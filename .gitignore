@@ -1,0 +1,15 @@
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+*.txss
+*.bcf
+*.xml
+journal/
+arXiv/
+referee/
