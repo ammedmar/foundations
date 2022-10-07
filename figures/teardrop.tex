@@ -1,0 +1,14 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+	\begin{tikzpicture}[scale = 4]
+	\coordinate (a) at (0,1.2);
+	\coordinate (b) at (0,0.2);
+
+	\draw[out=120, in=180, fill, opacity=.2] (b) to (a);
+	\draw[out=120, in=180] (b) to (a);
+	\draw[out=60, in=0, fill, opacity=.2] (b) to (a);
+	\draw[out=60, in=0] (b) to (a);
+	\end{tikzpicture}
+\end{document}

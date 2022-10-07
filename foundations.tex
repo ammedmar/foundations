@@ -1,0 +1,184 @@
+\documentclass{amsart}
+\usepackage{amssymb, amsmath, amsfonts, verbatim, mathtools,stmaryrd, diagrams, tabularx}
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{15pt}
+
+\usepackage{bm}
+\usepackage{mathbbol}
+\usepackage{ulem} % Used in the To-Do list
+\usepackage[all]{xy}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage[bookmarks=true, linktocpage=true,
+bookmarksnumbered=true, breaklinks=true,
+pdfstartview=FitH, hyperfigures=false,
+plainpages=false, naturalnames=true,
+colorlinks=true, pagebackref=true,
+pdfpagelabels]{hyperref}
+\hypersetup{
+	linkcolor  = blue,
+	citecolor  = blue,
+	urlcolor   = blue,
+	colorlinks = true,
+}
+\usepackage[capitalise,noabbrev,nosort]{cleveref}
+
+\addtolength{\textwidth}{1.4in}
+\oddsidemargin=0in
+\evensidemargin=0in
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem*{notation}{Notation}
+
+\newcommand{\codim}{\text{codim}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\e}{\mathbf{e}}
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\interval}{\mathbb{I}}
+\newcommand{\simplex}{\mathbb{\Delta}}
+\newcommand{\I}{\square}
+\newcommand{\chains}{C_*}
+\newcommand{\chainsn}{C_n}
+\newcommand{\cochains}{C^*}
+\newcommand{\chain}[1]{C_{#1}}
+\newcommand{\cochain}[1]{C^{#1}}
+\newcommand{\cd}{{\rm cd}}
+\DeclareMathOperator*{\colim}{colim}
+\newcommand{\ori}{\mathfrak{or}}
+\newcommand{\cor}{\mathfrak{cor}}
+\newcommand{\sh}{\mathfrak{sh}}
+\newcommand{\cs}{{\rm cst}}
+\newcommand{\os}{{\rm gst}}
+\newcommand{\Or}{{\rm Det}}
+\renewcommand{\Im}{{\rm Im} \;} 
+\newcommand{\im}{\text{im}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\init}{{\rm Init}}
+\newcommand{\term}{{\rm Term}}
+\newcommand{\sms}{\smallsmile}
+\newcommand{\pf}{\pitchfork}
+\newcommand{\bd}{\partial}
+\newcommand{\td}{\tilde}
+\newcommand{\Hom}{\textup{Hom}}
+\newcommand\red[1]{\textcolor{red}{#1}}
+\newcommand\blue[1]{\textcolor{blue}{#1}}
+\newcommand\purple[1]{\textcolor{purple}{#1}}
+\newcommand{\uW}{\underline{W}}
+\newcommand{\udW}{\underline{\partial W}}
+\newcommand{\uV}{\underline{V}}
+\newcommand{\uM}{\underline{M}}
+\newcommand{\uN}{\underline{N}}
+\newcommand{\xr}{\xrightarrow}
+\newcommand{\xl}{\xleftarrow}
+\newcommand{\uX}{\underline{X}}
+%\newcommand{\ker}{\rm ker}
+\hyphenation{to-pol-o-gy}
+\newcommand{\cman}{\mathrm{cMan}}
+\newcommand{\Cre}{\mathrm{Cre}}
+\newcommand{\aug}{\mathbf{a}}
+\newcommand{\vertices}{{\rm Vert}}       % vertices
+\newcommand{\jinterval}{\mathbb{J}}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\diag}{\mathbf{d}}
+\newcommand{\Ext}{\text{Ext}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\creflastconjunction}{, and\nobreakspace} %makes cleveref use serial commas
+
+
+
+%GBF: This all indents the table of contents, which isn't the default in the amsart class for some reason and was %driving me crazy:
+
+\setcounter{tocdepth}{4}% to get subsubsections in toc
+\let\oldtocsection=\tocsection
+\let\oldtocsubsection=\tocsubsection
+\let\oldtocsubsubsection=\tocsubsubsection
+\renewcommand{\tocsection}[2]{\hspace{0em}\oldtocsection{#1}{#2}}
+\renewcommand{\tocsubsection}[2]{\hspace{1em}\oldtocsubsection{#1}{#2}}
+\renewcommand{\tocsubsubsection}[2]{\hspace{2em}\oldtocsubsubsection{#1}{#2}}
+
+\begin{document}
+
+% AMS Structure in required order
+
+%\title[...]{...}
+%\author[...]{...}
+%\contrib[...]{...}
+%\address{...}
+%\curraddr{...}
+%\email{...}
+%\urladdr{...}
+%\dedicatory{...}
+%\thanks{...}
+%\subjclass[2010]{...}
+%\keywords{...}
+%\begin{abstract}...\end{abstract}
+%\maketitle
+
+\title{Geometric cohomology}
+
+% Greg
+\author[G. Friedman]{Greg Friedman}
+\address{Department of Mathematics, Texas Christian University}
+\email{g.friedman@tcu.edu}
+
+% Anibal
+\author[A. Medina-Mardones]{Anibal M. Medina-Mardones}
+\address{Max Planck Institute for Mathematics, Bonn, Germany}
+\email{ammedmar@mpim-bonn.mpg.de}
+\address{Department of Mathematics, University of Notre, Notre Dame, IN, USA}
+\email{amedinam@nd.edu}
+\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT - 1} and the hospitality of the Laboratory for Topology and Neuroscience at EPFL where part of this work was developed.\\This work was partially supported by a grant from the Simons Foundation (\#839707 to Greg Friedman) }
+
+% Dev
+\author[D. Sinha]{Dev Sinha}
+\address{Mathematics Department,
+	University of Oregon}
+\email{dps@uoregon.edu}
+
+\begin{abstract}
+	We set up the theory of geometric cohomology.
+\end{abstract}
+
+\maketitle
+
+
+%\setcounter{tocdepth}{4}
+\tableofcontents
+
+
+
+\input{s1} % Introduction
+
+\input{s2} %
+\input{s3} %
+\input{s4} %
+\input{s5} %
+\input{s6} %
+\input{s7} %
+\input{questions}
+
+\bibliographystyle{alpha}
+\bibliography{foundations}
+
+\pagebreak
+\input{to-do} %
+
+\end{document}
