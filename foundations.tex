@@ -1,5 +1,11 @@
 \documentclass{amsart}
-\usepackage{amssymb, amsmath, amsfonts, verbatim, mathtools,stmaryrd, diagrams, tabularx}
+\usepackage{amssymb, amsmath, amsfonts, verbatim, mathtools, stmaryrd, tabularx}
+
+\usepackage{diagrams2}
+\makeatletter
+\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
+\expandafter\foo\row@to@buffer\foo
+\makeatother
 
 \renewcommand{\arraystretch}{1.5}
 \setlength{\tabcolsep}{15pt}
@@ -68,7 +74,7 @@ pdfpagelabels]{hyperref}
 \newcommand{\cs}{{\rm cst}}
 \newcommand{\os}{{\rm gst}}
 \newcommand{\Or}{{\rm Det}}
-\renewcommand{\Im}{{\rm Im} \;} 
+\renewcommand{\Im}{{\rm Im} \;}
 \newcommand{\im}{\text{im}}
 \newcommand{\into}{\hookrightarrow}
 \newcommand{\init}{{\rm Init}}
