@@ -38,77 +38,6 @@ pdfpagelabels]{hyperref}
 \oddsidemargin=0in
 \evensidemargin=0in
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{proposition}[theorem]{Proposition}
-
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{convention}[theorem]{Convention}
-\newtheorem*{notation}{Notation}
-
-\newcommand{\codim}{\text{codim}}
-\newcommand{\mc}[1]{\mathcal{#1}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\id}{\mathrm{id}}
-\newcommand{\e}{\mathbf{e}}
-\newcommand{\f}{\mathbf{f}}
-\newcommand{\bb}{\mathbf{b}}
-\newcommand{\interval}{\mathbb{I}}
-\newcommand{\simplex}{\mathbb{\Delta}}
-\newcommand{\I}{\square}
-\newcommand{\chains}{C_*}
-\newcommand{\chainsn}{C_n}
-\newcommand{\cochains}{C^*}
-\newcommand{\chain}[1]{C_{#1}}
-\newcommand{\cochain}[1]{C^{#1}}
-\newcommand{\cd}{{\rm cd}}
-\DeclareMathOperator*{\colim}{colim}
-\newcommand{\ori}{\mathfrak{or}}
-\newcommand{\cor}{\mathfrak{cor}}
-\newcommand{\sh}{\mathfrak{sh}}
-\newcommand{\cs}{{\rm cst}}
-\newcommand{\os}{{\rm gst}}
-\newcommand{\Or}{{\rm Det}}
-\renewcommand{\Im}{{\rm Im} \;}
-\newcommand{\im}{\text{im}}
-\newcommand{\into}{\hookrightarrow}
-\newcommand{\init}{{\rm Init}}
-\newcommand{\term}{{\rm Term}}
-\newcommand{\sms}{\smallsmile}
-\newcommand{\pf}{\pitchfork}
-\newcommand{\bd}{\partial}
-\newcommand{\td}{\tilde}
-\newcommand{\Hom}{\textup{Hom}}
-\newcommand\red[1]{\textcolor{red}{#1}}
-\newcommand\blue[1]{\textcolor{blue}{#1}}
-\newcommand\purple[1]{\textcolor{purple}{#1}}
-\newcommand{\uW}{\underline{W}}
-\newcommand{\udW}{\underline{\partial W}}
-\newcommand{\uV}{\underline{V}}
-\newcommand{\uM}{\underline{M}}
-\newcommand{\uN}{\underline{N}}
-\newcommand{\xr}{\xrightarrow}
-\newcommand{\xl}{\xleftarrow}
-\newcommand{\uX}{\underline{X}}
-%\newcommand{\ker}{\rm ker}
-\hyphenation{to-pol-o-gy}
-\newcommand{\cman}{\mathrm{cMan}}
-\newcommand{\Cre}{\mathrm{Cre}}
-\newcommand{\aug}{\mathbf{a}}
-\newcommand{\vertices}{{\rm Vert}}       % vertices
-\newcommand{\jinterval}{\mathbb{J}}
-\newcommand{\onto}{\twoheadrightarrow}
-\newcommand{\diag}{\mathbf{d}}
-\newcommand{\Ext}{\text{Ext}}
-\newcommand{\mf}{\mathfrak}
-\newcommand{\creflastconjunction}{, and\nobreakspace} %makes cleveref use serial commas
-
 %GBF: Indents the table of contents.
 \setcounter{tocdepth}{4}% to get subsubsections in toc
 \let\oldtocsection=\tocsection
@@ -138,6 +67,8 @@ pdfpagelabels]{hyperref}
 \address{Mathematics Department, University of Oregon}
 \email{\href{mailto:dps@uoregon.edu}{dps@uoregon.edu}}
 
+\input{parts/commands}
+
 \begin{document}
 	\begin{abstract}
 		We set up the theory of geometric cohomology.
@@ -145,18 +76,18 @@ pdfpagelabels]{hyperref}
 	\maketitle
 	\tableofcontents
 
-	\input{s1} % Introduction
-	\input{s2} %
-	\input{s3} %
-	\input{s4} %
-	\input{s5} %
-	\input{s6} %
-	\input{s7} %
-	\input{questions}
+	\input{parts/s1} % Introduction
+	\input{parts/s2} %
+	\input{parts/s3} %
+	\input{parts/s4} %
+	\input{parts/s5} %
+	\input{parts/s6} %
+	\input{parts/s7} %
+	\input{parts/questions}
 
 	\bibliographystyle{alpha}
-	\bibliography{foundations}
+	\bibliography{parts/foundations}
 
 	\pagebreak
-	\input{to-do} %
+	\input{parts/to-do} %
 \end{document}

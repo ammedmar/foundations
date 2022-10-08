@@ -1,5 +1,5 @@
 
-% !TEX root = foundations.tex
+% !TEX root = ../foundations.tex
 
 
 \section{Basic properties of geometric (co)homology and equivalence with singular (co)homology}\label{S: basic properties}
@@ -99,8 +99,8 @@ This lemma shows that a homotopy $M\times I\to N$ cannot ``promote'' a manifold 
 
 \begin{corollary}
 Let $V, W\in PC_i^\Gamma(M)$ (or $V, W\in PC^i_\Gamma(M)$).
-Let $F \colon M \times I \to N$ be a smooth homotopy; if $V,W\in PC^i_\Gamma(M)$ suppose further that $F$ is proper and co-oriented. 
-If $V,W$ represent the same element of $C_i^\Gamma(M)$, then $F(-,1)\circ r_V: V \to N$ and 
+Let $F \colon M \times I \to N$ be a smooth homotopy; if $V,W\in PC^i_\Gamma(M)$ suppose further that $F$ is proper and co-oriented.
+If $V,W$ represent the same element of $C_i^\Gamma(M)$, then $F(-,1)\circ r_V: V \to N$ and
 $F(-,1)\circ r_W: W \to N$ represent the same element of $C_i^\Gamma(N)$ and $F \circ (r_V \times id_I) \colon V \times I \to N$ and $F \circ (r_W \times id_I) \colon W \times I \to N$ represent the same elements of $C_{i+1}^\Gamma(M)$. The analogous fact holds for  $V, W\in PC^i_\Gamma(M)$).
 \end{corollary}
 
@@ -188,15 +188,15 @@ Thus $f^*$ does not depend on our choices and depends on $f$ only through its ho
 \end{proof}
 
 \begin{remark}\label{R: homology transfer}
-Analogously, given $f:M\to N$, one could also define a contravariant pullback functor of homology groups $f^*: H_*^\Gamma(N)\to H_*^\Gamma(M)$ if $f$ is proper and $M$ and $N$ are both oriented (so that the pullback can be oriented). The following lemma shows that the pullback of a compact map by a proper map is compact. For the orientation, we observe that given an oriented map $r_V:V\to N$ that represents $\uV$ and a map $g:M\to N$ that is properly homotopic to $f$ and transverse to $r_V$,  the orientations of $V$ and $N$ induce a co-orientation on $r_V$ and so a co-orientation on the pullback $V\times_NM\to M$ by \cref{D: pullback coorient}. This in turn induces an orientation on $V\times_NM$ given the orientation of $M$. 
+Analogously, given $f:M\to N$, one could also define a contravariant pullback functor of homology groups $f^*: H_*^\Gamma(N)\to H_*^\Gamma(M)$ if $f$ is proper and $M$ and $N$ are both oriented (so that the pullback can be oriented). The following lemma shows that the pullback of a compact map by a proper map is compact. For the orientation, we observe that given an oriented map $r_V:V\to N$ that represents $\uV$ and a map $g:M\to N$ that is properly homotopic to $f$ and transverse to $r_V$,  the orientations of $V$ and $N$ induce a co-orientation on $r_V$ and so a co-orientation on the pullback $V\times_NM\to M$ by \cref{D: pullback coorient}. This in turn induces an orientation on $V\times_NM$ given the orientation of $M$.
 \end{remark}
 
 
 \begin{lemma}\label{L: compact pullback}
-Suppose $f:M\to N$ is a proper map of spaces and $r_V:V\to N$ is a map with $V$ compact. Then $V\times_NM$ is compact. 
+Suppose $f:M\to N$ is a proper map of spaces and $r_V:V\to N$ is a map with $V$ compact. Then $V\times_NM$ is compact.
 \end{lemma}
 \begin{proof}
-As $V$ is compact, so is $r_V(V)$, and as $f$ is proper, $f^{-1}(r_V(V))$ is compact. Now we observe that we must have $V\times_N M\subset V\times f^{-1}(r_V(V))\subset V\times M$. So $V\times_N M$ is compact. 
+As $V$ is compact, so is $r_V(V)$, and as $f$ is proper, $f^{-1}(r_V(V))$ is compact. Now we observe that we must have $V\times_N M\subset V\times f^{-1}(r_V(V))\subset V\times M$. So $V\times_N M$ is compact.
 \end{proof}
 
 
@@ -300,21 +300,21 @@ some $Z\in PC^*_\Gamma(M|_{U\cup V})$ such that $\bd Z=W_1+W_2+T$ for some $T\in
 Now let us choose a separating function and consider $(Z^-+\Cre(W_1),Z^++\Cre(W_2))\in PC^*_\Gamma(M|_U)\oplus  PC^*_\Gamma(M|_V)$; note that as $W_1$ and $W_2$ are in the boundary of $Z$, a separating function for $Z$ can also be used for creasing $W_1$ and $W_2$. We compute using again \cref{E: codim 1 pullbacks} and Equation \eqref{E: bd crease}:
 \begin{align*}
 \bd (Z^-+\Cre(W_1),Z^++\Cre(W_2))&=(\bd (Z^-)+\bd \Cre(W_1),\bd (Z^+)+\bd\Cre(W_2))\\
-&= (-Z^0 + W_1^- + W_2^- + T^-+W_1 -W_1^- -W_1^+ -\Cre(\bd W_1),\\ 
+&= (-Z^0 + W_1^- + W_2^- + T^-+W_1 -W_1^- -W_1^+ -\Cre(\bd W_1),\\
 &\qquad\qquad Z^0+ W_1^++ W_2^+ + T^++W_2 -W_2^- -W_2^+ -\Cre(\bd W_2))\\
-&= (-Z^0  + W_2^- + T^-+W_1  -W_1^+ -\Cre(\bd W_1)),\\ 
+&= (-Z^0  + W_2^- + T^-+W_1  -W_1^+ -\Cre(\bd W_1)),\\
 &\qquad\qquad Z^0+ W_1^+ + T^++W_2 -W_2^-  -\Cre(\bd W_2)))\\
 &= (W_1,W_2)+ (-Z^0,Z^0)  + (W_2^--W_1^+, W_1^+ -W_2^-)   + (T^-,T^+)\\
 &\qquad\qquad -(\Cre(\bd W_1),\Cre(\bd W_2)).
 \end{align*}
-The second and third terms are in $\im(i_U,-i_V)$, while  $(T^-,T^+)\in Q^*(M|_U)\oplus Q^*(M|_V)$ by \cref{C: creasing Q}. 
+The second and third terms are in $\im(i_U,-i_V)$, while  $(T^-,T^+)\in Q^*(M|_U)\oplus Q^*(M|_V)$ by \cref{C: creasing Q}.
  The last term is obtained by applying the creasing construction to the terms of  $(\bd W_1,\bd W_2)$, which by assumption is $0$ in $S^*$. In other words, $(\bd W_1,\bd W_2)$ can be represented as the union of an element of $Q^*(M|_U)\oplus Q^*(M|_V)$ with an element in the image of $(i_U,-i_V)$. But creasing preserves both support and membership in $Q^*$ by definition and by \cref{C: creasing Q}, and  if $(A,-B)=(i_U,-i_V)(C)=(i_U(C),-i_V(C))$, then $(\Cre(A),\Cre(-B))=(i_U(\Cre(C)),-i_V(\Cre(C)))$. Altogether, we obtain $$(W_1,W_2)=\bd (Z^-+\Cre(W_1),Z^++\Cre(W_2))$$ in $S^*$. So  $\psi$ is injective.
 \end{proof}
 
 \begin{remark}\label{R: MV boundary}
 The connecting homomorphism in this long exact sequence, as defined through this proof, is given by taking a cocycle in $M|_{U \cup V}$,
 using the creasing construction to write it as a sum of cochains in $C^*_\Gamma(M|_{U})$ and $C^*_\Gamma(M|_{V})M$, and taking the boundary of the cochain in $M_U$.
-In short, it takes a cocycle represented by $W\to U \cup V$ and sends it to $-W^0\to U\cap V$ determined by an appropriate separating function and separating point. 
+In short, it takes a cocycle represented by $W\to U \cup V$ and sends it to $-W^0\to U\cap V$ determined by an appropriate separating function and separating point.
 
 The description for the homology sequence is identical.
 \end{remark}
@@ -326,12 +326,12 @@ interest, geometric cohomology coincides with singular cohomology, the induction
 Let $M$ be an $m$-dimensional smooth manifold, and $U \subset M$ an open set that is diffeomorphic to an open ball and whose closure in $M$ is compact.  Then $H^n_\Gamma(M|_U)$ is $\Z$ if $n = m$ and is zero otherwise.
 \end{proposition}
 
-This observation is akin to the dimension axiom or the Poincar\'e lemma, but with the cohomology concentrated in top degree rather than degree zero; cf. the standard dimension axiom in \cref{E: dimension}.  
+This observation is akin to the dimension axiom or the Poincar\'e lemma, but with the cohomology concentrated in top degree rather than degree zero; cf. the standard dimension axiom in \cref{E: dimension}.
 
 
 
 \begin{proof}[Proof of \cref{P: P lemma}]
-If $r_W: W \to M$ is proper and has image in $U$, then $W$, as the preimage of the closure of $U$, must be compact. Also, $U$ is orientable, and so by choosing an orientation of $U$ every co-oriented $r_W:W\to U$ determines an orientation of $W$ as explained in \cref{S: co-orientations}. Thus $C^*_\Gamma(M|_U)\cong C_{m-*}^\Gamma(U)$, and the result follows from \cref{E: dimension} (the dimension axiom), homotopy functoriality of geometric homology, and that $U$ is homotopy equivalent to a point.  
+If $r_W: W \to M$ is proper and has image in $U$, then $W$, as the preimage of the closure of $U$, must be compact. Also, $U$ is orientable, and so by choosing an orientation of $U$ every co-oriented $r_W:W\to U$ determines an orientation of $W$ as explained in \cref{S: co-orientations}. Thus $C^*_\Gamma(M|_U)\cong C_{m-*}^\Gamma(U)$, and the result follows from \cref{E: dimension} (the dimension axiom), homotopy functoriality of geometric homology, and that $U$ is homotopy equivalent to a point.
 \end{proof}
 
 \begin{comment}
@@ -367,7 +367,7 @@ Instead, we proceed with a direct analysis at each term of the exact sequence as
 
 
 \begin{definition}
-Suppose $U,V\subset M$ are open subsets and $\uW\in H^k_\Gamma(U\cap V)$ represented by $r_W:W\to U\cap V$. Of course we can also consider $r_W$ to have image in $U\cup V$. Let $\phi:M\to [-1,1]$ be a separating function for $U$ and $V$ such that $0$ is a separating point for $W$. 
+Suppose $U,V\subset M$ are open subsets and $\uW\in H^k_\Gamma(U\cap V)$ represented by $r_W:W\to U\cap V$. Of course we can also consider $r_W$ to have image in $U\cup V$. Let $\phi:M\to [-1,1]$ be a separating function for $U$ and $V$ such that $0$ is a separating point for $W$.
 Define $\delta(\uW)\in H^{k+1}_\Gamma(U\cup V)$ to be represented by $-W^0=-\phi^{-1}(0)\times_{U\cup V}W$.
 \end{definition}
 
@@ -380,18 +380,18 @@ The map $H^k_\Gamma(U\cap V)\xr{\delta} H^{k+1}_\Gamma(U\cup V)$ is well defined
 \end{proposition}
 
 \begin{proof}
-Note that the $\phi^{-1}(0)\to U\cup V$ is a closed inclusion and so proper. Thus $r_{W^0}:W^0\to U\cup V$ is proper by \cref{L: co-orientable pullback} as the composition of $r_W^*:\phi^{-1}(0)\times_{U\cup V}W\to \phi^{-1}(0)$ and $\phi^{-1}(0)\into U\cup V$. 
+Note that the $\phi^{-1}(0)\to U\cup V$ is a closed inclusion and so proper. Thus $r_{W^0}:W^0\to U\cup V$ is proper by \cref{L: co-orientable pullback} as the composition of $r_W^*:\phi^{-1}(0)\times_{U\cup V}W\to \phi^{-1}(0)$ and $\phi^{-1}(0)\into U\cup V$.
 
 
 We next fix $\phi$ and show independence of the choices of separating point and representative for $\uW$.
 
-Suppose  $p,p'$  are  separating points for $W$. Without lose of generality, we assume $p<p'$. Then $\phi^{-1}([p,p'])$ will be transverse to $r_W:W\to M$, and we have $\phi^{-1}([p,p'])\subset U\cap V$. As $\phi^{-1}([p,p'])$ is closed in $U\cup V$, its inclusion is proper, and the inclusion can be tautologically co-oriented as a codimension $0$ embedding (see \cref{D: tautological co-orientation}). 
+Suppose  $p,p'$  are  separating points for $W$. Without lose of generality, we assume $p<p'$. Then $\phi^{-1}([p,p'])$ will be transverse to $r_W:W\to M$, and we have $\phi^{-1}([p,p'])\subset U\cap V$. As $\phi^{-1}([p,p'])$ is closed in $U\cup V$, its inclusion is proper, and the inclusion can be tautologically co-oriented as a codimension $0$ embedding (see \cref{D: tautological co-orientation}).
 Thus $$\bd(\varphi^{-1}([p,p'])\times_{U\cup V} W=(\varphi^{-1}(p')\times_{U\cup V} W)-(\varphi^{-1}(p)\times_{U\cup V} W)+ \varphi^{-1}([p,p'])\times_{U\cup V} \bd W.$$ As $W$ is a cocycle, the last term is in $Q^*(U\cup V)$ (with support in $U\cap V$) by \cref{L: pullback with Q}, so $\varphi^{-1}(p')\times_{U\cup V} W$ and $\varphi^{-1}(p)\times_{U\cup V} W$ are cohomologous. This shows independence of choice of separating point.
 
 Next suppose $W_1$ and $W_2$ cohomologous in $U\cap V$, so there is a $Z$ in $U\cap V$ with $\bd Z=W_1-W_2+T$ and $T\in Q^*(U\cap V)$. Let $p$ be a separating point for all of $Z,W_1,W_2,T$. Then (continuing to write, e.g., $W^0$ even when the separating point is $p$), by \cref{C: co-orient W0}  $$\bd (Z^0)=-(\bd Z)^0=-W_1^0+W_2^0-T^0,$$ with the last term in $Q^*(U\cup V)$, and so $W_1^0$ and $W_2^0$ are cohomologous. This establishes independence of the representing object for $\uW$.
 
 Finally, we must show independence of the choice of $\phi$. This is clear in the case that we vary $\phi$ by postcomposing with an orientation-preserving diffeomorphism $\psi$ of $[-1,1]$ and replace the splitting point $p$ by $\psi(p)$.
-Suppose more generally we have two separating functions $\phi_1,\phi_2:U\cup V\to [-1,1]$ and corresponding $p_1,p_2$ that are separating for $W$. 
+Suppose more generally we have two separating functions $\phi_1,\phi_2:U\cup V\to [-1,1]$ and corresponding $p_1,p_2$ that are separating for $W$.
 
 Next suppose there exists $q$ with $-1<q<p_2$ such that $\phi_1^{-1}(p_1)\subset \phi_2^{-1}([-1,q])$. By postcomposing $\phi_1$ with a diffeomorphism of $[-1,1]$, we may suppose that $p_1<q$. Let us choose $u_1,u_2$ such that $-1<u_1<p_1<u_1<q$. Using the Urysohn lemma we can find a continuous $\hat \Phi$ on $U\cup V$ such that:
 
@@ -447,12 +447,12 @@ In both cases these correspond to pairs of points $(x,y)\in W\times M$ with $r_W
 W&\rTo^{r_W}&N&\rTo^{\phi}&[-1,1]&\lInto&0.
 \end{diagram}
 
-Thus  $f^*\delta(\uW)$ and  $\delta f^*(\uW)$ are represented by the same map, and we only need to check co-orientations. 
+Thus  $f^*\delta(\uW)$ and  $\delta f^*(\uW)$ are represented by the same map, and we only need to check co-orientations.
 
-We return to the definitions of the pullback and fiber product co-orientations. It suffices to compare  $(W\times_N M)^0$ and $W^0\times_NM$ at an arbitrary point. We first consider the co-orientation in the form $(W\times_N M)^0$. For the pullback $W\times_NM\to M$, choose $e:W\into N\times \R^K$. At our chosen point, fix $\beta_N$ and choose $\beta_W$ so that $\omega_{r_W}=(\beta_W,\beta_N)$. Let $\nu$ be the Quillen-oriented normal bundle of $W$ in $N\times \R^K$ so that $\beta_W\wedge \beta_\nu=\beta_N\wedge \beta_E$, where $\beta_E$ is the standard orientation of $\R^K$. Then by definition the pullback map from $P=W\times_N M\subset M\times \R^K$ to $M$ is co-oriented by $(\beta_P,\beta_M)$ if we choose $\beta_P$ and $\beta_M$ such that $\beta_P\wedge \beta_\nu=\beta_M\times \beta_E$, recalling that we let $\beta_\nu$ also denote the pulled back normal bundle of $P$ in $M\times \R^K$. We suppose we have chosen such $\beta_P$ and $\beta_M$. Next, let $M^0\subset M$ have normal co-orientation $\beta_\phi$ determined by pulling back the standard orientation from $(-1,1)$, and similarly let $\beta_\phi$ denote the pullback normal co-orientation to $(W\times_N M)^0$. Then by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $(W\times_N M)^0=M^0\times_M (W\times_N M)\to W\times_N M$ is $(\beta_Q,\beta_Q\wedge \beta_\phi)$ for any $\beta_Q$. The fiber product $(W\times_N M)^0\into M$ is then co-oriented by the composition $(\beta_Q,\beta_Q\wedge \beta_\phi)*(\beta_P,\beta_M)$. So if we choose $\beta_Q$ so that $\beta_Q\wedge \beta_\phi=\beta_P$ (or equivalently $\beta_Q$ and $\beta_M$ so that $\beta_Q\wedge \beta_\phi\wedge \beta_\nu=\beta_M\wedge \beta_E$), the co-orientation is $(\beta_Q,\beta_M)$. 
+We return to the definitions of the pullback and fiber product co-orientations. It suffices to compare  $(W\times_N M)^0$ and $W^0\times_NM$ at an arbitrary point. We first consider the co-orientation in the form $(W\times_N M)^0$. For the pullback $W\times_NM\to M$, choose $e:W\into N\times \R^K$. At our chosen point, fix $\beta_N$ and choose $\beta_W$ so that $\omega_{r_W}=(\beta_W,\beta_N)$. Let $\nu$ be the Quillen-oriented normal bundle of $W$ in $N\times \R^K$ so that $\beta_W\wedge \beta_\nu=\beta_N\wedge \beta_E$, where $\beta_E$ is the standard orientation of $\R^K$. Then by definition the pullback map from $P=W\times_N M\subset M\times \R^K$ to $M$ is co-oriented by $(\beta_P,\beta_M)$ if we choose $\beta_P$ and $\beta_M$ such that $\beta_P\wedge \beta_\nu=\beta_M\times \beta_E$, recalling that we let $\beta_\nu$ also denote the pulled back normal bundle of $P$ in $M\times \R^K$. We suppose we have chosen such $\beta_P$ and $\beta_M$. Next, let $M^0\subset M$ have normal co-orientation $\beta_\phi$ determined by pulling back the standard orientation from $(-1,1)$, and similarly let $\beta_\phi$ denote the pullback normal co-orientation to $(W\times_N M)^0$. Then by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $(W\times_N M)^0=M^0\times_M (W\times_N M)\to W\times_N M$ is $(\beta_Q,\beta_Q\wedge \beta_\phi)$ for any $\beta_Q$. The fiber product $(W\times_N M)^0\into M$ is then co-oriented by the composition $(\beta_Q,\beta_Q\wedge \beta_\phi)*(\beta_P,\beta_M)$. So if we choose $\beta_Q$ so that $\beta_Q\wedge \beta_\phi=\beta_P$ (or equivalently $\beta_Q$ and $\beta_M$ so that $\beta_Q\wedge \beta_\phi\wedge \beta_\nu=\beta_M\wedge \beta_E$), the co-orientation is $(\beta_Q,\beta_M)$.
 
 
-On the other hand, consider $(N^0\times_N W)\times_N M=W^0\times_NM\to M$. One again we fix $\beta_N$ and $\beta_W$ so that $\omega_{r_W}=(\beta_W,\beta_N)$. Again by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $N^0\times_N W\to W$ is $(\beta_{W^0},\beta_{W^0}\wedge \beta_\phi)$ for any $\beta_{W^0}$, continuing to let $\beta_\phi$ denote any normal co-orientation pulled back via $\phi$. If we choose $\beta_{W^0}$ so that $\beta_{W^0}\wedge \beta_\phi=\beta_W$ then we have $r_{W^0}:W^0\to N$ co-oriented by $(\beta_{W^0},\beta_N)$. As $W^0\subset W$, we can embed $W^0$ in $N\times \R^K$ via the composition $W^0\into W \xhookrightarrow{e}N\times \R^K$, using the same $e$ and $K$ as above. As $\beta_W\wedge \beta_\nu=\beta_N\wedge \beta_E$ and $\beta_W=\beta_{W^0}\wedge \beta_\phi$, we have $\beta_{W^0}\wedge \beta_\phi\wedge \beta_\nu=\beta_N\wedge \beta_E$ so that $\beta_\phi\wedge \beta_\nu$ is the Quillen orientation for the normal bundle of $W^0$ in $N\times \R^K$. Using this to pull back $W^0\to N$ to $W^0\times_NM\to M$, by definition the pullback co-orientation is $(\beta_Q,\beta_M)$ when $\beta_Q$ and $\beta_M$ are chosen so that $\beta_Q\wedge \beta_\phi\wedge \beta_\nu=\beta_M\wedge \beta_E$. But this is exactly the same co-orientation we arrived at in the preceding paragraph. Thus the co-orientations of the two constructions agree. 
+On the other hand, consider $(N^0\times_N W)\times_N M=W^0\times_NM\to M$. One again we fix $\beta_N$ and $\beta_W$ so that $\omega_{r_W}=(\beta_W,\beta_N)$. Again by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $N^0\times_N W\to W$ is $(\beta_{W^0},\beta_{W^0}\wedge \beta_\phi)$ for any $\beta_{W^0}$, continuing to let $\beta_\phi$ denote any normal co-orientation pulled back via $\phi$. If we choose $\beta_{W^0}$ so that $\beta_{W^0}\wedge \beta_\phi=\beta_W$ then we have $r_{W^0}:W^0\to N$ co-oriented by $(\beta_{W^0},\beta_N)$. As $W^0\subset W$, we can embed $W^0$ in $N\times \R^K$ via the composition $W^0\into W \xhookrightarrow{e}N\times \R^K$, using the same $e$ and $K$ as above. As $\beta_W\wedge \beta_\nu=\beta_N\wedge \beta_E$ and $\beta_W=\beta_{W^0}\wedge \beta_\phi$, we have $\beta_{W^0}\wedge \beta_\phi\wedge \beta_\nu=\beta_N\wedge \beta_E$ so that $\beta_\phi\wedge \beta_\nu$ is the Quillen orientation for the normal bundle of $W^0$ in $N\times \R^K$. Using this to pull back $W^0\to N$ to $W^0\times_NM\to M$, by definition the pullback co-orientation is $(\beta_Q,\beta_M)$ when $\beta_Q$ and $\beta_M$ are chosen so that $\beta_Q\wedge \beta_\phi\wedge \beta_\nu=\beta_M\wedge \beta_E$. But this is exactly the same co-orientation we arrived at in the preceding paragraph. Thus the co-orientations of the two constructions agree.
 
 
 We conclude that the diagram of the lemma commutes.
@@ -473,7 +473,7 @@ with  $i(\uW)=(\uW|_U, -\uW|_V)$, $j(\uW_1,\uW_2)=\uW_1|_{U\cap V}+\uW_2|_{U\cap
 
 \begin{proof}
 Notationally, we always assume  $\uW$ is represented by $W$, etc.
-In the following we typically assume an appropriate separating function $\phi:U\cup V\to [-1,1]$ such that $\phi(U\setminus V)=-1$ and $\phi(V\setminus U)=1$ and choose an appropriate separating point without further comment. We observe that in this case $(U\cap V)^+=\phi^{-1}([0,1])\cap(U\cap V)$ is a closed subspace of both $U\cap V$ and of $U$, as $\phi|_U^{-1}([0,1])=\phi^{-1}([0,1])\cap (U\cap V)$ given that $\phi(U\setminus V)=-1$. So the inclusions $(U\cap V)^+\into U\cap V$ and $(U\cap V)^+\into U$ are both proper maps. Thus if $W\in PC^*_\Gamma(U\cap V)$, in which case in particular $r_W:W\to U\cap V$ is proper, both the fiber products $(U\cap V)^+\times_{U\cap V} W\to U\cap V$ and $(U\cap V)^+\times_{U} W\to U$ will be proper maps. In fact, they both have the same domain, which is just $W^+$, and we will write $W^+$ for the corresponding elements of $PC^*_\Gamma(U\cap V)$ or  $PC^*_\Gamma(U)$, determining which via context. Similarly, we obtain $W^-$ in $PC^*_\Gamma(U\cap V)$ or  $PC^*_\Gamma(V)$. See \cref{F: MV1}. On the other hand, $(U\cap V)^-=\phi^{-1}([-1,0])\cap(U\cap V)$ is not generally closed in $U$ and so we do not obtain a $W^-$ in $PC^*_\Gamma(U)$. 
+In the following we typically assume an appropriate separating function $\phi:U\cup V\to [-1,1]$ such that $\phi(U\setminus V)=-1$ and $\phi(V\setminus U)=1$ and choose an appropriate separating point without further comment. We observe that in this case $(U\cap V)^+=\phi^{-1}([0,1])\cap(U\cap V)$ is a closed subspace of both $U\cap V$ and of $U$, as $\phi|_U^{-1}([0,1])=\phi^{-1}([0,1])\cap (U\cap V)$ given that $\phi(U\setminus V)=-1$. So the inclusions $(U\cap V)^+\into U\cap V$ and $(U\cap V)^+\into U$ are both proper maps. Thus if $W\in PC^*_\Gamma(U\cap V)$, in which case in particular $r_W:W\to U\cap V$ is proper, both the fiber products $(U\cap V)^+\times_{U\cap V} W\to U\cap V$ and $(U\cap V)^+\times_{U} W\to U$ will be proper maps. In fact, they both have the same domain, which is just $W^+$, and we will write $W^+$ for the corresponding elements of $PC^*_\Gamma(U\cap V)$ or  $PC^*_\Gamma(U)$, determining which via context. Similarly, we obtain $W^-$ in $PC^*_\Gamma(U\cap V)$ or  $PC^*_\Gamma(V)$. See \cref{F: MV1}. On the other hand, $(U\cap V)^-=\phi^{-1}([-1,0])\cap(U\cap V)$ is not generally closed in $U$ and so we do not obtain a $W^-$ in $PC^*_\Gamma(U)$.
 
 \begin{figure}[h]
 	\includegraphics[scale=1]{figures/mayer_vietoris1.pdf}
@@ -493,7 +493,7 @@ Similarly, continuing with our assumptions about $\phi:U\cup V\to [-1,1]$,  we h
 \label{F: MV2}
 \end{figure}
 
-Finally, we also note that $\phi^{-1}(0)$ is closed in $U\cap V$, $U$, $V$, and $U\cup V$, so for any $W$ in $PC_\Gamma^*(-)$ for any of these spaces, $W^0$ is also in $PC^*_\Gamma(-)$ for all these spaces. 
+Finally, we also note that $\phi^{-1}(0)$ is closed in $U\cap V$, $U$, $V$, and $U\cup V$, so for any $W$ in $PC_\Gamma^*(-)$ for any of these spaces, $W^0$ is also in $PC^*_\Gamma(-)$ for all these spaces.
 
 
 
@@ -514,7 +514,7 @@ But   $(W|_U)^- +(W|_V)^+=W^-+W^+$, which through the creasing construction is c
 \textbf{Exactness at $H^k_\Gamma(U)\oplus H^k_\Gamma(V)$.}
 It is immediate that the composition $ji=0$.
 
-Now suppose $(\uW_1,\uW_2)\in \ker j\subset  H^k_\Gamma(U)\oplus H^k_\Gamma(V)$. Using representatives $W_1,W_2$, this means that there is a $Z\in C^k_\Gamma(U\cap V)$ with  $\bd Z=W_1|_{U\cap V}+W_2|_{U\cap V}+T$, with $T\in Q^*(U\cap V)$. Choose a separating point for all $Z$ and hence automatically $W_1$, $W_2$, and $T$. We claim that $\gamma=W_1^- - Z^0 -W_2^+$ represents an element of $H^k_\Gamma(U\cup V)$ whose image under $i$ is $(\uW_1,\uW_2)$. 
+Now suppose $(\uW_1,\uW_2)\in \ker j\subset  H^k_\Gamma(U)\oplus H^k_\Gamma(V)$. Using representatives $W_1,W_2$, this means that there is a $Z\in C^k_\Gamma(U\cap V)$ with  $\bd Z=W_1|_{U\cap V}+W_2|_{U\cap V}+T$, with $T\in Q^*(U\cap V)$. Choose a separating point for all $Z$ and hence automatically $W_1$, $W_2$, and $T$. We claim that $\gamma=W_1^- - Z^0 -W_2^+$ represents an element of $H^k_\Gamma(U\cup V)$ whose image under $i$ is $(\uW_1,\uW_2)$.
 We compute
 \begin{align*}\bd \gamma&=\bd (W_1^- - Z^0 -W_2^+)\\
 &= -W_1^0 +(\bd W_1)^- + (\bd Z)^0 - W_2^0 - (\bd W_2)^+\\
@@ -662,7 +662,7 @@ Axiom \ref{I: homotopy functor} holds from the definitions and \cref{P: homology
 We have Mayer-Vietoris sequences by \cref{T: relative MV,T: absolute MV}. The connecting map for the cohomology sequence is natural by \cref{L: natural connection}. The connecting map for the homology sequence is natural just as in the standard argument for singular homology: given a map of triples $(M;U',V')\to (N;U,V)$ there is a map of Mayer-Vietoris sequences induced by a map of short exactly sequences of chain complexes of the form of diagram \eqref{E: homology MV SES} (replacing supported cochains complexes with chain complexes), itself induced by functoriality from the maps of chain complexes $C_*^{\Gamma}(U')\to C_*^{\Gamma}(U)$ and similarly for $V$ and $U\cap V$. This map of Mayer-Vietoris sequences in particular shows that the connecting map is natural.
 
 
-Axiom \ref{I: neg dim} holds trivially for homology as there are no chains of degree $<0$. It also holds for cohomology because for $k<0$ any representing cocycle must have small rank and boundary in $Q^*(M)$. Thus any such cocycle must be $0\in C^k_\Gamma(M)$. 
+Axiom \ref{I: neg dim} holds trivially for homology as there are no chains of degree $<0$. It also holds for cohomology because for $k<0$ any representing cocycle must have small rank and boundary in $Q^*(M)$. Thus any such cocycle must be $0\in C^k_\Gamma(M)$.
 
 The Dimension Axiom has been proven in \cref{E: dimension}.
 
@@ -671,7 +671,7 @@ The Additivity Axiom is apparent.
 
 
 \begin{example}
-Let us consider $H^*_\Gamma(\R P^2)$. We know from the standard computations of $H^*(\R P^2)$ and the above theorem that 
+Let us consider $H^*_\Gamma(\R P^2)$. We know from the standard computations of $H^*(\R P^2)$ and the above theorem that
 \begin{equation*}
 H_\Gamma^i(\R P^2)=
 \begin{cases}
@@ -685,23 +685,23 @@ From the viewpoint of geometric cohomology, $H^0(\R P^2)$ is generated by the id
 In degree $1$, cochains are represented by co-oriented maps from (unions of) closed intervals or circles. For a map from the circle to be co-oriented it cannot represent the non-trivial element $\alpha\in \pi_1(\R P^2)$, and so it must be contractible. Any map from a disk must be co-orientable, as the disk is contractible (this can be considered an extension of \cref{L: co-orientable homotopies}). Thus by smooth approximation, any smooth co-oriented map from the circle to $\R P^2$ is the boundary of a smooth co-oriented map from the disk, and so represents $0$ in cohomology. The same is true for any ``circle of intervals'' that does not represent $\alpha\in \pi_2(\R P^2)$; via homotopy and creasing, such a ``circle'' is the boundary of a polygon. On the other hand, consider a map $g:\interval\to \R P^2$ that does represent $\alpha$. As $\interval$ is contractible, such a map can always be co-oriented. We can let $e$ represent the standard unit vector of $\interval$ and suppose that $g$ is co-oriented so that at $0\in \interval$ the co-orientation is represented by $(e,\beta)$ for some local orientation $\beta$ of $\R P^2$ at $f(0)$. Traversing the path, the representation for the co-orientation at $1$ is then $(e,-\beta)$. Recalling our boundary conventions, the boundary of $f$ therefore consists of the maps $f|_0:0\to \R P^2$ co-oriented by $(1,e)*(e,\beta)=(e,\beta)$ and $f|_1:1\to \R P^2$ co-oriented by $(1,-e)*(e,-\beta)=(e,\beta)$. Thus with these co-orientations, $f|_0:0\to \R P^2$ and $f|_1:1\to \R P^2$ represent isomorphic manifolds over $\R P^2$. As a co-oriented map from any single point to $\R P^2$ is a cocycle, we see by choosing the image to be the basepoint for $\pi_1(\R P^2)$ that twice any such map is a boundary. We leave it to the reader to verify that any two such points generate the same cohomology class, and so we have verified that $H^1_\Gamma(\R P^2)=0$ and $H_\Gamma^2(\R P^2)\cong \Z_2$.
 \end{example}
 
-\subsubsection{A more direct comparison of singular and geometric homology} 
+\subsubsection{A more direct comparison of singular and geometric homology}
 
 While it was convenient to cite simultaneously the homology and cohomology versions of the Kreck-Singhof theorem, we can provide a second proof in the homology case that says a bit more. In particular, as simplices are manifolds with corners and as the standard model simplex comes equipped with an orientation, if we let $S^{sm}_*(M)$ denote the chain complex of smooth singular chains,  there is an obvious inclusion map $S^{sm}_*(M)\into PC_*^\Gamma(M)$. It is not hard to check consistency of the boundary orientations so that this induces a chain map $S^{sm}_*(M)\to C_*^\Gamma(M)$. We will see that this is a quasi-isomorphism. Combined with the well-known fact that the inclusion $S^{sm}_*(M)\into S_*(M)$ is a chain homotopy equivalence if $S_*(M)$ is the full singular chain complex on $M$ \cite[Theorem 18.7]{Lee13}, this provides a concrete chain of isomorphisms $H_*(M)\cong H_*^\Gamma(M)$.
 
-It will also be useful below to have the analogous result for cubical singular homology in addition to the more common simplicial singular homology. Details of cubical singular homology can be found, for example, in (see, e.g., \cite{Mas91} or \cite[Section 8.3]{HW60}). Rather than maps of simplices $\Delta^k\to M$, the cubical singular chain complex $SK_*(M)$ is generated by maps $\interval^k\to M$ with $\interval$ being the standard interval $\interval=[0,1]$. The boundary formula is defined so that if $\sigma: \interval^k\to M$ is a singular cube, then 
+It will also be useful below to have the analogous result for cubical singular homology in addition to the more common simplicial singular homology. Details of cubical singular homology can be found, for example, in (see, e.g., \cite{Mas91} or \cite[Section 8.3]{HW60}). Rather than maps of simplices $\Delta^k\to M$, the cubical singular chain complex $SK_*(M)$ is generated by maps $\interval^k\to M$ with $\interval$ being the standard interval $\interval=[0,1]$. The boundary formula is defined so that if $\sigma: \interval^k\to M$ is a singular cube, then
 \begin{equation}\label{E: cube bd}
 \bd \sigma=\sum_{i=1}^k (-1)^i(\sigma \delta_i^0-\sigma \delta^1_i),
 \end{equation}
-where for $\epsilon\in\{0,1\}$, the map $\delta_i^\epsilon:\interval^{k-1}\to \interval^k$ is defined by 
-$$\delta_i^\epsilon(x_1,\ldots,x_k)=(x_1,\ldots,\epsilon,\ldots, x_k)$$ 
-with $\epsilon$ in the $i$th slot. The homology of the chain complex $SK_*(M)$ is not isomorphic to singular homology as it does not satisfy the dimension axiom, so one instead forms the normalized complex $NK_*(M)$ by quotienting out the subcomplex of degenerate singular cubes, generated by singular cubes $\sigma:\interval^k\to M$ such that $\sigma$ does not depend on at least one of the variables. In other words, the degenerate singular cubes are those maps $\sigma:\interval^k\to M$ that factor through one of the standard projections $\interval^k\to \interval^{k-1}$. It then holds that $NK_*(M)$ is chain homotopy equivalent to $S_*(M)$. In fact this holds for $M$ any space and not just a manifold \cite[Theorem 8.4.7]{HW60}. Of course we will need the smooth version $NK^{sm}_*(M)$ generated by smooth singular cubes and modulo degenerate smooth singular cubes. We defer to an appendix to this section the proof that $NK^{sm}_*(M)\into NK_*(M)$ is a chain homotopy equivalence. 
+where for $\epsilon\in\{0,1\}$, the map $\delta_i^\epsilon:\interval^{k-1}\to \interval^k$ is defined by
+$$\delta_i^\epsilon(x_1,\ldots,x_k)=(x_1,\ldots,\epsilon,\ldots, x_k)$$
+with $\epsilon$ in the $i$th slot. The homology of the chain complex $SK_*(M)$ is not isomorphic to singular homology as it does not satisfy the dimension axiom, so one instead forms the normalized complex $NK_*(M)$ by quotienting out the subcomplex of degenerate singular cubes, generated by singular cubes $\sigma:\interval^k\to M$ such that $\sigma$ does not depend on at least one of the variables. In other words, the degenerate singular cubes are those maps $\sigma:\interval^k\to M$ that factor through one of the standard projections $\interval^k\to \interval^{k-1}$. It then holds that $NK_*(M)$ is chain homotopy equivalent to $S_*(M)$. In fact this holds for $M$ any space and not just a manifold \cite[Theorem 8.4.7]{HW60}. Of course we will need the smooth version $NK^{sm}_*(M)$ generated by smooth singular cubes and modulo degenerate smooth singular cubes. We defer to an appendix to this section the proof that $NK^{sm}_*(M)\into NK_*(M)$ is a chain homotopy equivalence.
 
 
 
 
-As the cubes $\interval^k$ are compact manifolds with corners equipped with their standard orientations, 
- we have inclusion $SK^{sm}_i(M)\into PC_i^\Gamma(M)$ for all $i$. 
+As the cubes $\interval^k$ are compact manifolds with corners equipped with their standard orientations,
+ we have inclusion $SK^{sm}_i(M)\into PC_i^\Gamma(M)$ for all $i$.
 
 
 \begin{lemma}
@@ -710,13 +710,13 @@ The inclusion $SK^{sm}_*(M)\into PC_*^\Gamma(M)$ determines a chain map $NK^{sm}
 \begin{proof}
 Any degenerate singular cube $\sigma:\interval^k\to M$ is also degenerate in the sense of \cref{D: equiv, triv, and small}. In fact, it will have small rank as it filters through a projection. Furthermore, if that projection collapses the $i$th coordinate then each face $\sigma \delta_j^\epsilon$ for $j\neq i$ will also be a degenerate small cube and so have small rank, while the term $\pm (\sigma \delta_i^0-\sigma \delta_i^1)$ will be trivial with the trivializing map $\rho$ being the interchange of the two faces. Thus, the degenerate smooth singular cubes are elements of $Q_*(M)$, and our map is well defined in each degree.
 
-We check compatibility of boundary orientations. Consider the $n-1$ face $F$ of $\interval^n$ given by $x_i=j$ with $j\in\{0,1\}$. Then we have an outward pointing vector given by $(-1)^{j+1}e_i$, where $e_i$ is the vector in the positive $i$th direction. In general if we let $\beta_k$ denote the positive orientation corresponding to the $k$th coordinate, then the boundary orientation for $\beta_F$ is the one such that 
+We check compatibility of boundary orientations. Consider the $n-1$ face $F$ of $\interval^n$ given by $x_i=j$ with $j\in\{0,1\}$. Then we have an outward pointing vector given by $(-1)^{j+1}e_i$, where $e_i$ is the vector in the positive $i$th direction. In general if we let $\beta_k$ denote the positive orientation corresponding to the $k$th coordinate, then the boundary orientation for $\beta_F$ is the one such that
 $(-1)^{j+1}\beta_i\wedge\beta_F$ is the orientation $\beta_1\wedge\cdots\wedge \beta_n$ of $\interval^n$. Thus the boundary orientation is $(-1)^{j+1+i-1}\beta_1\wedge \cdots\wedge \hat{\beta}_i\wedge \cdots\beta_n$. On the other hand, $\beta_1\wedge \cdots\wedge \hat{\beta}_i\wedge \cdots\beta_n$ is precisely the standard orientation of $F$ when considering $\interval^n$ as a cubical complex. So the boundary orientation of $F$ is $(-1)^{i+j}$ times its orientation in the cubical complex. But this corresponds precisely to the formula for the boundary in $K^{sm}_*(M)$ coming from equation \eqref{E: cube bd}.
 \end{proof}
 
 
 \begin{comment}
-As the cubes $\interval^k$ are compact manifolds with corners equipped with their standard orientations, 
+As the cubes $\interval^k$ are compact manifolds with corners equipped with their standard orientations,
  we have $SK^{sm}_*(M)\into PC_*^\Gamma$. Furthermore, any degenerate singular cube $\sigma:\interval^k\to M$ is also degenerate in the sense of Definition \ref{D: equiv, triv, and small}. In fact, it will have small rank as it filters through a projection. Furthermore, if that projection collapses the $i$th coordinate then each face $\sigma \delta_j^\epsilon$ for $j\neq i$ will also be a degenerate small cube and so have small rank, while the term $\pm (\sigma \delta_i^0-\sigma \delta_i^1)$ will be trivial with the trivializing map $\rho$ being the interchange of the two faces. Thus, the degenerate smooth singular cubes are elements of $Q_*(M)$. As in the simplicial case one can check compatibility of boundary orientations so that we have a chain map $NK^{sm}_*(M)\to C_*^\Gamma(M)$. \red{NEED TO PROVE THIS IS A CHAIN MAP}
 \end{comment}
 
@@ -725,7 +725,7 @@ As the cubes $\interval^k$ are compact manifolds with corners equipped with thei
 The maps $H_*(S^{sm}_*(M))\to H_*^\Gamma(M)$ and $H_*(NK^{sm}_*(M)) \to H_*^\Gamma(M)$ obtained by treating smooth singular simplices and smooth singular cubes as elements of $C_*^\Gamma(M)$ are  isomorphisms.
 \end{theorem}
 \begin{proof}
-Both $H_*(S^{sm}_*(M))$ and $H_*(NK^{sm}_*(M))$ are isomorphic to the standard singular homology groups, so in the following we simply write $H_*$ for either of these theories and provide a uniform proof. 
+Both $H_*(S^{sm}_*(M))$ and $H_*(NK^{sm}_*(M))$ are isomorphic to the standard singular homology groups, so in the following we simply write $H_*$ for either of these theories and provide a uniform proof.
 
 We apply Theorem \cite[5.1.1]{Frie20}, which is based on standard Mayer-Vietoris techniques. In particular, on the category consisting of the open sets of $M$, the maps $\Phi: H_*(-)\to H_*^\Gamma(-)$ provide a natural transformation of functors. We need to check the following three properties:
 
@@ -745,7 +745,7 @@ S_*(U\cap V)&\rInto^{(i_U,-i_V)} & S_*(U)\oplus S_*(V)\\
 C_*^\Gamma(U\cap V)&\rInto^{(i_U,-i_V)} &C_*^\Gamma(U)\oplus C_*^\Gamma(V).
 \end{diagram}
 
-3. If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi:H_*(U_\alpha)\to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi:H_*(\cup_\alpha U_\alpha)\to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism. This argument is standard given that both singular (simplicial or cubical) chains and geometric chains are represented by compact spaces: If $W$ represents a cycle in $C_*^\Gamma(\cup_\alpha U_\alpha)$, then $W\to \cup_\alpha U_\alpha$ factors through some particular $U_\beta$, so, as $H_*(U_\beta)\xr{\Phi}H_*^\Gamma(U_\beta)$ is an isomorphism, $\uW$ is in the image of $H_*(U_\beta)\xr{\Phi}H_*^\Gamma(U_\beta)\to H_*^\Gamma(\cup_\alpha U_\alpha)$. But then $\uW$ is in the image of composition $H_*(U_\beta)\to H_*(\cup_\alpha U_\alpha)\to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi:H_*(\cup_\alpha U_\alpha)\to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective. Similarly, if $\Phi:H_*(\cup_\alpha U_\alpha)\to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, say $\bd W=\xi+T$ for some $T\in Q_*(U)$. But by compactness, there is some $\beta$ so that $W$, $T$, and $\xi$ all have image in $U_\beta$. So $\xi$ represents a class in $H_*(U_\beta)$ that maps to $0$ in $H_*^\Gamma(U_\beta)$. As $\Phi$ is assumed an isomorphism on $U_\beta$, it must be that $\xi$ represents $0$ in $H_*(U_\beta)$, and so it also represents $0$ in $H_*(\cup_\alpha U_\alpha)$.  
+3. If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi:H_*(U_\alpha)\to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi:H_*(\cup_\alpha U_\alpha)\to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism. This argument is standard given that both singular (simplicial or cubical) chains and geometric chains are represented by compact spaces: If $W$ represents a cycle in $C_*^\Gamma(\cup_\alpha U_\alpha)$, then $W\to \cup_\alpha U_\alpha$ factors through some particular $U_\beta$, so, as $H_*(U_\beta)\xr{\Phi}H_*^\Gamma(U_\beta)$ is an isomorphism, $\uW$ is in the image of $H_*(U_\beta)\xr{\Phi}H_*^\Gamma(U_\beta)\to H_*^\Gamma(\cup_\alpha U_\alpha)$. But then $\uW$ is in the image of composition $H_*(U_\beta)\to H_*(\cup_\alpha U_\alpha)\to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi:H_*(\cup_\alpha U_\alpha)\to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective. Similarly, if $\Phi:H_*(\cup_\alpha U_\alpha)\to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, say $\bd W=\xi+T$ for some $T\in Q_*(U)$. But by compactness, there is some $\beta$ so that $W$, $T$, and $\xi$ all have image in $U_\beta$. So $\xi$ represents a class in $H_*(U_\beta)$ that maps to $0$ in $H_*^\Gamma(U_\beta)$. As $\Phi$ is assumed an isomorphism on $U_\beta$, it must be that $\xi$ represents $0$ in $H_*(U_\beta)$, and so it also represents $0$ in $H_*(\cup_\alpha U_\alpha)$.
 
 It now follows from Theorem \cite[5.1.1]{Frie20} that $\Phi: H_*(M)\to H_*^\Gamma(M)$  is an isomorphism.
 \end{proof}
@@ -765,7 +765,7 @@ The inclusion $\psi: NK^{sm}_*(M)\into NK_*(M)$ is a chain homotopy equivalence.
 \begin{proof}
 The proof is analogous to the simplicial case as given in detail in \cite[Theorem 18.7]{Lee13}, though we need to take care with degenerate cubes, which is not an issue in the simplicial case. To account for this, we sketch the proof in \cite{Lee13} but provide some detailed modifications.
 
-We first observe that the map $SK^{sm}_*(M)\to NK_*(M)$ takes a smooth singular cubical chain to $0$ only if all of its cubes (with non-zero coefficient) are degenerate, and so we do have an injection $NK^{sm}_*(M)\into NK_*(M)$. We will define cube-wise a chain homotopy inverse  $s:NK_*(M)\to NK^{sm}_*(M)$ by starting with a map $\td s:SK_*(M)\to SK^{sm}_*(M)$ and passing to quotients. 
+We first observe that the map $SK^{sm}_*(M)\to NK_*(M)$ takes a smooth singular cubical chain to $0$ only if all of its cubes (with non-zero coefficient) are degenerate, and so we do have an injection $NK^{sm}_*(M)\into NK_*(M)$. We will define cube-wise a chain homotopy inverse  $s:NK_*(M)\to NK^{sm}_*(M)$ by starting with a map $\td s:SK_*(M)\to SK^{sm}_*(M)$ and passing to quotients.
 
 Recall from \cref{S: homology is homology} that we write $\delta_i^\epsilon$ for the face inclusions of the standard cubes. If $\sigma:\interval^k\to M$ is a singular cube, we define homotopies $H_\sigma:\interval^k\times \interval=\interval^{k+1}\to M$ so that the following properties hold:
 \begin{enumerate}
@@ -775,10 +775,10 @@ Recall from \cref{S: homology is homology} that we write $\delta_i^\epsilon$ for
 
 \item If $\sigma$ is smooth then $H_{\sigma}(x,t)=\sigma(x)$, i.e.\ the homotopy is constant.
 
-\item\label{I: degen} If $\sigma$ is independent of the coordinate $x_i$ then so is $H_\sigma$. 
+\item\label{I: degen} If $\sigma$ is independent of the coordinate $x_i$ then so is $H_\sigma$.
 \end{enumerate}
 
-The last condition, which we have added for cubes,  ensures that if $\sigma$ is degenerate so will be $H_\sigma$ and $\td \sigma$. 
+The last condition, which we have added for cubes,  ensures that if $\sigma$ is degenerate so will be $H_\sigma$ and $\td \sigma$.
 
 The construction is by induction on dimension. If $\sigma$ is a $0$-cube, then we define $H_\sigma(x,t)=\sigma(x)$, the constant homotopy. This satisfies the conditions. We then assume $H_\sigma$ defined with these properties for all cubes of dimension $<k$ and extend the definition to $k$-cubes. If $\sigma$ is already smooth, then the constant homotopy $H_\sigma(x,t)=\sigma(x)$ satisfies the conditions, noting that if $\sigma$ is smooth then so is each $\sigma\circ \delta_i^\epsilon$. If $\sigma$ is not smooth, we consider separately the two cases when $\sigma$ is degenerate or nondegenerate.
 
@@ -792,8 +792,8 @@ G\left(x,\frac{t-u(x)}{1-u(x)}\right),&x\in \text{Int}(\interval^k), u(x)\leq t\
 \end{equation*}
 One can check as in the proof of \cite[Lemma 18.8]{Lee13} that this is a continuous homotopy that satisfies the first two conditions above, as required.
 
-Next suppose $\sigma$ is degenerate, i.e.\ there is some coordinate $x_i$ so that $\sigma$ does not depend on $x_i$. Let $\pi_i:\interval^k\to\interval^{k-1}$ be given by $\pi_i(x_1,\ldots, x_k)=(x_1,\ldots, \hat x_i, \ldots, x_k)$ with the $x_i$ term omitted. In this case we let $H_\sigma(x,t):=H_{\sigma \delta_i^0}(\pi_i(x),t)=H_{\sigma \delta_i^1}(\pi_i(x),t)$. 
- We claim that if there are multiple coordinates of which $\sigma$ is independent then this definition is independent of the choice of such coordinate. This is clear for $1$-cubes for which there is only one possible coordinate. Suppose then the claim proven in dimensions $<k$ and that $\sigma:\interval^k\to M$ is independent of $x_i$ and $x_j$ with $j<i$. Since $\sigma$ is independent of $x_j$, so is $\sigma\circ \delta_i^0$, so inductively   $H_{\sigma \delta_i^0}(\pi_i(x),t)=H_{\sigma \delta_i^0\delta_j^0}(\pi_j\pi_i(x),t)$. Similarly, using that the $i$th coordinate of the cube is the $i-1$-st coordinate of the $j$th faces, we have $H_{\sigma \delta_j^0}(\pi_j(x),t)=H_{\sigma \delta_j^0\delta_{i-1}^0}(\pi_{i-1}\pi_j(x),t)$. But $\delta_i^0\delta_j^0$ and $\delta_j^0\delta_{i-1}^0$ determine the same $k-2$ face of $\interval^k$, and $\pi_j\pi_i(x)=\pi_{i-1}\pi_j(x)$. So both constructions give the same $H_\sigma$. 
+Next suppose $\sigma$ is degenerate, i.e.\ there is some coordinate $x_i$ so that $\sigma$ does not depend on $x_i$. Let $\pi_i:\interval^k\to\interval^{k-1}$ be given by $\pi_i(x_1,\ldots, x_k)=(x_1,\ldots, \hat x_i, \ldots, x_k)$ with the $x_i$ term omitted. In this case we let $H_\sigma(x,t):=H_{\sigma \delta_i^0}(\pi_i(x),t)=H_{\sigma \delta_i^1}(\pi_i(x),t)$.
+ We claim that if there are multiple coordinates of which $\sigma$ is independent then this definition is independent of the choice of such coordinate. This is clear for $1$-cubes for which there is only one possible coordinate. Suppose then the claim proven in dimensions $<k$ and that $\sigma:\interval^k\to M$ is independent of $x_i$ and $x_j$ with $j<i$. Since $\sigma$ is independent of $x_j$, so is $\sigma\circ \delta_i^0$, so inductively   $H_{\sigma \delta_i^0}(\pi_i(x),t)=H_{\sigma \delta_i^0\delta_j^0}(\pi_j\pi_i(x),t)$. Similarly, using that the $i$th coordinate of the cube is the $i-1$-st coordinate of the $j$th faces, we have $H_{\sigma \delta_j^0}(\pi_j(x),t)=H_{\sigma \delta_j^0\delta_{i-1}^0}(\pi_{i-1}\pi_j(x),t)$. But $\delta_i^0\delta_j^0$ and $\delta_j^0\delta_{i-1}^0$ determine the same $k-2$ face of $\interval^k$, and $\pi_j\pi_i(x)=\pi_{i-1}\pi_j(x)$. So both constructions give the same $H_\sigma$.
 
 In this case, Conditions \eqref{I: smooth} and \eqref{I: degen} hold by construction and by induction. We must verify Condition \eqref{I: faces}. If $\sigma$ is independent of $x_i$, the condition is clear by construction for the faces $\sigma\delta_i^0$ and $\sigma\delta_i^1$. For $j\neq i$, first suppose $i<j$. As $\sigma$ is independent of $x_i$, so is $\sigma\delta^j_\epsilon$, so
 \begin{align*}
@@ -803,8 +803,8 @@ H_{\sigma\delta_j^\epsilon}(x,t)&=H_{\sigma\delta_j^\epsilon \delta_i^0}(\pi_i(x
 &=H_{\sigma \delta_i^0}(\pi_i(\delta_j^\epsilon(x)),t)\\
 &=H_\sigma(\delta_j^\epsilon(x),t).
 \end{align*}
-Here the first equality uses our definition of $H_{\sigma\delta_j^\epsilon}$ as $\sigma\delta_j^\epsilon$ is independent of $x_i$. The second equality is an identity for cubical face inclusions. The third is Condition \eqref{I: faces} for  $H_{\sigma \delta_i^0}$, which holds by induction hypothesis. The fourth equality is another cubical identity, and the last is the definition of $H_\sigma$. 
- 
+Here the first equality uses our definition of $H_{\sigma\delta_j^\epsilon}$ as $\sigma\delta_j^\epsilon$ is independent of $x_i$. The second equality is an identity for cubical face inclusions. The third is Condition \eqref{I: faces} for  $H_{\sigma \delta_i^0}$, which holds by induction hypothesis. The fourth equality is another cubical identity, and the last is the definition of $H_\sigma$.
+
 Similarly, if $j<i$, then $\sigma\delta_j^\epsilon$ is independent of its $i-1$-st coordinate, and we compute analogously:
 
 \begin{align*}
@@ -822,15 +822,15 @@ This completes our construction of the homotopies $H_\sigma$. We can now define 
 &=\left(\sum_{i=1}^{k} (-1)^i\left(H_\sigma (\delta_i^0\times \id_\interval)-H_\sigma (\delta^1_i\times \id_\interval)\right)\right) +(-1)^{k+1}(H_\sigma(-,0)-H_\sigma(-,1))\\
 &=\left(\sum_{i=1}^{k} (-1)^i\left(H_{\sigma \delta_i^0}-H_{\sigma\delta^1_i}\right)\right) +(-1)^{k+1}(\sigma(-)-\td \psi\td s(\sigma)).
 \end{align*}
-So if we define $\td J(\sigma)=(-1)^{k+1}H_\sigma$, we obtain 
+So if we define $\td J(\sigma)=(-1)^{k+1}H_\sigma$, we obtain
 \begin{align*}
 (-1)^{k+1}\bd \td J(\sigma)&=\left(\sum_{i=1}^{k} (-1)^i\left( (-1)^k\td J(\sigma \delta_i^0)-(-1)^k\td J(\sigma\delta^1_i)\right)\right) +(-1)^{k+1}\left(\sigma(-)-\td \psi\td s(\sigma)\right)\\
 &=(-1)^k\td J(\bd \sigma)+(-1)^{k+1}(\sigma(-)-\td \psi\td s(\sigma)),
 \end{align*}
 so $$\bd \td J(\sigma)+\td J(\bd \sigma)=\sigma(-,0)-\td \psi\td s(\sigma),$$
-which shows that $\td \psi\td s$ is chain homotopic to the identity. 
+which shows that $\td \psi\td s$ is chain homotopic to the identity.
 
-Finally, we note that, by definition and construction, $\td \psi$, $\td s$, and $\td J$ all take degenerate simplices to degenerate simplices so that these descend to chain maps $\psi:NK_*^{sm}(M)\to NK_*(M)$ and $s:NK_*(M)\to NK_*^{sm}(M)$ with $s\psi=\id$ and a chain homotopy $J:NK_*(M)\to NK_{*+1}(M)$. 
+Finally, we note that, by definition and construction, $\td \psi$, $\td s$, and $\td J$ all take degenerate simplices to degenerate simplices so that these descend to chain maps $\psi:NK_*^{sm}(M)\to NK_*(M)$ and $s:NK_*(M)\to NK_*^{sm}(M)$ with $s\psi=\id$ and a chain homotopy $J:NK_*(M)\to NK_{*+1}(M)$.
 \end{proof}
 
 %%% Local Variables:
