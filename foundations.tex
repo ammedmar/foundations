@@ -1,7 +1,8 @@
 \documentclass{amsart}
 \usepackage{amssymb, amsmath, amsfonts, verbatim, mathtools, stmaryrd, tabularx}
 
-\usepackage{diagrams2}
+%AMM: Paul Taylor's package with the fix for NEVER HAPPEN error
+\usepackage{diagrams}
 \makeatletter
 \def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
 \expandafter\foo\row@to@buffer\foo
@@ -108,10 +109,7 @@ pdfpagelabels]{hyperref}
 \newcommand{\mf}{\mathfrak}
 \newcommand{\creflastconjunction}{, and\nobreakspace} %makes cleveref use serial commas
 
-
-
-%GBF: This all indents the table of contents, which isn't the default in the amsart class for some reason and was %driving me crazy:
-
+%GBF: Indents the table of contents.
 \setcounter{tocdepth}{4}% to get subsubsections in toc
 \let\oldtocsection=\tocsection
 \let\oldtocsubsection=\tocsubsection
@@ -120,71 +118,45 @@ pdfpagelabels]{hyperref}
 \renewcommand{\tocsubsection}[2]{\hspace{1em}\oldtocsubsection{#1}{#2}}
 \renewcommand{\tocsubsubsection}[2]{\hspace{2em}\oldtocsubsubsection{#1}{#2}}
 
-\begin{document}
-
-% AMS Structure in required order
-
-%\title[...]{...}
-%\author[...]{...}
-%\contrib[...]{...}
-%\address{...}
-%\curraddr{...}
-%\email{...}
-%\urladdr{...}
-%\dedicatory{...}
-%\thanks{...}
-%\subjclass[2010]{...}
-%\keywords{...}
-%\begin{abstract}...\end{abstract}
-%\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Geometric cohomology}
 
 % Greg
 \author[G. Friedman]{Greg Friedman}
 \address{Department of Mathematics, Texas Christian University}
-\email{g.friedman@tcu.edu}
+\email{\href{mailto:g.friedman@tcu.edu}{g.friedman@tcu.edu}}
+\thanks{This work was partially supported by a grant from the Simons Foundation (\#839707 to Greg Friedman)}
 
 % Anibal
 \author[A. Medina-Mardones]{Anibal M. Medina-Mardones}
-\address{Max Planck Institute for Mathematics, Bonn, Germany}
-\email{ammedmar@mpim-bonn.mpg.de}
-\address{Department of Mathematics, University of Notre, Notre Dame, IN, USA}
-\email{amedinam@nd.edu}
-\thanks{A.M-M. acknowledges financial support from Innosuisse grant \mbox{32875.1 IP-ICT - 1} and the hospitality of the Laboratory for Topology and Neuroscience at EPFL where part of this work was developed.\\This work was partially supported by a grant from the Simons Foundation (\#839707 to Greg Friedman) }
+\address{LAGA, Universit\'e Sorbonne Paris Nord}
+\email{\href{mailto:medina-mardones@math.univ-paris13.fr}{medina-mardones@math.univ-paris13.fr}}
 
 % Dev
 \author[D. Sinha]{Dev Sinha}
-\address{Mathematics Department,
-	University of Oregon}
-\email{dps@uoregon.edu}
+\address{Mathematics Department, University of Oregon}
+\email{\href{mailto:dps@uoregon.edu}{dps@uoregon.edu}}
 
-\begin{abstract}
-	We set up the theory of geometric cohomology.
-\end{abstract}
+\begin{document}
+	\begin{abstract}
+		We set up the theory of geometric cohomology.
+	\end{abstract}
+	\maketitle
+	\tableofcontents
 
-\maketitle
+	\input{s1} % Introduction
+	\input{s2} %
+	\input{s3} %
+	\input{s4} %
+	\input{s5} %
+	\input{s6} %
+	\input{s7} %
+	\input{questions}
 
+	\bibliographystyle{alpha}
+	\bibliography{foundations}
 
-%\setcounter{tocdepth}{4}
-\tableofcontents
-
-
-
-\input{s1} % Introduction
-
-\input{s2} %
-\input{s3} %
-\input{s4} %
-\input{s5} %
-\input{s6} %
-\input{s7} %
-\input{questions}
-
-\bibliographystyle{alpha}
-\bibliography{foundations}
-
-\pagebreak
-\input{to-do} %
-
+	\pagebreak
+	\input{to-do} %
 \end{document}
