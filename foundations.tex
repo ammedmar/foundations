@@ -1,16 +1,5 @@
 \documentclass{amsart}
 \usepackage{amssymb, amsmath, amsfonts, verbatim, mathtools, stmaryrd, tabularx}
-
-%AMM: Paul Taylor's package with the fix for NEVER HAPPEN error
-\usepackage{diagrams}
-\makeatletter
-\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
-\expandafter\foo\row@to@buffer\foo
-\makeatother
-
-\renewcommand{\arraystretch}{1.5}
-\setlength{\tabcolsep}{15pt}
-
 \usepackage{bm}
 \usepackage{mathbbol}
 \usepackage{ulem} % Used in the To-Do list
@@ -21,11 +10,11 @@
 \usepackage{subcaption}
 
 \usepackage[bookmarks=true, linktocpage=true,
-bookmarksnumbered=true, breaklinks=true,
-pdfstartview=FitH, hyperfigures=false,
-plainpages=false, naturalnames=true,
-colorlinks=true, pagebackref=true,
-pdfpagelabels]{hyperref}
+	bookmarksnumbered=true, breaklinks=true,
+	pdfstartview=FitH, hyperfigures=false,
+	plainpages=false, naturalnames=true,
+	colorlinks=true, pagebackref=true,
+	pdfpagelabels]{hyperref}
 \hypersetup{
 	linkcolor  = blue,
 	citecolor  = blue,
@@ -34,11 +23,14 @@ pdfpagelabels]{hyperref}
 }
 \usepackage[capitalise,noabbrev,nosort]{cleveref}
 
-\addtolength{\textwidth}{1.4in}
-\oddsidemargin=0in
-\evensidemargin=0in
+% AMM: Paul Taylor's package with the fix for NEVER HAPPEN error
+\usepackage{diagrams}
+\makeatletter
+\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
+\expandafter\foo\row@to@buffer\foo
+\makeatother
 
-%GBF: Indents the table of contents.
+% GBF: Indents the table of contents.
 \setcounter{tocdepth}{4}% to get subsubsections in toc
 \let\oldtocsection=\tocsection
 \let\oldtocsubsection=\tocsubsection
@@ -46,6 +38,14 @@ pdfpagelabels]{hyperref}
 \renewcommand{\tocsection}[2]{\hspace{0em}\oldtocsection{#1}{#2}}
 \renewcommand{\tocsubsection}[2]{\hspace{1em}\oldtocsubsection{#1}{#2}}
 \renewcommand{\tocsubsubsection}[2]{\hspace{2em}\oldtocsubsubsection{#1}{#2}}
+
+% Paper's geometry
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{15pt}
+
+\addtolength{\textwidth}{1.4in}
+\oddsidemargin=0in
+\evensidemargin=0in
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -75,8 +75,7 @@ pdfpagelabels]{hyperref}
 	\end{abstract}
 	\maketitle
 	\tableofcontents
-
-	\input{parts/s1} % Introduction
+	\input{parts/s1} %
 	\input{parts/s2} %
 	\input{parts/s3} %
 	\input{parts/s4} %
@@ -84,10 +83,8 @@ pdfpagelabels]{hyperref}
 	\input{parts/s6} %
 	\input{parts/s7} %
 	\input{parts/questions}
-
 	\bibliographystyle{alpha}
 	\bibliography{parts/foundations}
-
 	\pagebreak
 	\input{parts/to-do} %
 \end{document}
