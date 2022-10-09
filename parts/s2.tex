@@ -28,7 +28,8 @@ By modeling on $\R^n_k$, our category includes manifolds ($k=0$ in all charts) a
 
 \begin{definition}
 	A map $f \colon W\to M$ between manifolds with corners is {(weakly) \bf smooth} if whenever $(U,\phi)$, $(V,\psi)$ are charts for $W$ and $M$ respectively then
-	$$\psi^{-1}f \phi \colon (f\phi)^{-1}\psi(V)\to V$$ is smooth.
+	$$\psi^{-1}f \phi \colon (f\phi)^{-1}\psi(V)\to V$$
+	is smooth.
 
 	The {\bf tangent bundle} of a manifold with corners is the space of derivations of the ring of smooth real-valued functions. Analogously to smooth manifolds with boundary, if $(U,\phi)$ is a chart of $W$ then $d\phi$ takes the tangent space to $\R^n$ at $x\in U$ isomorphically to the tangent spaces of $W$ at $\phi(x)$. In particular, if $W$ is $n$-dimensional and $x\in W$, then the tangent space at $x$, denoted $T_xW$, is isomorphic to $\R^n$.
 \end{definition}
@@ -110,7 +111,8 @@ In general, Proposition~2.9 of \cite{Joy12} identifies $\partial^k W$ with the s
 Special cases of manifolds with corners, including
 manifolds with faces or manifolds with embedded corners \cite{Joy12}, steer clear of the interesting boundary phenomena of \cref{boundary}. Although, a more restrictive notion should suffice for our application, Lipyanskiy develops geometric cohomology in the current generality, and we appreciate Joyce's careful treatment of transversality in this category, so we use their definitions.
 
-We conclude this section by observing that the product $V\times W$ of two manifolds with corners is naturally a manifold with corners with, by \cite[Proposition 2.12]{Joy12}, $$\bd (V\times W)= (\bd V\times W)\sqcup (V\times \bd W).$$
+We conclude this section by observing that the product $V\times W$ of two manifolds with corners is naturally a manifold with corners with, by \cite[Proposition 2.12]{Joy12},
+$$\bd (V\times W)= (\bd V\times W)\sqcup (V\times \bd W).$$
 
 \subsection{Transversality}
 
@@ -209,7 +211,8 @@ When two embedded submanifolds of a manifold meet transversely, their intersecti
 
 \begin{definition}\label{D: top pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
-	Define the \textbf{pullback} or \textbf{fiber product} $V \times_M W$ by $$V \times_M W=\{(x, y) \in V \times W \mid f(x) = g(y)\}.$$
+	Define the \textbf{pullback} or \textbf{fiber product} $V \times_M W$ by
+	$$V \times_M W=\{(x, y) \in V \times W \mid f(x) = g(y)\}.$$
 
 	There are canonical maps from $V\times_M W$ to $V$, $W$, and $M$ that respectively take $(x,y)$ to $x$, $y$, and $f(x)=g(y)$.
 
@@ -262,7 +265,9 @@ recalling that if $g \colon W\to M$ then we interpret $\bd W$ as equipped with t
 		\item the $j-i+1$-tuple $\{f_i,\ldots,f_j\}$ is transverse, and
 		\item letting $P$ denote the fiber product of the maps $\{f_i,\ldots,f_j\}$, the $n-(j-i)$-tuple consisting of the fiber product map $P\to M$ and the $f_k$ with $k\notin\{i,\ldots,j\}$ is transverse.
 	\end{itemize}
-	Iterating this fact, we can see that this is equivalent to having $V_1$ transverse to $V_2$, then $V_3$ transverse to $V_1\times_MV_2$ and so on. In particular, we can form the $n$-tuple fiber product if and only if we can form the {\it transverse} iterated fiber products such as $(((V_1\times_MV_2)\times_M V_3)\times_M\ldots)\times_M V_n$ (or for any other order of association. See\footnote{Proposition 8-1 of \cite{RamBas09} actually concerns a more general situation of ``mixed associativity'' in which the data consists of zig-zags $$V_1\xr{f_1}S_1\xl{g_2}V_1\xr{f_2}\cdots\xr{f_{n-1}}S_{n-1}\xl{g_n}V_2.$$ However, this reduces to our setting by taking $S_i=M$ and $g_i=f_i$ for all $i$.} \cite[Proposition 8-1]{RamBas09}.
+	Iterating this fact, we can see that this is equivalent to having $V_1$ transverse to $V_2$, then $V_3$ transverse to $V_1\times_MV_2$ and so on. In particular, we can form the $n$-tuple fiber product if and only if we can form the {\it transverse} iterated fiber products such as $(((V_1\times_MV_2)\times_M V_3)\times_M\ldots)\times_M V_n$ (or for any other order of association. See\footnote{Proposition 8-1 of \cite{RamBas09} actually concerns a more general situation of ``mixed associativity'' in which the data consists of zig-zags
+	$$V_1\xr{f_1}S_1\xl{g_2}V_1\xr{f_2}\cdots\xr{f_{n-1}}S_{n-1}\xl{g_n}V_2.$$
+	However, this reduces to our setting by taking $S_i=M$ and $g_i=f_i$ for all $i$.} \cite[Proposition 8-1]{RamBas09}.
 
 	Unfortunately, in the setting of manifolds (for the moment without corners), the situation is less well behaved. Let now $f_i \colon V_i\to M$ be an $n$-tuple of smooth maps of manifolds. We say that this $n$-tuple is transverse when for any $n$-tuple $(v_1,\ldots, v_n)\in V_1\times\cdots \times V_n$ such that $f_1(v_1)=\cdots=f_n(v_n)$ the linear maps $D_{v_i}f_i$ are transverse. In this case, the fiber product $P=\{(v_1,\ldots, v_n)\in V_1\times\cdots \times V_n\mid f_1(v_1)=\cdots=f_n(v_n)\}$ is a smooth $\sum\dim(V_i)-(n-1)\dim(M)$-manifold. Furthermore, at any such point, this general transversality has implications such as those above for transversality of subcollections.
 
@@ -284,7 +289,9 @@ In this section we collect some well known, though not always easy to find, resu
 A proof can be found in \cite[Theorem 5.47]{Wed16}. Wedhorn proves this theorem for ``premanifolds,'' which are essentially manifolds minus the Hausdorff and second countability conditions. These will be automatic in our setting, so Wedhorn's proof applies. In many circumstances, this lemma allows us to reduce arguments about fiber products of maps of manifolds to arguments about fiber products of linear maps.
 
 \begin{lemma}\label{L: normal pullback}
-	Let $f \colon V\to M$ and $g \colon W\to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ is an embedding so that $V$ has a normal bundle $\nu V$ in $M$. Then the pullback map $g^*V=V\times_MW\to W$ is an embedding and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$. In other words, $$g^*(\nu V)\cong \nu(g^*V).$$ So ``the pullback of the normal bundle is the normal bundle of the pullback.''
+	Let $f \colon V\to M$ and $g \colon W\to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ is an embedding so that $V$ has a normal bundle $\nu V$ in $M$. Then the pullback map $g^*V=V\times_MW\to W$ is an embedding and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$. In other words,
+	$$g^*(\nu V)\cong \nu(g^*V).$$
+	So ``the pullback of the normal bundle is the normal bundle of the pullback.''
 
 	In case $g$ is also an embedding, this allows us to identify the restriction of $\nu V$ to $V\cap W$ with a sub-bundle of $TW$ over $V\cap W$.
 \end{lemma}
@@ -319,8 +326,11 @@ The next lemma is a bit more specific but will be useful later in proving certai
 	First suppose $h$ is transverse to the pullback $g^*V\to W$. Note that the existence of $g^*V$ uses the assumption that $f$ and $g$ are transverse. Suppose $x\in X$ and $y\in V$ with $gh(x)=f(y)$. Then $(y,h(x))\in P$, and by assumption we have both $Df(T_yV)+Dg(T_{h(x)}W)=T_{f(y)}M$ and
 	$Dh(T_xX)+D\pi_W(T_{(y,h(x))}P)=T_{h(x)}W$. Applying $Dg$ to the second formula, we have
 	$$Dg(T_{h(x)}W)=D(gh)(T_xX)+D(g\pi_W)(T_{(y,h(x))}P).$$
-	So from the first formula, $$T_{f(y)}M=Df(T_yV)+D(gh)(T_xX)+D(g\pi_W)(T_{(y,h(x))}P).$$
-	But $g\pi_W=f\pi_V$, so $D(g\pi_W)(T_{(y,h(x))}P)=D(f\pi_V)(T_{(y,h(x))}P)\subset Df(T_yV)$. It follows that $$T_{f(y)}M=Df(T_yV)+D(gh)(T_xX),$$ i.e\ $f$ is transverse to $gh$.
+	So from the first formula,
+	$$T_{f(y)}M=Df(T_yV)+D(gh)(T_xX)+D(g\pi_W)(T_{(y,h(x))}P).$$
+	But $g\pi_W=f\pi_V$, so $D(g\pi_W)(T_{(y,h(x))}P)=D(f\pi_V)(T_{(y,h(x))}P)\subset Df(T_yV)$. It follows that
+	$$T_{f(y)}M=Df(T_yV)+D(gh)(T_xX),$$
+	i.e\ $f$ is transverse to $gh$.
 
 	Next suppose $f$ is transverse to $gh$ and that $x\in X, p\in P$ with $h(x)=\pi_W(p)$. As $gh(x)=g\pi_W(p)=f\pi_V(p)$, we have $gh(x)$ in the image of $f$, so in particular $gh(x)$ is in the intersection of the images of $V$ and $W$ in $M$.
 	Now suppose $\mathbf w\in T_{h(x)}W$. By assumption $T_{hg(x)}M=Df(T_{\pi_V(p)}V)+D(gh)(T_xX)$, so we can write $Dg(\mathbf w)=Df(\mathbf a)+Dgh(\mathbf b)$ for some $\mathbf a\in T_{\pi_V(p)}V$ and $\mathbf b\in T_x X$. Now consider $\mathbf z=\mathbf w-Dh(\mathbf b)\in T_{h(x)}W$. Applying $Dg$ to both sides, we have $Dg(\mathbf z)=Dg(\mathbf w)-Dgh(\mathbf b)=Df(\mathbf a)$. So $(\mathbf a,\mathbf z)$ is in the pullback $T_{\pi_V(p)}V \times_{T_{gh(x)}M} T_{h(x)}W$. But by \cref{L: tangent of pullbacks}, this is precisely the tangent space of $V\times_MW$ at $(h(x),\pi_V(p))$. Furthermore, we have $D\pi_W(\mathbf a,\mathbf z)=\mathbf z$.
