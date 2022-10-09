@@ -25,12 +25,12 @@ By modeling on $\R^n_k$, our category includes manifolds ($k=0$ in all charts) a
 \begin{comment}
 	The smooth real-valued functions on a manifold with corners $W$ are those $f$ such that for each chart $\phi: U \subset \R^n_k \to W$ the composition $f\circ \phi:U\to \R$ is smooth.
 \end{comment}
+
 \begin{definition}
 	A map $f \colon W\to M$ between manifolds with corners is {(weakly) \bf smooth} if whenever $(U,\phi)$, $(V,\psi)$ are charts for $W$ and $M$ respectively then
 	$$\psi^{-1}f \phi \colon (f\phi)^{-1}\psi(V)\to V$$ is smooth.
 
 	The {\bf tangent bundle} of a manifold with corners is the space of derivations of the ring of smooth real-valued functions. Analogously to smooth manifolds with boundary, if $(U,\phi)$ is a chart of $W$ then $d\phi$ takes the tangent space to $\R^n$ at $x\in U$ isomorphically to the tangent spaces of $W$ at $\phi(x)$. In particular, if $W$ is $n$-dimensional and $x\in W$, then the tangent space at $x$, denoted $T_xW$, is isomorphic to $\R^n$.
-
 \end{definition}
 
 In \cite{Joy12}, Joyce reserves the word {\it smooth} for weakly smooth maps that also satisfy an additional condition concerning how they interact with the boundaries of their codomains. When the codomain is a manifold without boundary, which will be our primary situation of interest, the weaker and stronger notions coincide. In the few other cases in which we need to consider maps whose codomains have boundary, in particular boundary immersions and projections of pullbacks, the maps will also satisfy Joyce's stronger condition, though we will never need to utilize this explicitly. Thus we will feel justified in simply using the word ``smooth'' throughout, referring the reader to \cite[Definition 3.1]{Joy12} for the full definition.
@@ -130,8 +130,8 @@ To establish notation, let $f \colon V\to M$ and $g \colon W\to M$ be maps from 
 	Let $f \colon V\to M$ and $g \colon W\to M$ be maps from manifolds with corners to a manifold without boundary. Then $f$ and $g$ are transverse if and only if $fi_{\bd^j} \colon \bd^jV\to M$ and $gi_{\bd^k} \colon \bd^kW \to M$ are ordinary transverse for all $j,k$.
 \end{lemma}
 Note that, a priori, the latter is a stronger condition as it imposes conditions not just on the interior of strata but on their closures.
-\begin{proof}
 
+\begin{proof}
 	First suppose $fi_{\bd^j}$ and $gi_{\bd^k}$ are ordinary transverse for all $j,k$. Suppose $x\in S^j(V)$ and $y\in S^k(W)$ for some fixed $j,k$ and $f(x)=g(y)$. The preimage of $x$ under $i_{\bd^j}$ consists of $j!$ points in $S^0(\bd^jV)$, and $i_{\bd^j}$ maps a neighborhood of each such preimage point diffeomorphically to a neighborhood of $x$ in $S^j(V)$, and similarly for $y$. Let $\psi_x$ be the inverse diffeomorphism from a neighborood of $x$ in $S^j(V)$ to a neighborhood of one of the preimages. Then $f|_{S^j(V)}=fi_{\bd^j}\psi_x$ in a neighborhood of $x$, and similarly for $y$.
 	Since $fi_{\bd^j}$ and $gi_{\bd^k}$ are ordinary transverse, and $\psi_x$ and $\psi_y$ are diffeomorphisms, it follows that $f|_{S^j(V)}$ and $g|_{S^k(W)}$ are transverse at $f(x)=g(y)$.
 
@@ -182,6 +182,7 @@ The following technical lemma will help us extend the results of \cite{GuPo74} f
 \begin{theorem}\label{T: basic trans}
 	Let $f \colon M\to N$ be a continuous map from a manifold with (possibly empty) boundary to a manifold without boundary, and let $g \colon V\to N$ be a smooth map from a manifold with corners. Then there is a homotopy $h \colon M\times I\to N$ such that $h(-,0)=f$, and $h(-,1)$ is smooth and transverse to $g$. If $f|_{\bd M}$ is already smooth and transverse to $g$, then we can find such an $h$ with $h(-,1)=f$ on $\bd M$.
 \end{theorem}
+
 \begin{proof}
 	Let $j \colon V\to \R^k$ be an embedding (we recall that such an embedding always exists by our definition of manifolds with corners). Then $e \colon V\to N\times \R^k$ given by $e(x)=(g(x),j(x))$ is an embedding that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, so by that lemma it suffices to find a homotopy such that $h(-,0)=f$ and $h(-,1)\times \id_{\R^k} \colon M\times \R^k\to N\times \R^k$ is smooth and
 	transverse to $e(V)$.
@@ -268,7 +269,6 @@ recalling that if $g \colon W\to M$ then we interpret $\bd W$ as equipped with t
 	However, the above relations between $n$-ary transversality and ``iterated transversality'' cannot hold in general, because the $n$-ary fiber product cannot necessarily know about all points in the iterated fiber product. For example, consider maps $f \colon V\to M$, $g \colon W\to M$ and $h \colon Z\to M$. Suppose that $f$ and $g$ are not transverse; in particular, we can suppose that the fiber product $V\times_MW$ is not a manifold. Further suppose that $h(Z)$ is disjoint from $f(V)$ and $g(W)$. In this case, the triple of maps is transverse (vacuously) and its 3-ary fiber product is well defined as $\emptyset$. However, the iterated fiber product $(V\times_MW)\times_M Z$ is not well defined in the category of smooth manifolds and maps. Given that we define fiber products only of transverse maps of smooth manifolds, in this case $V\times_M W$ is not properly defined in our category, and it is further impossible then to define $(V\times_MW)\times_M Z$ in this context.
 
 	The upshot of all this is that when considering situations involving fiber product of more than two maps, we shall have to be careful to assume all needed transversality conditions rather than having some follow from a smaller set of transversality conditions as in the linear case.
-
 \end{remark}
 
 \subsubsection{Some further properties of transversality and fiber products}
@@ -288,6 +288,7 @@ A proof can be found in \cite[Theorem 5.47]{Wed16}. Wedhorn proves this theorem 
 
 	In case $g$ is also an embedding, this allows us to identify the restriction of $\nu V$ to $V\cap W$ with a sub-bundle of $TW$ over $V\cap W$.
 \end{lemma}
+
 \begin{proof}
 	See \cite[Proposition IV.1.4]{Kos93}.
 \end{proof}
@@ -295,6 +296,7 @@ A proof can be found in \cite[Theorem 5.47]{Wed16}. Wedhorn proves this theorem 
 \begin{lemma}
 	Let $f \colon V\to M$ and $g \colon W\to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ and $g$ are both embeddings. Then, identifying $V$ and $W$ as submanifolds of $M$, the fiber product $V\times_MW$ is simply the intersection $V\cap W$, which is a smooth submanifold of $M$.
 \end{lemma}
+
 \begin{proof}
 	By \cref{L: normal pullback}, the pullback is a smooth submanifold of $W$, but $g$ is itself an embedding, so, identifying the manifolds with their embedded images, we obtain smooth submanifolds $V\times_MW\subset W\subset M$. That $V\times_MW=V\cap W$ in this situation follows immediately from the definition of the fiber product.
 \end{proof}
