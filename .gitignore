@@ -4,7 +4,6 @@
 *.brf
 *.log
 *.out
-*.pdf
 *.synctex.gz
 *.toc
 *.txss
