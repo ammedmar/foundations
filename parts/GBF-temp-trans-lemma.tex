@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+\paperheight=11in
+%\paperwidth=8.5in
+\renewcommand{\baselinestretch}{1.04}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx, mathrsfs, hyperref,mathtools,multicol, enumitem,bbm,diagrams}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amstext}
+%\usepackage{cite}
+%\usepackage[notref]{showkeys}
+\usepackage{color}
+
+
+\newcommand\purple[1]{\marginpar{replacement}\textcolor{Purple}{#1}}     
+\newcommand\blue[1]{\marginpar{new}\textcolor{blue}{#1}}                       %
+\newcommand\red[1]{\marginpar{??}\textcolor{red}{#1}}                         %
+\newcommand\green[1]{\marginpar{delete ok?}\textcolor{green}{#1}}
+%\newcommand\ownremark[1]{\marginpar{remark for own use}\textcolor[rgb]{0.5,0.5,0}{#1}}                   %
+
+
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newcommand{\codim}{\text{codim}}
+ 
+
+\newcommand{\primeset}[1]{#1}
+\newcommand{\id}{\textup{id}}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\hra}{\hookrightarrow} 
+\newcommand{\Td}[1]{\Tilde{#1}}
+\newcommand{\td}[1]{\tilde{#1}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\bd}{\partial}
+\newcommand{\pf}{\pitchfork}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\renewcommand{\H}{\mathbb H}
+\newcommand{\rla}{\RightLeftarrow}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\dlim}{\varinjlim}
+\newcommand{\vg}{\varGamma}
+\newcommand{\blm}[2]{\langle  #1 , #2 \rangle}
+\newcommand{\bl}[2]{\left( #1 , #2 \right)}
+\newcommand{\vs}{\varSigma}
+\newcommand{\holink}{\text{holink}}
+\newcommand{\map}{\operatorname{map}}
+\newcommand{\hl}{\operatorname{holink}}
+\newcommand{\wt}{\widetilde}
+\renewcommand{\hom}{\text{Hom}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\SHom}{\text{\emph{Hom}}}
+\newcommand{\Ext}{\text{Ext}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\ih}{IH^{\bar p}}
+\newcommand{\di}{\text{dim}}
+\newcommand{\im}{\text{im}}
+\newcommand{\cok}{\text{cok}}
+\newcommand{\coim}{\text{coim}}
+\newcommand{\bp}{\boxplus}
+%\renewcommand{\P}{\mathbb P}
+\newcommand{\q}{\mathfrak q}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\singsupp}{\text{singsupp}}
+\newcommand{\Dom}{\text{Dom}}
+\newcommand{\LPDO}{\text{LPDO}}
+\newcommand{\PsiDO}{\Psi\text{DO}}
+
+\newcommand{\ka}{\kappa}
+
+\newcommand{\fl}{\text{FL}}
+\newcommand{\wfl}{\text{WFL}}
+\newcommand{\Ker}{\mbox{Kernel }}
+%\newcommand{\p}{\mf{p}}
+\newcommand{\p}{\mathbbm{p}}
+%\newcommand{\p}{\mathpzc{p}}
+\newcommand{\Vol}{\text{Vol}}
+\newcommand{\uW}{\underline{W}}
+\newcommand{\udW}{\underline{\partial W}}
+\newcommand{\uV}{\underline{V}}
+
+
+
+\newcommand{\sect}[1]{\vskip1cm \noindent\paragraph{#1}}
+
+\newcommand{\ttau}{\text{\texthtt}}
+
+\newcommand{\xr}{\xrightarrow}
+\newcommand{\xl}{\xleftarrow}
+
+\DeclareRobustCommand{\zvec}[1]{%
+  \mathrlap{\vec{\mkern-2mu\phantom{#1}}}#1%
+}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\cman}{\mathrm{cMan}}
+
+\newcommand{\Or}{{\rm Det}}
+
+\begin{document}
+
+\begin{proposition}\label{P: 3 out of 4 trans}
+Let $f:V\to M$, $g:W\to M$, and $h:Z\to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $W$ is transverse to $Z$ and that $V$ is transverse to $W$ and to $W\times_MZ$. Then $V\times_MW$ is transverse to $Z$. In particular, if $V\times_M(W\times_MZ)$ and $V\times_MW$ are well defined, then so is $(V\times_MW)\times_M Z$.
+\end{proposition}
+\begin{proof}
+We must show that $V\times_MW$ is transverse to $Z$, so we consider points $(v,w)\in V\times_M W$ and $z\in Z$ such that $h(z)$ is equal to $(f\times_Mg)(v,w)$, which by definition is equal to $f(v)=g(w)$. In other words, we consider  $(v,w,z)\in V\times W\times Z$ such that $f(v)=g(w)=h(z)$. 
+
+So suppose $(v,w,z)$ is such a triple, and denote the common image by $m\in M$.  By the transversality assumptions, we know that the images of $D_wg:T_wW\to T_mM$ and $D_zh:T_zZ\to T_mM$ span $T_mM$, i.e.\ that $D_wg$ and $D_zh$ are transverse as linear maps, and similarly that $D_{(w,z)}(g\times_M h):T_{(w,z)}(W\times_M Z)\to T_mM$ is transverse to $D_vf:T_vV\to T_mM$. Furthermore, by  Lemma \ref{L: tangent of pullbacks},  the tangent space of a fiber product is the fiber product of the tangent spaces, so $T_{(w,z)}(W\times_M Z)=T_wW\times_{T_mM}T_zZ$ and $D_{(w,z)}(g\times_M h)=D_wg\times_{T_mM}D_zh$. 
+
+Now by \cite[Propositions~4-9]{RamBas09}, the triple of linear maps $(D_vf,D_wg,D_zh)$ is transverse as a triple of maps, if and only if both $D_wg$ is transverse to $D_zh$ and $D_wg\times_{T_mM}D_zh$ is transverse to $D_vf$. As such statements are independent of how we order the terms, the transversality established in the preceding paragraph also implies that $D_vf$ and $D_wg$ are transverse (which already follows from the hypotheses of the proposition), and $D_vf\times_{T_mM}D_wg$ is transverse to $D_zh$. But this implies, again using Lemma \ref{L: tangent of pullbacks}, that $h$ is transverse to $f\times_Mg$, as desired.  
+\end{proof}
+
+\begin{remark}
+The end of the preceding proof at first seems to imply that if  $g$ and $h$ are transverse and $g\times_M h$ is transverse to $f$, then $f$ is transverse to $g$ and $f\times_Mg$ is transverse to $h$. Indeed,  \cite[Propositions~4-9]{RamBas09} says this is the case for the linear maps of the tangent spaces. Unfortunately, however, as \cite[Propositions~4-9]{RamBas09} applies only to linear maps, we can apply it only at those points $(v,w,z)\in V\times W\times Z$ where we know that $f(v)=g(w)=h(z)$ so that all three tangent space maps are well defined. So such a result would hold if the only intersections among the maps were such triple intersections. However, as noted in Remark \ref{R: multiproducts}, there could be pairs $(v,w)\in V\times W$ with $f(v)=g(w)$, but with this common image in $M$ not in the image of $h$. At such points, \cite[Propositions~4-9]{RamBas09} cannot tell us anything about the transversality of $V$ and $W$, and so $V\times_MW$ might not be well defined due to failure of transversality, even if $V\times_M (W\times_M Z)$ is. 
+\end{remark}
+
+
+\bibliographystyle{amsplain}
+\bibliography{../../bib}
+
+
+
+
+\end{document}
