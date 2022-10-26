@@ -343,53 +343,7 @@ There is a Leibniz rule for taking boundaries of fiber products of transverse ma
 recalling that if $g \colon W\to M$ then we interpret $\bd W$ as equipped with the map $gi_{\bd W} \colon \bd W\to M$ and similarly for $V$.
 We will see versions of this formula below that take into account orientations and co-orientations.
 
-\begin{remark}\label{R: multiproducts}
-	In this remark we briefly consider transversality and fiber products that involve more than two maps.
-	This is relevant, for example, when considering associativity of fiber products or pullbacks of fiber products.
-	As transversality of maps of manifolds is defined in terms of the behavior of the maps of tangent spaces, it is useful to first recall some notions about transversality in the setting of linear maps of vector spaces.
 
-	If $f \colon V\to M$ and $g \colon W\to M$ are linear maps, then transversality of $f$ and $g$ can be expressed in a number of equivalent ways \cite[Section 4.7]{RamBas09}:
-	\begin{itemize}
-		\item $f(V)$ and $g(W)$ span $M$,
-		\item the map $\Delta \colon V\times W\to M$ given by $\Delta(v,w)=f(v)-g(w)$ is surjective,
-		\item $\dim(V\times_MW)=\dim(V)+\dim(W)-\dim(M)$.
-	\end{itemize}
-	The last two formulations easily generalize to $n$-tuples of maps $f_i \colon V_i\to M$.
-	Such an $n$-tuple is considered transverse when either of the following equivalent conditions hold:
-	\begin{itemize}
-		\item the map $\Delta \colon \prod V_i\to M^{n-1}$ given by $\Delta(v_1,\ldots,v_n)=(f_2(v_2)-f_1(v_1),\ldots, f_n(v_n)-f_{n-1}(v_{n-1}))$ is surjective,
-		\item the fiber product given by $\{(v_1,\ldots,v_n)\in V_1\times\cdots \times V_n\mid f_1(v_1)=\cdots=f_n(v_n)\}$ has dimension $\sum_{i=1}^n\dim(V_i) -n\dim(M)$.
-	\end{itemize}
-	This version of transversality behaves very well in that this ``$n$-transversality'' is equivalent to the iterated transversality conditions that are required when taking fiber products two at a time.
-	In other words, an $n$-tuple is transverse if and only if for any $1\leq i<j\leq n$,
-	\begin{itemize}
-		\item the $j-i+1$-tuple $\{f_i,\ldots,f_j\}$ is transverse, and
-		\item letting $P$ denote the fiber product of the maps $\{f_i,\ldots,f_j\}$, the $n-(j-i)$-tuple consisting of the fiber product map $P\to M$ and the $f_k$ with $k\notin\{i,\ldots,j\}$ is transverse.
-	\end{itemize}
-	Iterating this fact, we can see that this is equivalent to having $V_1$ transverse to $V_2$, then $V_3$ transverse to $V_1\times_MV_2$ and so on.
-	In particular, we can form the $n$-tuple fiber product if and only if we can form the {\it transverse} iterated fiber products such as $(((V_1\times_MV_2)\times_M V_3)\times_M\ldots)\times_M V_n$ as well as in any other order of association.
-	% anibal: this sentence sounds clunky, maybe:  we can form the {\it transverse} iterated fiber product $(((V_1\times_MV_2)\times_M V_3)\times_M\ldots)\times_M V_n$ as well as in any other order of association.
-	% GBF: Done.
- 	See\footnote{Proposition 8-1 of \cite{RamBas09} actually concerns a more general situation of ``mixed associativity'' in which the data consists of zig-zags
-	$$V_1\xr{f_1}S_1\xl{g_2}V_1\xr{f_2}\cdots\xr{f_{n-1}}S_{n-1}\xl{g_n}V_2.$$
-	However, this reduces to our setting by taking $S_i=M$ and $g_i=f_i$ for all $i$.} \cite[Proposition~8-1]{RamBas09}.
-
-	Unfortunately, in the setting of manifolds (for the moment without corners), the situation is less well behaved.
-	Let now $f_i \colon V_i\to M$ be an $n$-tuple of smooth maps of manifolds.
-	We say that this $n$-tuple is transverse when for any $n$-tuple $(v_1,\ldots, v_n)\in V_1\times\cdots \times V_n$ such that $f_1(v_1)=\cdots=f_n(v_n)$ the linear maps $D_{v_i}f_i$ are transverse.
-	In this case, the fiber product $P=\{(v_1,\ldots, v_n)\in V_1\times\cdots \times V_n\mid f_1(v_1)=\cdots=f_n(v_n)\}$ is a smooth manifold of dimension $\sum\dim(V_i)-(n-1)\dim(M)$.
-	Furthermore, at any such point, this general transversality has implications such as those above for transversality of subcollections.
-
-	However, the above relations between $n$-ary transversality and ``iterated transversality'' cannot hold in general, because the $n$-ary fiber product cannot necessarily know about all points in the iterated fiber product.
-	For example, consider maps $f \colon V\to M$, $g \colon W\to M$ and $h \colon Z\to M$.
-	Suppose that $f$ and $g$ are not transverse; in particular, we can suppose that the fiber product $V\times_MW$ is not a manifold.
-	Further suppose that $h(Z)$ is disjoint from $f(V)$ and $g(W)$.
-	In this case, the triple of maps is transverse (vacuously) and its 3-ary fiber product is well defined as $\emptyset$.
-	However, the iterated fiber product $(V\times_MW)\times_M Z$ is not well defined in the category of smooth manifolds and maps.
-	Given that we define fiber products only of transverse maps of smooth manifolds, in this case $V\times_M W$ is not properly defined in our category, and it is further impossible then to define $(V\times_MW)\times_M Z$ in this context.
-
-	The upshot of all this is that when considering situations involving fiber products of more than two maps, we shall have to be careful to assume all needed transversality conditions, rather than having some of them follow from a smaller set of transversality conditions as in the linear case.
-\end{remark}
 
 \subsubsection{Some further properties of transversality and fiber products}
 
@@ -477,21 +431,78 @@ The next lemma is a bit more specific but will be useful later in proving certai
 	Furthermore, we have $D\pi_W(\mathbf a,\mathbf z)=\mathbf z$.
 	Thus $\mathbf w=\mathbf z+Dh(\mathbf b)=D\pi_W(\mathbf a,\mathbf z)+Dh(\mathbf b)$.
 	As $\mathbf w$ was arbitrary, $W=D\pi_W(T_{(h(x),\pi_V(p))}P)+Dh(T_xX)$, as desired.
-	\qedhere
-
-	\begin{comment}
-		Next suppose $f$ is transverse to $gh$.
-		Transversality is determined by the behavior of tangent spaces, and by Lemma \ref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangent spaces, so it suffices, and simplifies the notation (and our thinking), for us to assume that $X,V,W,M$ are vector spaces and $f,g,h$ are linear maps.
-		With this adjustment, we must show that $W=\pi_W(P)+h(X)$.
-		Suppose $w\in W$.
-		By assumption, we can write $g(w)=f(v)+gh(x)$ for some $v\in V$ and $x\in X$.
-		Now consider $z=w-h(x)\in W$.
-		Then $g(z)=g(w)-fh(x)=f(v)$, so $(v,z)\in P$.
-		and hence $z\in \pi_W(P)$.
-		Thus $w=z+h(x)=\pi_W((v,z))+h(x)\in \pi_W(P)+h(X)$.
-		As $w$ was arbitrary, $W=\pi_W(P)+h(X)$.
-	\end{comment}
 \end{proof}
+
+
+\subsubsection{Fiber products with more than three inputs}
+Finally, we briefly consider transversality of more than two maps. Remark \ref{R: multiproducts} highlights some of the issues and difficulties involved, while Proposition \ref{P: 3 out of 4 trans} shows that there are still some simplifications that can be observed. 
+
+\begin{remark}\label{R: multiproducts}
+	In this long remark we briefly discuss transversality and fiber products that involve more than two maps.
+	This is relevant, for example, when considering associativity of fiber products or pullbacks of fiber products.
+	As transversality of maps of manifolds is defined in terms of the behavior of the maps of tangent spaces, it is useful to first recall some notions about transversality in the setting of linear maps of vector spaces.
+
+	If $f \colon V\to M$ and $g \colon W\to M$ are linear maps, then transversality of $f$ and $g$ can be expressed in a number of equivalent ways \cite[Section 4.7]{RamBas09}:
+	\begin{itemize}
+		\item $f(V)$ and $g(W)$ span $M$,
+		\item the map $\Delta \colon V\times W\to M$ given by $\Delta(v,w)=f(v)-g(w)$ is surjective,
+		\item $\dim(V\times_MW)=\dim(V)+\dim(W)-\dim(M)$.
+	\end{itemize}
+	The last two formulations easily generalize to $n$-tuples of maps $f_i \colon V_i\to M$.
+	Such an $n$-tuple is considered transverse (as an $n$-tuple) when either of the following equivalent conditions hold:
+	\begin{itemize}
+		\item the map $\Delta \colon \prod V_i\to M^{n-1}$ given by $\Delta(v_1,\ldots,v_n)=(f_2(v_2)-f_1(v_1),\ldots, f_n(v_n)-f_{n-1}(v_{n-1}))$ is surjective,
+		\item the fiber product given by $\{(v_1,\ldots,v_n)\in V_1\times\cdots \times V_n\mid f_1(v_1)=\cdots=f_n(v_n)\}$ has dimension $\sum_{i=1}^n\dim(V_i) -n\dim(M)$.
+	\end{itemize}
+	This version of transversality behaves very well in that this ``$n$-transversality'' is equivalent to the iterated transversality conditions that are required when taking fiber products two at a time.
+	In other words, an $n$-tuple is transverse if and only if for any $1\leq i<j\leq n$,
+	\begin{itemize}
+		\item the $j-i+1$-tuple $\{f_i,\ldots,f_j\}$ is transverse, and
+		\item letting $P$ denote the fiber product of the maps $\{f_i,\ldots,f_j\}$, the $n-(j-i)$-tuple consisting of the fiber product map $P\to M$ and the $f_k$ with $k\notin\{i,\ldots,j\}$ is transverse.
+	\end{itemize}
+	Iterating this fact, we can see that this is equivalent to having $V_1$ transverse to $V_2$, then $V_3$ transverse to $V_1\times_MV_2$ and so on.
+	In particular, we can form the $n$-tuple fiber product if and only if we can form the {\it transverse} iterated fiber products such as $(((V_1\times_MV_2)\times_M V_3)\times_M\ldots)\times_M V_n$ as well as in any other order of association.
+	% anibal: this sentence sounds clunky, maybe:  we can form the {\it transverse} iterated fiber product $(((V_1\times_MV_2)\times_M V_3)\times_M\ldots)\times_M V_n$ as well as in any other order of association.
+	% GBF: Done.
+ 	See\footnote{Proposition 8-1 of \cite{RamBas09} actually concerns a more general situation of ``mixed associativity'' in which the data consists of zig-zags
+	$$V_1\xr{f_1}S_1\xl{g_2}V_1\xr{f_2}\cdots\xr{f_{n-1}}S_{n-1}\xl{g_n}V_2.$$
+	However, this reduces to our setting by taking $S_i=M$ and $g_i=f_i$ for all $i$.} \cite[Propositions~4-9 and 8-1]{RamBas09}.
+
+	Unfortunately, in the setting of maps of manifolds (for the moment without corners), the situation is less well behaved.
+	Let now $f_i \colon V_i\to M$ be an $n$-tuple of smooth maps of manifolds.
+	We say that this $n$-tuple is transverse when for any $n$-tuple $(v_1,\ldots, v_n)\in V_1\times\cdots \times V_n$ such that $f_1(v_1)=\cdots=f_n(v_n)$ the linear maps $D_{v_i}f_i$ are transverse.
+	In this case, the fiber product $P=\{(v_1,\ldots, v_n)\in V_1\times\cdots \times V_n\mid f_1(v_1)=\cdots=f_n(v_n)\}$ is a smooth manifold of dimension $\sum\dim(V_i)-(n-1)\dim(M)$.
+	Furthermore, at any such point, this general transversality has implications such as those above for transversality of subcollections.
+
+	However, the above relations between $n$-ary transversality and ``iterated transversality'' cannot hold in general, because the $n$-ary fiber product cannot necessarily know about all points in the iterated fiber product.
+	For example, consider maps $f \colon V\to M$, $g \colon W\to M$, and $h \colon Z\to M$.
+	Suppose that $f$ and $g$ are not transverse; in particular, we can suppose that the fiber product $V\times_MW$ is not a manifold.
+	Further suppose that $h(Z)$ is disjoint from $f(V)$ and $g(W)$.
+	In this case, the triple of maps is transverse (vacuously) and its 3-ary fiber product is well defined as $\emptyset$.
+	However, the iterated fiber product $(V\times_MW)\times_M Z$ is not well defined in the category of smooth manifolds and maps.
+	Given that we define fiber products only of transverse maps of smooth manifolds, in this case $V\times_M W$ is not properly defined in our category, and it is further impossible then to define $(V\times_MW)\times_M Z$ in this context.
+
+	The upshot of all this is that when considering situations involving fiber products of more than two maps, we shall have to be careful about the transversality assumptions.
+\end{remark}
+
+Despite the preceding remark, the transversality conditions involved in associativity of fiber products are not completely independent, as the following proposition shows. In later sections, we will usually simply assume all needed transversality exists, but the following proposition can be useful in practice.
+
+\begin{proposition}\label{P: 3 out of 4 trans}
+Let $f:V\to M$, $g:W\to M$, and $h:Z\to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $W$ is transverse to $Z$ and that $V$ is transverse to $W$ and to $W\times_MZ$. Then $V\times_MW$ is transverse to $Z$. In particular, if $V\times_M(W\times_MZ)$ and $V\times_MW$ are well defined, then so is $(V\times_MW)\times_M Z$.
+\end{proposition}
+\begin{proof}
+We must show that $V\times_MW$ is transverse to $Z$, so we consider points $(v,w)\in V\times_M W$ and $z\in Z$ such that $h(z)$ is equal to $(f\times_Mg)(v,w)$, which by definition is equal to $f(v)=g(w)$. In other words, we consider  $(v,w,z)\in V\times W\times Z$ such that $f(v)=g(w)=h(z)$. 
+
+So suppose $(v,w,z)$ is such a triple, and denote the common image by $m\in M$.  By the transversality assumptions, we know that the images of $D_wg:T_wW\to T_mM$ and $D_zh:T_zZ\to T_mM$ span $T_mM$, i.e.\ that $D_wg$ and $D_zh$ are transverse as linear maps, and similarly that $D_{(w,z)}(g\times_M h):T_{(w,z)}(W\times_M Z)\to T_mM$ is transverse to $D_vf:T_vV\to T_mM$. Furthermore, by  Lemma \ref{L: tangent of pullbacks},  the tangent space of a fiber product is the fiber product of the tangent spaces, so $T_{(w,z)}(W\times_M Z)=T_wW\times_{T_mM}T_zZ$ and $D_{(w,z)}(g\times_M h)=D_wg\times_{T_mM}D_zh$. 
+
+Now by \cite[Propositions~4-9]{RamBas09}, the triple of linear maps $(D_vf,D_wg,D_zh)$ is transverse as a triple of maps, if and only if both $D_wg$ is transverse to $D_zh$ and $D_wg\times_{T_mM}D_zh$ is transverse to $D_vf$. As such statements are independent of how we order the terms, the transversality established in the preceding paragraph also implies that $D_vf$ and $D_wg$ are transverse (which already follows from the hypotheses of the proposition), and $D_vf\times_{T_mM}D_wg$ is transverse to $D_zh$. But this implies, again using Lemma \ref{L: tangent of pullbacks}, that $h$ is transverse to $f\times_Mg$, as desired.  
+\end{proof}
+
+\begin{remark}
+The end of the preceding proof at first seems to imply that if  $g$ and $h$ are transverse and $g\times_M h$ is transverse to $f$, then $f$ is transverse to $g$ and $f\times_Mg$ is transverse to $h$. Indeed,  \cite[Propositions~4-9]{RamBas09} says this is the case for the linear maps of the tangent spaces. Unfortunately, however, as \cite[Propositions~4-9]{RamBas09} applies only to linear maps, we can apply it only at those points $(v,w,z)\in V\times W\times Z$ where we know that $f(v)=g(w)=h(z)$ so that all three tangent space maps are well defined. So such a result would hold if the only intersections among the maps were such triple intersections. However, as noted in Remark \ref{R: multiproducts}, there could be pairs $(v,w)\in V\times W$ with $f(v)=g(w)$, but with this common image in $M$ not in the image of $h$. At such points, \cite[Propositions~4-9]{RamBas09} cannot tell us anything about the transversality of $V$ and $W$, and so $V\times_MW$ might not be well defined due to failure of transversality, even if $V\times_M (W\times_M Z)$ is. 
+\end{remark}
+
+
 
 %%% Local Variables:
 %%% TeX-master: "geometric_cohomology.tex"
