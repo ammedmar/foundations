@@ -5,7 +5,7 @@
 \label{S: products}
 
 
-In this section we consider products of geometric chains and cochains, first simply as chains and cochains and then as pairings on homology and cohomology. These pairings are all built from the fiber products and exterior products of maps as defined in \cref{S: orientations and co-orientations}. However, while the exterior products were fully defined, the fiber products required transversality of $f:V\to M$ and $g:W\to M$ in order for $V\times_MW$ to be a well-defined manifold with corners possessing an oriented or co-oriented map to $M$. Consequently, the fiber products do not induce fully-defined chain- and cochain-level products such as a pairing $C^*_\Gamma(M)\otimes C^*_\Gamma(M)\to C^*_\Gamma(M)$. At best we can hope for a partially-defined (co)chain-level pairing, though even this is not clear once we take into account that a geometric chain or cochain is not represented simply by a single map $V\to M$ but is rather an equivalence class of such mappings up to triviality and degeneracy.
+In this section we consider products of geometric chains and cochains, first simply as chains and cochains and then as pairings on homology and cohomology. These pairings are all built from the fiber products and exterior products of maps as defined in \cref{S: orientations and co-orientations}. However, while the exterior products were fully defined, the fiber products required transversality of $f \colon V \to M$ and $g:W\to M$ in order for $V\times_MW$ to be a well-defined manifold with corners possessing an oriented or co-oriented map to $M$. Consequently, the fiber products do not induce fully-defined chain- and cochain-level products such as a pairing $C^*_\Gamma(M)\otimes C^*_\Gamma(M)\to C^*_\Gamma(M)$. At best we can hope for a partially-defined (co)chain-level pairing, though even this is not clear once we take into account that a geometric chain or cochain is not represented simply by a single map $V\to M$ but is rather an equivalence class of such mappings up to triviality and degeneracy.
 
 In \cref{S: chain products}, we address this issue and show that there is a natural notion of transversality among chains and cochains, despite the ambiguity in representing chains and cochains. We use this to provide partially-defined cup, cap, and intersection pairings among geometric chains and cochains. We consider it important to have such pairings, even when only partially defined, as cochain algebras contain much information that is lost on passage to cohomology. For example, the singular cochains of a space are what carry the $E_\infty$-algebra structure, while passage to cohomology often contains just shadows of this structure, such as the Steenrod squares. We also provide fully-defined chain and cochain exterior products, though these give us less trouble.
 In \cref{S: (co)chain properties}, we collect the various properties of these partially-defined products, mostly based on properties we have established for fiber products of maps in earlier sections.
@@ -176,14 +176,14 @@ we do not know whether the resulting theory agrees with ordinary cohomology.
 
 BCOMMENT
 \begin{lemma}
-Suppose $[f:V\to M]$ or $[g:W\to M]$ is $0$ in $C^*_\Gamma(M)$. Then $V_T\cap W_T\in Q(M)$ for any decompositions $V=V_T \amalg V_Q$ and $W=W_T\amalg W_Q$ of precochains representing $f$ and $g$.
+Suppose $[f \colon V \to M]$ or $[g:W\to M]$ is $0$ in $C^*_\Gamma(M)$. Then $V_T\cap W_T\in Q(M)$ for any decompositions $V=V_T \amalg V_Q$ and $W=W_T\amalg W_Q$ of precochains representing $f$ and $g$.
 \end{lemma}
 \begin{proof}
 Without loss of generality, suppose $[f]=0$. Then any representative of $[f]$ is an element of $Q(M)$. Suppose we have representatives that decompose as $V=V_T \amalg V_Q$ and $W=W_T\amalg W_Q$. By \cite[Lemma 12]{Lip14}, as $f\in Q(M)$ and $f|_{V_Q}\in Q(M)$, also $f|_{V_T}\in Q(M)$. By \red{SOMEWHERE ABOVE}, the intersection of an element of $Q(M)$ with any transverse cochain is in $Q(M)$.
 \end{proof}
 
 \begin{lemma}\label{L: one fixed}
-Let $f:V\to M$ and $f':V'\to M$ be two representatives of the same class in $C^*_\Gamma(M)$ with decompositions $V=V_T \amalg V_Q$ and $V'=V'_T \amalg V'_Q$. Suppose $g:W\to M$ is another class with decomposition $W=W_T\amalg W_Q$ and that $W_T$ is transverse to $V_T$ and $V_T'$. Then $V_T\cap W_T=V_T'\cap W_T\in C^*_\Gamma(M)$.
+Let $f \colon V \to M$ and $f':V'\to M$ be two representatives of the same class in $C^*_\Gamma(M)$ with decompositions $V=V_T \amalg V_Q$ and $V'=V'_T \amalg V'_Q$. Suppose $g:W\to M$ is another class with decomposition $W=W_T\amalg W_Q$ and that $W_T$ is transverse to $V_T$ and $V_T'$. Then $V_T\cap W_T=V_T'\cap W_T\in C^*_\Gamma(M)$.
 \end{lemma}
 \begin{proof}
 As $f$ and $f'$ represent the same element of $C^*_\Gamma(M)$, we have $f\amalg -f'\in Q(M)$. Furthermore, as $f|_{V_Q}$ and $f'|_{V'_Q}$ are in $Q(M)$ we have $f|_{V_T}-f'|_{V'_T}\in Q(M)$ by \cite[Lemma 12]{Lip14}. Thus by \red{SAME REF AS ABOVE}, $V_T\cap W_T -V'_T\cap W_T=(V_T -V'_T)\cap W_T\in Q(M)$. So $V_T\cap W_T=V'_T\cap W_T\in C^*_\Gamma(M)$.
@@ -842,7 +842,7 @@ So to finish the proof, we need an analogue of \cref{P: ball stability} that all
 \end{proof}
 
 \begin{proposition}\label{P: perturb transverse to map}
-Suppose  $f:V\to M$ and $g:W\to M$ are proper maps from manifolds with corners to a  manifold without boundary.  Then there is a proper universal homotopy $h:V\times I\to M$ such that:
+Suppose  $f \colon V \to M$ and $g:W\to M$ are proper maps from manifolds with corners to a  manifold without boundary.  Then there is a proper universal homotopy $h:V\times I\to M$ such that:
 \begin{enumerate}
 \item $h(-,0)=f$,
 
@@ -865,7 +865,7 @@ Recall that this lemma allows us to replace transversality of arbitrary maps wit
 \red{GOING TO MOVE ELSEWHERE - HEREHERE}
 
 \begin{lemma}\label{L: all transversality is wrt embeddings}
-Let $f:V\to M$ and $g:W\to M$ be smooth maps from manifolds with corners to a manifold without boundary. Let $e:W\to M\times \R^n$ be an embedding such that $\pi e=g$, where $\pi$ is the projection $M\times \R^n\to M$. Then $f$ and $g$ are transverse if and only if $e$ is transverse to $f\times\id_{\R^n}:V\times \R^n\to M\times \R^n$.
+Let $f \colon V \to M$ and $g:W\to M$ be smooth maps from manifolds with corners to a manifold without boundary. Let $e:W\to M\times \R^n$ be an embedding such that $\pi e=g$, where $\pi$ is the projection $M\times \R^n\to M$. Then $f$ and $g$ are transverse if and only if $e$ is transverse to $f\times\id_{\R^n}:V\times \R^n\to M\times \R^n$.
 \end{lemma}
 
 \begin{proof}
@@ -963,7 +963,7 @@ However, let  $K\subset X$ be compact, and let $L=H_1(i_X(K)\times \bar D_{1/2}^
 Choosing a $W_j$ as above and taking the union of the resulting $A_{(x,z)}\subset X\times D_{1/2}^N\times \R^n$ over all $(x,z)\in K\times \bar B^n_L$ and intersecting with $K\times D^N\times \bar B^n_L$ gives an open neighborhood $G_j$ of $K\times 0\times \bar B^n_L$ in $K\times D^N\times \bar B^n_L$, such that
  $H_1(-,s)\times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$  for all $(x,z)\in K\times \bar B^n_L$. Again we can use the Tube Lemma to find a neighborhood $U_j$ of $0$ in $D^N$ so that $K\times U_j\times \bar B^n_L \subset G_j$, and then for every $s\in U_k$, we know that $H_1(-,s)\times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ at every point of $K\times \R^n$, as points of $K\times \R^n$ outside of $K\times \bar B^n_L$ do not intersect $W_j$.  Now, as above, by ranging over all of the finite options for $j$ and $k$,  we can then find a neighborhood $U$ of $0$ in $D^N_{1/2}$ such that for all $s\in U$ we have $H_k(-,s)\times \id_{\R^n}$  (plainly) transverse to all $ei_{\bd^jW}$ at all points of $\bd^kV\times \R^n$, $k\geq 1$, that map to $K\times \R^n$ via the boundary immersions.
 
- Let $\{\mc U_\ell\}$ be a locally finite covering of $M$ such that each $\bar{\mc U_\ell}$ is compact. As $f:V\to M$ and  $r_X=f\circ i_{X}$ are proper, each $r^{-1}_X(\bar {\mc U_\ell})$ is compact in $X$. Proceeding as just above with $r_X^{-1}(\bar U_\ell)$ in place of $K$, we can find for each $\ell$ an $\varepsilon_{\ell,1}\leq 1$ so that  for every $s\in D^N_{\varepsilon_{\ell,1}}$ we have $H_1(-,s)\times \id_{\R^n}$  transverse to all $ei_{\bd^jW}$ at every  $(x,z)\in r^{-1}_X(\bar {\mc U_\ell})\times \R^n$. Analogously, we have $\varepsilon_{\ell,k}$ for all $k\geq 1$ so that $H_k(-,s)\times \id_{\R^n}$  is transverse to all $ei_{\bd^jW}$ at every  $(x,z)$ in  $(r_Vi_{\bd^kV})^{-1}(\bar {\mc U_\ell})\times \R^n$. Let $\varepsilon_\ell=\min\{\varepsilon_{\ell,k}\mid k\geq 1\}$. These minima exist as $V$ has finite depth.
+ Let $\{\mc U_\ell\}$ be a locally finite covering of $M$ such that each $\bar{\mc U_\ell}$ is compact. As $f \colon V \to M$ and  $r_X=f\circ i_{X}$ are proper, each $r^{-1}_X(\bar {\mc U_\ell})$ is compact in $X$. Proceeding as just above with $r_X^{-1}(\bar U_\ell)$ in place of $K$, we can find for each $\ell$ an $\varepsilon_{\ell,1}\leq 1$ so that  for every $s\in D^N_{\varepsilon_{\ell,1}}$ we have $H_1(-,s)\times \id_{\R^n}$  transverse to all $ei_{\bd^jW}$ at every  $(x,z)\in r^{-1}_X(\bar {\mc U_\ell})\times \R^n$. Analogously, we have $\varepsilon_{\ell,k}$ for all $k\geq 1$ so that $H_k(-,s)\times \id_{\R^n}$  is transverse to all $ei_{\bd^jW}$ at every  $(x,z)$ in  $(r_Vi_{\bd^kV})^{-1}(\bar {\mc U_\ell})\times \R^n$. Let $\varepsilon_\ell=\min\{\varepsilon_{\ell,k}\mid k\geq 1\}$. These minima exist as $V$ has finite depth.
 
 
 

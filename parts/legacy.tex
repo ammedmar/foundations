@@ -13,7 +13,7 @@ SECTION 3
 	Before defining fiber product co-orientations, we first want to ensure that fiber products of co-orientable maps are themselves co-orientable. This will free us to then determine the specific co-orientations by working locally.
 
 	\begin{lemma}\label{L: co-orientable pullback}
-		Suppose $g:W\to M$ and $f:V\to M$ are transverse. Then:
+		Suppose $g:W\to M$ and $f \colon V \to M$ are transverse. Then:
 
 		\begin{enumerate}
 			\item If $g$ is co-orienteable, the pullback $g^*:P\to V$ is co-orientable.
@@ -65,10 +65,10 @@ SECTION 3
 	ECOMMENT
 
 	\begin{corollary}
-		If $f:V\to M$ and $g:W\to M$ are transverse and co-orientable, their fiber product $P\to M$ is also co-orientable.
+		If $f \colon V \to M$ and $g:W\to M$ are transverse and co-orientable, their fiber product $P\to M$ is also co-orientable.
 	\end{corollary}
 	\begin{proof}
-		By the preceding lemma, the pullback $P\to V$ is co-orientable, and the map $f:V\to M$ is co-orientable by assumption. Now choose co-orientations and compose to get a co-orientation of $P\to M$.
+		By the preceding lemma, the pullback $P\to V$ is co-orientable, and the map $f \colon V \to M$ is co-orientable by assumption. Now choose co-orientations and compose to get a co-orientation of $P\to M$.
 	\end{proof}
 
 	\subsubsection{The linear case} To begin to define co-orientations of fiber products, we start with the case of linear maps, which will eventually model the more general situation via tangent spaces. There is considerable work, and notation, in developing the theory even for this case. We find that
@@ -203,7 +203,7 @@ SECTION 3
 
 		Moreover, we can choose basic orientations for $S$ and $T$ and then take basic orientations for $(W^\perp)'$, $(V^\perp)'$, $I$, $K'_f$, and $K'_g$ and so set
 		$\beta_{V^\perp} = \beta_{T}\wedge \beta'_{V^\perp}$, $\beta_{W^\perp}=\beta'_{W^\perp}\wedge \beta_S$, $\beta_I' = \beta_{S} \wedge \beta_I \wedge \beta_{T}$,
-		$\beta_{K_g} = \beta_{K_g}'\wedge \beta_S$, and $\beta_{K_f} = \beta_{T} \wedge \beta_{K_f}'$. As we are free to choose basic orientations by Lemma \ref{L: structural well defined}, such choices do not alter the the structural co-orientations of $f:V\to M$ at $x$ or $x'$.
+		$\beta_{K_g} = \beta_{K_g}'\wedge \beta_S$, and $\beta_{K_f} = \beta_{T} \wedge \beta_{K_f}'$. As we are free to choose basic orientations by Lemma \ref{L: structural well defined}, such choices do not alter the the structural co-orientations of $f \colon V \to M$ at $x$ or $x'$.
 
 		BCOMMENTSimilar arguments hold for all of the other compatible orientations from Definition~\ref{structural orientations}.
 		ECOMMENT
@@ -415,7 +415,7 @@ SECTION 3
 	The following lemma will be useful when working with the creasing construction.
 
 	\begin{lemma}
-		Let $g:W\to M$ be co-oriented and suppose $V$ is an embedded codimension $0$ submanifold with corners of $M$. Let $f:V\to M$ be the embedding, co-oriented by $(\beta_V,\beta_V)=(\beta_M,\beta_M)$ at each point of $V$. Then $f\times_Mg=g|_{g^{-1}(V)}$, and its pullback co-orientation is the restriction of the co-orientation of $g$ to $g^{-1}(V)$.
+		Let $g:W\to M$ be co-oriented and suppose $V$ is an embedded codimension $0$ submanifold with corners of $M$. Let $f \colon V \to M$ be the embedding, co-oriented by $(\beta_V,\beta_V)=(\beta_M,\beta_M)$ at each point of $V$. Then $f\times_Mg=g|_{g^{-1}(V)}$, and its pullback co-orientation is the restriction of the co-orientation of $g$ to $g^{-1}(V)$.
 	\end{lemma}
 	\begin{proof}
 		It is clear that $f\times_Mg=g|_{g^{-1}(V)}$ as maps, so we consider co-orientations.
@@ -442,14 +442,14 @@ SECTION 3
 
 	\subsubsection{Pullbacks by maps that are not co-oriented}\label{S: true pullback}
 
-	So far we have considered the pullback $P$ of transverse co-oriented proper maps $f:V\to M$ and $g:W\to M$ and assigned a co-orientation to $P\to M$. It is also of importance to consider the situation where $g$ is co-oriented and $f$ is not necessarily co-oriented (or co-orientable) and assign a co-orientation to $P\to V$. We know that $P\to V$ is co-orientable in this scenario by Lemma \ref{L: co-orientable pullback}.
+	So far we have considered the pullback $P$ of transverse co-oriented proper maps $f \colon V \to M$ and $g:W\to M$ and assigned a co-orientation to $P\to M$. It is also of importance to consider the situation where $g$ is co-oriented and $f$ is not necessarily co-oriented (or co-orientable) and assign a co-orientation to $P\to V$. We know that $P\to V$ is co-orientable in this scenario by Lemma \ref{L: co-orientable pullback}.
 
 	To assign a choice of co-orientation, we utilize again our structural orthogonal decompositions at some point of $P$. In the pair $(\beta_W,\beta_M)=(\beta_{K_g} \wedge \beta_I \wedge \beta_{V^\perp}, \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp})$, the bases $\beta_I$ and $\beta_{V^\perp}$ occur in both terms, so the co-orientation is determined by the basis pair $(\beta_{K_g},\beta_{W^\perp})$. We are free to choose these bases so that $(\beta_W,\beta_M)$ corresponds to the given co-orientation of $g:W\to M$.
 	But now we observe that $(\beta_P,\beta_V)=( \beta_{K_g} \wedge \beta_I \wedge \beta_{K_f}, \beta_{W^\perp} \wedge \beta_{I} \wedge \beta_{K_f})$. In this case $\beta_I$ and $\beta_{K_f}$ are shared, so again this co-orientation is determined by $(\beta_{K_g},\beta_{W^\perp})$. Having fixed this pair to give the correct co-orientation of $g$, we now define the co-orientation of $g^*:P\to V$ to use the same corresponding basis pair.
 
 	As the co-orientation pair $(\beta_{K_g}, \beta_{W^\perp})$ was determined by the co-orientation of $g$, there is no choice being made for this basis pair at the point of $P$ under cosideration. To see that such choices are consistent from point to point, we can apply the computations of Theorem \ref{local const} to see that $(\beta_P,\beta_V)=(\beta'_P,\beta'_V)$ via translation of the structural decomposition from $x\in P$ to a nearby $x'\in P$.
 
-	Analogously, if $f:V\to M$ is the co-oriented map, we choose the pair $(\beta_{K_f},\beta_{V^\perp})$ so that $(\beta_V,\beta_M)=( \beta_{W^\perp} \wedge \beta_{I} \wedge \beta_{K_f}, \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp})$ is co-oriented consistently with $f$ and then
+	Analogously, if $f \colon V \to M$ is the co-oriented map, we choose the pair $(\beta_{K_f},\beta_{V^\perp})$ so that $(\beta_V,\beta_M)=( \beta_{W^\perp} \wedge \beta_{I} \wedge \beta_{K_f}, \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp})$ is co-oriented consistently with $f$ and then
 	co-orient
 	$f^*:P\to W$ using the pair $(\beta_{P},\beta_{W})=(\beta_{K_g} \wedge \beta_I \wedge \beta_{K_f},\beta_{K_g} \wedge \beta_I \wedge \beta_{V^\perp})$.
 
