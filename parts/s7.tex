@@ -261,7 +261,7 @@ even number of times in $V_E\sqcup-W_E$ when counted without sign.
 \end{proof}
 
 \begin{corollary}\label{C: essential trans}
-Suppose $\uV = \uV' \in C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) and that $V_E$ is transverse to some $r_W:W\to M$. Then  $V'_E$ is also transverse to $W$.
+Suppose $\uV = \uV' \in C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) and that $V_E$ is transverse to some $r_W \colon W \to M$. Then  $V'_E$ is also transverse to $W$.
 \end{corollary}
 \begin{proof}
 By the lemma, any component of $V_E$ is also a component of $V'_E$ and vice versa.
@@ -833,7 +833,7 @@ These are easily seen to be bilinear and $\Z$-balanced (i.e.\ they satisfy $(r\u
 For the other products, we must show that if we are given homology or cohomology classes (depending on the particular product), then they can be represented by chains or cochains $\uV$ and $\uW$ that are transverse and that the product does not depend on such a choice.
 The basic steps of the proof are relatively standard and analogous to the proof of \cref{T: transverse complex}. We provide the general details here modulo a technical lemma that we will prove below.
 
-First we define the products. Given (co)homology classes represented by $r_V:V\to M$ and $r_W:W\to M$, we will find a universal homotopy\footnote{Recall from \cref{S: transverse cochains} that a universal homotopy will be one of the form $V\times I\xr{r_V\times \id} M\times I\xr{h} M$ and that such homotopies generate (co)homologies.} of $r_V$ to a map $r_V':V\to M$ that is transverse to $W$. Then $r_V$ and $r_V'$ represent (co)homologous (co)chains, and we can represent the product by the (oriented or co-oriented) fiber product of $r_V'$ and $r_W$.
+First we define the products. Given (co)homology classes represented by $r_V:V\to M$ and $r_W \colon W \to M$, we will find a universal homotopy\footnote{Recall from \cref{S: transverse cochains} that a universal homotopy will be one of the form $V\times I\xr{r_V\times \id} M\times I\xr{h} M$ and that such homotopies generate (co)homologies.} of $r_V$ to a map $r_V':V\to M$ that is transverse to $W$. Then $r_V$ and $r_V'$ represent (co)homologous (co)chains, and we can represent the product by the (oriented or co-oriented) fiber product of $r_V'$ and $r_W$.
 
 To show that this gives a well-defined (co)homology class, we can suppose that $r_V'':W\to M$ is another map transverse to $r_W$ representing the same (co)homology class as $r_V:V\to M$ with $r_Z:Z\to M$ providing the (co)homology. For notational purposes, let us write $r_V':V'\to M$ and $r_V'':V''\to M$ with $V=V'=V''$. Then $\bd Z=V'\sqcup -V''\sqcup T$ with $T\in Q(M)$. We must show that $V'\times_M W$ and $V''\times_M W$ are (co)homologous. To do so, we find a universal homotopy $H:Z\times I\to M$ from $r_Z$ to an $r_Z':Z'\to M$ with $Z=Z'$ such that the restrictions of $H$ to $V'\times I$ and $V''\times I$ are transverse to $r_W$ and $r_Z'$ is also transverse to $r_W$.  So $H|_{V'\times I}$ and $H|_{V''\times I}$ give (co)homologies from the (co)chains represented by $V'$ and $V''$ to  (co)chains that are (co)homologous via $r_Z'$. Altogether, this gives a (co)homology from $V'$ to $V''$ that is transverse to $r_W$. Call the (co)chain representing the (co)homology $\mf V$. Now we can consider $\mf V\times_M W$, and we have  $$\bd (\mf V\times_M W)=\pm (\bd \mf V)\times_M  W\pm \mf V\times_M\bd W$$ via the appropriate boundary formulas (see \cref{P: oriented fiber boundary,leibniz,P: Leibniz cap}). As $W$ represents a (co)cycle, $\bd W\in Q(M)$, so $\mf V\times_M \bd W\in Q(M)$ by \cref{L: pullback with Q}. Meanwhile, as $\mf V$ is a (co)homology from $V'$ to $V''$, we have $$\bd \mf V\times_M W=(V'\sqcup -V''\sqcup T')\times_MW=(V'\times_MW)\sqcup -(V''\times_M W)\sqcup (T'\times_M W),$$
 with $T'\in Q(M)$. So $T'\times_M W\in Q(M)$ by \cref{L: pullback with Q}, and we see that $V'\times_MW$ and $V''\times_M W$ are (co)homologous.
@@ -1337,7 +1337,7 @@ Use pullback of cross product after showing that cross product agrees with singu
 
 
 \begin{definition}
-Suppose $M$ and $N$ are manifolds. Then there is a product  map $C^*_\Gamma(M)\otimes C^*_\Gamma(N)\to C^*_\Gamma(M\times N)$ that takes geometric cochains $\uW\in C^*_\Gamma(M)$ and $\uV\in C^*_\Gamma(N)$ represented by $r_W:W\to M$ and $r_V:V\to N$ to the cochain $\uW\times \uV$ represented by $r_W\times r_V:W\times V\to M\times N$ with the product co-orientation. In other words, if $(\beta_W,\beta_M)$ and $(\beta_V,\beta_N)$ are the corresponding co-orientations of $\uW$ and $\uV$, then the product co-orientation is $(\beta_W\wedge \beta_V,\beta_M\wedge \beta_N)$. By linear extension we obtain the \textbf{(external) cross product} map $C^*_\Gamma(M)\otimes C^*_\Gamma(N)\to C^*_\Gamma(M\times N)$.
+Suppose $M$ and $N$ are manifolds. Then there is a product  map $C^*_\Gamma(M)\otimes C^*_\Gamma(N)\to C^*_\Gamma(M\times N)$ that takes geometric cochains $\uW\in C^*_\Gamma(M)$ and $\uV\in C^*_\Gamma(N)$ represented by $r_W \colon W \to M$ and $r_V:V\to N$ to the cochain $\uW\times \uV$ represented by $r_W\times r_V:W\times V\to M\times N$ with the product co-orientation. In other words, if $(\beta_W,\beta_M)$ and $(\beta_V,\beta_N)$ are the corresponding co-orientations of $\uW$ and $\uV$, then the product co-orientation is $(\beta_W\wedge \beta_V,\beta_M\wedge \beta_N)$. By linear extension we obtain the \textbf{(external) cross product} map $C^*_\Gamma(M)\otimes C^*_\Gamma(N)\to C^*_\Gamma(M\times N)$.
 \end{definition}
 
 
@@ -1486,12 +1486,12 @@ As in the proof of \cref{P: ball stability}, we use the transversality technique
 
 
 \begin{lemma}\label{L: M times transverse diag}
-Suppose $M$ is a manifold without boundary, $V\in PC^*_{\Gamma}(M)$, and $V$ is transverse to $W\in PC_*^\Gamma(M)$. Then $\id_M\times r_V:M\times V\to M\times M$ is transverse to $\diag r_W:W\to M\times M$ in $M\times M$, where $\diag:M\to M\times M$ is the diagonal map. In particular, $\id_M\times r_V:M\times V\to M\times M$ is transverse to $\diag:M\to M\times M$.
+Suppose $M$ is a manifold without boundary, $V\in PC^*_{\Gamma}(M)$, and $V$ is transverse to $W\in PC_*^\Gamma(M)$. Then $\id_M\times r_V:M\times V\to M\times M$ is transverse to $\diag r_W \colon W \to M\times M$ in $M\times M$, where $\diag:M\to M\times M$ is the diagonal map. In particular, $\id_M\times r_V:M\times V\to M\times M$ is transverse to $\diag:M\to M\times M$.
 \end{lemma}
 \begin{proof}
 By assumption, if $r_V(x)=r_W(y)$, then $Dr_V(T_xV)+Dr_W(T_yW)=T_{r_V(x)}M$. Now suppose that $(z,x)\in M\times V$ maps to $\diag r_W(y)$ with $y\in W$. This is equivalent to $r_V(x)=r_W(y)=z$. At any $(z,x)\in M\times V$, the image of $D(\id_M\times r_V)$ acting on $T_{(z,x)}(M\times V)=T_zM\oplus T_xV$ is $T_z(M)\oplus Dr_V(T_xV)$. While the image of $D(\diag r_W)$ acting on $T_yW$ is $Dr_W(T_yW)\oplus Dr_W(T_yW)$. As we know  $Dr_V(T_xV)+Dr_W(T_yW)=T_{r_V(x)}M$, when $r_V(x)=r_W(y)=z$ these images together span $T_{(r_W(y),r_W(y))}M\times M$.
 
-The last statement follows by taking $r_W:W\to M$ to be $\id_M:M\to M$, which is certainly transverse to any $V$.
+The last statement follows by taking $r_W \colon W \to M$ to be $\id_M:M\to M$, which is certainly transverse to any $V$.
 \end{proof}
 
 For the next lemmas, we make the following definitions.
@@ -1555,7 +1555,7 @@ We conclude that $\pi_1( (M\times V)\times_{M\times M}\mc J(\Delta(E)))$ as an e
 Let $M$ be a manifold without boundary. Let $V\in PC^*_\Gamma(M)$ and $W\in PC_*^\Gamma(M)$ be transverse. Let $\pi_1:M\times M\to M$ be the projection on the first factor. Then $$V\times_M W=\pi_1((M\times V)\times_{M\times M} \diag(W)).$$
 \end{lemma}
 \begin{proof}
-By \cref{L: M times transverse diag}, $\id_M\times r_V:M\times V\to M\times M$ is transverse to $\diag r_W:W\to M\times M$ in $M\times M$, so both expressions are defined. We also have $V=M\times_M V=\diag^*(M\times V)$ by \cref{C: cup with identity} and \cref{P: cross to cup}.
+By \cref{L: M times transverse diag}, $\id_M\times r_V:M\times V\to M\times M$ is transverse to $\diag r_W \colon W \to M\times M$ in $M\times M$, so both expressions are defined. We also have $V=M\times_M V=\diag^*(M\times V)$ by \cref{C: cup with identity} and \cref{P: cross to cup}.
 So we can compute
 \begin{align*}
 V\times_M W&=\pi_1\diag (V\times_M W)&\text{since $\pi_1\diag=\id_M$}\\
@@ -1564,7 +1564,7 @@ V\times_M W&=\pi_1\diag (V\times_M W)&\text{since $\pi_1\diag=\id_M$}\\
 \end{align*}
 For the last equality, see \cref{P: natural cap} and its interpretation in terms of naturality of the cap product in \cref{S: (co)chain properties}. \cref{P: natural cap} requires $\id_M\times r_V:M\times V\to M\times M$ be transverse to $\diag:M\to M\times M$ and $W\to M$ be transverse to the pullback of $M\times V$ by $\diag:M\to M\times M$ to
 $(M\times V)\times_{M\times M}M\to M$.
-The first requirement holds by \cref{L: M times transverse diag}. For the second transversality requirement, \cref{L: transverse to pullback} says that in the presence of the first transversality condition, this is equivalent to requiring $\id_M\times r_V:M\times V\to M\times M$ to be transverse to $\diag r_W:W\to M\times M$. But this also holds by \cref{L: M times transverse diag} as $V$ and $W$ are transverse.
+The first requirement holds by \cref{L: M times transverse diag}. For the second transversality requirement, \cref{L: transverse to pullback} says that in the presence of the first transversality condition, this is equivalent to requiring $\id_M\times r_V:M\times V\to M\times M$ to be transverse to $\diag r_W \colon W \to M\times M$. But this also holds by \cref{L: M times transverse diag} as $V$ and $W$ are transverse.
 \end{proof}
 
 
