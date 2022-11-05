@@ -2,9 +2,9 @@
 
 \section{Introduction}\label{intro}
 
-The goal of this work is to develop a geometric approach to singular homology and cohomology on smooth manifolds.
-By this we mean that the homology and cohomology classes should be represented by smooth maps from manifolds to our target manifold of interest.
-Such a goal is reminiscent of very classic thinking about homology dating back to Poincar\'e and Lefschetz and of course is also classically impossible due to the work of Thom, who showed that not all homology classes can be represented by pushing forward fundamental classes of manifolds.
+The goal of this work is to develop a geometric approach to ordinary homology and cohomology on smooth manifolds.
+By this we mean that both homology and cohomology classes should be represented by smooth maps from manifolds to our target manifold of interest.
+Such a goal is reminiscent of very classic thinking about homology dating back to Poincar\'e and Lefschetz and, of course, is also classically impossible due to the work of Thom, who showed that not all homology classes can be represented by pushing forward fundamental classes of manifolds.
 To get around this obstruction, one needs a broader notion of ``manifold,'' and the one we utilize here is manifolds with corners.
 On the homology side, it is not so surprising that one can do this, for after all simplices and cubes are manifolds with corners, and it is well known that one can compute the homology of a smooth manifold using only smooth maps of simplices or cubes.
 What is more surprising, though still to be found in certain classical corners of 20th century geometric topology, is that \textit{co}homology classes can also be represented by appropriate maps from manifolds with corners, more specifically, proper and co-oriented smooth maps from manifolds with corners, with associated degree given by the codimension of the map.
@@ -17,8 +17,8 @@ More generally, these products are represented by pullbacks or fiber products.
 This again is reminiscent of the original classical thinking about such products in terms of intersections.
 (A modern summary and treatment of such intersections in the PL category can be found in \cite{McC06}.)
 The trade-off for such a pleasant description is that these intersections are not always defined; they require transversality.
-This limitation is also classically anticipated by the famous commutative cochain problem: loosely speaking, no chain algebra over $\Z$ who cohomology gives the singular cohomology ring can be both algebraically fully defined and (graded) commutative.
-Since the process of forming intersections is commutative, it cannot be fully defined.
+This limitation is also classically anticipated by the famous commutative cochain problem: loosely speaking, no integral cochain construction computing ordinary cohomology can be made canonically into a (graded) commutative ring.
+Since the process of forming intersections is commutative, the algebra structure it induces cannot be fully defined.
 We will not let that stop us --- no theory is perfect.
 
 The idea of representing both homology and cohomology by some kind of geometric maps is also not new.
@@ -30,7 +30,7 @@ Our particular flavor of geometric homology and cohomology is originally due to 
 Lipyanskiy gives a fairly thorough account of geometric homology, but a much more lightly sketched account of geometric cohomology.
 Several of the major theorems are unproven or have arguments just hinted at.
 % anibal: this last clause reads weird to me
-Some other expected results are not stated at all, including an isomorphism, either as graded abelian groups or rings, between geometric and singular cohomology.
+Some other expected results are not stated at all, including an isomorphism, either as graded abelian groups or rings, between geometric and ordinary cohomology.
 So one of our main goals is to give a thorough account, with detailed proofs, of geometric homology and cohomology, with our primary focus on geometric cohomology, both because Lipyanskiy's account is more deficient in this area and also because cohomology, with its richer algebraic structures, is of more immediate interest to the authors.
 In fact, geometric cohomology caught our attention while working on \cite{FMS-flows} and looking for a rigorous foundation to geometrically model the cup product and ultimately, we hope, the higher algebraic products that arise in forming Steenrod operations and other aspects of the $E_\infty$-algebra structure on the cochain complex.
 So a second major goal, not really present in \cite{Lipy14}, is to consider the product structures not just in cohomology but at the level of the cochains themselves.
