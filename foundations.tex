@@ -72,22 +72,25 @@
 \email{\href{mailto:dps@uoregon.edu}{dps@uoregon.edu}}
 
 \begin{document}
-	\begin{abstract}
-		We set up the theory of geometric cohomology.
-	\end{abstract}
+	\input{parts/abstract}
 	\maketitle
+
 	\tableofcontents
-	\input{parts/s1} % Introducition
+	\input{parts/s1} % Introduction
 	\input{parts/s2} % Manifolds with corners
 	\input{parts/s3} % Orientations
 	\input{parts/s4} % Geometric cochains
 	\input{parts/s5} % Basic properties
 	\input{parts/s6} % Cubical
 	\input{parts/s7} % Products
-	\input{parts/questions}
+
+	% Bibliography
 	\bibliographystyle{alpha}
 	\bibliography{parts/foundations}
+
+	% Auxiliary
 	\pagebreak
-	\input{parts/to-do}  % To-do's
-	\input{parts/legacy} % Potentially useful
+	\input{parts/questions}
+	\input{parts/to-do}
+	\input{parts/legacy}
 \end{document}
