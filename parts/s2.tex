@@ -24,7 +24,7 @@ An $n$-dimensional atlas for $W$ is a family of pairwise compatible $n$-dimensio
 While essentially equivalent, we choose to work entirely with subspaces of $\R^\infty$ in order to have a set of such objects, so rather than directly employ Joyce's definition, we define manifolds with corners for the purposes of this text as follows.
 
 \begin{definition}\label{D: MWC}
-	An $n$-dimensional {\bf manifold with corners} $W$ is a subspace of some $\R^N \subset \R^\infty$ such that each point of $W$ possesses a neighborhood diffeomorphic to an open subset of $\R^n_k$ for some $k$.
+	An $n$-dimensional \textbf{manifold with corners} $W$ is a subspace of some $\R^N \subset \R^\infty$ such that each point of $W$ possesses a neighborhood diffeomorphic to an open subset of $\R^n_k$ for some $k$.
 \end{definition}
 
 We note that these local diffeomorphisms provide charts $\phi \colon U\subset \R^n_k\to W$, and these charts are compatible, with $\psi^{-1}\phi \colon \phi^{-1}(\phi(U)\cap \psi(V))\to \psi^{-1}(\phi(U)\cap \psi(V))$ being a diffeomorphism, even using Joyce's more restrictive notion of diffeomorphism.
@@ -46,7 +46,7 @@ By modeling on $\R^n_k$, our category includes manifolds ($k=0$ in all charts) a
 	$$\psi^{-1}f \phi \colon (f\phi)^{-1}\psi(V)\to V$$
 	is smooth.
 
-	The {\bf tangent bundle} of a manifold with corners is the space of derivations of the ring of smooth real-valued functions.
+	The \textbf{tangent bundle} of a manifold with corners is the space of derivations of the ring of smooth real-valued functions.
 	Analogously to smooth manifolds with boundary, if $(U,\phi)$ is a chart of $W$ then $d\phi$ takes the tangent space to $\R^n$ at $x\in U$ isomorphically to the tangent spaces of $W$ at $\phi(x)$.
 	In particular, if $W$ is $n$-dimensional and $x\in W$, then the tangent space at $x$, denoted $T_xW$, is isomorphic to $\R^n$.
 \end{definition}
@@ -98,7 +98,7 @@ As another example, letting $\interval=[0,1]$ and so $\interval^3$ the 3-cube, t
 
 \begin{definition}\label{D: MWC boundary}
 	Let $W$ be a manifold with corners.
-	Define its {\bf boundary} $\partial W$ to be the space of pairs $(x, \bb)$ with $x \in W$ and $\bb$ a local boundary component\footnote{Note that if $x\in S^0(W)$ then $x$ does not have any local boundary components and so does not appear in such a pair.} of $W$ at $x$.
+	Define its \textbf{boundary} $\partial W$ to be the space of pairs $(x, \bb)$ with $x \in W$ and $\bb$ a local boundary component\footnote{Note that if $x\in S^0(W)$ then $x$ does not have any local boundary components and so does not appear in such a pair.} of $W$ at $x$.
 	Define $i_{\partial W} \colon \partial W \to W$ by sending $(x,\bb)$ to $x$.
 \end{definition}
 
@@ -435,7 +435,7 @@ The next lemma is a bit more specific but will be useful later in proving certai
 
 
 \subsubsection{Fiber products with more than three inputs}
-Finally, we briefly consider transversality of more than two maps. Remark \ref{R: multiproducts} highlights some of the issues and difficulties involved, while Proposition \ref{P: 3 out of 4 trans} shows that there are still some simplifications that can be observed. 
+Finally, we briefly consider transversality of more than two maps. Remark \ref{R: multiproducts} highlights some of the issues and difficulties involved, while Proposition \ref{P: 3 out of 4 trans} shows that there are still some simplifications that can be observed.
 
 \begin{remark}\label{R: multiproducts}
 	In this long remark we briefly discuss transversality and fiber products that involve more than two maps.
@@ -491,15 +491,15 @@ Despite the preceding remark, the transversality conditions involved in associat
 Let $f:V\to M$, $g:W\to M$, and $h:Z\to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $W$ is transverse to $Z$ and that $V$ is transverse to $W$ and to $W\times_MZ$. Then $V\times_MW$ is transverse to $Z$. In particular, if $V\times_M(W\times_MZ)$ and $V\times_MW$ are well defined, then so is $(V\times_MW)\times_M Z$.
 \end{proposition}
 \begin{proof}
-We must show that $V\times_MW$ is transverse to $Z$, so we consider points $(v,w)\in V\times_M W$ and $z\in Z$ such that $h(z)$ is equal to $(f\times_Mg)(v,w)$, which by definition is equal to $f(v)=g(w)$. In other words, we consider  $(v,w,z)\in V\times W\times Z$ such that $f(v)=g(w)=h(z)$. 
+We must show that $V\times_MW$ is transverse to $Z$, so we consider points $(v,w)\in V\times_M W$ and $z\in Z$ such that $h(z)$ is equal to $(f\times_Mg)(v,w)$, which by definition is equal to $f(v)=g(w)$. In other words, we consider  $(v,w,z)\in V\times W\times Z$ such that $f(v)=g(w)=h(z)$.
 
-So suppose $(v,w,z)$ is such a triple, and denote the common image by $m\in M$.  By the transversality assumptions, we know that the images of $D_wg:T_wW\to T_mM$ and $D_zh:T_zZ\to T_mM$ span $T_mM$, i.e.\ that $D_wg$ and $D_zh$ are transverse as linear maps, and similarly that $D_{(w,z)}(g\times_M h):T_{(w,z)}(W\times_M Z)\to T_mM$ is transverse to $D_vf:T_vV\to T_mM$. Furthermore, by  Lemma \ref{L: tangent of pullbacks},  the tangent space of a fiber product is the fiber product of the tangent spaces, so $T_{(w,z)}(W\times_M Z)=T_wW\times_{T_mM}T_zZ$ and $D_{(w,z)}(g\times_M h)=D_wg\times_{T_mM}D_zh$. 
+So suppose $(v,w,z)$ is such a triple, and denote the common image by $m\in M$.  By the transversality assumptions, we know that the images of $D_wg:T_wW\to T_mM$ and $D_zh:T_zZ\to T_mM$ span $T_mM$, i.e.\ that $D_wg$ and $D_zh$ are transverse as linear maps, and similarly that $D_{(w,z)}(g\times_M h):T_{(w,z)}(W\times_M Z)\to T_mM$ is transverse to $D_vf:T_vV\to T_mM$. Furthermore, by  Lemma \ref{L: tangent of pullbacks},  the tangent space of a fiber product is the fiber product of the tangent spaces, so $T_{(w,z)}(W\times_M Z)=T_wW\times_{T_mM}T_zZ$ and $D_{(w,z)}(g\times_M h)=D_wg\times_{T_mM}D_zh$.
 
-Now by \cite[Propositions~4-9]{RamBas09}, the triple of linear maps $(D_vf,D_wg,D_zh)$ is transverse as a triple of maps, if and only if both $D_wg$ is transverse to $D_zh$ and $D_wg\times_{T_mM}D_zh$ is transverse to $D_vf$. As such statements are independent of how we order the terms, the transversality established in the preceding paragraph also implies that $D_vf$ and $D_wg$ are transverse (which already follows from the hypotheses of the proposition), and $D_vf\times_{T_mM}D_wg$ is transverse to $D_zh$. But this implies, again using Lemma \ref{L: tangent of pullbacks}, that $h$ is transverse to $f\times_Mg$, as desired.  
+Now by \cite[Propositions~4-9]{RamBas09}, the triple of linear maps $(D_vf,D_wg,D_zh)$ is transverse as a triple of maps, if and only if both $D_wg$ is transverse to $D_zh$ and $D_wg\times_{T_mM}D_zh$ is transverse to $D_vf$. As such statements are independent of how we order the terms, the transversality established in the preceding paragraph also implies that $D_vf$ and $D_wg$ are transverse (which already follows from the hypotheses of the proposition), and $D_vf\times_{T_mM}D_wg$ is transverse to $D_zh$. But this implies, again using Lemma \ref{L: tangent of pullbacks}, that $h$ is transverse to $f\times_Mg$, as desired.
 \end{proof}
 
 \begin{remark}
-The end of the preceding proof at first seems to imply that if  $g$ and $h$ are transverse and $g\times_M h$ is transverse to $f$, then $f$ is transverse to $g$ and $f\times_Mg$ is transverse to $h$. Indeed,  \cite[Propositions~4-9]{RamBas09} says this is the case for the linear maps of the tangent spaces. Unfortunately, however, as \cite[Propositions~4-9]{RamBas09} applies only to linear maps, we can apply it only at those points $(v,w,z)\in V\times W\times Z$ where we know that $f(v)=g(w)=h(z)$ so that all three tangent space maps are well defined. So such a result would hold if the only intersections among the maps were such triple intersections. However, as noted in Remark \ref{R: multiproducts}, there could be pairs $(v,w)\in V\times W$ with $f(v)=g(w)$, but with this common image in $M$ not in the image of $h$. At such points, \cite[Propositions~4-9]{RamBas09} cannot tell us anything about the transversality of $V$ and $W$, and so $V\times_MW$ might not be well defined due to failure of transversality, even if $V\times_M (W\times_M Z)$ is. 
+The end of the preceding proof at first seems to imply that if  $g$ and $h$ are transverse and $g\times_M h$ is transverse to $f$, then $f$ is transverse to $g$ and $f\times_Mg$ is transverse to $h$. Indeed,  \cite[Propositions~4-9]{RamBas09} says this is the case for the linear maps of the tangent spaces. Unfortunately, however, as \cite[Propositions~4-9]{RamBas09} applies only to linear maps, we can apply it only at those points $(v,w,z)\in V\times W\times Z$ where we know that $f(v)=g(w)=h(z)$ so that all three tangent space maps are well defined. So such a result would hold if the only intersections among the maps were such triple intersections. However, as noted in Remark \ref{R: multiproducts}, there could be pairs $(v,w)\in V\times W$ with $f(v)=g(w)$, but with this common image in $M$ not in the image of $h$. At such points, \cite[Propositions~4-9]{RamBas09} cannot tell us anything about the transversality of $V$ and $W$, and so $V\times_MW$ might not be well defined due to failure of transversality, even if $V\times_M (W\times_M Z)$ is.
 \end{remark}
 
 

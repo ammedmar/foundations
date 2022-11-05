@@ -36,10 +36,10 @@ When we wish to work with orientations symbolically, the following interpretatio
 
 \begin{definition}\label{D: det bundle}
 	Let $E \to M$ be a rank $d$ real vector bundle.
-	Define the {\bf determinant line bundle}
+	Define the \textbf{determinant line bundle}
 	$\Or(E)$ to be $\bigwedge^d E$.
 	If $d = 0$ this is interpreted to be the trivial rank one ``bundle of coefficients.''
-	We call the principal $O(1) \cong C_2$ bundle associated to $\Or(E)$ the {\bf orientation cover}.
+	We call the principal $O(1) \cong C_2$ bundle associated to $\Or(E)$ the \textbf{orientation cover}.
 
 	An orientation of $E$ is then a section of the orientation cover associated to $\Or(E)$ or, equivalently, an equivalence class of non-zero sections of $\Or(E)$ such that two sections are equivalent if they differ by multiplication by an everywhere positive scalar function.
 \end{definition}
@@ -223,19 +223,19 @@ This motivates the following.
 	Equivalently, a co-orientation is a choice of isomorphism between the associated orientation cover $\Or(TW)$ and the pullback of the associated orientation cover $\Or(TM)$.
 \end{definition}
 
-Thus, if $W$ is connected and $g:W\to M$ is co-orientable, there are exactly two co-orientations, which are {\bf opposite} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
+Thus, if $W$ is connected and $g:W\to M$ is co-orientable, there are exactly two co-orientations, which are \textbf{opposite} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
 In particular, for connected $W$ a choice of co-orientation at a single point determines a co-orientation globally when $g$ is co-orientable (analogously to orientations).
 Also, just as most manifolds do not possess a preferred orientation, most maps $g: W \to M$ do not carry a natural choice of co-orientation.
 
 \begin{definition}\label{D: tautological co-orientation}
-	An exception to the lack of a natural choice of co-orientation occurs when $g$ is a diffeomorphism or, more generally, a codimension-0 immersion in which case the top exterior power of $Dg$ provides a {\bf tautological co-orientation}.
+	An exception to the lack of a natural choice of co-orientation occurs when $g$ is a diffeomorphism or, more generally, a codimension-0 immersion in which case the top exterior power of $Dg$ provides a \textbf{tautological co-orientation}.
 \end{definition}
 
 The local triviality of the determinant
 line bundle of a manifold means being able to choose a consistent basis vector
 over sufficiently small neighborhoods.
 We call such a choice of basis vector around a point
-in $W$ a {\bf local orientation}, and, as for global orientations, often denote the local orientation $\beta_W$.
+in $W$ a \textbf{local orientation}, and, as for global orientations, often denote the local orientation $\beta_W$.
 Again, abusing notation, we also often allow $\beta_W$ to refer to its equivalence class up to multiplication by a positive scalar.
 We identify $\beta_W$ with a local choice of (equivalence class of) non-zero $\dim(W)$-form\footnote{As usual, if $\dim(W)=0$ we identify $\bigwedge^0 TW$ with the ground field $\R$, and, when forming exterior products, multiplication by a $0$-form is treated as scalar multiplication.} in $\bigwedge^{\dim(W)}TW$ in a neighborhood of a point $x$ in $W$ or, equivalently, a local smoothly varying ordered basis for the fibers of $TW$.
 We typically don't specify the point $x$, though when necessary we write $\beta_{W,x}$.
@@ -310,7 +310,7 @@ Although such a co-orientation is a global object over $W$, given an orientation
 
 \begin{definition}\label{normal co-or}
 	Let $g : W \to M$ be an immersion with normal bundle locally oriented by $\beta_\nu$.
-	Define the {\bf normal co-orientation} associated
+	Define the \textbf{normal co-orientation} associated
 	to $\beta_\nu$ locally as\footnote{Whenever we form wedge products, if one of the terms is an element of $\bigwedge^0 TV$ for some $V$ we treat that term as a $0$-form and interpret $\wedge$ as the fiberwise scalar product.}
 	$\omega_{\nu} = (\beta_W, \beta_W \wedge \beta_\nu)$, where $\beta_W$ is any choice of a local orientation of $W$.
 \end{definition}
@@ -374,12 +374,12 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 Given a co-oriented map $g:W\to M$ where $W$ is a manifold with corners, we can use the normal co-orientation of $\bd W$ in $W$ together with the composition of co-orientations noted in \cref{R: cooriented composition} to define ``boundary co-orientations'':
 
 \begin{definition}\label{D: boundary co-orientation}
-	The {\bf standard co-orientation of a boundary immersion}
+	The \textbf{standard co-orientation of a boundary immersion}
 	$i_{\bd W}:\partial W \hookrightarrow W$ is the normal co-orientation associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
 		However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.}
 	orientation of $\nu_{\partial W \subset W}$.
 
-	If $g : W \to M$ is co-oriented, the {\bf induced co-orientation} or {\bf boundary co-orientation} of the composition $gi_{\partial W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g:W\to M$.
+	If $g : W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\partial W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g:W\to M$.
 	We write $\bd g:\bd W\to M$ to denote $gi_{\bd W}$ with its induced co-orientation.
 \end{definition}
 
