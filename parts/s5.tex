@@ -27,12 +27,12 @@ In this section we consider the covariant behavior of geometric chains and cocha
 
 
 
-If $r_W:W\to M$ is in  $PC_*^\Gamma(M)$ and $f:M\to N$ is a smooth map, then the composition $fr_W:W\to N$ is in $PC^\Gamma_*(N)$. Consistent with our notation of writing $W\in PC_*^\Gamma(M)$, we write the image in $PC_*^\Gamma(N)$ as $f(W)$. Similarly, if $f$ is proper and co-oriented we obtain a map  $PC^*_\Gamma(M)\to PC^*_\Gamma(N)$ that we also write as $W\to f(W)$.
+If $r_W:W\to M$ is in  $PC_*^\Gamma(M)$ and $f \colon M \to N$ is a smooth map, then the composition $fr_W:W\to N$ is in $PC^\Gamma_*(N)$. Consistent with our notation of writing $W\in PC_*^\Gamma(M)$, we write the image in $PC_*^\Gamma(N)$ as $f(W)$. Similarly, if $f$ is proper and co-oriented we obtain a map  $PC^*_\Gamma(M)\to PC^*_\Gamma(N)$ that we also write as $W\to f(W)$.
 Functoriality is clear, and both $\bd(f(W))$ and $f(\bd W)$ are represented by $fr_Wi_{\bd W}$. To obtain chain maps  $C_*^\Gamma(M) \to C_*^\Gamma(N)$   and $C^*_\Gamma(M) \to C^*_\Gamma(N)$
 (that we also write as $f$) it suffices to show that if $W\in Q(M)$ then $f(W)\in Q(N)$.  This is the content of the following lemma.
 
 \begin{lemma}\label{L: Q preservation}
-If  $r_W:W\to M$ represents an element of $Q_*(M)$ (or $Q^*(M)$) and $f:M\to N$ is any (co-oriented proper) smooth map, then $fr_W:W \to N$ is in $Q_*(N)$ (or $Q^*(N)$, co-orienting $fr_W$ with the composition co-orientation.).
+If  $r_W:W\to M$ represents an element of $Q_*(M)$ (or $Q^*(M)$) and $f \colon M \to N$ is any (co-oriented proper) smooth map, then $fr_W:W \to N$ is in $Q_*(N)$ (or $Q^*(N)$, co-orienting $fr_W$ with the composition co-orientation.).
 \end{lemma}
 \begin{proof}
 First consider $W\in Q_*(M)$. By assumption, $W$ is the disjoint union of a trivial manifold over $M$ given by $r_T:T\to M$ and a degenerate manifold over $M$ given by $r_D:D\to M$. If $\rho:T\to T$ is an orientation-reversing diffeomorphism of $W$ such that $r_T\rho=r_T$ then also $fr_T\rho=fr_T$, so $fr_T:T\to N$ is also trivial. Furthermore, if $r_D$ has small rank then certainly so does $fr_D$. Similarly, $\bd(fr_D)$ is a union of trivial and small rank manifolds over $M$, and so $fr_D:D\to M$ is degenerate.
@@ -42,12 +42,12 @@ The proof for $W\in Q^*(M)$ is the same using that the composition of proper map
 
 
 \begin{corollary}[Lipyanskiy's Theorem 4]
-Given a smooth map $f:M\to N$ of manifolds (possibly with corners), there is an induced chain map  $C_*^\Gamma(M) \to C_*^\Gamma(N)$ given by $\uW\to \underline{f(W)}$, and this construction gives a functor from the category of smooth manifolds and smooth maps to chain complexes over $\Z$.
+Given a smooth map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map  $C_*^\Gamma(M) \to C_*^\Gamma(N)$ given by $\uW\to \underline{f(W)}$, and this construction gives a functor from the category of smooth manifolds and smooth maps to chain complexes over $\Z$.
 \end{corollary}
 
 
 \begin{corollary}
-Given a smooth proper co-oriented map $f:M\to N$ of manifolds (possibly with corners), there is an induced chain map  $C^*_\Gamma(M) \to C^*_\Gamma(N)$ given by $\uW\to \underline{f(W)}$, and this construction gives a functor from the category of smooth manifolds and smooth maps to  cochain complexes over $\Z$.
+Given a smooth proper co-oriented map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map  $C^*_\Gamma(M) \to C^*_\Gamma(N)$ given by $\uW\to \underline{f(W)}$, and this construction gives a functor from the category of smooth manifolds and smooth maps to  cochain complexes over $\Z$.
 \end{corollary}
 
 
@@ -131,7 +131,7 @@ that $fr_W:W\to N$ and $gr_W:W\to N$ represent cohomologous cocycles.
 
 
 \begin{proposition}[Lipyanskiy's Theorem 5]\label{P: homology homotopy functor}
-Given a \textit{continuous} map $f:M\to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_*:H_*^\Gamma(M)\to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$. If $f$ is proper and co-oriented, it also induces $f_*:H^*_\Gamma(M)\to H^*_\Gamma(N)$ that depends only on the proper homotopy class and co-orientation of $f$.
+Given a \textit{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_*:H_*^\Gamma(M)\to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$. If $f$ is proper and co-oriented, it also induces $f_*:H^*_\Gamma(M)\to H^*_\Gamma(N)$ that depends only on the proper homotopy class and co-orientation of $f$.
 \end{proposition}
 \begin{proof}
 First consider the case of homology. Let $g$ be any smooth approximation to $f$. Then by the preceding proposition $g$ induces a chain map  $C_*^\Gamma(M) \to C_*^\Gamma(N)$ and hence a map $H_*^\Gamma(M) \to H_*^\Gamma(N)$. Let $h$ be any other smooth map homotopic to $f$ (and so also homotopic to $g$). The continuous homotopy from $g$ to $h$ can be smoothly approximated by a smooth homotopy $H:M\times I\to N$ from $g$ to $h$  \cite[Theorem III.2.5]{Kos93}. The cycles represented by $g(W)$ and $h(W)$ are homologous by \cref{C: homotopy}.
@@ -144,7 +144,7 @@ The cohomological case is the same by taking proper smooth approximations and co
 
 \subsubsection{Contravariant functoriality of geometric cohomology}\label{S: cohomology pullback}
 
-In this section we assign to a continuous map $f:M\to N$ of manifolds without boundary a map $H^*_\Gamma(N)\to H^*_\Gamma(M)$.
+In this section we assign to a continuous map $f \colon M \to N$ of manifolds without boundary a map $H^*_\Gamma(N)\to H^*_\Gamma(M)$.
 
 First suppose $W\in PC^*_\Gamma(N)$ is represented by a proper co-oriented map $r_W:W\to N$, and let
 $g \colon M \to N$ be a \textit{smooth} (not necessarily co-oriented or proper) map such that $g$ is transverse to $r_W$. Then we define $g^*(W)$ to be the pullback $r_W\times_N g:W\times_N M\to M$, co-oriented as described in \cref{D: pullback coorient}. Note that the pullback is proper by \cref{L: co-orientable pullback}. Also, the pullback has dimension $\dim(W)+\dim(M)-\dim(N)=\dim(M)-(\dim(N)-\dim(W))=\dim(M)-\codim_N(W)$ by \cite[Theorem 6.4]{Joy12} so that the cohomological index is preserved by the pullback construction.
@@ -166,15 +166,15 @@ The final statement is then a consequence of the definitions as in the proof of 
 \end{proof}
 
 
-The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemma we cannot define a chain map $g^*:C^*_\Gamma(N)\to C^*_\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$. Nonetheless, given any continuous $f:M\to N$ of manifolds without boundary we can define a map in geometric cohomology $f^*:H^*_\Gamma(N)\to H^*_\Gamma(M)$ as follows.
+The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemma we cannot define a chain map $g^*:C^*_\Gamma(N)\to C^*_\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$. Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^*:H^*_\Gamma(N)\to H^*_\Gamma(M)$ as follows.
 
 \begin{definition}
-Suppose $f:M\to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary and  $\uW\in H^*_\Gamma(N)$ is represented by $r_W:W\to N$. Let $g \colon M \to N$ be any smooth approximation of $f$ that is transverse to $r_W$ (which we know exists by \cref{T: basic trans}). Then we define $f^*(\uW)\in H^*_\Gamma(M)$ as the cohomology class represented by $r_W\times_N g:W\times_N M\to M$.
+Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary and  $\uW\in H^*_\Gamma(N)$ is represented by $r_W:W\to N$. Let $g \colon M \to N$ be any smooth approximation of $f$ that is transverse to $r_W$ (which we know exists by \cref{T: basic trans}). Then we define $f^*(\uW)\in H^*_\Gamma(M)$ as the cohomology class represented by $r_W\times_N g:W\times_N M\to M$.
 \end{definition}
 
 
 \begin{proposition}\label{P: cohomology pullback}
-Suppose $f:M\to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary. The map $f^*:H^k_\Gamma(N)\to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
+Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary. The map $f^*:H^k_\Gamma(N)\to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
 \end{proposition}
 \begin{proof}
 First, let $r_W:W\to N$ represent a cocycle, and suppose we have two maps $g_0, g_1:M\to N$ that are smooth, homotopic to $f$, and transverse to $r_W$.
@@ -188,12 +188,12 @@ Thus $f^*$ does not depend on our choices and depends on $f$ only through its ho
 \end{proof}
 
 \begin{remark}\label{R: homology transfer}
-Analogously, given $f:M\to N$, one could also define a contravariant pullback functor of homology groups $f^*: H_*^\Gamma(N)\to H_*^\Gamma(M)$ if $f$ is proper and $M$ and $N$ are both oriented (so that the pullback can be oriented). The following lemma shows that the pullback of a compact map by a proper map is compact. For the orientation, we observe that given an oriented map $r_V:V\to N$ that represents $\uV$ and a map $g \colon M \to N$ that is properly homotopic to $f$ and transverse to $r_V$,  the orientations of $V$ and $N$ induce a co-orientation on $r_V$ and so a co-orientation on the pullback $V\times_NM\to M$ by \cref{D: pullback coorient}. This in turn induces an orientation on $V\times_NM$ given the orientation of $M$.
+Analogously, given $f \colon M \to N$, one could also define a contravariant pullback functor of homology groups $f^*: H_*^\Gamma(N)\to H_*^\Gamma(M)$ if $f$ is proper and $M$ and $N$ are both oriented (so that the pullback can be oriented). The following lemma shows that the pullback of a compact map by a proper map is compact. For the orientation, we observe that given an oriented map $r_V:V\to N$ that represents $\uV$ and a map $g \colon M \to N$ that is properly homotopic to $f$ and transverse to $r_V$,  the orientations of $V$ and $N$ induce a co-orientation on $r_V$ and so a co-orientation on the pullback $V\times_NM\to M$ by \cref{D: pullback coorient}. This in turn induces an orientation on $V\times_NM$ given the orientation of $M$.
 \end{remark}
 
 
 \begin{lemma}\label{L: compact pullback}
-Suppose $f:M\to N$ is a proper map of spaces and $r_V:V\to N$ is a map with $V$ compact. Then $V\times_NM$ is compact.
+Suppose $f \colon M \to N$ is a proper map of spaces and $r_V:V\to N$ is a map with $V$ compact. Then $V\times_NM$ is compact.
 \end{lemma}
 \begin{proof}
 As $V$ is compact, so is $r_V(V)$, and as $f$ is proper, $f^{-1}(r_V(V))$ is compact. Now we observe that we must have $V\times_N M\subset V\times f^{-1}(r_V(V))\subset V\times M$. So $V\times_N M$ is compact.
