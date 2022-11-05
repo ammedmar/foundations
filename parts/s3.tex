@@ -130,7 +130,7 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 \medskip
 
 \noindent\textbf{Fiber products of immersions.}
-The special case of fiber products with $f \colon V \to M$ and $g:W\to M$ embeddings or, a bit more generally, immersions, is always of particular interest, especially for developing intuition.
+The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is always of particular interest, especially for developing intuition.
 In the case of embeddings, $V\times_MW$ is simply the intersection of $V$ and $W$ as submanifolds of $M$, and in the immersed case this is true locally, i.e.\ restricting attention to submanifolds of $V$ and $W$ on which $f$ and $g$ are embeddings.
 Let us try to understand the orientation of $V\times_MW$ in this setting.
 
@@ -223,7 +223,7 @@ This motivates the following.
 	Equivalently, a co-orientation is a choice of isomorphism between the associated orientation cover $\Or(TW)$ and the pullback of the associated orientation cover $\Or(TM)$.
 \end{definition}
 
-Thus, if $W$ is connected and $g:W\to M$ is co-orientable, there are exactly two co-orientations, which are \textbf{opposite} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
+Thus, if $W$ is connected and $g \colon W \to M$ is co-orientable, there are exactly two co-orientations, which are \textbf{opposite} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
 In particular, for connected $W$ a choice of co-orientation at a single point determines a co-orientation globally when $g$ is co-orientable (analogously to orientations).
 Also, just as most manifolds do not possess a preferred orientation, most maps $g: W \to M$ do not carry a natural choice of co-orientation.
 
@@ -252,21 +252,21 @@ of $g: W \to M$ implies that $W$ is orientable.
 Moreover, an orientation on $M$ along with a co-orientation of $g$ gives rise to an \textbf{induced orientation} of $W$.
 Explicitly, if $\beta_M$ denotes the global orientation of $M$, then we orient $W$ at each point by the $\beta_W$ such that $\omega_g=(\beta_W,\beta_M)$.
 Conversely, if $M$ and $W$ are both oriented, say by $\beta_M$ and $\beta_W$ respectively, we have the \textbf{induced co-orientation} given by $\omega_g=(\beta_W,\beta_M)$ at each point of $W$.
-On the other hand, it is not true that if we have an orientation of $W$ and a co-orientation of $g:W\to M$ then we obtain an orientation of $M$.
+On the other hand, it is not true that if we have an orientation of $W$ and a co-orientation of $g \colon W \to M$ then we obtain an orientation of $M$.
 For example, if $W$ is orientable, any constant map to $M$ is co-orientable, regardless of whether or not $M$ is orientable.
 
 More generally, recall that the fundamental group
 of a manifold acts on classes of local orientations as the deck transformations of the orientation cover.
 A map is co-orientable if a loop in $W$ acts non-trivially on a local orientation of $W$ if and only if
 its image in $M$ acts non-trivially.
-Explicitly, if $g:W\to M$ is co-orientable the fundamental group can change the local orientation pair
+Explicitly, if $g \colon W \to M$ is co-orientable the fundamental group can change the local orientation pair
 $(\beta_W, \beta_M)$ to $(-\beta_W, -\beta_M)$, but these pairs define equivalent co-orientations.
 Similarly, to compare local constructions at different points, it is useful to use paths.
 Suppose $\gamma:I\to W$ is a path with $\gamma(0)=x$ and $\gamma(1)=y$.
 We can choose a lift $\td \gamma$ of $\gamma$ to the complement of the $0$-section of $\Or(TW)$ such that $\td \gamma(0)$ is in the equivalence class of $\beta_{W,x}$.
 We then define $\gamma_*\beta_{W}$ to be the equivalence class of $\td \gamma(1)$.
 Likewise, we define $(g\gamma)_*\beta_M$ by a lift of $g\gamma$ to the complement of the zero section of $\Or(TM)$.
-Then $\gamma_*\beta_{W}$ and $(g\gamma)_*\beta_M$ depend on $\gamma$, but if $g:W\to M$ is co-orientable the pair $(\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ is independent of $\gamma$ as this data also determines a non-vanishing lift of $\gamma$ in $\Hom(\Or(TW),g^*\Or(TM))$, which is trivial if $g$ is co-orientable.
+Then $\gamma_*\beta_{W}$ and $(g\gamma)_*\beta_M$ depend on $\gamma$, but if $g \colon W \to M$ is co-orientable the pair $(\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ is independent of $\gamma$ as this data also determines a non-vanishing lift of $\gamma$ in $\Hom(\Or(TW),g^*\Or(TM))$, which is trivial if $g$ is co-orientable.
 In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M):=(\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$.
 
 \begin{example}
@@ -302,7 +302,7 @@ As mentioned, a key example is when $g$ is an immersion, which is co-orientable 
 	Hence we can consider $W$ to have a normal bundle even if $g$ is merely an immersion and not actually an embedding.
 	The normal bundle can be identified with $g^*(TM)/TW$ after identifying $TW$ with a subbundle of $g^*(TM)$ using the differential.
 	In any case, locally in the neighborhood of any point of $W$ one has the usual identification of the normal bundle with a tubular neighborhood of the image, which suffices for our purposes here.}.
-Specifically, if $g:W\to M$ is an immersion, letting $\nu W$ denote the normal bundle, we have $TW\oplus \nu W\cong g^*TM$.
+Specifically, if $g \colon W \to M$ is an immersion, letting $\nu W$ denote the normal bundle, we have $TW\oplus \nu W\cong g^*TM$.
 So, taking $w=\dim(W)$ and $m=\dim(M)$, a co-orientation is a nowhere-zero map from $\bigwedge^w TW$ to $\bigwedge^m g^*TM=\bigwedge^m (TW\oplus \nu W)\cong \bigwedge^w TW \otimes \bigwedge^{m-w}\nu W$.
 Such a nowhere-zero map exists if and only $\bigwedge^{m-w}\nu W$ is a trivial line bundle.
 
@@ -327,7 +327,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 	He assumed the normal bundles to have complex structures and so called these \textit{complex orientations}.}
 
 \begin{lemma}\label{L: Quillen}
-	A map $g:W\to M$ is co-orientable if and only if for some $N\in \Z_{\geq 0}$ it factors as the composition $W\into M\times \R^N \to M$ of an embedding and a projection such that the image of $W$ in $M\times \R^N$ has an orientable normal bundle.
+	A map $g \colon W \to M$ is co-orientable if and only if for some $N\in \Z_{\geq 0}$ it factors as the composition $W\into M\times \R^N \to M$ of an embedding and a projection such that the image of $W$ in $M\times \R^N$ has an orientable normal bundle.
 \end{lemma}
 
 \begin{proof}
@@ -347,7 +347,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 
 \begin{definition}\label{D: Quillen normal or}
 	If we orient $\R^N$ by its standard orientation $\beta_E:= dx_1\wedge\cdots\wedge dx_N$, then the projection $\pi:M\times \R^N\to M$ has a canonical co-orientation $(\beta_M\wedge \beta_E,\beta_M)$ that is well defined as $\R^N$ is contractible.
-	If $g:W\to M$ is co-oriented and $e:W\into M\times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W\wedge \beta_\nu)$ with $(\beta_M\wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
+	If $g \colon W \to M$ is co-oriented and $e:W\into M\times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W\wedge \beta_\nu)$ with $(\beta_M\wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
 	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W\wedge \beta_\nu=
 	\beta_M\wedge \beta_E$ up to positive scalar multiple.
 
@@ -371,7 +371,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 
 \subsubsection{Co-orientations of boundaries}
 
-Given a co-oriented map $g:W\to M$ where $W$ is a manifold with corners, we can use the normal co-orientation of $\bd W$ in $W$ together with the composition of co-orientations noted in \cref{R: cooriented composition} to define ``boundary co-orientations'':
+Given a co-oriented map $g \colon W \to M$ where $W$ is a manifold with corners, we can use the normal co-orientation of $\bd W$ in $W$ together with the composition of co-orientations noted in \cref{R: cooriented composition} to define ``boundary co-orientations'':
 
 \begin{definition}\label{D: boundary co-orientation}
 	The \textbf{standard co-orientation of a boundary immersion}
@@ -379,7 +379,7 @@ Given a co-oriented map $g:W\to M$ where $W$ is a manifold with corners, we can 
 		However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.}
 	orientation of $\nu_{\partial W \subset W}$.
 
-	If $g : W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\partial W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g:W\to M$.
+	If $g : W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\partial W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g \colon W \to M$.
 	We write $\bd g:\bd W\to M$ to denote $gi_{\bd W}$ with its induced co-orientation.
 \end{definition}
 
@@ -400,7 +400,7 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 \end{example}
 
 \begin{example}\label{E: manifold decomposition}
-	An important generalization of the preceding example occurs when we have smooth maps $g:W\to M$ and $\varphi:M\to \R$ with $0$ a regular value of $\varphi g$.
+	An important generalization of the preceding example occurs when we have smooth maps $g \colon W \to M$ and $\varphi:M\to \R$ with $0$ a regular value of $\varphi g$.
 	Consider the spaces $W^0=(\varphi g)^{-1}(0)$, $W^-=(\varphi g)^{-1}((-\infty,0])$, and $W^+=(\varphi g)^{-1}([0,\infty))$, which are manifolds with corners.
 	In fact, they are the fiber products of the maps $\varphi g:W\to \R$ and, respectively, the inclusions of $\{0\}$, $(-\infty, 0]$, and $[0,\infty)$ into $\R$.
 	The required transversality is guaranteed by $0$ being a regular value of $\varphi g$.
@@ -410,13 +410,13 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 	We also have the boundary co-orientations of the inclusions of $W^0$ into $W^{\pm}$.
 	Analogously to \cref{E: splitting example 1}, the co-orientation on $W^0\into W$ induced by $\varphi$ is the opposite of co-orientation of $W^0\into W$ as the (partial) boundary of $W^-$ and agrees with the co-orientation of $W^0\into W$ as the (partial) boundary of $W^+$.
 
-	Now suppose $g:W\to M$ is co-oriented with local representatives $(\beta_W,\beta_M)$.
+	Now suppose $g \colon W \to M$ is co-oriented with local representatives $(\beta_W,\beta_M)$.
 	By composing this co-orientation with the tautological co-orientations of $W^\pm$ in $W$ as in the preceding example, we can canonically co-orient $g|_{W^\pm}$ by $(\beta_W,\beta_M)$.
 	Similarly, by composing the co-orientation of $g$ with the $\phi$-induced co-orientation of $W^0\into W$ we obtain the \textbf{co-orientation of $g|_{W^0}:W^0\to M$ induced by $\varphi$}.
 	As above, the co-orientation of $g|_{W^0}:W^0\to M$ induced by $\varphi$ disagrees with the boundary co-orientation of $g|_{W^0}:W^0\to M$ obtained by treating $W^0$ as part of the boundary of $W^-$, while it agrees with the co-orientation obtained by treating $W^0$ as part of the boundary of $W^+$.
 
 	In the special case of the identity map $\id:M\to M$ with the tautological co-orientation, we obtain submanifolds $M^0$ and $M^{\pm}$ of $M$ with co-orientations of their embeddings induced as above.
-	It is worth observing that then if we also have $g:W\to M$ then $W^0=M^0\times_M W$ and $W^{\pm}=M^{\pm}\times_M W$.
+	It is worth observing that then if we also have $g \colon W \to M$ then $W^0=M^0\times_M W$ and $W^{\pm}=M^{\pm}\times_M W$.
 	This statement holds purely topologically.
 	To ensure manifolds with corners, we observe that $\varphi g$ is transverse to $0$ if and only if $g$ is transverse to $M^0$.
 	Our co-orientation computations here for $W^0$ and $W^\pm$ will later be seen to be consistent with a co-orientation we define for fiber products of co-oriented maps.
@@ -424,7 +424,7 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 \end{example}
 
 \begin{comment}
-	\red{TO DO SOMEWHERE: It will be convenient to show that $g:W^0\to M$ with this co-orientation is the pullback of $M^0\into M$ (co-oriented as defined here) and $g:W\to M$ and similarly for $g:W^\pm\to M$.
+	\red{TO DO SOMEWHERE: It will be convenient to show that $g:W^0\to M$ with this co-orientation is the pullback of $M^0\into M$ (co-oriented as defined here) and $g \colon W \to M$ and similarly for $g:W^\pm\to M$.
 		Also need to rewrite things in other places as $M^0$, $M^\pm$, etc instead of always writing $\varphi^{-1}((\infty,0])$ etc.
 		Also need to show that $\bd W^0=-(\bd W)^0$, which should follow from the Leibniz rule and the first thing the previous sentence.}
 \end{comment}
@@ -485,11 +485,11 @@ The situation for co-orientations is analogous.
 
 Although we will not need it, we note that by employing appropriate smoothing near the boundaries in order to accomplish transitivity, co-oriented homotopy can be shown to be an equivalence relation on maps $W\to M$.
 
-In our most common use of homotopies, we begin with a co-oriented map $g:W\to M$ and want to construct a homotopic co-oriented map.
+In our most common use of homotopies, we begin with a co-oriented map $g \colon W \to M$ and want to construct a homotopic co-oriented map.
 For this the following lemma is useful.
 
 \begin{lemma}\label{L: co-orientable homotopies}
-	Suppose $g:W\to M$ is co-orientable and that $G:W\times I\to M$ is a homotopy with $g=G(-,t_0)$ for some $t_0\in I$.
+	Suppose $g \colon W \to M$ is co-orientable and that $G:W\times I\to M$ is a homotopy with $g=G(-,t_0)$ for some $t_0\in I$.
 	Then $G$ is co-orientable.
 	Conversely, if $G:W\times I\to M$ is co-orientable, then so is $g=G(-,t_0):W\to M$ for any $t_0$.
 \end{lemma}
@@ -522,7 +522,7 @@ For this the following lemma is useful.
 
 \begin{comment}
 	If $\beta_{W,x}$ is a local orientation of $W$ at a point $x\in W$ and $\gamma$ is a path in $W$ with $\gamma(0)=x$, then $\gamma$ determines a local orientation $\gamma_*\beta_{W,x}$ of $W$ at $\gamma(1)$ via any lift of $\gamma$ to the complement of the zero section of $\Or(TW)$.
-	Similarly, given a map $g:W\to M$ and a local orientation $\beta_{M,g(x)}$ of $M$ at $g(x)$, the path $g\gamma$ determines a local orientation $(g\gamma)_*\beta_{M,g(x)}$ at $g\gamma(1)$.
+	Similarly, given a map $g \colon W \to M$ and a local orientation $\beta_{M,g(x)}$ of $M$ at $g(x)$, the path $g\gamma$ determines a local orientation $(g\gamma)_*\beta_{M,g(x)}$ at $g\gamma(1)$.
 	Of course $\gamma_*\beta_{W,x}$ and $(g\gamma)_*\beta_{M,g(x)}$ depend on $\gamma$, but the condition that $g$ be co-orientable is precisely the condition that the pair $(\gamma_*\beta_{W,x}, (g\gamma)_*\beta_{M,g(x)})$ be independent of $\gamma$.
 
 	We use an analogous construction when we have a homotopy $G: W\times I\to M$ and a co-orientation of $g_0=G(-,0):W\to M$ and wish to define a co-orientation of $g_1=G(-,1):W\to M$.
@@ -530,7 +530,7 @@ For this the following lemma is useful.
 	Any $g_t=G(-,t)$ can be co-oriented analogously.
 
 	\begin{definition}
-		If $g:W\to M$ is co-oriented and $G:W\times I\to M$ is a homotopy with $G|_{W\times \{t_0\}}=g$, we define the \textbf{homotopy co-orientation on $G:W\times I \to M$ induced by $g$} so that if $(\beta_W,\beta_M)$ is a local co-orientation of $g$ at $x\in W$ then $(\beta_W\wedge \beta_{e_1},\beta_M)$ co-orients $G$ at $(x,t_0)$, where $\beta_{e_1}$ is the local orientation of $I$ corresponding to the standard positively-oriented tangent vector.
+		If $g \colon W \to M$ is co-oriented and $G:W\times I\to M$ is a homotopy with $G|_{W\times \{t_0\}}=g$, we define the \textbf{homotopy co-orientation on $G:W\times I \to M$ induced by $g$} so that if $(\beta_W,\beta_M)$ is a local co-orientation of $g$ at $x\in W$ then $(\beta_W\wedge \beta_{e_1},\beta_M)$ co-orients $G$ at $(x,t_0)$, where $\beta_{e_1}$ is the local orientation of $I$ corresponding to the standard positively-oriented tangent vector.
 		As $G$ is co-orientable, this determines a co-orientation for the whole map $G$.
 	\end{definition}
 
@@ -589,7 +589,7 @@ For this the following lemma is useful.
 \subsection{Co-orientations of pullbacks and fiber products}\label{S: co-orient pullbacks}
 
 In this section we define a convention for co-orientations of pullbacks and fiber products.
-More specifically, if $f \colon V \to M$ and $g:W\to M$ are transverse smooth maps from manifolds with corners to a manifold without boundary and $f$ is co-oriented, we define a co-orientation of the pullback $f^*:V\times_MW\to W$.
+More specifically, if $f \colon V \to M$ and $g \colon W \to M$ are transverse smooth maps from manifolds with corners to a manifold without boundary and $f$ is co-oriented, we define a co-orientation of the pullback $f^*:V\times_MW\to W$.
 This does not require $g$ to be co-oriented, but if it is, we can compose to also get a co-orientation of the fiber product $V\times_MW\to M$.
 Ultimately this will allow us to define certain products of geometric cochains.
 
@@ -717,7 +717,7 @@ The following argument about co-orientability will provide a roadmap to defining
 We also take the opportunity to observe that pullbacks of proper maps are proper.
 
 \begin{lemma}\label{L: co-orientable pullback}
-	Suppose $f \colon V \to M$ and $g:W\to M$ are transverse maps of manifolds with corners to a manifold without boundary.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps of manifolds with corners to a manifold without boundary.
 	Then:
 	\begin{enumerate}
 		\item If $f$ is co-orienteable, the pullback $f^*:P=V\times_MW\to W$ is co-orientable.
@@ -780,11 +780,11 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 \end{remark}
 
 \begin{corollary}
-	If $f \colon V \to M$ and $g:W\to M$ are transverse and co-orientable, their fiber product $V\times_MW \to M$ is also co-orientable.
+	If $f \colon V \to M$ and $g \colon W \to M$ are transverse and co-orientable, their fiber product $V\times_MW \to M$ is also co-orientable.
 \end{corollary}
 
 \begin{proof}
-	By the preceding lemma, the pullback $V\times_MW\to W$ is co-orientable, and the map $g:W\to M$ is co-orientable by assumption.
+	By the preceding lemma, the pullback $V\times_MW\to W$ is co-orientable, and the map $g \colon W \to M$ is co-orientable by assumption.
 	Now choose co-orientations and compose to get a co-orientation of $P\to M$.
 \end{proof}
 
@@ -794,7 +794,7 @@ The construction in the proof of \cref{L: co-orientable pullback} provides a roa
 For the following definition, refer again to Diagram \eqref{D: pullback}.
 
 \begin{definition}\label{D: pullback coorient}
-	Suppose $f \colon V \to M$ and $g:W\to M$ are transverse with $f$ co-oriented and the normal bundle $\nu V$ of $e(V)\subset M\times \R^N$ given its Quillen normal orientation as defined in \cref{D: Quillen normal or}.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ co-oriented and the normal bundle $\nu V$ of $e(V)\subset M\times \R^N$ given its Quillen normal orientation as defined in \cref{D: Quillen normal or}.
 	Then the pullback $P=V\times_MW=(g\times \id_{\R^N})^{-1}(e(V))\subset W\times \R^N$ has an oriented normal bundle that is the pullback of $\nu V$, which, by abuse of notation, we also label $\nu V$.
 	Let $\beta_P$ and $\beta_W$ be local orientations of $P$ and $W$, and let $\beta_E$ be the standard orientation of $\R^N$.
 	Define the \textbf{pullback co-orientation} on $P\to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P\wedge \nu V)$ with the canonical co-orientation $(\beta_W\wedge \beta_E,\beta_W)$.
@@ -803,7 +803,7 @@ For the following definition, refer again to Diagram \eqref{D: pullback}.
 	Following \cref{D: top pullback}, we sometimes write $f^*:P\to W$.
 	We also sometimes write $P=g^*V$ to emphasize that $P$ is the pullback of $V$ by $g$ to a manifold over $W$.
 
-	If $g$ is co-oriented, define the \textbf{fiber product co-orientation} on $P\to M$ as the composition of the pullback co-orientation with the co-orientation of $g:W\to M$.
+	If $g$ is co-oriented, define the \textbf{fiber product co-orientation} on $P\to M$ as the composition of the pullback co-orientation with the co-orientation of $g \colon W \to M$.
 \end{definition}
 
 In the definition, note that the Quillen orientation of $\nu V$ is determined by the co-orientation of $f$ and the orientation $\beta_E$ is taken to be canonically fixed across all instances.
@@ -817,7 +817,7 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 
 \begin{remark}\label{R: co-or restriction or switch}
 	It follows from the definition that reversing the co-orientation of $f \colon V \to M$ reverses the co-orientation of $f^*:V\times_MW\to W$.
-	Furthermore, if $g:W\to M$ is co-oriented, then reversing the co-orientation of either $f$ or $g$ reverses the co-orientation of the fiber product $f\times_M g:V\times_MW\to M$.
+	Furthermore, if $g \colon W \to M$ is co-oriented, then reversing the co-orientation of either $f$ or $g$ reverses the co-orientation of the fiber product $f\times_M g:V\times_MW\to M$.
 
 	It is also clear that the definition is consistent under restrictions to open sets.
 	In other words if $x\in V$, $y\in W$ with $f(x)=g(y)$, then replacing $V$, $W$, and $M$ with neighborhoods of $x$, $y$, and $f(x)=g(y)$ yields a co-orientation of the restriction of $f^*$ to a neighborhood of $(x,y)\in V\times_MW$ that is consistent with the co-orientation of all of $f^*$, at least so long as we use the same $N$ and a restriction of $e$, though we will now show independence of these choices as well.
@@ -887,7 +887,7 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 	Suppose $f \colon V \to M$ is co-oriented.
 	Then the pullback of $f$ by the identity $\id_M:M\to M$ is (diffeomorphic to) $f \colon V \to M$ with the same co-orientation.
 
-	Suppose further that $W$ and $M$ are manifolds without boundary, that $g:W\to M$ is transverse to $f$ and that $h:X\to W$ is transverse to $V\times_M W\to W$ (or, equivalently by \cref{L: transverse to pullback}, that $gh$ is transverse to $f$).
+	Suppose further that $W$ and $M$ are manifolds without boundary, that $g \colon W \to M$ is transverse to $f$ and that $h:X\to W$ is transverse to $V\times_M W\to W$ (or, equivalently by \cref{L: transverse to pullback}, that $gh$ is transverse to $f$).
 	Then $(gh)^*V\cong h^*g^*V$ as co-oriented manifolds over $M$.
 \end{proposition}
 
@@ -964,7 +964,7 @@ Note that in the proof we work with a single arbitrary but fixed $e:V\into M\tim
 Consequently, this result completes the proof of \cref{L: pullback co well defined}.
 
 \begin{proposition}[Leibniz rule]\label{leibniz}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse maps from manifolds with corners to a manifold without boundary, and suppose $f$ co-oriented.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary, and suppose $f$ co-oriented.
 	Let $V \times_M W\to W$ be the co-oriented pullback.
 	Then
 	$$\partial (V \times_M W) = (\partial V) \times_M W \bigsqcup (-1)^{\dim(M)-\dim(V)} V \times_M (\partial W),$$
@@ -976,7 +976,7 @@ The general case requires more care.
 
 \begin{proof}
 	The statement at the level of underlying manifolds with corners is \cite[Proposition 6.7]{Joy12}, so we focus on co-orientations.
-	The second statement follows from the first by composing each map with the co-oriented map $g:W\to M$ and taking the composite co-orientations.
+	The second statement follows from the first by composing each map with the co-oriented map $g \colon W \to M$ and taking the composite co-orientations.
 	We will write $\bd P$ when considering the boundary co-orientation of $P=V\times_M W$ and $(\bd V)\times_M W$ or $V\times_M (\bd W)$ when considering these pullback co-orientations.
 	In the following arguments, it suffices to consider points in the interiors of $\bd V$ or $\bd W$ as knowing a co-orientation at one point of each component determines it globally; in other words, we can avoid corners.
 
@@ -1018,7 +1018,7 @@ We do so only for proper maps, but this will suffice for the purposes of geometr
 The reader should recall \cref{R: precise commutativity} for a precise explanation of the statement of the proposition.
 
 \begin{proposition}\label{P: graded comm}
-	Suppose $f \colon V \to M$ and $g:W\to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
 	Then as co-oriented fiber products over $M$ we have $\omega_{g \times_M f} = (-1)^{(m-v)(m-w)} \omega_{f \times_M g}$, or, using Notation \ref{R: precise commutativity},
 	$$V\times_MW = (-1)^{(m-v)(m-w)} W\times_M V.$$
 \end{proposition}
@@ -1029,8 +1029,8 @@ Before proving the proposition, we put it to use in the following example.
 	In \cref{E: V embedded}, we considered pullback co-orientations $V\times_M W\to W$ when $V\into M$ was embedded.
 	In this example, we discuss the case where $W$ is embedded.
 
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse maps from manifolds with corners to a manifold without boundary.
-	Suppose $f$ is co-oriented and $g:W\to M$ is an embedding.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary.
+	Suppose $f$ is co-oriented and $g \colon W \to M$ is an embedding.
 	Let $(x,y)\in V\times_MW$.
 	Even though $g$ might not be co-oriented, let us choose a contractible neighborhood $U$ of $y$ in $W$ and an arbitrary co-orientation $(\beta_U,\beta_M)$ on the restriction of $g$ to $U$.
 	For the remainder of the argument, we fix this local orientation $\beta_M$ at $f(x)\in M$, and we choose $\beta_V$ at $x$ so that $(\beta_V,\beta_M)$ is the co-orientation of $V$ at $x$.
@@ -1090,7 +1090,7 @@ By \cref{R: precise commutativity} we can also generally identify $V\times_M W$ 
 	The pullback to $P$ is all of $W\times \R^N$, and if we also choose $\beta_W$ at $y$ so that $\omega_g=(\beta_W,\beta_M)$, then by \cref{D: pullback coorient} the fiber product co-orientation for $f\times_Mg$ is $(\beta_P,\beta_M)$ if and only if $\beta_P=\beta_W\wedge \beta_E$.
 
 	Now consider instead $W\times_MV$, constructed using the same neighborhoods.
-	In this case we take $e=g:W\to M\times \R^0$.
+	In this case we take $e=g \colon W \to M\times \R^0$.
 	The map $f$ is still our projection $M\times \R^N\to M$, and so the pullback is $f^{-1}(W)=W\times \R^N$.
 	The normal bundles are $\nu_W$.
 	We continue to assume coordinates so that $f$ is co-oriented by $(\beta_M\wedge \beta_E, \beta_M)$.
@@ -1137,7 +1137,7 @@ By \cref{R: precise commutativity} we can also generally identify $V\times_M W$ 
 We now show that for arbitrary transverse intersecting $f$ and $g$ there are always homotopies that maintain these properties while taking $f$ and $g$ each to maps of full rank at the intersection point.
 
 \begin{lemma}\label{L: make full}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse proper maps from manifolds with corners to a manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse proper maps from manifolds with corners to a manifold without boundary.
 	Suppose $x\in V$ and $y\in W$ such that $f(x)=g(y)$.
 	Then there is a smooth homotopy $F:V\times I\to M$ such that $F(-,0)=f$, $F(x,t)=f(x)$ for all $t\in I$, $F(-,t)$ is transverse to $g$ for all $t\in I$, and $DF_{(x,1)}$ has maximal rank at $x$.
 \end{lemma}
@@ -1193,7 +1193,7 @@ We now show that for arbitrary transverse intersecting $f$ and $g$ there are alw
 
 \begin{comment}
 	\begin{corollary}
-		Let $f \colon V \to M$ and $g:W\to M$ be transverse proper maps from manifolds with corners to a manifold without boundary.
+		Let $f \colon V \to M$ and $g \colon W \to M$ be transverse proper maps from manifolds with corners to a manifold without boundary.
 		Suppose $x\in V$ and $y\in W$ such that $f(x)=g(y)$.
 		Then there are smooth homotopies $F:V\times I\to M$ and $G:W\times I\to M$ such that $F(-,0)=f$, $G(-,0)=g$, $F(x,t)=f(x)=g(y)=G(y,t)$ for all $t\in I$, $DF(-,1)$ and $DG(0,1)$ have maximal rank at $x$ and $y$ respectively, and $F(-,t)$ is transverse to $G(-,t)$ for all $t\in I$.
 	\end{corollary}
@@ -1209,7 +1209,7 @@ They will be useful when working with the creasing construction for geometric co
 
 \begin{proposition}\label{P: codim 0 pullback}
 	Let $V$ be an embedded codimension $0$ submanifold with corners in the manifold without boundary $M$, and let $f \colon V \to M$ be the embedding, co-oriented by $(\beta_V,f_*\beta_V)$ at each point of $V$.
-	Let $W$ be a manifold with corners and suppose $g:W\to M$ is transverse to $f$.
+	Let $W$ be a manifold with corners and suppose $g \colon W \to M$ is transverse to $f$.
 	Then the co-oriented pullback $f^*:V\times_MW\to W$ is the inclusion of the codimension $0$ manifold with corners $g^{-1}(V)\into W$, co-oriented by the normal co-orientation of the immersion, which in this case is $(\beta_P,\beta_P)$, identifying the tangent spaces of $V\times_MW$ and $W$.
 	Consequently, if $g$ is co-oriented the co-oriented fiber product $V\times_MW\to M$ is just the restriction of the co-oriented map $g$ to the embedded codimension $0$ submanifold with corners $g^{-1}(V)$.
 \end{proposition}
@@ -1232,7 +1232,7 @@ They will be useful when working with the creasing construction for geometric co
 \begin{example}
 	Let $\varphi:M\to \R$ be a smooth function from a manifold without boundary to $\R$, and let $M^+=\varphi^{-1}([0,\infty))=[0,\infty)\times_\R M$, $M^-=\varphi^{-1}((-\infty,0])=(-\infty,0]\times_\R M$, and $M^0=\varphi^{-1}(0)=0\times_\R M$.
 	Then $M^\pm$ are embedded codimension $0$ manifolds with corners in $M$ and $\bd M^\pm=M^0$.
-	Suppose the embeddings $M^\pm\into M$ are given the tautological co-orientations of \cref{D: tautological co-orientation}, and let $g:W\to M$ be transverse to $M^\pm$, which in this case is equivalent to being transverse to $M^0$.
+	Suppose the embeddings $M^\pm\into M$ are given the tautological co-orientations of \cref{D: tautological co-orientation}, and let $g \colon W \to M$ be transverse to $M^\pm$, which in this case is equivalent to being transverse to $M^0$.
 	Then let $W^\pm:=g^{-1}(M^\pm)=M^\pm\times_MW$, and the pullback co-orientations of $W^\pm\into W$ given by \cref{P: codim 0 pullback} are again just the tautological co-orientations of the codimension $0$ embeddings.
 	The compositions $W^\pm\into W\to M$ are then the fiber products, and the co-orientations of \cref{P: codim 0 pullback} agree with those described in \cref{E: manifold decomposition}.
 \end{example}
@@ -1240,7 +1240,7 @@ They will be useful when working with the creasing construction for geometric co
 \begin{proposition}\label{P: codim 1 co-orient}
 	Suppose $V\subset M$ is a codimension $1$ submanifold with corners with oriented normal bundle $\nu$ in the manifold without boundary $M$.
 	Suppose the embedding $f:V\into M$ is co-oriented by $(\beta_V,\beta_V\wedge \beta_\nu)$.
-	Let $W$ be a manifold without corners and suppose $g:W\to M$ is transverse to $f$ so that $g^{-1}(V)=W^0$ is a codimension $1$ submanifold with corners with oriented pullback normal vector bundle $\nu_0$.
+	Let $W$ be a manifold without corners and suppose $g \colon W \to M$ is transverse to $f$ so that $g^{-1}(V)=W^0$ is a codimension $1$ submanifold with corners with oriented pullback normal vector bundle $\nu_0$.
 	Then the co-oriented pullback $f^*:P=V\times_M W\to W$ is the embedding $W^0\into W$, co-oriented by $(\beta_P,\beta_P\wedge \beta_{\nu_0})$.
 \end{proposition}
 
@@ -1305,7 +1305,7 @@ By \cref{P: oriented fiber product basic properties}, this convention is consist
 We observe the following interplay between fibered and exterior products of maps of oriented manifolds more generally.
 
 \begin{proposition}\label{P: oriented interchange}
-	Suppose $f \colon V \to M$ and $g:W\to M$ are transverse maps of oriented manifolds with corners to an oriented manifold without boundary and similarly for $h:X\to N$ and $k:Y\to N$.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps of oriented manifolds with corners to an oriented manifold without boundary and similarly for $h:X\to N$ and $k:Y\to N$.
 	Then
 
 	$$(V\times X)\times_{M\times N} (W\times Y)= (-1)^{(m-w)(n-y)}(V\times_MW)\times (X\times_NY)$$
@@ -1590,7 +1590,7 @@ These relationships correspond to those in singular cohomology between the exter
 This will also be useful for proving some properties of the co-oriented fiber product that we have deferred so far.
 
 \begin{proposition}\label{P: cross to cup}
-	Suppose $f \colon V \to M$ and $g:W\to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
 	Let $\diag:M\to M\times M$ be the diagonal map $\diag(x)=(x,x)$.
 	Then $f\times g$ is transverse to $\diag$, and the pullback of $V\times W\to M\times M$ by $\diag$ is the co-oriented fiber product $V\times_M W\to M$, i.e.\ $$V\times_MW=\diag^*(V\times W).$$
 \end{proposition}
@@ -1635,7 +1635,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 \end{proof}
 
 \begin{corollary}\label{C: fiber natural pullback}
-	Suppose $f \colon V \to M$ and $g:W\to M$ are transverse co-oriented maps of manifolds with corners to a manifold without boundary, that $N$ is a manifold with corners, and that $h:N\to M$ is transverse to $f$, $g$, and $f\times_M g$.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps of manifolds with corners to a manifold without boundary, that $N$ is a manifold with corners, and that $h:N\to M$ is transverse to $f$, $g$, and $f\times_M g$.
 	Then
 	$$h^*(V\times_M W)=h^*V \times_N h^*W$$
 	as manifolds with co-oriented maps to $N$.
@@ -1656,7 +1656,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 \end{proof}
 
 \begin{corollary}[Associativity of co-oriented fiber products]\label{C: fiber assoc}
-	Suppose $f \colon V \to M$, $g:W\to M$, and $h:X\to M$ are co-oriented maps from manifolds with corners to a manifold without boundary such that the following pairs are transverse (see \cref{R: multiproducts}): $(V,W)$, $(W,X)$, $(V\times_MW,X)$, and $(V,W\times_M X)$.
+	Suppose $f \colon V \to M$, $g \colon W \to M$, and $h:X\to M$ are co-oriented maps from manifolds with corners to a manifold without boundary such that the following pairs are transverse (see \cref{R: multiproducts}): $(V,W)$, $(W,X)$, $(V\times_MW,X)$, and $(V,W\times_M X)$.
 	Then $$(V\times_MW)\times_MX=V\times_M(W\times_MX)$$ as co-oriented fiber products mapping to $M$.
 \end{corollary}
 \begin{proof}
@@ -1674,7 +1674,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 \end{proof}
 
 \begin{corollary}\label{C: criss cross}
-	Suppose $f \colon V \to M$ and $g:W\to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary and similarly for $h:X\to N$ and $k:Y\to N$.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary and similarly for $h:X\to N$ and $k:Y\to N$.
 	Then $$(V\times X)\times_{M\times N} (W\times Y)=(-1)^{(m-w)(n-x)} (V\times_M W)\times (X\times_N Y) $$
 	as co-oriented fiber products over $M\times N$.
 	\red{Add a version for pullbacks (as opposed to fiber products)? Might have some extra signs to figure out.
@@ -1725,7 +1725,7 @@ It will be used in \cref{S: intersection map} to demonstrate that our intersecti
 This map is a critical component in relating geometric cohomology to other cohomology theories and is also central to the main result about cup products in \cite{FMS-flows}.
 
 \begin{proposition}\label{P: Leibniz cap}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse maps of manifolds with corners to a manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps of manifolds with corners to a manifold without boundary.
 	Suppose $f$ is co-oriented and $W$ is oriented.
 	Then\footnote{Note that the signs here agree with those for the boundary of a chain-level cap product in Spanier \cite[Section 5.6.15]{Span81} and Munkres \cite[Section 66]{Mun84}.} $$\bd(V\times_MW)=\left[(-1)^{\dim(V\times_M W)} (\bd V)\times_M W\right] \bigsqcup V\times_M\bd W$$
 	as oriented manifolds, giving $V\times_MW$, $(\bd V)\times_M W$, and $V\times_M\bd W$ each their cap orientations.
@@ -1765,7 +1765,7 @@ Next we describe the cap orientations when $V\to M$ and $W \to M$ are embeddings
 As we've observed in the cases where either both maps are oriented or both maps are co-oriented, this is often an instructive and important example.
 
 \begin{proposition}\label{P: cap of immersions}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse embeddings from manifolds with corners to a manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse embeddings from manifolds with corners to a manifold without boundary.
 	Suppose $f$ is co-oriented and $W$ is oriented.
 	Then $P=V\times_M W$ is just the intersection of $V$ and $W$ in $M$.
 	If $\beta_W$ is the orientation of $W$ and $\beta_{\nu V}$ is the Quillen orientation of the normal bundle to $V$ in $M$, which at points of $P$ we can identify\footnote{See \cref{L: normal pullback}.} with the normal bundle to $P$ in $W$, then the cap orientation $\beta_P$ of $P$ satisfies $\beta_P\wedge \beta_{\nu V}=\beta_W$.
@@ -1781,7 +1781,7 @@ As we've observed in the cases where either both maps are oriented or both maps 
 The following corollary is particularly important and follows immediately from \cref{P: cap of immersions}.
 
 \begin{corollary}\label{C: complementary cap}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse embeddings from manifolds with corners to a manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse embeddings from manifolds with corners to a manifold without boundary.
 	Suppose $f$ is co-oriented, $W$ is oriented, and $\dim(V)+\dim(W)=\dim(M)$.
 	Then $V\times_M W$ is the union of intersection points of $V$ and $W$.
 	Such a point $x\in V\cap W$ is positively oriented if and only if the Quillen orientation of the normal bundle $\nu V$ of $V$ at $x$ agrees with the orientation of $W$ at $x$, identifying the fiber of $\nu V$ at $x$ with $T_xW$.
@@ -1792,7 +1792,7 @@ The next two propositions will eventually correspond to the unital identities fo
 The analogues for singular chains and cochains are the cap product with the cochain $1$ and the cap product with a chain representing the fundamental class, though in this case our underlying spaces do not need to be compact.
 
 \begin{proposition}\label{P: cap with 1}
-	Let $g:W\to M$ be a map from an oriented manifold with corners to a manifold without boundary, and consider $M\to M$ as the identity with the tautological co-orientation.
+	Let $g \colon W \to M$ be a map from an oriented manifold with corners to a manifold without boundary, and consider $M\to M$ as the identity with the tautological co-orientation.
 	Then $M\times_M W=W$ as oriented manifolds.
 \end{proposition}
 \begin{proof}
@@ -1845,7 +1845,7 @@ The next property relates products of pullbacks with pullbacks of products.
 The following technical lemma will be used to prove \cref{P: OC mixed associativity}, which will eventually become the associativity relation among cup and cap products, i.e.\ $(a\cup b)\cap x=a \cap (b\cap x)$.
 
 \begin{lemma}\label{L: same induced}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse maps from manifolds with corners to a manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary.
 	Suppose that $f$ is co-oriented and that $W$ and $M$ are oriented, with respective (global) orientations $\beta_W$ and $\beta_M$.
 	Suppose we co-orient $g$ by $(\beta_W,\beta_M)$.
 	Then the cap orientation of $V\times_MW$ (i.e.\ that induced from the the pullback co-orientation of $V\times_MW\to W$ and the orientation of $W$) is the same as the orientation induced on $V\times_MW$ by the fiber product co-orientation of $V\times_MW\to M$ and the orientation of $M$ .
@@ -1857,7 +1857,7 @@ The following technical lemma will be used to prove \cref{P: OC mixed associativ
 \end{proof}
 
 \begin{proposition}[Mixed associativity]\label{P: OC mixed associativity}
-	Let $f \colon V \to M$ and $g:W\to M$ be co-oriented maps from manifolds with corners to a manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be co-oriented maps from manifolds with corners to a manifold without boundary.
 	Let $h:Z\to M$ be a map with $Z$ oriented.
 	Then, assuming sufficient transversality for all terms to be defined (see \cref{R: multiproducts}),
 
@@ -1889,18 +1889,18 @@ The following property will eventually manifest itself in geometric (co)homology
 	Let $f \colon V \to M$ and $h:N\to M$ be transverse maps with $h$ co-oriented, $V$ a manifold with corners and $M$ and $N$ manifolds without boundary.
 	Furthermore, let $g:W\to N$ be a map from an oriented manifold with corners that is transverse to the co-oriented pullback $V\times_MN\to N$.
 	Then the cap orientation induced on $(V\times_MN)\times_N W$ by pulling back the co-oriented map $V\times_MN\to N$ over $W\to N$
-	is the same as the cap orientation obtained by pulling back $V\to M$ by the composite $hg:W\to M$.
+	is the same as the cap orientation obtained by pulling back $V\to M$ by the composite $hg \colon W \to M$.
 	In other words, $(h^*V)\times_N W=V\times_M W$ as oriented manifolds.
 \end{proposition}
 \begin{proof}
-	Note that $V$ is transverse to $hg:W\to M$ by \cref{L: transverse to pullback}, so both expressions are defined.
+	Note that $V$ is transverse to $hg \colon W \to M$ by \cref{L: transverse to pullback}, so both expressions are defined.
 	It follows directly from \cref{P: pullback functoriality} that the two pullback co-orientations we have described for $(V\times_MN)\times_N W\to W$ agree.
 	Therefore, the induced orientations on $(V\times_MN)\times_N W$ agree.
 \end{proof}
 
 \subsubsection{Comparing the oriented and co-oriented fiber products}
 
-Suppose $f \colon V \to M$ and $g:W\to M$ are two transverse co-oriented maps from manifolds with corners to a manifold without boundary.
+Suppose $f \colon V \to M$ and $g \colon W \to M$ are two transverse co-oriented maps from manifolds with corners to a manifold without boundary.
 Further, suppose $M$ oriented.
 Then we know there is a bijection between co-orientations of $f$ and orientations of $V$: an orientation of $V$ induces a co-orientation of $f$ and vice versa.
 Of course the same is true of $W$ and $g$.
@@ -1922,7 +1922,7 @@ co-oriented will be the Poincar\'e duality isomorphism.
 So this proposition will ultimately demonstrate that the intersection product is Poincar\'e dual to the cup product, up to a sign; see \cref{S: PD}.
 
 \begin{proposition}\label{P: compare cup and intersection orientations}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary or, equivalently, suppose $V$, $W$, and $M$ all oriented.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary or, equivalently, suppose $V$, $W$, and $M$ all oriented.
 	Then $$V\times_M^oW=(-1)^{(m-v)(m-w)} V\times_M^cW$$ as oriented manifolds with corners.
 \end{proposition}
 
@@ -1994,7 +1994,7 @@ Now we show how to replace a general co-oriented fiber product with a co-oriente
 In our remaining constructions in this section we take all introduced Euclidean spaces to be even-dimensional to simplify the signs.
 
 \begin{lemma}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary.
 	Let $V\xhookrightarrow{e}M\times \R^{2a}\to M$ be a Quillen co-orientation for $f$.
 
 	Then $V\times_MW$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically orientated diffeomorphic to $V\times_{M\times \R^{2a}}(W\times \R^{2a})$ (with its orientation induced by the fiber product co-orientation and the orientation of $M\times \R^{2a}$).
@@ -2010,7 +2010,7 @@ In our remaining constructions in this section we take all introduced Euclidean 
 \end{proof}
 
 \begin{corollary}\label{C: co-oriented full transition to embedded}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary.
 	Let $V\xhookrightarrow{r} M\times \R^{2a}\to M$ and $W\xhookrightarrow{s} M\times \R^{2b}\to M$ be Quillen co-orientations compatible with $f$ and $g$.
 	Then the fiber product $V\times_M W$ (with its orientation induced from the co-oriented fiber product) is canonically oriented diffeomorphic to the fiber product $(V\times \R^{2b})\times_{M\times \R^{2a}\times \R^{2b}}(W\times \R^{2a})$ (with its orientation induced from the co-oriented fiber product), in which the first map is $r\times \id_{\R^{2b}}$ and the second map takes $(w,z)\in W\times \R^{2a}$ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
 \end{corollary}
@@ -2026,7 +2026,7 @@ Next we show how to replace a general oriented fiber product with an oriented fi
 Again, we take all introduced Euclidean spaces to be even-dimensional to simplify the signs.
 
 \begin{lemma}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
 	Let $V\xhookrightarrow{e}M\times \R^{2a}\to M$ be a factorization of $f$ with $e$ an embedding.
 	Then $V\times_M W$ is canonically oriented diffeomorphic to the oriented fiber product $V\times_{M\times \R^{2a}} (W\times \R^{2a})$ of $e:V\to M\times \R^{2a}$ and $g\times \id_{\R^{2a}}:W\times \R^{2a}\to M\times \R^{2a}$.
 \end{lemma}
@@ -2080,7 +2080,7 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 \end{proof}
 
 \begin{corollary}\label{C: oriented full transition to embedded}
-	Let $f \colon V \to M$ and $g:W\to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
 	Let $V\xhookrightarrow{r} M\times \R^{2a}\to M$ and $W\xhookrightarrow{s} M\times \R^{2b}\to M$ be factorizations of $f$ and $g$ with $r$ and $s$ embeddings.
 	Then the oriented fiber product $V\times_M W$ is canonically oriented diffeomorphic to the fiber product $(V\times \R^{2b})\times_{M\times \R^{2a}\times \R^{2b}}(W\times \R^{2a})$ in which the first map is $r\times \id_{\R^{2b}}$ and the second map takes $(w,z)\in W\times \R^{2a}$ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
 \end{corollary}

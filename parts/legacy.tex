@@ -13,7 +13,7 @@ SECTION 3
 	Before defining fiber product co-orientations, we first want to ensure that fiber products of co-orientable maps are themselves co-orientable. This will free us to then determine the specific co-orientations by working locally.
 
 	\begin{lemma}\label{L: co-orientable pullback}
-		Suppose $g:W\to M$ and $f \colon V \to M$ are transverse. Then:
+		Suppose $g \colon W \to M$ and $f \colon V \to M$ are transverse. Then:
 
 		\begin{enumerate}
 			\item If $g$ is co-orienteable, the pullback $g^*:P\to V$ is co-orientable.
@@ -65,7 +65,7 @@ SECTION 3
 	ECOMMENT
 
 	\begin{corollary}
-		If $f \colon V \to M$ and $g:W\to M$ are transverse and co-orientable, their fiber product $P\to M$ is also co-orientable.
+		If $f \colon V \to M$ and $g \colon W \to M$ are transverse and co-orientable, their fiber product $P\to M$ is also co-orientable.
 	\end{corollary}
 	\begin{proof}
 		By the preceding lemma, the pullback $P\to V$ is co-orientable, and the map $f \colon V \to M$ is co-orientable by assumption. Now choose co-orientations and compose to get a co-orientation of $P\to M$.
@@ -415,7 +415,7 @@ SECTION 3
 	The following lemma will be useful when working with the creasing construction.
 
 	\begin{lemma}
-		Let $g:W\to M$ be co-oriented and suppose $V$ is an embedded codimension $0$ submanifold with corners of $M$. Let $f \colon V \to M$ be the embedding, co-oriented by $(\beta_V,\beta_V)=(\beta_M,\beta_M)$ at each point of $V$. Then $f\times_Mg=g|_{g^{-1}(V)}$, and its pullback co-orientation is the restriction of the co-orientation of $g$ to $g^{-1}(V)$.
+		Let $g \colon W \to M$ be co-oriented and suppose $V$ is an embedded codimension $0$ submanifold with corners of $M$. Let $f \colon V \to M$ be the embedding, co-oriented by $(\beta_V,\beta_V)=(\beta_M,\beta_M)$ at each point of $V$. Then $f\times_Mg=g|_{g^{-1}(V)}$, and its pullback co-orientation is the restriction of the co-orientation of $g$ to $g^{-1}(V)$.
 	\end{lemma}
 	\begin{proof}
 		It is clear that $f\times_Mg=g|_{g^{-1}(V)}$ as maps, so we consider co-orientations.
@@ -424,7 +424,7 @@ SECTION 3
 	\end{proof}
 
 	\begin{lemma}\label{L: codim 1 co-orient}
-		Suppose $V\subset M$ is a codimension $1$ submanifold with an everywhere non-zero normal vector field $\nu$. Suppose the embedding $f:V\into M$ is co-oriented by $(\beta_V,\beta_V\wedge \beta_\nu)$. Let $g:W\to M$ be transverse to $f$ so that $g^{-1}(V)=W^0$ is a codimension $1$ submanifold with normal vector field $\nu_0$ such that $D_xg(\nu_0)=\nu\in T_{g(x)}M$ for all $x\in W^0$.
+		Suppose $V\subset M$ is a codimension $1$ submanifold with an everywhere non-zero normal vector field $\nu$. Suppose the embedding $f:V\into M$ is co-oriented by $(\beta_V,\beta_V\wedge \beta_\nu)$. Let $g \colon W \to M$ be transverse to $f$ so that $g^{-1}(V)=W^0$ is a codimension $1$ submanifold with normal vector field $\nu_0$ such that $D_xg(\nu_0)=\nu\in T_{g(x)}M$ for all $x\in W^0$.
 		Then $f\times_M g=g|_{W^0}$ and the pullback co-orientation corresponds to the composition of the co-orientation of $g$ with the co-orientation $(\beta_{W^0},\beta_{W^0}\wedge \beta_{\nu})$ of $W^0\into W$.
 	\end{lemma}
 	\begin{proof}
@@ -442,9 +442,9 @@ SECTION 3
 
 	\subsubsection{Pullbacks by maps that are not co-oriented}\label{S: true pullback}
 
-	So far we have considered the pullback $P$ of transverse co-oriented proper maps $f \colon V \to M$ and $g:W\to M$ and assigned a co-orientation to $P\to M$. It is also of importance to consider the situation where $g$ is co-oriented and $f$ is not necessarily co-oriented (or co-orientable) and assign a co-orientation to $P\to V$. We know that $P\to V$ is co-orientable in this scenario by Lemma \ref{L: co-orientable pullback}.
+	So far we have considered the pullback $P$ of transverse co-oriented proper maps $f \colon V \to M$ and $g \colon W \to M$ and assigned a co-orientation to $P\to M$. It is also of importance to consider the situation where $g$ is co-oriented and $f$ is not necessarily co-oriented (or co-orientable) and assign a co-orientation to $P\to V$. We know that $P\to V$ is co-orientable in this scenario by Lemma \ref{L: co-orientable pullback}.
 
-	To assign a choice of co-orientation, we utilize again our structural orthogonal decompositions at some point of $P$. In the pair $(\beta_W,\beta_M)=(\beta_{K_g} \wedge \beta_I \wedge \beta_{V^\perp}, \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp})$, the bases $\beta_I$ and $\beta_{V^\perp}$ occur in both terms, so the co-orientation is determined by the basis pair $(\beta_{K_g},\beta_{W^\perp})$. We are free to choose these bases so that $(\beta_W,\beta_M)$ corresponds to the given co-orientation of $g:W\to M$.
+	To assign a choice of co-orientation, we utilize again our structural orthogonal decompositions at some point of $P$. In the pair $(\beta_W,\beta_M)=(\beta_{K_g} \wedge \beta_I \wedge \beta_{V^\perp}, \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp})$, the bases $\beta_I$ and $\beta_{V^\perp}$ occur in both terms, so the co-orientation is determined by the basis pair $(\beta_{K_g},\beta_{W^\perp})$. We are free to choose these bases so that $(\beta_W,\beta_M)$ corresponds to the given co-orientation of $g \colon W \to M$.
 	But now we observe that $(\beta_P,\beta_V)=( \beta_{K_g} \wedge \beta_I \wedge \beta_{K_f}, \beta_{W^\perp} \wedge \beta_{I} \wedge \beta_{K_f})$. In this case $\beta_I$ and $\beta_{K_f}$ are shared, so again this co-orientation is determined by $(\beta_{K_g},\beta_{W^\perp})$. Having fixed this pair to give the correct co-orientation of $g$, we now define the co-orientation of $g^*:P\to V$ to use the same corresponding basis pair.
 
 	As the co-orientation pair $(\beta_{K_g}, \beta_{W^\perp})$ was determined by the co-orientation of $g$, there is no choice being made for this basis pair at the point of $P$ under cosideration. To see that such choices are consistent from point to point, we can apply the computations of Theorem \ref{local const} to see that $(\beta_P,\beta_V)=(\beta'_P,\beta'_V)$ via translation of the structural decomposition from $x\in P$ to a nearby $x'\in P$.
@@ -453,7 +453,7 @@ SECTION 3
 	co-orient
 	$f^*:P\to W$ using the pair $(\beta_{P},\beta_{W})=(\beta_{K_g} \wedge \beta_I \wedge \beta_{K_f},\beta_{K_g} \wedge \beta_I \wedge \beta_{V^\perp})$.
 
-	One important application is the context where $g:W\to M$ is co-oriented while $V$ is oriented. In this case we have just seen how to co-orient the pullback $g^*:P\to V$, and if $V$ is oriented the co-orientation of $g^*$ determines a compatible orientation of $P$, namely the orientation $\beta_P$ such that $(\beta_P,\beta_V)$ is the co-orientation of $g^*$. This observation will be utilized below (REFERENCE) in our construction of the cap product.
+	One important application is the context where $g \colon W \to M$ is co-oriented while $V$ is oriented. In this case we have just seen how to co-orient the pullback $g^*:P\to V$, and if $V$ is oriented the co-orientation of $g^*$ determines a compatible orientation of $P$, namely the orientation $\beta_P$ such that $(\beta_P,\beta_V)$ is the co-orientation of $g^*$. This observation will be utilized below (REFERENCE) in our construction of the cap product.
 
 	\begin{remark}
 		We pause to make a somewhat surprising observation. We have observed that the fiber product of two co-oriented maps is co-oriented, and this will eventually lead us to the cup product of geometric cochains. We have also just seen that the fiber product of a co-oriented map with an oriented map (i.e.\ a map whose domain is oriented) leads to an oriented map, and this will eventually lead us to a cap product of geometric chains and cochains. However, in general the fiber product of two oriented maps can not necessarily be oriented, and so there is in general no product of geometric chains and hence no homology product. Such oriented fiber products can be formed if the the codomain $M$ is oriented, as in this case there is an equivalence between orientations and co-orientations of maps. But this is not always possible when $M$ is not orientable. For example, we recall that the intersection of two orientable $\R P^3$s in the non-orientable $\R P^4$ can be a non-orientable $\R P^2$.
