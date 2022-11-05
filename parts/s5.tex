@@ -290,7 +290,7 @@ S^* \arrow[r] &
 The theorem will follow from showing there is a quasi-isomorphism  $\psi:S^* \to C_{\Gamma}^*(M|_{U \cup V})$.
 Our quasi-isomorphism will be induced by the map $C_{\Gamma}^*(M|_U)\oplus C_{\Gamma}^{*}(M|_V)\to C_{\Gamma}^*(M|_{U \cup V})$ that takes $\uW_1\oplus \uW_2$ to $\uW_1+\uW_2$. This is well defined as it clearly takes elements in the image of $(i_U{,}-i_V)$ to $0$. To establish the quasi-isomorphism, we use creasing.
 
-First suppose a cocycle $\uW\in C_{\Gamma}^*(M|_{U \cup V})$ represented by $r_W:W\to U\cup V$. Let $\phi:U\cup V\to (-1,1)$ be a separating function with $0$ a separating point. Then $W^-\in  C_{\Gamma}^*(M|_{U})$ and  $W^+\in  C_{\Gamma}^*(M|_{V})$, and by \cref{T: cohomology creasing}, we have $\uW=\underline{W^-}+\underline{W^+}\in H^*_\Gamma(M)$. But by the creasing construction if $W$ has image in $U\cup V$ then so does $\Cre(W)$, so also $\uW=\underline{W^-}+\underline{W^+}\in H_*^\Gamma(M|_{U\cup V})$. We have $\bd W\in Q^*(U\cup V)$ by assumption that $W$ is a cocycle. By the computation in \cref{E: codim 1 pullbacks}, we have $\bd( W^-)=(-W^0)\sqcup (\bd W)^-$, and  $\bd (W^+)=W^0\sqcup (\bd W)^+$. AS $\bd W\in Q^*(M)$ with image in $U\cup V$, we have $(\bd W)^\pm\in Q^*(M)$ with respective images in $U$ and $V$ by \cref{C: creasing Q}, i.e. $(\bd W)^-=0\in C^*_\Gamma(M|_U)$ and similarly $(\bd W)^+=0\in C^*_\Gamma(M|_V)$.
+First suppose a cocycle $\uW\in C_{\Gamma}^*(M|_{U \cup V})$ represented by $r_W:W\to U\cup V$. Let $\phi:U\cup V\to (-1,1)$ be a separating function with $0$ a separating point. Then $W^-\in  C_{\Gamma}^*(M|_{U})$ and  $W^+\in  C_{\Gamma}^*(M|_{V})$, and by \cref{T: cohomology creasing}, we have $\uW=\underline{W^-}+\underline{W^+}\in H^*_\Gamma(M)$. But by the creasing construction if $W$ has image in $U\cup V$ then so does $\Cre(W)$, so also $\uW=\underline{W^-}+\underline{W^+}\in H_*^\Gamma(M|_{U\cup V})$. We have $\bd W\in Q^*(U\cup V)$ by assumption that $W$ is a cocycle. By the computation in \cref{E: codim 1 pullbacks}, we have $\bd( W^-)=(-W^0)\sqcup (\bd W)^-$, and  $\bd (W^+)=W^0\sqcup (\bd W)^+$. AS $\bd W\in Q^*(M)$ with image in $U\cup V$, we have $(\bd W)^\pm\in Q^*(M)$ with respective images in $U$ and $V$ by \cref{C: creasing Q}, i.e.\ $(\bd W)^-=0\in C^*_\Gamma(M|_U)$ and similarly $(\bd W)^+=0\in C^*_\Gamma(M|_V)$.
 Thus $(W^-, W^+)$ represents an element of $C_{\Gamma}^*(M|_U)\oplus C_{\Gamma}^{*}(M|_V)$ whose boundary is $(-W^0,W^0)$, which is in the image of $(i_U,-i_V)$. Therefore,  $(W^-, W^+)$ represents an element of
 $H^*(S^*)$ that maps to $\uW\in H^*_\Gamma(M_{U\cup V})$. Thus $\psi$ is surjective.
 
@@ -422,7 +422,7 @@ Altogether we have shown that $\delta$ is independent of choices.
 
 
 \begin{lemma}\label{L: natural connection}
-The connecting map $\delta$ is natural, i.e. for a continuous map of triples $f:(M;U',V')\to (N;U,V)$ the following diagram commutes for all $k$:
+The connecting map $\delta$ is natural, i.e.\ for a continuous map of triples $f:(M;U',V')\to (N;U,V)$ the following diagram commutes for all $k$:
 
 \begin{diagram}
 H^k_\Gamma(U\cap V)&\rTo^\delta &H^{k+1}_\Gamma(U\cup V)\\
@@ -435,7 +435,7 @@ Consider $\uW\in H^k_\Gamma(U\cap V)$ represented by $r_W:W\to U\cap V$. Let $\p
 
 Next we note that $\phi f$ separates $U'$ and $V'$ but it may not be smooth. This can be remedied by a small homotopy of $f$ to $g$. This homotopy may not preserve the property that $f(U')\subset U$ and $f(V')\subset V$ but we may choose the homotopy small enough that $(\phi g)^{-1}([-1/3,1/3])\subset (\phi f)^{-1}(-1/2,1/2)$, which will be sufficient to ensure that $(\phi g)^{-1}([-1/3,1/3])\subset U'\cap V'$. We may further assume that the homotopy has been chosen so that $g$ is transverse to $r_{W^0}:W^0\to N$.
 
- We claim that the transversality of $g$ with $r_{W^0}$ implies that $0$ is a regular value for the composition $\phi gr_W^*$, where $r_W^*$ is the pullback of $W$ to $M$ via $g$, i.e. $r_W^*: W\times_N M\to M$.  To see this, recall that the tangent bundle of the pullback is the pullback of the tangent bundles  \cite[Theorem 5.47]{Wed16}, so at a point $(x,y)$ of $(\phi gr^*_{W})^{-1}(0)$ with $x\in W$, $y\in M$, the tangent space of $W\times_N M$ is $T_x W \times_{T_{( r_W(x),g(y))}} T_yM$.  As $0$ is a regular value for $\phi r_W$, there must be a vector $\xi\in T_xW$ with $D_x(\phi r_W)(\xi)\neq 0$. Consider $D_xr_W(\xi)$, which must also be nonzero. As $g$ is assumed transverse to $W^0$, there must be $\alpha\in T_xW^0$ and $\beta\in T_yM$ such that $(D_xr_W)(\xi)= (D_xr_W)(\alpha) + (D_yg) (\beta)$. Rewriting, $D_yg (\beta)=D_xr_W(\xi-\alpha)$. As $\alpha\in T_xW^0$, we have $$D_{r_W(x)}\phi(D_yg (\beta))=D_{r_W(x)}\phi\circ D_xr_W(\xi-\alpha)=D_x(\phi r_W)(\xi)-D_x(\phi r_W)(\alpha)=D_x(\phi r_W)(\xi)\neq 0.$$
+ We claim that the transversality of $g$ with $r_{W^0}$ implies that $0$ is a regular value for the composition $\phi gr_W^*$, where $r_W^*$ is the pullback of $W$ to $M$ via $g$, i.e.\ $r_W^*: W\times_N M\to M$.  To see this, recall that the tangent bundle of the pullback is the pullback of the tangent bundles  \cite[Theorem 5.47]{Wed16}, so at a point $(x,y)$ of $(\phi gr^*_{W})^{-1}(0)$ with $x\in W$, $y\in M$, the tangent space of $W\times_N M$ is $T_x W \times_{T_{( r_W(x),g(y))}} T_yM$.  As $0$ is a regular value for $\phi r_W$, there must be a vector $\xi\in T_xW$ with $D_x(\phi r_W)(\xi)\neq 0$. Consider $D_xr_W(\xi)$, which must also be nonzero. As $g$ is assumed transverse to $W^0$, there must be $\alpha\in T_xW^0$ and $\beta\in T_yM$ such that $(D_xr_W)(\xi)= (D_xr_W)(\alpha) + (D_yg) (\beta)$. Rewriting, $D_yg (\beta)=D_xr_W(\xi-\alpha)$. As $\alpha\in T_xW^0$, we have $$D_{r_W(x)}\phi(D_yg (\beta))=D_{r_W(x)}\phi\circ D_xr_W(\xi-\alpha)=D_x(\phi r_W)(\xi)-D_x(\phi r_W)(\alpha)=D_x(\phi r_W)(\xi)\neq 0.$$
  So, recalling that $Dr_W^*$ is simply the projection to $TM$,  the pair $( \xi-\alpha, \beta)$ is a non-zero vector in $T_xW\times_{T_{( r_W(x), g(y))}}T_y M$ that maps by $D(\phi gr_W^*)$ to a non-zero vector in $T_{0}[-1,1]$. As $(x,y)$ was an arbitrary point of $(\phi gr^*_{W})^{-1}(0)\subset W\times_N M$, this shows that $0$ is a regular value for $\phi gr^*_W$.
 
 
@@ -611,7 +611,7 @@ Next, we consider $W^--(\R_-\times W_0)$. Its boundary, again using the sign con
 &=T^--(\R_-\times T_0).
 \end{align*}
 As $T$ is an element of $Q^*(\R\times M)$ and $T^-$ and $T_0$ are pullbacks of $T$ with other precochains, they are also in $Q^*(\R\times M)$ by REF. It follows that $\R_-\times T_0$ is also in $Q^*(\R\times M)$, so
-$W^--(\R_-\times W_0)$ is a cocycle in $C_\Gamma^*(\R\times M)$ that is supported in $\R_-\times M$. By the preceding lemma, it cobounds, i.e. there is a $Z_1$ with $\bd Z_1=W^--(\R_-\times W_0)+A_1$, with $A_1\in Q^*(\R\times M)$.
+$W^--(\R_-\times W_0)$ is a cocycle in $C_\Gamma^*(\R\times M)$ that is supported in $\R_-\times M$. By the preceding lemma, it cobounds, i.e.\ there is a $Z_1$ with $\bd Z_1=W^--(\R_-\times W_0)+A_1$, with $A_1\in Q^*(\R\times M)$.
 
 Analogously, there are $Z_2$ and $A_2$ such that  $\bd Z_2=W^+-(\R_+\times W_0)+A_2$.
 
