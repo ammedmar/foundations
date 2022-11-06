@@ -1,4 +1,3 @@
-
 % !TEX root = ../foundations.tex
 
 \section{Basic properties of geometric (co)homology and equivalence with singular (co)homology}\label{S: basic properties}
@@ -24,6 +23,7 @@ Functoriality is clear, and both $\bd(f(W))$ and $f(\bd W)$ are represented by $
 \begin{lemma}\label{L: Q preservation}
 	If $r_W \colon W \to M$ represents an element of $Q_*(M)$ (or $Q^*(M)$) and $f \colon M \to N$ is any (co-oriented proper) smooth map, then $fr_W \colon W \to N$ is in $Q_*(N)$ (or $Q^*(N)$, co-orienting $fr_W$ with the composition co-orientation.).
 \end{lemma}
+
 \begin{proof}
 	First consider $W \in Q_*(M)$. By assumption, $W$ is the disjoint union of a trivial manifold over $M$ given by $r_T:T \to M$ and a degenerate manifold over $M$ given by $r_D:D \to M$. If $\rho:T \to T$ is an orientation-reversing diffeomorphism of $W$ such that $r_T\rho = r_T$ then also $fr_T\rho = fr_T$, so $fr_T:T \to N$ is also trivial. Furthermore, if $r_D$ has small rank then certainly so does $fr_D$. Similarly, $\bd(fr_D)$ is a union of trivial and small rank manifolds over $M$, and so $fr_D:D \to M$ is degenerate.
 
@@ -98,6 +98,7 @@ This lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a manifol
 
 	If $\uW \in C^*_\Gamma(M)$ is a cocycle and $F$ if proper and co-oriented, then $\underline{f(W)}$ and $\underline{g(W)}$ are cohomologous cocycles in $N$.
 \end{corollary}
+
 \begin{proof}
 	By the preceding corollary we may work with any representative $r_W \colon W \to M$ of $\uW$. First suppose $W \in PC_*^\Gamma(M)$. By Leibniz rule recalled in \cref{S: orientations} (treating $W$ and $I$ as manifolds over a point), we have $\bd (W \times I) = \bd W \times I \bigsqcup (-1)^{w} W \times \bd I$. As $W$ is a cycle, $\bd W \in Q_*(M)$, and hence so is $F \circ ((\bd r_W) \times \id_I) \colon \bd W \times I \to N$ by the preceding lemma. Thus in $C^\Gamma_*(N)$ the boundary of $F \circ (r_W \times \id_I) \colon W \times I \to N$ is represented up to signs by the restriction of
 	$F \circ (r_W \times \id_I)$ to $W \times \bd I = W \times (\{1\}-\{0\})$. As $F \circ (r_W \times \id_I)|_{W \times 1} = gr_W$ and $F \circ (r_W \times \id_I)|_{W \times 0} = fr_W$, we see that up to the overall sign $(-1)^{w}$, the boundary of $F \circ (r_W \times \id_I)$ is represented in $C_*^\Gamma(N)$ by the disjoint union of $gr_W \colon W \to N$ and $fr_W:-W \to N$. Thus $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent homologous cycles.
@@ -110,6 +111,7 @@ This lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a manifol
 \begin{proposition}[Lipyanskiy's Theorem 5]\label{P: homology homotopy functor}
 	Given a \textit{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_*:H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$. If $f$ is proper and co-oriented, it also induces $f_*:H^*_\Gamma(M) \to H^*_\Gamma(N)$ that depends only on the proper homotopy class and co-orientation of $f$.
 \end{proposition}
+
 \begin{proof}
 	First consider the case of homology. Let $g$ be any smooth approximation to $f$. Then by the preceding proposition $g$ induces a chain map $C_*^\Gamma(M) \to C_*^\Gamma(N)$ and hence a map $H_*^\Gamma(M) \to H_*^\Gamma(N)$. Let $h$ be any other smooth map homotopic to $f$ (and so also homotopic to $g$). The continuous homotopy from $g$ to $h$ can be smoothly approximated by a smooth homotopy $H \colon M \times I \to N$ from $g$ to $h$ \cite[Theorem III.2.5]{Kos93}. The cycles represented by $g(W)$ and $h(W)$ are homologous by \cref{C: homotopy}.
 
@@ -128,6 +130,7 @@ The following lemma is similar to \cref{L: pullback with Q}, as are their proofs
 \begin{lemma}\label{L: pullback map Q}
 	Suppose $N$ is a manifold without boundary and $r_S:S \to N$ is trivial or has small rank. Let $M$ be a manifold with corners, and let $g: M \to N$ be a smooth map transverse to $r_S$. Then $S \times_N M \to M$ is also trivial or has small rank, respectively. Consequently, if $S \in Q^k(N)$ then $S \times_N M \to M$ is in $Q^k(M)$.
 \end{lemma}
+
 \begin{proof}
 	If $\rho$ is a co-orientation reversing diffeomorphism of $S$ over $N$, then $\rho \times_N \id_M$ is a co-orientation reversing diffeomorphism of $S \times_N M$ over $M$ by \cref{R: co-or restriction or switch}.
 
@@ -145,6 +148,7 @@ The requirement that $g \colon M \to N$ must be transverse to $W$ means that eve
 \begin{proposition}\label{P: cohomology pullback}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary. The map $f^*:H^k_\Gamma(N) \to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
 \end{proposition}
+
 \begin{proof}
 	First, let $r_W \colon W \to N$ represent a cocycle, and suppose we have two maps $g_0, g_1 \colon M \to N$ that are smooth, homotopic to $f$, and transverse to $r_W$.
 	Let $G \colon M \times I \to N$ be a homotopy from $g_0$ to $g_1$, which exists by \cref{T: basic trans}. We can find such a $G$ that is smooth and transverse to $r_W$. Consider the composition $W \times_N (M \times I) \to M \times I \to M$ of the pullback $r_W$ by $G$ and the projection $M \times I \to M$. As $r_W$ is proper and co-oriented so is the pullback, and the the projection $M \times I \to M$ has its standard co-orientation $(\beta_M \wedge \beta_I,\beta_M)$ and is proper. Its boundary is the sum of $\bd W \times_N (M \times I) \to M \times I \to M$ and, up to sign, $$W \times_N (M \times \{1\}) - W \times_N (M \times \{0\}) \to M \times I \to M.$$ As $W$ is assumed to be a cocycle, $\bd W \in Q^*(N)$. So $\bd W \times_N (M \times I) \to M \times I$ is in\footnote{Note that even if $M$ is without boundary, $M \times I$ will have boundary (unless $M$ is empty). This instance is the main reason we have allowed such constructions as $PC^*(-)$ and $Q^*(-)$ to take manifolds with non-empty boundary as inputs up to this point. In this particular case, since $N$ does not have boundary, all ``smooth'' maps to $N$ are automatically smooth in the strong sense of \cite{Joy12}, as are then $W \times_N (M \times I) \to M \times I$ and $M \times I \to M$ as these are both pullbacks in the smooth category. Thus we obtain an element of $Q^*(M)$ whether one prefers to define $Q^*(-)$ in general using smooth or weakly smooth maps.} $Q^*(M \times I)$ by \cref{L: pullback map Q}, and it is then easy to see that the projection to $M$ preserve triviality and small rank. The other terms correspond to the pullbacks of $W$ via $g_0$ and $g_1$. Thus $f^*$ is independent of the choice of $g$ within the homotopy class of $f$.
@@ -163,6 +167,7 @@ The requirement that $g \colon M \to N$ must be transverse to $W$ means that eve
 \begin{lemma}\label{L: compact pullback}
 	Suppose $f \colon M \to N$ is a proper map of spaces and $r_V \colon V \to N$ is a map with $V$ compact. Then $V \times_N M$ is compact.
 \end{lemma}
+
 \begin{proof}
 	As $V$ is compact, so is $r_V(V)$, and as $f$ is proper, $f^{-1}(r_V(V))$ is compact. Now we observe that we must have $V \times_N M \subset V \times f^{-1}(r_V(V)) \subset V \times M$. So $V \times_N M$ is compact.
 \end{proof}
@@ -194,6 +199,7 @@ It is easy to observe that $C_\Gamma^*(M|_U)$ is a chain complex as it is closed
 \begin{lemma}
 	Let $PC_\Gamma^*(M|_U) \subset PC_\Gamma^*(M)$ be the subset consisting of $r_W \colon W \to M$ with image in $U$, and let $Q^*(M|_U)$ be the elements of $Q^*(M)$ with image in $U$. Then $C_\Gamma^*(M|_U)$ is isomorphic to the set of equivalence class of $PC_\Gamma^*(M|_U)$ under the relation $V\sim_U W$ if $V \sqcup -W \in Q^*(M|_U)$.
 \end{lemma}
+
 \begin{proof}
 	We first observe that $\sim_U$ is an equivalence relation on $PC_\Gamma^*(M|_U)$ by the same proof as \cref{L: cancel Q}, assuming all maps have image in $U$. Clearly if $V,W \in PC_\Gamma^*(M|_U)$ and $V\sim_UW$ then $V\sim W$ in the sense of \cref{L: cancel Q}. So letting $\hat C_\Gamma^*(M|_U)$ temporarily denote the
 	equivalence classes under $\sim_U$, we have a well-defined map $f: \hat C_\Gamma^*(M|_U) \to C_\Gamma^*(M|_U)$. By definition, elements of $C_\Gamma^*(M|_U)$ can be represented by elements of $PC_\Gamma^*(M|_U)$, so $f$ is surjective. Now suppose $W_1,W_2 \in PC^*_\Gamma(M|_U)$ represent the same element of $C^*_\Gamma(M|_U)$. Then $W_1\sim W_2$ in the sense of \cref{L: cancel Q}, i.e.\ $W_1 \sqcup -W_2 \in Q^*(M)$, but $W_1$ and $W_2$ each have support in $U$, so $W_1 \sqcup -W_2 \in Q^*(M|_U)$ and $W_1\sim_U W_2$. So $f$ is injective.
@@ -378,6 +384,7 @@ The choice to use $-W^0$ rather than $W^0$ in the definition is explained by \cr
 		H^k_\Gamma(U' \cap V')&\rTo^\delta &H^{k+1}_\Gamma(U' \cup V')
 	\end{diagram}
 \end{lemma}
+
 \begin{proof}
 	Consider $\uW \in H^k_\Gamma(U \cap V)$ represented by $r_W \colon W \to U \cap V$. Let $\phi:U \cup V \to [-1,1]$ be a separating function for $U,V$. We may assume that $0 \in [-1,1]$ is a separating point for $W$, by postcomposing $\phi$ with a diffeomorphism of $[-1,1]$ if necessary.
 
@@ -558,6 +565,7 @@ In this section we apply a theorem of Kreck and Singhof to show that geometric h
 \begin{theorem}\label{T: geometric is singular}
 	On the category of smooth manifolds (without boundary) and continuous maps, geometric homology and cohomology are respectively isomorphic to singular homology and cohomology with integer coefficients, i.e.\ $H_*^\Gamma \cong H_*(\cdot ;\Z)$ and $H^*_\Gamma \cong H^*(\cdot ;\Z)$ as functors.
 \end{theorem}
+
 \begin{proof}
 	This is a consequence of \cite[Theorem 10]{Krec10b} once we verify that $H_*^\Gamma$ and $H^*_\Gamma$ are respectively an ordinary homology theory and an ordinary cohomology theory on the category of smooth manifolds as defined in \cite{Krec10b}. This requires the following axioms:
 
@@ -616,6 +624,7 @@ we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
 \begin{lemma}
 	The inclusion $SK^{sm}_*(M) \into PC_*^\Gamma(M)$ determines a chain map $NK^{sm}_*(M) \to C_*^\Gamma(M)$.
 \end{lemma}
+
 \begin{proof}
 	Any degenerate singular cube $\sigma \colon \interval^k \to M$ is also degenerate in the sense of \cref{D: equiv triv and small}. In fact, it will have small rank as it filters through a projection. Furthermore, if that projection collapses the $i$th coordinate then each face $\sigma \delta_j^\epsilon$ for $j\neq i$ will also be a degenerate small cube and so have small rank, while the term $\pm (\sigma \delta_i^0-\sigma \delta_i^1)$ will be trivial with the trivializing map $\rho$ being the interchange of the two faces. Thus, the degenerate smooth singular cubes are elements of $Q_*(M)$, and our map is well defined in each degree.
 
@@ -631,6 +640,7 @@ we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
 \begin{theorem}\label{T: hom iso map}
 	The maps $H_*(S^{sm}_*(M)) \to H_*^\Gamma(M)$ and $H_*(NK^{sm}_*(M)) \to H_*^\Gamma(M)$ obtained by treating smooth singular simplices and smooth singular cubes as elements of $C_*^\Gamma(M)$ are isomorphisms.
 \end{theorem}
+
 \begin{proof}
 	Both $H_*(S^{sm}_*(M))$ and $H_*(NK^{sm}_*(M))$ are isomorphic to the standard singular homology groups, so in the following we simply write $H_*$ for either of these theories and provide a uniform proof.
 
@@ -666,6 +676,7 @@ Unfortunately, providing a direct comparison for cohomology theories is not so s
 \begin{proposition}\label{P: singular smooth cubes}
 	The inclusion $\psi: NK^{sm}_*(M) \into NK_*(M)$ is a chain homotopy equivalence.
 \end{proposition}
+
 \begin{proof}
 	The proof is analogous to the simplicial case as given in detail in \cite[Theorem 18.7]{Lee13}, though we need to take care with degenerate cubes, which is not an issue in the simplicial case. To account for this, we sketch the proof in \cite{Lee13} but provide some detailed modifications.
 
@@ -736,7 +747,3 @@ Unfortunately, providing a direct comparison for cohomology theories is not so s
 
 	Finally, we note that, by definition and construction, $\td \psi$, $\td s$, and $\td J$ all take degenerate simplices to degenerate simplices so that these descend to chain maps $\psi \colon NK_*^{sm}(M) \to NK_*(M)$ and $s \colon NK_*(M) \to NK_*^{sm}(M)$ with $s\psi = \id$ and a chain homotopy $J \colon NK_*(M) \to NK_{*+1}(M)$.
 \end{proof}
-
-%%% Local Variables:
-%%% TeX-master: "geometric_cohomology.tex"
-%%% End:

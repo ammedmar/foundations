@@ -1,4 +1,3 @@
-
 % !TEX root = ../foundations.tex
 
 \section{Products of geometric chains and cochains}
@@ -248,6 +247,7 @@ contains any essential components. Nonetheless, a component $V_1$ of $V_{NI}$ is
 \begin{corollary}\label{C: essential trans}
 	Suppose $\uV = \uV' \in C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) and that $V_E$ is transverse to some $r_W \colon W \to M$. Then $V'_E$ is also transverse to $W$.
 \end{corollary}
+
 \begin{proof}
 	By the lemma, any component of $V_E$ is also a component of $V'_E$ and vice versa.
 \end{proof}
@@ -257,6 +257,7 @@ contains any essential components. Nonetheless, a component $V_1$ of $V_{NI}$ is
 	$\underline{ V_{NI}} = \underline{ W_{NI}}$ and
 	$\underline{\bd V_{NI}} = \underline{\bd W_{NI}}$.
 \end{lemma}
+
 \begin{proof}
 	By assumption $V\sqcup-W = (V_E \sqcup V_{TI} \sqcup V_{NI}) \sqcup -(W_E \sqcup W_{TI} \sqcup W_{NI})$ is in $Q(M)$.
 	We know $V_{TI} \sqcup -W_{TI} \in Q(M)$ as each summand is in $Q(M)$, and $V_E \sqcup -W_E \in Q(M)$ by \cref{L: essential}.
@@ -266,6 +267,7 @@ contains any essential components. Nonetheless, a component $V_1$ of $V_{NI}$ is
 \begin{theorem}\label{T: cochain product}
 	Given simply transverse $\uV$ and $\uW$, the cup, cap, or intersection products of \cref{D: cochain products} are well defined, independent of choice of transverse decomposition.
 \end{theorem}
+
 \begin{proof}
 	For simplicity, we just give the proof for $\uplus$; the other arguments are identical. We also write $V+W$ and $V-W$ rather than $V \sqcup W$ and $V\sqcup-W$ to make the following easier to read.
 
@@ -328,6 +330,7 @@ $\uV\uplus (\underline{W_1}+\underline{W_2})$ to be represented by $(V_1 \times_
 \begin{lemma}\label{L: Q essential}
 	Suppose $\bigsqcup_i W_i \in Q(M)$, and let $W_i = W_{i,E} \sqcup W_{i,TI} \sqcup W_{i,NI}$ be the essential decomposition for each $W_i$. Then $\bigsqcup_i W_{i,E}$ is trivial and $\bigsqcup_i W_{i,NI} \in Q(M)$.
 \end{lemma}
+
 \begin{proof}
 	We write the proof for cochains, but the argument for chains is equivalent.
 	We know each $W_{i,TI}$ is in $Q(M)$, so by \cref{L: Lipy12}, $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI}) \in Q(M)$.
@@ -337,6 +340,7 @@ $\uV\uplus (\underline{W_1}+\underline{W_2})$ to be represented by $(V_1 \times_
 \begin{corollary}\label{C: Q essential}
 	If $W_1$ and $W_2$ represent the same element of $C^*_\Gamma(M)$ or $C_*^\Gamma(M)$ then there is some $Z$ so that $W_{1,E} = Z \sqcup T_1$ and $W_{2,E} = Z \sqcup T_2$ with $T_1$ and $T_2$ trivial.
 \end{corollary}
+
 \begin{proof}
 	By \cref{L: Q essential}, $W_{1,E} \sqcup -W_{2,E}$ is trivial. Let $\mf W$ be a connected component of $W_{1,E} \sqcup -W_{2,E}$. If $\mf W$ is itself trivial, then we assign it to $T_1$ or $T_2$ according to whether it is in $W_{1,E}$ or $W_{2,E}$. If there is a pair $\mf W \sqcup -\mf W$ in $W_{1,E}$, then we assign the pair to $T_1$ and similarly for $W_{2,E}$. This leaves only pairs $\mf W \sqcup -\mf W$ so that $\mf W \in W_{1,E}$ and $-\mf W \in W_{2,E}$ (reversing the sign of $\mf W$ if necessary). We let $Z$ be the disjoint union of the $\mf W$ in this last category, and corollary follows.
 \end{proof}
@@ -345,6 +349,7 @@ $\uV\uplus (\underline{W_1}+\underline{W_2})$ to be represented by $(V_1 \times_
 	Suppose $\sum_i \underline{W_i} = \sum_j \underline{W'_j} \in C_\Gamma^a(M)$ and that all $\underline{W_i}$ and $\underline{W_j'}$ are simply transverse to $\uV \in C_\Gamma^b(M)$. Then $$\sum_i \uV \uplus \underline{W_i} = \sum_j \uV\uplus \underline{W'_j}.$$
 	Analogous statements hold with the sum in the first factor and for the cap and intersection products.
 \end{proposition}
+
 \begin{proof}
 	We provide the proof for the cup product, the other arguments being analogous.
 
@@ -443,6 +448,7 @@ We notice that the transversality situation here is simpler than the more genera
 \begin{proposition}
 	Given a smooth map of manifolds without boundary $h \colon M \to N$, the set $C^*_{\Gamma\pf h}(N)$ is a subcomplex of $C^*_{\Gamma}(N)$, and the map $h^*:C^*_{\Gamma\pf h}(N) \to C^*_{\Gamma}(M)$ is a well-defined chain map.
 \end{proposition}
+
 \begin{proof}
 	If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $f \colon V \to N$ and $g \colon W \to N$ that are transverse to $h$, then $\uV+\uW$ can be represented by $V \sqcup W$, which will also be transverse to $h$. So $C^*_{\Gamma\pf h}(N)$ is closed under addition. If $f \colon V \to N$ is transverse to $h$ then so is $-f$, i.e.\ $f$ with the opposite co-orientation, so $C^*_{\Gamma\pf h}(N)$ is closed under negation. The empty map $\emptyset \to N$ is always transverse to $h$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma\pf h}(N)$. Finally, if $\uV$ is represented by $f \colon V \to N$ transverse to $h$, then by definition $\bd V \to N$ is transverse to $h$, so $\bd \uV \in C^*_{\Gamma\pf h}(N)$. Therefore, $C^*_{\Gamma\pf h}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
 
@@ -506,6 +512,7 @@ As is standard for singular homology and cohomology, we use the symbol $\times$ 
 \begin{proposition}
 	The exterior chain and cochain products are well defined.
 \end{proposition}
+
 \begin{proof}
 	As in \cref{S: exterior products}, we give the product of oriented manifolds the standard product orientation, while co-orientations of products of co-oriented maps are defined in \cref{D: co-oriented exterior}. \cref{L: proper product} establishes that the product of proper maps is proper.
 
@@ -795,6 +802,7 @@ The next lemma says, roughly speaking, that $e(W)$ does not run off to infinity 
 	Let $g \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, let $\pi_M \colon M \times \R^n \to M$ be the projection, and let $e \colon W \to M \times \R^n$ be an embedding such that $\pi_Me = g$.
 	Then if $L \subset M$ is compact, there exists a close ball $\bar B^n_L \subset \R^n$ such that $e(g^{-1}(L)) \subset L \times \bar B^n_L$.
 \end{lemma}
+
 \begin{proof}
 	As $L$ is compact and $g$ is proper, $g^{-1}(L)$ is compact. So $e(g^{-1}(L))$ is compact, as is its image under the projection $\pi_{\R^n} \colon M \times \R^n \to \R^n$. Let $\bar B^n_L \subset \R^n$ be a closed ball containing this projection. Then $\pi_Me(g^{-1}(L)) = g(g^{-1}(L)) \subset L$ and $\pi_{\R^n}e(g^{-1}(L)) \subset \bar B^n_L$. So $e(g^{-1}(L)) \subset L \times \bar B^n_L$.
 \end{proof}
@@ -952,6 +960,7 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 \begin{proposition}[Kreck and Singhof, Proposition 12 of \cite{Krec10b}]\label{P: Kreck-Singhof pairing}
 	Consider singular cohomology $H^*(-)$ as a cohomology theory on smooth manifolds\footnote{As defined in \cite{Krec10b}; see the proof of \cref{T: geometric is singular} above.}. Suppose $\star$ is a natural multiplication on $H^*(-)$ such that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$ (and with the obvious extension when $M$ is not connected). Then if\footnote{Rather than $s_p \times s_q$, Kreck and Singhof require $\pi_1^*(s_p) \star \pi_2^*(s_q)$ to be the element of $H^{p+q}(S^p \times S^q)$ that evaluates to $1$ on the fundamental class of $S^p \times S^q$, but with our conventions that tensor products of cochains act by $(\alpha \otimes \beta)(x \otimes y) = \alpha(x)\beta(y)$, these are the same cohomology class (c.f.\ \cite[page 245]{Span81} and \cite[Section 3B]{Hatc02}. } $\pi_1^*(s_p) \star \pi_2^*(s_q) = s_p \times s_q \in H^{p+q}(S^p \times S^q)$ for all $p,q\geq 1$, the product $\star$ is the cup product.
 \end{proposition}
+
 \begin{proof}
 	For a smooth manifold $M$, let $\alpha \in H^p(M)$ and $\beta \in H^q(M)$.
 	The condition that $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ whem $M$ is connected already guarantees that $\star$ is the cup product when $p$ or $q$ is $0$, so we can suppose $p,q>0$.
@@ -1105,6 +1114,7 @@ Recall from \cref{T: hom iso map} that we have an isomorphism $H_*(NK^{sm}_*(M))
 	\end{diagram}
 	that split (non-naturally).
 \end{theorem}
+
 \begin{proof}
 	We know there exists such an exact sequence in (not necessarily smooth) singular cubical cohomology \cite[Chapter XI]{Mas91}, and \cref{L: chain cross compare}, together with its analogue based on the maps quasi-isomorphisms $NK^{sm}_*(-) \to NK_*(-)$
 	of \cref{P: singular smooth cubes}, provides an isomorphism between the left three terms of the two short exact sequences. It follows that there is an isomorphism between the quotient terms of the two sequences, and $\oplus_{p+q = a-1}H_p(NK_*(M))* H^q(NK_*(N)) \cong \oplus_{p+q = a-1}H_p^\Gamma(M)* H_q^\Gamma(N)$, also via these isomorphisms. Since the exact sequences are isomorphic, they both split.
@@ -1130,6 +1140,7 @@ $\uV \times \uW = \pi_M^*(\uV)\uplus\pi_N^*(\uW)$, which follows from \cref{C: c
 	\end{diagram}
 	that split (non-naturally).
 \end{theorem}
+
 \begin{proof}
 	We know there exists such an exact sequence in singular cohomology \cite[Theorem 60.5]{Mun84}, and \cref{P: cross product is cross product} provides an isomorphism between the left three terms of the two short exact sequences. It follows that there is an isomorphism between the quotient terms of the two sequences, and $\oplus_{p+q = a+1}H^p(M)* H^q(N) \cong \oplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N)$ via the maps $\Phi_p*\Phi_q$. Since the exact sequences are isomorphic, they both split.
 \end{proof}
@@ -1147,6 +1158,7 @@ We can also approach the K\"unneth theorem with a more explict comparison map by
 		K^*(M) \otimes K^*(N)&\rTo^\times& K^*(M \times N).
 	\end{diagram}
 \end{proposition}
+
 \begin{proof}
 	The top square certainly commutes as the vertical maps are inclusions. Note that the product of two maps transverse to the cubulation will be transverse to the product cubulation, so the bottom map of the top square is well defined.
 
@@ -1274,6 +1286,7 @@ Before proving the theorem, we note the following corollary.
 \begin{corollary}\label{C: cap relation}
 	The cubical cap product (and hence the singular cap product) determine the geometric cap product. If all $H^i(M)$ are finitely generated, then the geometric cap product determines the cubical cap product.
 \end{corollary}
+
 \begin{proof}
 	Let $\uV \in H^*_\Gamma(M)$ and $\uW \in H_*^\Gamma(M)$. Choose a cubulation of $M$. As $\mc J:H_*(K_*(M)) \to H_*^\Gamma(M)$ is an isomorphism by \cref{T: cubical homology iso}, we have by \cref{T: equivalent cap}
 	$$\uV\nplus \uW = \uV\nplus \mc J(\mc J^{-1}(\uW)) = \mc J(\mc I(\uV)\frown \mc J^{-1}(\uW)).$$
@@ -1299,6 +1312,7 @@ We will approach the proof of \cref{T: equivalent cap} through a series of lemma
 \begin{lemma}\label{L: product transversal}
 	Let $M$ be a cubulated manifold without boundary. Let $V \in PC^*_{\Gamma}(M)$, and suppose $W \in PC_*(M \times M)$ is represented by a collection of embeddings. Then there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1) \colon V \to M$ is transverse to the product cubulation and $M \times V\colon\xr{\id_M \times h(-,1)} M \times M$ is transverse $W$ in $M \times M$.
 \end{lemma}
+
 \begin{proof}
 	As in the proof of \cref{P: ball stability}, we use the transversality techniques of \cite[Section 2.3]{GuPo74}. Consider $M$ as embedded in some $\R^N$ with an $\epsilon$-neighborhood $M_\epsilon$ and proper submersion $\pi \colon M_\epsilon \to M$. We define $H$ as in proof of \cref{P: ball stability} so that $H \colon V \times D^N \to M$ is the proper universal homotopy given by $H(x,s) = \pi(r_V(x)+\epsilon(x)s)$. Then $H$ is a submersion and so transverse to each face of the cubulation, and also $\id_M \times H \colon M \times V \times D^N \to M \times M$ is a submersion and hence transverse to $W$. So now by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for any face $E$ of the cubulation $H(-,s)$ is transverse to $E$ for almost all $s \in D^N$ and, similarly, $\id_M \times H(-,s)$ is transverse $W$ for almost all $s \in D^N$ (and similarly for each stratum of $W$). As the cubulation must have a countable number of faces and $W$ has a finite number of strata, there is an $s_0 \in D^N$ such that $H(-,s_0)$ is transverse to the cubulation and $\id_M \times H(-,s_0)$ is transverse $W$. Now let $h(x,t) = H(x,ts_0)$. This is a proper universal homotopy, and $h(-,1)$ has the required transversality properties.
 \end{proof}
@@ -1306,6 +1320,7 @@ We will approach the proof of \cref{T: equivalent cap} through a series of lemma
 \begin{lemma}\label{L: M times transverse diag}
 	Suppose $M$ is a manifold without boundary, $V \in PC^*_{\Gamma}(M)$, and $V$ is transverse to $W \in PC_*^\Gamma(M)$. Then $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag r_W \colon W \to M \times M$ in $M \times M$, where $\diag \colon M \to M \times M$ is the diagonal map. In particular, $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag \colon M \to M \times M$.
 \end{lemma}
+
 \begin{proof}
 	By assumption, if $r_V(x) = r_W(y)$, then $Dr_V(T_xV)+Dr_W(T_yW) = T_{r_V(x)}M$. Now suppose that $(z,x) \in M \times V$ maps to $\diag r_W(y)$ with $y \in W$. This is equivalent to $r_V(x) = r_W(y) = z$. At any $(z,x) \in M \times V$, the image of $D(\id_M \times r_V)$ acting on $T_{(z,x)}(M \times V) = T_zM \oplus T_xV$ is $T_z(M) \oplus Dr_V(T_xV)$. While the image of $D(\diag r_W)$ acting on $T_yW$ is $Dr_W(T_yW) \oplus Dr_W(T_yW)$. As we know $Dr_V(T_xV)+Dr_W(T_yW) = T_{r_V(x)}M$, when $r_V(x) = r_W(y) = z$ these images together span $T_{(r_W(y),r_W(y))}M \times M$.
 
@@ -1365,6 +1380,7 @@ For the next lemmas, we make the following definitions.
 \begin{lemma}\label{L: diagonal version of intersection}
 	Let $M$ be a manifold without boundary. Let $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ be transverse. Let $\pi_1 \colon M \times M \to M$ be the projection on the first factor. Then $$V \times_M W = \pi_1((M \times V)\times_{M \times M} \diag(W)).$$
 \end{lemma}
+
 \begin{proof}
 	By \cref{L: M times transverse diag}, $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag r_W \colon W \to M \times M$ in $M \times M$, so both expressions are defined. We also have $V = M \times_M V = \diag^*(M \times V)$ by \cref{C: cup with identity} and \cref{P: cross to cup}.
 	So we can compute
@@ -1381,6 +1397,7 @@ For the next lemmas, we make the following definitions.
 \begin{lemma}\label{L: diagonal equivalence}
 	Let $M$ be a cubulated manifold without boundary. Let $W$ be a cycle in $K_*(M)$, and let $V \in PC^*_\Gamma(M)$ be a cocycle such that $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag(\mc J(W))$ and $\mc J(\Delta(W))$. Then $$\underline{\pi_1((M \times V) \times_{M \times M}\diag(\mc J(W)))} = \underline{\pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W)))} \in H_*^\Gamma(M).$$
 \end{lemma}
+
 \begin{proof}
 	If we consider $W$ as an element of $NK_*^{sm}(M)$, then the geometric chain $\diag(\mc J(W))$ is represented by the singular cubical chain $\diag(W)$ and $\mc J(\Delta(M))$ is represented by the singular cubical chain $\zeta\xi\diag(W)$.
 
@@ -1427,6 +1444,7 @@ The proof follows immediately from \cref{T: equivalent cap} and the following le
 \begin{lemma}
 	Let $M$ be closed, oriented, cubulated, and connected. Then $\mc J([M]) = \uM \in H_m^\Gamma(M)$.
 \end{lemma}
+
 \begin{proof}
 	Let $\uV \in H^m_\Gamma(M)$ be represented by a map $V = pt \into M$ taking the point to the center of an $m$-cube of the cubulation, co-oriented so that its normal co-orientation agrees with the orientation of $M$. By \cref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ are both represented by embeddings with the same orientation in a neighborhood of the embedded point $V$, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are each represented by the same point with its induced orientation (which by \cref{P: cap of immersions} will be the positive orientation). This is a generator of $H_0^\Gamma(M) \cong \Z$, as we can see, for example, via our homology isomorphism $H_*(NK_*(M)) \to H_*^\Gamma(M)$.
 	As $H_m^\Gamma(M) \cong H_0^\Gamma(M) \cong \Z$ by the isomorphisms between geometric and singular homology and cohomology, $\uV\nplus:H_m^\Gamma(M) \to H_0^\Gamma(M)$ must be injective as we have shown it is not the $0$ map. Since we have shown $\uV\nplus\uM = \uV\nplus\mc J([M])$, we have $\uM = \mc J([M])$.
@@ -1453,6 +1471,7 @@ typically defined by taking a homology or cohomology class, dualizing using Poin
 		H_i^\Gamma(N)&\rTo^f&H_i^\Gamma(M)&&H_{m-i}^\Gamma(M)&\rTo^{f^*}&H_{n-i}^\Gamma(N).
 	\end{diagram}
 \end{proposition}
+
 \begin{proof}
 	We start with the diagram on the left. Let $\uV \in H^{n-i}_\Gamma(N)$ represented by a co-oriented map $r_v \colon V \to N$. Then $\uV\nplus\uN$ is represented by the same map to $N$ with its induced orientation; see \cref{S: co-orientations}. In particular, if $x \in V$ then $V$ is oriented at $x$ by the local orientation $\beta_V$ such that $(\beta_V,\beta_N)$ gives the co-orientation of $r_V$.
 	The path down then right is then the composition $fr_V$, considering $V$ with its orientation induced by $r_V$ and the orientation of $N$. On the other hand, by the definition in \cref{S: covariant functoriality}, the element $f(\uV)$ in $H^{m-i}_\Gamma(M)$ is represented by $fr_V$ co-oriented by composing the co-orientations of $r_V$ and $f$. So if the co-orientation of $r_V$ is again $(\beta_V,\beta_N)$, the co-orientation of $fr_V$ representing $f(\uV)$ is $(\beta_V,\beta_N)*(\beta_N,\beta_M) = (\beta_V,\beta_M)$. So $f(\uV)\nplus \uM$ is represented by $fr_V$ with $V$ oriented again by $\beta_V$. Thus the diagram commutes.
@@ -1485,7 +1504,3 @@ typically defined by taking a homology or cohomology class, dualizing using Poin
 		Then by Proposition \ref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ both have the same orientation in a neighborhood of the embedded point, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are each represented by the same embedding of a point with its induced orientation (which by Proposition \ref{P: cap of immersions} will be the positive orientation). So we must have $\mc J([M]) = \uM$ rather than $-\uM$.
 	\end{proof}
 \end{comment}
-
-%%% Local Variables:
-%%% TeX-master: "geometric_cohomology.tex"
-%%% End:
