@@ -37,7 +37,7 @@ and $V$ is fixed) the direct sum of the normal bundles.
 
 The following is essentially the content of Section~5 of \cite{Lipy14}.
 
-\begin{proposition} \label{P: product}
+\begin{proposition}\label{P: product}
 	The pullback product $\uplus_M$ extends linearly to a well-defined, though only partially-defined, product on $C_\Gamma^*(M)$, which in turn passes to a fully-defined product on $H_\Gamma^*(M)$.
 \end{proposition}
 
@@ -119,7 +119,7 @@ This expression differs from the standard orientation of $M \times M$ by a sign 
 
 We begin by defining a simple version of transversality for geometric chains and cochains and the resulting (co)chain-level cup, cap, and intersection products. Geometric chains and (co)chains $\uV$ and $\uW$ will be called \textbf{simply transverse} if they possess transverse representing pre(co)chains. This allows us to define cup, cap, and intersection products of transverse chains and cochains via their fiber products. After a thorough study of this case, we will consider some more complex situations. For example, one might consider the case where $\uV$ and $\uW$ can be represented by disjoint unions of pre(co)chains $V = \bigsqcup V_i$ and $W = \bigsqcup W_j$ such that the pairs $(V_i,W_j)$ are not necessarily transverse but such that for each such pair there are alternative representatives, say $(V'_{ij},W'_{ji})$, depending on both $i$ and $j$, with $\underline{V_i} = \underline{V'_{ij}}$, $\underline{W_j} = \underline{W'_{ji}}$, and $V'_{ij}$ transverse to $W'_{ji}$. Then one would like to have products of $\uV$ and $\uW$ using these representatives, but we must show independence of the choices involved. Such examples, and even more general ones, are critical for obtaining a version of multilinearity for our partially-defined products. But we begin with a more basic scenario.
 
-\begin{definition} \label{D: cochain trans}
+\begin{definition}\label{D: cochain trans}
 	We say that $\uV, \uW \in C^*_{\Gamma}(M)$ are \textbf{simply transverse} as geometric cochains if there exist representatives $V,W \in PC^*_\Gamma(M)$ such that $V$ and $W$ are transverse as manifolds with corners mapping to $M$.
 We call the data of such a pair $(V,W)$ a \textbf{simple transverse representation} for the pair $(\uV,\uW)$.
 
@@ -314,7 +314,7 @@ By \cref{L: essential}, $V_E-V'_E$ and $W_E-W'_E$ are trivial, and the transvers
 
 The remaining terms of \eqref{E: intersect} each involve an element of small rank and so are of small rank by \cref{L: pullback with Q}. So to see that what's left is an element of $Q(M)$, it suffices to show that the boundary of the remaining terms consists of cochains that are trivial or of small rank.
 Letting $m = \dim M$ and $v = \dim V$, this boundary is
-\begin{multline} \label{E: boundary}
+\begin{multline}\label{E: boundary}
 (\bd V_E) \times_M W_{NI}+(-1)^{m-v}V_E \times_M \bd W_{NI}+
 (\bd V_{NI}) \times_M W_E+(-1)^{m-v}V_{NI} \times_M \bd W_E\\
 +(\bd V_{NI}) \times_M W_{NI}+(-1)^{m-v}V_{NI} \times_M \bd W_{NI}
@@ -537,7 +537,7 @@ using the definitions, obvious properties of the pullback and \cref{L: co/chains
 
 We observe here that the exterior products defined in \cref{S: exterior products} give rise to well-defined products for geometric chains and cochains, and, in fact, these are fully defined, unlike the cup, cap, and intersection products.
 
-\begin{definition} \label{D: exterior chain}
+\begin{definition}\label{D: exterior chain}
 	Suppose $\uV \in C_*^{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(N)$ represented by $V \in PC_*^{\Gamma}(M)$ and $W \in PC_*^{\Gamma}(N)$. Then we define the \textbf{exterior chain product (or chain cross product)} $$\times: C_*^{\Gamma}(M) \times C_*^{\Gamma}(N) \to C_*^{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$.
 
 	Similarly, suppose $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C^*_{\Gamma}(N)$ represented by $V \in PC^*_{\Gamma}(M)$ and $W \in PC^*_{\Gamma}(N)$. Then we define the \textbf{exterior cochain product (or cochain cross product)} $$\times: C^*_{\Gamma}(M) \times C^*_{\Gamma}(N) \to C^*_{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$.

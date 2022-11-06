@@ -216,7 +216,7 @@ By definition, we choose an orientation of $P$ so that this matrix takes the con
 To define co-orientations, we recall our definition of an orientation of a bundle from \cref{D: det bundle} as an equivalence class, up to positive scalar multiplication, of an everywhere non-zero section of the top exterior power of the bundle.
 This motivates the following.
 
-\begin{definition} \label{D: co-orientations}
+\begin{definition}\label{D: co-orientations}
 	A \textbf{co-orientation} $\omega_g$ of a \textit{continuous}\footnote{We will most often be interested in the case of $g$ smooth, but continuous co-orientable maps do come up in \cref{S: basic properties} where we consider covariant functoriality of geometric cohomology with respect to continuous maps.} map $g \colon W \to M$ of manifolds with corners is an equivalence class, up to positive scalar multiplication, of a nowhere zero section of the line bundle $\Hom(\Or(TW), \Or(g^*TM)) \cong \Hom(\Or(TW), g^*\Or(TM))$.
 	Equivalently, a co-orientation is a choice of isomorphism between the associated orientation cover $\Or(TW)$ and the pullback of the associated orientation cover $\Or(TM)$.
 \end{definition}
@@ -320,7 +320,7 @@ If the normal bundle is orientable, one can conversely orient the normal bundle 
 Signs in the theory are highly dependent on choices.
 One such choice in this definition is whether to append the local normal orientation before or after the local tangent orientation.
 
-\subsubsection{Quillen co-orientations} \label{S: Quillen}
+\subsubsection{Quillen co-orientations}\label{S: Quillen}
 There is a useful alternative, though equivalent, definition of co-orientations due to Quillen \cite{Quil71} that only involves orientations of normal bundles.\footnote{Quillen's context was slightly different.
 	He assumed the normal bundles to have complex structures and so called these \textit{complex orientations}.}
 
@@ -668,7 +668,7 @@ Before getting into the specifics of the construction, we need to make the follo
 	we have an isomorphism
 	$\Or(TP) \otimes \Or(\nu_{P \subset V \times W}) \cong \Or (T(V \times W)) \cong \Or(TV)\otimes \Or(TW)$ and similarly for the second exact sequence.
 	These fit into a not-necessarily-commutative square
-	\begin{equation} \label{co-or stuff}
+	\begin{equation}\label{co-or stuff}
 		\begin{tikzcd}
 			\Or (TP) \otimes \Or(\nu_{P \subset V \times W}) \arrow[r, "\cong"] \arrow[d, "\gamma \otimes \Or(i)"] & \Or (T V) \otimes \Or (TW) \arrow[d] \\
 			\Or (TM) \otimes \Or( \nu_{\Delta M \subset M \times M}) \arrow[r, "\cong"] & \Or (T M) \otimes \Or (TM).
@@ -1183,7 +1183,7 @@ We now show that for arbitrary transverse intersecting $f$ and $g$ there are alw
 	By Lemma \ref{L: make full}, we can first perform a homotopy $F \times I:V \times I \to M$ of $f$ to $f':V \to M$ and then a homotopy of $G:W \times I \to M$ of $g$ to $g':W \to M$ so that $f'$ and $g'$ have full rank at $x$ and $y$ respectively.
 	By the construction of Lemma \ref{L: make full}, these properties will continue to hold if we take the homotopies constructed there to be of arbitrarily short duration, and we can assume the homotopies are constant outside of compact neighborhoods of $x$ and $y$ in the interiors of $V$ and $W$.
 	Considering $F$ first, by doing so, we can assure that, as spaces but ignoring co-orientations, the pullback $(V \times I) \times_M W$ will have the form of a cylinder $P \times I$ with $F \times_M g$ being a homotopy from $f \times_M g$ to $f' \times_M g$.
-	As $f \times_M g$ is co-orientable, so is this homotopy, and, now considering co-orientations, there is a co-orientation for this homotopy making it a co-oriented homotopy from $f \times_M g$ to $f' \times_M g$ (recall Definition \ref{D: co-oriented homotopy} and Section \label{S: co-oriented homotopy} in general).
+	As $f \times_M g$ is co-orientable, so is this homotopy, and, now considering co-orientations, there is a co-orientation for this homotopy making it a co-oriented homotopy from $f \times_M g$ to $f' \times_M g$ (recall Definition \ref{D: co-oriented homotopy} and Section\label{S: co-oriented homotopy} in general).
 	Similarly, $g \times_M F$ can be co-oriented as a co-oriented homotopy from $g \times_M f$ to $g \times_M f'$.
 	Identifying these pullback as in Diagram \eqref{D: comm triangle}, we see that $\omega_{f \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f}$ if and only if $\omega_{f' \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f'}$.
 	Analogously, this holds if and only if $\omega_{f' \times_M g'} = (-1)^{(m-v)(m-w)}\omega_{g' \times_M f'}$, which holds by Corollary \ref{C: if full}.

@@ -1,6 +1,6 @@
 % !TEX root = ../foundations.tex
 
-\section{Geometric chains and cochains} \label{S: geometric cochains}
+\section{Geometric chains and cochains}\label{S: geometric cochains}
 
 Geometric homology and cohomology are homology/cohomology theories for smooth manifolds defined through submanifolds or, more generally, maps from manifolds with corners.
 They agree with singular homology and cohomology, but having different representatives
@@ -14,7 +14,7 @@ Our definitions of geometric chains and cochains will be a modification of that 
 
 We first identify certain types of ``manifolds over $M$.'' In future sections $M$ will most typically be a manifold without boundary, as that is the case where we obtain agreement between geometric (co)homology and singular (co)homology, but in this section (and anywhere else we do not require transversality of maps to $M$), we allow it to be a manifold with corners anywhere that the extra generality may be useful but so long as it does not create more technical work (such as when utilizing smoothing, as happens below). In this case, we may interpret ``smooth'' to mean either ``smooth'' or ``weakly smooth'' in the sense of \cite{Joy12}, so long as we are consistent in this interpretation.
 
-\begin{definition} \label{V: maps are co-oriented}
+\begin{definition}\label{V: maps are co-oriented}
 A \textbf{manifold over $\mathbf{M}$} is a manifold with corners $W$ with a smooth map $r_W : W \to M$,
 called the \textbf{reference map}. We freely and almost always abuse notation
 by using the domain $W$ to refer to the manifold over $M$, not $r_W$ or some other symbol, letting
@@ -540,7 +540,7 @@ The lemma itself will also be important when we consider products below in Secti
 
 
 
-\begin{lemma} \label{L: pullback with Q}
+\begin{lemma}\label{L: pullback with Q}
 Let $M$ be a manifold without boundary. Suppose $T \in PC_*^\Gamma(M)$ (or $PC^*_\Gamma(M)$), and that $T \in Q(M)$. Then $T \times_M W \in Q(M)$ and $W \times_M T \in Q(M)$ for any $W$ in $PC_*^\Gamma(M)$ (or $PC^*_\Gamma(M)$) that is transverse to $T$.
 \end{lemma}
 \begin{proof}
@@ -601,7 +601,7 @@ Define $W^+$ to be $f^{-1} [p, \infty)$ and $W^-$ to be $f^{-1} (-\infty, p]$. B
 also transversality as developed in in Section 6 of \cite{Joy12}), $W^+$ and $W^-$ are manifolds with corners.
 The following is Lemma~9 of \cite{Lipy14}.
 
-\begin{proposition} \label{P: creasing}
+\begin{proposition}\label{P: creasing}
 Let $f \colon W \to \R$ and $p$ be a regular value of $f$.
 There is a manifold-with corners structure on the topological manifold $W \times [0,1]$, called the creasing of $W$ at $p$,
 whose boundary is the disjoint union of $W$ with its orientation
