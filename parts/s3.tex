@@ -911,7 +911,6 @@ The co-oriented pullback construction is functorial in the following sense.
 	For the second claim, there is a diffeomorphism between $\{(v,x) \in V \times X \mid f(v) = g(h(x))\}$ and $\{((v,w),x) \in (V \times_M W) \times X \mid w = h(x)\}$ given by $(v,x) \to (v,h(x),x)$ and $((v,w),x) \to (v,x)$.
 	To see that the last map is well-defined notice that $f(v) = g(h(x))$ as $h(x) = w$, and $f(v) = g(w)$ from the assumption $(v,w) \in V \times_M W$.
 	Compatibility of the co-orientations now follows by considering the following diagram and noting that it is equivalent to pull back the normal $\nu V$ to $X \times \R^N$ either in two steps or all at once.
-
 	\begin{diagram}
 		(V \times _M W)\times_W X&\rTo^{\pi_{V \times_M W}} &V \times_M W&\rTo^{\pi_V} & V\\
 		\dTo&&\dTo&&\dTo_e\\
@@ -941,7 +940,7 @@ In addition, these special cases are good for building intuition about the more 
 In the key example when both $f$ and $g$ are immersions, the fiber products will locally correspond to intersections of the images in $M$, and in this case our general definition of fiber product co-orientation is compatible with the approach to co-orientations via orientations of normal bundles.
 
 \begin{proposition}\label{P: normal pullback}
-	Let $f : V \to M$ and $g \colon W \to M$ be transverse co-oriented immersions from manifolds with corners to a manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented immersions from manifolds with corners to a manifold without boundary.
 	Let $\nu V$ and $\nu W$ denote the respective normal bundles.
 	Choose local Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ so that the normal co-orientations $(\beta_V,\beta_V \wedge \beta_{\nu V})$ and $(\beta_W,\beta_W \wedge \beta_{\nu W})$ agree with the given co-orientations of $f$ and $g$.
 	Then, decomposing the normal bundle of the fiber product $P = V \times_M W \to M$ at any point of intersection as $\nu V \oplus \nu W$ and giving it the orientation $\beta_{\nu V} \wedge \beta_{\nu W}$, the fiber product co-orientation agrees with the normal co-orientation, i.e.\
