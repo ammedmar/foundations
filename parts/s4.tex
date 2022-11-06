@@ -5,8 +5,7 @@
 Geometric homology and cohomology are homology/cohomology theories for smooth manifolds defined through submanifolds or, more generally, maps from manifolds with corners.
 They agree with singular homology and cohomology, but having different representatives
 at the chain/cochain level, they provide geometric approaches to both theory and calculations.
-They are thus akin to de Rham theory in the sense that chains and cochains are defined through the smooth structure rather than continuous maps or open sets,
-but they are defined over the integers and not just the real numbers.
+They are thus akin to de Rham theory in the sense that chains and cochains are defined through the smooth structure rather than continuous maps or open sets, but they are defined over the integers and not just the real numbers.
 
 Our definitions of geometric chains and cochains will be a modification of that given by Lipyanskiy in \cite{Lipy14}, though his results will continue to hold with our modified definitions. As Lipyanskiy primarily focuses on geometric chains and geometric homology, our focus, where the theories diverge, will primarily be on geometric cochains and cohomology, for which Lipyanskiy's account is much less complete despite the cohomological setting having its own subtleties. We also take the opportunity to fill in some of the details missing from Lipyanskiy's account more generally, especially utilizing the more thorough foundations on manifolds with corners provided by Joyce \cite{Joy12}.
 
@@ -34,8 +33,7 @@ We first identify certain types of ``manifolds over $M$.'' In future sections $M
 \end{definition}
 
 %The most important case of manifolds over $M$ are submanifolds.
-%At times we also
-%employ the notation $W \to M$, to address general maps but keep the emphasis on the case of embeddings.
+%At times we also employ the notation $W \to M$, to address general maps but keep the emphasis on the case of embeddings.
 
 Geometric chains and cochains will be equivalence classes of manifolds over $M$ under an equivalence relation we define using the following concepts, which are taken from or modify
 the definitions of \cite{Lipy14}.
@@ -119,6 +117,7 @@ The following useful basic properties are proven in \cite{Lipy14}; for completen
 \begin{lemma}[Lipyanskiy Lemma 10]\label{L: Lip L10}
 	If $V$ is trivial and $V \sqcup W$ is trivial, then $W$ is trivial.
 \end{lemma}
+
 \begin{proof}
 	We can write $W$ as the disjoint union of a (possibly infinite) number of isomorphism classes of connected components and then group the isomorphism classes together up to (co-)orientation as $W = W_1 \sqcup W_2 \sqcup \cdots$ so that all connected components of each $W_i$ are isomorphic (ignoring (co-)orientations) for each $i$ and so that no connected component of $W_i$ is isomorphic to a connected component of $W_j$ for $i\neq j$. As either $W$ is compact or $r_W$ is proper, each $W_i$ is the union of a finite number of connected components.
 	Any automorphism of $W$ preserves the decomposition into $W_i$ and so $W$ is trivial if and only if for all $i$ either $W_i$ has zero components when counting with (co-)orientation or each component of $W_i$ has a (co-)orientation reversing automorphism.
@@ -129,6 +128,7 @@ The following useful basic properties are proven in \cite{Lipy14}; for completen
 \begin{lemma}[Lipyanskiy Lemma 11]\label{L: bd defined}
 	If $W$ is in $Q(M)$, then $\bd W \in Q(M)$.
 \end{lemma}
+
 \begin{proof}
 	We first check that if $W$ is trivial then so is its boundary $r_{\bd W} = r_Wi_{\bd W} \colon \bd W \to M$. If $\rho \colon W \to W$ is (co-)orientation reversing, then we can consider $\rho_\bd$ as defined in \cref{R: bd diff}. As $r_W\rho = r_W$ we also have $r_Wi_{\bd W} = r_W\rho i_{\bd W} = r_W i_{\bd W} \rho_\bd$. Thus we only need see that $\rho_\bd$ is orientation reversing. It is sufficient to consider what happens at points on the interior of $\bd W$ so working locally we may identify such points of $\bd W$ with points of $W$ itself and similarly identify $\rho_\bd$ with $\rho$. In the oriented case, the orientation of $W$ determines orientations of $T_xW$ and $T_{\rho(x)}W$, and by assumption $D\rho: T_xW \to T_{\rho(x)}W$ takes the orientation of $T_xW$ to the opposite of the orientation of $T_{\rho(x)}W$. But also $D\rho$ must preserve inward/outward pointing vectors. Thus $D\rho$ must restrict to a map $T_x (\bd W) \to T_{\rho(x)}(\bd W)$ that also reverses the orientation. The co-oriented situation is analogous using local orientation pairs $\left(\beta_{W,x}, \beta_{M,r_W(x)}\right)$ and $\left(\beta_{W,\rho(x)}, \beta_{M,r_W\rho(x)}\right)$ and taking $\beta_{M,r_W\rho(x)} = \beta_{M,r_W(x)}$ as $\rho$ is a diffeomorphism over $M$.
 
@@ -149,6 +149,7 @@ The following useful basic properties are proven in \cite{Lipy14}; for completen
 \begin{lemma}[Lipyanskiy Lemma 13]\label{L: cancel Q}
 	The relation given by $V\sim W$ if $V \sqcup -W$ is in $Q_*(M)$ (respectively $Q^*(M)$) is an equivalence relation on $PC^\Gamma_*(M)$ (respectively $PC_\Gamma^*(M)$).
 \end{lemma}
+
 \begin{proof}
 	Reflexivity: For any $W$, we have $W \sqcup -W$ trivial via the map that interchanges the two copies of $W$.
 
@@ -175,6 +176,7 @@ The notation says that if $V$ and $W$ represent equivalence classes $\uV$ and $\
 \begin{lemma}\label{L: co/chains well defined}
 	The chain complexes $C_\Gamma^*(M)$ and $C_\Gamma^*(M)$ are well defined with $\uW = 0$ in $C^\Gamma_*(M)$ (respectively $C_\Gamma^*(M)$) if and only if $W$ is in $Q_*(M)$ (respectively $Q^*(M)$).
 \end{lemma}
+
 \begin{proof}
 	This is a consequence of the preceding lemmas. For simplicity we work with $Q_*(M)$ and $C^\Gamma_*(M)$, but the identical arguments hold with $Q^*(M)$ and $C_\Gamma^*(M)$.
 
@@ -277,6 +279,7 @@ The following algebraic property will be useful below as we consider homological
 \begin{lemma}
 	Each $C_i^\Gamma(M)$ or $C_\Gamma^i(M)$ is torsion-free and hence flat as a $\Z$-module.
 \end{lemma}
+
 \begin{proof}
 	The second statement follows from the first as $\Z$ is a Dedekind domain. The first statement is proven for geometric chains in \cite[Lemma 34]{Lipy14}. The proof for geometric cochains, even accounting for our different definition of degeneracy, is the same.
 \end{proof}
@@ -295,6 +298,7 @@ These products will ultimately become our cup, cap, intersection, and exterior p
 	$$PC_*^\Gamma(M) \times PC_*^\Gamma(M) \to PC^*_\Gamma(M).$$
 	In each case, the product is defined when the reference maps $r_V \colon V \to M$ and $r_W \colon W \to M$ are transverse.
 \end{definition}
+
 To define these products, in each case we suppose transverse maps $r_V \colon V \to M$ and $r_W \colon W \to M$ representing elements of
 $PC^*_\Gamma(M)$ or $PC_*^\Gamma(M)$ and form the fiber product $V \times_M W \to M$.
 Then the first product is well defined by the definition of the fiber product co-orientation, \cref{L: co-orientable pullback}, and that the composition of proper maps is proper. For the second product, we have the pullback co-orientation $V \times_M W \to W$, and $W$ is compact and oriented by definition. So $V \times_M W$ is compact by \cref{L: co-orientable pullback} as a proper map to a compact space must have compact domain. We also recall that given a smooth map of manifolds with oriented codomain, an orientation of the domain determines a co-orientation of the map and vice versa; see the discussion following \cref{D: co-orientations}. So $V \times_M W$ is compact, and if we give it the orientation we obtain from the pullback co-orientation of $V \times_M W \to W$, we obtain an element of $PC_*^\Gamma(M)$. For the third map, we use the convention of Joyce recalled in \cref{S: orientations} to oriented a fiber product of oriented manifolds with corners and observe that $V \times_M W$ is compact as a closed subset of the compact $V \times W$. Thus we obtain an element $PC_*^\Gamma(M)$. In this last case, we really need $M$ to be oriented in general, as we have observed in \cref{R: what products exist} that if $M$ is not orientable the fiber product of orientable manifolds over $M$ may be non-orientable.
@@ -306,6 +310,7 @@ The next Lemma will be critical in \cref{S: products} toward showing that these 
 \begin{lemma}\label{L: pullback with Q}
 	For any of the products above, if either $V$ or $W$ is in $Q(M)$, then $V \times_M W \in Q(M)$. In fact, if $V$ or $W$ is trivial then $V \times_M W$ is trivial, and if $V$ or $W$ has small rank then $V \times_M W$ has small rank.
 \end{lemma}
+
 \begin{proof}
 	We provide the proof if $V \in Q(M)$; the other case is similar. By assumption $V$ is the disjoint union of trivial and degenerate chains or cochains, so it suffices to consider independently the possibilities that $V$ is trivial or degenerate.
 
@@ -327,6 +332,7 @@ We have a similar result for the exterior products studied in \cref{S: exterior 
 \begin{lemma}\label{L: exterior Q}
 	Suppose $f \colon V \to M$ and $g \colon W \to N$ are respectively in $PC_*(M)$ and $PC_*(N)$ or that they are respectively in $PC^*(M)$ and $PC^*(N)$. Suppose $V \in Q(M)$ or $W \in Q(N)$. Then $f \times g \colon V \times W \to M \times N$ is in $Q(M \times N)$.
 \end{lemma}
+
 \begin{proof}
 	We provide the proof if both maps are in $PC^*$ and $V \in Q^*(M)$; the other cases are similar. By assumption $V$ is the disjoint union of trivial and degenerate chains or cochains, so it suffices to consider independently the possibilities that $V$ is trivial or degenerate.
 
@@ -415,7 +421,6 @@ We can now define creasing.
 	As usual, we typically abuse notation and, depending on context, may write $\Cre(W)$ to refer to the space $D\times_{(-1,1)} W$, the space together with its map to $W$, or, as we shall see below, refer to
 
 	If we are treating $\varphi \colon W \to (-1,1)$ as oriented, then we interpret $\Cre(W)$ as oriented. If we are treating $\varphi \colon W \to (-1,1)$ as co-oriented, then we interpret $\Cre(W)$ as co-oriented.
-
 \end{comment}
 
 To justify the notion of creasing as a type of homotopy, at least topologically, we have the following lemma and corollary:
@@ -423,6 +428,7 @@ To justify the notion of creasing as a type of homotopy, at least topologically,
 \begin{lemma}
 	Suppose given a projection $X \times Y \to X$ and a map $g \colon W \to X$. Then the fiber product $(X \times Y)\times_XW$ is homeomorphic to $Y \times W$.
 \end{lemma}
+
 \begin{proof}
 	We have $(X \times Y)\times_XW = \{(x,y,w) \in X \times Y \times W \mid x = g(w)\}$. A homeomorphism $(X \times Y)\times_XW \to Y \times W$ is then given by $(x,y,w) \to (y,w)$ with inverse given by $(y,w) \to (g(w),y,w)$.
 \end{proof}
@@ -430,6 +436,7 @@ To justify the notion of creasing as a type of homotopy, at least topologically,
 \begin{corollary}
 	$\Cre(W)$ is homeomorphic to $I \times W$.
 \end{corollary}
+
 \begin{proof}
 	This follows from the preceding lemma by observing that $D$ is homeomorphic to $(-1,1) \times I$ via a homeomorphism that preserves $\pi$ by taking $(x,y)$ to $\left(x, \frac{y}{2-|x|}\right)$.
 \end{proof}
@@ -455,7 +462,6 @@ again interpreting these formulas in $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$, respe
 
 	If $W \in PC_*^{\Gamma}(M)$ represented by $r_W \colon W \to M$, then $\Cre(W)$ is also compact and oriented, and we have a map $r_{\Cre(W)} = r_W\pi_W \colon W \to M$ with $\pi_W$ being the projection of $\Cre(W) = D\times_{(-1,1)}W$ to $W$. Thus $r_{\Cre(W)} \colon \Cre(W) \to M$ gives us a new element of $PC_*^\Gamma(M)$.
 	If $W \in PC^*_\Gamma(M)$, then to get an element $\Cre(W) \in PC^*_\Gamma(M)$ we will need to assume that $\varphi \colon W \to (-1,1)$ is a composition of maps $W \xr{r_W}M \xr{\phi} (-1,1)$. We can then form the space $\Cre(W)$ as the pullback by $\phi r_W$ of $\pi: D \to (-1,1)$. As $\pi$ is proper and co-oriented, the pullback $\pi^* = \pi_W \colon \Cre(W) \to W$ will be proper and co-oriented by Lemma \ref{L: co-orientable pullback} and Definition \ref{D: pullback coorient}. We then let $r_{\Cre(W)} = r_W \pi^*$ to obtain an element of $\Cre(W) \in PC^*_\Gamma(M)$. By \cite[Propositions 7.4]{Joy12} and Theorem \ref{leibniz}, our boundary formulas for $\Cre(W)$ continue to hold as elements of $PC_*^{\Gamma}(M)$ or $PC^*_{\Gamma}(M)$.
-
 \end{comment}
 
 \begin{convention}\label{C: regular value setup}
@@ -481,12 +487,12 @@ To next promote the construction $\Cre(-)$ to an operator on $C_*^{\Gamma}(M)$ o
 
 		Next we recall $\bd(T \times_M W) = (\bd T) \times_M W \bigsqcup \pm T \times_M (\bd W)$. We have just shown that $T \times_M (\bd W)$ must have small rank. As $T$ is degenerate, $\bd T$ is a disjoint of trivial and small rank manifolds over $M$, and so by the preceding arguments $(\bd T) \times_M W$ will be a union of trivial and small rank manifolds over $M$. Altogether, $T \times_M W$ is degenerate.
 	\end{proof}
-
 \end{comment}
 
 \begin{corollary}\label{C: creasing Q}
 	Let $M$ be a manifold without boundary. Suppose given $\phi \colon M \to (-1,1)$ with $0$ a regular value and $r_T:T \to M$ transverse to $M^0$. If $T \in Q(M)$ then so are $T^+$, $T^-$, $T^0$, and $\Cre(T)$.
 \end{corollary}
+
 \begin{proof}
 	As observed in \cref{C: regular value setup}, with our assumptions about $\varphi$ the spaces $T^\pm$ and $T^0$ are fiber products over $M$ of $T$ with $M^\pm$ and $M^0$. So in this case the claim follows from the \cref{L: pullback with Q}.
 
@@ -496,6 +502,7 @@ To next promote the construction $\Cre(-)$ to an operator on $C_*^{\Gamma}(M)$ o
 \begin{proposition}
 	Let $M$ be a manifold without boundary. Suppose given $\phi \colon M \to (-1,1)$ with $0$ a regular value. If $V$ and $W$ are any two representatives of $\uW \in C_*^\Gamma(M)$ whose reference maps are transverse to $M^0$, then $\Cre(V)$ and $\Cre(W)$ represent the same element of $C_*^\Gamma(M)$. Thus if the equivalence class $\uW$ contains any representative that is transverse to $M^0$, there is a well-defined element $\underline{\Cre(W)} \in C_*^\Gamma(M)$. Similarly for $C^*_\Gamma(M)$.
 \end{proposition}
+
 \begin{proof}
 	The proofs for chains and cochains are the same, so we provide that with chains.
 
@@ -508,6 +515,7 @@ Finally, we come to the punchline of creasing:
 	Let $M$ be a manifold without boundary. Suppose $\uW \in H_*^\Gamma(M)$ and that $\uW$ has a representative $r_W \colon W \to M$ that is transverse to $M^0$, defined with respect to some $\phi \colon M \to (-1,1)$ with $0$ a regular value.
 	Then $\uW = \underline{W^+}+\underline{W^-} \in H_*^\Gamma(M)$. Similarly for $H^*_\Gamma(M)$.
 \end{theorem}
+
 \begin{proof}
 	Again the proofs for homology and cohomology are the same so we focus on homology.
 
@@ -538,7 +546,3 @@ Finally, we come to the punchline of creasing:
 	See Figure~\ref{F: creasing} for a sketch of a creasing of the teardrop manifold.
 
 \end{comment}
-
-%%% Local Variables:
-%%% TeX-master: "geometric_cohomology.tex"
-%%% End:
