@@ -118,10 +118,10 @@ We will sometimes refer to elements of $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$ as \
 For the following definition only we will write isomorphism classes as $[W]$. In what follows we will abuse notation and refer to such an equivalence class only by a chosen representative.
 
 \begin{definition}
-If $V,W$ are compact oriented manifolds over $M$ (respectively proper co-oriented manifolds over $M$), then define $[V]\sqcup [W] = [V'\sqcup W']$, where on the right $\sqcup$ denotes disjoint union and $V'$ and $W'$ are compact oriented manifolds over $M$ (respectively proper co-oriented manifolds over $M$) such that $V'$ and $W'$ are disjoint in $\R^\infty$ (cf. \cref{D: MWC}).
+If $V,W$ are compact oriented manifolds over $M$ (respectively proper co-oriented manifolds over $M$), then define $[V] \sqcup [W] = [V' \sqcup W']$, where on the right $\sqcup$ denotes disjoint union and $V'$ and $W'$ are compact oriented manifolds over $M$ (respectively proper co-oriented manifolds over $M$) such that $V'$ and $W'$ are disjoint in $\R^\infty$ (cf. \cref{D: MWC}).
 \end{definition}
 
-The last clause in the definition is due to our requirement that all manifolds with corners be subsets of $\R^\infty$. As given, the definition allows constructions like $[W]\sqcup[W]$ to be well defined. We observe that this definition is well defined in general, since if $V''$ and $W''$ are two other manifolds over $M$ isomorphic to $V$ and $W$ (in the appropriate sense), then we can compose the diffeomorphisms $V'\xleftarrow{\phi'}V \xr{\phi''} V''$ and $W'\xleftarrow{\psi'}W \xr{\psi''} W''$ to obtain an isomorphism $\phi''(\phi')^{-1}\sqcup \psi''(\psi')^{-1} \colon V'\sqcup W' \to V''\sqcup W''$.
+The last clause in the definition is due to our requirement that all manifolds with corners be subsets of $\R^\infty$. As given, the definition allows constructions like $[W]\sqcup[W]$ to be well defined. We observe that this definition is well defined in general, since if $V''$ and $W''$ are two other manifolds over $M$ isomorphic to $V$ and $W$ (in the appropriate sense), then we can compose the diffeomorphisms $V'\xleftarrow{\phi'}V \xr{\phi''} V''$ and $W'\xleftarrow{\psi'}W \xr{\psi''} W''$ to obtain an isomorphism $\phi''(\phi')^{-1} \sqcup \psi''(\psi')^{-1} \colon V' \sqcup W' \to V'' \sqcup W''$.
 
 
 With $\sqcup$, $PC^\Gamma_*(M)$ and $PC_\Gamma^*(M)$ become commutative monoids in each degree with the empty maps $r_\emptyset:\emptyset \to M$ as the identities.
@@ -129,7 +129,7 @@ With $\sqcup$, $PC^\Gamma_*(M)$ and $PC_\Gamma^*(M)$ become commutative monoids 
 We now return to denoting isomorphism classes by their representatives, noting again that triviality and small rank are properties of the isomorphism classes.
 
 \begin{definition}
-Let $Q_*(M) \subset PC_*(M)$ denote the set of (isomorphism classes of) compact oriented manifolds over $M$ of the form $V\sqcup W$ with $V$ trivial and $W$ degenerate. Let $Q^*(M) \subset PC^*(M)$ denote the set of (isomorphism classes of) proper co-oriented manifolds over $M$ of the form $V\sqcup W$ with $V$ trivial and $W$ degenerate. In either case $V$ or $W$ may be empty.
+Let $Q_*(M) \subset PC_*(M)$ denote the set of (isomorphism classes of) compact oriented manifolds over $M$ of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate. Let $Q^*(M) \subset PC^*(M)$ denote the set of (isomorphism classes of) proper co-oriented manifolds over $M$ of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate. In either case $V$ or $W$ may be empty.
 
 We will sometimes write $W \in Q(M)$ to mean $W \in Q_*(M)$ or $W \in Q^*(M)$ for arguments that are analogous in the two cases. When we do so, we assume a consistent choice of $Q_*(M)$ or $Q^*(M)$ throughout the discussion; see for instance \cref{L: bd defined} and its proof.
 \end{definition}
@@ -141,13 +141,13 @@ We will sometimes write $W \in Q(M)$ to mean $W \in Q_*(M)$ or $W \in Q^*(M)$ fo
 The following useful basic properties are proven in \cite{Lipy14}; for completeness we provide versions of the arguments here, occasionally augmenting those of \cite{Lipy14}. In each case, ``isomorphic,'' ``trivial,'' or ``degenerate'' should be read consistently to refer to the compact oriented case or the proper co-oriented case. Lipyanskiy's proofs assume small image rather than small rank, butthe proofs are equivalent.
 
 \begin{lemma}[Lipyanskiy Lemma 10]\label{L: Lip L10}
-If $V$ is trivial and $V\sqcup W$ is trivial, then $W$ is trivial.
+If $V$ is trivial and $V \sqcup W$ is trivial, then $W$ is trivial.
 \end{lemma}
 \begin{proof}
-We can write $W$ as the disjoint union of a (possibly infinite) number of isomorphism classes of connected components and then group the isomorphism classes together up to (co-)orientation as $W = W_1\sqcup W_2\sqcup \cdots$ so that all connected components of each $W_i$ are isomorphic (ignoring (co-)orientations) for each $i$ and so that no connected component of $W_i$ is isomorphic to a connected component of $W_j$ for $i\neq j$. As either $W$ is compact or $r_W$ is proper, each $W_i$ is the union of a finite number of connected components.
+We can write $W$ as the disjoint union of a (possibly infinite) number of isomorphism classes of connected components and then group the isomorphism classes together up to (co-)orientation as $W = W_1 \sqcup W_2 \sqcup \cdots$ so that all connected components of each $W_i$ are isomorphic (ignoring (co-)orientations) for each $i$ and so that no connected component of $W_i$ is isomorphic to a connected component of $W_j$ for $i\neq j$. As either $W$ is compact or $r_W$ is proper, each $W_i$ is the union of a finite number of connected components.
 Any automorphism of $W$ preserves the decomposition into $W_i$ and so $W$ is trivial if and only if for all $i$ either $W_i$ has zero components when counting with (co-)orientation or each component of $W_i$ has a (co-)orientation reversing automorphism.
 
-Similarly, since $V$ is trivial, $V$ can be decomposed into unions of isomorphism classes, up to (co-)orientation, of connected components with $0$ components when counting with sign or with all components having (co-)orientation reversing automorphisms. In particular, forming $V\sqcup W$ adds to $W$ zero components when counting with sign or components with (co-)orientation reversing automorphisms, so if $V\sqcup W$ is trivial, $W$ must have already been trivial.
+Similarly, since $V$ is trivial, $V$ can be decomposed into unions of isomorphism classes, up to (co-)orientation, of connected components with $0$ components when counting with sign or with all components having (co-)orientation reversing automorphisms. In particular, forming $V \sqcup W$ adds to $W$ zero components when counting with sign or components with (co-)orientation reversing automorphisms, so if $V \sqcup W$ is trivial, $W$ must have already been trivial.
 \end{proof}
 
 
@@ -159,30 +159,30 @@ We first check that if $W$ is trivial then so is its boundary $r_{\bd W} = r_Wi_
 
 
 
-Now suppose $W$ degenerate. By definition $\bd W = A\sqcup B$ with $A$ trivial and $B$ of small rank. Then $\bd^2 W = \bd A\sqcup \bd B$. As noted, $\bd A$ is trivial, and $\bd^2 W$ is trivial for all $W$ by \cref{L: boundary2}. It follows from \cref{L: Lip L10} that $\bd B$ is trivial, and so $B$ is degenerate. Thus $\bd W$ is degenerate.
+Now suppose $W$ degenerate. By definition $\bd W = A \sqcup B$ with $A$ trivial and $B$ of small rank. Then $\bd^2 W = \bd A \sqcup \bd B$. As noted, $\bd A$ is trivial, and $\bd^2 W$ is trivial for all $W$ by \cref{L: boundary2}. It follows from \cref{L: Lip L10} that $\bd B$ is trivial, and so $B$ is degenerate. Thus $\bd W$ is degenerate.
 \end{proof}
 
 
 \begin{lemma}[Lipyanskiy Lemma 12]\label{L: Lipy12}
-If $V$ and $V\sqcup W$ are in $Q(M)$, then $W \in Q(M)$.
+If $V$ and $V \sqcup W$ are in $Q(M)$, then $W \in Q(M)$.
 \end{lemma}
 
 \begin{proof}
-As in the proof of \cref{L: Lip L10}, decompose $W$ as $W = W_1\sqcup W_2\sqcup \cdots$ and $V$ as $V = V_1\sqcup V_2\sqcup \cdots$. As $V$ and $V\sqcup W$ are in $Q(M)$, each $V_i$ has small rank or, also as in the proof of \cref{L: Lip L10}, $V_i$ is trivial, and similarly for $V\sqcup W$, from which it follows again by counting with signs in the trivial components that each $W_i$ is either trivial or has small rank.
-By grouping terms of the decomposition we can write $W = A\sqcup B$ with $A$ trivial and $B$ of small rank.
+As in the proof of \cref{L: Lip L10}, decompose $W$ as $W = W_1 \sqcup W_2 \sqcup \cdots$ and $V$ as $V = V_1 \sqcup V_2 \sqcup \cdots$. As $V$ and $V \sqcup W$ are in $Q(M)$, each $V_i$ has small rank or, also as in the proof of \cref{L: Lip L10}, $V_i$ is trivial, and similarly for $V \sqcup W$, from which it follows again by counting with signs in the trivial components that each $W_i$ is either trivial or has small rank.
+By grouping terms of the decomposition we can write $W = A \sqcup B$ with $A$ trivial and $B$ of small rank.
 
-We then have $\bd V$ and $\bd (V\sqcup W) = \bd V\sqcup \bd A\sqcup \bd B$ in $Q(M)$ by \cref{L: bd defined}, and also $\bd A$ is trivial as the boundary of a trivial manifold over $M$ by \cref{L: bd defined}. Now by the same argument as in the previous paragraph, replacing $V$ with $\bd V \sqcup \bd A$ and $W$ with $\bd B$, we have that $\bd B$ can be decomposed into the disjoint union of a trivial manifold over $M$ and one with small rank. But this shows $B$ is degenerate, so $W \in Q(M)$.
+We then have $\bd V$ and $\bd (V \sqcup W) = \bd V \sqcup \bd A \sqcup \bd B$ in $Q(M)$ by \cref{L: bd defined}, and also $\bd A$ is trivial as the boundary of a trivial manifold over $M$ by \cref{L: bd defined}. Now by the same argument as in the previous paragraph, replacing $V$ with $\bd V \sqcup \bd A$ and $W$ with $\bd B$, we have that $\bd B$ can be decomposed into the disjoint union of a trivial manifold over $M$ and one with small rank. But this shows $B$ is degenerate, so $W \in Q(M)$.
 \end{proof}
 
 \begin{lemma}[Lipyanskiy Lemma 13]\label{L: cancel Q}
-The relation given by $V\sim W$ if $V\sqcup -W$ is in $Q_*(M)$ (respectively $Q^*(M)$) is an equivalence relation on $PC^\Gamma_*(M)$ (respectively $PC_\Gamma^*(M)$).
+The relation given by $V\sim W$ if $V \sqcup -W$ is in $Q_*(M)$ (respectively $Q^*(M)$) is an equivalence relation on $PC^\Gamma_*(M)$ (respectively $PC_\Gamma^*(M)$).
 \end{lemma}
 \begin{proof}
-Reflexivity: For any $W$, we have $W\sqcup -W$ trivial via the map that interchanges the two copies of $W$.
+Reflexivity: For any $W$, we have $W \sqcup -W$ trivial via the map that interchanges the two copies of $W$.
 
-Symmetry: If $V\sqcup -W$ is the union of trivial and degenerate manifolds over $M$ then certainly so is $W\sqcup -V = -(V\sqcup -W)$.
+Symmetry: If $V \sqcup -W$ is the union of trivial and degenerate manifolds over $M$ then certainly so is $W \sqcup -V = -(V \sqcup -W)$.
 
-Transitivity: If $V\sqcup -W$ and $W\sqcup -U$ are in $Q_*(M)$ (or $Q^*(M)$), then so is $V\sqcup -W\sqcup W\sqcup -U \cong V\sqcup -U\sqcup W\sqcup -W$. We know $W\sqcup -W$ is trivial, and so $V\sqcup -U$ is in $Q_*(M)$ (or $Q^*(M)$) by \cref{L: Lipy12}.
+Transitivity: If $V \sqcup -W$ and $W \sqcup -U$ are in $Q_*(M)$ (or $Q^*(M)$), then so is $V \sqcup -W \sqcup W \sqcup -U \cong V \sqcup -U \sqcup W \sqcup -W$. We know $W \sqcup -W$ is trivial, and so $V \sqcup -U$ is in $Q_*(M)$ (or $Q^*(M)$) by \cref{L: Lipy12}.
 \end{proof}
 
 
@@ -203,7 +203,7 @@ We define the \textbf{geometric homology} of $M$, written $H_*^\Gamma(M)$, to be
 we define the \textbf{geometric cohomology} of $M$, written $H^*_\Gamma(M)$ to be $H^*(C_\Gamma^*(M))$.
 \end{definition}
 
-The notation says that if $V$ and $W$ represent equivalence classes $\uV$ and $\uW$, then in $C_*^{\Gamma}(M)$ (or $C^*_\Gamma(M)$), we have $\uV+\uW = \underline{V\sqcup W}$. In particular every chain or cochain can be represented by a single map $r_W \colon W \to M$ for appropriate $W$. Similarly, $V \in Q_*(M)$ (or $Q^*(M)$) if and only if $\uV = 0$.
+The notation says that if $V$ and $W$ represent equivalence classes $\uV$ and $\uW$, then in $C_*^{\Gamma}(M)$ (or $C^*_\Gamma(M)$), we have $\uV+\uW = \underline{V \sqcup W}$. In particular every chain or cochain can be represented by a single map $r_W \colon W \to M$ for appropriate $W$. Similarly, $V \in Q_*(M)$ (or $Q^*(M)$) if and only if $\uV = 0$.
 
 
 \begin{lemma}\label{L: co/chains well defined}
@@ -212,11 +212,11 @@ The chain complexes $C_\Gamma^*(M)$ and $C_\Gamma^*(M)$ are well defined with $\
 \begin{proof}
 This is a consequence of the preceding lemmas. For simplicity we work with $Q_*(M)$ and $C^\Gamma_*(M)$, but the identical arguments hold with $Q^*(M)$ and $C_\Gamma^*(M)$.
 
-Addition is well defined because if $\uV,\uW \in C^\Gamma_*(M)$ with $V$ and $V'$ in the class $\uV$ and $W$ and $W'$ in the class $\uW$, then $\uV+\uW$ is well defined as the class $\underline{V\sqcup W}$ because $(V\sqcup W)\sqcup -(V'\sqcup W') = (V\sqcup -V')\sqcup (W\sqcup -W')$: By assumption $V\sqcup -V' \in Q_*(M)$ is the disjoint union of a trivial manifold over $M$ and a degenerate manifold over $M$, and similarly for $W\sqcup -W'$, so $(V\sqcup -V')\sqcup (W\sqcup -W') \in Q_*(M)$.
+Addition is well defined because if $\uV,\uW \in C^\Gamma_*(M)$ with $V$ and $V'$ in the class $\uV$ and $W$ and $W'$ in the class $\uW$, then $\uV+\uW$ is well defined as the class $\underline{V \sqcup W}$ because $(V \sqcup W) \sqcup -(V' \sqcup W') = (V \sqcup -V') \sqcup (W \sqcup -W')$: By assumption $V \sqcup -V' \in Q_*(M)$ is the disjoint union of a trivial manifold over $M$ and a degenerate manifold over $M$, and similarly for $W \sqcup -W'$, so $(V \sqcup -V') \sqcup (W \sqcup -W') \in Q_*(M)$.
 
 The identity in each degree is represented by $\emptyset$ with the unique empty map to $M$ (with either orientation or co-orientation). In fact, every element of $Q_*(M)$ represents $0$ in $C^\Gamma_*(M)$ as elements of $Q_*(M)$ are all equivalent to $\emptyset$.
- Conversely, if $\uW = 0$ then $W \in Q_*(M)$, as if $\uV+\uW = \uV$ then $V\sqcup W \sqcup -V \in Q_*(M)$. But $V\sqcup -V \in Q_*(M)$, so by \cref{L: Lipy12}, $W \in Q_*(M)$.
-We also see that the additive inverse of $\uW$ is $\underline{-W}$, as $W\sqcup -W$ is trivial.
+ Conversely, if $\uW = 0$ then $W \in Q_*(M)$, as if $\uV+\uW = \uV$ then $V \sqcup W \sqcup -V \in Q_*(M)$. But $V \sqcup -V \in Q_*(M)$, so by \cref{L: Lipy12}, $W \in Q_*(M)$.
+We also see that the additive inverse of $\uW$ is $\underline{-W}$, as $W \sqcup -W$ is trivial.
 
 
 That the boundary map is well defined with $\bd \uW = \udW$ is due to \cref{L: bd defined} and \cite[Lemma 2.8]{Joy12}, which implies that $\bd W$ is proper.
@@ -313,7 +313,7 @@ If $M$ is a point, then every $r_W: W \to M$ with $\dim(W)>0$ is degenerate: If 
 \end{example}
 
 \begin{remark}\label{R: degen1}
-It is in the dimension axiom that we most obviously see the need to include degenerate chains and cochains in $Q(M)$. On the other hand, the formulation of degeneracy as given will create some difficult for us in \cref{S: products} when it comes to consider notions of transversality for geometric chains and cochains. The reason is that degeneracy causes much of the problematic ambiguity in choosing representatives for chains and cochains. For example, consider a connected prechain $V \in PC_*(M)$ with small rank but a boundary that is not in $Q_*(M)$. If $V'$ is any other such prechain with small rank and $\bd V = \bd V'$, then $V\sqcup -V' \in Q_*(M)$, so $V$ and $V'$ represent the same chain but could behave wildly differently aside from their boundaries. By contrast, we will see in \cref{S: products} that trivial chains are less of an issue (they can generally be ignored) and that non-trivial components without small rank are ``essential'' in a sense we will make precise in \cref{D: essential}; essential components appear in any representative of the same geometric chain or cochain.
+It is in the dimension axiom that we most obviously see the need to include degenerate chains and cochains in $Q(M)$. On the other hand, the formulation of degeneracy as given will create some difficult for us in \cref{S: products} when it comes to consider notions of transversality for geometric chains and cochains. The reason is that degeneracy causes much of the problematic ambiguity in choosing representatives for chains and cochains. For example, consider a connected prechain $V \in PC_*(M)$ with small rank but a boundary that is not in $Q_*(M)$. If $V'$ is any other such prechain with small rank and $\bd V = \bd V'$, then $V \sqcup -V' \in Q_*(M)$, so $V$ and $V'$ represent the same chain but could behave wildly differently aside from their boundaries. By contrast, we will see in \cref{S: products} that trivial chains are less of an issue (they can generally be ignored) and that non-trivial components without small rank are ``essential'' in a sense we will make precise in \cref{D: essential}; essential components appear in any representative of the same geometric chain or cochain.
 
 Given the headaches thus caused by the degenerate chains and cochains, it is tempting to ask for a simpler definition of degeneracy. One variant that comes to mind would be defining degeneracy so that each individual component must have a boundary consisting of trivial and small rank (co)chains. This would seem to be sufficient for the dimension axiom and would eliminate the difficulty described above. Unfortunately, with such an alternative definition of degeneracy, it will not generally be true that if $V \in Q(M)$ then fiber products $V \times_M W$ are also in $Q(M)$. This is an important property that will arise in the next section and then be needed both to construct cup and cap products and to prove the existence of Mayer-Vietoris sequences. See \cref{R: degen2} for further discussion of this point.
 \end{remark}
@@ -438,14 +438,14 @@ are manifolds with corners as they are also the fiber products $M^\pm \times_M W
 
 
 More precisely, by Lemma~9 of \cite{Lipy14}, there is a manifold-with-corners structure on the topological space $W \times [0,1]$,
-called the \textbf{creasing homotopy} of $W$ at $0$ and denoted $\Cre(W)$, such that $\bd \Cre(W) = W\sqcup -W^+\sqcup -W^-\sqcup - \Cre(\bd W)$. We will also see that if $W \in Q(M)$ then $\Cre(W) \in Q(M)$, which will provide the claimed (co)homology.
+called the \textbf{creasing homotopy} of $W$ at $0$ and denoted $\Cre(W)$, such that $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$. We will also see that if $W \in Q(M)$ then $\Cre(W) \in Q(M)$, which will provide the claimed (co)homology.
 
 
 
 By using pullbacks we provide an arguably simpler description of $\Cre(W)$ than found in \cite{Lipy14}. Let $D$ be the semi-open pentagonal region of the plane given by $$D = \{(x,y)\mid -1<x<1, 0\leq y\leq 2-|x|\}.$$
-Then $D$ is a manifold with corners with a smooth proper projection map $\pi:D \to (-1,1)$ given by $\pi(x,y) = x$. We see that $\bd D$ has three pieces, say $D_x$, $D_+$, and $D_-$, corresponding respectively to the intersection of $D$ with the $x$-axis, the graph of $y = 2-x$ over $[0,1)$, and the graph of $y = 2+x$ over $(-1, 0]$. We orient all three pieces by rightward pointing tangent vectors in the plane and give $D$ itself the standard planar orientation so that $\pi$ restricts to oriented diffeomorphisms from $D_x$, $D_+$, and $D_-$ onto their images in $(-1,1) = D_x$. Then as oriented manifolds with corners, $$\bd D = D_x\sqcup -D_-\sqcup -D_+.$$
+Then $D$ is a manifold with corners with a smooth proper projection map $\pi:D \to (-1,1)$ given by $\pi(x,y) = x$. We see that $\bd D$ has three pieces, say $D_x$, $D_+$, and $D_-$, corresponding respectively to the intersection of $D$ with the $x$-axis, the graph of $y = 2-x$ over $[0,1)$, and the graph of $y = 2+x$ over $(-1, 0]$. We orient all three pieces by rightward pointing tangent vectors in the plane and give $D$ itself the standard planar orientation so that $\pi$ restricts to oriented diffeomorphisms from $D_x$, $D_+$, and $D_-$ onto their images in $(-1,1) = D_x$. Then as oriented manifolds with corners, $$\bd D = D_x \sqcup -D_- \sqcup -D_+.$$
 To obtain analogous boundary formulas for creasings of cochains, we let the projections of $D_x$, $D_+$, and $D_-$ to $(-1,1)$ be co-oriented by taking the rightward orientations to the rightward orientations, and $\pi:D \to (-1,1)$ to be co-oriented by taking the standard planar orientation to the rightward orientation. In this case, as co-oriented manifolds with corners over $(-1,1)$, we have
- $$\bd D = D_x\sqcup -D_-\sqcup -D_+.$$
+ $$\bd D = D_x \sqcup -D_- \sqcup -D_+.$$
 
 The projection $\pi:D \to (-1,1)$ restricts to a submersion from $D_x$, $D_+$, and $D_-$ onto their images, and so a map $\varphi: W \to (-1,1)$ from a manifold with corners is transverse to $\pi$ if and only if it is transverse to the map from the point at the tip of the pentagon to $(-1,1)$. This is equivalent to the requirement that the restriction of $\varphi$ to every stratum of $W$ have $0$ as a regular value. In this case we will simply say that ``$\varphi$ has a regular value at $0$.''
 
@@ -514,7 +514,7 @@ See \cref{F: creasing} for a sketch of a creasing homotopy of the teardrop manif
 
 If either $W \in PC^\Gamma_*(M)$ or $W \in PC_\Gamma^*(M)$, we have
 \begin{equation}\label{E: bd crease}
-\bd(\Cre(W))\cong(D_x\sqcup -D_-\sqcup -D_+)\times_{(-1,1)} W \bigsqcup -D\times_{(-1,1)}\bd W = W\sqcup -W^-\sqcup -W^+\sqcup -\Cre(\bd W),
+\bd(\Cre(W))\cong(D_x \sqcup -D_- \sqcup -D_+)\times_{(-1,1)} W \bigsqcup -D\times_{(-1,1)}\bd W = W \sqcup -W^- \sqcup -W^+ \sqcup -\Cre(\bd W),
 \end{equation}
 again interpreting these formulas in $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$, respectively, by composing the pullback maps to $W$ with $r_W \colon W \to M$. This first equality comes from our boundary formulas for $D$ and our Leibniz rules from \cref{S: orientations} and \cref{leibniz}. For the second equality we use, for example, that $\pi$ is an orientation preserving diffeomorphism from $D_+ \cong [0,1)$ onto its image in $(-1,1)$, and so we have an orientation-preserving diffeomorphism $D_+\times_{(-1,1)} W \cong [0,1)\times_{(-1,1)} W = W^+$, and similarly in the co-oriented case.
 
@@ -563,7 +563,7 @@ Let $M$ be a manifold without boundary. Suppose given $\phi \colon M \to (-1,1)$
 \begin{proof}
 As observed in \cref{C: regular value setup}, with our assumptions about $\varphi$ the spaces $T^\pm$ and $T^0$ are fiber products over $M$ of $T$ with $M^\pm$ and $M^0$. So in this case the claim follows from the \cref{L: pullback with Q}.
 
-For $\Cre(T)$, the pullback projection $\pi:\Cre(T) \to T$ is of small rank, as $\dim(\Cre(T))>\dim(T)$, from which it follows that $r_{\Cre(T)} = r_T\pi$ is of small rank. We also have $\bd \Cre(T) = T\sqcup - T^+\sqcup -T^-\sqcup -\Cre(\bd T)$. By assumption and the preceding paragraph, $T, T^\pm \in Q(M)$ and by the preceding sentence $\Cre(\bd T)$ is of small rank. Thus all components of $\bd \Cre(T)$ are trivial or of small rank, and so $\Cre(T)$ is degenerate.
+For $\Cre(T)$, the pullback projection $\pi:\Cre(T) \to T$ is of small rank, as $\dim(\Cre(T))>\dim(T)$, from which it follows that $r_{\Cre(T)} = r_T\pi$ is of small rank. We also have $\bd \Cre(T) = T \sqcup - T^+ \sqcup -T^- \sqcup -\Cre(\bd T)$. By assumption and the preceding paragraph, $T, T^\pm \in Q(M)$ and by the preceding sentence $\Cre(\bd T)$ is of small rank. Thus all components of $\bd \Cre(T)$ are trivial or of small rank, and so $\Cre(T)$ is degenerate.
 \end{proof}
 
 \begin{proposition}
@@ -572,7 +572,7 @@ Let $M$ be a manifold without boundary. Suppose given $\phi \colon M \to (-1,1)$
 \begin{proof}
 The proofs for chains and cochains are the same, so we provide that with chains.
 
-If $r_V \colon V \to M$ and $r_W \colon W \to M$ represent the same class in $C_*^\Gamma(M)$ then $V\sqcup -W \in Q_*(M)$, and if $V$ and $W$ are both transverse to $M^0$ then so is $V\sqcup -W$. So $\Cre(V\sqcup-W)$ is defined, and by \cref{C: creasing Q}, $\Cre(V\sqcup -W) \in Q_*(M)$. Using our convention that all creasing maps are compositions of the fixed $\phi \colon M \to (-1,1)$ with the reference maps and the properties of fiber product orientations, we have $\Cre(V\sqcup -W) = \Cre(V)\sqcup \Cre(-W) = \Cre(V)\sqcup -\Cre(W)$. Thus $\Cre(V)$ and $\Cre(W)$ represent the same element of $C_*^\Gamma(M)$.
+If $r_V \colon V \to M$ and $r_W \colon W \to M$ represent the same class in $C_*^\Gamma(M)$ then $V \sqcup -W \in Q_*(M)$, and if $V$ and $W$ are both transverse to $M^0$ then so is $V \sqcup -W$. So $\Cre(V\sqcup-W)$ is defined, and by \cref{C: creasing Q}, $\Cre(V \sqcup -W) \in Q_*(M)$. Using our convention that all creasing maps are compositions of the fixed $\phi \colon M \to (-1,1)$ with the reference maps and the properties of fiber product orientations, we have $\Cre(V \sqcup -W) = \Cre(V) \sqcup \Cre(-W) = \Cre(V) \sqcup -\Cre(W)$. Thus $\Cre(V)$ and $\Cre(W)$ represent the same element of $C_*^\Gamma(M)$.
 \end{proof}
 
 Finally, we come to the punchline of creasing:
@@ -587,7 +587,7 @@ Again the proofs for homology and cohomology are the same so we focus on homolog
 We have seen that, with our assumptions, $\uW$ yields a well-defined element $\underline{\Cre(W)}$ represented by $\Cre(W)$. Computing in $C_*^\Gamma(M)$ we have
 \begin{align*}
 \bd \underline{\Cre(W)}& = \underline{\bd \Cre(W) }\\
-& = \underline{W\sqcup -W^+\sqcup -W^-\sqcup -\Cre(\bd W)}\\
+& = \underline{W \sqcup -W^+ \sqcup -W^- \sqcup -\Cre(\bd W)}\\
 & = \uW -\underline{W^+}-\underline{W^-}.
 \end{align*}
 In the last line we have used that $\underline{\bd W} = 0$ so that $\bd W \in Q_*(M)$ and hence $\Cre(\bd W) \in Q_*(M)$ by \cref{C: creasing Q} and $\underline{\Cre(\bd W)} = 0 \in C_*^\Gamma(M)$.

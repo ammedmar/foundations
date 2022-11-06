@@ -201,7 +201,7 @@ In this section we consider the cochains on $M$ represented by maps $W \to M$ th
 \begin{definition}
 Let $M$ be equipped with a smooth cubulation $|X| \to M$. We say that $r_W \colon W \to M$ is \textbf{transverse} to $X$ if $r_W: W \to M$ is transverse to each characteristic map of the cubulation. In particular, this implies by \cref{L: simple trans} that each induced $\bd^kW \to M$ is plainly transverse to each face of the cubulation. If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$ , and so we can define $PC^*_{\Gamma \pitchfork X}(M)$ to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
 
-We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma\pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma\pf X}^*(M)$ such that $V\sim W$ if and only if $V\sqcup -W \in Q^*_{\Gamma \pf X}(M)$. The \textbf{geometric cochains of $M$ transverse to $X$}, denoted $C_{\Gamma\pf X}^*(M)$, are the equivalence classes in $PC_{\Gamma\pf X}^*(M)$. The set $C_{\Gamma\pf X}^*(M)$ is a chain complexes under the operation $\sqcup$ and with boundary map $\bd$. The \textbf{geometric cohomology transverse to $X$} is $H_{\Gamma\pf X}^*(M) \defeq H^*(C_{\Gamma\pf X}^*(M))$.
+We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma\pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma\pf X}^*(M)$ such that $V\sim W$ if and only if $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$. The \textbf{geometric cochains of $M$ transverse to $X$}, denoted $C_{\Gamma\pf X}^*(M)$, are the equivalence classes in $PC_{\Gamma\pf X}^*(M)$. The set $C_{\Gamma\pf X}^*(M)$ is a chain complexes under the operation $\sqcup$ and with boundary map $\bd$. The \textbf{geometric cohomology transverse to $X$} is $H_{\Gamma\pf X}^*(M) \defeq H^*(C_{\Gamma\pf X}^*(M))$.
 
 When the specific cubulation $X$ is understood, we sometimes simplify the notation to $PC_{\Gamma\pf}^*(M)$, $C_{\Gamma\pf}^*(M)$, and $H_{\Gamma\pf}^*(M)$.
 \end{definition}
@@ -409,7 +409,7 @@ In particular, for a face $F$ of dimension $\dim(M)-\dim(W)$, we have $$\mc I(\u
 The intersection map $\mc I$ is a well-defined chain map.
 \end{proposition}
 \begin{proof}
-If $W, W' \in PC^*_{\Gamma\pf X}(M)$ are two representatives of $\uW$ then $W\sqcup -W' \in Q^*(M)$ and it is transverse to $X$. So for any face $F$ we have $\aug(W \times_M F)-\aug(W' \times_M F) = \aug((W\sqcup -W') \times_M F) = 0$ by \cref{L: Q-trivial intersection}. So $\mc I(\uW)$ does not depend on the choice of $W$.
+If $W, W' \in PC^*_{\Gamma\pf X}(M)$ are two representatives of $\uW$ then $W \sqcup -W' \in Q^*(M)$ and it is transverse to $X$. So for any face $F$ we have $\aug(W \times_M F)-\aug(W' \times_M F) = \aug((W \sqcup -W') \times_M F) = 0$ by \cref{L: Q-trivial intersection}. So $\mc I(\uW)$ does not depend on the choice of $W$.
 
 To see that $\mc I$ is a chain map, let $W$ be transverse to the cubulation and representing $\uW$. Then we compute for any face $f$ of $X$ that
 \begin{align*}
