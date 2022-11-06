@@ -258,7 +258,7 @@ We can choose a lift $\td \gamma$ of $\gamma$ to the complement of the $0$-secti
 We then define $\gamma_*\beta_{W}$ to be the equivalence class of $\td \gamma(1)$.
 Likewise, we define $(g\gamma)_*\beta_M$ by a lift of $g\gamma$ to the complement of the zero section of $\Or(TM)$.
 Then $\gamma_*\beta_{W}$ and $(g\gamma)_*\beta_M$ depend on $\gamma$, but if $g \colon W \to M$ is co-orientable the pair $(\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ is independent of $\gamma$ as this data also determines a non-vanishing lift of $\gamma$ in $\Hom(\Or(TW),g^*\Or(TM))$, which is trivial if $g$ is co-orientable.
-In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M): = (\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$.
+In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M) \defeq (\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$.
 
 \begin{example}
 	Let $g$ be any map $g: S^1 \to S^2$.
@@ -337,7 +337,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 \end{proof}
 
 \begin{definition}\label{D: Quillen normal or}
-	If we orient $\R^N$ by its standard orientation $\beta_E: = dx_1 \wedge\cdots\wedge dx_N$, then the projection $\pi:M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E,\beta_M)$ that is well defined as $\R^N$ is contractible.
+	If we orient $\R^N$ by its standard orientation $\beta_E \defeq dx_1 \wedge\cdots\wedge dx_N$, then the projection $\pi:M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E,\beta_M)$ that is well defined as $\R^N$ is contractible.
 	If $g \colon W \to M$ is co-oriented and $e:W\into M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
 	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu =
 	\beta_M \wedge \beta_E$ up to positive scalar multiple.
@@ -1224,7 +1224,7 @@ They will be useful when working with the creasing construction for geometric co
 	Let $\varphi:M \to \R$ be a smooth function from a manifold without boundary to $\R$, and let $M^+ = \varphi^{-1}([0,\infty)) = [0,\infty)\times_\R M$, $M^- = \varphi^{-1}((-\infty,0]) = (-\infty,0]\times_\R M$, and $M^0 = \varphi^{-1}(0) = 0\times_\R M$.
 	Then $M^\pm$ are embedded codimension $0$ manifolds with corners in $M$ and $\bd M^\pm = M^0$.
 	Suppose the embeddings $M^\pm\into M$ are given the tautological co-orientations of \cref{D: tautological co-orientation}, and let $g \colon W \to M$ be transverse to $M^\pm$, which in this case is equivalent to being transverse to $M^0$.
-	Then let $W^\pm: = g^{-1}(M^\pm) = M^\pm \times_M W$, and the pullback co-orientations of $W^\pm\into W$ given by \cref{P: codim 0 pullback} are again just the tautological co-orientations of the codimension $0$ embeddings.
+	Then let $W^\pm \defeq g^{-1}(M^\pm) = M^\pm \times_M W$, and the pullback co-orientations of $W^\pm\into W$ given by \cref{P: codim 0 pullback} are again just the tautological co-orientations of the codimension $0$ embeddings.
 	The compositions $W^\pm\into W \to M$ are then the fiber products, and the co-orientations of \cref{P: codim 0 pullback} agree with those described in \cref{E: manifold decomposition}.
 \end{example}
 
