@@ -83,7 +83,7 @@ We first suppose $W \in PC_*^\Gamma(M)$. In this case it is clear that $F \circ 
 	 the derivative $D(r_W \times \id_I)$, and thus so
 	 will $D(F \circ (r_W \times id_I)) = DF \circ D(r_W \times id_I)$. Thus $W \times I \to N$ has small rank.
 
-	By definition, if $W \to M$ is degenerate then it has small rank and $\partial W = T \cup S$ with $T$ trivial and $S$ small rank.
+	By definition, if $W \to M$ is degenerate then it has small rank and $\bd W = T \cup S$ with $T$ trivial and $S$ small rank.
 	We've shown that $W \times I \to N$ has small rank, so its suffices to consider its boundary,
 	which is the union (up to signs) of $\bd W \times I$ and $W \times \bd I$. But $\bd W \times I = (T \times I) \sqcup (S \times I)$, which by our previous
 	arguments are trivial and of small rank respectively. And $W \times \bd I$ maps to $N$ by maps which factor through our original $W \to M$,
@@ -340,8 +340,8 @@ to an open ball, there is a homotopy $F$ between the identity map on $U$ and a c
 Consider the composite
 of $r_W \times id : W \times I \to U \times I$ with $F$ obtain a manifold over $M$, which we call $P_W$. If $W$ is trivial then so is $P_W$ as the
 the product of the involution on $W$ with the identity map defines a suitable involution on $W \times I$. If $W$ is degenerate then so is $P_W$,
-as it is small rank and its boundary is the union of $W \times \partial I$, which is small rank, and $\partial W \times I$, which is trivial or small rank
-as $\partial W$ is.
+as it is small rank and its boundary is the union of $W \times \bd I$, which is small rank, and $\bd W \times I$, which is trivial or small rank
+as $\bd W$ is.
 
 The construction $W \to P_W$ provides a well-defined chain homotopy between
 the identity and the trivial map. Thus we have that $H^*_\Gamma(M|_U) \cong H^*_\Gamma(M|_{pt}) \cong H^{*-m}_\Gamma(pt)$. Finally, we observe that $H^*_\Gamma(pt) = H_*^\Gamma(pt)$ by definition (observing that a co-orientation of a map $W \to pt$ is equivalent to an orientation of $W$ \red{[GBF: do we need to explain this further? choose a convention?]}), while $H^\Gamma_*(pt)$ agrees with the singular homology of the point by \cite[Theorem 3]{Lipy14}.

@@ -27,7 +27,7 @@ When $W$ is orientable, so is its (topological) boundary \cite[Lemma 6.9.1]{Bred
 In particular, we choose the following convention, which agrees with that of Joyce \cite[Convention 7.2.a]{Joy12}:
 
 \begin{convention}\label{Con: oriented boundary}
-	For a smooth oriented manifold with boundary $N$, we orient $\bd N$ by stipulating that an outward normal vector followed by an oriented basis of $\partial N$ yields an oriented basis for $N$.
+	For a smooth oriented manifold with boundary $N$, we orient $\bd N$ by stipulating that an outward normal vector followed by an oriented basis of $\bd N$ yields an oriented basis for $N$.
 \end{convention}
 
 When $W$ is an oriented manifold with corners, we can identify $S^1(W)$ with the interior of $\bd W$, and this convention determines an orientation of $\bd W$.
@@ -126,7 +126,7 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
 	Then, as oriented manifolds,
 	\begin{equation*}
-		\partial (V \times_M W) = (\bd V \times_M W) \sqcup (-1)^{m-v}(V \times_M \bd W).
+		\bd (V \times_M W) = (\bd V \times_M W) \sqcup (-1)^{m-v}(V \times_M \bd W).
 	\end{equation*}
 \end{proposition}
 
@@ -369,11 +369,11 @@ Given a co-oriented map $g \colon W \to M$ where $W$ is a manifold with corners,
 
 \begin{definition}\label{D: boundary co-orientation}
 	The \textbf{standard co-orientation of a boundary immersion}
-	$i_{\bd W}:\partial W \hookrightarrow W$ is the normal co-orientation associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
+	$i_{\bd W}:\bd W \hookrightarrow W$ is the normal co-orientation associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
 		However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.}
-	orientation of $\nu_{\partial W \subset W}$.
+	orientation of $\nu_{\bd W \subset W}$.
 
-	If $g \colon W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\partial W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g \colon W \to M$.
+	If $g \colon W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\bd W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g \colon W \to M$.
 	We write $\bd g:\bd W \to M$ to denote $gi_{\bd W}$ with its induced co-orientation.
 \end{definition}
 
@@ -426,7 +426,7 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 \subsubsection{Co-orientations of boundaries of boundaries}
 
 In order to form a chain complex of geometric cochains, we will need a result about co-orientations of $\bd^2W$.
-Recall from \cref{S: boundaries} that Proposition 2.9 of \cite{Joy12} identifies $\partial^2 W$ with the set of points $(x,\bb_1,\bb_2)$ with $x \in W$ and the $\bb_i$ encoding distinct local boundary components.
+Recall from \cref{S: boundaries} that Proposition 2.9 of \cite{Joy12} identifies $\bd^2 W$ with the set of points $(x,\bb_1,\bb_2)$ with $x \in W$ and the $\bb_i$ encoding distinct local boundary components.
 The map $i_{\bd^2W}:\bd^2W \to W$ takes $(x,\bb_1,\bb_2)$ to $x$.
 The manifold with corners $\bd^2W$ is equipped with a canonical diffeomorphism $\rho$ defined by $(x,\bb_1,\bb_2) \to (x,\bb_2,\bb_1)$.
 
@@ -961,7 +961,7 @@ Consequently, this result completes the proof of \cref{L: pullback co well defin
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary, and suppose $f$ co-oriented.
 	Let $V \times_M W \to W$ be the co-oriented pullback.
 	Then
-	$$\partial (V \times_M W) = (\partial V) \times_M W \bigsqcup (-1)^{\dim(M)-\dim(V)} V \times_M (\partial W),$$
+	$$\bd (V \times_M W) = (\bd V) \times_M W \bigsqcup (-1)^{\dim(M)-\dim(V)} V \times_M (\bd W),$$
 	interpreting each of these pullback spaces as representing its co-oriented map to $W$; see Notation \ref{N: implicit notation}.\footnote{Here we interpret $V\times\bd W \to W$ as the composition of the co-oriented pullback $V\times\bd W \to \bd W$ with the co-oriented boundary immersion $\bd W \to W$.} If $g$ is also co-oriented then this formula also holds as fiber products mapping to $M$.
 \end{proposition}
 
