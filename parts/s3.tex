@@ -2032,7 +2032,7 @@ We begin with the case where $V$ and $W$ are immersions and then work toward the
 	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = (-1)^{(m-v)(m-w)}\beta^o_P \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W}.$$
 
 	We conclude that $\beta^c_P = (-1)^{(m-v)(m-w)}\beta^o_P$.
-\end{proof}.
+\end{proof}
 
 Now we show how to replace a general co-oriented fiber product with a co-oriented fiber product whose maps are embeddings.
 In our remaining constructions in this section we take all introduced Euclidean spaces to be even-dimensional to simplify the signs.
@@ -2047,6 +2047,7 @@ In our remaining constructions in this section we take all introduced Euclidean 
 	We also take $g \times \id_{\R^{2a}}$ to be co-oriented by the product co-orientation $(\beta_W \wedge \beta_a,\beta_M \wedge \beta_a)$ if $(\beta_W,\beta_M)$ is the co-orientation of $g$.
 	Finally, $M \times \R^{2a}$ is given the product orientation with $\R^{2a}$ having the standard orientation.
 \end{lemma}
+
 \begin{proof}
 	By the definitions of the induced orientation and the fiber product co-orientation, the orientation of the fiber product $V \times_M W \to M$ is $\beta_P$ where $\beta_P \wedge \beta_{\nu V} = \beta_M\wedge\beta_a$.
 	We recall that the $\nu V$ in this formula is actually the pullback of the normal bundle of $e(V) \subset M \times \R^{2a}$ via the map $g \times \id_{\R^{2a}}: W \times \R^{2a} \to M \times \R^{2a}$.
@@ -2055,13 +2056,13 @@ In our remaining constructions in this section we take all introduced Euclidean 
 
 \begin{corollary}\label{C: co-oriented full transition to embedded}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary.
-	Let $V\xhookrightarrow{r} M \times \R^{2a} \to M$ and $W\xhookrightarrow{s} M \times \R^{2b} \to M$ be Quillen co-orientations compatible with $f$ and $g$.
-	Then the fiber product $V \times_M W$ (with its orientation induced from the co-oriented fiber product) is canonically oriented diffeomorphic to the fiber product $(V \times \R^{2b})\times_{M \times \R^{2a} \times \R^{2b}}(W \times \R^{2a})$ (with its orientation induced from the co-oriented fiber product), in which the first map is $r \times \id_{\R^{2b}}$ and the second map takes $(w,z) \in W \times \R^{2a}$ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
+	Let $V \xhookrightarrow{r} M \times \R^{2a} \to M$ and $W\xhookrightarrow{s} M \times \R^{2b} \to M$ be Quillen co-orientations compatible with $f$ and $g$.
+	Then the fiber product $V \times_M W$ (with its orientation induced from the co-oriented fiber product) is canonically oriented diffeomorphic to the fiber product $(V \times \R^{2b}) \times_{M \times \R^{2a} \times \R^{2b}}(W \times \R^{2a})$ (with its orientation induced from the co-oriented fiber product), in which the first map is $r \times \id_{\R^{2b}}$ and the second map takes $(w,z) \in W \times \R^{2a}$ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
 \end{corollary}
 
 \begin{proof}
 	By the preceding lemma we have $V \times_M W$ canonically oriented diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$ with $V \to M \times \R^{2a}$ an embedding.
-	By \cref{P: graded comm}, the transposition map from this space to $(W \times \R^{2a})\times_{M \times \R^{2a}}V$ is $(-1)^{(m-v)(m-w)}$-orientation preserving, using that all our Euclidean spaces are taken even-dimensional.
+	By \cref{P: graded comm}, the transposition map from this space to $(W \times \R^{2a}) \times_{M \times \R^{2a}}V$ is $(-1)^{(m-v)(m-w)}$-orientation preserving, using that all our Euclidean spaces are taken even-dimensional.
 	We next observe the map described for $W \times \R^{2a} \to M \times \R^{2a} \times \R^{2b}$ is an embedding whose composition with the projection to $M \times \R^{2a}$ gives a Quillen co-orientation for $g \times \id_{\R^{2a}}$.
 	Now we can apply the lemma again and then transpose again.
 \end{proof}
@@ -2071,9 +2072,10 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 
 \begin{lemma}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
-	Let $V\xhookrightarrow{e}M \times \R^{2a} \to M$ be a factorization of $f$ with $e$ an embedding.
+	Let $V \xhookrightarrow{e}M \times \R^{2a} \to M$ be a factorization of $f$ with $e$ an embedding.
 	Then $V \times_M W$ is canonically oriented diffeomorphic to the oriented fiber product $V\times_{M \times \R^{2a}} (W \times \R^{2a})$ of $e \colon V \to M \times \R^{2a}$ and $g \times \id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
 \end{lemma}
+
 \begin{proof}
 	We will first show that $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $V\times_{M \times \R^{2a}} (W \times \R^{2a})$ with the map $V \to M \times \R^{2a}$ being the composition of $f$ with the inclusion $M = M \times \{0\} \into M \times \R^{2a}$.
 	We will write this composite as $f_0$.
@@ -2099,12 +2101,19 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 	For the $M \oplus \R^{2a}$ factor, we must show $\Upsilon \Psi(0,x,z) = (x,z)$.
 	We have $\Psi(0,x,z) = (s(x),0)-(0,0,z)$, noting that $s(x) \in V \oplus W$.
 	If we write $s(x) = (s_V(x),s_W(x))$, then by definition $f(s_V(x))-g(s_W(x)) = x$.
-	So we have \begin{align*}
-		\Upsilon((s(x),0)-(0,0,z))& = \Upsilon(s_V(x),s_W(x),z)\\& = f_0(s_V(x))-(g(s_W(x)),z)\\& = (f(s_V(x)),0)-(g(s_W(x)),z)\\& = (f(s_V(x))-g(s_W(x)),z)\\& = (x,z).\end{align*}
+	So we have
+	\begin{align*}
+		\Upsilon((s(x),0)-(0,0,z))& =
+		\Upsilon(s_V(x),s_W(x),z)\\& =
+		f_0(s_V(x))-(g(s_W(x)),z)\\& =
+		(f(s_V(x)),0)-(g(s_W(x)),z)\\& =
+		(f(s_V(x))-g(s_W(x)),z)\\& =
+		(x,z).
+	\end{align*}
 	So our definition of $\Psi$ is correct.
 
 	As $\Phi$ and $\Psi$ agree in the first two factors and the dimension of $\R^{2a}$ is even, we see that $\Psi$ is orientation-preserving if and only if $\Phi$ is.
-	Furthermore, we have $(-1)^{\dim(W)\dim(M \times \R^{2a})} = (-1)^{\dim(W)\dim(M)}$, so the two fiber product orientations agree in this case.
+	Furthermore, we have $(-1)^{\dim(W) \dim(M \times \R^{2a})} = (-1)^{\dim(W)\dim(M)}$, so the two fiber product orientations agree in this case.
 
 	Next we must generalize from $f_0 \colon V \to M \times \R^{2a}$ to the general case of $e \colon V \to M \times \R^{2a}$.
 	By assumption, $f \colon V \to M$ is the composition of $e$ with the projection $M \times \R^{2a} \to M$, so we may write $e(v) = (f(v), e_{\R}(v))$, and there is a fiberwise homotopy $H \colon V \times I \to M \times \R^{2a}$ from $e$ to $f_0$ given by $H(v,t) = (f(v), te_{\R}(v))$.
@@ -2128,6 +2137,7 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 	Let $V\xhookrightarrow{r} M \times \R^{2a} \to M$ and $W\xhookrightarrow{s} M \times \R^{2b} \to M$ be factorizations of $f$ and $g$ with $r$ and $s$ embeddings.
 	Then the oriented fiber product $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $(V \times \R^{2b})\times_{M \times \R^{2a} \times \R^{2b}}(W \times \R^{2a})$ in which the first map is $r \times \id_{\R^{2b}}$ and the second map takes $(w,z) \in W \times \R^{2a}$ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
 \end{corollary}
+
 \begin{proof}
 	As in the proof of \cref{C: co-oriented full transition to embedded},
 	we apply the preceding lemma to get $V \times_M W$ canonically oriented diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$.
