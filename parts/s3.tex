@@ -300,14 +300,20 @@ Such a nowhere-zero map exists if and only $\bigwedge^{m-w}\nu W$ is a trivial l
 Although such a co-orientation is a global object over $W$, given an orientation of $\nu W$ we can specify a standard choice of ``normal co-orientation'' through the following local construction:
 
 \begin{definition}\label{normal co-or}
-	Let $g : W \to M$ be an immersion with normal bundle locally oriented by $\beta_\nu$.
-	Define the \textbf{normal co-orientation} associated
-	to $\beta_\nu$ locally as\footnote{Whenever we form wedge products, if one of the terms is an element of $\bigwedge^0 TV$ for some $V$ we treat that term as a $0$-form and interpret $\wedge$ as the fiberwise scalar product.}
+	Let $g \colon W \to M$ be an immersion with normal bundle locally oriented by $\beta_\nu$.
+	Define the \textbf{normal co-orientation} associated to $\beta_\nu$ locally as\footnote{Whenever we form wedge products, if one of the terms is an element of $\bigwedge^0 TV$ for some $V$ we treat that term as a $0$-form and interpret $\wedge$ as the fiberwise scalar product.}
 	$\omega_{\nu} = (\beta_W, \beta_W \wedge \beta_\nu)$, where $\beta_W$ is any choice of a local orientation of $W$.
 \end{definition}
 
-This construction is independent of the choice of $\beta_W$, as reversing the orientation of $\beta_W$ gives $(-\beta_W, -\beta_W \wedge \beta_\nu) = (\beta_W, \beta_W \wedge \beta_\nu)$.
-If the normal bundle to $W$ is oriented globally on $W$ then the construction is also independent of the point at which it is carried out since if $\gamma$ is a path from $x$ to $y$ with $\beta_W$ and $\beta_\nu$ constructed at $x$ then $$(\gamma_*\beta_{W,x},(g\gamma)_* ( \beta_{W,x} \wedge \beta_{\nu,x})) = (\gamma_*\beta_{W,x},(\gamma_* \beta_{W,x}) \wedge(g\gamma)_*\beta_{\nu,x}) = (\gamma_*\beta_{W,x},(\gamma_* \beta_{W,x} ) \wedge \beta_{\nu,y}),$$ using that $\nu$ is assumed oriented and that, via the immersion, we can treat a path in $W$ as a path in $M$.
+This construction is independent of the choice of $\beta_W$, as reversing the orientation of $\beta_W$ gives
+$$(-\beta_W, -\beta_W \wedge \beta_\nu) = (\beta_W, \beta_W \wedge \beta_\nu).$$
+If the normal bundle to $W$ is oriented globally on $W$ then the construction is also independent of the point at which it is carried out since if $\gamma$ is a path from $x$ to $y$ with $\beta_W$ and $\beta_\nu$ constructed at $x$ then
+\begin{equation*}
+	(\gamma_*\beta_{W,x}\, , (g\gamma)_* (\beta_{W,x} \wedge \beta_{\nu,x})) =
+	(\gamma_*\beta_{W,x}\, , (\gamma_* \beta_{W,x}) \wedge (g\gamma)_*\beta_{\nu,x}) =
+	(\gamma_*\beta_{W,x}\, , (\gamma_* \beta_{W,x}) \wedge \beta_{\nu,y}),
+\end{equation*}
+using that $\nu$ is assumed oriented and that, via the immersion, we can treat a path in $W$ as a path in $M$.
 So if the normal bundle to $W$ is oriented these local choices determine a global co-orientation of $W \to M$.
 If the normal bundle is orientable, one can conversely orient the normal bundle if one is given a co-orientation.
 Signs in the theory are highly dependent on choices.
@@ -370,7 +376,7 @@ Given a co-oriented map $g \colon W \to M$ where $W$ is a manifold with corners,
 		However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.}
 	orientation of $\nu_{\partial W \subset W}$.
 
-	If $g : W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\partial W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g \colon W \to M$.
+	If $g \colon W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\partial W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g \colon W \to M$.
 	We write $\bd g:\bd W \to M$ to denote $gi_{\bd W}$ with its induced co-orientation.
 \end{definition}
 
