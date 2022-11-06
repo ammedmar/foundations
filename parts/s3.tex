@@ -462,12 +462,18 @@ The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism 
 \subsection{Co-orientation of homotopies}\label{S: co-oriented homotopy}
 
 In this section we develop co-orientations related to homotopies.
-As the product of two spaces is the same as their fiber product over a point, we have by equation \eqref{E: product boundary}: $$\bd(W \times I) = (\bd W \times I)\sqcup (W \times \bd I) = (W \times 1)\sqcup (W \times 0)\sqcup (\bd W \times I).$$
-Now recall that in general if we have a map $f \colon V \to M$ then we write $\bd f$ for the composition $\bd V\colon\xr{i_{\bd V}} V \xr{f} M$.
+As the product of two spaces is the same as their fiber product over a point, we have by equation \eqref{E: product boundary}:
+\begin{equation*}
+	\bd(W \times I) =
+	(\bd W \times I) \sqcup (W \times \bd I) =
+	(W \times 1) \sqcup (W \times 0) \sqcup (\bd W \times I).
+\end{equation*}
+Now recall that in general if we have a map $f \colon V \to M$ then we write $\bd f$ for the composition
+$$\bd V \xr{i_{\bd V}} V \xr{f} M.$$
 Adopting this convention also for pieces of the boundary we make the following definition:
 
 \begin{definition}\label{D: co-oriented homotopy}
-	If $G \colon W \times I \to M$ is a co-oriented map, we say that $G$ is a \textbf{co-oriented homotopy} (or simply a \textbf{homotopy} when working with co-orientations is understood) from $g_0 \colon W \to M$ to $g_1 \colon W \to M$ if $\bd G = g_1 \amalg -g_0\amalg H$, where $g_1$,$-g_0$, and $H$ correspond respectively to the compositions of $G$ with the inclusions into $W \times I$ of $W \times 1$, $W \times 0$, and $\bd W \times I$, taking each with its boundary co-orientation as in \cref{D: boundary co-orientation}.
+	If $G \colon W \times I \to M$ is a co-oriented map, we say that $G$ is a \textbf{co-oriented homotopy} (or simply a \textbf{homotopy} when working with co-orientations is understood) from $g_0 \colon W \to M$ to $g_1 \colon W \to M$ if $\bd G = g_1 \amalg -g_0\amalg H$, where $g_1$, $-g_0$, and $H$ correspond respectively to the compositions of $G$ with the inclusions into $W \times I$ of $W \times 1$, $W \times 0$, and $\bd W \times I$, taking each with its boundary co-orientation as in \cref{D: boundary co-orientation}.
 \end{definition}
 
 Note that, by analogy with homotopies involving oriented manifolds, a homotopy from $g_0$ to $g_1$ involves the oppositely co-oriented $-g_0$ in the boundary formula.
