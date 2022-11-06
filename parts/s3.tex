@@ -130,7 +130,7 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 	\end{equation*}
 \end{proposition}
 
-\medskip\noindent\textbf{Fiber products of immersions.}
+\medskip\noindent\textbf{Fiber 	 	products of immersions.}
 % anibal: should this be a \subsubsection?
 
 The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is always of particular interest, especially for developing intuition.
@@ -268,7 +268,7 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 	While the notation explicitly references a local orientation at a point, this is sufficient to determine the co-orientation globally.
 	In what follows we will often demonstrate properties of co-orientations by showing that they hold locally at an arbitrary point but do not depend on the choice of point.
 
-	As another example, consider the standard embedding $g \colon \R P^2\into \R P^4$.
+	As another example, consider the standard embedding $g \colon \R P^2 \into \R P^4$.
 	Choosing local orientations $e_1\, e_2$ at some $x \in \R P^2$ and $f_1\,f_2\,f_3\,f_4$ at $g(x)$, the two co-orientations are $(e_1\,e_2, f_1\,f_2\,f_3\,f_4)$ and its opposite.
 	If $\gamma$ is a loop that reverses the orientation of $\R P^2$ then it also reverses the orientation of $\R P^4$, so $\gamma_*(e_1\,e_2, f_1\,f_2\,f_3\,f_4) = (-e_1\,e_2,- f_1\,f_2\,f_3\,f_4) = (e_1\,e_2, f_1\,f_2\,f_3\,f_4)$, reflecting that $g$ is co-orientable.
 
@@ -383,13 +383,13 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 \begin{example}\label{E: splitting example 1}
 	Suppose $g \colon W \into M$ is the inclusion of a codimension-$0$ submanifold of $M$.
 	In this case $TW$ is the pullback of $TM$, and we have the tautological co-orientation of \cref{D: tautological co-orientation} that, slightly abusing notation, we can write as $(\beta_M,\beta_M)$.
-	A particularly important pair of examples is given by the inclusions $g^-:(-\infty, 0]\into \R$ and $g^+:[0,\infty)\into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
+	A particularly important pair of examples is given by the inclusions $g^-:(-\infty, 0] \into \R$ and $g^+:[0,\infty) \into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
 
 	Next consider the submanifold consisting of the point $0 \in \R$.
 	It has trivial determinant line bundle, and we can choose the basis element to be the $0$-form $1 \in \bigwedge^0 T0 \cong \R$.
-	By \cref{normal co-or,D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\}\into (-\infty, 0]$ is $(1,1 \wedge -e_1) = (1,-e_1)$.
-	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^-:(-\infty, 0] \to \R$ is then the composition of $(1,-e_1)$ with $(e_1,e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
-	As the inward normal to $[0,\infty)$ at $0$ is $e_1$, the inclusion $g^+:[0,\infty) \to \R$ induces the opposite co-orientation $(1,e_1)$ on the inclusion $\{0\} \to \R$.
+	By \cref{normal co-or,D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\} \into (-\infty, 0]$ is $(1, 1 \wedge -e_1) = (1, -e_1)$.
+	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^- \colon (-\infty, 0] \to \R$ is then the composition of $(1, -e_1)$ with $(e_1, e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
+	As the inward normal to $[0,\infty)$ at $0$ is $e_1$, the inclusion $g^+ \colon [0,\infty) \to \R$ induces the opposite co-orientation $(1, e_1)$ on the inclusion $\{0\} \to \R$.
 \end{example}
 
 \begin{example}\label{E: manifold decomposition}
@@ -401,11 +401,11 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 
 	In this setting, the normal bundle of $W^0$ in $W$ has a natural orientation given by pulling back via $\varphi g$ the standard orientation $e_1$ of the normal bundle of $0$ in $\R$, and this determines the \textbf{co-orientation of $W^0$ in $W$ induced by $\varphi$}, which is given by the normal co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge(\varphi g)^*e_1)$.
 	We also have the boundary co-orientations of the inclusions of $W^0$ into $W^{\pm}$.
-	Analogously to \cref{E: splitting example 1}, the co-orientation on $W^0\into W$ induced by $\varphi$ is the opposite of co-orientation of $W^0\into W$ as the (partial) boundary of $W^-$ and agrees with the co-orientation of $W^0\into W$ as the (partial) boundary of $W^+$.
+	Analogously to \cref{E: splitting example 1}, the co-orientation on $W^0 \into W$ induced by $\varphi$ is the opposite of co-orientation of $W^0 \into W$ as the (partial) boundary of $W^-$ and agrees with the co-orientation of $W^0 \into W$ as the (partial) boundary of $W^+$.
 
-	Now suppose $g \colon W \to M$ is co-oriented with local representatives $(\beta_W,\beta_M)$.
-	By composing this co-orientation with the tautological co-orientations of $W^\pm$ in $W$ as in the preceding example, we can canonically co-orient $g|_{W^\pm}$ by $(\beta_W,\beta_M)$.
-	Similarly, by composing the co-orientation of $g$ with the $\phi$-induced co-orientation of $W^0\into W$ we obtain the \textbf{co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\varphi$}.
+	Now suppose $g \colon W \to M$ is co-oriented with local representatives $(\beta_W, \beta_M)$.
+	By composing this co-orientation with the tautological co-orientations of $W^\pm$ in $W$ as in the preceding example, we can canonically co-orient $g|_{W^\pm}$ by $(\beta_W, \beta_M)$.
+	Similarly, by composing the co-orientation of $g$ with the $\phi$-induced co-orientation of $W^0 \into W$ we obtain the \textbf{co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\varphi$}.
 	As above, the co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\varphi$ disagrees with the boundary co-orientation of $g|_{W^0} \colon W^0 \to M$ obtained by treating $W^0$ as part of the boundary of $W^-$, while it agrees with the co-orientation obtained by treating $W^0$ as part of the boundary of $W^+$.
 
 	In the special case of the identity map $\id \colon M \to M$ with the tautological co-orientation, we obtain submanifolds $M^0$ and $M^{\pm}$ of $M$ with co-orientations of their embeddings induced as above.
@@ -417,7 +417,7 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 \end{example}
 
 \begin{comment}
-	\red{TO DO SOMEWHERE: It will be convenient to show that $g \colon W^0 \to M$ with this co-orientation is the pullback of $M^0\into M$ (co-oriented as defined here) and $g \colon W \to M$ and similarly for $g \colon W^\pm \to M$.
+	\red{TO DO SOMEWHERE: It will be convenient to show that $g \colon W^0 \to M$ with this co-orientation is the pullback of $M^0 \into M$ (co-oriented as defined here) and $g \colon W \to M$ and similarly for $g \colon W^\pm \to M$.
 		Also need to rewrite things in other places as $M^0$, $M^\pm$, etc instead of always writing $\varphi^{-1}((\infty,0])$ etc.
 		Also need to show that $\bd W^0 = -(\bd W)^0$, which should follow from the Leibniz rule and the first thing the previous sentence.}
 \end{comment}
@@ -507,7 +507,7 @@ For this the following lemma is useful.
 
 \begin{remark}\label{R: stationary homotopy}
 	In the above scenario, if $g_0$ is co-oriented locally at $x \in W$ by $(\beta_W,\beta_M)$, then at $(x,0) \in W \times I$, the corresponding local co-orientation of $G$ that yields $-g_0$ as a boundary component of $G$ is $(\beta_W \wedge -\beta_I, \beta_M)$, where $\beta_I$ corresponds to the standard orientation of $I$.
-	This follows from $(\beta_W,\beta_W \wedge \beta_I)$ being the boundary co-orientation of $W \times 0\into W \times I$ as $e_1$ is the inward pointing normal at $0 \in I$.
+	This follows from $(\beta_W,\beta_W \wedge \beta_I)$ being the boundary co-orientation of $W \times 0 \into W \times I$ as $e_1$ is the inward pointing normal at $0 \in I$.
 	As we can take $\beta_W \wedge -\beta_I$ to be a consistent orientation along the path given by $\gamma(t) = (x,t)$, we have $\gamma_*(\beta_W \wedge -\beta_I, \beta_M) = (\beta_W \wedge -\beta_I,\gamma_*\beta_M)$, and at this end of the homotopy the induced local co-orientation of $g_1$ at $x$ is $(\beta_W,\gamma_*\beta_M)$.
 	If $G$ is stationary along $x \times I$, then the co-orientation for $g_1$ at $x$ is again $(\beta_W,\beta_M)$ so that the co-orientations of $g_0$ and $g_1$ agree at $x$.
 	This observation will be useful below in showing that pullback co-orientations are well defined.
@@ -743,7 +743,7 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	So $\pi_W$ is proper.
 
 	For co-orientations, we use Quillen's definition from \cref{L: Quillen}.
-	We factor $f$ as $V\into M \times \R^N \to M$, and then we have the pullback diagram
+	We factor $f$ as $V \into M \times \R^N \to M$, and then we have the pullback diagram
 
 	\begin{diagram}[LaTeXeqno]\label{D: pullback}
 		P&\rTo^{\pi_V} & V\\
@@ -828,7 +828,7 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 \begin{proof}[Proof of \cref{L: pullback co well defined}]
 	As the local orientations of $P$, $V$, $W$, and $M$ used in the construction all come in pairs (e.g.\ $\beta_P$ in $(\beta_P,\beta_P \wedge \nu_V))$, the construction is independent of those choices.
 
-	Next, suppose we are given an embedding $e: V\into M \times \R^N$ and extend it to $e' = (e,0) \colon V\into M \times \R^N \times \R^n$.
+	Next, suppose we are given an embedding $e: V \into M \times \R^N$ and extend it to $e' = (e,0) \colon V \into M \times \R^N \times \R^n$.
 	In the construction involving $e$, if we choose $\beta_V$, $\beta_M$ so that $(\beta_V,\beta_M)$ is the co-orientation for $f$, then by the definition of the Quillen orientation, $\nu V$ will be such that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$ up to positive scalar.
 	If we now increase the dimension of the Euclidean factor to $\R^{N+n}$ and write its canonical local orientation as $\beta_{E^N} \wedge \beta_{E^n}$ while extending $e$ to $e'$, we see that $\nu_V$ becomes $\nu_V \oplus \underline{\R}^n$ so that $\beta_{\nu V}$ becomes $\beta_{\nu V} \wedge \beta_{E^n}$.
 	Pulling back over $W$ we obtain the pullback co-orientation $(\beta_P,\beta_P \wedge \beta_{\nu V} \wedge \beta_{E^n})*(\beta_W \wedge \beta_{E^N} \wedge \beta_{E^n},\beta_W)$.
@@ -840,13 +840,13 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 	Let $\pi \colon M \times \R^N \to M$ be the projection to $M$.
 	As $\pi e_0 = \pi e_1$, the maps $e_0$ and $e_1$ are homotopic over $f$, say by linear homotopies in the Euclidean fibers.
 	Let $H \colon V \times I \to M \times \R^N$ be the chosen homotopy.
-	Next, by the same argument by which embeddings $e$ exist, there is an embedding $\td H: V \times I\into M \times \R^N \times \R^Q$ for some $Q$ so that if $\td \pi \colon M \times \R^N \times \R^Q \to M \times \R^N$ is the projection then $\td \pi \td H = H$.
+	Next, by the same argument by which embeddings $e$ exist, there is an embedding $\td H: V \times I \into M \times \R^N \times \R^Q$ for some $Q$ so that if $\td \pi \colon M \times \R^N \times \R^Q \to M \times \R^N$ is the projection then $\td \pi \td H = H$.
 	If we let $\td e_0 = \td H(-,0) \colon V \to M \times \R^N \times \R^Q$ then $\td \pi \td e_0 = e_0$.
 	If we let $(e_0,0) \colon V \to M \times \R^N \times \R^Q$ denote the map $x \to (e_0(x), 0)$, then there is a homotopy from $\td e_0$ to $(e_0,0)$; in fact as $e_0$ is an embedding and $\td \pi\td e_0 = e_0$, we can let these homotopies be linear in the $\R^Q$ factor and constant in the other factors and this homotopy will be an embedding of $V \times I$.
 	We can define $\td e_1$, $(e_1,0)$, and an embedded homotopy between them similarly.
 
 	So we have a sequence of three embedded homotopies, say $F_1$, $F_2$, $F_3$ from $(e_0,0)$ to $\td e_0$, from $\td e_0$ to $\td e_1$, and from $\td e_1$ to $(e_1,0)$, respectively.
-	Additionally, $\pi \td \pi:F_j(x,t) = f(x)$ so each homotopy is constant in $I$ when projected to $M$, and in particular each of $(e_0,0)$, $(e_1,0)$, $\td e_0$, and $\td e_1$ is an embedding $V\into M \times \R^{N+Q}$ over $f \colon V \to M$.
+	Additionally, $\pi \td \pi:F_j(x,t) = f(x)$ so each homotopy is constant in $I$ when projected to $M$, and in particular each of $(e_0,0)$, $(e_1,0)$, $\td e_0$, and $\td e_1$ is an embedding $V \into M \times \R^{N+Q}$ over $f \colon V \to M$.
 	We know from above that the pullback co-orientation obtained from using $(e_0,0)$ and $(e_1,0)$ agree with those obtained from $e_0$ and $e_1$.
 	So it suffices to use the homotopies to show successively that $(e_0,0)$, $\td e_0$, $\td e_1$, and $(e_1,1)$ all provide the same pullback co-orientation of $f^*$.
 
@@ -941,7 +941,7 @@ the associated normal co-orientation is the fiber product co-orientation.
 
 \begin{proof}
 	It suffices to demonstrate this property in the neighborhood of any intersection point, so we may assume that $f$ and $g$ are embeddings and consider $x \in V$, $y \in W$ with $f(x) = g(y) = z \in M$.
-	Locally, for our Quillen co-orientation of $f$ we can apply the definition of the pullback co-orientation with $N = 0$ and the embedding $e \colon V\into M \times \R^N$ to be simply $f$ itself.
+	Locally, for our Quillen co-orientation of $f$ we can apply the definition of the pullback co-orientation with $N = 0$ and the embedding $e \colon V \into M \times \R^N$ to be simply $f$ itself.
 	As $N = 0$, in this case $\nu V$ is itself the oriented normal bundle of $e(V) = f(V)$ in $M \times \R^N = M$.
 	Pulling back via $g$ to $W$, we obtain the oriented pullback of $\nu V$ (which we also call $\nu V$) as the normal bundle of $P$ in $W$.
 	By definition, the co-orientation of $P \to W$ is then the composition of $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the standard co-orientation of the projection $W \times \R^N$ to $W$, which in this case is the identity.
@@ -953,7 +953,7 @@ the associated normal co-orientation is the fiber product co-orientation.
 \subsubsection{The Leibniz rule}
 
 We now verify the Leibniz rule.
-Note that in the proof we work with a single arbitrary but fixed $e \colon V\into M \times \R^N$ and its restriction to $\bd V$, and so the following theorem holds for any such choice in the definition of the pullback co-orientation.
+Note that in the proof we work with a single arbitrary but fixed $e \colon V \into M \times \R^N$ and its restriction to $\bd V$, and so the following theorem holds for any such choice in the definition of the pullback co-orientation.
 Consequently, this result completes the proof of \cref{L: pullback co well defined}.
 
 \begin{proposition}[Leibniz rule]\label{leibniz}
@@ -1019,7 +1019,7 @@ The reader should recall \cref{R: precise commutativity} for a precise explanati
 Before proving the proposition, we put it to use in the following example.
 
 \begin{example}\label{E: embedded}
-	In \cref{E: V embedded}, we considered pullback co-orientations $V \times_M W \to W$ when $V\into M$ was embedded.
+	In \cref{E: V embedded}, we considered pullback co-orientations $V \times_M W \to W$ when $V \into M$ was embedded.
 	In this example, we discuss the case where $W$ is embedded.
 
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary.
@@ -1029,25 +1029,25 @@ Before proving the proposition, we put it to use in the following example.
 	For the remainder of the argument, we fix this local orientation $\beta_M$ at $f(x) \in M$, and we choose $\beta_V$ at $x$ so that $(\beta_V,\beta_M)$ is the co-orientation of $V$ at $x$.
 
 	Although we are interested in $V \times_M U$, the definition of the pullback co-orientation makes it easier to work with $U \times_M V$ when $U$ is embedded; see \cref{E: V embedded}.
-	As we have chosen a co-orientation for $U\into M$ and $V \to M$ comes with a co-orientation, we can consider
+	As we have chosen a co-orientation for $U \into M$ and $V \to M$ comes with a co-orientation, we can consider
 	the fiber product $U \times_M V \to M$.
 	If we choose an orientation $\beta_{\nu U}$ of the normal bundle to $U$ at $y$ so that $\beta_U \wedge \beta_{\nu U} = \beta_M$, then this fiber product is $P_U = f^{-1}(U) = f^{-1}(U)\xr{f} M$ co-oriented by $(\beta_P,\beta_M)$, where $\beta_P$ is chosen so that $\beta_P \wedge \beta_{\nu U} = \beta_V$, as usual letting $\nu U$ here also stand for its pullback as a normal bundle of $P_U$ in $V$.
-	At this point, if we had chosen the opposite co-orientation for $U\into M$, we would have the opposite fiber product co-orientation.
+	At this point, if we had chosen the opposite co-orientation for $U \into M$, we would have the opposite fiber product co-orientation.
 
 	Now, we apply \cref{P: graded comm}.
 	Technically we need $g|_U$ to be proper, but we can achieve this by assuming that $U$ is the intersection of $W$ with some open neighborhood $\mc U$ of $y$ in $M$.
-	Then we can replace the co-oriented embedding $U\into M$ with the proper co-oriented embedding $U\into \mc U$ and $f$ with its restriction to $f^{-1}(\mc U)$.
+	Then we can replace the co-oriented embedding $U \into M$ with the proper co-oriented embedding $U \into \mc U$ and $f$ with its restriction to $f^{-1}(\mc U)$.
 	As pullback co-orientations are determined locally as noted in \cref{R: local pullback co-orientations}, this will suffice.
 	For simplicity, though, we maintain our original notations.
 
 	By \cref{P: graded comm}, we have $U \times_M V = (-1)^{(m-v)(m-w)}V \times_M U$ as co-oriented fiber products over $M$.
 	So the fiber product $V \times_M U \to M$ is represented by $f^{-1}(U)\xr{f}M$ with co-orientation at $(x,y)$ given by $(-1)^{(m-v)(m-w)}(\beta_P,\beta_M)$.
-	But decomposing the fiber product as the pullback $V \times_M U \to U$ and the inclusion $U\into M$, we can also decompose the co-orientation as $(-1)^{(m-v)(m-w)}(\beta_P,\beta_M) = (-1)^{(m-v)(m-w)}(\beta_P,\beta_U)*(\beta_U,\beta_M)$.
+	But decomposing the fiber product as the pullback $V \times_M U \to U$ and the inclusion $U \into M$, we can also decompose the co-orientation as $(-1)^{(m-v)(m-w)}(\beta_P,\beta_M) = (-1)^{(m-v)(m-w)}(\beta_P,\beta_U)*(\beta_U,\beta_M)$.
 	As $(\beta_U,\beta_M)$ is our co-orientation for $g|_U$, the pullback co-orientation must be $(-1)^{(m-v)(m-w)}(\beta_P,\beta_U)$.
 	Furthermore, if we had chosen the opposite co-orientation for $g|_U$, that would reverse the signs of both $(\beta_U,\beta_M)$ and of the fiber product, so in either case the pullback co-orientation is $(-1)^{(m-v)(m-w)}(\beta_P,\beta_U)$.
 	In other words, this description of the co-oriented pullback $V \times_M U \to U$ is independent of our choice of co-orientation for $g|_U$, and so it extends globally to $V \times_M W \to W$.
 	And explicitly it can be described as follows:
-	$V \times_M W \to W$ is just the inclusion $f^{-1}(W)\into W$ co-oriented by $(-1)^{(m-v)(m-w)}(\beta_P,\beta_W)$, where, if we write the co-oriented of $f$ locally by $(\beta_V,\beta_M)$ and choose any local orientation $\beta_{\nu W}$ for the normal bundle of $W$ in $M$, then $\beta_P \wedge \beta_{\nu W} = \beta_V$ and $\beta_W \wedge \beta_{\nu W} = \beta_M$.
+	$V \times_M W \to W$ is just the inclusion $f^{-1}(W) \into W$ co-oriented by $(-1)^{(m-v)(m-w)}(\beta_P,\beta_W)$, where, if we write the co-oriented of $f$ locally by $(\beta_V,\beta_M)$ and choose any local orientation $\beta_{\nu W}$ for the normal bundle of $W$ in $M$, then $\beta_P \wedge \beta_{\nu W} = \beta_V$ and $\beta_W \wedge \beta_{\nu W} = \beta_M$.
 	In other words, we can say that $W \subset M$ and $V \times_M W = f^{-1}(W) \subset V$ have compatible local normal co-orientations up to the sign $(-1)^{(m-v)(m-w)}$.
 
 	It is a nice exercise to confirm that this agrees with the computation of \cref{P: normal pullback} when $V$ and $W$ are both embedded.
@@ -1078,7 +1078,7 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 	By \cref{R: co-or restriction or switch} and the above observations, it suffices to consider a neighborhood of $x$ and a chart around $f(x)$ with respect to which $f$ agrees locally with the projection $M \times \R^N \to M$.
 	For simplicity of notation, we can take all of $M$ to be this chart.
 	We can choose the ordering of the coordinates in $\R^N$ so that $(\beta_M \wedge \beta_E,\beta_M)$ agrees with the co-orientation for $f$.
-	In this case we let $e \colon V\into M \times \R^N$ be the diffeomorphism realizing the neighborhood of $x$ as $M \times \R^N$.
+	In this case we let $e \colon V \into M \times \R^N$ be the diffeomorphism realizing the neighborhood of $x$ as $M \times \R^N$.
 	The normal bundle $\nu_V$ in this case is $0$-dimensional and positively oriented.
 	The pullback to $P$ is all of $W \times \R^N$, and if we also choose $\beta_W$ at $y$ so that $\omega_g = (\beta_W,\beta_M)$, then by \cref{D: pullback coorient} the fiber product co-orientation for $f \times_M g$ is $(\beta_P,\beta_M)$ if and only if $\beta_P = \beta_W \wedge \beta_E$.
 
@@ -1203,7 +1203,7 @@ They will be useful when working with the creasing construction for geometric co
 \begin{proposition}\label{P: codim 0 pullback}
 	Let $V$ be an embedded codimension $0$ submanifold with corners in the manifold without boundary $M$, and let $f \colon V \to M$ be the embedding, co-oriented by $(\beta_V,f_*\beta_V)$ at each point of $V$.
 	Let $W$ be a manifold with corners and suppose $g \colon W \to M$ is transverse to $f$.
-	Then the co-oriented pullback $f^* \colon V \times_M W \to W$ is the inclusion of the codimension $0$ manifold with corners $g^{-1}(V)\into W$, co-oriented by the normal co-orientation of the immersion, which in this case is $(\beta_P,\beta_P)$, identifying the tangent spaces of $V \times_M W$ and $W$.
+	Then the co-oriented pullback $f^* \colon V \times_M W \to W$ is the inclusion of the codimension $0$ manifold with corners $g^{-1}(V) \into W$, co-oriented by the normal co-orientation of the immersion, which in this case is $(\beta_P,\beta_P)$, identifying the tangent spaces of $V \times_M W$ and $W$.
 	Consequently, if $g$ is co-oriented the co-oriented fiber product $V \times_M W \to M$ is just the restriction of the co-oriented map $g$ to the embedded codimension $0$ submanifold with corners $g^{-1}(V)$.
 \end{proposition}
 \begin{proof}
@@ -1225,16 +1225,16 @@ They will be useful when working with the creasing construction for geometric co
 \begin{example}
 	Let $\varphi \colon M \to \R$ be a smooth function from a manifold without boundary to $\R$, and let $M^+ = \varphi^{-1}([0,\infty)) = [0,\infty)\times_\R M$, $M^- = \varphi^{-1}((-\infty,0]) = (-\infty,0]\times_\R M$, and $M^0 = \varphi^{-1}(0) = 0\times_\R M$.
 	Then $M^\pm$ are embedded codimension $0$ manifolds with corners in $M$ and $\bd M^\pm = M^0$.
-	Suppose the embeddings $M^\pm\into M$ are given the tautological co-orientations of \cref{D: tautological co-orientation}, and let $g \colon W \to M$ be transverse to $M^\pm$, which in this case is equivalent to being transverse to $M^0$.
-	Then let $W^\pm \defeq g^{-1}(M^\pm) = M^\pm \times_M W$, and the pullback co-orientations of $W^\pm\into W$ given by \cref{P: codim 0 pullback} are again just the tautological co-orientations of the codimension $0$ embeddings.
-	The compositions $W^\pm\into W \to M$ are then the fiber products, and the co-orientations of \cref{P: codim 0 pullback} agree with those described in \cref{E: manifold decomposition}.
+	Suppose the embeddings $M^\pm \into M$ are given the tautological co-orientations of \cref{D: tautological co-orientation}, and let $g \colon W \to M$ be transverse to $M^\pm$, which in this case is equivalent to being transverse to $M^0$.
+	Then let $W^\pm \defeq g^{-1}(M^\pm) = M^\pm \times_M W$, and the pullback co-orientations of $W^\pm \into W$ given by \cref{P: codim 0 pullback} are again just the tautological co-orientations of the codimension $0$ embeddings.
+	The compositions $W^\pm \into W \to M$ are then the fiber products, and the co-orientations of \cref{P: codim 0 pullback} agree with those described in \cref{E: manifold decomposition}.
 \end{example}
 
 \begin{proposition}\label{P: codim 1 co-orient}
 	Suppose $V \subset M$ is a codimension $1$ submanifold with corners with oriented normal bundle $\nu$ in the manifold without boundary $M$.
-	Suppose the embedding $f \colon V\into M$ is co-oriented by $(\beta_V,\beta_V \wedge \beta_\nu)$.
+	Suppose the embedding $f \colon V \into M$ is co-oriented by $(\beta_V,\beta_V \wedge \beta_\nu)$.
 	Let $W$ be a manifold without corners and suppose $g \colon W \to M$ is transverse to $f$ so that $g^{-1}(V) = W^0$ is a codimension $1$ submanifold with corners with oriented pullback normal vector bundle $\nu_0$.
-	Then the co-oriented pullback $f^*:P = V \times_M W \to W$ is the embedding $W^0\into W$, co-oriented by $(\beta_P,\beta_P \wedge \beta_{\nu_0})$.
+	Then the co-oriented pullback $f^*:P = V \times_M W \to W$ is the embedding $W^0 \into W$, co-oriented by $(\beta_P,\beta_P \wedge \beta_{\nu_0})$.
 \end{proposition}
 
 \begin{proof}
@@ -1453,7 +1453,7 @@ Among other things, it will help us to next demonstrate a commutativity property
 
 \begin{lemma}\label{L: Quillen product co-orientation}
 	Let $f \colon V \to M$ and $g \colon W \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary.
-	Consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V \colon V\into M \times \R^a$ and $e_W \colon W \into N \times \R^b \to N$ with $a$ and $b$ even.
+	Consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V \colon V \into M \times \R^a$ and $e_W \colon W \into N \times \R^b \to N$ with $a$ and $b$ even.
 	Denote the normal bundles of $V$ and $W$ in $M \times \R^a$ and $N \times \R^b$ by $\nu V$ and $\nu W$.
 	Let $T \colon M \times \R^a \times N \times \R^b \to M \times N \times \R^{a+b}$ be the diffeomorphism that interchanges the middle two factors.
 	Then
@@ -1490,12 +1490,12 @@ However, the pullback is by a diffeomorphism, so this result should extend witho
 	Let $(\beta_V,\beta_M)$ and $(\beta_W,\beta_N)$ be local representations of the co-orientations at some points.
 	The product co-orientation of $V \times W \to M \times N$ is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N)$.
 
-	As in \cref{L: Quillen product co-orientation},we consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V \colon V\into M \times \R^a$ and $e_W \colon W \into N \times \R^b \to N$ with $a$ and $b$ even.
+	As in \cref{L: Quillen product co-orientation},we consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V \colon V \into M \times \R^a$ and $e_W \colon W \into N \times \R^b \to N$ with $a$ and $b$ even.
 	This is sufficient as we know that the pullback construction is independent of $a$ and $b$ for sufficiently large dimensions by \cref{L: pullback co well defined}.
 	Assuming the other notation from \cref{L: Quillen product co-orientation}, the lemma tells us that $f \times g \colon V \times W \to M \times N$ has Quillen co-orientation given by $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W},$$
 	suitably interpreting the relevant coordinates in $M \times N \times \R^a \times \R^b$.
 
-	Now using this Quillen co-orientation for $f \times g$, we pull back by the diffeomorphism $\tau \colon N \times M \to M \times N$, obtaining the composition we can write $W \times V\into N \times M \times \R^a \times \R^b \to N \times M$.
+	Now using this Quillen co-orientation for $f \times g$, we pull back by the diffeomorphism $\tau \colon N \times M \to M \times N$, obtaining the composition we can write $W \times V \into N \times M \times \R^a \times \R^b \to N \times M$.
 	The pulled back normal bundle is still oriented in each fiber as $\beta_{\nu V} \wedge \beta_{\nu W}$ (though of course the order of actual local coordinates have now been jumbled around).
 	By definition, the pullback co-orientation is $(\beta_W \wedge \beta_V,\beta_N \wedge \beta_M)$ if and only if $$\beta_W \wedge \beta_V \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_N \wedge \beta M \wedge \beta_{a+b},$$
 	and as $a$ and $b$ are even this last expression is equal to
@@ -1527,7 +1527,7 @@ The next result relates co-oriented products in which one map is the identity wi
 	As the projections are submersions, the required transversality conditions to ensure the existence of the pullbacks are met.
 	These claims are then clear concerning maps of topological spaces, so we need only verify the co-orientations.
 
-	As in the preceding argument, we start again with an embedding $e \colon V\into M \times \R^a$ to establish a Quillen co-orientation for $f$.
+	As in the preceding argument, we start again with an embedding $e \colon V \into M \times \R^a$ to establish a Quillen co-orientation for $f$.
 	We again may assume $a$ be even for simplicity.
 	We write the co-orientation of $f$ as $(\beta_V,\beta_M)$, and we let $\nu V$ denote the normal to $e(V)$ and orient $\nu V$ so that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$, writing $\beta_a$ for the standard orientation of $\R^a$.
 
@@ -1789,7 +1789,7 @@ The analogues for singular chains and cochains are the cap product with the coch
 	Then $M \times_M W = W$ as oriented manifolds.
 \end{proposition}
 \begin{proof}
-	By definition, there is a Quillen co-orientation for $M$ consisting of the sequence of identity maps $M\into M \to M$ with the normal bundle to $M$ in itself being the $0$-dimensional vector bundle, which we consider to have positive orientation at each point.
+	By definition, there is a Quillen co-orientation for $M$ consisting of the sequence of identity maps $M \into M \to M$ with the normal bundle to $M$ in itself being the $0$-dimensional vector bundle, which we consider to have positive orientation at each point.
 	It follows from the definition of the pullback that the corresponding Quillen co-orientation for $M \times_M W$ comes from the sequence $g^{-1}(M) = W \into W \to W$ with $W$ also having a $0$-dimensional positively-oriented normal bundle in itself.
 	Consequently, the pullback co-orientation for $W \to W$ is the tautological one, and so the induced orientation on $W$ is the given one.
 \end{proof}
@@ -1822,7 +1822,7 @@ The next property relates products of pullbacks with pullbacks of products.
 
 	Furthermore, using our construction of pullback co-orientations, $\beta_P$ and $\beta_{P'}$ are such that $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_a$ and $\beta_{P'} \wedge \beta_{\nu X} = \beta_Y \wedge \beta_b$, where $\beta_a$ and $\beta_b$ are the standard orientations Euclidean spaces $\R^a$ and $\R^b$ and we are free to take $a$ and $b$ to be even integers.
 
-	By \cref{L: Quillen product co-orientation}, we have that the Quillen co-orientation of $V \times X \to M \times N$ is represented by an embedding $V \times X\into M \times N \times \R^a \times \R^b$ with normal bundle $\nu V \oplus \nu X$.
+	By \cref{L: Quillen product co-orientation}, we have that the Quillen co-orientation of $V \times X \to M \times N$ is represented by an embedding $V \times X \into M \times N \times \R^a \times \R^b$ with normal bundle $\nu V \oplus \nu X$.
 	So letting $Q = (V \times X)\times_{M \times N} (W \times Y)$, the orientation $\beta_Q$ is the one such that $(\beta_Q,\beta_W \wedge \beta_Y)$ is the pullback co-orientation, i.e.\ the one such that $\beta_Q \wedge \beta_{\nu V} \wedge \beta_{\nu X} = \beta_W \wedge \beta_Y \wedge \beta_a \wedge \beta_b$.
 	But then we compute, using $a$ and $b$ even,
 
@@ -1924,7 +1924,7 @@ Our strategy will be as follows: First, we will prove in \cref{L: compare cup an
 Then we will show, first for co-orientations and then for orientations, that we can replace the fiber product of
 $$V\xr{f} M \xleftarrow{g} W$$ with the fiber product
 $$V \times \R^{2b}\xhookrightarrow{e \times \id_{\R^{2b}}} M \times \R^{2a} \times \R^{2b} \xhookleftarrow W \times \R^{2a},$$
-where $e$ is the embedding $V\into M \times \R^{2a}$ of a Quillen co-orientation of $f$ and the leftward arrow is the identity between the $\R^{2a}$ factors and takes the $W$ factor into $M \times \R^{2b}$ by the embedding map of a Quillen co-orientation of $g$.
+where $e$ is the embedding $V \into M \times \R^{2a}$ of a Quillen co-orientation of $f$ and the leftward arrow is the identity between the $\R^{2a}$ factors and takes the $W$ factor into $M \times \R^{2b}$ by the embedding map of a Quillen co-orientation of $g$.
 By ``replace,'' we mean in the orientated case that the two fiber products are canonically oriented diffeomorphic.
 In the co-oriented case we mean that we have a canonical oriented diffeomorphism
 between the domains of the two co-oriented fiber products, oriented with their induced orientations coming respectively from the orientation of $M$ and from the concatenation orientation of $M \times \R^{2a} \times \R^{2b}$ using the standard orientations of the Euclidean terms.
@@ -1992,14 +1992,14 @@ In our remaining constructions in this section we take all introduced Euclidean 
 
 	Then $V \times_M W$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically orientated diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$ (with its orientation induced by the fiber product co-orientation and the orientation of $M \times \R^{2a}$).
 	Here the maps for the second fiber product are $e \colon V \to M \times \R^{2a}$ and $g\times\id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
-	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V\into M \times \R^{2a}$ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M}\wedge\beta_a,\beta_M)$ is the co-orientation of $f$.
+	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V \into M \times \R^{2a}$ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M}\wedge\beta_a,\beta_M)$ is the co-orientation of $f$.
 	We also take $g \times \id_{\R^{2a}}$ to be co-oriented by the product co-orientation $(\beta_W \wedge \beta_a,\beta_M \wedge \beta_a)$ if $(\beta_W,\beta_M)$ is the co-orientation of $g$.
 	Finally, $M \times \R^{2a}$ is given the product orientation with $\R^{2a}$ having the standard orientation.
 \end{lemma}
 \begin{proof}
 	By the definitions of the induced orientation and the fiber product co-orientation, the orientation of the fiber product $V \times_M W \to M$ is $\beta_P$ where $\beta_P \wedge \beta_{\nu V} = \beta_M\wedge\beta_a$.
 	We recall that the $\nu V$ in this formula is actually the pullback of the normal bundle of $e(V) \subset M \times \R^{2a}$ via the map $g\times\id_{\R^{2a}}: W \times \R^{2a} \to M \times \R^{2a}$.
-	But this is also precisely the description of the induced fiber product orientation from the co-oriented fiber product $V\times_{M \times \R^{2a}}(W \times \R^{2a})$, treating $e \colon V\into M \times \R^{2a}$ as its own Quillen co-orientation with $N = 0$ in \cref{D: pullback coorient}.
+	But this is also precisely the description of the induced fiber product orientation from the co-oriented fiber product $V\times_{M \times \R^{2a}}(W \times \R^{2a})$, treating $e \colon V \into M \times \R^{2a}$ as its own Quillen co-orientation with $N = 0$ in \cref{D: pullback coorient}.
 \end{proof}
 
 \begin{corollary}\label{C: co-oriented full transition to embedded}
@@ -2024,7 +2024,7 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 	Then $V \times_M W$ is canonically oriented diffeomorphic to the oriented fiber product $V\times_{M \times \R^{2a}} (W \times \R^{2a})$ of $e \colon V \to M \times \R^{2a}$ and $g \times \id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
 \end{lemma}
 \begin{proof}
-	We will first show that $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $V\times_{M \times \R^{2a}} (W \times \R^{2a})$ with the map $V \to M \times \R^{2a}$ being the composition of $f$ with the inclusion $M = M \times \{0\}\into M \times \R^{2a}$.
+	We will first show that $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $V\times_{M \times \R^{2a}} (W \times \R^{2a})$ with the map $V \to M \times \R^{2a}$ being the composition of $f$ with the inclusion $M = M \times \{0\} \into M \times \R^{2a}$.
 	We will write this composite as $f_0$.
 	It is clear that $f_0$ and $g \times \id_{\R^{2a}}$ are transverse as $f$ and $g$ are transverse in $M$ and the $\id_{\R^{2a}}$ factor takes care of the $\R^{2a}$ factor of the tangent spaces.
 	We also observe that the two fiber products are canonically the same as spaces, as $V \times_M W = \{(v,w) \in V \times W\mid f(v) = g(w)\}$, while the other fiber product is $\{(v,w,0) \in V \times W \times \R^a\mid f(v) = g(w)\}$.
