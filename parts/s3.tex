@@ -278,7 +278,7 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 	Co-oriented maps compose in an immediate way, forming a category.
 	Namely, given $V \xr{f} W \xr{g} M$ and co-orientations $\Or(TV) \to \Or(f^*TW)$ and $\Or(TW) \to \Or(g^*TM)$, we simply compose the former with the pullback of the latter via $f^*$, recalling that $f^*(\Or(E)) = \Or(f^*E)$ in a natural way.
 	We will refer to this simply as composing co-orientations and write the composition in symbols as $\omega_f*\omega_g$.
-	Warning: note that we write the terms in the order $\omega_f*\omega_g$ for the map $g\circ f$.
+	Warning: note that we write the terms in the order $\omega_f*\omega_g$ for the map $g \circ f$.
 	This is more convenient when writing out co-orientations using the local orientations as we obtain expressions such as $(\beta_V, \beta_W)*(\beta_W,\beta_M) = (\beta_V,\beta_M)$.
 \end{remark}
 
@@ -558,7 +558,7 @@ For this the following lemma is useful.
 		This is the the induced co-orientation for $g_1$.
 
 		On the other hand, as the positively-oriented tangent vector to $I$ points inward at $0$, the standard boundary co-orientation of $W \times 0 \to W \times I \to M$ is the composition of $(\beta_W, \beta_W \wedge \beta_\nu) = -(\beta_W, \beta_W \wedge \beta_{e_1})$ with $(\beta_W \wedge \beta_{e_1},\beta_M)$.
-		Thus as a piece of the boundary, $G\circ i_{W \times 0} = -g_0$.
+		Thus as a piece of the boundary, $G \circ i_{W \times 0} = -g_0$.
 
 		Finally, consider a point $(x,0) \in (\bd W) \times I$ and let $\nu_\bd$ be an outward pointing normal to $W$ at $i_{\bd W}(x)$.
 		Then the standard co-orientation of $\bd W$ in $W$ is $(\beta_{\bd W},\beta_{\bd W} \wedge \beta_\nu)$ and the standard co-orientation of the composite $\bd g_0 = g_0i_{\bd W}:\bd W \to M$ is the composite of $(\beta_{\bd W},\beta_{\bd W} \wedge \beta_\nu)$ with $(\beta_W,\beta_M)$.
@@ -1631,18 +1631,18 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 	as manifolds with co-oriented maps to $N$.
 \end{corollary}
 \begin{proof}
-	Using \cref{P: cross to cup,P: pullback functoriality,P: natural exterior}, and that $\diag_M h = (h \times h)\circ \diag_N$,
+	Using \cref{P: cross to cup,P: pullback functoriality,P: natural exterior}, and that $\diag_M h = (h \times h) \circ \diag_N$,
 	we compute
 	\begin{align*}
 		h^*(V \times_M W)& = h^*\diag_M^*(V \times W)\\
 		& = (\diag_M h)^*(V \times W)\\
-		& = ((h \times h)\circ \diag_N)^*(V \times W)\\
+		& = ((h \times h) \circ \diag_N)^*(V \times W)\\
 		& = \diag_N^*(h \times h)^*(V \times W)\\
 		& = \diag_N^*(h^*V \times h^*W)\\
 		& = h^*V\times_N h^*W.
 	\end{align*}
 	To apply \cref{P: pullback functoriality} in the second line, we note that $h$ is transverse to $\diag_M^*(V \times W) = V \times_M W$ by assumption.
-	For the fourth line we observe that $h \times h$ is transverse to $f \times g$ because $h$ is transverse to $f$ and $g$, and the composite $(h \times h)\circ \diag_N = \diag_M h$ is transverse to $f \times g$ by our assumptions and \cref{L: transverse to pullback}.
+	For the fourth line we observe that $h \times h$ is transverse to $f \times g$ because $h$ is transverse to $f$ and $g$, and the composite $(h \times h) \circ \diag_N = \diag_M h$ is transverse to $f \times g$ by our assumptions and \cref{L: transverse to pullback}.
 \end{proof}
 
 \begin{corollary}[Associativity of co-oriented fiber products]\label{C: fiber assoc}
