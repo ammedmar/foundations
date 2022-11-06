@@ -38,7 +38,7 @@ So any one of Joyce's manifolds with corners is diffeomorphic to a manifold with
 By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts) and manifolds with boundary ($k\leq 1$ in all charts) as well as cubes and simplices, but not the octahedron, for example, as the cone on $[0,1] \times [0,1]$ is not modeled by any $\R^n_k$.
 
 \begin{comment}
-	The smooth real-valued functions on a manifold with corners $W$ are those $f$ such that for each chart $\phi: U \subset \R^n_k \to W$ the composition $f\circ \phi:U \to \R$ is smooth.
+	The smooth real-valued functions on a manifold with corners $W$ are those $f$ such that for each chart $\phi: U \subset \R^n_k \to W$ the composition $f \circ \phi:U \to \R$ is smooth.
 \end{comment}
 
 \begin{definition}
@@ -251,7 +251,7 @@ The following technical lemma will help us extend the results of \cite{GuPo74} f
 		D(f \times \id_{\R^{n}})(T_{(v,z)}(V \times \R^n))+De(T_wW) = T_{e(w)}(M \times \R^n) = T_{f(v)}M \oplus \R^n.
 	\end{equation}
 	As $\pi$ is a submersion, the image of this tangent space under $D\pi$ is all of $T_{f(v)}M$.
-	But $(D\pi)(De) = D(\pi e) = Dg$, so $(D\pi\circ De)(T_wW) = Dg(T_wW)$.
+	But $(D\pi)(De) = D(\pi e) = Dg$, so $(D\pi \circ De)(T_wW) = Dg(T_wW)$.
 	Furthermore, letting $\pi_V \colon V \times \R^n \to V$ be the projection, we have $(D\pi)(D(f \times \id_{\R^{n}})) = D(\pi(f \times \id_{\R^{n}})) = D(f\pi_V) = (Df)(D\pi_V)$, so, as $D\pi_V \colon T_{(v,z)}(V \times \R^n) \to T_vV$ is surjective, we have $(D\pi)(D(f \times \id_{\R^{n}}))(T_{(v,z)}(V \times \R^n)) = Df(T_vV)$.
 	So applying $D\pi$ to equation \eqref{E: Quillen transverse}, we get $Df(T_vV)+Dg(T_wW) = T_{f(v)}M$, and $f$ is transverse to $g$.
 \end{proof}
