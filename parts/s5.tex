@@ -179,7 +179,7 @@ We also here continue to assume that $g \colon M \to N$ is transverse to the coc
 \end{comment}
 
 \begin{lemma}\label{L: pullback map Q}
-	Suppose $N$ is a manifold without boundary and $r_S:S \to N$ is trivial or has small rank.
+	Suppose $N$ is a manifold without boundary and $r_S \colon S \to N$ is trivial or has small rank.
 	Let $M$ be a manifold with corners, and let $g: M \to N$ be a smooth map transverse to $r_S$.
 	Then $S \times_N M \to M$ is also trivial or has small rank, respectively.
 	Consequently, if $S \in Q^k(N)$ then $S \times_N M \to M$ is in $Q^k(M)$.
@@ -188,9 +188,9 @@ We also here continue to assume that $g \colon M \to N$ is transverse to the coc
 \begin{proof}
 	If $\rho$ is a co-orientation reversing diffeomorphism of $S$ over $N$, then $\rho \times_N \id_M$ is a co-orientation reversing diffeomorphism of $S \times_N M$ over $M$ by \cref{R: co-or restriction or switch}.
 
-	Similarly, suppose $r_S:S \to N$ has small rank.
+	Similarly, suppose $r_S \colon S \to N$ has small rank.
 	Suppose at the point $x \in S$ we have $v \in \ker(D_x r_S)$.
-	The tangent space of the pullback is the pullback of the tangent spaces \cite[Theorem 5.47]{Wed16}, so $T_{(x,y)}(S \times_N M)$ is the pullback $T_{(x,y)}P = T_xS\times_{T_{(r_S(x),g(y))}N} T_y M$, and we are interested in the map from this space under the derivative of the projection $\pi:S \times M \to M$.
+	The tangent space of the pullback is the pullback of the tangent spaces \cite[Theorem 5.47]{Wed16}, so $T_{(x,y)}(S \times_N M)$ is the pullback $T_{(x,y)}P = T_xS\times_{T_{(r_S(x),g(y))}N} T_y M$, and we are interested in the map from this space under the derivative of the projection $\pi \colon S \times M \to M$.
 	As $v \in \ker D_xr_S$, we have $(v,0) \in T_{(x,y)}P$, and this projects to $0$ in $T_yM$.
 	So $(v,0) \in \ker(D_{(x,y)}\pi)$.
 	This shows that the pullback has small rank.
@@ -356,7 +356,7 @@ The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U 
 		\end{tikzcd}
 	\end{equation}
 
-	The theorem will follow from showing there is a quasi-isomorphism $\psi:S^* \to C_{\Gamma}^*(M|_{U \cup V})$.
+	The theorem will follow from showing there is a quasi-isomorphism $\psi \colon S^* \to C_{\Gamma}^*(M|_{U \cup V})$.
 	Our quasi-isomorphism will be induced by the map $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V) \to C_{\Gamma}^*(M|_{U \cup V})$ that takes $\uW_1 \oplus \uW_2$ to $\uW_1+\uW_2$.
 	This is well defined as it clearly takes elements in the image of $(i_U{,}-i_V)$ to $0$.
 	To establish the quasi-isomorphism, we use creasing.
@@ -1006,7 +1006,7 @@ It will take some work in the following sections to develop a geometric connecti
 	To account for this, we sketch the proof in \cite{Lee13} but provide some detailed modifications.
 
 	We first observe that the map $SK^{sm}_*(M) \to NK_*(M)$ takes a smooth singular cubical chain to $0$ only if all of its cubes (with non-zero coefficient) are degenerate, and so we do have an injection $NK^{sm}_*(M) \into NK_*(M)$.
-	We will define cube-wise a chain homotopy inverse $s \colon NK_*(M) \to NK^{sm}_*(M)$ by starting with a map $\td s:SK_*(M) \to SK^{sm}_*(M)$ and passing to quotients.
+	We will define cube-wise a chain homotopy inverse $s \colon NK_*(M) \to NK^{sm}_*(M)$ by starting with a map $\td s \colon SK_*(M) \to SK^{sm}_*(M)$ and passing to quotients.
 
 	Recall from \cref{S: homology is homology} that we write $\delta_i^\epsilon$ for the face inclusions of the standard cubes.
 	If $\sigma \colon \interval^k \to M$ is a singular cube, we define homotopies $H_\sigma \colon \interval^k \times \interval = \interval^{k+1} \to M$ so that the following properties hold:
@@ -1086,7 +1086,7 @@ It will take some work in the following sections to develop a geometric connecti
 	\end{align*}
 
 	This completes our construction of the homotopies $H_\sigma$.
-	We can now define $\td s:SK_*(M) \to SK^{sm}_*(M)$ by $\td s(\sigma) = H_\sigma(-,1)$.
+	We can now define $\td s \colon SK_*(M) \to SK^{sm}_*(M)$ by $\td s(\sigma) = H_\sigma(-,1)$.
 	Then if $\td \psi: SK_*^{sm}(M) \to SK_*(M)$ is the inclusion, we have by definition that $\td s \td \psi = \id$.
 	We show that $\td\psi\td s$ is chain homotopic to the identity\footnote{Here, finally, is a step that is easier in the cubical setting as we do not need to subdivide prisms into simplices.}.
 	Indeed, if $\sigma$ is a singular $k$-cube then treating $H_\sigma$ as a singular $k+1$ cube we have

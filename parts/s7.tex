@@ -573,8 +573,6 @@ In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon M \t
 In this section we utilize the notions of the preceding section to consider $f^*$ as a partially-defined map of cochain complexes $C^*_\Gamma(N) \to C^*_\Gamma(M)$.
 Then, by similar arguments, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
 
-\medskip
-
 \subsubsection{Pullbacks of cochains}
 
 \begin{definition}\label{D: transverse to map}
@@ -731,7 +729,6 @@ We explain the further assumptions and notations prior to each table of formulas
 For our first table, with formulas involving boundaries, we also invoke the well-definedness of boundaries of geometric chains and cochains, see \cref{L: co/chains well defined}.
 The cup, cap, and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
 
-\smallskip
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
@@ -753,7 +750,6 @@ The cup, cap, and intersection products require transversality of $\uV$ and $\uW
 For the commutativity properties listed below, $\tau$ is the transposition map $\tau \colon N \times M \to M \times N$.
 The cup and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
 
-\smallskip
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
@@ -778,10 +774,8 @@ Note that, as a cochain, $\uM \in C^0_\Gamma(M)$, and \cref{P: projection pullba
 We also let $\pi_1 \colon M \times N \to M$ and $\pi_2 \colon N \times M \to M$ denote the projections.
 In the first formula for the cap product with $\uM$, $M$ is oriented, and the first $\uV$ is $V \to M$ as a cochain while the second is $V \to M$ as a chain with the induced orientation on $V$; see \cref{P: cap with identity M}.
 In the second cap product formula, both instances of $\uV$ are as chains.
-
 As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 
-\smallskip
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
@@ -814,7 +808,6 @@ The first and last properties require that $\uV$ and $\uW$ be transverse.
 The second holds for all $\uV, \uW$.
 The next three require that $\uV$ be transverse to $\uW$ and that $\underline{X}$ be transverse to $\underline{Y}$.
 
-\smallskip
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
@@ -862,11 +855,9 @@ For naturality of cup products we assume not just that $\uV$ and $\uW$ are trans
 \end{itemize}
 
 Similarly for cap products we require decompositions such that $V_{ij}$ and $W_{ji}$ satisfy the transversality requirements of \cref{P: natural cap}.
-
 The exterior products are simpler.
 The naturality of the chain cross product requires no assumption, while the naturality of the cochain cross product requires only that $V$ and $W$ have representatives that are respectively transverse to $h$ and $k$.
 
-\smallskip
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
@@ -889,7 +880,6 @@ For the other products, while this might not encompass the most general possibil
 
 We leave the reader to formulate associativity for products of larger collections of maps.
 
-\smallskip
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
@@ -906,8 +896,6 @@ We leave the reader to formulate associativity for products of larger collection
 		\hline
 	\end{tabular}
 \end{center}
-
-\medskip
 
 We note that with our definitions, these triple products exhibit linearity in each variable, assuming as usual that all necessary transversality conditions are met.
 
@@ -1209,7 +1197,6 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 	Let $M$ have a cubulation $X$, let $\mc I: C_{\Gamma\pf X}^*(M) \to K^*(X)$ be the intersection map of \cref{D: intersection homomorphism},
 	and let $\mc J: K_*(X) \to C^\Gamma_*(M)$ be the map inducing the homology isomorphism of \cref{T: cubical homology iso}.
 	We consider the diagram
-
 	\begin{diagram}
 		H^i_\Gamma(M)&\rTo^{\alpha}&\Hom(H_i^\Gamma(M),\Z)\\
 		\uTo_\cong\\
@@ -1217,7 +1204,6 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 		\dTo^{\mc I}_\cong\\
 		H^i(K^*(X))&\rTo&\Hom(H_*(K_*(X)),\Z).
 	\end{diagram}
-
 	The vertical maps on the left are isomorphisms by \cref{T: transverse complex,T: intersection qi}, while the righthand vertical map is an isomorphism by \cref{T: cubical homology iso}.
 	We claim the diagram commutes.
 	In fact, let $V \in PC_\Gamma^i(M)$ represent an element of $H^i(C^*_{\Gamma\pf X}(M))$.
@@ -1258,13 +1244,13 @@ As the proof of this proposition is only sketched in \cite{Krec10b}, we first fi
 Before stating the result, we establish some further notation.
 
 In this section we assume the $S^p$, $p>0$, to each have a fixed orientation.
-We also want these orientations to be compatible in the sense that the composition $\nu:S^p \times S^q \to S^p \wedge S^q \cong S^{p+q}$ is orientation preserving away from the subspace that is collapsed to form the wedge product.
+We also want these orientations to be compatible in the sense that the composition $\nu \colon S^p \times S^q \to S^p \wedge S^q \cong S^{p+q}$ is orientation preserving away from the subspace that is collapsed to form the wedge product.
 In particular, if $[S^p]$ and $[S^q]$ are the corresponding fundamental classes, the quotient should take $[S^p] \times [S^q]$ to $[S^{p+q}]$.
 This can be arranged, for example, by modeling our spheres as the standardly-oriented cubes with their boundaries collapsed.
 For each $p$, we let $s_p \in H^p(S^p) \cong \Hom(H_p(S^p), \Z)$ be the cohomology class that evaluates to $1$ on $[S^p]$.
-Let $\pi_1:S^p \times S^q \to S^p$ and $\pi_2:S^p \times S^q \to S^q$ be the projections.
+Let $\pi_1 \colon S^p \times S^q \to S^p$ and $\pi_2 \colon S^p \times S^q \to S^q$ be the projections.
 
-Similarly, let $K_p = K(\Z,p)$, $p>0$, be the Eilenberg-MacLane space, and let $\iota_p \in H^p(K_p)$ denote the fundamental class such that if the $p$-skeleton of $K_p$ is $S^p$ and $\phi_p:S^p \to K_p$ is the inclusion, then $\phi_p^*(\iota_p) = s_p$.
+Similarly, let $K_p = K(\Z,p)$, $p>0$, be the Eilenberg-MacLane space, and let $\iota_p \in H^p(K_p)$ denote the fundamental class such that if the $p$-skeleton of $K_p$ is $S^p$ and $\phi_p \colon S^p \to K_p$ is the inclusion, then $\phi_p^*(\iota_p) = s_p$.
 As the $p+1$ skeleton of $K_p$ can be taken to be the image of $S^p$ under $\phi_p$, it is standard that $\phi_p^*$ is an isomorphism.
 We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map that extends the collapse map $\nu$.
 
@@ -1306,7 +1292,6 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	\end{diagram}
 	and similarly for $\pi_2$, abusing notation to write $\pi_1$ and $\pi_2$ for the projections to the first and second factors for both pairs of spaces.
 	Now we compute:
-
 	\begin{comment}
 		Now, we consider the diagram
 		\begin{diagram}
@@ -1319,7 +1304,6 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 		Again by \cite[Section 4.3]{Hatc02}, $\mu^*(\iota_{p+q}) = \iota_p \times \iota_q$, so $\alpha\smile \beta = \diag^*(\bar \alpha \times \bar \beta)^*(\iota_p \times \iota_q)$.
 		So we compute as follows.
 	\end{comment}
-
 	\begin{align*}
 		\alpha\smile \beta& = \diag^*(\bar \alpha \times \bar \beta)^*\mu^*(\iota_{p+q})&\text{see \eqref{E: EM cross}}\\
 		& = \diag^*(\bar \alpha \times \bar \beta)^*((\phi_p \times \phi_q)^*)^{-1}(\phi_p \times \phi_q)^*\mu^*(\iota_{p+q})\\
@@ -1365,13 +1349,11 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	Taking $H^*(-)$ and $H^*_\Gamma(-)$ with these Mayer-Vietoris maps and this $\Phi_0:H^0(pt) \to H^0_\Gamma(pt)$, \cite[Theorem 10]{Krec10b} gives natural isomorphisms $\Phi_p:H^p(-) \to H^*_\Gamma(-)$ extending $\Phi_0$ on a point.
 	The naturality implies that $\Phi_0(s_0) = s_0^\Gamma$.
 	It now follows by induction using the following diagram due to the commutativity of $\Phi_*$ with the connecting maps, that $\Phi_p(s_p) = s_p^\Gamma$ for all $p$:
-
 	\begin{diagram}
 		H^p(S^p) \cong H^p(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}(S^{p+1})\\
 		\dTo^{\Phi_p}&&\dTo^{\Phi_{p+1}}\\
 		H^p_\Gamma(S^p) \cong H^p_\Gamma(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H_\Gamma^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}_\Gamma(S^{p+1}).
 	\end{diagram}
-
 	For each $M$, we can now define pairings $\star$ on $H^p(-) \otimes H^q(-) \to H^{p+q}(-)$ by the composition
 	$$H^p(M) \otimes H^q(M) \xr{\Phi_p \otimes \Phi_q}H^p_\Gamma(M) \otimes H^q_\Gamma(M) \xr{\uplus}H^{p+q}_\Gamma(M) \xr{\Phi_{p+q}^{-1}}H^{p+q}(M).$$
 	This pairing is natural, as all the maps are natural.
@@ -1393,7 +1375,6 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	As we know that $\Phi_0(1_{pt}) = \underline{pt}$, it follows from the commutativity that $\Phi_0(1_M) = \uM$.
 
 	So for $\alpha \in H^p(M)$, we have
-
 	\begin{align*}
 		\lambda\star \alpha& = \Phi_p^{-1}(\lambda\uM\uplus \Phi_p(\alpha))\\
 		& = \Phi_p^{-1}(\lambda\Phi_p(\alpha))\\
@@ -1419,7 +1400,6 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	So $\pi_1^*(s_p) \star \pi_2^*(s_q) = \Phi_{p+q}^{-1}(s_p^\Gamma \times s_q^\Gamma)$, and it remains to show that this is $s_p \times s_q$, i.e.\ that $\Phi_{p+q}(s_p \times s_q) = s_p^\Gamma \times s_q^\Gamma$.
 
 	To do so, consider the following diagram, which commutes by the naturality of $\Phi_{p+q}$:
-
 	\begin{diagram}
 		H^{p+q}(S^p \times S^q)&\lTo^{\nu^*}&H^{p+q}(S^{p+q})\\
 		\dTo^{\Phi_{p+q}}&&\dTo_{\Phi_{p+q}}\\
@@ -1520,7 +1500,6 @@ We can also approach the K\"unneth theorem with a more explict comparison map by
 	Let $M$ and $N$ be cubulated manifolds without boundary, and let $M \times N$ have the product cubulation.
 	Let $K^*$ denote the complex of cubical cochains for the appropriate cubulation.
 	The following diagram commutes
-
 	\begin{diagram}
 		C^*_{\Gamma}(M) \otimes C^*_{\Gamma}(N)&\rTo^\times& C^*_{\Gamma}(M \times N)\\
 		\uInto&&\uInto\\
@@ -1554,7 +1533,6 @@ The following corollary is now immediate from \cref{P: cross product comparison,
 \begin{corollary}
 	If $M$ and $N$ are cubulated manifolds without boundary and each $H^i(M)$ and $H^j(N)$ is finitely generated, then the cubical cohomology cross product is isomorphic to the geometric cohomology cross product.
 	In particular, we have the following diagram with all vertical maps isomorphisms, letting $H_{cub}^*$ stand for the appropriate cubical cohomology groups:
-
 	\begin{diagram}
 		H^*_{\Gamma}(M) \otimes H^*_{\Gamma}(N)&\rTo^\times& H^*_{\Gamma}(M \times N)\\
 		\uTo_\cong&&\uTo^\cong\\
@@ -1567,7 +1545,6 @@ The following corollary is now immediate from \cref{P: cross product comparison,
 Utilizing these maps rather than the more abstract $\Phi_p$ provides an alternative proof of \cref{T: cohomology kunneth}.
 
 \begin{comment}
-
 	Dev's sketched elementary proof:
 
 	Use pullback of cross product after showing that cross product agrees with singular cross product using the cubical structure as intermediary as in flows.
@@ -1714,7 +1691,6 @@ Then we have a series of lemmas that essentially consist of various reformulatio
 Once we have all the lemma established, we explain how to tie them all together to prove the theorem.
 
 \begin{comment}
-
 	\begin{lemma}\red{REMOVE???:}
 		Suppose $M$ is a cubulated manifold without boundary and $V \in PC^*_{\Gamma\pf}(M)$.
 		Then $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to the product cubulation of $M \times M$.
@@ -1724,7 +1700,6 @@ Once we have all the lemma established, we explain how to tie them all together 
 	\end{proof}
 
 	\red{Note $\mc J$ commutes with $\Delta$ and switch them below.}
-
 \end{comment}
 
 \begin{lemma}\label{L: product transversal}
@@ -1820,7 +1795,6 @@ For the next lemmas, we make the following definitions.
 	So $\pi_1(E_{1i} \times (V \times_M E_{2i}))$ is also degenerate in this case, and these terms are also $0$ in $C^\Gamma_*(M)$.
 
 	\begin{comment}
-
 		We also have
 		$$\bd ( V \times_M E_{2i}) = \pm (\bd V) \times_M E_{2i}\pm V \times_M \bd E_{2i}$$.
 		Since $V$ is a cocycle, $\bd V$ is a union of trivial or small rank precochains, and hence so is $(\bd V) \times_M E_{2i}$ by Lemma \ref{L: pullback with Q}.
@@ -1879,7 +1853,8 @@ For the next lemmas, we make the following definitions.
 	$(M \times V)\times_{M \times M} \diag(\mc J(W))$ and $(M \times V)\times_{M \times M} \mc J(\Delta(W))$ represent the same geometric homology class, and so their images under $\pi_1$ represent the same geometric homology class.
 \end{proof}
 
-\begin{comment}Let $E$ be a face of the cubulation.
+\begin{comment}
+	Let $E$ be a face of the cubulation.
 	Then we can think of $E$ as corresponding to a smooth singular cubical chain represented by the embedding $S_E \colon \interval^n \to M$.
 	Then $\diag(\mc J(W))$ is the geometric chain represented by the smooth singular cubical chain $\diag S_E \colon \interval^n \to M \times M$, while $\mc J(\Delta(M))$ is the geometric chain represented by the smooth singular cubical chain $\zeta\xi(\diag S_E)$.
 	So, more generally, $\diag(\mc J(W))$ and $\mc J(\Delta(W)))$ must be homologous in $NK^{sm}(M)$.
@@ -1899,7 +1874,6 @@ For the next lemmas, we make the following definitions.
 	Let us first choose a cubical cycle $W$ representing our given cubical homology class.
 	By \cref{L: product transversal}, we can choose a representative $V$ of our geometric cohomology class such that $V$ is transverse to the cubulation (and hence to $W$) and $M \times V$ is transverse to $\diag(\mc J(W)) \sqcup \mc J(\Delta(W))$, which is also represented by a union of embeddings.
 	Then by \cref{L: image of cubical cap}, we have
-
 	$$\underline{\mc J(\mc I(V)\frown W)} = \underline{\pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W)))} \in H_*^\Gamma(M),$$
 	and by \cref{L: diagonal equivalence} this equals $\underline{\pi_1((M \times V)\times_{M \times M} \diag(\mc J(W)))}$.
 	Then by \cref{L: diagonal version of intersection},
@@ -1916,7 +1890,6 @@ In \cref{E: first examples}, we noticed that geometric homology and cohomology s
 	Let $M$ be a closed oriented cubulated manifold.
 	Let $\underline M \in C_m^\Gamma(M)$ be represented by the orientation-preserving identity map $\id_M \colon M \to M$, and let $[M] \in K_*(M)$ represent the cubical fundamental class.
 	Then there is a commutative diagram of isomorphisms
-
 	\begin{diagram}
 		H^{n-i}_\Gamma(M)&\rTo^{\nplus \uM}& H_i^\Gamma(M)\\
 		\dTo^{\mc I}&&\uTo_{\mc J}\\
