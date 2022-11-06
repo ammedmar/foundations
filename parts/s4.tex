@@ -124,7 +124,7 @@ If $V,W$ are compact oriented manifolds over $M$ (respectively proper co-oriente
 The last clause in the definition is due to our requirement that all manifolds with corners be subsets of $\R^\infty$. As given, the definition allows constructions like $[W]\sqcup[W]$ to be well defined. We observe that this definition is well defined in general, since if $V''$ and $W''$ are two other manifolds over $M$ isomorphic to $V$ and $W$ (in the appropriate sense), then we can compose the diffeomorphisms $V'\xleftarrow{\phi'}V \xr{\phi''} V''$ and $W'\xleftarrow{\psi'}W \xr{\psi''} W''$ to obtain an isomorphism $\phi''(\phi')^{-1} \sqcup \psi''(\psi')^{-1} \colon V' \sqcup W' \to V'' \sqcup W''$.
 
 
-With $\sqcup$, $PC^\Gamma_*(M)$ and $PC_\Gamma^*(M)$ become commutative monoids in each degree with the empty maps $r_\emptyset:\emptyset \to M$ as the identities.
+With $\sqcup$, $PC^\Gamma_*(M)$ and $PC_\Gamma^*(M)$ become commutative monoids in each degree with the empty maps $r_\emptyset \colon \emptyset \to M$ as the identities.
 
 We now return to denoting isomorphism classes by their representatives, noting again that triviality and small rank are properties of the isomorphism classes.
 
@@ -521,8 +521,8 @@ again interpreting these formulas in $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$, respe
 \begin{comment}
 Next let us see how to use creasing in the context of chains and cochains.
 
-If $W \in PC_*^{\Gamma}(M)$ represented by $r_W \colon W \to M$, then $\Cre(W)$ is also compact and oriented, and we have a map $r_{\Cre(W)} = r_W\pi_W \colon W \to M$ with $\pi_W$ being the projection of $\Cre(W) = D\times_{(-1,1)}W$ to $W$. Thus $r_{\Cre(W)}:\Cre(W) \to M$ gives us a new element of $PC_*^\Gamma(M)$.
-If $W \in PC^*_\Gamma(M)$, then to get an element $\Cre(W) \in PC^*_\Gamma(M)$ we will need to assume that $\varphi \colon W \to (-1,1)$ is a composition of maps $W \xr{r_W}M \xr{\phi} (-1,1)$. We can then form the space $\Cre(W)$ as the pullback by $\phi r_W$ of $\pi: D \to (-1,1)$. As $\pi$ is proper and co-oriented, the pullback $\pi^* = \pi_W:\Cre(W) \to W$ will be proper and co-oriented by Lemma \ref{L: co-orientable pullback} and Definition \ref{D: pullback coorient}. We then let $r_{\Cre(W)} = r_W \pi^*$ to obtain an element of $\Cre(W) \in PC^*_\Gamma(M)$. By \cite[Propositions 7.4]{Joy12} and Theorem \ref{leibniz}, our boundary formulas for $\Cre(W)$ continue to hold as elements of $PC_*^{\Gamma}(M)$ or $PC^*_{\Gamma}(M)$.
+If $W \in PC_*^{\Gamma}(M)$ represented by $r_W \colon W \to M$, then $\Cre(W)$ is also compact and oriented, and we have a map $r_{\Cre(W)} = r_W\pi_W \colon W \to M$ with $\pi_W$ being the projection of $\Cre(W) = D\times_{(-1,1)}W$ to $W$. Thus $r_{\Cre(W)} \colon \Cre(W) \to M$ gives us a new element of $PC_*^\Gamma(M)$.
+If $W \in PC^*_\Gamma(M)$, then to get an element $\Cre(W) \in PC^*_\Gamma(M)$ we will need to assume that $\varphi \colon W \to (-1,1)$ is a composition of maps $W \xr{r_W}M \xr{\phi} (-1,1)$. We can then form the space $\Cre(W)$ as the pullback by $\phi r_W$ of $\pi: D \to (-1,1)$. As $\pi$ is proper and co-oriented, the pullback $\pi^* = \pi_W \colon \Cre(W) \to W$ will be proper and co-oriented by Lemma \ref{L: co-orientable pullback} and Definition \ref{D: pullback coorient}. We then let $r_{\Cre(W)} = r_W \pi^*$ to obtain an element of $\Cre(W) \in PC^*_\Gamma(M)$. By \cite[Propositions 7.4]{Joy12} and Theorem \ref{leibniz}, our boundary formulas for $\Cre(W)$ continue to hold as elements of $PC_*^{\Gamma}(M)$ or $PC^*_{\Gamma}(M)$.
 
 \end{comment}
 
@@ -563,7 +563,7 @@ Let $M$ be a manifold without boundary. Suppose given $\phi \colon M \to (-1,1)$
 \begin{proof}
 As observed in \cref{C: regular value setup}, with our assumptions about $\varphi$ the spaces $T^\pm$ and $T^0$ are fiber products over $M$ of $T$ with $M^\pm$ and $M^0$. So in this case the claim follows from the \cref{L: pullback with Q}.
 
-For $\Cre(T)$, the pullback projection $\pi:\Cre(T) \to T$ is of small rank, as $\dim(\Cre(T))>\dim(T)$, from which it follows that $r_{\Cre(T)} = r_T\pi$ is of small rank. We also have $\bd \Cre(T) = T \sqcup - T^+ \sqcup -T^- \sqcup -\Cre(\bd T)$. By assumption and the preceding paragraph, $T, T^\pm \in Q(M)$ and by the preceding sentence $\Cre(\bd T)$ is of small rank. Thus all components of $\bd \Cre(T)$ are trivial or of small rank, and so $\Cre(T)$ is degenerate.
+For $\Cre(T)$, the pullback projection $\pi \colon \Cre(T) \to T$ is of small rank, as $\dim(\Cre(T))>\dim(T)$, from which it follows that $r_{\Cre(T)} = r_T\pi$ is of small rank. We also have $\bd \Cre(T) = T \sqcup - T^+ \sqcup -T^- \sqcup -\Cre(\bd T)$. By assumption and the preceding paragraph, $T, T^\pm \in Q(M)$ and by the preceding sentence $\Cre(\bd T)$ is of small rank. Thus all components of $\bd \Cre(T)$ are trivial or of small rank, and so $\Cre(T)$ is degenerate.
 \end{proof}
 
 \begin{proposition}
