@@ -1374,16 +1374,20 @@ Before getting to co-orientations, we first show that a product of proper maps i
 \begin{lemma}\label{L: proper product}
 	If $f \colon V \to M$ and $g \colon W \to N$ are proper maps of spaces then the product map $f \times g \colon V \times W \to M \times N$ is proper.
 \end{lemma}
+
 \begin{proof}
 	Let $\pi_M,\pi_N$ be the projections of $M \times N$ to $M$ and $N$, and similarly for $\pi_V, \pi_W$.
 	Let $K$ be a compact subspace of $M \times N$.
 	Then $\pi_M(K)$ and $\pi_N(K)$ are compact, and hence so is $\pi_M(K) \times \pi_N(K) \subset M \times N$, and this set contains $K$.
-	So $$(f \times g)^{-1}(K) \subset (f \times g)^{-1}(\pi_M(K) \times \pi_N(K)) = f^{-1}(\pi_M(K)) \times g^{-1}(\pi_N(K)).$$ But now $f^{-1}(\pi_M(K))$ and $g^{-1}(\pi_N(K))$ are compact as $f$ and $g$ are proper and so $(f \times g)^{-1}(K)$ is a closed subset of a compact set, hence compact.
+	So
+	$$(f \times g)^{-1}(K) \subset (f \times g)^{-1}(\pi_M(K) \times \pi_N(K)) = f^{-1}(\pi_M(K)) \times g^{-1}(\pi_N(K)).$$
+	But now $f^{-1}(\pi_M(K))$ and $g^{-1}(\pi_N(K))$ are compact as $f$ and $g$ are proper and so $(f \times g)^{-1}(K)$ is a closed subset of a compact set, hence compact.
 \end{proof}
 
 \begin{lemma}
 	If $f \colon V \to M$ and $g \colon W \to N$ are co-orientable maps of manifolds with corners then the product map $f \times g \colon V \times W \to M \times N$ is co-orientable.
 \end{lemma}
+
 \begin{proof}
 	We recall that, by definition, a co-orientation of $f$ is equivalent to a choice of isomorphism between the orientation cover $\Or(TV)$ and the pullback $f^*\Or(TM)$ of the orientation cover $\Or(TM)$, and similarly for $g$.
 
@@ -1426,6 +1430,7 @@ Before getting to co-orientations, we first show that a product of proper maps i
 	Let $f \colon V \to M$ be a co-oriented map of manifolds with corners, and let $g:pt \to pt$ be the unique map with the canonical co-orientation.
 	Then $f \times g \colon V \times pt \to M \times pt$ and $g \times f:pt \times V \to pt \times M$ are each isomorphic as co-oriented maps of manifolds with corners to $f \colon V \to M$.
 \end{proposition}
+
 \begin{proof}
 	This is obvious ignoring co-orientations.
 	Considering co-orientations, if $f$ is co-oriented at a point by $(\beta_V,\beta_M)$, then the co-orientation of $f \times g$ is simply $(\beta_V \wedge \R,\beta_M \wedge \R) = (\beta_V,\beta_M)$, noting that
@@ -1435,8 +1440,9 @@ Before getting to co-orientations, we first show that a product of proper maps i
 
 \begin{proposition}\label{P: boundary of exterior product}
 	Let $f \colon V \to M$ and $g \colon W \to N$ be co-oriented maps of manifolds with corners and suppose $f \times g \colon V \times W \to M \times N$ is given the product co-orientation.
-	Then the boundary co-orientation of $V \times W$ as co-oriented maps to $M \times N$ is $$\bd(V \times W) = (\bd V) \times W\bigsqcup (-1)^{m-v}V \times \bd W.$$
+	Then the boundary co-orientation of $V \times W$ as co-oriented maps to $M \times N$ is $$\bd(V \times W) = (\bd V) \times W \bigsqcup (-1)^{m-v}V \times \bd W.$$
 \end{proposition}
+
 \begin{proof}
 	We know that this expression is an identity ignoring co-orientations, so we must establish the agreement of the co-orientations for each component.
 	As usual, it suffices to consider points in the top dimensional strata of $\bd(V \times W)$.
@@ -1461,9 +1467,10 @@ Before getting to co-orientations, we first show that a product of proper maps i
 	Then the co-orientations of $(V \times W) \times X \to M \times N \times Q$ and $V \times (W \times X) \to M \times N \times Q$ agree.
 	In other words, forming co-oriented products is associative.
 \end{proposition}
+
 \begin{proof}
 	Let $v = \dim(V)$, etc.
-	If $f,g,h$ are co-oriented by $(\beta_V,\beta_M)$, etc., then both products are co-oriented up to sign by $(\beta_V\wedge\beta_W \wedge \beta_X,\beta_M\wedge\beta_N \wedge \beta_P)$.
+	If $f,g,h$ are co-oriented by $(\beta_V,\beta_M)$, etc., then both products are co-oriented up to sign by $(\beta_V \wedge \beta_W \wedge \beta_X,\beta_M \wedge \beta_N \wedge \beta_P)$.
 	In forming $(V \times W) \times X$ we first have the sign $(-1)^{(m-v)w}$ from $V \times W$, then taking the product with $X$ on the right multiplies by $(-1)^{(m+n-v-w)x}$.
 	So the total sign is $(-1)^{(m-v)w+(m+n-v-w)x}$.
 	Alternatively, forming $W \times X$ has the sign $(-1)^{(n-w)x}$ and then taking the product with $V$ on the left contributes $(-1)^{(m-v)(w+x)}$.
