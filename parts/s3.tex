@@ -369,12 +369,11 @@ Given a co-oriented map $g \colon W \to M$ where $W$ is a manifold with corners,
 
 \begin{definition}\label{D: boundary co-orientation}
 	The \textbf{standard co-orientation of a boundary immersion}
-	$i_{\bd W}:\bd W \hookrightarrow W$ is the normal co-orientation associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
-		However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.}
-	orientation of $\nu_{\bd W \subset W}$.
+	$i_{\bd W} \colon \bd W \hookrightarrow W$ is the normal co-orientation associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
+	However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.} orientation of $\nu_{\bd W \subset W}$.
 
 	If $g \colon W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\bd W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g \colon W \to M$.
-	We write $\bd g:\bd W \to M$ to denote $gi_{\bd W}$ with its induced co-orientation.
+	We write $\bd g \colon \bd W \to M$ to denote $gi_{\bd W}$ with its induced co-orientation.
 \end{definition}
 
 We will use induced co-orientations on boundaries to define the differential in the geometric cochain complex.
@@ -431,7 +430,7 @@ The map $i_{\bd^2W}:\bd^2W \to W$ takes $(x,\bb_1,\bb_2)$ to $x$.
 The manifold with corners $\bd^2W$ is equipped with a canonical diffeomorphism $\rho$ defined by $(x,\bb_1,\bb_2) \to (x,\bb_2,\bb_1)$.
 
 \begin{lemma}\label{L: boundary2}
-	Suppose $i_{\bd^2W}:\bd^2W \to W$ is co-oriented via the composition of boundary co-orientations $\bd^2W \to \bd W \to W$, and suppose $\rho:\bd W \to \bd W$ is given the co-orientation induced by $\bigwedge D\rho$ (see \cref{S: co-orientations}).
+	Suppose $i_{\bd^2W}:\bd^2W \to W$ is co-oriented via the composition of boundary co-orientations $\bd^2W \to \bd W \to W$, and suppose $\rho \colon \bd W \to \bd W$ is given the co-orientation induced by $\bigwedge D\rho$ (see \cref{S: co-orientations}).
 	Then $i_{\bd^2W}$ and $i_{\bd^2W}\rho$ have opposite co-orientations.
 \end{lemma}
 
@@ -442,7 +441,7 @@ The manifold with corners $\bd^2W$ is equipped with a canonical diffeomorphism $
 	We let $\bb_X$ and $\bb_Y$ be the corresponding local boundary components.
 	Then the preimage in $\bd^2W$ of a small neighborhood $U$ of $x$ in $S^2(W)$ consists of two copies of $U$ that we can write $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$.
 	The notation indicates that we think of the first copy of $U$ as embedding into $X \times \R^{w-2} \subset \bd W$ and the second as embedding into $Y \times \R^{w-2} \subset \bd W$.
-	The map $i_{\bd W}:\bd W \to W$ then identifies the two copies.
+	The map $i_{\bd W} \colon \bd W \to W$ then identifies the two copies.
 	The map $\rho$ simply interchanges them.
 
 	Let $\beta_X$ and $\beta_Y$ denote positively-directed tangent vectors in $X$ and $Y$, and let $\beta_U$ be an arbitrary local orientation of $U$.
@@ -531,7 +530,7 @@ For this the following lemma is useful.
 	\begin{lemma}
 		Let $g_0 \colon W \to M$ be co-oriented, and let $G \colon W \times I \to M$ be a homotopy with $G(-,0) = g_0$.
 		Let $G$ and $g_1 = G(-,1)$ have the induced co-orientations.
-		Furthermore, let $G_\bd:(\bd W) \times I \to M$ be the composition $(\bd W) \times I\xr{i_{\bd W} \times \id_I} W \times I\xr{G}M$, co-oriented by taking the homotopy orientation induced from $g_0i_{\bd W}:\bd W \to M$ with its standard boundary co-orientation obtained from the co-orientation of $g_0$.
+		Furthermore, let $G_\bd:(\bd W) \times I \to M$ be the composition $(\bd W) \times I\xr{i_{\bd W} \times \id_I} W \times I\xr{G}M$, co-oriented by taking the homotopy orientation induced from $g_0i_{\bd W} \colon \bd W \to M$ with its standard boundary co-orientation obtained from the co-orientation of $g_0$.
 		Then $$\bd G = g_1-g_0-G_\bd.$$
 	\end{lemma}
 \end{comment}
@@ -553,7 +552,7 @@ For this the following lemma is useful.
 \begin{comment}
 	\begin{proof}
 		We will always denote the local co-orientation of $g_0$ by $(\beta_W,\beta_M)$.
-		Recall that the standard co-orientation for the boundary inclusion $i_{\bd V}:\bd V \to V$ of a manifold with corners $V$ is $(\beta_{\bd V},\beta_{\bd V} \wedge \beta_\nu)$, where $\nu$ is an outward pointing normal vector.
+		Recall that the standard co-orientation for the boundary inclusion $i_{\bd V} \colon \bd V \to V$ of a manifold with corners $V$ is $(\beta_{\bd V},\beta_{\bd V} \wedge \beta_\nu)$, where $\nu$ is an outward pointing normal vector.
 		If $f \colon V \to M$ is co-oriented, then the composite $\bd V\xr{i_{\bd V}}V\xr{f}M$ is co-oriented by composing the co-orientations of the component maps.
 
 		Now consider $W \times 1 \subset W \times I$.
@@ -565,10 +564,10 @@ For this the following lemma is useful.
 		Thus as a piece of the boundary, $G \circ i_{W \times 0} = -g_0$.
 
 		Finally, consider a point $(x,0) \in (\bd W) \times I$ and let $\nu_\bd$ be an outward pointing normal to $W$ at $i_{\bd W}(x)$.
-		Then the standard co-orientation of $\bd W$ in $W$ is $(\beta_{\bd W},\beta_{\bd W} \wedge \beta_\nu)$ and the standard co-orientation of the composite $\bd g_0 = g_0i_{\bd W}:\bd W \to M$ is the composite of $(\beta_{\bd W},\beta_{\bd W} \wedge \beta_\nu)$ with $(\beta_W,\beta_M)$.
+		Then the standard co-orientation of $\bd W$ in $W$ is $(\beta_{\bd W},\beta_{\bd W} \wedge \beta_\nu)$ and the standard co-orientation of the composite $\bd g_0 = g_0i_{\bd W} \colon \bd W \to M$ is the composite of $(\beta_{\bd W},\beta_{\bd W} \wedge \beta_\nu)$ with $(\beta_W,\beta_M)$.
 		If $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$, this composite co-orientation is $(\beta_{\bd W},\beta_M)$, and otherwise it is
 		$-(\beta_{\bd W},\beta_M)$.
-		The induced homotopy co-orientation of $G_\bd:\bd W \times I\xr{i_{\bd W} \times \id}W \times I \to M$ is then $\pm(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$, as $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$ or not.
+		The induced homotopy co-orientation of $G_\bd \colon \bd W \times I\xr{i_{\bd W} \times \id}W \times I \to M$ is then $\pm(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$, as $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$ or not.
 
 		On the other hand, consider $(\bd W) \times I$ as part of the boundary of $W \times I$.
 		The standard boundary co-orientation for $(\bd W) \times I$ in $W \times I$ is $(\beta_{(\bd W) \times I},\beta_{(\bd W) \times I}\wedge\beta_{\nu_\bd})$.
@@ -980,7 +979,7 @@ The general case requires more care.
 
 	Now, consider a point in the interior of $(\bd V) \times_M W \subset V \times_M W = P$.
 	By choosing standard choices of coordinate charts in such neighborhoods, we see that we can take $\nu\bd V = \nu \bd P$ to be the same inward pointing normal vector.
-	In the construction of the pullback co-orientation for $(\bd V) \times_M W$, we can take $e:\bd V \to M \times \R^N$ to be the restriction of the $e \colon V \to M \times \R^N$ used to co-oriented $P$.
+	In the construction of the pullback co-orientation for $(\bd V) \times_M W$, we can take $e \colon \bd V \to M \times \R^N$ to be the restriction of the $e \colon V \to M \times \R^N$ used to co-oriented $P$.
 	As we have already used $\nu \bd V$ for the normal of $\bd V \subset V$, to avoid confusing the notation, we write $\nu^s\bd V$ ($s$ for stable) for the normal bundle of $e(\bd V) \subset M \times \R^N$.
 	Note that $\nu^s\bd V \cong \nu\bd V \oplus \nu V$.
 	The Quillen orientation $\beta_{\nu V}$ was chosen so that $\beta_V \wedge \beta_{\nu V} = \beta_{M} \wedge \beta_E$.
@@ -995,7 +994,7 @@ The general case requires more care.
 	Again we can take $\nu\bd W = \nu \bd P$ to be the same inward pointing normal vector, and we write $\beta_{V \times_M W}$ and $\beta_{V \times_M \bd W}$ as $\beta_P$ and $\beta_{\bd P}$ near our point.
 	Furthermore, we can choose $\beta_{W}$, $\beta_{\bd W}$, and $\beta_M$ so that $(\beta_W,\beta_M)$ is the co-orientation of $g$ and $(\beta_{\bd W},\beta_W)$ co-orients $i_{\bd W}$, which implies $\beta_W = \beta_{\bd W} \wedge \beta_{\nu\bd W}$.
 	We also continue to choose $\beta_{P} = \beta_{\bd P} \wedge \beta_{\nu \bd P} = \beta_{\bd P} \wedge \beta_{\nu \bd W}$.
-	By \cref{D: pullback coorient}, applied to $\bd g:\bd W \to M$, the co-orientation of the pullback $V \times_M \bd W \to \bd W$ is $(\beta_{\bd P},\beta_{\bd W})$ if and only if $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$ up to positive scalar as local orientations at the image of $x$ in $\bd W \times \R^N$.
+	By \cref{D: pullback coorient}, applied to $\bd g \colon \bd W \to M$, the co-orientation of the pullback $V \times_M \bd W \to \bd W$ is $(\beta_{\bd P},\beta_{\bd W})$ if and only if $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$ up to positive scalar as local orientations at the image of $x$ in $\bd W \times \R^N$.
 	Considering $\bd W \times \R^N \subset W \times \R^N$ locally (recalling that $x$ is chosen in the interior of $\bd W$), $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$ if and only if $\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu\bd W} = \beta_{\bd W} \wedge \beta_E \wedge \beta_{\nu\bd W}$.
 	But as $\dim(\nu\bd W) = 1$ and $\dim(\nu V) = m+N-v$,
 	$$\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu\bd W} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu\bd W} \wedge \beta_{\nu V} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V},$$ and
