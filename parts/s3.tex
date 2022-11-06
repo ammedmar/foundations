@@ -261,15 +261,14 @@ Then $\gamma_*\beta_{W}$ and $(g\gamma)_*\beta_M$ depend on $\gamma$, but if $g 
 In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M) \defeq (\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$.
 
 \begin{example}
-	Let $g$ be any map $g: S^1 \to S^2$.
+	Let $g$ be any map $g \colon S^1 \to S^2$.
 	As $S^1$ and $S^2$ are orientable, $g$ is co-orientable.
 	If we choose a local orientation vector $e_{\theta}$ at any point $x \in S^1$ and latitude/longitude coordinates $\phi,\psi$ at $g(x)$ so that\footnote{Following \cite{BoTu82} we will generally omit the exterior product symbol $\wedge$ when working with explicit coordinate choices.} $e_\phi\, e_\psi$ is a local orientation in a neighborhood of $g(x)$, then the two possible co-orientations for for $g$ can be written $(e_\theta, e_\phi\, e_\psi)$ and $-(e_\theta, e_\phi\, e_\psi) = (-e_\theta, e_\phi \,e_\psi) = (e_\theta,- e_\phi\, e_\psi)$.
 	While the notation explicitly references a local orientation at a point, this is sufficient to determine the co-orientation globally.
 	In what follows we will often demonstrate properties of co-orientations by showing that they hold locally at an arbitrary point but do not depend on the choice of point.
 
-	As another example, consider the standard embedding $g:\R P^2\into \R P^4$.
-	Choosing local orientations $e_1\,e_2$ at some $x \in \R P^2$ and $f_1\,f_2\,f_3\,f_4$ at $g(x)$, the two co-orientations are
-	$(e_1\,e_2, f_1\,f_2\,f_3\,f_4)$ and its opposite.
+	As another example, consider the standard embedding $g \colon \R P^2\into \R P^4$.
+	Choosing local orientations $e_1\, e_2$ at some $x \in \R P^2$ and $f_1\,f_2\,f_3\,f_4$ at $g(x)$, the two co-orientations are $(e_1\,e_2, f_1\,f_2\,f_3\,f_4)$ and its opposite.
 	If $\gamma$ is a loop that reverses the orientation of $\R P^2$ then it also reverses the orientation of $\R P^4$, so $\gamma_*(e_1\,e_2, f_1\,f_2\,f_3\,f_4) = (-e_1\,e_2,- f_1\,f_2\,f_3\,f_4) = (e_1\,e_2, f_1\,f_2\,f_3\,f_4)$, reflecting that $g$ is co-orientable.
 
 	By contrast, no embedding of the M\"obius strip in $\R^3$ is co-orientable.
@@ -277,7 +276,7 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 
 \begin{remark}\label{R: cooriented composition}
 	Co-oriented maps compose in an immediate way, forming a category.
-	Namely, given $V\xr{f} W\xr{g}M$ and co-orientations $\Or(TV) \to \Or(f^*TW)$ and $\Or(TW) \to \Or(g^*TM)$, we simply compose the former with the pullback of the latter via $f^*$, recalling that $f^*(\Or(E)) = \Or(f^*E)$ in a natural way.
+	Namely, given $V \xr{f} W \xr{g} M$ and co-orientations $\Or(TV) \to \Or(f^*TW)$ and $\Or(TW) \to \Or(g^*TM)$, we simply compose the former with the pullback of the latter via $f^*$, recalling that $f^*(\Or(E)) = \Or(f^*E)$ in a natural way.
 	We will refer to this simply as composing co-orientations and write the composition in symbols as $\omega_f*\omega_g$.
 	Warning: note that we write the terms in the order $\omega_f*\omega_g$ for the map $g\circ f$.
 	This is more convenient when writing out co-orientations using the local orientations as we obtain expressions such as $(\beta_V, \beta_W)*(\beta_W,\beta_M) = (\beta_V,\beta_M)$.
