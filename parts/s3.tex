@@ -597,8 +597,8 @@ More specifically, if $f \colon V \to M$ and $g \colon W \to M$ are transverse s
 This does not require $g$ to be co-oriented, but if it is, we can compose to also get a co-orientation of the fiber product $V \times_M W \to M$.
 Ultimately this will allow us to define certain products of geometric cochains.
 
-Recall that our canonical realization of the topological pullback $P = V \times_M W$ is defined to be $P = \{(x,y) \in V \times W\mid f(x) = g(y)\}$.
-By Joyce \cite{Joy12}, the projections $P \to V$ and $P \to W$ are smooth, and hence so is $f \times_M g:P \to M$ given by $(x,y) \to f(x) = g(y)$.
+Recall that our canonical realization of the topological pullback $P = V \times_M W$ is defined to be $P = \{(x,y) \in V \times W \mid f(x) = g(y)\}$.
+By Joyce \cite{Joy12}, the projections $P \to V$ and $P \to W$ are smooth, and hence so is $f \times_M g \colon P \to M$ given by $(x,y) \to f(x) = g(y)$.
 It is not obvious how to define the co-orientations of pullbacks and fiber products, and any such definition will depend on choices of convention.
 Our goal in this section is to provide a definition such that co-orientations of fiber products of co-oriented maps possess the following desirable properties:
 
@@ -615,7 +615,7 @@ Our goal in this section is to provide a definition such that co-orientations of
 Before getting into the specifics of the construction, we need to make the following important observations.
 
 \begin{remark}\label{R: pullback representative}
-	While our canonical pullback $P$ has been defined as $V \times_M W = \{(x,y) \in V \times W\mid f(x) = g(y)\}$, categorically the pullback $P$ is technically only well defined up to canonical diffeomorphisms.
+	While our canonical pullback $P$ has been defined as $V \times_M W = \{(x,y) \in V \times W \mid f(x) = g(y)\}$, categorically the pullback $P$ is technically only well defined up to canonical diffeomorphisms.
 	In particular, if $P$ and $P'$ are two specific representatives of the pullback, we have commutative diagrams
 	\begin{diagram}[LaTeXeqno]\label{D: comm triangle}
 		P &\rTo^\cong& P'\\
@@ -744,10 +744,10 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	Suppose $K \subset W$ is compact.
 	We have
 	\begin{align*}
-		\pi_W^{-1}(K)& = \{x \in P\mid \pi_W(x) \in K\}\\
-		& \subset \{x \in P\mid g\pi_W(x) \in g(K)\} \\
-		& = \{x \in P\mid f\pi_V(x) \in g(K)\} \\
-		& = \{x \in P\mid \pi_V(x) \in f^{-1}(g(K))\}.
+		\pi_W^{-1}(K)& = \{x \in P \mid \pi_W(x) \in K\}\\
+		& \subset \{x \in P \mid g\pi_W(x) \in g(K)\} \\
+		& = \{x \in P \mid f\pi_V(x) \in g(K)\} \\
+		& = \{x \in P \mid \pi_V(x) \in f^{-1}(g(K))\}.
 	\end{align*}
 	So $\pi_W^{-1}(K) \subset K \times f^{-1}(g(K)) \subset V \times W$.
 	But this is a product of compact sets as $f$ is proper.
@@ -775,12 +775,12 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 
 \begin{remark}\label{R: pullback representative 2}
 	As foreshadowed in \cref{R: pullback representative}, we here use a different realization of $P = V \times_M W$.
-	Thinking of the top square of the diagram as a pullback square, this $P$ is concretely the subset $\{(v,(w,z)) \in V \times (W \times \R^N)\mid e(v) = (g(w),z)\}$.
+	Thinking of the top square of the diagram as a pullback square, this $P$ is concretely the subset $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\}$.
 	If $\pi_1 \colon M \times \R^N \to M$ and $\pi_2 \colon M \times \R^N \to \R^N$ are the projections, we know by definition that $\pi_1(e(v)) = f(v)$, and this is also $g(w)$, so the points in this realization of $P$ also satisfy $f(v) = g(w)$.
-	In fact, there is a canonical map between this realization of $P$ and our standard realization $\{(v,w) \in V \times W\mid f(v) = g(w)\}$ given by $(v,(w,z)) \to (v,w)$ with inverse given by $(v,w) \to (v,(w,\pi_2(e(v))))$.
+	In fact, there is a canonical map between this realization of $P$ and our standard realization $\{(v,w) \in V \times W \mid f(v) = g(w)\}$ given by $(v,(w,z)) \to (v,w)$ with inverse given by $(v,w) \to (v,(w,\pi_2(e(v))))$.
 
 	We also already observed in the above proof that $P$ can be identified with $(g \times \id)^{-1}(e(V)) \subset W \times \R^N$.
-	Of course when we think of $P$ as $\{(v,(w,z)) \in V \times (W \times \R^N)\mid e(v) = (g(w),z)\}$, the embedding into $W \times \R^N$ is just the map $(v,(w,z)) \to (w,z)$.
+	Of course when we think of $P$ as $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\}$, the embedding into $W \times \R^N$ is just the map $(v,(w,z)) \to (w,z)$.
 \end{remark}
 
 \begin{corollary}
@@ -896,7 +896,7 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 \end{proposition}
 
 \begin{proof}
-	We first note that there is a diffeomorphism between $V$ and $\{(v,x) \in V \times M\mid f(v) = x\}$ given by $v \to (v,f(v))$ and $(v,x) \to v$.
+	We first note that there is a diffeomorphism between $V$ and $\{(v,x) \in V \times M \mid f(v) = x\}$ given by $v \to (v,f(v))$ and $(v,x) \to v$.
 	Then given compatible Quillen co-orientation of $f$, we can form the pullback diagram as
 	\begin{diagram}
 		V&\rTo^{\id_V} & V\\
@@ -907,7 +907,7 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 	\end{diagram}
 	and the conclusion is evident.
 
-	For the second claim, there is a diffeomorphism between $\{(v,x) \in V \times X\mid f(v) = g(h(x))\}$ and $\{((v,w),x) \in (V \times_M W) \times X\mid w = h(x)\}$ given by $(v,x) \to (v,h(x),x)$ and $((v,w),x) \to (v,x)$.
+	For the second claim, there is a diffeomorphism between $\{(v,x) \in V \times X \mid f(v) = g(h(x))\}$ and $\{((v,w),x) \in (V \times_M W) \times X \mid w = h(x)\}$ given by $(v,x) \to (v,h(x),x)$ and $((v,w),x) \to (v,x)$.
 	To see that the last map is well-defined notice that $f(v) = g(h(x))$ as $h(x) = w$, and $f(v) = g(w)$ from the assumption $(v,w) \in V \times_M W$.
 	Compatibility of the co-orientations now follows by considering the following diagram and noting that it is equivalent to pull back the normal $\nu V$ to $X \times \R^N$ either in two steps or all at once.
 
@@ -1615,7 +1615,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 	which is in $D(f \times g)(T_xV \times T_yW)+D\diag(T_zM)$.
 	Hence the pullback by the diagonal is a manifold with corners.
 
-	This pullback consists precisely of those $(v,w,z) \in V \times W \times M$ such that $(f(v),g(w)) = (z,z)$, which is diffeomorphic to $V \times_M W = \{(v,w) \in V \times W\mid f(v) = g(w)\}$ via the projection $(v,w,z) \to (v,w)$ with inverse $(v,w) \to (v,w,f(v))$.
+	This pullback consists precisely of those $(v,w,z) \in V \times W \times M$ such that $(f(v),g(w)) = (z,z)$, which is diffeomorphic to $V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$ via the projection $(v,w,z) \to (v,w)$ with inverse $(v,w) \to (v,w,f(v))$.
 	So we consider the co-orientations.
 
 	Proceeding as in the proof of \cref{P: exterior commutativity} (with now $M = N$), if $f$ and $g$ are co-oriented (at appropriate points) by $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$ and if we we take Quillen co-orientations coming from $V\xhookrightarrow{e_v} M \times \R^a \to M$ and $W\xrightarrow{e_W} M \times \R^b \to M$ (with $a$ and $b$ assumed even) by orienting $\nu_V$ and $\nu_W$ in $M \times \R^a$ and $M \times \R^b$, then the co-orientation of the product $f \times g$ has Quillen co-orientation with the normal bundle to $V \times W$ in $M \times M \times \R^{a+b}$ oriented $\beta_{\nu V} \wedge \beta_{\nu W}$.
@@ -1879,7 +1879,7 @@ On the right we first give $W \times_M Z$ its cap orientation and then use that 
 	But now these co-oriented fiber products are the same by \cref{C: fiber assoc}.
 
 	Next, suppose $M$ is not necessarily orientable.
-	We know from their constructions that $(V \times_M W) \times_M Z$ and $V \times_M (W \times_M Z)$ are oriented manifolds, and it is not difficult to see that they are diffeomorphic, both being diffeomorphic to $\{(v,w,z) \in V \times W \times Z\mid f(v) = g(w) = h(z)\}$.
+	We know from their constructions that $(V \times_M W) \times_M Z$ and $V \times_M (W \times_M Z)$ are oriented manifolds, and it is not difficult to see that they are diffeomorphic, both being diffeomorphic to $\{(v,w,z) \in V \times W \times Z \mid f(v) = g(w) = h(z)\}$.
 	So it suffices to consider these as identical spaces and to show that their induced orientations agree at any arbitrary point.
 	If $(v,w,z)$ is such a point, consider its image $a = f(v) = g(w) = h(z) \in M$.
 	Let $U$ be a Euclidean neighborhood of $a$, and consider the restrictions of $f$, $g$, and $h$ to $f^{-1}(U)$, $g^{-1}(U)$, and $h^{-1}(U)$.
@@ -1943,7 +1943,7 @@ The maps of this second fiber product are embeddings for which the proposition h
 The even dimensions of the Euclidean factors are chosen to avoid some extraneous signs in the arguments below.
 
 Before proceeding, let us explain in more detail what we mean by ``canonical'' here and below.
-Recall that, as a space, $P = V \times_M W$ can be identified with $\{(v,w) \in V \times W\mid f(v) = g(w)\}$.
+Recall that, as a space, $P = V \times_M W$ can be identified with $\{(v,w) \in V \times W \mid f(v) = g(w)\}$.
 Below we will see various fancier embeddings of $P$ in spaces of the form $V \times X \times W \times Y$, with $X$ and $Y$ Euclidean or $I$.
 For each such embedding, the projection to $V \times W$ will take the embedding of $P$ back to $P$.
 In this way, all versions of $P$ can be canonically identified, and it is these identifications that will yield our orientation preserving diffeomorphisms.
@@ -1954,8 +1954,8 @@ In the latter remark, we provide exactly such a canonical identification between
 
 	is already contained in the construction of the co-oriented fiber product, where $V\times^c_MW$ can be considered to be contained in $V \times W \times \R^N$.
 	Explicitly we constructed $P = (g \times \id_{\R^N})^{-1}(e(V))$, but as $e$ is an embedding, the $V$ factor of points in $P$ is implicitly determined by $(w,z) \in P \subset W \times \R^N$ as $e^{-1}((g(w),z))$.
-	So $P = (g \times \id_{\R^N})^{-1}(e(V))$ is canonically identified with $\{(v,w,z) \in V \times W \times \R^N\mid e(v) = (g(w),z)\}$.
-	And as $e$ is part of a Quillen co-orientation, by projecting $M \times \R^N$ to $M$, we have of course $g(w) = f(v)$, so there is a canonical map $\{(v,w,z) \in V \times W \times \R^N\mid e(v) \to \{(v,w) \in V \times W\mid f(v) = g(w)\}$ given by projection to the first two factors.
+	So $P = (g \times \id_{\R^N})^{-1}(e(V))$ is canonically identified with $\{(v,w,z) \in V \times W \times \R^N \mid e(v) = (g(w),z)\}$.
+	And as $e$ is part of a Quillen co-orientation, by projecting $M \times \R^N$ to $M$, we have of course $g(w) = f(v)$, so there is a canonical map $\{(v,w,z) \in V \times W \times \R^N \mid e(v) \to \{(v,w) \in V \times W \mid f(v) = g(w)\}$ given by projection to the first two factors.
 	This is a diffeomorphism, whose inverse takes $(v,w)$ to $(v,w,z)$ such that $e(v) = (g(w),z)$.
 
 	\red{Put some of this as a remark in the section where pullback of co-orientation is defined.}
@@ -2038,7 +2038,7 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 	We will first show that $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $V\times_{M \times \R^{2a}} (W \times \R^{2a})$ with the map $V \to M \times \R^{2a}$ being the composition of $f$ with the inclusion $M = M \times \{0\} \into M \times \R^{2a}$.
 	We will write this composite as $f_0$.
 	It is clear that $f_0$ and $g \times \id_{\R^{2a}}$ are transverse as $f$ and $g$ are transverse in $M$ and the $\id_{\R^{2a}}$ factor takes care of the $\R^{2a}$ factor of the tangent spaces.
-	We also observe that the two fiber products are canonically the same as spaces, as $V \times_M W = \{(v,w) \in V \times W\mid f(v) = g(w)\}$, while the other fiber product is $\{(v,w,0) \in V \times W \times \R^a\mid f(v) = g(w)\}$.
+	We also observe that the two fiber products are canonically the same as spaces, as $V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$, while the other fiber product is $\{(v,w,0) \in V \times W \times \R^a \mid f(v) = g(w)\}$.
 
 	Now we consider the orientations.
 	As the tangent space of the pullback is the pullback of the tangent space, it suffices to assume that all spaces and maps are linear; in the general case we replace all the following spaces with their bundles and all maps with their derivatives.
