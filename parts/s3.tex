@@ -1720,7 +1720,6 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 \begin{proof}
 	With our given transversality assumptions, $f \times h$ is transverse to $g \times k$, so the expression on the left is well defined.
 	We then compute using \cref{P: cross to cup,P: pullback functoriality,P: exterior associativity,P: exterior commutativity,P: natural exterior} and letting $\tau$ here be the interchange of the interior $N$ and $M$ in the quadruple product:
-
 	\begin{align*}
 		(V \times X)\times_{M \times N} (W \times Y)& = \diag_{M \times N}^*(V \times X \times W \times Y)\\
 		& = \diag_{M \times N}^*(\id \times \tau^* \times \id)^*(-1)^{(n-x)(m-w)}(V \times W \times X \times Y)\\
@@ -1740,7 +1739,6 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 \begin{proof}
 	By \cref{P: projection pullbacks}, $\pi_M^*(V) = V \times N$ and $\pi_N^*(W) = M \times W$, so these are transverse in $M \times N$.
 	Then by \cref{C: criss cross,C: cup with identity}, we have
-
 	\begin{align*}
 		\pi_M^*(V)\times_{M \times N}\pi_N^*(W)& = (V \times N)\times_{M \times N} (M \times W)\\
 		& = (V \times_M M) \times (N \times_N W)\\
@@ -1767,11 +1765,12 @@ This map is a critical component in relating geometric cohomology to other cohom
 	Then\footnote{Note that the signs here agree with those for the boundary of a chain-level cap product in Spanier \cite[Section 5.6.15]{Span81} and Munkres \cite[Section 66]{Mun84}.} $$\bd(V \times_M W) = \left[(-1)^{\dim(V \times_M W)} (\bd V) \times_M W\right] \bigsqcup V \times_M \bd W$$
 	as oriented manifolds, giving $V \times_M W$, $(\bd V) \times_M W$, and $V \times_M \bd W$ each their cap orientations.
 \end{proposition}
+
 \begin{proof}
 	We compute and compare these orientations by first considering the pullback co-orientations as defined in \cref{D: pullback coorient}.
 	We proceed by analogy to the proof of the Leibniz rule for the pullback of co-oriented maps in \cref{leibniz}, utilizing the computations already performed there.
 
-	Recall, in brief, from \cref{D: pullback coorient} that to co-oriented the pullback $P = V \times_M W \to W$ we first construct a composition $V\xhookrightarrow{e} M \times \R^N \to M$ and find a Quillen orientation for the normal bundle $\nu V$ of $e(V) \subset M \times \R^N$ as determined by the co-orientation of $V \to M$.
+	Recall, in brief, from \cref{D: pullback coorient} that to co-oriented the pullback $P = V \times_M W \to W$ we first construct a composition $V \xhookrightarrow{e} M \times \R^N \to M$ and find a Quillen orientation for the normal bundle $\nu V$ of $e(V) \subset M \times \R^N$ as determined by the co-orientation of $V \to M$.
 	Then we pull back via $W \times \R^N \to M \times \R^N$ to obtain a normal bundle, also labeled $\nu V$, of $P \subset W \times \R^N$.
 	Then we co-orient $P \to W$ locally by $(\beta_P,\beta_W)$ so that $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$, where $\beta_E$ represents the standard orientation of $\R^N$.
 	In the case at hand, we can assume $\beta_W$ to represent the global orientation of $W$, and then $\beta_P$ becomes a global orientation for $P$.
@@ -1793,7 +1792,8 @@ This map is a critical component in relating geometric cohomology to other cohom
 	From the Leibniz rule computation for co-orientations, the co-orientation of the pullback $V \times_M \bd W \to \bd W$ is $(\beta_{\bd P},\beta_{\bd W})$ if and only if $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$.
 	If $\nu\bd P$ is an outward normal then this is equivalent to $\beta_{\nu\bd P} \wedge \beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\nu\bd P} \wedge \beta_{\bd W} \wedge \beta_E = \beta_W \wedge \beta_E$.
 	But taking $\beta_P$ and $\beta_{\bd P}$ as found above using our given orientation of $\beta_W$, we have $\beta_{\nu\bd P} \wedge \beta_{\bd P} = \beta_P$, and so the condition is equivalent to $\beta_{P} \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$, which holds by our choice above of $\beta_P$.
-	So the orientation of $V \times_M \bd W$ agrees with the orientation of $\bd P$ and we obtain overall $$\bd(V \times_M W) = \left[(-1)^{\dim(P)} (\bd V) \times_M W\right] \bigsqcup V \times_M \bd W.$$
+	So the orientation of $V \times_M \bd W$ agrees with the orientation of $\bd P$ and we obtain overall
+	$$\bd(V \times_M W) = \left[(-1)^{\dim(P)} (\bd V) \times_M W\right] \bigsqcup V \times_M \bd W.$$
 
 	Finally, we use that $\dim(P) = \dim(V)+\dim(W)-\dim(M)$.
 \end{proof}
@@ -1808,6 +1808,7 @@ As we've observed in the cases where either both maps are oriented or both maps 
 	If $\beta_W$ is the orientation of $W$ and $\beta_{\nu V}$ is the Quillen orientation of the normal bundle to $V$ in $M$, which at points of $P$ we can identify\footnote{See \cref{L: normal pullback}.} with the normal bundle to $P$ in $W$, then the cap orientation $\beta_P$ of $P$ satisfies $\beta_P \wedge \beta_{\nu V} = \beta_W$.
 	If $f$ and $g$ are immersions, then this description holds locally.
 \end{proposition}
+
 \begin{proof}
 	As $f$ is an embedding, we can take $N = 0$ in the definition of the pullback co-orientation, \cref{D: pullback coorient}.
 	Then the pullback is just the inclusion of $P = g^{-1}(V) = V \cap W$ into $W$, and by definition the pullback co-orientation has the form $(\beta_P,\beta_W)$, where $\beta_P \wedge \beta_{\nu V} = \beta_W$ and $\nu V$ here is the pullback of the normal bundle of $V$ in $M$ to be the normal bundle of $V \cap W$ in $W$.
@@ -1819,7 +1820,7 @@ The following corollary is particularly important and follows immediately from \
 
 \begin{corollary}\label{C: complementary cap}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse embeddings from manifolds with corners to a manifold without boundary.
-	Suppose $f$ is co-oriented, $W$ is oriented, and $\dim(V)+\dim(W) = \dim(M)$.
+	Suppose $f$ is co-oriented, $W$ is oriented, and $\dim(V) + \dim(W) = \dim(M)$.
 	Then $V \times_M W$ is the union of intersection points of $V$ and $W$.
 	Such a point $x \in V \cap W$ is positively oriented if and only if the Quillen orientation of the normal bundle $\nu V$ of $V$ at $x$ agrees with the orientation of $W$ at $x$, identifying the fiber of $\nu V$ at $x$ with $T_xW$.
 	If $f$ and $g$ are immersions, then this description holds locally.
@@ -1832,6 +1833,7 @@ The analogues for singular chains and cochains are the cap product with the coch
 	Let $g \colon W \to M$ be a map from an oriented manifold with corners to a manifold without boundary, and consider $M \to M$ as the identity with the tautological co-orientation.
 	Then $M \times_M W = W$ as oriented manifolds.
 \end{proposition}
+
 \begin{proof}
 	By definition, there is a Quillen co-orientation for $M$ consisting of the sequence of identity maps $M \into M \to M$ with the normal bundle to $M$ in itself being the $0$-dimensional vector bundle, which we consider to have positive orientation at each point.
 	It follows from the definition of the pullback that the corresponding Quillen co-orientation for $M \times_M W$ comes from the sequence $g^{-1}(M) = W \into W \to W$ with $W$ also having a $0$-dimensional positively-oriented normal bundle in itself.
@@ -1842,6 +1844,7 @@ The analogues for singular chains and cochains are the cap product with the coch
 	Let $f \colon V \to M$ be a co-oriented map from a manifold with corners to an oriented manifold without boundary, and consider $M$ equipped with its identity map $M \to M$.
 	Then $V \times_M M$ is $V$ with its induced orientation.
 \end{proposition}
+
 \begin{proof}
 	This follows directly from \cref{C: cup with identity} and the definitions.
 \end{proof}
@@ -1852,10 +1855,10 @@ The next property relates products of pullbacks with pullbacks of products.
 	Let $f \colon V \to M$ and $g:X \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary, and let $h \colon W \to M$ and $k \colon Y \to N$ be maps with $W$ and $Y$ compacted oriented manifolds with corners.
 	Suppose that $V$ is transverse to $W$ and that $X$ is transverse to $Y$.
 	Then\footnote{Again our signs agree with the cap product formulas in Spanier, in this case \cite[Section 5.6.21]{Span81}.},
-
 	$$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(x+y-n)(m-v)} (V \times_M W) \times (X \times_N Y),$$
 	as oriented manifolds mapping to $M \times N$.
 \end{proposition}
+
 \begin{proof}
 	Let $\beta_W$ and $\beta_Y$ denote the orientations of $W$ and $Y$.
 	Then $W \times Y$ is oriented by $\beta_W \wedge \beta_Y$.
@@ -1869,7 +1872,6 @@ The next property relates products of pullbacks with pullbacks of products.
 	By \cref{L: Quillen product co-orientation}, we have that the Quillen co-orientation of $V \times X \to M \times N$ is represented by an embedding $V \times X \into M \times N \times \R^a \times \R^b$ with normal bundle $\nu V \oplus \nu X$.
 	So letting $Q = (V \times X)\times_{M \times N} (W \times Y)$, the orientation $\beta_Q$ is the one such that $(\beta_Q,\beta_W \wedge \beta_Y)$ is the pullback co-orientation, i.e.\ the one such that $\beta_Q \wedge \beta_{\nu V} \wedge \beta_{\nu X} = \beta_W \wedge \beta_Y \wedge \beta_a \wedge \beta_b$.
 	But then we compute, using $a$ and $b$ even,
-
 	\begin{align*}
 		\beta_W \wedge \beta_Y \wedge \beta_a \wedge \beta_b& = \beta_W \wedge \beta_a \wedge \beta_Y \wedge \beta_b\\
 		& = \beta_P \wedge \beta_{\nu V} \wedge \beta_{P'} \wedge \beta_{\nu X}\\
@@ -1887,6 +1889,7 @@ The following technical lemma will be used to prove \cref{P: OC mixed associativ
 	Suppose we co-orient $g$ by $(\beta_W,\beta_M)$.
 	Then the cap orientation of $V \times_M W$ (i.e.\ that induced from the the pullback co-orientation of $V \times_M W \to W$ and the orientation of $W$) is the same as the orientation induced on $V \times_M W$ by the fiber product co-orientation of $V \times_M W \to M$ and the orientation of $M$ .
 \end{lemma}
+
 \begin{proof}
 	By definition, the orientation of $V \times_M W$ induced from the orientation of $W$ and the pullback co-orientation of $V \times_M W \to W$ is the orientation $\beta_P$ such that $(\beta_P,\beta_W)$ is the pullback co-orientation.
 	But then the fiber product co-orientation is the composite $(\beta_P,\beta_W)*(\beta_W,\beta_M) = (\beta_P,\beta_M)$.
@@ -1897,7 +1900,6 @@ The following technical lemma will be used to prove \cref{P: OC mixed associativ
 	Let $f \colon V \to M$ and $g \colon W \to M$ be co-oriented maps from manifolds with corners to a manifold without boundary.
 	Let $h \colon Z \to M$ be a map with $Z$ oriented.
 	Then, assuming sufficient transversality for all terms to be defined (see \cref{R: multiproducts}),
-
 	$$(V \times_M W) \times_M Z = V \times_M (W \times_M Z),$$
 	as oriented manifolds mapping to $M$.
 \end{proposition}
@@ -1929,6 +1931,7 @@ The following property will eventually manifest itself in geometric (co)homology
 	is the same as the cap orientation obtained by pulling back $V \to M$ by the composite $hg \colon W \to M$.
 	In other words, $(h^*V) \times_N W = V \times_M W$ as oriented manifolds.
 \end{proposition}
+
 \begin{proof}
 	Note that $V$ is transverse to $hg \colon W \to M$ by \cref{L: transverse to pullback}, so both expressions are defined.
 	It follows directly from \cref{P: pullback functoriality} that the two pullback co-orientations we have described for $(V \times_M N) \times_N W \to W$ agree.
@@ -1954,8 +1957,7 @@ However, we already know this to be identical to $V \times_M ^cW$ by \cref{L: sa
 By contrast, these are not always the same as $V \times_M ^oW$.
 
 When we move on to geometric homology, $V \times_M ^oW$ will correspond to the classical intersection product of homology classes, as described for example in \cite[Section VI.11]{Bred97}, while $V \times_M ^cW$ will correspond to the cup product of cohomology classes.
-When $M$ is closed and oriented, switching between thinking of $V$ and $W$ as oriented vs.
-co-oriented will be the Poincar\'e duality isomorphism.
+When $M$ is closed and oriented, switching between thinking of $V$ and $W$ as oriented vs. co-oriented will be the Poincar\'e duality isomorphism.
 So this proposition will ultimately demonstrate that the intersection product is Poincar\'e dual to the cup product, up to a sign; see \cref{S: PD}.
 
 \begin{proposition}\label{P: compare cup and intersection orientations}
@@ -1966,7 +1968,8 @@ So this proposition will ultimately demonstrate that the intersection product is
 The proof will take a bit of work.
 Our strategy will be as follows: First, we will prove in \cref{L: compare cup and intersection for immersions} that the result holds when $f$ and $g$ are immersions.
 Then we will show, first for co-orientations and then for orientations, that we can replace the fiber product of
-$$V \xr{f} M \xleftarrow{g} W$$ with the fiber product
+$$V \xr{f} M \xleftarrow{g} W$$
+with the fiber product
 $$V \times \R^{2b}\xhookrightarrow{e \times \id_{\R^{2b}}} M \times \R^{2a} \times \R^{2b} \xhookleftarrow W \times \R^{2a},$$
 where $e$ is the embedding $V \into M \times \R^{2a}$ of a Quillen co-orientation of $f$ and the leftward arrow is the identity between the $\R^{2a}$ factors and takes the $W$ factor into $M \times \R^{2b}$ by the embedding map of a Quillen co-orientation of $g$.
 By ``replace,'' we mean in the orientated case that the two fiber products are canonically oriented diffeomorphic.
@@ -1984,7 +1987,6 @@ Such identifications have already been discussed in \cref{R: pullback representa
 In the latter remark, we provide exactly such a canonical identification between our standard realization of $V \times_M W$ as a subset of $V \times W$ and the version used for co-orienting pullbacks and fiber products.
 
 \begin{comment}
-
 	is already contained in the construction of the co-oriented fiber product, where $V\times^c_MW$ can be considered to be contained in $V \times W \times \R^N$.
 	Explicitly we constructed $P = (g \times \id_{\R^N})^{-1}(e(V))$, but as $e$ is an embedding, the $V$ factor of points in $P$ is implicitly determined by $(w,z) \in P \subset W \times \R^N$ as $e^{-1}((g(w),z))$.
 	So $P = (g \times \id_{\R^N})^{-1}(e(V))$ is canonically identified with $\{(v,w,z) \in V \times W \times \R^N \mid e(v) = (g(w),z)\}$.
@@ -2003,6 +2005,7 @@ We begin with the case where $V$ and $W$ are immersions and then work toward the
 \begin{lemma}\label{L: compare cup and intersection for immersions}
 	If $f$ and $g$ are transverse immersions of oriented manifolds with corners into an oriented manifold without boundary, then $V \times_M ^oW = (-1)^{(m-v)(m-w)} V \times_M ^cW$.
 \end{lemma}
+
 \begin{proof}
 	It suffices to consider small neighborhoods on which $f$ and $g$ are embeddings.
 	Let $\beta_V$, $\beta_W$, and $\beta_M$ denote the orientations of $V$, $W$, and $M$, respectively.
@@ -2018,11 +2021,15 @@ We begin with the case where $V$ and $W$ are immersions and then work toward the
 	In fact, let us suppose $\beta^o_P$, $\beta^o_{\nu V}$, and $\beta^o_{\nu W}$ chosen so that these expressions all hold.
 	Then we have
 	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = \beta_{W} \wedge \beta^o_{\nu W},$$
-	so $\beta_W^o = \beta_W^c.$ Similarly,
+	so
+	$$\beta_W^o = \beta_W^c.$$
+	Similarly,
 	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = (-1)^{(m-v)(m-w)}\beta^o_P \wedge \beta^o_{\nu W} \wedge \beta^o_{\nu V} = (-1)^{(m-v)(m-w)}\beta^o_V \wedge \beta^o_{\nu V},$$
-	so $\beta^0_{\nu V} = (-1)^{(m-v)(m-w)}\beta^c_{\nu V}$.
+	so
+	$$\beta^0_{\nu V} = (-1)^{(m-v)(m-w)}\beta^c_{\nu V}.$$
 
-	Thus $$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = (-1)^{(m-v)(m-w)}\beta^o_P \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W}.$$
+	Thus
+	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = (-1)^{(m-v)(m-w)}\beta^o_P \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W}.$$
 
 	We conclude that $\beta^c_P = (-1)^{(m-v)(m-w)}\beta^o_P$.
 \end{proof}.
