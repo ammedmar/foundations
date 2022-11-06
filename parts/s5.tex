@@ -1,31 +1,21 @@
 
 % !TEX root = ../foundations.tex
 
-
 \section{Basic properties of geometric (co)homology and equivalence with singular (co)homology}\label{S: basic properties}
-
 
 In this section we establish the basic properties of geometric homology and cohomology, eventually showing that they are equivalent to singular homology and cohomology using a result of Kreck and Singhof. In later sections we will provide an alternative argument for geometric cohomology.
 
-
 \subsection{Functoriality and homotopy properties}\label{S: functoriality}
 
-
 Given a continuous map of manifolds $f \colon N \to M$, in this section we define the induced maps $f_*:H_*^\Gamma(N) \to H_*^\Gamma(M)$ and $f^*:H^*_\Gamma(M) \to H^*_\Gamma(N)$ and show that they are independent of $f$ up to homotopy. We also treat the case that $f$ is proper, in which case it induces a covariant map $f_*:H^*_\Gamma(N) \to H^*_\Gamma(M)$ independent of proper homotopy. In the covariant cases $M$ and $N$ may both be manifolds with corners. In the contravariant case we need to use transversality, and so $M$ will be without boundary.
-
-
 
 In the homology case this is relatively straightforward and can essentially be found in \cite[Section 6]{Lipy14}, though we provide additional details. The covariant case of cohomology is similar to that for homology. For the contravariant case of cohomology there is slightly more work, and our argument there parallels Kreck's in \cite{Krec10}, which is slightly different than the sketch in Lipyanskiy \cite[Section 6]{Lipy14} in that we choose to perturb $f$ rather than the reference map for the cohomology class to obtain transversality.
 
 As part of the constructions, we will see that if $F \colon N \times I \to M$ is a homotopy (proper or co-oriented as need be) and $r_W \colon W \to N$ is a cycle or cocyle then the compositions $F \circ (r_W \times \id_I)$ provide homologies or cohomologies from $F(-,0)r_W \colon W \to M$ to $F(-,1)r_W \colon W \to M$. However, we remark that, somewhat contrary to intuition, homologies $W \times I \to M$ will not generally generate homologies or cohomologies as membership in $Q(M)$ is not generally preserved by homotopies of this form.
 
-
-
 \subsubsection{Covariant functoriality of geometric homology and cohomology}\label{S: covariant functoriality}
 
 In this section we consider the covariant behavior of geometric chains and cochains under maps and homotopies. In this case, both $M$ and $N$ may have corners unless noted otherwise.
-
-
 
 If $r_W \colon W \to M$ is in $PC_*^\Gamma(M)$ and $f \colon M \to N$ is a smooth map, then the composition $fr_W \colon W \to N$ is in $PC^\Gamma_*(N)$. Consistent with our notation of writing $W \in PC_*^\Gamma(M)$, we write the image in $PC_*^\Gamma(N)$ as $f(W)$. Similarly, if $f$ is proper and co-oriented we obtain a map $PC^*_\Gamma(M) \to PC^*_\Gamma(N)$ that we also write as $W \to f(W)$.
 Functoriality is clear, and both $\bd(f(W))$ and $f(\bd W)$ are represented by $fr_Wi_{\bd W}$. To obtain chain maps $C_*^\Gamma(M) \to C_*^\Gamma(N)$ and $C^*_\Gamma(M) \to C^*_\Gamma(N)$
@@ -40,24 +30,19 @@ First consider $W \in Q_*(M)$. By assumption, $W$ is the disjoint union of a tri
 The proof for $W \in Q^*(M)$ is the same using that the composition of proper maps is proper and the composition of co-oriented maps is co-oriented.
 \end{proof}
 
-
 \begin{corollary}[Lipyanskiy's Theorem 4]
 Given a smooth map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map $C_*^\Gamma(M) \to C_*^\Gamma(N)$ given by $\uW \to \underline{f(W)}$, and this construction gives a functor from the category of smooth manifolds and smooth maps to chain complexes over $\Z$.
 \end{corollary}
 
-
 \begin{corollary}
 Given a smooth proper co-oriented map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map $C^*_\Gamma(M) \to C^*_\Gamma(N)$ given by $\uW \to \underline{f(W)}$, and this construction gives a functor from the category of smooth manifolds and smooth maps to cochain complexes over $\Z$.
 \end{corollary}
-
-
 
 \noindent\textbf{Homotopies.} Next we consider behavior with respect to homotopies.
 
 \begin{convention}
 If $r_W \colon W \to M$ is co-oriented, then we co-orient $r_W \times \id_I \colon W \times I \to M \times I$ so that if $(\beta_W,\beta_M)$ is the co-orientation at $x \in W$ then $(\beta_W \wedge \beta_I,\beta_M \wedge \beta_I)$ is the co-orientation at $(x,t)$ for any $t \in I$, with $\beta_I$ being the standard orientation of the interval.
 \end{convention}
-
 
 \begin{lemma}\label{L: dessicated homotopy}
 	Let $W \in PC_*^\Gamma(M)$ (or $W \in PC^*_\Gamma(M)$).
@@ -89,13 +74,11 @@ We first suppose $W \in PC_*^\Gamma(M)$. In this case it is clear that $F \circ 
 	arguments are trivial and of small rank respectively. And $W \times \bd I$ maps to $N$ by maps which factor through our original $W \to M$,
 	and thus are of small rank.
 
-
 If $W \in PC^*_\Gamma(M)$, then $F$ is proper and co-oriented by assumption, and we noted above our co-orientation convention for $r_W \times \id_I$. To see the latter is proper, if $K$ is compact in $M \times I$, then $K \subset \pi_M(K) \times I$, which is also compact. Then $(r_W \times \id_I)^{-1}(K) \subset (r_W \times \id_I)^{-1}(\pi_M(K) \times I) = r_W^{-1}(\pi_M(K)) \times I$, which is compact as $r_W$ is proper.
 As compositions of proper co-oriented maps are proper and co-oriented, $F \circ (r_W \times \id_I) \colon W \times I \to N$ is well defined in $PC^*_\Gamma(N)$. The remaining arguments are analogous to the compact oriented case.
 \end{proof}
 
 This lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a manifold over $M$ that is in $Q(M)$ to one that is not in $Q(N)$.
-
 
 \begin{corollary}
 Let $V, W \in PC_i^\Gamma(M)$ (or $V, W \in PC^i_\Gamma(M)$).
@@ -107,8 +90,6 @@ $F(-,1) \circ r_W: W \to N$ represent the same element of $C_i^\Gamma(N)$ and $F
 \begin{proof}
 We know $V, W \in PC_i^\Gamma(M)$ represent the same element of $C_i^\Gamma(M)$ if and only if $V \sqcup -W \in Q_*(M)$, so the corollary follows from \cref{L: dessicated homotopy}. Similarly for cochains.
 \end{proof}
-
-
 
 \begin{corollary}\label{C: homotopy}
 Suppose $F \colon M \times I \to N$ is a smooth (co-oriented) homotopy between maps $f,g \colon M \to N$.
@@ -126,10 +107,6 @@ Next consider the case of $W$ a cocycle. The map $F \circ ((\bd r_W) \times \id_
 that $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent cohomologous cocycles.
 \end{proof}
 
-
-
-
-
 \begin{proposition}[Lipyanskiy's Theorem 5]\label{P: homology homotopy functor}
 Given a \textit{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_*:H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$. If $f$ is proper and co-oriented, it also induces $f_*:H^*_\Gamma(M) \to H^*_\Gamma(N)$ that depends only on the proper homotopy class and co-orientation of $f$.
 \end{proposition}
@@ -139,9 +116,6 @@ First consider the case of homology. Let $g$ be any smooth approximation to $f$.
 The cohomological case is the same by taking proper smooth approximations and co-orienting the homotopies using \cref{L: co-orientable homotopies}.
 \end{proof}
 
-
-
-
 \subsubsection{Contravariant functoriality of geometric cohomology}\label{S: cohomology pullback}
 
 In this section we assign to a continuous map $f \colon M \to N$ of manifolds without boundary a map $H^*_\Gamma(N) \to H^*_\Gamma(M)$.
@@ -150,9 +124,6 @@ First suppose $W \in PC^*_\Gamma(N)$ is represented by a proper co-oriented map 
 $g \colon M \to N$ be a \textit{smooth} (not necessarily co-oriented or proper) map such that $g$ is transverse to $r_W$. Then we define $g^*(W)$ to be the pullback $r_W \times_N g \colon W \times_N M \to M$, co-oriented as described in \cref{D: pullback coorient}. Note that the pullback is proper by \cref{L: co-orientable pullback}. Also, the pullback has dimension $\dim(W)+\dim(M)-\dim(N) = \dim(M)-(\dim(N)-\dim(W)) = \dim(M)-\codim_N(W)$ by \cite[Theorem 6.4]{Joy12} so that the cohomological index is preserved by the pullback construction.
 
 The following lemma is similar to \cref{L: pullback with Q}, as are their proofs, though in that context the analog of $M$ was permitted to have corners so that $Q^*(M)$ would not technically be defined. We also here continue to assume that $g \colon M \to N$ is transverse to the cochain so that the pullback of the cochain has the same codimension as the original cochain. \red{GBF: Might want to try to combine those into a single lemma somewhere at some point, but it looks like it might be less messy, if a bit redundant, not to.}
-
-
-
 
 \begin{lemma}\label{L: pullback map Q}
 Suppose $N$ is a manifold without boundary and $r_S:S \to N$ is trivial or has small rank. Let $M$ be a manifold with corners, and let $g: M \to N$ be a smooth map transverse to $r_S$. Then $S \times_N M \to M$ is also trivial or has small rank, respectively. Consequently, if $S \in Q^k(N)$ then $S \times_N M \to M$ is in $Q^k(M)$.
@@ -165,13 +136,11 @@ Similarly, suppose $r_S:S \to N$ has small rank. Suppose at the point $x \in S$ 
 The final statement is then a consequence of the definitions as in the proof of \cref{L: Q preservation}.
 \end{proof}
 
-
 The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemma we cannot define a chain map $g^*:C^*_\Gamma(N) \to C^*_\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$. Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^*:H^*_\Gamma(N) \to H^*_\Gamma(M)$ as follows.
 
 \begin{definition}
 Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary and $\uW \in H^*_\Gamma(N)$ is represented by $r_W \colon W \to N$. Let $g \colon M \to N$ be any smooth approximation of $f$ that is transverse to $r_W$ (which we know exists by \cref{T: basic trans}). Then we define $f^*(\uW) \in H^*_\Gamma(M)$ as the cohomology class represented by $r_W \times_N g \colon W \times_N M \to M$.
 \end{definition}
-
 
 \begin{proposition}\label{P: cohomology pullback}
 Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary. The map $f^*:H^k_\Gamma(N) \to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
@@ -191,7 +160,6 @@ Thus $f^*$ does not depend on our choices and depends on $f$ only through its ho
 Analogously, given $f \colon M \to N$, one could also define a contravariant pullback functor of homology groups $f^*: H_*^\Gamma(N) \to H_*^\Gamma(M)$ if $f$ is proper and $M$ and $N$ are both oriented (so that the pullback can be oriented). The following lemma shows that the pullback of a compact map by a proper map is compact. For the orientation, we observe that given an oriented map $r_V \colon V \to N$ that represents $\uV$ and a map $g \colon M \to N$ that is properly homotopic to $f$ and transverse to $r_V$, the orientations of $V$ and $N$ induce a co-orientation on $r_V$ and so a co-orientation on the pullback $V \times_N M \to M$ by \cref{D: pullback coorient}. This in turn induces an orientation on $V \times_N M$ given the orientation of $M$.
 \end{remark}
 
-
 \begin{lemma}\label{L: compact pullback}
 Suppose $f \colon M \to N$ is a proper map of spaces and $r_V \colon V \to N$ is a map with $V$ compact. Then $V \times_N M$ is compact.
 \end{lemma}
@@ -199,13 +167,11 @@ Suppose $f \colon M \to N$ is a proper map of spaces and $r_V \colon V \to N$ is
 As $V$ is compact, so is $r_V(V)$, and as $f$ is proper, $f^{-1}(r_V(V))$ is compact. Now we observe that we must have $V \times_N M \subset V \times f^{-1}(r_V(V)) \subset V \times M$. So $V \times_N M$ is compact.
 \end{proof}
 
-
 \subsection{Mayer-Vietoris sequences}
 
 In this sections we consider Mayer-Vietoris sequences for homology and cohomology. As in the previous section, we present covariant homology and cohomology sequences and a contravariant cohomology sequence.
 
 A key tool in proving the existence of these sequences will be creasing; see \cref{S: creasing}. The following definition will be useful.
-
 
 \begin{definition}
 Let $U,V$ be open subsets of a manifold $M$. We will call a smooth non-constant\footnote{The extra condition that $\phi$ not be constant is required if $U\setminus V$ or $V\setminus U$ is empty, i.e.\ if $U \subset V$ or $V \subset U$.} function $\phi:U \cup V \to [-1,1]$ a \textbf{separating function} for $U$ and $V$ if $\phi(U\setminus V) = -1$ and $\phi(V\setminus U) = 1$. Such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
@@ -213,11 +179,9 @@ Let $U,V$ be open subsets of a manifold $M$. We will call a smooth non-constant\
 Suppose now $\phi$ is a separating function for $U$ and $V$ and that we have a map $r_W \colon W \to U \cup V$. The subset of $(-1,1)$ of regular values for the composite $\phi r_W$ is dense in $(-1,1)$ by Sard's Theorem. We will say that such a regular value $p$ is a \textbf{separating point} for $W$. In this case we may perform creasing of $W$ along $(\phi r_W)^{-1}(p)$. By composing with an orientation-preserving diffeomorphism of $(-1,1)$ we may always assume $p = 0$ for notational convenience.
 \end{definition}
 
-
 \subsubsection{Covariant Mayer-Vietoris sequences and cohomology with support}
 
 For the homology Mayer-Vietoris sequences, the maps $H_*^\Gamma(U) \to H_*^\Gamma(M)$, etc., induced by inclusion will be those defined in the preceding section. For cohomology, however, the map of the preceding section will not work, as the inclusion of an open set into a manifold is not generally proper. Rather, for the covariant cohomology sequence we will need to use the following variant of geometric cohomology supported on open subsets:
-
 
 \begin{definition}
 Let $M$ be a manifold without boundary and $U \subset M$ an open subset. Define $C_\Gamma^*(M|_U) \subset C_\Gamma^*(M)$ to be the subcomplex consisting of elements of $C_\Gamma^*(M)$ that can be represented by $r_W \colon W \to M$ in $PC^*_\Gamma(M)$ with the image of $W$ contained in $U$. Let $H_\Gamma^*(M|_U) = H^*(C_\Gamma^*(M|_U))$.
@@ -227,7 +191,6 @@ Let $M$ be a manifold without boundary and $U \subset M$ an open subset. Define 
 
 It is easy to observe that $C_\Gamma^*(M|_U)$ is a chain complex as it is closed under addition and taking boundaries using that the sum $W_1+W_2$ of two elements of $PC^*_\Gamma(M)$ with image in $U$ can be represented by the disjoint union $W_1 \sqcup W_2$ with image in $U$, and similarly the boundary of a map with image in $U$ has image in $U$. In fact, we can reformulate this definition as follows.
 
-
 \begin{lemma}
 Let $PC_\Gamma^*(M|_U) \subset PC_\Gamma^*(M)$ be the subset consisting of $r_W \colon W \to M$ with image in $U$, and let $Q^*(M|_U)$ be the elements of $Q^*(M)$ with image in $U$. Then $C_\Gamma^*(M|_U)$ is isomorphic to the set of equivalence class of $PC_\Gamma^*(M|_U)$ under the relation $V\sim_U W$ if $V \sqcup -W \in Q^*(M|_U)$.
 \end{lemma}
@@ -236,12 +199,7 @@ We first observe that $\sim_U$ is an equivalence relation on $PC_\Gamma^*(M|_U)$
 equivalence classes under $\sim_U$, we have a well-defined map $f: \hat C_\Gamma^*(M|_U) \to C_\Gamma^*(M|_U)$. By definition, elements of $C_\Gamma^*(M|_U)$ can be represented by elements of $PC_\Gamma^*(M|_U)$, so $f$ is surjective. Now suppose $W_1,W_2 \in PC^*_\Gamma(M|_U)$ represent the same element of $C^*_\Gamma(M|_U)$. Then $W_1\sim W_2$ in the sense of \cref{L: cancel Q}, i.e.\ $W_1 \sqcup -W_2 \in Q^*(M)$, but $W_1$ and $W_2$ each have support in $U$, so $W_1 \sqcup -W_2 \in Q^*(M|_U)$ and $W_1\sim_U W_2$. So $f$ is injective.
 \end{proof}
 
-
 The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U \subset W \subset M$ are open sets then we have $C_\Gamma^*(M|_U) \subset C_\Gamma^*(M|_W) \subset C_\Gamma^*(M|_M) = C_\Gamma^*(M)$, and these induce maps $H_\Gamma^*(M|_U) \to H_\Gamma^*(M|_W) \to H_\Gamma^*(M)$.
-
-
-
-
 
 \begin{theorem}\label{T: relative MV}
 Let $M$ be a manifold without boundary. For any pair of open sets $U$ and $V$ in $M$ there are Mayer-Vietoris exact sequences \red{Fix tikz arrows?}
@@ -270,7 +228,6 @@ cells = {nodes = {text height = 2ex,text depth = 0.75ex}}
 \begin{proof}
 The proof parallels standard proofs of Mayer-Vietoris for singular homology, and is in fact simpler than those relying on barycentric subdivision since ``creasing subdivision'' only needs to be applied once. The proofs for homology and cohomology are analogous, so we give the cohomological case, which is slightly more exotic.
 
-
 Let $S^*$ denote the quotient of $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V)$ by the image of $C_{\Gamma}^*(M|_{U \cap V})$ under the map $(i_U, -i_V)$, with $i_U$ and $i_V$ being the inclusions.
 Then we have a short exact sequence
 \begin{equation}\label{E: homology MV SES}
@@ -293,7 +250,6 @@ Our quasi-isomorphism will be induced by the map $C_{\Gamma}^*(M|_U) \oplus C_{\
 First suppose a cocycle $\uW \in C_{\Gamma}^*(M|_{U \cup V})$ represented by $r_W \colon W \to U \cup V$. Let $\phi:U \cup V \to (-1,1)$ be a separating function with $0$ a separating point. Then $W^- \in C_{\Gamma}^*(M|_{U})$ and $W^+ \in C_{\Gamma}^*(M|_{V})$, and by \cref{T: cohomology creasing}, we have $\uW = \underline{W^-}+\underline{W^+} \in H^*_\Gamma(M)$. But by the creasing construction if $W$ has image in $U \cup V$ then so does $\Cre(W)$, so also $\uW = \underline{W^-}+\underline{W^+} \in H_*^\Gamma(M|_{U \cup V})$. We have $\bd W \in Q^*(U \cup V)$ by assumption that $W$ is a cocycle. By the computation in \cref{E: codim 1 pullbacks}, we have $\bd( W^-) = (-W^0) \sqcup (\bd W)^-$, and $\bd (W^+) = W^0 \sqcup (\bd W)^+$. AS $\bd W \in Q^*(M)$ with image in $U \cup V$, we have $(\bd W)^\pm \in Q^*(M)$ with respective images in $U$ and $V$ by \cref{C: creasing Q}, i.e.\ $(\bd W)^- = 0 \in C^*_\Gamma(M|_U)$ and similarly $(\bd W)^+ = 0 \in C^*_\Gamma(M|_V)$.
 Thus $(W^-, W^+)$ represents an element of $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V)$ whose boundary is $(-W^0,W^0)$, which is in the image of $(i_U,-i_V)$. Therefore, $(W^-, W^+)$ represents an element of
 $H^*(S^*)$ that maps to $\uW \in H^*_\Gamma(M_{U \cup V})$. Thus $\psi$ is surjective.
-
 
 Next, suppose $\uW$ is a cocyle in $S^*$, represented by $(W_1,W_2) \in PC^*_\Gamma(M|_U) \oplus PC^*_\Gamma(M|_V)$, that maps to zero in $H_{\Gamma}^*(M|_{U \cup V})$. Thus there is
 some $Z \in PC^*_\Gamma(M|_{U \cup V})$ such that $\bd Z = W_1+W_2+T$ for some $T \in Q^*(M|_{U \cup V})$.
@@ -327,8 +283,6 @@ Let $M$ be an $m$-dimensional smooth manifold, and $U \subset M$ an open set tha
 \end{proposition}
 
 This observation is akin to the dimension axiom or the Poincar\'e lemma, but with the cohomology concentrated in top degree rather than degree zero; cf. the standard dimension axiom in \cref{E: dimension}.
-
-
 
 \begin{proof}[Proof of \cref{P: P lemma}]
 If $r_W: W \to M$ is proper and has image in $U$, then $W$, as the preimage of the closure of $U$, must be compact. Also, $U$ is orientable, and so by choosing an orientation of $U$ every co-oriented $r_W \colon W \to U$ determines an orientation of $W$ as explained in \cref{S: co-orientations}. Thus $C^*_\Gamma(M|_U) \cong C_{m-*}^\Gamma(U)$, and the result follows from \cref{E: dimension} (the dimension axiom), homotopy functoriality of geometric homology, and that $U$ is homotopy equivalent to a point.
@@ -364,8 +318,6 @@ In this section we show that geometric cohomology possesses a contravariant Maye
 
 Instead, we proceed with a direct analysis at each term of the exact sequence as in Kreck's proof of the Mayer-Vietoris sequence for his cohomology theory using stratifolds in \cite{Krec10}. In fact, our argument for exactness parallel's Kreck's fairly closely. However, our proof that the connecting map is well defined is more complicated than the analogous proof in Kreck (ignoring the extra complications in \cite{Krec10} arising from considerations of collars that we do not need). This is because Kreck is able to define the splitting functions directly on his representing objects as $\varphi \colon W \to [0,1]$, which then makes it possible to compare two different $\varphi$s using a cylinder $W \times I$ with different versions of $\varphi$ on each end. Here, however, we must always use splitting maps that factor through $M$ or risk that even if $W$ is trivial $W^{\pm}$ may not be. This complicates the proof of \cref{P: connecting} below.
 
-
-
 \begin{definition}
 Suppose $U,V \subset M$ are open subsets and $\uW \in H^k_\Gamma(U \cap V)$ represented by $r_W \colon W \to U \cap V$. Of course we can also consider $r_W$ to have image in $U \cup V$. Let $\phi \colon M \to [-1,1]$ be a separating function for $U$ and $V$ such that $0$ is a separating point for $W$.
 Define $\delta(\uW) \in H^{k+1}_\Gamma(U \cup V)$ to be represented by $-W^0 = -\phi^{-1}(0)\times_{U \cup V}W$.
@@ -373,15 +325,12 @@ Define $\delta(\uW) \in H^{k+1}_\Gamma(U \cup V)$ to be represented by $-W^0 = -
 
 The choice to use $-W^0$ rather than $W^0$ in the definition is explained by \cref{R: MV boundary}. An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-i_U,i_V)$ rather than $(i_U,-i_V)$ in our covariant Mayer-Vietoris sequences and the map $\uW \to (-\uW|_U, \uW|_V)$ rather than $\uW \to (\uW|_U, -\uW|_V)$ in our contravariant Mayer-Vietoris sequence below.
 
-
-
 \begin{proposition}\label{P: connecting}
 The map $H^k_\Gamma(U \cap V) \xr{\delta} H^{k+1}_\Gamma(U \cup V)$ is well defined.
 \end{proposition}
 
 \begin{proof}
 Note that the $\phi^{-1}(0) \to U \cup V$ is a closed inclusion and so proper. Thus $r_{W^0} \colon W^0 \to U \cup V$ is proper by \cref{L: co-orientable pullback} as the composition of $r_W^* \colon \phi^{-1}(0)\times_{U \cup V}W \to \phi^{-1}(0)$ and $\phi^{-1}(0) \into U \cup V$.
-
 
 We next fix $\phi$ and show independence of the choices of separating point and representative for $\uW$.
 
@@ -420,7 +369,6 @@ Now, we can modify $\hat \Phi$ by an $\epsilon$-homotopy fixing $\phi_2^{-1}([-1
 Altogether we have shown that $\delta$ is independent of choices.
 \end{proof}
 
-
 \begin{lemma}\label{L: natural connection}
 The connecting map $\delta$ is natural, i.e.\ for a continuous map of triples $f:(M;U',V') \to (N;U,V)$ the following diagram commutes for all $k$:
 
@@ -438,7 +386,6 @@ Next we note that $\phi f$ separates $U'$ and $V'$ but it may not be smooth. Thi
  We claim that the transversality of $g$ with $r_{W^0}$ implies that $0$ is a regular value for the composition $\phi gr_W^*$, where $r_W^*$ is the pullback of $W$ to $M$ via $g$, i.e.\ $r_W^*: W \times_N M \to M$. To see this, recall that the tangent bundle of the pullback is the pullback of the tangent bundles \cite[Theorem 5.47]{Wed16}, so at a point $(x,y)$ of $(\phi gr^*_{W})^{-1}(0)$ with $x \in W$, $y \in M$, the tangent space of $W \times_N M$ is $T_x W \times_{T_{( r_W(x),g(y))}} T_yM$. As $0$ is a regular value for $\phi r_W$, there must be a vector $\xi \in T_xW$ with $D_x(\phi r_W)(\xi)\neq 0$. Consider $D_xr_W(\xi)$, which must also be nonzero. As $g$ is assumed transverse to $W^0$, there must be $\alpha \in T_xW^0$ and $\beta \in T_yM$ such that $(D_xr_W)(\xi) = (D_xr_W)(\alpha) + (D_yg) (\beta)$. Rewriting, $D_yg (\beta) = D_xr_W(\xi-\alpha)$. As $\alpha \in T_xW^0$, we have $$D_{r_W(x)}\phi(D_yg (\beta)) = D_{r_W(x)}\phi \circ D_xr_W(\xi-\alpha) = D_x(\phi r_W)(\xi)-D_x(\phi r_W)(\alpha) = D_x(\phi r_W)(\xi)\neq 0.$$
  So, recalling that $Dr_W^*$ is simply the projection to $TM$, the pair $( \xi-\alpha, \beta)$ is a non-zero vector in $T_xW\times_{T_{( r_W(x), g(y))}}T_y M$ that maps by $D(\phi gr_W^*)$ to a non-zero vector in $T_{0}[-1,1]$. As $(x,y)$ was an arbitrary point of $(\phi gr^*_{W})^{-1}(0) \subset W \times_N M$, this shows that $0$ is a regular value for $\phi gr^*_W$.
 
-
 Now we have from the definitions that $f^*\delta(W)$ is represented by $(-W^0) \times_N M = -(N^0 \times_N W) \times_N M = -(\phi^{-1}(0) \times_N W) \times_N M$, where $(\phi^{-1}(0) \times_N W)$ is a fiber product over $M$ and the whole expression is the pullback of this fiber product to $N$ via $g \colon M \to N$. On the other hand, $\delta f^*(W) = -(W \times_N M)^0 = -M^0 \times_M (W \times_N M) = -(\phi g)^{-1}(0) \times_M (W \times_N M)$. Here $W \times_N M$ is the pullback to $M$ and then we take the fiber product with $(\phi g)^{-1}(0)$.
 In both cases these correspond to pairs of points $(x,y) \in W \times M$ with $r_W(x) = g(y)$ and $\phi(r_W(x)) = \phi(g(y)) = 0$. In other words, as spaces these are both precisely the limit of the following diagram together with its map to $M$:
 \begin{diagram}
@@ -451,13 +398,10 @@ Thus $f^*\delta(\uW)$ and $\delta f^*(\uW)$ are represented by the same map, and
 
 We return to the definitions of the pullback and fiber product co-orientations. It suffices to compare $(W \times_N M)^0$ and $W^0 \times_N M$ at an arbitrary point. We first consider the co-orientation in the form $(W \times_N M)^0$. For the pullback $W \times_N M \to M$, choose $e \colon W \into N \times \R^K$. At our chosen point, fix $\beta_N$ and choose $\beta_W$ so that $\omega_{r_W} = (\beta_W,\beta_N)$. Let $\nu$ be the Quillen-oriented normal bundle of $W$ in $N \times \R^K$ so that $\beta_W \wedge \beta_\nu = \beta_N \wedge \beta_E$, where $\beta_E$ is the standard orientation of $\R^K$. Then by definition the pullback map from $P = W \times_N M \subset M \times \R^K$ to $M$ is co-oriented by $(\beta_P,\beta_M)$ if we choose $\beta_P$ and $\beta_M$ such that $\beta_P \wedge \beta_\nu = \beta_M \times \beta_E$, recalling that we let $\beta_\nu$ also denote the pulled back normal bundle of $P$ in $M \times \R^K$. We suppose we have chosen such $\beta_P$ and $\beta_M$. Next, let $M^0 \subset M$ have normal co-orientation $\beta_\phi$ determined by pulling back the standard orientation from $(-1,1)$, and similarly let $\beta_\phi$ denote the pullback normal co-orientation to $(W \times_N M)^0$. Then by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $(W \times_N M)^0 = M^0 \times_M (W \times_N M) \to W \times_N M$ is $(\beta_Q,\beta_Q \wedge \beta_\phi)$ for any $\beta_Q$. The fiber product $(W \times_N M)^0 \into M$ is then co-oriented by the composition $(\beta_Q,\beta_Q \wedge \beta_\phi)*(\beta_P,\beta_M)$. So if we choose $\beta_Q$ so that $\beta_Q \wedge \beta_\phi = \beta_P$ (or equivalently $\beta_Q$ and $\beta_M$ so that $\beta_Q \wedge \beta_\phi \wedge \beta_\nu = \beta_M \wedge \beta_E$), the co-orientation is $(\beta_Q,\beta_M)$.
 
-
 On the other hand, consider $(N^0 \times_N W) \times_N M = W^0 \times_N M \to M$. One again we fix $\beta_N$ and $\beta_W$ so that $\omega_{r_W} = (\beta_W,\beta_N)$. Again by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $N^0 \times_N W \to W$ is $(\beta_{W^0},\beta_{W^0} \wedge \beta_\phi)$ for any $\beta_{W^0}$, continuing to let $\beta_\phi$ denote any normal co-orientation pulled back via $\phi$. If we choose $\beta_{W^0}$ so that $\beta_{W^0} \wedge \beta_\phi = \beta_W$ then we have $r_{W^0} \colon W^0 \to N$ co-oriented by $(\beta_{W^0},\beta_N)$. As $W^0 \subset W$, we can embed $W^0$ in $N \times \R^K$ via the composition $W^0 \into W \xhookrightarrow{e}N \times \R^K$, using the same $e$ and $K$ as above. As $\beta_W \wedge \beta_\nu = \beta_N \wedge \beta_E$ and $\beta_W = \beta_{W^0} \wedge \beta_\phi$, we have $\beta_{W^0} \wedge \beta_\phi \wedge \beta_\nu = \beta_N \wedge \beta_E$ so that $\beta_\phi \wedge \beta_\nu$ is the Quillen orientation for the normal bundle of $W^0$ in $N \times \R^K$. Using this to pull back $W^0 \to N$ to $W^0 \times_N M \to M$, by definition the pullback co-orientation is $(\beta_Q,\beta_M)$ when $\beta_Q$ and $\beta_M$ are chosen so that $\beta_Q \wedge \beta_\phi \wedge \beta_\nu = \beta_M \wedge \beta_E$. But this is exactly the same co-orientation we arrived at in the preceding paragraph. Thus the co-orientations of the two constructions agree.
-
 
 We conclude that the diagram of the lemma commutes.
 \end{proof}
-
 
 \begin{notation}
 If $f: U \into M$ is the inclusion of an open subset and $\uW \in C^*_\Gamma(M)$, we may also write $f^*(\uW)$ as $\uW|_U$. As such an inclusion $U$ is necessarily transverse to any other map to $M$, we also obtain a well-defined map $PC^*_\Gamma(M) \to PC^*_\Gamma(U)$ that we also write $W \to W|_U$. By \cref{P: codim 0 pullback}, $W|_U$ is simply the restriction of $r_W \colon W \to M$ to $r_W^{-1}(U)$.
@@ -469,8 +413,6 @@ $$\cdots \to H^k_\Gamma(U \cup V) \xr{i} H^k_\Gamma(U) \oplus H^k_\Gamma(V) \xr{
 with $i(\uW) = (\uW|_U, -\uW|_V)$, $j(\uW_1,\uW_2) = \uW_1|_{U \cap V}+\uW_2|_{U \cap V}$, and $\delta$ as above.
 \end{theorem}
 
-
-
 \begin{proof}
 Notationally, we always assume $\uW$ is represented by $W$, etc.
 In the following we typically assume an appropriate separating function $\phi:U \cup V \to [-1,1]$ such that $\phi(U\setminus V) = -1$ and $\phi(V\setminus U) = 1$ and choose an appropriate separating point without further comment. We observe that in this case $(U \cap V)^+ = \phi^{-1}([0,1])\cap(U \cap V)$ is a closed subspace of both $U \cap V$ and of $U$, as $\phi|_U^{-1}([0,1]) = \phi^{-1}([0,1]) \cap (U \cap V)$ given that $\phi(U\setminus V) = -1$. So the inclusions $(U \cap V)^+ \into U \cap V$ and $(U \cap V)^+ \into U$ are both proper maps. Thus if $W \in PC^*_\Gamma(U \cap V)$, in which case in particular $r_W \colon W \to U \cap V$ is proper, both the fiber products $(U \cap V)^+\times_{U \cap V} W \to U \cap V$ and $(U \cap V)^+\times_{U} W \to U$ will be proper maps. In fact, they both have the same domain, which is just $W^+$, and we will write $W^+$ for the corresponding elements of $PC^*_\Gamma(U \cap V)$ or $PC^*_\Gamma(U)$, determining which via context. Similarly, we obtain $W^-$ in $PC^*_\Gamma(U \cap V)$ or $PC^*_\Gamma(V)$. See \cref{F: MV1}. On the other hand, $(U \cap V)^- = \phi^{-1}([-1,0])\cap(U \cap V)$ is not generally closed in $U$ and so we do not obtain a $W^-$ in $PC^*_\Gamma(U)$.
@@ -481,11 +423,7 @@ In the following we typically assume an appropriate separating function $\phi:U 
 \label{F: MV1}
 \end{figure}
 
-
-
-
 Similarly, continuing with our assumptions about $\phi:U \cup V \to [-1,1]$, we have $\phi^{-1}([-1,0]) = \phi|_U^{-1}([-1,0])$ so that $\phi^{-1}([-1,0])$ is a closed subset of $U$ and of $U \cup V$. Therefore, the inclusions $\phi^{-1}([-1,0]) \into U$ and $\phi^{-1}([-1,0]) \into U \cup V$ are proper so that if $W \in PC^*_\Gamma(U)$, then $W^-$ is well-defined in both $PC^*_\Gamma(U)$ and $PC^*_\Gamma(U \cup V)$. See \cref{F: MV2}. Analogously, if $W \in PC^*_\Gamma(V)$ then we obtain $W^+$ in both $PC^*_\Gamma(V)$ and $PC^*_\Gamma(V^+)$.
-
 
 \begin{figure}[h]
 	\includegraphics[scale = 1]{figures/mayer_vietoris2.pdf}
@@ -494,8 +432,6 @@ Similarly, continuing with our assumptions about $\phi:U \cup V \to [-1,1]$, we 
 \end{figure}
 
 Finally, we also note that $\phi^{-1}(0)$ is closed in $U \cap V$, $U$, $V$, and $U \cup V$, so for any $W$ in $PC_\Gamma^*(-)$ for any of these spaces, $W^0$ is also in $PC^*_\Gamma(-)$ for all these spaces.
-
-
 
 These observations will be used freely in the remainder of the proof.
 
@@ -509,8 +445,6 @@ Next suppose $\uW \in H^k_\Gamma(U \cup V)$ with $i(\uW) = 0$. Representing $\uW
 \end{align*}
 But $(W|_U)^- +(W|_V)^+ = W^-+W^+$, which through the creasing construction is cohomologous to $W$. Further, $S^-+T^+ \in Q^*(U \cup V)$, so we see that $W$ is cohomologous to $A^0-B^0$. But $A^0-B^0 = \delta(B|_{U \cap V}-A|_{U \cap V})$.
 
-
-
 \textbf{Exactness at $H^k_\Gamma(U) \oplus H^k_\Gamma(V)$.}
 It is immediate that the composition $ji = 0$.
 
@@ -523,7 +457,6 @@ We compute
 \end{align*}
 As $W_1$ and $W_2$ are cycles, $(\bd W_1)^-$, $(\bd W_2)^+$, and $T^0$ are in $Q^*(U \cup V)$. So this boundary is $0$ in $C^*_\Gamma(U \cup V)$, and $\gamma$ represents an element of $H^k_\Gamma(U \cup V)$.
 
-
 Next we show that $\gamma|_U$ is cohomologous to $W_1$ in $U$. In fact, in $U$ we have
 $$\bd (Z^+) = Z^0+(\bd Z)^+ = Z^0+ W_1^++ W_2^+|_{U}+T^+.$$ So
 $\bd (Z^+) +\gamma|_U = W_1^-+W_1^+ +T^+$, and we see that $\gamma|_U$ is cohomologous in $U$ to $W_1^-+W_1^+$, which is cohomologous to $W_1$ in $U$ via creasing. Similarly, in $V$ we have
@@ -533,10 +466,8 @@ $\bd(Z^-) - \gamma|_V = W_2^-+W_2^+ +T^-$, and $-\gamma|_V$ is cohomologous to $
 
 So $(\uW_1,\uW_2) = i(\underline{\gamma})$.
 
-
 \textbf{Exactness at $H^k_\Gamma(U \cap V)$.}
 Consider a cocycle $W$ in $C^k_\Gamma(U)$. Then $\delta j(\uW)$ is represented by $-W^0$. By the discussion above, $W^- \in PC^*_\Gamma(U \cup V)$, and $$\bd (W^-) = -W^0+ (\bd W)^-.$$ As $W$ is a cocycle, $\bd W \in Q^*(U)$, and so $(\bd W)^- \in Q^*(U \cup V)$ via \cref{C: creasing Q}. So $\delta j(\uW) = 0 \in H^*_\Gamma(U \cup V)$, and similarly for elements of $H^k_\Gamma(V)$.
-
 
 Now suppose $\uW \in H^k_\Gamma(U \cap V)$ and $\delta(\uW) = 0$. Representing $\uW$ by $W$ and choosing a separating function and separating point, this means there is a $Z$ in $U \cup V$ such that $\bd Z = -W^0+T$ with $T \in Q^*(U \cup V)$. Let $A = Z|_U+ W^+ \in PC^*_\Gamma(U)$ and $B = -Z|_V +W^- \in PC^*_\Gamma(V)$. Then
 \begin{align*}
@@ -554,12 +485,9 @@ j(A,B)& = A|_{U \cap V}+B|_{U \cap B}\\
 which represents $\uW \in H^k(U \cap V)$ via creasing.
 \end{proof}
 
-
-
 \begin{comment}
 
 \subsection{The suspension map and the cohomology of Euclidean space}\label{S: suspension}
-
 
 \red{I'm leaving it for now, but I'm not sure we need this section anymore (which is a shame as I enjoyed writing it).}
 
@@ -570,10 +498,6 @@ $H_\Gamma^*(\R^n) \cong H^*(\R^n)$.
 The proof of the proposition will proceed by an induction over the dimension $n$.
  For $n = 0$, the domains of all cochains must be compact and oriented, so $H^*_\Gamma(\R^0) = H_*^\Gamma(\R^0)$, where the latter represents Lipyanskiy's geometric homology theory, which is isomorphic to singular homology by \cite[Section 10]{Lipy14} (or in this case by direct computation). For $n>0$, our general strategy will be derived from the treatment of non-compactly supported piecewise-linear intersection homology in \cite[Section II.2]{BoHab}. In particular, we have the following two lemmas modifying \cite[Lemmas 2.2 and 2.3]{BoHab}.
 
-
-
-
-
 \begin{lemma}
 Let $M$ be a manifold, and suppose $\uW \in C^{i}_\Gamma(\R \times M)$ is a cocycle with support in $\R_+ \times M$. Then $\uW$ is the coboundary of a cochain in $C^{i-1}_\Gamma(\R \times M)$ supported in $\R_+ \times M$.
 \end{lemma}
@@ -581,9 +505,7 @@ Let $M$ be a manifold, and suppose $\uW \in C^{i}_\Gamma(\R \times M)$ is a cocy
 Let $p_1 \colon \R \times M \to \R$ and $p_2 \colon \R \times M \to M$ be the projections, and let $r_W: W \to \R_+ \times M$ be the reference map. Note that $\R_+ \times W$ is a manifold with corners by \cite[Theorem 6.4]{Joy12}. So we can define a new map $r_{\R_+ \times W} \colon \R_+ \times W \to \R \times M$ by $r_{\R_+ \times W}(t,x) = (t+p_1r_W(x),p_2r_W(x))$. As $r_W$ is proper, so is $r_{\R_+ \times W}$, and its boundary (up to signs) is the sum of $W$ with $\pm r_{\R_+ \times \bd W} \colon \R_+ \times \bd W \to \R \times M$, letting this latter map be constructed analogously to $r_{\R_+ \times W}$. As $\bd W$ represents $0$ in $C^*_\Gamma(\R \times W)$, it must be a sum of trivial and degenerate objects. But it is easy to see that our construction takes trivial and degenerate objects to trivial and degenerate objects, respectively, so that $\R_+ \times \bd W$ is a sum of trivial and degenerate objects. Thus $W$ cobounds as required.
 \end{proof}
 
-
 In this section we give an explicit construction of the cohomology suspension isomorphism
-
 
 \begin{proposition}[Suspension isomorphism]
 Define the suspension map\footnote{Note that the suspension map $S$ has degree $0$ as the degree of an element of $W$ is determined by the codimension $\dim(M)-\dim(W)$, which is preserved under suspension. } $S:PC^*_\Gamma(M) \to PC^{*}_\Gamma(\R \times M)$ so that if $W \in PC^*_\Gamma(M)$ is represented by $r_W \colon W \to M$ then $S(W)$ is represented by $r_{\R \times W} \colon \R \times W \to \R \times M$ defined by $r_{\R \times W}(t,x) = (t,r_W(x))$. Then $S$ induces isomorphisms $S:H^*_\Gamma(M) \to H^{*}_\Gamma(M)$.
@@ -597,9 +519,7 @@ Consider the map $p \colon \R \times M \to \R$. The composite $pr_W$ must have a
 Similarly, we consider $S(W_0)$ and note that it has an analogous creasing decomposition with $(S(W_0))_0 = W_0$, $S(W_0)^+ = \R_+ \times W_0$, and $S(W_0)^- = \R_- \times W_0$. We will also need to consider $\bd (W_0)$. From the properties of pullbacks \cite[Proposition 7.4]{Joy12} (from which we get the sign in the following formula using that $W_0 = p^{-1}(0) \times_M W$), we have
 $$\bd(W_0) = -(\bd W)_0 = -S(V+T)_0 = -S(V)_0-T_0 = -V-T_0.$$
 
-
 %p^{-1}((-infty,0]) \times_M W
-
 
 Next, we consider $W^--(\R_- \times W_0)$. Its boundary, again using the sign conventions from Joyce, is
 \begin{align*}
@@ -623,8 +543,6 @@ We now consider the cochain $\Cre(W)-\Cre(S(W_0))-Z_1-Z_2$. Its boundary is
 & = -W+S(W_0)-\Cre(\bd W)+\Cre(\bd S(W_0))-A_1-A_2
 \end{align*}
 
-
-
 Now recall that $\bd W = S(V)+T$, while $\bd S(W_0) = \bd(\R \times W_0) = -\R \times \bd W_0 = -S(\bd W_0) = -S(-V-T_0) = S(V+T_0)$. So $\Cre(\bd W)-\Cre(\bd S(W_0)) = \Cre(T)-\Cre(S(T_0))$.
 We already know $A_1,A_2 \in Q^*(\R \times M)$. Furthermore, $\Cre(T), \Cre(S(T_0)) \in Q^*(\R \times M)$ as we have noted that the suspension of an element of $Q^*(M)$ is in $Q^*(\R \times M)$ and the creasing of an element of $Q^*(\R \times M)$ is in $Q^*(\R \times M)$ by the proof of \cite[Lemma 18]{Lipy14}.
 
@@ -632,7 +550,6 @@ So, we have established a cohomology between $W$ and $S(W_0)$ as desired.
 \end{proof}
 
 \end{comment}
-
 
 \subsection{Geometric homology and cohomology are singular homology and cohomology}\label{S: homology is homology}
 
@@ -649,9 +566,7 @@ This is a consequence of \cite[Theorem 10]{Krec10b} once we verify that $H_*^\Ga
 
 \item For each triple $(M;U,V)$ with $M$ a smooth manifold and $U,V$ open subsets such that $U \cup V = M$ there are exact (homological or cohomological) Mayer-Vietoris sequences with natural connecting maps $\delta$.
 
-
 \item\label{I: neg dim} For all $M$, $H_k^\Gamma(M) = H^k_\Gamma(M) = 0$ for $k<0$.
-
 
 \item The Dimension Axiom: $H_k^\Gamma(pt) = H^k_\Gamma(pt) = 0$ for $k\neq 0$ and $H^\Gamma_0(pt) \cong H_\Gamma^0(pt) \cong \Z$.
 
@@ -661,14 +576,12 @@ This is a consequence of \cite[Theorem 10]{Krec10b} once we verify that $H_*^\Ga
 Axiom \ref{I: homotopy functor} holds from the definitions and \cref{P: homology homotopy functor,P: cohomology pullback}.
 We have Mayer-Vietoris sequences by \cref{T: relative MV,T: absolute MV}. The connecting map for the cohomology sequence is natural by \cref{L: natural connection}. The connecting map for the homology sequence is natural just as in the standard argument for singular homology: given a map of triples $(M;U',V') \to (N;U,V)$ there is a map of Mayer-Vietoris sequences induced by a map of short exactly sequences of chain complexes of the form of diagram \eqref{E: homology MV SES} (replacing supported cochains complexes with chain complexes), itself induced by functoriality from the maps of chain complexes $C_*^{\Gamma}(U') \to C_*^{\Gamma}(U)$ and similarly for $V$ and $U \cap V$. This map of Mayer-Vietoris sequences in particular shows that the connecting map is natural.
 
-
 Axiom \ref{I: neg dim} holds trivially for homology as there are no chains of degree $<0$. It also holds for cohomology because for $k<0$ any representing cocycle must have small rank and boundary in $Q^*(M)$. Thus any such cocycle must be $0 \in C^k_\Gamma(M)$.
 
 The Dimension Axiom has been proven in \cref{E: dimension}.
 
 The Additivity Axiom is apparent.
 \end{proof}
-
 
 \begin{example}
 Let us consider $H^*_\Gamma(\R P^2)$. We know from the standard computations of $H^*(\R P^2)$ and the above theorem that
@@ -697,12 +610,8 @@ where for $\epsilon\in\{0,1\}$, the map $\delta_i^\epsilon \colon \interval^{k-1
 $$\delta_i^\epsilon(x_1,\ldots,x_k) = (x_1,\ldots,\epsilon,\ldots, x_k)$$
 with $\epsilon$ in the $i$th slot. The homology of the chain complex $SK_*(M)$ is not isomorphic to singular homology as it does not satisfy the dimension axiom, so one instead forms the normalized complex $NK_*(M)$ by quotienting out the subcomplex of degenerate singular cubes, generated by singular cubes $\sigma \colon \interval^k \to M$ such that $\sigma$ does not depend on at least one of the variables. In other words, the degenerate singular cubes are those maps $\sigma \colon \interval^k \to M$ that factor through one of the standard projections $\interval^k \to \interval^{k-1}$. It then holds that $NK_*(M)$ is chain homotopy equivalent to $S_*(M)$. In fact this holds for $M$ any space and not just a manifold \cite[Theorem 8.4.7]{HW60}. Of course we will need the smooth version $NK^{sm}_*(M)$ generated by smooth singular cubes and modulo degenerate smooth singular cubes. We defer to an appendix to this section the proof that $NK^{sm}_*(M) \into NK_*(M)$ is a chain homotopy equivalence.
 
-
-
-
 As the cubes $\interval^k$ are compact manifolds with corners equipped with their standard orientations,
  we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
-
 
 \begin{lemma}
 The inclusion $SK^{sm}_*(M) \into PC_*^\Gamma(M)$ determines a chain map $NK^{sm}_*(M) \to C_*^\Gamma(M)$.
@@ -714,12 +623,10 @@ We check compatibility of boundary orientations. Consider the $n-1$ face $F$ of 
 $(-1)^{j+1}\beta_i\wedge\beta_F$ is the orientation $\beta_1 \wedge\cdots\wedge \beta_n$ of $\interval^n$. Thus the boundary orientation is $(-1)^{j+1+i-1}\beta_1 \wedge \cdots \wedge \hat{\beta}_i \wedge \cdots\beta_n$. On the other hand, $\beta_1 \wedge \cdots \wedge \hat{\beta}_i \wedge \cdots\beta_n$ is precisely the standard orientation of $F$ when considering $\interval^n$ as a cubical complex. So the boundary orientation of $F$ is $(-1)^{i+j}$ times its orientation in the cubical complex. But this corresponds precisely to the formula for the boundary in $K^{sm}_*(M)$ coming from equation \eqref{E: cube bd}.
 \end{proof}
 
-
 \begin{comment}
 As the cubes $\interval^k$ are compact manifolds with corners equipped with their standard orientations,
  we have $SK^{sm}_*(M) \into PC_*^\Gamma$. Furthermore, any degenerate singular cube $\sigma \colon \interval^k \to M$ is also degenerate in the sense of Definition \ref{D: equiv triv and small}. In fact, it will have small rank as it filters through a projection. Furthermore, if that projection collapses the $i$th coordinate then each face $\sigma \delta_j^\epsilon$ for $j\neq i$ will also be a degenerate small cube and so have small rank, while the term $\pm (\sigma \delta_i^0-\sigma \delta_i^1)$ will be trivial with the trivializing map $\rho$ being the interchange of the two faces. Thus, the degenerate smooth singular cubes are elements of $Q_*(M)$. As in the simplicial case one can check compatibility of boundary orientations so that we have a chain map $NK^{sm}_*(M) \to C_*^\Gamma(M)$. \red{NEED TO PROVE THIS IS A CHAIN MAP}
 \end{comment}
-
 
 \begin{theorem}\label{T: hom iso map}
 The maps $H_*(S^{sm}_*(M)) \to H_*^\Gamma(M)$ and $H_*(NK^{sm}_*(M)) \to H_*^\Gamma(M)$ obtained by treating smooth singular simplices and smooth singular cubes as elements of $C_*^\Gamma(M)$ are isomorphisms.
@@ -750,14 +657,11 @@ C_*^\Gamma(U \cap V)&\rInto^{(i_U,-i_V)} &C_*^\Gamma(U) \oplus C_*^\Gamma(V).
 It now follows from Theorem \cite[5.1.1]{Frie20} that $\Phi: H_*(M) \to H_*^\Gamma(M)$ is an isomorphism.
 \end{proof}
 
-
 \cref{T: hom iso map} is claimed without proof in \cite[Section 10]{Lipy14}. Lipyanskiy states ``The fact that the natural maps induce isomorphisms follow from the standard Mayer-Vietoris arguments.'' However, these arguments are not given and, in fact, no Mayer-Vietoris sequence is proven to exist in \cite{Lipy14}, though the main required tool, creasing, is provided.
 
 Unfortunately, providing a direct comparison for cohomology theories is not so straight forward as there is no obvious map between $C^*_\Gamma(M)$ and $S^*(M) = \Hom(S_*(M),\Z)$. It will take some work in the following sections to develop a geometric connection between these cohomology theories.
 
-
 \subsection{Appendix: smooth singular cubes}
-
 
 \begin{proposition}\label{P: singular smooth cubes}
 The inclusion $\psi: NK^{sm}_*(M) \into NK_*(M)$ is a chain homotopy equivalence.
