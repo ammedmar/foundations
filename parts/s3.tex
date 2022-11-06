@@ -724,8 +724,8 @@ We also take the opportunity to observe that pullbacks of proper maps are proper
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps of manifolds with corners to a manifold without boundary.
 	Then:
 	\begin{enumerate}
-		\item If $f$ is co-orientable, the pullback $f^*:P = V \times_M W \to W$ is co-orientable.
-		\item If $f$ is proper, the pullback $f^*:P = V \times_M W \to W$ is proper.
+		\item If $f$ is co-orientable, the pullback $f^* \colon P = V \times_M W \to W$ is co-orientable.
+		\item If $f$ is proper, the pullback $f^* \colon P = V \times_M W \to W$ is proper.
 	\end{enumerate}
 \end{lemma}
 
@@ -769,7 +769,7 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	Since $f$ is transverse to $g$, we have $g \times \id$ transverse to $e$.
 	As $e$ is an embedding, it follows that $P = (g \times \id)^{-1}(e(V))$ is a submanifold of $W \times \R^N$.
 	Furthermore, by \cref{L: Quillen}, $e(V)$ has an orientable normal bundle in $M \times \R^N$, and since the pullback of the normal bundle is the normal bundle of the pullback, it follows that the normal bundle of $P$ in $W \times \R^N$ is also orientable.
-	Applying \cref{L: Quillen} again, the map $f^* = \pi_W:P \to W$ is co-orientable.
+	Applying \cref{L: Quillen} again, the map $f^* = \pi_W \colon P \to W$ is co-orientable.
 \end{proof}
 
 \begin{remark}\label{R: pullback representative 2}
@@ -803,14 +803,14 @@ For the following definition, refer again to Diagram \eqref{D: pullback}.
 	Define the \textbf{pullback co-orientation} on $P \to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P \wedge \nu V)$ with the canonical co-orientation $(\beta_W \wedge \beta_E,\beta_W)$.
 	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ up to positive scalar and $-(\beta_P,\beta_W)$ otherwise.
 
-	Following \cref{D: top pullback}, we sometimes write $f^*:P \to W$.
+	Following \cref{D: top pullback}, we sometimes write $f^* \colon P \to W$.
 	We also sometimes write $P = g^*V$ to emphasize that $P$ is the pullback of $V$ by $g$ to a manifold over $W$.
 
 	If $g$ is co-oriented, define the \textbf{fiber product co-orientation} on $P \to M$ as the composition of the pullback co-orientation with the co-orientation of $g \colon W \to M$.
 \end{definition}
 
 In the definition, note that the Quillen orientation of $\nu V$ is determined by the co-orientation of $f$ and the orientation $\beta_E$ is taken to be canonically fixed across all instances.
-The other orientations appearing in the definition are $\beta_P$ and $\beta_W$, but the co-orientation of the pullback $f^*:P \to W$ does not depend on the particular choices.
+The other orientations appearing in the definition are $\beta_P$ and $\beta_W$, but the co-orientation of the pullback $f^* \colon P \to W$ does not depend on the particular choices.
 For example, suppose we choose $\beta_P$ and $\beta_W$ so that $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ and hence the pullback co-orientation is $(\beta_P,\beta_W)$.
 If we replace $\beta_P$ with $\beta_P' = -\beta_P$, then
 $\beta_P' \wedge \beta_{\nu V} = -\beta_P \wedge \beta_{\nu V} = -\beta_W \wedge \beta_E$, so the co-orientation is $-(\beta_P',\beta_W) = -(-\beta_P,\beta_W) = (\beta_P,\beta_W)$.
@@ -876,7 +876,7 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 
 \begin{remark}\label{R: what products exist}
 	We have just shown that, after choosing conventions, the fiber product of two transverse co-oriented maps is co-oriented, and this will eventually lead us to the cup product of geometric cochains.
-	Analogously, if $f \colon V \to M$ is co-oriented and $W$ is oriented, then the pullback co-orientation $f^*:P = V \times_M W \to W$ provides a way to orient $P$, namely if $\beta_W$ is the given globally-defined orientation of $W$ we can choose $\beta_P$ so that $(\beta_P,\beta_W)$ is the co-orientation of $f^*$.
+	Analogously, if $f \colon V \to M$ is co-oriented and $W$ is oriented, then the pullback co-orientation $f^* \colon P = V \times_M W \to W$ provides a way to orient $P$, namely if $\beta_W$ is the given globally-defined orientation of $W$ we can choose $\beta_P$ so that $(\beta_P,\beta_W)$ is the co-orientation of $f^*$.
 	This observation will be utilized below in our construction of the cap product.
 	However, somewhat surprisingly, the fiber product of two maps with oriented domains cannot necessarily be oriented, and so there is in general no product of geometric chains and hence, in general, no homology product.
 	Such oriented fiber products can be formed if the the codomain $M$ is oriented, as in this case there is an equivalence between orientations of domains and co-orientations of maps.
@@ -1244,7 +1244,7 @@ They will be useful when working with the creasing construction for geometric co
 	Suppose $V \subset M$ is a codimension $1$ submanifold with corners with oriented normal bundle $\nu$ in the manifold without boundary $M$.
 	Suppose the embedding $f \colon V \into M$ is co-oriented by $(\beta_V,\beta_V \wedge \beta_\nu)$.
 	Let $W$ be a manifold without corners and suppose $g \colon W \to M$ is transverse to $f$ so that $g^{-1}(V) = W^0$ is a codimension $1$ submanifold with corners with oriented pullback normal vector bundle $\nu_0$.
-	Then the co-oriented pullback $f^*:P = V \times_M W \to W$ is the embedding $W^0 \into W$, co-oriented by $(\beta_P,\beta_P \wedge \beta_{\nu_0})$.
+	Then the co-oriented pullback $f^* \colon P = V \times_M W \to W$ is the embedding $W^0 \into W$, co-oriented by $(\beta_P,\beta_P \wedge \beta_{\nu_0})$.
 \end{proposition}
 
 \begin{proof}
@@ -2043,7 +2043,7 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 	As the tangent space of the pullback is the pullback of the tangent space, it suffices to assume that all spaces and maps are linear; in the general case we replace all the following spaces with their bundles and all maps with their derivatives.
 	For $P = V \times_M W$, we look at the map
 	\begin{equation}\label{E: fiber orient}
-		\Phi:P \oplus M \to V \oplus W
+		\Phi \colon P \oplus M \to V \oplus W
 	\end{equation}
 	given by $((v,w),x) \to (v,w)+s(x)$, where $s$ is a splitting of the map $V \oplus W \to M$ that takes $(v,w)$ to $f(v)-g(w)$.
 	We recall that the orientation of $P$ is chosen so that $\Phi$ is an orientation preserving isomorphism up to a sign of $(-1)^{\dim(W)\dim(M)}$.
