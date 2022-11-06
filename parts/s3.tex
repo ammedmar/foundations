@@ -1118,11 +1118,11 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 
 \begin{proof}
 	As in the preceding lemma, we can choose local coordinates such that $f$ is the projection $M \times \R^N \to M$ and $g$ is the projection $M \times \R^n \to M$.
-	Let $\beta_E$ and $\beta_F$ be local orientations of $\R^N$ and $\R^n$ such that $\omega_f = (\beta_V,\beta_M) = (\beta_M \wedge \beta_E,\beta_M)$ and $\omega_g = (\beta_M \wedge \beta_F,\beta_M)$.
+	Let $\beta_E$ and $\beta_F$ be local orientations of $\R^N$ and $\R^n$ such that $\omega_f = (\beta_V,\beta_M) = (\beta_M \wedge \beta_E, \beta_M)$ and $\omega_g = (\beta_M \wedge \beta_F, \beta_M)$.
 	To compute $\omega_{f \times_M g}$, we identify $V$ and $M \times \R^N$ as in the preceding lemma, so the Quillen normal bundle is trivial and positive.
 	The pullback is $W \times \R^N \cong M \times \R^n \times \R^N$.
-	And by \cref{D: pullback coorient}, taking $\beta_P = \beta_W \wedge \beta_E$, we have $\omega_{f \times_M g} = (\beta_W \wedge \beta_E,\beta_M) = (\beta_M \wedge \beta_F \wedge \beta_E,\beta_M)$.
-	Analogously, $\omega_{g \times_M f} = (\beta_V \wedge \beta_F,\beta_M) = (\beta_M \wedge \beta_E \wedge \beta_F,\beta_M)$.
+	And by \cref{D: pullback coorient}, taking $\beta_P = \beta_W \wedge \beta_E$, we have $\omega_{f \times_M g} = (\beta_W \wedge \beta_E, \beta_M) = (\beta_M \wedge \beta_F \wedge \beta_E, \beta_M)$.
+	Analogously, $\omega_{g \times_M f} = (\beta_V \wedge \beta_F, \beta_M) = (\beta_M \wedge \beta_E \wedge \beta_F, \beta_M)$.
 	The lemma follows as $N = v-m$ and $n = w-m$.
 \end{proof}
 
@@ -1158,9 +1158,9 @@ We now show that for arbitrary transverse intersecting $f$ and $g$ there are alw
 	So suppose $Df$ does not have maximal rank at $x$.
 	We will construct a homotopy fixed outside a small neighborhood of $x$, so we work in local charts, identifying neighborhoods of $x$ and $f(x)$ with $\R^v$ and $\R^m$ so that $x$ and $f(x)$ are at the respective origins.
 	We may also choose the charts so that $Df_x(e_i) = e_i$ for $1\leq i\leq k$ for some $k<\dim(V) = v$ and $Df_x(e_i) = 0$ for $i>k$.
-	Let $\eta:\R^v \to \R$ be a smooth function that is $0$ outside a compact neighborhood of the origin and $1$ on a neighborhood of the origin.
-	Let $z = (z_1,\ldots, z_v)$ be the coordinates of $\R^v$, and let
-	$$H(z_1,\ldots, z_v,t) = f(z)+t\eta(z)\left(\sum_{i = k+1}^{\min(v,m)} z_i\right).$$
+	Let $\eta \colon \R^v \to \R$ be a smooth function that is $0$ outside a compact neighborhood of the origin and $1$ on a neighborhood of the origin.
+	Let $z = (z_1,\ldots,z_v)$ be the coordinates of $\R^v$, and let
+	$$H(z_1,\ldots,z_v,t) = f(z) + t\eta(z)\left(\sum_{i = k+1}^{\min(v,m)} z_i\right).$$
 	Then $H(z,t) = f(z)$ outside a compact neighborhood of the origin in $\R^v$, and so $H$ extends to a homotopy defined on all of $V \times I$.
 	Furthermore, $H(0,t) = f(0)$, i.e.\ $H(x,t) = f(x)$.
 	Also,
@@ -1392,7 +1392,7 @@ Before getting to co-orientations, we first show that a product of proper maps i
 \end{proof}
 
 \begin{definition}\label{D: co-oriented exterior}
-	If $f \colon V \to M$ and $g \colon W \to N$ are co-oriented maps of manifolds with corners with co-orientations given by isomorphisms $\phi:\Or(TV) \to f^*\Or(TM)$ and $\psi:\Or(TW) \to g^*\Or(TN)$, we define the \textbf{product co-orientation} of $f \times g \colon V \times W \to M \times N$ by the isomorphism $(-1)^{(m-v)w}\pi_V^*\phi \otimes \pi_W^*\psi$.
+	If $f \colon V \to M$ and $g \colon W \to N$ are co-oriented maps of manifolds with corners with co-orientations given by isomorphisms $\phi \colon \Or(TV) \to f^*\Or(TM)$ and $\psi \colon \Or(TW) \to g^*\Or(TN)$, we define the \textbf{product co-orientation} of $f \times g \colon V \times W \to M \times N$ by the isomorphism $(-1)^{(m-v)w}\pi_V^*\phi \otimes \pi_W^*\psi$.
 	In particular, if at $x \in V$ the co-orientation of $f$ is given locally by $(\beta_V,\beta_M)$ and at $y \in W$ the co-orientation of $g$ is given locally by $(\beta_W,\beta_N)$, then up to standard abuses of notation the product co-orientation is locally represented at $(x,y)$ by $$(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
 
 	Following our standard conventions, we often denote this product manifold over $M \times N$ by simply $V \times W$.
