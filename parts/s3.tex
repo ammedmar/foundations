@@ -654,7 +654,7 @@ Before getting into the specifics of the construction, we need to make the follo
 			0 \arrow[r] & TM \arrow[r,"D\Delta"] & T (M \times M) \arrow[r] & \nu_{\Delta M \subset M \times M} \arrow[r] & 0.
 		\end{tikzcd}
 	\end{equation}
-	Here the two bundles labeled with $\nu$ are normal bundles, and we use the general fact that, given a smooth map of manifolds $h \colon  A \to B$ with $C$ immersed in $B$ and $h$ transverse to $C$, the normal bundle of $h^{-1}(C)$ in $A$ is the pullback of the normal bundle of $C$ in $B$.
+	Here the two bundles labeled with $\nu$ are normal bundles, and we use the general fact that, given a smooth map of manifolds $h \colon A \to B$ with $C$ immersed in $B$ and $h$ transverse to $C$, the normal bundle of $h^{-1}(C)$ in $A$ is the pullback of the normal bundle of $C$ in $B$.
 	In the case at hand, $P = (f \times g)^{-1}(\Delta M) \subset V \times W$ and the transversality of $f$ and $g$ implies that $f \times g$ is transverse to $\Delta M$, and so $\nu_{P \subset V \times W}$ is the pullback of $\nu_{\Delta M \subset M \times M}$; we label this isomorphism $i$.
 
 	\red{D: we should have some more extensive differential topology discussion, pulling from Joyce's oeuvre.
@@ -947,8 +947,7 @@ In the key example when both $f$ and $g$ are immersions, the fiber products will
 	$$\omega_{f \times_M g} = (\beta_P,\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}).$$
 \end{proposition}
 
-That is, if one orients the normal bundle of the intersection by following an oriented basis of the normal bundle of $V$ by one for $W$,
-the associated normal co-orientation is the fiber product co-orientation.
+That is, if one orients the normal bundle of the intersection by following an oriented basis of the normal bundle of $V$ by one for $W$, the associated normal co-orientation is the fiber product co-orientation.
 
 \begin{proof}
 	It suffices to demonstrate this property in the neighborhood of any intersection point, so we may assume that $f$ and $g$ are embeddings and consider $x \in V$, $y \in W$ with $f(x) = g(y) = z \in M$.
@@ -956,7 +955,7 @@ the associated normal co-orientation is the fiber product co-orientation.
 	As $N = 0$, in this case $\nu V$ is itself the oriented normal bundle of $e(V) = f(V)$ in $M \times \R^N = M$.
 	Pulling back via $g$ to $W$, we obtain the oriented pullback of $\nu V$ (which we also call $\nu V$) as the normal bundle of $P$ in $W$.
 	By definition, the co-orientation of $P \to W$ is then the composition of $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the standard co-orientation of the projection $W \times \R^N$ to $W$, which in this case is the identity.
-	The co-orientation of the fiber product is thus the composition of $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the co-orientation $(\beta_W,\beta_W \wedge \beta_{\nu W})$ of $g$.
+	The co-orientation of the fiber product is thus the composition of $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the co-orientation $(\beta_W, \beta_W \wedge \beta_{\nu W})$ of $g$.
 	But this last co-orientation is independent of the choice of $\beta_W$, so we can take $\beta_W = \beta_P \wedge \beta_{\nu V}$.
 	Thus we see that the fiber product co-orientation of $P \to M$ is $(\beta_P, \beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W})$, as desired.
 \end{proof}
@@ -972,7 +971,7 @@ Consequently, this result completes the proof of \cref{L: pullback co well defin
 	Let $V \times_M W \to W$ be the co-oriented pullback.
 	Then
 	$$\bd (V \times_M W) = (\bd V) \times_M W \bigsqcup (-1)^{\dim(M)-\dim(V)} V \times_M (\bd W),$$
-	interpreting each of these pullback spaces as representing its co-oriented map to $W$; see Notation \ref{N: implicit notation}.\footnote{Here we interpret $V\times\bd W \to W$ as the composition of the co-oriented pullback $V\times\bd W \to \bd W$ with the co-oriented boundary immersion $\bd W \to W$.} If $g$ is also co-oriented then this formula also holds as fiber products mapping to $M$.
+	interpreting each of these pullback spaces as representing its co-oriented map to $W$; see Notation \ref{N: implicit notation}.\footnote{Here we interpret $V \times \bd W \to W$ as the composition of the co-oriented pullback $V \times \bd W \to \bd W$ with the co-oriented boundary immersion $\bd W \to W$.} If $g$ is also co-oriented then this formula also holds as fiber products mapping to $M$.
 \end{proposition}
 
 Establishing this directly for immersions, for which we can use the normal co-orientations, is a quick exercise.
@@ -1664,7 +1663,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 	Then $$(V \times_M W) \times_M X = V \times_M (W \times_M X)$$ as co-oriented fiber products mapping to $M$.
 \end{corollary}
 \begin{proof}
-	We compute using \cref{P: cross to cup,P: pullback functoriality,P: exterior associativity,P: natural exterior} and that $(\id_M \times \diag)\diag = (\diag\times\id_M)\diag$:
+	We compute using \cref{P: cross to cup,P: pullback functoriality,P: exterior associativity,P: natural exterior} and that $(\id_M \times \diag)\diag = (\diag \times \id_M)\diag$:
 
 	\begin{align*}
 		(V \times_M W) \times_M X& = \diag^*(\diag^*(V \times W) \times X)\\
@@ -1692,7 +1691,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 		(V \times X)\times_{M \times N} (W \times Y)& = \diag_{M \times N}^*(V \times X \times W \times Y)\\
 		& = \diag_{M \times N}^*(\id \times \tau^* \times \id)^*(-1)^{(n-x)(m-w)}(V \times W \times X \times Y)\\
 		& = (\diag_M \times \diag_N)^*(-1)^{(n-x)(m-w)}(V \times W \times X \times Y)\\
-		& = (-1)^{(n-x)(m-w)}\diag_M^*(V \times W)\times\diag_N^*( X \times Y)\\
+		& = (-1)^{(n-x)(m-w)}\diag_M^*(V \times W) \times \diag_N^*( X \times Y)\\
 		& = (-1)^{(m-w)(n-x)} (V \times_M W) \times (X\times_N Y).
 	\end{align*}
 	For the third equality, we use that $\diag_M \times \diag_N = (\id_M \times \tau \times \id_N)\diag_{M \times N}$.
@@ -2002,14 +2001,14 @@ In our remaining constructions in this section we take all introduced Euclidean 
 	Let $V\xhookrightarrow{e}M \times \R^{2a} \to M$ be a Quillen co-orientation for $f$.
 
 	Then $V \times_M W$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically orientated diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$ (with its orientation induced by the fiber product co-orientation and the orientation of $M \times \R^{2a}$).
-	Here the maps for the second fiber product are $e \colon V \to M \times \R^{2a}$ and $g\times\id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
+	Here the maps for the second fiber product are $e \colon V \to M \times \R^{2a}$ and $g \times \id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
 	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V \into M \times \R^{2a}$ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M}\wedge\beta_a,\beta_M)$ is the co-orientation of $f$.
 	We also take $g \times \id_{\R^{2a}}$ to be co-oriented by the product co-orientation $(\beta_W \wedge \beta_a,\beta_M \wedge \beta_a)$ if $(\beta_W,\beta_M)$ is the co-orientation of $g$.
 	Finally, $M \times \R^{2a}$ is given the product orientation with $\R^{2a}$ having the standard orientation.
 \end{lemma}
 \begin{proof}
 	By the definitions of the induced orientation and the fiber product co-orientation, the orientation of the fiber product $V \times_M W \to M$ is $\beta_P$ where $\beta_P \wedge \beta_{\nu V} = \beta_M\wedge\beta_a$.
-	We recall that the $\nu V$ in this formula is actually the pullback of the normal bundle of $e(V) \subset M \times \R^{2a}$ via the map $g\times\id_{\R^{2a}}: W \times \R^{2a} \to M \times \R^{2a}$.
+	We recall that the $\nu V$ in this formula is actually the pullback of the normal bundle of $e(V) \subset M \times \R^{2a}$ via the map $g \times \id_{\R^{2a}}: W \times \R^{2a} \to M \times \R^{2a}$.
 	But this is also precisely the description of the induced fiber product orientation from the co-oriented fiber product $V\times_{M \times \R^{2a}}(W \times \R^{2a})$, treating $e \colon V \into M \times \R^{2a}$ as its own Quillen co-orientation with $N = 0$ in \cref{D: pullback coorient}.
 \end{proof}
 
@@ -2069,13 +2068,13 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 	Next we must generalize from $f_0 \colon V \to M \times \R^{2a}$ to the general case of $e \colon V \to M \times \R^{2a}$.
 	By assumption, $f \colon V \to M$ is the composition of $e$ with the projection $M \times \R^{2a} \to M$, so we may write $e(v) = (f(v), e_{\R}(v))$, and there is a fiberwise homotopy $H \colon V \times I \to M \times \R^{2a}$ from $e$ to $f_0$ given by $H(v,t) = (f(v), te_{\R}(v))$.
 	We note that $H$ and $e$ are each transverse to $g \times \id_{\R^{2a}}$.
-	Indeed, if $e(v) = (g\times\id_{\R^{2a}})(w,z)$, then $(f(v),e_{\R}(v)) = (g(w),z)$.
-	The image of the derivative of $g\times\id_{\R^{2a}}$ at such a point will span $Dg(T_wW) \oplus T(\R^{2a}) = Dg(T_wW) \oplus \R^{2a}$, while the derivative of $e$ will have the form $(Df,De_{\R})$.
-	But the image of $D(g\times\id_{\R^{2a}})$ already spans $0\oplus \R^{2a}$, so $De+D(g\times\id_{\R^{2a}}) = (Df,0)+(Dg,0)+(0,\id_{\R^{2a}}) = T(M \times \R^{2a})$.
+	Indeed, if $e(v) = (g \times \id_{\R^{2a}})(w,z)$, then $(f(v),e_{\R}(v)) = (g(w),z)$.
+	The image of the derivative of $g \times \id_{\R^{2a}}$ at such a point will span $Dg(T_wW) \oplus T(\R^{2a}) = Dg(T_wW) \oplus \R^{2a}$, while the derivative of $e$ will have the form $(Df,De_{\R})$.
+	But the image of $D(g \times \id_{\R^{2a}})$ already spans $0\oplus \R^{2a}$, so $De+D(g \times \id_{\R^{2a}}) = (Df,0)+(Dg,0)+(0,\id_{\R^{2a}}) = T(M \times \R^{2a})$.
 	The same argument holds for $H(-,t)$ for any fixed $t$, replacing $De_{\R}$ with $tDe_{\R}$.
-	But if each $H(-,t)$ is transverse to $g\times\id_{\R^{2a}}$ then so is $H$.
+	But if each $H(-,t)$ is transverse to $g \times \id_{\R^{2a}}$ then so is $H$.
 
-	It follows that we can form the oriented fiber product of $H$ and $g\times\id_{\R^{2a}}$ over $M \times \R^{2a}$.
+	It follows that we can form the oriented fiber product of $H$ and $g \times \id_{\R^{2a}}$ over $M \times \R^{2a}$.
 	In fact, this fiber product is diffeomorphic to $P \times I$: Noting that we have $H(v,t) = (f(v),te_{\R}(v)) = (g(w),z)$ if and only if $f(v) = g(w)$ and $te_{\R}(v) = z$, we obtain a diffeomorphism $P \times I \to (V \times I)\times_{M \times \R^{2a}}(W \times \R^{2a})$ given by $((v,w),t) \to ((v,t),(w, te_{\R}(v))$ with inverse $((v,t),(w,z)) \to ((v,w),t)$.
 	The two ends of the cylinder correspond to our two versions of $V\times_{M \times \R^{2a}} (W \times \R^{2a})$, one mapping $V$ by $f_0$ and the other by $e$.
 	Hence these spaces are oriented diffeomorphic, and canonically so by our construction.
