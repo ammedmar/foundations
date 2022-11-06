@@ -368,8 +368,7 @@ He assumed the normal bundles to have complex structures and so called these \te
 Given a co-oriented map $g \colon W \to M$ where $W$ is a manifold with corners, we can use the normal co-orientation of $\bd W$ in $W$ together with the composition of co-orientations noted in \cref{R: cooriented composition} to define ``boundary co-orientations'':
 
 \begin{definition}\label{D: boundary co-orientation}
-	The \textbf{standard co-orientation of a boundary immersion}
-	$i_{\bd W} \colon \bd W \hookrightarrow W$ is the normal co-orientation associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
+	The \textbf{standard co-orientation of a boundary immersion} $i_{\bd W} \colon \bd W \into W$ is the normal co-orientation associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
 	However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.} orientation of $\nu_{\bd W \subset W}$.
 
 	If $g \colon W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\bd W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g \colon W \to M$.
@@ -1537,7 +1536,7 @@ The next result relates co-oriented products in which one map is the identity wi
 	But $ \beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ by assumption, so this holds.
 
 	For the first statement, the product co-orientation of $f \times \id_N \colon V \times N \to M \times N$ is $(-1)^{(m-v)n}(\beta_V \wedge \beta_N,\beta_M \wedge \beta_N)$.
-	The pullback by the projection $M \times N \to M$ gives us an embedding/projection sequence $V \times N \hookrightarrow M \times N \times \R^a \to M \times N$ (where the first arrow is the composition of $e \times \id_N$ with a permutation of coordinates), and the orientation of the pullback of the normal bundle $\nu V$ by $\pi_1 \times \id_{\R^a}$ is again $\beta_{\nu V}$.
+	The pullback by the projection $M \times N \to M$ gives us an embedding/projection sequence $V \times N \into M \times N \times \R^a \to M \times N$ (where the first arrow is the composition of $e \times \id_N$ with a permutation of coordinates), and the orientation of the pullback of the normal bundle $\nu V$ by $\pi_1 \times \id_{\R^a}$ is again $\beta_{\nu V}$.
 	So now from the definition, the pullback has the product co-orientation if and only if $\beta_V \wedge \beta_N \wedge \beta_{\nu V} = (-1)^{(m-v)n}\beta_M \wedge \beta_N \wedge \beta_a$.
 	But $ \beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ by assumption, so
 	\begin{align*}
