@@ -731,11 +731,8 @@ We explain the further assumptions and notations prior to each table of formulas
 For our first table, with formulas involving boundaries, we also invoke the well-definedness of boundaries of geometric chains and cochains, see \cref{L: co/chains well defined}.
 The cup, cap, and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
 
-\bigskip
-
-\begin{minipage}{\linewidth}
-	\centering
-
+\smallskip
+\begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
 		Chain cross product &$\bd(\uV \times \uW) = (\bd \uV) \times \uW+ (-1)^{v}\uV \times \bd \uW$&Standard \\
@@ -749,18 +746,15 @@ The cup, cap, and intersection products require transversality of $\uV$ and $\uW
 		Intersection product &$\bd (\uV \bullet \uW) = (\bd \uV) \bullet \uW + (-1)^{m-v}\uV \bullet \bd \uW$&\cref{P: oriented fiber boundary}\\
 		\hline
 	\end{tabular}
-\end{minipage}
+\end{center}
 
 \subsubsection{Commutativity formulas}
 
 For the commutativity properties listed below, $\tau$ is the transposition map $\tau \colon N \times M \to M \times N$.
 The cup and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
 
-\bigskip
-
-\begin{minipage}{\linewidth}
-	\centering
-
+\smallskip
+\begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
 		Chain cross product&$\tau(\uV \times \uW) = (-1)^{vw}\uW \times \uV$&Standard\\
@@ -772,7 +766,7 @@ The cup and intersection products require transversality of $\uV$ and $\uW$; the
 		Intersection product&$\uV\bullet \uW = (-1)^{(m-v)(m-w)}\uW\bullet \uV$&\cref{P: commute oriented fiber}\\
 		\hline
 	\end{tabular}
-\end{minipage}
+\end{center}
 
 \subsubsection{Unital properties}
 
@@ -787,11 +781,8 @@ In the second cap product formula, both instances of $\uV$ are as chains.
 
 As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 
-\bigskip
-
-\begin{minipage}{\linewidth}
-	\centering
-
+\smallskip
+\begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
 		Identity for chain cross product&$\uV \times \underline{pt} = \underline{pt} \times \uV = \uV$& Obvious\\
@@ -809,7 +800,7 @@ As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 		Intersection product with $\uM$ &$\uM\bullet \uV = \uV\bullet \uM = \uV$&\cref{P: oriented fiber product basic properties}\\
 		\hline
 	\end{tabular}
-\end{minipage}
+\end{center}
 
 \subsubsection{Mixed properties}\label{S: mixed formulas}
 
@@ -823,27 +814,24 @@ The first and last properties require that $\uV$ and $\uW$ be transverse.
 The second holds for all $\uV, \uW$.
 The next three require that $\uV$ be transverse to $\uW$ and that $\underline{X}$ be transverse to $\underline{Y}$.
 
-\bigskip
-
-\begin{minipage}{\linewidth}
-	\centering
-
+\smallskip
+\begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
-		Cup from cross& $\uV\uplus \uW = \diag^*(\uV \times \uW)$&\cref{P: cross to cup}	\\
+		Cup from cross& $\uV\uplus \uW = \diag^*(\uV \times \uW)$&\ref{P: cross to cup}	\\
 		\hline
-		Cross from cup&$\uV \times \underline{X} = \pi_M^*(\uV)\uplus\pi_N^*(\underline{X})$& \cref{C: cross is cup}	\\
+		Cross from cup&$\uV \times \underline{X} = \pi_M^*(\uV)\uplus\pi_N^*(\underline{X})$& \ref{C: cross is cup}	\\
 		\hline
-		Cup of crosses&$(\uV \times \underline{X})\uplus (\uW \times \underline{Y}) = (-1)^{(m-w)(n-x)} (\uV\uplus \uW) \times (\underline{X}\uplus \underline{Y})$ &	\cref{C: criss cross}\\
+		Cup of crosses&$(\uV \times \underline{X})\uplus (\uW \times \underline{Y}) = (-1)^{(m-w)(n-x)} (\uV\uplus \uW) \times (\underline{X}\uplus \underline{Y})$ &	\ref{C: criss cross}\\
 		\hline
-		Cap of crosses &$(\uV \times \underline{X})\nplus (\uW \times \underline{Y}) = (-1)^{(x+y-n)(m-v)} (\uV \nplus \uW) \times (\underline{X}\nplus \underline{Y})$ & \cref{P: cap cross}\\
+		Cap of crosses &$(\uV \times \underline{X})\nplus (\uW \times \underline{Y}) = (-1)^{(x+y-n)(m-v)} (\uV \nplus \uW) \times (\underline{X}\nplus \underline{Y})$ & \ref{P: cap cross}\\
 		\hline
-		Intersection of crosses &$(\uV \times \underline{X})\bullet (\uW \times \underline{Y}) = (-1)^{(m-w)(n-x)}(\uV\bullet \uW) \times (\underline{X}\bullet \underline{Y})$&\cref{P: oriented interchange}\\
+		Intersect. of crosses &$(\uV \times \underline{X})\bullet (\uW \times \underline{Y}) = (-1)^{(m-w)(n-x)}(\uV\bullet \uW) \times (\underline{X}\bullet \underline{Y})$&\ref{P: oriented interchange}\\
 		\hline
-		Cup and intersection &$(\uV\uplus \uW)\nplus \uM = (-1)^{(m-v)(m-w)}(\uV\nplus \uM)\bullet(\uW\nplus \uM)$&\cref{P: compare cup and intersection orientations}\\
+		Cup and intersect. &$(\uV\uplus \uW)\nplus \uM = (-1)^{(m-v)(m-w)}(\uV\nplus \uM)\bullet(\uW\nplus \uM)$&\ref{P: compare cup and intersection orientations}\\
 		\hline
 	\end{tabular}
-\end{minipage}
+\end{center}
 
 \subsubsection{Immersion formulas}
 
@@ -878,11 +866,8 @@ Similarly for cap products we require decompositions such that $V_{ij}$ and $W_{
 The exterior products are simpler.
 The naturality of the chain cross product requires no assumption, while the naturality of the cochain cross product requires only that $V$ and $W$ have representatives that are respectively transverse to $h$ and $k$.
 
-\bigskip
-
-\begin{minipage}{\linewidth}
-	\centering
-
+\smallskip
+\begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
 		Chain cross product&$(h \times k)(\uV \times \uW) = h(\uV) \times k(\uW)$ &Obvious\\
@@ -894,7 +879,7 @@ The naturality of the chain cross product requires no assumption, while the natu
 		Cap product &$\uV \nplus h(\uW) = h(h^*(\uV)\nplus \uW)$&\cref{P: natural cap}\\
 		\hline
 	\end{tabular}
-\end{minipage}
+\end{center}
 
 \bigskip
 
@@ -905,11 +890,8 @@ For the other products, while this might not encompass the most general possibil
 
 We leave the reader to formulate associativity for products of larger collections of maps.
 
-\bigskip
-
-\begin{minipage}{\linewidth}
-	\centering
-
+\smallskip
+\begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
 		Chain cross product& $(\uV \times \uW) \times \uX = \uV \times (\uW \times \uX)$&Evident\\
@@ -924,9 +906,9 @@ We leave the reader to formulate associativity for products of larger collection
 		$(\uV\bullet\uW)\bullet\uX = \uV\bullet(\uW\bullet \uX)$&\cref{P: oriented fiber mixed associativity}\\
 		\hline
 	\end{tabular}
-\end{minipage}
+\end{center}
 
-\bigskip
+\medskip
 
 We note that with our definitions, these triple products exhibit linearity in each variable, assuming as usual that all necessary transversality conditions are met.
 
