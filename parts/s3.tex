@@ -130,7 +130,7 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 	\end{equation*}
 \end{proposition}
 
-\medskip\noindent\textbf{Fiber 	 	products of immersions.}
+\medskip\noindent\textbf{Fiber products of immersions.}
 % anibal: should this be a \subsubsection?
 
 The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is always of particular interest, especially for developing intuition.
@@ -336,10 +336,16 @@ He assumed the normal bundles to have complex structures and so called these \te
 	Clearly $\pi e = g$.
 
 	Next we note that $T(M \times \R^N) \cong \pi^*(TM) \oplus \underline{\R}^N$ where $\underline{\R}^N$ is the trivial $\R^N$ bundle over $M \times \R^N$.
-	As $ \Or( \underline\R^N)$ is a trivial line bundle,
-	$$\Or(T(M \times \R^N)) \cong \Or(\pi^*(TM)) \otimes \Or(\underline\R^N) \cong \Or(\pi^*TM).$$ Thus $\pi$ is always co-orientable.
+	As $\Or( \underline\R^N)$ is a trivial line bundle,
+	\begin{equation*}
+		\Or(T(M \times \R^N)) \cong \Or(\pi^*(TM)) \otimes \Or(\underline\R^N) \cong \Or(\pi^*TM).
+	\end{equation*}
+	Thus $\pi$ is always co-orientable.
 	Furthermore, we see that
-	$$\Or(g^*TM) \cong \Or(e^*\pi^*TM) \cong e^*\Or(\pi^*TM) \cong e^*\Or(T(M \times \R^N)) \cong \Or(e^*T(M \times \R^N)).$$ So $e$ is co-orientable if and only if $g$ is co-orientable.
+	\begin{equation*}
+		\Or(g^*TM) \cong \Or(e^*\pi^*TM) \cong e^*\Or(\pi^*TM) \cong e^*\Or(T(M \times \R^N)) \cong \Or(e^*T(M \times \R^N)).
+	\end{equation*}
+	So $e$ is co-orientable if and only if $g$ is co-orientable.
 	But $e$ is an immersion, and so it is co-orientable if and only if the normal bundle of the image is trivial by the discussion preceding \cref{normal co-or}.
 \end{proof}
 
@@ -493,7 +499,7 @@ For this the following lemma is useful.
 \end{lemma}
 
 \begin{proof}
-	Over $W \times t_0$, we have $\Or(T(W \times I)) \cong \Or(TW \oplus TI) \cong \Or(TW)\otimes \Or (TI) \cong \Or(TW)$, while the restriction of $G^*\Or(TM)$ over $W \times t_0$ is isomorphic to $g^*\Or(TM)$.
+	Over $W \times t_0$, we have $\Or(T(W \times I)) \cong \Or(TW \oplus TI) \cong \Or(TW) \otimes \Or (TI) \cong \Or(TW)$, while the restriction of $G^*\Or(TM)$ over $W \times t_0$ is isomorphic to $g^*\Or(TM)$.
 	If $G$ is co-orientable then there is a nowhere-vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM))$, so restricting to $W \times t_0$ and using the above identifications we obtain a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM))$ over $W \times t_0$, hence $g$ is co-orientable.
 	Conversely,
 	if $g$ is co-orientable, there is a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM)$ over $W \times t_0$.
@@ -666,7 +672,7 @@ Before getting into the specifics of the construction, we need to make the follo
 
 	Applying these ideas to the exact sequences of Equation~\eqref{pullback exact},
 	we have an isomorphism
-	$\Or(TP) \otimes \Or(\nu_{P \subset V \times W}) \cong \Or (T(V \times W)) \cong \Or(TV)\otimes \Or(TW)$ and similarly for the second exact sequence.
+	$\Or(TP) \otimes \Or(\nu_{P \subset V \times W}) \cong \Or (T(V \times W)) \cong \Or(TV) \otimes \Or(TW)$ and similarly for the second exact sequence.
 	These fit into a not-necessarily-commutative square
 	\begin{equation}\label{co-or stuff}
 		\begin{tikzcd}
@@ -1370,13 +1376,13 @@ Before getting to co-orientations, we first show that a product of proper maps i
 	using that $\pi_M(f \times g) = f\pi_V \colon V \times W \to M$ and $\pi_N(f \times g) = g\pi_W \colon V \times W \to N$.
 	So
 	\begin{multline*}
-		(f \times g)^*\Or(T(M \times N)) \cong \Or((f \times g)^*T(M \times N))\\ \cong \Or(\pi_V^*f^*TM)\otimes \Or(\pi_W^*g^*TN) \cong \pi_V^*f^*\Or(TM)\otimes \pi_W^*g^*\Or(TN).
+		(f \times g)^*\Or(T(M \times N)) \cong \Or((f \times g)^*T(M \times N))\\ \cong \Or(\pi_V^*f^*TM) \otimes \Or(\pi_W^*g^*TN) \cong \pi_V^*f^*\Or(TM) \otimes \pi_W^*g^*\Or(TN).
 	\end{multline*}
 	Thus if $\Or(TV) \cong f^*\Or(TM)$ and $\Or(TW) \cong g^*\Or(TN)$, we can construct isomorphisms $\Or(T(V \times W)) \cong (f \times g)^*\Or(T(M \times N))$.
 \end{proof}
 
 \begin{definition}\label{D: co-oriented exterior}
-	If $f \colon V \to M$ and $g \colon W \to N$ are co-oriented maps of manifolds with corners with co-orientations given by isomorphisms $\phi:\Or(TV) \to f^*\Or(TM)$ and $\psi:\Or(TW) \to g^*\Or(TN)$, we define the \textbf{product co-orientation} of $f \times g \colon V \times W \to M \times N$ by the isomorphism $(-1)^{(m-v)w}\pi_V^*\phi\otimes \pi_W^*\psi$.
+	If $f \colon V \to M$ and $g \colon W \to N$ are co-oriented maps of manifolds with corners with co-orientations given by isomorphisms $\phi:\Or(TV) \to f^*\Or(TM)$ and $\psi:\Or(TW) \to g^*\Or(TN)$, we define the \textbf{product co-orientation} of $f \times g \colon V \times W \to M \times N$ by the isomorphism $(-1)^{(m-v)w}\pi_V^*\phi \otimes \pi_W^*\psi$.
 	In particular, if at $x \in V$ the co-orientation of $f$ is given locally by $(\beta_V,\beta_M)$ and at $y \in W$ the co-orientation of $g$ is given locally by $(\beta_W,\beta_N)$, then up to standard abuses of notation the product co-orientation is locally represented at $(x,y)$ by $$(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
 
 	Following our standard conventions, we often denote this product manifold over $M \times N$ by simply $V \times W$.

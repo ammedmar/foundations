@@ -5,7 +5,7 @@
 \label{S: products}
 
 
-In this section we consider products of geometric chains and cochains, first simply as chains and cochains and then as pairings on homology and cohomology. These pairings are all built from the fiber products and exterior products of maps as defined in \cref{S: orientations and co-orientations}. However, while the exterior products were fully defined, the fiber products required transversality of $f \colon V \to M$ and $g \colon W \to M$ in order for $V \times_M W$ to be a well-defined manifold with corners possessing an oriented or co-oriented map to $M$. Consequently, the fiber products do not induce fully-defined chain- and cochain-level products such as a pairing $C^*_\Gamma(M)\otimes C^*_\Gamma(M) \to C^*_\Gamma(M)$. At best we can hope for a partially-defined (co)chain-level pairing, though even this is not clear once we take into account that a geometric chain or cochain is not represented simply by a single map $V \to M$ but is rather an equivalence class of such mappings up to triviality and degeneracy.
+In this section we consider products of geometric chains and cochains, first simply as chains and cochains and then as pairings on homology and cohomology. These pairings are all built from the fiber products and exterior products of maps as defined in \cref{S: orientations and co-orientations}. However, while the exterior products were fully defined, the fiber products required transversality of $f \colon V \to M$ and $g \colon W \to M$ in order for $V \times_M W$ to be a well-defined manifold with corners possessing an oriented or co-oriented map to $M$. Consequently, the fiber products do not induce fully-defined chain- and cochain-level products such as a pairing $C^*_\Gamma(M) \otimes C^*_\Gamma(M) \to C^*_\Gamma(M)$. At best we can hope for a partially-defined (co)chain-level pairing, though even this is not clear once we take into account that a geometric chain or cochain is not represented simply by a single map $V \to M$ but is rather an equivalence class of such mappings up to triviality and degeneracy.
 
 In \cref{S: chain products}, we address this issue and show that there is a natural notion of transversality among chains and cochains, despite the ambiguity in representing chains and cochains. We use this to provide partially-defined cup, cap, and intersection pairings among geometric chains and cochains. We consider it important to have such pairings, even when only partially defined, as cochain algebras contain much information that is lost on passage to cohomology. For example, the singular cochains of a space are what carry the $E_\infty$-algebra structure, while passage to cohomology often contains just shadows of this structure, such as the Steenrod squares. We also provide fully-defined chain and cochain exterior products, though these give us less trouble.
 In \cref{S: (co)chain properties}, we collect the various properties of these partially-defined products, mostly based on properties we have established for fiber products of maps in earlier sections.
@@ -807,11 +807,11 @@ In this section we observe that the partially-defined cup, cap, and intersection
 Let $M$ and $N$ be manifolds without boundary. The chain cross product, cochain cross product, cup product, cap product, and, if $M$ is oriented, intersection product induce fully-defined bilinear maps
 
 \begin{align*}
-\times:& H^\Gamma_*(M)\otimes H^\Gamma_*(N) \to H^\Gamma_*(M \times N)\\
-\times:& H_\Gamma^*(M)\otimes H_\Gamma^*(N) \to H_\Gamma^*(M \times N)\\
-\uplus:& H_\Gamma^*(M)\otimes H_\Gamma^*(M) \to H_\Gamma^*(M)\\
-\nplus:& H_\Gamma^*(M)\otimes H^\Gamma_*(M) \to H^\Gamma_*(M)\\
-\bullet:& H^\Gamma_*(M)\otimes H^\Gamma_*(M) \to H^\Gamma_*(M).\\
+\times:& H^\Gamma_*(M) \otimes H^\Gamma_*(N) \to H^\Gamma_*(M \times N)\\
+\times:& H_\Gamma^*(M) \otimes H_\Gamma^*(N) \to H_\Gamma^*(M \times N)\\
+\uplus:& H_\Gamma^*(M) \otimes H_\Gamma^*(M) \to H_\Gamma^*(M)\\
+\nplus:& H_\Gamma^*(M) \otimes H^\Gamma_*(M) \to H^\Gamma_*(M)\\
+\bullet:& H^\Gamma_*(M) \otimes H^\Gamma_*(M) \to H^\Gamma_*(M).\\
 \end{align*}
 \end{theorem}
 
@@ -996,7 +996,7 @@ $D(\Psi\Phi \times \id_{\R^n})$ contains $T_xX \times 0 \times \R^n$. By our con
 \subsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}
 
 When applying the cap product to a chain and cochain of the same degree, we can compose with the augmentation map $\aug:H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
-$$H^i_\Gamma(M)\otimes H_i^\Gamma(M) \xr{\nplus} H_0^\Gamma(M) \to \Z.$$
+$$H^i_\Gamma(M) \otimes H_i^\Gamma(M) \xr{\nplus} H_0^\Gamma(M) \to \Z.$$
 Taking the adjunct then provides a map
 $$\alpha: H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z).$$
 Tracing through the definitions, this maps acts by counting the intersection number between a geometric chain and a geometric cochain in the sense of \cref{D: intersection number,D: intersection number}.
@@ -1053,9 +1053,9 @@ Note that while we obtain the expected Universal Coeficient Theorem relating geo
 \begin{theorem}\label{T: intersection is cup product}
 On the category of smooth manifold without boundary and continuous maps, there is for each $p\geq 0$ a natural isomorphism of functors $\Phi_p: H^p(-) \to H^p_\Gamma(-)$ from singular cohomology to geometric cohomology that is also compatible with cup products. In other words, for each manifold without boundary $M$ there is a commutative diagram
 \begin{diagram}
-H^p(M)\otimes H^q(M)&\rTo^{\smile}&H^{p+q}(M)\\
-\dTo^{\Phi_p\otimes \Phi_q}&&\dTo_{\Phi_{p+q}}\\
-H^p_\Gamma(M)\otimes H^q_\Gamma(M)&\rTo^{\uplus}&H^{p+q}_\Gamma(M).
+H^p(M) \otimes H^q(M)&\rTo^{\smile}&H^{p+q}(M)\\
+\dTo^{\Phi_p \otimes \Phi_q}&&\dTo_{\Phi_{p+q}}\\
+H^p_\Gamma(M) \otimes H^q_\Gamma(M)&\rTo^{\uplus}&H^{p+q}_\Gamma(M).
 \end{diagram}
 \end{theorem}
 
@@ -1070,7 +1070,7 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 
 
 \begin{proposition}[Kreck and Singhof, Proposition 12 of \cite{Krec10b}]\label{P: Kreck-Singhof pairing}
-Consider singular cohomology $H^*(-)$ as a cohomology theory on smooth manifolds\footnote{As defined in \cite{Krec10b}; see the proof of \cref{T: geometric is singular} above.}. Suppose $\star$ is a natural multiplication on $H^*(-)$ such that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$ (and with the obvious extension when $M$ is not connected). Then if\footnote{Rather than $s_p \times s_q$, Kreck and Singhof require $\pi_1^*(s_p) \star \pi_2^*(s_q)$ to be the element of $H^{p+q}(S^p \times S^q)$ that evaluates to $1$ on the fundamental class of $S^p \times S^q$, but with our conventions that tensor products of cochains act by $(\alpha\otimes \beta)(x\otimes y) = \alpha(x)\beta(y)$, these are the same cohomology class (c.f.\ \cite[page 245]{Span81} and \cite[Section 3B]{Hatc02}. } $\pi_1^*(s_p) \star \pi_2^*(s_q) = s_p \times s_q \in H^{p+q}(S^p \times S^q)$ for all $p,q\geq 1$, the product $\star$ is the cup product.
+Consider singular cohomology $H^*(-)$ as a cohomology theory on smooth manifolds\footnote{As defined in \cite{Krec10b}; see the proof of \cref{T: geometric is singular} above.}. Suppose $\star$ is a natural multiplication on $H^*(-)$ such that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$ (and with the obvious extension when $M$ is not connected). Then if\footnote{Rather than $s_p \times s_q$, Kreck and Singhof require $\pi_1^*(s_p) \star \pi_2^*(s_q)$ to be the element of $H^{p+q}(S^p \times S^q)$ that evaluates to $1$ on the fundamental class of $S^p \times S^q$, but with our conventions that tensor products of cochains act by $(\alpha \otimes \beta)(x \otimes y) = \alpha(x)\beta(y)$, these are the same cohomology class (c.f.\ \cite[page 245]{Span81} and \cite[Section 3B]{Hatc02}. } $\pi_1^*(s_p) \star \pi_2^*(s_q) = s_p \times s_q \in H^{p+q}(S^p \times S^q)$ for all $p,q\geq 1$, the product $\star$ is the cup product.
 \end{proposition}
 \begin{proof}
 For a smooth manifold $M$, let $\alpha \in H^p(M)$ and $\beta \in H^q(M)$.
@@ -1151,8 +1151,8 @@ H^p_\Gamma(S^p) \cong H^p_\Gamma(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H_\Gamma^
 
 
 
-For each $M$, we can now define pairings $\star$ on $H^p(-)\otimes H^q(-) \to H^{p+q}(-)$ by the composition
-$$H^p(M)\otimes H^q(M) \xr{\Phi_p\otimes \Phi_q}H^p_\Gamma(M)\otimes H^q_\Gamma(M) \xr{\uplus}H^{p+q}_\Gamma(M) \xr{\Phi_{p+q}^{-1}}H^{p+q}(M).$$
+For each $M$, we can now define pairings $\star$ on $H^p(-) \otimes H^q(-) \to H^{p+q}(-)$ by the composition
+$$H^p(M) \otimes H^q(M) \xr{\Phi_p \otimes \Phi_q}H^p_\Gamma(M) \otimes H^q_\Gamma(M) \xr{\uplus}H^{p+q}_\Gamma(M) \xr{\Phi_{p+q}^{-1}}H^{p+q}(M).$$
 This pairing is natural, as all the maps are natural. We will apply \cref{P: Kreck-Singhof pairing} to show that this is really the cup product, which will prove the theorem.
 
 We first show that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class of $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$. Let $pt$ be an arbitrary point in $M$ and consider the diagram
@@ -1221,15 +1221,15 @@ Recall from \cref{T: hom iso map} that we have an isomorphism $H_*(NK^{sm}_*(M))
 \begin{lemma}\label{L: chain cross compare}
 Let $M$ and $N$ be manifolds without boundary. Then the following diagram commutes:
 \begin{diagram}
-NK^{sm}_*(M)\otimes NK^{sm}_*(N)&\rTo^{\times}&NK^{sm}_*(M \times N)\\
+NK^{sm}_*(M) \otimes NK^{sm}_*(N)&\rTo^{\times}&NK^{sm}_*(M \times N)\\
 \dTo&&\dTo\\
-C_*^\Gamma(M)\otimes C_*^\Gamma(N)&\rTo^{ \times }&C_*^\Gamma(M \times N).
+C_*^\Gamma(M) \otimes C_*^\Gamma(N)&\rTo^{ \times }&C_*^\Gamma(M \times N).
 \end{diagram}
 This induces the commutative diagram
 \begin{diagram}
-H_*(NK^{sm}_*(M))\otimes H_*(NK^{sm}_*(N))&\rTo^{\times}&H_*(NK^{sm}_*(M \times N))\\
+H_*(NK^{sm}_*(M)) \otimes H_*(NK^{sm}_*(N))&\rTo^{\times}&H_*(NK^{sm}_*(M \times N))\\
 \dTo^\cong&&\dTo_\cong\\
-H_*^\Gamma(M)\otimes H_*^\Gamma(N)&\rTo^{ \times }&H_*^\Gamma(M \times N).
+H_*^\Gamma(M) \otimes H_*^\Gamma(N)&\rTo^{ \times }&H_*^\Gamma(M \times N).
 \end{diagram}
 \end{lemma}
 
@@ -1237,7 +1237,7 @@ H_*^\Gamma(M)\otimes H_*^\Gamma(N)&\rTo^{ \times }&H_*^\Gamma(M \times N).
 \begin{theorem}[K\"unneth Theorem]\label{T: homology kunneth}
 Let $M$ and $N$ be manifolds without boundary. There are natural short exact sequences
 \begin{diagram}
-0&\rTo&\oplus_{p+q = a}H_p^\Gamma(M)\otimes H_q^\Gamma(N)&\rTo^{ \times }&H_{p+q}^\Gamma(M \times N)&\rTo&\oplus_{p+q = a-1}H_p^\Gamma(M)* H_q^\Gamma(N)&\rTo&0
+0&\rTo&\oplus_{p+q = a}H_p^\Gamma(M) \otimes H_q^\Gamma(N)&\rTo^{ \times }&H_{p+q}^\Gamma(M \times N)&\rTo&\oplus_{p+q = a-1}H_p^\Gamma(M)* H_q^\Gamma(N)&\rTo&0
 \end{diagram}
 that split (non-naturally).
 \end{theorem}
@@ -1260,16 +1260,16 @@ $\uV \times \uW = \pi_M^*(\uV)\uplus\pi_N^*(\uW)$, which follows from \cref{C: c
 \begin{proposition}\label{P: cross product is cross product}
 On the category of smooth manifold without boundary and continuous maps, the isomorphisms $\Phi_p$ from singular cohomology to geometric cohomology are compatible with cross products. In other words, for manifolds without boundary $M$ and $N$ there are commutative diagrams
 \begin{diagram}
-H^p(M)\otimes H^q(N)&\rTo^{\times}&H^{p+q}(M \times N)\\
-\dTo_\cong^{\Phi_p\otimes \Phi_q}&&\dTo^\cong_{\Phi_{p+q}}\\
-H^p_\Gamma(M)\otimes H^q_\Gamma(N)&\rTo^{ \times }&H^{p+q}_\Gamma(M \times N).
+H^p(M) \otimes H^q(N)&\rTo^{\times}&H^{p+q}(M \times N)\\
+\dTo_\cong^{\Phi_p \otimes \Phi_q}&&\dTo^\cong_{\Phi_{p+q}}\\
+H^p_\Gamma(M) \otimes H^q_\Gamma(N)&\rTo^{ \times }&H^{p+q}_\Gamma(M \times N).
 \end{diagram}
 \end{proposition}
 
 \begin{theorem}[K\"unneth Theorem]\label{T: cohomology kunneth}
 If either $H^i_\Gamma(M)$ is finitely generated for all $i$ or $H^i_\Gamma(N)$ is finitely generated for all $i$, then there are natural short exact sequences
 \begin{diagram}
-0&\rTo&\oplus_{p+q = a}H^p_\Gamma(M)\otimes H^q_\Gamma(N)&\rTo^{ \times }&H^{p+q}_\Gamma(M \times N)&\rTo&\oplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N)&\rTo&0
+0&\rTo&\oplus_{p+q = a}H^p_\Gamma(M) \otimes H^q_\Gamma(N)&\rTo^{ \times }&H^{p+q}_\Gamma(M \times N)&\rTo&\oplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N)&\rTo&0
 \end{diagram}
 that split (non-naturally).
 \end{theorem}
@@ -1286,11 +1286,11 @@ We can also approach the K\"unneth theorem with a more explict comparison map by
 Let $M$ and $N$ be cubulated manifolds without boundary, and let $M \times N$ have the product cubulation. Let $K^*$ denote the complex of cubical cochains for the appropriate cubulation. The following diagram commutes
 
 \begin{diagram}
-C^*_{\Gamma}(M)\otimes C^*_{\Gamma}(N)&\rTo^\times& C^*_{\Gamma}(M \times N)\\
+C^*_{\Gamma}(M) \otimes C^*_{\Gamma}(N)&\rTo^\times& C^*_{\Gamma}(M \times N)\\
 \uInto&&\uInto\\
-C^*_{\Gamma\pf}(M)\otimes C^*_{\Gamma\pf}(N)&\rTo^\times& C^*_{\Gamma\pf}(M \times N)\\
-\dTo^{\mc I\otimes \mc I}&&\dTo_{\mc I}\\
-K^*(M)\otimes K^*(N)&\rTo^\times& K^*(M \times N).
+C^*_{\Gamma\pf}(M) \otimes C^*_{\Gamma\pf}(N)&\rTo^\times& C^*_{\Gamma\pf}(M \times N)\\
+\dTo^{\mc I \otimes \mc I}&&\dTo_{\mc I}\\
+K^*(M) \otimes K^*(N)&\rTo^\times& K^*(M \times N).
 \end{diagram}
 \end{proposition}
 \begin{proof}
@@ -1312,11 +1312,11 @@ The following corollary is now immediate from \cref{P: cross product comparison,
  If $M$ and $N$ are cubulated manifolds without boundary and each $H^i(M)$ and $H^j(N)$ is finitely generated, then the cubical cohomology cross product is isomorphic to the geometric cohomology cross product. In particular, we have the following diagram with all vertical maps isomorphisms, letting $H_{cub}^*$ stand for the appropriate cubical cohomology groups:
 
 \begin{diagram}
-H^*_{\Gamma}(M)\otimes H^*_{\Gamma}(N)&\rTo^\times& H^*_{\Gamma}(M \times N)\\
+H^*_{\Gamma}(M) \otimes H^*_{\Gamma}(N)&\rTo^\times& H^*_{\Gamma}(M \times N)\\
 \uTo_\cong&&\uTo^\cong\\
-H^*_{\Gamma\pf}(M)\otimes H^*_{\Gamma\pf}(N)&\rTo^\times& H^*_{\Gamma\pf}(M \times N)\\
-\dTo_\cong^{\mc I\otimes \mc I}&&\dTo^\cong_{\mc I}\\
-H_{cub}^*(M)\otimes H_{cub}^*(N)&\rTo^\times& H_{cub}^*(M \times N).
+H^*_{\Gamma\pf}(M) \otimes H^*_{\Gamma\pf}(N)&\rTo^\times& H^*_{\Gamma\pf}(M \times N)\\
+\dTo_\cong^{\mc I \otimes \mc I}&&\dTo^\cong_{\mc I}\\
+H_{cub}^*(M) \otimes H_{cub}^*(N)&\rTo^\times& H_{cub}^*(M \times N).
 \end{diagram}
 \end{corollary}
 
@@ -1337,7 +1337,7 @@ Use pullback of cross product after showing that cross product agrees with singu
 
 
 \begin{definition}
-Suppose $M$ and $N$ are manifolds. Then there is a product map $C^*_\Gamma(M)\otimes C^*_\Gamma(N) \to C^*_\Gamma(M \times N)$ that takes geometric cochains $\uW \in C^*_\Gamma(M)$ and $\uV \in C^*_\Gamma(N)$ represented by $r_W \colon W \to M$ and $r_V \colon V \to N$ to the cochain $\uW \times \uV$ represented by $r_W \times r_V \colon W \times V \to M \times N$ with the product co-orientation. In other words, if $(\beta_W,\beta_M)$ and $(\beta_V,\beta_N)$ are the corresponding co-orientations of $\uW$ and $\uV$, then the product co-orientation is $(\beta_W \wedge \beta_V,\beta_M \wedge \beta_N)$. By linear extension we obtain the \textbf{(external) cross product} map $C^*_\Gamma(M)\otimes C^*_\Gamma(N) \to C^*_\Gamma(M \times N)$.
+Suppose $M$ and $N$ are manifolds. Then there is a product map $C^*_\Gamma(M) \otimes C^*_\Gamma(N) \to C^*_\Gamma(M \times N)$ that takes geometric cochains $\uW \in C^*_\Gamma(M)$ and $\uV \in C^*_\Gamma(N)$ represented by $r_W \colon W \to M$ and $r_V \colon V \to N$ to the cochain $\uW \times \uV$ represented by $r_W \times r_V \colon W \times V \to M \times N$ with the product co-orientation. In other words, if $(\beta_W,\beta_M)$ and $(\beta_V,\beta_N)$ are the corresponding co-orientations of $\uW$ and $\uV$, then the product co-orientation is $(\beta_W \wedge \beta_V,\beta_M \wedge \beta_N)$. By linear extension we obtain the \textbf{(external) cross product} map $C^*_\Gamma(M) \otimes C^*_\Gamma(N) \to C^*_\Gamma(M \times N)$.
 \end{definition}
 
 
@@ -1353,13 +1353,13 @@ To see that we have a chain map, we observe that \red{PUT SOMETHING IN THE CO-OR
 
 The following is now standard homological algebra:
 \begin{corollary}
-The external cochain cross product induces an \textbf{(external) cohomology cross product} $H^i_\Gamma(M)\otimes H^j_\Gamma(N) \to H^{i+j}_\Gamma(M \times N)$.
+The external cochain cross product induces an \textbf{(external) cohomology cross product} $H^i_\Gamma(M) \otimes H^j_\Gamma(N) \to H^{i+j}_\Gamma(M \times N)$.
 \end{corollary}
 
 
 
 \begin{theorem}
-Let $M$ and $N$ be manifolds. Then the geometric cohomology cross product $H^i_\Gamma(M)\otimes H^j_\Gamma(N) \to H^{i+j}_\Gamma(M \times N)$ is isomorphic to the singular cohomology cross product $H^i(M)\otimes H^j(N) \to H^{i+j}(M \times N)$.
+Let $M$ and $N$ be manifolds. Then the geometric cohomology cross product $H^i_\Gamma(M) \otimes H^j_\Gamma(N) \to H^{i+j}_\Gamma(M \times N)$ is isomorphic to the singular cohomology cross product $H^i(M) \otimes H^j(N) \to H^{i+j}(M \times N)$.
 \end{theorem}
 
 
@@ -1386,38 +1386,38 @@ In \cref{T: equivalent cap,C: cap relation} we show that the cubical cap product
 
 In this section we discuss cup and cap products for cubical and singular cubical homology and cohomology. This will be needed below for comparing the geometric cap product with the classical cap products.
 
-We first recall from Massey \cite[Chapter XI]{Mas91} some results about the normalized singular cubical chain complexes, which we have been denoting $NK_*(-)$, though we utilize some different notation from Massey. Just as for the more familiar singular simplicial chains, there is an Eilenberg-Zilber theorem that provides a chain homotopy equivalence between $NK_*(X)\otimes NK_*(Y)$ and $NK_*(X \times Y)$ for any spaces $X$ and $Y$. Explicit constructions of such homotopy inverse maps are given in \cite[Section XI.5]{Mas91}.
-The map $\zeta: NK_*(X)\otimes NK_*(Y) \to NK_*(X \times Y)$ is simply the cross product that takes $S\otimes T$ for representative singular cubes $S: \interval^m \to X$ and $T:\interval^n \to Y$ to the product $S \times T:\interval^m \times \interval^n = \interval^{m+n} \to X \times Y$. If $S$ or $T$ is degenerate, so is $S \times T$, so this product is well defined for the normalized complexes. The homotopy inverse map\footnote{Massey sometimes writes this map as $\eta$.} $\xi: NK_*(X \times Y) \to NK_*(X)\otimes NK_*(Y)$ takes $S:\interval^n \to X \times Y$ to
-$$\xi(S) = \sum \rho_{H,K}A_H(\pi_1S)\otimes B_K(\pi_2S),$$ where $\pi_i$ is the projection to the $i$th factor. The precise definitions of $\rho_{H,K}$, $A_H$, and $B_K$ will not need to concern us except to note that $H$ and $K$ are complementary subsets of $\{1,\ldots, n\}$, the sum is over all such partitions, $\rho_{H,K}$ is either $1$ or $-1$ (in fact it is the sign of permutation $HK$), and $A_H$ and $B_K$ are cubical faces of various dimensions of the singular cubes $\pi_1S$ and $\pi_2S$. Again, this construction is sufficiently compatible with degeneracies to be well defined for the normalized singular cube complexes. We also observe that if $X$ is a smooth manifold and our input singular cubes are smooth, then all other cubes appearing in the constructions are smooth.
+We first recall from Massey \cite[Chapter XI]{Mas91} some results about the normalized singular cubical chain complexes, which we have been denoting $NK_*(-)$, though we utilize some different notation from Massey. Just as for the more familiar singular simplicial chains, there is an Eilenberg-Zilber theorem that provides a chain homotopy equivalence between $NK_*(X) \otimes NK_*(Y)$ and $NK_*(X \times Y)$ for any spaces $X$ and $Y$. Explicit constructions of such homotopy inverse maps are given in \cite[Section XI.5]{Mas91}.
+The map $\zeta: NK_*(X) \otimes NK_*(Y) \to NK_*(X \times Y)$ is simply the cross product that takes $S \otimes T$ for representative singular cubes $S: \interval^m \to X$ and $T:\interval^n \to Y$ to the product $S \times T:\interval^m \times \interval^n = \interval^{m+n} \to X \times Y$. If $S$ or $T$ is degenerate, so is $S \times T$, so this product is well defined for the normalized complexes. The homotopy inverse map\footnote{Massey sometimes writes this map as $\eta$.} $\xi: NK_*(X \times Y) \to NK_*(X) \otimes NK_*(Y)$ takes $S:\interval^n \to X \times Y$ to
+$$\xi(S) = \sum \rho_{H,K}A_H(\pi_1S) \otimes B_K(\pi_2S),$$ where $\pi_i$ is the projection to the $i$th factor. The precise definitions of $\rho_{H,K}$, $A_H$, and $B_K$ will not need to concern us except to note that $H$ and $K$ are complementary subsets of $\{1,\ldots, n\}$, the sum is over all such partitions, $\rho_{H,K}$ is either $1$ or $-1$ (in fact it is the sign of permutation $HK$), and $A_H$ and $B_K$ are cubical faces of various dimensions of the singular cubes $\pi_1S$ and $\pi_2S$. Again, this construction is sufficiently compatible with degeneracies to be well defined for the normalized singular cube complexes. We also observe that if $X$ is a smooth manifold and our input singular cubes are smooth, then all other cubes appearing in the constructions are smooth.
 
 As usual, one then defines cup and cap products (up to one's favorite sign conventions) as follows (using our current sign conventions). If $\alpha, \beta \in NK^*(X) = \Hom(NK_*(X),\Z)$, then $\alpha\smile \beta \in \Hom(NK_*(X),\Z)$ acts on a normalized singular cube $S$ by
 \begin{equation}\label{E: cubical cup}
-(\alpha \smile \beta)(S) = (\alpha\otimes \beta)(\xi(\diag S)),
+(\alpha \smile \beta)(S) = (\alpha \otimes \beta)(\xi(\diag S)),
 \end{equation}
 with $\diag$ the diagonal map $X \to X \times X$,
 while the cap product $\alpha\frown S$ is given by
 \begin{equation}\label{E: cubical cap}
-\alpha\frown S = (\id\otimes \alpha) (\xi(\diag S)),
+\alpha\frown S = (\id \otimes \alpha) (\xi(\diag S)),
 \end{equation}
-identifying $NK_*(X)\otimes \Z$ with $NK_*(X)$.
+identifying $NK_*(X) \otimes \Z$ with $NK_*(X)$.
 
 
 
 Now suppose that $X$ is a cubical complex, and let $K_*(X)$ and $K^*(X) = \Hom(K_*(X),\Z)$ be the cubical chain and cochain complexes. If $E, F \in K_*(X)$ are any cubical faces, then $E \times F$ is also a cubical face. Furthermore, abusing notation by conflating $E$ with its embedding into the cubical complex (thought of as a space), we have $\pi_1\diag(E) = \pi_2\diag(E) = E$, and every face of $E$ is also a cube in the complex. So now if $M$ is a cubulated manifold without boundary and we abuse notation by using $K_*$ for the cubical chain complex $K_*(M)$ corresponding to the cubulation $X$ and $K_*(M \times M)$ for the cubical complex coming from the product cubulation $X \times X$, we have the following commutative diagrams with the upward arrows being inclusions (note that all complexes are free) and the lower horizontal maps being the restrictions of the top horizontal maps:
 \begin{diagram}
-NK_*(M)\otimes NK_*(M)&\rTo^\zeta&NK_*(M \times M)\\
+NK_*(M) \otimes NK_*(M)&\rTo^\zeta&NK_*(M \times M)\\
 \uInto&&\uInto\\
-NK^{sm}_*(M)\otimes NK^{sm}_*(M)&\rTo^\zeta&NK^{sm}_*(M \times M)\\
+NK^{sm}_*(M) \otimes NK^{sm}_*(M)&\rTo^\zeta&NK^{sm}_*(M \times M)\\
 \uInto&&\uInto\\
-K_*(M)\otimes K_*(M)&\rTo^\zeta&K_*(M \times M).
+K_*(M) \otimes K_*(M)&\rTo^\zeta&K_*(M \times M).
 \end{diagram}
 and
 \begin{diagram}
-NK_*(M)\otimes NK_*(M)&\lTo^\xi&NK_*(M \times M)\\
+NK_*(M) \otimes NK_*(M)&\lTo^\xi&NK_*(M \times M)\\
 \uInto&&\uInto\\
-NK^{sm}_*(M)\otimes NK^{sm}_*(M)&\lTo^\xi&NK^{sm}_*(M \times M)\\
+NK^{sm}_*(M) \otimes NK^{sm}_*(M)&\lTo^\xi&NK^{sm}_*(M \times M)\\
 \uInto&&\uInto\\
-K_*(M)\otimes K_*(M)&\lTo^\xi&K_*(M \times M).
+K_*(M) \otimes K_*(M)&\lTo^\xi&K_*(M \times M).
 \end{diagram}
 
 The top map in each diagram is a homotopy equivalences, the vertical maps are all quasi-isomorphisms by \cref{P: singular smooth cubes} and the proof of \cref{T: cubical homology iso},
@@ -1511,8 +1511,8 @@ where $\pi_1 \colon M \times M \to M$ is the projection to the first factor.
 \end{lemma}
 
 \begin{proof}
-For a cubical face $E$ representing an element of $K_*(M)$, let us writem$\xi(\diag (E)) = \sum_i E_{1i}\otimes E_{2i}$, analogously to Sweedler notation. By definition, at the chain/cochain level $\mc I(V)\frown E$ is given by
-$$(1\otimes \mc I(V))(\xi(\diag (E))) = (1\otimes \mc I(V))\left(\sum_i E_{1i}\otimes E_{2i}\right) = \sum_i E_{1i}\otimes \mc I(V)(E_{2i}) = \sum_i \mc I(V)(E_{2i})\cdot E_{1i},$$
+For a cubical face $E$ representing an element of $K_*(M)$, let us writem$\xi(\diag (E)) = \sum_i E_{1i} \otimes E_{2i}$, analogously to Sweedler notation. By definition, at the chain/cochain level $\mc I(V)\frown E$ is given by
+$$(1 \otimes \mc I(V))(\xi(\diag (E))) = (1 \otimes \mc I(V))\left(\sum_i E_{1i} \otimes E_{2i}\right) = \sum_i E_{1i} \otimes \mc I(V)(E_{2i}) = \sum_i \mc I(V)(E_{2i})\cdot E_{1i},$$
 where $\mc I(V)(E_{2i})$ is the intersection number of $V$ with $E_{2i}$ by \cref{D: intersection homomorphism}. So $\mc J(\mc I(V)\frown W)$ is just the geometric cochain represented by $\sum_i I(V,E_{2i})E_{1i} = \sum_i \aug(V \times_M E_{2i})E_{1i} $, identifying the cubical face $E_{1i}$ with its embedding into $M$. Note that we have $I(V,E_{2i}) = 0$ if $V$ and $E_{2i}$ do not have complementary dimension in $M$, so we can take the sum $\sum_i I(V,E_{2i})E_{1i}$ to be over those $i$ such that $E_{2i}$ has complementary dimension to $V$.
 
 On the other hand, $\mc J(\Delta(E))$ is the geometric chain corresponding to $\sum_i E_{1i} \times E_{2i}$, and, applying our transversality assumption, we have
