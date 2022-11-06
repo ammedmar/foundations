@@ -182,7 +182,7 @@ Reflexivity: For any $W$, we have $W\sqcup -W$ trivial via the map that intercha
 
 Symmetry: If $V\sqcup -W$ is the union of trivial and degenerate manifolds over $M$ then certainly so is $W\sqcup -V = -(V\sqcup -W)$.
 
-Transitivity: If $V\sqcup -W$ and $W\sqcup -U$ are in $Q_*(M)$ (or $Q^*(M)$), then so is $V\sqcup -W\sqcup W\sqcup -U\cong V\sqcup -U\sqcup W\sqcup -W$. We know $W\sqcup -W$ is trivial, and so $V\sqcup -U$ is in $Q_*(M)$ (or $Q^*(M)$) by \cref{L: Lipy12}.
+Transitivity: If $V\sqcup -W$ and $W\sqcup -U$ are in $Q_*(M)$ (or $Q^*(M)$), then so is $V\sqcup -W\sqcup W\sqcup -U \cong V\sqcup -U\sqcup W\sqcup -W$. We know $W\sqcup -W$ is trivial, and so $V\sqcup -U$ is in $Q_*(M)$ (or $Q^*(M)$) by \cref{L: Lipy12}.
 \end{proof}
 
 
@@ -309,7 +309,7 @@ If $M$ is compact and oriented then tautologically $C_*^\Gamma(M) = C_\Gamma^{\d
 \end{example}
 
 \begin{example}[Dimension axiom]\label{E: dimension}
-If $M$ is a point, then every $r_W: W \to M$ with $\dim(W)>0$ is degenerate: If $\dim(W)>1$, both $W$ and $\bd W$ must have small rank. If $\dim(W) = 1$ then $W$ is a union of closed intervals and circles, so it has small rank, while $\bd W$ is trivial, consisting of pairs of maps $pt \to pt$ with opposite (co-)orientations. Thus $C_*^\Gamma(pt) = C^{-*}_\Gamma(pt) = 0$ unless $* = 0$, and so $H_*^\Gamma(pt) = H^{-*}_\Gamma(pt) = 0$ unless $* = 0$. When $* = 0$, the identity $pt \to pt$ is a cycle (or cocycle) that does not (co)bound, and as in ordinary bordism theory we have $H_0^\Gamma(pt)\cong H^0_\Gamma(pt)\cong \Z$.
+If $M$ is a point, then every $r_W: W \to M$ with $\dim(W)>0$ is degenerate: If $\dim(W)>1$, both $W$ and $\bd W$ must have small rank. If $\dim(W) = 1$ then $W$ is a union of closed intervals and circles, so it has small rank, while $\bd W$ is trivial, consisting of pairs of maps $pt \to pt$ with opposite (co-)orientations. Thus $C_*^\Gamma(pt) = C^{-*}_\Gamma(pt) = 0$ unless $* = 0$, and so $H_*^\Gamma(pt) = H^{-*}_\Gamma(pt) = 0$ unless $* = 0$. When $* = 0$, the identity $pt \to pt$ is a cycle (or cocycle) that does not (co)bound, and as in ordinary bordism theory we have $H_0^\Gamma(pt) \cong H^0_\Gamma(pt) \cong \Z$.
 \end{example}
 
 \begin{remark}\label{R: degen1}
@@ -516,7 +516,7 @@ If either $W \in PC^\Gamma_*(M)$ or $W \in PC_\Gamma^*(M)$, we have
 \begin{equation}\label{E: bd crease}
 \bd(\Cre(W))\cong(D_x\sqcup -D_-\sqcup -D_+)\times_{(-1,1)} W \bigsqcup -D\times_{(-1,1)}\bd W = W\sqcup -W^-\sqcup -W^+\sqcup -\Cre(\bd W),
 \end{equation}
-again interpreting these formulas in $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$, respectively, by composing the pullback maps to $W$ with $r_W \colon W \to M$. This first equality comes from our boundary formulas for $D$ and our Leibniz rules from \cref{S: orientations} and \cref{leibniz}. For the second equality we use, for example, that $\pi$ is an orientation preserving diffeomorphism from $D_+\cong [0,1)$ onto its image in $(-1,1)$, and so we have an orientation-preserving diffeomorphism $D_+\times_{(-1,1)} W\cong [0,1)\times_{(-1,1)} W = W^+$, and similarly in the co-oriented case.
+again interpreting these formulas in $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$, respectively, by composing the pullback maps to $W$ with $r_W \colon W \to M$. This first equality comes from our boundary formulas for $D$ and our Leibniz rules from \cref{S: orientations} and \cref{leibniz}. For the second equality we use, for example, that $\pi$ is an orientation preserving diffeomorphism from $D_+ \cong [0,1)$ onto its image in $(-1,1)$, and so we have an orientation-preserving diffeomorphism $D_+\times_{(-1,1)} W \cong [0,1)\times_{(-1,1)} W = W^+$, and similarly in the co-oriented case.
 
 \begin{comment}
 Next let us see how to use creasing in the context of chains and cochains.

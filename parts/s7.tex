@@ -940,7 +940,7 @@ We must start with two observations that were not needed in the proof of \cref{P
 First, as we are currently assuming that $V$ is compact, $L = H(V \times \bar D^N_{1/2}) \subset M$ is compact, and so by \cref{L: compact preimage} we have $e(g^{-1}(L)) \subset M \times \bar B^n_L$ for some closed ball $\bar B^n_L$. In particular, this implies that for $|s|\leq 1/2$ only points in the compact set $V \times \bar B^n_k$ can be taken by $H(-,s) \times \id_{\R^n}$ to points of $e(W)$ in $M \times \R^n$.
 
 Second, we also have to be more careful here about the map $e:W \times \R^n$, as its behavior can be more complicated than the embedding of a closed face of a cubulation.
-Let $W_j = ei_{\bd^jW}(\bd^jW)$, the image of $\bd^jW$ in $M \times \R^n$. As the maps $i_{\bd^jW}$ are not necessarily embeddings, it will not generally be the case that $W_j\cong \bd^jW$. However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jW}$ are proper maps, so $W_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Section I.10]{Bou98}).
+Let $W_j = ei_{\bd^jW}(\bd^jW)$, the image of $\bd^jW$ in $M \times \R^n$. As the maps $i_{\bd^jW}$ are not necessarily embeddings, it will not generally be the case that $W_j \cong \bd^jW$. However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jW}$ are proper maps, so $W_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Section I.10]{Bou98}).
 
 Now, suppose $(x,z) \in X \times \bar B^n_L$. As $f \times \id_{\R^n} = H_1(-,0) \times \id_{\R^n}$ is transverse $e:W \to M \times \R^n$, either $(r_X(x),z)\notin W_j$ or $r_X \times \id_{\R^n}$ is (plainly) transverse to $ei_{\bd^jW}$ at $(r_X(x),z)$. In the former case, as $W_j$ is closed, there is an open neighborhood $A_{(x,z)}$ of $(x,0,z) \in X \times D^N \times \R^n$ such that $(H_1 \times \id_{\R^n})(A_x) \cap W_j = \emptyset$. Now suppose that $(r_X(x),z) \in W_j$ and is transverse there to $ei_{\bd^jW}:\bd^jW \to M \times \R^n$. As $e$ is an embedding, the preimage of $(r_X(x),z)$ in $\bd^jW$ is the preimage of a point of $W$ under the boundary map $i_{\bd^jW}$, which is a finite set of points. Let $a \in \bd^jW$ be one point of the preimage. As the boundary maps are immersions, there is a neighborhood $C_a$ of $a$ in $\bd^jW$ on which $ei_{\bd^jW}$ restricts to an embedding from a $w-j$ dimensional manifold with corners into $M \times \R^n$. In fact, by choosing a chart around $a$ and using the definition of a smooth map of manifolds with corners, $ei_{\bd^jW}$ (composed with the chart map) extends to a smooth immersion of a neighborhood of $0 \in \R^{w-j}$ into $M \times \R^n$.
  By further appealing to charts and local diffeomorphisms, we can identify a neighborhood of $(r_X(x),z)$ in $M \times \R^n$ with $\R^{m+n}$ and the image of the extension of $ei_{\bd^jW}$ with $\R^{w-j} \times 0 \subset \R^{m+n}$.
@@ -1011,7 +1011,7 @@ If $H^i_\Gamma(M)$ is finitely generated, there is a short exact sequence
 \end{theorem}
 
 \begin{remark}
-The existence of a Universal Coefficient exact sequence holds even if $H^i_\Gamma(M)$ is not finitely generated, as we know by \cref{T: geometric is singular} that $H^i_\Gamma(M)\cong H^i(M)$, and then we have the usual singular cohomology Universal Coefficient Theorem. We can further identify $\Hom(H_i(M),\Z)$ and $\Ext(H_{i-1}(M),\Z)$ with $\Hom(H^\Gamma_i(M),\Z)$ and $\Ext(H^\Gamma_{i-1}(M),\Z)$, also using \cref{T: geometric is singular}. What we lose in this general case is that this approach does not allow us to identify the map $H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z)$ as given by counting intersection numbers.
+The existence of a Universal Coefficient exact sequence holds even if $H^i_\Gamma(M)$ is not finitely generated, as we know by \cref{T: geometric is singular} that $H^i_\Gamma(M) \cong H^i(M)$, and then we have the usual singular cohomology Universal Coefficient Theorem. We can further identify $\Hom(H_i(M),\Z)$ and $\Ext(H_{i-1}(M),\Z)$ with $\Hom(H^\Gamma_i(M),\Z)$ and $\Ext(H^\Gamma_{i-1}(M),\Z)$, also using \cref{T: geometric is singular}. What we lose in this general case is that this approach does not allow us to identify the map $H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z)$ as given by counting intersection numbers.
 \end{remark}
 
 
@@ -1033,7 +1033,7 @@ $$\aug\left( V \times_M \sum_jc_jE_j\right) = \sum_jc_j\aug(V \times_M E_j).$$
 
  On the other hand, by \cref{D: intersection homomorphism}, the composition counterclockwise takes $\uV$ to a map that acts on $\xi$ by $\sum_j I_M(V,E_j)$. But $I_M(V,E_j)$ is precisely $\aug(V \times_M E_j)$ by \cref{D: intersection number}. So the diagram commutes.
 
-We know that the $K_i(X)$ is a free abelian group, so the bottom map of the diagram is a surjection by the algebraic Universal Coefficient Theorem, with kernel $\Ext(H_{i-1}(X),\Z)$. The commutativity of the diagram thus implies that the top map of the diagram is a surjection with isomorphic kernel. To complete the proof, we again invoke \cref{T: cubical homology iso} to observe $\Ext(H_{i-1}(X),\Z)\cong \Ext(H^\Gamma_{i-1}(X),\Z)$.
+We know that the $K_i(X)$ is a free abelian group, so the bottom map of the diagram is a surjection by the algebraic Universal Coefficient Theorem, with kernel $\Ext(H_{i-1}(X),\Z)$. The commutativity of the diagram thus implies that the top map of the diagram is a surjection with isomorphic kernel. To complete the proof, we again invoke \cref{T: cubical homology iso} to observe $\Ext(H_{i-1}(X),\Z) \cong \Ext(H^\Gamma_{i-1}(X),\Z)$.
 \end{proof}
 
 
@@ -1062,15 +1062,15 @@ H^p_\Gamma(M)\otimes H^q_\Gamma(M)&\rTo^{\uplus}&H^{p+q}_\Gamma(M).
 The proof will rely on work of Kreck and Singhof \cite[Proposition 12]{Krec10b}. As the proof of this proposition is only sketched in \cite{Krec10b}, we first fill in the details, restricting ourselves to $\Z$ coefficients and changing Kreck and Singhof's notation a bit to avoid conflicts with our earlier notation.
 Before stating the result, we establish some further notation.
 
-In this section we assume the $S^p$, $p>0$, to each have a fixed orientation. We also want these orientations to be compatible in the sense that the composition $\nu:S^p \times S^q \to S^p \wedge S^q\cong S^{p+q}$ is orientation preserving away from the subspace that is collapsed to form the wedge product. In particular, if $[S^p]$ and $[S^q]$ are the corresponding fundamental classes, the quotient should take $[S^p] \times [S^q]$ to $[S^{p+q}]$. This can be arranged, for example, by modeling our spheres as the standardly-oriented cubes with their boundaries collapsed.
- For each $p$, we let $s_p \in H^p(S^p)\cong \Hom(H_p(S^p), \Z)$ be the cohomology class that evaluates to $1$ on $[S^p]$. Let $\pi_1:S^p \times S^q \to S^p$ and $\pi_2:S^p \times S^q \to S^q$ be the projections.
+In this section we assume the $S^p$, $p>0$, to each have a fixed orientation. We also want these orientations to be compatible in the sense that the composition $\nu:S^p \times S^q \to S^p \wedge S^q \cong S^{p+q}$ is orientation preserving away from the subspace that is collapsed to form the wedge product. In particular, if $[S^p]$ and $[S^q]$ are the corresponding fundamental classes, the quotient should take $[S^p] \times [S^q]$ to $[S^{p+q}]$. This can be arranged, for example, by modeling our spheres as the standardly-oriented cubes with their boundaries collapsed.
+ For each $p$, we let $s_p \in H^p(S^p) \cong \Hom(H_p(S^p), \Z)$ be the cohomology class that evaluates to $1$ on $[S^p]$. Let $\pi_1:S^p \times S^q \to S^p$ and $\pi_2:S^p \times S^q \to S^q$ be the projections.
 
 Similarly, let $K_p = K(\Z,p)$, $p>0$, be the Eilenberg-MacLane space, and let $\iota_p \in H^p(K_p)$ denote the fundamental class such that if the $p$-skeleton of $K_p$ is $S^p$ and $\phi_p:S^p \to K_p$ is the inclusion, then $\phi_p^*(\iota_p) = s_p$. As the $p+1$ skeleton of $K_p$ can be taken to be the image of $S^p$ under $\phi_p$, it is standard that $\phi_p^*$ is an isomorphism.
 We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map that extends the collapse map $\nu$.
 
 
 \begin{proposition}[Kreck and Singhof, Proposition 12 of \cite{Krec10b}]\label{P: Kreck-Singhof pairing}
-Consider singular cohomology $H^*(-)$ as a cohomology theory on smooth manifolds\footnote{As defined in \cite{Krec10b}; see the proof of \cref{T: geometric is singular} above.}. Suppose $\star$ is a natural multiplication on $H^*(-)$ such that if $M$ is connected and $\lambda \in H^0(M)\cong \Z$ (generated by the class $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$ (and with the obvious extension when $M$ is not connected). Then if\footnote{Rather than $s_p \times s_q$, Kreck and Singhof require $\pi_1^*(s_p) \star \pi_2^*(s_q)$ to be the element of $H^{p+q}(S^p \times S^q)$ that evaluates to $1$ on the fundamental class of $S^p \times S^q$, but with our conventions that tensor products of cochains act by $(\alpha\otimes \beta)(x\otimes y) = \alpha(x)\beta(y)$, these are the same cohomology class (c.f.\ \cite[page 245]{Span81} and \cite[Section 3B]{Hatc02}. } $\pi_1^*(s_p) \star \pi_2^*(s_q) = s_p \times s_q \in H^{p+q}(S^p \times S^q)$ for all $p,q\geq 1$, the product $\star$ is the cup product.
+Consider singular cohomology $H^*(-)$ as a cohomology theory on smooth manifolds\footnote{As defined in \cite{Krec10b}; see the proof of \cref{T: geometric is singular} above.}. Suppose $\star$ is a natural multiplication on $H^*(-)$ such that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$ (and with the obvious extension when $M$ is not connected). Then if\footnote{Rather than $s_p \times s_q$, Kreck and Singhof require $\pi_1^*(s_p) \star \pi_2^*(s_q)$ to be the element of $H^{p+q}(S^p \times S^q)$ that evaluates to $1$ on the fundamental class of $S^p \times S^q$, but with our conventions that tensor products of cochains act by $(\alpha\otimes \beta)(x\otimes y) = \alpha(x)\beta(y)$, these are the same cohomology class (c.f.\ \cite[page 245]{Span81} and \cite[Section 3B]{Hatc02}. } $\pi_1^*(s_p) \star \pi_2^*(s_q) = s_p \times s_q \in H^{p+q}(S^p \times S^q)$ for all $p,q\geq 1$, the product $\star$ is the cup product.
 \end{proposition}
 \begin{proof}
 For a smooth manifold $M$, let $\alpha \in H^p(M)$ and $\beta \in H^q(M)$.
@@ -1137,15 +1137,15 @@ As our present theorem does not particularly care about the signs of the connect
 U_p& = \{(x_1,\ldots,x_{p+1}) \in S^p\mid x_{p+1}>-1/2\}\\
 V_p& = \{(x_1,\ldots,x_{p+1}) \in S^p\mid x_{p+1}<1/2\}.
 \end{align*}
-Then $U_p \cap V_p$ is homotopy equivalent to $S^{p-1}$. For $p\geq 1$, we now choose the sign of $\delta_p:H^{p}(U_{p+1} \cap V_{p+1})\cong H^{p}(S^p) \to H^{p+1}(S^{p+1})$ so that $\delta_p(s_p) = s_{p+1}$, and similarly for geometric cohomology so that $\delta_p(s_p^\Gamma) = s_{p+1}^\Gamma$. For $p = 0$, to avoid confusion let us write $z_- = -1 \in \R$ and $z_+ = 1 \in \R$.
-We let $s_0$ be the element of $H^0(S^0)\cong \Z^2$ that restricts to $1 \in H^0(z_+)$ and $0 \in H^0(z_-)$. Similarly, let $s_0^\Gamma \in H^0_\Gamma(S^0)$ be represented by the identity map of $z_+$ with its canonical co-orientation. Then we choose the signs of $\delta_0$ so that $\delta_0(s_0) = s_{1}$ and $\delta_0(s_0^\Gamma) = s_{1}^\Gamma$. Finally, let $\Phi_0$ take $1 \in H^0(pt)$ to the element of $H^0_\Gamma(pt)$ represented by the identity with canonical co-orientation.
+Then $U_p \cap V_p$ is homotopy equivalent to $S^{p-1}$. For $p\geq 1$, we now choose the sign of $\delta_p:H^{p}(U_{p+1} \cap V_{p+1}) \cong H^{p}(S^p) \to H^{p+1}(S^{p+1})$ so that $\delta_p(s_p) = s_{p+1}$, and similarly for geometric cohomology so that $\delta_p(s_p^\Gamma) = s_{p+1}^\Gamma$. For $p = 0$, to avoid confusion let us write $z_- = -1 \in \R$ and $z_+ = 1 \in \R$.
+We let $s_0$ be the element of $H^0(S^0) \cong \Z^2$ that restricts to $1 \in H^0(z_+)$ and $0 \in H^0(z_-)$. Similarly, let $s_0^\Gamma \in H^0_\Gamma(S^0)$ be represented by the identity map of $z_+$ with its canonical co-orientation. Then we choose the signs of $\delta_0$ so that $\delta_0(s_0) = s_{1}$ and $\delta_0(s_0^\Gamma) = s_{1}^\Gamma$. Finally, let $\Phi_0$ take $1 \in H^0(pt)$ to the element of $H^0_\Gamma(pt)$ represented by the identity with canonical co-orientation.
 
 Taking $H^*(-)$ and $H^*_\Gamma(-)$ with these Mayer-Vietoris maps and this $\Phi_0:H^0(pt) \to H^0_\Gamma(pt)$, \cite[Theorem 10]{Krec10b} gives natural isomorphisms $\Phi_p:H^p(-) \to H^*_\Gamma(-)$ extending $\Phi_0$ on a point. The naturality implies that $\Phi_0(s_0) = s_0^\Gamma$. It now follows by induction using the following diagram due to the commutativity of $\Phi_*$ with the connecting maps, that $\Phi_p(s_p) = s_p^\Gamma$ for all $p$:
 
 \begin{diagram}
-H^p(S^p)\cong H^p(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}(S^{p+1})\\
+H^p(S^p) \cong H^p(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}(S^{p+1})\\
 \dTo^{\Phi_p}&&\dTo^{\Phi_{p+1}}\\
-H^p_\Gamma(S^p)\cong H^p_\Gamma(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H_\Gamma^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}_\Gamma(S^{p+1}).
+H^p_\Gamma(S^p) \cong H^p_\Gamma(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H_\Gamma^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}_\Gamma(S^{p+1}).
 \end{diagram}
 
 
@@ -1155,7 +1155,7 @@ For each $M$, we can now define pairings $\star$ on $H^p(-)\otimes H^q(-) \to H^
 $$H^p(M)\otimes H^q(M)\xr{\Phi_p\otimes \Phi_q}H^p_\Gamma(M)\otimes H^q_\Gamma(M)\xr{\uplus}H^{p+q}_\Gamma(M)\xr{\Phi_{p+q}^{-1}}H^{p+q}(M).$$
 This pairing is natural, as all the maps are natural. We will apply \cref{P: Kreck-Singhof pairing} to show that this is really the cup product, which will prove the theorem.
 
-We first show that if $M$ is connected and $\lambda \in H^0(M)\cong \Z$ (generated by the class of $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$. Let $pt$ be an arbitrary point in $M$ and consider the diagram
+We first show that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class of $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$. Let $pt$ be an arbitrary point in $M$ and consider the diagram
 \begin{diagram}
 H^0(M)&\rTo& H^0(pt)\\
 \dTo^{\Phi_0}&&\dTo_{\Phi_0}\\
@@ -1243,7 +1243,7 @@ that split (non-naturally).
 \end{theorem}
 \begin{proof}
 We know there exists such an exact sequence in (not necessarily smooth) singular cubical cohomology \cite[Chapter XI]{Mas91}, and \cref{L: chain cross compare}, together with its analogue based on the maps quasi-isomorphisms $NK^{sm}_*(-) \to NK_*(-)$
-of \cref{P: singular smooth cubes}, provides an isomorphism between the left three terms of the two short exact sequences. It follows that there is an isomorphism between the quotient terms of the two sequences, and $\oplus_{p+q = a-1}H_p(NK_*(M))* H^q(NK_*(N))\cong \oplus_{p+q = a-1}H_p^\Gamma(M)* H_q^\Gamma(N)$, also via these isomorphisms. Since the exact sequences are isomorphic, they both split.
+of \cref{P: singular smooth cubes}, provides an isomorphism between the left three terms of the two short exact sequences. It follows that there is an isomorphism between the quotient terms of the two sequences, and $\oplus_{p+q = a-1}H_p(NK_*(M))* H^q(NK_*(N)) \cong \oplus_{p+q = a-1}H_p^\Gamma(M)* H_q^\Gamma(N)$, also via these isomorphisms. Since the exact sequences are isomorphic, they both split.
 \end{proof}
 
 
@@ -1274,7 +1274,7 @@ If either $H^i_\Gamma(M)$ is finitely generated for all $i$ or $H^i_\Gamma(N)$ i
 that split (non-naturally).
 \end{theorem}
 \begin{proof}
-We know there exists such an exact sequence in singular cohomology \cite[Theorem 60.5]{Mun84}, and \cref{P: cross product is cross product} provides an isomorphism between the left three terms of the two short exact sequences. It follows that there is an isomorphism between the quotient terms of the two sequences, and $\oplus_{p+q = a+1}H^p(M)* H^q(N)\cong \oplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N)$ via the maps $\Phi_p*\Phi_q$. Since the exact sequences are isomorphic, they both split.
+We know there exists such an exact sequence in singular cohomology \cite[Theorem 60.5]{Mun84}, and \cref{P: cross product is cross product} provides an isomorphism between the left three terms of the two short exact sequences. It follows that there is an isomorphism between the quotient terms of the two sequences, and $\oplus_{p+q = a+1}H^p(M)* H^q(N) \cong \oplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N)$ via the maps $\Phi_p*\Phi_q$. Since the exact sequences are isomorphic, they both split.
 \end{proof}
 
 
@@ -1438,7 +1438,7 @@ Putting this all together, for both the complexes of normalized smooth singular 
 
 
 
-In this section we show that the geometric and cubical cap products are compatible in the sense given below in \cref{T: equivalent cap,C: cap relation}. Recall that in \cref{R: intersection map extension} we extended the definition of the intersection map $\mc I$ to give us a map $H^*_\Gamma(M) \to H^i(K_X^*(M))$ for the manifold $M$ cubulated by $X$, though we leave $X$ tacit in the following. We again let $\mc J: K_*(X)\cong K^X_*(M) \to C^\Gamma_*(M)$ be the map that takes a cubical face of $X$ to its embedding into $M$; see \cref{T: cubical homology iso}.
+In this section we show that the geometric and cubical cap products are compatible in the sense given below in \cref{T: equivalent cap,C: cap relation}. Recall that in \cref{R: intersection map extension} we extended the definition of the intersection map $\mc I$ to give us a map $H^*_\Gamma(M) \to H^i(K_X^*(M))$ for the manifold $M$ cubulated by $X$, though we leave $X$ tacit in the following. We again let $\mc J: K_*(X) \cong K^X_*(M) \to C^\Gamma_*(M)$ be the map that takes a cubical face of $X$ to its embedding into $M$; see \cref{T: cubical homology iso}.
 
 
 \begin{theorem}\label{T: equivalent cap}
@@ -1624,8 +1624,8 @@ The proof follows immediately from \cref{T: equivalent cap} and the following le
 Let $M$ be closed, oriented, cubulated, and connected. Then $\mc J([M]) = \uM \in H_m^\Gamma(M)$.
 \end{lemma}
 \begin{proof}
-Let $\uV \in H^m_\Gamma(M)$ be represented by a map $V = pt\into M$ taking the point to the center of an $m$-cube of the cubulation, co-oriented so that its normal co-orientation agrees with the orientation of $M$. By \cref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ are both represented by embeddings with the same orientation in a neighborhood of the embedded point $V$, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are each represented by the same point with its induced orientation (which by \cref{P: cap of immersions} will be the positive orientation). This is a generator of $H_0^\Gamma(M)\cong \Z$, as we can see, for example, via our homology isomorphism $H_*(NK_*(M)) \to H_*^\Gamma(M)$.
-As $H_m^\Gamma(M)\cong H_0^\Gamma(M)\cong \Z$ by the isomorphisms between geometric and singular homology and cohomology, $\uV\nplus:H_m^\Gamma(M) \to H_0^\Gamma(M)$ must be injective as we have shown it is not the $0$ map. Since we have shown $\uV\nplus\uM = \uV\nplus\mc J([M])$, we have $\uM = \mc J([M])$.
+Let $\uV \in H^m_\Gamma(M)$ be represented by a map $V = pt\into M$ taking the point to the center of an $m$-cube of the cubulation, co-oriented so that its normal co-orientation agrees with the orientation of $M$. By \cref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ are both represented by embeddings with the same orientation in a neighborhood of the embedded point $V$, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are each represented by the same point with its induced orientation (which by \cref{P: cap of immersions} will be the positive orientation). This is a generator of $H_0^\Gamma(M) \cong \Z$, as we can see, for example, via our homology isomorphism $H_*(NK_*(M)) \to H_*^\Gamma(M)$.
+As $H_m^\Gamma(M) \cong H_0^\Gamma(M) \cong \Z$ by the isomorphisms between geometric and singular homology and cohomology, $\uV\nplus:H_m^\Gamma(M) \to H_0^\Gamma(M)$ must be injective as we have shown it is not the $0$ map. Since we have shown $\uV\nplus\uM = \uV\nplus\mc J([M])$, we have $\uM = \mc J([M])$.
 \end{proof}
 
 With $\nplus \uM$ as our Poincar\'e duality map, the relation of \cref{P: compare cup and intersection orientations}, which in \cref{S: mixed formulas} became the chain/cochain formula
@@ -1667,10 +1667,10 @@ $f^! = f:H^{n-i}(N) \to H^{m-i}(M)$ and
 
 
 \begin{comment}
-We know $H_m^\Gamma(M)\cong \Z$ by the isomorphism between geometric and singular homology. We first show that $\uM$ is a generator.
+We know $H_m^\Gamma(M) \cong \Z$ by the isomorphism between geometric and singular homology. We first show that $\uM$ is a generator.
 
 Let $\uV \in H^m_\Gamma(M)$ be represented by a map $V = pt\into M$ taking the point to the center of an $m$-cube of the cubulation, co-oriented so that its normal co-orientation agrees with the orientation of $M$.
-Then by Proposition \ref{P: cap with identity M}, the cap product $\uV\nplus \uM \in H_0^\Gamma(M)$ is represented by the same embedding of a point with its induced orientation (which by Proposition \ref{P: cap of immersions} will be the positive orientation). This is certainly a generator of $H_0^\Gamma(M)\cong \Z$, as we can see, for example, via our homology isomorphism $H_*(NK_*(M)) \to H_*^\Gamma(M)$. If there were another class $\uW \in H_m^\Gamma(M)$ with $k\uW = \uM$, $|k|>1$, then $\uV\nplus \uM = \uV\nplus (k\uW) = k(\uV\nplus \uW)$ could not be a generator, providing a contradiction. So $\uM$ is a generator of $H_m^\Gamma(M)$.
+Then by Proposition \ref{P: cap with identity M}, the cap product $\uV\nplus \uM \in H_0^\Gamma(M)$ is represented by the same embedding of a point with its induced orientation (which by Proposition \ref{P: cap of immersions} will be the positive orientation). This is certainly a generator of $H_0^\Gamma(M) \cong \Z$, as we can see, for example, via our homology isomorphism $H_*(NK_*(M)) \to H_*^\Gamma(M)$. If there were another class $\uW \in H_m^\Gamma(M)$ with $k\uW = \uM$, $|k|>1$, then $\uV\nplus \uM = \uV\nplus (k\uW) = k(\uV\nplus \uW)$ could not be a generator, providing a contradiction. So $\uM$ is a generator of $H_m^\Gamma(M)$.
 
 Now, as $\mc J$ is a homology isomorphism and $[M]$ is a generator of $H_m^{cub}(M)$ by the classical theory, we must have $\mc J([M]) = \pm\uM$. But by Proposition \ref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ are both represented by embeddings with the same orientation in a neighborhood of the embedded point $V$, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are again each represented by the same point with its positive orientation. So we must have $\mc J([M]) = \uM$ rather than $-\uM$.
 \end{comment}
@@ -1681,7 +1681,7 @@ Now, as $\mc J$ is a homology isomorphism and $[M]$ is a generator of $H_m^{cub}
 With the hypotheses of Corollary \ref{C: PD}, $\mc J([M]) = \uM$.
 \end{lemma}
 \begin{proof}
-It suffices to assume $M$ is connected, otherwise we could work component-wise. By the preceding lemma and classical theory, we know that $\uM$ and $M$ are respective generators of $H_m^\Gamma(M)\cong H_m(M)\cong \Z$, so, as $\mc J$ induces an isomorphism on homology, we must have $\mc J([M]) = \pm\uM$.
+It suffices to assume $M$ is connected, otherwise we could work component-wise. By the preceding lemma and classical theory, we know that $\uM$ and $M$ are respective generators of $H_m^\Gamma(M) \cong H_m(M) \cong \Z$, so, as $\mc J$ induces an isomorphism on homology, we must have $\mc J([M]) = \pm\uM$.
 
 
 

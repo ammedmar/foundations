@@ -213,20 +213,17 @@ By definition, we choose an orientation of $P$ so that this matrix takes the con
 
 \subsection{Co-orientations}\label{S: co-orientations}
 
-To define co-orientations, we recall our definition of an orientation of a bundle from \cref{D: det bundle} as an equivalence class, up to positive scalar multiplication,
-of an everywhere non-zero section of the top exterior power of the bundle.
+To define co-orientations, we recall our definition of an orientation of a bundle from \cref{D: det bundle} as an equivalence class, up to positive scalar multiplication, of an everywhere non-zero section of the top exterior power of the bundle.
 This motivates the following.
 
 \begin{definition} \label{D: co-orientations}
-	A \textbf{co-orientation} $\omega_g$ of a \textit{continuous}\footnote{We will most often be interested in the case of $g$ smooth, but continuous co-orientable maps do come up in \cref{S: basic properties} where we consider covariant functoriality of geometric cohomology with respect to continuous maps.
-	} map $g: W \to M$ of manifolds with corners is an equivalence class, up to positive scalar multiplication, of a nowhere zero section of the line bundle
-	$\Hom(\Or(TW), \Or(g^*TM))\cong \Hom(\Or(TW), g^*\Or(TM)) $.
+	A \textbf{co-orientation} $\omega_g$ of a \textit{continuous}\footnote{We will most often be interested in the case of $g$ smooth, but continuous co-orientable maps do come up in \cref{S: basic properties} where we consider covariant functoriality of geometric cohomology with respect to continuous maps.} map $g \colon W \to M$ of manifolds with corners is an equivalence class, up to positive scalar multiplication, of a nowhere zero section of the line bundle $\Hom(\Or(TW), \Or(g^*TM)) \cong \Hom(\Or(TW), g^*\Or(TM))$.
 	Equivalently, a co-orientation is a choice of isomorphism between the associated orientation cover $\Or(TW)$ and the pullback of the associated orientation cover $\Or(TM)$.
 \end{definition}
 
 Thus, if $W$ is connected and $g \colon W \to M$ is co-orientable, there are exactly two co-orientations, which are \textbf{opposite} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
 In particular, for connected $W$ a choice of co-orientation at a single point determines a co-orientation globally when $g$ is co-orientable (analogously to orientations).
-Also, just as most manifolds do not possess a preferred orientation, most maps $g: W \to M$ do not carry a natural choice of co-orientation.
+Also, just as most manifolds do not possess a preferred orientation, most maps $g \colon W \to M$ do not carry a natural choice of co-orientation.
 
 \begin{definition}\label{D: tautological co-orientation}
 	An exception to the lack of a natural choice of co-orientation occurs when $g$ is a diffeomorphism or, more generally, a codimension-0 immersion in which case the top exterior power of $Dg$ provides a \textbf{tautological co-orientation}.
@@ -249,7 +246,7 @@ As a co-orientation at a point completely determines the co-orientation of a co-
 
 A manifold is orientable if and only if the orientation cover is trivial.
 So if $M$ is orientable, $\Or(g^*(TM))$ is trivial, and a co-orientation
-of $g: W \to M$ implies that $W$ is orientable.
+of $g \colon W \to M$ implies that $W$ is orientable.
 Moreover, an orientation on $M$ along with a co-orientation of $g$ gives rise to an \textbf{induced orientation} of $W$.
 Explicitly, if $\beta_M$ denotes the global orientation of $M$, then we orient $W$ at each point by the $\beta_W$ such that $\omega_g = (\beta_W,\beta_M)$.
 Conversely, if $M$ and $W$ are both oriented, say by $\beta_M$ and $\beta_W$ respectively, we have the \textbf{induced co-orientation} given by $\omega_g = (\beta_W,\beta_M)$ at each point of $W$.
@@ -303,8 +300,8 @@ As mentioned, a key example is when $g$ is an immersion, which is co-orientable 
 	Hence we can consider $W$ to have a normal bundle even if $g$ is merely an immersion and not actually an embedding.
 	The normal bundle can be identified with $g^*(TM)/TW$ after identifying $TW$ with a subbundle of $g^*(TM)$ using the differential.
 	In any case, locally in the neighborhood of any point of $W$ one has the usual identification of the normal bundle with a tubular neighborhood of the image, which suffices for our purposes here.}.
-Specifically, if $g \colon W \to M$ is an immersion, letting $\nu W$ denote the normal bundle, we have $TW \oplus \nu W\cong g^*TM$.
-So, taking $w = \dim(W)$ and $m = \dim(M)$, a co-orientation is a nowhere-zero map from $\bigwedge^w TW$ to $\bigwedge^m g^*TM = \bigwedge^m (TW \oplus \nu W)\cong \bigwedge^w TW \otimes \bigwedge^{m-w}\nu W$.
+Specifically, if $g \colon W \to M$ is an immersion, letting $\nu W$ denote the normal bundle, we have $TW \oplus \nu W \cong g^*TM$.
+So, taking $w = \dim(W)$ and $m = \dim(M)$, a co-orientation is a nowhere-zero map from $\bigwedge^w TW$ to $\bigwedge^m g^*TM = \bigwedge^m (TW \oplus \nu W) \cong \bigwedge^w TW \otimes \bigwedge^{m-w}\nu W$.
 Such a nowhere-zero map exists if and only $\bigwedge^{m-w}\nu W$ is a trivial line bundle.
 
 Although such a co-orientation is a global object over $W$, given an orientation of $\nu W$ we can specify a standard choice of ``normal co-orientation'' through the following local construction:
@@ -337,11 +334,11 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 	Then define $e:W\into M \times \R^N$ by $e(x) = (g(x),j(x))$ and $\pi:M \times \R^N \to M$ the projection.
 	Clearly $\pi e = g$.
 
-	Next we note that $T(M \times \R^N)\cong \pi^*(TM) \oplus \underline{\R}^N$ where $\underline{\R}^N$ is the trivial $\R^N$ bundle over $M \times \R^N$.
+	Next we note that $T(M \times \R^N) \cong \pi^*(TM) \oplus \underline{\R}^N$ where $\underline{\R}^N$ is the trivial $\R^N$ bundle over $M \times \R^N$.
 	As $ \Or( \underline\R^N)$ is a trivial line bundle,
-	$$\Or(T(M \times \R^N))\cong \Or( \pi^*(TM)) \otimes \Or(\underline\R^N)\cong \Or(\pi^*TM).$$ Thus $\pi$ is always co-orientable.
+	$$\Or(T(M \times \R^N)) \cong \Or( \pi^*(TM)) \otimes \Or(\underline\R^N) \cong \Or(\pi^*TM).$$ Thus $\pi$ is always co-orientable.
 	Furthermore, we see that
-	$$\Or(g^*TM)\cong \Or(e^*\pi^*TM)\cong e^*\Or(\pi^*TM)\cong e^*\Or(T(M \times \R^N))\cong \Or(e^*T(M \times \R^N)).$$ So $e$ is co-orientable if and only if $g$ is co-orientable.
+	$$\Or(g^*TM) \cong \Or(e^*\pi^*TM) \cong e^*\Or(\pi^*TM) \cong e^*\Or(T(M \times \R^N)) \cong \Or(e^*T(M \times \R^N)).$$ So $e$ is co-orientable if and only if $g$ is co-orientable.
 	But
 	$e$ is an immersion, and so it is co-orientable if and only if the normal bundle of the image is trivial by the discussion preceding \cref{normal co-or}.
 \end{proof}
@@ -356,7 +353,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 \end{definition}
 
 \begin{remark}\label{R: immersion}
-	In particular, if $g: W \to M$ is an immersion, then, by taking $N = 0$, a co-orientation of $g$ is equivalent to a Quillen orientation of the normal bundle
+	In particular, if $g \colon W \to M$ is an immersion, then, by taking $N = 0$, a co-orientation of $g$ is equivalent to a Quillen orientation of the normal bundle
 	$\nu$ of $W$ in $M$.
 	In particular, the co-orientation is given locally by $(\beta_W,\beta_M)$ if and only if $\nu$ is oriented so that $\beta_W \wedge \beta_\nu =
 	\beta_M$ up to positive scalar multiple.
@@ -394,7 +391,7 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 	A particularly important pair of examples is given by the inclusions $g^-:(-\infty, 0]\into \R$ and $g^+:[0,\infty)\into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
 
 	Next consider the submanifold consisting of the point $0 \in \R$.
-	It has trivial determinant line bundle, and we can choose the basis element to be the $0$-form $1 \in \bigwedge^0 T0\cong \R$.
+	It has trivial determinant line bundle, and we can choose the basis element to be the $0$-form $1 \in \bigwedge^0 T0 \cong \R$.
 	By \cref{normal co-or,D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\}\into (-\infty, 0]$ is $(1,1 \wedge -e_1) = (1,-e_1)$.
 	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^-:(-\infty, 0] \to \R$ is then the composition of $(1,-e_1)$ with $(e_1,e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
 	As the inward normal to $[0,\infty)$ at $0$ is $e_1$, the inclusion $g^+:[0,\infty) \to \R$ induces the opposite co-orientation $(1,e_1)$ on the inclusion $\{0\} \to \R$.
@@ -496,7 +493,7 @@ For this the following lemma is useful.
 \end{lemma}
 
 \begin{proof}
-	Over $W \times t_0$, we have $\Or(T(W \times I))\cong \Or(TW \oplus TI)\cong \Or(TW)\otimes \Or (TI)\cong \Or(TW)$, while the restriction of $G^*\Or(TM)$ over $W \times t_0$ is isomorphic to $g^*\Or(TM)$.
+	Over $W \times t_0$, we have $\Or(T(W \times I)) \cong \Or(TW \oplus TI) \cong \Or(TW)\otimes \Or (TI) \cong \Or(TW)$, while the restriction of $G^*\Or(TM)$ over $W \times t_0$ is isomorphic to $g^*\Or(TM)$.
 	If $G$ is co-orientable then there is a nowhere-vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM))$, so restricting to $W \times t_0$ and using the above identifications we obtain a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM))$ over $W \times t_0$, hence $g$ is co-orientable.
 	Conversely,
 	if $g$ is co-orientable, there is a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM)$ over $W \times t_0$.
@@ -660,7 +657,7 @@ Before getting into the specifics of the construction, we need to make the follo
 	}
 	\red{GBF: Should we do this????}
 
-	Next we recall that if the sequence of vector bundles $0 \to K \to A \to C \to 0$ 	is exact, then we have a splitting $A\cong K \oplus C$ so that $\Or(A)\cong \Or(K) \otimes \Or(C)$.
+	Next we recall that if the sequence of vector bundles $0 \to K \to A \to C \to 0$ 	is exact, then we have a splitting $A \cong K \oplus C$ so that $\Or(A) \cong \Or(K) \otimes \Or(C)$.
 	Such an
 	isomorphism is not canonical, though it can be made concrete by, for example, taking the image in $A$ of an oriented basis of $K$ and following it by the
 	preimage in $A$ of an oriented basis of $C$ to choose a representative oriented basis of $A$.
@@ -669,7 +666,7 @@ Before getting into the specifics of the construction, we need to make the follo
 
 	Applying these ideas to the exact sequences of Equation~\eqref{pullback exact},
 	we have an isomorphism
-	$\Or(TP) \otimes \Or(\nu_{P \subset V \times W}) \cong \Or (T(V \times W))\cong \Or(TV)\otimes \Or(TW)$ and similarly for the second exact sequence.
+	$\Or(TP) \otimes \Or(\nu_{P \subset V \times W}) \cong \Or (T(V \times W)) \cong \Or(TV)\otimes \Or(TW)$ and similarly for the second exact sequence.
 	These fit into a not-necessarily-commutative square
 	\begin{equation} \label{co-or stuff}
 		\begin{tikzcd}
@@ -889,7 +886,7 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 	Then the pullback of $f$ by the identity $\id_M:M \to M$ is (diffeomorphic to) $f \colon V \to M$ with the same co-orientation.
 
 	Suppose further that $W$ and $M$ are manifolds without boundary, that $g \colon W \to M$ is transverse to $f$ and that $h:X \to W$ is transverse to $V \times_M W \to W$ (or, equivalently by \cref{L: transverse to pullback}, that $gh$ is transverse to $f$).
-	Then $(gh)^*V\cong h^*g^*V$ as co-oriented manifolds over $M$.
+	Then $(gh)^*V \cong h^*g^*V$ as co-oriented manifolds over $M$.
 \end{proposition}
 
 \begin{proof}
@@ -937,7 +934,7 @@ In addition, these special cases are good for building intuition about the more 
 In the key example when both $f$ and $g$ are immersions, the fiber products will locally correspond to intersections of the images in $M$, and in this case our general definition of fiber product co-orientation is compatible with the approach to co-orientations via orientations of normal bundles.
 
 \begin{proposition}\label{P: normal pullback}
-	Let $f : V \to M$ and $g: W \to M$ be transverse co-oriented immersions from manifolds with corners to a manifold without boundary.
+	Let $f : V \to M$ and $g \colon W \to M$ be transverse co-oriented immersions from manifolds with corners to a manifold without boundary.
 	Let $\nu V$ and $\nu W$ denote the respective normal bundles.
 	Choose local Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ so that the normal co-orientations $(\beta_V,\beta_V \wedge \beta_{\nu V})$ and $(\beta_W,\beta_W \wedge \beta_{\nu W})$ agree with the given co-orientations of $f$ and $g$.
 	Then, decomposing the normal bundle of the fiber product $P = V \times_M W \to M$ at any point of intersection as $\nu V \oplus \nu W$ and giving it the orientation $\beta_{\nu V} \wedge \beta_{\nu W}$, the fiber product co-orientation agrees with the normal co-orientation, i.e.\
@@ -989,7 +986,7 @@ The general case requires more care.
 	By choosing standard choices of coordinate charts in such neighborhoods, we see that we can take $\nu\bd V = \nu \bd P$ to be the same inward pointing normal vector.
 	In the construction of the pullback co-orientation for $(\bd V) \times_M W$, we can take $e:\bd V \to M \times \R^N$ to be the restriction of the $e:V \to M \times \R^N$ used to co-oriented $P$.
 	As we have already used $\nu \bd V$ for the normal of $\bd V \subset V$, to avoid confusing the notation, we write $\nu^s\bd V$ ($s$ for stable) for the normal bundle of $e(\bd V) \subset M \times \R^N$.
-	Note that $\nu^s\bd V\cong \nu\bd V \oplus \nu V$.
+	Note that $\nu^s\bd V \cong \nu\bd V \oplus \nu V$.
 	The Quillen orientation $\beta_{\nu V}$ was chosen so that $\beta_V \wedge \beta_{\nu V} = \beta_{M} \wedge \beta_E$.
 	If we choose $\beta_{\bd V}$ so that $\beta_V = \beta_{\bd V} \wedge \beta_{\nu\bd V}$ then the boundary co-orientation of $\bd V \to M$ will be $(\beta_{\bd V},\beta_M)$ so we can then perform the construction of \cref{D: pullback coorient} using $\beta_{\bd V}$.
 	Note that as $\beta_{\nu V}$ is chosen so that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$, we will have also $\beta_M \wedge \beta_E = \beta_{\bd V} \wedge \beta_{\nu\bd V} \wedge \beta_{\nu V}$ and so the Quillen orientation of $\nu^s\bd V$ is $\beta_{\nu^s\bd V} = \beta_{\nu\bd V} \wedge \beta_{\nu V}$.
@@ -1110,7 +1107,7 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 	As in the preceding lemma, we can choose local coordinates such that $f$ is the projection $M \times \R^N \to M$ and $g$ is the projection $M \times \R^n \to M$.
 	Let $\beta_E$ and $\beta_F$ be local orientations of $\R^N$ and $\R^n$ such that $\omega_f = (\beta_V,\beta_M) = (\beta_M \wedge \beta_E,\beta_M)$ and $\omega_g = (\beta_M \wedge \beta_F,\beta_M)$.
 	To compute $\omega_{f \times_M g}$, we identify $V$ and $M \times \R^N$ as in the preceding lemma, so the Quillen normal bundle is trivial and positive.
-	The pullback is $W \times \R^N\cong M \times \R^n \times \R^N$.
+	The pullback is $W \times \R^N \cong M \times \R^n \times \R^N$.
 	And by \cref{D: pullback coorient}, taking $\beta_P = \beta_W \wedge \beta_E$, we have $\omega_{f \times_M g} = (\beta_W \wedge \beta_E,\beta_M) = (\beta_M \wedge \beta_F \wedge \beta_E,\beta_M)$.
 	Analogously, $\omega_{g \times_M f} = (\beta_V \wedge \beta_F,\beta_M) = (\beta_M \wedge \beta_E \wedge \beta_F,\beta_M)$.
 	The lemma follows as $N = v-m$ and $n = w-m$.
@@ -1366,16 +1363,16 @@ Before getting to co-orientations, we first show that a product of proper maps i
 \begin{proof}
 	We recall that, by definition, a co-orientation of $f$ is equivalent to a choice of isomorphism between the orientation cover $\Or(TV)$ and the pullback $f^*\Or(TM)$ of the orientation cover $\Or(TM)$, and similarly for $g$.
 
-	If we let $\pi_V, \pi_W$ denote the projections of $V \times W$ to $V$ and $W$, then $T(V \times W)\cong \pi_V^*(TV) \oplus \pi_W^*(TW)$, and so $$\Or(T(V \times W))\cong \Or(\pi_V^*(TV))\otimes\Or(\pi_W^*(TW))\cong \pi_V^*\Or(TV)\otimes\pi_W^*\Or(TW).$$ Similarly
-	\begin{multline*}(f \times g)^*T(M \times N)\cong (f \times g)^*(\pi_M^*(TM) \oplus \pi_N^*(TN))\\
-		\cong (f \times g)^*\pi_M^*(TM) \oplus (f \times g)^*\pi_N^*(TN))\cong \pi_V^*f^*(TM) \oplus \pi_W^*g^*(TN),
+	If we let $\pi_V, \pi_W$ denote the projections of $V \times W$ to $V$ and $W$, then $T(V \times W) \cong \pi_V^*(TV) \oplus \pi_W^*(TW)$, and so $$\Or(T(V \times W)) \cong \Or(\pi_V^*(TV))\otimes\Or(\pi_W^*(TW)) \cong \pi_V^*\Or(TV)\otimes\pi_W^*\Or(TW).$$ Similarly
+	\begin{multline*}(f \times g)^*T(M \times N) \cong (f \times g)^*(\pi_M^*(TM) \oplus \pi_N^*(TN))\\
+		 \cong (f \times g)^*\pi_M^*(TM) \oplus (f \times g)^*\pi_N^*(TN)) \cong \pi_V^*f^*(TM) \oplus \pi_W^*g^*(TN),
 	\end{multline*}
 	using that $\pi_M(f \times g) = f\pi_V:V \times W \to M$ and $\pi_N(f \times g) = g\pi_W:V \times W \to N$.
 	So
 	\begin{multline*}
-		(f \times g)^*\Or(T(M \times N))\cong \Or((f \times g)^*T(M \times N))\\\cong \Or(\pi_V^*f^*TM)\otimes \Or(\pi_W^*g^*TN)\cong \pi_V^*f^*\Or(TM)\otimes \pi_W^*g^*\Or(TN).
+		(f \times g)^*\Or(T(M \times N)) \cong \Or((f \times g)^*T(M \times N))\\ \cong \Or(\pi_V^*f^*TM)\otimes \Or(\pi_W^*g^*TN) \cong \pi_V^*f^*\Or(TM)\otimes \pi_W^*g^*\Or(TN).
 	\end{multline*}
-	Thus if $\Or(TV)\cong f^*\Or(TM)$ and $\Or(TW)\cong g^*\Or(TN)$, we can construct isomorphisms $\Or(T(V \times W))\cong (f \times g)^*\Or(T(M \times N))$.
+	Thus if $\Or(TV) \cong f^*\Or(TM)$ and $\Or(TW) \cong g^*\Or(TN)$, we can construct isomorphisms $\Or(T(V \times W)) \cong (f \times g)^*\Or(T(M \times N))$.
 \end{proof}
 
 \begin{definition}\label{D: co-oriented exterior}
@@ -1387,8 +1384,8 @@ Before getting to co-orientations, we first show that a product of proper maps i
 
 \begin{remark}
 	The sign in the definition is not at first obvious, though it will be justified in the following lemmas.
-	One way to think of it is as follows: If we we take $V$ and $W$ as immersed submanifolds co-oriented by orienting their normal bundles as in \cref{normal co-or}, then $V \times W$ is also immersed, and at an image point we have $T(M \times N)\cong TV \oplus \nu V \oplus TW \oplus \nu W$.
-	The sign $(-1)^{(m-v)w}$ is the sign needed in the orientation to permute this to $TV \oplus TW \oplus \nu V \oplus \nu W$ so that we can properly utilize the normal co-orientation for $\nu(V \times W)\cong \nu V \oplus \nu W$.
+	One way to think of it is as follows: If we we take $V$ and $W$ as immersed submanifolds co-oriented by orienting their normal bundles as in \cref{normal co-or}, then $V \times W$ is also immersed, and at an image point we have $T(M \times N) \cong TV \oplus \nu V \oplus TW \oplus \nu W$.
+	The sign $(-1)^{(m-v)w}$ is the sign needed in the orientation to permute this to $TV \oplus TW \oplus \nu V \oplus \nu W$ so that we can properly utilize the normal co-orientation for $\nu(V \times W) \cong \nu V \oplus \nu W$.
 	While this argument is essentially heuristic, it is borne out in the computations below.
 \end{remark}
 
@@ -1600,7 +1597,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 	We briefly recall the argument.
 	Suppose $f(x) = g(y) = z \in M$.
 	Then $Df(T_xV)+Dg(T_yW) = T_zM$.
-	Now suppose $(a,b) \in T_{(z,z)}(M \times M)\cong T_zM \oplus T_zM$.
+	Now suppose $(a,b) \in T_{(z,z)}(M \times M) \cong T_zM \oplus T_zM$.
 	Write $a = v_a+w_a$ with $v_a \in Df(T_xV)$ and $w_a \in Dg(T_yW)$.
 	Similarly, write $v = v_b+w_b$.
 	Then
