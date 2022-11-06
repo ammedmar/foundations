@@ -325,7 +325,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 He assumed the normal bundles to have complex structures and so called these \textit{complex orientations}.}
 
 \begin{lemma}\label{L: Quillen}
-	A map $g \colon W \to M$ is co-orientable if and only if for some $N \in \Z_{\geq 0}$ it factors as the composition $W\into M \times \R^N \to M$ of an embedding and a projection such that the image of $W$ in $M \times \R^N$ has an orientable normal bundle.
+	A map $g \colon W \to M$ is co-orientable if and only if for some $N \in \Z_{\geq 0}$ it factors as the composition $W \into M \times \R^N \to M$ of an embedding and a projection such that the image of $W$ in $M \times \R^N$ has an orientable normal bundle.
 \end{lemma}
 
 \begin{proof}
@@ -336,35 +336,30 @@ He assumed the normal bundles to have complex structures and so called these \te
 
 	Next we note that $T(M \times \R^N) \cong \pi^*(TM) \oplus \underline{\R}^N$ where $\underline{\R}^N$ is the trivial $\R^N$ bundle over $M \times \R^N$.
 	As $ \Or( \underline\R^N)$ is a trivial line bundle,
-	$$\Or(T(M \times \R^N)) \cong \Or( \pi^*(TM)) \otimes \Or(\underline\R^N) \cong \Or(\pi^*TM).$$ Thus $\pi$ is always co-orientable.
+	$$\Or(T(M \times \R^N)) \cong \Or(\pi^*(TM)) \otimes \Or(\underline\R^N) \cong \Or(\pi^*TM).$$ Thus $\pi$ is always co-orientable.
 	Furthermore, we see that
 	$$\Or(g^*TM) \cong \Or(e^*\pi^*TM) \cong e^*\Or(\pi^*TM) \cong e^*\Or(T(M \times \R^N)) \cong \Or(e^*T(M \times \R^N)).$$ So $e$ is co-orientable if and only if $g$ is co-orientable.
-	But
-	$e$ is an immersion, and so it is co-orientable if and only if the normal bundle of the image is trivial by the discussion preceding \cref{normal co-or}.
+	But $e$ is an immersion, and so it is co-orientable if and only if the normal bundle of the image is trivial by the discussion preceding \cref{normal co-or}.
 \end{proof}
 
 \begin{definition}\label{D: Quillen normal or}
-	If we orient $\R^N$ by its standard orientation $\beta_E \defeq dx_1 \wedge\cdots\wedge dx_N$, then the projection $\pi \colon M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E,\beta_M)$ that is well defined as $\R^N$ is contractible.
+	If we orient $\R^N$ by its standard orientation $\beta_E \defeq dx_1 \wedge\cdots\wedge dx_N$, then the projection $\pi \colon M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E, \beta_M)$ that is well defined as $\R^N$ is contractible.
 	If $g \colon W \to M$ is co-oriented and $e \colon W \into M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
-	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu =
-	\beta_M \wedge \beta_E$ up to positive scalar multiple.
+	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu = \beta_M \wedge \beta_E$ up to positive scalar multiple.
 
-	We sometimes speak of the entire structure $W\into M \times \R^N \to M$ with an orientation of $\nu$ as a \textbf{Quillen co-orientation} for $W \to M$ or as a ``compatible Quillen co-orientation'' if we have already specified a co-orientation for $W \to M$ and we wish to choose the Quillen co-orientation that agrees with it.
+	We sometimes speak of the entire structure $W \into M \times \R^N \to M$ with an orientation of $\nu$ as a \textbf{Quillen co-orientation} for $W \to M$ or as a ``compatible Quillen co-orientation'' if we have already specified a co-orientation for $W \to M$ and we wish to choose the Quillen co-orientation that agrees with it.
 \end{definition}
 
 \begin{remark}\label{R: immersion}
-	In particular, if $g \colon W \to M$ is an immersion, then, by taking $N = 0$, a co-orientation of $g$ is equivalent to a Quillen orientation of the normal bundle
-	$\nu$ of $W$ in $M$.
-	In particular, the co-orientation is given locally by $(\beta_W,\beta_M)$ if and only if $\nu$ is oriented so that $\beta_W \wedge \beta_\nu =
-	\beta_M$ up to positive scalar multiple.
+	In particular, if $g \colon W \to M$ is an immersion, then, by taking $N = 0$, a co-orientation of $g$ is equivalent to a Quillen orientation of the normal bundle $\nu$ of $W$ in $M$.
+	In particular, the co-orientation is given locally by $(\beta_W, \beta_M)$ if and only if $\nu$ is oriented so that $\beta_W \wedge \beta_\nu = \beta_M$ up to positive scalar multiple.
 	If $g$ is a codimension-$0$ immersion, then $\nu$ will be $0$-dimensional, and if the co-orientation is the tautological one then $\beta_\nu$ will be the positive orientation at each point.
 \end{remark}
 
 \begin{remark}
-	Lipyanskiy's definition of co-orientation in \cite{Lipy14} factors a proper map through a map which is surjective onto $TM$,
-	rather than injective from $TW$ as in the Quillen approach.
+	Lipyanskiy's definition of co-orientation in \cite{Lipy14} factors a proper map through a map which is surjective onto $TM$, rather than injective from $TW$ as in the Quillen approach.
 	An argument similar to the one just given establishes an equivalence between Lipyanskiy's definition and ours in that setting.
-	\red{[GBF: I'd suggest we give it, or at least sketch it.]}
+%	\red{[GBF: I'd suggest to we give it, or at least sketch it.]}
 \end{remark}
 
 \subsubsection{Co-orientations of boundaries}
@@ -1250,7 +1245,7 @@ They will be useful when working with the creasing construction for geometric co
 
 \begin{example}\label{E: codim 1 pullbacks}
 	Continuing to assume $\varphi \colon M \to \R$, let $V = M^0 = \varphi^{-1}(0)$ with normal bundle oriented by the pullback of the standard (positive-direction) orientation of the normal bundle of $0 \in \R$, which determines a co-orientation of the embedding $M^0 \to M$.
-	Then by \cref{P: codim 1 co-orient} the pullback co-orientation of $W^0 = M^0 \times_M W\into W$ agrees with the $\varphi$-induced co-orientation of $W^0$ defined in \cref{E: manifold decomposition}.
+	Then by \cref{P: codim 1 co-orient} the pullback co-orientation of $W^0 = M^0 \times_M W \into W$ agrees with the $\varphi$-induced co-orientation of $W^0$ defined in \cref{E: manifold decomposition}.
 	We can also confirm now using the Leibniz rule that $$\bd(W^-) = \bd(M^- \times_M W) = (\bd M^-) \times_M W \bigsqcup M^- \times \bd W = M^0 \times_M W \bigsqcup M^- \times_M \bd W = (-W^0) \bigsqcup (\bd W)^-,$$
 	using that the orientation of the normal bundle to $M^0$ is outward pointing from $M^-$ and so disagrees with the inward-pointing normal used to co-orient the boundary inclusion.
 	Analogously, $$\bd (W^+) = W^0 \bigsqcup (\bd W)^+,$$
@@ -1561,7 +1556,7 @@ The next proposition shows that the exterior product construction is natural.
 \end{proposition}
 \begin{proof}
 	It is easy to show that $h \times k$ is transverse to $f \times g$ so we focus on co-orientation.
-	As in the preceding proofs, we write the Quillen orientation of the normal to the image of $V \times W\into M \times N \times \R^a \times \R^b$ as $\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}$.
+	As in the preceding proofs, we write the Quillen orientation of the normal to the image of $V \times W \into M \times N \times \R^a \times \R^b$ as $\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}$.
 	Then the pullback $P = (h \times k)^*(V \times W)$ is co-oriented by $(\beta_P,\beta_{X \times Y})$ if and only if we choose $\beta_P$ and $\beta_{X \times Y}$ so that
 	$$\beta_{P} \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_{X \times Y} \wedge \beta_{a+b}.$$
 
@@ -1795,7 +1790,7 @@ The analogues for singular chains and cochains are the cap product with the coch
 \end{proposition}
 \begin{proof}
 	By definition, there is a Quillen co-orientation for $M$ consisting of the sequence of identity maps $M\into M \to M$ with the normal bundle to $M$ in itself being the $0$-dimensional vector bundle, which we consider to have positive orientation at each point.
-	It follows from the definition of the pullback that the corresponding Quillen co-orientation for $M \times_M W$ comes from the sequence $g^{-1}(M) = W\into W \to W$ with $W$ also having a $0$-dimensional positively-oriented normal bundle in itself.
+	It follows from the definition of the pullback that the corresponding Quillen co-orientation for $M \times_M W$ comes from the sequence $g^{-1}(M) = W \into W \to W$ with $W$ also having a $0$-dimensional positively-oriented normal bundle in itself.
 	Consequently, the pullback co-orientation for $W \to W$ is the tautological one, and so the induced orientation on $W$ is the given one.
 \end{proof}
 
