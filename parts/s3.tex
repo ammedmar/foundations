@@ -314,14 +314,15 @@ If the normal bundle to $W$ is oriented globally on $W$ then the construction is
 	(\gamma_*\beta_{W,x}\, , (\gamma_* \beta_{W,x}) \wedge \beta_{\nu,y}),
 \end{equation*}
 using that $\nu$ is assumed oriented and that, via the immersion, we can treat a path in $W$ as a path in $M$.
-So if the normal bundle to $W$ is oriented these local choices determine a global co-orientation of $W \to M$.
+So if the normal bundle to $W$ is oriented, these local choices determine a global co-orientation of $W \to M$.
 If the normal bundle is orientable, one can conversely orient the normal bundle if one is given a co-orientation.
 Signs in the theory are highly dependent on choices.
 One such choice in this definition is whether to append the local normal orientation before or after the local tangent orientation.
 
 \subsubsection{Quillen co-orientations}\label{S: Quillen}
+
 There is a useful alternative, though equivalent, definition of co-orientations due to Quillen \cite{Quil71} that only involves orientations of normal bundles.\footnote{Quillen's context was slightly different.
-	He assumed the normal bundles to have complex structures and so called these \textit{complex orientations}.}
+He assumed the normal bundles to have complex structures and so called these \textit{complex orientations}.}
 
 \begin{lemma}\label{L: Quillen}
 	A map $g \colon W \to M$ is co-orientable if and only if for some $N \in \Z_{\geq 0}$ it factors as the composition $W\into M \times \R^N \to M$ of an embedding and a projection such that the image of $W$ in $M \times \R^N$ has an orientable normal bundle.
@@ -330,7 +331,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 \begin{proof}
 	We first note that such a smooth factorization always exists.
 	For example, let $j:W \to \R^N$ be an embedding as guaranteed by Whitney's theorem.
-	Then define $e:W\into M \times \R^N$ by $e(x) = (g(x),j(x))$ and $\pi:M \times \R^N \to M$ the projection.
+	Then define $e \colon W \into  M \times \R^N$ by $e(x) = (g(x),j(x))$ and $\pi:M \times \R^N \to M$ the projection.
 	Clearly $\pi e = g$.
 
 	Next we note that $T(M \times \R^N) \cong \pi^*(TM) \oplus \underline{\R}^N$ where $\underline{\R}^N$ is the trivial $\R^N$ bundle over $M \times \R^N$.
@@ -344,7 +345,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 
 \begin{definition}\label{D: Quillen normal or}
 	If we orient $\R^N$ by its standard orientation $\beta_E \defeq dx_1 \wedge\cdots\wedge dx_N$, then the projection $\pi:M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E,\beta_M)$ that is well defined as $\R^N$ is contractible.
-	If $g \colon W \to M$ is co-oriented and $e:W\into M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
+	If $g \colon W \to M$ is co-oriented and $e \colon W \into  M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
 	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu =
 	\beta_M \wedge \beta_E$ up to positive scalar multiple.
 
@@ -385,7 +386,7 @@ We will use induced co-orientations on boundaries to define the differential in 
 The following examples will be important in \cref{S: creasing} when we discuss creasing.
 
 \begin{example}\label{E: splitting example 1}
-	Suppose $g:W\into M$ is the inclusion of a codimension-$0$ submanifold of $M$.
+	Suppose $g \colon W \into  M$ is the inclusion of a codimension-$0$ submanifold of $M$.
 	In this case $TW$ is the pullback of $TM$, and we have the tautological co-orientation of \cref{D: tautological co-orientation} that, slightly abusing notation, we can write as $(\beta_M,\beta_M)$.
 	A particularly important pair of examples is given by the inclusions $g^-:(-\infty, 0]\into \R$ and $g^+:[0,\infty)\into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
 
@@ -1457,7 +1458,7 @@ Among other things, it will help us to next demonstrate a commutativity property
 
 \begin{lemma}\label{L: Quillen product co-orientation}
 	Let $f \colon V \to M$ and $g:W \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary.
-	Consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V:V\into M \times \R^a$ and $e_W:W\into N \times \R^b \to N$ with $a$ and $b$ even.
+	Consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V:V\into M \times \R^a$ and $e_W \colon W \into  N \times \R^b \to N$ with $a$ and $b$ even.
 	Denote the normal bundles of $V$ and $W$ in $M \times \R^a$ and $N \times \R^b$ by $\nu V$ and $\nu W$.
 	Let $T:M \times \R^a \times N \times \R^b \to M \times N \times \R^{a+b}$ be the diffeomorphism that interchanges the middle two factors.
 	Then
@@ -1494,7 +1495,7 @@ However, the pullback is by a diffeomorphism, so this result should extend witho
 	Let $(\beta_V,\beta_M)$ and $(\beta_W,\beta_N)$ be local representations of the co-orientations at some points.
 	The product co-orientation of $V \times W \to M \times N$ is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N)$.
 
-	As in \cref{L: Quillen product co-orientation},we consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V:V\into M \times \R^a$ and $e_W:W\into N \times \R^b \to N$ with $a$ and $b$ even.
+	As in \cref{L: Quillen product co-orientation},we consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V:V\into M \times \R^a$ and $e_W \colon W \into  N \times \R^b \to N$ with $a$ and $b$ even.
 	This is sufficient as we know that the pullback construction is independent of $a$ and $b$ for sufficiently large dimensions by \cref{L: pullback co well defined}.
 	Assuming the other notation from \cref{L: Quillen product co-orientation}, the lemma tells us that $f \times g:V \times W \to M \times N$ has Quillen co-orientation given by $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W},$$
 	suitably interpreting the relevant coordinates in $M \times N \times \R^a \times \R^b$.
