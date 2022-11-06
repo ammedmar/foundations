@@ -1101,7 +1101,13 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 	We continue to assume coordinates so that $f$ is co-oriented by $(\beta_M \wedge \beta_E, \beta_M)$.
 	By \cref{D: pullback coorient} the fiber product co-orientation for $g \times_M f$ is $(\beta_P,\beta_M)$ if and only if $\beta_P \wedge \beta_{\nu W} = \beta_V$.
 	But if $\beta_P = \beta_W \wedge \beta_E$ consistent with the preceding case and $\beta_V = \beta_M \wedge \beta_E$, then we have
-	\begin{multline*}\beta_P \wedge \beta_{\nu W} = \beta_W \wedge \beta_E \wedge \beta_{\nu W} = (-1)^{N\dim(\nu W)}\beta_W \wedge \beta_{\nu W} \wedge \beta_E\\ = (-1)^{N\dim(\nu W)}\beta_M \wedge \beta_E = (-1)^{N\dim(\nu W)}\beta_V.\end{multline*}
+	\begin{multline*}
+		\beta_P \wedge \beta_{\nu W} =
+		\beta_W \wedge \beta_E \wedge \beta_{\nu W} =
+		(-1)^{N\dim(\nu W)} \beta_W \wedge \beta_{\nu W} \wedge \beta_E \\ =
+		(-1)^{N\dim(\nu W)} \beta_M \wedge \beta_E =
+		(-1)^{N\dim(\nu W)} \beta_V.
+	\end{multline*}
 	Here we have used that $\beta_M = \beta_W \wedge \beta_{\nu W}$ by the choice of Quillen local orientation for $\nu W$ in \cref{D: pullback coorient}, taking into account $N = 0$.
 	As $\dim(\nu W) = m-w$ and $N = v-m$, the lemma is follows.
 \end{proof}
