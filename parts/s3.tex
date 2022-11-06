@@ -170,20 +170,17 @@ By definition, we choose an orientation of $P$ so that this matrix takes the con
 	$$\beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V} = (-1)^{w(m-w)} \beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}$$
 	as $P \oplus \nu V = W$ and $\dim(\nu W) = m-w$.
 
-	To prove the first statement, let $(p_1,\cdots,p_a)$ be an ordered basis for $P$ consistent with the orientation described in the lemma; so we can write $\beta_P = p_1\wedge\cdots \wedge p_a$.
+	To prove the first statement, let $(p_1,\cdots,p_a)$ be an ordered basis for $P$ consistent with the orientation described in the lemma; so we can write $\beta_P = p_1 \wedge\cdots\wedge p_a$.
 	When we consider each $p_i$ as a vector in $V$, $W$, or $M$, we write $p_i^V$, $p_i^W$, or $p_i^M$.
 	We employ a similar convention with the other bases we will consider.
 	Let $(x_1,\cdots,x_b)$ and $(y_1,\cdots,y_c)$ be corresponding ordered bases for $\nu W$ and $\nu V$ as described in the lemma, and we can write $\beta_{\nu W}$ and $\beta_{\nu V}$ analogously as for $\beta_P$.
 	Then, we have $\beta_M$ represented by $(-1)^{w(m+1)} \beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V}.$ So our orientation of $P \oplus M$ obtained by concatenation is
-	$$(-1)^{w(m+1)} p_1\wedge\cdots \wedge p_a \wedge x^M_1\wedge\cdots \wedge x^M_b \wedge p^M_1\wedge\cdots \wedge p^M_a \wedge y^M_1\wedge\cdots \wedge y^M_c.$$
-
+	$$(-1)^{w(m+1)} p_1 \wedge\cdots\wedge p_a \wedge x^M_1 \wedge\cdots\wedge x^M_b \wedge p^M_1 \wedge\cdots\wedge p^M_a \wedge y^M_1 \wedge\cdots\wedge y^M_c.$$
 	When we apply our matrix above, we obtain the form in $V \oplus W$ given by
-	$$(-1)^{w(m+1)} (p^V_1+p^W_1)\wedge\cdots \wedge (p^V_a+p^W_a) \wedge x^V_1\wedge\cdots \wedge x^V_b \wedge (- p^W_1)\wedge\cdots \wedge (-p^W_a) \wedge (-y^W_1)\wedge\cdots \wedge(- y^W_c).
-	$$
+	$$(-1)^{w(m+1)} (p^V_1+p^W_1) \wedge\cdots\wedge (p^V_a+p^W_a) \wedge x^V_1 \wedge\cdots\wedge x^V_b \wedge (- p^W_1) \wedge\cdots\wedge (-p^W_a) \wedge (-y^W_1) \wedge\cdots\wedge(- y^W_c).$$
 	This expression simplifies to
-	$$(-1)^{wm} p^V_1\wedge\cdots \wedge p^V_a \wedge x^V_1\wedge\cdots \wedge x^V_b \wedge p^W_1 \wedge \cdots \wedge p^W_a \wedge y^W_1\wedge\cdots \wedge y^W_c.
-	$$
-	But this is now precisely $(-1)^{wm} $ times the concatenation orientation of $V \oplus W$ as desired for definition of the fiber product orientation.
+	$$(-1)^{wm} p^V_1 \wedge\cdots\wedge p^V_a \wedge x^V_1 \wedge\cdots\wedge x^V_b \wedge p^W_1 \wedge\cdots\wedge p^W_a \wedge y^W_1 \wedge\cdots\wedge y^W_c.$$
+	But this is now precisely $(-1)^{wm}$ times the concatenation orientation of $V \oplus W$ as desired for definition of the fiber product orientation.
 \end{proof}
 
 \begin{example}
@@ -209,7 +206,7 @@ By definition, we choose an orientation of $P$ so that this matrix takes the con
 \begin{example}
 	Let $M = \R^2$ with the standard orientation that we can write $e_x \wedge e_y$.
 	Let $V$ be the $x$-axis with orientation $e_x$ and $W$ be the $y$-axis oriented by $e_y$.
-	Then it is false that $e_x \wedge e_y = \beta_{V} \wedge \beta_{W} = (-1)^{w(m+1)}\beta_M = -e_x \wedge e_y$.
+	Then it is false that $e_x \wedge e_y = \beta_{V} \wedge \beta_{W} = (-1)^{w(m+1)} \beta_M = -e_x \wedge e_y$.
 	So the orientation of the intersection point is the negative one.
 	This runs against the standard convention for transverse intersections of manifolds of complementary dimension, but we nonetheless favor this overall convention for orienting fiber products due to the properties and uniqueness result of \cite{RamBas09}.
 \end{example}
@@ -350,7 +347,7 @@ There is a useful alternative, though equivalent, definition of co-orientations 
 \end{proof}
 
 \begin{definition}\label{D: Quillen normal or}
-	If we orient $\R^N$ by its standard orientation $\beta_E: = dx_1\wedge\cdots \wedge dx_N$, then the projection $\pi:M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E,\beta_M)$ that is well defined as $\R^N$ is contractible.
+	If we orient $\R^N$ by its standard orientation $\beta_E: = dx_1 \wedge\cdots\wedge dx_N$, then the projection $\pi:M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E,\beta_M)$ that is well defined as $\R^N$ is contractible.
 	If $g \colon W \to M$ is co-oriented and $e:W\into M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
 	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu =
 	\beta_M \wedge \beta_E$ up to positive scalar multiple.
