@@ -183,7 +183,7 @@ Without loss of generality, suppose $[f] = 0$. Then any representative of $[f]$ 
 \end{proof}
 
 \begin{lemma}\label{L: one fixed}
-Let $f \colon V \to M$ and $f':V' \to M$ be two representatives of the same class in $C^*_\Gamma(M)$ with decompositions $V = V_T \amalg V_Q$ and $V' = V'_T \amalg V'_Q$. Suppose $g \colon W \to M$ is another class with decomposition $W = W_T\amalg W_Q$ and that $W_T$ is transverse to $V_T$ and $V_T'$. Then $V_T \cap W_T = V_T' \cap W_T \in C^*_\Gamma(M)$.
+Let $f \colon V \to M$ and $f' \colon V' \to M$ be two representatives of the same class in $C^*_\Gamma(M)$ with decompositions $V = V_T \amalg V_Q$ and $V' = V'_T \amalg V'_Q$. Suppose $g \colon W \to M$ is another class with decomposition $W = W_T\amalg W_Q$ and that $W_T$ is transverse to $V_T$ and $V_T'$. Then $V_T \cap W_T = V_T' \cap W_T \in C^*_\Gamma(M)$.
 \end{lemma}
 \begin{proof}
 As $f$ and $f'$ represent the same element of $C^*_\Gamma(M)$, we have $f\amalg -f' \in Q(M)$. Furthermore, as $f|_{V_Q}$ and $f'|_{V'_Q}$ are in $Q(M)$ we have $f|_{V_T}-f'|_{V'_T} \in Q(M)$ by \cite[Lemma 12]{Lip14}. Thus by \red{SAME REF AS ABOVE}, $V_T \cap W_T -V'_T \cap W_T = (V_T -V'_T) \cap W_T \in Q(M)$. So $V_T \cap W_T = V'_T \cap W_T \in C^*_\Gamma(M)$.
@@ -221,13 +221,13 @@ contains any essential components. Nonetheless, a component $V_1$ of $V_{NI}$ is
 
 
 \begin{example}
-Let $V$ be any connected oriented manifold with corners that does not possess an orientation reversing diffeomorphism, and let $r_V:V \to M$ be any map that is not of small rank. Then $V = V_E$ is essential.
+Let $V$ be any connected oriented manifold with corners that does not possess an orientation reversing diffeomorphism, and let $r_V \colon V \to M$ be any map that is not of small rank. Then $V = V_E$ is essential.
 \end{example}
 
 \begin{example}
 Consider \cref{E: projected triangle}, which consisted of the projection of the 2-simplex $V \subset \R^2$ with vertices at $(1,0)$, $(-1,0)$, and $(0,1)$ to the $x$-axis. This map has small rank, but its boundary is not trivial or of small rank. In this case $V = V_{NI}$.
 
-We can make this example a bit more interesting as follows. Instead of the codomain being $\R^1$, we let the codomain be $\R^2$. We continue to let most of the map $r_V:V \to \R^2$ be the projection to the $x$-axis, but let us choose a Euclidean ball in the interior of the simplex and draw its image out into a 1-dimensional ``thread'' in the plane, analogously to how one changes basepoints for an element of some $\pi_2(M)$. With some care, this can be done smoothly. Any two such maps represent the same chain or cochain (depending on whether we assign orientations or co-orientations), but depending on the choice of thread, one such example may be transverse to some other (co)chain $W$ while another such example may not be transverse to $W$.
+We can make this example a bit more interesting as follows. Instead of the codomain being $\R^1$, we let the codomain be $\R^2$. We continue to let most of the map $r_V \colon V \to \R^2$ be the projection to the $x$-axis, but let us choose a Euclidean ball in the interior of the simplex and draw its image out into a 1-dimensional ``thread'' in the plane, analogously to how one changes basepoints for an element of some $\pi_2(M)$. With some care, this can be done smoothly. Any two such maps represent the same chain or cochain (depending on whether we assign orientations or co-orientations), but depending on the choice of thread, one such example may be transverse to some other (co)chain $W$ while another such example may not be transverse to $W$.
 \end{example}
 
 
@@ -467,7 +467,7 @@ In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon M \t
 \subsubsection{Pullbacks of cochains}
 
 \begin{definition}\label{D: transverse to map}
-Let $h:M \to N$ be a smooth map of manifolds without boundary, and let $\uV \in C^*_\Gamma(N)$. We will say that $\uV$ is \textbf{transverse to $h$} if $\uV$ has a representative $f:V \to N$ such that $f$ is transverse to $h$. In this case we define the pullback $h^*(\uV)$ to be $\underline{h^*(V)} \in C^*_\Gamma(M)$.
+Let $h \colon M \to N$ be a smooth map of manifolds without boundary, and let $\uV \in C^*_\Gamma(N)$. We will say that $\uV$ is \textbf{transverse to $h$} if $\uV$ has a representative $f \colon V \to N$ such that $f$ is transverse to $h$. In this case we define the pullback $h^*(\uV)$ to be $\underline{h^*(V)} \in C^*_\Gamma(M)$.
 
 We will write the set of cochains transverse to $h$ as $C^*_{\Gamma\pf h}(N)$.
 \end{definition}
@@ -475,10 +475,10 @@ We will write the set of cochains transverse to $h$ as $C^*_{\Gamma\pf h}(N)$.
 We notice that the transversality situation here is simpler than the more general ones in the preceding section, as $h$ is a fixed map.
 
 \begin{proposition}
-Given a smooth map of manifolds without boundary $h:M \to N$, the set $C^*_{\Gamma\pf h}(N)$ is a subcomplex of $C^*_{\Gamma}(N)$, and the map $h^*:C^*_{\Gamma\pf h}(N) \to C^*_{\Gamma}(M)$ is a well-defined chain map.
+Given a smooth map of manifolds without boundary $h \colon M \to N$, the set $C^*_{\Gamma\pf h}(N)$ is a subcomplex of $C^*_{\Gamma}(N)$, and the map $h^*:C^*_{\Gamma\pf h}(N) \to C^*_{\Gamma}(M)$ is a well-defined chain map.
 \end{proposition}
 \begin{proof}
-If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $f:V \to N$ and $g:W \to N$ that are transverse to $h$, then $\uV+\uW$ can be represented by $V\sqcup W$, which will also be transverse to $h$. So $C^*_{\Gamma\pf h}(N)$ is closed under addition. If $f:V \to N$ is transverse to $h$ then so is $-f$, i.e.\ $f$ with the opposite co-orientation, so $C^*_{\Gamma\pf h}(N)$ is closed under negation. The empty map $\emptyset \to N$ is always transverse to $h$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma\pf h}(N)$. Finally, if $\uV$ is represented by $f:V \to N$ transverse to $h$, then by definition $\bd V \to N$ is transverse to $h$, so $\bd \uV \in C^*_{\Gamma\pf h}(N)$. Therefore, $C^*_{\Gamma\pf h}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
+If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $f \colon V \to N$ and $g \colon W \to N$ that are transverse to $h$, then $\uV+\uW$ can be represented by $V\sqcup W$, which will also be transverse to $h$. So $C^*_{\Gamma\pf h}(N)$ is closed under addition. If $f \colon V \to N$ is transverse to $h$ then so is $-f$, i.e.\ $f$ with the opposite co-orientation, so $C^*_{\Gamma\pf h}(N)$ is closed under negation. The empty map $\emptyset \to N$ is always transverse to $h$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma\pf h}(N)$. Finally, if $\uV$ is represented by $f \colon V \to N$ transverse to $h$, then by definition $\bd V \to N$ is transverse to $h$, so $\bd \uV \in C^*_{\Gamma\pf h}(N)$. Therefore, $C^*_{\Gamma\pf h}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
 
 To how that $h^*$ is well defined on $C^*_{\Gamma\pf h}(N)$ we must show that it does not depend on the choice of representative $V$. Suppose $V$ and $V'$ both represent $\uV$ and are transverse to $h$. Then $V\sqcup -V'$ is transverse to $h$ and an element of $Q^*(N)$. So by \cref{L: pullback map Q}, $h^*(V\sqcup -V')$, which is by definition $(V\sqcup -V')\times_NM = (V\times_NM)\sqcup (-V'\times_NM)$ mapping to $M$, is an element of $Q^*(M)$. So $h^*(V)$ and $h^*(V')$ represent the same element of $C^*_{\Gamma}(M)$. Thus $h^*$ is well defined.
 
@@ -490,7 +490,7 @@ using the definitions, obvious properties of the pullback and \cref{L: co/chains
 
 
 \begin{remark}
-While $C^*_{\Gamma\pf h}(N)$ is a subcomplex, it is not closed under taking cup products, even when they are well defined. As an example, let $h:M \to N$ be the inclusion of the $x$-axis into the plane $\R^2$. Let $V$ be represented by an embedding of $\R$ into $\R^2$ as the line $y = x$, and let $W$ similarly correspond to $y = -x$, with any co-orientations. Then $\uV \uplus \uW$ is represented by the embedding of the origin into $\R^2$, but this is not transverse to $h$, even though both $V$ and $W$ are transverse to $h$.
+While $C^*_{\Gamma\pf h}(N)$ is a subcomplex, it is not closed under taking cup products, even when they are well defined. As an example, let $h \colon M \to N$ be the inclusion of the $x$-axis into the plane $\R^2$. Let $V$ be represented by an embedding of $\R$ into $\R^2$ as the line $y = x$, and let $W$ similarly correspond to $y = -x$, with any co-orientations. Then $\uV \uplus \uW$ is represented by the embedding of the origin into $\R^2$, but this is not transverse to $h$, even though both $V$ and $W$ are transverse to $h$.
 \end{remark}
 
 
@@ -522,7 +522,7 @@ So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom(C_i^{\Gamma\pf \
 
 \begin{comment}
 \begin{proof}
-If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $f:V \to N$ and $g:W \to N$ that are transverse to $h$, then $\uV+\uW$ is represented by $V\sqcup W$, which will also be transverse to $h$. So $C^*_{\Gamma\pf h}(N)$ is closed under addition. If $f:V \to N$ is transverse to $h$ then so is $-f$, i.e.\ $f$ with the opposite co-orientation, so $C^*_{\Gamma\pf h}(N)$ is closed under taking negatives. The empty map $\emptyset \to N$ is always transverse to $h$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma\pf h}(N)$. Finally, if $\uV$ is represented by $f:V \to N$ transverse to $h$, then by definition $\bd V \to N$ is transverse to $h$, so $\bd \uV \in C^*_{\Gamma\pf h}(N)$. Therefore, $C^*_{\Gamma\pf h}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
+If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $f \colon V \to N$ and $g \colon W \to N$ that are transverse to $h$, then $\uV+\uW$ is represented by $V\sqcup W$, which will also be transverse to $h$. So $C^*_{\Gamma\pf h}(N)$ is closed under addition. If $f \colon V \to N$ is transverse to $h$ then so is $-f$, i.e.\ $f$ with the opposite co-orientation, so $C^*_{\Gamma\pf h}(N)$ is closed under taking negatives. The empty map $\emptyset \to N$ is always transverse to $h$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma\pf h}(N)$. Finally, if $\uV$ is represented by $f \colon V \to N$ transverse to $h$, then by definition $\bd V \to N$ is transverse to $h$, so $\bd \uV \in C^*_{\Gamma\pf h}(N)$. Therefore, $C^*_{\Gamma\pf h}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
 
 To how that $h^*$ is well defined on $C^*_{\Gamma\pf h}(N)$ we must show that it does not depend on the choice of representative $V$. Suppose $V$ and $V'$ both represent $\uV$ and are transverse to $h$. Then $V\sqcup -V'$ is transverse to $h$ and an element of $Q^*(N)$. So by \cref{L: pullback map Q}, $h^*(V\sqcup -V')$, which is by definition $(V\sqcup -V')\times_NM = (V\times_NM)\sqcup (-V'\times_NM)$ mapping to $M$, is an element of $Q^*(M)$. So $h^*(V)$ and $h^*(V')$ represent the same element of $C^*_{\Gamma}(M)$. Thus $h^*$ is well defined.
 
@@ -615,7 +615,7 @@ Intersection product &$\partial (\uV \bullet \uW) = (\partial \uV) \bullet \uW +
 
 \subsubsection{Commutativity formulas}
 
- For the commutativity properties listed below, $\tau$ is the transposition map $\tau:N \times M \to M \times N$. The cup and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
+ For the commutativity properties listed below, $\tau$ is the transposition map $\tau \colon N \times M \to M \times N$. The cup and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
 
 \bigskip
 
@@ -639,8 +639,8 @@ Intersection product&$\uV\bullet \uW = (-1)^{(m-v)(m-w)}\uW\bullet \uV$&\cref{P:
 \subsubsection{Unital properties}
 
 
-For the following unital properties, we write $pt$ to refer to the point with its positive orientation. We will write $\underline{pt}$ for the geometric chain given by $\id_{pt}:pt \to pt$ or for the geometric cochain given by the canonically co-oriented identity map $\id_{pt}:pt \to pt$. Similarly, $\uM$ represents the geometric chain or cochain corresponding to $\id_M:M \to M$, canonically co-oriented in the cochain case. Technically, $M$ must be compact for $\id_M$ to represent a chain, but the corresponding formulas hold more broadly at the referenced locations and so these identities could be taken as statements involving a broader class of geometric chains.
- Note that, as a cochain, $\uM \in C^0_\Gamma(M)$, and \cref{P: projection pullbacks} shows that these correspond to the singular cochain $1$. We also let $\pi_1:M \times N \to M$ and $\pi_2:N \times M \to M$ denote the projections. In the first formula for the cap product with $\uM$, $M$ is oriented, and the first $\uV$ is $V \to M$ as a cochain while the second is $V \to M$ as a chain with the induced orientation on $V$; see \cref{P: cap with identity M}. In the second cap product formula, both instances of $\uV$ are as chains.
+For the following unital properties, we write $pt$ to refer to the point with its positive orientation. We will write $\underline{pt}$ for the geometric chain given by $\id_{pt}:pt \to pt$ or for the geometric cochain given by the canonically co-oriented identity map $\id_{pt}:pt \to pt$. Similarly, $\uM$ represents the geometric chain or cochain corresponding to $\id_M \colon M \to M$, canonically co-oriented in the cochain case. Technically, $M$ must be compact for $\id_M$ to represent a chain, but the corresponding formulas hold more broadly at the referenced locations and so these identities could be taken as statements involving a broader class of geometric chains.
+ Note that, as a cochain, $\uM \in C^0_\Gamma(M)$, and \cref{P: projection pullbacks} shows that these correspond to the singular cochain $1$. We also let $\pi_1 \colon M \times N \to M$ and $\pi_2 \colon N \times M \to M$ denote the projections. In the first formula for the cap product with $\uM$, $M$ is oriented, and the first $\uV$ is $V \to M$ as a cochain while the second is $V \to M$ as a chain with the induced orientation on $V$; see \cref{P: cap with identity M}. In the second cap product formula, both instances of $\uV$ are as chains.
 
 As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 
@@ -675,7 +675,7 @@ Intersection product with $\uM$ &$\uM\bullet \uV = \uV\bullet \uM = \uV$&\cref{P
 
 
 
-The next grouping concerns properties that involve multiple products. We recall that $\diag:M \to M \times M$ is the diagonal map. For these properties we assume maps $V,W \to M$ and $X,Y \to N$. We also have projections $\pi_M:M \times N \to M$ and $\pi_N:M \times N \to N$. The last formula follows from \cref{P: compare cup and intersection orientations} by observing from the previous list of properties that, when $M$ is oriented, the cap product with $\uM$, which represents the chain $\id_M:M \to M$, takes a cochain to the chain with the orientation induced by the cochain co-orientation and the orientation of $M$.
+The next grouping concerns properties that involve multiple products. We recall that $\diag \colon M \to M \times M$ is the diagonal map. For these properties we assume maps $V,W \to M$ and $X,Y \to N$. We also have projections $\pi_M \colon M \times N \to M$ and $\pi_N \colon M \times N \to N$. The last formula follows from \cref{P: compare cup and intersection orientations} by observing from the previous list of properties that, when $M$ is oriented, the cap product with $\uM$, which represents the chain $\id_M \colon M \to M$, takes a cochain to the chain with the orientation induced by the cochain co-orientation and the orientation of $M$.
 
 The first and last properties require that $\uV$ and $\uW$ be transverse. The second holds for all $\uV, \uW$. The next three require that $\uV$ be transverse to $\uW$ and that $\underline{X}$ be transverse to $\underline{Y}$.
 
@@ -720,7 +720,7 @@ Similar concerns arise for our naturality formula, as pulling back a cup product
 
 \textbf{Naturality.}
 As noted above, naturality of cup and cap products requires some extra care to ensure not just that chains and cochains are appropriately transverse but that there are also the appropriate transversalities with respect to the maps we pull back by. This requires a good number of further assumptions; see \cref{R: multiproducts}.
-So suppose $h:M \to N$ is a map of manifolds without boundaries and that $\uV,\uW \in C^*_{\Gamma}(N)$. For naturality of cup products we assume not just that $\uV$ and $\uW$ are transverse, but we require decompositions $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$, $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$ such that each pair $(\underline{V_i},\underline{W_j})$ has representatives $V_{ij}$ and $W_{ji}$ such that
+So suppose $h \colon M \to N$ is a map of manifolds without boundaries and that $\uV,\uW \in C^*_{\Gamma}(N)$. For naturality of cup products we assume not just that $\uV$ and $\uW$ are transverse, but we require decompositions $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$, $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$ such that each pair $(\underline{V_i},\underline{W_j})$ has representatives $V_{ij}$ and $W_{ji}$ such that
 
 
 \begin{itemize}
@@ -833,20 +833,20 @@ These are easily seen to be bilinear and $\Z$-balanced (i.e.\ they satisfy $(r\u
 For the other products, we must show that if we are given homology or cohomology classes (depending on the particular product), then they can be represented by chains or cochains $\uV$ and $\uW$ that are transverse and that the product does not depend on such a choice.
 The basic steps of the proof are relatively standard and analogous to the proof of \cref{T: transverse complex}. We provide the general details here modulo a technical lemma that we will prove below.
 
-First we define the products. Given (co)homology classes represented by $r_V:V \to M$ and $r_W \colon W \to M$, we will find a universal homotopy\footnote{Recall from \cref{S: transverse cochains} that a universal homotopy will be one of the form $V \times I\xr{r_V \times \id} M \times I\xr{h} M$ and that such homotopies generate (co)homologies.} of $r_V$ to a map $r_V':V \to M$ that is transverse to $W$. Then $r_V$ and $r_V'$ represent (co)homologous (co)chains, and we can represent the product by the (oriented or co-oriented) fiber product of $r_V'$ and $r_W$.
+First we define the products. Given (co)homology classes represented by $r_V \colon V \to M$ and $r_W \colon W \to M$, we will find a universal homotopy\footnote{Recall from \cref{S: transverse cochains} that a universal homotopy will be one of the form $V \times I\xr{r_V \times \id} M \times I\xr{h} M$ and that such homotopies generate (co)homologies.} of $r_V$ to a map $r_V' \colon V \to M$ that is transverse to $W$. Then $r_V$ and $r_V'$ represent (co)homologous (co)chains, and we can represent the product by the (oriented or co-oriented) fiber product of $r_V'$ and $r_W$.
 
-To show that this gives a well-defined (co)homology class, we can suppose that $r_V'':W \to M$ is another map transverse to $r_W$ representing the same (co)homology class as $r_V:V \to M$ with $r_Z:Z \to M$ providing the (co)homology. For notational purposes, let us write $r_V':V' \to M$ and $r_V'':V'' \to M$ with $V = V' = V''$. Then $\bd Z = V'\sqcup -V''\sqcup T$ with $T \in Q(M)$. We must show that $V' \times_M W$ and $V'' \times_M W$ are (co)homologous. To do so, we find a universal homotopy $H:Z \times I \to M$ from $r_Z$ to an $r_Z':Z' \to M$ with $Z = Z'$ such that the restrictions of $H$ to $V' \times I$ and $V'' \times I$ are transverse to $r_W$ and $r_Z'$ is also transverse to $r_W$. So $H|_{V' \times I}$ and $H|_{V'' \times I}$ give (co)homologies from the (co)chains represented by $V'$ and $V''$ to (co)chains that are (co)homologous via $r_Z'$. Altogether, this gives a (co)homology from $V'$ to $V''$ that is transverse to $r_W$. Call the (co)chain representing the (co)homology $\mf V$. Now we can consider $\mf V \times_M W$, and we have $$\bd (\mf V \times_M W) = \pm (\bd \mf V) \times_M W\pm \mf V \times_M \bd W$$ via the appropriate boundary formulas (see \cref{P: oriented fiber boundary,leibniz,P: Leibniz cap}). As $W$ represents a (co)cycle, $\bd W \in Q(M)$, so $\mf V \times_M \bd W \in Q(M)$ by \cref{L: pullback with Q}. Meanwhile, as $\mf V$ is a (co)homology from $V'$ to $V''$, we have $$\bd \mf V \times_M W = (V'\sqcup -V''\sqcup T') \times_M W = (V' \times_M W)\sqcup -(V'' \times_M W)\sqcup (T' \times_M W),$$
+To show that this gives a well-defined (co)homology class, we can suppose that $r_V'' \colon W \to M$ is another map transverse to $r_W$ representing the same (co)homology class as $r_V \colon V \to M$ with $r_Z:Z \to M$ providing the (co)homology. For notational purposes, let us write $r_V' \colon V' \to M$ and $r_V'' \colon V'' \to M$ with $V = V' = V''$. Then $\bd Z = V'\sqcup -V''\sqcup T$ with $T \in Q(M)$. We must show that $V' \times_M W$ and $V'' \times_M W$ are (co)homologous. To do so, we find a universal homotopy $H:Z \times I \to M$ from $r_Z$ to an $r_Z':Z' \to M$ with $Z = Z'$ such that the restrictions of $H$ to $V' \times I$ and $V'' \times I$ are transverse to $r_W$ and $r_Z'$ is also transverse to $r_W$. So $H|_{V' \times I}$ and $H|_{V'' \times I}$ give (co)homologies from the (co)chains represented by $V'$ and $V''$ to (co)chains that are (co)homologous via $r_Z'$. Altogether, this gives a (co)homology from $V'$ to $V''$ that is transverse to $r_W$. Call the (co)chain representing the (co)homology $\mf V$. Now we can consider $\mf V \times_M W$, and we have $$\bd (\mf V \times_M W) = \pm (\bd \mf V) \times_M W\pm \mf V \times_M \bd W$$ via the appropriate boundary formulas (see \cref{P: oriented fiber boundary,leibniz,P: Leibniz cap}). As $W$ represents a (co)cycle, $\bd W \in Q(M)$, so $\mf V \times_M \bd W \in Q(M)$ by \cref{L: pullback with Q}. Meanwhile, as $\mf V$ is a (co)homology from $V'$ to $V''$, we have $$\bd \mf V \times_M W = (V'\sqcup -V''\sqcup T') \times_M W = (V' \times_M W)\sqcup -(V'' \times_M W)\sqcup (T' \times_M W),$$
 with $T' \in Q(M)$. So $T' \times_M W \in Q(M)$ by \cref{L: pullback with Q}, and we see that $V' \times_M W$ and $V'' \times_M W$ are (co)homologous.
 
 So to finish the proof, we need an analogue of \cref{P: ball stability} that allows us to construct the homotopy $H$. This is the content of \cref{P: perturb transverse to map} below.
 \end{proof}
 
 \begin{proposition}\label{P: perturb transverse to map}
-Suppose $f \colon V \to M$ and $g \colon W \to M$ are proper maps from manifolds with corners to a manifold without boundary. Then there is a proper universal homotopy $h:V \times I \to M$ such that:
+Suppose $f \colon V \to M$ and $g \colon W \to M$ are proper maps from manifolds with corners to a manifold without boundary. Then there is a proper universal homotopy $h \colon V \times I \to M$ such that:
 \begin{enumerate}
 \item $h(-,0) = f$,
 
-\item $h(-,1):V \to M$ is transverse to $g$,
+\item $h(-,1) \colon V \to M$ is transverse to $g$,
 
 \item if $i_{X}:X \to V$ is the inclusion of a union of boundary components of $V$ with $r_X = fi_X:X \to M$ transverse to $g$ then $h\circ(i_{X} \times \id):X \times I \to M$ is transverse to $g$.
 
@@ -865,7 +865,7 @@ Recall that this lemma allows us to replace transversality of arbitrary maps wit
 \red{GOING TO MOVE ELSEWHERE - HEREHERE}
 
 \begin{lemma}\label{L: all transversality is wrt embeddings}
-Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary. Let $e:W \to M \times \R^n$ be an embedding such that $\pi e = g$, where $\pi$ is the projection $M \times \R^n \to M$. Then $f$ and $g$ are transverse if and only if $e$ is transverse to $f\times\id_{\R^n}:V \times \R^n \to M \times \R^n$.
+Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary. Let $e \colon W \to M \times \R^n$ be an embedding such that $\pi e = g$, where $\pi$ is the projection $M \times \R^n \to M$. Then $f$ and $g$ are transverse if and only if $e$ is transverse to $f\times\id_{\R^n} \colon V \times \R^n \to M \times \R^n$.
 \end{lemma}
 
 \begin{proof}
@@ -879,7 +879,7 @@ Next suppose $f \times \id_{\R^n}$ and $e$ are transverse and that $f(v) = g(w) 
 \begin{equation}\label{E: Quillen transverse}
 D(f\times\id_{\R^{n}})(T_{(v,z)}(V \times \R^n))+De(T_wW) = T_{e(w)}(M \times \R^n) = T_{f(v)}M \oplus \R^n.
 \end{equation}
- As $\pi$ is a submersion, the image of this tangent space under $D\pi$ is all of $T_{f(v)}M$. But $(D\pi)(De) = D(\pi e) = Dg$, so $(D\pi \circ De)(T_wW) = Dg(T_wW)$. Furthermore, letting $\pi_V:V \times \R^n \to V$ be the projection, we have $(D\pi)(D(f\times\id_{\R^{n}})) = D(\pi(f\times\id_{\R^{n}})) = D(f\pi_V) = (Df)(D\pi_V)$, so, as $D\pi_V:T_{(v,z)}(V \times \R^n) \to T_vV$ is surjective, we have $(D\pi)(D(f\times\id_{\R^{n}}))(T_{(v,z)}(V \times \R^n)) = Df(T_vV)$. So applying $D\pi$ to equation \eqref{E: Quillen transverse}, we get $Df(T_vV)+Dg(T_wW) = T_{f(v)}M$, and $f$ is transverse to $g$.
+ As $\pi$ is a submersion, the image of this tangent space under $D\pi$ is all of $T_{f(v)}M$. But $(D\pi)(De) = D(\pi e) = Dg$, so $(D\pi \circ De)(T_wW) = Dg(T_wW)$. Furthermore, letting $\pi_V \colon V \times \R^n \to V$ be the projection, we have $(D\pi)(D(f\times\id_{\R^{n}})) = D(\pi(f\times\id_{\R^{n}})) = D(f\pi_V) = (Df)(D\pi_V)$, so, as $D\pi_V:T_{(v,z)}(V \times \R^n) \to T_vV$ is surjective, we have $(D\pi)(D(f\times\id_{\R^{n}}))(T_{(v,z)}(V \times \R^n)) = Df(T_vV)$. So applying $D\pi$ to equation \eqref{E: Quillen transverse}, we get $Df(T_vV)+Dg(T_wW) = T_{f(v)}M$, and $f$ is transverse to $g$.
 \end{proof}
 
 \end{comment}
@@ -888,11 +888,11 @@ D(f\times\id_{\R^{n}})(T_{(v,z)}(V \times \R^n))+De(T_wW) = T_{e(w)}(M \times \R
 The next lemma says, roughly speaking, that $e(W)$ does not run off to infinity in the $\R^n$ factors over compact subsets of $M$.
 
 \begin{lemma}\label{L: compact preimage}
-Let $g \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, let $\pi_M:M \times \R^n \to M$ be the projection, and let $e:W \to M \times \R^n$ be an embedding such that $\pi_Me = g$.
+Let $g \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, let $\pi_M \colon M \times \R^n \to M$ be the projection, and let $e \colon W \to M \times \R^n$ be an embedding such that $\pi_Me = g$.
 Then if $L \subset M$ is compact, there exists a close ball $\bar B^n_L \subset \R^n$ such that $e(g^{-1}(L)) \subset L \times \bar B^n_L$.
 \end{lemma}
 \begin{proof}
-As $L$ is compact and $g$ is proper, $g^{-1}(L)$ is compact. So $e(g^{-1}(L))$ is compact, as is its image under the projection $\pi_{\R^n}:M \times \R^n \to \R^n$. Let $\bar B^n_L \subset \R^n$ be a closed ball containing this projection. Then $\pi_Me(g^{-1}(L)) = g(g^{-1}(L)) \subset L$ and $\pi_{\R^n}e(g^{-1}(L)) \subset \bar B^n_L$. So $e(g^{-1}(L)) \subset L \times \bar B^n_L$.
+As $L$ is compact and $g$ is proper, $g^{-1}(L)$ is compact. So $e(g^{-1}(L))$ is compact, as is its image under the projection $\pi_{\R^n} \colon M \times \R^n \to \R^n$. Let $\bar B^n_L \subset \R^n$ be a closed ball containing this projection. Then $\pi_Me(g^{-1}(L)) = g(g^{-1}(L)) \subset L$ and $\pi_{\R^n}e(g^{-1}(L)) \subset \bar B^n_L$. So $e(g^{-1}(L)) \subset L \times \bar B^n_L$.
 \end{proof}
 
 
@@ -900,32 +900,32 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 \cref{P: perturb transverse to map}.
 
 \begin{proof}[Proof of \cref{P: perturb transverse to map}]
-Suppose we have an embedding $e:W \to M \times \R^n$ such that $\pi e = g$, with $\pi: M \times \R^n \to M$ the projection. Such an embedding always exists by the proof of \cref{L: Quillen}. By \cref{L: all transversality is wrt embeddings}, it suffices to show that there is a proper universal homotopy $h:V \times I \to M$ such that
+Suppose we have an embedding $e \colon W \to M \times \R^n$ such that $\pi e = g$, with $\pi: M \times \R^n \to M$ the projection. Such an embedding always exists by the proof of \cref{L: Quillen}. By \cref{L: all transversality is wrt embeddings}, it suffices to show that there is a proper universal homotopy $h \colon V \times I \to M$ such that
 
 \begin{enumerate}
 \item $h(-,0) = f$,
-\item $h(-,1) \times \id_{\R^n}:V \times \R^n \to M \times \R^n$ is transverse to $e:W \to M \times \R^n$, and
+\item $h(-,1) \times \id_{\R^n} \colon V \times \R^n \to M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$, and
 \item $(h\circ(i_{X} \times \id_I))\times\id_{\R^n}: X \times I \times \R^n \to M \times \R^n$ is transverse to $e$.
 \end{enumerate}
 To do so, we will run through the proof of \cref{P: ball stability} again, adapting it to this altered situation and referring back to that proof for some of the details. \red{Note to Dev and Anibal: I know this is a bit redundant and \cref{P: ball stability} is arguably a special case with $n = 0$ (though there are a few other differences), but the proof of \cref{P: ball stability} is already very complicated so I didn't want to just do this more general version earlier. }
 
 
-As in the proof of \cref{P: ball stability}, we begin with the case where $V$ is compact and construct $F:M \times D^N \to M$, with $D^N$ the unit ball centered at $0$ in $\R^N$ for some $N$, such that
+As in the proof of \cref{P: ball stability}, we begin with the case where $V$ is compact and construct $F \colon M \times D^N \to M$, with $D^N$ the unit ball centered at $0$ in $\R^N$ for some $N$, such that
 
 \begin{enumerate}
 
-\item $F(-,0) = \id:M \to M$,
-\item for almost all $s \in D^N$ the composition $V \times \R^n\xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e:W \to M \times \R^n$,
+\item $F(-,0) = \id \colon M \to M$,
+\item for almost all $s \in D^N$ the composition $V \times \R^n\xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$,
 
 \item there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $X \times \R^n\xr{i_{X} \times \id_{\R^n}} V \times \R^n\xr{f \times \id_{\R^n}} M \times \R^n\xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e$.
 \end{enumerate}
 
-Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n\xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s_0) \times \id_{\R^n}}M \times \R^n$ is transverse to $e:W \to M \times \R^n$. Then let $h(-,t) = F(-,ts_0)f$, i.e.\ $h(x,t) = F(f(x),ts_0)$. The first required property for $h$ holds since $F(-,0) = \id$. The second property holds by our choice of $s_0$. The last property then holds as $ts_0 \in D_r^N$ for all $t \in I$; thus each $(h(-,ts_0) \times \id_{\R^n})(i_X \times \id_{\R^n}) = (h(-,ts_0)i_x) \times \id_{\R^n}$ is transverse to $e$, which then implies that $(h\circ(i_{X} \times \id_I))\times\id_{\R^n}$ is transverse to $e$ as well. Furthermore, $h$ is a universal homotopy by construction, and it is automatically proper as we are assuming $V$ to be compact.
+Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n\xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s_0) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$. Then let $h(-,t) = F(-,ts_0)f$, i.e.\ $h(x,t) = F(f(x),ts_0)$. The first required property for $h$ holds since $F(-,0) = \id$. The second property holds by our choice of $s_0$. The last property then holds as $ts_0 \in D_r^N$ for all $t \in I$; thus each $(h(-,ts_0) \times \id_{\R^n})(i_X \times \id_{\R^n}) = (h(-,ts_0)i_x) \times \id_{\R^n}$ is transverse to $e$, which then implies that $(h\circ(i_{X} \times \id_I))\times\id_{\R^n}$ is transverse to $e$ as well. Furthermore, $h$ is a universal homotopy by construction, and it is automatically proper as we are assuming $V$ to be compact.
 
 We now claim that we can construct $F$ almost exactly as in \cref{P: ball stability}. Recall that we let $M_\epsilon$ be an $\epsilon$-neighborhood of a proper embedding of $M$ into some $\R^N$ in the sense of the $\epsilon$-Neighborhood Theorem of \cite[Section 2.3]{GuPo74}, with $\epsilon$ a smooth positive function of $M$ and $M_\epsilon = \{z \in \R^N\mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
 Let $\pi_\epsilon: M_\epsilon \to M$ be the submersion.
 We define $\theta: M \times D^N \to M_\epsilon$ by $\theta(y, s) = y + \epsilon(y) s$, which is a submersion onto its image.
-Then we let $F:M \times D^N \to M$ be the submersion $M \times D^N\xr{\theta}M_\epsilon \xr{\pi}M$ and let $H:V \times D^N \to M$ be the composition $F \circ (f \times \id_{D^N})$. The map $H$ is also a submersion onto its image, as are its restrictions $H|_{S^k(V) \times D^N}$.
+Then we let $F \colon M \times D^N \to M$ be the submersion $M \times D^N\xr{\theta}M_\epsilon \xr{\pi}M$ and let $H \colon V \times D^N \to M$ be the composition $F \circ (f \times \id_{D^N})$. The map $H$ is also a submersion onto its image, as are its restrictions $H|_{S^k(V) \times D^N}$.
 Consequently the maps
 $$S^k(V) \times D^N \times \R^n\xr{H \times \id_{\R^n}} M \times \R^n$$
 are also submersions onto their images. Thus they are all transverse to all the strata of $W$, embedded by $e$ into $M \times \R^n$.
@@ -939,10 +939,10 @@ We must start with two observations that were not needed in the proof of \cref{P
 
 First, as we are currently assuming that $V$ is compact, $L = H(V \times \bar D^N_{1/2}) \subset M$ is compact, and so by \cref{L: compact preimage} we have $e(g^{-1}(L)) \subset M \times \bar B^n_L$ for some closed ball $\bar B^n_L$. In particular, this implies that for $|s|\leq 1/2$ only points in the compact set $V \times \bar B^n_k$ can be taken by $H(-,s) \times \id_{\R^n}$ to points of $e(W)$ in $M \times \R^n$.
 
-Second, we also have to be more careful here about the map $e:W \times \R^n$, as its behavior can be more complicated than the embedding of a closed face of a cubulation.
+Second, we also have to be more careful here about the map $e \colon W \times \R^n$, as its behavior can be more complicated than the embedding of a closed face of a cubulation.
 Let $W_j = ei_{\bd^jW}(\bd^jW)$, the image of $\bd^jW$ in $M \times \R^n$. As the maps $i_{\bd^jW}$ are not necessarily embeddings, it will not generally be the case that $W_j \cong \bd^jW$. However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jW}$ are proper maps, so $W_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Section I.10]{Bou98}).
 
-Now, suppose $(x,z) \in X \times \bar B^n_L$. As $f \times \id_{\R^n} = H_1(-,0) \times \id_{\R^n}$ is transverse $e:W \to M \times \R^n$, either $(r_X(x),z)\notin W_j$ or $r_X \times \id_{\R^n}$ is (plainly) transverse to $ei_{\bd^jW}$ at $(r_X(x),z)$. In the former case, as $W_j$ is closed, there is an open neighborhood $A_{(x,z)}$ of $(x,0,z) \in X \times D^N \times \R^n$ such that $(H_1 \times \id_{\R^n})(A_x) \cap W_j = \emptyset$. Now suppose that $(r_X(x),z) \in W_j$ and is transverse there to $ei_{\bd^jW}:\bd^jW \to M \times \R^n$. As $e$ is an embedding, the preimage of $(r_X(x),z)$ in $\bd^jW$ is the preimage of a point of $W$ under the boundary map $i_{\bd^jW}$, which is a finite set of points. Let $a \in \bd^jW$ be one point of the preimage. As the boundary maps are immersions, there is a neighborhood $C_a$ of $a$ in $\bd^jW$ on which $ei_{\bd^jW}$ restricts to an embedding from a $w-j$ dimensional manifold with corners into $M \times \R^n$. In fact, by choosing a chart around $a$ and using the definition of a smooth map of manifolds with corners, $ei_{\bd^jW}$ (composed with the chart map) extends to a smooth immersion of a neighborhood of $0 \in \R^{w-j}$ into $M \times \R^n$.
+Now, suppose $(x,z) \in X \times \bar B^n_L$. As $f \times \id_{\R^n} = H_1(-,0) \times \id_{\R^n}$ is transverse $e \colon W \to M \times \R^n$, either $(r_X(x),z)\notin W_j$ or $r_X \times \id_{\R^n}$ is (plainly) transverse to $ei_{\bd^jW}$ at $(r_X(x),z)$. In the former case, as $W_j$ is closed, there is an open neighborhood $A_{(x,z)}$ of $(x,0,z) \in X \times D^N \times \R^n$ such that $(H_1 \times \id_{\R^n})(A_x) \cap W_j = \emptyset$. Now suppose that $(r_X(x),z) \in W_j$ and is transverse there to $ei_{\bd^jW}:\bd^jW \to M \times \R^n$. As $e$ is an embedding, the preimage of $(r_X(x),z)$ in $\bd^jW$ is the preimage of a point of $W$ under the boundary map $i_{\bd^jW}$, which is a finite set of points. Let $a \in \bd^jW$ be one point of the preimage. As the boundary maps are immersions, there is a neighborhood $C_a$ of $a$ in $\bd^jW$ on which $ei_{\bd^jW}$ restricts to an embedding from a $w-j$ dimensional manifold with corners into $M \times \R^n$. In fact, by choosing a chart around $a$ and using the definition of a smooth map of manifolds with corners, $ei_{\bd^jW}$ (composed with the chart map) extends to a smooth immersion of a neighborhood of $0 \in \R^{w-j}$ into $M \times \R^n$.
  By further appealing to charts and local diffeomorphisms, we can identify a neighborhood of $(r_X(x),z)$ in $M \times \R^n$ with $\R^{m+n}$ and the image of the extension of $ei_{\bd^jW}$ with $\R^{w-j} \times 0 \subset \R^{m+n}$.
  The transversality assumption means that the composition of $D(r_X \times \id_{\R^n}):T_xX \times T_z\R^n
  \to T_{(r_X(x),z)}(M \times \R^n)$ with the projection to the last $m+n-(w-j)$ coordinates is a linear surjection. As this is an open condition on the Jacobian matrix of $r_X \times \id_{\R^n}$ at $(x,z)$, it follows again that there is an open neighborhood $A_{(x,t),a}$ of $(x,0,z)$ in $X \times D_{1/2}^N \times \R^n$ such that for each $(x',s,z')$ in the neighborhood $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ in a neighborhood of $a$. As there are a finite number of possible points $a$ and the transversality assumptions must hold for all of them, by taking $A_{(x,z)} = \cap_a A_{(x,z),a}$ with the finite intersection running over all points of $\bd^jW$ that map to $(r_X(x),z)$, we obtain a neighborhood $A_{(x,z)}$ of $(x,0,z)$ in $W \times D_{1/2}^N \times \R^n$ such that for each $(x',s,z')$ in the neighborhood, $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ at $(x',z')$.
@@ -953,12 +953,12 @@ Now, taking the union of the $A_{(x,z)}$ over all $(x,z) \in X \times \bar B^n_L
 This completes the proof of the proposition for $V$ compact.
 
 
-Next suppose that $V$ is no longer necessarily compact. We construct a homotopy $\hat h:V \times I \to M$ that fulfills the proposition.
+Next suppose that $V$ is no longer necessarily compact. We construct a homotopy $\hat h \colon V \times I \to M$ that fulfills the proposition.
 
 
 
 
-We will utilize $F:M \times I \to M$ as defined above, which did not rely on $V$ being compact. For $V$ not compact, the first two properties listed above for $F$ will continue to hold, but the third relied on compactness and so need not hold any long in general.
+We will utilize $F \colon M \times I \to M$ as defined above, which did not rely on $V$ being compact. For $V$ not compact, the first two properties listed above for $F$ will continue to hold, but the third relied on compactness and so need not hold any long in general.
 However, let $K \subset X$ be compact, and let $L = H_1(i_X(K) \times \bar D_{1/2}^N) \subset M$.
 Choosing a $W_j$ as above and taking the union of the resulting $A_{(x,z)} \subset X \times D_{1/2}^N \times \R^n$ over all $(x,z) \in K \times \bar B^n_L$ and intersecting with $K \times D^N \times \bar B^n_L$ gives an open neighborhood $G_j$ of $K \times 0 \times \bar B^n_L$ in $K \times D^N \times \bar B^n_L$, such that
  $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ for all $(x,z) \in K \times \bar B^n_L$. Again we can use the Tube Lemma to find a neighborhood $U_j$ of $0$ in $D^N$ so that $K \times U_j \times \bar B^n_L \subset G_j$, and then for every $s \in U_k$, we know that $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ at every point of $K \times \R^n$, as points of $K \times \R^n$ outside of $K \times \bar B^n_L$ do not intersect $W_j$. Now, as above, by ranging over all of the finite options for $j$ and $k$, we can then find a neighborhood $U$ of $0$ in $D^N_{1/2}$ such that for all $s \in U$ we have $H_k(-,s) \times \id_{\R^n}$ (plainly) transverse to all $ei_{\bd^jW}$ at all points of $\bd^kV \times \R^n$, $k\geq 1$, that map to $K \times \R^n$ via the boundary immersions.
@@ -967,11 +967,11 @@ Choosing a $W_j$ as above and taking the union of the resulting $A_{(x,z)} \subs
 
 
 
-Now, using \cref{L: minimizer}, we choose a smooth function $\phi:M \to \R$ such that for all $x \in M$ we have $0<\phi(x)<\epsilon_\ell$ if $x \in \bar{\mc U_\ell}$. Let $M\times_\phi D^N = \{(y,s) \in M \times D^N\mid |s|<\phi(y)\}$. By our construction, for all $k\geq 1$ we have $H_k(-,s) \times \id_{\R^n}:\bd^{k}V \times \R^n \to M \times \R^n$ transverse to $ei_{\bd^jW}$ for each $s$ and at each $(x,z)$ such that $(x,s)\in(r_Xi_{\bd^{k}V} \times \id)^{-1}(M\times_\phi D^N) = \{(x,s) \in \bd^{k}V \times I\mid |s|<\phi(r_Xi_{\bd^kV}(x))\}$.
+Now, using \cref{L: minimizer}, we choose a smooth function $\phi \colon M \to \R$ such that for all $x \in M$ we have $0<\phi(x)<\epsilon_\ell$ if $x \in \bar{\mc U_\ell}$. Let $M\times_\phi D^N = \{(y,s) \in M \times D^N\mid |s|<\phi(y)\}$. By our construction, for all $k\geq 1$ we have $H_k(-,s) \times \id_{\R^n}:\bd^{k}V \times \R^n \to M \times \R^n$ transverse to $ei_{\bd^jW}$ for each $s$ and at each $(x,z)$ such that $(x,s)\in(r_Xi_{\bd^{k}V} \times \id)^{-1}(M\times_\phi D^N) = \{(x,s) \in \bd^{k}V \times I\mid |s|<\phi(r_Xi_{\bd^kV}(x))\}$.
 
 
-Let $\hat \theta: M \times D^N \to M_\epsilon$ be given by $\hat \theta(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points. Let $\hat F:M \times D^N \to M$ be the composition $M \times D^N\xr{\hat \theta}M_\epsilon \xr{\pi_\epsilon}M$, and let $\hat H_k$ be the composition $\bd^kV \times D^N\xr{i_{\bd^kV} \times \id}V \times D^N\xr{f \times \id} M \times D^N\xr{\hat F} M$ for $k\geq 0$. Once again by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for almost all $s \in D^N$ we have $\hat H_k(-,s) \times \id_{\R^n}$ transverse to all $ei_{\bd^jW}$
- for all $k\geq 0$. Letting $s_0$ be any such point we define $\hat h:V \times I \to M$ to be $\hat h(x,t) = \hat H(x,ts_0)$, and we claim that this $h$ satisfies the conditions of the proposition.
+Let $\hat \theta: M \times D^N \to M_\epsilon$ be given by $\hat \theta(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points. Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N\xr{\hat \theta}M_\epsilon \xr{\pi_\epsilon}M$, and let $\hat H_k$ be the composition $\bd^kV \times D^N\xr{i_{\bd^kV} \times \id}V \times D^N\xr{f \times \id} M \times D^N\xr{\hat F} M$ for $k\geq 0$. Once again by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for almost all $s \in D^N$ we have $\hat H_k(-,s) \times \id_{\R^n}$ transverse to all $ei_{\bd^jW}$
+ for all $k\geq 0$. Letting $s_0$ be any such point we define $\hat h \colon V \times I \to M$ to be $\hat h(x,t) = \hat H(x,ts_0)$, and we claim that this $h$ satisfies the conditions of the proposition.
 
 The map $\hat h$ is proper, and the first two conditions of the proposition follow immediately from the construction. It remains to verify that $$(\hat h\circ(i_{X} \times \id_I))\times\id_{\R^n}: X \times I \times \R^n \to M \times \R^n$$ is transverse to $e$. As we already know from the second condition of the proposition that $\hat h(-,1) \times \id_{\R^n}$ is transverse to $e$ and from the hypotheses that $\hat h(-,0)$ is transverse to $e$, it suffices to demonstrated transversality to $e$ of the restriction of $\hat h \times \id_{\R^n}$ to $X \times (0,1) \times \R^n$. From here, the argument is essentially the same as the end of the proof of \cref{P: ball stability} with the $\R^n$ factor just along for the ride.
 
@@ -1075,7 +1075,7 @@ Consider singular cohomology $H^*(-)$ as a cohomology theory on smooth manifolds
 \begin{proof}
 For a smooth manifold $M$, let $\alpha \in H^p(M)$ and $\beta \in H^q(M)$.
 The condition that $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ whem $M$ is connected already guarantees that $\star$ is the cup product when $p$ or $q$ is $0$, so we can suppose $p,q>0$.
-As $H^*$ is ordinary singular cohomology, we know that $\alpha$ and $\beta$ can be represented by maps $\bar \alpha:M \to K_p$ and $\bar\beta :M \to K_q$ with $\alpha = \bar \alpha^*(\iota_p)$ and $\beta = \bar\beta^*(\iota_q)$. Furthermore, $\alpha\smile \beta$ is the pullback of $\iota_{p+q}$ by the composition
+As $H^*$ is ordinary singular cohomology, we know that $\alpha$ and $\beta$ can be represented by maps $\bar \alpha \colon M \to K_p$ and $\bar\beta \colon M \to K_q$ with $\alpha = \bar \alpha^*(\iota_p)$ and $\beta = \bar\beta^*(\iota_q)$. Furthermore, $\alpha\smile \beta$ is the pullback of $\iota_{p+q}$ by the composition
 \begin{equation}\label{E: EM cross}
 M\xr{\diag}M \times M\xr{\bar\alpha\times\bar \beta} K_p \times K_q\xr{\mu} K_{p+q};
 \end{equation}
@@ -1337,7 +1337,7 @@ Use pullback of cross product after showing that cross product agrees with singu
 
 
 \begin{definition}
-Suppose $M$ and $N$ are manifolds. Then there is a product map $C^*_\Gamma(M)\otimes C^*_\Gamma(N) \to C^*_\Gamma(M \times N)$ that takes geometric cochains $\uW \in C^*_\Gamma(M)$ and $\uV \in C^*_\Gamma(N)$ represented by $r_W \colon W \to M$ and $r_V:V \to N$ to the cochain $\uW \times \uV$ represented by $r_W \times r_V:W \times V \to M \times N$ with the product co-orientation. In other words, if $(\beta_W,\beta_M)$ and $(\beta_V,\beta_N)$ are the corresponding co-orientations of $\uW$ and $\uV$, then the product co-orientation is $(\beta_W \wedge \beta_V,\beta_M \wedge \beta_N)$. By linear extension we obtain the \textbf{(external) cross product} map $C^*_\Gamma(M)\otimes C^*_\Gamma(N) \to C^*_\Gamma(M \times N)$.
+Suppose $M$ and $N$ are manifolds. Then there is a product map $C^*_\Gamma(M)\otimes C^*_\Gamma(N) \to C^*_\Gamma(M \times N)$ that takes geometric cochains $\uW \in C^*_\Gamma(M)$ and $\uV \in C^*_\Gamma(N)$ represented by $r_W \colon W \to M$ and $r_V \colon V \to N$ to the cochain $\uW \times \uV$ represented by $r_W \times r_V \colon W \times V \to M \times N$ with the product co-orientation. In other words, if $(\beta_W,\beta_M)$ and $(\beta_V,\beta_N)$ are the corresponding co-orientations of $\uW$ and $\uV$, then the product co-orientation is $(\beta_W \wedge \beta_V,\beta_M \wedge \beta_N)$. By linear extension we obtain the \textbf{(external) cross product} map $C^*_\Gamma(M)\otimes C^*_\Gamma(N) \to C^*_\Gamma(M \times N)$.
 \end{definition}
 
 
@@ -1346,7 +1346,7 @@ The cochain cross product is a well-defined map.
 \end{lemma}
 
 \begin{proof}
-If $V$ is trivial via $\rho_W:W \to W$, then $W \times V$ is trivial via $\rho_W \times \id_V$. Similarly, if $W$ is of small rank then so is $W \times V$. Since the sum of geometric cochains is represented by disjoint union, we have $(W_1\pm W_2) \times V = (W_1 \times V)\pm (W_2 \times V)$. So if $W_1-W_2 \in Q^*(M)$ then $W_1 \times V- W_2 \times V = (W_1-W_2) \times V \in Q^*(M \times N)$. So the cross product is independent of representative for $\uW$, and similarly it is independent of the choice of representative for $\uV$.
+If $V$ is trivial via $\rho_W \colon W \to W$, then $W \times V$ is trivial via $\rho_W \times \id_V$. Similarly, if $W$ is of small rank then so is $W \times V$. Since the sum of geometric cochains is represented by disjoint union, we have $(W_1\pm W_2) \times V = (W_1 \times V)\pm (W_2 \times V)$. So if $W_1-W_2 \in Q^*(M)$ then $W_1 \times V- W_2 \times V = (W_1-W_2) \times V \in Q^*(M \times N)$. So the cross product is independent of representative for $\uW$, and similarly it is independent of the choice of representative for $\uV$.
 
 To see that we have a chain map, we observe that \red{PUT SOMETHING IN THE CO-ORIENTATION SECTION}.
 \end{proof}
@@ -1466,7 +1466,7 @@ We will approach the proof of \cref{T: equivalent cap} through a series of lemma
 \begin{comment}
 
 \begin{lemma}\red{REMOVE???:}
-Suppose $M$ is a cubulated manifold without boundary and $V \in PC^*_{\Gamma\pf}(M)$. Then $\id_M \times r_V:M \times V \to M \times M$ is transverse to the product cubulation of $M \times M$.
+Suppose $M$ is a cubulated manifold without boundary and $V \in PC^*_{\Gamma\pf}(M)$. Then $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to the product cubulation of $M \times M$.
 \end{lemma}
 \begin{proof}
 Easy = see if I did this earlier somewhere
@@ -1477,21 +1477,21 @@ Easy = see if I did this earlier somewhere
 \end{comment}
 
 \begin{lemma}\label{L: product transversal}
- Let $M$ be a cubulated manifold without boundary. Let $V \in PC^*_{\Gamma}(M)$, and suppose $W \in PC_*(M \times M)$ is represented by a collection of embeddings. Then there is a proper universal homotopy $h:V \times I \to M$ such that $h(-,1):V \to M$ is transverse to the product cubulation and $M \times V \xr{\id_M \times h(-,1)} M \times M$ is transverse $W$ in $M \times M$.
+ Let $M$ be a cubulated manifold without boundary. Let $V \in PC^*_{\Gamma}(M)$, and suppose $W \in PC_*(M \times M)$ is represented by a collection of embeddings. Then there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1) \colon V \to M$ is transverse to the product cubulation and $M \times V \xr{\id_M \times h(-,1)} M \times M$ is transverse $W$ in $M \times M$.
 \end{lemma}
 \begin{proof}
-As in the proof of \cref{P: ball stability}, we use the transversality techniques of \cite[Section 2.3]{GuPo74}. Consider $M$ as embedded in some $\R^N$ with an $\epsilon$-neighborhood $M_\epsilon$ and proper submersion $\pi:M_\epsilon \to M$. We define $H$ as in proof of \cref{P: ball stability} so that $H:V \times D^N \to M$ is the proper universal homotopy given by $H(x,s) = \pi(r_V(x)+\epsilon(x)s)$. Then $H$ is a submersion and so transverse to each face of the cubulation, and also $\id_M \times H:M \times V \times D^N \to M \times M$ is a submersion and hence transverse to $W$. So now by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for any face $E$ of the cubulation $H(-,s)$ is transverse to $E$ for almost all $s \in D^N$ and, similarly, $\id_M \times H(-,s)$ is transverse $W$ for almost all $s \in D^N$ (and similarly for each stratum of $W$). As the cubulation must have a countable number of faces and $W$ has a finite number of strata, there is an $s_0 \in D^N$ such that $H(-,s_0)$ is transverse to the cubulation and $\id_M \times H(-,s_0)$ is transverse $W$. Now let $h(x,t) = H(x,ts_0)$. This is a proper universal homotopy, and $h(-,1)$ has the required transversality properties.
+As in the proof of \cref{P: ball stability}, we use the transversality techniques of \cite[Section 2.3]{GuPo74}. Consider $M$ as embedded in some $\R^N$ with an $\epsilon$-neighborhood $M_\epsilon$ and proper submersion $\pi \colon M_\epsilon \to M$. We define $H$ as in proof of \cref{P: ball stability} so that $H \colon V \times D^N \to M$ is the proper universal homotopy given by $H(x,s) = \pi(r_V(x)+\epsilon(x)s)$. Then $H$ is a submersion and so transverse to each face of the cubulation, and also $\id_M \times H \colon M \times V \times D^N \to M \times M$ is a submersion and hence transverse to $W$. So now by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for any face $E$ of the cubulation $H(-,s)$ is transverse to $E$ for almost all $s \in D^N$ and, similarly, $\id_M \times H(-,s)$ is transverse $W$ for almost all $s \in D^N$ (and similarly for each stratum of $W$). As the cubulation must have a countable number of faces and $W$ has a finite number of strata, there is an $s_0 \in D^N$ such that $H(-,s_0)$ is transverse to the cubulation and $\id_M \times H(-,s_0)$ is transverse $W$. Now let $h(x,t) = H(x,ts_0)$. This is a proper universal homotopy, and $h(-,1)$ has the required transversality properties.
 \end{proof}
 
 
 
 \begin{lemma}\label{L: M times transverse diag}
-Suppose $M$ is a manifold without boundary, $V \in PC^*_{\Gamma}(M)$, and $V$ is transverse to $W \in PC_*^\Gamma(M)$. Then $\id_M \times r_V:M \times V \to M \times M$ is transverse to $\diag r_W \colon W \to M \times M$ in $M \times M$, where $\diag:M \to M \times M$ is the diagonal map. In particular, $\id_M \times r_V:M \times V \to M \times M$ is transverse to $\diag:M \to M \times M$.
+Suppose $M$ is a manifold without boundary, $V \in PC^*_{\Gamma}(M)$, and $V$ is transverse to $W \in PC_*^\Gamma(M)$. Then $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag r_W \colon W \to M \times M$ in $M \times M$, where $\diag \colon M \to M \times M$ is the diagonal map. In particular, $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag \colon M \to M \times M$.
 \end{lemma}
 \begin{proof}
 By assumption, if $r_V(x) = r_W(y)$, then $Dr_V(T_xV)+Dr_W(T_yW) = T_{r_V(x)}M$. Now suppose that $(z,x) \in M \times V$ maps to $\diag r_W(y)$ with $y \in W$. This is equivalent to $r_V(x) = r_W(y) = z$. At any $(z,x) \in M \times V$, the image of $D(\id_M \times r_V)$ acting on $T_{(z,x)}(M \times V) = T_zM \oplus T_xV$ is $T_z(M) \oplus Dr_V(T_xV)$. While the image of $D(\diag r_W)$ acting on $T_yW$ is $Dr_W(T_yW) \oplus Dr_W(T_yW)$. As we know $Dr_V(T_xV)+Dr_W(T_yW) = T_{r_V(x)}M$, when $r_V(x) = r_W(y) = z$ these images together span $T_{(r_W(y),r_W(y))}M \times M$.
 
-The last statement follows by taking $r_W \colon W \to M$ to be $\id_M:M \to M$, which is certainly transverse to any $V$.
+The last statement follows by taking $r_W \colon W \to M$ to be $\id_M \colon M \to M$, which is certainly transverse to any $V$.
 \end{proof}
 
 For the next lemmas, we make the following definitions.
@@ -1501,13 +1501,13 @@ For a cubulation of $M$, let $\Delta:K_*(M) \to K_*(M \times M)$ be the chain ma
 \end{definition}
 
 \begin{definition}
-Let $V \in PC^*_\Gamma(M)$. Below we write $M \times V$ for the element of $PC^*_\Gamma(M \times M)$ given by the co-oriented exterior product of $V$ with the identity $\id_M:M \times M$ given its canonical co-orientation.
+Let $V \in PC^*_\Gamma(M)$. Below we write $M \times V$ for the element of $PC^*_\Gamma(M \times M)$ given by the co-oriented exterior product of $V$ with the identity $\id_M \colon M \times M$ given its canonical co-orientation.
 \end{definition}
 
 
 \begin{lemma}\label{L: image of cubical cap}
-Suppose $M$ is a cubulated manifold without boundary and that $K_*(M)$ is the cubical chain complex with respect to some fixed cubulation. Let $V \in PC^*_{\Gamma\pf}(M)$ represent a cocycle, and let $W \in K_*(M)$. Suppose $\id_M \times r_V:M \times V \to M \times M$ is transverse to $\mc J(\Delta(W))$. Then $$\mc J(\mc I(V)\frown W) = \pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W))) \in C_*^\Gamma(M),$$
-where $\pi_1:M \times M \to M$ is the projection to the first factor.
+Suppose $M$ is a cubulated manifold without boundary and that $K_*(M)$ is the cubical chain complex with respect to some fixed cubulation. Let $V \in PC^*_{\Gamma\pf}(M)$ represent a cocycle, and let $W \in K_*(M)$. Suppose $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\mc J(\Delta(W))$. Then $$\mc J(\mc I(V)\frown W) = \pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W))) \in C_*^\Gamma(M),$$
+where $\pi_1 \colon M \times M \to M$ is the projection to the first factor.
 \end{lemma}
 
 \begin{proof}
@@ -1552,24 +1552,24 @@ We conclude that $\pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(E)))$ as an
 
 
 \begin{lemma}\label{L: diagonal version of intersection}
-Let $M$ be a manifold without boundary. Let $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ be transverse. Let $\pi_1:M \times M \to M$ be the projection on the first factor. Then $$V \times_M W = \pi_1((M \times V)\times_{M \times M} \diag(W)).$$
+Let $M$ be a manifold without boundary. Let $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ be transverse. Let $\pi_1 \colon M \times M \to M$ be the projection on the first factor. Then $$V \times_M W = \pi_1((M \times V)\times_{M \times M} \diag(W)).$$
 \end{lemma}
 \begin{proof}
-By \cref{L: M times transverse diag}, $\id_M \times r_V:M \times V \to M \times M$ is transverse to $\diag r_W \colon W \to M \times M$ in $M \times M$, so both expressions are defined. We also have $V = M \times_M V = \diag^*(M \times V)$ by \cref{C: cup with identity} and \cref{P: cross to cup}.
+By \cref{L: M times transverse diag}, $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag r_W \colon W \to M \times M$ in $M \times M$, so both expressions are defined. We also have $V = M \times_M V = \diag^*(M \times V)$ by \cref{C: cup with identity} and \cref{P: cross to cup}.
 So we can compute
 \begin{align*}
 V \times_M W& = \pi_1\diag (V \times_M W)&\text{since $\pi_1\diag = \id_M$}\\
 & = \pi_1\diag (\diag^*(M \times V) \times_M W)&\text{by the above}\\
 & = \pi_1((V \times M)\times_{M \times M}\diag(W))&\text{by naturality of cap products.}
 \end{align*}
-For the last equality, see \cref{P: natural cap} and its interpretation in terms of naturality of the cap product in \cref{S: (co)chain properties}. \cref{P: natural cap} requires $\id_M \times r_V:M \times V \to M \times M$ be transverse to $\diag:M \to M \times M$ and $W \to M$ be transverse to the pullback of $M \times V$ by $\diag:M \to M \times M$ to
+For the last equality, see \cref{P: natural cap} and its interpretation in terms of naturality of the cap product in \cref{S: (co)chain properties}. \cref{P: natural cap} requires $\id_M \times r_V \colon M \times V \to M \times M$ be transverse to $\diag \colon M \to M \times M$ and $W \to M$ be transverse to the pullback of $M \times V$ by $\diag \colon M \to M \times M$ to
 $(M \times V)\times_{M \times M}M \to M$.
-The first requirement holds by \cref{L: M times transverse diag}. For the second transversality requirement, \cref{L: transverse to pullback} says that in the presence of the first transversality condition, this is equivalent to requiring $\id_M \times r_V:M \times V \to M \times M$ to be transverse to $\diag r_W \colon W \to M \times M$. But this also holds by \cref{L: M times transverse diag} as $V$ and $W$ are transverse.
+The first requirement holds by \cref{L: M times transverse diag}. For the second transversality requirement, \cref{L: transverse to pullback} says that in the presence of the first transversality condition, this is equivalent to requiring $\id_M \times r_V \colon M \times V \to M \times M$ to be transverse to $\diag r_W \colon W \to M \times M$. But this also holds by \cref{L: M times transverse diag} as $V$ and $W$ are transverse.
 \end{proof}
 
 
 \begin{lemma}\label{L: diagonal equivalence}
-Let $M$ be a cubulated manifold without boundary. Let $W$ be a cycle in $K_*(M)$, and let $V \in PC^*_\Gamma(M)$ be a cocycle such that $\id_M \times r_V:M \times V \to M \times M$ is transverse to $\diag(\mc J(W))$ and $\mc J(\Delta(W))$. Then $$\underline{\pi_1((M \times V) \times_{M \times M}\diag(\mc J(W)))} = \underline{\pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W)))} \in H_*^\Gamma(M).$$
+Let $M$ be a cubulated manifold without boundary. Let $W$ be a cycle in $K_*(M)$, and let $V \in PC^*_\Gamma(M)$ be a cocycle such that $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag(\mc J(W))$ and $\mc J(\Delta(W))$. Then $$\underline{\pi_1((M \times V) \times_{M \times M}\diag(\mc J(W)))} = \underline{\pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W)))} \in H_*^\Gamma(M).$$
 \end{lemma}
 \begin{proof}
 If we consider $W$ as an element of $NK_*^{sm}(M)$, then the geometric chain $\diag(\mc J(W))$ is represented by the singular cubical chain $\diag(W)$ and $\mc J(\Delta(M))$ is represented by the singular cubical chain $\zeta\xi\diag(W)$.
@@ -1607,7 +1607,7 @@ $\pi_1((M \times V)\times_{M \times M} \diag(\mc J(W))) = V \times_M \mc J(W) \i
 In \cref{E: first examples}, we noticed that geometric homology and cohomology satisfy a very strong form of Poincar\'e duality, as for a closed oriented manifold $M$ we in fact have chain-level identities $C^{m-i}_\Gamma(M) = C_i^\Gamma(M)$ obtained by identifying co-oriented cochains with their corresponding orientated chains, using the orientations induced by the orientation of $M$. \cref{T: equivalent cap} allows us to observe that this strong version of geometric Poincar\'e is compatible with the classical Poincar\'e duality:
 
 \begin{corollary}[Poincar\'e duality]\label{C: PD}
-Let $M$ be a closed oriented cubulated manifold. Let $\underline M \in C_m^\Gamma(M)$ be represented by the orientation-preserving identity map $\id_M:M \to M$, and let $[M] \in K_*(M)$ represent the cubical fundamental class. Then there is a commutative diagram of isomorphisms
+Let $M$ be a closed oriented cubulated manifold. Let $\underline M \in C_m^\Gamma(M)$ be represented by the orientation-preserving identity map $\id_M \colon M \to M$, and let $[M] \in K_*(M)$ represent the cubical fundamental class. Then there is a commutative diagram of isomorphisms
 
 \begin{diagram}
 H^{n-i}_\Gamma(M)&\rTo^{\nplus \uM}& H_i^\Gamma(M)\\
@@ -1637,7 +1637,7 @@ demonstrates the usual relationship between intersection products and cup produc
 
 
 
-\Cref{C: PD} allows us to make some remarks about umkehr maps, also known as wrong-way or transfer maps, associated to maps of closed oriented manifolds $f:N \to M$. These are maps
+\Cref{C: PD} allows us to make some remarks about umkehr maps, also known as wrong-way or transfer maps, associated to maps of closed oriented manifolds $f \colon N \to M$. These are maps
 \begin{align*}
 f^!:H^{n-i}_\Gamma(N) \to H^{m-i}_\Gamma(M)\\
 f_!:H_{m-i}^\Gamma(M) \to H_{n-i}^\Gamma(N),
@@ -1645,7 +1645,7 @@ f_!:H_{m-i}^\Gamma(M) \to H_{n-i}^\Gamma(N),
 typically defined by taking a homology or cohomology class, dualizing using Poincar\'e duality, applying $f$ or $f^*$, and then dualizing again; see \cite[Definition VI.11.2]{Bred97}. We will show that when $M$ and $N$ are closed and oriented, these transfer maps correspond to the pullbacks and pushforwards already encountered in \cref{S: functoriality}, where we only required for homology pushforwards that $f$ be proper and co-oriented and for homology pullbacks that $f$ be proper and that $M$ and $N$ be oriented.
 
 \begin{proposition}
-Let $f:N \to M$ be a map of closed oriented manifolds. We may consider $f$ co-oriented via the orientations of $M$ and $N$. Then the following diagrams commute:
+Let $f \colon N \to M$ be a map of closed oriented manifolds. We may consider $f$ co-oriented via the orientations of $M$ and $N$. Then the following diagrams commute:
 \begin{diagram}
 H^{n-i}_\Gamma(N)&\rTo^f&H^{m-i}_\Gamma(M)&&H^{i}_\Gamma(M)&\rTo^{f^*}&H^{i}_\Gamma(N)\\
 \dTo^{\nplus \uN}&&\dTo_{\nplus \uM}&&\dTo^{\nplus \uM}&&\dTo_{\nplus \uN}\\
@@ -1653,14 +1653,14 @@ H_i^\Gamma(N)&\rTo^f&H_i^\Gamma(M)&&H_{m-i}^\Gamma(M)&\rTo^{f^*}&H_{n-i}^\Gamma(
 \end{diagram}
 \end{proposition}
 \begin{proof}
-We start with the diagram on the left. Let $\uV \in H^{n-i}_\Gamma(N)$ represented by a co-oriented map $r_v:V \to N$. Then $\uV\nplus\uN$ is represented by the same map to $N$ with its induced orientation; see \cref{S: co-orientations}. In particular, if $x \in V$ then $V$ is oriented at $x$ by the local orientation $\beta_V$ such that $(\beta_V,\beta_N)$ gives the co-orientation of $r_V$.
+We start with the diagram on the left. Let $\uV \in H^{n-i}_\Gamma(N)$ represented by a co-oriented map $r_v \colon V \to N$. Then $\uV\nplus\uN$ is represented by the same map to $N$ with its induced orientation; see \cref{S: co-orientations}. In particular, if $x \in V$ then $V$ is oriented at $x$ by the local orientation $\beta_V$ such that $(\beta_V,\beta_N)$ gives the co-orientation of $r_V$.
 The path down then right is then the composition $fr_V$, considering $V$ with its orientation induced by $r_V$ and the orientation of $N$. On the other hand, by the definition in \cref{S: covariant functoriality}, the element $f(\uV)$ in $H^{m-i}_\Gamma(M)$ is represented by $fr_V$ co-oriented by composing the co-orientations of $r_V$ and $f$. So if the co-orientation of $r_V$ is again $(\beta_V,\beta_N)$, the co-orientation of $fr_V$ representing $f(\uV)$ is $(\beta_V,\beta_N)*(\beta_N,\beta_M) = (\beta_V,\beta_M)$. So $f(\uV)\nplus \uM$ is represented by $fr_V$ with $V$ oriented again by $\beta_V$. Thus the diagram commutes.
 
-For the second diagram, let $r_V:V \to M$ represent $\uV \in H^{i}_\Gamma(M)$. We can assume up to a homotopy that $f$ is smooth and transverse to $r_V$. Then $f^*(\uV)$ is represented by the co-oriented pullback $V \times_M N \to N$, and $f^*(\uV)\nplus\uN$ is represented by this map with the orientation on $V \times_M N$ induced by the pullback co-orientation and the orientation of $N$. Meanwhile, $\uV\nplus \uM$ is represented by $r_V$ with the orientation consistent with the given co-orientation and the orientation of $M$. Applying $f^*$ then gives the pullback the same orientation just described for $f^*(\uV)\nplus\uN$ by the definition in \cref{R: homology transfer}.
+For the second diagram, let $r_V \colon V \to M$ represent $\uV \in H^{i}_\Gamma(M)$. We can assume up to a homotopy that $f$ is smooth and transverse to $r_V$. Then $f^*(\uV)$ is represented by the co-oriented pullback $V \times_M N \to N$, and $f^*(\uV)\nplus\uN$ is represented by this map with the orientation on $V \times_M N$ induced by the pullback co-orientation and the orientation of $N$. Meanwhile, $\uV\nplus \uM$ is represented by $r_V$ with the orientation consistent with the given co-orientation and the orientation of $M$. Applying $f^*$ then gives the pullback the same orientation just described for $f^*(\uV)\nplus\uN$ by the definition in \cref{R: homology transfer}.
 \end{proof}
 
 \begin{corollary}
-If $f:N \to M$ is a map of closed oriented manifolds then
+If $f \colon N \to M$ is a map of closed oriented manifolds then
 $f^! = f:H^{n-i}(N) \to H^{m-i}(M)$ and
 \end{corollary}
 
