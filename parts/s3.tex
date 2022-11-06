@@ -942,7 +942,7 @@ In the key example when both $f$ and $g$ are immersions, the fiber products will
 \begin{proposition}\label{P: normal pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented immersions from manifolds with corners to a manifold without boundary.
 	Let $\nu V$ and $\nu W$ denote the respective normal bundles.
-	Choose local Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ so that the normal co-orientations $(\beta_V,\beta_V \wedge \beta_{\nu V})$ and $(\beta_W,\beta_W \wedge \beta_{\nu W})$ agree with the given co-orientations of $f$ and $g$.
+	Choose local Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ so that the normal co-orientations $(\beta_V, \beta_V \wedge \beta_{\nu V})$ and $(\beta_W, \beta_W \wedge \beta_{\nu W})$ agree with the given co-orientations of $f$ and $g$.
 	Then, decomposing the normal bundle of the fiber product $P = V \times_M W \to M$ at any point of intersection as $\nu V \oplus \nu W$ and giving it the orientation $\beta_{\nu V} \wedge \beta_{\nu W}$, the fiber product co-orientation agrees with the normal co-orientation, i.e.\
 	$$\omega_{f \times_M g} = (\beta_P,\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}).$$
 \end{proposition}
@@ -1007,7 +1007,8 @@ The general case requires more care.
 	By \cref{D: pullback coorient}, applied to $\bd g \colon \bd W \to M$, the co-orientation of the pullback $V \times_M \bd W \to \bd W$ is $(\beta_{\bd P},\beta_{\bd W})$ if and only if $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$ up to positive scalar as local orientations at the image of $x$ in $\bd W \times \R^N$.
 	Considering $\bd W \times \R^N \subset W \times \R^N$ locally (recalling that $x$ is chosen in the interior of $\bd W$), $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$ if and only if $\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu\bd W} = \beta_{\bd W} \wedge \beta_E \wedge \beta_{\nu\bd W}$.
 	But as $\dim(\nu\bd W) = 1$ and $\dim(\nu V) = m+N-v$,
-	$$\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu\bd W} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu\bd W} \wedge \beta_{\nu V} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V},$$ and
+	$$\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu\bd W} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu\bd W} \wedge \beta_{\nu V} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V},$$
+	and
 	$$\beta_{\bd W} \wedge \beta_E \wedge \beta_{\nu\bd W} = (-1)^N\beta_{\bd W} \wedge \beta_{\nu\bd W} \wedge \beta_E = (-1)^N\beta_{W} \wedge \beta_E.$$
 	So the co-orientation of $V \times_M \bd W \to W$ is $(\beta_{\bd P},\beta_{\bd W})$, and hence by composition the co-orientation of $V \times_M \bd W \to \bd W$ is $(\beta_{\bd P},\beta_{W})$,
 	if and only if $\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V} = (-1)^{m-v}\beta_{W} \wedge \beta_E$ up to positive scalar.
@@ -1051,8 +1052,9 @@ Before proving the proposition, we put it to use in the following example.
 	For simplicity, though, we maintain our original notations.
 
 	By \cref{P: graded comm}, we have $U \times_M V = (-1)^{(m-v)(m-w)}V \times_M U$ as co-oriented fiber products over $M$.
-	So the fiber product $V \times_M U \to M$ is represented by $f^{-1}(U) \xr{f}M$ with co-orientation at $(x,y)$ given by $(-1)^{(m-v)(m-w)}(\beta_P,\beta_M)$.
-	But decomposing the fiber product as the pullback $V \times_M U \to U$ and the inclusion $U \into M$, we can also decompose the co-orientation as $(-1)^{(m-v)(m-w)}(\beta_P,\beta_M) = (-1)^{(m-v)(m-w)}(\beta_P,\beta_U)*(\beta_U,\beta_M)$.
+	So the fiber product $V \times_M U \to M$ is represented by $f^{-1}(U) \xr{f} M$ with co-orientation at $(x,y)$ given by $(-1)^{(m-v)(m-w)}(\beta_P, \beta_M)$.
+	But decomposing the fiber product as the pullback $V \times_M U \to U$ and the inclusion $U \into M$, we can also decompose the co-orientation as
+	$$(-1)^{(m-v)(m-w)}(\beta_P, \beta_M) = (-1)^{(m-v)(m-w)}(\beta_P,\beta_U)*(\beta_U,\beta_M).$$
 	As $(\beta_U,\beta_M)$ is our co-orientation for $g|_U$, the pullback co-orientation must be $(-1)^{(m-v)(m-w)}(\beta_P,\beta_U)$.
 	Furthermore, if we had chosen the opposite co-orientation for $g|_U$, that would reverse the signs of both $(\beta_U,\beta_M)$ and of the fiber product, so in either case the pullback co-orientation is $(-1)^{(m-v)(m-w)}(\beta_P,\beta_U)$.
 	In other words, this description of the co-oriented pullback $V \times_M U \to U$ is independent of our choice of co-orientation for $g|_U$, and so it extends globally to $V \times_M W \to W$.
