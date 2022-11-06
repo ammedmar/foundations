@@ -87,12 +87,12 @@ We state these properties in the following two propositions.
 	Let $V$, $W$, and $Z$ be oriented manifolds with corners, and let $M$ and $N$ be oriented manifolds without boundary.
 	Then the ``mixed associativity'' formula for oriented fiber products
 	\begin{equation}\label{E: mixed associativity fiber orientation}
-		(V \times_M W)\times_N Z = V \times_M (W\times_N Z)
+		(V \times_M W) \times_N Z = V \times_M (W \times_N Z)
 	\end{equation}
 	holds when given maps
 	$$V \xr{f} M\xleftarrow{g} W \xr{h} N\xleftarrow{k} Z$$
 	and assuming sufficient transversality for all the fiber products in \eqref{E: mixed associativity fiber orientation} to be well defined (see \cref{R: multiproducts}).
-	In this case the map $V \times_M W \to N$ is given by composing the projection from $V \times_M W$ to $W$ with $h$, and similarly for the map $W\times_N Z \to M$.
+	In this case the map $V \times_M W \to N$ is given by composing the projection from $V \times_M W$ to $W$ with $h$, and similarly for the map $W \times_N Z \to M$.
 \end{proposition}
 
 These propositions are evident at the level of spaces.
@@ -1076,7 +1076,7 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 
 \begin{proof}
 	As observed just above, it suffices to prove the desired identity at $(x,y)$.
-	By \cref{P: normal pullback}, we have $\omega_{f \times_M g} = (\beta_P,\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}),$ noting in the second term that $\beta_P$ is technically the image of the local orientation $\beta_P$ of $P$ now considered as a submanifold of $M$ via the embedding.
+	By \cref{P: normal pullback}, we have $\omega_{f \times_M g} = (\beta_P, \beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W})$, noting in the second term that $\beta_P$ is technically the image of the local orientation $\beta_P$ of $P$ now considered as a submanifold of $M$ via the embedding.
 	Similarly, \cref{P: normal pullback} gives
 	$\omega_{g \times_M f} = (\beta_P,\beta_P \wedge \beta_{\nu W} \wedge \beta_{\nu V})$.
 	So the two fiber products differ by $(-1)^{\dim(\nu W)\dim(\nu V)} = (-1)^{(m-v)(m-w)}$ as required.
@@ -1313,14 +1313,14 @@ We observe the following interplay between fibered and exterior products of maps
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps of oriented manifolds with corners to an oriented manifold without boundary and similarly for $h \colon X \to N$ and $k:Y \to N$.
 	Then
 
-	$$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(m-w)(n-y)}(V \times_M W) \times (X\times_NY)$$
+	$$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(m-w)(n-y)}(V \times_M W) \times (X \times_N Y)$$
 	as oriented manifolds.
 \end{proposition}
 \begin{proof}
 	We first note that the transversality assumptions ensure also that $f \times h$ will be transverse to $g \times k$.
 	It is straightforward to verify that these are diffeomorphic spaces, so we focus on the orientations.
 	For simplicity, let us write
-	$P = (V \times X)\times_{M \times N} (W \times Y)$ and $P' = (V \times_M W) \times (X\times_NY)$.
+	$P = (V \times X)\times_{M \times N} (W \times Y)$ and $P' = (V \times_M W) \times (X \times_N Y)$.
 	We then write orientation symbolically as $\beta_P$, etc.
 	By definition, and omitting the pullbacks from the notation, $P$ is oriented so that
 	$$\beta_P \wedge \beta_{M \times N} = (-1)^{(w+y)(m+n)}\beta_{V \times X} \wedge \beta_{W \times Y},$$
@@ -1328,16 +1328,19 @@ We observe the following interplay between fibered and exterior products of maps
 	Here we identify $T(M \times N)$ as a summand by splitting $D(f \times h)-D(g \times k)$.
 	Similarly, we have
 	\begin{align*}
-		\beta_{V \times_M W} \wedge \beta_M & = (-1)^{wm}\beta_V \wedge \beta_W\\
-		\beta_{X\times_NY} \wedge \beta_N & = (-1)^{yn}\beta_X \wedge \beta_Y,
+		\beta_{V \times_M W} \wedge \beta_M & = (-1)^{wm}\beta_V \wedge \beta_W \\
+		\beta_{X \times_N Y} \wedge \beta_N & = (-1)^{yn}\beta_X \wedge \beta_Y,
 	\end{align*}
 	using the splittings of $Df-Dg$ and $Dh-Dk$.
 	In particular, the signs of $Df$, $Dg$, $Dh$, and $Dk$ in the splitting formulas are consistent in computing the orientations for $P$ and $P'$.
 	Wedging the two sides, we have
-	$$\beta_{V \times_M W} \wedge \beta_M\wedge\beta_{X\times_NY} \wedge \beta_N = (-1)^{wm+ny}\beta_V \wedge \beta_W\beta_X \wedge \beta_Y.$$
-	As $\beta_{P'} = \beta_{V \times_M W}\wedge\beta_{X\times_NY},$ we have
+	\begin{equation*}
+		\beta_{V \times_M W} \wedge \beta_M\wedge\beta_{X \times_N Y} \wedge \beta_N =
+		(-1)^{wm+ny}\beta_V \wedge \beta_W\beta_X \wedge \beta_Y.
+	\end{equation*}
+	As $\beta_{P'} = \beta_{V \times_M W}\wedge\beta_{X \times_N Y}$, we have
 	\begin{align*}
-		\beta_{P'} \wedge \beta_M \wedge \beta_N& = (-1)^{m(x+y-n)}\beta_{V \times_M W} \wedge \beta_M\wedge\beta_{X\times_NY} \wedge \beta_N\\
+		\beta_{P'} \wedge \beta_M \wedge \beta_N& = (-1)^{m(x+y-n)}\beta_{V \times_M W} \wedge \beta_M\wedge\beta_{X \times_N Y} \wedge \beta_N\\
 		& = (-1)^{m(x+y-n)+wm+ny}\beta_V \wedge \beta_W \wedge \beta_X \wedge \beta_Y\\
 		& = (-1)^{m(x+y-n)+wm+ny+xw}\beta_V \wedge \beta_X \wedge \beta_W \wedge \beta_Y
 	\end{align*}
@@ -1654,7 +1657,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 		& = ((h \times h) \circ \diag_N)^*(V \times W)\\
 		& = \diag_N^*(h \times h)^*(V \times W)\\
 		& = \diag_N^*(h^*V \times h^*W)\\
-		& = h^*V\times_N h^*W.
+		& = h^*V \times_N h^*W.
 	\end{align*}
 	To apply \cref{P: pullback functoriality} in the second line, we note that $h$ is transverse to $\diag_M^*(V \times W) = V \times_M W$ by assumption.
 	For the fourth line we observe that $h \times h$ is transverse to $f \times g$ because $h$ is transverse to $f$ and $g$, and the composite $(h \times h) \circ \diag_N = \diag_M h$ is transverse to $f \times g$ by our assumptions and \cref{L: transverse to pullback}.
@@ -1680,7 +1683,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 
 \begin{corollary}\label{C: criss cross}
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary and similarly for $h \colon X \to N$ and $k:Y \to N$.
-	Then $$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(m-w)(n-x)} (V \times_M W) \times (X\times_N Y) $$
+	Then $$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(m-w)(n-x)} (V \times_M W) \times (X \times_N Y) $$
 	as co-oriented fiber products over $M \times N$.
 	\red{Add a version for pullbacks (as opposed to fiber products)? Might have some extra signs to figure out.
 		Not really needed anywhere I do not think.}
@@ -1694,7 +1697,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 		& = \diag_{M \times N}^*(\id \times \tau^* \times \id)^*(-1)^{(n-x)(m-w)}(V \times W \times X \times Y)\\
 		& = (\diag_M \times \diag_N)^*(-1)^{(n-x)(m-w)}(V \times W \times X \times Y)\\
 		& = (-1)^{(n-x)(m-w)}\diag_M^*(V \times W) \times \diag_N^*( X \times Y)\\
-		& = (-1)^{(m-w)(n-x)} (V \times_M W) \times (X\times_N Y).
+		& = (-1)^{(m-w)(n-x)} (V \times_M W) \times (X \times_N Y).
 	\end{align*}
 	For the third equality, we use that $\diag_M \times \diag_N = (\id_M \times \tau \times \id_N)\diag_{M \times N}$.
 \end{proof}
@@ -1711,7 +1714,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 
 	\begin{align*}
 		\pi_M^*(V)\times_{M \times N}\pi_N^*(W)& = (V \times N)\times_{M \times N} (M \times W)\\
-		& = (V \times_M M) \times (N\times_N W)\\
+		& = (V \times_M M) \times (N \times_N W)\\
 		& = V \times W.\qedhere
 	\end{align*}
 \end{proof}
@@ -1821,14 +1824,14 @@ The next property relates products of pullbacks with pullbacks of products.
 	Suppose that $V$ is transverse to $W$ and that $X$ is transverse to $Y$.
 	Then\footnote{Again our signs agree with the cap product formulas in Spanier, in this case \cite[Section 5.6.21]{Span81}.},
 
-	$$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(x+y-n)(m-v)} (V \times_M W) \times (X\times_NY),$$
+	$$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(x+y-n)(m-v)} (V \times_M W) \times (X \times_N Y),$$
 	as oriented manifolds mapping to $M \times N$.
 \end{proposition}
 \begin{proof}
 	Let $\beta_W$ and $\beta_Y$ denote the orientations of $W$ and $Y$.
 	Then $W \times Y$ is oriented by $\beta_W \wedge \beta_Y$.
 
-	Now let $P = V \times_M W$ and $P' = X\times_N Y$.
+	Now let $P = V \times_M W$ and $P' = X \times_N Y$.
 	By definition, $P$ and $P'$ are oriented by the orientations $\beta_P$ and $\beta_{P'}$ such that $(\beta_P,\beta_W)$ and $(\beta_{P'},\beta_Y)$ are the pullback co-orientations for $P \to W$ and $P' \to Y$.
 	Then $P \times P'$ is oriented by $\beta_P \wedge \beta_{P'}$.
 
@@ -1893,14 +1896,14 @@ The following property will eventually manifest itself in geometric (co)homology
 \begin{proposition}\label{P: natural cap}
 	Let $f \colon V \to M$ and $h \colon N \to M$ be transverse maps with $h$ co-oriented, $V$ a manifold with corners and $M$ and $N$ manifolds without boundary.
 	Furthermore, let $g \colon W \to N$ be a map from an oriented manifold with corners that is transverse to the co-oriented pullback $V \times_M N \to N$.
-	Then the cap orientation induced on $(V \times_M N)\times_N W$ by pulling back the co-oriented map $V \times_M N \to N$ over $W \to N$
+	Then the cap orientation induced on $(V \times_M N) \times_N W$ by pulling back the co-oriented map $V \times_M N \to N$ over $W \to N$
 	is the same as the cap orientation obtained by pulling back $V \to M$ by the composite $hg \colon W \to M$.
-	In other words, $(h^*V)\times_N W = V \times_M W$ as oriented manifolds.
+	In other words, $(h^*V) \times_N W = V \times_M W$ as oriented manifolds.
 \end{proposition}
 \begin{proof}
 	Note that $V$ is transverse to $hg \colon W \to M$ by \cref{L: transverse to pullback}, so both expressions are defined.
-	It follows directly from \cref{P: pullback functoriality} that the two pullback co-orientations we have described for $(V \times_M N)\times_N W \to W$ agree.
-	Therefore, the induced orientations on $(V \times_M N)\times_N W$ agree.
+	It follows directly from \cref{P: pullback functoriality} that the two pullback co-orientations we have described for $(V \times_M N) \times_N W \to W$ agree.
+	Therefore, the induced orientations on $(V \times_M N) \times_N W$ agree.
 \end{proof}
 
 \subsubsection{Comparing the oriented and co-oriented fiber products}
