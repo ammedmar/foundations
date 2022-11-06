@@ -1157,16 +1157,16 @@ We now show that for arbitrary transverse intersecting $f$ and $g$ there are alw
 	If $Df$ already has maximal rank at $x$ we can take $F(-,t) = f(-)$.
 	So suppose $Df$ does not have maximal rank at $x$.
 	We will construct a homotopy fixed outside a small neighborhood of $x$, so we work in local charts, identifying neighborhoods of $x$ and $f(x)$ with $\R^v$ and $\R^m$ so that $x$ and $f(x)$ are at the respective origins.
-	We may also choose the charts so that $Df_x(e_i) = e_i$ for $1\leq i\leq k$ for some $k<\dim(V) = v$ and $Df_x(e_i) = 0$ for $i>k$.
+	We may also choose the charts so that $Df_x(e_i) = e_i$ for $1 \leq i \leq k$ for some $k<\dim(V) = v$ and $Df_x(e_i) = 0$ for $i>k$.
 	Let $\eta \colon \R^v \to \R$ be a smooth function that is $0$ outside a compact neighborhood of the origin and $1$ on a neighborhood of the origin.
 	Let $z = (z_1,\ldots,z_v)$ be the coordinates of $\R^v$, and let
 	$$H(z_1,\ldots,z_v,t) = f(z) + t\eta(z)\left(\sum_{i = k+1}^{\min(v,m)} z_i\right).$$
 	Then $H(z,t) = f(z)$ outside a compact neighborhood of the origin in $\R^v$, and so $H$ extends to a homotopy defined on all of $V \times I$.
 	Furthermore, $H(0,t) = f(0)$, i.e.\ $H(x,t) = f(x)$.
 	Also,
-	$DH_{(0,t)}e_i = e_i$ for $i\leq k$ and $te_i$ for $k<i\leq \min(v,m)$.
+	$DH_{(0,t)}e_i = e_i$ for $i \leq k$ and $te_i$ for $k<i \leq \min(v,m)$.
 	Thus $DH(-,t)$ has full rank at $x$ for all $t>0$.
-	Finally, as $f$ and $g$ are proper and transverse, there is an $\epsilon$ so that for $0\leq t\leq \epsilon$, $H(-,t)$ and $g$ will be transverse by stability of transversality\footnote{A proof is given within our proof of \cref{T: transverse complex}, below.}.
+	Finally, as $f$ and $g$ are proper and transverse, there is an $\epsilon$ so that for $0 \leq t \leq \epsilon$, $H(-,t)$ and $g$ will be transverse by stability of transversality\footnote{A proof is given within our proof of \cref{T: transverse complex}, below.}.
 	Now define $F(-,t) = H(-,\epsilon t)$.
 \end{proof}
 
