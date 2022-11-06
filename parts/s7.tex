@@ -919,17 +919,17 @@ Similarly, we obtain external homology and cohomology products, although this is
 \begin{theorem}\label{T: (co)homology products}
 	Let $M$ and $N$ be manifolds without boundary.
 	The chain cross product, cochain cross product, cup product, cap product, and, if $M$ is oriented, intersection product induce fully-defined bilinear maps
-
 	\begin{align*}
-		\times:& H^\Gamma_*(M) \otimes H^\Gamma_*(N) \to H^\Gamma_*(M \times N)\\
-		\times:& H_\Gamma^*(M) \otimes H_\Gamma^*(N) \to H_\Gamma^*(M \times N)\\
-		\uplus:& H_\Gamma^*(M) \otimes H_\Gamma^*(M) \to H_\Gamma^*(M)\\
-		\nplus:& H_\Gamma^*(M) \otimes H^\Gamma_*(M) \to H^\Gamma_*(M)\\
-		\bullet:& H^\Gamma_*(M) \otimes H^\Gamma_*(M) \to H^\Gamma_*(M).\\
+		\times \colon & H^\Gamma_*(M) \otimes H^\Gamma_*(N) \to H^\Gamma_*(M \times N)\\
+		\times \colon & H_\Gamma^*(M) \otimes H_\Gamma^*(N) \to H_\Gamma^*(M \times N)\\
+		\uplus \colon & H_\Gamma^*(M) \otimes H_\Gamma^*(M) \to H_\Gamma^*(M)\\
+		\nplus \colon & H_\Gamma^*(M) \otimes H^\Gamma_*(M) \to H^\Gamma_*(M)\\
+		\bullet \colon & H^\Gamma_*(M) \otimes H^\Gamma_*(M) \to H^\Gamma_*(M).\\
 	\end{align*}
 \end{theorem}
 
 We will prove \cref{T: (co)homology products} in a moment, but first we note the following immediate consequence.
+
 \begin{theorem}
 	The homology cross product, cohomology cross product, cohomology cup product, cohomology/homology cap product, and, if $M$ is oriented, homology intersection product satisfy the properties enumerated in \cref{S: (co)chain properties}, except for the boundary formulas.
 \end{theorem}
@@ -976,11 +976,8 @@ We first prove it up to some technical lemmas and propositions, which follow jus
 	Then there is a proper universal homotopy $h \colon V \times I \to M$ such that:
 	\begin{enumerate}
 		\item $h(-,0) = f$,
-
 		\item $h(-,1) \colon V \to M$ is transverse to $g$,
-
 		\item if $i_{X}:X \to V$ is the inclusion of a union of boundary components of $V$ with $r_X = fi_X:X \to M$ transverse to $g$ then $h\circ(i_{X} \times \id):X \times I \to M$ is transverse to $g$.
-
 	\end{enumerate}
 \end{proposition}
 
@@ -992,7 +989,6 @@ We have already seen the first relevant lemma as \cref{L: all transversality is 
 Recall that this lemma allows us to replace transversality of arbitrary maps with transversality in which one map is an embedding.
 
 \begin{comment}
-
 	\red{GOING TO MOVE ELSEWHERE - HEREHERE}
 
 	\begin{lemma}\label{L: all transversality is wrt embeddings}
@@ -1053,7 +1049,6 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	Suppose we have an embedding $e \colon W \to M \times \R^n$ such that $\pi e = g$, with $\pi: M \times \R^n \to M$ the projection.
 	Such an embedding always exists by the proof of \cref{L: Quillen}.
 	By \cref{L: all transversality is wrt embeddings}, it suffices to show that there is a proper universal homotopy $h \colon V \times I \to M$ such that
-
 	\begin{enumerate}
 		\item $h(-,0) = f$,
 		\item $h(-,1) \times \id_{\R^n} \colon V \times \R^n \to M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$, and
@@ -1066,7 +1061,6 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	As in the proof of \cref{P: ball stability}, we begin with the case where $V$ is compact and construct $F \colon M \times D^N \to M$, with $D^N$ the unit ball centered at $0$ in $\R^N$ for some $N$, such that
 
 	\begin{enumerate}
-
 		\item $F(-,0) = \id \colon M \to M$,
 		\item for almost all $s \in D^N$ the composition $V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n\colon\xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$,
 
