@@ -1520,7 +1520,9 @@ Among other things, it will help us to next demonstrate a commutativity property
 \begin{proposition}\label{P: exterior commutativity}
 	Let $f \colon V \to M$ and $g \colon W \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary and suppose $f \times g \colon V \times W \to M \times N$ is given the product co-orientation.
 	Let $\tau \colon N \times M \to M \times N$ be the diffeomorphism that interchanges coordinates.
-	Then the pullback of $V \times W$ by $\tau$ is $$\tau^*(V \times W) = (-1)^{(m-v)(n-w)}W \times V,$$ where $m = \dim M$, etc.
+	Then the pullback of $V \times W$ by $\tau$ is
+	$$\tau^*(V \times W) = (-1)^{(m-v)(n-w)}W \times V,$$
+	where $m = \dim M$, etc.
 \end{proposition}
 We assume $M$ and $N$ to be without corners so that we can properly use the pullback construction, which requires transversality, in the proposition and its proof.
 However, the pullback is by a diffeomorphism, so this result should extend without problem to more general settings.
@@ -1540,10 +1542,11 @@ However, the pullback is by a diffeomorphism, so this result should extend witho
 	$\beta_N \wedge \beta_b \wedge \beta_M \wedge \beta_{a}.$ But by the previous choices, $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ and $\beta_W \wedge \beta_{\nu W} = \beta_N \wedge \beta_b$.
 	So
 	\begin{align*}
-		\beta_N \wedge \beta_b \wedge \beta_M \wedge \beta_{a}& = \beta_W \wedge \beta_{\nu W} \wedge \beta_V \wedge \beta_{\nu V}\\
-		& = (-1)^{v(n+b-w)}\beta_W \wedge \beta_V \wedge \beta_{\nu W} \wedge \beta_{\nu V}\\
-		& = (-1)^{v(n+b-w)+(m+a-v)(n+b-w)}\beta_W \wedge \beta_V \wedge \beta_{\nu V} \wedge \beta_{\nu W}\\
-		& = (-1)^{v(n-w)+(m-v)(n-w)}\beta_W \wedge \beta_V \wedge \beta_{\nu V} \wedge \beta_{\nu W},\\
+		\beta_N \wedge \beta_b \wedge \beta_M \wedge \beta_{a}
+		& = \beta_W \wedge \beta_{\nu W} \wedge \beta_V \wedge \beta_{\nu V} \\
+		& = (-1)^{v(n+b-w)}\beta_W \wedge \beta_V \wedge \beta_{\nu W} \wedge \beta_{\nu V} \\
+		& = (-1)^{v(n+b-w)+(m+a-v)(n+b-w)}\beta_W \wedge \beta_V \wedge \beta_{\nu V} \wedge \beta_{\nu W} \\
+		& = (-1)^{v(n-w)+(m-v)(n-w)}\beta_W \wedge \beta_V \wedge \beta_{\nu V} \wedge \beta_{\nu W}, \\
 	\end{align*}
 	where again we use that $a$ and $b$ are even.
 
@@ -1554,13 +1557,12 @@ The next result relates co-oriented products in which one map is the identity wi
 
 \begin{proposition}\label{P: projection pullbacks}
 	Let $f \colon V \to M$ be a co-oriented map from a manifolds with corners to a manifold without boundary, and let $\id_N \colon N \to N$ be the identity map of a manifold with corners with the canonical co-orientation.
-
 	\begin{enumerate}
 		\item The co-oriented pullback of $V$ by the projection $\pi_1 \colon M \times N \to M$ is $f \times \id_N \colon V \times N \to M \times N$ with its product co-orientation, i.e.\ $\pi_1^*V = V \times N$.
-
 		\item The co-oriented pullback of $V$ by the projection $\pi_2 \colon N \times M \to M$ is $\id_N \times f \colon N \times V \to N \times M$ with its product co-orientation, i.e.\ $\pi_2^*V = N \times V$.
 	\end{enumerate}
 \end{proposition}
+
 \begin{proof}
 	As the projections are submersions, the required transversality conditions to ensure the existence of the pullbacks are met.
 	These claims are then clear concerning maps of topological spaces, so we need only verify the co-orientations.
@@ -1570,7 +1572,7 @@ The next result relates co-oriented products in which one map is the identity wi
 	We write the co-orientation of $f$ as $(\beta_V,\beta_M)$, and we let $\nu V$ denote the normal to $e(V)$ and orient $\nu V$ so that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$, writing $\beta_a$ for the standard orientation of $\R^a$.
 
 	For the second statement, the product co-orientation of $\id_N \times f \colon N \times V \to N \times M$ is $(\beta_N \wedge \beta_V,\beta_N \wedge \beta_M)$, as the domain and codomain of $\id_N$ have the same dimension.
-	The pullback by the projection $N \times M \to M$ gives us the embedding/projection sequence $N \times V\xhookrightarrow{\id_N \times e} N \times M \times \R^a \to N \times M$, and the oreintations of the pullback of the normal bundle $\nu V$ by $\pi_2 \times \id_{\R^a}$ is again $\beta_{\nu V}$ at each point of $N \times e(V)$.
+	The pullback by the projection $N \times M \to M$ gives us the embedding/projection sequence $N \times V\xhookrightarrow{\id_N \times e} N \times M \times \R^a \to N \times M$, and the orientations of the pullback of the normal bundle $\nu V$ by $\pi_2 \times \id_{\R^a}$ is again $\beta_{\nu V}$ at each point of $N \times e(V)$.
 	So now from the definition, the pullback has the product co-orientation if and only if $\beta_N \wedge \beta_V \wedge \beta_{\nu V} = \beta_N \wedge \beta_M \wedge \beta_a$.
 	But $ \beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ by assumption, so this holds.
 
@@ -1592,6 +1594,7 @@ The next proposition shows that the exterior product construction is natural.
 	Let $h \colon X \to M$ and $k \colon Y \to N$ be maps of manifolds with corners that are transverse to $f$ and $g$ respectively.
 	Then $(h \times k)^*(V \times W) = h^*V \times k^*W$ spaces with co-oriented maps to $X \times Y$.
 \end{proposition}
+
 \begin{proof}
 	It is easy to show that $h \times k$ is transverse to $f \times g$ so we focus on co-orientation.
 	As in the preceding proofs, we write the Quillen orientation of the normal to the image of $V \times W \into M \times N \times \R^a \times \R^b$ as $\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}$.
@@ -1602,7 +1605,6 @@ The next proposition shows that the exterior product construction is natural.
 	Assuming these hold, then $h^*V \times k^*W$ is co-oriented by $$(-1)^{(x-(v+x-m))(w+y-n)}(\beta_{h^*V} \wedge \beta_{k^*W},\beta_X \wedge \beta_Y) = (-1)^{(m-v)(w+y-n)}(\beta_{h^*V} \wedge \beta_{k^*W},\beta_X \wedge \beta_Y).$$
 
 	Now, continuing to assume the equalities of the last paragraph and taking $a$ and $b$ even as usual, we have
-
 	\begin{align*}
 		\beta_{h^*V} \wedge \beta_{k^*W} \wedge \beta_{\nu V} \wedge \beta_{\nu W}
 		& = (-1)^{(w+y-n)(m-v)}\beta_{h^*V} \wedge \beta_{\nu V} \wedge \beta_{k^*W} \wedge \beta_{\nu W}\\
@@ -1616,6 +1618,7 @@ The next proposition shows that the exterior product construction is natural.
 \end{proof}
 
 \subsubsection{The relation between co-oriented exterior products and co-oriented fiber products}
+
 Having established these elementary properties for our exterior product, we can now relate co-oriented exterior products to co-oriented fiber products.
 These relationships correspond to those in singular cohomology between the exterior and cup products of cochains, though one very nice feature is that in our context these relationships all hold ``on the nose'' at the cochain level and can be proven without any need for Alexander-Whitney maps or any other approximations to the diagonal.
 This will also be useful for proving some properties of the co-oriented fiber product that we have deferred so far.
@@ -1625,6 +1628,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 	Let $\diag \colon M \to M \times M$ be the diagonal map $\diag(x) = (x,x)$.
 	Then $f \times g$ is transverse to $\diag$, and the pullback of $V \times W \to M \times M$ by $\diag$ is the co-oriented fiber product $V \times_M W \to M$, i.e.\ $$V \times_M W = \diag^*(V \times W).$$
 \end{proposition}
+
 \begin{proof}
 	It is standard that if $f$ and $g$ are transverse then $f \times g$ is transverse to the diagonal map.
 	We briefly recall the argument.
@@ -1671,6 +1675,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 	$$h^*(V \times_M W) = h^*V \times_N h^*W$$
 	as manifolds with co-oriented maps to $N$.
 \end{corollary}
+
 \begin{proof}
 	Using \cref{P: cross to cup,P: pullback functoriality,P: natural exterior}, and that $\diag_M h = (h \times h) \circ \diag_N$,
 	we compute
@@ -1690,9 +1695,9 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 	Suppose $f \colon V \to M$, $g \colon W \to M$, and $h \colon X \to M$ are co-oriented maps from manifolds with corners to a manifold without boundary such that the following pairs are transverse (see \cref{R: multiproducts}): $(V,W)$, $(W,X)$, $(V \times_M W,X)$, and $(V,W \times_M X)$.
 	Then $$(V \times_M W) \times_M X = V \times_M (W \times_M X)$$ as co-oriented fiber products mapping to $M$.
 \end{corollary}
+
 \begin{proof}
 	We compute using \cref{P: cross to cup,P: pullback functoriality,P: exterior associativity,P: natural exterior} and that $(\id_M \times \diag)\diag = (\diag \times \id_M)\diag$:
-
 	\begin{align*}
 		(V \times_M W) \times_M X& = \diag^*(\diag^*(V \times W) \times X)\\
 		& = \diag^*(\diag \times \id_M)^*((V \times W) \times X)\\
@@ -1706,11 +1711,12 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 
 \begin{corollary}\label{C: criss cross}
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary and similarly for $h \colon X \to N$ and $k \colon Y \to N$.
-	Then $$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(m-w)(n-x)} (V \times_M W) \times (X \times_N Y) $$
+	Then$$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(m-w)(n-x)} (V \times_M W) \times (X \times_N Y) $$
 	as co-oriented fiber products over $M \times N$.
 	\red{Add a version for pullbacks (as opposed to fiber products)? Might have some extra signs to figure out.
 		Not really needed anywhere I do not think.}
 \end{corollary}
+
 \begin{proof}
 	With our given transversality assumptions, $f \times h$ is transverse to $g \times k$, so the expression on the left is well defined.
 	We then compute using \cref{P: cross to cup,P: pullback functoriality,P: exterior associativity,P: exterior commutativity,P: natural exterior} and letting $\tau$ here be the interchange of the interior $N$ and $M$ in the quadruple product:
