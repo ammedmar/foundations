@@ -54,7 +54,7 @@ If $V$ and $W$ are oriented manifolds, we orient $V \times W$ in the standard wa
 More generally, if $f \colon V \to M$ and $g \colon W \to M$ are transverse maps with $V$, $W$, and $M$ all oriented and $M$ without boundary, Joyce defines an orientation on the pullback $V \times_M W$ as follows \cite[Convention 7.2b]{Joy12}.
 Consider the short exact sequence of vector bundles over $P = V \times_M W$ given by
 \begin{equation}\label{E: fiber orientation}
-	0 \to TP\xr{D\pi_V \oplus D\pi_W} \pi_V^*(TV) \oplus \pi_W^*(TW)\xr{\pi_V^*(Df)-\pi_W^*(Dg)} (f\pi_V)^*TM \to 0.
+	0 \to TP \xr{D\pi_V \oplus D\pi_W} \pi_V^*(TV) \oplus \pi_W^*(TW) \xr{\pi_V^*(Df)-\pi_W^*(Dg)} (f\pi_V)^*TM \to 0.
 \end{equation}
 Here $\pi_V$ and $\pi_W$ are the projections of $V \times_M W$ to $V$ and $W$, and $D\pi_V$ is being treated as a map $TP \to \pi_V^*TV$ and similarly for $D\pi_W$.
 Analogously, $\pi_V^*(Df)$ is the pullback of the map $Df \colon TV \to TM$ obtained first by treating it as a map $TV \to f^*(TM)$ and then pulling back functorially by $\pi_V^*$, and similarly for $\pi_W^*(Dg)$.
@@ -90,7 +90,7 @@ We state these properties in the following two propositions.
 		(V \times_M W)\times_N Z = V \times_M (W\times_N Z)
 	\end{equation}
 	holds when given maps
-	$$V\xr{f} M\xleftarrow{g} W\xr{h} N\xleftarrow{k} Z$$
+	$$V \xr{f} M\xleftarrow{g} W \xr{h} N\xleftarrow{k} Z$$
 	and assuming sufficient transversality for all the fiber products in \eqref{E: mixed associativity fiber orientation} to be well defined (see \cref{R: multiproducts}).
 	In this case the map $V \times_M W \to N$ is given by composing the projection from $V \times_M W$ to $W$ with $h$, and similarly for the map $W\times_N Z \to M$.
 \end{proposition}
@@ -277,7 +277,7 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 
 \begin{remark}\label{R: cooriented composition}
 	Co-oriented maps compose in an immediate way, forming a category.
-	Namely, given $V \xr{f} W \xr{g} M$ and co-orientations $\Or(TV) \to \Or(f^*TW)$ and $\Or(TW) \to \Or(g^*TM)$, we simply compose the former with the pullback of the latter via $f^*$, recalling that $f^*(\Or(E)) = \Or(f^*E)$ in a natural way.
+	Namely, given $V\colon\xr{f} W\colon\xr{g} M$ and co-orientations $\Or(TV) \to \Or(f^*TW)$ and $\Or(TW) \to \Or(g^*TM)$, we simply compose the former with the pullback of the latter via $f^*$, recalling that $f^*(\Or(E)) = \Or(f^*E)$ in a natural way.
 	We will refer to this simply as composing co-orientations and write the composition in symbols as $\omega_f*\omega_g$.
 	Warning: note that we write the terms in the order $\omega_f*\omega_g$ for the map $g \circ f$.
 	This is more convenient when writing out co-orientations using the local orientations as we obtain expressions such as $(\beta_V, \beta_W)*(\beta_W,\beta_M) = (\beta_V,\beta_M)$.
@@ -382,11 +382,11 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 \begin{example}\label{E: splitting example 1}
 	Suppose $g \colon W \into M$ is the inclusion of a codimension-$0$ submanifold of $M$.
 	In this case $TW$ is the pullback of $TM$, and we have the tautological co-orientation of \cref{D: tautological co-orientation} that, slightly abusing notation, we can write as $(\beta_M,\beta_M)$.
-	A particularly important pair of examples is given by the inclusions $g^-:(-\infty, 0] \into \R$ and $g^+:[0,\infty) \into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
+	A particularly important pair of examples is given by the inclusions $g^- \colon (-\infty, 0] \into \R$ and $g^+ \colon [0,\infty) \into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
 
 	Next consider the submanifold consisting of the point $0 \in \R$.
 	It has trivial determinant line bundle, and we can choose the basis element to be the $0$-form $1 \in \bigwedge^0 T0 \cong \R$.
-	By \cref{normal co-or,D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\} \into (-\infty, 0]$ is $(1, 1 \wedge -e_1) = (1, -e_1)$.
+	By \cref{normal co-or, D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\} \into (-\infty, 0]$ is $(1, 1 \wedge -e_1) = (1, -e_1)$.
 	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^- \colon (-\infty, 0] \to \R$ is then the composition of $(1, -e_1)$ with $(e_1, e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
 	As the inward normal to $[0,\infty)$ at $0$ is $e_1$, the inclusion $g^+ \colon [0,\infty) \to \R$ induces the opposite co-orientation $(1, e_1)$ on the inclusion $\{0\} \to \R$.
 \end{example}
@@ -398,7 +398,7 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 	The required transversality is guaranteed by $0$ being a regular value of $\varphi g$.
 	In this case, however, rather than consider the maps of these fiber products to $\R$, we consider their maps to $M$ via restrictions of $g$.
 
-	In this setting, the normal bundle of $W^0$ in $W$ has a natural orientation given by pulling back via $\varphi g$ the standard orientation $e_1$ of the normal bundle of $0$ in $\R$, and this determines the \textbf{co-orientation of $W^0$ in $W$ induced by $\varphi$}, which is given by the normal co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge(\varphi g)^*e_1)$.
+	In this setting, the normal bundle of $W^0$ in $W$ has a natural orientation given by pulling back via $\varphi g$ the standard orientation $e_1$ of the normal bundle of $0$ in $\R$, and this determines the \textbf{co-orientation of $W^0$ in $W$ induced by $\varphi$}, which is given by the normal co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)$.
 	We also have the boundary co-orientations of the inclusions of $W^0$ into $W^{\pm}$.
 	Analogously to \cref{E: splitting example 1}, the co-orientation on $W^0 \into W$ induced by $\varphi$ is the opposite of co-orientation of $W^0 \into W$ as the (partial) boundary of $W^-$ and agrees with the co-orientation of $W^0 \into W$ as the (partial) boundary of $W^+$.
 
@@ -423,14 +423,14 @@ The following examples will be important in \cref{S: creasing} when we discuss c
 
 \subsubsection{Co-orientations of boundaries of boundaries}
 
-In order to form a chain complex of geometric cochains, we will need a result about co-orientations of $\bd^2W$.
+In order to form a chain complex of geometric cochains, we will need a result about co-orientations of $\bd^2 W$.
 Recall from \cref{S: boundaries} that Proposition 2.9 of \cite{Joy12} identifies $\bd^2 W$ with the set of points $(x,\bb_1,\bb_2)$ with $x \in W$ and the $\bb_i$ encoding distinct local boundary components.
-The map $i_{\bd^2W}:\bd^2W \to W$ takes $(x,\bb_1,\bb_2)$ to $x$.
-The manifold with corners $\bd^2W$ is equipped with a canonical diffeomorphism $\rho$ defined by $(x,\bb_1,\bb_2) \to (x,\bb_2,\bb_1)$.
+The map $i_{\bd^2 W} \colon \bd^2 W \to W$ takes $(x,\bb_1,\bb_2)$ to $x$.
+The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism $\rho$ defined by $(x,\bb_1,\bb_2) \to (x,\bb_2,\bb_1)$.
 
 \begin{lemma}\label{L: boundary2}
-	Suppose $i_{\bd^2W}:\bd^2W \to W$ is co-oriented via the composition of boundary co-orientations $\bd^2W \to \bd W \to W$, and suppose $\rho \colon \bd W \to \bd W$ is given the co-orientation induced by $\bigwedge D\rho$ (see \cref{S: co-orientations}).
-	Then $i_{\bd^2W}$ and $i_{\bd^2W}\rho$ have opposite co-orientations.
+	Suppose $i_{\bd^2 W} \colon \bd^2 W \to W$ is co-oriented via the composition of boundary co-orientations $\bd^2 W \to \bd W \to W$, and suppose $\rho \colon \bd W \to \bd W$ is given the co-orientation induced by $\bigwedge D\rho$ (see \cref{S: co-orientations}).
+	Then $i_{\bd^2 W}$ and $i_{\bd^2 W}\rho$ have opposite co-orientations.
 \end{lemma}
 
 \begin{proof}
@@ -438,7 +438,7 @@ The manifold with corners $\bd^2W$ is equipped with a canonical diffeomorphism $
 	In $W$ such $x$ have neighborhoods of the form $[0,\infty)^2 \times \R^{w-2}$ with $x$ at the origin.
 	We identify $[0,\infty)^2$ with the first quadrant of $\R^2$, letting $X$ and $Y$ denote the non-negative $x$ and $y$ axes.
 	We let $\bb_X$ and $\bb_Y$ be the corresponding local boundary components.
-	Then the preimage in $\bd^2W$ of a small neighborhood $U$ of $x$ in $S^2(W)$ consists of two copies of $U$ that we can write $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$.
+	Then the preimage in $\bd^2 W$ of a small neighborhood $U$ of $x$ in $S^2(W)$ consists of two copies of $U$ that we can write $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$.
 	The notation indicates that we think of the first copy of $U$ as embedding into $X \times \R^{w-2} \subset \bd W$ and the second as embedding into $Y \times \R^{w-2} \subset \bd W$.
 	The map $i_{\bd W} \colon \bd W \to W$ then identifies the two copies.
 	The map $\rho$ simply interchanges them.
@@ -446,15 +446,15 @@ The manifold with corners $\bd^2W$ is equipped with a canonical diffeomorphism $
 	Let $\beta_X$ and $\beta_Y$ denote positively-directed tangent vectors in $X$ and $Y$, and let $\beta_U$ be an arbitrary local orientation of $U$.
 	Abusing notation, we also write $\beta_U$ for the corresponding local orientations of $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$.
 	The induced co-orientation on $\rho$ can be written $(\beta_U,\beta_U)$.
-	Up to identifying neighborhoods in $W$ with their local models, the boundary co-orientation of $i_{\bd^2W}$ on $(U,\bb_X,\bb_Y)$ comes from first mapping it into $X \times \R^{w-2}$ and then into $X \times Y \times \R^{w-2}$.
+	Up to identifying neighborhoods in $W$ with their local models, the boundary co-orientation of $i_{\bd^2 W}$ on $(U,\bb_X,\bb_Y)$ comes from first mapping it into $X \times \R^{w-2}$ and then into $X \times Y \times \R^{w-2}$.
 	So from the definition of boundary co-orientations this co-orientation is $(\beta_U, \beta_U \wedge \beta_X \wedge \beta_Y)$.
-	Analogously, the boundary co-orientation of $i_{\bd^2W}$ on $(U,\bb_Y,\bb_X)$ is $(\beta_U, \beta_U \wedge \beta_Y \wedge \beta_X)$.
-	By composition, the co-orientations of $i_{\bd^2W}\rho$ on $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$ are respectively $(\beta_U, \beta_U \wedge \beta_Y \wedge \beta_X)$ and $(\beta_U, \beta_U \wedge \beta_X \wedge \beta_Y)$ as first we interchange then embed.
+	Analogously, the boundary co-orientation of $i_{\bd^2 W}$ on $(U,\bb_Y,\bb_X)$ is $(\beta_U, \beta_U \wedge \beta_Y \wedge \beta_X)$.
+	By composition, the co-orientations of $i_{\bd^2 W}\rho$ on $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$ are respectively $(\beta_U, \beta_U \wedge \beta_Y \wedge \beta_X)$ and $(\beta_U, \beta_U \wedge \beta_X \wedge \beta_Y)$ as first we interchange then embed.
 	But $\beta_U \wedge \beta_X \wedge \beta_Y = -\beta_U \wedge \beta_Y \wedge \beta_X$, which establishes the lemma.
 \end{proof}
 
 \begin{remark}\label{R: bd2 oriented}
-	A similar argument using \cref{Con: oriented boundary} shows that if $W$ is oriented than $\bd^2W$ possess an orientation reversing diffeomorphism.
+	A similar argument using \cref{Con: oriented boundary} shows that if $W$ is oriented than $\bd^2 W$ possess an orientation reversing diffeomorphism.
 	In this case we observe that of our two copies of $U$, one is oriented by \cref{Con: oriented boundary} so that $\beta_X \wedge \beta_Y \wedge \beta_U$ is the local orientation of $W$ and the other is oriented so that $\beta_Y \wedge \beta_X \wedge \beta_U$ is the orientation of $W$.
 	Thus the two copies of $U$ have opposite orientations, and again the diffeomorphism simply interchanges them.
 \end{remark}
@@ -463,7 +463,7 @@ The manifold with corners $\bd^2W$ is equipped with a canonical diffeomorphism $
 
 In this section we develop co-orientations related to homotopies.
 As the product of two spaces is the same as their fiber product over a point, we have by equation \eqref{E: product boundary}: $$\bd(W \times I) = (\bd W \times I)\sqcup (W \times \bd I) = (W \times 1)\sqcup (W \times 0)\sqcup (\bd W \times I).$$
-Now recall that in general if we have a map $f \colon V \to M$ then we write $\bd f$ for the composition $\bd V\xr{i_{\bd V}} V\xr{f} M$.
+Now recall that in general if we have a map $f \colon V \to M$ then we write $\bd f$ for the composition $\bd V\colon\xr{i_{\bd V}} V \xr{f} M$.
 Adopting this convention also for pieces of the boundary we make the following definition:
 
 \begin{definition}\label{D: co-oriented homotopy}
@@ -529,7 +529,7 @@ For this the following lemma is useful.
 	\begin{lemma}
 		Let $g_0 \colon W \to M$ be co-oriented, and let $G \colon W \times I \to M$ be a homotopy with $G(-,0) = g_0$.
 		Let $G$ and $g_1 = G(-,1)$ have the induced co-orientations.
-		Furthermore, let $G_\bd:(\bd W) \times I \to M$ be the composition $(\bd W) \times I\xr{i_{\bd W} \times \id_I} W \times I\xr{G}M$, co-oriented by taking the homotopy orientation induced from $g_0i_{\bd W} \colon \bd W \to M$ with its standard boundary co-orientation obtained from the co-orientation of $g_0$.
+		Furthermore, let $G_\bd:(\bd W) \times I \to M$ be the composition $(\bd W) \times I \xr{i_{\bd W} \times \id_I} W \times I \xr{G}M$, co-oriented by taking the homotopy orientation induced from $g_0i_{\bd W} \colon \bd W \to M$ with its standard boundary co-orientation obtained from the co-orientation of $g_0$.
 		Then $$\bd G = g_1-g_0-G_\bd.$$
 	\end{lemma}
 \end{comment}
@@ -552,7 +552,7 @@ For this the following lemma is useful.
 	\begin{proof}
 		We will always denote the local co-orientation of $g_0$ by $(\beta_W,\beta_M)$.
 		Recall that the standard co-orientation for the boundary inclusion $i_{\bd V} \colon \bd V \to V$ of a manifold with corners $V$ is $(\beta_{\bd V},\beta_{\bd V} \wedge \beta_\nu)$, where $\nu$ is an outward pointing normal vector.
-		If $f \colon V \to M$ is co-oriented, then the composite $\bd V\xr{i_{\bd V}}V\xr{f}M$ is co-oriented by composing the co-orientations of the component maps.
+		If $f \colon V \to M$ is co-oriented, then the composite $\bd V \xr{i_{\bd V}}V \xr{f}M$ is co-oriented by composing the co-orientations of the component maps.
 
 		Now consider $W \times 1 \subset W \times I$.
 		At $(x,1)$, the induced homotopy orientation is $(\beta_W \wedge \beta_{e_1},\gamma_*\beta_M)$, where $\gamma$ is the path $I \to G(x,-)$.
@@ -566,14 +566,14 @@ For this the following lemma is useful.
 		Then the standard co-orientation of $\bd W$ in $W$ is $(\beta_{\bd W},\beta_{\bd W} \wedge \beta_\nu)$ and the standard co-orientation of the composite $\bd g_0 = g_0i_{\bd W} \colon \bd W \to M$ is the composite of $(\beta_{\bd W},\beta_{\bd W} \wedge \beta_\nu)$ with $(\beta_W,\beta_M)$.
 		If $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$, this composite co-orientation is $(\beta_{\bd W},\beta_M)$, and otherwise it is
 		$-(\beta_{\bd W},\beta_M)$.
-		The induced homotopy co-orientation of $G_\bd \colon \bd W \times I\xr{i_{\bd W} \times \id}W \times I \to M$ is then $\pm(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$, as $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$ or not.
+		The induced homotopy co-orientation of $G_\bd \colon \bd W \times I \xr{i_{\bd W} \times \id}W \times I \to M$ is then $\pm(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$, as $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$ or not.
 
 		On the other hand, consider $(\bd W) \times I$ as part of the boundary of $W \times I$.
 		The standard boundary co-orientation for $(\bd W) \times I$ in $W \times I$ is $(\beta_{(\bd W) \times I},\beta_{(\bd W) \times I}\wedge\beta_{\nu_\bd})$.
 		This is independent of the choice of $\beta_{(\bd W) \times I}$, so we may take $\beta_{(\bd W) \times I} = \beta_W \wedge \beta_{e_1}$, where $\beta_{e_1}$ is positively-directed in $I$.
 		Then
 		$$(\beta_{(\bd W) \times I},\beta_{(\bd W) \times I}\wedge\beta_{\nu_\bd}) = (\beta_{\bd W} \wedge \beta_{e_1},\beta_{\bd W} \wedge \beta_{e_1}\wedge\beta_{\nu_\bd}) = -(\beta_{\bd W} \wedge \beta_{e_1},\beta_{\bd W} \wedge \beta_{\nu_\bd}\wedge\beta_{\nu_I}).$$
-		Composing with the induced co-orientation $(\beta_W \wedge \beta_{e_1},\beta_M)$ of $G$ gives the composite $(\bd W) \times I\xr{i_{(\bd W) \times I}}W \times I\xr{G} M$ the co-orientation $-(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$ if $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$ and $(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$ otherwise.
+		Composing with the induced co-orientation $(\beta_W \wedge \beta_{e_1},\beta_M)$ of $G$ gives the composite $(\bd W) \times I \xr{i_{(\bd W) \times I}}W \times I \xr{G} M$ the co-orientation $-(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$ if $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$ and $(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$ otherwise.
 		Thus, altogether, the $(\bd W) \times I$ boundary component of $W \times I$ with its boundary co-orientation is $-G_\bd$.
 	\end{proof}
 \end{comment}
@@ -753,7 +753,7 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	\end{diagram}
 	The bottom square is evidently a pullback.
 	Thus by elementary topology the top square is a pullback diagram if and only if the composite rectangle is a pullback diagram.
-	So by letting the top square be a pullback diagram, we obtain the pullback $P$ of $W\xr{g} M\xleftarrow{f} V$.
+	So by letting the top square be a pullback diagram, we obtain the pullback $P$ of $W \xr{g} M\xleftarrow{f} V$.
 
 	Since $f$ is transverse to $g$, we have $g \times \id$ transverse to $e$.
 	As $e$ is an embedding, it follows that $P = (g \times \id)^{-1}(e(V))$ is a submanifold of $W \times \R^N$.
@@ -1030,7 +1030,7 @@ Before proving the proposition, we put it to use in the following example.
 	Although we are interested in $V \times_M U$, the definition of the pullback co-orientation makes it easier to work with $U \times_M V$ when $U$ is embedded; see \cref{E: V embedded}.
 	As we have chosen a co-orientation for $U \into M$ and $V \to M$ comes with a co-orientation, we can consider
 	the fiber product $U \times_M V \to M$.
-	If we choose an orientation $\beta_{\nu U}$ of the normal bundle to $U$ at $y$ so that $\beta_U \wedge \beta_{\nu U} = \beta_M$, then this fiber product is $P_U = f^{-1}(U) = f^{-1}(U)\xr{f} M$ co-oriented by $(\beta_P,\beta_M)$, where $\beta_P$ is chosen so that $\beta_P \wedge \beta_{\nu U} = \beta_V$, as usual letting $\nu U$ here also stand for its pullback as a normal bundle of $P_U$ in $V$.
+	If we choose an orientation $\beta_{\nu U}$ of the normal bundle to $U$ at $y$ so that $\beta_U \wedge \beta_{\nu U} = \beta_M$, then this fiber product is $P_U = f^{-1}(U) = f^{-1}(U) \xr{f} M$ co-oriented by $(\beta_P,\beta_M)$, where $\beta_P$ is chosen so that $\beta_P \wedge \beta_{\nu U} = \beta_V$, as usual letting $\nu U$ here also stand for its pullback as a normal bundle of $P_U$ in $V$.
 	At this point, if we had chosen the opposite co-orientation for $U \into M$, we would have the opposite fiber product co-orientation.
 
 	Now, we apply \cref{P: graded comm}.
@@ -1040,7 +1040,7 @@ Before proving the proposition, we put it to use in the following example.
 	For simplicity, though, we maintain our original notations.
 
 	By \cref{P: graded comm}, we have $U \times_M V = (-1)^{(m-v)(m-w)}V \times_M U$ as co-oriented fiber products over $M$.
-	So the fiber product $V \times_M U \to M$ is represented by $f^{-1}(U)\xr{f}M$ with co-orientation at $(x,y)$ given by $(-1)^{(m-v)(m-w)}(\beta_P,\beta_M)$.
+	So the fiber product $V \times_M U \to M$ is represented by $f^{-1}(U) \xr{f}M$ with co-orientation at $(x,y)$ given by $(-1)^{(m-v)(m-w)}(\beta_P,\beta_M)$.
 	But decomposing the fiber product as the pullback $V \times_M U \to U$ and the inclusion $U \into M$, we can also decompose the co-orientation as $(-1)^{(m-v)(m-w)}(\beta_P,\beta_M) = (-1)^{(m-v)(m-w)}(\beta_P,\beta_U)*(\beta_U,\beta_M)$.
 	As $(\beta_U,\beta_M)$ is our co-orientation for $g|_U$, the pullback co-orientation must be $(-1)^{(m-v)(m-w)}(\beta_P,\beta_U)$.
 	Furthermore, if we had chosen the opposite co-orientation for $g|_U$, that would reverse the signs of both $(\beta_U,\beta_M)$ and of the fiber product, so in either case the pullback co-orientation is $(-1)^{(m-v)(m-w)}(\beta_P,\beta_U)$.
@@ -1921,7 +1921,7 @@ So this proposition will ultimately demonstrate that the intersection product is
 The proof will take a bit of work.
 Our strategy will be as follows: First, we will prove in \cref{L: compare cup and intersection for immersions} that the result holds when $f$ and $g$ are immersions.
 Then we will show, first for co-orientations and then for orientations, that we can replace the fiber product of
-$$V\xr{f} M \xleftarrow{g} W$$ with the fiber product
+$$V \xr{f} M \xleftarrow{g} W$$ with the fiber product
 $$V \times \R^{2b}\xhookrightarrow{e \times \id_{\R^{2b}}} M \times \R^{2a} \times \R^{2b} \xhookleftarrow W \times \R^{2a},$$
 where $e$ is the embedding $V \into M \times \R^{2a}$ of a Quillen co-orientation of $f$ and the leftward arrow is the identity between the $\R^{2a}$ factors and takes the $W$ factor into $M \times \R^{2b}$ by the embedding map of a Quillen co-orientation of $g$.
 By ``replace,'' we mean in the orientated case that the two fiber products are canonically oriented diffeomorphic.

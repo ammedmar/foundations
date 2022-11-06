@@ -376,7 +376,7 @@ The choice to use $-W^0$ rather than $W^0$ in the definition is explained by \cr
 
 
 \begin{proposition}\label{P: connecting}
-The map $H^k_\Gamma(U \cap V)\xr{\delta} H^{k+1}_\Gamma(U \cup V)$ is well defined.
+The map $H^k_\Gamma(U \cap V) \xr{\delta} H^{k+1}_\Gamma(U \cup V)$ is well defined.
 \end{proposition}
 
 \begin{proof}
@@ -465,7 +465,7 @@ If $f: U \into M$ is the inclusion of an open subset and $\uW \in C^*_\Gamma(M)$
 
 \begin{theorem}\label{T: absolute MV}
 Let $U,V \subset M$ be open subsets. There is a long exact Mayer-Vietoris sequence
-$$\cdots \to H^k_\Gamma(U \cup V)\xr{i} H^k_\Gamma(U) \oplus H^k_\Gamma(V)\xr{j} H^k_\Gamma(U \cap V)\xr{\delta} H^{k+1}_\Gamma(U \cup V)\to\cdots$$
+$$\cdots \to H^k_\Gamma(U \cup V) \xr{i} H^k_\Gamma(U) \oplus H^k_\Gamma(V) \xr{j} H^k_\Gamma(U \cap V) \xr{\delta} H^{k+1}_\Gamma(U \cup V)\to\cdots$$
 with $i(\uW) = (\uW|_U, -\uW|_V)$, $j(\uW_1,\uW_2) = \uW_1|_{U \cap V}+\uW_2|_{U \cap V}$, and $\delta$ as above.
 \end{theorem}
 
@@ -745,7 +745,7 @@ S_*(U \cap V)&\rInto^{(i_U,-i_V)} & S_*(U) \oplus S_*(V)\\
 C_*^\Gamma(U \cap V)&\rInto^{(i_U,-i_V)} &C_*^\Gamma(U) \oplus C_*^\Gamma(V).
 \end{diagram}
 
-3. If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi:H_*(U_\alpha) \to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism. This argument is standard given that both singular (simplicial or cubical) chains and geometric chains are represented by compact spaces: If $W$ represents a cycle in $C_*^\Gamma(\cup_\alpha U_\alpha)$, then $W \to \cup_\alpha U_\alpha$ factors through some particular $U_\beta$, so, as $H_*(U_\beta)\xr{\Phi}H_*^\Gamma(U_\beta)$ is an isomorphism, $\uW$ is in the image of $H_*(U_\beta)\xr{\Phi}H_*^\Gamma(U_\beta) \to H_*^\Gamma(\cup_\alpha U_\alpha)$. But then $\uW$ is in the image of composition $H_*(U_\beta) \to H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective. Similarly, if $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, say $\bd W = \xi+T$ for some $T \in Q_*(U)$. But by compactness, there is some $\beta$ so that $W$, $T$, and $\xi$ all have image in $U_\beta$. So $\xi$ represents a class in $H_*(U_\beta)$ that maps to $0$ in $H_*^\Gamma(U_\beta)$. As $\Phi$ is assumed an isomorphism on $U_\beta$, it must be that $\xi$ represents $0$ in $H_*(U_\beta)$, and so it also represents $0$ in $H_*(\cup_\alpha U_\alpha)$.
+3. If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi:H_*(U_\alpha) \to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism. This argument is standard given that both singular (simplicial or cubical) chains and geometric chains are represented by compact spaces: If $W$ represents a cycle in $C_*^\Gamma(\cup_\alpha U_\alpha)$, then $W \to \cup_\alpha U_\alpha$ factors through some particular $U_\beta$, so, as $H_*(U_\beta) \xr{\Phi}H_*^\Gamma(U_\beta)$ is an isomorphism, $\uW$ is in the image of $H_*(U_\beta) \xr{\Phi}H_*^\Gamma(U_\beta) \to H_*^\Gamma(\cup_\alpha U_\alpha)$. But then $\uW$ is in the image of composition $H_*(U_\beta) \to H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective. Similarly, if $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, say $\bd W = \xi+T$ for some $T \in Q_*(U)$. But by compactness, there is some $\beta$ so that $W$, $T$, and $\xi$ all have image in $U_\beta$. So $\xi$ represents a class in $H_*(U_\beta)$ that maps to $0$ in $H_*^\Gamma(U_\beta)$. As $\Phi$ is assumed an isomorphism on $U_\beta$, it must be that $\xi$ represents $0$ in $H_*(U_\beta)$, and so it also represents $0$ in $H_*(\cup_\alpha U_\alpha)$.
 
 It now follows from Theorem \cite[5.1.1]{Frie20} that $\Phi: H_*(M) \to H_*^\Gamma(M)$ is an isomorphism.
 \end{proof}
