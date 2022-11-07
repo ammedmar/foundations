@@ -216,9 +216,9 @@ In this section we consider the cochains on $M$ represented by maps $W \to M$ th
 
 \begin{definition}
 	Let $M$ be equipped with a smooth cubulation $|X| \to M$.
-	We say that $r_W \colon W \to M$ is \textbf{transverse} to $X$ if $r_W \colon  W \to M$ is transverse to each characteristic map of the cubulation.
+	We say that $r_W \colon W \to M$ is \textbf{transverse} to $X$ if $r_W \colon W \to M$ is transverse to each characteristic map of the cubulation.
 	In particular, this implies by \cref{L: simple trans} that each induced $\bd^kW \to M$ is plainly transverse to each face of the cubulation.
-	If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$ , and so we can define $PC^*_{\Gamma \pitchfork X}(M)$ to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
+	If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$ , and so we can define $PC^*_{\Gamma \pf X}(M)$ to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
 
 	We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma \pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma \pf X}^*(M)$ such that $V\sim W$ if and only if $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$.
 	The \textbf{geometric cochains of $M$ transverse to $X$}, denoted $C_{\Gamma \pf X}^*(M)$, are the equivalence classes in $PC_{\Gamma \pf X}^*(M)$.
@@ -236,10 +236,10 @@ is that this inclusion induces a cohomology isomorphism.
 In other words, the cochains that are transverse to $X$ are sufficient to compute the cohomology of $M$.
 
 \begin{theorem}\label{T: transverse complex}
-	The inclusion $C^*_{\Gamma \pitchfork X}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism.
+	The inclusion $C^*_{\Gamma \pf X}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism.
 \end{theorem}
 
-To show that the inclusion $C^*_{\Gamma \pitchfork X}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism, it will be necessary to consider the following scenario.
+To show that the inclusion $C^*_{\Gamma \pf X}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism, it will be necessary to consider the following scenario.
 Suppose we have a map $r_V \colon V \to M$ with $V$ a manifold with corners and $M$ a manifold with a cubulation.
 Let $\bd V = W$, which will also be transverse to the cubulation.
 We construct a homotopy $h \colon V \times I \to M$ such that $g(-,0) = r_V$, $g(-,1)$ is transverse to the cubulation, and so the restriction of $h$ to $W \times I$ is transverse to the cubulation.
@@ -278,24 +278,24 @@ The needed versions of these results is established in the following proposition
 	\end{enumerate}
 \end{proposition}
 
-Before proving the proposition, which is somewhat technical, we use it to prove \cref{T: transverse complex}, which states that $H^*(C^*_{\Gamma \pitchfork X}(M)) \to H^*(C_\Gamma^*(M))$ is an isomorphism.
+Before proving the proposition, which is somewhat technical, we use it to prove \cref{T: transverse complex}, which states that $H^*(C^*_{\Gamma \pf X}(M)) \to H^*(C_\Gamma^*(M))$ is an isomorphism.
 
 \begin{proof}[Proof of \cref{T: transverse complex}]
-	The idea of the argument that $H^*(C^*_{\Gamma \pitchfork X}(M)) \to H^*(C_\Gamma^*(M))$ is a surjection is contained already in the proof of \cite[Lemma 15]{Lipy14}, which involves constructing a homotopy to move a cycle into transverse position.
+	The idea of the argument that $H^*(C^*_{\Gamma \pf X}(M)) \to H^*(C_\Gamma^*(M))$ is a surjection is contained already in the proof of \cite[Lemma 15]{Lipy14}, which involves constructing a homotopy to move a cycle into transverse position.
 	We elaborate upon that argument.
 
 	Suppose $\uV \in C_\Gamma^*(M)$ is a cocycle represented by $r_V \colon V \to M$.
 	By \cref{P: ball stability}, there is a proper universal homotopy $h \colon V \times I \to M$ from $r_V$ to $r_{V'} \colon V' \to M$ with $V'$ transverse to the cubulation.
-	By \cref{C: homotopy}, $r_V$ and $r_{V'}$ represent the same cohomology class in $H^*_{\Gamma}(M)$, but the class represented by $r_{V'}$ is in the image of $H^*(C^*_{\Gamma \pitchfork X}(M))$.
+	By \cref{C: homotopy}, $r_V$ and $r_{V'}$ represent the same cohomology class in $H^*_{\Gamma}(M)$, but the class represented by $r_{V'}$ is in the image of $H^*(C^*_{\Gamma \pf X}(M))$.
 
 	For injectivity, suppose $W \in PC^*_{\Gamma \pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
 	Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V = W+T$ for some
 	$T \in Q^*(M)$.
 	By \cref{P: ball stability} there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1)$ and $h \circ (i_{W} \times \id)$ are both transverse to the cubulation.
 	Let $V', W',T' \in PC^*_\Gamma(M)$ be $W$, $V$, and $T$ but with reference maps given respectively by $h(-,1)$, $h(-,1)i_W$, and $h(-,1)i_T$, where $i_W \colon W \to V$ and $i_T \colon T \to V$ are the boundary inclusion maps restricted to the components of $W$ and $T$, respectively.
-	As $h \circ (i_{W} \times \id)$ is transverse to the cubulation, $W$ and $W'$ represent the same element of $H^*_{\Gamma \pitchfork X}(M)$ by arguments analogous to the proof of \cref{C: homotopy}.
-	But we also have $\bd V' = W'+T'$ with $V'$ in $C^*_{\Gamma \pitchfork X}(M)$ and, by \cref{L: Q preservation}, $T' \in Q^*(M)$.
-	So $W'$ represents $0 \in H^*(C^*_{\Gamma \pitchfork X}(M))$.
+	As $h \circ (i_{W} \times \id)$ is transverse to the cubulation, $W$ and $W'$ represent the same element of $H^*_{\Gamma \pf X}(M)$ by arguments analogous to the proof of \cref{C: homotopy}.
+	But we also have $\bd V' = W'+T'$ with $V'$ in $C^*_{\Gamma \pf X}(M)$ and, by \cref{L: Q preservation}, $T' \in Q^*(M)$.
+	So $W'$ represents $0 \in H^*(C^*_{\Gamma \pf X}(M))$.
 \end{proof}
 
 It remains to prove \cref{P: ball stability}, which will requires the following technical lemma that is also useful below in the proof of \cref{T: intersection qi}.
@@ -809,7 +809,7 @@ The payoff is in \cref{T: intersection qi}, which can be found in the next subse
 We conjecture that $\mc I$ is an isomorphism in the general case but have not been able to prove this.
 
 \begin{remark}\label{R: intersection map extension}
-	Putting together the isomorphism $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$ with the inverse of the isomorphism $H^*_{\Gamma \pitchfork X}(M) \to H^*_\Gamma(M)$, it is sometimes useful to abuse notation and speak of the intersection-induced isomorphism
+	Putting together the isomorphism $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$ with the inverse of the isomorphism $H^*_{\Gamma \pf X}(M) \to H^*_\Gamma(M)$, it is sometimes useful to abuse notation and speak of the intersection-induced isomorphism
 	$H^*_\Gamma(M) \to H^i(K_X^*(M))$.
 	Of course this map is given by taking a cohomology class representative that is transverse to the cubulation and applying the intersection map $\mc I$ to find a cubical cocycle representing the target cohomology class.
 \end{remark}
