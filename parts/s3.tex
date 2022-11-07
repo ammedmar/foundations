@@ -850,13 +850,15 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 	Let $\pi \colon M \times \R^N \to M$ be the projection to $M$.
 	As $\pi e_0 = \pi e_1$, the maps $e_0$ and $e_1$ are homotopic over $f$, say by linear homotopies in the Euclidean fibers.
 	Let $H \colon V \times I \to M \times \R^N$ be the chosen homotopy.
-	Next, by the same argument by which embeddings $e$ exist, there is an embedding $\td H: V \times I \into M \times \R^N \times \R^Q$ for some $Q$ so that if $\td \pi \colon M \times \R^N \times \R^Q \to M \times \R^N$ is the projection then $\td \pi \td H = H$.
+	Next, by the same argument by which embeddings $e$ exist, there is an embedding $\td H \colon V \times I \into M \times \R^N \times \R^Q$ for some $Q$ so that if $\td \pi \colon M \times \R^N \times \R^Q \to M \times \R^N$ is the projection then $\td \pi \td H = H$.
 	If we let $\td e_0 = \td H(-,0) \colon V \to M \times \R^N \times \R^Q$ then $\td \pi \td e_0 = e_0$.
 	If we let $(e_0,0) \colon V \to M \times \R^N \times \R^Q$ denote the map $x \to (e_0(x), 0)$, then there is a homotopy from $\td e_0$ to $(e_0,0)$; in fact as $e_0$ is an embedding and $\td \pi \td e_0 = e_0$, we can let these homotopies be linear in the $\R^Q$ factor and constant in the other factors and this homotopy will be an embedding of $V \times I$.
 	We can define $\td e_1$, $(e_1,0)$, and an embedded homotopy between them similarly.
 
 	So we have a sequence of three embedded homotopies, say $F_1$, $F_2$, $F_3$ from $(e_0,0)$ to $\td e_0$, from $\td e_0$ to $\td e_1$, and from $\td e_1$ to $(e_1,0)$, respectively.
-	Additionally, $\pi \td \pi:F_j(x,t) = f(x)$ so each homotopy is constant in $I$ when projected to $M$, and in particular each of $(e_0,0)$, $(e_1,0)$, $\td e_0$, and $\td e_1$ is an embedding $V \into M \times \R^{N+Q}$ over $f \colon V \to M$.
+	Additionally, $\pi \td \pi:F_j(x,t) = f(x)$
+%	This seems like a typo.
+	so each homotopy is constant in $I$ when projected to $M$, and in particular each of $(e_0,0)$, $(e_1,0)$, $\td e_0$, and $\td e_1$ is an embedding $V \into M \times \R^{N+Q}$ over $f \colon V \to M$.
 	We know from above that the pullback co-orientation obtained from using $(e_0,0)$ and $(e_1,0)$ agree with those obtained from $e_0$ and $e_1$.
 	So it suffices to use the homotopies to show successively that $(e_0,0)$, $\td e_0$, $\td e_1$, and $(e_1,1)$ all provide the same pullback co-orientation of $f^*$.
 
@@ -1179,7 +1181,7 @@ We now show that for arbitrary transverse intersecting $f$ and $g$ there are alw
 	As $f$ is co-oriented, $F$ is co-orientable by \cref{L: co-orientable homotopies} and can be co-oriented by \cref{D: homotopy co-orientation}.
 	So $(V \times I) \times_M W$ can be co-oriented, and by \cref{leibniz} two of its boundary components will be $f \times_M g: (V \times 0) \times_M W = V \times_M W \to M$ and
 	$f' \times_M g:(V \times 1) \times_M W = V \times_M W \to M$, topologically, with the co-orientations given by composing the boundary co-orientations with the co-orientation of $F \times_M g$.
-	Similarly, two of the boundary components of $W \times_M (V \times I)$ will be $g \times_M f: W \times_M (V \times 0) = W \times_M V \to M$ and
+	Similarly, two of the boundary components of $W \times_M (V \times I)$ will be $g \times_M f \colon W \times_M (V \times 0) = W \times_M V \to M$ and
 	$g \times_M f' \colon W \times_M (V \times 1) = W \times_M V \to M$ topologically, with the co-orientations given by $(-1)^{m-w}$ times the compositions of the boundary co-orientations with the co-orientation of $g \times_M F$.
 	But now the point is that $(V \times I) \times_M W$ and $W \times_M (V \times I)$ are diffeomorphic with compatible maps to $M$, and so their co-orientations either agree or disagree, and correspondingly the co-orientations of the corresponding boundary components will agree or disagree.
 	In other words,
@@ -1428,7 +1430,7 @@ Before getting to co-orientations, we first show that a product of proper maps i
 
 \begin{proposition}\label{P: co-oriented exterior unit}
 	Let $f \colon V \to M$ be a co-oriented map of manifolds with corners, and let $g:pt \to pt$ be the unique map with the canonical co-orientation.
-	Then $f \times g \colon V \times pt \to M \times pt$ and $g \times f:pt \times V \to pt \times M$ are each isomorphic as co-oriented maps of manifolds with corners to $f \colon V \to M$.
+	Then $f \times g \colon V \times pt \to M \times pt$ and $g \times f \colon pt \times V \to pt \times M$ are each isomorphic as co-oriented maps of manifolds with corners to $f \colon V \to M$.
 \end{proposition}
 
 \begin{proof}
@@ -2093,7 +2095,7 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 
 	In the case of $V\times_{M \times \R^{2a}} (W \times \R^{2a})$, if we abuse notation and again write $P$ for the fiber product, then we have instead a map
 	\begin{equation}\label{E: fiber plus euclidean}
-		\Psi: P \oplus M \oplus \R^{2a} \to V \oplus W \oplus \R^{2a},
+		\Psi \colon P \oplus M \oplus \R^{2a} \to V \oplus W \oplus \R^{2a},
 	\end{equation}
 	with $\Psi$ again the restriction to $P$ of the projections to $V$ and $W \oplus \R^{2a}$, while the restriction to $M$ must be a splitting of the map $\Upsilon: V \oplus W \oplus \R^{2a} \to M \oplus \R^{2a}$ that is $f_0$ on the first factor and $-(g \oplus \id_{\R^{2a}})$ on the last two factors.
 	We claim that we can take $\Psi((v,w,0),x,z) = (v,w,0)+(s(x),0)-(0,0,z)$.

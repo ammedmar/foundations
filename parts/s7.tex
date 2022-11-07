@@ -540,7 +540,7 @@ Again, this requires enough transversality for all fiber products to be defined,
 	Also, each $V_{ij} \times_M W_{ji,TI} \in Q^*(M)$ by \cref{L: pullback with Q}, as $W_{ji,TI} \in Q^*(M)$.
 	So it remains to show that
 	\begin{equation}\label{E: multicup NI}
-		\left(\bigsqcup_{i,j} V_{ij} \times W_{ji,NI} \right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell k,NI}\right)
+		\left(\bigsqcup_{i,j} V_{ij} \times W_{ji,NI} \right) \sqcup \left(- \bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell k,NI}\right)
 	\end{equation}
 	is in $Q^*(M)$.
 	As each $W_{j,NI}$ and $W'_{\ell,NI}$ has small rank, each component of \eqref{E: multicup NI} is of small rank by \cref{L: pullback with Q}.
@@ -569,7 +569,7 @@ Again, this requires enough transversality for all fiber products to be defined,
 
 \subsubsection{Pullbacks of cochains and the Kronecker pairing}
 
-In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon M \to N$ of manifolds without boundary yields a well-defined cohomology map $h^*:H^*_\Gamma(N) \to H^*_\Gamma(M)$.
+In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon M \to N$ of manifolds without boundary yields a well-defined cohomology map $h^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$.
 In this section we utilize the notions of the preceding section to consider $f^*$ as a partially-defined map of cochain complexes $C^*_\Gamma(N) \to C^*_\Gamma(M)$.
 Then, by similar arguments, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
 
@@ -622,7 +622,7 @@ We notice that the transversality situation here is simpler than the more genera
 
 The partially-defined cap product becomes a partially-defined pairing
 $$C^i_\Gamma(M) \times C_i^\Gamma(M) \xr{\nplus} C_0^\Gamma(M) \xr{\aug}\Z,$$
-where $\aug:C_0^\Gamma(M) \to \Z$ is the augmentation map of \cref{D: aug}.
+where $\aug \colon C_0^\Gamma(M) \to \Z$ is the augmentation map of \cref{D: aug}.
 We consider here the extent to which this pairing corresponds to a function $C^i_\Gamma(M) \to \Hom(C_i^\Gamma(M),\Z)$.
 The situation is very similar to the preceding discussion of pullbacks.
 
@@ -945,7 +945,7 @@ We first prove it up to some technical lemmas and propositions, which follow jus
 	For notational purposes, let us write $r_V' \colon V' \to M$ and $r_V'' \colon V'' \to M$ with $V = V' = V''$.
 	Then $\bd Z = V' \sqcup -V'' \sqcup T$ with $T \in Q(M)$.
 	We must show that $V' \times_M W$ and $V'' \times_M W$ are (co)homologous.
-	To do so, we find a universal homotopy $H:Z \times I \to M$ from $r_Z$ to an $r_Z':Z' \to M$ with $Z = Z'$ such that the restrictions of $H$ to $V' \times I$ and $V'' \times I$ are transverse to $r_W$ and $r_Z'$ is also transverse to $r_W$.
+	To do so, we find a universal homotopy $H \colon Z \times I \to M$ from $r_Z$ to an $r_Z':Z' \to M$ with $Z = Z'$ such that the restrictions of $H$ to $V' \times I$ and $V'' \times I$ are transverse to $r_W$ and $r_Z'$ is also transverse to $r_W$.
 	So $H|_{V' \times I}$ and $H|_{V'' \times I}$ give (co)homologies from the (co)chains represented by $V'$ and $V''$ to (co)chains that are (co)homologous via $r_Z'$.
 	Altogether, this gives a (co)homology from $V'$ to $V''$ that is transverse to $r_W$.
 	Call the (co)chain representing the (co)homology $\mf V$.
@@ -1009,7 +1009,7 @@ Recall that this lemma allows us to replace transversality of arbitrary maps wit
 		\end{equation}
 		As $\pi$ is a submersion, the image of this tangent space under $D\pi$ is all of $T_{f(v)}M$.
 		But $(D\pi)(De) = D(\pi e) = Dg$, so $(D\pi \circ De)(T_wW) = Dg(T_wW)$.
-		Furthermore, letting $\pi_V \colon V \times \R^n \to V$ be the projection, we have $(D\pi)(D(f \times \id_{\R^{n}})) = D(\pi(f \times \id_{\R^{n}})) = D(f\pi_V) = (Df)(D\pi_V)$, so, as $D\pi_V:T_{(v,z)}(V \times \R^n) \to T_vV$ is surjective, we have $(D\pi)(D(f \times \id_{\R^{n}}))(T_{(v,z)}(V \times \R^n)) = Df(T_vV)$.
+		Furthermore, letting $\pi_V \colon V \times \R^n \to V$ be the projection, we have $(D\pi)(D(f \times \id_{\R^{n}})) = D(\pi(f \times \id_{\R^{n}})) = D(f\pi_V) = (Df)(D\pi_V)$, so, as $D\pi_V \colon T_{(v,z)}(V \times \R^n) \to T_vV$ is surjective, we have $(D\pi)(D(f \times \id_{\R^{n}}))(T_{(v,z)}(V \times \R^n)) = Df(T_vV)$.
 		So applying $D\pi$ to equation \eqref{E: Quillen transverse}, we get $Df(T_vV)+Dg(T_wW) = T_{f(v)}M$, and $f$ is transverse to $g$.
 	\end{proof}
 
@@ -1104,7 +1104,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	As the boundary maps are immersions, there is a neighborhood $C_a$ of $a$ in $\bd^jW$ on which $ei_{\bd^jW}$ restricts to an embedding from a $w-j$ dimensional manifold with corners into $M \times \R^n$.
 	In fact, by choosing a chart around $a$ and using the definition of a smooth map of manifolds with corners, $ei_{\bd^jW}$ (composed with the chart map) extends to a smooth immersion of a neighborhood of $0 \in \R^{w-j}$ into $M \times \R^n$.
 	By further appealing to charts and local diffeomorphisms, we can identify a neighborhood of $(r_X(x),z)$ in $M \times \R^n$ with $\R^{m+n}$ and the image of the extension of $ei_{\bd^jW}$ with $\R^{w-j} \times 0 \subset \R^{m+n}$.
-	The transversality assumption means that the composition of $D(r_X \times \id_{\R^n}):T_xX \times T_z\R^n
+	The transversality assumption means that the composition of $D(r_X \times \id_{\R^n}) \colon T_xX \times T_z\R^n
 	\to T_{(r_X(x),z)}(M \times \R^n)$ with the projection to the last $m+n-(w-j)$ coordinates is a linear surjection.
 	As this is an open condition on the Jacobian matrix of $r_X \times \id_{\R^n}$ at $(x,z)$, it follows again that there is an open neighborhood $A_{(x,t),a}$ of $(x,0,z)$ in $X \times D_{1/2}^N \times \R^n$ such that for each $(x',s,z')$ in the neighborhood $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ in a neighborhood of $a$.
 	As there are a finite number of possible points $a$ and the transversality assumptions must hold for all of them, by taking $A_{(x,z)} = \cap_a A_{(x,z),a}$ with the finite intersection running over all points of $\bd^jW$ that map to $(r_X(x),z)$, we obtain a neighborhood $A_{(x,z)}$ of $(x,0,z)$ in $W \times D_{1/2}^N \times \R^n$ such that for each $(x',s,z')$ in the neighborhood, $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ at $(x',z')$.
@@ -1172,7 +1172,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 
 \subsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}
 
-When applying the cap product to a chain and cochain of the same degree, we can compose with the augmentation map $\aug:H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
+When applying the cap product to a chain and cochain of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
 $$H^i_\Gamma(M) \otimes H_i^\Gamma(M) \xr{\nplus} H_0^\Gamma(M) \to \Z.$$
 Taking the adjunct then provides a map
 $$\alpha: H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z).$$
@@ -1194,8 +1194,8 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 \end{remark}
 
 \begin{proof}[Proof of \cref{T: UCT}]
-	Let $M$ have a cubulation $X$, let $\mc I: C_{\Gamma\pf X}^*(M) \to K^*(X)$ be the intersection map of \cref{D: intersection homomorphism},
-	and let $\mc J: K_*(X) \to C^\Gamma_*(M)$ be the map inducing the homology isomorphism of \cref{T: cubical homology iso}.
+	Let $M$ have a cubulation $X$, let $\mc I \colon C_{\Gamma\pf X}^*(M) \to K^*(X)$ be the intersection map of \cref{D: intersection homomorphism},
+	and let $\mc J \colon K_*(X) \to C^\Gamma_*(M)$ be the map inducing the homology isomorphism of \cref{T: cubical homology iso}.
 	We consider the diagram
 	\begin{diagram}
 		H^i_\Gamma(M)&\rTo^{\alpha}&\Hom(H_i^\Gamma(M),\Z)\\
@@ -1322,7 +1322,7 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 \begin{proof}[Proof of \cref{T: intersection is cup product}]
 	Recall that in the Proof of \cref{T: geometric is singular}, which established an isomorphism between geometric and singular cohomology, we applied \cite[Theorem 10]{Krec10b}.
 	That theorem of Kreck-Singhof shows that there is a natural isomorphism of these cohomology theories on the category of smooth manifolds and continuous maps.
-	In fact, it shows there is such an isomorphism extending any given isomorphism of coefficients $\Phi_0:H^0(pt) \to H^0_\Gamma(pt)$ to natural isomorphisms $\Phi_p:H^p(-) \to H^p_\Gamma(-)$ for all $p\geq 0$.
+	In fact, it shows there is such an isomorphism extending any given isomorphism of coefficients $\Phi_0 \colon H^0(pt) \to H^0_\Gamma(pt)$ to natural isomorphisms $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$ for all $p\geq 0$.
 	For the argument below, we would like to arrange that for all $p\geq 1$ we have $\Phi_p(s_p) = s_p^\Gamma$, where
 	$s_p \in H^p(S^p)$ is our preferred generator described just above and $s_p^\Gamma \in H^p_\Gamma(S^p)$ is the generator represented by an embedded point with normal co-orientation agreeing with our chosen orientation of $S^p$.
 	This will not necessarily be the case for the $\Phi_p$ output by \cref{T: geometric is singular}.
@@ -1339,14 +1339,14 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 		V_p& = \{(x_1,\ldots,x_{p+1}) \in S^p \mid x_{p+1}<1/2\}.
 	\end{align*}
 	Then $U_p \cap V_p$ is homotopy equivalent to $S^{p-1}$.
-	For $p\geq 1$, we now choose the sign of $\delta_p:H^{p}(U_{p+1} \cap V_{p+1}) \cong H^{p}(S^p) \to H^{p+1}(S^{p+1})$ so that $\delta_p(s_p) = s_{p+1}$, and similarly for geometric cohomology so that $\delta_p(s_p^\Gamma) = s_{p+1}^\Gamma$.
+	For $p\geq 1$, we now choose the sign of $\delta_p \colon H^{p}(U_{p+1} \cap V_{p+1}) \cong H^{p}(S^p) \to H^{p+1}(S^{p+1})$ so that $\delta_p(s_p) = s_{p+1}$, and similarly for geometric cohomology so that $\delta_p(s_p^\Gamma) = s_{p+1}^\Gamma$.
 	For $p = 0$, to avoid confusion let us write $z_- = -1 \in \R$ and $z_+ = 1 \in \R$.
 	We let $s_0$ be the element of $H^0(S^0) \cong \Z^2$ that restricts to $1 \in H^0(z_+)$ and $0 \in H^0(z_-)$.
 	Similarly, let $s_0^\Gamma \in H^0_\Gamma(S^0)$ be represented by the identity map of $z_+$ with its canonical co-orientation.
 	Then we choose the signs of $\delta_0$ so that $\delta_0(s_0) = s_{1}$ and $\delta_0(s_0^\Gamma) = s_{1}^\Gamma$.
 	Finally, let $\Phi_0$ take $1 \in H^0(pt)$ to the element of $H^0_\Gamma(pt)$ represented by the identity with canonical co-orientation.
 
-	Taking $H^*(-)$ and $H^*_\Gamma(-)$ with these Mayer-Vietoris maps and this $\Phi_0:H^0(pt) \to H^0_\Gamma(pt)$, \cite[Theorem 10]{Krec10b} gives natural isomorphisms $\Phi_p:H^p(-) \to H^*_\Gamma(-)$ extending $\Phi_0$ on a point.
+	Taking $H^*(-)$ and $H^*_\Gamma(-)$ with these Mayer-Vietoris maps and this $\Phi_0 \colon H^0(pt) \to H^0_\Gamma(pt)$, \cite[Theorem 10]{Krec10b} gives natural isomorphisms $\Phi_p \colon H^p(-) \to H^*_\Gamma(-)$ extending $\Phi_0$ on a point.
 	The naturality implies that $\Phi_0(s_0) = s_0^\Gamma$.
 	It now follows by induction using the following diagram due to the commutativity of $\Phi_*$ with the connecting maps, that $\Phi_p(s_p) = s_p^\Gamma$ for all $p$:
 	\begin{diagram}
@@ -1545,7 +1545,7 @@ The following corollary is now immediate from \cref{P: cross product comparison,
 Utilizing these maps rather than the more abstract $\Phi_p$ provides an alternative proof of \cref{T: cohomology kunneth}.
 
 \begin{comment}
-	Dev's sketched elementary proof:
+	Dev's sketched elementary proof \colon
 
 	Use pullback of cross product after showing that cross product agrees with singular cross product using the cubical structure as intermediary as in flows.
 	In particular, given $V$ and $W$ then $V \times W = (V \times M) \cap (M \times V)$ should act on the cube $\sigma \times \tau$ as $W(\sigma)V(\tau)$.
@@ -1594,7 +1594,7 @@ We first discuss formulas for the cubical cup and cap products, relying on known
 Then we apply the cubical formulas to the geometric world.
 
 In \cref{T: equivalent cap,C: cap relation} we show that the cubical cap product (and hence the singular cap product) determines the geometric cap product in general, while the geometric cap product determines the cubical cap product if all $H^i(M)$ are finitely generated.
-This last condition is needed because \cref{T: intersection qi} only tells us that the intersection map induces cohomology isomorphisms $\mc I: H^i_{\Gamma\pf X}(M) \to H^i(K_X^*(M))$, for some cubulation $X$, when $H^i(M)$ is finitely generated.
+This last condition is needed because \cref{T: intersection qi} only tells us that the intersection map induces cohomology isomorphisms $\mc I \colon H^i_{\Gamma\pf X}(M) \to H^i(K_X^*(M))$, for some cubulation $X$, when $H^i(M)$ is finitely generated.
 Unlike the situation with \cref{T: intersection is cup product}, for which we used the Kreck-Singhof theorem for cup products to show that the geometric and singular cup products are always isomorphic, we do not know of an analogue of the Kreck-Singhof theorem for cap products that would allow us to provide compatibility of cap products in full generality.
 
 \subsubsection{Cubical cup and cap products}\label{S: cubical products}
@@ -1656,7 +1656,7 @@ These products are then compatible with the constructions for normalized singula
 
 In this section we show that the geometric and cubical cap products are compatible in the sense given below in \cref{T: equivalent cap,C: cap relation}.
 Recall that in \cref{R: intersection map extension} we extended the definition of the intersection map $\mc I$ to give us a map $H^*_\Gamma(M) \to H^i(K_X^*(M))$ for the manifold $M$ cubulated by $X$, though we leave $X$ tacit in the following.
-We again let $\mc J: K_*(X) \cong K^X_*(M) \to C^\Gamma_*(M)$ be the map that takes a cubical face of $X$ to its embedding into $M$; see \cref{T: cubical homology iso}.
+We again let $\mc J \colon K_*(X) \cong K^X_*(M) \to C^\Gamma_*(M)$ be the map that takes a cubical face of $X$ to its embedding into $M$; see \cref{T: cubical homology iso}.
 
 \begin{theorem}\label{T: equivalent cap}
 	Let $M$ be a smoothly cubulated manifold without boundary.
@@ -1677,10 +1677,10 @@ Before proving the theorem, we note the following corollary.
 \begin{proof}
 	Let $\uV \in H^*_\Gamma(M)$ and $\uW \in H_*^\Gamma(M)$.
 	Choose a cubulation of $M$.
-	As $\mc J:H_*(K_*(M)) \to H_*^\Gamma(M)$ is an isomorphism by \cref{T: cubical homology iso}, we have by \cref{T: equivalent cap}
+	As $\mc J \colon H_*(K_*(M)) \to H_*^\Gamma(M)$ is an isomorphism by \cref{T: cubical homology iso}, we have by \cref{T: equivalent cap}
 	$$\uV\nplus \uW = \uV\nplus \mc J(\mc J^{-1}(\uW)) = \mc J(\mc I(\uV)\frown \mc J^{-1}(\uW)).$$
 	On the other hand, suppose $V \in H^*(K^*(M))$ and $W \in H_*(K_*(M))$.
-	Then $\mc I:H^*_\Gamma(M) \to H^*(K^*(M))$ is an isomorphism by \cref{T: intersection qi,R: intersection map extension} when all $H^i(M)$ are finitely generated.
+	Then $\mc I \colon H^*_\Gamma(M) \to H^*(K^*(M))$ is an isomorphism by \cref{T: intersection qi,R: intersection map extension} when all $H^i(M)$ are finitely generated.
 	So then
 	$$V\frown M = \mc J^{-1}(\mc J(\mc I\mc I^{-1}(V)\frown W)) = \mc J^{-1}(\mc I^{-1}(V) \nplus \mc J(W)).$$
 \end{proof}
@@ -1908,7 +1908,7 @@ The proof follows immediately from \cref{T: equivalent cap} and the following le
 	Let $\uV \in H^m_\Gamma(M)$ be represented by a map $V = pt \into M$ taking the point to the center of an $m$-cube of the cubulation, co-oriented so that its normal co-orientation agrees with the orientation of $M$.
 	By \cref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ are both represented by embeddings with the same orientation in a neighborhood of the embedded point $V$, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are each represented by the same point with its induced orientation (which by \cref{P: cap of immersions} will be the positive orientation).
 	This is a generator of $H_0^\Gamma(M) \cong \Z$, as we can see, for example, via our homology isomorphism $H_*(NK_*(M)) \to H_*^\Gamma(M)$.
-	As $H_m^\Gamma(M) \cong H_0^\Gamma(M) \cong \Z$ by the isomorphisms between geometric and singular homology and cohomology, $\uV\nplus:H_m^\Gamma(M) \to H_0^\Gamma(M)$ must be injective as we have shown it is not the $0$ map.
+	As $H_m^\Gamma(M) \cong H_0^\Gamma(M) \cong \Z$ by the isomorphisms between geometric and singular homology and cohomology, $\uV\nplus \colon H_m^\Gamma(M) \to H_0^\Gamma(M)$ must be injective as we have shown it is not the $0$ map.
 	Since we have shown $\uV\nplus\uM = \uV\nplus\mc J([M])$, we have $\uM = \mc J([M])$.
 \end{proof}
 
@@ -1923,8 +1923,8 @@ Of course this is always possible if one takes the above formula as a defining f
 \Cref{C: PD} allows us to make some remarks about umkehr maps, also known as wrong-way or transfer maps, associated to maps of closed oriented manifolds $f \colon N \to M$.
 These are maps
 \begin{align*}
-	f^!:H^{n-i}_\Gamma(N) \to H^{m-i}_\Gamma(M)\\
-	f_!:H_{m-i}^\Gamma(M) \to H_{n-i}^\Gamma(N),
+	f^! \colon H^{n-i}_\Gamma(N) \to H^{m-i}_\Gamma(M)\\
+	f_! \colon H_{m-i}^\Gamma(M) \to H_{n-i}^\Gamma(N),
 \end{align*}
 typically defined by taking a homology or cohomology class, dualizing using Poincar\'e duality, applying $f$ or $f^*$, and then dualizing again; see \cite[Definition VI.11.2]{Bred97}.
 We will show that when $M$ and $N$ are closed and oriented, these transfer maps correspond to the pullbacks and pushforwards already encountered in \cref{S: functoriality}, where we only required for homology pushforwards that $f$ be proper and co-oriented and for homology pullbacks that $f$ be proper and that $M$ and $N$ be oriented.
@@ -1960,7 +1960,7 @@ We will show that when $M$ and $N$ are closed and oriented, these transfer maps 
 
 \begin{corollary}
 	If $f \colon N \to M$ is a map of closed oriented manifolds then
-	$f^! = f:H^{n-i}(N) \to H^{m-i}(M)$ and
+	$f^! = f \colon H^{n-i}(N) \to H^{m-i}(M)$ and
 \end{corollary}
 
 \begin{comment}

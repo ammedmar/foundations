@@ -38,7 +38,7 @@ So any one of Joyce's manifolds with corners is diffeomorphic to a manifold with
 By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts) and manifolds with boundary ($k \leq 1$ in all charts) as well as cubes and simplices, but not the octahedron, for example, as the cone on $[0,1] \times [0,1]$ is not modeled by any $\R^n_k$.
 
 \begin{comment}
-	The smooth real-valued functions on a manifold with corners $W$ are those $f$ such that for each chart $\phi: U \subset \R^n_k \to W$ the composition $f \circ \phi:U \to \R$ is smooth.
+	The smooth real-valued functions on a manifold with corners $W$ are those $f$ such that for each chart $\phi \colon U \subset \R^n_k \to W$ the composition $f \circ \phi \colon U \to \R$ is smooth.
 \end{comment}
 
 \begin{definition}
@@ -489,7 +489,7 @@ Despite the preceding remark, the transversality conditions involved in associat
 \begin{proof}
 	We must show that $V \times _MW$ is transverse to $Z$, so we consider points $(v,w) \in V \times _M W$ and $z \in Z$ such that $h(z)$ is equal to $(f \times _Mg)(v,w)$, which by definition is equal to $f(v) = g(w)$. In other words, we consider $(v,w,z) \in V \times W \times Z$ such that $f(v) = g(w) = h(z)$.
 
-	So suppose $(v,w,z)$ is such a triple, and denote the common image by $m \in M$. By the transversality assumptions, we know that the images of $D_wg:T_wW \to T_mM$ and $D_z h \colon T_zZ \to T_mM$ span $T_mM$, i.e.\ that $D_wg$ and $D_zh$ are transverse as linear maps, and similarly that $D_{(w,z)}(g \times _M h):T_{(w,z)}(W \times _M Z) \to T_mM$ is transverse to $D_vf:T_vV \to T_mM$. Furthermore, by Lemma \ref{L: tangent of pullbacks}, the tangent space of a fiber product is the fiber product of the tangent spaces, so $T_{(w,z)}(W \times _M Z) = T_wW \times _{T_mM}T_zZ$ and $D_{(w,z)}(g \times _M h) = D_wg \times _{T_mM}D_zh$.
+	So suppose $(v,w,z)$ is such a triple, and denote the common image by $m \in M$. By the transversality assumptions, we know that the images of $D_wg \colon T_wW \to T_mM$ and $D_z h \colon T_zZ \to T_mM$ span $T_mM$, i.e.\ that $D_wg$ and $D_zh$ are transverse as linear maps, and similarly that $D_{(w,z)}(g \times _M h) \colon T_{(w,z)}(W \times _M Z) \to T_mM$ is transverse to $D_vf \colon T_vV \to T_mM$. Furthermore, by Lemma \ref{L: tangent of pullbacks}, the tangent space of a fiber product is the fiber product of the tangent spaces, so $T_{(w,z)}(W \times _M Z) = T_wW \times _{T_mM}T_zZ$ and $D_{(w,z)}(g \times _M h) = D_wg \times _{T_mM}D_zh$.
 
 	Now by \cite[Propositions~4-9]{RamBas09}, the triple of linear maps $(D_vf,D_wg,D_zh)$ is transverse as a triple of maps, if and only if both $D_wg$ is transverse to $D_zh$ and $D_wg \times _{T_mM}D_zh$ is transverse to $D_vf$. As such statements are independent of how we order the terms, the transversality established in the preceding paragraph also implies that $D_vf$ and $D_wg$ are transverse (which already follows from the hypotheses of the proposition), and $D_vf \times _{T_mM}D_wg$ is transverse to $D_zh$. But this implies, again using Lemma \ref{L: tangent of pullbacks}, that $h$ is transverse to $f \times _Mg$, as desired.
 \end{proof}

@@ -7,8 +7,8 @@ In later sections we will provide an alternative argument for geometric cohomolo
 
 \subsection{Functoriality and homotopy properties}\label{S: functoriality}
 
-Given a continuous map of manifolds $f \colon N \to M$, in this section we define the induced maps $f_*:H_*^\Gamma(N) \to H_*^\Gamma(M)$ and $f^*:H^*_\Gamma(M) \to H^*_\Gamma(N)$ and show that they are independent of $f$ up to homotopy.
-We also treat the case that $f$ is proper, in which case it induces a covariant map $f_*:H^*_\Gamma(N) \to H^*_\Gamma(M)$ independent of proper homotopy.
+Given a continuous map of manifolds $f \colon N \to M$, in this section we define the induced maps $f_* \colon H_*^\Gamma(N) \to H_*^\Gamma(M)$ and $f^* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$ and show that they are independent of $f$ up to homotopy.
+We also treat the case that $f$ is proper, in which case it induces a covariant map $f_* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ independent of proper homotopy.
 In the covariant cases $M$ and $N$ may both be manifolds with corners.
 In the contravariant case we need to use transversality, and so $M$ will be without boundary.
 
@@ -38,8 +38,8 @@ This is the content of the following lemma.
 
 \begin{proof}
 	First consider $W \in Q_*(M)$.
-	By assumption, $W$ is the disjoint union of a trivial manifold over $M$ given by $r_T:T \to M$ and a degenerate manifold over $M$ given by $r_D:D \to M$.
-	If $\rho:T \to T$ is an orientation-reversing diffeomorphism of $W$ such that $r_T\rho = r_T$ then also $fr_T\rho = fr_T$, so $fr_T:T \to N$ is also trivial.
+	By assumption, $W$ is the disjoint union of a trivial manifold over $M$ given by $r_T \colon T \to M$ and a degenerate manifold over $M$ given by $r_D:D \to M$.
+	If $\rho \colon T \to T$ is an orientation-reversing diffeomorphism of $W$ such that $r_T\rho = r_T$ then also $fr_T\rho = fr_T$, so $fr_T \colon T \to N$ is also trivial.
 	Furthermore, if $r_D$ has small rank then certainly so does $fr_D$.
 	Similarly, $\bd(fr_D)$ is a union of trivial and small rank manifolds over $M$, and so $fr_D:D \to M$ is degenerate.
 
@@ -146,8 +146,8 @@ This lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a manifol
 \end{proof}
 
 \begin{proposition}[Lipyanskiy's Theorem 5]\label{P: homology homotopy functor}
-	Given a \textit{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_*:H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$.
-	If $f$ is proper and co-oriented, it also induces $f_*:H^*_\Gamma(M) \to H^*_\Gamma(N)$ that depends only on the proper homotopy class and co-orientation of $f$.
+	Given a \textit{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$.
+	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$ that depends only on the proper homotopy class and co-orientation of $f$.
 \end{proposition}
 
 \begin{proof}
@@ -199,7 +199,7 @@ We also here continue to assume that $g \colon M \to N$ is transverse to the coc
 \end{proof}
 
 The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemma we cannot define a chain map $g^*:C^*_\Gamma(N) \to C^*_\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$.
-Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^*:H^*_\Gamma(N) \to H^*_\Gamma(M)$ as follows.
+Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ as follows.
 
 \begin{definition}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary and $\uW \in H^*_\Gamma(N)$ is represented by $r_W \colon W \to N$.
@@ -209,7 +209,7 @@ Nonetheless, given any continuous $f \colon M \to N$ of manifolds without bounda
 
 \begin{proposition}\label{P: cohomology pullback}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary.
-	The map $f^*:H^k_\Gamma(N) \to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
+	The map $f^* \colon H^k_\Gamma(N) \to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
 \end{proposition}
 
 \begin{proof}
@@ -265,7 +265,7 @@ The following definition will be useful.
 
 \begin{definition}
 	Let $U,V$ be open subsets of a manifold $M$.
-	We will call a smooth non-constant\footnote{The extra condition that $\phi$ not be constant is required if $U\setminus V$ or $V\setminus U$ is empty, i.e.\ if $U \subset V$ or $V \subset U$.} function $\phi:U \cup V \to [-1,1]$ a \textbf{separating function} for $U$ and $V$ if $\phi(U\setminus V) = -1$ and $\phi(V\setminus U) = 1$.
+	We will call a smooth non-constant\footnote{The extra condition that $\phi$ not be constant is required if $U\setminus V$ or $V\setminus U$ is empty, i.e.\ if $U \subset V$ or $V \subset U$.} function $\phi \colon U \cup V \to [-1,1]$ a \textbf{separating function} for $U$ and $V$ if $\phi(U\setminus V) = -1$ and $\phi(V\setminus U) = 1$.
 	Such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
 
 	Suppose now $\phi$ is a separating function for $U$ and $V$ and that we have a map $r_W \colon W \to U \cup V$.
@@ -301,7 +301,7 @@ In fact, we can reformulate this definition as follows.
 	We first observe that $\sim_U$ is an equivalence relation on $PC_\Gamma^*(M|_U)$ by the same proof as \cref{L: cancel Q}, assuming all maps have image in $U$.
 	Clearly if $V,W \in PC_\Gamma^*(M|_U)$ and $V\sim_UW$ then $V\sim W$ in the sense of \cref{L: cancel Q}.
 	So letting $\hat C_\Gamma^*(M|_U)$ temporarily denote the
-	equivalence classes under $\sim_U$, we have a well-defined map $f: \hat C_\Gamma^*(M|_U) \to C_\Gamma^*(M|_U)$.
+	equivalence classes under $\sim_U$, we have a well-defined map $f \colon \hat C_\Gamma^*(M|_U) \to C_\Gamma^*(M|_U)$.
 	By definition, elements of $C_\Gamma^*(M|_U)$ can be represented by elements of $PC_\Gamma^*(M|_U)$, so $f$ is surjective.
 	Now suppose $W_1,W_2 \in PC^*_\Gamma(M|_U)$ represent the same element of $C^*_\Gamma(M|_U)$.
 	Then $W_1\sim W_2$ in the sense of \cref{L: cancel Q}, i.e.\ $W_1 \sqcup -W_2 \in Q^*(M)$, but $W_1$ and $W_2$ each have support in $U$, so $W_1 \sqcup -W_2 \in Q^*(M|_U)$ and $W_1\sim_U W_2$.
@@ -362,7 +362,7 @@ The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U 
 	To establish the quasi-isomorphism, we use creasing.
 
 	First suppose a cocycle $\uW \in C_{\Gamma}^*(M|_{U \cup V})$ represented by $r_W \colon W \to U \cup V$.
-	Let $\phi:U \cup V \to (-1,1)$ be a separating function with $0$ a separating point.
+	Let $\phi \colon U \cup V \to (-1,1)$ be a separating function with $0$ a separating point.
 	Then $W^- \in C_{\Gamma}^*(M|_{U})$ and $W^+ \in C_{\Gamma}^*(M|_{V})$, and by \cref{T: cohomology creasing}, we have $\uW = \underline{W^-}+\underline{W^+} \in H^*_\Gamma(M)$.
 	But by the creasing construction if $W$ has image in $U \cup V$ then so does $\Cre(W)$, so also $\uW = \underline{W^-}+\underline{W^+} \in H_*^\Gamma(M|_{U \cup V})$.
 	We have $\bd W \in Q^*(U \cup V)$ by assumption that $W$ is a cocycle.
@@ -539,7 +539,7 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 \end{proof}
 
 \begin{lemma}\label{L: natural connection}
-	The connecting map $\delta$ is natural, i.e.\ for a continuous map of triples $f:(M;U',V') \to (N;U,V)$ the following diagram commutes for all $k$:
+	The connecting map $\delta$ is natural, i.e.\ for a continuous map of triples $f \colon (M;U',V') \to (N;U,V)$ the following diagram commutes for all $k$:
 
 	\begin{diagram}
 		H^k_\Gamma(U \cap V)&\rTo^\delta &H^{k+1}_\Gamma(U \cup V)\\
@@ -550,7 +550,7 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 
 \begin{proof}
 	Consider $\uW \in H^k_\Gamma(U \cap V)$ represented by $r_W \colon W \to U \cap V$.
-	Let $\phi:U \cup V \to [-1,1]$ be a separating function for $U,V$.
+	Let $\phi \colon U \cup V \to [-1,1]$ be a separating function for $U,V$.
 	We may assume that $0 \in [-1,1]$ is a separating point for $W$, by postcomposing $\phi$ with a diffeomorphism of $[-1,1]$ if necessary.
 
 	Next we note that $\phi f$ separates $U'$ and $V'$ but it may not be smooth.
@@ -608,7 +608,7 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 \end{proof}
 
 \begin{notation}
-	If $f: U \into M$ is the inclusion of an open subset and $\uW \in C^*_\Gamma(M)$, we may also write $f^*(\uW)$ as $\uW|_U$.
+	If $f \colon U \into M$ is the inclusion of an open subset and $\uW \in C^*_\Gamma(M)$, we may also write $f^*(\uW)$ as $\uW|_U$.
 	As such an inclusion $U$ is necessarily transverse to any other map to $M$, we also obtain a well-defined map $PC^*_\Gamma(M) \to PC^*_\Gamma(U)$ that we also write $W \to W|_U$.
 	By \cref{P: codim 0 pullback}, $W|_U$ is simply the restriction of $r_W \colon W \to M$ to $r_W^{-1}(U)$.
 \end{notation}
@@ -622,7 +622,7 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 
 \begin{proof}
 	Notationally, we always assume $\uW$ is represented by $W$, etc.
-	In the following we typically assume an appropriate separating function $\phi:U \cup V \to [-1,1]$ such that $\phi(U\setminus V) = -1$ and $\phi(V\setminus U) = 1$ and choose an appropriate separating point without further comment.
+	In the following we typically assume an appropriate separating function $\phi \colon U \cup V \to [-1,1]$ such that $\phi(U\setminus V) = -1$ and $\phi(V\setminus U) = 1$ and choose an appropriate separating point without further comment.
 	We observe that in this case $(U \cap V)^+ = \phi^{-1}([0,1])\cap(U \cap V)$ is a closed subspace of both $U \cap V$ and of $U$, as $\phi|_U^{-1}([0,1]) = \phi^{-1}([0,1]) \cap (U \cap V)$ given that $\phi(U\setminus V) = -1$.
 	So the inclusions $(U \cap V)^+ \into U \cap V$ and $(U \cap V)^+ \into U$ are both proper maps.
 	Thus if $W \in PC^*_\Gamma(U \cap V)$, in which case in particular $r_W \colon W \to U \cap V$ is proper, both the fiber products $(U \cap V)^+\times_{U \cap V} W \to U \cap V$ and $(U \cap V)^+\times_{U} W \to U$ will be proper maps.
@@ -638,7 +638,7 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 		\label{F: MV1}
 	\end{figure}
 
-	Similarly, continuing with our assumptions about $\phi:U \cup V \to [-1,1]$, we have $\phi^{-1}([-1,0]) = \phi|_U^{-1}([-1,0])$ so that $\phi^{-1}([-1,0])$ is a closed subset of $U$ and of $U \cup V$.
+	Similarly, continuing with our assumptions about $\phi \colon U \cup V \to [-1,1]$, we have $\phi^{-1}([-1,0]) = \phi|_U^{-1}([-1,0])$ so that $\phi^{-1}([-1,0])$ is a closed subset of $U$ and of $U \cup V$.
 	Therefore, the inclusions $\phi^{-1}([-1,0]) \into U$ and $\phi^{-1}([-1,0]) \into U \cup V$ are proper so that if $W \in PC^*_\Gamma(U)$, then $W^-$ is well-defined in both $PC^*_\Gamma(U)$ and $PC^*_\Gamma(U \cup V)$.
 	See \cref{F: MV2}.
 	Analogously, if $W \in PC^*_\Gamma(V)$ then we obtain $W^+$ in both $PC^*_\Gamma(V)$ and $PC^*_\Gamma(V^+)$.
@@ -762,7 +762,7 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 	\begin{proposition}[Suspension isomorphism]
 		Define the suspension map\footnote{Note that the suspension map $S$ has degree $0$ as the degree of an element of $W$ is determined by the codimension $\dim(M)-\dim(W)$, which is preserved under suspension.
 		} $S:PC^*_\Gamma(M) \to PC^{*}_\Gamma(\R \times M)$ so that if $W \in PC^*_\Gamma(M)$ is represented by $r_W \colon W \to M$ then $S(W)$ is represented by $r_{\R \times W} \colon \R \times W \to \R \times M$ defined by $r_{\R \times W}(t,x) = (t,r_W(x))$.
-		Then $S$ induces isomorphisms $S:H^*_\Gamma(M) \to H^{*}_\Gamma(M)$.
+		Then $S$ induces isomorphisms $S \colon H^*_\Gamma(M) \to H^{*}_\Gamma(M)$.
 	\end{proposition}
 	\begin{proof}
 		We first observe that $S$ descends to a well-defined map $C^*_\Gamma(M) \to C^{*}_\Gamma(\R \times M)$, as it is easy to see that it preserves the properties of being trivial or degenerate.
@@ -978,10 +978,10 @@ we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
 	\end{diagram}
 
 	3.
-	If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi:H_*(U_\alpha) \to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism.
+	If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi \colon H_*(U_\alpha) \to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism.
 	This argument is standard given that both singular (simplicial or cubical) chains and geometric chains are represented by compact spaces: If $W$ represents a cycle in $C_*^\Gamma(\cup_\alpha U_\alpha)$, then $W \to \cup_\alpha U_\alpha$ factors through some particular $U_\beta$, so, as $H_*(U_\beta) \xr{\Phi}H_*^\Gamma(U_\beta)$ is an isomorphism, $\uW$ is in the image of $H_*(U_\beta) \xr{\Phi}H_*^\Gamma(U_\beta) \to H_*^\Gamma(\cup_\alpha U_\alpha)$.
-	But then $\uW$ is in the image of composition $H_*(U_\beta) \to H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective.
-	Similarly, if $\Phi:H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, say $\bd W = \xi+T$ for some $T \in Q_*(U)$.
+	But then $\uW$ is in the image of composition $H_*(U_\beta) \to H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective.
+	Similarly, if $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, say $\bd W = \xi+T$ for some $T \in Q_*(U)$.
 	But by compactness, there is some $\beta$ so that $W$, $T$, and $\xi$ all have image in $U_\beta$.
 	So $\xi$ represents a class in $H_*(U_\beta)$ that maps to $0$ in $H_*^\Gamma(U_\beta)$.
 	As $\Phi$ is assumed an isomorphism on $U_\beta$, it must be that $\xi$ represents $0$ in $H_*(U_\beta)$, and so it also represents $0$ in $H_*(\cup_\alpha U_\alpha)$.
