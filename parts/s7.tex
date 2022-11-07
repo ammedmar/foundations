@@ -965,7 +965,7 @@ We first prove it up to some technical lemmas and propositions, which follow jus
 	\begin{enumerate}
 		\item $h(-,0) = f$,
 		\item $h(-,1) \colon V \to M$ is transverse to $g$,
-		\item if $i_{X}:X \to V$ is the inclusion of a union of boundary components of $V$ with $r_X = fi_X:X \to M$ transverse to $g$ then $h\circ(i_{X} \times \id):X \times I \to M$ is transverse to $g$.
+		\item if $i_{X}:X \to V$ is the inclusion of a union of boundary components of $V$ with $r_X = fi_X:X \to M$ transverse to $g$ then $h \circ (i_{X} \times \id):X \times I \to M$ is transverse to $g$.
 	\end{enumerate}
 \end{proposition}
 
@@ -1040,7 +1040,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	\begin{enumerate}
 		\item $h(-,0) = f$,
 		\item $h(-,1) \times \id_{\R^n} \colon V \times \R^n \to M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$, and
-		\item $(h\circ(i_{X} \times \id_I)) \times \id_{\R^n}: X \times I \times \R^n \to M \times \R^n$ is transverse to $e$.
+		\item $(h \circ (i_{X} \times \id_I)) \times \id_{\R^n}: X \times I \times \R^n \to M \times \R^n$ is transverse to $e$.
 	\end{enumerate}
 	To do so, we will run through the proof of \cref{P: ball stability} again, adapting it to this altered situation and referring back to that proof for some of the details.
 
@@ -1061,7 +1061,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	Then let $h(-,t) = F(-,ts_0)f$, i.e.\ $h(x,t) = F(f(x),ts_0)$.
 	The first required property for $h$ holds since $F(-,0) = \id$.
 	The second property holds by our choice of $s_0$.
-	The last property then holds as $ts_0 \in D_r^N$ for all $t \in I$; thus each $(h(-,ts_0) \times \id_{\R^n})(i_X \times \id_{\R^n}) = (h(-,ts_0)i_x) \times \id_{\R^n}$ is transverse to $e$, which then implies that $(h\circ(i_{X} \times \id_I)) \times \id_{\R^n}$ is transverse to $e$ as well.
+	The last property then holds as $ts_0 \in D_r^N$ for all $t \in I$; thus each $(h(-,ts_0) \times \id_{\R^n})(i_X \times \id_{\R^n}) = (h(-,ts_0)i_x) \times \id_{\R^n}$ is transverse to $e$, which then implies that $(h \circ (i_{X} \times \id_I)) \times \id_{\R^n}$ is transverse to $e$ as well.
 	Furthermore, $h$ is a universal homotopy by construction, and it is automatically proper as we are assuming $V$ to be compact.
 
 	We now claim that we can construct $F$ almost exactly as in \cref{P: ball stability}.
@@ -1146,7 +1146,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	Letting $s_0$ be any such point we define $\hat h \colon V \times I \to M$ to be $\hat h(x,t) = \hat H(x,ts_0)$, and we claim that this $h$ satisfies the conditions of the proposition.
 
 	The map $\hat h$ is proper, and the first two conditions of the proposition follow immediately from the construction.
-	It remains to verify that $$(\hat h\circ(i_{X} \times \id_I)) \times \id_{\R^n}: X \times I \times \R^n \to M \times \R^n$$ is transverse to $e$.
+	It remains to verify that $$(\hat h \circ (i_{X} \times \id_I)) \times \id_{\R^n}: X \times I \times \R^n \to M \times \R^n$$ is transverse to $e$.
 	As we already know from the second condition of the proposition that $\hat h(-,1) \times \id_{\R^n}$ is transverse to $e$ and from the hypotheses that $\hat h(-,0)$ is transverse to $e$, it suffices to demonstrated transversality to $e$ of the restriction of $\hat h \times \id_{\R^n}$ to $X \times (0,1) \times \R^n$.
 	From here, the argument is essentially the same as the end of the proof of \cref{P: ball stability} with the $\R^n$ factor just along for the ride.
 
@@ -1204,7 +1204,7 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 		\dTo^{\mc I}_\cong\\
 		H^i(K^*(X))&\rTo&\Hom(H_*(K_*(X)),\Z).
 	\end{diagram}
-	The vertical maps on the left are isomorphisms by \cref{T: transverse complex,T: intersection qi}, while the righthand vertical map is an isomorphism by \cref{T: cubical homology iso}.
+	The vertical maps on the left are isomorphisms by \cref{T: transverse complex,T: intersection qi}, while the right hand vertical map is an isomorphism by \cref{T: cubical homology iso}.
 	We claim the diagram commutes.
 	In fact, let $V \in PC_\Gamma^i(M)$ represent an element of $H^i(C^*_{\Gamma \pf X}(M))$.
 	Then $V$ is transverse to the cubulation, and by definition the path clockwise around the diagram takes $\uV$ to a map that acts on an element $\xi$ of $H_*(K_*(X))$ represented by a $\Z$-linear combination of cubical faces $\sum_j c_j E_j$ by treating each $E_j$ as a geometric chain and forming
