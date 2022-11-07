@@ -581,10 +581,10 @@ For this the following lemma is useful.
 		The induced homotopy co-orientation of $G_\bd \colon \bd W \times I \xr{i_{\bd W} \times \id}W \times I \to M$ is then $\pm(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$, as $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$ or not.
 
 		On the other hand, consider $(\bd W) \times I$ as part of the boundary of $W \times I$.
-		The standard boundary co-orientation for $(\bd W) \times I$ in $W \times I$ is $(\beta_{(\bd W) \times I},\beta_{(\bd W) \times I}\wedge\beta_{\nu_\bd})$.
+		The standard boundary co-orientation for $(\bd W) \times I$ in $W \times I$ is $(\beta_{(\bd W) \times I},\beta_{(\bd W) \times I} \wedge \beta_{\nu_\bd})$.
 		This is independent of the choice of $\beta_{(\bd W) \times I}$, so we may take $\beta_{(\bd W) \times I} = \beta_W \wedge \beta_{e_1}$, where $\beta_{e_1}$ is positively-directed in $I$.
 		Then
-		$$(\beta_{(\bd W) \times I},\beta_{(\bd W) \times I}\wedge\beta_{\nu_\bd}) = (\beta_{\bd W} \wedge \beta_{e_1},\beta_{\bd W} \wedge \beta_{e_1}\wedge\beta_{\nu_\bd}) = -(\beta_{\bd W} \wedge \beta_{e_1},\beta_{\bd W} \wedge \beta_{\nu_\bd}\wedge\beta_{\nu_I}).$$
+		$$(\beta_{(\bd W) \times I},\beta_{(\bd W) \times I} \wedge \beta_{\nu_\bd}) = (\beta_{\bd W} \wedge \beta_{e_1},\beta_{\bd W} \wedge \beta_{e_1} \wedge \beta_{\nu_\bd}) = -(\beta_{\bd W} \wedge \beta_{e_1},\beta_{\bd W} \wedge \beta_{\nu_\bd} \wedge \beta_{\nu_I}).$$
 		Composing with the induced co-orientation $(\beta_W \wedge \beta_{e_1},\beta_M)$ of $G$ gives the composite $(\bd W) \times I \xr{i_{(\bd W) \times I}}W \times I \xr{G} M$ the co-orientation $-(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$ if $\beta_W = \beta_{\bd W} \wedge \beta_{\nu_\bd}$ and $(\beta_{\bd W} \wedge \beta_{e_1},\beta_M)$ otherwise.
 		Thus, altogether, the $(\bd W) \times I$ boundary component of $W \times I$ with its boundary co-orientation is $-G_\bd$.
 	\end{proof}
@@ -1340,7 +1340,7 @@ We observe the following interplay between fibered and exterior products of maps
 	By definition, and omitting the pullbacks from the notation, $P$ is oriented so that
 	$$\beta_P \wedge \beta_{M \times N} = (-1)^{(w+y)(m+n)}\beta_{V \times X} \wedge \beta_{W \times Y},$$
 	or, as (non-fiber) products are oriented by concatenation,
-	$$\beta_P \wedge \beta_M\wedge\beta_N = (-1)^{(w+y)(m+n)}\beta_V \wedge \beta_X \wedge \beta_W \wedge \beta_Y.$$
+	$$\beta_P \wedge \beta_M \wedge \beta_N = (-1)^{(w+y)(m+n)}\beta_V \wedge \beta_X \wedge \beta_W \wedge \beta_Y.$$
 	Here we identify $T(M \times N)$ as a summand by splitting $D(f \times h) - D(g \times k)$.
 	Similarly, we have
 	\begin{align*}
@@ -1452,7 +1452,7 @@ Before getting to co-orientations, we first show that a product of proper maps i
 
 	Let $\nu$ denote an inward pointing normal to $V \times W$ at such a point.
 	Then the inclusion $\bd(V \times W) \to V \times W$ is co-oriented at that point by $(\beta_{\bd(V \times W)},\beta_{\bd(V \times W)} \wedge \beta_\nu)$ for any $\beta_{\bd(V \times W)}$.
-	If we choose $\beta_{\bd(V \times W)}$ so that $(\beta_{\bd(V \times W)}\wedge\beta_\nu,\beta_M \wedge \beta_N)$ represents the co-orientation of $V \times W \to M \times N$, then from the definition of the boundary co-orientation, the boundary $\bd(V \times W) \to M \times N$ is co-oriented by $(\beta_{\bd(V \times W)},\beta_M \wedge \beta_N)$.
+	If we choose $\beta_{\bd(V \times W)}$ so that $(\beta_{\bd(V \times W)} \wedge \beta_\nu,\beta_M \wedge \beta_N)$ represents the co-orientation of $V \times W \to M \times N$, then from the definition of the boundary co-orientation, the boundary $\bd(V \times W) \to M \times N$ is co-oriented by $(\beta_{\bd(V \times W)},\beta_M \wedge \beta_N)$.
 	We fix such a choice in what follows.
 
 	Now suppose our point is more specifically in the top-dimensional stratum of $(\bd V) \times W$.
@@ -1513,8 +1513,8 @@ Among other things, it will help us to next demonstrate a commutativity property
 	Taking $\beta_{M \times N} = \beta_M \wedge \beta_N$ and $\beta_{V \times W} = \beta_V \wedge \beta_W$ and noting $\beta_{a+b} = \beta_a \wedge \beta_b$, this formula becomes
 	$$(\beta_V \wedge \beta_W, \beta_V \wedge \beta_W \wedge \beta_{\nu V \oplus \nu W})*(\beta_M \wedge \beta_N \wedge \beta_a \wedge \beta_b,\beta_M \wedge \beta_N) = (-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
 	We also have $$\beta_M \wedge \beta_N \wedge \beta_a \wedge \beta_b = \beta_M \wedge \beta_a \wedge \beta_N \wedge \beta_b,$$ as $a$ is even, so using $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ and $\beta_W \wedge \beta_{\nu W} = \beta_N \wedge \beta_b$, we require
-	$$(\beta_V \wedge \beta_W, \beta_V \wedge \beta_W \wedge \beta_{\nu V \oplus \nu W})*(\beta_V \wedge \beta_{\nu V}\wedge\beta_W \wedge \beta_{\nu W} ,\beta_M \wedge \beta_N) = (-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
-	But now $$\beta_V \wedge \beta_{\nu V}\wedge\beta_W \wedge \beta_{\nu W} = (-1)^{(m-v)w} \beta_V \wedge \beta_{W}\wedge\beta_{\nu V} \wedge \beta_{\nu W},$$
+	$$(\beta_V \wedge \beta_W, \beta_V \wedge \beta_W \wedge \beta_{\nu V \oplus \nu W})*(\beta_V \wedge \beta_{\nu V} \wedge \beta_W \wedge \beta_{\nu W} ,\beta_M \wedge \beta_N) = (-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
+	But now $$\beta_V \wedge \beta_{\nu V} \wedge \beta_W \wedge \beta_{\nu W} = (-1)^{(m-v)w} \beta_V \wedge \beta_{W} \wedge \beta_{\nu V} \wedge \beta_{\nu W},$$
 	so, after all that, we see that the Quillen orientation of the normal bundle to $V \times W$ is simply $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W},$$
 	suitably interpreting the relevant coordinates in $M \times N \times \R^a \times \R^b$.
 \end{proof}
@@ -2045,13 +2045,13 @@ In our remaining constructions in this section we take all introduced Euclidean 
 
 	Then $V \times_M W$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically orientated diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$ (with its orientation induced by the fiber product co-orientation and the orientation of $M \times \R^{2a}$).
 	Here the maps for the second fiber product are $e \colon V \to M \times \R^{2a}$ and $g \times \id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
-	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V \into M \times \R^{2a}$ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M}\wedge\beta_a,\beta_M)$ is the co-orientation of $f$.
+	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V \into M \times \R^{2a}$ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M} \wedge \beta_a,\beta_M)$ is the co-orientation of $f$.
 	We also take $g \times \id_{\R^{2a}}$ to be co-oriented by the product co-orientation $(\beta_W \wedge \beta_a,\beta_M \wedge \beta_a)$ if $(\beta_W,\beta_M)$ is the co-orientation of $g$.
 	Finally, $M \times \R^{2a}$ is given the product orientation with $\R^{2a}$ having the standard orientation.
 \end{lemma}
 
 \begin{proof}
-	By the definitions of the induced orientation and the fiber product co-orientation, the orientation of the fiber product $V \times_M W \to M$ is $\beta_P$ where $\beta_P \wedge \beta_{\nu V} = \beta_M\wedge\beta_a$.
+	By the definitions of the induced orientation and the fiber product co-orientation, the orientation of the fiber product $V \times_M W \to M$ is $\beta_P$ where $\beta_P \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$.
 	We recall that the $\nu V$ in this formula is actually the pullback of the normal bundle of $e(V) \subset M \times \R^{2a}$ via the map $g \times \id_{\R^{2a}}: W \times \R^{2a} \to M \times \R^{2a}$.
 	But this is also precisely the description of the induced fiber product orientation from the co-oriented fiber product $V\times_{M \times \R^{2a}}(W \times \R^{2a})$, treating $e \colon V \into M \times \R^{2a}$ as its own Quillen co-orientation with $N = 0$ in \cref{D: pullback coorient}.
 \end{proof}

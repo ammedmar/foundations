@@ -635,7 +635,7 @@ We extend $\bd_{\text{int}}$ to a linear operator in the obvious way.
 \begin{lemma}\label{L: ext faces}
 	Suppose for any $n-1$ face $E$ of $\interval^n$ with $F<E$ we let $F_E^\vee$ denote the dual of $F$ in $E$ (ignoring co-orientation).
 	Then the exterior faces $\bd_{\text{ext}}F^\vee$ of $F^\vee$ correspond exactly to the $F_E^\vee$ as $E$ ranges over the $n-1$ faces of $\interval^n$ containing $F$.
-	Furthermore, if $F^\vee$ is given the normal co-orientation induced by $F$ as above, then the co-orientation of $F^\vee_E \to F^\vee \to \interval^n$ as a piece of the boundary of $F^\vee$ is given by $(\beta_{F_E^\vee},\beta_{F_E^\vee}\wedge\beta_v \wedge \beta_F)$, where $\beta_{F_E^\vee}$ is any arbitrary orientation for $F_E^\vee$, $v$ is an inward pointing normal at $E$, and $\beta_F$ is the orientation of $F$.
+	Furthermore, if $F^\vee$ is given the normal co-orientation induced by $F$ as above, then the co-orientation of $F^\vee_E \to F^\vee \to \interval^n$ as a piece of the boundary of $F^\vee$ is given by $(\beta_{F_E^\vee},\beta_{F_E^\vee} \wedge \beta_v \wedge \beta_F)$, where $\beta_{F_E^\vee}$ is any arbitrary orientation for $F_E^\vee$, $v$ is an inward pointing normal at $E$, and $\beta_F$ is the orientation of $F$.
 \end{lemma}
 
 \begin{proof}
@@ -650,7 +650,7 @@ We extend $\bd_{\text{int}}$ to a linear operator in the obvious way.
 	It remains to consider the co-orientations.
 	Suppose $f$ is an external face of $F^\vee$ in the $n-1$ face $E$, i.e.\ $f = F^\vee_E$.
 	The co-orientation of $F^\vee$ in $\interval^n$ and the co-orientation of $f$ in $E$ are both the normal co-orientations determined by the orientation of $F$.
-	As $f$ is part of $\bd F^\vee$, its orientation in $\interval^n$ is therefore the composite $$(\beta_f,\beta_f\wedge\beta_v)*(\beta_f\wedge\beta_v,\beta_f\wedge\beta_v \wedge \beta_F) = (\beta_f,\beta_f\wedge\beta_v \wedge \beta_F),$$ where $\beta_f$ is any arbitrary orientation for $f$, $v$ is the inward pointing normal of $f$ in $F^\vee$, which in this case is also an outward pointing normal of $E$ in $\interval^n$, and we use $\beta_f\wedge\beta_v$ as a convenient orientation for $F^\vee$.
+	As $f$ is part of $\bd F^\vee$, its orientation in $\interval^n$ is therefore the composite $$(\beta_f,\beta_f \wedge \beta_v)*(\beta_f \wedge \beta_v,\beta_f \wedge \beta_v \wedge \beta_F) = (\beta_f,\beta_f \wedge \beta_v \wedge \beta_F),$$ where $\beta_f$ is any arbitrary orientation for $f$, $v$ is the inward pointing normal of $f$ in $F^\vee$, which in this case is also an outward pointing normal of $E$ in $\interval^n$, and we use $\beta_f \wedge \beta_v$ as a convenient orientation for $F^\vee$.
 \end{proof}
 
 \subsubsection{Dualization in cubical complexes}
@@ -675,7 +675,7 @@ We similarly extend $\Psi$ so that $\Psi(F^*) = F^\vee = \sum_{F<B} F_{B}^\vee$.
 	For this, let us fix an $n$-cube $B$ containing $F$, and let $E$ be an $n-1$ face of $B$ containing $F$.
 	As $M$ is an $n$-manifold, there is exactly one other $n$-cube, say $B_1$, in the cubulation that shares the face $E$ with $B$.
 	Furthermore, by \cref{L: ext faces}, $E$ contains external faces of $\bd(F^\vee_B)$ and $\bd(F^\vee_{B_1})$ and they both correspond geometrically to $F^\vee_E$.
-	Also by the lemma, the co-orientation as a boundary piece of $F^\vee_B$ is $(\beta_{F_E^\vee},\beta_{F_E^\vee}\wedge\beta_{v_B} \wedge \beta_F)$, where $v_B$ is an inward pointing vector of $B$ at $E$, and the co-orientation as a boundary piece of $F^\vee_{B_1}$ is $(\beta_{F_E^\vee},\beta_{F_E^\vee}\wedge\beta_{v_{B_1}} \wedge \beta_F)$, where $v_{B_1}$ is an inward pointing vector of $B_1$ at $E$.
+	Also by the lemma, the co-orientation as a boundary piece of $F^\vee_B$ is $(\beta_{F_E^\vee},\beta_{F_E^\vee} \wedge \beta_{v_B} \wedge \beta_F)$, where $v_B$ is an inward pointing vector of $B$ at $E$, and the co-orientation as a boundary piece of $F^\vee_{B_1}$ is $(\beta_{F_E^\vee},\beta_{F_E^\vee} \wedge \beta_{v_{B_1}} \wedge \beta_F)$, where $v_{B_1}$ is an inward pointing vector of $B_1$ at $E$.
 	Since a normal vector to $E$ that is inward pointing with respect to $B_1$ is outward pointing with respect to $B$, and vice versa, these are opposite co-orientations, so these two boundary pieces cancel in $\bd \Psi(F^*)$.
 \end{proof}
 
@@ -693,12 +693,9 @@ The payoff is in \cref{T: intersection qi}, which can be found in the next subse
 \begin{lemma}
 	Suppose $M$ is a manifold without boundary with a cubulation $X$.
 	Then there is a smooth map $h \colon M \to M$ such that for each face $F$ of $X$ the following hold:
-
 	\begin{enumerate}
 		\item $h|_{F^\vee} \colon F^\vee \to M$ is transverse to $X$
-
 		\item the only $\dim(F)$-face of $X$ that intersects $h(F^\vee)$ is $F$
-
 		\item $I_M(h(F^\vee),F) = 1$.
 	\end{enumerate}
 \end{lemma}
