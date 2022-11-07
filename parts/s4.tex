@@ -271,7 +271,6 @@ Similarly, $V \in Q_*(M)$ (or $Q^*(M)$) if and only if $\uV = 0$.
 \end{comment}
 
 \begin{comment}
-
 	Having given our version of geometric chains and cochains, for the remainder of this section we work exclusively with cochains, referring to \cite{Lipy14}for (or leaving as exercises for the interested reader) the analogous properties of geometric chains.
 
 	\begin{lemma}
@@ -289,7 +288,6 @@ Similarly, $V \in Q_*(M)$ (or $Q^*(M)$) if and only if $\uV = 0$.
 	Moreover, under our co-orientation conventions, the two vectors appended to the co-orientation of $W$ to obtain one for $\bd^2 W$ over the same point in
 	$S^2(W)$ differ by a transposition, so this $C_2$-action is co-orientation reversing.
 	This fact about $\bd^2$ not only eventually shows that $d_\Gamma^{\,2} = 0$, but is first needed to show that the boundary of a degenerate map is degenerate; \red{see the proof of \cite[Lemma 11]{Lipy14}}.
-
 \end{comment}
 
 \begin{comment}
@@ -317,7 +315,6 @@ Unfortunately, Lipyanskiy does not provided a detailed treatment of geometric co
 First, though, we present here some computational examples, mostly without proofs, to aid the reader's intuition.
 
 \begin{example}\label{E: first examples}
-
 	For any manifold, the map of an oriented point to $M$ is a generator of $H_0^\Gamma(M)$.
 	Any two points with the same orientation mapping to the same component of $M$ represent the same element of $H_0^\Gamma(M)$ as can be seen by joining them with a smooth path.
 
@@ -565,8 +562,7 @@ We can now define creasing.
 	Then define the \textbf{creasing homotopy} to be the pullback
 	$$\Cre(W) = D\times_{(-1,1)} W \to W.$$
 
-	We note that
-	$\Cre(W)$ does depend on the map $\varphi$, though we typically omit it from the notation.
+	We note that $\Cre(W)$ does depend on the map $\varphi$, though we typically omit it from the notation.
 	When necessary for clarity, we may write $\Cre_\varphi(W)$.
 
 	Typically in practice $W$ will arise with a map $r_W \colon W \to M$ representing an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$, and in this case our map $\varphi: W \to (-1,1)$ will generally be given as a composition
@@ -598,12 +594,12 @@ To justify the notion of creasing as a type of homotopy, at least topologically,
 
 \begin{lemma}
 	Suppose given a projection $X \times Y \to X$ and a map $g \colon W \to X$.
-	Then the fiber product $(X \times Y)\times_XW$ is homeomorphic to $Y \times W$.
+	Then the fiber product $(X \times Y) \times_X W$ is homeomorphic to $Y \times W$.
 \end{lemma}
 
 \begin{proof}
-	We have $(X \times Y)\times_XW = \{(x,y,w) \in X \times Y \times W \mid x = g(w)\}$.
-	A homeomorphism $(X \times Y)\times_XW \to Y \times W$ is then given by $(x,y,w) \to (y,w)$ with inverse given by $(y,w) \to (g(w),y,w)$.
+	We have $(X \times Y) \times_X W = \{(x,y,w) \in X \times Y \times W \mid x = g(w)\}$.
+	A homeomorphism $(X \times Y) \times_X W \to Y \times W$ is then given by $(x,y,w) \to (y,w)$ with inverse given by $(y,w) \to (g(w),y,w)$.
 \end{proof}
 
 \begin{corollary}
@@ -718,7 +714,7 @@ Finally, we come to the punchline of creasing:
 \begin{theorem}\label{T: cohomology creasing}
 	Let $M$ be a manifold without boundary.
 	Suppose $\uW \in H_*^\Gamma(M)$ and that $\uW$ has a representative $r_W \colon W \to M$ that is transverse to $M^0$, defined with respect to some $\phi \colon M \to (-1,1)$ with $0$ a regular value.
-	Then $\uW = \underline{W^+}+\underline{W^-} \in H_*^\Gamma(M)$.
+	Then $\uW = \underline{W^+} + \underline{W^-} \in H_*^\Gamma(M)$.
 	Similarly for $H^*_\Gamma(M)$.
 \end{theorem}
 
@@ -752,5 +748,4 @@ Finally, we come to the punchline of creasing:
 
 	We denote the creasing of $W$ at $p$ by $\Cre(W)$, suppressing $f$ and $p$ from notation.
 	See Figure~\ref{F: creasing} for a sketch of a creasing of the teardrop manifold.
-
 \end{comment}
