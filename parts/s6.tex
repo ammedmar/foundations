@@ -220,17 +220,17 @@ In this section we consider the cochains on $M$ represented by maps $W \to M$ th
 	In particular, this implies by \cref{L: simple trans} that each induced $\bd^kW \to M$ is plainly transverse to each face of the cubulation.
 	If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$ , and so we can define $PC^*_{\Gamma \pitchfork X}(M)$ to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
 
-	We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma\pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma\pf X}^*(M)$ such that $V\sim W$ if and only if $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$.
-	The \textbf{geometric cochains of $M$ transverse to $X$}, denoted $C_{\Gamma\pf X}^*(M)$, are the equivalence classes in $PC_{\Gamma\pf X}^*(M)$.
-	The set $C_{\Gamma\pf X}^*(M)$ is a chain complexes under the operation $\sqcup$ and with boundary map $\bd$.
-	The \textbf{geometric cohomology transverse to $X$} is $H_{\Gamma\pf X}^*(M) \defeq H^*(C_{\Gamma\pf X}^*(M))$.
+	We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma \pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma \pf X}^*(M)$ such that $V\sim W$ if and only if $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$.
+	The \textbf{geometric cochains of $M$ transverse to $X$}, denoted $C_{\Gamma \pf X}^*(M)$, are the equivalence classes in $PC_{\Gamma \pf X}^*(M)$.
+	The set $C_{\Gamma \pf X}^*(M)$ is a chain complexes under the operation $\sqcup$ and with boundary map $\bd$.
+	The \textbf{geometric cohomology transverse to $X$} is $H_{\Gamma \pf X}^*(M) \defeq H^*(C_{\Gamma \pf X}^*(M))$.
 
 	When the specific cubulation $X$ is understood, we sometimes simplify the notation to $PC_{\Gamma\pf}^*(M)$, $C_{\Gamma\pf}^*(M)$, and $H_{\Gamma\pf}^*(M)$.
 \end{definition}
 
-The proof of \cref{L: co/chains well defined} continues to hold for transverse cochains, and so $r_W \colon W \to M$ represents $0$ in $C^*_{\Gamma\pf X}(M)$ if and only if it is in $Q^*_{\Gamma \pf X}(M)$.
-Therefore, the evident map $C^*_{\Gamma\pf X}(M) \to C^*_\Gamma(M)$, which takes the element of $C^*_{\Gamma\pf X}(M)$ represented by $r_W \colon W \to M$ to the element $C^*_\Gamma(M)$ represented by the same map, is a monomorphism of chain complexes, for such an $r_W$ is transverse to $X$ by definition and if it is also in $Q^*(M)$ then it is in $Q^*_{\Gamma \pf X}(M)$.
-Thus we will think of $C^*_{\Gamma\pf X}(M)$ as a subcomplex of $C^*_\Gamma(M)$.
+The proof of \cref{L: co/chains well defined} continues to hold for transverse cochains, and so $r_W \colon W \to M$ represents $0$ in $C^*_{\Gamma \pf X}(M)$ if and only if it is in $Q^*_{\Gamma \pf X}(M)$.
+Therefore, the evident map $C^*_{\Gamma \pf X}(M) \to C^*_\Gamma(M)$, which takes the element of $C^*_{\Gamma \pf X}(M)$ represented by $r_W \colon W \to M$ to the element $C^*_\Gamma(M)$ represented by the same map, is a monomorphism of chain complexes, for such an $r_W$ is transverse to $X$ by definition and if it is also in $Q^*(M)$ then it is in $Q^*_{\Gamma \pf X}(M)$.
+Thus we will think of $C^*_{\Gamma \pf X}(M)$ as a subcomplex of $C^*_\Gamma(M)$.
 A key technical result, which will take the remainder of this section to prove,
 is that this inclusion induces a cohomology isomorphism.
 In other words, the cochains that are transverse to $X$ are sufficient to compute the cohomology of $M$.
@@ -288,7 +288,7 @@ Before proving the proposition, which is somewhat technical, we use it to prove 
 	By \cref{P: ball stability}, there is a proper universal homotopy $h \colon V \times I \to M$ from $r_V$ to $r_{V'} \colon V' \to M$ with $V'$ transverse to the cubulation.
 	By \cref{C: homotopy}, $r_V$ and $r_{V'}$ represent the same cohomology class in $H^*_{\Gamma}(M)$, but the class represented by $r_{V'}$ is in the image of $H^*(C^*_{\Gamma \pitchfork X}(M))$.
 
-	For injectivity, suppose $W \in PC^*_{\Gamma\pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
+	For injectivity, suppose $W \in PC^*_{\Gamma \pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
 	Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V = W+T$ for some
 	$T \in Q^*(M)$.
 	By \cref{P: ball stability} there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1)$ and $h\circ(i_{W} \times \id)$ are both transverse to the cubulation.
@@ -499,7 +499,7 @@ Furthermore, in a neighborhood of $x$ the co-orientation of $r_W$ determines an 
 \end{proof}
 
 \begin{definition}\label{D: intersection homomorphism}
-	Given the manifold without boundary $M$ cubulated by $X$, we define the \textbf{intersection map} $\mc I \colon C^*_{\Gamma\pf X}(M) \to K^*(X)$ by $$\mc I(\uW) = \sum_F I_M(W,F)F^*,$$ where the sum is taken over faces $F$ of the cubulation $X$ such that $\dim(F)+\dim(W) = \dim(M)$ and the $W$ on the righthand side is any element of $PC^*_{\Gamma\pf X}(M)$ representing $\uW$.
+	Given the manifold without boundary $M$ cubulated by $X$, we define the \textbf{intersection map} $\mc I \colon C^*_{\Gamma \pf X}(M) \to K^*(X)$ by $$\mc I(\uW) = \sum_F I_M(W,F)F^*,$$ where the sum is taken over faces $F$ of the cubulation $X$ such that $\dim(F)+\dim(W) = \dim(M)$ and the $W$ on the righthand side is any element of $PC^*_{\Gamma \pf X}(M)$ representing $\uW$.
 
 	In particular, for a face $F$ of dimension $\dim(M)-\dim(W)$, we have $$\mc I(\uW)(F) = I_M(W,F) = \aug(W \times_M F).$$
 \end{definition}
@@ -509,7 +509,7 @@ Furthermore, in a neighborhood of $x$ the co-orientation of $r_W$ determines an 
 \end{proposition}
 
 \begin{proof}
-	If $W, W' \in PC^*_{\Gamma\pf X}(M)$ are two representatives of $\uW$ then $W \sqcup -W' \in Q^*(M)$ and it is transverse to $X$.
+	If $W, W' \in PC^*_{\Gamma \pf X}(M)$ are two representatives of $\uW$ then $W \sqcup -W' \in Q^*(M)$ and it is transverse to $X$.
 	So for any face $F$ we have $\aug(W \times_M F)-\aug(W' \times_M F) = \aug((W \sqcup -W') \times_M F) = 0$ by \cref{L: Q-trivial intersection}.
 	So $\mc I(\uW)$ does not depend on the choice of $W$.
 
@@ -768,7 +768,7 @@ The payoff is in \cref{T: intersection qi}, which can be found in the next subse
 	Furthermore, by the Transversality Theorem of \cite[GuPo74], for almost every $s_0 \in S$ and for any face $F$ of $X$, the map $H|_G(-,s_0)$ is transverse to the interior of $F$ at all points on the submanifold $G-G \cap W_1$ of $G$.
 	But there are a finite number of faces of $X$, so for almost every $s_0 \in S$ and for every face $F$ of $X$, the map $H|_G(-,s_0)$ is transverse to the interior of every face of $F$, which implies it is transverse to every face of $F$.
 	But there are also only a finite number of faces of $sd(X)$, and so for almost every $s_0 \in S$, $H|_G(-,s_0)$ is transverse to $F$ for every $G$ and every $F$.
-	In particular, each $H|_{F^\vee}$ determines an element of $PC^*_{\Gamma\pf X}(M)$ (that $H|_{F^\vee}$ is the output of an ambient isotopy in a neighborhood of $\hat F$ allows us to co-orient the components of $H$ via orientations of their tubular neighborhoods, which are also pushed around isotopically).
+	In particular, each $H|_{F^\vee}$ determines an element of $PC^*_{\Gamma \pf X}(M)$ (that $H|_{F^\vee}$ is the output of an ambient isotopy in a neighborhood of $\hat F$ allows us to co-orient the components of $H$ via orientations of their tubular neighborhoods, which are also pushed around isotopically).
 
 	To complete the proof we must do one last thing: we must fine tune $\rho$ to ensure that in forming $H(-,s_0)$ to ensure all of the required transversality we have not pushed any $F^\vee$ so far as to create new intersections with faces of $X$ of complementary dimensions beyond the single intersection of $H(F^\vee,s_0)$ with $F$ inside $W$.
 	For this we do the following.
@@ -792,19 +792,19 @@ The payoff is in \cref{T: intersection qi}, which can be found in the next subse
 \subsubsection{The intersection map is an isomorphism for finitely-generated cohomology groups}
 
 \begin{theorem}\label{T: intersection qi}
-	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma\pf X}(M) \to H^i(K_X^*(M))$ is an isomorphism whenever $H^i(M)$ is finitely generated.
+	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$ is an isomorphism whenever $H^i(M)$ is finitely generated.
 	It is a surjection even if $H^i(M)$ is not finitely generated.
 \end{theorem}
 
 \begin{proof}
-	Above we constructed a chain map $\Psi \colon K_X^*(M) \to C_\Gamma^*(M)$ by taking $F^*$ to the geometric cochain represented by the inclusion of $F^\vee$ into $M$, but the image did not lie in $C^*_{\Gamma\pf X}(M)$.
-	We now modify that construction to define $\psi:K_X^*(M) \to C_{\Gamma\pf X}^*(M)$ by taking $F^*$ to the element of $C^*_{\Gamma\pf X}(M)$ represented by the composition of the inclusion of $F^\vee$ into $M$ with $h$.
+	Above we constructed a chain map $\Psi \colon K_X^*(M) \to C_\Gamma^*(M)$ by taking $F^*$ to the geometric cochain represented by the inclusion of $F^\vee$ into $M$, but the image did not lie in $C^*_{\Gamma \pf X}(M)$.
+	We now modify that construction to define $\psi:K_X^*(M) \to C_{\Gamma \pf X}^*(M)$ by taking $F^*$ to the element of $C^*_{\Gamma \pf X}(M)$ represented by the composition of the inclusion of $F^\vee$ into $M$ with $h$.
 	To see that this is a chain map, we observed that $\Psi$ commutes with boundaries in the proof of \cref{L: dual chain map}, and we know that $h$ commutes with boundaries by the discussion leading up to \cref{P: homology homotopy functor}, co-orienting $h$ using that it is homotopic to the identity.
 	Furthermore, by construction $\psi(F^*)$ represents a map that is transverse to the cubulation for each generator $F^*$ of $K_X^*(M)$.
-	So $\psi$ determined a chain map to $C_{\Gamma\pf X}^*(M)$ as desired.
+	So $\psi$ determined a chain map to $C_{\Gamma \pf X}^*(M)$ as desired.
 
 	Furthermore, we see by the preceding lemma and the definition that $\mc I\psi$ is the identity map.
-	In particular, then, $\mc I$ induces a cohomology surjection $H^*_{\Gamma\pf X}(M)\onto H^*(K_X^*(M))$.
+	In particular, then, $\mc I$ induces a cohomology surjection $H^*_{\Gamma \pf X}(M)\onto H^*(K_X^*(M))$.
 
 	Now, we know from \cref{T: geometric is singular} and the isomorphism between cubical and singular cubical cohomologies that these groups are both isomorphic to $H^*(M)$, and a surjective map of isomorphic finitely-generated abelian groups is an isomorphism (as $\Z$-is Noetherian).
 \end{proof}
@@ -812,7 +812,7 @@ The payoff is in \cref{T: intersection qi}, which can be found in the next subse
 We conjecture that $\mc I$ is an isomorphism in the general case but have not been able to prove this.
 
 \begin{remark}\label{R: intersection map extension}
-	Putting together the isomorphism $\mc I \colon H^i_{\Gamma\pf X}(M) \to H^i(K_X^*(M))$ with the inverse of the isomorphism $H^*_{\Gamma \pitchfork X}(M) \to H^*_\Gamma(M)$, it is sometimes useful to abuse notation and speak of the intersection-induced isomorphism
+	Putting together the isomorphism $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$ with the inverse of the isomorphism $H^*_{\Gamma \pitchfork X}(M) \to H^*_\Gamma(M)$, it is sometimes useful to abuse notation and speak of the intersection-induced isomorphism
 	$H^*_\Gamma(M) \to H^i(K_X^*(M))$.
 	Of course this map is given by taking a cohomology class representative that is transverse to the cubulation and applying the intersection map $\mc I$ to find a cubical cocycle representing the target cohomology class.
 \end{remark}

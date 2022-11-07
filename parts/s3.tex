@@ -1179,8 +1179,8 @@ We now show that for arbitrary transverse intersecting $f$ and $g$ there are alw
 
 	First consider $F$.
 	As $f$ is co-oriented, $F$ is co-orientable by \cref{L: co-orientable homotopies} and can be co-oriented by \cref{D: homotopy co-orientation}.
-	So $(V \times I) \times_M W$ can be co-oriented, and by \cref{leibniz} two of its boundary components will be $f \times_M g: (V \times 0) \times_M W = V \times_M W \to M$ and
-	$f' \times_M g:(V \times 1) \times_M W = V \times_M W \to M$, topologically, with the co-orientations given by composing the boundary co-orientations with the co-orientation of $F \times_M g$.
+	So $(V \times I) \times_M W$ can be co-oriented, and by \cref{leibniz} two of its boundary components will be $f \times_M g \colon (V \times 0) \times_M W = V \times_M W \to M$ and
+	$f' \times_M g \colon (V \times 1) \times_M W = V \times_M W \to M$, topologically, with the co-orientations given by composing the boundary co-orientations with the co-orientation of $F \times_M g$.
 	Similarly, two of the boundary components of $W \times_M (V \times I)$ will be $g \times_M f \colon W \times_M (V \times 0) = W \times_M V \to M$ and
 	$g \times_M f' \colon W \times_M (V \times 1) = W \times_M V \to M$ topologically, with the co-orientations given by $(-1)^{m-w}$ times the compositions of the boundary co-orientations with the co-orientation of $g \times_M F$.
 	But now the point is that $(V \times I) \times_M W$ and $W \times_M (V \times I)$ are diffeomorphic with compatible maps to $M$, and so their co-orientations either agree or disagree, and correspondingly the co-orientations of the corresponding boundary components will agree or disagree.
@@ -1429,7 +1429,7 @@ Before getting to co-orientations, we first show that a product of proper maps i
 \end{example}
 
 \begin{proposition}\label{P: co-oriented exterior unit}
-	Let $f \colon V \to M$ be a co-oriented map of manifolds with corners, and let $g:pt \to pt$ be the unique map with the canonical co-orientation.
+	Let $f \colon V \to M$ be a co-oriented map of manifolds with corners, and let $g \colon pt \to pt$ be the unique map with the canonical co-orientation.
 	Then $f \times g \colon V \times pt \to M \times pt$ and $g \times f \colon pt \times V \to pt \times M$ are each isomorphic as co-oriented maps of manifolds with corners to $f \colon V \to M$.
 \end{proposition}
 
@@ -1854,7 +1854,7 @@ The analogues for singular chains and cochains are the cap product with the coch
 The next property relates products of pullbacks with pullbacks of products.
 
 \begin{proposition}\label{P: cap cross}
-	Let $f \colon V \to M$ and $g:X \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary, and let $h \colon W \to M$ and $k \colon Y \to N$ be maps with $W$ and $Y$ compacted oriented manifolds with corners.
+	Let $f \colon V \to M$ and $g \colon X \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary, and let $h \colon W \to M$ and $k \colon Y \to N$ be maps with $W$ and $Y$ compacted oriented manifolds with corners.
 	Suppose that $V$ is transverse to $W$ and that $X$ is transverse to $Y$.
 	Then\footnote{Again our signs agree with the cap product formulas in Spanier, in this case \cite[Section 5.6.21]{Span81}.},
 	$$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(x+y-n)(m-v)} (V \times_M W) \times (X \times_N Y),$$
