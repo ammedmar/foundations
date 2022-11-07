@@ -65,13 +65,13 @@ This is the content of the following lemma.
 	Let $F \colon M \times I \to N$ be a smooth homotopy; if $W \in PC^*_\Gamma(M)$ suppose further that $F$ is proper and co-oriented.
 	Then $F \circ (r_W \times \id_I) \colon W \times I \to N$ is in $PC_*^\Gamma(N)$ (or $PC^*_\Gamma(N))$.
 	Furthermore,
-	if $r_W: W \to M$ is trivial, of small rank, or
+	if $r_W \colon  W \to M$ is trivial, of small rank, or
 	degenerate then so are
-	$F \circ (r_W \times id_I) \colon W \times I \to N$ and $F(-,1) \circ r_W: W \to N$.
+	$F \circ (r_W \times id_I) \colon W \times I \to N$ and $F(-,1) \circ r_W \colon  W \to N$.
 \end{lemma}
 
 \begin{proof}
-	The last statement concerning $F(-,1) \circ r_W: W \to N$ holds by \cref{L: Q preservation} and its proof.
+	The last statement concerning $F(-,1) \circ r_W \colon  W \to N$ holds by \cref{L: Q preservation} and its proof.
 
 	We first suppose $W \in PC_*^\Gamma(M)$.
 	In this case it is clear that $F \circ (r_W \times \id_I) \in PC_*^\Gamma(N)$ using the product orientation on $W \times I$.
@@ -110,7 +110,7 @@ This lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a manifol
 	Let $V, W \in PC_i^\Gamma(M)$ (or $V, W \in PC^i_\Gamma(M)$).
 	Let $F \colon M \times I \to N$ be a smooth homotopy; if $V,W \in PC^i_\Gamma(M)$ suppose further that $F$ is proper and co-oriented.
 	If $V,W$ represent the same element of $C_i^\Gamma(M)$, then $F(-,1) \circ r_V: V \to N$ and
-	$F(-,1) \circ r_W: W \to N$ represent the same element of $C_i^\Gamma(N)$ and $F \circ (r_V \times id_I) \colon V \times I \to N$ and $F \circ (r_W \times id_I) \colon W \times I \to N$ represent the same elements of $C_{i+1}^\Gamma(M)$.
+	$F(-,1) \circ r_W \colon  W \to N$ represent the same element of $C_i^\Gamma(N)$ and $F \circ (r_V \times id_I) \colon V \times I \to N$ and $F \circ (r_W \times id_I) \colon W \times I \to N$ represent the same elements of $C_{i+1}^\Gamma(M)$.
 	The analogous fact holds for $V, W \in PC^i_\Gamma(M)$).
 \end{corollary}
 
@@ -134,7 +134,7 @@ This lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a manifol
 	As $W$ is a cycle, $\bd W \in Q_*(M)$, and hence so is $F \circ ((\bd r_W) \times \id_I) \colon \bd W \times I \to N$ by the preceding lemma.
 	Thus in $C^\Gamma_*(N)$ the boundary of $F \circ (r_W \times \id_I) \colon W \times I \to N$ is represented up to signs by the restriction of
 	$F \circ (r_W \times \id_I)$ to $W \times \bd I = W \times (\{1\}-\{0\})$.
-	As $F \circ (r_W \times \id_I)|_{W \times 1} = gr_W$ and $F \circ (r_W \times \id_I)|_{W \times 0} = fr_W$, we see that up to the overall sign $(-1)^{w}$, the boundary of $F \circ (r_W \times \id_I)$ is represented in $C_*^\Gamma(N)$ by the disjoint union of $gr_W \colon W \to N$ and $fr_W:-W \to N$.
+	As $F \circ (r_W \times \id_I)|_{W \times 1} = gr_W$ and $F \circ (r_W \times \id_I)|_{W \times 0} = fr_W$, we see that up to the overall sign $(-1)^{w}$, the boundary of $F \circ (r_W \times \id_I)$ is represented in $C_*^\Gamma(N)$ by the disjoint union of $gr_W \colon W \to N$ and $fr_W \colon -W \to N$.
 	Thus $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent homologous cycles.
 
 	Next consider the case of $W$ a cocycle.
@@ -416,7 +416,7 @@ This observation is akin to the dimension axiom or the Poincar\'e lemma, but wit
 the standard dimension axiom in \cref{E: dimension}.
 
 \begin{proof}[Proof of \cref{P: P lemma}]
-	If $r_W: W \to M$ is proper and has image in $U$, then $W$, as the preimage of the closure of $U$, must be compact.
+	If $r_W \colon  W \to M$ is proper and has image in $U$, then $W$, as the preimage of the closure of $U$, must be compact.
 	Also, $U$ is orientable, and so by choosing an orientation of $U$ every co-oriented $r_W \colon W \to U$ determines an orientation of $W$ as explained in \cref{S: co-orientations}.
 	Thus $C^*_\Gamma(M|_U) \cong C_{m-*}^\Gamma(U)$, and the result follows from \cref{E: dimension} (the dimension axiom), homotopy functoriality of geometric homology, and that $U$ is homotopy equivalent to a point.
 \end{proof}
@@ -748,7 +748,7 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 		Then $\uW$ is the coboundary of a cochain in $C^{i-1}_\Gamma(\R \times M)$ supported in $\R_+ \times M$.
 	\end{lemma}
 	\begin{proof}
-		Let $p_1 \colon \R \times M \to \R$ and $p_2 \colon \R \times M \to M$ be the projections, and let $r_W: W \to \R_+ \times M$ be the reference map.
+		Let $p_1 \colon \R \times M \to \R$ and $p_2 \colon \R \times M \to M$ be the projections, and let $r_W \colon  W \to \R_+ \times M$ be the reference map.
 		Note that $\R_+ \times W$ is a manifold with corners by \cite[Theorem 6.4]{Joy12}.
 		So we can define a new map $r_{\R_+ \times W} \colon \R_+ \times W \to \R \times M$ by $r_{\R_+ \times W}(t,x) = (t+p_1r_W(x),p_2r_W(x))$.
 		As $r_W$ is proper, so is $r_{\R_+ \times W}$, and its boundary (up to signs) is the sum of $W$ with $\pm r_{\R_+ \times \bd W} \colon \R_+ \times \bd W \to \R \times M$, letting this latter map be constructed analogously to $r_{\R_+ \times W}$.
