@@ -1,0 +1,39 @@
+% !TEX root = ../foundations.tex
+
+\section*{Legacy}
+
+INTRODUCTION
+
+------------
+
+Old Stuff:
+
+\red{NEEDS TO BE REWRITTEN SPECIFIC TO THIS NEW VERSION OF THE PAPER. WE SHOULD EMPHASIZE THAT WE'LL PAY MORE ATTENTION TO COHOMOLOGY THAN HOMOLOGY BECAUSE LIPYANSKIY'S TREATMENT OF HOMOLOGY SEEMS TO CARRY OVER FINE WITH OUR MODIFICATIONS AND IS FAIRLY THOROUGHLY WRITTEN, UNLIKE COHOMOLOGY WHICH IS WHERE WE REALLY HAVE NEW RESULTS}
+
+Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains \cite{Lipy14, Joyc15},
+much as forms and wedge product do over the real numbers.
+
+We are setting the foundations of this theory, including new developments such as a cochain-level product.
+
+To specify a cubical  cochain in a fixed degree is to give an integer for each and every {nondegenerate cube} in that degree,
+which in practice can be an unwieldy amount of data.
+Submanifolds, which can be simple to describe in cases of interest, can encode such data through intersection.
+
+The basic idea is classical, essentially an implementation of Poincar\'e duality at the chain and cochain level by using intersection with a
+submanifold in order to define a function on chains - see \cref{D: intersection homomorphism}.
+But there are two ways in which  generalization is needed to implement this idea.
+First, submanifolds alone do not capture homology and cohomology, as Thom famously realized and can be
+seen in applications such as using Schubert varieties to represent cohomology of Grassmannians.
+So we generalize from intersection with a submanifold to pullback of a map from a manifold.
+Secondly, in order to model cohomology, we need manifolds with corners, which also arise immediately when taking intersections or pullbacks of manifolds with boundary, as we use to define our product.
+
+While there are a number of treatments of homology and cohomology which employ manifolds and their
+generalizations \cite{Whit47, BRS76,  FeSj83, Krec10,  Kahn01, Zing08, Joyc15} the cochain theory most compatible with the differential topology we employ is geometric cohomology, developed by Lipyanskiy \cite{Lipy14}.
+Geometric cohomology uses manifolds with corners, for which we follow the careful treatment by Joyce \cite{Joy12}.
+Lipyanskiy does not give, or utilize, the careful treatment of manifolds with corners contained in \cite{Joy12}, and neither gives a complete treatment of co-orientations.
+So we fill in some gaps in the details of Lipyanskiy's use of manifolds with corners, especially as regards pullbacks and co-orientations, though to preserve space we do refer to Lipyanskiy for details wherever possible.
+
+\red{GBF: From the email I wrote on 10/27/21:
+I think probably the philosophy should be that at the level of (co)chains the intersection pairing of chains is just a subcase of the intersection pairing of cochains. As previously observed, the intersection of chains is only well defined in general when everything in sight is orientable. But if everything in sight is orientable, then co-orientations and orientations are the same thing, so an oriented intersection is also a co-oriented intersection, and if the domains are compact then the maps are automatically proper, so a well-defined intersection of chains \textit{is} an intersection of cochains.}
+
+\red{Now of course that’s not the same as what happens in homology, but I bet we can also prove that in the totally oriented setting where homology products are defined then homology is the same thing as compactly supported cohomology, so again homology becomes largely disposable in the study of products, especially as in our setting it’s not like the chains are really any simpler than the cochains like they are for singular homology/cohomology.}
