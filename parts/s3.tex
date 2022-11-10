@@ -5,13 +5,13 @@
 Manifolds with corners are, in particular, topological manifolds, and so they carry the standard notions of orientability and orientation.
 As in singular or simplicial homology, orientations carry sign information in geometric versions of homology theory.
 For geometric cohomology, however, it turns out that the natural structures to carry sign information are co-orientations, sometimes called orientations of maps.
-Unlike orientations, co-orientation can be ``pulled-back.''
+Unlike orientations, co-orientation can be ``pulled back.''
 
 Co-orientations are less familiar than orientations, so it is helpful to keep the following central example in mind: If $W \to M$ is an immersion of manifolds, a co-orientation is equivalent to an orientation of the normal bundle of the image; see \cref{normal co-or} below.
 Notice that this condition does not require the orientability of either $W$ or $M$.
 In fact, an important case is when neither $W$ nor $M$ is orientable but the monodromies of their orientation bundles around loops in $W$ are either both orientation-preserving or both orientation-reversing; it is in this sense that we have a \textit{co}-orientation.
 
-The special case of (local) immersions is important both for intuition and in practice; for example, the only geometric cochains which evaluate non-trivially on fixed collections of chains through the intersection homomorphisms of \cite{FMS-flows} are local immersions.
+The special case of (local) immersions is important both for intuition and in practice; for example, the only geometric cochains which evaluate nontrivially on fixed collections of chains through the intersection homomorphisms of \cite{FMS-flows} are local immersions.
 However, for complete definitions that cover all cases of interest, it is critical to co-orient more general maps and to do so in a way that provides key properties when forming pullbacks, such as a Leibniz rule when taking boundaries, graded commutativity of cochains, and a simple expression when the maps are immersions.
 While co-orientations can be found in many places in the literature, we could not find a careful treatment that guaranteed these key properties.
 Therefore, we develop co-orientations in depth in this (long) section.
@@ -130,8 +130,7 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 	\end{equation*}
 \end{proposition}
 
-\medskip\noindent\textbf{Fiber products of immersions.}
-% anibal: should this be a \subsubsection?
+\subsubsection{Fiber products of immersions}
 
 The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is always of particular interest, especially for developing intuition.
 In the case of embeddings, $V \times_M W$ is simply the intersection of $V$ and $W$ as submanifolds of $M$, and in the immersed case this is true locally, i.e.\ restricting attention to submanifolds of $V$ and $W$ on which $f$ and $g$ are embeddings.
@@ -249,8 +248,8 @@ On the other hand, it is not true that if we have an orientation of $W$ and a co
 For example, if $W$ is orientable, any constant map to $M$ is co-orientable, regardless of whether or not $M$ is orientable.
 
 More generally, recall that the fundamental group of a manifold acts on classes of local orientations as the deck transformations of the orientation cover.
-A map is co-orientable if a loop in $W$ acts non-trivially on a local orientation of $W$ if and only if
-its image in $M$ acts non-trivially.
+A map is co-orientable if a loop in $W$ acts nontrivially on a local orientation of $W$ if and only if
+its image in $M$ acts nontrivially.
 Explicitly, if $g \colon W \to M$ is co-orientable the fundamental group can change the local orientation pair
 $(\beta_W, \beta_M)$ to $(-\beta_W, -\beta_M)$, but these pairs define equivalent co-orientations.
 Similarly, to compare local constructions at different points, it is useful to use paths.
