@@ -92,6 +92,7 @@
 \newcommand{\di}{\text{dim}}
 \newcommand{\im}{\text{im}}
 \newcommand{\cok}{\text{cok}}
+\renewcommand{\ker}{\text{ker}}
 \newcommand{\coim}{\text{coim}}
 \newcommand{\bp}{\boxplus}
 %\renewcommand{\P}{\mathbb P}
@@ -135,7 +136,7 @@
 
 \begin{document}
 
-In \cite{Lipy14}, Lipyanskiy uses a different notion of co-orientations, which he initially refers to as orientations of maps, than the one we have used to define geometric cochains. We here discuss Lipyanskiy's co-orientation and show that it is equivalent to our definition, up to possible sign conventions. 
+In \cite{Lipy14}, Lipyanskiy uses a different notion of co-orientation from the one we have used to define geometric cochains. We here discuss Lipyanskiy's co-orientation, which he initially refers to as orientations of maps,  and show that when we have smooth maps $f:M\to N$, it is equivalent to our definition, up to possible sign conventions. In other words, we show that a map is co-orientable in our sense if and only if it is co-orientable in Lipyanskiy's sense. We will not explore the precise differences between the specific co-orientation conventions. 
 
 To define, co-orientations, Lipyanskiy utilizes the determinant line bundles of Donaldson and Kronheimer in \cite[Section 5.2.1]{DoKr90}.
 A key point throughout our discussion will be the following lemma, which is presented without proof in \cite{DoKr90}:
@@ -143,71 +144,93 @@ A key point throughout our discussion will be the following lemma, which is pres
 \begin{lemma}\label{L: det sequence}
 Given an exact sequence of vector bundles
 \begin{diagram}
-0&\rTo&V_1&\rTo& \cdots &\rTo& V_m&]rTo&0,
+0 \to V_1 \to \cdots \to V_m\to 0,
 \end{diagram}
 there is a canonical isomorphism 
 $$\underset{i\text{ odd}}{\otimes}\Or(V_i)\cong \underset{i\text{ even}}{\otimes}\Or(V_i).$$
 \end{lemma}
 \begin{proof}
+UGH - TRY TO FIND THIS SOMEWHERE
 We first consider the case of a short exact sequence $0\to V_1\xr{d_1} V_2\xr{d_2} V_3\to 0$. As short exact sequences of vector bundles always split (REF!), we have a map $e:V_3\to V_2$ such that $d_1\oplus e:V_1\oplus V_3\to V_2$ is an isomorphism. 
 So $\Or(V_1\oplus V_3) \xr{\Or(d_1\oplus e)} \Or(V_2)$ is an isomorphism, as is the canonical map (REF OR PROVE) $\Or(V_1)\otimes \Or(V_3)\to \Or(V_1\oplus V_3\to V_2)$. The composite isomorphism appears \emph{a priori} to depend on the splitting $e$, but if $e'$ is another such splitting then the image of $e-e'$ lies in $\ker(d_2)=\im(d_1)$, so $\Or(d_1\otimes e)-\Or(d_1\otimes e')=\Or(d_1\otimes (e-e'))=0$ as the exterior product of a top form of $\im(d_1)$ with anything else in $\im(d_1)$ must be $0$. REF TO THESE MECHANICS So the isomorphism is independent of the choice of splitting.  THIS PROOF NEEDS A LOT OF FIXING. 
 \end{proof}
 
 
-Now, to define, co-orientations, Lipyanskiy utilizes the determinant line bundles of Donaldson and Kronheimer in \cite[Section 5.2.1]{DoKr90}. There, in a slightly more general setting, the determinant line bundle of a map of vector bundles $F:E\to E'$ over $M$ is first defined, in our notation from {D: det bundle}, as $$\Or(\ker F)\otimes \Or(\cok F)^*,$$ 
-where the $*$ over $\Or(\cok(F))$ denotes the dual bundle. This is only the first version of the definition, as $\ker F$ and $\cok F$ are not necessarily well defined vector bundles. We will return to this point below, but for now let us assume these are vector bundles. We then see that Donaldson-Kronheimer determinant bundle is morally something like an index of an operator. 
+We can now define the determinant line bundles as in \cite[Section 5.2.1]{DoKr90}. Donaldson and Kronheimer work in a more general setting, but we will confine ourselves to considering a map of vector bundles $F:E\to E'$ over $M$. At first, we also assume that $\ker(F)$ and $\cok(F)$ are well-defined vector bundles. Then, in our notation from \cred{D: det bundle}, the Donaldson-Kronheimer determinant line bundle is defined to be   $$\Or(\ker(F))\otimes \Or(\cok(F))^*,$$ 
+where the $*$ over $\Or(\cok(F))$ denotes the dual bundle. Below we will consider that $\ker(F)$ and $\cok(F)$ are not always vector bundles, but for now we see that the determinant bundle is morally related to the index of an operator. We refer to \cite[Section 5.2.1]{DoKr90} for a more precise statement of the relationship.
 
-To relate this our notion of co-orientation, consider the exact sequence of vector bundles
-\begin{diagram}
-0&\rTo& \ker F&\rTo& E&\rTo&E'&\rTo&\cok F&\rTo&0.
-\end{diagram}
-Applying \cref{L: det sequence}, we have $\Or(\ker F)\otimes \Or(E')\cong \Or(E)\otimes \Or(\cok F)$. Next we use that for a line bundle $L$ we have $L\otimes L^*\cong \underline\{R}$, the trivial line bundle. So multiplying both sides by $\Or(\cok F)^*$ and $\Or(E')^*$, we get $$\Or(\ker F)\otimes \Or(\cok F)^*\cong \Or(E)\otimes \Or(E')^*.$$
-The latter is isomorphic to $\Hom(\Or(E'),\Or(E))$, which is dual to $\Hom(E,E')$. In particular, then, $\Hom(E,E')$ is trivial, and so admits a non-zero section, if and only if the Donaldson-Kronheimer determinant bundle $\Or(\ker F)\otimes \Or(\cok F)^*$ is trivial. 
-In the setting of a smooth map $f:M\to N$, we can think of the derivative $Df$ as a map $Df:TM\to f^*(TN)$, and then a co-orientation of $f$ in the sense of is an orientation of the determinant line bundle associated to $Df$. If $\ker(Df)$ and $\cok(Df)$ are well-defined vector bundles. Then we can relate this notion of co-orientation to ours as follows.
+To relate the Donaldson-Kronkeimer determinant line bundle to our notion of co-orientation, consider the exact sequence of vector bundles
+\begin{equation*}
+0\to \ker(F) \to  E \to E' \to \cok(F) \to 0.
+\end{equation*}
+Applying \cref{L: det sequence}, we have $\Or(\ker(F))\otimes \Or(E')\cong \Or(E)\otimes \Or(\cok(F))$. Next we use that for a line bundle $L$ we have $L\otimes L^*\cong \underline{\R}$, the trivial line bundle. So multiplying both sides by $\Or(\cok(F))^*$ and $\Or(E')^*$, we get $$\Or(\ker(F))\otimes \Or(\cok(F))^*\cong \Or(E)\otimes \Or(E')^*.$$
+The latter is isomorphic to $\Hom(\Or(E'),\Or(E))$, which is dual to $\Hom(E,E')$. In particular, $\Hom(E,E')$ is trivial, and so admits a non-zero section, if and only if the Donaldson-Kronheimer determinant bundle $\Or(\ker(F))\otimes \Or(\cok(F))^*$ is trivial. 
 
+In the setting of a smooth map $f:M\to N$, we can think of the derivative $Df$ as a map $Df:TM\to f^*(TN)$, and then the above demonstrates that $\Hom(TM,f^*(TN))$ is trivial if and only if the determinant bundle $\Or(\ker(dF))\otimes \Or(\cok(dF))^*$ is trivial. We recall that the triviality of $\Hom(TM,f^*(TN))$ is the condition for co-orientability of $f$ in the sense of \cref{D: co-orientations}.  
+So, up to the actual co-orientation conventions, the two notions of co-orientability coincide. We leave it to the reader to define the isomorphisms in sufficient detail to carry a particular co-orientation as defined in \cref{S: co-orientations} to one as defined here.
+
+
+
+\begin{comment}
 Returning to the general setting of the bundle map $F:E\to E'$ and choosing splittings, we can write $E= \ker(F)\oplus \im(F)$ and $E'=\im(F)\oplus \cok(F)$, and then $\Or(E)\cong \Or(\ker(F))\otimes \Or(\im(F))$ and $\Or(E')\cong \Or(\im(F))\otimes \Or(\cok(F))$. 
 So $\Or(E)$ and $\Or(E')$ are isomorphic (and hence there exists a non-zero section to $\Hom(E,E')$) if and only if  $\Or(\ker(F))\cong \Or(\cok(F))$. In this case we observe that $\Hom(\Or(E),\Or(E'))$, $$\Hom(\Or(\ker(F)), \Or(\cok(F)))\cong \Or(\ker(F))^*\otimes \Or(\cok(F)),$$ 
 and $$(\Or(\ker(F))^*\otimes \Or(\cok(DF)))^*\cong \Or(\ker(F))\otimes \Or(\cok(F))^*$$
-are all trivial lines bundles, and hence isomorphic. 
+are all trivial lines bundles, and hence isomorphic. \end{comment}
 
-So, up to the actual co-orientation conventions, the two notions of co-orientability coincide. We leave it to the reader to define the isomorphisms in sufficient detail to carry a particular co-orientation as defined in \cref{S: co-orientations} to one as defined here.
 
-There are two problems with the preceding analysis: the assumption that the kernel and cokernel are well-defined vector bundles and the possible reliance of the isomorphisms on a choice of splittings. The latter issue is dispensed with pretty easily by \cref{??} below. The first requires a bit more work, as in general $\ker(Df)$ and $\cok(Df)$ do not even have the same dimensions from fiber to fiber. The solution is to generalize the determinant line bundle as in \cite{DoKr90} to a definition that is always well defined and that isomorphic to $\Or(\ker F)\otimes \Or(\cok(F))^*$ when it is also well defined. 
 
-For this, let $\underline{\C}^N$ be the trivial $\R^N$ bundle over $M$, and suppose we have a map $\psi:\underline{\R}^N\to E'$ such that $F\oplus \psi:E\oplus \underline{\R}^N$ is surjective\footnote{Donaldson and Kronheimer work with complex vector bundles, so \cite{DoKr90} features $\underline{\C}^N$ rather than $\underline{\R}^N$.}. This will always be true in our setting, as we observed in Section \ref{S: manifolds with corners} that work of Joyce and Melrose implies that smooth manifolds with corners can always be embedded in finite dimensional Euclidean space. Hence tangent bundles are subbundles of trivial bundles and the images of projections of trivial bundles (or, up isomorphism, quotients of the trivial bundle by their orthogonal bundles). The gain is that $F\oplus \psi$ now has trivial cokernel and a kernel that is a vector bundle as now the fibers of the kernel have a fixed dimension. Now let $$\ms L=\Or(\ker(F\oplus \psi))\otimes \Or(\underline{\R}^N)^*\cong \Or(\ker(F\oplus \psi)).$$ 
+The problem with the preceding analysis is that in general $\ker(Df)$ and $\cok(Df)$ do not necessarily have the same dimensions from fiber to fiber, and so $\ker(Df)$ and $\cok(Df)$ are not necessarily well defined as vector bundles. The solution is to reframe the definition of the determinant line bundle as in \cite{DoKr90} so that it is always well defined and such that it is isomorphic to $\Or(\ker(F))\otimes \Or(\cok(F))^*$ when it is also well defined. 
 
-In the case where the $\ker(F)$ and $\cok(F)$ were already vector bundles, $\ms L$ is isomorphic to the determinant line bundle of $F$ using the following two lemmas: 
+For this, let $\underline{\R}^n$ be the trivial $\R^n$ bundle over $M$, and suppose we have a map $\psi:\underline{\R}^n\to E'$ such that $F\oplus \psi:E\oplus \underline{\R}^n$ is surjective\footnote{Donaldson and Kronheimer work with complex vector bundles, so \cite{DoKr90} features $\underline{\C}^n$ rather than $\underline{\R}^n$.}. This will always be true in our setting, as we observed in Section \ref{S: manifolds with corners} that work of Joyce and Melrose implies that smooth manifolds with corners can always be embedded in finite dimensional Euclidean space. Hence tangent bundles are subbundles of trivial bundles and so the images of projections of trivial bundles (or, up isomorphism, quotients of the trivial bundle by their orthogonal complements after endowing the trivial bundle with a Riemannian structure). The gain is that $F\oplus \psi$ now has trivial cokernel and a kernel that is a vector bundle, as now the fibers of the kernel have a fixed dimension. We then define the determinant line bundle to be  $$\ms L=\Or(\ker(F\oplus \psi))\otimes \Or(\underline{\R}^n)^*\cong \Or(\ker(F\oplus \psi)).$$ 
+
+In the case where $\ker(F)$ and $\cok(F)$ were already vector bundles, $\ms L$ is isomorphic to the determinant line bundle of $F$ using \cref{L: det sequence} and the following lemma: 
 
 \begin{lemma}
-If $F:E\to E'$ and $\psi:\underline{\R}^N\to E'$  are bundle maps with $F\oplus \psi: E\oplus \underline{\R}^N$ surjective, then the following sequence of vector bundles is exact:
+If $F:E\to E'$ and $\psi:\underline{\R}^n\to E'$  are bundle maps with $F\oplus \psi: E\oplus \underline{\R}^n$ surjective and $\ker(F)$ and $\cok(F)$ well-defined vector bundles, then the following sequence is exact\footnote{This exact sequence appears incorrectly in \cite{DoKr90} with the $\psi$ in place of $F$ in the first and last terms.}:
 \begin{diagram}
-0&\rTo&\ker(F)&\rTo&\ker(F\oplus \psi)&\rTo& \underline{\R}^N&\rTo& \cok(F)&\rTo&0.
+0&\rTo&\ker(F)&\rTo&\ker(F\oplus \psi)&\rTo& \underline{\R}^n&\rTo& \cok(F)&\rTo&0.
 \end{diagram} 
 \end{lemma}
+\begin{proof}
+This exact sequence is simply the serpent lemma exact sequence obtained from the commutative diagram of exact sequences
+\begin{diagram}
+0&\rTo&E&\rTo& E\oplus \underline{\R}^n&\rTo&\underline{\R}^n&\rTo&0\\
+&&\dTo^F&&\dTo^{F\oplus\psi}&&\dTo\\
+0&\rTo&E'&\rTo^=& E'&\rTo&0&\rTo&0.
+\end{diagram}
+The category of vector bundles over a space is not technically an abelian category, but one can check by hand for this diagram that, with our assumptions, all the maps of the exact sequence are well defined and the exactness then holds fiberwise by the classical serpent lemma. In particular, the map $\underline{\R}^n\to  \cok(F)$ is the composition of the splitting map $\underline{\R}^n\to E\oplus \underline{\R}^n$, the map $F\oplus \psi$, and the projection $E'$ to $\cok(F)$. 
+\end{proof}
 
+
+\begin{comment}
 \begin{lemma}\label{L: det sequence}
 Given an exact sequence of vector bundles
 \begin{diagram}
 0&\rTo&V_1&\rTo& \cdots &\rTo& V_m&]rTo&0,
 \end{diagram}
 there is a canonical isomorphism 
-$$\underset{i\text{ odd}}{\otimes}\Or(V_i)\cong \underset{i\text{ even}}{\otimes}\Or(V_i).$$
+$$\underset{i\text{ odd}}{\otimes}\Or(V_i)\cong \unders9et{i\text{ even}}{\otimes}\Or(V_i).$$
 \end{lemma}
+\end{comment}
 
-Assuming these lemmas for now, they combine to give us an isomorphism
-$$\Or(\ker(F))\otimes \Or(\underline{\R}^N)\cong \Or(\ker(F\oplus \psi))\otimes \Or(\cok(F)).$$
-Multiplying both sides by $\Or(\underline{\R}^N)^*\otimes \Or(\cok(F))^*$ and using that in general for a line bundle $L$ we have $L\otimes L^*\cong \underline{\R}$, we obtain
-$$\Or(\ker(F))\otimes \Or(\cok(F))^*\cong \Or(\ker(F\oplus \psi))\otimes \Or(\underline{\R}^N)^*.$$
-So, as promised, the two definitions agree (up to isomorphism?) when $\ker(F)$ and $\cok(F)$ are defined. 
+Combining this lemma with \cref{L: det sequence} gives us an isomorphism
+$$\Or(\ker(F))\otimes \Or(\underline{\R}^n)\cong \Or(\ker(F\oplus \psi))\otimes \Or(\cok(F)).$$
+Multiplying both sides by $\Or(\underline{\R}^n)^*\otimes \Or(\cok(F))^*$ and using again that for a line bundle $L$ we have $L\otimes L^*\cong \underline{\R}$, we obtain
+$$\Or(\ker(F))\otimes \Or(\cok(F))^*\cong \Or(\ker(F\oplus \psi))\otimes \Or(\underline{\R}^n)^*.$$
+So, as promised, the two definitions agree (up to canonical isomorphisms) when $\ker(F)$ and $\cok(F)$ are defined. 
 
-We also observe that in the context of a map $f:M\to N$ of manifolds, if $\psi:\underline{R}^N\to f^*(TN)$ is surjective, then applying \cref{L: det sequence} to exact sequence
+Finally, we note that the definition of $\ms L$ is clearly independent of $n$ up to canonical isomorphism as $\det(\underline{\R}^n)\cong \det(\underline{\R}^n)^*\cong \underline{\R}$ for all $n$ (for the isomorphisms to be canonical, we may assume $\R^n$ to be given its standard oriented basis and standard inner product).  
+
+
+\begin{comment}
+We also observe that in the context of a map $f:M\to N$ of manifolds, if $\psi:\underline{R}^n\to f^*(TN)$ is surjective, then applying \cref{L: det sequence} to exact sequence
 \begin{diagram}
-0&\rTo&\ker(Df\otimes \psi)&\rTo&TM\oplus\underline{\R}^N&\rTo^{Df\oplus \psi}&f^*(TN)&\rTo&0,
+0&\rTo&\ker(Df\otimes \psi)&\rTo&TM\oplus\underline{\R}^n&\rTo^{Df\oplus \psi}&f^*(TN)&\rTo&0,
 \end{diagram}
 we obtain an isomorphism
-$$\Or(\ker(Df\otimes \psi))\otimes\Or(f^*(TN))\cong \Or(TM\oplus\underline{\R}^N)\cong \Or(TM)\otimes \Or(\underline{\R}^N)).$$
-So once again employing the duals, we obtain an isomorphism between the Donaldson-Kronheimer line bundle $\Or(\ker(Df\otimes \psi))\otimes \Or(\underline{\R}^N))^*$ used by Lipyanskiy and $\Or(TM)\otimes\Or(f^*(TN))^*\cong \Hom(\Or(f^*(TN)),\Or(TM))$, while our notion of co-orientation utilizes the line bundle $\Hom(\Or(TM), \Or(f^*(TN)))$, which is dual to  $\Hom(\Or(f^*(TN)),\Or(TM))$. So, once again we observe that our line bundle $\Hom(\Or(TM), \Or(f^*(TN)))$ is trivial, and so possesses a non-zero section, if and only if the Donaldson-Kronheimer determinant line bundle for the map $Df$ is trivial. This also shows that the Donaldson-Kronheimer construction is independent of the choice of $\C^N$ and $\psi$. 
-
+$$\Or(\ker(Df\otimes \psi))\otimes\Or(f^*(TN))\cong \Or(TM\oplus\underline{\R}^n)\cong \Or(TM)\otimes \Or(\underline{\R}^n)).$$
+So once again employing the duals, we obtain an isomorphism between the Donaldson-Kronheimer line bundle $\Or(\ker(Df\otimes \psi))\otimes \Or(\underline{\R}^n))^*$ used by Lipyanskiy and $\Or(TM)\otimes\Or(f^*(TN))^*\cong \Hom(\Or(f^*(TN)),\Or(TM))$, while our notion of co-orientation utilizes the line bundle $\Hom(\Or(TM), \Or(f^*(TN)))$, which is dual to  $\Hom(\Or(f^*(TN)),\Or(TM))$. So, once again we observe that our line bundle $\Hom(\Or(TM), \Or(f^*(TN)))$ is trivial, and so possesses a non-zero section, if and only if the Donaldson-Kronheimer determinant line bundle for the map $Df$ is trivial. This also shows that the Donaldson-Kronheimer construction is independent of the choice of $\C^n$ and $\psi$. 
+\end{comment}
 
 
 
