@@ -135,10 +135,35 @@
 
 \begin{document}
 
-In \cite{Lipy14}, Lipyanskiy uses a different notion of co-orientations, which he initially refers to as orientations of maps, than the one we have used to define geometric cochains. We here discuss Lipyanskiy's co-orientation and show that it is equivalent to our definition, up to possible sign conventions.
+In \cite{Lipy14}, Lipyanskiy uses a different notion of co-orientations, which he initially refers to as orientations of maps, than the one we have used to define geometric cochains. We here discuss Lipyanskiy's co-orientation and show that it is equivalent to our definition, up to possible sign conventions. 
 
-To define, co-orientations, Lipyanskiy utilizes the determinant line bundles of Donaldson and Kronheimer in \cite[Section 5.2.1]{DoKr90}. There, in a slightly more general setting, the determinant line bundle of a map of vector bundles $F:E\to E'$ over $M$ is defined, in our notation from Section REF, as $$\Or(\ker F)\otimes \Or(\cok(F))^*,$$ 
-where the $*$ over $\Or(\cok(F))$ denotes the dual bundle. In the setting of a smooth map $f:M\to N$, we can think of the derivative $Df$ as a map $Df:TM\to f^*(TN)$ (CHECK), and then a co-orientation of $f$ is an orientation of the determinant line bundle associated to $Df$. If $\ker(Df)$ and $\cok(Df)$ are well-defined vector bundles. Then we can relate this notion of co-orientation to ours as follows.
+To define, co-orientations, Lipyanskiy utilizes the determinant line bundles of Donaldson and Kronheimer in \cite[Section 5.2.1]{DoKr90}.
+A key point throughout our discussion will be the following lemma, which is presented without proof in \cite{DoKr90}:
+
+\begin{lemma}\label{L: det sequence}
+Given an exact sequence of vector bundles
+\begin{diagram}
+0&\rTo&V_1&\rTo& \cdots &\rTo& V_m&]rTo&0,
+\end{diagram}
+there is a canonical isomorphism 
+$$\underset{i\text{ odd}}{\otimes}\Or(V_i)\cong \underset{i\text{ even}}{\otimes}\Or(V_i).$$
+\end{lemma}
+\begin{proof}
+We first consider the case of a short exact sequence $0\to V_1\xr{d_1} V_2\xr{d_2} V_3\to 0$. As short exact sequences of vector bundles always split (REF!), we have a map $e:V_3\to V_2$ such that $d_1\oplus e:V_1\oplus V_3\to V_2$ is an isomorphism. 
+So $\Or(V_1\oplus V_3) \xr{\Or(d_1\oplus e)} \Or(V_2)$ is an isomorphism, as is the canonical map (REF OR PROVE) $\Or(V_1)\otimes \Or(V_3)\to \Or(V_1\oplus V_3\to V_2)$. The composite isomorphism appears \emph{a priori} to depend on the splitting $e$, but if $e'$ is another such splitting then the image of $e-e'$ lies in $\ker(d_2)=\im(d_1)$, so $\Or(d_1\otimes e)-\Or(d_1\otimes e')=\Or(d_1\otimes (e-e'))=0$ as the exterior product of a top form of $\im(d_1)$ with anything else in $\im(d_1)$ must be $0$. REF TO THESE MECHANICS So the isomorphism is independent of the choice of splitting.  THIS PROOF NEEDS A LOT OF FIXING. 
+\end{proof}
+
+
+Now, to define, co-orientations, Lipyanskiy utilizes the determinant line bundles of Donaldson and Kronheimer in \cite[Section 5.2.1]{DoKr90}. There, in a slightly more general setting, the determinant line bundle of a map of vector bundles $F:E\to E'$ over $M$ is first defined, in our notation from {D: det bundle}, as $$\Or(\ker F)\otimes \Or(\cok F)^*,$$ 
+where the $*$ over $\Or(\cok(F))$ denotes the dual bundle. This is only the first version of the definition, as $\ker F$ and $\cok F$ are not necessarily well defined vector bundles. We will return to this point below, but for now let us assume these are vector bundles. We then see that Donaldson-Kronheimer determinant bundle is morally something like an index of an operator. 
+
+To relate this our notion of co-orientation, consider the exact sequence of vector bundles
+\begin{diagram}
+0&\rTo& \ker F&\rTo& E&\rTo&E'&\rTo&\cok F&\rTo&0.
+\end{diagram}
+Applying \cref{L: det sequence}, we have $\Or(\ker F)\otimes \Or(E')\cong \Or(E)\otimes \Or(\cok F)$. Next we use that for a line bundle $L$ we have $L\otimes L^*\cong \underline\{R}$, the trivial line bundle. So multiplying both sides by $\Or(\cok F)^*$ and $\Or(E')^*$, we get $$\Or(\ker F)\otimes \Or(\cok F)^*\cong \Or(E)\otimes \Or(E')^*.$$
+The latter is isomorphic to $\Hom(\Or(E'),\Or(E))$, which is dual to $\Hom(E,E')$. In particular, then, $\Hom(E,E')$ is trivial, and so admits a non-zero section, if and only if the Donaldson-Kronheimer determinant bundle $\Or(\ker F)\otimes \Or(\cok F)^*$ is trivial. 
+In the setting of a smooth map $f:M\to N$, we can think of the derivative $Df$ as a map $Df:TM\to f^*(TN)$, and then a co-orientation of $f$ in the sense of is an orientation of the determinant line bundle associated to $Df$. If $\ker(Df)$ and $\cok(Df)$ are well-defined vector bundles. Then we can relate this notion of co-orientation to ours as follows.
 
 Returning to the general setting of the bundle map $F:E\to E'$ and choosing splittings, we can write $E= \ker(F)\oplus \im(F)$ and $E'=\im(F)\oplus \cok(F)$, and then $\Or(E)\cong \Or(\ker(F))\otimes \Or(\im(F))$ and $\Or(E')\cong \Or(\im(F))\otimes \Or(\cok(F))$. 
 So $\Or(E)$ and $\Or(E')$ are isomorphic (and hence there exists a non-zero section to $\Hom(E,E')$) if and only if  $\Or(\ker(F))\cong \Or(\cok(F))$. In this case we observe that $\Hom(\Or(E),\Or(E'))$, $$\Hom(\Or(\ker(F)), \Or(\cok(F)))\cong \Or(\ker(F))^*\otimes \Or(\cok(F)),$$ 
