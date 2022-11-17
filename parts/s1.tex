@@ -2,72 +2,51 @@
 
 \section{Introduction}\label{intro}
 
+The goal of this work is to develop a geometric approach to ordinary homology and cohomology on smooth manifolds.
+By this we mean that both homology and cohomology classes should be represented by smooth maps from manifolds to our target manifold of interest.
+Such a goal is reminiscent of very classic thinking about homology dating back to Poincar\'e and Lefschetz and, of course, is also classically impossible due to the work of Thom, who showed that not all homology classes can be represented by pushing forward fundamental classes of manifolds.
+To get around this obstruction, one needs a broader notion of ``manifold,'' and the one we utilize here is manifolds with corners.
+On the homology side, it is not so surprising that one can do this, for after all simplices and cubes are manifolds with corners, and it is well known that one can compute the homology of a smooth manifold using only smooth maps of simplices or cubes.
+What is more surprising, though still to be found in certain classical corners of 20th century geometric topology, is that \textit{co}homology classes can also be represented by appropriate maps from manifolds with corners, more specifically, proper and co-oriented smooth maps from manifolds with corners, with associated degree given by the codimension of the map.
+In particular, in such theories cochains are not (just) some kind of algebraic duals to chains but are geometric objects in their own right.
 
-The goal of this work is to develop a geometric approach to singular homology and cohomology on smooth manifolds. By this we mean that the homology and cohomology classes should be represented by smooth maps from manifolds to our target manifold of interest. Such a goal is reminiscent of very classic thinking about homology dating back to Poincar\'e and Lefschetz and of course is also classically impossible due to the work of Thom (REFERENCE), who showed that not all homology classes can be represented by pushing forward fundamental classes of manifolds. To get around this obstruction, one needs a broader notion of ``manifold,'' and the one we utilize here is manifolds with corners. On the homology side, it is not so surprising that one can do this, for after all simplices and cubes are manifolds with corners, and it is well known that one can compute the homology of a smooth manifold using only smooth maps of simplices or cubes. What is more surprising, though still to be found in certain classical corners of 20th century geometric topology, is that {\it co}homology classes can also be represented by appropriate maps from manifolds with corners, more specifically, proper and co-oriented smooth maps from manifolds with corners. In particular, in such theories cochains are not (just) some kind of algebraic duals to chains but are geometric objects in their own right.
+One benefit to such thinking is that the classical operations of algebraic topology, such as cup and cap products, can be described \textit{at the level of cochains} by simple geometric operations without recourse to algebraic diagonals, Alexander-Whitney maps, or other such combinatorics.
+In fact, when our cochains are represented by transverse embeddings, their cup product is simply their intersection.
+So, in fact, is the cap product.
+More generally, these products are represented by pullbacks or fiber products.
+This again is reminiscent of the original classical thinking about such products in terms of intersections.
+(A modern summary and treatment of such intersections in the PL category can be found in \cite{McC06}.)
+The trade-off for such a pleasant description is that these intersections are not always defined; they require transversality.
+This limitation is also classically anticipated by the famous commutative cochain problem: loosely speaking, no integral cochain construction computing ordinary cohomology can be made canonically into a (graded) commutative ring.
+Since the process of forming intersections is commutative, the algebra structure it induces cannot be fully defined.
+We will not let that stop us --- no theory is perfect.
 
-One benefit to such thinking is that the classical operations of algebraic topology, such as cup and cap products, can be described {\it at the level of cochains} by simple geometric operations without recourse to algebraic diagonals, Alexander-Whitney maps, or other such combinatorics. In fact, when our cochains are represented by embeddings, the cup product is simply the intersection. So, in fact, is the cap product. More generally, these products are represented by pullbacks or fiber products. This again is reminiscent of the original classical thinking about such products in terms of intersections\footnote{A nice modern summary and treatment of such intersections in the PL category can be found in \cite{McC06}.}.
-The trade-off for such a pleasant description is that these intersections are not always defined; they require transversality. This limitation is also classically anticipated by the famous commutative cochain problem: loosely speaking, no chain algebra over $\Z$ who cohomology gives the singular cohomology ring can be both algebraically fully defined and (graded) commutative. Since the process of forming intersections is commutative, it cannot be fully defined. We will not let that stop us --- no theory is perfect.
+The idea of representing both homology and cohomology by some kind of geometric maps is also not new.
+Past examples include
+% GORESKY'S REPRESENTATION OF PL COHOMOLOG and
+Kreck's ``differential algebraic topology'' \cite{Krec10}, which provides homology and cohomology on smooth manifolds using maps from \textit{stratifolds}, a certain kind of singular space; and present work in progress by Joyce \cite{Joyc15}, which utilizes manifolds with corners, but in a different setting with applications to symplectic geometry in mind.
 
-The idea of representing both homology and cohomology by some kind of geometric maps is also not new. Past examples include GORESKY'S REPRESENTATION OF PL COHOMOLOG and Kreck's ``differential algebraic topology'' \cite{Krec10}, which provides homology and cohomology on smooth manifolds using maps from {\it stratifolds}, a certain kind of singular space; and present work in progress by Joyce \cite{Joyc15}, which utilizes manifolds with corners, but in a more elaborate setting with the goal of applications to symplectic geometry.
+Our particular flavor of geometric homology and cohomology is originally due to Lipyanskiy in an incomplete and unpublished manuscript \cite{Lipy14}.
+Lipyanskiy gives a fairly thorough account of geometric homology, but a much more lightly sketched account of geometric cohomology.
+Several of the major theorems are unproven or have arguments just hinted at.
+% anibal: this last clause reads weird to me
+Some other expected results are not stated at all, including an isomorphism, either as graded abelian groups or rings, between geometric and ordinary cohomology.
+So one of our main goals is to give a thorough account, with detailed proofs, of geometric homology and cohomology, with our primary focus on geometric cohomology, both because Lipyanskiy's account is more deficient in this area and also because cohomology, with its richer algebraic structures, is of more immediate interest to the authors.
+In fact, geometric cohomology caught our attention while working on \cite{FMS-flows} and looking for a rigorous foundation to geometrically model the cup product and ultimately, we hope, the higher algebraic products that arise in forming Steenrod operations and other aspects of the $E_\infty$-algebra structure on the cochain complex.
+So a second major goal, not really present in \cite{Lipy14}, is to consider the product structures not just in cohomology but at the level of the cochains themselves.
+To show that such products are ever well defined (even when some transversality is present) requires some careful analysis of the structure of geometric cochains.
 
-Our particular flavor of geometric homology and cohomology is originally due to Lipyanskiy in an incomplete and unpublished manuscript \cite{Lipy14}. Lipyanskiy gives a fairly thorough account of geometric homology, but a much more lightly sketched account of geometric cohomology. Several of the major theorems are unproven or have arguments just hinted at. Some other expected results are not stated at all, including an isomorphism between geometric and singular cohomology or that the geometrically defined cup product coincides with the classical singular cup product. So one of our main goals is to give a thorough account, with detailed proofs, of geometric homology and cohomology, with our primary focus on geometric cohomology, both because Lipyanskiy's account is more deficient in this area and also because cohomology, with its richer algebraic structures, is of more immediate interest to the authors. In fact, geometric cohomology caught our attention while working on \cite{FMS-flows} and looking for a rigorous foundation to geometrically model the cup product and ultimately, we hope, the higher algebraic products that arise in forming Steenrod squares and other aspects of the $E_\infty$-algebra structure of the cochain complex. So a second major goal, not really present in \cite{Lipy14}, is to consider the product structures not just in cohomology but at the level of the cochains themselves. To show that such products are ever well defined (even when some transversality is present) requires some careful analysis of the structure of geometric cochains, which we will see our not actually simply maps of manifolds but certain equivalence classes of such, which is a necessity to obtain a theory that models singular cohomology.
+Our main objects are manifolds with corners, and we are indebted to Joyce's \cite{Joy12}, which not only contains specific and rigorous definitions of these objects but also works through the details of showing that the fiber product of two appropriate transverse maps of manifolds with corners is again a manifold with corners.
+To avoid the most complicated part of Joyce's theory, and also because some of our results about geometric cohomology would no longer be true otherwise,
+% greg: We should give an example here or somewhere.
+our target manifolds will always be smooth manifolds without boundary whenever we need transversality of maps from manifolds with corners.
 
-Our main objects are manifolds with corners, and we are indebted to Joyce's \cite{Joy12}, which not only contains specific and rigorous definitions of these objects but also works through the details of showing that the fiber product of two appropriate transverse maps of manifolds with corners is again a manifold with corners. To avoid the most complicated part of Joyce's theory, and also because our results about geometric cohomology would no longer be true with the greater generality\footnote{\red{We should give an example here or somewhere.}}, our target manifolds will always be smooth manifolds without boundary whenever we need transversality of maps from manifolds with corners.
-
-Another important background piece that we could not find properly worked out in the literature (perhaps more due to our own ignorance than its non-existence) is co-orientation of smooth maps. Roughly speaking, a map of manifolds is co-oriented when a loop in the domain is orientation-preserving or orientation-reversing if and only if its image loop in the target has the same property. As we shall see, the co-orientability requirement allows maps of non-orientable manifolds to serve as geometric cochains, and they are important to the theory\footnote{While co-orientations are central to our approach, surprisingly they do not seem to be absolutely essential, as Kreck's cohomology theory in \cite{Krec10} does not utilize them. On the other hand, Kreck requires his targets to be oriented and handles non-orientable manifolds via a nice trick with double covers \red{Double check and add specific references.} He also does not work as directly with cochain level products, for which we find the use of co-orientations to be a bit more natural}. For example, the identity map of any smooth manifold, orientable or not, represents the cohomology class\footnote{Perhaps this is a good point to observe that geometric cochain are indexed by co-dimension and not dimension like chains.} $1$. Co-orientations are more appropriate for cochains that orientations, as co-orientations ``pull back'' in a way that we will see orientations do not. We develop the notion and properties of co-orientation quite thoroughly, which we hope may be also of broader use.
-
-
-
-
-
-
-
-
-\textbf{Conventions.} Throughout we will denote the dimension of a manifold represented by an upper case character by the corresponding lower case character. For example, $\dim(M)=m$, $\dim(V)=v$, etc.
-
-
-
-------------
-
-Old Stuff:
-
-\red{NEEDS TO BE REWRITTEN SPECIFIC TO THIS NEW VERSION OF THE PAPER. WE SHOULD EMPHASIZE THAT WE'LL PAY MORE ATTENTION TO COHOMOLOGY THAN HOMOLOGY BECAUSE LIPYANSKIY'S TREATMENT OF HOMOLOGY SEEMS TO CARRY OVER FINE WITH OUR MODIFICATIONS AND IS FAIRLY THOROUGHLY WRITTEN, UNLIKE COHOMOLOGY WHICH IS WHERE WE REALLY HAVE NEW RESULTS}
-
-Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains \cite{Lipy14, Joyc15},
-much as forms and wedge product do over the real numbers.
-
-We are setting the foundations of this theory, including new developments such as a cochain-level product.
-
-
-To specify a cubical  cochain in a fixed degree is to give an integer for each and every {nondegenerate cube} in that degree,
-which in practice can be an unwieldy amount of data.
-Submanifolds, which can be simple to describe in cases of interest, can encode such data through intersection.
-
-The basic idea is classical, essentially an implementation of Poincar\'e duality at the chain and cochain level by using intersection with a
-submanifold in order to define a function on chains - see \cref{D: intersection homomorphism}.
-But there are two ways in which  generalization is needed to implement this idea.
-First, submanifolds alone do not capture homology and cohomology, as Thom famously realized and can be
-seen in applications such as using Schubert varieties to represent cohomology of Grassmannians.
-So we generalize from intersection with a submanifold to pullback of a map from a manifold.
-Secondly, in order to model cohomology, we need manifolds with corners, which also arise immediately when taking intersections or pullbacks of manifolds with boundary, as we use to define our product.
-
-While there are a number of treatments of homology and cohomology which employ manifolds and their
-generalizations \cite{Whit47, BRS76,  FeSj83, Krec10,  Kahn01, Zing08, Joyc15} the cochain theory most compatible with the differential topology we employ is geometric cohomology, developed by Lipyanskiy \cite{Lipy14}.
-Geometric cohomology uses manifolds with corners, for which we follow the careful treatment by Joyce \cite{Joy12}.
-Lipyanskiy does not give, or utilize, the careful treatment of manifolds with corners contained in \cite{Joy12}, and neither gives a complete treatment of co-orientations. So we fill in some gaps in the details of Lipyanskiy's use of manifolds with corners, especially as regards pullbacks and co-orientations, though to preserve space we do refer to Lipyanskiy for details wherever possible.
-
-
-
-\red{GBF: From the email I wrote on 10/27/21:
-I think probably the philosophy should be that at the level of (co)chains the intersection pairing of chains is just a subcase of the intersection pairing of cochains. As previously observed, the intersection of chains is only well defined in general when everything in sight is orientable. But if everything in sight is orientable, then co-orientations and orientations are the same thing, so an oriented intersection is also a co-oriented intersection, and if the domains are compact then the maps are automatically proper, so a well-defined intersection of chains {\it is} an intersection of cochains. }
-
-\red{Now of course that’s not the same as what happens in homology, but I bet we can also prove that in the totally oriented setting where homology products are defined then homology is the same thing as compactly supported cohomology, so again homology becomes largely disposable in the study of products, especially as in our setting it’s not like the chains are really any simpler than the cochains like they are for singular homology/cohomology. }
-
-
-
-\section*{Acknowledgments}
-The authors thank Mike Miller, for pointing us to \cite{Lipy14}, and Dominic Joyce, for answering  questions about his work.
-
-%%% Local Variables:
-%%% TeX-master: "geometric_cohomology.tex"
-%%% End:
+Another important background piece that we could not find properly worked out in the literature (perhaps more due to our own ignorance than its non-existence) is co-orientation of smooth maps.
+Roughly speaking, a map of manifolds is co-oriented when a loop in the domain is orientation-preserving or orientation-reversing if and only if its image loop in the target has the same property.
+As we shall see, the co-orientability requirement allows maps of non-orientable manifolds to serve as geometric cochains, and they are important to the theory\footnote{While co-orientations are central to our approach, surprisingly they do not seem to be absolutely essential, as Kreck's cohomology theory in \cite{Krec10} does not utilize them.
+On the other hand, Kreck requires his targets to be oriented and handles non-orientable manifolds via a nice trick with double covers.
+% greg: Double check and add specific references
+He also does not work as directly with cochain level products, for which we find the use of co-orientations to be a bit more natural}.
+For example, the identity map of any smooth connected manifold, orientable or not, represents a generator of its $0$-th geometric cohomology.
+Co-orientations are more appropriate for cochains that orientations, as co-orientations ``pull back'' in a way that we will see orientations do not.
+We develop the notion and properties of co-orientation quite thoroughly, which we hope may be also of broader use.

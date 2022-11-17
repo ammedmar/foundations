@@ -17,10 +17,8 @@
 	colorlinks=true, pagebackref=true,
 	pdfpagelabels]{hyperref}
 \hypersetup{
-	linkcolor  = blue,
-	citecolor  = blue,
-	urlcolor   = blue,
-	colorlinks = true,
+	linkcolor=blue, citecolor=blue,
+	urlcolor=blue, colorlinks=true,
 }
 \usepackage[capitalise,noabbrev,nosort]{cleveref}
 \newcommand{\creflastconjunction}{, and\nobreakspace} %makes cleveref use serial commas
@@ -54,7 +52,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Geometric cohomology}
+\title[Foundations of geometric cohomology]{Foundations of geometric cohomology: from co-orientations to product structures}
 
 % Greg
 \author[G. Friedman]{Greg Friedman}
@@ -73,22 +71,26 @@
 \email{\href{mailto:dps@uoregon.edu}{dps@uoregon.edu}}
 
 \begin{document}
-	\begin{abstract}
-		We set up the theory of geometric cohomology.
-	\end{abstract}
+	\input{parts/abstract}
 	\maketitle
+
 	\tableofcontents
-	\input{parts/s1} % Introducition
+	\input{parts/s1} % Introduction
 	\input{parts/s2} % Manifolds with corners
 	\input{parts/s3} % Orientations
 	\input{parts/s4} % Geometric cochains
 	\input{parts/s5} % Basic properties
 	\input{parts/s6} % Cubical
 	\input{parts/s7} % Products
-	\input{parts/questions}
 	\input{parts/app1}
+
+	% Bibliography
 	\bibliographystyle{alpha}
 	\bibliography{parts/foundations}
+
+	% Auxiliary
 	\pagebreak
-	\input{parts/to-do} %
+	\input{parts/questions}
+	\input{parts/to-do}
+	\input{parts/legacy}
 \end{document}

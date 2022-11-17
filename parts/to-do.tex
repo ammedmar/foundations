@@ -1,49 +1,75 @@
 % !TEX root = ../foundations.tex
 
 \section*{To-Do}
+
 \begin{enumerate}
-	\item Is there a place where we don't use integer coefficients?  Should Or(E) just be $\wedge^n(E)$?
+	\item Is there a place where we do not use integer coefficients? Should Or(E) just be $\wedge^n(E)$?
 
 	\item Add an argument that our definition of co-orientation agrees with Lipyanskiy's?
 
-	\item Thom isomorphism (what does this mean in this setting - we can't have a singular space, and we don't have relative cohomology)
-
-
-
+	\item Thom isomorphism (what does this mean in this setting - we can't have a singular space, and we do not have relative cohomology)
 
 	\item anibal: diagrams in diagrams.sty are sensitive to having a blank space before and after.
 	Make this choice homogeneous all around.
 
-	\item anibal: consider a command \verb|\ie| to make homogeneous the use of i.e. since some use a \verb|\ | after.  
+	\item anibal: consider a command \verb|\ie| to make homogeneous the use of i.e.\ since some use a \verb|\ | after.
 
+	\item Greg left the following in in s3 and I commented out.
+	The exact position can be found searching for any string in it.
+
+	Dev and Anibal, please check the following arguments carefully as I'm not 100\% confident in it.
+	It gives the ``right'' answer but I'm a little uncomfortable divorcing the order of the orientation terms from the order of the manifold terms.
+	Of course this happens all the time - even if we think of $\R^2$ as $\R_x \oplus \R_y$ we can still think about the two-form $y \wedge x$, but I'm still a little nervous about maybe having missed a sign somewhere.
+	I'm also a little nervous about my trick of taking $a$ and $b$ to be even so that they won't contribute, but the earlier work says that this should be allowable.
+	Presumably if I didn't do this there would be a bunch of extra signs that miraculous cancel out, but I'm not so excited about trying that out in detail to see.
+
+	\item Similarly with:
+
+	Add a version for pullbacks (as opposed to fiber products)? Might have some extra signs to figure out.
+	Not really needed anywhere I do not think.
+
+	\item From s5 I commented out this:
+
+	GBF: Might want to try to combine those into a single lemma somewhere at some point, but it looks like it might be less messy, if a bit redundant, not to.
+
+	\item also:
+
+	Fix tikz arrows?
 
 \begin{comment}
 	\item \sout{Picture for creasing.}
 	\item Compactness and orientation assumptions on Theorem 3.13 (transversality constrains preserve q-iso type).
 
-	\item \sout{Treatment of creasing.}
-	\item Guillemin-Pollock for mnfds with corner.
+    \item \sout{Treatment of creasing.}
+    \item Guillemin-Pollock for mnfds with corner.
 
-	\item Clarify isomorphisms used in orientations and make more explicit how the Lipyanskiy orientations fit.
+    \item Clarify isomorphisms used in orientations and make more explicit how the Lipyanskiy orientations fit.
 
 
 	\item More on Mayer-Vietoris - check full argument
 	\item Poincar\'e Lemma - check new proof
 	\item (Anibal) Add a better treatment of ``cst" from \verb|Flows/old/pd_cubical_S2.Feb16.tex| \\
-	Greg: Let K be any finite set of cubical faces and let L be a single cubical face. We need $cst(K)\cup cst(L)$ to be $cst(K\cup L)$  (maybe this part is just by definition?) and we need $cst(K)\cap cst(L)$ to be $cst(K ? L)$   where $K ? L$ needs to be some set of faces with cardinality less than or equal to that of K.
+	Greg: Let K be any finite set of cubical faces and let L be a single cubical face. We need $cst(K) \cup cst(L)$ to be $cst(K \cup L)$ (maybe this part is just by definition?) and we need $cst(K) \cap cst(L)$ to be $cst(K ? L)$ where $K ? L$ needs to be some set of faces with cardinality less than or equal to that of K.
 \end{comment}
 
-\begin{comment}
-\item Reference for pullback of normal bundle is normal bundle of pullback
-\item Reference for pullback of tangent spaces is tangent space of pullbacks (argument already given?)
-\end{comment}
+	\begin{comment}
+		\item \sout{Picture for creasing.}
+		\item Compactness and orientation assumptions on Theorem 3.13 (transversality constrains preserve q-iso type).
 
+		\item \sout{Treatment of creasing.}
+		\item Guillemin-Pollock for mnfds with corner.
 
-\section*{To-Do elsewhere}
+		\item Clarify isomorphisms used in orientations and make more explicit how the Lipyanskiy orientations fit.
 
+		\item More on Mayer-Vietoris - check full argument
+		\item Poincar\'e Lemma - check new proof
+		\item (Anibal) Add a better treatment of ``cst" from \verb|Flows/old/pd_cubical_S2.Feb16.tex| \\
+		Greg: Let K be any finite set of cubical faces and let L be a single cubical face. We need $cst(K)\cup cst(L)$ to be $cst(K\cup L)$  (maybe this part is just by definition?) and we need $cst(K)\cap cst(L)$ to be $cst(K ? L)$   where $K ? L$ needs to be some set of faces with cardinality less than or equal to that of K.
+	\end{comment}
+
+	\begin{comment}
+		\item Reference for pullback of normal bundle is normal bundle of pullback
+		\item Reference for pullback of tangent spaces is tangent space of pullbacks (argument already given?)
+	\end{comment}
 
 \end{enumerate}
-
-%%% Local Variables:
-%%% TeX-master: "foundations.tex"
-%%% End:
