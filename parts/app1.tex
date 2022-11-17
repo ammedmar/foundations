@@ -8,20 +8,25 @@
 In \cite{Lipy14}, Lipyanskiy uses a different notion of co-orientation from the one we have used to define geometric cochains. We here discuss Lipyanskiy's co-orientation, which he initially refers to as \textit{orientations of maps},  and show that when we have smooth maps $f:M\to N$, it is equivalent to our definition, up to possible sign conventions. In other words, we show that a smooth map is co-orientable in our sense if and only if it is co-orientable in Lipyanskiy's sense. We will not explore the precise differences between the specific co-orientation conventions.
 
 To define, co-orientations, Lipyanskiy utilizes the determinant line bundles of Donaldson and Kronheimer in \cite[Section 5.2.1]{DoKr90}.
-A key point throughout our discussion will be the following lemma, which is presented without proof in \cite{DoKr90}. For the statement, recall our definition of $\Or(V)$ in \cref{D: det bundle}.
+A key point throughout our discussion will be the following lemma, which is  \cite[Lemma 5.2.2]{DoKr90}. Donaldson and Kronheimer actually state (without proof) a stronger version of the lemma---that the isomorphism is canonical---but we will not need that for our purposes For the statement of the lemma, recall our definition of $\Or(V)$ in \cref{D: det bundle}.
 
 \begin{lemma}\label{L: det sequence}
 Given an exact sequence of vector bundles
 \begin{diagram}
-0 \to V_1 \to \cdots \to V_m\to 0,
+0 \to V_1 \xr{d_1} \cdots \xr{d_{m-1}} V_m\to 0,
 \end{diagram}
-there is a canonical isomorphism
+there is an isomorphism
 $$\underset{i\text{ odd}}{\otimes}\Or(V_i)\cong \underset{i\text{ even}}{\otimes}\Or(V_i).$$
 \end{lemma}
 \begin{proof}
-UGH - TRY TO FIND THIS SOMEWHERE: STILL NEED TO FIX/ADD THIS
-We first consider the case of a short exact sequence $0\to V_1\xr{d_1} V_2\xr{d_2} V_3\to 0$. As short exact sequences of vector bundles always split (REF!), we have a map $e:V_3\to V_2$ such that $d_1\oplus e:V_1\oplus V_3\to V_2$ is an isomorphism.
-So $\Or(V_1\oplus V_3) \xr{\Or(d_1\oplus e)} \Or(V_2)$ is an isomorphism, as is the canonical map (REF OR PROVE) $\Or(V_1)\otimes \Or(V_3)\to \Or(V_1\oplus V_3\to V_2)$. The composite isomorphism appears \emph{a priori} to depend on the splitting $e$, but if $e'$ is another such splitting then the image of $e-e'$ lies in $\ker(d_2)=\im(d_1)$, so $\Or(d_1\otimes e)-\Or(d_1\otimes e')=\Or(d_1\otimes (e-e'))=0$ as the exterior product of a top form of $\im(d_1)$ with anything else in $\im(d_1)$ must be $0$. REF TO THESE MECHANICS So the isomorphism is independent of the choice of splitting.  THIS PROOF NEEDS A LOT OF FIXING.
+It is implicit in the hypothesis of exactness that the kernels and image of the maps in the sequence are well-defined vector bundles so that it makes sense to say $\im(d_{i-1})=\ker(d_{i})$ as objects in the category of vector bundles. We thus have for each $i$ a short exact sequence
+\begin{diagram}
+0 \to \ker(d_i) \to V_i \to \im(d_i)\to 0,
+\end{diagram}
+and since short exact sequences of vector bundles split \cite[Theorem 3.9.6]{Hus75}, we have $V_i\cong \ker(d_i)\oplus \im(d_i)=\im(d_{i-1})\oplus \im(d_i)$. Consequently,
+
+$$\underset{i\text{ odd}}{\otimes}\Or(V_i)\cong \underset{i\text{ odd}}{\otimes}\Or(\im(d_{i-1})\oplus \im(d_i))\cong \underset{i\text{ odd}}{\otimes}\Or(\im(d_{i-1}))\otimes \Or(\im(d_i))\cong \underset{i}{\otimes}\Or(\im(d_{i})),$$
+and similarly for the other tensor product. 
 \end{proof}
 
 
