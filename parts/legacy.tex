@@ -1,39 +1,497 @@
-% !TEX root = ../foundations.tex
 
-\section*{Legacy}
 
-INTRODUCTION
 
-------------
+SECTION 3
 
-Old Stuff:
+---------
 
-\red{NEEDS TO BE REWRITTEN SPECIFIC TO THIS NEW VERSION OF THE PAPER. WE SHOULD EMPHASIZE THAT WE'LL PAY MORE ATTENTION TO COHOMOLOGY THAN HOMOLOGY BECAUSE LIPYANSKIY'S TREATMENT OF HOMOLOGY SEEMS TO CARRY OVER FINE WITH OUR MODIFICATIONS AND IS FAIRLY THOROUGHLY WRITTEN, UNLIKE COHOMOLOGY WHICH IS WHERE WE REALLY HAVE NEW RESULTS}
+\begin{comment}
+	OLD VERSION OF FIBER PRODUCTS FROM HERE THROUGH REST OF THE FILE
 
-Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains \cite{Lipy14, Joyc15},
-much as forms and wedge product do over the real numbers.
+	\subsubsection{Co-orientability of fiber products}
 
-We are setting the foundations of this theory, including new developments such as a cochain-level product.
+	Before defining fiber product co-orientations, we first want to ensure that fiber products of co-orientable maps are themselves co-orientable. This will free us to then determine the specific co-orientations by working locally.
 
-To specify a cubical  cochain in a fixed degree is to give an integer for each and every {nondegenerate cube} in that degree,
-which in practice can be an unwieldy amount of data.
-Submanifolds, which can be simple to describe in cases of interest, can encode such data through intersection.
+	\begin{lemma}\label{L: co-orientable pullback}
+		Suppose $g \colon W \to M$ and $f \colon V \to M$ are transverse. Then:
 
-The basic idea is classical, essentially an implementation of Poincar\'e duality at the chain and cochain level by using intersection with a
-submanifold in order to define a function on chains - see \cref{D: intersection homomorphism}.
-But there are two ways in which  generalization is needed to implement this idea.
-First, submanifolds alone do not capture homology and cohomology, as Thom famously realized and can be
-seen in applications such as using Schubert varieties to represent cohomology of Grassmannians.
-So we generalize from intersection with a submanifold to pullback of a map from a manifold.
-Secondly, in order to model cohomology, we need manifolds with corners, which also arise immediately when taking intersections or pullbacks of manifolds with boundary, as we use to define our product.
+		\begin{enumerate}
+			\item If $g$ is co-orienteable, the pullback $g^*:P\to V$ is co-orientable.
 
-While there are a number of treatments of homology and cohomology which employ manifolds and their
-generalizations \cite{Whit47, BRS76,  FeSj83, Krec10,  Kahn01, Zing08, Joyc15} the cochain theory most compatible with the differential topology we employ is geometric cohomology, developed by Lipyanskiy \cite{Lipy14}.
-Geometric cohomology uses manifolds with corners, for which we follow the careful treatment by Joyce \cite{Joy12}.
-Lipyanskiy does not give, or utilize, the careful treatment of manifolds with corners contained in \cite{Joy12}, and neither gives a complete treatment of co-orientations.
-So we fill in some gaps in the details of Lipyanskiy's use of manifolds with corners, especially as regards pullbacks and co-orientations, though to preserve space we do refer to Lipyanskiy for details wherever possible.
+			\item If $g$ is proper, the pullback $g^*:P\to V$ is proper.
+		\end{enumerate}
 
-\red{GBF: From the email I wrote on 10/27/21:
-I think probably the philosophy should be that at the level of (co)chains the intersection pairing of chains is just a subcase of the intersection pairing of cochains. As previously observed, the intersection of chains is only well defined in general when everything in sight is orientable. But if everything in sight is orientable, then co-orientations and orientations are the same thing, so an oriented intersection is also a co-oriented intersection, and if the domains are compact then the maps are automatically proper, so a well-defined intersection of chains \textit{is} an intersection of cochains.}
+	\end{lemma}
+	Note that $f$ need not be co-orientable or proper for this lemma to apply.
+	\begin{proof}
+		We first show that the pullback is proper. Let us label our maps
+		\begin{diagram}
+			P&\rTo^{\pi_W} & W\\
+			\dTo^{g^*=\pi_V}&&\dTo_g\\
+			V&\rTo^f&M.
+		\end{diagram}
 
-\red{Now of course that’s not the same as what happens in homology, but I bet we can also prove that in the totally oriented setting where homology products are defined then homology is the same thing as compactly supported cohomology, so again homology becomes largely disposable in the study of products, especially as in our setting it’s not like the chains are really any simpler than the cochains like they are for singular homology/cohomology.}
+		Suppose $K\subset V$ is compact. We have
+		\begin{align*}
+			\pi_V^{-1}(K)&=\{x\in P\mid \pi_V(x)\in K\}\\
+			&\subset \{x\in P\mid f\pi_V(x)\in f(K)\} \\
+			&=\{x\in P\mid g\pi_W(x)\in f(K)\} \\
+			&=\{x\in P\mid \pi_W(x)\in g^{-1}(f(K))\}.
+		\end{align*}
+		So $\pi_V^{-1}(K)\subset K\times g^{-1}(f(K))\subset V\times W$. But this is a product of compact sets as $g$ is proper. So $\pi_V$ is proper.
+
+		For co-orientations, we use Quillen's definition from Lemma \ref{L: Quillen}. We factor $g$ as $W\into M\times \R^N \to M$, and then we have the pullback diagram
+
+		\begin{diagram}
+			P&\rTo^{\pi_W} & W\\
+			\dTo&&\dTo_e\\
+			V\times \R^N&\rTo^{f\times \id}&M\times \R^N\\
+			\dTo&&\dTo_{\pi_M}\\
+			V&\rTo^f&M.
+		\end{diagram}
+		The bottom square is evidently a pullback. Thus by elementary topology the top square is a pullback diagram if and only if the composite rectangle is a pullback diagram. So by letting the top square be a pullbal diagram, we obtain the pullback $P$ of $V\xr{f} M\xleftarrow{g} W$.
+
+		Since $f$ is transverse to $g$, we have $f\times \id$ transverse to $e$. As $e$ is an embedding, it follows that $P=(f\times \id)^{-1}(e(W))$ is a submanifold of $V\times \R^N$. Furthermore, by Lemma \ref{L: Quillen}, $e(W)$ has a trivial normal bundle in $M\times \R^N$, and since the pullback of the normal bundle is the normal bundle of the pullback, it follows that the normal bundle of $P$ in $V\times \R^N$ is also trivial. Applying Lemma \ref{L: Quillen} again, the map $\pi_V:P\to V$ is co-orientable.
+	\end{proof}
+
+	BCOMMENT
+	(MESSY) PROOF THAT e IS TRANSVERSE TO $f \times id$ In fact, suppose $(f\times \id)(x,t)=e(y)$. We have $D(f\times \id)T_{(x,t)}(V\times \R^N)=Df(T_xV) \oplus \R^N\subset T_{f(x)}M\oplus \R^N\cong T_{e(y)}(M\times \R^N)$. Meanwhile $D\pi_M\circ De(T_yW)=Dg(T_yW)\subset T_{g(y)}M$. So for ever vector $a\in Dg(T_yW)$, there is a vector $\epsilon \in\R^N$ so that $a+\epsilon\in De(T_yW)\subset T_{e(y)}(M\times \R^N)\cong T_{g(y)}M\oplus \R^N$ with $\pi_M(a+\epsilon)=a$. So $De(T_yW)+\R^N=DgT_y(W)+\R^N$. Thus
+	\begin{align*}
+		D(f\times \id)T_{(x,t)}(V\times \R^N)+De(T_yW)&=Df(T_xV)+ \R^N+De(T_yW)\\
+		&= Df(T_xV) +\R^n+DgT_y(W)\\
+		&=T_{g(y)}M+\R^N\\
+		&=T_{e(y)}W.
+	\end{align*}
+	ECOMMENT
+
+	\begin{corollary}
+		If $f \colon V \to M$ and $g \colon W \to M$ are transverse and co-orientable, their fiber product $P\to M$ is also co-orientable.
+	\end{corollary}
+	\begin{proof}
+		By the preceding lemma, the pullback $P\to V$ is co-orientable, and the map $f \colon V \to M$ is co-orientable by assumption. Now choose co-orientations and compose to get a co-orientation of $P\to M$.
+	\end{proof}
+
+	\subsubsection{The linear case} To begin to define co-orientations of fiber products, we start with the case of linear maps, which will eventually model the more general situation via tangent spaces. There is considerable work, and notation, in developing the theory even for this case. We find that
+	using inner products on vector spaces is the most convenient way to set consistent definitions.
+
+	To set up the following definition, let $f : V \to M$ and $g: W \to M$ be transverse linear maps between finite-dimensional vector spaces. In this case, a co-orientation of $f$ is just an equivalence class up to positive scalar multiplication of a map of the top exterior $\bigwedge V\to \bigwedge M$, and similarly for $W$. We wish to naturally co-oriented the fiber product $P=V\times_MW\to M$ given co-orientations of $f$ and $g$.
+
+	By the transversality assumption, $M=\Im V +\Im W$. If we let $I$ be the intersection of $\Im V$ with $\Im W$ then we can choose a basis of $M$ of the form $\{v_1,\ldots,v_j, u_1,\ldots, u_k, w_1,\ldots, w_\ell\}$ with the $u_i\in I$, the $v_i\in (\Im V)\setminus I$, and the $w_i\in (\Im W)\setminus I$. By choosing an inner product on $M$ that makes this an orthogonal basis, we can write $v_i\in (\Im W)^\perp$ and $w_i\in (\Im V)^\perp$, and, more generally, we have $\Im V\cong (\Im W)^\perp\oplus I$ and $\Im W \cong I\oplus (\Im W)^\perp$. This turns out to be a convenient formulation, and the summand ordering here and in what follows will be justified below.
+
+	Next, writing $K_f$ and $K_g$ for the kernels of $f$ and $g$, we can then choose splittings and write $V\cong (\Im W)^\perp\oplus I\oplus K_f$ and $W\cong K_g\oplus I\oplus (\Im V)^\perp$. Finally, letting $P=V\times_M W$ denote the pullback of $f$ and $g$, we have $P \cong K_g \oplus I \oplus K_f$. This last isomorphism can be taken to be canonical given the chosen splittings of $f$ and $g$. Indeed, by definition $P=\{(x,y)\in V\mid f(x)=g(y)\}$, so identifying $V$ and $W$ with their splittings, we have $P=\{(w^\perp,i_1,k_f,k_g,i_2,v^\perp)\mid f(w^\perp,i_1,k_f)=g(k_g,i_2,v^\perp)\}$. But the condition is only possible when $w^\perp=v^\perp=0$ and when $f(i_1)=g(i_2)$. Furthermore, given the value of $f(i_1)=g(i_2)$, the choices of splittings identify $i_1$ and $i_2$ uniquely, and in particular $i_1$ determines $i_2$. So, with these fixed splittings of $f$ and $g$, the fiber product $P$ is precisely the subspace of $V\times W$ spanned by the subspaces $K_f$ and $K_g$, identified respectively with the third and fourth coordinates, and a subspace $I$ contained in the span of the second and fifth coordinates. Our decomposition $P\cong K_g \oplus I \oplus K_f$ can then be obtained by permuting these subspaces.
+
+	We formalize such constructions as follows:
+
+	\begin{definition}\label{structural decomposition}
+		Let $f : V \to M$ and $g: W \to M$ be transverse linear maps between finite-dimensional vector spaces with kernels $K_f$ and $K_g$.
+		Let $I = {\rm Im} \; V \cap {\rm Im} \; W$. A \textbf{structural orthogonal decomposition} is a choice of inner product on $M$
+		along with isomorphisms
+		\begin{itemize}
+			\item $M \cong ({\rm Im} \; W)^\perp \oplus I \oplus ( {\rm Im} \; V)^\perp$,
+			\item $V \cong ( {\rm Im} \; W)^\perp \oplus I \oplus K_f $,
+			\item $W \cong K_ g \oplus I \oplus( {\rm Im} \; V)^\perp$,
+			\item $P \cong K_g \oplus I \oplus K_f$
+		\end{itemize}
+		so that there is an isomorphism of commutative squares:
+
+		\begin{diagram}
+			P&\rTo & W&&&& K_g \oplus I \oplus K_f&\rTo & K_ g \oplus I \oplus( \Im V)^\perp\\
+			\dTo&&\dTo_g&\phantom{A}&\rTo^\Phi&\phantom{A}&\dTo&&\dTo\\
+			V&\rTo^f& M&&&& ( \Im W)^\perp \oplus I \oplus K_f&\rTo&( \Im W)^\perp \oplus I \oplus( \Im V)^\perp
+		\end{diagram}
+		with all the maps in the righthand square the obvious projections to subspaces. We label the specific isomorphisms $\Phi_P$, $\Phi_V$, etc.
+	\end{definition}
+
+	BCOMMENT
+	Here by ``standard maps'' we mean such maps as $f$, $g$, $f\times_M g:P\to M$, the projections from $P$ to $V$ and $W$, and the various inclusions such as $K_f\into V$, etc. By ``respect these decompositions,'' we mean, for example, that our choices of decomposition isomorphisms yield commutative diagrams such as
+
+	\begin{equation*}
+		\begin{tikzcd}
+			V \arrow[r, "\cong"] \arrow[d, "f"] & ( {\rm Im} \; W)^\perp \oplus I \oplus K_f \arrow[d] \\
+			M \arrow[r, "\cong"] &({\rm Im} \; W)^\perp \oplus I \oplus ( {\rm Im} \; V)^\perp
+		\end{tikzcd}
+	\end{equation*}
+	in which the righthand vertical arrow is just the projection onto the shared summands, i.e.\ $(x,y,z)\to (x,y,0)$.
+	ECOMMENT
+
+	Paying attention to kernels and cokernels, the latter as orthogonal complements, is clearly necessary. As we will discuss
+	after the proof of the Leibniz rule in Theorem~\ref{leibniz}, the
+	ordering of these decompositions is, in a sense, canonical.
+
+	\begin{definition}\label{structural orientations}
+		Suppose $f$ and $g$ are given a structural orthogonal decomposition as above. Suppose we
+		fix \textbf{basic orientations} $\beta_{W^\perp}$
+		for $( {\rm Im} \; W)^\perp$, $\beta_{K_f}$ for $K_f$, $\beta_I$ for $I$, $\beta_{K_g}$ for $K_g$, and $\beta_{V^\perp}$ for $({\rm Im} \; V)^\perp$.
+
+		Via the isomorphisms $\Phi$, we define \textbf{compatible orientations} on $P$, $V$, $W$, and $M$ as follows
+		\begin{itemize}
+			\item $\beta_P = \beta_{K_g} \wedge \beta_I \wedge \beta_{K_f}$
+			\item $\beta_V = \beta_{W^\perp} \wedge \beta_{I} \wedge \beta_{K_f} $
+			\item $\beta_W = \beta_{K_g} \wedge \beta_I \wedge \beta_{V^\perp}$
+			\item $\beta_M = \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp}$.
+		\end{itemize}
+
+		Define a co-orientation of a standard map between any of these vector spaces
+		to be a \textbf{structural co-orientation} with respect to a structural orthogonal decomposition if it pairs
+		basic or compatible orientations. For example, $(\beta_V,\beta_M)$ is a structural co-orientation of $f$, while $-(\beta_V,\beta_M)$ is not.
+	\end{definition}
+
+	\red{So how does all this data determine the splittings of the short exact sequences in order to get the isomorphisms in the square diagram?}
+
+	With such decompositions and clear choices about interrelationships between orientations in place, we co-orient $V\times_MW\to M$.
+
+	\begin{definition}\label{D: pullback co-or}
+		Let $f : V \to M$ and $g: W \to M$ be co-oriented
+		transverse linear maps between finite-dimensional vector spaces with a structural orthogonal decomposition.
+		If the co-orientations of $f$ and $g$ are structural then define the \textbf{fiber product co-orientation} on $P$ to be structural as well.
+
+		Consistent with this, if the co-orientations of $f$ and $g$ are given by $\omega_f = (-1)^a(\beta_V, \beta_M)$ and $\omega_g =(-1)^b(\beta_W, \beta_M)$, then define the pullback co-orientation on $P$ to be $\omega_{f \times_M g} = (-1)^{a+b}(\beta_P, \beta_M)$.
+	\end{definition}
+
+	A motivating example for these choices is when $M = \R^m$ and $V$ and $W$ are transverse coordinate subspaces, spanned by the first $v$ and last $w$ standard basis vectors,
+	respectively. In that setting, the basic and compatible orientations are always represented by $\bigwedge_{j \in J} e_j$ where the indices in $J$
+	are increasing.
+
+	\begin{lemma}\label{L: structural well defined}
+		The fiber product co-orientation is
+		independent of the choices of structural orthogonal decomposition and basic orientations.
+	\end{lemma}
+	\begin{proof}
+		The following example illustrates the independence of choice of basic orientations. Let us suppose that $\omega_f=(\beta_V,\beta_M)$ and $\omega_g=(\beta_W,\beta_M)$, i.e.\ that $\omega_f$ and $\omega_g$ are both structural with so that $P$ is co-oriented by $\omega_{f\times_Mg}=(\omega_P,\omega_M)$. Consider now replacing $\beta_{W^\perp}$ with $\beta'_{W^\perp}=-\beta_{W^\perp}$.
+		We then replace $\beta_{W^\perp}$ everywhere with $\beta'_{W^\perp}$, which gives $\beta'_V=-\beta_V$ and $\beta'_M=-\beta_M$, while $\beta'_W=\beta_W$ and $\beta'_P=\beta_P$. So in this case we have $(\beta'_V,\beta'_M)=(-\beta_V,-\beta_M)=(\beta_V,\beta_M)$, so $\omega_f$ remains structural with respect to the ``primed structure.'' On the other hand, $(\beta'_W,\beta'_M)=-(\beta_W,\beta_M)=-\omega_g$, so $\omega_g$ has the negative of the structural co-orientation. In this case, the definition says that $\omega_{f \times_M g}$ is given the negative of the structural co-orientation, i.e.\ $\omega_{f \times_M g} =-(\beta'_P,\beta'_M)= -(\beta_P,-\beta_M)=(\beta_P,\beta_M)$, agreeing with the definition using the un-primed structures. If we had assumed that $\omega_f$ or $\omega_g$ were not structurally co-oriented, the signs would percolate similarly. Analogous arguments hold for any other change of basic orientation.
+
+		To see the independence of the choices in Definition \ref{structural decomposition}, we first note that orientations and co-orientations are constant under continuous deformation. So suppose we choose the basis $\{x_i\}$ for $\Im(V)\subset V$ that we use for the structural orientation, take the image of this basis in $M$, and then map these basis vectors back into $V$ using a new splitting to a basis $\{x'_i\}$ of an alternative $\Im(W)^\perp\subset V$. Then $x'_i-x_i=k_i\in K_f$. By considering $\{x_i+tk_i\}$ for $t\in [0,1]$, we obtain a 1-parameter family of splittings and a corresponding 1-parameter family of co-orientations of $f$ (holding the other data fixed). But co-orientations are discrete, so we obtain the same co-orientation with either splitting. Similarly, the co-orientations is independent of the choice of the splitting of $g$.
+
+		ings. splittings of the same basis element differ only by an element of the kernel, and that element can be continuously contracted to zero).
+
+		could also reverse orientations, but then the above argument again applies. Finally, the definition of the pullback orientation is independent of inner product used in the structural orthogonal decomposition
+		because orientations and co-orientations are constant under continuous deformation, and
+		the space of inner products is contractible.
+	\end{proof}
+
+	\subsubsection{Local and global co-orientations} We next show this definition for the pullback co-orientation can be promoted from a construction at a point to a local definition. A global definition is then immediate. \red{Could we say more about this point? Why are we sure these all patch together?}
+
+	\begin{theorem}\label{local const}
+		Let $f : V \to M$ and $g: W \to M$ be transverse co-oriented maps and $P = V \times_M W$. Then the pullback co-orientation on the derivative
+		map from $T_{(x,y)} P$ to $T_{f(x)} M$ is locally constant.
+	\end{theorem}
+
+	\begin{proof}
+		We compare the structural orthogonal decomposition at some point $(x,y) \in P \subset V \times W$ with those at other
+		$(x',y')$ in a neighborhood, using $I$, $\beta_{K_f}$, and so forth for the decomposition at $(x,y)$ and $I'$, $\beta_{K_f}'$, etc.
+		for the identification of a structural orthogonal decomposition at $(x',y')$, which is identified with (some) orthogonal decomposition
+		at $(x,y)$ through a local trivialization. We ultimately show that the structural co-orientations to be compared after such identifications
+		differ only by ``changing affiliations'' of wedge factors, not requiring any transpositions.
+
+		The derivative having a kernel of a specified dimension is a closed condition, so about any point there is a neighborhood
+		of that point for which every other point in the neighborhood has kernel that is not of greater dimension. That is, when we identify fibers through
+		a local trivialization, we can arrange for $\ker(D_{x'} f) \subset \ker(D_x f)$ and similarly for $g$. We prefer and use
+		instead the notation of Definition~\ref{structural decomposition}, stating these containments as $K'_f \subset K_f$ and $K'_g \subset K_g$.
+		Similarly, we can arrange for an identification of fibers and their structural orthogonal decompositions
+		with $I \subset I'$, $(W^\perp)' \subset W^\perp$, and $(V^\perp)' \subset V^\perp$, letting $V$ stand for $T_xV$, $V'$ for $T_{x'}V$, $V^\perp$ for the orthogonal to the image of $T_xV$ in $T_{f(x)}(M)$, etc.
+
+		\red{I don't love the exposition in the following but I'm not sure how to improve it.} But now consider, for example, the decomposition $T_x V \cong W^\perp \oplus I \oplus K_f $
+		and the ``transported decomposition''
+		$T_x V \cong (W^\perp)' \oplus I' \oplus K_f' $, and similarly for $W$ and $M$. As we perturb the situation at $x$, summands of $K_f$ may now map non-trivially to $TM$ replacing summands of $V^\perp$. In other words, up to isomorphisms and transport, for some summand $T$ we will have $K_f\cong T\oplus K_f'$, while $V^\perp\cong T\oplus (V^\perp)'$. Similarly, for some $S$, we have $K_g\cong K_G' \oplus S$, while $W^\perp\cong (W^\perp)'\oplus S$.
+		Furthermore, as $V$ and $W$ are transverse, any new contribution to $V^\perp$ or $W^\perp$ must become part of the intersection, so $I'\cong S\oplus I\oplus T$.
+
+		BCOMMENT
+		We can let $S_W = ( {\rm Im} \; W)^\perp \cap I'$ and $T_V = I' \cap K_f$
+		and produce a common refinement orthogonal decomposition
+		$$T_x V \cong {( {\rm Im} \; W)^\perp}' \oplus S_W \oplus I \oplus T_V\oplus K_f'.$$
+		ECOMMENT
+
+		Moreover, we can choose basic orientations for $S$ and $T$ and then take basic orientations for $(W^\perp)'$, $(V^\perp)'$, $I$, $K'_f$, and $K'_g$ and so set
+		$\beta_{V^\perp} = \beta_{T}\wedge \beta'_{V^\perp}$, $\beta_{W^\perp}=\beta'_{W^\perp}\wedge \beta_S$, $\beta_I' = \beta_{S} \wedge \beta_I \wedge \beta_{T}$,
+		$\beta_{K_g} = \beta_{K_g}'\wedge \beta_S$, and $\beta_{K_f} = \beta_{T} \wedge \beta_{K_f}'$. As we are free to choose basic orientations by Lemma \ref{L: structural well defined}, such choices do not alter the the structural co-orientations of $f \colon V \to M$ at $x$ or $x'$.
+
+		BCOMMENTSimilar arguments hold for all of the other compatible orientations from Definition~\ref{structural orientations}.
+		ECOMMENT
+		The key choice to make in these conventions is that of the $\beta_I$ always in the middle term in the definition of compatible orientations and $\beta_S$ and $\beta_T$ placed so that one can ``exchange'' them between adjacent terms.
+
+		Altogether we now have the following:
+		\begin{align*}
+			\beta_P &= \beta_{K_g}\wedge\beta_I\wedge \beta_{K_f}= \beta_{K_g}'\wedge\beta_{S} \wedge \beta_I \wedge \beta_{T} \wedge \beta_{K_f}'=\beta'_{K_g}\wedge \beta_{I}'\wedge \beta'_{K_f}=\beta_{P}'\\
+			\beta_M &= \beta_{W^\perp}\wedge\beta_I\wedge\beta_{V^\perp}=
+			\beta'_{W^\perp} \wedge \beta_{S} \wedge \beta_I \wedge \beta_{T}\wedge\beta'_{V^\perp}=\beta'_{W^\perp}\wedge \beta_{I}'\wedge \beta'_{V^\perp}=\beta_{M}'.
+		\end{align*}
+		So for the pullback co-orientations we have $(\beta_P,\beta_M)=(\beta'_P,\beta'_M)$ up to transport as required.
+
+		For later use, we similarly observe
+		\begin{align*}
+			\beta_V&=\beta_{W^\perp}\wedge\beta_I\wedge\beta_{K_f}=\beta'_{W^\perp} \wedge \beta_{S} \wedge \beta_I \wedge \beta_T\wedge\beta'_{K_f}=\beta'_{W^\perp} \wedge \beta'_I \wedge\beta'_{K_f}=\beta'_V.\qedhere
+		\end{align*}
+	\end{proof}
+
+	Conventions through which orientations of summands are ordered differently -- without ``$\beta_I$ in the middle'' -- require additional signs
+	to be locally constant. We have not managed to find conventions to fully specify a pullback co-orientation without using coordinates or orthogonal decompositions. In light of Theorem~\ref{local const}, we can now define co-orientations of pullbacks globally as follows.
+
+	\begin{definition}
+		Let $f : V \to M$ and $g: W \to M$ be transverse co-oriented maps. We endow their pullback, whose tangent bundle is the pullback of tangent bundles, with the pullback co-orientation at each point.
+	\end{definition}
+
+	With this definition in hand, we can now show that pullback co-orientations satisfy our three desired properties: nice behavior for immersions, graded commutativity, and a Leibniz rule.
+
+	\subsubsection{Pullbacks of immersions} In the key example when both $f$ and $g$ are immersions, the pullbacks will locally correspond to intersections of the images in $M$, and in this case our general definition of pullback co-orientation is compatible with the standard approach via normal orientations.
+
+	\begin{proposition}\label{normal pullback}
+		Let $f : V \to M$ and $g: W \to M$ be transverse immersions with normal bundle orientations $\beta_{\nu V}$ and $\beta_{\nu W}$. Suppose $V$ and $W$ are given the normal co-orientations $\omega_{\beta_{\nu V}}=(\beta_V, \beta_V \wedge \beta_{\nu V})$ and $\omega_{\beta_{\nu W}}=(\beta_W, \beta_W \wedge \beta_{\nu W})$.
+		Then, decomposing the normal bundle at any point of intersection as $\nu V \oplus \nu W$ and giving it the orientation $\beta_{\nu V}\wedge \beta_{\nu W}$, the pullback co-orientation agrees with the normal co-orientation, i.e.\
+		$$\omega_{f\times_M g}=(\beta_P,\beta_P\wedge \beta_{\nu V}\wedge \beta_{\nu W}).$$
+	\end{proposition}
+
+	That is, if one orients the normal bundle of the intersection by following an oriented basis of the normal bundle of $V$ by one for $W$,
+	the associated normal co-orientation is the pullback co-orientation.
+
+	\begin{proof}
+		Definition~\ref{D: pullback co-or} simplifies in the immersed setting, as in this case at each point the kernel terms always vanish and the pullback is just the intersection. Letting $P$ denote the pullback and $x\in M$, the structural decomposition of $T_xM$ looks like
+		$$T_x M \cong (T_x W)^\perp \oplus T_x P \oplus (T_x V)^\perp.$$
+		Setting $\beta_{V^\perp} = \beta_{\nu V}$ and $\beta_{W^\perp} = \beta_{\nu W}$ and choosing some $\beta_P$, the pullback co-orientation of the \emph{structural co-orientations} of $f$ and $g$ is just $(\beta_P,\beta_{\nu W}\wedge \beta_P \wedge \beta_{\nu V})$. However, the structural co-orientations of $f$, $g$, and $f\times_M g$ do not necessarily agree with their normal co-orientations. By Definition \ref{D: pullback co-or}, it suffices to show that if the structural co-orientation of $f$ differs from the normal co-orientation of $f$ by the sign $(-1)^a$, and similarly the structural and normal co-orientations of $g$ differ by the sign $(-1)^b$ then the structural and normal co-orientations of the pullback differ by $(-1)^{a+b}$.
+
+		The structural co-orientation of $T_x V \subset T_x M$ and the normal co-orientation agree; they are both $(\beta_V,\beta_M)=( \beta_{W^\perp} \wedge \beta_P, \beta_{W^\perp} \wedge \beta_P \wedge \beta_{V^\perp})$.
+		But the structural co-orientation of $T_x W \subset T_x M$ is $(\beta_W,\beta_M) = (\beta_P \wedge \beta_{V^\perp}, \beta_{W^\perp} \wedge \beta_P \wedge \beta_{V^\perp})$ while the normal co-orientation is $(\beta_W, \beta_W\wedge \beta_{\nu W})=(\beta_P\wedge \beta_{V^\perp}, \beta_P\wedge \beta_{V^\perp}\wedge \beta_{W^\perp})$. Letting $m=\dim(M)$ and $w=\dim(W)$ so that $\dim(W^\perp)=m-w$, these two co-orientations differ by the sign $(-1)^{w(m-w)}$.
+
+		Next consider the pullback. Again, the structural co-orientation is $(\beta_P,\beta_{\nu W}\wedge \beta_P \wedge \beta_{\nu V})$, while the normal co-orientation associated to our chosen orientation of the normal bundle of the pullback is $(\beta_P,\beta_P\wedge \beta_{\nu V}\wedge\beta_{\nu W})$. Again the sign is $(-1)^{w(m-w)}$, as desired.
+	\end{proof}
+
+	\subsubsection{Graded commutativity}
+	The direct sum normal co-orientation on the pullback of immersions is manifestly graded commutative, graded by the dimensions
+	of the normal bundles which are the co-dimensions of $V$ and $W$. The general case is graded commutative as well. In what follows we continue the convention of letting lower-case letters stand for dimensions so that $m=\dim(M)$, $v=\dim(V)$, $i=\dim(I)$, $v^\perp=\dim(V^\perp)$, $k_f=\dim(K_f)$, etc.
+
+	\begin{theorem}\label{graded comm}
+		$\omega_{g \times_M f} = (-1)^{(m-v)(m-w)} \omega_{f \times_M g}$.
+	\end{theorem}
+
+	\begin{proof}
+		We may use structural orthogonal decompositions for $f \times_M g$ and $g \times_M f$ with the same blocks, which occur in different orders,
+		and the same basic orientations. The compatible orientations depend on the order of $V$ and $W$, so we distinguish between
+		$\beta_V = \beta_{W^\perp} \wedge \beta_{I} \wedge \beta_{K_f} $ for ${f \times_M g}$ and
+		$\beta'_V = \beta_{K_f} \wedge \beta_I \wedge \beta_{W^\perp}$ for ${g \times_M f}$.
+		These differ by a sign of $(-1)^{i \cdot w^\perp + i \cdot k_f + k_f \cdot w^\perp}$.
+
+		For $W$, $M$, and $P$, the compatible orientations will differ similarly when considering $f\times_Mg$ versus $g\times_M f$. Altogether we will have the following sign difference:
+		\begin{align*}
+			\beta_P'&= (-1)^{i \cdot k_f + i k_g + k_f \cdot k_g}\beta_P\\
+			\beta_V'&= (-1)^{i \cdot w^\perp + i \cdot k_f + k_f \cdot w^\perp}\beta_V\\
+			\beta_W'&= (-1)^{i \cdot v^\perp + i \cdot k_g + k_g \cdot v^\perp}\beta_W\\
+			\beta_M'&= (-1)^{i \cdot v^\perp + i \cdot w^\perp + v^\perp \cdot w^\perp}\beta_M.
+		\end{align*}
+
+		Now, let $\omega_f$ be the structural co-orientation as constructed to compute $f\times_M g$, namely $(\beta_V,\beta_M)$, and let $\omega'_f$ be the structural co-orientation for $f$ as constructed to compute $g\times_M f$, namely $(\beta'_V,\beta'_M)$. Then
+		$$(\beta'_V,\beta'_M)=((-1)^{i \cdot w^\perp + i \cdot k_f + k_f \cdot w^\perp}\beta_V,(-1)^{i \cdot v^\perp + i \cdot w^\perp + v^\perp \cdot w^\perp}\beta_M)=(-1)^{ i \cdot k_f + k_f \cdot w^\perp+i \cdot v^\perp + v^\perp \cdot w^\perp}(\beta_V,\beta_M), $$
+		and similarly
+
+		\begin{align*}(\beta'_W,\beta'_M)&=((-1)^{i \cdot v^\perp + i \cdot k_g + k_g \cdot v^\perp}\beta_W,(-1)^{i \cdot v^\perp + i \cdot w^\perp + v^\perp \cdot w^\perp}\beta_M)=(-1)^{i \cdot k_g + k_g \cdot v^\perp + i \cdot w^\perp + v^\perp \cdot w^\perp }(\beta_V,\beta_M), \\
+			(\beta'_P,\beta'_M)&=((-1)^{i \cdot k_f + i k_g + k_f \cdot k_g}\beta_P,(-1)^{i \cdot v^\perp + i \cdot w^\perp + v^\perp \cdot w^\perp}\beta_M)=(-1)^{i \cdot k_f + i k_g + k_f \cdot k_g+i \cdot v^\perp + i \cdot w^\perp + v^\perp \cdot w^\perp} (\beta_P,\beta_M).
+		\end{align*}
+
+		Now, suppose we assume that we are given co-orientations of $f$ and $g$ that are compatible with the structural co-orientations used to compute $\omega_{f\times_M g}$. In this case, $\omega_{f\times_M g}=(\beta_P,\beta_M)$. Recall from Definition \ref{D: pullback co-or} that $\omega_{g\times_M f}$ will differ from $(\beta_P',\beta_M')$ by the product of the signs
+		coming from comparing the structural co-orientations of $f$ and $g$ to the given co-orientations. It follows that $\omega_{g\times_M f}$ will differ from $\omega_{f\times_M g}$ by the product of
+		the signs in the last three equations. The total sign is
+		$$(-1)^{ k_f \cdot w^\perp+ k_g \cdot v^\perp + v^\perp \cdot w^\perp + k_f \cdot k_g }=(-1)^{(k_f + v^\perp)( k_g + w^\perp)}.$$
+		But $v=k_f+\dim(\im V)=k_f+m-v^\perp$, so, mod 2, $k_f+v^\perp=m-v$, and similarly for $W$. Thus, $\omega_{g\times_Mf}=(-1)^{(m-v)(m-w)}\omega_{f\times_Mg}$ as claimed.
+	\end{proof}
+
+	\subsubsection{The Leibniz rule} We can now show the Leibniz rule.
+
+	\begin{theorem}\label{leibniz}
+		$\partial (V \times_M W) = (\partial V) \times_M W \bigsqcup (-1)^{\rm{codim} \; V} V \times_M (\partial W).$
+	\end{theorem}
+
+	Establishing this directly for immersions, for which we can use the normal co-orientations, is a quick exercise. The general case requires more care.
+
+	\begin{proof}
+		The statement at the level of underlying manifolds with corners is \cite[Proposition 6.7]{Joy12}, so we focus on co-orientations. We write $\bd P$ when considering the standard boundary co-orientation and $(\bd V)\times W$ or $V\times (\bd W)$ when considering the pullback co-orientations. As above, we abuse notation letting $W$ also stand for the image of $T_yW$ in $T_{g(y)}M$, etc. For simplicity we assume that $V$, $W$, and $P$ all have the structural co-orientations with the more general cases following.
+
+		We first consider points in $V\times_M \bd W$ and start by fixing compatible structural decompositions of $T_xV$, $T_y(\bd W)$, and $T_{f(x)}M$. We will use bars to indicate we are in the boundary situation, so we write
+		\begin{align*}
+			T_{(x,y)}(V\times_M \bd W) &\cong \bar K_g \oplus \bar I\oplus \bar K_f\\
+			T_xV &\cong \bar W^\perp \oplus \bar I \oplus \bar K_f \\
+			T_y(\bd W)& \cong \bar K_g \oplus \bar I \oplus \bar V^\perp\\
+			T_{f(x)} M &\cong \bar W^\perp \oplus \bar I \oplus \bar V^\perp,
+		\end{align*}
+		and analogously for the basic forms $\beta$.
+		Now we consider $T_yW\cong T_y(\bd W)\oplus \R\nu$, where $\nu$ is an outward pointing normal vector that we may choose. Note that $T_y(\bd W)$ is canonically embedded in $T_yW$ as a subspace, and we maintain our decomposition of $T_y(\bd W)$ within $T_yW$. In particular, we can continue to choose a splitting of $T_yW\to T_{f(x)}M$ so that $\bar V^\perp\subset T_y(\bd W)$.
+
+		Now, as we extend from considering $V\times_M\bd W$ to $V\times_M W$, there are two possibilities. One is that the image of $T_yW$ in $T_{f(x)}M$ is larger than the image of $T_y(\bd W)$ by one dimension. The other is that the images of $T_yW$ and $T_y(\bd W)$ coincide in $T_{f(x)}W$.
+
+		We first consider the case with the image of $T_yW$ larger than that of $T_y(\bd W)$.
+		In this case, as the images of $T_y(\bd W)$ and $T_xV$ are transverse in $T_{f(x)}M$, the dimension of the intersection of $D(T_yW)$ with $D(T_xV)$ must be larger than the dimension of the intersection of $D(T_y(\bd W))$ with $D(T_xV)$, so we can choose $\nu$ so that $Dg(\nu)$ is in $D(T_xV)$. So in this case we have a vector transferring from $\bar W^\perp$ to $I$, and we can take $I=\R\nu\oplus \bar I$ and $\bar W^\perp=W^\perp\oplus \R\nu$. The kernel terms are unaltered, and so we have
+		\begin{align*}
+			T_{(x,y)}(V\times_M W) &\cong K_g \oplus I\oplus K_f\cong \bar K_g \oplus \R\nu\oplus \bar I\oplus \bar K_f\\
+			T_xV &\cong W^\perp \oplus I \oplus K_f \cong W^\perp \oplus \R \nu\oplus \bar I \oplus \bar K_f\cong \bar W^\perp \oplus \bar I \oplus \bar K_f \\
+			T_yW& \cong K_g \oplus I \oplus V^\perp\cong \bar K_g\oplus \R\nu\oplus \bar I\oplus \bar V^\perp\\
+			T_{f(x)} M &\cong W^\perp \oplus I \oplus V^\perp\cong W^\perp \oplus \R\nu \oplus\bar I \oplus \bar V^\perp\cong \bar W^\perp \oplus \bar I \oplus \bar V^\perp.
+		\end{align*}
+		These computations demonstrate that we can take $\beta_M=\beta_{\bar M}$ and $\beta_V=\beta_{\bar V}$, i.e.\ the same basic forms for $V$ and $M$ can be use in co-orientation computations involving both $W$ and $\bd W$. In particular, whether we're considering $V\times_M W$ or $V\times_M \bd W$, the structural co-orientations of $V$ are the same.
+
+		BCOMMENT
+		In particular recall the decomposition $T_yW\cong K_ g \oplus I \oplus V^\perp$. Because $y\in \bd W$, there is also a decomposition $T_y(\bd W)\oplus \R\nu$ for $\nu$ an outward pointing normal vector to $W$. We do not assume this latter decomposition is orthogonal or compatible in any way with the structural decomposition. In particular, $\nu$ can be chose to be any vector in ``outward point'' open half space of $T_yW$. Unless $I\subset T_y(\bd W)$, we may choose $\nu\in I$. If $I\subset T_y(\bd W)$ we will choose $\nu\in K_g$. This is always possible, \red{WHY???????}. We first suppose that $\nu\in I$ and write $I=\bar I\oplus \nu$ with $\bar I$ the intersection of the images of $T_xV$ and $T_y(\bd W)$ in $T_{f(x)}M$ \red{Why is this possible?}. We then take $\beta_I=\beta_{\bar I}\wedge \nu$. We set all
+		compatible orientations consistent with this $\beta_I$, and we assume that $f: V \to M$ and $g: W \to M$ are co-oriented structurally at $x$ and $y$,
+		and thus so is $P = V \times_M W \to M$ at $(x,y)$. We have then $\beta_{\bd P}=\beta_{K_g}\wedge \beta_{\bar I}\wedge \beta_{K_f}$. \red{WHY THE SAME $K_g$??? SIMILARLY, WHY DOES $\beta_{\bd W}$ BELOW HAVE THE SAME OTHER PIECES?}
+		ECOMMENT
+
+		Now consider $\partial P = \partial (V \times_M W)$. The standard co-orientation of $\bd P$ is the composition of the normal co-orientation of $\bd P$ in $P$ with the structural co-orientation of $P$ in $M$, i.e.\ the composition of
+		$(\beta_{\bd P},\beta_{\bd P}\wedge \beta_\nu)$ with $(\beta_P,\beta_M)$. We have
+		$$\beta_{\bd P}\wedge \beta_\nu=\beta_{\bar K_g}\wedge \beta_{\bar I}\wedge \beta_{\bar K_f}\wedge\beta_\nu=(-1)^{\bar i+k_f}\beta_{K_g}\wedge \beta_{I}\wedge \beta_{K_f}=(-1)^{\bar i+k_f}\beta_P,$$
+		so this composition is $(-1)^{\bar i+k_f}$ times the structural co-orientation of $\bd P$, namely $(\beta_{\bd P},\beta_M)$.
+		On the other hand, consider $V\times (\bd W)$. The standard orientation of $\bd W$ is the composition of the normal co-orientation of $\bd W$ in $W$ with the structural co-orientation of $W$ in $M$, i.e.\ the composition of
+		$(\beta_{\bd W},\beta_{\bd W}\wedge \beta_\nu)$ with $(\beta_W,\beta_M)$. We have
+		$$\beta_{\bd W}\wedge \beta_\nu=\beta_{\bar K_g}\wedge \beta_{\bar I}\wedge \beta_{\bar V^\perp}\wedge\beta_\nu=(-1)^{\bar i+v^\perp}\beta_{K_g}\wedge \beta_{I}\wedge \beta_{V^\perp}=(-1)^{\bar i+v^\perp}\beta_W,$$
+		so this composition is $(-1)^{\bar i+v^\perp}$ times the structural co-orientation of $\bd W$.
+		By Definition \ref{D: pullback co-or} the co-orientation of $V\times_M (\bd W)$ is then defined to be $(-1)^{\bar i+v^\perp}$ times the structural orientation $(\beta_{\bd P},\beta_M)$. Altogether then the co-orientations of $\bd P$ versus $V\times (\bd W)$ differ by a sign $(-1)^{k_f+v^\perp}$, which is $(-1)^{m-v}$ as seen in the proof of Theorem \ref{graded comm}.
+
+		Next suppose that the image of $T_yW$ is equal to the image of $T_y(\bd W)$ in $T_{f(x)}M$. In this case we can choose $\nu$ in $K_g$ and have $K_g\cong \bar K_g\oplus \R\nu$. In this case, $I=\bar I$, $\bar V^\perp=V^\perp$, $\bar W^\perp=W^\perp$, and $\bar K_f=K_f$.
+		In this setting,
+		the standard orientation of $\bd P$ is again the composition of the normal co-orientation of $\bd P$ in $P$ with the structural co-orientation of $P$ in $M$, but now we have
+		$$\beta_{\bd P}\wedge \beta_\nu=\beta_{\bar K_g}\wedge \beta_{\bar I}\wedge \beta_{\bar K_f}\wedge\beta_\nu=(-1)^{i+k_f}\beta_{K_g}\wedge \beta_{I}\wedge \beta_{K_f}=(-1)^{i+k_f}\beta_P$$
+		(though in this case the $\beta_\nu$ term becomes part of $\beta_{K_g}$, not $\beta_{I}$ as above).
+		Similarly, for $V\times (\bd W)$, the standard orientation of $\bd W$ is again the composition of the normal co-orientation of $\bd W$ in $W$ with the structural co-orientation of $W$ in $M$, and now
+		$$\beta_{\bd W}\wedge \beta_\nu=\beta_{\bar K_g}\wedge \beta_{\bar I}\wedge \beta_{\bar V^\perp}\wedge\beta_\nu=(-1)^{i+v^\perp}\beta_{K_g}\wedge \beta_{I}\wedge \beta_{V^\perp}=(-1)^{i+v^\perp}\beta_W.$$
+		The total difference between $\bd P$ and $V\times (\bd W)$ is again the sign $(-1)^{k_f+v^\perp}=(-1)^{m-v}$.
+
+		Next, we considered a point $(x,y)$ in $(\bd V)\times W$. Similar considerations apply. Let us first suppose that $D(T_xV)$ is not contained in $D(T_x(\bd V))$ in $T_{f(x)}M$ so that we can choose $\nu\in I$. Then we can write $I\cong \bar I\oplus \R\nu$ and $\bar V^\perp\cong \R\nu\oplus V^\perp$ with $\bar K_f=K_f$, etc., and the structural orientation of $W$ the same whether working with $V$ or $\bd V$.
+		In this case we have
+		$$\beta_{\bd P}\wedge \beta_\nu=\beta_{\bar K_g}\wedge \beta_{\bar I}\wedge \beta_{\bar K_f}\wedge\beta_\nu=(-1)^{k_f}\beta_{K_g}\wedge \beta_{I}\wedge \beta_{K_f}=(-1)^{k_f}\beta_P.$$
+		So the structural and standard boundary co-orientations of $\bd P$ in $P$ differ by $(-1)^{k_f}$. Similarly,
+		$$\beta_{\bd V}\wedge \beta_\nu=\beta_{\bar W^\perp}\wedge \beta_{\bar I}\wedge \beta_{\bar K_f}\wedge\beta_\nu=(-1)^{k_f}\beta_{W^\perp}\wedge \beta_{I}\wedge \beta_{K_f}=(-1)^{k_f}\beta_V$$
+		so that the structural and standard boundary co-orientations of $\bd V$ differ by $(-1)^{k_f}$. All other co-orientations remain unchanged.
+		So in this case the sign is $(-1)^{k_f}$ in both cases, so overall the co-orientations of $\bd P$ and $(\bd V)\times W$ agree.
+
+		Finally, consider a point $(x,y)$ in $(\bd V)\times W$ and suppose $D(T_xV)=D(T_x(\bd V))$ in $T_{f(x)}M$. In this case we can choose $K_f\cong \bar K_f\oplus \R\nu$ while all other terms are the same in their barred and unbarred versions.
+		The computation needed for $\bd P$ is
+		$$\beta_{\bd P}\wedge \beta_\nu=\beta_{\bar K_g}\wedge \beta_{\bar I}\wedge \beta_{\bar K_f}\wedge\beta_\nu=\beta_{K_g}\wedge \beta_{I}\wedge \beta_{K_f}=\beta_P,$$
+		while the computation needed for $(\bd V)\times_M W$ is
+		$$\beta_{\bd V}\wedge \beta_\nu=\beta_{\bar W^\perp}\wedge \beta_{\bar I}\wedge \beta_{\bar K_f}\wedge\beta_\nu=\beta_{W^\perp}\wedge \beta_{I}\wedge \beta_{K_f}=\beta_V.$$
+		So in this case there are no signs.
+	\end{proof}
+
+	BCOMMENT
+	\begin{proof}
+		The statement at the level of underlying manifolds with corners \cite[Proposition 6.7]{Joy12}, so we focus on co-orientations. We consider
+		boundaries of $V$ and $W$ separately, focussing on $W$ first, and then must track whether the normal to $\partial W$ is in
+		the kernel $K_g \subset T_y W$
+		or not, tackling the latter case first. In this case we refine the structural decomposition of the maps $f$ and $g$ by setting $I = \bar{I} \oplus
+		\nu$, where $\nu$ is the image of this normal vector, and accordingly $\beta_I = \beta_{\bar{I}} \wedge \beta_\nu$. We set all
+		compatible orientations consistent with this $\beta_I$, and we assume that $f: V \to M$ and $g: W \to M$ are co-oriented structurally at
+		$x$ and $y$,
+		and thus so is $P = V \times_M W \to M$ at $(x,y)$.
+
+		With these choices, neither $\partial P = \partial (V \times_M W)$ nor $V \times_M (\partial W)$
+		is co-oriented structurally at $(x,y)$. Both are determined of course by where they send $\beta_{\partial P}
+		= \beta_{K_g} \wedge \beta_{\bar{I}} \wedge \beta_{K_f}$. In the case of $\partial P$
+		we consider its boundary co-orientation, sending it
+		to $\beta_{K_g} \wedge \beta_{\bar{I}} \wedge \beta_{K_f} \wedge \beta_\nu$, which differs from
+		$\beta_P = \beta_{K_g} \wedge \beta_{\bar{I}} \wedge \beta_\nu \wedge \beta_{K_f}$ by a sign of $(-1)^{k_f}$. Thus since
+		$P$ is structurally co-oriented, such points in $\partial P$ are co-oriented by sending $\beta_{\partial P}$ to $(-1)^{k_f} \beta_M$.
+
+		In the case of $V \times_M (\partial W)$, the boundary co-orientation of $\partial W$
+		sends $\beta_{\partial W} = \beta_{K_g} \wedge \beta_{\bar{I}} \wedge \beta_{V^\perp}$ to
+		$\beta_{K_g} \wedge \beta_{\bar{I}} \wedge \beta_{V^\perp} \wedge \beta_\nu$, which differs from $\beta_W$ by a sign of
+		$(-1)^{v^\perp}$. Thus $V \times_M \partial W$ is co-oriented by sending $\beta_{\partial P}$ to $(-1)^{v^\perp} \beta_M$. This
+		differs from its co-orientation as a subset of $\partial P$ by $(-1)^{v^\perp - k_f} = (-1)^{m-v},$ the codimension of $v$.
+
+		The arguments for the remaining three cases are similar. If we consider boundary points of $P$ which coincide with
+		$(\partial V) \times_M W$ whose normal vector is not in $K_f$, we can set $\beta_I$ as before. In this case, both the boundary co-orientation
+		of such points $\partial (V \times_M W)$ in $V \times_M W$ and the boundary co-orientation of $\partial V$ in $V$ introduce a
+		sign of $(-1)^{k_f}$, so the co-orientations agree.
+
+		We return to boundary points of the pullback identified with $V \times_M (\partial W)$, but now consider the case when the normal vector
+		to the boundary is
+		in $K_g$. So we further decompose $K_g$ as ${\bar{K_g}} \oplus \nu$ and set $\beta_{K_g} = \beta_{\bar{K_g}} \wedge \beta_\nu$.
+		We of course also decompose $T_{x} W$ and $T_{(x,y)} P$ and re-set all orientations accordingly. In this setting,
+		the inclusion of the boundary of $P$ in $P$ is boundary co-oriented by sending $\beta_{\partial P}$ to $(-1)^{i + k_f} \beta_P$,
+		which leads to the same sign in the composite co-orientation. Similarly, the boundary of $W$ in $W$
+		is boundary co-oriented by sending $\beta_{\partial W}$ to $(-1)^{i + v^\perp} \beta_W$. The composite co-orientations differ
+		by $(-1)^{v^\perp - k_f} = (-1)^{m-v},$ the codimension of $V$, as in the previous case of boundary points of $W$.
+
+		Finally, the case of points in $(\partial V) \times_M W$ so that the normal vector to the boundary is in $K_f$ are the only case in which
+		no signs occur in expressing the boundary co-orientation in terms of the compatible orientations. Thus no sign occurs
+		in comparison of co-orientations as well.
+	\end{proof}
+	ECOMMENT
+
+	\subsubsection{Codimension $0$ and $1$ pullbacks}
+	The following lemma will be useful when working with the creasing construction.
+
+	\begin{lemma}
+		Let $g \colon W \to M$ be co-oriented and suppose $V$ is an embedded codimension $0$ submanifold with corners of $M$. Let $f \colon V \to M$ be the embedding, co-oriented by $(\beta_V,\beta_V)=(\beta_M,\beta_M)$ at each point of $V$. Then $f\times_Mg=g|_{g^{-1}(V)}$, and its pullback co-orientation is the restriction of the co-orientation of $g$ to $g^{-1}(V)$.
+	\end{lemma}
+	\begin{proof}
+		It is clear that $f\times_Mg=g|_{g^{-1}(V)}$ as maps, so we consider co-orientations.
+
+		Suppose given structural co-orientations. As $f$ is an embedding, we have $K_f=V^\perp=0$, so the structural co-orientation for $f$ will have the form $(\beta_{W^\perp}\wedge \beta_I, \beta_{W^\perp}\wedge \beta_I)$. This is consistent with the given co-orientation of $f$, so the co-orientation of the pullback will be the structural orientation or not according to whether the structural co-orientation of $g$ agrees with the given co-orientation of $g$ or not. In this scenario, the structural co-orientations of $f\times_M g$ and $g$ are both $(\beta_{K_g}\wedge \beta_I,\beta_{W^\perp}\wedge \beta_I)$. So if the structural co-orientation of $g$ agrees with the given co-orientation of $g$, both $g|_{g^{-1}(V)}$ and $f\times_M g$ are co-oriented by $(\beta_{K_g}\wedge \beta_I,\beta_{W^\perp}\wedge \beta_I)$. If the structural and given co-orientations of $g$ disagree, then both $g|_{g^{-1}(V)}$ and $f\times_M g$ are co-oriented by $-(\beta_{K_g}\wedge \beta_I,\beta_{W^\perp}\wedge \beta_I)$.
+	\end{proof}
+
+	\begin{lemma}\label{L: codim 1 co-orient}
+		Suppose $V\subset M$ is a codimension $1$ submanifold with an everywhere non-zero normal vector field $\nu$. Suppose the embedding $f:V\into M$ is co-oriented by $(\beta_V,\beta_V\wedge \beta_\nu)$. Let $g \colon W \to M$ be transverse to $f$ so that $g^{-1}(V)=W^0$ is a codimension $1$ submanifold with normal vector field $\nu_0$ such that $D_xg(\nu_0)=\nu\in T_{g(x)}M$ for all $x\in W^0$.
+		Then $f\times_M g=g|_{W^0}$ and the pullback co-orientation corresponds to the composition of the co-orientation of $g$ with the co-orientation $(\beta_{W^0},\beta_{W^0}\wedge \beta_{\nu})$ of $W^0\into W$.
+	\end{lemma}
+	\begin{proof}
+		Again it is clear that $f\times_Mg=g|_{W^0}$ as maps. Suppose given structural co-orientations. As $f$ is an embedding, we have $K_f=0$, while $V^\perp$ is spanned by $\nu$; note that as $\nu_0$ maps to $\nu$, we write simply $\nu$ in the local decomposition of $TW$. The structural co-orientation of $f$ is $(\beta_{W^\perp}\wedge \beta_I, \beta_{W^\perp}\wedge \beta_I\wedge \beta_\nu)$, which agrees with the assumed co-orientation for $f$. So the co-orientation of the pullback will be the structural orientation or not according to whether the structural co-orientation of $g$ agrees with the given co-orientation of $g$ or not. The structural co-orientation of $g$ is $(\beta_{K_g}\wedge \beta_I\wedge \beta_\nu, \beta_{W^\perp}\wedge \beta_I\wedge \beta_\nu)$, while the structural co-orientation of the pullback is $(\beta_{K_g}\wedge \beta_I, \beta_{W^\perp}\wedge \beta_I\wedge \beta_\nu)$. If the given co-orientation for $g$ agrees with the structural orientation, then the claimed co-orientation for $g|_{W^0}$ is the composition of the structural co-orientation for $g$ with $(\beta_{W^0},\beta_{W^0}\wedge \beta_{\nu})$. In this last expression we are free to choose any $\beta_{W^0}$ we like, so we can let $\beta_{W^0}=\beta_{K_g}\wedge \beta_I$. Then the claimed composite co-orientation is $(\beta_{K_g}\wedge \beta_I, \beta_{W^\perp}\wedge \beta_I\wedge \beta_\nu)$, which agrees with the pullback co-orientation as claimed. If the given co-orientation of $g$ disagrees with the structural co-orientation, this changes the sign of both the pullback co-orientation and of the representative of the co-orientation of $g$ used in our composite but not the sign of $(\beta_{W^0},\beta_{W^0}\wedge \beta_{\nu})$. So again the pullback co-orientation agrees with the claimed composite.
+	\end{proof}
+
+	\begin{corollary}
+		Suppose the hypotheses and notation of Lemma \ref{L: codim 1 co-orient} and suppose $V$ is without boundary. Then $\bd W^0=-(\bd W)^0$, where $(\bd W)^0=(gi_{\bd W})^{-1}(V)$ co-oriented as in Lemma \ref{L: codim 1 co-orient}.
+	\end{corollary}
+	\begin{proof}
+		By Lemma \ref{L: codim 1 co-orient}, $W^0=V\times_M W$, so by Theorem \ref{leibniz}, we have $$\bd W^0=\bd (V\times_M W)=(-1)^{\codim(V)}V\times_M \bd W=-V\times_M(\bd W)=-(\bd W)^0.$$
+	\end{proof}
+
+	\red{This stuff together with the co-orientation of homotopies should imply that $\bd \Cre(W)=W^++W^--W-\Cre(\bd W)$, though there's still a little more work to do there as $\Cre(W)$ isn't quite of the form $W\times I$, so there's a bit more work to do there. But at least all this makes me sure about how the signs work. }
+
+	\subsubsection{Pullbacks by maps that are not co-oriented}\label{S: true pullback}
+
+	So far we have considered the pullback $P$ of transverse co-oriented proper maps $f \colon V \to M$ and $g \colon W \to M$ and assigned a co-orientation to $P\to M$. It is also of importance to consider the situation where $g$ is co-oriented and $f$ is not necessarily co-oriented (or co-orientable) and assign a co-orientation to $P\to V$. We know that $P\to V$ is co-orientable in this scenario by Lemma \ref{L: co-orientable pullback}.
+
+	To assign a choice of co-orientation, we utilize again our structural orthogonal decompositions at some point of $P$. In the pair $(\beta_W,\beta_M)=(\beta_{K_g} \wedge \beta_I \wedge \beta_{V^\perp}, \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp})$, the bases $\beta_I$ and $\beta_{V^\perp}$ occur in both terms, so the co-orientation is determined by the basis pair $(\beta_{K_g},\beta_{W^\perp})$. We are free to choose these bases so that $(\beta_W,\beta_M)$ corresponds to the given co-orientation of $g \colon W \to M$.
+	But now we observe that $(\beta_P,\beta_V)=( \beta_{K_g} \wedge \beta_I \wedge \beta_{K_f}, \beta_{W^\perp} \wedge \beta_{I} \wedge \beta_{K_f})$. In this case $\beta_I$ and $\beta_{K_f}$ are shared, so again this co-orientation is determined by $(\beta_{K_g},\beta_{W^\perp})$. Having fixed this pair to give the correct co-orientation of $g$, we now define the co-orientation of $g^*:P\to V$ to use the same corresponding basis pair.
+
+	As the co-orientation pair $(\beta_{K_g}, \beta_{W^\perp})$ was determined by the co-orientation of $g$, there is no choice being made for this basis pair at the point of $P$ under cosideration. To see that such choices are consistent from point to point, we can apply the computations of Theorem \ref{local const} to see that $(\beta_P,\beta_V)=(\beta'_P,\beta'_V)$ via translation of the structural decomposition from $x\in P$ to a nearby $x'\in P$.
+
+	Analogously, if $f \colon V \to M$ is the co-oriented map, we choose the pair $(\beta_{K_f},\beta_{V^\perp})$ so that $(\beta_V,\beta_M)=( \beta_{W^\perp} \wedge \beta_{I} \wedge \beta_{K_f}, \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp})$ is co-oriented consistently with $f$ and then
+	co-orient
+	$f^*:P\to W$ using the pair $(\beta_{P},\beta_{W})=(\beta_{K_g} \wedge \beta_I \wedge \beta_{K_f},\beta_{K_g} \wedge \beta_I \wedge \beta_{V^\perp})$.
+
+	One important application is the context where $g \colon W \to M$ is co-oriented while $V$ is oriented. In this case we have just seen how to co-orient the pullback $g^*:P\to V$, and if $V$ is oriented the co-orientation of $g^*$ determines a compatible orientation of $P$, namely the orientation $\beta_P$ such that $(\beta_P,\beta_V)$ is the co-orientation of $g^*$. This observation will be utilized below (REFERENCE) in our construction of the cap product.
+
+	\begin{remark}
+		We pause to make a somewhat surprising observation. We have observed that the fiber product of two co-oriented maps is co-oriented, and this will eventually lead us to the cup product of geometric cochains. We have also just seen that the fiber product of a co-oriented map with an oriented map (i.e.\ a map whose domain is oriented) leads to an oriented map, and this will eventually lead us to a cap product of geometric chains and cochains. However, in general the fiber product of two oriented maps can not necessarily be oriented, and so there is in general no product of geometric chains and hence no homology product. Such oriented fiber products can be formed if the the codomain $M$ is oriented, as in this case there is an equivalence between orientations and co-orientations of maps. But this is not always possible when $M$ is not orientable. For example, we recall that the intersection of two orientable $\R P^3$s in the non-orientable $\R P^4$ can be a non-orientable $\R P^2$.
+	\end{remark}
+
+	\subsubsection{Remarks} While the goals of establishing the Leibniz rule, graded commutativity, and the use of normal co-orientations for immersions may seem modest, upon reflection they seem to require substantial care.
+	As alluded to when we discussed co-orientations through a diagram chase of Equation~\ref{co-or stuff}, other conventions for pullback co-orientation are possible and can be viewed as fixing isomorphisms differently. Before close analysis, we had assumed that all or at least many conventions would yield these basic rules, but examples using conventions such as ``follow an oriented basis of the kernel by one of the cokernel''
+	for the isomorphisms of Equation~\ref{co-or stuff} did not yield graded commutativity or the Leibniz rule.
+	And in coordinates, if one does choose the orderings of the basic orientations which
+	involve $\beta_V$ and $\beta_W$ to mirror one another, one does not obtain the usual sign of graded commutativity as in Theorem~\ref{graded comm}. On the other hand, there are choices which lead more quickly to graded commutativity, with for example $\beta_M = \beta_I \wedge \beta_{W^\perp} \wedge \beta_{V^\perp}$
+	instead of $\beta_M = \beta_{W^\perp} \wedge \beta_I \wedge \beta_{V^\perp}$. But these fail to be locally constant, as established for our choices in Theorem~\ref{local const}. Lack of local constancy
+	can be remedied through multiplication by a sign which itself can ``jump'', such as $(-1)^{\dim K_f \cdot \dim W^\perp}$. But we are content to do a little arithmetic to establish graded commutativity
+	in order to work with a definition that is more naturally locally constant.
+	Similarly, the Leibniz rule uses consistency for example of the $K_f$ factor occurring as the last in both the decomposition of $V$ and that of $P$.
+
+	Taken as a whole, the situation is remarkably rigid. Between having the ``$I$ factors'' in the middle for local constancy, reverse ordering of the factors for $V$ and $W$ in order to have graded commutativity, and consistency between places of the kernels in the decompositions of $V$ and $P$ and of $W$ and $P$, there are only two decompositions and local orientations possible which are locally constant without additional signs and yield graded commutativity and the Leibniz rule. The second such decomposition is related to the current by reversing the roles of $V$ and $W$ everywhere, the standard anti-automorphism in non-commutative algebra. So essentially the choices we've made are canonical.
+
+	\subsubsection{Other approaches to co-orientation}
+
+	There are two further approaches to co-orientations which we highlight.
+
+	An alternative approach to co-orientations, developed by Quillen \cite{Quil71}, will be useful \red{WHERE?} to understand pullbacks of co-orientations and other related constructions.
+	Given $W \to M$, consider a factorization $W \overset{e}{\hookrightarrow} M \times \R^n \overset{p}{\longrightarrow} M$ where $e$ is an embedding and $p$ the projection.
+	A \textbf{Quillen co-orientation} of $W \to M$ is an orientation of the normal bundle of the smooth embedding $e$,
+	up to equivalence through stabilization.
+	Thus, in the case in which the map is a submanifold inclusion, a Quillen co-orientation is an orientation of its normal bundle.
+
+	To see that co-orientations and Quillen co-orientations are equivalent concepts, first recall that an exact sequence of vector bundles $E \to F \to F/ E$ gives rise to an isomorphism of $\Or(F)$ with $\Or(E) \otimes \Or(F/E)$ \red{[GBF: how? or ref?]}or, equivalently, of $\Or(F/E)$ with $\Hom(\Or(F), \Or(E))$.
+	Thus, letting $\R^n$ denote the trivial rank $n$ bundle over any base, we have
+	\begin{equation*}
+		\Or (e^*(TM \oplus \R^n)/TW) \cong \Hom\left(\Or(TW), \Or(e^*(TM \oplus \R^n))\right).
+	\end{equation*}
+	\red{[GBF: This isomorphism is not consistent with the isomorphism $\Or(F/E)\cong \Hom(\Or(F), \Or(E))$ mentioned right above - the orders in the Hom terms differ.]}
+	As $\R^n$ is canonically oriented, we can identify $\Or(e^*(TM \oplus \R^n))$ with $\Or(f^*(TM))$.
+
+	\red{If we're going to leave this in, I think we need to explain the stabilization or maybe it suffices for the dimension of the $\R^n$ to always be even?}
+
+	Lipyanskiy's definition of co-orientation factors a proper map through a map which is surjective onto $TM$,
+	rather than injective from $TW$ as in the Quillen approach.
+	An argument similar to the one just given establishes an equivalence between Lipyanskiy's definition and ours. \red{[GBF: I'd suggest we give it, or at least sketch it.]}
+\end{comment}
