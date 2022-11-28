@@ -676,10 +676,11 @@ We observe here that the exterior products defined in \cref{S: exterior products
 
 \begin{definition}\label{D: exterior chain}
 	Suppose $\uV \in C_*^{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(N)$ represented by $V \in PC_*^{\Gamma}(M)$ and $W \in PC_*^{\Gamma}(N)$.
-	Then we define the \textbf{exterior chain product (or chain cross product)} $$\times: C_*^{\Gamma}(M) \times C_*^{\Gamma}(N) \to C_*^{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$.
+	Then we define the \textbf{exterior chain product (or chain cross product)} $$\times \colon C_*^{\Gamma}(M) \times C_*^{\Gamma}(N) \to C_*^{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$.
 
 	Similarly, suppose $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C^*_{\Gamma}(N)$ represented by $V \in PC^*_{\Gamma}(M)$ and $W \in PC^*_{\Gamma}(N)$.
-	Then we define the \textbf{exterior cochain product (or cochain cross product)} $$\times: C^*_{\Gamma}(M) \times C^*_{\Gamma}(N) \to C^*_{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$.
+	Then we define the \textbf{exterior cochain product (or cochain cross product)}
+	$$\times \colon C^*_{\Gamma}(M) \times C^*_{\Gamma}(N) \to C^*_{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$.
 \end{definition}
 
 As is standard for singular homology and cohomology, we use the symbol $\times$ for both products, allowing context to determine which product is meant.
@@ -700,13 +701,11 @@ As is standard for singular homology and cohomology, we use the symbol $\times$ 
 
 \subsection{Properties of the chain and cochain products}\label{S: (co)chain properties}
 
-\red{This whole section needs better formatting}
-
 Now that we have defined cup, cap, intersection, and exterior product and shown that they are well defined, at least when the necessary transversality and orientation conditions hold, they immediately inherit many of the properties demonstrated in \cref{S: orientations and co-orientations}.
 We provide below some tables listing these properties and the locations of the previous results that support them.
 The references are typically to results that involve only transversality of a pair of prechains or precochains, but in the chain and cochain setting they generalize to the more general products of \cref{D: multicup} by applying them to each summand.
 
-For example, suppose $\uV,\uW \in C^*_\Gamma(M)$ are transverse.
+For example, suppose $\uV, \uW \in C^*_\Gamma(M)$ are transverse.
 This means we can write $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$, $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$ with each pair $(\underline{V_i},\underline{W_j})$ simply transverse.
 And this means that there are representatives $V_{ij},W_{ji} \in PC_\Gamma^*(M)$ such that for all $i$ and $j$, we have $\underline{V_{ij}} = \underline{V_i}$, $\underline{W_{ji}} = \underline{W_j}$, and $V_{ij}$ transverse to $W_{ji}$.
 We then have $\uV\uplus \uW$ represented by
