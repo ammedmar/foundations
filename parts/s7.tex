@@ -1051,12 +1051,12 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 
 	\begin{enumerate}
 		\item $F(-,0) = \id \colon M \to M$,
-		\item for almost all $s \in D^N$ the composition $V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n\colon\xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$,
+		\item for almost all $s \in D^N$ the composition $V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$,
 
 		\item there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $X \times \R^n \xr{i_{X} \times \id_{\R^n}} V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e$.
 	\end{enumerate}
 
-	Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n\colon\xr{F(-,s_0) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$.
+	Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s_0) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$.
 	Then let $h(-,t) = F(-,ts_0)f$, i.e.\ $h(x,t) = F(f(x),ts_0)$.
 	The first required property for $h$ holds since $F(-,0) = \id$.
 	The second property holds by our choice of $s_0$.
@@ -1067,7 +1067,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	Recall that we let $M_\epsilon$ be an $\epsilon$-neighborhood of a proper embedding of $M$ into some $\R^N$ in the sense of the $\epsilon$-Neighborhood Theorem of \cite[Section 2.3]{GuPo74}, with $\epsilon$ a smooth positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
 	Let $\pi_\epsilon: M_\epsilon \to M$ be the submersion.
 	We define $\theta: M \times D^N \to M_\epsilon$ by $\theta(y, s) = y + \epsilon(y) s$, which is a submersion onto its image.
-	Then we let $F \colon M \times D^N \to M$ be the submersion $M \times D^N \xr{\theta}M_\epsilon\colon\xr{\pi}M$ and let $H \colon V \times D^N \to M$ be the composition $F \circ (f \times \id_{D^N})$.
+	Then we let $F \colon M \times D^N \to M$ be the submersion $M \times D^N \xr{\theta}M_\epsilon \xr{\pi}M$ and let $H \colon V \times D^N \to M$ be the composition $F \circ (f \times \id_{D^N})$.
 	The map $H$ is also a submersion onto its image, as are its restrictions $H|_{S^k(V) \times D^N}$.
 	Consequently the maps
 	$$S^k(V) \times D^N \times \R^n \xr{H \times \id_{\R^n}} M \times \R^n$$
@@ -1139,7 +1139,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	By our construction, for all $k\geq 1$ we have $H_k(-,s) \times \id_{\R^n} \colon \bd^{k}V \times \R^n \to M \times \R^n$ transverse to $ei_{\bd^jW}$ for each $s$ and at each $(x,z)$ such that $(x,s)\in(r_Xi_{\bd^{k}V} \times \id)^{-1}(M\times_\phi D^N) = \{(x,s) \in \bd^{k}V \times I \mid |s|<\phi(r_Xi_{\bd^kV}(x))\}$.
 
 	Let $\hat \theta: M \times D^N \to M_\epsilon$ be given by $\hat \theta(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points.
-	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat \theta}M_\epsilon\colon\xr{\pi_\epsilon}M$, and let $\hat H_k$ be the composition $\bd^kV \times D^N \xr{i_{\bd^kV} \times \id}V \times D^N \xr{f \times \id} M \times D^N \xr{\hat F} M$ for $k\geq 0$.
+	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat \theta}M_\epsilon \xr{\pi_\epsilon}M$, and let $\hat H_k$ be the composition $\bd^kV \times D^N \xr{i_{\bd^kV} \times \id}V \times D^N \xr{f \times \id} M \times D^N \xr{\hat F} M$ for $k\geq 0$.
 	Once again by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for almost all $s \in D^N$ we have $\hat H_k(-,s) \times \id_{\R^n}$ transverse to all $ei_{\bd^jW}$
 	for all $k\geq 0$.
 	Letting $s_0$ be any such point we define $\hat h \colon V \times I \to M$ to be $\hat h(x,t) = \hat H(x,ts_0)$, and we claim that this $h$ satisfies the conditions of the proposition.
@@ -1153,7 +1153,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	$$\hat h(i_X(x),t) = \pi_\epsilon(r_X(x)+\phi(r_X(x))\epsilon(r_X(x))ts_0).$$
 	So, alternatively, we can observe that $\hat h \circ (i_X \times \id_I)$ is the composition
 	\begin{equation}\label{E: alt hat g}
-		X \times I \xr{\Phi} X \times I \xhookrightarrow{\Psi} X \times D^N\colon\xr{r_X \times \id} M \times D^N \xr{F} M,
+		X \times I \xr{\Phi} X \times I \xhookrightarrow{\Psi} X \times D^N \xr{r_X \times \id} M \times D^N \xr{F} M,
 	\end{equation}
 	with $\Phi(x,t) = (x,\phi(r_X(x))t)$, $\Psi(x,t) = (x,ts_0)$, and noting that on the right we do mean our original $F$ and not $\hat F$.
 
@@ -1429,7 +1429,7 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 Now that we know that the geometric cup product is naturally isomorphic to the singular chain cup product, we can use this to compare cohomology cross products and obtain the geometric cohomology K\"unneth Theorem.
 We begin with the homology K\"unneth Theorem, which is simpler, and then address the cohomology one.
 
-Recall from \cref{T: hom iso map} that we have an isomorphism $H_*(NK^{sm}_*(M))\colon\xr{\cong} H_*^\Gamma(M)$, where $NK^{sm}_*(M)$ is the complex of normalized smooth singular cubical chains.
+Recall from \cref{T: hom iso map} that we have an isomorphism $H_*(NK^{sm}_*(M)) \xr{\cong} H_*^\Gamma(M)$, where $NK^{sm}_*(M)$ is the complex of normalized smooth singular cubical chains.
 As elements of $NK^{sm}_*(M)$ are represented by linear combinations of smooth maps from cubes and the cross product is represented by taking geometric products, we have the following immediate compatibility of chain cross products.
 
 \begin{lemma}\label{L: chain cross compare}
@@ -1704,7 +1704,7 @@ Once we have all the lemma established, we explain how to tie them all together 
 \begin{lemma}\label{L: product transversal}
 	Let $M$ be a cubulated manifold without boundary.
 	Let $V \in PC^*_{\Gamma}(M)$, and suppose $W \in PC_*(M \times M)$ is represented by a collection of embeddings.
-	Then there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1) \colon V \to M$ is transverse to the product cubulation and $M \times V\colon\xr{\id_M \times h(-,1)} M \times M$ is transverse $W$ in $M \times M$.
+	Then there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1) \colon V \to M$ is transverse to the product cubulation and $M \times V \xr{\id_M \times h(-,1)} M \times M$ is transverse $W$ in $M \times M$.
 \end{lemma}
 
 \begin{proof}

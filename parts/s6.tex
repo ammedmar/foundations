@@ -341,7 +341,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	$M_\epsilon$ is an $\epsilon$-neighborhood of a proper embedding of $M$ into $\R^N$ that possesses a submersion $\pi: M_\epsilon \to M$.
 	If $M$ is not compact, then $\epsilon$ is a smooth positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
 	Let $f \colon M \times D^N \to M_\epsilon$ be given by $f(y, s) = y + \epsilon(y) s$; as $\epsilon(y)>0$, this is clearly a submersion (onto its image) at all points.
-	We let $F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{f}M_\epsilon\colon\xr{\pi}M$.
+	We let $F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{f}M_\epsilon \xr{\pi}M$.
 	Furthermore, the map $H \colon V \times D^N \to M$ given by the composition $$V \times D^N \xr{r_V \times \id} M \times D^N \xr{F} M$$ as well as all the restrictions $H|_{S^k(V)}$
 	are submersions.
 	In particular, each $H|_{S^k(V)}$ is transverse to any submanifold of $M$, so it follows by the Transversality Theorem of \cite[Section 2.3]{GuPo74} that for any fixed submanifold $Z$ of $M$, each $H|_{S^k(V)}(-,s)$ is transverse to $Z$ for almost all $s \in D^N$.
@@ -407,7 +407,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	we cannot construct $h$ from $F$ as above using a fixed $s_0$ as there may be no single $s_0\neq 0$ so that $W \times s_0 \subset M\times_\phi D^N$.
 
 	To account for this, we modify our functions above as follows: Let $\hat f \colon M \times D^N \to M_\epsilon$ be given by $\hat f(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points.
-	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat f}M_\epsilon\colon\xr{\pi}M$, and let $\hat H_k$ be the composition $\bd^kV \times D^N \xr{i_{\bd^kV} \times \id}V \times D^N \xr{r_V \times \id} M \times D^N \xr{\hat F} M$ for $k\geq 0$.
+	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat f}M_\epsilon \xr{\pi}M$, and let $\hat H_k$ be the composition $\bd^kV \times D^N \xr{i_{\bd^kV} \times \id}V \times D^N \xr{r_V \times \id} M \times D^N \xr{\hat F} M$ for $k\geq 0$.
 	Once again by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for almost all $s \in D^N$ we have $\hat H_k(-,s)$ transverse to all cubical faces for all $k\geq 0$.
 	Letting $s_0$ be any such point we define $\hat h \colon V \times I \to M$ to be $\hat h(x,t) = \hat H(x,ts_0)$, and we claim that this $\hat h$ satisfies the conditions of the proposition.
 
@@ -420,7 +420,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	$$\hat h(x,t) = \pi(r_W(x)+\phi(r_W(x))\epsilon(r_W(x))ts_0).$$
 	So, alternatively, we can observe that $\hat h(x,t) \circ (i_W \times \id_I)$ is the composition
 	\begin{equation}\label{E: alt hat h}
-		W \times I \xr{\Phi} W \times I \xhookrightarrow{\Psi} W \times D^N\colon\xr{r_W \times \id} M \times D^N \xr{F} M,
+		W \times I \xr{\Phi} W \times I \xhookrightarrow{\Psi} W \times D^N \xr{r_W \times \id} M \times D^N \xr{F} M,
 	\end{equation}
 	with $\Phi(x,t) = (x,\phi(r_W(x))t)$, $\Psi(x,t) = (x,ts_0)$, and noting that on the right we do mean our original $F$ and not $\hat F$.
 
