@@ -614,14 +614,14 @@ We extend $\bd_{\text{int}}$ to a linear operator in the obvious way.
 	We can write its normal co-orientation as $(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})$.
 	Let $k \in F_0 \cup F_1$ be the unique index that is free in $f$ but bound in $F$ and so also free in $F^\vee$.
 	Then $f^\vee$ is the boundary component of $F^\vee$ with $x_k$ set to $1/2$.
-	In this case the boundary co-orientation of $f^\vee$ in $F^\vee$ is $(\beta_{F_0 \cup F_1-\{k\}},\beta_{F_0 \cup F_1-\{k\}} \wedge (-1)^{j+1} \beta_{e_k})$, where $e_k$ is the unit vector in the direction of increasing $x_k$.
+	In this case the boundary co-orientation of $f^\vee$ in $F^\vee$ is $(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} \beta_{e_k})$, where $e_k$ is the unit vector in the direction of increasing $x_k$.
 	The sign $(-1)^{j+1}$ is because if $j = 1$ then in $F^\vee$ the variable $x_k$ is free on $[1/2,1]$ so the inward normal vector at $1/2$ points in the direction of $e_k$, and the opposite if $j = 0$.
-	So the boundary co-orientation for $f^\vee$ in $\interval^n$ as a piece of $\bd F^\vee$ is the composition $$(\beta_{F_0 \cup F_1-\{k\}},\beta_{F_0 \cup F_1-\{k\}} \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}}).$$
+	So the boundary co-orientation for $f^\vee$ in $\interval^n$ as a piece of $\bd F^\vee$ is the composition $$(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}}).$$
 
-	Meanwhile, the natural co-orientation for $f^\vee$ is $$(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{f_{01}}).$$ But now we observe that $f_0 \cup f_1 = F_0 \cup F_1-\{k\}$.
+	Meanwhile, the natural co-orientation for $f^\vee$ is $$(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{f_{01}}).$$ But now we observe that $f_0 \cup f_1 = F_0 \cup F_1 \setminus \{k\}$.
 	So
 	\begin{align*}
-		(\beta_{F_0 \cup F_1-\{k\}},\beta_{F_0 \cup F_1-\{k\}} \wedge (-1)^{j+1} \beta_{e_k})&*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})\\
+		(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} \beta_{e_k})&*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})\\
 		& = (-1)^{j+1}(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{e_k})*(\beta_{f_0 \cup f_1} \wedge \beta_{e_k},\beta_{f_0 \cup f_1} \wedge \beta_{e_k} \wedge \beta_{F_{01}})\\
 		& = (-1)^{j+1}(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{e_k} \wedge \beta_{F_{01}})\\
 		& = (-1)^{j+i}(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{f_{01}})\\
