@@ -7,7 +7,7 @@ They agree with singular homology and cohomology, but having different represent
 at the chain/cochain level, they provide geometric approaches to both theory and calculations.
 They are thus akin to de Rham theory in the sense that chains and cochains are defined through the smooth structure rather than continuous maps or open sets, but they are defined over the integers and not just the real numbers.
 
-Our definitions of geometric chains and cochains will be a modification of that given by Lipyanskiy in \cite{Lipy14}, though his results will continue to hold with our modified definitions.
+Our definitions of geometric chains and cochains will be a modification of those given by Lipyanskiy in \cite{Lipy14}, though his results will continue to hold with our modified definitions.
 As Lipyanskiy primarily focuses on geometric chains and geometric homology, our focus, where the theories diverge, will primarily be on geometric cochains and cohomology, for which Lipyanskiy's account is much less complete despite the cohomological setting having its own subtleties.
 We also take the opportunity to fill in some of the details missing from Lipyanskiy's account more generally, especially utilizing the more thorough foundations on manifolds with corners provided by Joyce \cite{Joy12}.
 
@@ -23,16 +23,16 @@ In this case, we may interpret ``smooth'' to mean either ``smooth'' or ``weakly 
 	by using the domain $W$ to refer to the manifold over $M$, not $r_W$ or some other symbol, letting
 	context determine whether we are referring to the entire data or the domain.
 
-	We say a manifold over $M$ is
+	We say a manifold over $M$, is:
 	\begin{itemize}
-		\item \textbf{compact} if the domain $W$ is compact,
-		\item \textbf{proper} if the reference map is proper (if $K \subset M$ is compact then $r_W^{-1}(K)$ is compact),
-		\item \textbf{oriented} if $W$ is oriented,
-		\item \textbf{co-oriented} if the reference map $r_W$ is co-oriented.
+		\item \textbf{compact} if its domain is compact,
+		\item \textbf{proper} if its reference map is proper (i.e. the preimage of compact subsets is compact),
+		\item \textbf{oriented} if its domain is oriented, and
+		\item \textbf{co-oriented} if its reference map is co-oriented.
 	\end{itemize}
 	If $W$ is a manifold over $M$ then so is $\bd W$ using the reference map $r_W \circ i_{\bd W} \colon \bd W \to M$.
 	If $W$ is oriented or co-oriented, then $\bd W$ inherits an orientation or co-orientation as in \cref{Con: oriented boundary} or \cref{D: boundary co-orientation}.
-	By [Lemma 2.8]{Joy12}, $i_{\bd W}$ is proper, so, as the composition of proper maps is proper, if $W$ is a proper manifold over $M$ then so is $\bd W$.
+	By \cite[Lemma 2.8]{Joy12}, $i_{\bd W}$ is proper, so, as the composition of proper maps is proper, if $W$ is a proper manifold over $M$ then so is $\bd W$.
 
 	If $W$ is oriented or co-oriented we write $-W$ to refer to the manifold over $M$ with the opposite orientation or co-orientation; it should always be clear from context which structure we are replacing with its opposite.
 \end{definition}
@@ -46,24 +46,21 @@ the definitions of \cite{Lipy14}.
 \begin{definition}\label{D: equiv triv and small}
 	Let $V, W$ be manifolds over $M$ with reference maps $r_V$ and $r_W$.
 	\begin{itemize}
-		\item If $V$ and $W$ are oriented, we say they are \textbf{(oriented) isomorphic} if there is an orientation-preserving preserving diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$.
+		\item If $V$ and $W$ are oriented, we say they are \textbf{(oriented) isomorphic} if there is an orientation-preserving diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$.
 		If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic} if there is a diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$ and the composition of the
 		co-orientation induced by $\phi$
 		with the co-orientation of $r_V$ agrees with the co-orientation of $r_W$.
 
-		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial} if there is an orientation-reversing
-		diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
-		If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$ and
-		the composite of the co-orientation induced by $\rho$ with the co-orientation of $r_W$ is the opposite of the co-orientation of $r_W$.
+		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial} if there is an orientation-reversing diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
+		If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$ and the composite of the co-orientation induced by $\rho$ with the co-orientation of $r_W$ is the opposite of the co-orientation of $r_W$.
 		We call such a map $\rho$ \textbf{co-orientation reversing}.
 
 		\item $W$ has \textbf{small rank} if the differential $D r_W$ is less than full rank everywhere.
-		\item If $W$ is (co-)oriented, then it is \textbf{((co-)oriented) degenerate} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co-)oriented
-		manifold over $M$ and one with small rank.
+		\item If $W$ is (co-)oriented, then it is \textbf{((co-)oriented) degenerate} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co-)oriented manifold over $M$ and one with small rank.
 	\end{itemize}
 \end{definition}
 
-Note that isomorphism (oriented or co-oriented) is an equivalence relation and that is preserves triviality and degeneracy (oriented or co-oriented, respectively).
+Note that isomorphism is an equivalence relation and that it preserves triviality and degeneracy.
 
 Rather than small rank, Lipyanskiy uses the condition of \textbf{small image}.
 In our notation, a map $r_W \colon W \to M$ has small image if there is another map $r_T \colon T \to M$ such that $r_T(T)\supset r_W(W)$ but $\dim(T)<\dim(W)$.
@@ -74,7 +71,7 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 
 \begin{example}
 	Let $S^1$ be the unit circle in the plane with the standard counterclockwise orientation.
-	Let $\pi: S^1 \to \R$ be the projection of the circle onto the $x$-axis.
+	Let $\pi \colon S^1 \to \R$ be the projection of the circle onto the $x$-axis.
 	This map is trivial.
 	Indeed, if $\rho$ is the reflection of the circle across the $x$-axis, then $\rho$ is orientation-reversing and $\pi \rho = \pi$.
 
@@ -86,7 +83,7 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 \begin{example}
 	If $r_V \colon V \to M$ is any oriented or co-oriented map and $-r_V \colon V \to M$ is the same map with the opposite orientation or co-orientation, then $r_V \sqcup -r_V$ is trivial, taking $\rho$ to be the map that switches the two copies of $V$.
 	To be technically accurate, we should not think of a single instance of $V$ as being the domain for both maps in order for $r_V \sqcup -r_V$ to have a well-defined domain that is a submanifold of some $\R^N$.
-	However, recall that we are always free to replace $r_V \colon V \to M$ with an isomorphic map whose domain is another, diffeomorphic, ``copy'' of $V$ in $\R^N$.
+	However, recall that we are always free to replace $r_V \colon V \to M$ with an isomorphic map whose domain is a disjoint, diffeomorphic, ``copy'' of $V$ in $\R^N$.
 \end{example}
 
 \begin{example}
@@ -149,7 +146,7 @@ We now return to denoting isomorphism classes by their representatives, noting a
 
 The following useful basic properties are proven in \cite{Lipy14}; for completeness we provide versions of the arguments here, occasionally augmenting those of \cite{Lipy14}.
 In each case, ``isomorphic,'' ``trivial,'' or ``degenerate'' should be read consistently to refer to the compact oriented case or the proper co-oriented case.
-Lipyanskiy's proofs assume small image rather than small rank, butthe proofs are equivalent.
+Lipyanskiy's proofs assume small image rather than small rank, but the proofs are equivalent.
 
 \begin{lemma}[Lipyanskiy Lemma 10]\label{L: Lip L10}
 	If $V$ is trivial and $V \sqcup W$ is trivial, then $W$ is trivial.
@@ -160,12 +157,12 @@ Lipyanskiy's proofs assume small image rather than small rank, butthe proofs are
 	As either $W$ is compact or $r_W$ is proper, each $W_i$ is the union of a finite number of connected components.
 	Any automorphism of $W$ preserves the decomposition into $W_i$ and so $W$ is trivial if and only if for all $i$ either $W_i$ has zero components when counting with (co-)orientation or each component of $W_i$ has a (co-)orientation reversing automorphism.
 
-	Similarly, since $V$ is trivial, $V$ can be decomposed into unions of isomorphism classes, up to (co-)orientation, of connected components with $0$ components when counting with sign or with all components having (co-)orientation reversing automorphisms.
+	Similarly, since $V$ is trivial, $V$ can be decomposed into unions of isomorphism classes, up to (co-)orienta\-tion, of connected components with $0$ components when counting with sign or with all components having (co-)orientation reversing automorphisms.
 	In particular, forming $V \sqcup W$ adds to $W$ zero components when counting with sign or components with (co-)orientation reversing automorphisms, so if $V \sqcup W$ is trivial, $W$ must have already been trivial.
 \end{proof}
 
 \begin{lemma}[Lipyanskiy Lemma 11]\label{L: bd defined}
-	If $W$ is in $Q(M)$, then $\bd W \in Q(M)$.
+	If $W$ is in $Q(M)$ then so is $\bd W$.
 \end{lemma}
 
 \begin{proof}
@@ -188,7 +185,7 @@ Lipyanskiy's proofs assume small image rather than small rank, butthe proofs are
 \end{proof}
 
 \begin{lemma}[Lipyanskiy Lemma 12]\label{L: Lipy12}
-	If $V$ and $V \sqcup W$ are in $Q(M)$, then $W \in Q(M)$.
+	If both $V$ and $V \sqcup W$ are in $Q(M)$ then so is $W$.
 \end{lemma}
 
 \begin{proof}
@@ -326,7 +323,7 @@ First, though, we present here some computational examples, mostly without proof
 	If $M$ is compact such a map is a generator of a non-trivial cohomology class.
 	If the point maps to a non-compact component of $M$ then it represents $0$ in $H_\Gamma^m(M)$ because any proper path $(-\infty,0] \to M$ with the restriction to $0$ being our cochain representative gives a null-cohomology with appropriate choices of co-orientation.
 
-	In $\R^3-\{0\}$, the inclusion of the positive $x$-axis with either co-orientation is a generator of $H_\Gamma^2(M)$, while the embedding the oriented unit 2-sphere containing the origin is a generator of $H_2^\Gamma(M)$.
+	In $\R^3 \setminus \{0\}$, the inclusion of the positive $x$-axis with either co-orientation is a generator of $H_\Gamma^2(M)$, while the embedding the oriented unit 2-sphere containing the origin is a generator of $H_2^\Gamma(M)$.
 
 	If $M$ is compact and oriented then tautologically $C_*^\Gamma(M) = C_\Gamma^{\dim(M)-*}(M)$.
 	This is a strong form of Poincar\'e duality.
@@ -403,7 +400,7 @@ It will also be needed much sooner to show that the creasing construction is wel
 This construction is used, in turn, to demonstrate the existence of Mayer-Vietoris sequences.
 
 \begin{lemma}\label{L: pullback with Q}
-	For any of the products above, if either $V$ or $W$ is in $Q(M)$, then $V \times_M W \in Q(M)$.
+	For any of the products above, if either $V$ or $W$ is in $Q(M)$ then so is $V \times_M W$.
 	In fact, if $V$ or $W$ is trivial then $V \times_M W$ is trivial, and if $V$ or $W$ has small rank then $V \times_M W$ has small rank.
 \end{lemma}
 
@@ -435,9 +432,8 @@ This construction is used, in turn, to demonstrate the existence of Mayer-Vietor
 We have a similar result for the exterior products studied in \cref{S: exterior products}, which are always fully defined:
 
 \begin{lemma}\label{L: exterior Q}
-	Suppose $f \colon V \to M$ and $g \colon W \to N$ are respectively in $PC_*(M)$ and $PC_*(N)$ or that they are respectively in $PC^*(M)$ and $PC^*(N)$.
-	Suppose $V \in Q(M)$ or $W \in Q(N)$.
-	Then $f \times g \colon V \times W \to M \times N$ is in $Q(M \times N)$.
+	Consider two pre(co)chains $f \colon V \to M$ and $g \colon W \to N$.
+	If $V \in Q(M)$ or $W \in Q(N)$ then $f \times g \colon V \times W \to M \times N$ is in $Q(M \times N)$.
 \end{lemma}
 
 \begin{proof}
@@ -534,28 +530,28 @@ are manifolds with corners as they are also the fiber products $M^\pm \times_M W
 The idea of creasing is to, for example, show that if $W$ is a cycle (or cocycle) over $M$ then it is homologous (or cohomologous) to $W^++W^-$.
 This is the analog in geometric homology/cohomology of subdivision of singular simplices.
 
-More precisely, by Lemma~9 of \cite{Lipy14}, there is a manifold-with-corners structure on the topological space $W \times [0,1]$,
-called the \textbf{creasing homotopy} of $W$ at $0$ and denoted $\Cre(W)$, such that $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
-We will also see that if $W \in Q(M)$ then $\Cre(W) \in Q(M)$, which will provide the claimed (co)homology.
+By \cite[Lemma~9]{Lipy14}, the topological space $\Cre(W) = W \times [0,1]$, called the \textbf{creasing homotopy} of $W$ at $0$, can be given the structure of a manifold with corners satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
+We will see that if $W \in Q(M)$ then $\Cre(W) \in Q(M)$, which will provide the claimed (co)homology.
 
 By using pullbacks we provide an arguably simpler description of $\Cre(W)$ than found in \cite{Lipy14}.
-Let $D$ be the semi-open pentagonal region of the plane given by $$D = \{(x,y) \mid -1<x<1, 0 \leq y \leq 2-|x|\}.$$
-Then $D$ is a manifold with corners with a smooth proper projection map $\pi:D \to (-1,1)$ given by $\pi(x,y) = x$.
+Let $D$ be the semi-open pentagonal region of the plane given by
+$$D = \{(x,y) \mid -1<x<1, 0 \leq y \leq 2-|x|\}.$$
+Then $D$ is a manifold with corners with a smooth proper projection map $\pi \colon D \to (-1,1)$ given by $\pi(x,y) = x$.
 We see that $\bd D$ has three pieces, say $D_x$, $D_+$, and $D_-$, corresponding respectively to the intersection of $D$ with the $x$-axis, the graph of $y = 2-x$ over $[0,1)$, and the graph of $y = 2+x$ over $(-1, 0]$.
 We orient all three pieces by rightward pointing tangent vectors in the plane and give $D$ itself the standard planar orientation so that $\pi$ restricts to oriented diffeomorphisms from $D_x$, $D_+$, and $D_-$ onto their images in $(-1,1) = D_x$.
 Then as oriented manifolds with corners, $$\bd D = D_x \sqcup -D_- \sqcup -D_+.$$
-To obtain analogous boundary formulas for creasings of cochains, we let the projections of $D_x$, $D_+$, and $D_-$ to $(-1,1)$ be co-oriented by taking the rightward orientations to the rightward orientations, and $\pi:D \to (-1,1)$ to be co-oriented by taking the standard planar orientation to the rightward orientation.
+To obtain analogous boundary formulas for creasings of cochains, we let the projections of $D_x$, $D_+$, and $D_-$ to $(-1,1)$ be co-oriented by taking the rightward orientations to the rightward orientations, and $\pi \colon D \to (-1,1)$ to be co-oriented by taking the standard planar orientation to the rightward orientation.
 In this case, as co-oriented manifolds with corners over $(-1,1)$, we have
 $$\bd D = D_x \sqcup -D_- \sqcup -D_+.$$
 
-The projection $\pi:D \to (-1,1)$ restricts to a submersion from $D_x$, $D_+$, and $D_-$ onto their images, and so a map $\varphi: W \to (-1,1)$ from a manifold with corners is transverse to $\pi$ if and only if it is transverse to the map from the point at the tip of the pentagon to $(-1,1)$.
+The projection $\pi \colon D \to (-1,1)$ restricts to a submersion from $D_x$, $D_+$, and $D_-$ onto their images, and so a map $\varphi \colon W \to (-1,1)$ from a manifold with corners is transverse to $\pi$ if and only if it is transverse to the map from the point at the tip of the pentagon to $(-1,1)$.
 This is equivalent to the requirement that the restriction of $\varphi$ to every stratum of $W$ have $0$ as a regular value.
 In this case we will simply say that ``$\varphi$ has a regular value at $0$.''
 
 We can now define creasing.
 
 \begin{definition}
-	Suppose given a smooth map\footnote{Given instead a smooth $\varphi \colon W \to \R$ with regular value at $0$ as in the preceding examples, we may alter $\varphi$ to have image in $(-1,1)$ by composing with a diffeomorphism, for example $x \to \frac{2\arctan(x)}{\pi}$.
+	Suppose given a smooth map\footnote{Given instead a smooth $\varphi \colon W \to \R$ with regular value at $0$ as in the preceding examples, we may alter $\varphi$ to have image in $(-1,1)$ by composing with a diffeomorphism, for example $x \mapsto \frac{2\arctan(x)}{\pi}$.
 	This does not change $W^0$, $W^+$, $W^-$, and, up to diffeomorphism, the creasing construction does not depend on the choice of diffeomorphism $\R \to (-1,1)$ so long as $(-\infty,0]$ maps to $(-1,0]$ and $[0,\infty)$ maps to $[0,1)$.
 	Similarly, there is nothing special about the value $0$ or the interval $(-1,1)$; given any $\varphi \colon W \to \R$ with regular value $p$, we could construct a version of $\Cre(W)$ that creases along $\varphi^{-1}(p)$ rather than $\varphi^{-1}(0)$.}
 	$\varphi \colon W \to (-1,1)$ with a regular value at $0$.
@@ -565,7 +561,7 @@ We can now define creasing.
 	We note that $\Cre(W)$ does depend on the map $\varphi$, though we typically omit it from the notation.
 	When necessary for clarity, we may write $\Cre_\varphi(W)$.
 
-	Typically in practice $W$ will arise with a map $r_W \colon W \to M$ representing an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$, and in this case our map $\varphi: W \to (-1,1)$ will generally be given as a composition
+	Typically in practice $W$ will arise with a map $r_W \colon W \to M$ representing an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$, and in this case our map $\varphi \colon W \to (-1,1)$ will generally be given as a composition
 	$W \xr{r_W}M \xr{\phi} (-1,1)$ for some smooth $\phi \colon M \to (-1,1)$.
 	When $r_W \colon W \to M$ represents an element of $PC_*^\Gamma(M)$, we treat $D\times_{(-1,1)} W$ as oriented by the pullback conventions, using our given orientation of $D$, and we will show in a moment that if $W$ is compact so is $D\times_{(-1,1)} W$.
 	Thus composing the pullback map with $r_W$ we obtain another element of $PC_*^\Gamma(M)$ given by $D\times_{(-1,1)} W \to W \xr{r_W}M$.
@@ -634,14 +630,14 @@ For the second equality we use, for example, that $\pi$ is an orientation preser
 	If $W \in PC_*^{\Gamma}(M)$ represented by $r_W \colon W \to M$, then $\Cre(W)$ is also compact and oriented, and we have a map $r_{\Cre(W)} = r_W\pi_W \colon W \to M$ with $\pi_W$ being the projection of $\Cre(W) = D\times_{(-1,1)}W$ to $W$.
 	Thus $r_{\Cre(W)} \colon \Cre(W) \to M$ gives us a new element of $PC_*^\Gamma(M)$.
 	If $W \in PC^*_\Gamma(M)$, then to get an element $\Cre(W) \in PC^*_\Gamma(M)$ we will need to assume that $\varphi \colon W \to (-1,1)$ is a composition of maps $W \xr{r_W}M \xr{\phi} (-1,1)$.
-	We can then form the space $\Cre(W)$ as the pullback by $\phi r_W$ of $\pi: D \to (-1,1)$.
+	We can then form the space $\Cre(W)$ as the pullback by $\phi r_W$ of $\pi \colon D \to (-1,1)$.
 	As $\pi$ is proper and co-oriented, the pullback $\pi^* = \pi_W \colon \Cre(W) \to W$ will be proper and co-oriented by Lemma \ref{L: co-orientable pullback} and Definition \ref{D: pullback coorient}.
 	We then let $r_{\Cre(W)} = r_W \pi^*$ to obtain an element of $\Cre(W) \in PC^*_\Gamma(M)$.
 	By \cite[Propositions 7.4]{Joy12} and Theorem \ref{leibniz}, our boundary formulas for $\Cre(W)$ continue to hold as elements of $PC_*^{\Gamma}(M)$ or $PC^*_{\Gamma}(M)$.
 \end{comment}
 
 \begin{convention}\label{C: regular value setup}
-	In order to crease an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$ represented by $r_W \colon W \to M$, we need a smooth map $\varphi \colon W \to (-1,1)$ so that the composite $\varphi: W \xr{r_W}M \xr{\phi} (-1,1)$ has $0$ as a regular value.
+	In order to crease an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$ represented by $r_W \colon W \to M$, we need a smooth map $\varphi \colon W \to (-1,1)$ so that the composite $\varphi \colon W \xr{r_W}M \xr{\phi} (-1,1)$ has $0$ as a regular value.
 	In this case $M^0$ and $M^\pm$ are fiber products and thus manifolds with corners as in \cref{E: manifold decomposition}.
 	Also as observed there, in this case $\varphi$ has $0$ as a regular value if and only if $r_W$ is transverse to $M^0$, in which case we also have $W^0 = M^0 \times_M W$ and $W^\pm = M^\pm \times_M W$.
 	Unless noted, we will always assume this situation when working with creasing, i.e.\ that we have a fixed $\phi \colon M \to (-1,1)$ with $0$ a regular value and that creasing is defined with respect to the composition $\varphi = \phi r_W$ with $r_W$ transverse to $M^0$.
