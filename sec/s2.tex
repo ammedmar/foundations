@@ -306,20 +306,12 @@ This construction extends to manifolds with corners mapping into a manifold with
 	$$V \times _M W = \{(x, y) \in V \times W \mid f(x) = g(y)\}.$$
 
 	There are canonical maps from $V \times _M W$ to $V$, $W$, and $M$ that respectively take $(x,y)$ to $x$, $y$, and $f(x) = g(y)$.
-
-	\begin{diagram}
-		V \times _MW&\rTo^{g^*}& V\\
-		\dTo^{f^*}&&\dTo_f\\
-		W&\rTo^g& M
-	\end{diagram}
-
-	\begin{center}
-		\begin{tikzcd}
-			V \times_M W \arrow[r, "g^*"] \arrow[d, "f^*"] & V \arrow[d, "f"] \\
-			W \arrow[r, "g"] & M
-		\end{tikzcd}
-	\end{center}
-
+	\[
+	\begin{tikzcd}
+		V \times_M W \arrow[r, "g^*"] \arrow[d, "f^*"] & V \arrow[d, "f"] \\
+		W \arrow[r, "g"] & M.
+	\end{tikzcd}
+	\]
 	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times _M g \colon V \times _M W \to M$.
 	We also sometimes write $f^*$ as $\pi_W$ and $g^*$ as $\pi_V$, as these maps are induced by restricting to $V \times _MW$ the projections from $V \times W$ to $V$ and $W$.
 
@@ -402,13 +394,12 @@ The next lemma is a bit more specific but will be useful later in proving certai
 \begin{proof}
 	For simplicity of notation, let $P = g^*V = V \times _MW$, and let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the maps induced by the projections from $V \times W$ to $V$ and $W$.
 	So we have the diagram
-
-	\begin{diagram}
-		&&P = V \times _MW&\rTo^{\pi_V}& V\\
-		&&\dTo^{\pi_W}&&\dTo_f\\
-		X&\rTo^h&W&\rTo^g&M.
-	\end{diagram}
-
+	\[
+	\begin{tikzcd}
+		& P = V \times_M W \arrow[r, "\pi_V"] \arrow[d, "\pi_W"] & V \arrow[d, "f"] \\
+		X \arrow[r, "h"] & W \arrow[r, "g"]&  M
+	\end{tikzcd}
+	\]
 	First suppose $h$ is transverse to the pullback $g^*V \to W$.
 	Note that the existence of $g^*V$ uses the assumption that $f$ and $g$ are transverse.
 	Suppose $x \in X$ and $y \in V$ with $gh(x) = f(y)$.
