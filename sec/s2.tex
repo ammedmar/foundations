@@ -291,7 +291,7 @@ The following technical lemma will help us extend the results of \cite{GuPo74} f
 	Then we define
 	$$H(x,s) = \pi(f(x)+ \epsilon(x)\rho(x)s).$$
 	Then when $x \in \bd M$, we have $H(x,s) = \pi(f(x)) = f(x)$, so $h$ is constant along $\bd M$.
-	For $x\notin \bd M$, the argument goes through exactly as above.
+	For $x \notin \bd M$, the argument goes through exactly as above.
 \end{proof}
 
 \subsection{Pullbacks and fiber products}
@@ -302,7 +302,7 @@ This construction extends to manifolds with corners mapping into a manifold with
 
 \begin{definition}\label{D: top pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
-	Define the \textbf{pullback} or \textbf{fiber product} $V \times _M W$ by
+	Define the \textbf{pullback} or \textbf{fiber product} $V \times_M W$ by
 	$$V \times _M W = \{(x, y) \in V \times W \mid f(x) = g(y)\}.$$
 
 	There are canonical maps from $V \times _M W$ to $V$, $W$, and $M$ that respectively take $(x,y)$ to $x$, $y$, and $f(x) = g(y)$.
@@ -312,6 +312,13 @@ This construction extends to manifolds with corners mapping into a manifold with
 		\dTo^{f^*}&&\dTo_f\\
 		W&\rTo^g& M
 	\end{diagram}
+
+	\begin{center}
+		\begin{tikzcd}
+			V \times_M W \arrow[r, "g^*"] \arrow[d, "f^*"] & V \arrow[d, "f"] \\
+			W \arrow[r, "g"] & M
+		\end{tikzcd}
+	\end{center}
 
 	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times _M g \colon V \times _M W \to M$.
 	We also sometimes write $f^*$ as $\pi_W$ and $g^*$ as $\pi_V$, as these maps are induced by restricting to $V \times _MW$ the projections from $V \times W$ to $V$ and $W$.
