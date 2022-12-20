@@ -1180,9 +1180,9 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 
 \begin{theorem}\label{T: UCT}
 	If $H^i_\Gamma(M)$ is finitely generated, there is a short exact sequence
-	\begin{diagram}
-		0&\rTo& \Ext\left(H_{i-1}^\Gamma(M),\Z\right)&\rTo &H^i_\Gamma(M)&\rTo^{\alpha}&\Hom\left(H_i^\Gamma(M),\Z\right)&\rTo &0.
-	\end{diagram}
+	\[
+	0 \to \Ext\left(H_{i-1}^\Gamma(M),\Z\right) \to H^i_\Gamma(M) \xr{\alpha} \Hom\left(H_i^\Gamma(M),\Z\right) \to 0.
+	\]
 \end{theorem}
 
 \begin{remark}
@@ -1195,13 +1195,13 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 	Let $M$ have a cubulation $X$, let $\mc I \colon C_{\Gamma \pf X}^*(M) \to K^*(X)$ be the intersection map of \cref{D: intersection homomorphism},
 	and let $\mc J \colon K_*(X) \to C^\Gamma_*(M)$ be the map inducing the homology isomorphism of \cref{T: cubical homology iso}.
 	We consider the diagram
-	\begin{diagram}
-		H^i_\Gamma(M)&\rTo^{\alpha}&\Hom(H_i^\Gamma(M),\Z)\\
-		\uTo_\cong\\
-		H^i(C^*_{\Gamma \pf X}(M))&&\dTo_{\mc J^*}^\cong\\
-		\dTo^{\mc I}_\cong\\
-		H^i(K^*(X))&\rTo&\Hom(H_*(K_*(X)),\Z).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^i_\Gamma(M) \arrow[r, "\alpha"] & \Hom(H_i^\Gamma(M),\Z) \arrow[dd, "\cong", "\mc J^*"'] \\
+		H^i(C^*_{\Gamma \pf X}(M)) \arrow[u, "\cong"'] \arrow[d, "\cong", "\mc I"'] & \\
+		H^i(K^*(X)) \arrow[r] & \Hom(H_*(K_*(X)), \Z).
+	\end{tikzcd}
+	\]
 	The vertical maps on the left are isomorphisms by \cref{T: transverse complex,T: intersection qi}, while the right hand vertical map is an isomorphism by \cref{T: cubical homology iso}.
 	We claim the diagram commutes.
 	In fact, let $V \in PC_\Gamma^i(M)$ represent an element of $H^i(C^*_{\Gamma \pf X}(M))$.
@@ -1228,13 +1228,15 @@ In this section we show that the geometric cup product agrees with the singular 
 Our proof is based on an axiomatic characterization of the cup product on manifolds due to Kreck and Singhof.
 
 \begin{theorem}\label{T: intersection is cup product}
-	On the category of smooth manifold without boundary and continuous maps, there is for each $p\geq 0$ a natural isomorphism of functors $\Phi_p: H^p(-) \to H^p_\Gamma(-)$ from singular cohomology to geometric cohomology that is also compatible with cup products.
+	On the category of smooth manifold without boundary and continuous maps, there is for each $p\geq 0$ a natural isomorphism of functors $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$ from singular cohomology to geometric cohomology that is also compatible with cup products.
 	In other words, for each manifold without boundary $M$ there is a commutative diagram
-	\begin{diagram}
-		H^p(M) \otimes H^q(M)&\rTo^{\smile}&H^{p+q}(M)\\
-		\dTo^{\Phi_p \otimes \Phi_q}&&\dTo_{\Phi_{p+q}}\\
-		H^p_\Gamma(M) \otimes H^q_\Gamma(M)&\rTo^{\uplus}&H^{p+q}_\Gamma(M).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^p(M) \otimes H^q(M) \arrow{r}{\smile} \arrow{d}{\Phi_p \otimes \Phi_q} &
+		H^{p+q}(M) \arrow{d}{\Phi_{p+q}} \\
+		H^p_\Gamma(M) \otimes H^q_\Gamma(M) \arrow{r}{\uplus} & H^{p+q}_\Gamma(M).
+	\end{tikzcd}
+	\]
 \end{theorem}
 
 The proof will rely on work of Kreck and Singhof \cite[Proposition 12]{Krec10b}.
@@ -1265,7 +1267,7 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	As $H^*$ is ordinary singular cohomology, we know that $\alpha$ and $\beta$ can be represented by maps $\bar \alpha \colon M \to K_p$ and $\bar\beta \colon M \to K_q$ with $\alpha = \bar \alpha^*(\iota_p)$ and $\beta = \bar\beta^*(\iota_q)$.
 	Furthermore, $\alpha\smile \beta$ is the pullback of $\iota_{p+q}$ by the composition
 	\begin{equation}\label{E: EM cross}
-		M \xr{\diag}M \times M \xr{\bar\alpha \times \bar \beta} K_p \times K_q \xr{\mu} K_{p+q};
+		M \xr{\diag} M \times M \xr{\bar\alpha \times \bar \beta} K_p \times K_q \xr{\mu} K_{p+q};
 	\end{equation}
 	while similarly $s_p \times s_q$ is the pullback of $\iota_{p+q}$ by
 	\begin{equation}\label{E: sphere cross}
@@ -1283,11 +1285,13 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	Next we make two more preliminary observations.
 	The first is that it follows from $\star$ being natural with respect to pullbacks that, when $f^*$ is an isomorphism, the product $\star$ is also natural with respect to $(f^*)^{-1}$, as we see by applying $f^*$ to the claimed identity $(f^*)^{-1}(x)\star (f^*)^{-1}(y) = (f^*)^{-1}(x\star y)$.
 	The second is that there is an evident commutative diagram
-	\begin{diagram}[LaTeXeqno]\label{D: projections}
-		H^p(\mc K_p)&\rTo^{\pi_1^*}&H^p(\mc K_p \times \mc K_q)\\
-		\dTo^{\phi_p^*}&&\dTo_{(\phi_p \times \phi_q)^*}\\
-		H^p(S^p)&\rTo^{\pi_1^*}&H^p(S^p \times S^q),
-	\end{diagram}
+	\begin{equation}\label{D: projections}
+		\begin{tikzcd}
+			H^p(\mc K_p) \arrow{r}{\pi_1^*} \arrow[d, "\phi_p^*"] &
+			H^p(\mc K_p \times \mc K_q) \arrow[d, "(\phi_p \times \phi_q)^*"] \\
+			H^p(S^p) \arrow{r}{\pi_1^*} & H^p(S^p \times S^q)
+		\end{tikzcd}
+	\end{equation}
 	and similarly for $\pi_2$, abusing notation to write $\pi_1$ and $\pi_2$ for the projections to the first and second factors for both pairs of spaces.
 	Now we compute:
 	\begin{comment}
@@ -1347,23 +1351,32 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	Taking $H^*(-)$ and $H^*_\Gamma(-)$ with these Mayer-Vietoris maps and this $\Phi_0 \colon H^0(pt) \to H^0_\Gamma(pt)$, \cite[Theorem 10]{Krec10b} gives natural isomorphisms $\Phi_p \colon H^p(-) \to H^*_\Gamma(-)$ extending $\Phi_0$ on a point.
 	The naturality implies that $\Phi_0(s_0) = s_0^\Gamma$.
 	It now follows by induction using the following diagram due to the commutativity of $\Phi_*$ with the connecting maps, that $\Phi_p(s_p) = s_p^\Gamma$ for all $p$:
-	\begin{diagram}
-		H^p(S^p) \cong H^p(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}(S^{p+1})\\
-		\dTo^{\Phi_p}&&\dTo^{\Phi_{p+1}}\\
-		H^p_\Gamma(S^p) \cong H^p_\Gamma(U_{p+1} \cap V_{p+1})&\rTo^{\delta_p}&H_\Gamma^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}_\Gamma(S^{p+1}).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^p(S^p) \cong H^p(U_{p+1} \cap V_{p+1}) \arrow{r}{\delta_p} \arrow[d, "\Phi_p"] &
+		H^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}(S^{p+1}) \arrow[d, "\Phi_{p+1}"] \\
+		H^p_\Gamma(S^p) \cong H^p_\Gamma(U_{p+1} \cap V_{p+1}) \arrow{r}{\delta_p} &
+		H_\Gamma^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}_\Gamma(S^{p+1}).
+	\end{tikzcd}
+	\]
 	For each $M$, we can now define pairings $\star$ on $H^p(-) \otimes H^q(-) \to H^{p+q}(-)$ by the composition
-	$$H^p(M) \otimes H^q(M) \xr{\Phi_p \otimes \Phi_q}H^p_\Gamma(M) \otimes H^q_\Gamma(M) \xr{\uplus}H^{p+q}_\Gamma(M) \xr{\Phi_{p+q}^{-1}}H^{p+q}(M).$$
+	\[
+	H^p(M) \otimes H^q(M) \xr{\Phi_p \otimes \Phi_q}
+	H^p_\Gamma(M) \otimes H^q_\Gamma(M) \xr{\uplus}
+	H^{p+q}_\Gamma(M) \xr{\Phi_{p+q}^{-1}}
+	H^{p+q}(M).
+	\]
 	This pairing is natural, as all the maps are natural.
 	We will apply \cref{P: Kreck-Singhof pairing} to show that this is really the cup product, which will prove the theorem.
 
 	We first show that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class of $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$.
 	Let $pt$ be an arbitrary point in $M$ and consider the diagram
-	\begin{diagram}
-		H^0(M)&\rTo& H^0(pt)\\
-		\dTo^{\Phi_0}&&\dTo_{\Phi_0}\\
-		H_\Gamma^0(M)&\rTo& H_\Gamma^0(pt).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^0(M) \arrow{r} \arrow[d, "\Phi_0"] & H^0(pt) \arrow[d, "\Phi_0"] \\
+		H_\Gamma^0(M) \arrow{r} & H_\Gamma^0(pt)
+	\end{tikzcd}
+	\]
 	The vertical maps are isomorphisms by our application of \cite[Theorem 10]{Krec10b}, and it is standard that the top map is an isomorphism.
 	In fact, we can consider $H^0(M)$ as generated by the cochain $1_M$, and this pulls back to the generator $1_{pt} \in H^0(pt)$ (each represented by the map that takes a positively oriented point considered as a singular $0$-chain to $1$).
 	It follows that the bottom map is an isomorphism.
@@ -1374,8 +1387,9 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 
 	So for $\alpha \in H^p(M)$, we have
 	\begin{align*}
-		\lambda\star \alpha& = \Phi_p^{-1}(\lambda\uM\uplus \Phi_p(\alpha))\\
-		& = \Phi_p^{-1}(\lambda\Phi_p(\alpha))\\
+		\lambda \star \alpha
+		& = \Phi_p^{-1}(\lambda\uM \uplus \Phi_p(\alpha)) \\
+		& = \Phi_p^{-1}(\lambda\Phi_p(\alpha)) \\
 		& = \lambda\alpha,
 	\end{align*}
 	using the unital property of $\uplus$ --- see \cref{S: (co)chain properties}.
@@ -1398,24 +1412,29 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	So $\pi_1^*(s_p) \star \pi_2^*(s_q) = \Phi_{p+q}^{-1}(s_p^\Gamma \times s_q^\Gamma)$, and it remains to show that this is $s_p \times s_q$, i.e.\ that $\Phi_{p+q}(s_p \times s_q) = s_p^\Gamma \times s_q^\Gamma$.
 
 	To do so, consider the following diagram, which commutes by the naturality of $\Phi_{p+q}$:
-	\begin{diagram}
-		H^{p+q}(S^p \times S^q)&\lTo^{\nu^*}&H^{p+q}(S^{p+q})\\
-		\dTo^{\Phi_{p+q}}&&\dTo_{\Phi_{p+q}}\\
-		H^{p+q}_\Gamma(S^p \times S^q)&\lTo^{\nu^*}&H_\Gamma^{p+q}(S^{p+q}).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^{p+q}(S^p \times S^q) \arrow{d}{\Phi_{p+q}} &
+		H^{p+q}(S^{p+q}) \arrow[l, "\nu^*"'] \arrow{d}{\Phi_{p+q}} \\
+		H^{p+q}_\Gamma(S^p \times S^q) &
+		H_\Gamma^{p+q}(S^{p+q}) \arrow[l, "\nu^*"'].
+	\end{tikzcd}
+	\]
 	Let $s_{p+q}^\Gamma$ be represented by the embedding of a point at $y \in S^{p+q}$, normally co-oriented consistently with the orientation of $S^{p+q}$.
-	By possibly rechoosing the point, we can choose a smooth map homotopic to $\nu$ that maps a Euclidean neighborhood of some point $x \in S^p \times S^q$ by an orientation-preserving diffeomorphism to a neighborhood of $y$, taking $x$ to $y$ and the complement of a neighborhood of $x$ to the complement of a neighborhood of $y$.
+	By possibly choosing the point again, we can choose a smooth map homotopic to $\nu$ that maps a Euclidean neighborhood of some point $x \in S^p \times S^q$ by an orientation-preserving diffeomorphism to a neighborhood of $y$, taking $x$ to $y$ and the complement of a neighborhood of $x$ to the complement of a neighborhood of $y$.
 	Then, from the definitions, the pullback of $s_{p+q}^\Gamma$ is the embedding of $x$ into $S^p \times S^q$ with normal co-orientation corresponding to the orientation of $S^p \times S^q$.
 	By \cref{E: sphere product}, this is exactly $s_p^\Gamma \times s_q^\Gamma$, i.e.\ $\nu^*(s_{p+q}^\Gamma) = s_p^\Gamma \times s_q^\Gamma$.
 	So, recalling that $\Phi_p(s_{p+q}) = s_{p+q}^\Gamma$, we have $\nu^*\Phi_{p+q}(s_{p+q}) = s_p^\Gamma \times s_q^\Gamma$.
 	Thus, from the commutativity of the diagram and $\Phi_{p+q}$ being an isomorphism, it suffices to show that $\nu^*(s_{p+q}) = s_p \times s_q$.
 
 	For this, consider the commutative diagram
-	\begin{diagram}
-		H^{p+q}(\mc K_p \times \mc K_q)&\lTo^{\mu^*}&H^{p+q}(\mc K_{p+q})\\
-		\dTo^{(\phi_p \times \phi_q)^*}&&\dTo_{\phi_{p+q}^*}\\
-		H^{p+q}(S^p \times S^q)&\lTo^{\nu^*}&H^{p+q}(S^{p+q}).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^{p+q}(\mc K_p \times \mc K_q) \arrow[d, "(\phi_p \times \phi_q)^*"] &
+		\arrow[l, "\mu^*"'] H^{p+q}(\mc K_{p+q}) \arrow[d, "\phi_{p+q}^*"] \\
+		H^{p+q}(S^p \times S^q) & \arrow[l, "\nu^*"'] H^{p+q}(S^{p+q}).
+	\end{tikzcd}
+	\]
 	As the $p+q+1$ skeleton of $K_p \times K_q$ can be taken to be $S^p \times S^q$, the vertical maps are isomorphisms.
 	And we know from \eqref{E: sphere cross} and the definitions that
 	$$(\phi_p \times \phi_q)^*\mu^*(\phi_{p+q}^*)^{-1}(s_{p+q}) = (\phi_p \times \phi_q)^*\mu^*(\iota_{p+q})\\
@@ -1434,25 +1453,28 @@ As elements of $NK^{sm}_*(M)$ are represented by linear combinations of smooth m
 \begin{lemma}\label{L: chain cross compare}
 	Let $M$ and $N$ be manifolds without boundary.
 	Then the following diagram commutes:
-	\begin{diagram}
-		NK^{sm}_*(M) \otimes NK^{sm}_*(N)&\rTo^{\times}&NK^{sm}_*(M \times N)\\
-		\dTo&&\dTo\\
-		C_*^\Gamma(M) \otimes C_*^\Gamma(N)&\rTo^{ \times }&C_*^\Gamma(M \times N).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		NK^{sm}_*(M) \otimes NK^{sm}_*(N) \arrow{r}{\times} \arrow[d] & NK^{sm}_*(M \times N) \arrow[d] \\
+		C_*^\Gamma(M) \otimes C_*^\Gamma(N) \arrow{r}{\times} & C_*^\Gamma(M \times N).
+	\end{tikzcd}
+	\]
 	This induces the commutative diagram
-	\begin{diagram}
-		H_*(NK^{sm}_*(M)) \otimes H_*(NK^{sm}_*(N))&\rTo^{\times}&H_*(NK^{sm}_*(M \times N))\\
-		\dTo^\cong&&\dTo_\cong\\
-		H_*^\Gamma(M) \otimes H_*^\Gamma(N)&\rTo^{ \times }&H_*^\Gamma(M \times N).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H_*(NK^{sm}_*(M)) \otimes H_*(NK^{sm}_*(N)) \arrow{r}{\times} \arrow[d, "\cong"] &
+		H_*(NK^{sm}_*(M \times N)) \arrow[d, "\cong"] \\
+		H_*^\Gamma(M) \otimes H_*^\Gamma(N) \arrow{r}{\times} & H_*^\Gamma(M \times N).
+	\end{tikzcd}
+	\]
 \end{lemma}
 
 \begin{theorem}[K\"unneth Theorem]\label{T: homology kunneth}
 	Let $M$ and $N$ be manifolds without boundary.
 	There are natural short exact sequences
-	\begin{diagram}
-		0&\rTo&\oplus_{p+q = a}H_p^\Gamma(M) \otimes H_q^\Gamma(N)&\rTo^{ \times }&H_{p+q}^\Gamma(M \times N)&\rTo&\oplus_{p+q = a-1}H_p^\Gamma(M)* H_q^\Gamma(N)&\rTo&0
-	\end{diagram}
+	\[
+	0 \to \bigoplus_{p+q = a} H_p^\Gamma(M) \otimes H_q^\Gamma(N) \xr{\times} H_{p+q}^\Gamma(M \times N) \to \bigoplus_{p+q = a-1} H_p^\Gamma(M)* H_q^\Gamma(N) \to 0
+	\]
 	that split (non-naturally).
 \end{theorem}
 
@@ -1471,18 +1493,21 @@ So the following is immediate from the naturality of our comparison maps $\Phi$ 
 \begin{proposition}\label{P: cross product is cross product}
 	On the category of smooth manifold without boundary and continuous maps, the isomorphisms $\Phi_p$ from singular cohomology to geometric cohomology are compatible with cross products.
 	In other words, for manifolds without boundary $M$ and $N$ there are commutative diagrams
-	\begin{diagram}
-		H^p(M) \otimes H^q(N)&\rTo^{\times}&H^{p+q}(M \times N)\\
-		\dTo_\cong^{\Phi_p \otimes \Phi_q}&&\dTo^\cong_{\Phi_{p+q}}\\
-		H^p_\Gamma(M) \otimes H^q_\Gamma(N)&\rTo^{ \times }&H^{p+q}_\Gamma(M \times N).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^p(M) \otimes H^q(N) \arrow{r}{\times} \arrow[d,"\Phi_p \otimes \Phi_q"', "\cong"] &
+		H^{p+q}(M \times N) \arrow[d, "\Phi_{p+q}"', "\cong"] \\
+		H^p_\Gamma(M) \otimes H^q_\Gamma(N) \arrow{r}{\times} &
+		H^{p+q}_\Gamma(M \times N).
+	\end{tikzcd}
+	\]
 \end{proposition}
 
 \begin{theorem}[K\"unneth Theorem]\label{T: cohomology kunneth}
 	If either $H^i_\Gamma(M)$ is finitely generated for all $i$ or $H^i_\Gamma(N)$ is finitely generated for all $i$, then there are natural short exact sequences
-	\begin{diagram}
-		0&\rTo&\oplus_{p+q = a}H^p_\Gamma(M) \otimes H^q_\Gamma(N)&\rTo^{ \times }&H^{p+q}_\Gamma(M \times N)&\rTo&\oplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N)&\rTo&0
-	\end{diagram}
+	\[
+	0 \to \bigoplus_{p+q = a}H^p_\Gamma(M) \otimes H^q_\Gamma(N) \xr{\times} H^{p+q}_\Gamma(M \times N) \to \bigoplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N) \to 0
+	\]
 	that split (non-naturally).
 \end{theorem}
 
@@ -1492,19 +1517,19 @@ So the following is immediate from the naturality of our comparison maps $\Phi$ 
 	Since the exact sequences are isomorphic, they both split.
 \end{proof}
 
-We can also approach the K\"unneth theorem with a more explict comparison map by once again utilizing cubulations.
+We can also approach the K\"unneth theorem with a more explicit comparison map by once again utilizing cubulations.
 
 \begin{proposition}\label{P: cross product comparison}
 	Let $M$ and $N$ be cubulated manifolds without boundary, and let $M \times N$ have the product cubulation.
 	Let $K^*$ denote the complex of cubical cochains for the appropriate cubulation.
 	The following diagram commutes
-	\begin{diagram}
-		C^*_{\Gamma}(M) \otimes C^*_{\Gamma}(N)&\rTo^\times& C^*_{\Gamma}(M \times N)\\
-		\uInto&&\uInto\\
-		C^*_{\Gamma\pf}(M) \otimes C^*_{\Gamma\pf}(N)&\rTo^\times& C^*_{\Gamma\pf}(M \times N)\\
-		\dTo^{\mc I \otimes \mc I}&&\dTo_{\mc I}\\
-		K^*(M) \otimes K^*(N)&\rTo^\times& K^*(M \times N).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		C^*_{\Gamma}(M) \otimes C^*_{\Gamma}(N) \arrow{r}{\times} & C^*_{\Gamma}(M \times N) \\
+		C^*_{\Gamma\pf}(M) \otimes C^*_{\Gamma\pf}(N) \arrow{r}{\times} \arrow[u, hook] \arrow[d, "\mc I \otimes \mc I"] & C^*_{\Gamma\pf}(M \times N) \arrow[u, hook] \arrow[d, "\mc I"] \\
+		K^*(M) \otimes K^*(N) \arrow{r}{\times} & K^*(M \times N)
+	\end{tikzcd}
+	\]
 \end{proposition}
 
 \begin{proof}
@@ -1531,13 +1556,14 @@ The following corollary is now immediate from \cref{P: cross product comparison,
 \begin{corollary}
 	If $M$ and $N$ are cubulated manifolds without boundary and each $H^i(M)$ and $H^j(N)$ is finitely generated, then the cubical cohomology cross product is isomorphic to the geometric cohomology cross product.
 	In particular, we have the following diagram with all vertical maps isomorphisms, letting $H_{cub}^*$ stand for the appropriate cubical cohomology groups:
-	\begin{diagram}
-		H^*_{\Gamma}(M) \otimes H^*_{\Gamma}(N)&\rTo^\times& H^*_{\Gamma}(M \times N)\\
-		\uTo_\cong&&\uTo^\cong\\
-		H^*_{\Gamma\pf}(M) \otimes H^*_{\Gamma\pf}(N)&\rTo^\times& H^*_{\Gamma\pf}(M \times N)\\
-		\dTo_\cong^{\mc I \otimes \mc I}&&\dTo^\cong_{\mc I}\\
-		H_{cub}^*(M) \otimes H_{cub}^*(N)&\rTo^\times& H_{cub}^*(M \times N).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^*_{\Gamma}(M) \otimes H^*_{\Gamma}(N) \arrow{r}{\times} & H^*_{\Gamma}(M \times N) \\
+		H^*_{\Gamma\pf}(M) \otimes H^*_{\Gamma\pf}(N) \arrow{r}{\times} \arrow[u, "\cong"] \arrow[d, "\cong", "\mc I \otimes \mc I"'] &
+		H^*_{\Gamma\pf}(M \times N) \arrow[u, "\cong"] \arrow[d, "\cong", "\mc I"'] \\
+		H_{cub}^*(M) \otimes H_{cub}^*(N) \arrow{r}{\times} & H_{cub}^*(M \times N).
+	\end{tikzcd}
+	\]
 \end{corollary}
 
 Utilizing these maps rather than the more abstract $\Phi_p$ provides an alternative proof of \cref{T: cohomology kunneth}.
@@ -1627,21 +1653,21 @@ Now suppose that $X$ is a cubical complex, and let $K_*(X)$ and $K^*(X) = \Hom(K
 If $E, F \in K_*(X)$ are any cubical faces, then $E \times F$ is also a cubical face.
 Furthermore, abusing notation by conflating $E$ with its embedding into the cubical complex (thought of as a space), we have $\pi_1\diag(E) = \pi_2\diag(E) = E$, and every face of $E$ is also a cube in the complex.
 So now if $M$ is a cubulated manifold without boundary and we abuse notation by using $K_*$ for the cubical chain complex $K_*(M)$ corresponding to the cubulation $X$ and $K_*(M \times M)$ for the cubical complex coming from the product cubulation $X \times X$, we have the following commutative diagrams with the upward arrows being inclusions (note that all complexes are free) and the lower horizontal maps being the restrictions of the top horizontal maps:
-\begin{diagram}
-	NK_*(M) \otimes NK_*(M)&\rTo^\zeta&NK_*(M \times M)\\
-	\uInto&&\uInto\\
-	NK^{sm}_*(M) \otimes NK^{sm}_*(M)&\rTo^\zeta&NK^{sm}_*(M \times M)\\
-	\uInto&&\uInto\\
-	K_*(M) \otimes K_*(M)&\rTo^\zeta&K_*(M \times M).
-\end{diagram}
+\[
+\begin{tikzcd}
+	NK_*(M) \otimes NK_*(M) \arrow{r}{\zeta} & NK_*(M \times M) \\
+	NK^{sm}_*(M) \otimes NK^{sm}_*(M) \arrow{r}{\zeta} \arrow[u, hook] & NK^{sm}_*(M \times M) \arrow[u, hook] \\
+	K_*(M) \otimes K_*(M) \arrow{r}{\zeta} \arrow[u, hook] & K_*(M \times M). \arrow[u, hook]
+\end{tikzcd}
+\]
 and
-\begin{diagram}
-	NK_*(M) \otimes NK_*(M)&\lTo^\xi&NK_*(M \times M)\\
-	\uInto&&\uInto\\
-	NK^{sm}_*(M) \otimes NK^{sm}_*(M)&\lTo^\xi&NK^{sm}_*(M \times M)\\
-	\uInto&&\uInto\\
-	K_*(M) \otimes K_*(M)&\lTo^\xi&K_*(M \times M).
-\end{diagram}
+\[
+\begin{tikzcd}
+	NK_*(M) \otimes NK_*(M) & \arrow[l, "\xi"'] NK_*(M \times M) \\
+	NK^{sm}_*(M) \otimes NK^{sm}_*(M) \arrow[u, hook] & \arrow[l, "\xi"'] NK^{sm}_*(M \times M) \arrow[u, hook] \\
+	K_*(M) \otimes K_*(M) \arrow[u, hook] & \arrow[l, "\xi"'] K_*(M \times M). \arrow[u, hook]
+\end{tikzcd}
+\]
 
 The top map in each diagram is a homotopy equivalences, the vertical maps are all quasi-isomorphisms by \cref{P: singular smooth cubes} and the proof of \cref{T: cubical homology iso},
 and the complexes are all free, so the horizontal maps are all chain homotopy equivalences \cite[Theorem 46.2]{Mun84}.
@@ -1888,11 +1914,12 @@ In \cref{E: first examples}, we noticed that geometric homology and cohomology s
 	Let $M$ be a closed oriented cubulated manifold.
 	Let $\underline M \in C_m^\Gamma(M)$ be represented by the orientation-preserving identity map $\id_M \colon M \to M$, and let $[M] \in K_*(M)$ represent the cubical fundamental class.
 	Then there is a commutative diagram of isomorphisms
-	\begin{diagram}
-		H^{n-i}_\Gamma(M)&\rTo^{\nplus \uM}& H_i^\Gamma(M)\\
-		\dTo^{\mc I}&&\uTo_{\mc J}\\
-		H^{n-i}_{cub}(M)&\rTo^{\frown [M]} &H_i^{cub}(M).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^{n-i}_\Gamma(M) \arrow{r}{\nplus \uM} \arrow[d, "\mc I"] & H_i^\Gamma(M) \\
+		H^{n-i}_{cub}(M) \arrow{r}{\frown [M]} & H_i^{cub}(M). \arrow[u, "\mc J"']
+	\end{tikzcd}
+	\]
 \end{corollary}
 
 The proof follows immediately from \cref{T: equivalent cap} and the following lemma.
@@ -1931,11 +1958,12 @@ We will show that when $M$ and $N$ are closed and oriented, these transfer maps 
 	Let $f \colon N \to M$ be a map of closed oriented manifolds.
 	We may consider $f$ co-oriented via the orientations of $M$ and $N$.
 	Then the following diagrams commute:
-	\begin{diagram}
-		H^{n-i}_\Gamma(N)&\rTo^f&H^{m-i}_\Gamma(M)&&H^{i}_\Gamma(M)&\rTo^{f^*}&H^{i}_\Gamma(N)\\
-		\dTo^{\nplus \uN}&&\dTo_{\nplus \uM}&&\dTo^{\nplus \uM}&&\dTo_{\nplus \uN}\\
-		H_i^\Gamma(N)&\rTo^f&H_i^\Gamma(M)&&H_{m-i}^\Gamma(M)&\rTo^{f^*}&H_{n-i}^\Gamma(N).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^{n-i}_\Gamma(N) \arrow{r}{f} \arrow[d, "\nplus \uN"] & H^{m-i}_\Gamma(M) \arrow[d, "\nplus \uM"] & H^{i}_\Gamma(M) \arrow{r}{f^*} \arrow[d, "\nplus \uM"] & H^{i}_\Gamma(N) \arrow[d, "\nplus \uN"] \\
+		H_i^\Gamma(N) \arrow{r}{f} & H_i^\Gamma(M) & H_{m-i}^\Gamma(M) \arrow{r}{f^*} & H_{n-i}^\Gamma(N).
+	\end{tikzcd}
+	\]
 \end{proposition}
 
 \begin{proof}
