@@ -27,13 +27,6 @@
 \usepackage[capitalise,noabbrev,nosort]{cleveref}
 \newcommand{\creflastconjunction}{, and\nobreakspace} %makes cleveref use serial commas
 
-% AMM: Paul Taylor's package with the fix for NEVER HAPPEN error
-\usepackage{diagrams}
-\makeatletter
-\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
-\expandafter\foo\row@to@buffer\foo
-\makeatother
-
 % GBF: Indents the table of contents.
 \setcounter{tocdepth}{4}% to get subsubsections in toc
 \let\oldtocsection=\tocsection

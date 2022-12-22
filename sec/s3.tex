@@ -618,10 +618,12 @@ Before getting into the specifics of the construction, we need to make the follo
 \begin{remark}\label{R: pullback representative}
 	While our canonical pullback $P$ has been defined as $V \times_M W = \{(x,y) \in V \times W \mid f(x) = g(y)\}$, categorically the pullback $P$ is technically only well defined up to canonical diffeomorphisms.
 	In particular, if $P$ and $P'$ are two specific representatives of the pullback, we have commutative diagrams
-	\begin{diagram}[LaTeXeqno]\label{D: comm triangle}
-		P &\rTo^\cong& P'\\
-		&\rdTo(1,1)\ldTo(1,1)W.
-	\end{diagram}
+	\begin{equation}\label{D: comm triangle}
+		\begin{tikzcd}[column sep=small]
+			P \arrow[rr, "\cong"] \arrow[dr] & & P' \arrow[dl] \\
+			& W. &
+		\end{tikzcd}
+	\end{equation}
 	But, as we have observed in \cref{D: tautological co-orientation}, diffeomorphisms come equipped with natural co-orientations, and so a co-orientation of $P \to M$ determines a unique co-orientation of $P' \to M$ by composition and vice versa.
 	Thus when working with co-orientations of pullbacks, we typically think of selecting a fixed representative $P \to W$ to work with for computations, though not necessarily the canonical one.
 	This observation shows that we are free to do so, and typically we will do so tacitly.
@@ -631,10 +633,12 @@ Before getting into the specifics of the construction, we need to make the follo
 \begin{remark}\label{R: precise commutativity}
 	This is also a good place to point out exactly what we mean by writing $V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V$ in our commutativity statement, as $V \times_M W \subset V \times W$ and $W \times_M V \subset W \times V$ are different spaces, though canonically identified via the map $\tau \colon V \times W \to W \times V$ that switches the coordinates.
 	This map fits into a commutative diagram of fiber products
-	\begin{diagram}[LaTeXeqno]
-		V \times_M W &\rTo^\tau& W \times_M V\\
-		&\rdTo(1,1)\ldTo(1,1)M.
-	\end{diagram}
+	\[
+	\begin{tikzcd}[column sep=tiny]
+		V \times_M W \arrow[rr, "\tau"] \arrow[dr] & & W \times_M V \arrow[dl] \\
+		& M. &
+	\end{tikzcd}
+	\]
 	Again, $\tau$ has an induced co-orientation from being a diffeomorphism, and so the statement means that co-orientation of the fiber product $V \times_M W \to M$ and the composite co-orientation of $\tau$ and then the co-orientation of $W \times_M W \to M$ should differ by the sign $(-1)^{(m-v)(m-w)}$.
 
 	Putting together this observation with \cref{R: pullback representative}, we will generally be able to identify $V \times_M W$ and $W \times_M W$ via $\tau$ as spaces, and so we typically can leave the map $\tau$ itself tacit and just work with the local orientations on $V \times_M W$ and $M$.
@@ -735,12 +739,12 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 \begin{proof}
 	We first show that the pullback is proper.
 	Let us label our maps
-	\begin{diagram}
-		P&\rTo^{\pi_V} & V\\
-		\dTo^{f^* = \pi_W}&&\dTo_f\\
-		W&\rTo^g&M.
-	\end{diagram}
-
+	\[
+	\begin{tikzcd}
+		P \arrow[r, "\pi_V"] \arrow[d,"f^*", "\pi_W"'] & V \arrow[d, "f"] \\
+		W \arrow[r, "g"] & M.
+	\end{tikzcd}
+	\]
 	Suppose $K \subset W$ is compact.
 	We have
 	\begin{align*}
@@ -755,14 +759,13 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 
 	For co-orientations, we use Quillen's definition from \cref{L: Quillen}.
 	We factor $f$ as $V \into M \times \R^N \to M$, and then we have the pullback diagram
-
-	\begin{diagram}[LaTeXeqno]\label{D: pullback}
-		P&\rTo^{\pi_V} & V\\
-		\dTo&&\dTo_e\\
-		W \times \R^N&\rTo^{g \times \id}&M \times \R^N\\
-		\dTo&&\dTo_{\pi_M}\\
-		W&\rTo^g&M.
-	\end{diagram}
+	\begin{equation}\label{D: pullback}
+		\begin{tikzcd}
+			P \arrow[r, "\pi_V"] \arrow[d] & V \arrow[d] \\
+			W \times \R^N \arrow[r, "g \times \id"] \arrow[d] & M \times \R^N \arrow[d, "\pi_M"] \\
+			W \arrow[r, "g"] & M.
+		\end{tikzcd}
+	\end{equation}
 	The bottom square is evidently a pullback.
 	Thus by elementary topology the top square is a pullback diagram if and only if the composite rectangle is a pullback diagram.
 	So by letting the top square be a pullback diagram, we obtain the pullback $P$ of $W \xr{g} M\xleftarrow{f} V$.
@@ -900,25 +903,25 @@ The co-oriented pullback construction is functorial in the following sense.
 \begin{proof}
 	We first note that there is a diffeomorphism between $V$ and $\{(v,x) \in V \times M \mid f(v) = x\}$ given by $v \to (v,f(v))$ and $(v,x) \to v$.
 	Then given compatible Quillen co-orientation of $f$, we can form the pullback diagram as
-	\begin{diagram}
-		V&\rTo^{\id_V} & V\\
-		\dTo^e&&\dTo_e\\
-		M \times \R^N&\rTo^{\id_{M \times \R^N}}&M \times \R^N\\
-		\dTo^{\pi_M}&&\dTo_{\pi_M}\\
-		M&\rTo^{\id_M}&M,
-	\end{diagram}
+	\[
+	\begin{tikzcd}[column sep=large]
+		V \arrow[r, "\id_V"] \arrow[d,"e"] & V \arrow[d,"e"] \\
+		M \times \R^N \arrow[r, "\id_{M \times \R^N}"] \arrow[d,"\pi_M"] & M \times \R^N \arrow[d,"\pi_M"] \\
+		M \arrow[r, "\id_M"] & M
+	\end{tikzcd}
+	\]
 	and the conclusion is evident.
 
 	For the second claim, there is a diffeomorphism between $\{(v,x) \in V \times X \mid f(v) = g(h(x))\}$ and $\{((v,w),x) \in (V \times_M W) \times X \mid w = h(x)\}$ given by $(v,x) \to (v,h(x),x)$ and $((v,w),x) \to (v,x)$.
 	To see that the last map is well-defined notice that $f(v) = g(h(x))$ as $h(x) = w$, and $f(v) = g(w)$ from the assumption $(v,w) \in V \times_M W$.
 	Compatibility of the co-orientations now follows by considering the following diagram and noting that it is equivalent to pull back the normal $\nu V$ to $X \times \R^N$ either in two steps or all at once.
-	\begin{diagram}
-		(V \times _M W)\times_W X&\rTo^{\pi_{V \times_M W}} &V \times_M W&\rTo^{\pi_V} & V\\
-		\dTo&&\dTo&&\dTo_e\\
-		X \times \R^N&\rTo^{h \times \id}&W \times \R^N&\rTo^{g \times \id}&M \times \R^N\\
-		\dTo&&\dTo&&\dTo_{\pi_M}\\
-		X&\rTo^h&W&\rTo^g&M.
-	\end{diagram}
+	\[
+	\begin{tikzcd}[column sep=large]
+		(V \times_M W) \times_W X \arrow[r, "\pi_{V \times_M W}"] \arrow[d] & V \times_M W \arrow[r, "\pi_V"] \arrow[d] & V \arrow[d, "e"] \\
+		X \times \R^N \arrow[r, "h \times \id"] \arrow[d] & W \times \R^N \arrow[r, "g \times \id"] \arrow[d] & M \times \R^N \arrow[d, "\pi_M"] \\
+		X \arrow[r, "h"] & W \arrow[r, "g"] & M.
+	\end{tikzcd}
+	\]
 \end{proof}
 
 \subsubsection{Fiber products of immersions}\label{S: co-or product immersion}
@@ -2168,22 +2171,30 @@ For the statement of the lemma, recall our definition of $\Or(V)$ in \cref{D: de
 
 \begin{lemma}\label{L: det sequence}
 	Given an exact sequence of vector bundles
-	\begin{diagram}
-		0 \to V_1 \xr{d_1} \cdots \xr{d_{m-1}} V_m \to 0,
-	\end{diagram}
+	\[
+	0 \to V_1 \xr{d_1} \cdots \xr{d_{m-1}} V_m \to 0,
+	\]
 	there is an isomorphism
-	$$\underset{i\text{ odd}}{ \otimes }\Or(V_i) \cong \underset{i\text{ even}}{ \otimes }\Or(V_i).$$
+	\[
+	\bigotimes_{i\ \text{odd}} \Or(V_i) \ \cong
+	\bigotimes_{i\ \text{even}} \Or(V_i).
+	\]
 \end{lemma}
 
 \begin{proof}
 	It is implicit in the hypothesis of exactness that the kernels and image of the maps in the sequence are well-defined vector bundles so that it makes sense to say $\im(d_{i-1}) = \ker(d_{i})$ as objects in the category of vector bundles.
 	We thus have for each $i$ a short exact sequence
-	\begin{diagram}
-		0 \to \ker(d_i) \to V_i \to \im(d_i) \to 0,
-	\end{diagram}
+	\[
+	0 \to \ker(d_i) \to V_i \to \im(d_i) \to 0,
+	\]
 	and since short exact sequences of vector bundles split \cite[Theorem 3.9.6]{Hus75}, we have $V_i \cong \ker(d_i) \oplus \im(d_i) = \im(d_{i-1}) \oplus \im(d_i)$.
 	Consequently,
-	$$\underset{i\text{ odd}}{ \otimes }\Or(V_i) \cong \underset{i\text{ odd}}{ \otimes }\Or(\im(d_{i-1}) \oplus \im(d_i)) \cong \underset{i\text{ odd}}{ \otimes }\Or(\im(d_{i-1})) \otimes \Or(\im(d_i)) \cong \underset{i}{ \otimes }\Or(\im(d_{i})),$$
+	\[
+	\bigotimes_{i\ \text{odd}} \Or(V_i)\, \cong
+	\bigotimes_{i\ \text{odd}} \Or(\im(d_{i-1}) \oplus \im(d_i))\, \cong
+	\bigotimes_{i\ \text{odd}} \Or(\im(d_{i-1})) \otimes \Or(\im(d_i))\, \cong
+	\bigotimes_i \Or(\im(d_{i})),
+	\]
 	and similarly for the other tensor product.
 \end{proof}
 
@@ -2232,18 +2243,21 @@ In the case where $\ker(F)$ and $\cok(F)$ were already vector bundles, $\mathscr
 
 \begin{lemma}
 	If $F \colon E \to E'$ and $\psi \colon \underline{\R}^n \to E'$ are bundle maps with $F \oplus \psi \colon E \oplus \underline{\R}^n \to E'$ surjective and $\ker(F)$ and $\cok(F)$ well-defined vector bundles, then the following sequence is exact\footnote{This exact sequence appears incorrectly in \cite{DoKr90} with the $\psi$ in place of $F$ in the first and last terms.}:
-	\begin{diagram}
-		0&\rTo&\ker(F)&\rTo&\ker(F \oplus \psi)&\rTo& \underline{\R}^n&\rTo& \cok(F)&\rTo&0.
-	\end{diagram}
+	\[
+	\begin{tikzcd}[column sep=small]
+		0 \arrow[r] & \ker(F) \arrow[r] & \ker(F \oplus \psi) \arrow[r] & \underline{\R}^n \arrow[r] & \cok(F) \arrow[r] & 0
+	\end{tikzcd}
+	\]
 \end{lemma}
 
 \begin{proof}
 	This exact sequence is simply the snake lemma exact sequence obtained from the commutative diagram of exact sequences
-	\begin{diagram}
-		0&\rTo&E&\rTo& E \oplus \underline{\R}^n&\rTo&\underline{\R}^n&\rTo&0\\
-		&&\dTo^F&&\dTo^{F \oplus \psi}&&\dTo\\
-		0&\rTo&E'&\rTo^ = & E'&\rTo&0&\rTo&0.
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		0 \arrow[r] & E  \arrow[r] \arrow[d, "F"] & E \oplus \underline{\R}^n \arrow[r] \arrow[d, "F \otimes \psi"] & \underline{\R}^n \arrow[r] \arrow[d] & 0 \\
+		0 \arrow[r] & E' \arrow[r, "="] & E' \arrow[r] & 0 \arrow[r] & 0.
+	\end{tikzcd}
+	\]
 	The category of vector bundles over a space is not technically an abelian category, but one can check by hand for this diagram that, with our assumptions, all the maps of the exact sequence are well defined and the exactness then holds fiberwise by the classical snake lemma.
 	In particular, the map $\underline{\R}^n \to \cok(F)$ is the composition of the splitting map $\underline{\R}^n \to E \oplus \underline{\R}^n$, the map $F \oplus \psi$, and the projection $E'$ to $\cok(F)$.
 \end{proof}

@@ -172,11 +172,12 @@ As expected this gives the standard homology:
 	So it suffices to show that $\eta$ is an isomorphism.
 
 	For this, we have the diagram
-	\begin{diagram}
-		H_*(K^X_*(M))&\rTo^{\eta_*}& H_*(NK^{sm}_*(M))&\rTo^{\psi_*}_\cong&H_*(NK_*(M))\\
-		\dTo^\cong&&&\ruTo(4,2)_\Theta^\cong\\
-		H_*(CW_*(M)),
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H_*(K^X_*(M)) \arrow[r, "\eta_*"] \arrow[d, "\cong"] & H_*(NK^{sm}_*(M)) \arrow[r, "\psi_*", "\cong"'] & H_*(NK_*(M)) \\
+		H_*(CW_*(M)) \arrow[rru, "\Theta", "\cong"', out=0, in=200] & &
+	\end{tikzcd}
+	\]
 	in which $CW_*(M)$ is the CW chain complex of $M$ corresponding to the CW complex structure given by the cubulation and $\Theta$ is the standard isomorphism between CW homology and singular homology as in Dold \cite[Proposition V.1.9]{Dol72}.
 	The isomorphism in Dold is developed using simplicial singular homology, but as simplicial singular and cubical singular homology are isomorphic, the argument goes through identically using singular cubes.
 	The map on the left is an isomorphism at the chain level as there is an evident isomorphism in this case between the cubical chain complex and the CW chain complex that takes an embedding of a $k$-cube to the corresponding generator of $CW_k(M) = H_k(X^k, X^{k-1})$ (where we assume the expression on the right is singular cubical homology).

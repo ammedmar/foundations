@@ -540,12 +540,12 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 
 \begin{lemma}\label{L: natural connection}
 	The connecting map $\delta$ is natural, i.e.\ for a continuous map of triples $f \colon (M;U',V') \to (N;U,V)$ the following diagram commutes for all $k$:
-
-	\begin{diagram}
-		H^k_\Gamma(U \cap V)&\rTo^\delta &H^{k+1}_\Gamma(U \cup V)\\
-		\dTo^{f^*}&&\dTo^{f^*}\\
-		H^k_\Gamma(U' \cap V')&\rTo^\delta &H^{k+1}_\Gamma(U' \cup V')
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H^k_\Gamma(U \cap V) \arrow[r, "\delta"] \arrow[d, "f^*"] & H^{k+1}_\Gamma(U \cup V) \arrow[d, "f^*"] \\
+		H^k_\Gamma(U' \cap V') \arrow[r, "\delta"] & H^{k+1}_\Gamma(U' \cup V')
+	\end{tikzcd}
+	\]
 \end{lemma}
 
 \begin{proof}
@@ -573,12 +573,12 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 	Here $W \times_N M$ is the pullback to $M$ and then we take the fiber product with $(\phi g)^{-1}(0)$.
 	In both cases these correspond to pairs of points $(x,y) \in W \times M$ with $r_W(x) = g(y)$ and $\phi(r_W(x)) = \phi(g(y)) = 0$.
 	In other words, as spaces these are both precisely the limit of the following diagram together with its map to $M$:
-	\begin{diagram}
-		&&M\\
-		&&\dTo^{g}\\
-		W&\rTo^{r_W}&N&\rTo^{\phi}&[-1,1]&\lInto&0.
-	\end{diagram}
-
+	\[
+	\begin{tikzcd}
+		& M \arrow[d,"g"] & \\
+		W \arrow[r, "r_W"] & N \arrow[r, "\phi"] & {[-1,1]} & \arrow[l,hook'] 0
+	\end{tikzcd}
+	\]
 	Thus $f^*\delta(\uW)$ and $\delta f^*(\uW)$ are represented by the same map, and we only need to check co-orientations.
 
 	We return to the definitions of the pullback and fiber product co-orientations.
@@ -957,23 +957,24 @@ we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
 	1.
 	On $\emptyset$ or $U \subset M$ with $U$ homeomorphic to $\R^m$, the map $\Phi: H_*(U) \to H_*^\Gamma(U)$ is an isomorphism.
 	As both $H_*$ and $H_*^\Gamma(-)$ are homotopy functors, we know from the respective Dimension Axioms (see \cref{E: dimension}) that in this case $H_k(U) = H_k^\Gamma(U) = 0$ for $k\neq 0$, while for $k = 0$ we have the commutative diagram
-
-	\begin{diagram}
-		H_0(pt)&\rTo& H_0(U)\\
-		\dTo^\Phi&&\dTo_\Phi\\
-		H_0^\Gamma(pt)&\rTo &H^\Gamma_0(U).
-	\end{diagram}
+	\[
+	\begin{tikzcd}
+		H_0(pt) \arrow[r] \arrow[d, "\Phi"] & H_0(U) \arrow[d, "\Phi"] \\
+		H_0^\Gamma(pt) \arrow[r] & H^\Gamma_0(U).
+	\end{tikzcd}
+	\]
 	The horizontal maps are isomorphisms because these are homotopy functors, and the left hand vertical map is an isomorphism because $\Phi$ takes a generator of $H_0(pt) \cong \Z$ to a generator of $H_0^\Gamma(pt) \cong \Z$; see again \cref{E: dimension}.
 	So the right hand map is also an isomorphism.
 
 	2.
 	$\Phi$ induces a commutative diagram of long exact Mayer-Vietoris sequences.
 	This follows from basic homological algebra given the commutativity of the following diagram and its analogue for singular cubical chains
-	\begin{diagram}
-		S_*(U \cap V)&\rInto^{(i_U,-i_V)} & S_*(U) \oplus S_*(V)\\
-		\dTo^\Phi&&\dTo_{\Phi \oplus \Phi}\\
-		C_*^\Gamma(U \cap V)&\rInto^{(i_U,-i_V)} &C_*^\Gamma(U) \oplus C_*^\Gamma(V).
-	\end{diagram}
+	\[
+	\begin{tikzcd}[column sep=large]
+		S_*(U \cap V) \arrow[r, "{(i_U, -i_V)}", hook] \arrow[d, "\Phi"] & S_*(U) \oplus S_*(V) \arrow[d, "\Phi \oplus \Phi"] \\
+		C_*^\Gamma(U \cap V) \arrow[r, "{(i_U, -i_V)}", hook] & C_*^\Gamma(U) \oplus C_*^\Gamma(V).
+	\end{tikzcd}
+	\]
 
 	3.
 	If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi \colon H_*(U_\alpha) \to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism.
