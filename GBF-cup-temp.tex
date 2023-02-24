@@ -42,13 +42,11 @@
 
  NOTE: CLARIFY $K_*(X)$ vs $K_*(M)$ IN PREVIOUS STUFF
 
-ADD CONVENTION ABOUT TENSORS OF COCHAINS
+
 
 SHOW UNIVERSAL HOMOTOPIES YIELD HOMOLOGY AND COHOMOLOGIES
 
-SIMPLIFY BELOW USING That as chains all that degenerate crud vanishes and then just think of A as a geometric chain so can ignore all the crud. 
 
-NEED TO CHOOSE ORIENTATION OF TRACES SO THAT BOUNDARY WORKS OUT
 
 
 \begin{lemma}\label{L: trans diag cube}
@@ -84,7 +82,7 @@ Also, as $V$ and $W$ are transverse and as $V\times_MW$ is transverse to the cub
 are also transverse to  $V\times W$. 
 
 We construct an element $A\in PC^\Gamma_*(M\times M)$ from the end of the homotopy and the traces of $\diag(Z)$ and $\zeta\xi\diag(Z)$. To simplify notation, recall from \cref{S: covariant functoriality} that if we have $r_U:U\to M$ representing an element that we call $U\in PC^\Gamma_*(M)$ and if we have a map $F:M\to N$, then we write $F(U)$ for the corresponding element of $PC^\Gamma_*(M)$, represented by the composition $U\xr{r_U}M\xr{F}M$.
-Utilizing this notation, and also letting $H_1=H(-,1):M\times M\to M\times M$, we define $A\in PC^\Gamma_*(M\times M)$ to be the union of the following:
+Utilizing this notation, and also letting $H_1=H(-,1):M\times M\to M\times M$ and noting that $H(-,0)=\id$, we define $A\in PC^\Gamma_*(M\times M)$ to be the union of the following:
 \begin{enumerate}
 \item $Y'=H_1(Y)$, i.e.\ if $r_Y:Y\to M\times M$ represents $Y$ as an element of $PC^\Gamma_*(M)$, then $Y'$ is represented by  the composition $Y\xr{r_Y} M\times M\xr{H_1}M\times M$, 
 
@@ -117,7 +115,6 @@ Next, consider $(\mc I(\uV) \smile \mc I(\uW))(Z)$. If $Z=\sum_i a_iE_i$, then b
 Here the third equality is from the definition of the map $\mc I$ and the fourth utilizes \cref{P: cross product comparison}.
 \end{proof}
 
-CHECK CONVENTION ESTABLISHED FOR TENSOR PRODUCT OF COCHAINS ACTING ON CHAINS
 
 
 
