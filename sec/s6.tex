@@ -233,15 +233,9 @@ In other words, the cochains that are transverse to $X$ are sufficient to comput
 
 To show that the inclusion $C^*_{\Gamma \pf X}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism, it will be necessary to consider the following scenario.
 Suppose we have a map $r_V \colon V \to M$ with $V$ a manifold with corners and $M$ a manifold with a cubulation.
-Let $\bd V = W$, which will also be transverse to the cubulation.
-We construct a homotopy $h \colon V \times I \to M$ such that $g(-,0) = r_V$, $g(-,1)$ is transverse to the cubulation, and so the restriction of $h$ to $W \times I$ is transverse to the cubulation.
-However, cochains are not generally well behaved with respect to homotopy.
-For example, $r_V \colon V \to M$ might be degenerate but a map homotopic to $r_V$ may not.
-To solve this problem, we launder our homotopies through homotopies of $M$, i.e.\ we only use homotopies of the form $V \times I \xr{r_V \times \id} M \times I \xr{H} M$ with $H(-,0) = \id$.
-This ensures that components of $V$ or $W$ in $Q^*(M)$ remain in $Q^*(M)$ and, in general, that our homotopies generate cohohomologies of cocycles via
-\cref{S: covariant functoriality}.
-We co-orient $h$ using the co-orientation induced by $\id \colon M \to M$; see \cref{D: homotopy co-orientation}.
-Given such an $h$, we will call the resulting homotopy from $r_V$ to $H(-,1) \circ r_V$ a \textbf{universal homotopy} $V \times I \to M$.
+Let $\bd V = W$, and suppose $W$ is already transverse to the cubulation.
+We will construct a homotopy $h \colon V \times I \to M$ such that $g(-,0) = r_V$, $g(-,1)$ is transverse to the cubulation, and the restriction of $h$ to $W \times I$ is transverse to the cubulation. However, as noted at the end of \cref{S: covariant functoriality}, such a homotopy might not preserve cohomology classes, as we will need below. So we must instead use the universal homotopies of \cref{D: universal homotopy,P: universal homotopy}. 
+
 
 The technique for constructing such homotopies will be modeled on a variety of results in \cite{GuPo74}.
 We use the Transversality Theorem and Transversality Homotopy Theorem of \cite[Section 2.3]{GuPo74} as stated.

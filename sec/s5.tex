@@ -161,6 +161,29 @@ This lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a manifol
 	The cohomological case is the same by taking proper smooth approximations and co-orienting the homotopies using \cref{L: co-orientable homotopies}.
 \end{proof}
 
+
+
+There is another very useful application of \cref{C: homotopy} that will be used frequently below. To explain, we first observe that if we have a map $f \colon V\to M$ representing an element of $H_*^\Gamma(M)$, then, in general, this homology classes is not preserved under homotopies of $f$. In fact, a map representing a cycle might be homotopic to maps that do not represent cycles. For example, a map taking two arcs to opposite halves of $S^1$ to form a generator of $H_1^\Gamma(M)\cong \Z$ is homotopic to a map taking the two arcs to disjoint points. It is also homotopic to a map wrapping each arc completely around the circle and so altogether representing twice a generator of $H_1^\Gamma(M)$. So, in general, geometric homology and cohomology do not behave well with respect to homotopies of the elements of $PC(M)$. This will be a problem below, for example when we want to alter a map representing a cycle by a homotopy to make it transverse to some other cycle. The solution will be to define and use what we call universal homotopies.
+
+
+\begin{definition}\label{D: universal homotopy}
+Given two maps $f,g \colon V\to M$, we say that there is a \textbf{universal homotopy} from $f$ to $g$ if there is a smooth homotopy $H \colon M\times I\to M$ with $H(-,0)=\id_M$ and such that $g=H(-,1)\circ f$; in other words, if  $f$ and $g$ are homotopic by a  composition of the form  $V \times I \xr{f\times \id} M \times I \xr{H} M$. In this case, we call the composition a \textbf{univeral homotopy} from $f$ to $g$. We say that the universal homotopy is proper if $f$, $g$, and $H$ are proper maps. 
+\end{definition}
+
+
+\begin{proposition}\label{P: universal homotopy}
+Suppose there is a universal homotopy from $f \colon V\to M$ to $g \colon V\to M$. If $f \colon V\to M$ represents an element of $H_*^\Gamma(M)$, then $g \colon V\to M$ represents the same element. Similarly, if $f \colon V\to M$ represents an element of $H^*_\Gamma(M)$ and the universal homotopy is proper, then $g \colon V\to M$ represents the same element.
+\end{proposition}
+\begin{proof}
+The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there. In the case of cohomology, we co-orient $h$ using the co-orientation induced by $\id \colon M \to M$; see \cref{D: homotopy co-orientation}.
+\end{proof}
+
+
+
+
+
+
+
 \subsubsection{Contravariant functoriality of geometric cohomology}\label{S: cohomology pullback}
 
 In this section we assign to a continuous map $f \colon M \to N$ of manifolds without boundary a map $H^*_\Gamma(N) \to H^*_\Gamma(M)$.
