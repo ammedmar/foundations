@@ -84,28 +84,19 @@ Also, as $V$ and $W$ are transverse and as $V\times_MW$ is transverse to the cub
 are also transverse to  $V\times W$. 
 
 We construct an element $A\in PC^\Gamma_*(M\times M)$ from the end of the homotopy and the traces of $\diag(Z)$ and $\zeta\xi\diag(Z)$. To simplify notation, recall from \cref{S: covariant functoriality} that if we have $r_U:U\to M$ representing an element that we call $U\in PC^\Gamma_*(M)$ and if we have a map $F:M\to N$, then we write $F(U)$ for the corresponding element of $PC^\Gamma_*(M)$, represented by the composition $U\xr{r_U}M\xr{F}M$.
-Utilizing this notation, also letting $H_1=H(-,1):M\times M\to M\times M$, we let $A\in PC^\Gamma_*(M\times M)$ be the union of the following:
+Utilizing this notation, and also letting $H_1=H(-,1):M\times M\to M\times M$, we define $A\in PC^\Gamma_*(M\times M)$ to be the union of the following:
 \begin{enumerate}
 \item $Y'=H_1(Y)$, i.e.\ if $r_Y:Y\to M\times M$ represents $Y$ as an element of $PC^\Gamma_*(M)$, then $Y'$ is represented by  the composition $Y\xr{r_Y} M\times M\xr{H_1}M\times M$, 
 
-\item $-H(\diag(Z)\times I)$, i.e.\ the homotopy $\diag(Z)\times I\xr{r_{\diag(Z)}\times \id_I} M\times M\times I\xr{H}M\times M$ with its opposite orientation,
+\item $\pm H(\diag(Z)\times I)$, i.e.\ the homotopy $\diag(Z)\times I\xr{r_{\diag(Z)}\times \id_I} M\times M\times I\xr{H}M\times M$, with the sign chosen so that its boundary will include $\diag(Z)-H_1(\diag(Z))$,
 
-\item $H(\zeta\xi\diag(Z)\times I)$, i.e.\ the homotopy $\zeta\xi\diag(Z)\times I\xr{r_{\zeta\xi\diag(Z)}\times \id_I} M\times M\times I\xr{H}M\times M$.
+\item $\pm H(\zeta\xi\diag(Z)\times I)$, i.e.\ the homotopy $\zeta\xi\diag(Z)\times I\xr{r_{\zeta\xi\diag(Z)}\times \id_I} M\times M\times I\xr{H}M\times M$, with the sign chosen so that its boundary will include $H_1(\zeta\xi\diag(Z))-\zeta\xi\diag(Z)$.
 \end{enumerate}
-Then as observed above, $A$ is transverse to $V\times W$, and we next compute $\bd A$. We have 
-\begin{enumerate}
-\item $\bd Y'=H_1(\bd Y)=H_1(\diag(Z)-\zeta\xi\diag(Z)+Q)=H_1(\diag(Z))-H_1(\zeta\xi\diag(Z))+H_1(Q)$,
-
-\item $-\bd H(\diag(Z)\times I)=-H(\bd (\diag(Z)\times I))=-H_1(\diag(Z))+\diag(Z)-H((\bd\diag(Z))\times I)$,
-
-\item $\bd H(\zeta\xi\diag(Z)\times I)=H(\bd (\zeta\xi\diag(Z)\times I))=H_1(\zeta\xi\diag(Z))-\zeta\xi\diag(Z)+H((\bd\zeta\xi\diag(Z))\times I)$.
-\end{enumerate}
-As $\bd Z=0$ as a cubical chain, it is trivial as a singular cubical chain or element of $PC_*^\Gamma(M)$, and so the terms involving $\bd\diag(Z)$ or $\bd\zeta\xi\diag(Z)$ are also trivial by \cref{L: dessicated homotopy}. Similarly, $H_1(Q)$ is trivial. So, in $C_*^\Gamma(X)$, we have $\bd Y=\bd A$. 
+Then, as observed above, $A$ is transverse to $V\times W$. Furthermore, as elements in $C_*^\Gamma(M\times M)$, we have $\bd Y=\bd A$, applying \cref{L: dessicated homotopy} and using that $\bd Z=0\in C_*^\Gamma(M\times M)$.
 
 
 
-
-Now, at last we can compute, treating $A$ as a manifold with corners. To fix our indices, we assume as usual that $\dim(M)=m$, $\dim(V)=v$, and $\dim(W)=w$, so $\dim(V\times_MW)= v+w-m$, which is the dimension of an $m-(v+w-m)=2m-v-w$ cochain. So we take $\dim(Z)=2m-v-w$, which implies $\dim(A)=\dim(Y)=2m-v-w+1$. So $\dim((V\times W)\times_{M\times M}A)=(v+w)+(2m-v-w+1)-2m=1$, and its boundary is $0$-dimensional and augments to $0$ by \cref{D: aug}. But, as $V$ and $W$ represent geometric cocycles, 
+Now, at last we can compute. To fix our indices, we assume as usual that $\dim(M)=m$, $\dim(V)=v$, and $\dim(W)=w$, so $\dim(V\times_MW)= v+w-m$, which is the dimension of an $m-(v+w-m)=2m-v-w$ cochain. So we take $\dim(Z)=2m-v-w$, which implies $\dim(A)=\dim(Y)=2m-v-w+1$. So $\dim((V\times W)\times_{M\times M}A)=(v+w)+(2m-v-w+1)-2m=1$, and its boundary is $0$-dimensional and augments to $0$ by \cref{D: aug}. But, as $V$ and $W$ represent geometric cocycles, 
 this implies  $$\aug((V\times W)\times_{M\times M}\diag(Z))=\aug((V\times W)\times_{M\times M}\zeta\xi\diag(Z)).$$
 We claim the former represents $(\mc I(\uV\uplus\uW))(Z)$ and the latter represents $(\mc I(\uV) \smile \mc I(\uW))(Z)$.
 
