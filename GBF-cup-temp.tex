@@ -28,6 +28,7 @@
 \newcommand{\creflastconjunction}{, and\nobreakspace} %makes cleveref use serial commas
 
 
+
 %\topmargin0.0cm
 %\headheight0.0cm
 %\headsep0.0cm
@@ -43,10 +44,48 @@
  NOTE: CLARIFY $K_*(X)$ vs $K_*(M)$ IN PREVIOUS STUFF
 
 
+SEE IF FLOWS GIVES THE COMPACT CASE IN GENERAL
 
-SHOW UNIVERSAL HOMOTOPIES YIELD HOMOLOGY AND COHOMOLOGIES
+\subsubsection{S: intersection map cup}
 
 
+In \cref{T: intersection is cup product} we showed that singular cohomology and geometric cohomology on a manifold without boundary are isomorphic as algebras with the cup products providing the multiplications. Ideally, we would like to have this isomorphism realized by an explicit map. Given \cref{T: equivalent cap} concerning the cap product, it is natural to conjecture as follows:
+
+\begin{conjecture}\label{cup conjecture}
+Let $M$ be a manifold without boundary given the smooth cubulation $X$. Then the intersection map  $\mc I \colon C^*_{\Gamma \pf X}(M) \to K^*(X)$ induces on cohomology with cup products an isomorphism of algebras. In particular, we have algebra isomorphisms $H^*_{\Gamma\pf X}(M) \xleftarrow{\cong} H^*_{\Gamma\pf X}(M)\xr{\mc I} H^*(K^*(X))$. Using the extended definition of $\mc I$ from \cref{R: intersection map extension}, we can write the conjecture as 
+$$\mc I(\uV \uplus \uW) = \mc I(\uV) \smile \mc I(\uW).$$
+\end{conjecture}
+
+We will show just below that the map to the left, which is induced by inclusion and is an isomorphism by \cref{T: transverse complex}, is an algebra isomorphism, which includes showing that the cup product is well defined in $H^*_{\Gamma\pf X}(M)$. We know that the map $\mc I$ is an isomorphism when $H^*(X)$ is finitely generated in each degree by \cite{T: intersection qi}. 
+
+Unfortunately, we have not been able to show that $\mc I$ is a map of algebras, even when $H^*(X)$ is finitely generated. However, the main result of \cite{FMS-flows} implies the conjecture is true when $M$ is compact. We also have some partial results, which we state below, that imply the conjecture in other cases, including if $H^i(M)$  either is all torsion or is torsion-free in each degree. These results are presented in the remainder of \cref{S: intersection map cup}.
+
+
+
+\begin{proposition}
+Let $M$ be a manifold without boundary, and suppose $M$ has smooth cubulation $X$. The isomorphism $H^*_{\Gamma\pf X}(M)\to H^*_{\Gamma\pf X}(M)$ is a map of algebras. In particular, the cup product on $H^*_{\Gamma\pf X}(M)$ can be defined using only cochains in $C^*_{\Gamma \pf X}(M)$.
+\end{proposition}
+\begin{proof}
+It suffices to prove the last statement, i.e.\ that for any cohomology classes $\uV,\uW\in H^*_\Gamma(M)$ there exist representatives $f \colon V \to M$ and $g \colon W \to M$ in $PC^*_{\Gamma \pf X}(M)$ such that the fiber product $V \times_M W$ is also in $PC^*_{\Gamma \pf X}(M)$. Then we can define the cup product $\uV \uplus \uW \in H^*_{\Gamma\pf X}(M)$ as the class represented by $V \times_M W$.  Indeed, if $V'$ and $W'$ are any other such classes in $PC^*_{\Gamma \pf X}(M)$ representing $\uV$ and $\uW$, then we know from the well-definedness of the cup product in $H^*_\Gamma(M)$ that $V \times_M W$ and $V' \times_M W'$ represent the same element of $H^*_\Gamma(M)$ and so the same element of $H^*_{\Gamma\pf X}(M)$.
+
+So suppose $f \colon V \to M$ and $g \colon W \to M$ represent $\uV,\uW\in H^*_{\Gamma\pf X}(M)$. 
+Let $h$ be the map representing the cubulation, thought of as a disjoint union of top-dimensional cubes mapping to $M$. We can let $X$ denote this disjoint union of cubes mapping to $M$ and note that this contains the same information as the cubulation. By \cref{T: transverse complex}, we can assume that $g:W \to M$ is transverse to the cubulation. 
+As we have assumed $W$ is transfer to the cubulation, $W \times_M X$ is well defined as a manifold with corners mapping to $M$ (ignoring (co)-orientation considerations for the moment). 
+Next, let us consider the union $W\sqcup X\sqcup (W\times_M X)$ as a single manifold with corners over $M$. By \cref{P: perturb transverse to map}, there is a proper universal homotopy from $f$ to a map $f':V\to M$ that is transverse to this union; $f'$ represents the same cohomology class as $f$ (in $H^*_{\Gamma}(M)$ and so also in $H^*_{\Gamma\pf X}(M)$ as $f'$ is transverse to $h$) by an application of \cref{P: universal homotopy}. By \cref{P: 3 out of 4 trans}, since $W$ is transverse to $X$ and our new $f' \colon V \to M$ is transverse to both $W$ and $W\times_MX$, we also have that $X$ is transverse to $f'\times g \colon V\times_M W \to M$. 
+\end{proof}
+
+
+\begin{theorem}
+Let $M$ be a \emph{compact} manifold without boundary given the smooth cubulation $X$. Then the intersection map  $\mc I \colon C^*_{\Gamma \pf X}(M) \to K^*(X)$ induces on cohomology an isomorphism of algebras. In particular, we have algebra isomorphisms $H^*_{\Gamma\pf X}(M) \xleftarrow{\cong} H^*_{\Gamma\pf X}(M)\xr{\mc I} H^*(K^*(X)).$
+\end{theorem}
+\begin{proof}
+Suppose $V,W\in PC^*_{\Gamma\pf X}(M)$ represent $\uV,\uW\in H^*_{\Gamma\pf X}(M)$. By \cite[Theorem 1.1]{FMS-flows}, there is a flow $\mathbf{f}_t$ and a time $t$ such that $\mathbf{f}_t(V)$ and $\mathbf{f}_{-t}(W)$ are transverse and $\mc I(\mathbf{f}_t(V)\times_M \mathbf{f}_{-t}(W))=\mc I(\mathbf{f}_t(V)) \smile \mc I(\mathbf{f}_{-t}(W)).$
+The flows provide universal universal homotopies, and so $\mathbf{f}_t(V)$ and $\mathbf{f}_{-t}(W)$ represent the same cohomology classes as $V$ and $W$, respectively. Thus $\mathbf{f}_t(V)\times_M \mathbf{f}_{-t}(W)$ represents $\uV \uplus \uW$, and the theorem follows. 
+\end{proof}
+
+
+We next remove the compactness assumption. In this case, we cannot prove \cref{cup conjecture} in generality, but we can show that  
+$\mc I(\uV \uplus \uW)$ and $\mc I(\uV) \smile \mc I(\uW)$ have the same image under the evaluation map to $\Hom(H_*(K_*(X)),\Z)$. We can also show they agree if $H^*(M)$ is finitely generated and in each degree and these expressions are torsion elements. We first need the following transversality lemma.
 
 
 \begin{lemma}\label{L: trans diag cube}
@@ -74,7 +113,7 @@ Let $Z$ be a cubical cycle representing an element of $H_*(K_*^X(M))$. As in \cr
 
 In order to proceed from here, we need to establish chain and cochain representatives with sufficient transversality to begin computing intersections. 
 
-First, choose $f:V\to M$ and $g:W\to M$ representing $\uV$ and $\uW$. Let $h$ be the map representing the cubulation, though of as a disjoint union of top-dimensional cubes mapping to $M$. We can let $X$ denote this disjoint union of cubes mapping to $M$ and note that this contains the same information as the cubulation. By \cref{T: transverse complex}, we can assume that $g:W\to M$ is transverse to the cubulation. So $W\times_MX$ is well defined as a manifold with corners mapping to $M$ (ignoring (co)-orientation considerations for the moment). 
+First, choose $f:V\to M$ and $g:W\to M$ representing $\uV$ and $\uW$. Let $h$ be the map representing the cubulation, thought of as a disjoint union of top-dimensional cubes mapping to $M$. We can let $X$ denote this disjoint union of cubes mapping to $M$ and note that this contains the same information as the cubulation. By \cref{T: transverse complex}, we can assume that $g:W\to M$ is transverse to the cubulation. So $W\times_MX$ is well defined as a manifold with corners mapping to $M$ (ignoring (co)-orientation considerations for the moment). 
 Next, let us consider the union $W\sqcup X\sqcup (W\times_M X)$ as a single manifold with corners over $M$. By \cref{P: perturb transverse to map} there is a proper universal homotopy from $f$ to a map $f':V\to M$ that is transverse to this union; $f'$ represents the same cohomology class as $f$ by an application of \cref{P: universal homotopy}. Abusing notation, let us rechristen this new transverse map $f:V\to M$.  By \cref{P: 3 out of 4 trans}, since $W$ is transverse to $X$ and $V$ is transverse to both $W$ and $W\times_MX$, we also have that $X$ is transverse to $V\times_M W$. 
 
 Next, consider $V\times W$ in $M\times M$. As $V$ and $W$ are each transverse to the cubulation $X$, we have $V\times W$ transverse to the product cubulation $X\times X$ by the proof of \cref{P: oriented interchange}. 
@@ -124,10 +163,13 @@ In the current setting we will apply this to cubical cohomology with integer coe
 
 
 \begin{proposition}
-Let $M$ be a smoothly cubulated manifold without boundary with cubulation $X$, and suppose $H^i(X)$ is finitely generated for each $i$. Let $\uV,\uW\in H^*_\Gamma(M)$. Suppose the cohomology classes $\mc I(\uV\uplus\uW)$ and $\mc I(\uV) \smile \mc I(\uW)$ lie in $T(H^*(K_X^*(M)))$. Then they agree after composition with the map $$\lambda:T(H^*(K_X^*(M)))\to \Hom(H_{*-1}(K_*^X(M)),\Q/\Z).$$ 
+Let $M$ be a smoothly cubulated manifold without boundary with cubulation $X$, and suppose $H^i(X)$ is finitely generated for each $i$. Let $\uV,\uW\in H^*_\Gamma(M)$. Suppose the cohomology classes $\mc I(\uV\uplus\uW)$ and $\mc I(\uV) \smile \mc I(\uW)$ lie in $T(H^*(K_X^*(M)))$. Then they agree after composition with the isomorphism $$\lambda:T(H^*(K_X^*(M)))\to \Hom(H_{*-1}(K_*^X(M)),\Q/\Z)$$
+and so they are equal in $H^*(K_X^*(M)$.
 \end{proposition}
 
-UGH, WHAT IF ONE IS TORSION AND THE OTHER ISN'T?
+\begin{proof}
+
+\end{proof}
 
 
 \end{document}
