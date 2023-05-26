@@ -79,7 +79,10 @@ Again see \cite[Section 2]{Joy12} for further details.
 \end{example}
 
 When $W$ is a general manifold with corners, the boundary is more naturally a space equipped with a map to $W$, rather than a subspace of $W$.
-The reason can be seen, for example, in the teardrop space of \cref{F: teardrop}, where the boundary should be considered to be homeomorphic to the closed interval mapping both endpoints to the vertex of the tear drop.
+The reason can be seen, for example, in the teardrop space of \cref{F: teardrop}. 
+The intuitive boundary here would be homeomorphic to the circle but have a corner at the point of the teardrop.
+However, this would not be a smooth manifold with corners.
+Instead, we consider the boundary to be homeomorphic to the closed interval together with a map taking both endpoints to the vertex of the teardrop.
 To explain in more detail, we have the following definitions.
 
 \begin{figure}[h]
@@ -89,7 +92,7 @@ To explain in more detail, we have the following definitions.
 \end{figure}
 
 \begin{definition}
-	A \textbf{local boundary component} $\beta$ of $W$ at $x \in W$ is a consistent choice of connected component $\mathbf{b}_V$ of $S^1(X) \cap V$ for any neighborhood $V$ of $x$, with consistent meaning that $\mathbf{b}_{V \cap V'} \subset \mathbf{b}_{V} \cap \mathbf{b}_{V'}$.
+	A \textbf{local boundary component} $\beta$ of $W$ at $x \in W$ is a consistent choice of connected component $\mathbf{b}_V$ of $S^1(W) \cap V$ for any neighborhood $V$ of $x$, with consistent meaning that $\mathbf{b}_{V \cap V'} \subset \mathbf{b}_{V} \cap \mathbf{b}_{V'}$.
 \end{definition}
 
 Since this notion is local, the number of such components is determined by the depth.
@@ -113,8 +116,8 @@ Inductively, we let $\bd^k W$ denote $\bd (\bd^{k-1} W)$ with $\bd^0 W = W$, and
 	If $f \colon V \to W$ is a diffeomorphism of manifolds with corners then it must, in particular, take components of $S^i(V)$ diffeomorphically onto corresponding components of $S^i(W)$, and, consequently, given a local boundary component $\mathbf{b}$ at a point $x \in V$, the map $f$ picks out a corresponding local boundary component, say $f_*(\mathbf{b})$ in $W$. We obtain a diffeomorphism $f_\bd \colon \bd V \to \bd W$ by $(x,\mathbf{b})\mapsto (f(x),f_*(\mathbf{b}))$ with $fi_{\bd V} = i_{\bd W} f_\bd$.
 \end{remark}
 
-While for manifolds with boundary $\bd^2 W$ is empty, for general manifolds with corners it will not be.
-However, given a co-oriented map $W \to M$, $\bd^2 W$ does come equipped with a natural co-orientation reversing $\Z_2$ action.
+If $W$ is a classical smooth manifold with boundary, then we have $\bd^2 W=\emptyset$, but this will not generally be the case for a manifolds with corners.
+However, given a map $W \to M$ with either $W$ oriented or the map co-oriented, then $\bd^2 W$ does come equipped with a natural orientation or co-orientation reversing $\Z_2$ action.
 This will be explained below and is a key component in showing that $\bd$ is suitable for defining boundary maps of geometric chain and cochain complexes.
 
 N.B. When no confusion is likely to occur, we will sometimes abuse notation and use $\bd W$ also to refer to the image $i_{\bd W}(\bd W) \subset W$, which is the boundary of $W$ as a topological manifold in the usual sense.
@@ -122,13 +125,13 @@ N.B. When no confusion is likely to occur, we will sometimes abuse notation and 
 The following is an example in which $\bd^2 W$ immerses into $W$ in an interesting way.
 
 \begin{example}\label{boundary}
-	Consider the quotient $Q$ of $S^n \times \R^2_2$ by the diagonal $C_2$ action, where $C_2$ (the group of order 2) acts antipodally on $S^n$ and acts by permuting the two coordinates
+	Consider the quotient $Q$ of $S^n \times \R^2_2$ by the diagonal $\Z_2$ action, where $\Z_2$acts antipodally on $S^n$ and acts by permuting the two coordinates
 	of $\R^2_2$.
-	The projection of $Q$ onto $S^n / C_2 = \R P^n$ defines a fiber bundle with fiber $\R^2_2$.
+	The projection of $Q$ onto $S^n / \Z_2 = \R P^n$ defines a fiber bundle with fiber $\R^2_2$.
 	Local coordinates can then be used to endow $Q$ with the structure of a manifolds with corners.
 
 	The subspace $S^1(Q)$ is diffeomorphic to $S^n \times (0,\infty)$, and $S^2(Q)$ is diffeomorphic to $\R P^n$.
-	The boundary $\bd Q$ is the quotient of $S^n \times \bd \R^2_2$ by $C_2$, which is diffeomorphic to
+	The boundary $\bd Q$ is the quotient of $S^n \times \bd \R^2_2$ by $\Z_2$, which is diffeomorphic to
 	$S^n \times [0,\infty)$.
 	Thus $\bd^2 Q$ is $S^n$, which maps to $S^2(Q)$ by the standard quotient by antipodal action.
 \end{example}
