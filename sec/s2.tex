@@ -8,16 +8,16 @@ By \textbf{smooth} we always mean differentiable of all orders.
 Throughout the paper, all manifolds and maps will be in the smooth category unless noted otherwise.
 
 \begin{definition}
-	If $A \subset \R^n$ and $B \subset \R^m$ are any subsets we say that $f \colon A \to B$ is \textbf{smooth} if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$.
+	If $A \subset \R^n$ and $B \subset \R^m$ are any subsets, we say that $f \colon A \to B$ is \textbf{smooth} if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$.
 	We say that $f$ is a \textbf{diffeomorphism} if $f$ is a homeomorphism and both $f$ and $f^{-1}$ are smooth\footnote{Joyce requires $n = m$ in his definition for $f$ to be a diffeomorphism.
 	But suppose $f$ is a diffeomorphism as defined here and, without loss of generality, $n>m$.
 	Let $\R^m \subset \R^n$ in the usual way.
 	Then as $f$ extends to a smooth map from a neighborhood of $A$ to $\R^m$, we can certainly consider $f$ as extending to a smooth map from a neighborhood of $A$ to $\R^n$.
 	Similarly, as $f^{-1}$ extends to a smooth map from a neighborhood of $B$ in $\R^m$ to $\R^n$, we can extend $f^{-1}$ to a neighborhood $B$ in $\R^n$ by precomposing with the projection $\R^n \to \R^m$.
-	So diffeomorphisms in our sense can be made into diffeomorphisms in Joyce's sense.}.
+	So diffeomorphisms in our sense can be made into diffeomorphisms in Joyce's sense, and obviously vice versa.}.
 \end{definition}
 
-With this definition, the notions of smooth charts and atlases for manifolds in the standard setting can be extended to define (smooth) manifolds with corners; see \cite[Section 2]{Joy12}: An $n$-dimensional chart $(U,\phi)$ of the space $W$ has domain $U$ an open subset of $\R^n_k = [0,\infty)^k \times \R^{n-k} \subset \R^n$ and $\phi$ is a homeomorphism from $U$ to $\phi(U) \subset W$.
+With this definition, the notions of smooth charts and atlases for manifolds in the standard setting can be extended to define (smooth) manifolds with corners; see \cite[Section 2]{Joy12}: An $n$-dimensional chart $(U,\phi)$ of the space $W$ has domain $U$ an open subset of $\R^n_k = [0,\infty)^k \times \R^{n-k} \subset \R^n$, and $\phi$ is a homeomorphism from $U$ to $\phi(U) \subset W$.
 Two $n$-dimensional charts $(U,\phi)$ and $(V,\psi)$ are compatible if $\psi^{-1}\phi \colon \phi^{-1}(\phi(U) \cap \psi(V)) \to \psi^{-1}(\phi(U) \cap \psi(V))$ is a diffeomorphism of subsets of $\R^n$.
 An $n$-dimensional atlas for $W$ is a family of pairwise compatible $n$-dimensional charts that cover $W$, and an $n$-dimensional manifold with corners is a paracompact Hausdorff space with a maximal $n$-dimensional atlas.
 
@@ -35,7 +35,7 @@ On the other hand, Joyce notes on page 231 of \cite{Joy12} that his manifolds wi
 These can then be embedded into Euclidean space by the Whitney Embedding Theorem.
 So any one of Joyce's manifolds with corners is diffeomorphic to a manifold with corners in our sense.
 
-By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts) and manifolds with boundary ($k \leq 1$ in all charts) as well as cubes and simplices, but not the octahedron, for example, as the cone on $[0,1] \times [0,1]$ is not modeled by any $\R^n_k$.
+By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts) and manifolds with boundary ($k \leq 1$ in all charts), as well as cubes and simplices, but not the octahedron, for example, as the cone on $[0,1] \times [0,1]$ is not modeled by any $\R^n_k$.
 
 \begin{comment}
 	The smooth real-valued functions on a manifold with corners $W$ are those $f$ such that for each chart $\phi \colon U \subset \R^n_k \to W$ the composition $f \circ \phi \colon U \to \R$ is smooth.
