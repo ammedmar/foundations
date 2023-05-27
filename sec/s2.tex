@@ -159,18 +159,26 @@ More general versions of transversality can be found in \cite[Section 6]{Joy12}.
 
 \begin{definition}{\cite[Special case of Definition 6.1]{Joy12}}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps of manifolds with corners to a manifold without boundary.
-	We say $f$ and $g$ are \textbf{transverse} if whenever $x \in S^j(X)$ and $y \in S^k(Y)$ with $f(x) = g(y) = z$ then $Df|_{S^j(V)}(T_xS^j(V))+Dg|_{S^k(W)}(T_yS^k(W)) = T_zM$.
+	We say $f$ and $g$ are \textbf{transverse} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$, if  $x\in S^j(V)$ and $y \in S^k(W)$  then $Df|_{S^j(V)}(T_xS^j(V))+Dg|_{S^k(W)}(T_yS^k(W)) = T_zM$.
 \end{definition}
 
-While this particular formulation of transversality is given in terms of the behavior of $f$ and $g$ on the strata $S^j(V)$ and $S^k(W)$, it is sometimes useful to have a reformulation in terms of the boundaries $\bd^j V$ and $\bd^kW$.
-This is the content of \cref{L: simple trans} below.
+\red{Note that in our version of the definition, we use maps of the form $f|_{S^j(V)}$, which are classical smooth maps, as the strata $S^j(V)$ are smooth manifolds. Joyce takes a slightly different approach, first noting that if $f:V\to M$ is a smooth map of manifolds with corners then there is an induced map $Df$ ``in the usual way'' \cite[Definition 3.2]{Joy12} and then restricting $Df$ to $T_xS^j(V)\subset T_xV$ (see also \cite[Proposition 2.4]{Joy12}). However, some thinking through the definitions shows that the resulting spaces $D(f|_{S^j(V)})(T_xS^j(V))$ and $Df(T_xS^j(V))$ are identical, both being the derivations that act on functions $h:M\to \R$ by taking the derivatives of $hf$ in the directions tangent to $S^k(V)$. We somewhat prefer our formulation as it expresses transversality entirely in terms of properties of maps of smooth manifolds (without corners).}
 
-To establish notation, let $f \colon V \to M$ and $g \colon W \to M$ be maps from manifolds with corners to a manifold without boundary.
-We say that $f$ and $g$ are \textbf{plainly transverse} if they are transverse as maps of manifolds in the classical sense, without special consideration of strata or boundaries.
+While this definition of transversality is given in terms of the behavior of $f$ and $g$ on the strata $S^j(V)$ and $S^k(W)$, it is sometimes useful to have a reformulation in terms of the boundaries $\bd^j V$ and $\bd^kW$.
+This is the content of \cref{L: simple trans} below, for which we need a further definition.
+
+\begin{definition}
+Let $f \colon V \to M$ and $g \colon W \to M$ be maps from manifolds with corners to a manifold without boundary. 
+We say that $f$ and $g$ are \textbf{plainly transverse} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$ we have $Df(T_xV)+Dg(T_yW) = T_z M$. Note that $x$ and $y$ may be boundary points of $V$ and $W$, the maps $Df$ and $Dg$ being those of \cite[Definition 3.2]{Joy12}.
+\end{definition}
+
+\begin{comment}
 To be explicit in the case that $x \in V-S^0(V)$ or $y \in W-S^0(W)$ with $f(x) = g(y)$, let $(U_x,\phi_x)$ and $(U_y,\phi_y)$ be charts with $\phi_x(0) = x$ and $\phi_y(0) = y$.
 By definition of smoothness, there exist neighborhoods $N_x$ and $N_y$ of $0$ in $\R^v$ and $\R^w$, respectively, so that $f\phi_x$ and $g\phi_y$ extend to smooth maps $\psi_x \colon N_x \to M$ and $\psi_y \colon N_y \to M$.
 Then $f$ and $g$ are plainly transverse at $x$ and $y$ if $D\psi_x(T_0 \R^v)+D\psi_y(T_0\R^w) = T_{f(x)}M$.
 This property is independent of the involved choices as $D\psi_x(T_0 \R^v)$ is the limit of $D\psi_x(T_{a} \R^v)$ for $a$ taken along any smooth path in $U_x$, and this does not depend on the choice of $N_x$ or $\psi_x$, and similarly for $\psi_y$.
+\end{comment}
+
 
 \begin{lemma}\label{L: simple trans}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be maps from manifolds with corners to a manifold without boundary.
@@ -199,15 +207,16 @@ Note that, a priori, the latter is a stronger condition as it imposes conditions
 
 Throughout this text, we will need a series of increasingly more general results guaranteeing that we can make certain maps transverse to each other.
 We begin here with a relatively simple case that will be first used in \cref{S: basic properties} to show that geometric cohomology is contravariantly functorial with respect to continuous maps of manifolds without boundary.
+
 All of our transversality theorems will be built using some basic tools that can be found in \cite[Section 2.3]{GuPo74}.
 In particular, we record the following results, referring the reader to \cite[Section 2.3]{GuPo74} for the proofs\footnote{We rephrase the statements of these theorems slightly to better fit our context and notation.}:
 
-\begin{theorem}[Transversality Theorem]
+\begin{theorem}[Transversality Theorem]\label{T: GP transversality}
 	Suppose $F \colon X \times S \to Y$ is a smooth map of manifolds, where only $X$ has boundary, and let $Z$ be any boundaryless submanifold of $Y$.
-	If both $F$ and $F|_{\bd X \times S}$ are transverse to $X$, then for almost every $s \in S$, both $F(-,s) \colon X \to Y$ and $F(-,s)|_{\bd X} \colon \bd X \to Y$ are transverse to $Z$.
+	If both $F$ and $F|_{\bd X \times S}$ are transverse to $Z$, then for almost every $s \in S$, both $F(-,s) \colon X \to Y$ and $F(-,s)|_{\bd X} \colon \bd X \to Y$ are transverse to $Z$.
 \end{theorem}
 
-\begin{theorem}[$\epsilon$-Neighborhood Theorem]
+\begin{theorem}[$\epsilon$-Neighborhood Theorem]\label{T: epsilon neighborhood}
 	For a compact boundaryless manifold $Y$ in $\R^M$ and a positive number $\epsilon$, let $Y_\epsilon$ be the open set of points in $\R^M$ with distance less than $\epsilon$ from $Y$.
 	If $\epsilon$ is sufficiently small, then each point $w \in Y_\epsilon$ possesses a unique closest point in $Y$, denoted $\pi(w)$.
 	Moreover, the map $\pi \colon Y_\epsilon \to Y$ is a submersion.
@@ -217,6 +226,7 @@ In particular, we record the following results, referring the reader to \cite[Se
 These theorems are used in \cite{GuPo74} to prove the following basic transversality result:
 
 \begin{theorem}[Transversality Homotopy Theorem]
+	Let $X$ be a smooth manifold with boundary.
 	For any smooth map $f \colon X \to Y$ and any boundaryless submanifold $Z$ of the boundaryless manifold $Y$, there exists a smooth map $g \colon X \to Y$ homotopic to $f$ such that $g$ is transverse to $Z$ and $g|_{\bd X}$ is transverse to $Z$.
 \end{theorem}
 
@@ -273,26 +283,26 @@ The following technical lemma will help us extend the results of \cite{GuPo74} f
 	We first find a homotopy from $f$ to a smooth map that agrees with $f$ on $\bd M$ if $f|_{\bd M}$ is already smooth.
 	This can be done by the smooth approximation theorem; see \cite[Theorem III.2.5]{Kos93}.
 	So we assume for the rest of the proof that this first homotopy has been completed and that $f$ is a smooth map.
-	We will first construct our homotopy to achieve transversality without consideration of whether or not $f$ is already transverse to $g$ on $\bd M$, and then we show how to modify the construction for that case.
+	We will next construct our homotopy to achieve transversality without consideration of whether or not $f$ is already transverse to $g$ on $\bd M$, and then we show how to modify the construction for that case.
 
-	We can think of $N$ as properly embedded in some $\R^K$ by the Whitney Embedding Theorem \cite[Section 1.8]{GuPo74}, and we let $N_\epsilon$ be an $\epsilon$ neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$.
+	We can think of $N$ as properly embedded in some $\R^K$ by the Whitney Embedding Theorem \cite[Section 1.8]{GuPo74}, and we let $N_\epsilon$ be an $\epsilon$ neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$ (see \cref{T: epsilon neighborhood}).
 	Let $D$ be the open unit ball in $\R^K$.
 	We define a composite map $H \colon M \times D \to \R^K \to N$ by
-	$$H(x,s) = \pi(f(x)+ \epsilon(x)s).$$
-	We have $H(x,0) = \pi(f(x)) = f(x)$, and, since $\epsilon(x)>0$ for all $x$, the map $(x,s) \to f(x)+ \epsilon(x)s$ is a submersion onto its image in $\R^K$.
+	$$H(x,s) = \pi(f(x)+ \epsilon(f(x))s).$$
+	We have $H(x,0) = \pi(f(x)) = f(x)$, and, since $\epsilon(x)>0$ for all $x$, the map $(x,s) \to f(x)+ \epsilon(f(x))s$ is a submersion onto its image in $\R^K$.
 	As $\pi$ is also a submersion, so is $H$, and then $H \times \id_{\R^k} \colon M \times D \times \R^k \to N \times \R^k$ is a submersion.
-	In particular, $H \times \id_{\R^k}$ is transverse to $e(V)$ and to $e(S^i(V))$ for each stratum $S^i(V)$ of $W$.
-	We can now apply the Transversality Theorem (though with the parameter space $D$ in a slightly nontraditional location in the ordering of factors) to obtain that $H(-,s) \times \id_{\R^k}$ is transverse to $e(V) \times \R^k$ for almost every $s \in D$.
+	In particular, $H \times \id_{\R^k}$ is transverse to $e(V)$ and to $e(S^i(V))$ for each stratum $S^i(V)$ of $V$.
+	We can now apply the Transversality Theorem, (\cref{T: GP transversality}, though with the parameter space $D$ in a slightly nontraditional location in the ordering of factors) to obtain that $H(-,s) \times \id_{\R^k}$ is transverse to $e(V) \times \R^k$ for almost every $s \in D$.
 	If $W$ is a stratum of $V$, then this statement also holds replacing $V$ with $W$.
 	It also holds, for the same reasons, replacing $M$ with $\bd M$.
-	Since $V$ has a finite number of strata and $M$ and $\bd M$ are only two space, and since the intersection of a finite number of dense subsets is dense, it holds for almost every $s \in D$, that both $H(-,s) \times \id_{\R^k}$ and its restriction to $\bd M \times \R^k$ are transverse to every stratum of $V$.
+	Since $V$ has a finite number of strata and $M$ and $\bd M$ are only two spaces, and since the intersection of a finite number of dense subsets is dense, it holds for almost every $s \in D$ that both $H(-,s) \times \id_{\R^k}$ and its restriction to $\bd M \times \R^k$ are transverse to every stratum of $V$.
 	Now let $s_0$ be one such $s$, and let $h \colon M \times I \to N$ be given by $h(x,t) = H(x,ts_0)$.
 	Then $h(x,0) = H(x,0) = \pi(f(x)) = f(x)$.
-	While $h(x,1) = H(-,s_0)$ has the desired properties by construction.
+	While $h(-,1) = H(-,s_0)$ has the desired properties by construction.
 
 	If $f|_{\bd M}$ is already transverse to $g$, we modify the construction as follows: Let $\rho \colon M \to [0,1]$ be a smooth function that is $0$ on $\bd M$ and $>0$ on $M-\bd M$.
 	Then we define
-	$$H(x,s) = \pi(f(x)+ \epsilon(x)\rho(x)s).$$
+	$$H(x,s) = \pi(f(x)+ \epsilon(f(x))\rho(x)s).$$
 	Then when $x \in \bd M$, we have $H(x,s) = \pi(f(x)) = f(x)$, so $h$ is constant along $\bd M$.
 	For $x \notin \bd M$, the argument goes through exactly as above.
 \end{proof}
