@@ -1,6 +1,6 @@
 % !TEX root = ../foundations.tex
 
-\section{Introduction}\label{intro}
+\section{Introduction}\label{S: introduction}
 
 We fully develop a geometric approach to ordinary homology and cohomology on smooth manifolds, with classes represented by smooth maps from manifolds to our target manifold of interest.
 Such a development is in line with thinking about homology dating back to Poincar\'e and Lefschetz, but is also a time-honored approach to cohomology through intersection theory and Thom classes.
@@ -10,7 +10,8 @@ The former property is needed to define homologies, and we use the latter proper
 The study of these multiplicative structures -- a partially defined ring structure on cochains and a module over it on chains -- is also in line with the classical perspective, and their rigorous development is a central goal of this project.
 While these structures give rise to the usual cup and cap products on cohomology and homology, they are markedly different at the chain and cochain level when compared to simplicial, cubical, or singular approaches, providing greater geometric access and enjoying strict graded commutativity when defined.
 
-Our approach using manifolds with corners was initiated by Lipyanskiy in the unpublished manuscript \cite{Lipy14}, and we extend that work to a full treatment of cochains and multiplicative structures, along the way filling in details needed. Chains of degree $i$ are represented by maps from compact oriented $i$-dimensional manifolds with corners, while cochains are represented geometrically by proper and co-oriented smooth maps from manifolds with corners, with associated degree of the cochain given by the codimension of the map.
+Our approach using manifolds with corners was initiated by Lipyanskiy in the unpublished manuscript \cite{Lipy14}, and we extend that work to a full treatment of cochains and multiplicative structures, along the way filling in details needed.
+Chains of degree $i$ are represented by maps from compact oriented $i$-dimensional manifolds with corners, while cochains are represented geometrically by proper and co-oriented smooth maps from manifolds with corners, with associated degree of the cochain given by the codimension of the map.
 While it is expected that ordinary homology can be captured in this way -- after all simplices and cubes are manifolds with corners -- the technicalities in this setting are surprising.
 For example, the boundary of a boundary of a manifold with corners is not empty or even naively zero as a chain or cochain.
 Following Lipyanskiy, we simply quotient by the the sorts of ``trivial'' chains that arise in the image of the boundary squared, but then our chains and cochains are themselves equivalence classes.
@@ -18,28 +19,18 @@ Another quotient by ``degenerate'' chains and cochains is needed to ensure homol
 Once one is working with such equivalence classes and needs, for example, transversality to define products, truly substantial difficulties arise.
 Indeed, at one point we doubted the existence of a well-defined multiplication.
 
-
-
-
-
-
 Approaches to ordinary homology and cohomology were an active area of development eighty years ago, and indeed we highlight that our work is in some sense parallel to de Rham theory, allowing one to make calculations and invoke geometry for manifolds, rather than rely on transcendental approaches to cochains as formal linear duals.
 Compared with de Rham theory, our present work has the key advantage of being defined over the integers.
-Slightly more recent developments with similar goals of describing homology, and especiall cohomology, more geometrically include Goresky's work on geometric homology and cohomology of Whitney stratified objects \cite{goresky1981stratified} and the book by Buoncristiano, Rourke, and Sanderson \cite{buoncristiano1976homology}.
+Slightly more recent developments with similar goals of describing homology, and especially cohomology, more geometrically include Goresky's work on geometric homology and cohomology of Whitney stratified objects \cite{goresky1981stratified} and the book by Buoncristiano, Rourke, and Sanderson \cite{buoncristiano1976homology}.
 But this project is more contemporary than one might assume.
 Symplectic geometers have been revisiting these ideas as a parallel to work on Floer theory, with both Lipyanskiy \cite{Lipy14} and Joyce \cite{Joyc15} offering versions.
 In a similar vein, Kreck's ``differential algebraic topology'' \cite{Krec10} provides homology and cohomology on smooth manifolds using maps from \textit{stratifolds}, a certain kind of singular space.
 Even the foundations of a theory of transversality for manifolds with corners suitable for our work has only been worked out about a decade ago by Joyce \cite{Joy12}.
 
-
-
 While the idea of homology as represented by fundamental classes of submanifolds or, more generally, manifold mappings is quite familiar, historically it was only in some corners of 20th century geometric topology, such as those noted above, that \textit{co}homology classes were also represented by appropriate maps from manifolds.
 Such cochains are geometric objects in their own right, which partially evaluate on chains through intersection.
-A great benefit to such thinking is that the classical operations of algebraic topology, such as cup and cap products, can be described \textit{at the level of chains and cochains} by simple geometric operations based on intersection, without recourse to chain approximations to the diagonals, Alexander--Whitney maps, or other such combinatorics. 
+A great benefit to such thinking is that the classical operations of algebraic topology, such as cup and cap products, can be described \textit{at the level of chains and cochains} by simple geometric operations based on intersection, without recourse to chain approximations to the diagonals, Alexander--Whitney maps, or other such combinatorics.
 This again is reminiscent of the original thinking about such products in terms of intersection, and parallels modern work such as intersection theory in the PL category as in McClure's \cite{McC06}.
-
-
-
 
 The trade-off for such a pleasant description is that these intersections are not always defined; they require transversality.
 This limitation is also classically anticipated by the famous commutative cochain problem.
@@ -51,13 +42,11 @@ For concrete applications of ideas in line with our viewpoint, we mention Cochra
 Lipyanskiy's manuscript \cite{Lipy14}, on which we build, gives a fairly thorough account of geometric homology, but a much more lightly sketched account of geometric cohomology, which leaves several major theorems unproven.
 Some other expected results are not stated at all, including an isomorphism between geometric and ordinary cohomology, either as graded abelian groups or as rings.
 So one of our main goals is to give a thorough account, with detailed proofs, of geometric homology and cohomology, with our primary focus on geometric cohomology, both because Lipyanskiy's account of this requires more filling in and also because cohomology with its algebra structure is of more interest to us.
-In addition to research applications, we find these ideas helpful in teaching graduate students as, for example, cohomology of projective spaces follows from linear algebra, and pushforward or umkher maps are defined just by taking images.
+In addition to research applications, we find these ideas helpful in teaching graduate students as, for example, cohomology of projective spaces follows from linear algebra, and pushforward or umkehr maps are defined just by taking images.
 At the research level, we found Lipyanskiy's work thanks to Mike Miller, while working on \cite{FMS-flows} and looking for a rigorous foundation to geometrically model the cup product.
 Ultimately our main aim is to obtain a full -- but partially defined -- $E_\infty$-algebra structure on geometric cochains, with the $E_\infty$-structure ``resolving'' partial definedness (though itself being partially defined!) rather than non-commutativity.
 We also see plenty of room for development to make geometric cochains more broadly applicable, for example conjecturally to CW complexes with smooth attaching maps.
 Our careful treatment here is offered to facilitate such work, and we invite others who would like to use geometric reasoning in algebraic topology to contact us if they are interested in such development.
-
-
 
 \section*{Acknowledgments}
 
@@ -65,9 +54,9 @@ The authors thank Mike Miller for pointing us to \cite{Lipy14} and Dominic Joyce
 
 \section*{Conventions}
 
-Throughout we will denote the dimension of a manifold represented by an upper case character by the corresponding lower case character, for example, $\dim(M)=m$, $\dim(V)=v$, etc.
+Throughout we will denote the dimension of a manifold represented by an upper case character by the corresponding lower case character, for example, $\dim(M) = m$, $\dim(V) = v$, etc.
 
-
-For evaluation of a tensor products of cochains on a tensor product of chains, we follow the convention  $(\alpha\otimes \beta)(x\otimes y)=\alpha(x)\beta(y)$. This convention is used to define the cup product in Munkres \cite[Section 60]{Mun84}, Hatcher \cite[Section 3.2]{Hatc02}, and Spanier \cite[Section 5.6]{Span81}, though it disagrees with the conventions in some other sources, such as Dold \cite[Section VII.7]{Dol72}.
+For evaluation of a tensor products of cochains on a tensor product of chains, we follow the convention  $(\alpha \otimes \beta)(x\otimes y) = \alpha(x)\beta(y)$.
+This convention is used to define the cup product in Munkres \cite[Section 60]{Mun84}, Hatcher \cite[Section 3.2]{Hatc02}, and Spanier \cite[Section 5.6]{Span81}, though it disagrees with the conventions in some other sources, such as Dold \cite[Section VII.7]{Dol72}.
 
 The symbol $\sqcup$ denotes disjoint union.
