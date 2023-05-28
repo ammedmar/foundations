@@ -1,0 +1,53 @@
+% !TEX root = ../foundations.tex
+
+\usepackage{amssymb, amsmath, amsfonts, verbatim, mathtools, stmaryrd, tabularx}
+\usepackage{bm}
+\usepackage{mathbbol}
+\usepackage{ulem} % Used in the To-Do list
+\usepackage[all]{xy}
+\usepackage{tikz-cd}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mathrsfs}
+\usepackage{babel}
+\usepackage{standalone}
+\usepackage{todo}
+\def\todoname{Comments, remarks and to-do's}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{snake it/.style={decorate, decoration=snake}}
+
+\usepackage[bookmarks=true, linktocpage=true,
+bookmarksnumbered=true, breaklinks=true,
+pdfstartview=FitH, hyperfigures=false,
+plainpages=false, naturalnames=true,
+colorlinks=true, pagebackref=true,
+pdfpagelabels]{hyperref}
+\hypersetup{
+	linkcolor=blue, citecolor=blue,
+	urlcolor=blue, colorlinks=true,
+}
+\usepackage[capitalise,noabbrev,nosort]{cleveref}
+\newcommand{\creflastconjunction}{, and\nobreakspace} %makes cleveref use serial commas
+
+% GBF: Indents the table of contents.
+\setcounter{tocdepth}{4}% to get subsubsections in toc
+\let\oldtocsection=\tocsection
+\let\oldtocsubsection=\tocsubsection
+\let\oldtocsubsubsection=\tocsubsubsection
+\renewcommand{\tocsection}[2]{\hspace{0em}\oldtocsection{#1}{#2}}
+\renewcommand{\tocsubsection}[2]{\hspace{1em}\oldtocsubsection{#1}{#2}}
+\renewcommand{\tocsubsubsection}[2]{\hspace{2em}\oldtocsubsubsection{#1}{#2}}
+
+% Paper's geometry
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{15pt}
+
+\addtolength{\textwidth}{1.4in}
+\oddsidemargin=0in
+\evensidemargin=0in
+
+% alphabetically:
+\newcommand{\anibal}[1]{\todo[A.\!]{#1}}
+\newcommand{\dev}[1]{\todo[D.\!]{#1}}
+\newcommand{\greg}[1]{\todo[G.\!]{#1}}
