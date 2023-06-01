@@ -122,7 +122,7 @@ This will be explained below and is a key component in showing that $\bd$ is sui
 
 N.B. When no confusion is likely to occur, we will sometimes abuse notation and use $\bd W$ also to refer to the image $i_{\bd W}(\bd W) \subset W$, which is the boundary of $W$ as a topological manifold in the usual sense.
 
-The following is an example in which $\bd^2 W$ immerses into $W$ in an interesting way.
+In the following example, which is a mild generalization of \cite[Example 7.3]{Joy12}, we see $\bd^2 W$ immerse into $W$ in an interesting way.
 
 \begin{example}\label{boundary}
 	Consider the quotient $Q$ of $S^n \times \R^2_2$ by the diagonal $\Z_2$ action, where $\Z_2$acts antipodally on $S^n$ and acts by permuting the two coordinates
@@ -154,12 +154,13 @@ $$\bd (V \times W) = (\bd V \times W) \sqcup (V \times \bd W).$$
 
 Transversality of smooth maps will play a key role, as this is the condition that assures that intersections or, more generally, pullbacks of manifolds (with corners) are also manifolds (with corners).
 Recall that in the classical setting if $f \colon V \to M$ and $g \colon W \to M$ are smooth maps of manifolds without boundary then we say that $f$ and $g$ are \textbf{transverse} if whenever $f(x) = g(y) = z$ for some $x \in V$, $y \in W$, and $z \in M$ we have $Df(T_xV)+Dg(T_yW) = T_z M$.
-We here discuss the extension of transversality to manifolds with corners, though only in the case where $M$ is without boundary.
+We here discuss the extension of transversality to manifolds with corners, though only in the case where $M$ is without boundary; as noted in \cite[Remark 6.3]{Joy12}, in this special case Joyce's transversality of manifolds with corners is equivalent to the formulation of transversality in \cite[Section 7.2]{MaDo92}.
 More general versions of transversality can be found in \cite[Section 6]{Joy12}.
 
 \begin{definition}{\cite[Special case of Definition 6.1]{Joy12}}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps of manifolds with corners to a manifold without boundary.
 	We say $f$ and $g$ are \textbf{transverse} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$, if  $x\in S^j(V)$ and $y \in S^k(W)$  then $Df|_{S^j(V)}(T_xS^j(V))+Dg|_{S^k(W)}(T_yS^k(W)) = T_zM$.
+	In this case, we often abuse notation by saying that $V$ and $W$ are transverse, leaving the maps tacit.
 \end{definition}
 
 \red{Note that in our version of the definition, we use maps of the form $f|_{S^j(V)}$, which are classical smooth maps, as the strata $S^j(V)$ are smooth manifolds. Joyce takes a slightly different approach, first noting that if $f:V\to M$ is a smooth map of manifolds with corners then there is an induced map $Df$ ``in the usual way'' \cite[Definition 3.2]{Joy12} and then restricting $Df$ to $T_xS^j(V)\subset T_xV$ (see also \cite[Proposition 2.4]{Joy12}). However, some thinking through the definitions shows that the resulting spaces $D(f|_{S^j(V)})(T_xS^j(V))$ and $Df(T_xS^j(V))$ are identical, both being the derivations that act on functions $h:M\to \R$ by taking the derivatives of $hf$ in the directions tangent to $S^k(V)$. We somewhat prefer our formulation as it expresses transversality entirely in terms of properties of maps of smooth manifolds (without corners).}
@@ -332,16 +333,24 @@ This construction extends to manifolds with corners mapping into a manifold with
 	When treating $V \times _M W$ as a pullback, we also sometimes use the notation $g^*V \to W$ or $f^*W \to V$; this notation is consistent with the analogous notation for pullbacks of fiber bundles, which is a special case.
 \end{definition}
 
-The following analysis of fiber products is standard -- see for example Proposition~7.2.7 of \cite{MaDo92}.
+The reason for the transversality requirement in \cref{D: top pullback} is that this ensures that $V\times_MW$ is itself a manifold with corners, as follows from \cite[Theorem 7.2.7]{MaDo92} or \cite[Theorem 6.4]{Joy12}. In fact, we have the following. 
 
 \begin{theorem}\label{pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
 	Then $V \times _M W$ is a manifold with corners with
 	\begin{equation*}
-		S^i(V \times _M W) = \bigsqcup_{k + \ell = i} S^k(V) \times _M S^\ell(W).
+		S^i(V \times _M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
 	\end{equation*}
-	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are weakly smooth.
+	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are (weakly) smooth.
 \end{theorem}
+\begin{proof}
+By  \cite[Theorem 6.4]{Joy12} or \cite[Theorem 7.2.7]{MaDo92}, the pullback is a manifold with corners; see \cite[Remark 6.3]{Joy12} for the equivalence of the definitions of transversality in the two papers given our assumptions. The statements that the projections are weakly smooth also follows from \cite[Theorem 6.4]{Joy12}, which states that $V\times_MW$ is a fiber product in the category of manifolds with corners (with smooth maps), which includes the statement that the projection maps are maps in the category and hence smooth; see the introduction to \cite[Section 6]{Joy12}. 
+
+For the decomposition, we refer to \cite[Theorem 7.2.7.a]{MaDo92}, which says that $V\times_MW$ is a \textit{totally neat} submanifold of $V\times W$. By \cite[Definition 3.1.10]{MaDo92}, the definition of ``totally neat submanifold'' includes the condition that the \textit{index} of a point in the submanifold is equal to its index in the ambient manifold. But the notion of index in \cite{MaDo92} is precisely our notion of depth. So $V\times_MW$ being a totally neat submanifold implies that $S^i(V\times_MW)$ must consist of those points of $V\times_MW$ in $S^i(V\times W)$.  But clearly from the definitions, 
+$$S^i(V\times W)=\bigsqcup_{k + \ell = i} S^k(V) \times S^\ell(W).$$
+So a point of $S^i(V\times_M W)$ consists of a pair $(x,y)\in V\times W$ with $f(x)=g(y)$ and such that $x\in S^k(V)$ and $y\in S^\ell(W)$ for some $k,\ell$ with $k+\ell=i$. But this means precisely that $(x,y)\in S^k(V) \times_M S^\ell(W)$ for some $k,\ell$ with $k+\ell=i$. Conversely, if $(x,y)\in S^k(V) \times_M S^\ell(W)$ and $k+\ell=i$, then $(x,y)\in V\times_MW$ and, since $(x,y)$ has index $i$ in $V\times W$, it must in fact be in $S^i(V\times_M W)$.
+\end{proof}
+
 
 To generalize this theorem when $M$ is also a manifold with corners requires substantial additional hypotheses in the definition of transverse smooth maps.
 Such a generalization is a central result in \cite{Joy12}.
