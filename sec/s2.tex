@@ -496,17 +496,13 @@ Finally for this section, we briefly consider transversality of more than two ma
 	However, this reduces to our setting by taking $S_i = M$ and $g_i = f_i$ for all $i$.}
 	\cite[Propositions~4-9 and 8-1]{RamBas09}.
 
-	Unfortunately, in the setting of maps of manifolds (for the moment without corners), the situation is less well behaved.
-	Let now $f_i \colon V_i \to M$ be an $n$-tuple of smooth maps of manifolds.
-	We say that this $n$-tuple is transverse when for any $n$-tuple $(v_1,\ldots, v_n) \in V_1 \times \cdots \times V_n$ such that $f_1(v_1) = \cdots = f_n(v_n)$ the linear maps $D_{v_i}f_i$ are transverse.
-	In this case, the fiber product $P = \{(v_1,\ldots, v_n) \in V_1 \times \cdots \times V_n \mid f_1(v_1) = \cdots = f_n(v_n)\}$ is a smooth manifold of dimension $\sum\dim(V_i)-(n-1)\dim(M)$.
-	Furthermore, at any such point, this general transversality has implications such as those above for transversality of subcollections.
-	\greg{This needs a citation}
+	Unfortunately, in the setting of maps of manifolds, the situation is less well behaved.
+	Suppose $f_i \colon V_i \to M$ is an $n$-tuple of smooth maps of manifolds.
+	There are notions of transversality for such an $n$-tuple that imply the fiber product $P = \{(v_1,\ldots, v_n) \in V_1 \times \cdots \times V_n \mid f_1(v_1) = \cdots = f_n(v_n)\}$ is a smooth manifold of dimension $\sum\dim(V_i)-(n-1)\dim(M)$; e.g.\ \cite[Theorem 7.2.7]{MaDo92}.
+	However, in this setting the equivalence between such $n$-ary transversality and ``iterated transversality'' cannot hold in general, because the $n$-ary fiber product does not involve potentional problem points that would arise in intermediate stages of an iterated fiber product.
 	
-
-	However, the above equivalence between $n$-ary transversality and ``iterated transversality'' cannot hold in general, because the $n$-ary fiber product cannot necessarily know about all points involved in the iterated fiber product.
 	For example, consider maps $f \colon V \to M$, $g \colon W \to M$, and $h \colon Z \to M$.
-	Suppose that $f$ and $g$ are not transverse; in particular, we can suppose that the fiber product $V \times _MW$ is not a manifold.
+	Suppose that $f$ and $g$ are not transverse; in particular, suppose that the fiber product $V \times _MW$ is not a manifold.
 	Further, suppose that $h(Z)$ is disjoint from $f(V)$ and $g(W)$.
 	In this case, the triple of maps is transverse (vacuously) and its 3-ary fiber product is well defined as $\emptyset$.
 	However, the iterated fiber product $(V \times _MW) \times _M Z$ is not well defined in the category of smooth manifolds and maps.
