@@ -2,7 +2,7 @@
 
 \section{Orientations and co-orientations}\label{S: orientations and co-orientations}
 
-Manifolds with corners are, in particular, topological manifolds, and so they carry the standard notions of orientability and orientation.
+Manifolds with corners are, in particular, topological manifolds (with boundary), and so they carry the standard notions of orientability and orientation.
 As in singular or simplicial homology, orientations carry sign information in geometric versions of homology theory.
 For geometric cohomology, however, it turns out that the natural structures to carry sign information are co-orientations, sometimes called orientations of maps.
 Unlike orientations, co-orientation can be ``pulled back.''
@@ -23,30 +23,33 @@ If $W$ is a manifold with corners then it is a topological manifold with boundar
 Following standard conventions, we typically refer to an oriented manifold with corners $W$ with the orientation tacit.
 If an orientation on $W$ is understood, then $-W$ refers to $W$ with the opposite orientation.
 
-When $W$ is orientable, so is its (topological) boundary \cite[Lemma 6.9.1]{Bred97}, and since $S^0(W) \cup S^1(W)$ is a smooth manifold with boundary, we can allow an orientation of $W$ to determine an orientation of $S^1(W)$ using standard smooth manifold conventions.
+When $W$ is orientable, so is its (topological) boundary \cite[Lemma 6.9.1]{Bred97}, and since $S^0(W) \cup S^1(W)$ is a smooth manifold with boundary, we can allow an orientation of $W$ to determine an orientation of $S^1(W)$ using standard smooth manifold conventions. 
+This gives an orientation for $\bd W$, as we can identify $S^1(W)$ with the interior of $\bd W$. 
 In particular, we choose the following convention, which agrees with that of Joyce \cite[Convention 7.2.a]{Joy12}:
 
 \begin{convention}\label{Con: oriented boundary}
-	For a smooth oriented manifold with boundary $N$, we orient $\bd N$ by stipulating that an outward normal vector followed by an oriented basis of $\bd N$ yields an oriented basis for $N$.
+	For a smooth oriented manifold with boundary $N$, we orient $\bd N$ by stipulating that an outward normal vector followed by an oriented basis of $\bd N$ yields an oriented basis for $N$. 
+
+	When $W$ is an oriented manifold with corners, we identify $S^1(W)$ with the interior of $\bd W$, and this convention determines an orientation of $\bd W$.
 \end{convention}
 
-When $W$ is an oriented manifold with corners, we can identify $S^1(W)$ with the interior of $\bd W$, and this convention determines an orientation of $\bd W$.
+
 
 When we wish to work with orientations symbolically, the following interpretation will be extremely useful.
 
 \begin{definition}\label{D: det bundle}
-	Let $E \to M$ be a rank $d$ real vector bundle.
+	Let $E \to B$ be a rank $d$ real vector bundle.
 	Define the \textbf{determinant line bundle}
 	$\Or(E)$ to be $\bigwedge^d E$.
-	If $d = 0$ this is interpreted to be the trivial rank one ``bundle of coefficients.''
+	If $d = 0$ this is interpreted to be the trivial rank one ``bundle of coefficients.'' 
 	We call the principal $O(1) \cong C_2$ bundle associated to $\Or(E)$ the \textbf{orientation cover}.
 
-	An orientation of $E$ is then a section of the orientation cover associated to $\Or(E)$ or, equivalently, an equivalence class of non-zero sections of $\Or(E)$ such that two sections are equivalent if they differ by multiplication by an everywhere positive scalar function.
+	An orientation of $E$, if it exists, is then a section of the orientation cover associated to $\Or(E)$ or, equivalently, an equivalence class of non-zero sections of $\Or(E)$ such that two sections are equivalent if they differ by multiplication by an everywhere positive scalar function.
 \end{definition}
 
-In particular, we thus think of orientations of $M^m$ as $m$-forms in $\Or(TM)$.
+In particular, we thus think of orientations of a manifold $M^m$ as (equivalence classes of) $m$-forms in $\Or(TM)$.
 We typically use the notation $\beta_M$ to stand for such an $m$-form, and, as we are only ever interested in $m$-forms to represent orientations, we systematically abuse notation by not distinguishing between an $m$-form and its equivalence class.
-Thus all expressions such as $\beta_M = \beta_V \wedge \beta_W$ should be interpreted as equality of equivalence classes.
+Thus all expressions such as $\beta_M = \beta_V \wedge \beta_W$ should be interpreted as equality of equivalence classes. Of course over a point $x \in M$, we identify the oriented basis $(e_1,\ldots, e_m)$ of $T_xM$ with the form $e_1 \wedge \cdots \wedge e_m$. 
 
 \subsubsection{Orientations of fiber products}
 
@@ -56,16 +59,16 @@ Consider the short exact sequence of vector bundles over $P = V \times_M W$ give
 \begin{equation}\label{E: fiber orientation}
 	0 \to TP \xr{D\pi_V \oplus D\pi_W} \pi_V^*(TV) \oplus \pi_W^*(TW) \xr{\pi_V^*(Df)-\pi_W^*(Dg)} (f\pi_V)^*TM \to 0.
 \end{equation}
-Here $\pi_V$ and $\pi_W$ are the projections of $V \times_M W$ to $V$ and $W$, and $D\pi_V$ is being treated as a map $TP \to \pi_V^*TV$ and similarly for $D\pi_W$.
-Analogously, $\pi_V^*(Df)$ is the pullback of the map $Df \colon TV \to TM$ obtained first by treating it as a map $TV \to f^*(TM)$ and then pulling back functorially by $\pi_V^*$, and similarly for $\pi_W^*(Dg)$.
+Here $\pi_V$ and $\pi_W$ are the projections of $V \times_M W$ to $V$ and $W$, and $D\pi_V$ is being treated as a map $TP \to \pi_V^*(TV)$ and similarly for $D\pi_W$.
+Analogously, $\pi_V^*(Df)$ is the pullback of the map $Df \colon TV \to TM$ obtained first by treating it as a map $TV \to f^*(TM)$ and then pulling back functorially by $\pi_V^*$, and similarly for $\pi_W^*(Dg)$; note that $f\pi_V = g\pi_W$ at points of $P$. 
 By choosing a splitting, this sequence determines an isomorphism
 \begin{equation*}
 	TP \oplus (f\pi_V)^*TM\cong\pi_V^*(TV) \oplus \pi_W^*(TW).
 \end{equation*}
-The choices of orientations determine orientations on all summands in this expression except $TP$.
+The choices of orientations on $V$, $W$, and $M$ determine orientations on all summands in this expression except $TP$.
 The orientation on $TP$ is then chosen so that the two direct sums differ in orientation by a factor of $(-1)^{\dim(W)\dim(M)}$.
 
-Much more about the orientation of fiber products can be found in the technical report of Ramshaw and Basch \cite{RamBas09}.
+Much more about the orientations of fiber products can be found in the technical report of Ramshaw and Basch \cite{RamBas09}.
 While the focus there is on manifolds without boundary, and sometimes just fiber products of linear maps of vector spaces, the results about orientations extend to manifolds with corners by employing them on the top-dimensional stratum and utilizing their stability property, by which orientation properties of fiber products of linear maps extend to properties of fiber products of transverse manifolds (see \cite[Sections 6.3, 9.1.2, and 9.3]{RamBas09}).
 Their orientation of fiber products agrees with Joyce's.
 This can be checked directly from the definitions\footnote{Their multiplicative ``fudge factor'' in \cite[Theorem 9.14]{RamBas09} at first appears to be different from Joyce's, but this is only because their conventions utilize what in our notation would be the map $\pi_W^*(Dg)-\pi_V^*(Df)$ rather than $\pi_V^*(Df)-\pi_W^*(Dg)$.} or, as Joyce notes in \cite[Remark 7.6.iii]{Joy12}, axiomatically, as Ramshaw and Basch show that theirs is the unique choice of orientation convention satisfying certain basic expected properties.
@@ -78,7 +81,7 @@ We state these properties in the following two propositions.
 		\item When $M$ is a point, the oriented fiber product $V \times_M W$ is simply $V \times W$, and in this case the fiber product orientation is consistent with the basic concatenation rule for products.
 		\item When one of the maps is the identity $\id_M \colon M \to M$, the projection maps to the other factors are orientation preserving diffeomorphisms
 		\begin{equation*}
-			M \times_M V = V\quad\text{and}\quad V \times_M M = V
+			M \times_M V = V\quad\text{and}\quad V \times_M M = V.
 		\end{equation*}
 	\end{enumerate}
 \end{proposition}
@@ -92,7 +95,7 @@ We state these properties in the following two propositions.
 	holds when given maps
 	$$V \xr{f} M\xleftarrow{g} W \xr{h} N\xleftarrow{k} Z$$
 	and assuming sufficient transversality for all the fiber products in \eqref{E: mixed associativity fiber orientation} to be well defined (see \cref{R: multiproducts}).
-	In this case the map $V \times_M W \to N$ is given by composing the projection from $V \times_M W$ to $W$ with $h$, and similarly for the map $W \times_N Z \to M$.
+	In this case, the map $V \times_M W \to N$ is given by composing the projection from $V \times_M W$ to $W$ with $h$, and similarly for the map $W \times_N Z \to M$.
 \end{proposition}
 
 These propositions are evident at the level of spaces.
@@ -103,8 +106,8 @@ In this case we have the ordinary associativity
 \begin{equation}\label{E: oriented fiber associativity}
 	(V \times_M W) \times_M Z = V \times_M (W \times_M Z).
 \end{equation}
-That these properties determine the orientation rule is the content of \cite[Theorem 9-10]{RamBas09}.
-Technically they require for uniqueness two other properties: an Isomorphism Axiom, which says that the construction is consistent across oriented homeomorphisms, and a Stability Axiom, which implies that the orientation can be determined pointwise in a globally consistent manner.
+That these properties determine the orientation rule for fiber products is the content of \cite[Theorem 9-10]{RamBas09}.
+Technically, Ramshaw and Basch require for uniqueness two other properties: an Isomorphism Axiom, which says that the construction is consistent across oriented homeomorphisms, and a Stability Axiom, which implies that the orientation can be determined pointwise in a globally consistent manner.
 These properties are both implicit in Joyce's global definition of the fiber product orientation.
 
 There is also a commutativity rule proven in \cite[Sections 9.3.8]{RamBas09} that follows from the other properties:
@@ -117,10 +120,10 @@ There is also a commutativity rule proven in \cite[Sections 9.3.8]{RamBas09} tha
 	\end{equation*}
 \end{proposition}
 
-This means that the canonical diffeomorphism taking $(v,w) \in V \times_M W \subset V \times W$ to $(w,v) \in W \times_M V \subset W \times V$ takes a positively-oriented basis of the tangent space of $V \times_M W$ to a $(-1)^{(\dim M-\dim V)(\dim M-\dim W)}$-oriented basis of the tangent space of $W \times_M V$.
+Recalling that we write $\dim(M)=m$, etc., this means that the canonical diffeomorphism taking $(x,y) \in V \times_M W \subset V \times W$ to $(y,x) \in W \times_M V \subset W \times V$ takes a positively-oriented basis of the tangent space of $V \times_M W$ to a $(-1)^{(m-v)(m-w)}$-oriented basis of the tangent space of $W \times_M V$.
 We note that these signs, while note quite in line with the Koszul conventions, agree with those for the intersection product of homology classes in Dold \cite[Section VIII.13]{Dol72}.
 
-Furthermore, with our convention for oriented boundaries, one obtains the following useful identity of oriented manifolds with corners; see \cite[Propositions 7.4 and 7.5]{Joy12}
+Furthermore, with our convention for oriented boundaries, one obtains the following useful identity; see \cite[Propositions 7.4 and 7.5]{Joy12}
 
 \begin{proposition}\label{P: oriented fiber boundary}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
