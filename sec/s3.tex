@@ -47,9 +47,27 @@ When we wish to work with orientations symbolically, the following interpretatio
 	An orientation of $E$, if it exists, is then a section of the orientation cover associated to $\Or(E)$ or, equivalently, an equivalence class of non-zero sections of $\Or(E)$ such that two sections are equivalent if they differ by multiplication by an everywhere positive scalar function.
 \end{definition}
 
+\greg{I've tried to add some text here explaining our symbolic conventions for working with orientations since otherwise I think it comes up pretty abruptly and is hard to understand. What do you think of this? Is it sufficient?}
+
 In particular, we thus think of orientations of a manifold $M^m$ as (equivalence classes of) $m$-forms in $\Or(TM)$.
-We typically use the notation $\beta_M$ to stand for such an $m$-form, and, as we are only ever interested in $m$-forms to represent orientations, we systematically abuse notation by not distinguishing between an $m$-form and its equivalence class.
-Thus all expressions such as $\beta_M = \beta_V \wedge \beta_W$ should be interpreted as equality of equivalence classes. Of course over a point $x \in M$, we identify the oriented basis $(e_1,\ldots, e_m)$ of $T_xM$ with the form $e_1 \wedge \cdots \wedge e_m$. 
+We typically use the notation $\beta_M$ to stand for such an $m$-form, and, as we are only ever interested in $m$-forms to represent orientations, we systematically abuse notation by not distinguishing between an $m$-form and its equivalence class. 
+Thus an expression such as $\beta_M = \beta_V \wedge \beta_W$ should be interpreted as an equality of equivalence classes. 
+Such formulas are also often meant to be interpreted locally over some particular point or subspace that will be understood from context. 
+This notation turn out to be extremely useful in working with orientations, and we will use it frequently.
+
+Of course over a point $x \in M$, we identify the oriented basis $(e_1,\ldots, e_m)$ of $T_xM$ with the form $e_1 \wedge \cdots \wedge e_m$. 
+We also use the standard identification $\bigwedge (A\oplus B)=(\bigwedge A )\otimes (\bigwedge B)$, letting $\bigwedge$ always denote the top-dimensional exterior product. 
+So, for example, if $V$ and $W$ are two submanifolds of a manifold $M$ intersecting transversely at a point $x$, we would have $T_xM = T_xV\oplus T_xW$, and the formula $\beta_M = \beta_V \wedge \beta_W$ would indicate that concatenating an oriented basis for $T_xV$ with an oriented basis for $T_xW$, in that order, gives an oriented basis for $T_xM$. 
+More generally, if $E$ is an oriented bundle over $M$, we can write $\beta_E$ for the corresponding form at a point. 
+Any abuses of notation involved in this calculus are very much justified by its extreme usefulness in working with orientations, as we shall see.
+
+\begin{example}
+We have said that for a smooth oriented manifold with boundary $N$, we orient $\bd N$ so that an outward normal vector followed by an oriented basis of $\bd N$ yields an oriented basis for $N$. 
+In our form notation, we can let $\nu$ denote the normal bundle to the boundary and $\beta_{\nu}$ the $1$-form corresponding to the outward-pointing orientation. 
+Then letting $\beta_N$ and $\beta_{\bd N}$ denote the forms corresponding to the orientations of $N$ and $\bd N$, we can write our boundary orientation convention by saying that at each boundary point $\beta_N=\beta_\nu\wedge \beta_{\bd N}$.
+\end{example}
+
+
 
 \subsubsection{Orientations of fiber products}
 
@@ -135,8 +153,9 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 
 \subsubsection{Fiber products of immersions}
 
-The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is always of particular interest, especially for developing intuition.
-In the case of embeddings, $V \times_M W$ is simply the intersection of $V$ and $W$ as submanifolds of $M$, and in the immersed case this is true locally, i.e.\ restricting attention to submanifolds of $V$ and $W$ on which $f$ and $g$ are embeddings.
+The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is of particular interest, especially for developing intuition.
+Once again, since we are concerned primarily with orientations in this section, it is sufficient to consider $V$ and $W$ to be manifolds, and then the results we obtain extend directly to manifolds with corners.  
+In the case of embeddings, $V \times_M W$ is simply the intersection of $V$ and $W$ as submanifolds of $M$ by \cref{L: fiber product of embeddings}, and in the immersed case this is true locally, i.e.\ restricting attention to submanifolds of $V$ and $W$ on which $f$ and $g$ are embeddings.
 Let us try to understand the orientation of $V \times_M W$ in this setting.
 
 For convenience of notation, let us assume $f$ and $g$ are embeddings and write $P = V \times_M W = V \cap W$.
