@@ -69,7 +69,7 @@ Then letting $\beta_N$ and $\beta_{\bd N}$ denote the forms corresponding to the
 
 
 
-\subsubsection{Orientations of fiber products}
+\subsubsection{Orientations of fiber products}\label{S: orientation of fiber products}
 
 If $V$ and $W$ are oriented manifolds, we orient $V \times W$ in the standard way by concatenating oriented bases of tangent spaces of $V$ with those of $W$.
 More generally, if $f \colon V \to M$ and $g \colon W \to M$ are transverse maps with $V$, $W$, and $M$ all oriented and $M$ without boundary, Joyce defines an orientation on the pullback $V \times_M W$ as follows \cite[Convention 7.2b]{Joy12}.
@@ -156,68 +156,89 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is of particular interest, especially for developing intuition.
 Once again, since we are concerned primarily with orientations in this section, it is sufficient to consider $V$ and $W$ to be manifolds, and then the results we obtain extend directly to manifolds with corners.  
 In the case of embeddings, $V \times_M W$ is simply the intersection of $V$ and $W$ as submanifolds of $M$ by \cref{L: fiber product of embeddings}, and in the immersed case this is true locally, i.e.\ restricting attention to submanifolds of $V$ and $W$ on which $f$ and $g$ are embeddings.
-Let us try to understand the orientation of $V \times_M W$ in this setting.
+Let us try to understand the orientation of $V \times_M W$ determined by orientations of $V$, $W$, and $M$ in this setting.\greg{Since this is early on and we haven't worked much with our form notation yet at this point, I tried to really improve the exposition in this section to make it much clearer. Please have a look and let me know what you think.}
 
-For convenience of notation, let us assume $f$ and $g$ are embeddings and write $P = V \times_M W = V \cap W$.
-As orientations are defined via the tangent bundles and as the tangent bundle of a fiber product is the fiber product of the tangent bundles by \cref{L: tangent of pullbacks}, it suffices to consider $f$ and $g$ as linear embeddings of vector spaces.
-Then we can identify $V$, $W$, and $P$ as subspaces and write $M = \nu W \oplus P \oplus \nu V$, where $\nu W \subset V$ and $\nu V \subset W$ are complementary subspaces to $P$ within $V$ and $W$ respectively.
-In particular, $V = P \oplus \nu W$ and $W = P \oplus \nu V$, and we think of $\nu W$ and $\nu V$ as representing normal bundles to $P$.
-With these identifications, the maps $f$ and $g$ are simply the identifications with the appropriate subspaces.
+For convenience of notation, let us assume we have transverse embeddings so that $V$ and $W$ are submanifolds of $M$. 
+Then, by \cref{L: fiber product of embeddings}, we know that $P = V \times_M W$ is just the intersection $V \cap W$. 
+Consider a point $x \in P$. 
+As $V$, $W$, and $P$, are all submanifolds, $T_xV$, $T_xW$, and $T_xP$ are all subspaces of $T_xM$. Furthermore, as orientations are defined via the tangent bundles, it suffices to consider the relation among the orientations of $T_x V$, $T_xW$, $T_xM$, and $T_xP$, and, as the tangent space of a fiber product is the fiber product of the tangent spaces by \cref{L: tangent of pullbacks}, we have $T_xP = T_xV \times_{T_xM} T_xW = T_xV \cap T_xW$. 
+For simplicity of notation in the following, we drop the ``$T_x$'' from the notation and treat the maps $f$ and $g$ as linear embeddings of vector spaces. 
+We can then work with orientations of vector spaces expressed in our exterior power notation. 
 
-We can now write a splitting $M \to V \oplus W$ of the exact sequence \eqref{E: fiber orientation} in terms of these decomposition as
+
+So we have a vector space $M$ with subspaces $V$, $W$, and $P = V \times_M W = V \cap W$. 
+By the transversality assumption, $V$ and $W$ span $M$. 
+Let $\nu W \subset V$ be a complementary subspace to $P$ in $V$ so that $V = P \oplus \nu W$; the notation is meant to suggest that $\nu W$ is a choice of normal subspace to $W$ in $M$. 
+Similarly, let $\nu V \subset W$ be a complementary subspace to $P$ in $W$ so that $W = P \oplus \nu V$.
+Then we have $M = \nu W \oplus P \oplus \nu V$. \greg{I think this would be a good place for a picture. Maybe have $V$ and $W$ be 2-dimensional subspaces of $\R^3$? In fact, see \cref{Ex: intersection orientation}.}
+
+
+In our current context, the exact sequence \eqref{E: fiber orientation} becomes a sequence of vector spaces 
+\begin{equation*}
+	0 \to P \to V \oplus W \xr{f-g} M \to 0
+\end{equation*}
+with the first non-trivial map being the direct sum of inclusions and with $f$ and $g$ the emeddings of $V$ and $W$ into $M$. 
+Using our direct sum decompositions of the preceding paragraph, we can choose a splitting $M \to V \oplus W$ as
 $$\nu W \oplus P \oplus \nu V \to P \oplus \nu W \oplus P \oplus \nu V,$$
 given by $(x,p,y) \mapsto (0, x, -p, -y)$.
-The signs are necessary as, in our current linear setting, the surjective map of the short exact sequence is $f-g$.
-Our isomorphism $P \oplus M \to V \oplus W$ thus has block form
-$$\begin{pmatrix*}[r]
-	I&0&0&0\\
-	0&I&0&0\\
-	I&0&-I&0\\
-	0&0&0&-I
-\end{pmatrix*},$$
+The signs are necessary due to the sign in $f-g$.
+With this splitting, our resulting isomorphism $P \oplus M \to V \oplus W$ can be written in block matric form as
+\begin{equation}\label{E: orientation matrix}
+	\begin{pmatrix*}[r]
+		I&0&0&0\\
+		0&I&0&0\\
+		I&0&-I&0\\
+		0&0&0&-I
+	\end{pmatrix*},
+\end{equation}
 which has determinant $(-1)^{w}$.
-By definition, we choose an orientation of $P$ so that this matrix takes the concatenation of the orientation of $P$ with an orientation of $M$ to $(-1)^{wm}$ times the concatenation of the orientations of $V$ and $W$.
+
+By definition, the orientation of $P$ determined by the orientations of $V$, $W$, and $M$ is the orientation so that this matrix takes the concatenation of the orientation of $P$ with an orientation of $M$ (i.e.\ an ordered basis representing this concatenation orientation) to $(-1)^{wm}$ times the concatenation of the orientations of $V$ and $W$ (i.e.\ an ordered basis of $V \oplus W$ that differs from the concatenation orientation by a permutation of sign $(-1)^{wm}$). 
+
+This call can be expressed via our calculus of forms as follows.
 
 \begin{proposition}\label{P: orient intersection}
-	Let $\beta_V$, $\beta_W$, and $\beta_M$ be orientations of $V$, $W$, and $M$.
-	Then, the fiber product orientation of $P = V \times_M W$ is the unique orientation $\beta_P$ such that\footnote{Note that as $P$ and $\nu W$ are subspaces of $V$, we may consider $\beta_P$ and $\beta_{\nu W}$ as forms over $V$, and similarly for the other expressions that follow.} if we choose orientations $\beta_{\nu W}$ and $\beta_{\nu V}$ for $\nu W$ and $\nu V$ such that $\beta_P \wedge \beta_{\nu W} = \beta_V$ and $\beta_P \wedge \beta_{\nu V} = \beta_W$ then $\beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V} = (-1)^{w(m+1)}\beta_M$ or, alternatively, $$ \beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M.$$
+	Let $V$ and $W$ be transverse oriented submanifolds of the oriented manifold $M$. 
+	Let $\beta_V$, $\beta_W$, and $\beta_M$ be orientations of $V$, $W$, and $M$ at a point of $P = V \times_M W = V \cap W$.
+	Then, using our notation established just above, the fiber product orientation of $P$ is the unique orientation $\beta_P$ such that if we choose orientations $\beta_{\nu W}$ and $\beta_{\nu V}$ for $\nu W$ and $\nu V$ such that $\beta_P \wedge \beta_{\nu W} = \beta_V$ and $\beta_P \wedge \beta_{\nu V} = \beta_W$ then $\beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V} = (-1)^{w(m+1)}\beta_M$ or, alternatively, $$\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M.$$
 \end{proposition}
 
 \begin{proof}
-	Note that if we replace $\beta_P$ with its opposite orientation, then this must also reverse the orientations $\beta_{\nu W}$ and $\beta_{\nu V}$ and hence altogether we get the opposite orientation for $\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}$.
-	Thus there is a unique such $\beta_P$ as described.
+	We may work with $V$, $W$, and $P$ as linear subspaces of a vector space $M$ as above. Note that if we replace $\beta_P$ with its opposite orientation, then this must also reverse the orientations $\beta_{\nu W}$ and $\beta_{\nu V}$ and hence altogether we get the opposite orientation for $\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}$.
+	Thus there is a unique choice of orientation $\beta_P$ as described in the lemma, and we must show that this is the orientation as defined in \cref{S: orientation of fiber products}.
 
 	It will be more convenient to prove the lemma in the first form, but the second form follows by observing that $$(-1)^{w(m+1)} = (-1)^{wm+w} = (-1)^{wm-w^2} = (-1)^{w(m-w)},$$
 	and then
 	$$\beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V} = (-1)^{w(m-w)} \beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}$$
-	as $P \oplus \nu V = W$ and $\dim(\nu W) = m-w$.
+	as $\dim(P \oplus \nu V) = \dim(W) = w$ and $\dim(\nu W) = m-w$.
 
 	To prove the first statement, let $(p_1,\cdots,p_a)$ be an ordered basis for $P$ consistent with the orientation described in the lemma; so we can write $\beta_P = p_1 \wedge\cdots\wedge p_a$.
 	When we consider each $p_i$ as a vector in $V$, $W$, or $M$, we write $p_i^V$, $p_i^W$, or $p_i^M$.
 	We employ a similar convention with the other bases we will consider.
-	Let $(x_1,\cdots,x_b)$ and $(y_1,\cdots,y_c)$ be corresponding ordered bases for $\nu W$ and $\nu V$ as described in the lemma, and we can write $\beta_{\nu W}$ and $\beta_{\nu V}$ analogously as for $\beta_P$.
-	Then, we have $\beta_M$ represented by $(-1)^{w(m+1)} \beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V}.$ So our orientation of $P \oplus M$ obtained by concatenation is
+	Let $(x_1,\cdots,x_b)$ and $(y_1,\cdots,y_c)$ be corresponding ordered bases for $\nu W$ and $\nu V$ as described in the lemma, and we can write $\beta_{\nu W}$ and $\beta_{\nu V}$ analogously. Recall that, by assumption, we have $\beta_P \wedge \beta_{\nu W} = \beta_V$, $\beta_P \wedge \beta_{\nu V} = \beta_W$, and $\beta_M = (-1)^{w(m+1)} \beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V}$, and we must show that this is consistent with the definition of the fiber product orientation for $P$.
+	
+	So our orientation of $P \oplus M$ obtained by concatenation is
 	$$(-1)^{w(m+1)} p_1 \wedge\cdots\wedge p_a \wedge x^M_1 \wedge\cdots\wedge x^M_b \wedge p^M_1 \wedge\cdots\wedge p^M_a \wedge y^M_1 \wedge\cdots\wedge y^M_c.$$
-	When we apply our matrix above, we obtain the form in $V \oplus W$ given by
+	When we apply the matrix \eqref{E: orientation matrix}, we obtain the form in $V \oplus W$ given by
 	$$(-1)^{w(m+1)} (p^V_1+p^W_1) \wedge\cdots\wedge (p^V_a+p^W_a) \wedge x^V_1 \wedge\cdots\wedge x^V_b \wedge (- p^W_1) \wedge\cdots\wedge (-p^W_a) \wedge (-y^W_1) \wedge\cdots\wedge(- y^W_c).$$
-	This expression simplifies to
+	As the number of terms with a negative sign is $w$, this expression simplifies to
 	$$(-1)^{wm} p^V_1 \wedge\cdots\wedge p^V_a \wedge x^V_1 \wedge\cdots\wedge x^V_b \wedge p^W_1 \wedge\cdots\wedge p^W_a \wedge y^W_1 \wedge\cdots\wedge y^W_c.$$
-	But this is now precisely $(-1)^{wm}$ times the concatenation orientation of $V \oplus W$ as desired for definition of the fiber product orientation.
+	But this is now precisely $(-1)^{wm}$ times the concatenation orientation of $V \oplus W$ as desired for the definition of the fiber product orientation of $P$.
 \end{proof}
 
-\begin{example}
+\begin{example}\label{Ex: intersection orientation}
 	As an example, let $M = \R^3$ oriented by the standard ordered basis $(e_x,e_y,e_z)$.
 	Let $V$ be the $z = 0$ plane oriented by the ordered basis vectors $(e_x,e_y)$, and let $W$ be the $x = 0$ plane oriented by the ordered basis vectors $(e_y,e_z)$.
 	The intersection $P$ is the $y$ axis.
-	We claim that $P$ should be oriented by $-e_y$.
-	Indeed, in this case we have $\beta_V = e_x \wedge e_y = -e_y \wedge e_x = (-e_y) \wedge e_x$, so $\beta_{\nu W} = e_x$, and $\beta_W = e_y \wedge e_z = (-e_y) \wedge (-e_z)$, so $\beta_{\nu V} = -e_z$.
+	We claim that $P$ has the fiber product orientation by $-e_y$.
+	Indeed, assuming so we have $\beta_V = e_x \wedge e_y = -e_y \wedge e_x = (-e_y) \wedge e_x$, so $\beta_{\nu W} = e_x$, and $\beta_W = e_y \wedge e_z = (-e_y) \wedge (-e_z)$, so $\beta_{\nu V} = -e_z$.
 	And then $$\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W} = -e_y \wedge (-e_z) \wedge e_x = e_x \wedge e_y \wedge e_z = \beta_M,$$
 	as required.
 \end{example}
 
 \begin{corollary}\label{C: orient complementary intersection}
 	Suppose $V$ and $W$ have complementary dimensions so that they intersect in a point.
-	Then the point is positively oriented if and only if $\beta_{W} \wedge \beta_{V} = \beta_M$.
+	Then the fiber product orientation of the point is positive if and only if $\beta_{W} \wedge \beta_{V} = \beta_M$.
 \end{corollary}
 
 \begin{proof}
@@ -225,11 +246,15 @@ By definition, we choose an orientation of $P$ so that this matrix takes the con
 	If $\beta_P = 1$, then the formula from \cref{P: orient intersection} becomes exactly the formula of the corollary.
 \end{proof}
 
+\begin{remark}
+The corollary shows that the fiber product orientation is \textit{not} necessarily the expected concatenation orientation in the case of transverse complementary embeddings.
+\end{remark}
+
 \begin{example}
 	Let $M = \R^2$ with the standard orientation that we can write $e_x \wedge e_y$.
 	Let $V$ be the $x$-axis with orientation $e_x$ and $W$ be the $y$-axis oriented by $e_y$.
-	Then it is false that $e_x \wedge e_y = \beta_{V} \wedge \beta_{W} = (-1)^{w(m+1)} \beta_M = -e_x \wedge e_y$.
-	So the orientation of the intersection point is the negative one.
+	Then  $\beta_W \wedge \beta_V = e_y \wedge e_x$, while $\beta_M = e_x \wedge e_y = -e_y \wedge e_x$. 
+	So the fiber product orientation of the intersection point is the negative one.
 	This runs against the standard convention for transverse intersections of manifolds of complementary dimension, but we nonetheless favor this overall convention for orienting fiber products due to the properties and uniqueness result of \cite{RamBas09}.
 \end{example}
 
