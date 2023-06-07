@@ -54,6 +54,7 @@ We typically use the notation $\beta_M$ to stand for such an $m$-form, and, as w
 Thus an expression such as $\beta_M = \beta_V \wedge \beta_W$ should be interpreted as an equality of equivalence classes. 
 Such formulas are also often meant to be interpreted locally over some particular point or subspace that will be understood from context. 
 This notation turn out to be extremely useful in working with orientations, and we will use it frequently.
+Whenever we form such wedge products, if one of the terms is an element of $\bigwedge^0 TV$ for some $V$ we treat that term as a $0$-form and interpret $\wedge$ as the fiberwise scalar product.
 
 Of course over a point $x \in M$, we identify the oriented basis $(e_1,\ldots, e_m)$ of $T_xM$ with the form $e_1 \wedge \cdots \wedge e_m$. 
 We also use the standard identification $\bigwedge (A\oplus B)=(\bigwedge A )\otimes (\bigwedge B)$, letting $\bigwedge$ always denote the top-dimensional exterior product. 
@@ -340,9 +341,11 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 	In this, case we write $-V$ to refer to the same map with the opposite co-orientation.
 \end{notation}
 
+
+
 \subsection{Normal co-orientations of immersions and co-orientations of boundaries}\label{S: normal orientatin}
 
-As mentioned, a key example is when $g$ is an immersion, which is co-orientable if and only if its normal bundle is orientable\footnote{Recall that technically all bundles are over $W$, though our convention is to elide that in the notation.
+Once again, a key example is when $g$ is an immersion, which is co-orientable if and only if its normal bundle is orientable\footnote{Recall that technically all bundles are over $W$, though our convention is to elide that in the notation.
 Hence we can consider $W$ to have a normal bundle even if $g$ is merely an immersion and not actually an embedding.
 The normal bundle can be identified with $g^*(TM)/TW$ after identifying $TW$ with a sub-bundle of $g^*(TM)$ using the differential.
 In any case, locally in the neighborhood of any point of $W$ one has the usual identification of the normal bundle with a tubular neighborhood of the image, which suffices for our purposes here.}.
@@ -350,12 +353,11 @@ Specifically, if $g \colon W \to M$ is an immersion, letting $\nu W$ denote the 
 So, taking $w = \dim(W)$ and $m = \dim(M)$, a co-orientation is a nowhere-zero map from $\bigwedge^w TW$ to $\bigwedge^m g^*TM = \bigwedge^m (TW \oplus \nu W) \cong \bigwedge^w TW \otimes \bigwedge^{m-w}\nu W$.
 Such a nowhere-zero map exists if and only $\bigwedge^{m-w}\nu W$ is a trivial line bundle.
 
-Although such a co-orientation is a global object over $W$, given an orientation of $\nu W$ we can specify a standard choice of ``normal co-orientation'' through the following local construction:
+Given a specific orientation of $\nu W$, we specify a standard choice of \textbf{normal co-orientation} for the immersion $g \colon W \to M$ by the following local construction:
 
 \begin{definition}\label{normal co-or}
-	Let $g \colon W \to M$ be an immersion with normal bundle locally oriented by $\beta_\nu$.
-	Define the \textbf{normal co-orientation} associated to $\beta_\nu$ locally as\footnote{Whenever we form wedge products, if one of the terms is an element of $\bigwedge^0 TV$ for some $V$ we treat that term as a $0$-form and interpret $\wedge$ as the fiberwise scalar product.}
-	$\omega_{\nu} = (\beta_W, \beta_W \wedge \beta_\nu)$, where $\beta_W$ is any choice of a local orientation of $W$.
+	Let $g \colon W \to M$ be an immersion with normal bundle locally oriented (at some point of $W$) by $\beta_\nu$.
+	Define the \textbf{normal co-orientation} associated to $\beta_\nu$ locally by the pair $\omega_{\nu} = (\beta_W, \beta_W \wedge \beta_\nu)$, where $\beta_W$ is any choice of a local orientation of $W$.
 \end{definition}
 
 This construction is independent of the choice of $\beta_W$, as reversing the orientation of $\beta_W$ gives
@@ -366,10 +368,12 @@ If the normal bundle to $W$ is oriented globally on $W$ then the construction is
 	(\gamma_*\beta_{W,x}\, , (\gamma_* \beta_{W,x}) \wedge (g\gamma)_*\beta_{\nu,x}) =
 	(\gamma_*\beta_{W,x}\, , (\gamma_* \beta_{W,x}) \wedge \beta_{\nu,y}),
 \end{equation*}
-using that $\nu$ is assumed oriented and that, via the immersion, we can treat a path in $W$ as a path in $M$.
+using that $\nu$ is assumed oriented and that, via the immersion, we can treat a path in $W$ as a path in $M$ and tangent vectors of $W$ as tangent vectors of $M$.
+Now taking $\beta_{W,y}$ to be $\gamma_* \beta_{W,x}$, the expression on the right again has the prescribed form. 
 So if the normal bundle to $W$ is oriented, these local choices determine a global co-orientation of $W \to M$.
-If the normal bundle is orientable, one can conversely orient the normal bundle if one is given a co-orientation.
-Signs in the theory are highly dependent on choices.
+If the normal bundle is orientable, one can conversely orient the normal bundle via this formula if one is given a co-orientation: choose $\beta_\nu$ so that $(\beta_W, \beta_W \wedge \beta_\nu)$ is the co-orientation of the immersion.
+
+As we shall see, signs in the theory of co-orientations are highly dependent on choices.
 One such choice in this definition is whether to append the local normal orientation before or after the local tangent orientation.
 
 \subsubsection{Quillen co-orientations}\label{S: Quillen}
