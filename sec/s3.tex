@@ -264,7 +264,7 @@ To define co-orientations, we recall our definition of an orientation of a bundl
 This motivates the following.
 
 \begin{definition}\label{D: co-orientations}
-	A \textbf{co-orientation} $\omega_g$ of a \textit{continuous}\footnote{We will most often be interested in the case of $g$ smooth, but continuous co-orientable maps do come up in \cref{S: basic properties} where we consider covariant functoriality of geometric cohomology with respect to continuous maps.} map $g \colon W \to M$ of manifolds with corners is an equivalence class, up to positive scalar multiplication, of a nowhere zero section of the line bundle $\Hom(\Or(TW), \Or(g^*TM)) \cong \Hom(\Or(TW), g^*\Or(TM))$.
+	A \textbf{co-orientation} $\omega_g$ of a \textit{continuous}\footnote{We will most often be interested in the case of $g$ smooth, but continuous co-orientable maps do come up, for example in \cref{S: basic properties} where we consider covariant functoriality of geometric cohomology with respect to continuous maps.} map $g \colon W \to M$ of manifolds with corners is an equivalence class, up to positive scalar multiplication, of a nowhere zero section of the line bundle $\Hom(\Or(TW), \Or(g^*TM)) \cong \Hom(\Or(TW), g^*\Or(TM))$.
 	Equivalently, a co-orientation is a choice of isomorphism between the associated orientation cover $\Or(TW)$ and the pullback of the associated orientation cover $\Or(TM)$.
 
 	In particular, a co-orientation exists if and only if $\Hom(\Or(TW), \Or(g^*TM))$ is a trivial line bundle, in which case we say that $g$ is \textbf{co-orientable}.
@@ -272,10 +272,12 @@ This motivates the following.
 
 Thus, if $W$ is connected and $g \colon W \to M$ is co-orientable, there are exactly two co-orientations, which are \textbf{opposite} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
 In particular, for connected $W$ a choice of co-orientation at a single point determines a co-orientation globally when $g$ is co-orientable (analogously to orientations).
-Also, just as most manifolds do not possess a preferred orientation, most maps $g \colon W \to M$ do not carry a natural choice of co-orientation.
+Also, just as most manifolds do not possess a preferred orientation, most maps $g \colon W \to M$ do not carry a natural choice of co-orientation, with the following notable exception. 
 
 \begin{definition}\label{D: tautological co-orientation}
-	An exception to the lack of a natural choice of co-orientation occurs when $g$ is a diffeomorphism, or more generally a codimension-0 immersion, in which case the top exterior power of $Dg$ provides a \textbf{tautological co-orientation}.
+	 Suppose $g$ is a diffeomorphism, or more generally a codimension-0 immersion. In this case, the top exterior power of $Dg$, 
+	$$\bigwedge Dg \colon \bigwedge TW \to \bigwedge g^*\Or(TM),$$ 
+	provides a \textbf{tautological co-orientation}.
 \end{definition}
 
 The local triviality of the determinant line bundle of a manifold means being able to choose a consistent basis vector over sufficiently small neighborhoods.
@@ -283,13 +285,13 @@ We call such a choice of basis vector around a point in $W$ a \textbf{local orie
 Again, abusing notation, we also often allow $\beta_W$ to refer to its equivalence class up to multiplication by a positive scalar.
 We identify $\beta_W$ with a local choice of (equivalence class of) non-zero $\dim(W)$-form\footnote{As usual, if $\dim(W) = 0$ we identify $\bigwedge^0 TW$ with the ground field $\R$, and, when forming exterior products, multiplication by a $0$-form is treated as scalar multiplication.} in $\bigwedge^{\dim(W)}TW$ in a neighborhood of a point $x$ in $W$ or, equivalently, a local smoothly varying ordered basis for the fibers of $TW$.
 We typically do not specify the point $x$, though when necessary we write $\beta_{W,x}$.
-We then use ordered-pair notation for co-orientation homomorphisms, with $\omega_g = (\beta_W, \beta_M)$ being the \textbf{local co-orientation} that sends the local orientation $\beta_W$ at $x \in W$ to a local orientation $\beta_M$ for $g^*(TM)$ up to a positive scalar.
-We will often further abuse notation by neglecting the pullback and treat $\beta_M$ as a local orientation at $g(x)$ in $M$.
-We also write the opposite co-orientation $(\beta_W,-\beta_M) = (-\beta_W,\beta_M)$ as $-(\beta_W,\beta_M)$.
+We then use ordered-pair notation for co-orientation homomorphisms, with $\omega_g = (\beta_W, \beta_M)$ being the \textbf{local co-orientation} that sends the local orientation $\beta_W$ at $x \in W$ to the local orientation $\beta_M$ for $g^*(TM)$ up to a positive scalar.
+We will often further abuse notation by neglecting the pullback and treating $\beta_M$ as a local orientation at $g(x)$ in $M$.
+We write the opposite co-orientation $(\beta_W,-\beta_M) = (-\beta_W,\beta_M)$ as $-(\beta_W,\beta_M)$.
 As a co-orientation at a point completely determines the co-orientation of a co-orientable map for connected $W$, it is useful to cheat further and write $\omega_g = (\beta_W,\beta_M)$ for appropriate $\beta_W$ and $\beta_M$ with the chosen points $x$ implicit.
 
 A manifold is orientable if and only if the orientation cover is trivial.
-So if $M$ is orientable, $\Or(g^*(TM))$ is trivial, and a co-orientation of $g \colon W \to M$ implies that $W$ is orientable.
+So if $M$ is orientable, $\Or(g^*(TM))$ is trivial, and co-orientability of $g \colon W \to M$ implies that $W$ is orientable.
 Moreover, an orientation on $M$ along with a co-orientation of $g$ gives rise to an \textbf{induced orientation} of $W$.
 Explicitly, if $\beta_M$ denotes the global orientation of $M$, then we orient $W$ at each point by the $\beta_W$ such that $\omega_g = (\beta_W,\beta_M)$.
 Conversely, if $M$ and $W$ are both oriented, say by $\beta_M$ and $\beta_W$ respectively, we have the \textbf{induced co-orientation} given by $\omega_g = (\beta_W,\beta_M)$ at each point of $W$.
@@ -297,10 +299,12 @@ On the other hand, it is not true that if we have an orientation of $W$ and a co
 For example, if $W$ is orientable, any constant map to $M$ is co-orientable, regardless of whether or not $M$ is orientable.
 
 More generally, recall that the fundamental group of a manifold acts on classes of local orientations as the deck transformations of the orientation cover.
-A map is co-orientable if a loop in $W$ acts nontrivially on a local orientation of $W$ if and only if
-its image in $M$ acts nontrivially.
-Explicitly, if $g \colon W \to M$ is co-orientable the fundamental group can change the local orientation pair
+A map is co-orientable if it holds that a loop in $W$ acts nontrivially on a local orientation of $W$ if and only if
+its image in $M$ acts nontrivially on a local orientation of $M$.
+Explicitly, if $g \colon W \to M$ is co-orientable, following a loop in $W$ may change the local orientation pair
 $(\beta_W, \beta_M)$ to $(-\beta_W, -\beta_M)$, but these pairs define equivalent co-orientations.
+
+
 Similarly, to compare local constructions at different points, it is useful to use paths.
 Suppose $\gamma \colon I \to W$ is a path with $\gamma(0) = x$ and $\gamma(1) = y$.
 We can choose a lift $\td \gamma$ of $\gamma$ to the complement of the $0$-section of $\Or(TW)$ such that $\td \gamma(0)$ is in the equivalence class of $\beta_{W,x}$.
@@ -312,13 +316,13 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 \begin{example}
 	Let $g$ be any map $g \colon S^1 \to S^2$.
 	As $S^1$ and $S^2$ are orientable, $g$ is co-orientable.
-	If we choose a local orientation vector $e_{\theta}$ at any point $x \in S^1$ and latitude/longitude coordinates $\phi,\psi$ at $g(x)$ so that\footnote{Following \cite{BoTu82} we will generally omit the exterior product symbol $\wedge$ when working with explicit coordinate choices.} $e_\phi\, e_\psi$ is a local orientation in a neighborhood of $g(x)$, then the two possible co-orientations for for $g$ can be written $(e_\theta, e_\phi\, e_\psi)$ and $-(e_\theta, e_\phi\, e_\psi) = (-e_\theta, e_\phi \,e_\psi) = (e_\theta,- e_\phi\, e_\psi)$.
+	If we choose a local orientation vector $e_{\theta}$ at any point $x \in S^1$ and latitude/longitude coordinates $\phi,\psi$ at $g(x)$ so that $e_\phi \wedge e_\psi$ is a local orientation in a neighborhood of $g(x)$, then the two possible co-orientations for $g$ can be written $(e_\theta, e_\phi \wedge e_\psi)$ and $-(e_\theta, e_\phi \wedge e_\psi) = (-e_\theta, e_\phi \wedge e_\psi) = (e_\theta,- e_\phi \wedge e_\psi)$.
 	While the notation explicitly references a local orientation at a point, this is sufficient to determine the co-orientation globally.
 	In what follows we will often demonstrate properties of co-orientations by showing that they hold locally at an arbitrary point but do not depend on the choice of point.
 
 	As another example, consider the standard embedding $g \colon \R P^2 \into \R P^4$.
-	Choosing local orientations $e_1\, e_2$ at some $x \in \R P^2$ and $f_1\,f_2\,f_3\,f_4$ at $g(x)$, the two co-orientations are $(e_1\,e_2, f_1\,f_2\,f_3\,f_4)$ and its opposite.
-	If $\gamma$ is a loop that reverses the orientation of $\R P^2$ then it also reverses the orientation of $\R P^4$, so $\gamma_*(e_1\,e_2, f_1\,f_2\,f_3\,f_4) = (-e_1\,e_2,- f_1\,f_2\,f_3\,f_4) = (e_1\,e_2, f_1\,f_2\,f_3\,f_4)$, reflecting that $g$ is co-orientable.
+	Choosing local orientations $e_1 \wedge  e_2$ at some $x \in \R P^2$ and $f_1 \wedge f_2 \wedge f_3 \wedge f_4$ at $g(x)$, the two co-orientations are $(e_1 \wedge e_2, f_1 \wedge f_2 \wedge f_3 \wedge f_4)$ and its opposite.
+	If $\gamma$ is a loop that reverses the orientation of $\R P^2$ then it also reverses the orientation of $\R P^4$, so $\gamma_*(e_1 \wedge e_2, f_1 \wedge f_2 \wedge f_3 \wedge f_4) = (-e_1 \wedge e_2,- f_1 \wedge f_2 \wedge f_3 \wedge f_4) = (e_1 \wedge e_2, f_1 \wedge f_2 \wedge f_3 \wedge f_4)$, reflecting that $g$ is co-orientable.
 
 	By contrast, no embedding of the M\"obius strip in $\R^3$ is co-orientable.
 \end{example}
@@ -333,7 +337,7 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 
 \begin{notation}\label{N: implicit notation}
 	It will be useful in notation to sometimes leave the maps, codomains, and co-orientations all implicit once they have already been established and just write $V$ to represent the co-oriented map $f \colon V \to M$.
-	In this case we write $-V$ to refer to the same map with the opposite co-orientation.
+	In this, case we write $-V$ to refer to the same map with the opposite co-orientation.
 \end{notation}
 
 \subsection{Normal co-orientations of immersions and co-orientations of boundaries}\label{S: normal orientatin}
