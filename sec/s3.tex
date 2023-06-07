@@ -351,7 +351,7 @@ The normal bundle can be identified with $g^*(TM)/TW$ after identifying $TW$ wit
 In any case, locally in the neighborhood of any point of $W$ one has the usual identification of the normal bundle with a tubular neighborhood of the image, which suffices for our purposes here.}.
 Specifically, if $g \colon W \to M$ is an immersion, letting $\nu W$ denote the normal bundle, we have $TW \oplus \nu W \cong g^*TM$.
 So, taking $w = \dim(W)$ and $m = \dim(M)$, a co-orientation is a nowhere-zero map from $\bigwedge^w TW$ to $\bigwedge^m g^*TM = \bigwedge^m (TW \oplus \nu W) \cong \bigwedge^w TW \otimes \bigwedge^{m-w}\nu W$.
-Such a nowhere-zero map exists if and only $\bigwedge^{m-w}\nu W$ is a trivial line bundle.
+Such a nowhere-zero map exists if and only $\bigwedge^{m-w}\nu W$ is a trivial line bundle, i.e.\ if $\nu W$ is orientable.
 
 Given a specific orientation of $\nu W$, we specify a standard choice of \textbf{normal co-orientation} for the immersion $g \colon W \to M$ by the following local construction:
 
@@ -378,7 +378,7 @@ One such choice in this definition is whether to append the local normal orienta
 
 \subsubsection{Quillen co-orientations}\label{S: Quillen}
 
-There is a useful alternative, though equivalent, definition of co-orientations due to Quillen \cite{Quil71} that only involves orientations of normal bundles.\footnote{Quillen's context was slightly different.
+There is a useful alternative, though equivalent, definition of co-orientations due to Quillen \cite{Quil71} that only involves orientations of normal bundles as in the preceding section.\footnote{Quillen's context was slightly different.
 He assumed the normal bundles to have complex structures and so called these \textit{complex orientations}.}
 
 \begin{lemma}\label{L: Quillen}
@@ -402,11 +402,12 @@ He assumed the normal bundles to have complex structures and so called these \te
 		\Or(g^*TM) \cong \Or(e^*\pi^*TM) \cong e^*\Or(\pi^*TM) \cong e^*\Or(T(M \times \R^N)) \cong \Or(e^*T(M \times \R^N)).
 	\end{equation*}
 	So $e$ is co-orientable if and only if $g$ is co-orientable.
-	But $e$ is an immersion, and so it is co-orientable if and only if the normal bundle of the image is trivial by the discussion preceding \cref{normal co-or}.
+	But $e$ is an immersion, and so it is co-orientable if and only if the normal bundle of the image is orientable by the discussion preceding \cref{normal co-or}.
 \end{proof}
 
 \begin{definition}\label{D: Quillen normal or}
-	If we orient $\R^N$ by its standard orientation $\beta_E \defeq dx_1 \wedge\cdots\wedge dx_N$, then the projection $\pi \colon M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E, \beta_M)$ that is well defined as $\R^N$ is contractible.
+	If $(e_1, \ldots, e_n)$ is the standard ordered basis of $\R^N$, we denote the corresponding orientation from by $\beta_E = e_1 \wedge \cdots \wedge e_N$. 
+	Then the projection $\pi \colon M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E, \beta_M)$ that is well defined as $\R^N$ is contractible.
 	If $g \colon W \to M$ is co-oriented and $e \colon W \into M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
 	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu = \beta_M \wedge \beta_E$ up to positive scalar multiple.
 
@@ -414,16 +415,16 @@ He assumed the normal bundles to have complex structures and so called these \te
 \end{definition}
 
 \begin{remark}\label{R: immersion}
-	In particular, if $g \colon W \to M$ is an immersion, then, by taking $N = 0$, a co-orientation of $g$ is equivalent to a Quillen orientation of the normal bundle $\nu$ of $W$ in $M$.
+	In particular, if $g \colon W \to M$ is an immersion, then, by taking $N = 0$, a co-orientation of $g$ is equivalent to a Quillen normal orientation of the normal bundle $\nu$ of $W$ in $M$.
 	In particular, the co-orientation is given locally by $(\beta_W, \beta_M)$ if and only if $\nu$ is oriented so that $\beta_W \wedge \beta_\nu = \beta_M$ up to positive scalar multiple.
 	If $g$ is a codimension-$0$ immersion, then $\nu$ will be $0$-dimensional, and if the co-orientation is the tautological one then $\beta_\nu$ will be the positive orientation at each point.
 \end{remark}
 
-\begin{remark}
-	Lipyanskiy's definition of co-orientation in \cite{Lipy14} factors a proper map through a map which is surjective onto $TM$, rather than injective from $TW$ as in the Quillen approach.
-	An argument similar to the one just given establishes an equivalence between Lipyanskiy's definition and ours in that setting.
-%	\red{[GBF: I'd suggest to we give it, or at least sketch it.]}
-\end{remark}
+
+Lipyanskiy's definition of co-orientation in \cite{Lipy14} factors a proper map through a map which is surjective onto $TM$, rather than injective from $TW$ as in the Quillen approach.
+We discuss Lipyanskiy's co-orientatons in an appendix at the end of this section; see \cref{S: Lipyanskiy co-orientations}.
+
+
 
 \subsubsection{Co-orientations of boundaries}
 
@@ -2211,7 +2212,7 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 	By \cref{C: co-oriented full transition to embedded,C: oriented full transition to embedded}, the proposition reduces to \cref{L: compare cup and intersection for immersions}.
 \end{proof}
 
-\subsection{Appendix: Lipyanskiy's co-orientations}
+\subsection{Appendix: Lipyanskiy's co-orientations}\label{S: Lipyanskiy co-orientations}
 
 In \cite{Lipy14}, Lipyanskiy uses a different notion of co-orientation from the one we have used to define geometric cochains.
 We here discuss Lipyanskiy's co-orientation, which he initially refers to as \textit{orientations of maps}, and show that when we have smooth maps $f \colon M \to N$, it is equivalent to our definition, up to possible sign conventions.
