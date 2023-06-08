@@ -343,7 +343,7 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 
 
 
-\subsection{Normal co-orientations of immersions and co-orientations of boundaries}\label{S: normal orientatin}
+\subsection{Normal co-orientations of immersions and co-orientations of boundaries}\label{S: normal orientation}
 
 Once again, a key example is when $g$ is an immersion, which is co-orientable if and only if its normal bundle is orientable\footnote{Recall that technically all bundles are over $W$, though our convention is to elide that in the notation.
 Hence we can consider $W$ to have a normal bundle even if $g$ is merely an immersion and not actually an embedding.
@@ -428,54 +428,61 @@ We discuss Lipyanskiy's co-orientatons in an appendix at the end of this section
 
 \subsubsection{Co-orientations of boundaries}
 
-Given a co-oriented map $g \colon W \to M$ where $W$ is a manifold with corners, we can use the normal co-orientation of $\bd W$ in $W$ together with the composition of co-orientations noted in \cref{R: cooriented composition} to define ``boundary co-orientations'':
+Given a co-oriented map $g \colon W \to M$ where $W$ is a manifold with corners, we can use a normal co-orientation of $\bd W$ in $W$ together with the composition of co-orientations noted in \cref{R: cooriented composition} to define ``boundary co-orientations'':
 
 \begin{definition}\label{D: boundary co-orientation}
-	The \textbf{standard co-orientation of a boundary immersion} $i_{\bd W} \colon \bd W \into W$ is the normal co-orientation associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
-	However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.} orientation of $\nu_{\bd W \subset W}$.
+	Let $\nu$ be the normal bundle of $\bd W$ as an immersed with corners of $W$.
+	The \textbf{standard co-orientation of a boundary immersion} $i_{\bd W} \colon \bd W \into W$ is the normal co-orientation (see \cref{normal co-or}) associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
+	However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.} orientation of $\nu$.
 
 	If $g \colon W \to M$ is co-oriented, the \textbf{induced co-orientation} or \textbf{boundary co-orientation} of the composition $gi_{\bd W}$ is the composition of the standard co-orientation of $i_{\bd W}$ with the given co-orientation of $g \colon W \to M$.
 	We write $\bd g \colon \bd W \to M$ to denote $gi_{\bd W}$ with its induced co-orientation.
 \end{definition}
 
-We will use induced co-orientations on boundaries to define the differential in the geometric cochain complex.
+In \cref{S: geometric cochains}, we will use induced co-orientations on boundaries to define the differential in the geometric cochain complex.
 
-The following examples will be important in \cref{S: creasing} when we discuss creasing.
+
 
 \begin{example}\label{E: splitting example 1}
-	Suppose $g \colon W \into M$ is the inclusion of a codimension-$0$ submanifold of $M$.
+	Suppose $g \colon W \into M$ is the embedding of a codimension-$0$ submanifold of $M$.
 	In this case $TW$ is the pullback of $TM$, and we have the tautological co-orientation of \cref{D: tautological co-orientation} that, slightly abusing notation, we can write as $(\beta_M,\beta_M)$.
 	A particularly important pair of examples is given by the inclusions $g^- \colon (-\infty, 0] \into \R$ and $g^+ \colon [0,\infty) \into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
 
 	Next consider the submanifold consisting of the point $0 \in \R$.
-	It has trivial determinant line bundle, and we can choose the basis element to be the $0$-form $1 \in \bigwedge^0 T0 \cong \R$.
+	Its tangent space has trivial determinant line bundle, and we can choose the basis element to be the $0$-form $1 \in \bigwedge^0 T0 \cong \R$. If we give the normal bundle to $0$ in $\R$ the standard orientation in the positive direction, denoted by the standard basis vector $e_1$, then the corresponding normal orientation of the inclusion of $0$ into $\R$ will be $(1, 1 \wedge e_1) = (1, e_1)$. 
 	By \cref{normal co-or,D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\} \into (-\infty, 0]$ is $(1, 1 \wedge -e_1) = (1, -e_1)$.
-	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^- \colon (-\infty, 0] \to \R$ is then the composition of $(1, -e_1)$ with $(e_1, e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
+	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^- \colon (-\infty, 0] \to \R$ is then the composition of $(1, -e_1)$ with $(e_1, e_1)=(-e_1,-e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
 	As the inward normal to $[0,\infty)$ at $0$ is $e_1$, the inclusion $g^+ \colon [0,\infty) \to \R$ induces the opposite co-orientation $(1, e_1)$ on the inclusion $\{0\} \to \R$.
+	So we see in this case different co-orientations of the same inclusion $0\into \R$ depending on which conventions and which contexts we choose to employ.
 \end{example}
 
+The following example, which may at first seem a bit artificial in employing $M$ as an intermediary between $W$ and $\R$, will turn out to be important in \cref{S: creasing} when we discuss creasing.
+
 \begin{example}\label{E: manifold decomposition}
-	An important generalization of the preceding example occurs when we have smooth maps $g \colon W \to M$ and $\varphi \colon M \to \R$ with $0$ a regular value of $\varphi g$.
+	Suppose we have smooth maps $g \colon W \to M$, and $\varphi \colon M \to \R$ with $0$ a regular value of $\varphi g$.
 	Consider the spaces $W^0 = (\varphi g)^{-1}(0)$, $W^- = (\varphi g)^{-1}((-\infty,0])$, and $W^+ = (\varphi g)^{-1}([0,\infty))$, which are manifolds with corners.
-	In fact, they are the fiber products of the maps $\varphi g \colon W \to \R$ and, respectively, the inclusions of $\{0\}$, $(-\infty, 0]$, and $[0,\infty)$ into $\R$.
-	The required transversality is guaranteed by $0$ being a regular value of $\varphi g$.
-	In this case, however, rather than consider the maps of these fiber products to $\R$, we consider their maps to $M$ via restrictions of $g$.
+	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions. Then, by the boundary formula \cref{E: product boundary}, $$\bd W^-= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right),$$
+	and the first component is precisely $W^0$, so $W^0$ is a boundary component of $W^-$ and similarly for $W^+$.  
 
-	In this setting, the normal bundle of $W^0$ in $W$ has a natural orientation given by pulling back via $\varphi g$ the standard orientation $e_1$ of the normal bundle of $0$ in $\R$, and this determines the \textbf{co-orientation of $W^0$ in $W$ induced by $\varphi$}, which is given by the normal co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)$.
+
+	Now, the normal bundle of $W^0$ in $W$ is the pullback via $\varphi g$ of the normal bundle of $0$ in $\R$. Giving the normal bundle of $0$ in $\R$ the standard orientation in the positive direction, denoted by the basis vector $e_1$ as a form, this orientation pulls back to a natural orientation of the normal bundle to $W^0$ in $W$. Applying \cref{normal co-or}, we obtain a normal co-orientation for $W^0$ in $W$, which we call the \textbf{co-orientation of $W^0$ in $W$ induced by $g\varphi$}. This is the co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)$.
+
+
+
 	We also have the boundary co-orientations of the inclusions of $W^0$ into $W^{\pm}$.
-	Analogously to \cref{E: splitting example 1}, the co-orientation on $W^0 \into W$ induced by $\varphi$ is the opposite of co-orientation of $W^0 \into W$ as the (partial) boundary of $W^-$ and agrees with the co-orientation of $W^0 \into W$ as the (partial) boundary of $W^+$.
+	Analogously to \cref{E: splitting example 1}, the boundary co-orientation from the composite $W^0 \to W^- \into W$  is the opposite of the co-orientation of $W^0\into W$ induced by $g\varphi$, while the boundary co-orientation from the composite $W^0 \to W^+ \into W$  agrees with the co-orientation of $W^0\into W$ induced by $g\varphi$
 
-	Now suppose $g \colon W \to M$ is co-oriented with local representatives $(\beta_W, \beta_M)$.
+	Now we suppose $g \colon W \to M$ is co-oriented with local representatives $(\beta_W, \beta_M)$.
 	By composing this co-orientation with the tautological co-orientations of $W^\pm$ in $W$ as in the preceding example, we can canonically co-orient $g|_{W^\pm}$ by $(\beta_W, \beta_M)$.
-	Similarly, by composing the co-orientation of $g$ with the $\phi$-induced co-orientation of $W^0 \into W$ we obtain the \textbf{co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\varphi$}.
-	As above, the co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\varphi$ disagrees with the boundary co-orientation of $g|_{W^0} \colon W^0 \to M$ obtained by treating $W^0$ as part of the boundary of $W^-$, while it agrees with the co-orientation obtained by treating $W^0$ as part of the boundary of $W^+$.
+	Similarly, by composing the co-orientation of $g$ with the $g\varphi$-induced co-orientation of $W^0 \into W$ we obtain the \textbf{co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\varphi$}, which in symbols is just $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)*(\beta_W,\beta_M)$.
+	Furthermore, as above, the co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\varphi$ disagrees with its boundary co-orientation as a component of $\bd(g|_{W^-})$, while it agrees with its co-orientation as a component of $\bd(g|_{W^+})$.
 
 	In the special case of the identity map $\id \colon M \to M$ with the tautological co-orientation, we obtain submanifolds $M^0$ and $M^{\pm}$ of $M$ with co-orientations of their embeddings induced as above.
-	It is worth observing that then if we also have $g \colon W \to M$ then $W^0 = M^0 \times_M W$ and $W^{\pm} = M^{\pm} \times_M W$.
+	Then if we also have $g \colon W \to M$, our spaces $W^0$ and $W^\pm$ are fiber products $W^0 = M^0 \times_M W$ and $W^{\pm} = M^{\pm} \times_M W$.
 	This statement holds purely topologically.
 	To ensure manifolds with corners, we observe that $\varphi g$ is transverse to $0$ if and only if $g$ is transverse to $M^0$.
-	Our co-orientation computations here for $W^0$ and $W^\pm$ will later be seen to be consistent with a co-orientation we define for fiber products of co-oriented maps.
-	In \cref{C: co-orient W0}, we will use that technology to see that $\bd (W^0)$ and $(\bd W)^0$ agree as spaces but their maps to $M$ have opposite co-orientations given our conventions, i.e.\ ``$\bd W^0 = -(\bd W)^0$'' eliding the maps.
+	When $g$ is co-oriented, our co-orientation computations here for the restrictions of $g$ to $W^0$ and $W^\pm$ will later be seen to be consistent with the co-orientations we define for fiber products of co-oriented maps; see \cref{E: codim 0 and 1 co-or as fiber products}.
+	In \cref{C: co-orient W0}, we will use that technology to see that $\bd (W^0)$ and $(\bd W)^0$ agree as spaces, but their maps to $M$ will have opposite co-orientations under our conventions, i.e.\ ``$\bd W^0 = -(\bd W)^0$'' eliding the maps.
 \end{example}
 
 \begin{comment}
@@ -987,7 +994,7 @@ In addition, these special cases are good for building intuition about the more 
 
 \begin{example}\label{E: V embedded}
 	When $f \colon V \to M$ is a co-oriented embedding, the pullback $V \times_M W$ is particularly easy to describe.
-	In this case, we know from \cref{S: normal orientatin} that the co-orientation is determined by an orientation $\beta_{\nu V}$ of the normal bundle to $V$ in $M$.
+	In this case, we know from \cref{S: normal orientation} that the co-orientation is determined by an orientation $\beta_{\nu V}$ of the normal bundle to $V$ in $M$.
 	Then, as $f$ is already an embedding, we can take $N = 0$ in \cref{D: pullback coorient}.
 	So the pullback $V \times_M W$ is just the submanifold $g^{-1}(V) \subset W$, co-oriented by $(\beta_P,\beta_W)$, where $\beta_P \wedge \beta_{\nu V} = \beta_W$, the $\nu V$ here being the pullback of the normal bundle to $g^{-1}(V)$ in $W$.
 	In other words, the co-orientation of the pullback is just the normal co-orientation corresponding to the pulled back orientation of $\nu V$.
@@ -1302,7 +1309,7 @@ They will be useful when working with the creasing construction for geometric co
 	The first case follows immediately from the preceding lemma, and the other then follows from the graded commutativity of the fiber product, \cref{P: graded comm}.
 \end{proof}
 
-\begin{example}
+\begin{example}\label{E: codim 0 and 1 co-or as fiber products}
 	Let $\varphi \colon M \to \R$ be a smooth function from a manifold without boundary to $\R$, and let $M^+ = \varphi^{-1}([0,\infty)) = [0,\infty) \times_\R M$, $M^- = \varphi^{-1}((-\infty,0]) = (-\infty,0] \times_\R M$, and $M^0 = \varphi^{-1}(0) = 0 \times_\R M$.
 	Then $M^\pm$ are embedded codimension $0$ manifolds with corners in $M$ and $\bd M^\pm = M^0$.
 	Suppose the embeddings $M^\pm \into M$ are given the tautological co-orientations of \cref{D: tautological co-orientation}, and let $g \colon W \to M$ be transverse to $M^\pm$, which in this case is equivalent to being transverse to $M^0$.
