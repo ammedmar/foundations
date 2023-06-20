@@ -281,6 +281,7 @@ Also, just as most manifolds do not possess a preferred orientation, most maps $
 	provides a \textbf{tautological co-orientation}.
 \end{definition}
 
+
 The local triviality of the determinant line bundle of a manifold means being able to choose a consistent basis vector over sufficiently small neighborhoods.
 We call such a choice of basis vector around a point in $W$ a \textbf{local orientation}, and, as for global orientations, often denote a local orientation by $\beta_W$.
 Again, abusing notation, we also often allow $\beta_W$ to refer to its equivalence class up to multiplication by a positive scalar.
@@ -314,6 +315,9 @@ Likewise, we define $(g\gamma)_*\beta_M$ by a lift of $g\gamma$ to the complemen
 Then $\gamma_*\beta_{W}$ and $(g\gamma)_*\beta_M$ depend on $\gamma$, but if $g \colon W \to M$ is co-orientable the pair $(\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ is independent of $\gamma$ as this data also determines a non-vanishing lift of $\gamma$ in $\Hom(\Or(TW),g^*\Or(TM))$, which is trivial if $g$ is co-orientable.
 In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M) \defeq (\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$.
 
+
+
+
 \begin{example}
 	Let $g$ be any map $g \colon S^1 \to S^2$.
 	As $S^1$ and $S^2$ are orientable, $g$ is co-orientable.
@@ -336,12 +340,23 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 	This is more convenient when writing out co-orientations using the local orientations as we obtain expressions such as $(\beta_V, \beta_W)*(\beta_W,\beta_M) = (\beta_V,\beta_M)$.
 \end{remark}
 
+
 \begin{notation}\label{N: implicit notation}
 	It will be useful in notation to sometimes leave the maps, codomains, and co-orientations all implicit once they have already been established and just write $V$ to represent the co-oriented map $f \colon V \to M$.
 	In this, case we write $-V$ to refer to the same map with the opposite co-orientation.
+	\greg{Is there a better place to put this?}
 \end{notation}
 
+Just as is the case for orientations, when working with co-orientations it suffices to consider the interior of the manifold, in this case of the domain. 
 
+\begin{proposition}
+Let $g \colon W \to M$ be a map of manifolds with corners. Then $g$ is co-orientable if and only if its restriction to $S^0(W)$, the interior of $W$, is co-orientable.
+\end{proposition}
+\begin{proof}
+It is clear from the definition that if $g$ is co-orientable then so is its restriction to any open set of $W$. 
+
+Conversely, suppose the restriction of $g$ to $S^0(W)$ is co-orientable. As $W$ is a topological manifold with boundary, which we will denote $bd(W)$, the collaring theorem tells us that $bd(W)$ possesses a collar \cite[Theorem 2]{Bro62}. Let $C$ be a closed collar of $bd(W)$. Then $C$ is homeomorphic to $bd(W)\times I$ with $bd (W)$ identified under the homeomorphism with $bd(W) \times 0$. Let $B$ be the image of $bd(W) \times 1$ in $W$, and let $int(C)$ be the image of $bd(W) \times [0,1)$. Since $g|_{S^0(W)}$ is co-orientable, any choice of co-orientation restricts to a bundle isomorphism $\bigwedge TW|_B \to \bigwedge g^*\Or(TM)|_B$. Due to the product structure of the collar, the restriction of $\bigwedge TW$ to $C$ is isomorphic to $\bigwedge TW|_B \times I$ and similarly for $\bigwedge g^*\Or(TM)$ \cite[Theorem 3.4.4]{Hus94}, and so the bundle isomorphism over $B$ can be extended to a bundle isomorphism over $C$. As we chose the bundle isomorphism over $B$ to be the restriction of an isomorphism over $g|_{S^0(W)}$, we can glue together the bundle isomorphisms over $C$ and over $W-int(C)$ to obtain an isomorphism over all of $W$. 
+\end{proof}
 
 \subsection{Normal co-orientations of immersions and co-orientations of boundaries}\label{S: normal orientation}
 
@@ -567,7 +582,7 @@ For this the following lemma is useful.
 	If $G$ is co-orientable then there is a nowhere-vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM))$, so restricting to $W \times t_0$ and using the above identifications we obtain a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM))$ over $W \times t_0$, hence $g$ is co-orientable.
 	Conversely,
 	if $g$ is co-orientable, there is a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM)$ over $W \times t_0$.
-	By general bundle theory, any vector bundle $E$ over $W \times I$ is isomorphic to $E_{t_0} \times I$, where $E_{t_0}$ is the restriction of $E$ to $W \times \{t_0\}$.
+	By general bundle theory \cite[Theorem 3.4.4]{Hus94}, any vector bundle $E$ over $W \times I$ is isomorphic to $E_{t_0} \times I$, where $E_{t_0}$ is the restriction of $E$ to $W \times \{t_0\}$.
 	So our nowhere-vanishing map of line bundles over $W \times t_0$ extends to a nowhere vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM))$ over $W \times I$.
 	This implies the co-orientability of $G$.
 \end{proof}
