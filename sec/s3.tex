@@ -508,40 +508,40 @@ The following example, which may at first seem a bit artificial in employing $M$
 
 \subsubsection{Co-orientations of boundaries of boundaries}
 
-In order to form a chain complex of geometric cochains, we will need a result about co-orientations of $\bd^2 W$.
+In order to form a chain complex of geometric cochains in \cref{S: geometric cochains}, we will need a result about co-orientations of $\bd^2 W$.
 Recall from \cref{S: boundaries} that Proposition 2.9 of \cite{Joy12} identifies $\bd^2 W$ with the set of points $(x,\bb_1,\bb_2)$ with $x \in W$ and the $\bb_i$ encoding distinct local boundary components.
 The map $i_{\bd^2 W} \colon \bd^2 W \to W$ takes $(x,\bb_1,\bb_2)$ to $x$.
 The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism $\rho$ defined by $(x,\bb_1,\bb_2) \to (x,\bb_2,\bb_1)$.
 
 \begin{lemma}\label{L: boundary2}
-	Suppose $i_{\bd^2 W} \colon \bd^2 W \to W$ is co-oriented via the composition of boundary co-orientations $\bd^2 W \to \bd W \to W$, and suppose $\rho \colon \bd W \to \bd W$ is given the co-orientation induced by $\bigwedge D\rho$ (see \cref{S: co-orientations}).
+	Suppose $i_{\bd^2 W} \colon \bd^2 W \to W$ is co-oriented via the composition of boundary co-orientations $\bd^2 W \to \bd W \to W$, and suppose $\rho \colon \bd^2 W \to \bd^2 W$ is given its tautological co-orientation (see \cref{D: tautological co-orientation}).
 	Then $i_{\bd^2 W}$ and $i_{\bd^2 W}\rho$ have opposite co-orientations.
 \end{lemma}
 
 \begin{proof}
 	It suffices to consider points $(x,\bb_1,\bb_2) \in \bd^2 W$ with $x \in S^2(W)$, as such points fill out the interior of $\bd^2 W$.
-	In $W$ such $x$ have neighborhoods of the form $[0,\infty)^2 \times \R^{w-2}$ with $x$ at the origin.
+	In $W$, such $x$ have neighborhoods of the form $[0,\infty)^2 \times \R^{w-2}$ with $x$ at the origin.
 	We identify $[0,\infty)^2$ with the first quadrant of $\R^2$, letting $X$ and $Y$ denote the non-negative $x$ and $y$ axes.
 	We let $\bb_X$ and $\bb_Y$ be the corresponding local boundary components.
 	Then the preimage in $\bd^2 W$ of a small neighborhood $U$ of $x$ in $S^2(W)$ consists of two copies of $U$ that we can write $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$.
 	The notation indicates that we think of the first copy of $U$ as embedding into $X \times \R^{w-2} \subset \bd W$ and the second as embedding into $Y \times \R^{w-2} \subset \bd W$.
 	The map $i_{\bd W} \colon \bd W \to W$ then identifies the two copies.
-	The map $\rho$ simply interchanges them.
+	The map $\rho$ simply interchanges them.\greg{Picture here?}
 
-	Let $\beta_X$ and $\beta_Y$ denote positively-directed tangent vectors in $X$ and $Y$, and let $\beta_U$ be an arbitrary local orientation of $U$.
+	Let $\beta_X$ and $\beta_Y$ correspond to the positively-directed tangent vectors in $X$ and $Y$, and let $\beta_U$ be an arbitrary local orientation of $U$.
 	Abusing notation, we also write $\beta_U$ for the corresponding local orientations of $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$.
-	The induced co-orientation on $\rho$ can be written $(\beta_U,\beta_U)$.
+	The induced co-orientation on $\rho$ can then be written $(\beta_U,\beta_U)$.
 	Up to identifying neighborhoods in $W$ with their local models, the boundary co-orientation of $i_{\bd^2 W}$ on $(U,\bb_X,\bb_Y)$ comes from first mapping it into $X \times \R^{w-2}$ and then into $X \times Y \times \R^{w-2}$.
-	So from the definition of boundary co-orientations this co-orientation is $(\beta_U, \beta_U \wedge \beta_X \wedge \beta_Y)$.
+	So from the definition of boundary co-orientations, this co-orientation is $(\beta_U, \beta_U \wedge \beta_X \wedge \beta_Y)$.
 	Analogously, the boundary co-orientation of $i_{\bd^2 W}$ on $(U,\bb_Y,\bb_X)$ is $(\beta_U, \beta_U \wedge \beta_Y \wedge \beta_X)$.
 	By composition, the co-orientations of $i_{\bd^2 W}\rho$ on $(U,\bb_X,\bb_Y)$ and $(U,\bb_Y,\bb_X)$ are respectively $(\beta_U, \beta_U \wedge \beta_Y \wedge \beta_X)$ and $(\beta_U, \beta_U \wedge \beta_X \wedge \beta_Y)$ as first we interchange then embed.
 	But $\beta_U \wedge \beta_X \wedge \beta_Y = -\beta_U \wedge \beta_Y \wedge \beta_X$, which establishes the lemma.
 \end{proof}
 
 \begin{remark}\label{R: bd2 oriented}
-	A similar argument using \cref{Con: oriented boundary} shows that if $W$ is oriented than $\bd^2 W$ possess an orientation reversing diffeomorphism.
-	In this case we observe that of our two copies of $U$, one is oriented by \cref{Con: oriented boundary} so that $\beta_X \wedge \beta_Y \wedge \beta_U$ is the local orientation of $W$ and the other is oriented so that $\beta_Y \wedge \beta_X \wedge \beta_U$ is the orientation of $W$.
-	Thus the two copies of $U$ have opposite orientations, and again the diffeomorphism simply interchanges them.
+	A similar, though more familiar, argument using \cref{Con: oriented boundary} shows that if $W$ is oriented then $\bd^2 W$ possess an orientation reversing diffeomorphism.
+	In this case, we observe that of our two copies of $U$, one is oriented by \cref{Con: oriented boundary} so that $\beta_X \wedge \beta_Y \wedge \beta_U$ is the local orientation of $W$ and the other is oriented so that $\beta_Y \wedge \beta_X \wedge \beta_U$ is the orientation of $W$.
+	Thus the two copies of $U$ have opposite orientations, and again the diffeomorphism simply interchanges the two copies.
 \end{remark}
 
 \subsection{Co-orientation of homotopies}\label{S: co-oriented homotopy}
