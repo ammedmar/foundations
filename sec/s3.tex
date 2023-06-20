@@ -547,18 +547,22 @@ The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism 
 \subsection{Co-orientation of homotopies}\label{S: co-oriented homotopy}
 
 In this section we develop co-orientations related to homotopies.
-As the product of two spaces is the same as their fiber product over a point, we have by equation \eqref{E: product boundary}:
+As the product of two spaces is the same as their fiber product over a point, we have by equation \eqref{E: product boundary} and rearranging the order of components:
 \begin{equation*}
 	\bd(W \times I) =
 	(\bd W \times I) \sqcup (W \times \bd I) =
 	(W \times 1) \sqcup (W \times 0) \sqcup (\bd W \times I).
 \end{equation*}
+
 Now recall that in general if we have a map $f \colon V \to M$ then we write $\bd f$ for the composition
 $$\bd V \xr{i_{\bd V}} V \xr{f} M.$$
-Adopting this convention also for pieces of the boundary we make the following definition:
+We make the following definition:
 
 \begin{definition}\label{D: co-oriented homotopy}
-	If $G \colon W \times I \to M$ is a co-oriented map, we say that $G$ is a \textbf{co-oriented homotopy} (or simply a \textbf{homotopy} when working with co-orientations is understood) from $g_0 \colon W \to M$ to $g_1 \colon W \to M$ if $\bd G = g_1 \amalg -g_0\amalg H$, where $g_1$, $-g_0$, and $H$ correspond respectively to the compositions of $G$ with the inclusions into $W \times I$ of $W \times 1$, $W \times 0$, and $\bd W \times I$, taking each with its boundary co-orientation as in \cref{D: boundary co-orientation}.
+	If $G \colon W \times I \to M$ is a co-oriented map, we say that $G$ is a \textbf{co-oriented homotopy} (or simply a \textbf{homotopy} when working with co-orientations is understood) from $g_0 \colon W \to M$ to $g_1 \colon W \to M$ if $\bd G = g_1 \amalg -g_0\amalg H$, where $g_1$, $-g_0$, and $H$ correspond respectively to the compositions of $G$ with the inclusions into $W \times I$ of $W \times 1$, $W \times 0$, and $\bd W \times I$, taking each with its boundary co-orientation as in \cref{D: boundary co-orientation}. 
+	In particular, then, $g_0$ is the composition 
+	$$W=W \times 0 \into W \times I \xr{G} M$$
+	with the opposite of the boundary co-orientation coming from $G$. 
 \end{definition}
 
 Note that, by analogy with homotopies involving oriented manifolds, a homotopy from $g_0$ to $g_1$ involves the oppositely co-oriented $-g_0$ in the boundary formula.
@@ -572,13 +576,12 @@ In our most common use of homotopies, we begin with a co-oriented map $g \colon 
 For this the following lemma is useful.
 
 \begin{lemma}\label{L: co-orientable homotopies}
-	Suppose $g \colon W \to M$ is co-orientable and that $G \colon W \times I \to M$ is a homotopy with $g = G(-,t_0)$ for some $t_0 \in I$.
-	Then $G$ is co-orientable.
-	Conversely, if $G \colon W \times I \to M$ is co-orientable, then so is $g = G(-,t_0) \colon W \to M$ for any $t_0$.
+	If $g \colon W \to M$ is co-orientable and $G \colon W \times I \to M$ is a homotopy with $g = G(-,t_0)$ for some $t_0 \in I$, then $G$ is co-orientable.
+	Conversely, if $G \colon W \times I \to M$ is co-orientable, then so is $g = G(-,t_0) \colon W \to M$ for any $t_0 \in I$.
 \end{lemma}
 
 \begin{proof}
-	Over $W \times t_0$, we have $\Or(T(W \times I)) \cong \Or(TW \oplus TI) \cong \Or(TW) \otimes \Or (TI) \cong \Or(TW)$, while the restriction of $G^*\Or(TM)$ over $W \times t_0$ is isomorphic to $g^*\Or(TM)$.
+	Over $W \times t_0$, we have $\Or(T(W \times I)) \cong \Or(TW \oplus TI) \cong \Or(TW) \otimes \Or (TI) \cong \Or(TW)$, while the restriction of $G^*\Or(TM)$ over $W \times t_0$ is just $g^*\Or(TM)$.
 	If $G$ is co-orientable then there is a nowhere-vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM))$, so restricting to $W \times t_0$ and using the above identifications we obtain a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM))$ over $W \times t_0$, hence $g$ is co-orientable.
 	Conversely,
 	if $g$ is co-orientable, there is a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM)$ over $W \times t_0$.
@@ -589,7 +592,7 @@ For this the following lemma is useful.
 
 \begin{definition}\label{D: homotopy co-orientation}
 	Suppose $g_0 \colon W \to M$ is co-oriented and $G \colon W \times I \to M$ is a smooth homotopy with $G(-,0) = g_0$.
-	Then by the above lemma $G$ is co-orientable and clearly there is exactly one choice of co-orientation for $G$ for which the $W \times 0$ component of $\bd G$ is $-g_0$.
+	Then, by the above lemma, $G$ is co-orientable and clearly there is exactly one choice of co-orientation for $G$ for which the $W \times 0$ component of $\bd G$ is $-g_0$.
 	We call this co-orientation the \textbf{co-orientation on $G$ induced by $g_0$}.
 	The map $G$ then determines a co-oriented homotopy from $g_0$ to a co-oriented map $g_1 \colon W \to M$.
 	We call this co-orientation on $g_1 = G(-,1)$ the \textbf{induced co-orientation on $g_1$.}
@@ -597,8 +600,8 @@ For this the following lemma is useful.
 
 \begin{remark}\label{R: stationary homotopy}
 	In the above scenario, if $g_0$ is co-oriented locally at $x \in W$ by $(\beta_W,\beta_M)$, then at $(x,0) \in W \times I$, the corresponding local co-orientation of $G$ that yields $-g_0$ as a boundary component of $G$ is $(\beta_W \wedge -\beta_I, \beta_M)$, where $\beta_I$ corresponds to the standard orientation of $I$.
-	This follows from $(\beta_W,\beta_W \wedge \beta_I)$ being the boundary co-orientation of $W \times 0 \into W \times I$ as $e_1$ is the inward pointing normal at $0 \in I$.
-	As we can take $\beta_W \wedge -\beta_I$ to be a consistent orientation along the path given by $\gamma(t) = (x,t)$, we have $\gamma_*(\beta_W \wedge -\beta_I, \beta_M) = (\beta_W \wedge -\beta_I,\gamma_*\beta_M)$, and at this end of the homotopy the induced local co-orientation of $g_1$ at $x$ is $(\beta_W,\gamma_*\beta_M)$.
+	This follows from $(\beta_W,\beta_W \wedge \beta_I)$ being the boundary co-orientation of $W \times 0 \into W \times I$ as $\beta_I$ corresponds to the inward pointing normal at $0 \in I$.
+	As we can take $\beta_W \wedge -\beta_I$ to be a consistent orientation along the path given by $\gamma(t) = (x,t)$, we have, recalling the notation from \cref{S: co-orientations}, that $\gamma_*(\beta_W \wedge -\beta_I, \beta_M) = (\beta_W \wedge -\beta_I,\gamma_*\beta_M)$, and at this end of the homotopy the induced local co-orientation of $g_1$ at $x$ is $(\beta_W,\gamma_*\beta_M)$.
 	If $G$ is stationary along $x \times I$, then the co-orientation for $g_1$ at $x$ is again $(\beta_W,\beta_M)$ so that the co-orientations of $g_0$ and $g_1$ agree at $x$.
 	This observation will be useful below in showing that pullback co-orientations are well defined.
 \end{remark}
@@ -631,12 +634,13 @@ For this the following lemma is useful.
 \end{lemma}
 
 \begin{proof}
-	By definition $H$ is co-oriented as a boundary component of the co-oriented map $G$, so it remains to check that the induced co-orientations of the ends of $H$ have the expected signs.
+	By definition, $H$ is co-oriented as a boundary component of the co-oriented map $G$, so it remains to check that the induced co-orientations of the ends of $H$ have the expected signs.
 	This could be done directly, but rather we use \cref{L: boundary2}, noting that each copy of $\bd W$ (at the top and bottom of the cylinder) can be considered to be a piece of $\bd^2(W \times I)$.
-	In particular, applying this lemma we see the maps $\bd W \to M$ take opposite co-orientations depending on whether we think of them as first mapping $\bd W$ into $W$ and then identifying $W$ as one end of the cylinder versus first including $\bd W$ into $(\bd W) \times I$ and then mapping this to $W \times I$.
-	In both cases we follow with the map $G$.
+	In particular, applying \cref{L: boundary2} we see the maps $\bd W \to M$ take opposite co-orientations depending on whether we think of them as first mapping $\bd W$ into $W$ and then identifying $W$ as one end of the cylinder versus first including $\bd W$ into $(\bd W) \times I$ and then mapping this to $W \times I$.
+	In both cases, we follow with the map $G$.
 	As we think of $g_1$ as defined on $W \subset W \times I$ and let $\bd g_1$ denote its boundary, we see that the corresponding map from the top of the cylinder $(\bd W) \times I$ must be $-\bd g_1$.
-	Similarly, the map at the bottom of the cylinder is $\bd g_0$.
+	Similarly, the map at the bottom of the cylinder is $\bd g_0$. 
+	The lemma now follows from \cref{D: co-oriented homotopy}.
 \end{proof}
 
 \begin{comment}
@@ -673,11 +677,11 @@ For this the following lemma is useful.
 
 In this section we define a convention for co-orientations of pullbacks and fiber products.
 More specifically, if $f \colon V \to M$ and $g \colon W \to M$ are transverse smooth maps from manifolds with corners to a manifold without boundary and $f$ is co-oriented, we define a co-orientation of the pullback $f^* \colon V \times_M W \to W$.
-This does not require $g$ to be co-oriented, but if it is, we can compose to also get a co-orientation of the fiber product $V \times_M W \to M$.
+This does not require $g$ to be co-oriented, but if it is, we can compose with $g$ to also get a co-orientation of the fiber product $V \times_M W \to M$.
 Ultimately this will allow us to define certain products of geometric cochains.
 
 Recall that our canonical realization of the topological pullback $P = V \times_M W$ is defined to be $P = \{(x,y) \in V \times W \mid f(x) = g(y)\}$.
-By Joyce \cite{Joy12}, the projections $P \to V$ and $P \to W$ are smooth, and hence so is $f \times_M g \colon P \to M$ given by $(x,y) \to f(x) = g(y)$.
+By Joyce \cite[Section 6]{Joy12}, the projections $P \to V$ and $P \to W$ are smooth, and hence so is $f \times_M g \colon P \to M$ given by $(x,y) \to f(x) = g(y)$.
 It is not obvious how to define the co-orientations of pullbacks and fiber products, and any such definition will depend on choices of convention.
 Our goal in this section is to provide a definition such that co-orientations of fiber products of co-oriented maps possess the following desirable properties:
 
@@ -685,9 +689,9 @@ Our goal in this section is to provide a definition such that co-orientations of
 	\item If $f$ and $g$ are transverse co-oriented embeddings, then their fiber product is just the (embedding of the) intersection of the images of $V$ and $W$ in $M$.
 	If $f$ and $g$ are normally co-oriented (see \cref{normal co-or}), then the intersection should be normally co-oriented with the orientation of the normal bundle of the intersection given by concatenating the orientation for the normal bundle of $V$ followed by the orientation for the normal bundle of $W$.
 
-	\item Graded commutativity: Letting $v = \dim(V)$, $w = \dim W$, and $m = \dim(M)$, we should have $V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V$ as fiber product, using Notation \ref{N: implicit notation}.
+	\item Graded commutativity: Letting $v = \dim(V)$, $w = \dim W$, and $m = \dim(M)$, we should have $V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V$ as fiber product, using Notation \ref{N: implicit notation} to allow the domain to represent also the map.
 
-	\item Leibniz rule: we should have $\bd (V \times_M W) = (\bd V \times_M W)\amalg (-1)^{m-v}(V \times_M \bd W)$, using Notation \ref{N: implicit notation}.
+	\item Leibniz rule: we should have $\bd (V \times_M W) = (\bd V \times_M W)\amalg (-1)^{m-v}(V \times_M \bd W)$, again using Notation \ref{N: implicit notation}.
 	This formula will hold for pullbacks as well as fiber products.
 \end{enumerate}
 
@@ -695,15 +699,15 @@ Before getting into the specifics of the construction, we need to make the follo
 
 \begin{remark}\label{R: pullback representative}
 	While our canonical pullback $P$ has been defined as $V \times_M W = \{(x,y) \in V \times W \mid f(x) = g(y)\}$, categorically the pullback $P$ is technically only well defined up to canonical diffeomorphisms.
-	In particular, if $P$ and $P'$ are two specific representatives of the pullback, we have commutative diagrams
+	In particular, if $P$ and $P'$ are two specific representatives of the pullback categorically, we have commutative diagrams
 	\begin{equation}\label{D: comm triangle}
 		\begin{tikzcd}[column sep=small]
 			P \arrow[rr, "\cong"] \arrow[dr] & & P' \arrow[dl] \\
 			& W. &
 		\end{tikzcd}
 	\end{equation}
-	But, as we have observed in \cref{D: tautological co-orientation}, diffeomorphisms come equipped with natural co-orientations, and so a co-orientation of $P \to M$ determines a unique co-orientation of $P' \to M$ by composition and vice versa.
-	Thus when working with co-orientations of pullbacks, we typically think of selecting a fixed representative $P \to W$ to work with for computations, though not necessarily the canonical one.
+	But, as we have observed in \cref{D: tautological co-orientation}, diffeomorphisms come equipped with tautological co-orientations, and so a co-orientation of $P \to M$ determines a unique co-orientation of $P' \to M$ by composition and vice versa.
+	Thus, when working with co-orientations of pullbacks, we typically think of selecting a fixed representative $P \to W$ to work with for computations, though not always the canonical one.
 	This observation shows that we are free to do so, and typically we will do so tacitly.
 	This foreshadows the notion of isomorphic representatives of geometric chains and cochains; see \cref{D: equiv triv and small}.
 \end{remark}
@@ -717,9 +721,7 @@ Before getting into the specifics of the construction, we need to make the follo
 		& M. &
 	\end{tikzcd}
 	\]
-	Again, $\tau$ has an induced co-orientation from being a diffeomorphism, and so the statement means that co-orientation of the fiber product $V \times_M W \to M$ and the composite co-orientation of $\tau$ and then the co-orientation of $W \times_M W \to M$ should differ by the sign $(-1)^{(m-v)(m-w)}$.
-
-	Putting together this observation with \cref{R: pullback representative}, we will generally be able to identify $V \times_M W$ and $W \times_M W$ via $\tau$ as spaces, and so we typically can leave the map $\tau$ itself tacit and just work with the local orientations on $V \times_M W$ and $M$.
+	Again, $\tau$ has a tautological co-orientation from being a diffeomorphism, and so the statement means that co-orientation of the fiber product $V \times_M W \to M$ and the composite co-orientation of $\tau$ and then the co-orientation of $W \times_M V \to M$ should differ by the sign $(-1)^{(m-v)(m-w)}$.
 \end{remark}
 
 \begin{comment}
