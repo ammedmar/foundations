@@ -349,7 +349,7 @@ In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the c
 
 Just as is the case for orientations, when working with co-orientations it suffices to consider the interior of the manifold, in this case of the domain. 
 
-\begin{proposition}
+\begin{proposition}\label{P: interior co-orientation}
 Let $g \colon W \to M$ be a map of manifolds with corners. Then $g$ is co-orientable if and only if its restriction to $S^0(W)$, the interior of $W$, is co-orientable.
 \end{proposition}
 \begin{proof}
@@ -511,7 +511,7 @@ The following example, which may at first seem a bit artificial in employing $M$
 In order to form a chain complex of geometric cochains in \cref{S: geometric cochains}, we will need a result about co-orientations of $\bd^2 W$.
 Recall from \cref{S: boundaries} that Proposition 2.9 of \cite{Joy12} identifies $\bd^2 W$ with the set of points $(x,\bb_1,\bb_2)$ with $x \in W$ and the $\bb_i$ encoding distinct local boundary components.
 The map $i_{\bd^2 W} \colon \bd^2 W \to W$ takes $(x,\bb_1,\bb_2)$ to $x$.
-The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism $\rho$ defined by $(x,\bb_1,\bb_2) \to (x,\bb_2,\bb_1)$.
+The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism $\rho$ defined by $(x,\bb_1,\bb_2) \mapsto (x,\bb_2,\bb_1)$.
 
 \begin{lemma}\label{L: boundary2}
 	Suppose $i_{\bd^2 W} \colon \bd^2 W \to W$ is co-oriented via the composition of boundary co-orientations $\bd^2 W \to \bd W \to W$, and suppose $\rho \colon \bd^2 W \to \bd^2 W$ is given its tautological co-orientation (see \cref{D: tautological co-orientation}).
@@ -802,7 +802,7 @@ Before getting into the specifics of the construction, we need to make the follo
 \subsubsection{Co-orientability of pullbacks and fiber products}
 
 Before defining pullback and fiber product co-orientations, we first want to ensure that pullbacks and fiber products of co-orientable maps are themselves co-orientable.
-The following argument about co-orientability will provide a roadmap to defining co-orientations such co-orientations.
+The following argument about co-orientability will also provide a roadmap to defining such co-orientations.
 We also take the opportunity to observe that pullbacks of proper maps are proper.
 
 \begin{lemma}\label{L: co-orientable pullback}
@@ -817,42 +817,43 @@ We also take the opportunity to observe that pullbacks of proper maps are proper
 Note that $g$ need not be co-orientable or proper for this lemma to apply.
 
 \begin{proof}
-	We first show that the pullback is proper.
-	Recalling that the pullback $f^*:V\times_MW\to W$ can be identified with the restriction to $V\times_MW$ of the projection $\pi_W:V\times W\to W$, let us write $f^*=\pi_W$ so that we label our maps
+	We first show that the pullback of a proper map is proper.
+	Recall that if we use the canonical version of $V \times_M W$ as $P = \{(x,y) \mid f(x) = g(y )\}$ then the pullback map $f^*:V\times_MW\to W$ can be identified with the restriction to $V \times_M W$ of the projection $\pi_W: V\times W\to W$. Let us write $f^*=\pi_W$ so that we label our maps
 	\[
 	\begin{tikzcd}
 		P \arrow[r, "\pi_V"] \arrow[d, "\pi_W"] & V \arrow[d, "f"] \\
 		W \arrow[r, "g"] & M.
 	\end{tikzcd}
-	\]
+	\]\greg{This is still in Tikzcd - should probably change to be consistent.}
 	Suppose $K \subset W$ is compact.
 	We have
 	\begin{align*}
-		\pi_W^{-1}(K)& = \{x \in P \mid \pi_W(x) \in K\}\\
-		& \subset \{x \in P \mid g\pi_W(x) \in g(K)\} \\
-		& = \{x \in P \mid f\pi_V(x) \in g(K)\} \\
-		& = \{x \in P \mid \pi_V(x) \in f^{-1}(g(K))\}.
+		\pi_W^{-1}(K)& = \{z \in P \mid \pi_W(z) \in K\}\\
+		& \subset \{z \in P \mid g\pi_W(z) \in g(K)\} \\
+		& = \{z \in P \mid f\pi_V(z) \in g(K)\} \\
+		& = \{z \in P \mid \pi_V(z) \in f^{-1}(g(K))\}.
 	\end{align*}
 	So $\pi_W^{-1}(K) \subset K \times f^{-1}(g(K)) \subset V \times W$.
 	But this is a product of compact sets as $f$ is proper.
 	So $\pi_W$ is proper.
 
-	For co-orientations, we use Quillen's definition from \cref{L: Quillen}.
-	We factor $f$ as $V \into M \times \R^N \to M$, and then we have the pullback diagram
+	For co-orientatability, it suffices by \cref{P: interior co-orientation} to consider the restriction to the interior of $V \times_M W$. Equivalently, we assume that $V$ and $W$ are manifolds for the remainder of the argument. 
+	By \cref{L: Quillen}, it suffices to utilize Quillen's approach to co-orientability as discussed in \cref{S: Quillen}.
+	We factor $f$ as $V \xhookrightarrow{e} M \times \R^N \to M$, and then we have the pullback diagram
 	\begin{equation}\label{D: pullback}
 		\begin{tikzcd}
-			P \arrow[r, "\pi_V"] \arrow[d] & V \arrow[d] \\
+			P \arrow[r, "\pi_V"] \arrow[d] & V \arrow[d, "e"] \\
 			W \times \R^N \arrow[r, "g \times \id"] \arrow[d] & M \times \R^N \arrow[d, "\pi_M"] \\
 			W \arrow[r, "g"] & M.
-		\end{tikzcd}
+		\end{tikzcd}\greg{This is also still Tikzcd}
 	\end{equation}
 	The bottom square is evidently a pullback.
 	Thus by elementary topology the top square is a pullback diagram if and only if the composite rectangle is a pullback diagram.
-	So by letting the top square be a pullback diagram, we obtain the pullback $P$ of $W \xr{g} M\xleftarrow{f} V$.
+	So by choosing $P$ so that the top square is a pullback diagram, we obtain also the pullback of $W \xr{g} M\xleftarrow{f} V$.
 
-	Since $f$ is transverse to $g$, we have $g \times \id$ transverse to $e$.
-	As $e$ is an embedding, it follows that $P = (g \times \id)^{-1}(e(V))$ is a submanifold of $W \times \R^N$.
-	Furthermore, by \cref{L: Quillen}, $e(V)$ has an orientable normal bundle in $M \times \R^N$, and since the pullback of the normal bundle is the normal bundle of the pullback, it follows that the normal bundle of $P$ in $W \times \R^N$ is also orientable.
+	Since $f$ is transverse to $g$, we have $g \times \id$ transverse to $e$ by \cref{L: all transversality is wrt embeddings}.
+	As $e$ is an embedding, it follows that $P = (g \times \id)^{-1}(e(V))$ is a submanifold of $W \times \R^N$ by \cite[Theorem IV.1.4]{Kos93}.
+	Furthermore, by \cref{L: Quillen}, $e(V)$ has an orientable normal bundle in $M \times \R^N$, and since the pullback of the normal bundle is the normal bundle of the pullback, again by \cite[Theorem IV.1.4]{Kos93}, it follows that the normal bundle of $P$ in $W \times \R^N$ is also orientable.
 	Applying \cref{L: Quillen} again, the map $f^* = \pi_W \colon P \to W$ is co-orientable.
 \end{proof}
 
@@ -860,10 +861,10 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	As foreshadowed in \cref{R: pullback representative}, we here use a different realization of $P = V \times_M W$.
 	Thinking of the top square of the diagram as a pullback square, this $P$ is concretely the subset $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\}$.
 	If $\pi_1 \colon M \times \R^N \to M$ and $\pi_2 \colon M \times \R^N \to \R^N$ are the projections, we know by definition that $\pi_1(e(v)) = f(v)$, and this is also $g(w)$, so the points in this realization of $P$ also satisfy $f(v) = g(w)$.
-	In fact, there is a canonical map between this realization of $P$ and our standard realization $\{(v,w) \in V \times W \mid f(v) = g(w)\}$ given by $(v,(w,z)) \to (v,w)$ with inverse given by $(v,w) \to (v,(w,\pi_2(e(v))))$.
+	In fact, there is a canonical map between this realization of $P$ and our standard realization $\{(v,w) \in V \times W \mid f(v) = g(w)\}$ given by $(v,(w,z)) \mapsto (v,w)$ with inverse given by $(v,w) \mapsto (v,(w,\pi_2(e(v))))$.
 
 	We also already observed in the above proof that $P$ can be identified with $(g \times \id)^{-1}(e(V)) \subset W \times \R^N$.
-	Of course when we think of $P$ as $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\}$, the embedding into $W \times \R^N$ is just the map $(v,(w,z)) \to (w,z)$.
+	Of course when we think of $P$ as $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\}$, the embedding into $W \times \R^N$ is just the map $(v,(w,z)) \mapsto (w,z)$.
 \end{remark}
 
 \begin{corollary}
