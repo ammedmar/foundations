@@ -842,10 +842,10 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	We factor $f$ as $V \xhookrightarrow{e} M \times \R^N \to M$, and then we have the pullback diagram
 	\begin{equation}\label{D: pullback}
 		\begin{tikzcd}
-			P \arrow[r, "\pi_V"] \arrow[d] & V \arrow[d, "e"] \\
+			P \arrow[r, "\pi_V"] \arrow[d] & V \arrow[hookrightarrow, d, "e"] \\
 			W \times \R^N \arrow[r, "g \times \id"] \arrow[d] & M \times \R^N \arrow[d, "\pi_M"] \\
 			W \arrow[r, "g"] & M.
-		\end{tikzcd}\greg{This is also still Tikzcd}
+		\end{tikzcd}
 	\end{equation}
 	The bottom square is evidently a pullback.
 	Thus by elementary topology the top square is a pullback diagram if and only if the composite rectangle is a pullback diagram.
@@ -879,14 +879,14 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 \subsubsection{Co-orientations of pullbacks and fiber products}\label{S: co-orientation of pullbacks}
 
 The construction in the proof of \cref{L: co-orientable pullback} provides a roadmap to define the co-orientations of pullbacks and fiber products.
-For the following definition, refer again to Diagram \eqref{D: pullback}.
+For the following definition, refer again to Diagram \eqref{D: pullback}. Again thanks to \cref{P: interior co-orientation}, we can assume that our spaces are all smooth manifolds. 
 
 \begin{definition}\label{D: pullback coorient}
-	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ co-oriented and the normal bundle $\nu V$ of $e(V) \subset M \times \R^N$ given its Quillen normal orientation as defined in \cref{D: Quillen normal or}.
-	Then the pullback $P = V \times_M W = (g \times \id_{\R^N})^{-1}(e(V)) \subset W \times \R^N$ has an oriented normal bundle that is the pullback of $\nu V$, which, by abuse of notation, we also label $\nu V$.
-	Let $\beta_P$ and $\beta_W$ be local orientations of $P$ and $W$, and let $\beta_E$ be the standard orientation of $\R^N$.
-	Define the \textbf{pullback co-orientation} on $P \to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P \wedge \nu V)$ with the canonical co-orientation $(\beta_W \wedge \beta_E,\beta_W)$.
-	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ up to positive scalar and $-(\beta_P,\beta_W)$ otherwise.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ co-oriented and the normal bundle $\nu V$ of embedded image $e(V) \subset M \times \R^N$ given its Quillen normal orientation as defined in \cref{D: Quillen normal or}.
+	As $\nu V$ is oriented, so is its pullback over $P = V \times_M W = (g \times \id_{\R^N})^{-1}(e(V)) \subset W \times \R^N$, which, by abuse of notation, we also label $\nu V$.
+	Let $\beta_P$ and $\beta_W$ be local orientations of $P$ and $W$, let $\beta_{\nu V}$ denote the fiber orientation of the normal bundle $\nu V$ over $P$, and let $\beta_E$ be the standard orientation of $\R^N$.
+	Define the \textbf{pullback co-orientation} on $P \to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the canonical co-orientation $(\beta_W \wedge \beta_E,\beta_W)$.
+	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ and $-(\beta_P,\beta_W)$ otherwise.
 
 	Following \cref{D: top pullback}, we sometimes write $f^* \colon P \to W$.
 	We also sometimes write $P = g^*V$ to emphasize that $P$ is the pullback of $V$ by $g$ to a manifold over $W$.
@@ -894,14 +894,14 @@ For the following definition, refer again to Diagram \eqref{D: pullback}.
 	If $g$ is co-oriented, define the \textbf{fiber product co-orientation} on $P \to M$ as the composition of the pullback co-orientation with the co-orientation of $g \colon W \to M$.
 \end{definition}
 
-In the definition, note that the Quillen orientation of $\nu V$ is determined by the co-orientation of $f$ and the orientation $\beta_E$ is taken to be canonically fixed across all instances.
+In the definition, note that the Quillen orientation of $\nu V$ is determined by the co-orientation of $f$, and the orientation $\beta_E$ of $\R^N$ is taken to be canonically fixed across all instances.
 The other orientations appearing in the definition are $\beta_P$ and $\beta_W$, but the co-orientation of the pullback $f^* \colon P \to W$ does not depend on the particular choices.
 For example, suppose we choose $\beta_P$ and $\beta_W$ so that $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ and hence the pullback co-orientation is $(\beta_P,\beta_W)$.
 If we replace $\beta_P$ with $\beta_P' = -\beta_P$, then
 $\beta_P' \wedge \beta_{\nu V} = -\beta_P \wedge \beta_{\nu V} = -\beta_W \wedge \beta_E$, so the co-orientation is $-(\beta_P',\beta_W) = -(-\beta_P,\beta_W) = (\beta_P,\beta_W)$.
 So the co-orientation is unchanged.
-Similarly the definition is independent of our choice of $\beta_W$.
-We will show just below that the definition is independent of $N$ and $e$ as well.
+Similarly, the definition is independent of our choice of $\beta_W$.
+We will show just below that the definition is independent of $N$ and $e$, as well.
 
 \begin{remark}\label{R: co-or restriction or switch}
 	It follows from the definition that reversing the co-orientation of $f \colon V \to M$ reverses the co-orientation of $f^* \colon V \times_M W \to W$.
@@ -912,11 +912,11 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 \end{remark}
 
 \begin{lemma}\label{L: pullback co well defined}
-	The pullback and fiber product co-orientations do not depend on the choices of $N$, $e$, or local orientations of $P$, $V$, $W$, or $M$.
+	The pullback and fiber product co-orientations do not depend on the choices of $N$, $e$, or the choices of local orientations of $P$, $V$, $W$, or $M$ used in the definition (note that local orientations of $V$ and $M$ are implicit in choosing a Quillen normal orientation for $\nu V$).
 \end{lemma}
 
 \begin{remark}
-	The co-orientations \textit{do} depend on the choice of the canonical orientation for $\R^N$, the choice of the standard co-orientation of the projection to be $(\beta_M \wedge \beta_E, \beta_M)$, etc., but these are all universal choices.
+	The pullback co-orientations \textit{do} depend on such choices as the choice to use the standard orientation for $\R^N$ and the choice for the co-orientation of the projection $M \times \R^N \to M$ to be $(\beta_M \wedge \beta_E, \beta_M)$, but these are universal choices that we make once and for all.
 	The point is that the pullback and fiber product co-orientations only depend on $f$, $g$, and their co-orientations, after fixing such universal choices that do not depend on $f$ or $g$.
 \end{remark}
 
@@ -924,30 +924,45 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 	As the local orientations of $P$, $V$, $W$, and $M$ used in the construction all come in pairs (e.g.\ $\beta_P$ in $(\beta_P,\beta_P \wedge \nu_V))$, the construction is independent of those choices.
 
 	Next, suppose we are given an embedding $e \colon V \into M \times \R^N$ and extend it to $e' = (e,0) \colon V \into M \times \R^N \times \R^n$.
-	In the construction involving $e$, if we choose $\beta_V$, $\beta_M$ so that $(\beta_V,\beta_M)$ is the co-orientation for $f$, then by the definition of the Quillen orientation, $\nu V$ will be such that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$ up to positive scalar.
+	In the construction involving $e$, if we choose $\beta_V$, $\beta_M$ so that $(\beta_V,\beta_M)$ is the co-orientation for $f$, then by the definition of the Quillen orientation, $\beta_{\nu V}$ will be such that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$ up to positive scalar.
 	If we now increase the dimension of the Euclidean factor to $\R^{N+n}$ and write its canonical local orientation as $\beta_{E^N} \wedge \beta_{E^n}$ while extending $e$ to $e'$, we see that $\nu_V$ becomes $\nu_V \oplus \underline{\R}^n$ so that $\beta_{\nu V}$ becomes $\beta_{\nu V} \wedge \beta_{E^n}$.
 	Pulling back over $W$ we obtain the pullback co-orientation $(\beta_P,\beta_P \wedge \beta_{\nu V} \wedge \beta_{E^n})*(\beta_W \wedge \beta_{E^N} \wedge \beta_{E^n},\beta_W)$.
-	This is $(\beta_P,\beta_W)$ if and only if $\beta_P \wedge \beta_{\nu V} \wedge \beta_{E^n} = \beta_W \wedge \beta_{E^N} \wedge \beta_{E^n}$ up to positive scalar, but this condition is equivalent to having $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_{E^N}$ up to positive scalar.
+	This is $(\beta_P,\beta_W)$ if and only if $\beta_P \wedge \beta_{\nu V} \wedge \beta_{E^n} = \beta_W \wedge \beta_{E^N} \wedge \beta_{E^n}$, but this condition is equivalent to having $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_{E^N}$.
 	So the pullback co-orientation is unchanged.
 
-	Next suppose that $e_0 \colon V \to M \times R^{N_0}$ and $e_1 \colon V \to M \times R^{N_1}$ are any two embeddings over $f$.
+	Now suppose that $e_0 \colon V \to M \times R^{N_0}$ and $e_1 \colon V \to M \times R^{N_1}$ are any two embeddings over $f$.
 	By the preceding paragraph, by adding Euclidean factors we can assume $N_0 = N_1 = N$ for some sufficiently large $N$ without changing the pullback co-orientations associated to $e_0$ and $e_1$.
 	Let $\pi \colon M \times \R^N \to M$ be the projection to $M$.
-	As $\pi e_0 = \pi e_1$, the maps $e_0$ and $e_1$ are homotopic over $f$, say by linear homotopies in the Euclidean fibers.
+	As $\pi e_0 = \pi e_1$ by assumption, the maps $e_0$ and $e_1$ are homotopic over $f$, say by linear homotopies in the Euclidean fibers.
 	Let $H \colon V \times I \to M \times \R^N$ be the chosen homotopy.
-	Next, by the same argument by which embeddings $e$ exist, there is an embedding $\td H: V \times I \into M \times \R^N \times \R^Q$ for some $Q$ so that if $\td \pi \colon M \times \R^N \times \R^Q \to M \times \R^N$ is the projection then $\td \pi \td H = H$.
-	If we let $\td e_0 = \td H(-,0) \colon V \to M \times \R^N \times \R^Q$ then $\td \pi \td e_0 = e_0$.
-	If we let $(e_0,0) \colon V \to M \times \R^N \times \R^Q$ denote the map $x \to (e_0(x), 0)$, then there is a homotopy from $\td e_0$ to $(e_0,0)$; in fact as $e_0$ is an embedding and $\td \pi \td e_0 = e_0$, we can let these homotopies be linear in the $\R^Q$ factor and constant in the other factors and this homotopy will be an embedding of $V \times I$.
+	Next, by the same argument by which embeddings such as $e_0$ and $e_1$ exist (see the proof of \cref{L: Quillen}), there is an embedding $\td H: V \times I \into M \times \R^N \times \R^Q$ for some $Q\geq 0$ so that if $\td \pi \colon M \times \R^N \times \R^Q \to M \times \R^N$ is the projection then $\td \pi \td H = H$.
+	If we let $\td e_0 , \td e_1$ denote respectively $\td H(-,0), \td H(-,1) \colon V \to M \times \R^N \times \R^Q$, then $\td \pi \td e_0 = e_0$, $\td \pi \td e_1 = e_1$, and $\td H$ is a homotopy from $\td e_0$ to $\td e_1$.
+	If then $(e_0,0) \colon V \to M \times \R^N \times \R^Q$ denotes the map $x \mapsto (e_0(x), 0)$, then there is also a homotopy from $\td e_0$ to $(e_0,0)$; in fact as $e_0$ is an embedding and $\td \pi \td e_0 = e_0$, we can let these homotopies be linear in the $\R^Q$ factor and constant in the other factors and this homotopy will be an embedding of $V \times I$ into $M\times \R^N \times \R^Q$.
 	We can define $\td e_1$, $(e_1,0)$, and an embedded homotopy between them similarly.
 
-	So we have a sequence of three embedded homotopies, say $F_1$, $F_2$, $F_3$ from $(e_0,0)$ to $\td e_0$, from $\td e_0$ to $\td e_1$, and from $\td e_1$ to $(e_1,0)$, respectively.
-	Additionally, $\pi \td \pi \colon F_j(x,t) = f(x)$ so each homotopy is constant in $I$ when projected to $M$, and in particular each of $(e_0,0)$, $(e_1,0)$, $\td e_0$, and $\td e_1$ is an embedding $V \into M \times \R^{N+Q}$ over $f \colon V \to M$.
+	So we have a sequence of three embedded homotopies, say $F_0$, $\td H$, and $F_1$, respectively from $(e_0,0)$ to $\td e_0$, from $\td e_0$ to $\td e_1$, and from $\td e_1$ to $(e_1,0)$.
+	Additionally, as for $\td H$, we have $\pi \td \pi F_j(x,t) = f(x)$, so each of the three homotopies is constant in $I$ when projected down to $M$, and in particular each of $(e_0,0)$, $(e_1,0)$, $\td e_0$, and $\td e_1$ is an embedding $V \into M \times \R^{N+Q}$ over $f \colon V \to M$.
 	We know from above that the pullback co-orientation obtained from using $(e_0,0)$ and $(e_1,0)$ agree with those obtained from $e_0$ and $e_1$.
-	So it suffices to use the homotopies to show successively that $(e_0,0)$, $\td e_0$, $\td e_1$, and $(e_1,1)$ all provide the same pullback co-orientation of $f^*$.
+	So it suffices to use these homotopies to show successively that $(e_0,0)$, $\td e_0$, $\td e_1$, and $(e_1,1)$ all provide the same pullback co-orientation of $f^*$. This is the content of the following lemma.
+\end{proof}
 
-	By \cref{L: co-orientable homotopies,D: homotopy co-orientation}, we can use the embeddings $F_j$ to co-orient each of our constant homotopies.
-	In particular, using $F_j$ in place of $e$ in \cref{D: pullback coorient} we obtain three co-orientations of the pullbacks $(V \times I) \times_M W \to W$.
-	We will see below in \cref{leibniz}, whose proof is independent of this one, that when accounting for co-orientations, pullback co-orientations satisfy a Leibniz rule and, in particular, two of the signed boundary components of each co-oriented $(V \times I) \times_M W \to W$ will be $(V \times \{0\}) \times_M W \to W$ and $(V \times \{1\}) \times_M W \to W$, occurring with opposite signs.
+	
+\begin{lemma}
+Suppose that $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ co-oriented. Let $\pi \colon M \times \R^N \to M$ be the projection, and let $h: V \times I \to \R^N$ be an embedding such that $\pi h(x,t) = f(x)$. Say that $h$ is a homotopy between the emebddings $e$ and $e'$. Then the co-orientations of $V \times_M W$ obtained using $e$ and $e'$ are the same. 
+\end{lemma}
+
+\begin{proof}
+
+	%By \cref{L: co-orientable homotopies,D: homotopy co-orientation}, we can use the embeddings $F_j$ to %co-orient each of our constant homotopies.
+	Now, using $F_0$, $\td H$, and $F_1$ respectively in place of $e$ in \cref{D: pullback coorient}, we obtain three co-orientations of the pullbacks $(V \times I) \times_M W \to W$ with the map $V\times I \to M$ being given by $(x,t) \mapsto f(x)$ in all three cases. 
+	Note that such a map is certainly transverse to $g \colon W \to M$ if $f$ is.
+	For specificity, let us focus on the homotopy $F_0$. As we know that the restrictions of $F_0$ to $V \times 0$ and $V \times 1$ are co-orientable, so is $F_0$ by \cref{L: co-orientable homotopies}. If we choose any co-orientation for $F_0$, then by 
+
+
+
+	We will see below in \cref{leibniz}, whose proof is independent of this one, that when accounting for co-orientations, pullback co-orientations satisfy a Leibniz rule of the following form, again allowing spaces to stand also for their maps:
+	$$\bd (V \times_M W) = (\bd V) \times_M W \bigsqcup (-1)^{m-v} V \times_M (\bd W).$$
+	Applying this in our current setting, each of our three homotopies will include boundary components of the form $\left(\bd (V\times I) \right)\times_M W$, which by   and, in particular, two of the signed boundary components of each co-oriented $(V \times I) \times_M W \to W$ will be $(V \times \{0\}) \times_M W \to W$ and $(V \times \{1\}) \times_M W \to W$, occurring with opposite signs.
 	In other words, with appropriate choices on the co-orientations of the homotopies, by \cref{D: co-oriented homotopy}, we obtain three sequential co-oriented (constant) homotopies from $f$ to itself.
 	It now follows by applying \cref{R: stationary homotopy} sequentially that all four copies of $f$ must have the same co-orientation.
 	In particular, this is the case for the co-orientations of $f$ obtained from the embeddings $e_0$ and $e_1$.
@@ -955,13 +970,13 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 
 \begin{remark}\label{R: local pullback co-orientations}
 	The pullback co-orientation is determined locally in the sense that if $U$ is an open subset of $M$ then the pullback co-orientation of $f^{-1}(U) \times_U g^{-1}(U) \to g^{-1}(U)$ will just be the restriction of the pullback co-orientation of $V \times_M W \to W$.
-	This is clear from the construction if we co-orient the local pullback using the Quillen co-orientation of $f^{-1}(U) \to U$ given by $f^{-1}(U) \xhookrightarrow{e|_{f^{-1}(U)}} U \times \R^N \to U$, the restriction of the Quillen co-orientation $V\xhookrightarrow{e}M \times \R^N \times M$ use to co-oriented $f \colon V \to M$.
-	But \cref{L: pullback co well defined} says that we are free to do so.
+	This is clear from the construction if we co-orient the local pullback using the Quillen co-orientation of $f^{-1}(U) \to U$ obtained from $f^{-1}(U) \xhookrightarrow{e|_{f^{-1}(U)}} U \times \R^N \to U$, the restriction of the Quillen co-orientation for $f$  obtained using the map $V\xhookrightarrow{e}M \times \R^N \times M$.
+	But \cref{L: pullback co well defined} says that we are free to make such a choice.
 \end{remark}
 
 \begin{remark}\label{R: what products exist}
 	We have just shown that, after choosing conventions, the fiber product of two transverse co-oriented maps is co-oriented, and this will eventually lead us to the cup product of geometric cochains.
-	Analogously, if $f \colon V \to M$ is co-oriented and $W$ is oriented, then the pullback co-orientation $f^* \colon P = V \times_M W \to W$ provides a way to orient $P$, namely if $\beta_W$ is the given globally-defined orientation of $W$ we can choose $\beta_P$ so that $(\beta_P, \beta_W)$ is the co-orientation of $f^*$.
+	Analogously, if $f \colon V \to M$ is co-oriented and $W$ is oriented, then the pullback co-orientation $f^* \colon P = V \times_M W \to W$ provides a way to orient $P$, namely if $\beta_W$ is the given globally-defined orientation of $W$ then we can choose $\beta_P$ so that $(\beta_P, \beta_W)$ is the co-orientation of $f^*$ (this is just the induced orientation discussed in \cref{S: co-orientations}).
 	This observation will be utilized below in our construction of the cap product.
 	However, somewhat surprisingly, the fiber product of two maps with oriented domains cannot necessarily be oriented, and so there is in general no product of geometric chains and hence, in general, no homology product.
 	Such oriented fiber products can be formed if the the codomain $M$ is oriented, as in this case there is an equivalence between orientations of domains and co-orientations of maps.
