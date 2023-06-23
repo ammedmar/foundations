@@ -316,29 +316,29 @@ This construction extends to manifolds with corners mapping into a manifold with
 \begin{definition}\label{D: top pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
 	Define the \textbf{pullback} or \textbf{fiber product} $V \times_M W$ by
-	$$V \times _M W = \{(x, y) \in V \times W \mid f(x) = g(y)\}.$$
+	$$V \times_M W = \{(x, y) \in V \times W \mid f(x) = g(y)\}.$$
 
-	There are canonical maps from $V \times _M W$ to $V$, $W$, and $M$ that respectively take $(x,y)$ to $x$, $y$, and $f(x) = g(y)$.
+	There are canonical maps from $V \times_M W$ to $V$, $W$, and $M$ that respectively take $(x,y)$ to $x$, $y$, and $f(x) = g(y)$.
 	\[
 	\begin{tikzcd}
 		V \times_M W \arrow[r, "g^*"] \arrow[d, "f^*"] & V \arrow[d, "f"] \\
 		W \arrow[r, "g"] & M.
 	\end{tikzcd}
 	\]
-	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times _M g \colon V \times _M W \to M$.
-	We also sometimes write $f^*$ as $\pi_W$ and $g^*$ as $\pi_V$, as these maps are induced by restricting to $V \times _MW$ the projections from $V \times W$ to $V$ and $W$.
+	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times_M g \colon V \times_M W \to M$.
+	We also sometimes write $f^*$ as $\pi_W$ and $g^*$ as $\pi_V$, as these maps are induced by restricting to $V \times_MW$ the projections from $V \times W$ to $V$ and $W$.
 
-	We will generally use the term \textit{pullback} when we want to emphasize $V \times _M W$ with its map to $V$ or $W$, while the \textit{fiber product} is to be considered as mapping to $M$.
-	When treating $V \times _M W$ as a pullback, we also sometimes use the notation $g^*V \to W$ or $f^*W \to V$; this notation is consistent with the analogous notation for pullbacks of fiber bundles, which is a special case.
+	We will generally use the term \textit{pullback} when we want to emphasize $V \times_M W$ with its map to $V$ or $W$, while the \textit{fiber product} is to be considered as mapping to $M$.
+	When treating $V \times_M W$ as a pullback, we also sometimes use the notation $g^*V \to W$ or $f^*W \to V$; this notation is consistent with the analogous notation for pullbacks of fiber bundles, which is a special case.
 \end{definition}
 
 The reason for the transversality requirement in \cref{D: top pullback} is that this ensures that $V\times_MW$ is itself a manifold with corners, as follows from \cite[Theorem 7.2.7]{MaDo92} or \cite[Theorem 6.4]{Joy12}. In fact, we have the following.
 
 \begin{theorem}\label{pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
-	Then $V \times _M W$ is a manifold with corners with
+	Then $V \times_M W$ is a manifold with corners with
 	\begin{equation*}
-		S^i(V \times _M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
+		S^i(V \times_M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
 	\end{equation*}
 	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are (weakly) smooth.
 \end{theorem}
@@ -361,7 +361,7 @@ Such a generalization is a central result in \cite{Joy12}.
 
 There is a Leibniz rule for taking boundaries of fiber products of transverse maps \cite[Proposition~6.7]{Joy12}:
 \begin{equation}\label{E: product boundary}
-	\bd(V \times _M W) = (\bd V \times _M W) \sqcup (V \times _M \bd W),
+	\bd(V \times_M W) = (\bd V \times_M W) \sqcup (V \times_M \bd W),
 \end{equation}
 recalling that if $g \colon W \to M$ then we interpret $\bd W$ as equipped with the map $gi_{\bd W} \colon \bd W \to M$ and similarly for $V$.
 We will see versions of this formula below that take into account orientations and co-orientations.
@@ -373,8 +373,8 @@ We state these results mainly in the classical setting of manifolds without boun
 
 \begin{lemma}\label{L: tangent of pullbacks}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds without boundary.
-	Suppose $x \in V$ and $y \in W$ with $f(x) = g(y) = z$ so that $(x,y) \in V \times _MW$.
-	Then the tangent space of $V \times _MW$ at $(x,y)$ as a subspace of $T_{(x,y)}(V \times W) = T_xV \oplus T_yW$ consists of those vectors $(\mathbf v,\mathbf w)$ such that $Df(\mathbf v) = Dg(\mathbf w) \in T_zM$.
+	Suppose $x \in V$ and $y \in W$ with $f(x) = g(y) = z$ so that $(x,y) \in V \times_MW$.
+	Then the tangent space of $V \times_MW$ at $(x,y)$ as a subspace of $T_{(x,y)}(V \times W) = T_xV \oplus T_yW$ consists of those vectors $(\mathbf v,\mathbf w)$ such that $Df(\mathbf v) = Dg(\mathbf w) \in T_zM$.
 	In other words,
 	$$T_{(x,y)}(V \times_M W) = T_xV \times_{T_zM} T_yW,$$
 	or ``the tangent space of the fiber product is the fiber product of the tangent spaces.''
@@ -395,7 +395,7 @@ By definition, the map $f \times_M g$ is either of the compositions $f \pi_V = g
 
 \begin{lemma}\label{L: normal pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ is an embedding so that $V$ has a normal bundle $\nu V$ in $M$.
-	Then the pullback map $g^*V = V \times _MW \to W$ is an embedding and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$.
+	Then the pullback map $g^*V = V \times_MW \to W$ is an embedding and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$.
 	In other words,
 	$$\nu(g^*V) \cong \left(g|_{V\times_M W}\right)^*(\nu V),$$
 	or ``the pullback of the normal bundle is the normal bundle of the pullback.''
@@ -407,13 +407,13 @@ By definition, the map $f \times_M g$ is either of the compositions $f \pi_V = g
 
 \begin{lemma}\label{L: fiber product of embeddings}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ and $g$ are both embeddings.
-	Then, identifying $V$ and $W$ as submanifolds of $M$, the fiber product $V \times _MW$ is simply the intersection $V \cap W$, which is a smooth submanifold of $M$.
+	Then, identifying $V$ and $W$ as submanifolds of $M$, the fiber product $V \times_MW$ is simply the intersection $V \cap W$, which is a smooth submanifold of $M$.
 	In this case, we can identify the restriction of $\nu V$ to $V \cap W$ with a sub-bundle of the restriction of $TW$ to $V \cap W$.
 \end{lemma}
 
 \begin{proof}
-	By \cref{L: normal pullback}, the pullback is a smooth submanifold of $W$, but $g$ is itself an embedding, so, identifying the manifolds with their embedded images, we obtain smooth submanifolds $V \times _MW \subset W \subset M$.
-	That $V \times _MW = V \cap W$ in this situation follows immediately from the definition of the fiber product.
+	By \cref{L: normal pullback}, the pullback is a smooth submanifold of $W$, but $g$ is itself an embedding, so, identifying the manifolds with their embedded images, we obtain smooth submanifolds $V \times_MW \subset W \subset M$.
+	That $V \times_MW = V \cap W$ in this situation follows immediately from the definition of the fiber product.
 
 	The second claim is now a special case of \cref{L: normal pullback}.
 \end{proof}
@@ -426,7 +426,7 @@ The next lemma is a bit more specific but will be useful later in proving certai
 \end{lemma}
 
 \begin{proof}
-	For simplicity of notation, let $P = V \times _MW$, and let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the maps induced by the projections from $V \times W$ to $V$ and $W$.
+	For simplicity of notation, let $P = V \times_MW$, and let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the maps induced by the projections from $V \times W$ to $V$ and $W$.
 	So we have the diagram
 	\[
 	\begin{tikzcd}
@@ -454,8 +454,8 @@ The next lemma is a bit more specific but will be useful later in proving certai
 	By assumption $T_{hg(x)}M = Df(T_{\pi_V(p)}V)+D(gh)(T_xX)$, so we can write $Dg(\mathbf w) = Df(\mathbf a)+Dgh(\mathbf b)$ for some $\mathbf a \in T_{\pi_V(p)}V$ and $\mathbf b \in T_x X$.
 	Now consider $\mathbf z = \mathbf w-Dh(\mathbf b) \in T_{h(x)}W$.
 	Applying $Dg$ to both sides, we have $Dg(\mathbf z) = Dg(\mathbf w)-Dgh(\mathbf b) = Df(\mathbf a)$.
-	So $(\mathbf a,\mathbf z)$ is in the pullback $T_{\pi_V(p)}V \times _{T_{gh(x)}M} T_{h(x)}W$.
-	But by \cref{L: tangent of pullbacks}, this is precisely the tangent space of $V \times _MW$ at $(h(x),\pi_V(p))$.
+	So $(\mathbf a,\mathbf z)$ is in the pullback $T_{\pi_V(p)}V \times_{T_{gh(x)}M} T_{h(x)}W$.
+	But by \cref{L: tangent of pullbacks}, this is precisely the tangent space of $V \times_MW$ at $(h(x),\pi_V(p))$.
 	Furthermore, we have $D\pi_W(\mathbf a,\mathbf z) = \mathbf z$.
 	Thus $\mathbf w = \mathbf z+Dh(\mathbf b) = D\pi_W(\mathbf a,\mathbf z)+Dh(\mathbf b)$.
 	As $\mathbf w$ was arbitrary, $W = D\pi_W(T_{(h(x),\pi_V(p))}P)+Dh(T_xX)$, as desired.
@@ -474,7 +474,7 @@ Finally for this section, we briefly consider transversality of more than two ma
 	\begin{itemize}
 		\item $f(V)$ and $g(W)$ span $M$,
 		\item the map $\Delta \colon V \times W \to M$ given by $\Delta(v,w) = f(v)-g(w)$ is surjective,
-		\item $\dim(V \times _MW) = \dim(V)+\dim(W)-\dim(M)$.
+		\item $\dim(V \times_MW) = \dim(V)+\dim(W)-\dim(M)$.
 	\end{itemize}
 	The last two formulations easily generalize to $n$-tuples of maps $f_i \colon V_i \to M$.
 	Such an $n$-tuple is considered transverse (as an $n$-tuple) when either of the following equivalent conditions hold:
@@ -488,8 +488,8 @@ Finally for this section, we briefly consider transversality of more than two ma
 		\item the $j-i+1$-tuple $\{f_i,\ldots,f_j\}$ is transverse, and
 		\item letting $P$ denote the fiber product of the maps $\{f_i,\ldots,f_j\}$, the $n-(j-i)$-tuple consisting of the fiber product map $P \to M$ and the $f_k$ with $k\notin\{i,\ldots,j\}$ is transverse.
 	\end{itemize}
-	Iterating this fact, we can see that this is equivalent to having $V_1$ transverse to $V_2$, then $V_3$ transverse to $V_1 \times _MV_2$ and so on.
-	In particular, we can form the $n$-tuple fiber product if and only if we can form the \textit{transverse} iterated fiber products such as $(((V_1 \times _MV_2) \times _M V_3) \times _M\ldots) \times _M V_n$ as well as in any other order of association.
+	Iterating this fact, we can see that this is equivalent to having $V_1$ transverse to $V_2$, then $V_3$ transverse to $V_1 \times_MV_2$ and so on.
+	In particular, we can form the $n$-tuple fiber product if and only if we can form the \textit{transverse} iterated fiber products such as $(((V_1 \times_MV_2) \times_M V_3) \times_M\ldots) \times_M V_n$ as well as in any other order of association.
 	See\footnote{Proposition 8-1 of \cite{RamBas09} actually concerns a more general situation of ``mixed associativity'' in which the data consists of zig-zags
 	$$V_1 \xr{f_1}S_1\xl{g_2}V_2 \xr{f_2}\cdots \xr{f_{n-1}}S_{n-1}\xl{g_n}V_n.$$
 	However, this reduces to our setting by taking $S_i = M$ and $g_i = f_i$ for all $i$.}
@@ -501,11 +501,11 @@ Finally for this section, we briefly consider transversality of more than two ma
 	However, in this setting the equivalence between such $n$-ary transversality and ``iterated transversality'' cannot hold in general, because the $n$-ary fiber product does not involve potentional problem points that would arise in intermediate stages of an iterated fiber product.
 
 	For example, consider maps $f \colon V \to M$, $g \colon W \to M$, and $h \colon Z \to M$.
-	Suppose that $f$ and $g$ are not transverse; in particular, suppose that the fiber product $V \times _MW$ is not a manifold.
+	Suppose that $f$ and $g$ are not transverse; in particular, suppose that the fiber product $V \times_MW$ is not a manifold.
 	Further, suppose that $h(Z)$ is disjoint from $f(V)$ and $g(W)$.
 	In this case, the triple of maps is transverse (vacuously) and its 3-ary fiber product is well defined as $\emptyset$.
-	However, the iterated fiber product $(V \times _MW) \times _M Z$ is not well defined in the category of smooth manifolds and maps.
-	Given that we define fiber products only of transverse maps of smooth manifolds, in this case $V \times _M W$ is not properly defined in our category, and it is further impossible then to define $(V \times _MW) \times _M Z$ in this context.
+	However, the iterated fiber product $(V \times_MW) \times_M Z$ is not well defined in the category of smooth manifolds and maps.
+	Given that we define fiber products only of transverse maps of smooth manifolds, in this case $V \times_M W$ is not properly defined in our category, and it is further impossible then to define $(V \times_MW) \times_M Z$ in this context.
 
 	The upshot of all this is that when considering situations involving fiber products of more than two maps, we shall have to be careful about the transversality assumptions.
 \end{remark}
@@ -513,17 +513,17 @@ Finally for this section, we briefly consider transversality of more than two ma
 Despite the preceding remark, the transversality conditions involved in associativity of fiber products are not completely independent, as the following proposition shows. In later sections, we will usually simply assume all needed transversality exists, but the following proposition can be useful in practice.
 
 \begin{proposition}\label{P: 3 out of 4 trans}
-	Let $f \colon V \to M$, $g \colon W \to M$, and $h \colon Z \to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $W$ is transverse to $Z$ and that $V$ is transverse to $W$ and to $W \times _MZ$. Then $V \times _MW$ is transverse to $Z$. In particular, if $V \times _M(W \times _MZ)$ and $V \times _MW$ are well defined, then so is $(V \times _MW) \times _M Z$.
+	Let $f \colon V \to M$, $g \colon W \to M$, and $h \colon Z \to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $W$ is transverse to $Z$ and that $V$ is transverse to $W$ and to $W \times_MZ$. Then $V \times_MW$ is transverse to $Z$. In particular, if $V \times_M(W \times_MZ)$ and $V \times_MW$ are well defined, then so is $(V \times_MW) \times_M Z$.
 \end{proposition}
 
 \begin{proof}
-	As above, it suffices to assume that $V$, $W$, and $M$ are manifolds without boundary. We must show that $V \times _MW$ is transverse to $Z$, so we consider points $(v,w) \in V \times _M W$ and $z \in Z$ such that $h(z)$ is equal to $(f \times _Mg)(v,w)$, which by definition is equal to $f(v) = g(w)$. In other words, we consider $(v,w,z) \in V \times W \times Z$ such that $f(v) = g(w) = h(z)$.
+	As above, it suffices to assume that $V$, $W$, and $M$ are manifolds without boundary. We must show that $V \times_MW$ is transverse to $Z$, so we consider points $(v,w) \in V \times_M W$ and $z \in Z$ such that $h(z)$ is equal to $(f \times_Mg)(v,w)$, which by definition is equal to $f(v) = g(w)$. In other words, we consider $(v,w,z) \in V \times W \times Z$ such that $f(v) = g(w) = h(z)$.
 
-	So suppose $(v,w,z)$ is such a triple, and denote the common image by $m \in M$. By the transversality assumptions, we know that the images of $D_wg \colon T_wW \to T_mM$ and $D_z h \colon T_zZ \to T_mM$ span $T_mM$, i.e.\ that $D_wg$ and $D_zh$ are transverse as linear maps, and similarly that $D_{(w,z)}(g \times _M h) \colon T_{(w,z)}(W \times _M Z) \to T_mM$ is transverse to $D_vf \colon T_vV \to T_mM$. Furthermore, by \cref{L: tangent of pullbacks,C: tangent map of pullbacks}, the tangent space of a fiber product is the fiber product of the tangent spaces, so $T_{(w,z)}(W \times _M Z) = T_wW \times _{T_mM}T_zZ$ and $D_{(w,z)}(g \times _M h) = D_wg \times _{T_mM}D_zh$.
+	So suppose $(v,w,z)$ is such a triple, and denote the common image by $m \in M$. By the transversality assumptions, we know that the images of $D_wg \colon T_wW \to T_mM$ and $D_z h \colon T_zZ \to T_mM$ span $T_mM$, i.e.\ that $D_wg$ and $D_zh$ are transverse as linear maps, and similarly that $D_{(w,z)}(g \times_M h) \colon T_{(w,z)}(W \times_M Z) \to T_mM$ is transverse to $D_vf \colon T_vV \to T_mM$. Furthermore, by \cref{L: tangent of pullbacks,C: tangent map of pullbacks}, the tangent space of a fiber product is the fiber product of the tangent spaces, so $T_{(w,z)}(W \times_M Z) = T_wW \times_{T_mM}T_zZ$ and $D_{(w,z)}(g \times_M h) = D_wg \times_{T_mM}D_zh$.
 
-	Now by \cite[Propositions~4-9]{RamBas09}, the triple of linear maps $(D_vf,D_wg,D_zh)$ is transverse as a triple of maps if and only if both $D_wg$ is transverse to $D_zh$ and $D_wg \times _{T_mM}D_zh$ is transverse to $D_vf$. As such statements are independent of how we order the terms, the transversality established in the preceding paragraph also implies that $D_vf$ and $D_wg$ are transverse (which already follows from the hypotheses of the proposition), and $D_vf \times _{T_mM}D_wg$ is transverse to $D_zh$. But this implies, again using \cref{L: tangent of pullbacks,C: tangent map of pullbacks}, that $h$ is transverse to $f \times _Mg$, as desired.
+	Now by \cite[Propositions~4-9]{RamBas09}, the triple of linear maps $(D_vf,D_wg,D_zh)$ is transverse as a triple of maps if and only if both $D_wg$ is transverse to $D_zh$ and $D_wg \times_{T_mM}D_zh$ is transverse to $D_vf$. As such statements are independent of how we order the terms, the transversality established in the preceding paragraph also implies that $D_vf$ and $D_wg$ are transverse (which already follows from the hypotheses of the proposition), and $D_vf \times_{T_mM}D_wg$ is transverse to $D_zh$. But this implies, again using \cref{L: tangent of pullbacks,C: tangent map of pullbacks}, that $h$ is transverse to $f \times_Mg$, as desired.
 \end{proof}
 
 \begin{remark}
-	The end of the preceding proof at first seems to imply that if $g$ and $h$ are transverse and $g \times _M h$ is transverse to $f$, then $f$ is transverse to $g$ and $f \times _Mg$ is transverse to $h$. Indeed, \cite[Propositions~4-9]{RamBas09} says this is the case for the linear maps of the tangent spaces. Unfortunately, however, as \cite[Propositions~4-9]{RamBas09} applies only to linear maps, we can apply it only at those points $(v,w,z) \in V \times W \times Z$ where we know that $f(v) = g(w) = h(z)$ so that all three tangent space maps are well defined. So such a result would hold if the only intersections among the maps were such triple intersections. However, as noted in \cref{R: multiproducts}, there could be pairs $(v,w) \in V \times W$ with $f(v) = g(w)$, but with this common image in $M$ not in the image of $h$. At such points, \cite[Propositions~4-9]{RamBas09} cannot tell us anything about the transversality of $V$ and $W$, and so $V \times _MW$ might not be well defined due to failure of transversality, even if $V \times _M (W \times _M Z)$ is.
+	The end of the preceding proof at first seems to imply that if $g$ and $h$ are transverse and $g \times_M h$ is transverse to $f$, then $f$ is transverse to $g$ and $f \times_Mg$ is transverse to $h$. Indeed, \cite[Propositions~4-9]{RamBas09} says this is the case for the linear maps of the tangent spaces. Unfortunately, however, as \cite[Propositions~4-9]{RamBas09} applies only to linear maps, we can apply it only at those points $(v,w,z) \in V \times W \times Z$ where we know that $f(v) = g(w) = h(z)$ so that all three tangent space maps are well defined. So such a result would hold if the only intersections among the maps were such triple intersections. However, as noted in \cref{R: multiproducts}, there could be pairs $(v,w) \in V \times W$ with $f(v) = g(w)$, but with this common image in $M$ not in the image of $h$. At such points, \cite[Propositions~4-9]{RamBas09} cannot tell us anything about the transversality of $V$ and $W$, and so $V \times_MW$ might not be well defined due to failure of transversality, even if $V \times_M (W \times_M Z)$ is.
 \end{remark}
