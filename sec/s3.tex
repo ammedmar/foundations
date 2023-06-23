@@ -108,7 +108,7 @@ We state these properties in the following two propositions.
 		(V \times_M W) \times_N Z = V \times_M (W \times_N Z)
 	\end{equation}
 	holds when given maps
-	$$V \xr{f} M\xleftarrow{g} W \xr{h} N\xleftarrow{k} Z$$
+	$$V \xr{f} M\xleftarrow{g} W \xr{h} N \xl{k} Z$$
 	and assuming sufficient transversality for all the fiber products in \eqref{E: mixed associativity fiber orientation} to be well defined (see \cref{R: multiproducts}).
 	In this case, the map $V \times_M W \to N$ is given by composing the projection from $V \times_M W$ to $W$ with $h$, and similarly for the map $W \times_N Z \to M$.
 \end{proposition}
@@ -162,13 +162,11 @@ As $V$, $W$, and $P$, are all submanifolds, $T_xV$, $T_xW$, and $T_xP$ are all s
 For simplicity of notation in the following, we drop the ``$T_x$'' from the notation and treat the maps $f$ and $g$ as linear embeddings of vector spaces.
 We can then work with orientations of vector spaces expressed in our exterior power notation.
 
-
 So we have a vector space $M$ with subspaces $V$, $W$, and $P = V \times_M W = V \cap W$.
 By the transversality assumption, $V$ and $W$ span $M$.
 Let $\nu W \subset V$ be a complementary subspace to $P$ in $V$ so that $V = P \oplus \nu W$; the notation is meant to suggest that $\nu W$ is a choice of normal subspace to $W$ in $M$.
 Similarly, let $\nu V \subset W$ be a complementary subspace to $P$ in $W$ so that $W = P \oplus \nu V$.
 Then we have $M = \nu W \oplus P \oplus \nu V$. \greg{I think this would be a good place for a picture. Maybe have $V$ and $W$ be 2-dimensional subspaces of $\R^3$? In fact, see \cref{Ex: intersection orientation}.}
-
 
 In our current context, the exact sequence \eqref{E: fiber orientation} becomes a sequence of vector spaces
 \begin{equation*}
@@ -176,7 +174,9 @@ In our current context, the exact sequence \eqref{E: fiber orientation} becomes 
 \end{equation*}
 with the first non-trivial map being the direct sum of inclusions and with $f$ and $g$ the emeddings of $V$ and $W$ into $M$.
 Using our direct sum decompositions of the preceding paragraph, we can choose a splitting $M \to V \oplus W$ as
-$$\nu W \oplus P \oplus \nu V \to P \oplus \nu W \oplus P \oplus \nu V,$$
+\[
+\nu W \oplus P \oplus \nu V \to P \oplus \nu W \oplus P \oplus \nu V,
+\]
 given by $(x,p,y) \mapsto (0, x, -p, -y)$.
 The signs are necessary due to the sign in $f-g$.
 With this splitting, our resulting isomorphism $P \oplus M \to V \oplus W$ can be written in block matric form as
@@ -206,7 +206,10 @@ This call can be expressed via our calculus of forms as follows.
 
 	It will be more convenient to prove the lemma in the first form, but the second form follows by observing that $$(-1)^{w(m+1)} = (-1)^{wm+w} = (-1)^{wm-w^2} = (-1)^{w(m-w)},$$
 	and then
-	$$\beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V} = (-1)^{w(m-w)} \beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}$$
+	\[
+	\beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V} =
+	(-1)^{w(m-w)} \beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}
+	\]
 	as $\dim(P \oplus \nu V) = \dim(W) = w$ and $\dim(\nu W) = m-w$.
 
 	To prove the first statement, let $(p_1,\cdots,p_a)$ be an ordered basis for $P$ consistent with the orientation described in the lemma; so we can write $\beta_P = p_1 \wedge\cdots\wedge p_a$.
@@ -277,7 +280,6 @@ Also, just as most manifolds do not possess a preferred orientation, most maps $
 	provides a \textbf{tautological co-orientation}.
 \end{definition}
 
-
 The local triviality of the determinant line bundle of a manifold means being able to choose a consistent basis vector over sufficiently small neighborhoods.
 We call such a choice of basis vector around a point in $W$ a \textbf{local orientation}, and, as for global orientations, often denote a local orientation by $\beta_W$.
 Again, abusing notation, we also often allow $\beta_W$ to refer to its equivalence class up to multiplication by a positive scalar.
@@ -297,11 +299,9 @@ On the other hand, it is not true that if we have an orientation of $W$ and a co
 For example, if $W$ is orientable, any constant map to $M$ is co-orientable, regardless of whether or not $M$ is orientable.
 
 More generally, recall that the fundamental group of a manifold acts on classes of local orientations as the deck transformations of the orientation cover.
-A map is co-orientable if it holds that a loop in $W$ acts nontrivially on a local orientation of $W$ if and only if
-its image in $M$ acts nontrivially on a local orientation of $M$.
+A map is co-orientable if it holds that a loop in $W$ acts nontrivially on a local orientation of $W$ if and only if its image in $M$ acts nontrivially on a local orientation of $M$.
 Explicitly, if $g \colon W \to M$ is co-orientable, following a loop in $W$ may change the local orientation pair
 $(\beta_W, \beta_M)$ to $(-\beta_W, -\beta_M)$, but these pairs define equivalent co-orientations.
-
 
 Similarly, to compare local constructions at different points, it is useful to use paths.
 Suppose $\gamma \colon I \to W$ is a path with $\gamma(0) = x$ and $\gamma(1) = y$.
@@ -310,9 +310,6 @@ We then define $\gamma_*\beta_{W}$ to be the equivalence class of $\td \gamma(1)
 Likewise, we define $(g\gamma)_*\beta_M$ by a lift of $g\gamma$ to the complement of the zero section of $\Or(TM)$.
 Then $\gamma_*\beta_{W}$ and $(g\gamma)_*\beta_M$ depend on $\gamma$, but if $g \colon W \to M$ is co-orientable the pair $(\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ is independent of $\gamma$ as this data also determines a non-vanishing lift of $\gamma$ in $\Hom(\Or(TW),g^*\Or(TM))$, which is trivial if $g$ is co-orientable.
 In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M) \defeq (\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$.
-
-
-
 
 \begin{example}
 	Let $g$ be any map $g \colon S^1 \to S^2$.
@@ -431,11 +428,8 @@ He assumed the normal bundles to have complex structures and so called these \te
 	If $g$ is a codimension-$0$ immersion, then $\nu$ will be $0$-dimensional, and if the co-orientation is the tautological one then $\beta_\nu$ will be the positive orientation at each point.
 \end{remark}
 
-
 Lipyanskiy's definition of co-orientation in \cite{Lipy14} factors a proper map through a map which is surjective onto $TM$, rather than injective from $TW$ as in the Quillen approach.
-We discuss Lipyanskiy's co-orientatons in an appendix at the end of this section; see \cref{S: Lipyanskiy co-orientations}.
-
-
+We discuss Lipyanskiy's co-orientations in an appendix at the end of this section; see \cref{S: Lipyanskiy co-orientations}.
 
 \subsubsection{Co-orientations of boundaries}
 
@@ -475,10 +469,7 @@ The following example, which may at first seem a bit artificial in employing $M$
 	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions. Then, by the boundary formula \cref{E: product boundary}, $$\bd W^-= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right),$$
 	and the first component is precisely $W^0$, so $W^0$ is a boundary component of $W^-$ and similarly for $W^+$.
 
-
 	Now, the normal bundle of $W^0$ in $W$ is the pullback via $\varphi g$ of the normal bundle of $0$ in $\R$. Giving the normal bundle of $0$ in $\R$ the standard orientation in the positive direction, denoted by the basis vector $e_1$ as a form, this orientation pulls back to a natural orientation of the normal bundle to $W^0$ in $W$. Applying \cref{normal co-or}, we obtain a normal co-orientation for $W^0$ in $W$, which we call the \textbf{co-orientation of $W^0$ in $W$ induced by $g\varphi$}. This is the co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)$.
-
-
 
 	We also have the boundary co-orientations of the inclusions of $W^0$ into $W^{\pm}$.
 	Analogously to \cref{E: splitting example 1}, the boundary co-orientation from the composite $W^0 \to W^- \into W$  is the opposite of the co-orientation of $W^0\into W$ induced by $g\varphi$, while the boundary co-orientation from the composite $W^0 \to W^+ \into W$  agrees with the co-orientation of $W^0\into W$ induced by $g\varphi$
@@ -833,7 +824,7 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	But this is a product of compact sets as $f$ is proper.
 	So $\pi_W$ is proper.
 
-	For co-orientatability, it suffices by \cref{P: interior co-orientation} to consider the restriction to the interior of $V \times_M W$. Equivalently, we assume that $V$ and $W$ are manifolds for the remainder of the argument.
+	For co-orientability, it suffices by \cref{P: interior co-orientation} to consider the restriction to the interior of $V \times_M W$. Equivalently, we assume that $V$ and $W$ are manifolds for the remainder of the argument.
 	By \cref{L: Quillen}, it suffices to utilize Quillen's approach to co-orientability as discussed in \cref{S: Quillen}.
 	We factor $f$ as $V \xhookrightarrow{e} M \times \R^N \to M$, and then we have the pullback diagram
 	\begin{equation}\label{D: pullback}
