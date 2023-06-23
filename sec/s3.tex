@@ -42,29 +42,29 @@ When we wish to work with orientations symbolically, the following interpretatio
 	If $d = 0$ this is interpreted to be the trivial rank one ``bundle of coefficients.''
 	We call the principal $O(1) \cong C_2$ bundle associated to $\Or(E)$ the \textbf{orientation cover} of $E$.
 
-	An orientation of $E$, if it exists, is then a section of its orientation cover or, equivalently, an equivalence class of non-zero sections of $\Or(E)$ such that two sections are equivalent if they differ by multiplication by an everywhere positive scalar function.
+	An \textbf{orientation} of $E$, if it exists, is then a section of its orientation cover or, equivalently, an equivalence class of non-zero sections of $\Or(E)$ such that two sections are equivalent if they differ by multiplication by an everywhere positive scalar function.
 \end{definition}
 
 \greg{I've tried to add some text here explaining our symbolic conventions for working with orientations since otherwise I think it comes up pretty abruptly and is hard to understand. What do you think of this? Is it sufficient?\\
 A. Differential form? I don't think we are considering sections on $\bigwedge^{m} T^\ast M$ (cotangent bundle). Maybe you just mean sections of $\bigwedge^{m} T^\ast M$. Maybe we can talk about this.}
 
-In particular, we thus think of orientations of a manifold $M^m$ as (equivalence classes of) $m$-forms in $\Or(TM)$.
-We typically use the notation $\beta_M$ to stand for such an $m$-form, and, as we are only ever interested in $m$-forms to represent orientations, we systematically abuse notation by not distinguishing between an $m$-form and its equivalence class.
+In particular, we thus think of orientations of a manifold $M^m$ as (equivalence classes of) non-zero sections of $\Or(TM)$.
+We typically use the notation $\beta_M$ to stand for such a section, and, as we are only ever interested in such sections to represent orientations, we systematically abuse notation by not distinguishing between a section and its equivalence class.
 Thus an expression such as $\beta_M = \beta_V \wedge \beta_W$ should be interpreted as an equality of equivalence classes.
-Such formulas are also often meant to be interpreted locally over some particular point or subspace that will be understood from context.
+Such formulas are also often meant to be interpreted locally over some particular point or subspace that will be understood from context, and in this context we refer to expressions such as $\beta_V$ as \textbf{local orientations}.
 This notation turn out to be extremely useful in working with orientations, and we will use it frequently.
-Whenever we form such wedge products, if one of the terms is an element of $\bigwedge^0 TV$ for some $V$ we treat that term as a $0$-form and interpret $\wedge$ as the fiberwise scalar product.
+Whenever we form such wedge products, if one of the terms is an element of $\bigwedge^0 TV$ for some $V$ we treat that term as a scalar function and interpret $\wedge$ as the fiberwise scalar product.
 
-Of course over a point $x \in M$, we identify the oriented basis $(e_1,\ldots, e_m)$ of $T_xM$ with the form $e_1 \wedge \cdots \wedge e_m$.
+Of course, over a point $x \in M$, we identify the oriented basis $(e_1,\ldots, e_m)$ of $T_xM$ with the section $e_1 \wedge \cdots \wedge e_m$ of $\Or(TM)$.
 We also use the standard identification $\bigwedge (A\oplus B)=(\bigwedge A )\otimes (\bigwedge B)$, letting $\bigwedge$ always denote the top-dimensional exterior product.
-So, for example, if $V$ and $W$ are two submanifolds of a manifold $M$ intersecting transversely at a point $x$, we would have $T_xM = T_xV\oplus T_xW$, and the formula $\beta_M = \beta_V \wedge \beta_W$ would indicate that concatenating an oriented basis for $T_xV$ with an oriented basis for $T_xW$, in that order, gives an oriented basis for $T_xM$.
-More generally, if $E$ is an oriented bundle over $M$, we can write $\beta_E$ for the corresponding form at a point.
+So, for example, if $V$ and $W$ are two submanifolds of a manifold $M$ intersecting transversely at a point $x$, we would have $T_xM = T_xV\oplus T_xW$, and the local orientation formula $\beta_M = \beta_V \wedge \beta_W$ would indicate that concatenating an oriented basis for $T_xV$ with an oriented basis for $T_xW$, in that order, gives an oriented basis for $T_xM$.
+More generally, if $E$ is an oriented bundle over $M$, we can write $\beta_E$ for the corresponding local orientation at a point or in the neighborhood of a point.
 Any abuses of notation involved in this calculus are very much justified by its extreme usefulness in working with orientations, as we shall see.
 
 \begin{example}
 	We have said that for a smooth oriented manifold with boundary $N$, we orient $\bd N$ so that an outward normal vector followed by an oriented basis of $\bd N$ yields an oriented basis for $N$.
-	In our form notation, we can let $\nu$ denote the normal bundle to the boundary and $\beta_{\nu}$ the $1$-form corresponding to the outward-pointing orientation.
-	Then letting $\beta_N$ and $\beta_{\bd N}$ denote the forms corresponding to the orientations of $N$ and $\bd N$, we can write our boundary orientation convention by saying that at each boundary point $\beta_N=\beta_\nu\wedge \beta_{\bd N}$.
+	In our notation, we can let $\nu$ denote the normal bundle to the boundary and $\beta_{\nu}$ the section of the normal bundle tangent bundle corresponding to the outward-pointing orientation.
+	Then letting $\beta_N$ and $\beta_{\bd N}$ denote the local orientations of $N$ and $\bd N$ at a boundary point, we can write our boundary orientation convention by saying that at each boundary point $\beta_N=\beta_\nu\wedge \beta_{\bd N}$.
 \end{example}
 
 \subsubsection{Orientations of fiber products}\label{S: orientation of fiber products}
@@ -180,7 +180,7 @@ Using our direct sum decompositions of the preceding paragraph, we can choose a 
 \]
 given by $(x,p,y) \mapsto (0, x, -p, -y)$.
 The signs are necessary due to the sign in $f-g$.
-With this splitting, our resulting isomorphism $P \oplus M \to V \oplus W$ can be written in block matric form as
+With this splitting, our resulting isomorphism $P \oplus M \to V \oplus W$ can be written in block matrix form as
 \begin{equation}\label{E: orientation matrix}
 	\begin{pmatrix*}[r]
 		I&0&0&0\\
@@ -193,11 +193,11 @@ which has determinant $(-1)^{w}$.
 
 By definition, the orientation of $P$ determined by the orientations of $V$, $W$, and $M$ is the orientation so that this matrix takes the concatenation of the orientation of $P$ with an orientation of $M$ (i.e.\ an ordered basis representing this concatenation orientation) to $(-1)^{wm}$ times the concatenation of the orientations of $V$ and $W$ (i.e.\ an ordered basis of $V \oplus W$ that differs from the concatenation orientation by a permutation of sign $(-1)^{wm}$).
 
-This call can be expressed via our calculus of forms as follows.
+This call can be expressed via our calculus of local orientations as follows.
 
 \begin{proposition}\label{P: orient intersection}
 	Let $V$ and $W$ be transverse oriented submanifolds of the oriented manifold $M$.
-	Let $\beta_V$, $\beta_W$, and $\beta_M$ be orientations of $V$, $W$, and $M$ at a point of $P = V \times_M W = V \cap W$.
+	Let $\beta_V$, $\beta_W$, and $\beta_M$ be local orientations of $V$, $W$, and $M$ at a point of $P = V \times_M W = V \cap W$.
 	Then, using our notation established just above, the fiber product orientation of $P$ is the unique orientation $\beta_P$ such that if we choose orientations $\beta_{\nu W}$ and $\beta_{\nu V}$ for $\nu W$ and $\nu V$ such that $\beta_P \wedge \beta_{\nu W} = \beta_V$ and $\beta_P \wedge \beta_{\nu V} = \beta_W$ then $\beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V} = (-1)^{w(m+1)}\beta_M$ or, alternatively, $$\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M.$$
 \end{proposition}
 
@@ -277,14 +277,14 @@ Also, just as most manifolds do not possess a preferred orientation, most maps $
 
 \begin{definition}\label{D: tautological co-orientation}
 	 Suppose $g$ is a diffeomorphism, or more generally a codimension-0 immersion. In this case, the top exterior power of $Dg$,
-	$$\bigwedge Dg \colon \bigwedge TW \to \bigwedge g^*\Or(TM),$$
+	$$\textstyle{\bigwedge^w} Dg \colon \textstyle{\bigwedge^w} TW \to \textstyle{\bigwedge^w} g^*(TM),$$
 	provides a \textbf{tautological co-orientation}.
 \end{definition}
 
 The local triviality of the determinant line bundle of a manifold means being able to choose a consistent basis vector over sufficiently small neighborhoods.
-We call such a choice of basis vector around a point in $W$ a \textbf{local orientation}, and, as for global orientations, often denote a local orientation by $\beta_W$.
+Again, we call such a choice of basis vector around a point in $W$ a \textbf{local orientation}, and, as for global orientations, often denote a local orientation by $\beta_W$.
 Again, abusing notation, we also often allow $\beta_W$ to refer to its equivalence class up to multiplication by a positive scalar.
-We identify $\beta_W$ with a local choice of (equivalence class of) non-zero $\dim(W)$-form\footnote{As usual, if $\dim(W) = 0$ we identify $\bigwedge^0 TW$ with the ground field $\R$, and, when forming exterior products, multiplication by a $0$-form is treated as scalar multiplication.} in $\bigwedge^{\dim(W)}TW$ in a neighborhood of a point $x$ in $W$ or, equivalently, a local smoothly varying ordered basis for the fibers of $TW$.
+We identify $\beta_W$ with a local choice of (equivalence class of) non-zero section of\footnote{As usual, if $\dim(W) = 0$ we identify $\bigwedge^0 TW$ with the trivial $\R$ bundle, and, when forming exterior products, multiplication by a section is treated as scalar multiplication.} $\bigwedge^w TW$ in a neighborhood of a point $x$ in $W$ or, equivalently, a local smoothly varying ordered basis for the fibers of $TW$. 
 We typically do not specify the point $x$, though when necessary we write $\beta_{W,x}$.
 We then use ordered-pair notation for co-orientation homomorphisms, with $\omega_g = (\beta_W, \beta_M)$ being the \textbf{local co-orientation} that sends the local orientation $\beta_W$ at $x \in W$ to the local orientation $\beta_M$ for $g^*(TM)$ up to a positive scalar.
 We will often further abuse notation by neglecting the pullback and treating $\beta_M$ as a local orientation at $g(x)$ in $M$.
@@ -455,7 +455,7 @@ In \cref{S: geometric cochains}, we will use induced co-orientations on boundari
 	A particularly important pair of examples is given by the inclusions $g^- \colon (-\infty, 0] \into \R$ and $g^+ \colon [0,\infty) \into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
 
 	Next consider the submanifold consisting of the point $0 \in \R$.
-	Its tangent space has trivial determinant line bundle, and we can choose the basis element to be the $0$-form $1 \in \bigwedge^0 T0 \cong \R$. If we give the normal bundle to $0$ in $\R$ the standard orientation in the positive direction, denoted by the standard basis vector $e_1$, then the corresponding normal orientation of the inclusion of $0$ into $\R$ will be $(1, 1 \wedge e_1) = (1, e_1)$.
+	Its tangent space has trivial determinant line bundle, and we can choose the basis element to be the element $1 \in \bigwedge^0 T0 \cong \R$. If we give the normal bundle to $0$ in $\R$ the standard orientation in the positive direction, denoted by the standard basis vector $e_1$, then the corresponding normal orientation of the inclusion of $0$ into $\R$ will be $(1, 1 \wedge e_1) = (1, e_1)$.
 	By \cref{normal co-or,D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\} \into (-\infty, 0]$ is $(1, 1 \wedge -e_1) = (1, -e_1)$.
 	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^- \colon (-\infty, 0] \to \R$ is then the composition of $(1, -e_1)$ with $(e_1, e_1)=(-e_1,-e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
 	As the inward normal to $[0,\infty)$ at $0$ is $e_1$, the inclusion $g^+ \colon [0,\infty) \to \R$ induces the opposite co-orientation $(1, e_1)$ on the inclusion $\{0\} \to \R$.
@@ -470,7 +470,7 @@ The following example, which may at first seem a bit artificial in employing $M$
 	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions. Then, by the boundary formula \cref{E: product boundary}, $$\bd W^-= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right),$$
 	and the first component is precisely $W^0$, so $W^0$ is a boundary component of $W^-$ and similarly for $W^+$.
 
-	Now, the normal bundle of $W^0$ in $W$ is the pullback via $\varphi g$ of the normal bundle of $0$ in $\R$. Giving the normal bundle of $0$ in $\R$ the standard orientation in the positive direction, denoted by the basis vector $e_1$ as a form, this orientation pulls back to a natural orientation of the normal bundle to $W^0$ in $W$. Applying \cref{normal co-or}, we obtain a normal co-orientation for $W^0$ in $W$, which we call the \textbf{co-orientation of $W^0$ in $W$ induced by $g\varphi$}. This is the co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)$.
+	Now, the normal bundle of $W^0$ in $W$ is the pullback via $\varphi g$ of the normal bundle of $0$ in $\R$. Giving the normal bundle of $0$ in $\R$ the standard orientation in the positive direction, denoted by the basis vector $e_1$, this orientation pulls back to a natural orientation of the normal bundle to $W^0$ in $W$. Applying \cref{normal co-or}, we obtain a normal co-orientation for $W^0$ in $W$, which we call the \textbf{co-orientation of $W^0$ in $W$ induced by $g\varphi$}. This is the co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)$.
 
 	We also have the boundary co-orientations of the inclusions of $W^0$ into $W^{\pm}$.
 	Analogously to \cref{E: splitting example 1}, the boundary co-orientation from the composite $W^0 \to W^- \into W$  is the opposite of the co-orientation of $W^0\into W$ induced by $g\varphi$, while the boundary co-orientation from the composite $W^0 \to W^+ \into W$  agrees with the co-orientation of $W^0\into W$ induced by $g\varphi$
@@ -1729,7 +1729,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 
 	On the other hand, using the Quillen co-orientation for $V$, the co-orientation of the fiber product $P = V \times_M W \to W \to M$ is $(\beta_P,\beta_M)$ if and only if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_a$.
 
-	Note that even though these local orientation forms do not all live on the same spaces, they are essentially just statements about the relative orders of coordinates on the spaces where those coordinates occur; this point of view allows us to elide the pullback maps that would be necessary needed (and messy) to formally pull all our comparisons onto the same space.
+	Note that even though these local orientations do not all live on the same spaces, they are essentially just statements about the relative orders of coordinates on the spaces where those coordinates occur; this point of view allows us to elide the pullback maps that would be necessary needed (and messy) to formally pull all our comparisons onto the same space.
 	With these thoughts in mind, we can conclude as follows.
 
 	If we assume that we do have $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_a$ then
