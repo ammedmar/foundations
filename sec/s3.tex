@@ -313,7 +313,8 @@ We can choose a lift $\td \gamma$ of $\gamma$ to the complement of the $0$-secti
 We then define $\gamma_*\beta_{W}$ to be the equivalence class of $\td \gamma(1)$.
 Likewise, we define $(g\gamma)_*\beta_M$ by a lift of $g\gamma$ to the complement of the zero section of $\Or(TM)$.
 Then $\gamma_*\beta_{W}$ and $(g\gamma)_*\beta_M$ depend on $\gamma$, but if $g \colon W \to M$ is co-orientable the pair $(\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ is independent of $\gamma$ as this data also determines a non-vanishing lift of $\gamma$ in $\Hom(\Or(TW),g^*\Or(TM))$, which is trivial if $g$ is co-orientable.
-In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M) \defeq (\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$.
+In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M) \defeq (\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$. 
+We refer to this as \textbf{transporting} the co-orientation from $x$ to $y$.
 
 
 
@@ -920,6 +921,8 @@ We will show just below that the definition is independent of $N$ and $e$, as we
 	The point is that the pullback and fiber product co-orientations only depend on $f$, $g$, and their co-orientations, after fixing such universal choices that do not depend on $f$ or $g$.
 \end{remark}
 
+\greg{I've significantly updated the proof of this lemma. The first part of the proof is the same, but the old ending didn't make sense to me anymore, so I wrote a new ending, split off into its own second lemma below. It makes sense to me, and I think it's correct, but it was hard to get the ideas down concretely. So someone else should read through the whole proof and doublecheck it, both for correctness and perhaps to improve the exposition. One very good thing about the new proof is that it's completely organic here - the old version made a forward reference to the Leibniz formula, whose proof can be taken to be independent to this by using a fixed map $e$, but it wasn't a great way to proceed. On the other hand, there was a certain elegance to using a higher level result instead of the hands-on mucking around that's in the proof now.}
+
 \begin{proof}[Proof of \cref{L: pullback co well defined}]
 	As the local orientations of $P$, $V$, $W$, and $M$ used in the construction all come in pairs (e.g.\ $\beta_P$ in $(\beta_P,\beta_P \wedge \nu_V))$, the construction is independent of those choices.
 
@@ -947,12 +950,58 @@ We will show just below that the definition is independent of $N$ and $e$, as we
 \end{proof}
 
 	
-\begin{lemma}
-Suppose that $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ co-oriented. Let $\pi \colon M \times \R^N \to M$ be the projection, and let $h: V \times I \to \R^N$ be an embedding such that $\pi h(x,t) = f(x)$. Say that $h$ is a homotopy between the emebddings $e$ and $e'$. Then the co-orientations of $V \times_M W$ obtained using $e$ and $e'$ are the same. 
+\begin{lemma}\label{L: homotopy pullback independence}
+Suppose that $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ co-oriented. 
+Let $\pi \colon M \times \R^N \to M$ be the projection, and let $h \colon V \times I \to \R^N$ be an embedding such that $\pi h(x,t) = f(x)$.
+Say that $h$ is a homotopy between the emebddings $h_0$ and $h_1$. 
+Then the co-orientations of $V \times_M W$ obtained from the above pullback co-orientation construction, using $h_0$ and $h_1$ as the embeddings of $V$, are the same. 
 \end{lemma}
 
 \begin{proof}
+The composition $\pi h \colon V \times I \to M$ is the constant homotopy with $\pi h(x,t) = f(x)$, so $\pi h$ is also transverse to $g$, and 
+\begin{align*}
+	(V \times I) \times_M W &= \{ (x,t,y)\in V \times I \times M \mid \pi h(x,t) = g(y) \} \\
+	&= \{ (x,t,y)\in V \times I \times M \mid f(x) = g(y) \} \\
+	&= (V \times_M W) \times I.
+\end{align*}
+So, within the setup of the lemma, we have $V \times I$ embedded in $M \times \R^N$ and $(V \times_M W) \times I$ embedded in $W \times \R^N$ with $g \times \id_{\R^N}$ mapping the latter to the former. 
+Let us fix through the proof a particular pair $(x,y)$ with $f(x) = g(y)$. 
+Then identifying the spaces with their embeddings, the map $g \times \id$ takes $(x,y,t) \subset (V \times_M W) \times I$ to $(x,t) \subset V$; in fact, as $\pi h$ is a constant homotopy, these correspond to the same path in the fiber $\R^N$. 
+To simplify notation, we write $x_0 = (x,0) \in V_0= V \times 0$ and $x_1 = (x,1) \in V_1 = V \times 1$ and identify these points and spaces also with their images under $h$.
 
+Suppose $\beta_V$ is a local orientation at $x$ and $\beta_M$ is a local orientation at $f(x)$ such that $(\beta_V,\beta_M)$ is the given co-orientation of $f$.
+We can also think of these as co-orientations of the restrictions of $\pi h$ to each $V\times t \subset V \times I$. We co-orient the composite $\pi h \colon V \times I \to M$ with the co-orientation $(\beta_V \wedge \beta_I,\beta_M)$ at each $(x,t)$, with $\beta_I$ corresponding to the standard positive orientation of the interval.
+So then if we give each inclusion $V\to V \times t\subset V \times I$ the normal co-orientation $(\beta_V, \beta_V \wedge \beta_I)$ at $x$, the composition of this normal co-orientation with the co-orientation of $\pi h$ is the co-orientation of $f$.
+
+Now, considering $V \times I$ as embedded via $h$ in $M \times I$, we have the Quillen orientation $\beta_{\nu(V \times I)}$ of the normal bundle $\nu(V \times I)$. 
+If we let $\beta_{V \times I} = \beta_V \wedge \beta_I$ at some $(x,t)$, then by definition the Quillen orientation of the normal bundle is the one such that
+\[(\beta_V \wedge \beta_I, \beta_V \wedge \beta_I \wedge \beta_{\nu(V \times I)}) * (\beta_M\wedge \beta_E,\beta_M) = (\beta_V\wedge \beta_I,\beta_M),\]
+i.e.\ such that $\beta_V \wedge \beta_I \wedge \beta_{\nu(V \times I)}=\beta_M \wedge \beta_E$.
+Similarly, if $\nu V_0$ is the normal bundle to $V_0$ at $x_0$, then its Quillen orientation is such that 
+\[(\beta_V, \beta_V \wedge \beta_{\nu V_0})*(\beta_M \wedge \beta_E,\beta_M)=(\beta_V, \beta_M),\] i.e.\  $\beta_V \wedge \beta_{\nu V_0} = \beta_M \wedge \beta_E$. 
+But on $V_0$, the normal bundle $\nu V_0$ is just the sum of $\nu(V \times I)$ and a line bundle tangent to $V \times I$ in the $I$ direction, which we write as $\nu V_0=\nu(V \times I)\oplus TI$. 
+And since the above computations imply $\beta_V \wedge \beta_I \wedge \beta_{\nu(V \times I)}=\beta_V \wedge \beta_{\nu V_0}$ at $x_0$, the relation among the orientations is that $\beta_I \wedge \beta_{\nu(V \times I)}=\beta_{\nu V_0}$. 
+By the same argument, we have the equivalent relation at $x_1\in V_1$. 
+The point of all this is that we have now related the orientations of the Quillen normal bundles at $x_0\in V_0$ and $x_1\in V_1$ to the orientations there of the single oriented bundle $\nu(V \times I)$. 
+
+Now, following the recipe for the pullback co-orientation of $(V \times I) \times_M W \cong (V \times_M W) \times I$, we pull $V \times I \subset M \times \R^N$ back by $g \times \id$, and the oriented normal bundles of $(V \times_M W) \times I$, $V_0 \times_M W$, and $V_1 \times_M W$ will be the pullbacks of the normal bundles of $V \times I$, $V_0$, and $V_1$. 
+Again, we abuse notation and use the same notations for the pulled back bundles and their orientations. 
+As we have noted that the path $(x,y) \times I\in (V \times_M W) \times I$ maps to the path $x \times I \in V \times I$, preserving the orientation of $I$, the identification $\nu V_0=\nu(V \times I)\oplus TI$ continues to hold under the pullback, and similarly at the other end of the homotopy. 
+
+At $(x_0,y)\in (V \times_M W) \times I$, let us now choose a local orientation of the form $\beta_P \wedge \beta_I$ with $\beta_P$ a local orientation of $V \times_M W$. 
+By definition, the pullback co-orientation of the projection $(V \times I) \times_M W \to W$ at this point will be $(\beta_P \wedge \beta_I,\beta_P \wedge \beta_I \wedge \beta_{\nu(V \times I)})* (\beta_W \wedge \beta_E,\beta_W)$. 
+For convenience, let use suppose we choose $\beta_W$ so that $\beta_P \wedge \beta_I \wedge \beta_{\nu(V \times I)}=\beta_W \wedge \beta_E$, in which case the co-orientation of $(V \times I) \times_M W \to W$ is $(\beta_P \wedge \beta_I, \beta_W)$. 
+Similarly, continuing to use the same $\beta_P$ for $V \times_M W$, the co-orientation at $(x_0,y)$ of $V_0 \times_M W\to W$ will be $(\beta_P,\beta_P \wedge \beta_{\nu V_0})* (\beta_W \wedge \beta_E,\beta_W)$.
+As the relationship $\beta_I \wedge \beta_{\nu(V \times I)}=\beta_{\nu V_0}$ is maintained under the pullback, this latter co-orientation is 
+$(\beta_P,\beta_P \wedge\beta_I \wedge \beta_{\nu(V \times I)}) * (\beta_W \wedge \beta_E,\beta_W),$
+which is then $(\beta_P,\beta_W)$ by our preceding assumption that $\beta_P \wedge \beta_I \wedge \beta_{\nu(V \times I)}=\beta_W \wedge \beta_E$. 
+So the pullback co-orientation of $V_0 \times_M W\to W$ is just $(\beta_P, \beta_W)$. 
+But now the computations concerning $V_1$ are equivalent. 
+Furthermore, as the pullback map $(V \times_M W) \times I \to W$ is also a constant homotopy, the choice of $\beta_W$ so that $\beta_P \wedge \beta_I \wedge \beta_{\nu(V \times I)}=\beta_W \wedge \beta_E$ will be the same: as we transport the orientations $\beta_P$, $\beta_I$, and $\beta_{\nu(V \times I)}$ along $(x,y)\times I$ in $(V \times_M W) \times I$, the corresponding $\beta_W$ will stay constant. 
+In particular, the entire equality $\beta_P \wedge \beta_I \wedge \beta_{\nu(V \times I)}=\beta_W \wedge \beta_E$ transports along the image of $(x,y)\times I$ in $(V \times_M W) \times I$, so the co-orientation of $V_1 \times_M W$ at $(x_1,y)$ is also $(\beta_P, \beta_W)$. 
+\end{proof}
+
+\begin{comment}
 	%By \cref{L: co-orientable homotopies,D: homotopy co-orientation}, we can use the embeddings $F_j$ to %co-orient each of our constant homotopies.
 	Now, using $F_0$, $\td H$, and $F_1$ respectively in place of $e$ in \cref{D: pullback coorient}, we obtain three co-orientations of the pullbacks $(V \times I) \times_M W \to W$ with the map $V\times I \to M$ being given by $(x,t) \mapsto f(x)$ in all three cases. 
 	Note that such a map is certainly transverse to $g \colon W \to M$ if $f$ is.
@@ -966,7 +1015,7 @@ Suppose that $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ c
 	In other words, with appropriate choices on the co-orientations of the homotopies, by \cref{D: co-oriented homotopy}, we obtain three sequential co-oriented (constant) homotopies from $f$ to itself.
 	It now follows by applying \cref{R: stationary homotopy} sequentially that all four copies of $f$ must have the same co-orientation.
 	In particular, this is the case for the co-orientations of $f$ obtained from the embeddings $e_0$ and $e_1$.
-\end{proof}
+\end{comment}
 
 \begin{remark}\label{R: local pullback co-orientations}
 	The pullback co-orientation is determined locally in the sense that if $U$ is an open subset of $M$ then the pullback co-orientation of $f^{-1}(U) \times_U g^{-1}(U) \to g^{-1}(U)$ will just be the restriction of the pullback co-orientation of $V \times_M W \to W$.
