@@ -877,7 +877,7 @@ For the following definition, refer again to Diagram \eqref{D: pullback}.
 	Then the pullback $P = V \times_M W = (g \times \id_{\R^N})^{-1}(e(V)) \subset W \times \R^N$ has an oriented normal bundle that is the pullback of $\nu V$, which, by abuse of notation, we also label $\nu V$.
 	Let $\beta_P$ and $\beta_W$ be local orientations of $P$ and $W$, and let $\beta_E$ be the standard orientation of $\R^N$.
 	Define the \textbf{pullback co-orientation} on $P \to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P \wedge \nu V)$ with the canonical co-orientation $(\beta_W \wedge \beta_E,\beta_W)$.
-	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ up to positive scalar and $-(\beta_P,\beta_W)$ otherwise.
+	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ up to positive scalar and $-(\beta_P,\beta_W)$ otherwise. Equivalently, the co-orientation of the pullback is the one for which $\beta_{\nu V}$ is the compatible Quillen normal orientation.  
 
 	Following \cref{D: top pullback}, we sometimes write $f^* \colon P \to W$.
 	We also sometimes write $P = g^*V$ to emphasize that $P$ is the pullback of $V$ by $g$ to a manifold over $W$.
@@ -973,20 +973,21 @@ The co-oriented pullback construction is functorial in the following sense.
 \end{proposition}
 
 \begin{proof}
-	We first note that there is a diffeomorphism between $V$ and $\{(v,x) \in V \times M \mid f(v) = x\}$ given by $v \to (v,f(v))$ and $(v,x) \to v$.
-	Then given compatible Quillen co-orientation of $f$, we can form the pullback diagram as
+	We first note that there is a diffeomorphism between $V$ and $V \times_M M = \{(v,x) \in V \times M \mid f(v) = x\}$ given by $v \mapsto (v,f(v))$ with inverse $(v,x) \mapsto v$.
+	Then, given a compatible Quillen co-orientation of $f$, we can form the pullback diagram as
 	\[
 	\begin{tikzcd}[column sep=large]
 		V \arrow[r, "\id_V"] \arrow[d,"e"] & V \arrow[d,"e"] \\
 		M \times \R^N \arrow[r, "\id_{M \times \R^N}"] \arrow[d,"\pi_M"] & M \times \R^N \arrow[d,"\pi_M"] \\
-		M \arrow[r, "\id_M"] & M
+		M \arrow[r, "\id_M"] & M,
 	\end{tikzcd}
 	\]
 	and the conclusion is evident.
 
-	For the second claim, there is a diffeomorphism between $\{(v,x) \in V \times X \mid f(v) = g(h(x))\}$ and $\{((v,w),x) \in (V \times_M W) \times X \mid w = h(x)\}$ given by $(v,x) \to (v,h(x),x)$ and $((v,w),x) \to (v,x)$.
-	To see that the last map is well-defined notice that $f(v) = g(h(x))$ as $h(x) = w$, and $f(v) = g(w)$ from the assumption $(v,w) \in V \times_M W$.
-	Compatibility of the co-orientations now follows by considering the following diagram and noting that it is equivalent to pull back the normal $\nu V$ to $X \times \R^N$ either in two steps or all at once.
+	For the second claim, there is a diffeomorphism between $V \times_M X = \{(v,x) \in V \times X \mid f(v) = g(h(x))\}$ and $(V \times_M W) \times_W X = \{((v,w),x) \in (V \times_M W) \times X \mid w = h(x)\}$ given by $(v,x) \mapsto (v,h(x),x)$ and $((v,w),x) \mapsto (v,x)$.
+	To see that the last map is well defined notice that $f(v) = g(h(x))$ as $h(x) = w$, and $f(v) = g(w)$ from the assumption $(v,w) \in V \times_M W$.
+
+	Compatibility of the co-orientations now follows by considering the following diagram. We may assume $V$ and $W$ are manifolds by \cref{P: interior co-orientation}, and then the map labeled $e^*$ is an embedding, as recalled in the proof of \cref{L: co-orientable pullback}. We then note that it is equivalent to pull back the normal $\nu V$ to $X \times \R^N$ either in two steps or all at once.
 	\[
 	\begin{tikzcd}[column sep=large]
 		(V \times_M W) \times_W X \arrow[r, "\pi_{V \times_M W}"] \arrow[d] & V \times_M W \arrow[r, "\pi_V"] \arrow[d] & V \arrow[d, "e"] \\
