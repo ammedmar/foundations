@@ -987,7 +987,9 @@ The co-oriented pullback construction is functorial in the following sense.
 	For the second claim, there is a diffeomorphism between $V \times_M X = \{(v,x) \in V \times X \mid f(v) = g(h(x))\}$ and $(V \times_M W) \times_W X = \{((v,w),x) \in (V \times_M W) \times X \mid w = h(x)\}$ given by $(v,x) \mapsto (v,h(x),x)$ and $((v,w),x) \mapsto (v,x)$.
 	To see that the last map is well defined notice that $f(v) = g(h(x))$ as $h(x) = w$, and $f(v) = g(w)$ from the assumption $(v,w) \in V \times_M W$.
 
-	Compatibility of the co-orientations now follows by considering the following diagram. We may assume $V$ and $W$ are manifolds by \cref{P: interior co-orientation}, and then the map labeled $e^*$ is an embedding, as recalled in the proof of \cref{L: co-orientable pullback}. We then note that it is equivalent to pull back the normal $\nu V$ to $X \times \R^N$ either in two steps or all at once.
+	Compatibility of the co-orientations now follows by considering the following diagram. 
+	We may assume $V$ and $W$ are manifolds by \cref{P: interior co-orientation}, and then the map labeled $e^*$ is an embedding, as recalled in the proof of \cref{L: co-orientable pullback}. 
+	We then note that it is equivalent to pull back the normal $\nu V$ to $X \times \R^N$ either in two steps or all at once.
 	\[
 	\begin{tikzcd}[column sep=large]
 		(V \times_M W) \times_W X \arrow[r, "\pi_{V \times_M W}"] \arrow[d] & V \times_M W \arrow[r, "\pi_V"] \arrow[d] & V \arrow[d, "e"] \\
@@ -999,38 +1001,38 @@ The co-oriented pullback construction is functorial in the following sense.
 
 \subsubsection{Fiber products of immersions}\label{S: co-or product immersion}
 
-Pullbacks have particularly nice descriptions when on or both of the maps are embeddings or immersions.
+Pullbacks have particularly nice descriptions when one or both of the maps are embeddings or immersions.
 In addition, these special cases are good for building intuition about the more general situation.
 
 \begin{example}\label{E: V embedded}
 	When $f \colon V \to M$ is a co-oriented embedding, the pullback $V \times_M W$ is particularly easy to describe.
-	In this case, we know from \cref{S: normal orientation} that the co-orientation is determined by an orientation $\beta_{\nu V}$ of the normal bundle to $V$ in $M$.
+	In this case, we know from \cref{S: normal orientation} that a co-orientation is equivalent to an orientation $\beta_{\nu V}$ of the normal bundle to $V$ in $M$.
 	Then, as $f$ is already an embedding, we can take $N = 0$ in \cref{D: pullback coorient}.
 	So the pullback $V \times_M W$ is just the submanifold $g^{-1}(V) \subset W$, co-oriented by $(\beta_P,\beta_W)$, where $\beta_P \wedge \beta_{\nu V} = \beta_W$, the $\nu V$ here being the pullback of the normal bundle to $g^{-1}(V)$ in $W$.
 	In other words, the co-orientation of the pullback is just the normal co-orientation corresponding to the pulled back orientation of $\nu V$.
-	We can say that $V$ and $V \times_M W = g^{-1}(V)$ have compatible normal co-orientations.
 
-	The case where $g$ is embedded instead also has a nice description but requires some more technology.
+	The case where $g$ is an embedding instead also has a nice description but requires some more technology.
 	We will discuss that case below in \cref{E: embedded}.
 \end{example}
 
-In the key example when both $f$ and $g$ are immersions, the fiber products will locally correspond to intersections of the images in $M$, and in this case our general definition of fiber product co-orientation is compatible with the approach to co-orientations via orientations of normal bundles.
+In the key example when both $f \colon V \to M$ and $g \colon W \to M$ are immersions, we know by \cref{L: fiber product of embeddings,S: normal orientation} that the co-orientations correspond locally to orientations of the normal bundles $\nu V$ and $\nu W$ and the fiber product $V \times_M W \to M$ correspnds locally to the intersection of the images of $V$ and $W$.
+In this case our fiber product co-orientation of $V \times_M W \subset M$ is easily determined in terms of the orientations of $\nu V$ and $\nu W$. 
 
 \begin{proposition}\label{P: normal pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented immersions from manifolds with corners to a manifold without boundary.
 	Let $\nu V$ and $\nu W$ denote the respective normal bundles.
 	Choose local Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ so that the normal co-orientations $(\beta_V, \beta_V \wedge \beta_{\nu V})$ and $(\beta_W, \beta_W \wedge \beta_{\nu W})$ agree with the given co-orientations of $f$ and $g$.
-	Then, decomposing the normal bundle of the fiber product $P = V \times_M W \to M$ at any point of intersection as $\nu V \oplus \nu W$ and giving it the orientation $\beta_{\nu V} \wedge \beta_{\nu W}$, the fiber product co-orientation agrees with the normal co-orientation, i.e.\
+	Then, decomposing the normal bundle of the fiber product $P = V \times_M W \to M$ at any point as $\nu V \oplus \nu W$ and giving it the orientation $\beta_{\nu V} \wedge \beta_{\nu W}$, the fiber product co-orientation agrees with the normal co-orientation, i.e.\
 	$$\omega_{f \times_M g} = (\beta_P,\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}).$$
 \end{proposition}
 
-That is, if one orients the normal bundle of the intersection by following an oriented basis of the normal bundle of $V$ by one for $W$, the associated normal co-orientation is the fiber product co-orientation.
+That is, if one orients the normal bundle of the intersection by following an oriented basis of the normal bundle of $V$ with an oriented basis of the normal bundle of $W$, the associated normal co-orientation is the fiber product co-orientation.
 
 \begin{proof}
-	It suffices to demonstrate this property in the neighborhood of any intersection point, so we may assume that $f$ and $g$ are embeddings and consider $x \in V$, $y \in W$ with $f(x) = g(y) = z \in M$.
-	Locally, for our Quillen co-orientation of $f$ we can apply the definition of the pullback co-orientation with $N = 0$ and the embedding $e \colon V \into M \times \R^N$ to be simply $f$ itself.
+	It suffices to demonstrate this property in the neighborhood of any intersection point, so we may assume that $f$ and $g$ are embeddings of manifolds and consider $x \in V$, $y \in W$ with $f(x) = g(y) = z \in M$.
+	Locally, for our Quillen co-orientation of $f$ we can apply the definition of the pullback co-orientation with $N = 0$ and the embedding $e \colon V \into M \times \R^N$ being simply $f$ itself.
 	As $N = 0$, in this case $\nu V$ is itself the oriented normal bundle of $e(V) = f(V)$ in $M \times \R^N = M$.
-	Pulling back via $g$ to $W$, we obtain the oriented pullback of $\nu V$ (which we also call $\nu V$) as the normal bundle of $P$ in $W$.
+	Pulling back via $g$ to $W$, we obtain the oriented pullback of $\nu V$ (which we also call $\nu V$) as the normal bundle of $P = g^{-1}(V)$ in $W$.
 	By definition, the co-orientation of $P \to W$ is then the composition of $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the standard co-orientation of the projection $W \times \R^N$ to $W$, which in this case is the identity.
 	The co-orientation of the fiber product is thus the composition of $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the co-orientation $(\beta_W, \beta_W \wedge \beta_{\nu W})$ of $g$.
 	But this last co-orientation is independent of the choice of $\beta_W$, so we can take $\beta_W = \beta_P \wedge \beta_{\nu V}$.
