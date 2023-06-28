@@ -65,6 +65,10 @@ Any abuses of notation involved in this calculus are very much justified by its 
 	We have said that for a smooth oriented manifold with boundary $N$, we orient $\bd N$ so that an outward normal vector followed by an oriented basis of $\bd N$ yields an oriented basis for $N$.
 	In our notation, we can let $\nu$ denote the normal bundle to the boundary and $\beta_{\nu}$ the section of the normal bundle tangent bundle corresponding to the outward-pointing orientation.
 	Then letting $\beta_N$ and $\beta_{\bd N}$ denote the local orientations of $N$ and $\bd N$ at a boundary point, we can write our boundary orientation convention by saying that at each boundary point $\beta_N=\beta_\nu\wedge \beta_{\bd N}$.
+
+	Of course, the normal bundle is technically a quotient bundle, but we can use the splitting of exact sequence of vector bundles \cite[Theorem 3.9.6]{Hus75} to identify it with a subbundle of the tangent bundle of $N$. 
+	Such choices are not unique, but they are unique up to elements of $T(\bd N)$, so the (equivalence class of the) exterior product $\beta_\nu\wedge \beta_{\bd N}$ does not depend on such choices. 
+	Such identifications will be used regularly and tacitly when working with normal bundles. 
 \end{example}
 
 \subsubsection{Orientations of fiber products}\label{S: orientation of fiber products}
@@ -1042,29 +1046,33 @@ That is, if one orients the normal bundle of the intersection by following an or
 \subsubsection{The Leibniz rule}
 
 We now verify the Leibniz rule.
-Note that in the proof we work with a single arbitrary but fixed $e \colon V \into M \times \R^N$ and its restriction to $\bd V$, and so the following theorem holds for any such choice in the definition of the pullback co-orientation.
-Consequently, this result completes the proof of \cref{L: pullback co well defined}.
+We recall from \cref{D: boundary co-orientation} that if $g \colon W \to M$ is co-oriented, then the boundary co-orientation of the composite $\bd W \xr{i_{\bd W}} W \xr{g} M$ is the composite of the boundary co-orientation $(\beta_{\bd W}, \beta_{\bd W} \wedge \beta_{\nu \bd W})$, with $\beta_{\nu \bd W}$ corresponding to the inward pointing normal vector, and the co-orientation of $g$.
+Recall also that we often abuse notation by letting $W$ stand for the co-oriented map $g$, and in this case we write $\bd W$ to stand for the co-oriented composite. 
+We also write $-W$ for $g$ with the opposite co-orientation. 
+This notation makes the statement of the Leibniz rule, stated just below, comprehensible.
+Establishing the rule directly for immersions, for which we can use the normal co-orientations, is a quick exercise; the general case requires more care.
+
 
 \begin{proposition}[Leibniz rule]\label{leibniz}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary, and suppose $f$ co-oriented.
 	Let $V \times_M W \to W$ be the co-oriented pullback.
 	Then
-	$$\bd (V \times_M W) = (\bd V) \times_M W \bigsqcup (-1)^{\dim(M)-\dim(V)} V \times_M (\bd W),$$
+	$$\bd (V \times_M W) = (\bd V) \times_M W \bigsqcup (-1)^{m-v} V \times_M (\bd W),$$
 	interpreting each of these pullback spaces as representing its co-oriented map to $W$; see Notation \ref{N: implicit notation}.\footnote{Here we interpret $V \times \bd W \to W$ as the composition of the co-oriented pullback $V \times \bd W \to \bd W$ with the co-oriented boundary immersion $\bd W \to W$.} If $g$ is also co-oriented then this formula also holds as fiber products mapping to $M$.
 \end{proposition}
 
-Establishing this directly for immersions, for which we can use the normal co-orientations, is a quick exercise.
-The general case requires more care.
+
+
 
 \begin{proof}
 	The statement at the level of underlying manifolds with corners is \cite[Proposition 6.7]{Joy12}, so we focus on co-orientations.
 	The second statement follows from the first by composing each map with the co-oriented map $g \colon W \to M$ and taking the composite co-orientations.
-	We will write $\bd P$ when considering the boundary co-orientation of $P = V \times_M W$ and $(\bd V) \times_M W$ or $V \times_M (\bd W)$ when considering these pullback co-orientations.
-	In the following arguments, it suffices to consider points in the interiors of $\bd V$ or $\bd W$ as knowing a co-orientation at one point of each component determines it globally; in other words, we can avoid corners.
+	We will write $\bd P$ when considering the boundary of the pullback map $P = V \times_M W \to W$ with its boundary co-orientation, and we write $(\bd V) \times_M W$ or $V \times_M (\bd W)$ when considering the maps from these boundary components with their pullback co-orientations.
+	In the following arguments, it suffices to consider points in the interiors of $\bd V$ or $\bd W$ as knowing a co-orientation at one such point of each component determines it globally; in other words, we can avoid corners.
 
-	By \cref{D: pullback coorient}, the co-orientation $\omega_{f^*}$ of $P \to W$ is $(\beta_P,\beta_W)$ if and only if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ up to positive scalar, where $\nu V$ is the pullback to $P$ of the Quillen-oriented normal bundle of $e(V)$ in $M \times \R^N$.
+	By \cref{D: pullback coorient}, the co-orientation $\omega_{f^*}$ of $P \to W$ is $(\beta_P,\beta_W)$ if and only if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$, where $\nu V$ is the pullback to $P$ of the Quillen-oriented normal bundle of $e(V)$ in $M \times \R^N$ for some appropriate embedding $e$ that we fix throughout the following.
 	Recall that by \cref{D: boundary co-orientation}, if $\nu \bd P$ is the inward pointing normal of $\bd P$ in $P$ then $\bd P \to V$ is co-oriented by composing the boundary co-orientation $(\beta_{\bd P},\beta_{\bd P} \wedge \beta_{\nu \bd P})$ with $\omega_{f^*}$.
-	Choosing $\beta_P = \beta_{\bd P} \wedge \beta_{\nu \bd P}$ (for an arbitrary choice of $\beta_{\bd P}$), we see $\omega_{\bd P \to W}$ is $(\beta_{\bd P},\beta_W)$ if and only if $\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$.
+	If we make arbitrary choices of $\beta_{\bd P}$ and $\beta_W$ and then choose $\beta_P = \beta_{\bd P} \wedge \beta_{\nu \bd P}$, then we see that $\omega_{\bd P \to W}$ is $(\beta_{\bd P},\beta_W)$ if and only if $\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$.
 
 	Now, consider a point in the interior of $(\bd V) \times_M W \subset V \times_M W = P$.
 	By choosing standard choices of coordinate charts in such neighborhoods, we see that we can take $\nu\bd V = \nu \bd P$ to be the same inward pointing normal vector.
