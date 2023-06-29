@@ -847,8 +847,8 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	So by choosing $P$ so that the top square is a pullback diagram, we obtain also the pullback of $W \xr{g} M\xleftarrow{f} V$.
 
 	Since $f$ is transverse to $g$, we have $g \times \id$ transverse to $e$ by \cref{L: all transversality is wrt embeddings}.
-	As $e$ is an embedding, it follows that $P = (g \times \id)^{-1}(e(V))$ is a submanifold of $W \times \R^N$ by \cite[Theorem IV.1.4]{Kos93}.
-	Furthermore, by \cref{L: Quillen}, $e(V)$ has an orientable normal bundle in $M \times \R^N$, and since the pullback of the normal bundle is the normal bundle of the pullback, again by \cite[Theorem IV.1.4]{Kos93}, it follows that the normal bundle of $P$ in $W \times \R^N$ is also orientable.
+	As $e$ is an embedding, it follows that $P = (g \times \id)^{-1}(e(V))$ is a submanifold of $W \times \R^N$ by \cite[Proposition IV.1.4]{Kos93}.
+	Furthermore, by \cref{L: Quillen}, $e(V)$ has an orientable normal bundle in $M \times \R^N$, and since the pullback of the normal bundle is the normal bundle of the pullback, again by \cite[Proposition IV.1.4]{Kos93}, it follows that the normal bundle of $P$ in $W \times \R^N$ is also orientable.
 	Applying \cref{L: Quillen} again, the map $f^* = \pi_W \colon P \to W$ is co-orientable.
 \end{proof}
 
@@ -881,7 +881,7 @@ For the following definition, refer again to Diagram \eqref{D: pullback}.
 	Then the pullback $P = V \times_M W = (g \times \id_{\R^N})^{-1}(e(V)) \subset W \times \R^N$ has an oriented normal bundle that is the pullback of $\nu V$, which, by abuse of notation, we also label $\nu V$.
 	Let $\beta_P$ and $\beta_W$ be local orientations of $P$ and $W$, and let $\beta_E$ be the standard orientation of $\R^N$.
 	Define the \textbf{pullback co-orientation} on $P \to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P \wedge \nu V)$ with the canonical co-orientation $(\beta_W \wedge \beta_E,\beta_W)$.
-	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ up to positive scalar and $-(\beta_P,\beta_W)$ otherwise. Equivalently, the co-orientation of the pullback is the one for which $\beta_{\nu V}$ is the compatible Quillen normal orientation.  
+	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ and $-(\beta_P,\beta_W)$ otherwise. Equivalently, the co-orientation of the pullback is the one for which $\beta_{\nu V}$ is the compatible Quillen normal orientation.  
 
 	Following \cref{D: top pullback}, we sometimes write $f^* \colon P \to W$.
 	We also sometimes write $P = g^*V$ to emphasize that $P$ is the pullback of $V$ by $g$ to a manifold over $W$.
@@ -1061,45 +1061,72 @@ Establishing the rule directly for immersions, for which we can use the normal c
 	interpreting each of these pullback spaces as representing its co-oriented map to $W$; see Notation \ref{N: implicit notation}.\footnote{Here we interpret $V \times \bd W \to W$ as the composition of the co-oriented pullback $V \times \bd W \to \bd W$ with the co-oriented boundary immersion $\bd W \to W$.} If $g$ is also co-oriented then this formula also holds as fiber products mapping to $M$.
 \end{proposition}
 
+We first need a lemma. 
 
-
-
+\begin{lemma}\label{L: pullback boundary normal}
+	Let $V$ be a smooth manifold with boundary embedded in a manifold without boundary $M$, and suppose $g \colon W \to M$ is a map from a manifold without boundary and transverse to $V$. 
+	In this case we know that $V \times_M W = g^{-1}(V)$ and the pullback of the normal bundle $\nu V$ of $V$ in $M$ is the normal bundle of $g^{-1}(V)$ in $W$, and similarly replacing $\bd V$ with $V$. 
+	Let $w\in \bd (V \times_M W) = (\bd V) \times_M W$. 
+	Then there is a vector $b \in T_w(V \times_M W)$, not contained in $T_w((\bd V) \times_M W)$, such that $Dg(b) \in T_{g(w)}V$ but $Dg(b) \notin T_{g(w)}(\bd V)$. Furthermore, both $b$ and $Dg(b)$ can be taken to be inward pointing, toward $V \times_M W$ and $V$, respectively.
+	So, roughly speaking, there is a correspondence between the normal direction to $(\bd V) \times_M W$ in $V \times_M W$ and the normal direction to $\bd V$ in $V$ (up to the usual ambiguities in the choices of splittings for normal bundles).
+\end{lemma}
 \begin{proof}
+Let $v = g(w)$, and let $a \in T_v V \subset T_v M$ such that $a \notin T_v (\bd V)$. As $g$ is transverse to $\bd V$, there are vectors $b \in T_w W$ and $c \in T_v(\bd V)$ such that $a= Dg(b) + c$. Now rewriting as $Dg(b) = a - c$, the righthand side is contained in $T_v(V)$, but not in $T_v(\bd V)$ or else $a$ would be in $T_v(\bd V)$. As the tangent space of the pullback $g^{-1}(V)$ at $w$ is the pullback of the tangent spaces of $T_v V$ and $T_w W$ mapping to $T_v M$ by \cref{L: tangent of pullbacks}, we see that the pair $(a-c, b) \in T_v V \times_{T_v M} T_w W$ is in the tangent space of the pullback, and as the embedding $V \times_M W \to W$ corresponds to the projection in the $W$ co-ordinate, we see that $b$ must be a tangent vector to $g^{-1}(V)$ mapping to $Dg(b)$ via $Dg$ as desired. Note that $b$ cannot be in $T_w((\bd V) \times_M W)$ as such a vector would map to $T_v (\bd V)$. It is clear that $Dg$ must take inward pointing vectors to inward pointing vectors. 
+\end{proof}
+
+The lemma will let us identify a normal direction to $\bd V$ in $V$ with a normal direction to $(\bd V) \times_M W$ in $V \times_M W$ in the following argument. 
+
+\begin{proof}[Proof of \cref{leibniz}]
 	The statement at the level of underlying manifolds with corners is \cite[Proposition 6.7]{Joy12}, so we focus on co-orientations.
 	The second statement follows from the first by composing each map with the co-oriented map $g \colon W \to M$ and taking the composite co-orientations.
-	We will write $\bd P$ when considering the boundary of the pullback map $P = V \times_M W \to W$ with its boundary co-orientation, and we write $(\bd V) \times_M W$ or $V \times_M (\bd W)$ when considering the maps from these boundary components with their pullback co-orientations.
-	In the following arguments, it suffices to consider points in the interiors of $\bd V$ or $\bd W$ as knowing a co-orientation at one such point of each component determines it globally; in other words, we can avoid corners.
+	We will write $\bd P$ when considering the boundary of the pullback map $P = V \times_M W \to W$ with its boundary co-orientation, and we write $(\bd V) \times_M W$ or $V \times_M (\bd W)$ when considering the maps from these boundary components with their pullback co-orientations, and in general we speak respectively of the ``boundary''  and ``pullback'' co-orientations.  
+	However, in both cases we write $\beta_{\bd P}$ when speaking of local orientations to simplify the notation.
+	In the following arguments, it suffices to consider points in the interiors of $\bd V$ or $\bd W$, as knowing a co-orientation at one such point of each component determines it globally; in other words, we can avoid corners.
+	So working locally and separating the two cases, we can assume for each case that only one of $V$ or $W$ has a boundary.
 
-	By \cref{D: pullback coorient}, the co-orientation $\omega_{f^*}$ of $P \to W$ is $(\beta_P,\beta_W)$ if and only if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$, where $\nu V$ is the pullback to $P$ of the Quillen-oriented normal bundle of $e(V)$ in $M \times \R^N$ for some appropriate embedding $e$ that we fix throughout the following.
-	Recall that by \cref{D: boundary co-orientation}, if $\nu \bd P$ is the inward pointing normal of $\bd P$ in $P$ then $\bd P \to V$ is co-oriented by composing the boundary co-orientation $(\beta_{\bd P},\beta_{\bd P} \wedge \beta_{\nu \bd P})$ with $\omega_{f^*}$.
-	If we make arbitrary choices of $\beta_{\bd P}$ and $\beta_W$ and then choose $\beta_P = \beta_{\bd P} \wedge \beta_{\nu \bd P}$, then we see that $\omega_{\bd P \to W}$ is $(\beta_{\bd P},\beta_W)$ if and only if $\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$.
+	We first consider the boundary co-orientation. 
+	By \cref{D: pullback coorient}, at a point of $P = V \times_M W$, the co-orientation $\omega_{f^*}$ of $P \to W$ is $(\beta_P,\beta_W)$ if and only if $\beta_P$ and $\beta_W$ are chosen so that $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$, where $\nu V$ is the pullback to $P$ of the Quillen-oriented normal bundle of $e(V)$ in $M \times \R^N$ for some appropriate embedding $e$ that we fix throughout the following.
+	The normal bundle $\nu V$ is given its Quillen orientation corresponding to the co-orientation of $f$.
+	By \cref{D: boundary co-orientation}, if $\nu (\bd P)$ is an inward pointing normal of $\bd P$ in $P$ then the boundary co-orientation $\bd P \to W$ is obtained by composing the normal co-orientation of the boundary immersion $(\beta_{\bd P},\beta_{\bd P} \wedge \beta_{\nu (\bd P})$ with $\omega_{f^*}$.
+	If we choose $\beta_W$ and $\beta_P$ to satisfy the condition above that  $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ and then choose $\beta_{\bd P}$ so that $\beta_P = \beta_{\bd P} \wedge \beta_{\nu(\bd P)}$, then we have that $\omega_{\bd P \to W}$ is $(\beta_{\bd P},\beta_W)$.
+	We assume in what follows that we have made such choices.
 
 	Now, consider a point in the interior of $(\bd V) \times_M W \subset V \times_M W = P$.
-	By choosing standard choices of coordinate charts in such neighborhoods, we see that we can take $\nu\bd V = \nu \bd P$ to be the same inward pointing normal vector.
-	In the construction of the pullback co-orientation for $(\bd V) \times_M W$, we can take $e \colon \bd V \to M \times \R^N$ to be the restriction of the $e \colon V \to M \times \R^N$ used to co-oriented $P$.
-	As we have already used $\nu \bd V$ for the normal of $\bd V \subset V$, to avoid confusing the notation, we write $\nu^s\bd V$ ($s$ for stable) for the normal bundle of $e(\bd V) \subset M \times \R^N$.
-	Note that $\nu^s\bd V \cong \nu\bd V \oplus \nu V$.
-	The Quillen orientation $\beta_{\nu V}$ was chosen so that $\beta_V \wedge \beta_{\nu V} = \beta_{M} \wedge \beta_E$.
-	If we choose $\beta_{\bd V}$ so that $\beta_V = \beta_{\bd V} \wedge \beta_{\nu\bd V}$ then the boundary co-orientation of $\bd V \to M$ will be $(\beta_{\bd V},\beta_M)$ so we can then perform the construction of \cref{D: pullback coorient} using $\beta_{\bd V}$.
-	Note that as $\beta_{\nu V}$ is chosen so that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$, we will have also $\beta_M \wedge \beta_E = \beta_{\bd V} \wedge \beta_{\nu\bd V} \wedge \beta_{\nu V}$ and so the Quillen orientation of $\nu^s\bd V$ is $\beta_{\nu^s\bd V} = \beta_{\nu\bd V} \wedge \beta_{\nu V}$.
+	In the construction of the pullback co-orientation for $(\bd V) \times_M W$, we can take $e \colon \bd V \to M \times \R^N$ to be the restriction to $\bd V$ of our fixed embedding $e$.
+	As there are two objects we could reasonable notate $\nu (\bd V)$, throughout the proof we will use $\nu (\bd V)$ for the normal bundle of $\bd V$ in $V$, and we will write $\nu^s(\bd V)$ ($s$ for stable) for the normal bundle of $e(\bd V)$ in $M \times \R^N$.
+	Analogously, $\nu(\bd W)$ and $\nu(\bd P)$ will be the normal bundles as submanifolds of $W$ and $P$, respectively. 
+	Note that $\nu^s(\bd V) \cong \nu(\bd V) \oplus \nu V$.
+	Furthermore, by employing \cref{L: pullback boundary normal}, when we pull back $\nu^s(\bd V)$ to the normal bundle of $(\bd V) \times_M W$ in $W \times \R^N$, we maintain this decomposition, identifying the pullback of $\nu V$ with the normal bundle to $V \times_M W$, as usual, and the pullback of $\nu(\bd V)$ with $\nu (\bd P)$, the normal to $\bd P$ in $P$ at our point.
+	Employing our standard abuses of notation, we thus write $\beta_{\nu(\bd P)} =  \beta_{\nu(\bd V)}$, identifying the inward pointing normal orientations. 
+	 
+	Next, recall the Quillen orientation $\beta_{\nu V}$ was chosen so that if $(\beta_V, \beta_M)$ is the co-orientation of $V$ (at an appropriate point) then $\beta_V \wedge \beta_{\nu V} = \beta_{M} \wedge \beta_E$.
+	Let us fix such $\beta_V$ and $\beta_M$.
+	Then if we choose $\beta_{\bd V}$ so that $\beta_V = \beta_{\bd V} \wedge \beta_{\nu(\bd V)}$ then the boundary co-orientation of $\bd V \to M$ will be $(\beta_{\bd V}, \beta_{\bd V} \wedge \beta_{\nu(\bd V)}) * (\beta_V, \beta_M) = (\beta_{\bd V},\beta_M)$, so we can then perform the pullback co-orientation construction of \cref{D: pullback coorient} using this co-orientation of $\bd V$.
+	Note that as $\beta_{\nu V}$ is chosen so that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$, we will have also $\beta_M \wedge \beta_E = \beta_{\bd V} \wedge \beta_{\nu(\bd V)} \wedge \beta_{\nu V}$ and so the corresponding Quillen orientation of $\nu^s(\bd V)$ is $\beta_{\nu^s(\bd V)} = \beta_{\nu(\bd V)} \wedge \beta_{\nu V}$.
 
-	So now applying once again \cref{D: pullback coorient} and writing $\beta_{(\bd V) \times_M W} = \beta_{\bd P}$ at our chosen point, the co-orientation is $(\beta_{\bd P},\beta_W)$ if and only if $\beta_{\bd P} \wedge \beta_{\nu^s\bd V} = \beta_W \wedge \beta_E$ up to positive scalar.
-	But $\beta_{\bd P} \wedge \beta_{\nu^s\bd V} = \beta_{\bd P} \wedge \beta_{\nu\bd V} \wedge \beta_{\nu V}$.
-	So the co-orientation is $(\beta_{\bd P},\beta_W)$ if and only if $\beta_{\bd P} \wedge \beta_{\nu\bd V} \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ up to positive scalar, which we established above to be precisely the description for this component of $\bd P \to W$.
+	So now applying \cref{D: pullback coorient}, the pullback co-orientation of $(\bd V) \times_M W \to W$ is $(\beta_{\bd P},\beta_W)$ (for our previously chosen $\beta_{\bd P}, \beta_W$) if and only if $\beta_{\bd P} \wedge \beta_{\nu^s(\bd V)} = \beta_W \wedge \beta_E$.
+	But $\beta_{\bd P} \wedge \beta_{\nu^s(\bd V)} = \beta_{\bd P} \wedge \beta_{\nu(\bd V)} \wedge \beta_{\nu V}$.
+	So the pullback co-orientation is $(\beta_{\bd P},\beta_W)$ if and only if $\beta_{\bd P} \wedge \beta_{\nu(\bd V)} \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$.
+	But we have previously identified $\beta_{\nu(\bd V)}$ with $\beta_{\nu(\bd P)}$, and $\beta_{\bd P} \wedge \beta_{\nu(\bd P)} = \beta_P$ by assumption. 
+	So this condition reduces to $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$, which also holds by previous assumption.
+	So the boundar and pullback co-orientations agree at points of $(\bd V) \times_M W$. 
 
 	Next, consider a point $x$ in $V \times_M \bd W$.
-	Again we can take $\nu\bd W = \nu \bd P$ to be the same inward pointing normal vector, and we write $\beta_{V \times_M W}$ and $\beta_{V \times_M \bd W}$ as $\beta_P$ and $\beta_{\bd P}$ near our point.
-	Furthermore, we can choose $\beta_{W}$, $\beta_{\bd W}$, and $\beta_M$ so that $(\beta_W,\beta_M)$ is the co-orientation of $g$ and $(\beta_{\bd W},\beta_W)$ co-orients $i_{\bd W}$, which implies $\beta_W = \beta_{\bd W} \wedge \beta_{\nu\bd W}$.
-	We also continue to choose $\beta_{P} = \beta_{\bd P} \wedge \beta_{\nu \bd P} = \beta_{\bd P} \wedge \beta_{\nu \bd W}$.
-	By \cref{D: pullback coorient}, applied to $\bd g \colon \bd W \to M$, the co-orientation of the pullback $V \times_M \bd W \to \bd W$ is $(\beta_{\bd P},\beta_{\bd W})$ if and only if $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$ up to positive scalar as local orientations at the image of $x$ in $\bd W \times \R^N$.
-	Considering $\bd W \times \R^N \subset W \times \R^N$ locally (recalling that $x$ is chosen in the interior of $\bd W$), $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$ if and only if $\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu\bd W} = \beta_{\bd W} \wedge \beta_E \wedge \beta_{\nu\bd W}$.
-	But as $\dim(\nu\bd W) = 1$ and $\dim(\nu V) = m+N-v$,
-	$$\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu\bd W} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu\bd W} \wedge \beta_{\nu V} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V},$$
+	As our pullback $V \times_M W$ is embedded neatly in $W \times \R^N$ \cite[Proposition IV.1.4]{Kos93}, it is immediate that, at $x$, the normal bundle of $V \times_M \bd W = (g \times \id)|_{(\bd W) \times \R^N}^{-1}(V)$ in $W \times \R^N$ can be decomposed into the direct sum of the pullback of $\nu V$, which can be identified with a subbundle of $T_x((\bd W) \times \R^N)$, and a 1-dimensional summand that is normal to $(\bd W) \times \R^N$. By projection, we can identify this summand with a normal direction to $\bd W$ in $W$ and again write $\beta_{\nu(\bd P)}=\beta_{\nu(\bd W)}$ for the orientation determined by these inward pointing normals. 
+
+
+	Now, we continue to assume that $(\beta_P, \beta_W)$ is the co-orientation of $V \times_M W \to W$ (and so $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$).
+	We choose $\beta_M$ so that $(\beta_W,\beta_M)$ is the co-orientation of $g$ and $\beta_{\bd W}$ so that $(\beta_{\bd W},\beta_W)$ co-orients $i_{\bd W}$, which implies $\beta_W = \beta_{\bd W} \wedge \beta_{\nu(\bd W)}$.
+	We also continue to choose $\beta_{\bd P}$ so that $\beta_P = \beta_{\bd P} \wedge \beta_{\nu(\bd P)} = \beta_{\bd P} \wedge \beta_{\nu(\bd W)}$ and hence the boundary co-orientation of $\bd P \to W$ is $(\beta_{\bd P}, \beta_W)$.
+
+	Using these local orientations and applying \cref{D: pullback coorient} to $\bd g \colon \bd W \to M$, the co-orientation of the pullback $V \times_M \bd W \to \bd W$ is $(\beta_{\bd P},\beta_{\bd W})$ (and so the composite co-orientation to $W$ is $(\beta_{\bd P}, \beta_W)$) if and only if $\beta_{\bd P} \wedge \beta_{\nu V} = \beta_{\bd W} \wedge \beta_E$ as local orientations at the image of $x$ in $\bd W \times \R^N$.
+	Considering $\bd W \times \R^N \subset W \times \R^N$, this condition holds if and only if $\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu(\bd W)} = \beta_{\bd W} \wedge \beta_E \wedge \beta_{\nu(\bd W)}$ in $W \times \R^N$.
+	But as the dimensions as bundles are $\dim(\nu(\bd W)) = 1$ and $\dim(\nu V) = m+N-v$,
+	$$\beta_{\bd P} \wedge \beta_{\nu V} \wedge \beta_{\nu(\bd W)} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu(\bd W)} \wedge \beta_{\nu V} = (-1)^{m+N-v}\beta_{\bd P} \wedge \beta_{\nu(\bd P)} \wedge \beta_{\nu V} = (-1)^{m+N-v}\beta_P \wedge \beta_{\nu V} ,$$
 	and
-	$$\beta_{\bd W} \wedge \beta_E \wedge \beta_{\nu\bd W} = (-1)^N\beta_{\bd W} \wedge \beta_{\nu\bd W} \wedge \beta_E = (-1)^N\beta_{W} \wedge \beta_E.$$
-	So the co-orientation of $V \times_M \bd W \to W$ is $(\beta_{\bd P},\beta_{\bd W})$, and hence by composition the co-orientation of $V \times_M \bd W \to \bd W$ is $(\beta_{\bd P},\beta_{W})$,
-	if and only if $\beta_{\bd P} \wedge \beta_{\nu\bd P} \wedge \beta_{\nu V} = (-1)^{m-v}\beta_{W} \wedge \beta_E$ up to positive scalar.
-	Comparing with $\omega_{\bd P \to W}$, we thus see that $\omega_{V \times_M \bd W \to W}$ differs from it by a sign of $(-1)^{m-v}$ as desired.
+	$$\beta_{\bd W} \wedge \beta_E \wedge \beta_{\nu(\bd W)} = (-1)^N\beta_{\bd W} \wedge \beta_{\nu(\bd W)} \wedge \beta_E = (-1)^N\beta_{W} \wedge \beta_E.$$
+	So the pullback co-orientation of $V \times_M \bd W \to W$ is $(\beta_{\bd P},\beta_W)$ if and only if $\beta_P \wedge \beta_{\nu V} = (-1)^{m-v}\beta_{W} \wedge \beta_E$.
+	But in defining the boundary co-orientation we assumed that $\beta_P \wedge \beta_{\nu V} = \beta_{W} \wedge \beta_E$, so two co-orientations agree or disagree according to the sign $(-1)^{m-v}$ as claimed.
 \end{proof}
 
 \subsubsection{Graded commutativity}
