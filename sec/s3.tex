@@ -715,7 +715,7 @@ We then demonstrate that our convention yields pullback and fiber product co-ori
 		& M. &
 	\end{tikzcd}
 	\]
-	Again, $\tau$ has a tautological co-orientation from being a diffeomorphism, and so the statement means that co-orientation of the fiber product $V \times_M W \to M$ and the composite co-orientation of $\tau$ and then the co-orientation of $W \times_M V \to M$ should differ by the sign $(-1)^{(m-v)(m-w)}$.
+	Again, $\tau$ has a tautological co-orientation from being a diffeomorphism, and so the statement means that co-orientation of the fiber product $V \times_M W \to M$ and the composite co-orientation of $\tau$ and then the fiber product co-orientation of $W \times_M V \to M$ should differ by the sign $(-1)^{(m-v)(m-w)}$.
 \end{remark}
 
 \begin{comment}
@@ -1136,7 +1136,7 @@ We do so only for proper maps, but this will suffice for the purposes of geometr
 The reader should recall \cref{R: precise commutativity} for a precise explanation of the statement of the proposition.
 
 \begin{proposition}\label{P: graded comm}
-	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse proper co-oriented maps from manifolds with corners to a manifold without boundary.
 	Then as co-oriented fiber products over $M$ we have $\omega_{g \times_M f} = (-1)^{(m-v)(m-w)} \omega_{f \times_M g}$, or, using Notation \ref{R: precise commutativity},
 	$$V \times_M W = (-1)^{(m-v)(m-w)} W \times_M V.$$
 \end{proposition}
@@ -1148,39 +1148,42 @@ Before proving the proposition, we put it to use in the following example.
 	In this example, we discuss the case where $W$ is embedded.
 
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary.
-	Suppose $f$ is co-oriented and $g \colon W \to M$ is an embedding.
+	Suppose $f$ is co-oriented and $g \colon W \to M$ is an embedding, which we use throughout the example to identify $W$ with its image.
 	Let $(x,y) \in V \times_M W$.
-	Even though $g$ might not be co-oriented, let us choose a contractible neighborhood $U$ of $y$ in $W$ and an arbitrary co-orientation $(\beta_U,\beta_M)$ on the restriction of $g$ to $U$.
-	For the remainder of the argument, we fix this local orientation $\beta_M$ at $f(x) \in M$, and we choose $\beta_V$ at $x$ so that $(\beta_V,\beta_M)$ is the co-orientation of $V$ at $x$.
+	For the remainder of the argument, we fix a local orientation $\beta_M$ at $f(x) \in M$, and we choose $\beta_V$ at $x$ so that $(\beta_V,\beta_M)$ is the co-orientation of $V$ at $x$.	
+	Furthermore, even though $g$ might not be co-oriented, let us choose a Euclidean neighborhood $U$ of $y$ in $W$ and an arbitrary co-orientation $(\beta_U,\beta_M)$ on the restriction of $g$ to $U$.
+	This can be done as $U$ is contractible and so $g|_U$ is co-orientable. 
+	
 
 	Although we are interested in $V \times_M U$, the definition of the pullback co-orientation makes it easier to work with $U \times_M V$ when $U$ is embedded; see \cref{E: V embedded}.
-	As we have chosen a co-orientation for $U \into M$ and $V \to M$ comes with a co-orientation, we can consider
-	the fiber product $U \times_M V \to M$.
-	If we choose an orientation $\beta_{\nu U}$ of the normal bundle to $U$ at $y$ so that $\beta_U \wedge \beta_{\nu U} = \beta_M$, then this fiber product is $P_U = f^{-1}(U) = f^{-1}(U) \xr{f} M$ co-oriented by $(\beta_P,\beta_M)$, where $\beta_P$ is chosen so that $\beta_P \wedge \beta_{\nu U} = \beta_V$, as usual letting $\nu U$ here also stand for its pullback as a normal bundle of $P_U$ in $V$.
-	At this point, if we had chosen the opposite co-orientation for $U \into M$, we would have the opposite fiber product co-orientation.
+	As we have chosen a co-orientation for $U \into M$ and as $V \to M$ comes with a co-orientation, we can consider the fiber product $P_U = U \times_M V \to M$.
+	As $U$ is embedded in $M$, we have $P_U = f^{-1}(U) \subset V$.
+	If we choose an orientation $\beta_{\nu U}$ of the normal bundle to $U$ in $M$ at $y$ so that $\beta_U \wedge \beta_{\nu U} = \beta_M$, then by \cref{E: V embedded} and the definition of fiber product co-orientation, the map $P_U \xr{f} M$ is co-oriented by $(\beta_P,\beta_M)$, where $\beta_P$ is chosen so that $\beta_P \wedge \beta_{\nu U} = \beta_V$, as usual letting $\nu U$ here also stand for its pullback as a normal bundle of $P_U$ in $V$.
+	We note that if we had chosen the opposite co-orientation for $U \into M$ then, as we have fixed $\beta_V$ and $\beta_M$, the result would be to replace our current $\beta_U$ with $-\beta_U$, which would result in also reversing the signs of $\beta_{\nu U}$ and $\beta_P$.
+	In particular, the fiber product would have the opposite co-orientation.
 
-	Now, we apply \cref{P: graded comm}.
-	Technically we need $g|_U$ to be proper, but we can achieve this by assuming that $U$ is the intersection of $W$ with some open neighborhood $\mc U$ of $y$ in $M$.
+	Next, we will apply \cref{P: graded comm}.
+	Technically we need $g|_U$ to be proper, but as $W$ is embedded in $M$, we can achieve this by assuming that $U$ is the intersection of $W$ with some Euclidean neighborhood $\mc U$ of $y$ in $M$.
 	Then we can replace the co-oriented embedding $U \into M$ with the proper co-oriented embedding $U \into \mc U$ and $f$ with its restriction to $f^{-1}(\mc U)$.
-	As pullback co-orientations are determined locally as noted in \cref{R: local pullback co-orientations}, this will suffice.
+	As pullback co-orientations are determined locally, as noted in \cref{R: local pullback co-orientations}, this will suffice.
 	For simplicity, though, we maintain our original notations.
 
 	By \cref{P: graded comm}, we have $U \times_M V = (-1)^{(m-v)(m-w)}V \times_M U$ as co-oriented fiber products over $M$.
-	So the fiber product $V \times_M U \to M$ is represented by $f^{-1}(U) \xr{f} M$ with co-orientation at $(x,y)$ given by $(-1)^{(m-v)(m-w)}(\beta_P, \beta_M)$.
-	But decomposing the fiber product as the pullback $V \times_M U \to U$ and the inclusion $U \into M$, we can also decompose the co-orientation as
+	By \cref{R: precise commutativity}, this means that the fiber product $V \times_M U \to M$ with its fiber product co-orientation corresponds to the fiber product $U \times_M V = f^{-1}(U) \xr{f} M$ with co-orientation at $(x,y)$ given by $(-1)^{(m-v)(m-w)}(\beta_P, \beta_M)$.
+	But decomposing the fiber product as the pullback $V \times_M U \to U$ and the inclusion $U \into M$, we write $(-1)^{(m-v)(m-w)}(\beta_P, \beta_M)$ as the composite co-orientation
 	$$(-1)^{(m-v)(m-w)}(\beta_P, \beta_M) = (-1)^{(m-v)(m-w)}(\beta_P, \beta_U)*(\beta_U, \beta_M).$$
-	As $(\beta_U, \beta_M)$ is our co-orientation for $g|_U$, the pullback co-orientation must be $(-1)^{(m-v)(m-w)}(\beta_P, \beta_U)$.
-	Furthermore, if we had chosen the opposite co-orientation for $g|_U$, that would reverse the signs of both $(\beta_U, \beta_M)$ and of the fiber product, so in either case the pullback co-orientation is $(-1)^{(m-v)(m-w)}(\beta_P, \beta_U)$.
-	In other words, this description of the co-oriented pullback $V \times_M U \to U$ is independent of our choice of co-orientation for $g|_U$, and so it extends globally to $V \times_M W \to W$.
-	And explicitly it can be described as follows:
-	$V \times_M W \to W$ is just the inclusion $f^{-1}(W) \into W$ co-oriented by $(-1)^{(m-v)(m-w)}(\beta_P, \beta_W)$, where, if we write the co-oriented of $f$ locally by $(\beta_V,\beta_M)$ and choose any local orientation $\beta_{\nu W}$ for the normal bundle of $W$ in $M$, then $\beta_P \wedge \beta_{\nu W} = \beta_V$ and $\beta_W \wedge \beta_{\nu W} = \beta_M$.
-	In other words, we can say that $W \subset M$ and $V \times_M W = f^{-1}(W) \subset V$ have compatible local normal co-orientations up to the sign $(-1)^{(m-v)(m-w)}$.
+	As $(\beta_U, \beta_M)$ is our chosen co-orientation for $g|_U$, the pullback co-orientation of $V \times_M U \to U$ must be $(-1)^{(m-v)(m-w)}(\beta_P, \beta_U)$.
+	But we have already observed that if we had chosen the opposite co-orientation for $g|_U$, that would reverse the signs of both $\beta_U$ and $\beta_P$, so in either case we obtain the same pullback co-orientation for $V \times_M U \to U$.
+	In other words, this description of the co-oriented pullback $V \times_M U \to U$ is independent of our choice of co-orientation for $g|_U$, and so it extends globally to give our pullback co-orientation of $V \times_M W \to W$.
+
+	Summarizing then, as a space we have $P = V \times_M W = f^{-1}(W)$, and the pullback and fiber product are the first map and composite of $f^{-1}(W) \xr{f} W \into M$ (analogously to the case where $f$ was an embedding in \cref{E: V embedded}). 
+	Furthermore, fixing the co-orientation of $f$ as $(\beta_V, \beta_M)$, the co-orientation of the pullback $V \times_M W \to W$ is by $(-1)^{(m-v)(m-w)}(\beta_P, \beta_W)$, where, if we choose any local orientation $\beta_{\nu W}$ for the normal bundle of $W$ in $M$, then $\beta_P \wedge \beta_{\nu W} = \beta_V$ and $\beta_W \wedge \beta_{\nu W} = \beta_M$.
 
 	It is a nice exercise to confirm that this agrees with the computation of \cref{P: normal pullback} when $V$ and $W$ are both embedded.
 \end{example}
 
 \cref{P: graded comm} will be proven through a sequence of lemmas.
-One common theme is to first observe that the statement will be true if it is true at any one point in each connected component of $P$.
+One common theme is to first show that the statement will be true if it is true at any one point in each connected component of $P$.
 As fiber product co-orientations are well defined globally, if they agree or disagree at any one point then they must agree or disagree on the entire connected component.
 By \cref{R: precise commutativity} we can also generally identify $V \times_M W$ with $W \times_M V$ as spaces in what follows and focus only on how the two constructions specify co-orientations.
 
