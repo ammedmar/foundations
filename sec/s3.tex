@@ -369,7 +369,7 @@ Such a nowhere-zero map exists if and only $\bigwedge^{m-w}\nu W$ is a trivial l
 Given a specific orientation of $\nu W$, we specify a standard choice of \textbf{normal co-orientation} for the immersion $g \colon W \to M$ by the following local construction:
 
 \begin{definition}\label{normal co-or}
-	Let $g \colon W \to M$ be an immersion with normal bundle locally oriented (at some point of $W$) by $\beta_\nu$.
+	Let $g \colon W \to M$ be an immersion with normal bundle $\nu$ locally oriented (at some point of $W$) by $\beta_\nu$.
 	Define the \textbf{normal co-orientation} associated to $\beta_\nu$ locally by the pair $\omega_{\nu} = (\beta_W, \beta_W \wedge \beta_\nu)$, where $\beta_W$ is any choice of a local orientation of $W$.
 \end{definition}
 
@@ -880,7 +880,7 @@ For the following definition, refer again to Diagram \eqref{D: pullback}.
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ co-oriented and the normal bundle $\nu V$ of $e(V) \subset M \times \R^N$ given its Quillen normal orientation as defined in \cref{D: Quillen normal or}.
 	Then the pullback $P = V \times_M W = (g \times \id_{\R^N})^{-1}(e(V)) \subset W \times \R^N$ has an oriented normal bundle that is the pullback of $\nu V$, which, by abuse of notation, we also label $\nu V$.
 	Let $\beta_P$ and $\beta_W$ be local orientations of $P$ and $W$, and let $\beta_E$ be the standard orientation of $\R^N$.
-	Define the \textbf{pullback co-orientation} on $P \to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P \wedge \nu V)$ with the canonical co-orientation $(\beta_W \wedge \beta_E,\beta_W)$.
+	Define the \textbf{pullback co-orientation} on $P \to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the canonical co-orientation $(\beta_W \wedge \beta_E,\beta_W)$.
 	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ and $-(\beta_P,\beta_W)$ otherwise. Equivalently, the co-orientation of the pullback is the one for which $\beta_{\nu V}$ is the compatible Quillen normal orientation.  
 
 	Following \cref{D: top pullback}, we sometimes write $f^* \colon P \to W$.
@@ -916,11 +916,11 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 \end{remark}
 
 \begin{proof}[Proof of \cref{L: pullback co well defined}]
-	As the local orientations of $P$, $V$, $W$, and $M$ used in the construction all come in pairs (e.g.\ $\beta_P$ in $(\beta_P,\beta_P \wedge \nu_V))$, the construction is independent of those choices.
+	As the local orientations of $P$, $V$, $W$, and $M$ used in the construction all come in pairs (e.g.\ $\beta_P$ in $(\beta_P,\beta_P \wedge \beta_{\nu V}))$, the construction is independent of those choices.
 
 	Next, suppose we are given an embedding $e \colon V \into M \times \R^N$ and extend it to $e' = (e,0) \colon V \into M \times \R^N \times \R^n$.
 	In the construction involving $e$, if we choose $\beta_V$, $\beta_M$ so that $(\beta_V,\beta_M)$ is the co-orientation for $f$, then by the definition of the Quillen orientation, $\nu V$ will be such that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$ up to positive scalar.
-	If we now increase the dimension of the Euclidean factor to $\R^{N+n}$ and write its canonical local orientation as $\beta_{E^N} \wedge \beta_{E^n}$ while extending $e$ to $e'$, we see that $\nu_V$ becomes $\nu_V \oplus \underline{\R}^n$ so that $\beta_{\nu V}$ becomes $\beta_{\nu V} \wedge \beta_{E^n}$.
+	If we now increase the dimension of the Euclidean factor to $\R^{N+n}$ and write its canonical local orientation as $\beta_{E^N} \wedge \beta_{E^n}$ while extending $e$ to $e'$, we see that $\nu V$ becomes $\nu V \oplus \underline{\R}^n$ so that $\beta_{\nu V}$ becomes $\beta_{\nu V} \wedge \beta_{E^n}$.
 	Pulling back over $W$ we obtain the pullback co-orientation $(\beta_P,\beta_P \wedge \beta_{\nu V} \wedge \beta_{E^n})*(\beta_W \wedge \beta_{E^N} \wedge \beta_{E^n},\beta_W)$.
 	This is $(\beta_P,\beta_W)$ if and only if $\beta_P \wedge \beta_{\nu V} \wedge \beta_{E^n} = \beta_W \wedge \beta_{E^N} \wedge \beta_{E^n}$ up to positive scalar, but this condition is equivalent to having $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_{E^N}$ up to positive scalar.
 	So the pullback co-orientation is unchanged.
@@ -1204,20 +1204,26 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 \end{lemma}
 
 \begin{proof}
-	By \cref{R: co-or restriction or switch} and the above observations, it suffices to consider a neighborhood of $x$ and a chart around $f(x)$ with respect to which $f$ agrees locally with the projection $M \times \R^N \to M$.
-	For simplicity of notation, we can take all of $M$ to be this chart.
+	By \cref{R: co-or restriction or switch} and the above observations, it suffices to consider a neighborhood of $x$ and a chart $U$ around $f(x)$ with respect to which $f$ agrees locally with the projection $U \times \R^N \to U$.
+	For simplicity of notation, we can take all of $M$ to be this chart and replace $V$ and $W$ by $f^{-1})(U)$ and $g^{-1}(U)$, respectively. 
+	For the remainder of the proof, we assume we have done so and return to writing $W$, $M$, and $V = M \times \R^N$.
 	We can choose the ordering of the coordinates in $\R^N$ so that $(\beta_M \wedge \beta_E,\beta_M)$ agrees with the co-orientation for $f$.
-	In this case we let $e \colon V \into M \times \R^N$ be the diffeomorphism realizing the neighborhood of $x$ as $M \times \R^N$.
-	The normal bundle $\nu_V$ in this case is $0$-dimensional and positively oriented.
-	The pullback to $P$ is all of $W \times \R^N$, and if we also choose $\beta_W$ at $y$ so that $\omega_g = (\beta_W,\beta_M)$, then by \cref{D: pullback coorient} the fiber product co-orientation for $f \times_M g$ is $(\beta_P,\beta_M)$ if and only if $\beta_P = \beta_W \wedge \beta_E$.
+	
+	We first consider the fiber product co-orientation for $V \times_M W$.
+	In this case, we can let our usual embedding $e \colon V \into M \times \R^N$ be the diffeomorphism realizing $V$ as $M \times \R^N$.
+	Then as we have written the co-orientation of $f$ as $(\beta_M \wedge \beta_E,\beta_M)$, the normal bundle $\nu V$ is $0$-dimensional and positively oriented.
+	The pullback $(g \times \id)^{-1}(V)$ is then all of $W \times \R^N$, and if we also choose $\beta_W$ at $y$ so that $\omega_g = (\beta_W,\beta_M)$, then by \cref{D: pullback coorient} the fiber product co-orientation for $f \times_M g$ is $(\beta_P,\beta_M)$ if and only if $\beta_P = \beta_W \wedge \beta_E$.
 
-	Now consider instead $W \times_M V$, constructed using the same neighborhoods.
+	Now consider instead the fiber product co-orientation construction for $W \times_M V$.
 	In this case we take $e = g \colon W \to M \times \R^0$.
-	The map $f$ is still our projection $M \times \R^N \to M$, and so the pullback is $f^{-1}(W) = W \times \R^N$.
-	The normal bundles are $\nu_W$.
+	The map $f$ is still our projection $M \times \R^N \to M$, and so the pullback is again $f^{-1}(W) = W \times \R^N$, as expected.
+	We identify this $W \times \R^N$ with the copy from the preceding paragraph and assign it the same local orientation $\beta_P$ at the corresponding points.
+	Note that we can assume the identification to be the identity on the $\R^N$ factors. 
+	In fact, in both constructions we obtain an embedding of $W \times \R^N$ into $M \times \R^N$ that is the identity on the $\R^N$ factors, and the fiber product is the composition of this embedding with the projection to $M$. 
+	As usual we let $\nu W$ denote the normal bundle of $W$ in $M$ and its pullback normal bundle to $W \times \R^N$ in $M \times \R^N$.
 	We continue to assume coordinates so that $f$ is co-oriented by $(\beta_M \wedge \beta_E, \beta_M)$.
 	By \cref{D: pullback coorient} the fiber product co-orientation for $g \times_M f$ is $(\beta_P,\beta_M)$ if and only if $\beta_P \wedge \beta_{\nu W} = \beta_V$.
-	But if $\beta_P = \beta_W \wedge \beta_E$ consistent with the preceding case and $\beta_V = \beta_M \wedge \beta_E$, then we have
+	But if we continue to let $\beta_P = \beta_W \wedge \beta_E$ and $\beta_V = \beta_M \wedge \beta_E$ as above, then we compute in $M \times \R^N$ that
 	\begin{multline*}
 		\beta_P \wedge \beta_{\nu W} =
 		\beta_W \wedge \beta_E \wedge \beta_{\nu W} =
@@ -1766,7 +1772,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 	This pullback consists precisely of those $(v,w,z) \in V \times W \times M$ such that $(f(v),g(w)) = (z,z)$, which is diffeomorphic to $V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$ via the projection $(v,w,z) \to (v,w)$ with inverse $(v,w) \to (v,w,f(v))$.
 	So we consider the co-orientations.
 
-	Proceeding as in the proof of \cref{P: exterior commutativity} (with now $M = N$), if $f$ and $g$ are co-oriented (at appropriate points) by $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$ and if we we take Quillen co-orientations coming from $V\xhookrightarrow{e_v} M \times \R^a \to M$ and $W\xrightarrow{e_W} M \times \R^b \to M$ (with $a$ and $b$ assumed even) by orienting $\nu_V$ and $\nu_W$ in $M \times \R^a$ and $M \times \R^b$, then the co-orientation of the product $f \times g$ has Quillen co-orientation with the normal bundle to $V \times W$ in $M \times M \times \R^{a+b}$ oriented $\beta_{\nu V} \wedge \beta_{\nu W}$.
+	Proceeding as in the proof of \cref{P: exterior commutativity} (with now $M = N$), if $f$ and $g$ are co-oriented (at appropriate points) by $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$ and if we we take Quillen co-orientations coming from $V\xhookrightarrow{e_v} M \times \R^a \to M$ and $W\xrightarrow{e_W} M \times \R^b \to M$ (with $a$ and $b$ assumed even) by orienting $\nu V$ and $\nu W$ in $M \times \R^a$ and $M \times \R^b$, then the co-orientation of the product $f \times g$ has Quillen co-orientation with the normal bundle to $V \times W$ in $M \times M \times \R^{a+b}$ oriented $\beta_{\nu V} \wedge \beta_{\nu W}$.
 
 	Pulling back by the diagonal, we thus obtain from the definition that the pullback $P$ is co-oriented by $(\beta_P,\beta_M)$ if and only if $\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M \wedge \beta_{a+b}$.
 
