@@ -1145,9 +1145,9 @@ Before proving the proposition, we put it to use in the following example.
 
 \begin{example}\label{E: embedded}
 	In \cref{E: V embedded}, we considered pullback co-orientations $V \times_M W \to W$ when $V \into M$ was embedded.
-	In this example, we discuss the case where $W$ is embedded.
+	In this example, we discuss the case where $W$ is embedded, assuming both maps are proper.
 
-	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse proper maps from manifolds with corners to a manifold without boundary.
 	Suppose $f$ is co-oriented and $g \colon W \to M$ is an embedding, which we use throughout the example to identify $W$ with its image.
 	Let $(x,y) \in V \times_M W$.
 	For the remainder of the argument, we fix a local orientation $\beta_M$ at $f(x) \in M$, and we choose $\beta_V$ at $x$ so that $(\beta_V,\beta_M)$ is the co-orientation of $V$ at $x$.	
@@ -1240,9 +1240,9 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 \end{lemma}
 
 \begin{proof}
-	As in the preceding lemma, we can choose local coordinates such that $f$ is the projection $M \times \R^N \to M$ and $g$ is the projection $M \times \R^n \to M$.
-	Let $\beta_E$ and $\beta_F$ be local orientations of $\R^N$ and $\R^n$ such that $\omega_f = (\beta_V,\beta_M) = (\beta_M \wedge \beta_E, \beta_M)$ and $\omega_g = (\beta_M \wedge \beta_F, \beta_M)$.
-	To compute $\omega_{f \times_M g}$, we identify $V$ and $M \times \R^N$ as in the preceding lemma, so the Quillen normal bundle is trivial and positive.
+	As in the proof of the preceding lemma, we can restrict to a small neighborhood of $f(x) = g(y)$ and relabel to assume that $f$ is the projection $M \times \R^N \to M$ and $g$ is the projection $M \times \R^n \to M$.
+	Let $\beta_E$ and $\beta_F$ be local orientations of $\R^N$ and $\R^n$ such that $\omega_f = (\beta_V,\beta_M) = (\beta_M \wedge \beta_E, \beta_M)$ and $\omega_g = (\beta_W,\beta_M) = (\beta_M \wedge \beta_F, \beta_M)$.
+	To compute $\omega_{f \times_M g}$, we identify $V$ and $M \times \R^N$ as in the proof of the preceding lemma, so the Quillen normal bundle is trivial and positive.
 	The pullback is $W \times \R^N \cong M \times \R^n \times \R^N$.
 	And by \cref{D: pullback coorient}, taking $\beta_P = \beta_W \wedge \beta_E$, we have $\omega_{f \times_M g} = (\beta_W \wedge \beta_E, \beta_M) = (\beta_M \wedge \beta_F \wedge \beta_E, \beta_M)$.
 	Analogously, $\omega_{g \times_M f} = (\beta_V \wedge \beta_F, \beta_M) = (\beta_M \wedge \beta_E \wedge \beta_F, \beta_M)$.
@@ -1256,7 +1256,7 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 \begin{proof}
 	If $f \colon V \to M$ is of maximal rank at $x \in V$, it is an immersion or submersion at that point, and similarly for $g$.
 	Thus the corollary follows directly from \cref{L: im/im,L: im/sub,L: sub/sub}.
-	Not that while the statement of \cref{L: im/sub} assumes $f$ is the submersion and $g$ the immersion, we obtain the opposite case by reversing the roles of $g$ and $f$ in the statement of \cref{P: graded comm}.
+	Note that while the statement of \cref{L: im/sub} assumes $f$ is the submersion and $g$ the immersion, we obtain the opposite case by reversing the roles of $g$ and $f$ in the statement of \cref{P: graded comm}.
 \end{proof}
 
 \begin{comment}
@@ -1268,47 +1268,48 @@ By \cref{R: precise commutativity} we can also generally identify $V \times_M W$
 	If $f$ is an immersion and $g$ a submersion, we reverse the roles in the argument.
 \end{comment}
 
-We now show that for arbitrary transverse intersecting $f$ and $g$ there are always homotopies that maintain these properties while taking $f$ and $g$ each to maps of full rank at the intersection point.
+We now show that for arbitrary proper transverse intersecting $f$ and $g$ there are always homotopies that maintain these properties while taking $f$ and $g$ each to maps of full rank at a given intersection point. 
+Note that this is where we use the properness assumption in \cref{P: graded comm}.
 
 \begin{lemma}\label{L: make full}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse proper maps from manifolds with corners to a manifold without boundary.
 	Suppose $x \in V$ and $y \in W$ such that $f(x) = g(y)$.
-	Then there is a smooth homotopy $F \colon V \times I \to M$ such that $F(-,0) = f$, $F(x,t) = f(x)$ for all $t \in I$, $F(-,t)$ is transverse to $g$ for all $t \in I$, and $DF_{(x,1)}$ has maximal rank at $x$.
+	Then there is a smooth homotopy $F \colon V \times I \to M$ such that $F(-,0) = f$, $F(x,t) = f(x)$ for all $t \in I$, $F(-,t)$ is transverse to $g$ for all $t \in I$, and $D(F(-,1))$ has maximal rank at $x$.
 \end{lemma}
 
 \begin{proof}
 	If $Df$ already has maximal rank at $x$ we can take $F(-,t) = f(-)$.
 	So suppose $Df$ does not have maximal rank at $x$.
 	We will construct a homotopy fixed outside a small neighborhood of $x$, so we work in local charts, identifying neighborhoods of $x$ and $f(x)$ with $\R^v$ and $\R^m$ so that $x$ and $f(x)$ are at the respective origins.
-	We may also choose the charts so that $Df_x(e_i) = e_i$ for $1 \leq i \leq k$ for some $k<\dim(V) = v$ and $Df_x(e_i) = 0$ for $i>k$.
+	By \cite[Sections 1.3-1.4]{GuPo74}, we may also choose the charts so that $Df_x(e_i) = e_i$ for $1 \leq i \leq k$ for some $k<\dim(V) = v$ and $Df_x(e_i) = 0$ for $i>k$.
 	Let $\eta \colon \R^v \to \R$ be a smooth function that is $0$ outside a compact neighborhood of the origin and $1$ on a neighborhood of the origin.
-	Let $z = (z_1,\ldots,z_v)$ be the coordinates of $\R^v$, and let
+	Let $z = (z_1,\ldots,z_v)$ be the coordinates of $\R^v$ and $(z_1, \ldots, z_m)$ the coordinates for $\R^m$.
+	Using the charts to identify these Euclidean spaces with their corresponding subsets of $V$ and $M$, we define a homotopy $H \colon \R^v \times I \to \R^m$ by
 	$$H(z_1,\ldots,z_v,t) = f(z) + t\eta(z)\left(\sum_{i = k+1}^{\min(v,m)} z_i\right).$$
 	Then $H(z,t) = f(z)$ outside a compact neighborhood of the origin in $\R^v$, and so $H$ extends to a homotopy defined on all of $V \times I$.
 	Furthermore, $H(0,t) = f(0)$, i.e.\ $H(x,t) = f(x)$.
-	Also,
-	$DH_{(0,t)}e_i = e_i$ for $i \leq k$ and $te_i$ for $k<i \leq \min(v,m)$.
+	Also, for each fixed $t > 0$, we have that 
+	$(DH(-,t))_0e_i = e_i$ for $i \leq k$ and $(DH(-,t))_0e_i = te_i$ for $k<i \leq \min(v,m)$.
 	Thus $DH(-,t)$ has full rank at $x$ for all $t>0$.
-	Finally, as $f$ and $g$ are proper and transverse, there is an $\epsilon$ so that for $0 \leq t \leq \epsilon$, $H(-,t)$ and $g$ will be transverse by stability of transversality\footnote{A proof is given within our proof of \cref{T: transverse complex}, below.}.
+	Finally, as $f$ and $g$ are proper and transverse, there is an $\epsilon$ so that $H(-,t)$ and $g$ will be transverse for $0 \leq t \leq \epsilon$ by stability of transversality\footnote{See \cite[Theorem 1.6]{GuPo74} for the case where one manfiold is compact and the other is embedded. A proof for the current situation is given within our proof of \cref{T: transverse complex}, below.}.
 	Now define $F(-,t) = H(-,\epsilon t)$.
 \end{proof}
 
 \begin{proof}[Proof of \cref{P: graded comm}]
 	As noted above, it suffices to verify the claim at one point of each connected component of $P$.
 	As $f$ and $g$ are transverse, if a component $P_0$ of $V \times_M W$ is nonempty, by \cref{pullback} we can find $x \in V$, $y \in W$, each point in the interior, so that $(x,y) \in P_0$.
-	By \cref{L: make full}, we can first perform a homotopy $F \colon V \times I \to M$ of $f$ to $f' \colon V \to M$ and then a homotopy $G \colon W \times I \to M$ of $g$ to $g' \colon W \to M$ so that $f'$ and $g'$ have full rank at $x$ and $y$ respectively.
+	By \cref{L: make full}, we can first perform a homotopy $F \colon V \times I \to M$ of $f$ to $f' \colon V \to M$ and then a homotopy $G \colon W \times I \to M$ of $g$ to $g' \colon W \to M$ so that $f'$ and $g'$ have full rank at $x$ and $y$ respectively and the images of $x$ and $y$ are fixed throughout the homotopies. 
 
 	First consider $F$.
-	As $f$ is co-oriented, $F$ is co-orientable by \cref{L: co-orientable homotopies} and can be co-oriented by \cref{D: homotopy co-orientation}.
-	So $(V \times I) \times_M W$ can be co-oriented, and by \cref{leibniz} two of its boundary components will be $f \times_M g: (V \times 0) \times_M W = V \times_M W \to M$ and
-	$f' \times_M g:(V \times 1) \times_M W = V \times_M W \to M$, topologically, with the co-orientations given by composing the boundary co-orientations with the co-orientation of $F \times_M g$.
-	Similarly, two of the boundary components of $W \times_M (V \times I)$ will be $g \times_M f: W \times_M (V \times 0) = W \times_M V \to M$ and
-	$g \times_M f' \colon W \times_M (V \times 1) = W \times_M V \to M$ topologically, with the co-orientations given by $(-1)^{m-w}$ times the compositions of the boundary co-orientations with the co-orientation of $g \times_M F$.
-	But now the point is that $(V \times I) \times_M W$ and $W \times_M (V \times I)$ are diffeomorphic with compatible maps to $M$, and so their co-orientations either agree or disagree, and correspondingly the co-orientations of the corresponding boundary components will agree or disagree.
-	In other words,
-	identifying these pullback as in Diagram \eqref{D: comm triangle}, we see that regardless of the actual co-orientations of $F \times_M g$ and $g \times_M F$ we have $\omega_{f \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f}$ if and only if $\omega_{f' \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f'}$.
-	Analogously using $G$, we have $\omega_{f' \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f'}$ if and only if $\omega_{f' \times_M g'} = (-1)^{(m-v)(m-w)}\omega_{g' \times_M f'}$.
-	But this last equality is true by \cref{C: if full}.
+	As $f$ is co-oriented, $F$ is co-orientable by \cref{L: co-orientable homotopies}, and we co-orient it via \cref{D: homotopy co-orientation}.
+	Then $(V \times I) \times_M W$ will have its fiber product co-orientation, and by \cref{leibniz} two of its boundary components will be (topologically) $f \times_M g \colon (V \times 0) \times_M W \to M$ and
+	$f' \times_M g \colon (V \times 1) \times_M W \to M$ with appropriate boundary co-orientations.
+	Similarly, two of the boundary components of $W \times_M (V \times I)$ will be $g \times_M f: W \times_M (V \times 0) \to M$ and
+	$g \times_M f' \colon W \times_M (V \times 1) \to M$ with appropriate co-orientations. 
+	But now we note that $(V \times I) \times_M W$ and $W \times_M (V \times I)$ are diffeomorphic as spaces mapping to $M$ (see \cref{R: pullback representative}), and so their co-orientations either agree or disagree, but the relations between the co-orientations of these spaces and the co-orientations of their boundary components will be the same, and so the co-orientations of the boundary components will agree or disagree as the co-orientations of $(V \times I) \times_M W$ and $W \times_M (V \times I)$ agree or disagree.
+	In other words, identifying these fiber products as in Diagram \eqref{D: comm triangle}, we see that regardless of the actual co-orientations of $F \times_M g$ and $g \times_M F$ we have $\omega_{f \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f}$ if and only if $\omega_{f' \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f'}$.
+	Analogously, using $G$, we have $\omega_{f' \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f'}$ if and only if $\omega_{f' \times_M g'} = (-1)^{(m-v)(m-w)}\omega_{g' \times_M f'}$.
+	But this last equality is true by \cref{C: if full}. 
 \end{proof}
 
 \begin{comment}
