@@ -31,7 +31,7 @@ We note that these local diffeomorphisms provide charts $\phi \colon U \subset \
 These charts collectively give an atlas, and every atlas extends to a unique maximal one.
 So our manifolds with corners are also manifolds with corners by Joyce's definition.
 
-On the other hand, Joyce notes on page 231 of \cite{Joy12} that his manifolds with corners are what Melrose calls t-manifolds, and Melrose shows in \cite[Proposition 1.15.1]{Melrose} that t-manifolds can be embedded into manifolds without boundary.
+On the other hand, Joyce notes on page 231 of \cite{Joy12} that his manifolds with corners are what Melrose calls t-manifolds, and Melrose shows in \cite[Proposition 1.14.1]{Melrose} that t-manifolds can be embedded into manifolds without boundary.
 These can then be embedded into Euclidean space by the Whitney Embedding Theorem.
 So any one of Joyce's manifolds with corners is diffeomorphic to a manifold with corners in our sense.
 
@@ -371,8 +371,8 @@ We will see versions of this formula below that take into account orientations a
 In this section we collect some well-known, though not always easy to find in the literature, results about transversality and fiber products.
 We state these results mainly in the classical setting of manifolds without boundary, though they generally extend to the case of transverse maps of manifolds with corners mapping to a manifold without boundary, either by applying them to the pairwise transverse strata or by thinking in terms of the ``plain transversality'' of \cref{D: plain transversality}.
 
-\begin{lemma}\label{L: tangent of pullbacks}
-	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds without boundary.
+\begin{lemma}[Tangent spaces of pullbacks]\label{L: tangent of pullbacks}
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds with corners to a manifold without boundary.
 	Suppose $x \in V$ and $y \in W$ with $f(x) = g(y) = z$ so that $(x,y) \in V \times_MW$.
 	Then the tangent space of $V \times_MW$ at $(x,y)$ as a subspace of $T_{(x,y)}(V \times W) = T_xV \oplus T_yW$ consists of those vectors $(\mathbf v,\mathbf w)$ such that $Df(\mathbf v) = Dg(\mathbf w) \in T_zM$.
 	In other words,
@@ -380,16 +380,17 @@ We state these results mainly in the classical setting of manifolds without boun
 	or ``the tangent space of the fiber product is the fiber product of the tangent spaces.''
 \end{lemma}
 
-A proof can be found in \cite[Theorem 5.47]{Wed16}.
-Wedhorn proves this theorem for ``premanifolds,'' which are essentially manifolds minus the Hausdorff and second countability conditions.
-These conditions will be automatic in our setting, so Wedhorn's proof applies.
+For manifolds without boundary, a proof can be found in \cite[Theorem 5.47]{Wed16}.
+Wedhorn proves this theorem for ``premanifolds,'' which are essentially manifolds minus the Hausdorff and second countability conditions; these conditions will be automatic in our setting, so Wedhorn's proof applies.
+For manifolds with corners, see \cite[Proposition 7.2.7.c]{MaDo92} (note that manifolds with corners are just called ``manifolds'' in \cite{MaDo92}, where they may also be infinite dimensional!).
 In many circumstances, this lemma allows us to reduce arguments about fiber products of maps of manifolds to arguments about fiber products of linear maps.
 
 \begin{corollary}\label{C: tangent map of pullbacks}
 With the notation of \cref{L: tangent of pullbacks}, $D_{(x,y)}(f\times_Mg)=D_xf \times_{T_zM} D_yg$ as maps from $T_{(x,y)}(V \times_M W) = T_xV \times_{T_zM} T_yW$ to $T_z(M)$.
 \end{corollary}
 \begin{proof}
-By definition, the map $f \times_M g$ is either of the compositions $f \pi_V = g \pi_W$. So $D_{(x,y)} (f \times_M g) = D_yg \circ D_{(x,y)} \pi_W$. On the other hand, considering the fiber product $D_xf \times_{T_z M} D_y g$ of the maps $D_x f \colon T_xV \to T_zM$ and $D_y g \colon T_yW \to T_zM$, it is the composition of the projection $T_xV \times_{T_zM} T_yW \to  T_yW$ and $D_y g$. But this projection is precisely $D_{(x,y}) \pi_W$, so the maps agree.
+By definition, the map $f \times_M g$ is either of the compositions $f \pi_V = g \pi_W$. So $D_{(x,y)} (f \times_M g) = D_yg \circ D_{(x,y)} \pi_W$. On the other hand, considering the fiber product $D_xf \times_{T_z M} D_y g$ of the maps $D_x f \colon T_xV \to T_zM$ and $D_y g \colon T_yW \to T_zM$, it is the composition of the projection $T_xV \times_{T_zM} T_yW \to  T_yW$ and $D_y g$. 
+But this projection is precisely $D_{(x,y)} \pi_W$, so the maps agree.
 \end{proof}
 
 
