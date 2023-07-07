@@ -691,7 +691,7 @@ As is standard for singular homology and cohomology, we use the symbol $\times$ 
 
 \begin{proof}
 	As in \cref{S: exterior products}, we give the product of oriented manifolds the standard product orientation, while co-orientations of products of co-oriented maps are defined in \cref{D: co-oriented exterior}.
-	\cref{L: proper product} establishes that the product of proper maps is proper.
+	The product of proper maps is proper by \cite[Proposition I.10.1.4]{Bou98}.
 
 	It remains to show that if $V'$ and $W'$ are alternative representatives of $V$ and $W$ then $(V \times W) \sqcup -(V' \times W') \in Q(M \times N)$.
 	We will show that $(V \times W) \sqcup -(V' \times W) \in Q(M \times N)$, then the general case follows from an equivalent argument with $W$.
@@ -1091,7 +1091,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	Second, we also have to be more careful here about the map $e \colon W \times \R^n$, as its behavior can be more complicated than the embedding of a closed face of a cubulation.
 	Let $W_j = ei_{\bd^jW}(\bd^jW)$, the image of $\bd^jW$ in $M \times \R^n$.
 	As the maps $i_{\bd^jW}$ are not necessarily embeddings, it will not generally be the case that $W_j \cong \bd^jW$.
-	However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jW}$ are proper maps, so $W_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Section I.10]{Bou98}).
+	However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jW}$ are proper maps, so $W_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Proposition I.10.1.1]{Bou98}).
 
 	Now, suppose $(x,z) \in X \times \bar B^n_L$.
 	As $f \times \id_{\R^n} = H_1(-,0) \times \id_{\R^n}$ is transverse $e \colon W \to M \times \R^n$, either $(r_X(x),z)\notin W_j$ or $r_X \times \id_{\R^n}$ is (plainly) transverse to $ei_{\bd^jW}$ at $(r_X(x),z)$.
