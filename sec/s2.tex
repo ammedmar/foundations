@@ -246,7 +246,42 @@ Among other generalizations as we progress, we will extend these results to maps
 We will also often require that the homotopies take a special form, i.e.\ that they are \textit{universal} homotopies as defined in \cref{S: transverse cochains}.
 See, for example, \cref{P: perturb transverse to map}.
 
-The following technical lemma will help us extend the results of \cite{GuPo74} from transversality with respect to submanifolds to transversality with respect to maps.
+When working with transversality, it is often much easier to work with the case where one of the maps is an embedding. 
+The following technical results will facilitate that and help us to extend the results of \cite{GuPo74} from transversality with respect to submanifolds to transversality with respect to maps.
+
+
+
+
+\begin{lemma}\label{L: proper product}
+	Let $f \colon X \to Y$ be an arbitrary map and $g \colon X \to Z$ a proper map. 
+	Then the map $(f,g) \colon X \to Y \times Z$ given by $(f,g)(x)=(f(x),g(x))$ is proper.
+\end{lemma}
+\begin{proof}
+	Let $K \subset Y \times Z$ be compact. 
+	Let $\pi_Y,\pi_Z$ be the projectiond of $Y \times Z$ to $Y$ and $Z$. Then 
+	\begin{align*}
+		(f,g)^{-1}(K) &= \{x \in X \mid (f(x),g(x)) \in K \}\\
+		&\subset \{ x \in X \mid f(x) \in \pi_X(K), g(x) \in \pi_Y(K)\}\\
+		&\subset \{ x \in X \mid g(x) \in \pi_Y(K)\}\\
+		&= g^{-1}(\pi_Y(K)).
+	\end{align*} 
+	As $K$ is compact and $g$ is proper, $g^{-1}(\pi_Y(K))$ is compact. 
+	So $(f,g)^{-1}(K)$ is a closed subset of a compact set, and so compact.
+\end{proof}
+
+\begin{corollary}\label{C: embed V}
+Let $g \colon W \to M$ be a map from a manifold with corners to a manifold without boundary. 
+Then for some $N$ there exists a closed embedding $e \colon W \to M \times \R^N$ such that, if $\pi \colon M \times \R^N \to M$ is the projection, then $\pi e = g$. 
+\end{corollary}
+\begin{proof}
+By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^N$ for some $N$. 
+Then by \cref{L: proper product} the map $(g,\alpha)$ is proper, and as $\alpha$ is an immersion, so is $(g,\alpha)$.
+In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^N$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces, and the map $\pi_{\R^N}(g,\alpha)$ equals the embedding $g$, so $D(g,\alpha)$ must be injective at each point.
+Similarly, the map $(g,\alpha)$ is itself  injective.  
+But just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}, and it is clear from the construction that $\pi (g,\alpha) = g$.
+\end{proof}
+
+
 
 \begin{lemma}\label{L: all transversality is wrt embeddings}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary.
@@ -281,6 +316,10 @@ The following technical lemma will help us extend the results of \cite{GuPo74} f
 	So applying $D\pi$ to equation \eqref{E: Quillen transverse}, we get $Df(T_vV)+Dg(T_wW) = T_{f(v)}M$, and $f$ is transverse to $g$.
 \end{proof}
 
+We now apply our technical results to demonstrate that we can make maps transverse via homotopies. 
+We will various alternative, and in some cases fancier, versions of this theorem below.
+See, for example, \cref{P: ball stability,P: perturb transverse to map}.
+
 \begin{theorem}\label{T: basic trans}
 	Let $f \colon M \to N$ be a continuous map from a manifold with (possibly empty) boundary to a manifold without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
 	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, and $h(-,1)$ is smooth and transverse to $g$.
@@ -288,9 +327,7 @@ The following technical lemma will help us extend the results of \cite{GuPo74} f
 \end{theorem}
 
 \begin{proof}
-	Let $j \colon V \to \R^k$ be an embedding (we recall that such an embedding always exists by our definition of manifolds with corners).
-	Then $e \colon V \to N \times \R^k$ given by $e(x) = (g(x),j(x))$ is an embedding that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, so by that lemma it suffices to find a homotopy such that $h(-,0) = f$ and $h(-,1) \times \id_{\R^k} \colon M \times \R^k \to N \times \R^k$ is smooth and
-	transverse to $e(V)$.
+	By \cref{C: embed V}, there is a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, so by that lemma it suffices to find a homotopy such that $h(-,0) = f$ and $h(-,1) \times \id_{\R^k} \colon M \times \R^k \to N \times \R^k$ is smooth and transverse to $e(V)$.
 
 	We first find a homotopy from $f$ to a smooth map that agrees with $f$ on $\bd M$ if $f|_{\bd M}$ is already smooth.
 	This can be done by the smooth approximation theorem; see \cite[Theorem III.2.5]{Kos93}.

@@ -270,16 +270,18 @@ Let $z\in M$ be this common value. Using a chart to establish local coordinates 
 \end{proof}
 
 \begin{corollary}\label{C: embed V}
-Let $f \colon V \to M$ be a map from a manifold with corners to a manifold without boundary. 
-Then for some $N$ there exists a closed embedding $e \colon V \to M \times \R^N$ such that, if $\pi \colon M \times \R^N \to M$ is the projection, then $\pi e = f$. 
+Let $g \colon W \to M$ be a map from a manifold with corners to a manifold without boundary. 
+Then for some $N$ there exists a closed embedding $e \colon W \to M \times \R^N$ such that, if $\pi \colon M \times \R^N \to M$ is the projection, then $\pi e = g$. 
 \end{corollary}
 \begin{proof}
-By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $g \colon V \to \R^N$ for some $N$. 
-Then by \cref{L: proper product} the map $(f,g)$ is proper, and as $g$ is an immersion, so is $(f,g)$.
-In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^N$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces, and the map $\pi_{\R^N}(f,g)$ equals the embedding $g$, so $D(f,g)$ must be injective at each point.
-Similarly, the map $(f,g)$ is itself  injective.  
-But just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}, and it is clear from the construction that $\pi (f,g) = f$.
+By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^N$ for some $N$. 
+Then by \cref{L: proper product} the map $(g,\alpha)$ is proper, and as $\alpha$ is an immersion, so is $(g,\alpha)$.
+In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^N$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces, and the map $\pi_{\R^N}(g,\alpha)$ equals the embedding $g$, so $D(g,\alpha)$ must be injective at each point.
+Similarly, the map $(g,\alpha)$ is itself  injective.  
+But just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}, and it is clear from the construction that $\pi (g,\alpha) = g$.
 \end{proof}
+
+
 \bibliographystyle{amsplain}
 \bibliography{../../bib}
 
