@@ -225,6 +225,61 @@ Other alternative idea: Embedd W in manifold with boundary
 First idea: look in Margalef-Roig
 
 
+
+
+
+----------
+
+\begin{proposition}
+Let $H \colon W \times I \to M$ and $f \colon V \to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $f$ is proper and that $g = H(-,0)$ are transverse. Suppose further that $H$ is a constant homotopy outside a compact set $K \subset W$. Then there is an $\epsilon>0$ such that $H(-,t)$ is transverse to $f$ for every $0\leq t <\epsilon$. 
+\end{proposition}
+
+\begin{proof}
+We will show that for every point $x \in K$ there is an open neighborhood $U_x$ of $x$ in $W \times I$ such that $H(-,t)$ is transverse to $f$ at $x$ for all $(x,t) \in U_x$. 
+Then $\cup_x U_x$ covers a neighborhood of $K$ in $W \times I$, and by the Tube Lemma (REF) there is therefore an $\epsilon$ such that $K \times [0,\epsilon) \subset \cup_x U_x$. 
+As $H$ is constant in $t$ off of $K$ and $g = H(-,0)$ is transverse to $K$, this $\epsilon$ will suffice. 
+
+So suppose $x \in K$. 
+First, suppose $g(x) \cap f(V) = \emptyset$. 
+By assumption, $V$ is a closed subset of $M$; thus we can take $U_x=H^{-1}(M-V)$.
+
+
+
+Next suppose that $g(x) = f(y)$ for some $y \in V$. 
+Let $z\in M$ be this common value. Using a chart to establish local coordinates for $M$ about $z$, we can identify $Df_x(T_xV)$ with a $v$-dimensional subspace of  
+\end{proof}
+
+
+
+
+\begin{lemma}\label{L: proper product}
+	Let $f \colon X \to Y$ be an arbitrary map and $g \colon X \to Z$ a proper map. 
+	Then the map $(f,g) \colon X \to Y \times Z$ given by $(f,g)(x)=(f(x),g(x))$ is proper.
+\end{lemma}
+\begin{proof}
+	Let $K \subset Y \times Z$ be compact. 
+	Let $\pi_Y,\pi_Z$ be the projectiond of $Y \times Z$ to $Y$ and $Z$. Then 
+	\begin{align*}
+		(f,g)^{-1}(K) &= \{x \in X \mid (f(x),g(x)) \in K \}\\
+		&\subset \{ x \in X \mid f(x) \in \pi_X(K), g(x) \in \pi_Y(K)\}\\
+		&\subset \{ x \in X \mid g(x) \in \pi_Y(K)\}\\
+		&= g^{-1}(\pi_Y(K)).
+	\end{align*} 
+	As $K$ is compact and $g$ is proper, $g^{-1}(\pi_Y(K))$ is compact. 
+	So $(f,g)^{-1}(K)$ is a closed subset of a compact set, and so compact.
+\end{proof}
+
+\begin{corollary}\label{C: embed V}
+Let $f \colon V \to M$ be a map from a manifold with corners to a manifold without boundary. 
+Then for some $N$ there exists a closed embedding $e \colon V \to M \times \R^N$ such that, if $\pi \colon M \times \R^N \to M$ is the projection, then $\pi e = f$. 
+\end{corollary}
+\begin{proof}
+By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $g \colon V \to \R^N$ for some $N$. 
+Then by \cref{L: proper product} the map $(f,g)$ is proper, and as $g$ is an immersion, so is $(f,g)$.
+In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^N$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces, and the map $\pi_{\R^N}(f,g)$ equals the embedding $g$, so $D(f,g)$ must be injective at each point.
+Similarly, the map $(f,g)$ is itself  injective.  
+But just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}, and it is clear from the construction that $\pi (f,g) = f$.
+\end{proof}
 \bibliographystyle{amsplain}
 \bibliography{../../bib}
 

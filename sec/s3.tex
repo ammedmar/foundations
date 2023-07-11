@@ -459,7 +459,8 @@ In \cref{S: geometric cochains}, we will use induced co-orientations on boundari
 	A particularly important pair of examples is given by the inclusions $g^- \colon (-\infty, 0] \into \R$ and $g^+ \colon [0,\infty) \into \R$, each tautologically co-oriented by $(e_1,e_1)$, where $e_1$ is the standard unit vector in $\R$.
 
 	Next consider the submanifold consisting of the point $0 \in \R$.
-	Its tangent space has trivial determinant line bundle, and we can choose the basis element to be the element $1 \in \bigwedge^0 T0 \cong \R$. If we give the normal bundle to $0$ in $\R$ the standard orientation in the positive direction, denoted by the standard basis vector $e_1$, then the corresponding normal orientation of the inclusion of $0$ into $\R$ will be $(1, 1 \wedge e_1) = (1, e_1)$.
+	Its tangent space has trivial determinant line bundle, and we can choose the basis element to be the element $1 \in \bigwedge^0 T0 \cong \R$. 
+	If we give the normal bundle to $0$ in $\R$ the standard orientation in the positive direction, denoted by the standard basis vector $e_1$, then the corresponding normal orientation of the inclusion of $0$ into $\R$ will be $(1, 1 \wedge e_1) = (1, e_1)$.
 	By \cref{normal co-or,D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\} \into (-\infty, 0]$ is $(1, 1 \wedge -e_1) = (1, -e_1)$.
 	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^- \colon (-\infty, 0] \to \R$ is then the composition of $(1, -e_1)$ with $(e_1, e_1)=(-e_1,-e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
 	As the inward normal to $[0,\infty)$ at $0$ is $e_1$, the inclusion $g^+ \colon [0,\infty) \to \R$ induces the opposite co-orientation $(1, e_1)$ on the inclusion $\{0\} \to \R$.
@@ -471,10 +472,11 @@ The following example, which may at first seem a bit artificial in employing $M$
 \begin{example}\label{E: manifold decomposition}
 	Suppose we have smooth maps $g \colon W \to M$, and $\varphi \colon M \to \R$ with $0$ a regular value of $\varphi g$.
 	Consider the spaces $W^0 = (\varphi g)^{-1}(0)$, $W^- = (\varphi g)^{-1}((-\infty,0])$, and $W^+ = (\varphi g)^{-1}([0,\infty))$, which are manifolds with corners.
-	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions. Then, by the boundary formula \cref{E: product boundary}, $$\bd W^-= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right),$$
+	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions, and in fact $W^0$ is a submanifold (with corners) of $W$ by \cite[Proposition 4.2.9]{MaDo92}. By the boundary formula \cref{E: product boundary}, 
+	$$\bd (W^-)= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right),$$
 	and the first component is precisely $W^0$, so $W^0$ is a boundary component of $W^-$ and similarly for $W^+$.
 
-	Now, the normal bundle of $W^0$ in $W$ is the pullback via $\varphi g$ of the normal bundle of $0$ in $\R$. Giving the normal bundle of $0$ in $\R$ the standard orientation in the positive direction, denoted by the basis vector $e_1$, this orientation pulls back to a natural orientation of the normal bundle to $W^0$ in $W$. Applying \cref{normal co-or}, we obtain a normal co-orientation for $W^0$ in $W$, which we call the \textbf{co-orientation of $W^0$ in $W$ induced by $g\varphi$}. This is the co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)$.
+	Now, at least over its interior, the normal bundle of $W^0$ in $W$ is the pullback via $\varphi g$ of the normal bundle of $0$ in $\R$ by \cref{L: normal pullback}. Giving the normal bundle of $0$ in $\R$ the standard orientation in the positive direction, denoted by the basis vector $e_1$, this orientation pulls back to a natural orientation of the normal bundle to the interior of $W^0$ in $W$. Applying \cref{normal co-or}, we obtain a normal co-orientation for $W^0$ in $W$, which we call the \textbf{co-orientation of $W^0$ in $W$ induced by $g\varphi$}. This is the co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi g)^*e_1)$.
 
 	We also have the boundary co-orientations of the inclusions of $W^0$ into $W^{\pm}$.
 	Analogously to \cref{E: splitting example 1}, the boundary co-orientation from the composite $W^0 \to W^- \into W$  is the opposite of the co-orientation of $W^0\into W$ induced by $g\varphi$, while the boundary co-orientation from the composite $W^0 \to W^+ \into W$  agrees with the co-orientation of $W^0\into W$ induced by $g\varphi$
@@ -690,6 +692,7 @@ Our goal in this section is to provide a definition such that co-orientations of
 Before getting into the specifics of the construction, we conclude this introductory section with some important general observations. 
 In the following subsections, we first show that pullbacks of co-orientable maps are co-orientable; the proof will then become the roadmap for defining a specific pullback co-orientation convention. 
 We then demonstrate that our convention yields pullback and fiber product co-orientations satisfying a number of desireable properties, including those listed above. 
+Further properties of co-orientations of fiber products will be proven in \cref{S: exterior products} using a co-orientation we will define there for direct (exterior) products of co-oriented maps.
 
 \begin{remark}\label{R: pullback representative}
 	While our canonical pullback $P$ has been defined as $V \times_M W = \{(x,y) \in V \times W \mid f(x) = g(y)\}$, categorically the pullback $P$ is technically only well defined up to canonical diffeomorphisms.
@@ -831,7 +834,7 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	But this is a product of compact sets as $f$ is proper.
 	So $\pi_W$ is proper.
 
-	For co-orientability, it suffices by \cref{P: interior co-orientation} to consider the restriction to the interior of $V \times_M W$. Equivalently, we assume that $V$ and $W$ are manifolds for the remainder of the argument.
+	For co-orientability, it suffices by \cref{P: interior co-orientation} to consider the restriction to the interior of $V \times_M W$. Equivalently, we assume that $V$ and $W$ are manifolds without boundary for the remainder of the argument.
 	By \cref{L: Quillen}, it suffices to utilize Quillen's approach to co-orientability as discussed in \cref{S: Quillen}.
 	We factor $f$ as $V \xhookrightarrow{e} M \times \R^N \to M$, and then we have the pullback diagram
 	\begin{equation}\label{D: pullback}
@@ -856,10 +859,14 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	As foreshadowed in \cref{R: pullback representative}, we here use a different realization of $P = V \times_M W$.
 	Thinking of the top square of the diagram as a pullback square, this $P$ is concretely the subset $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\}$.
 	If $\pi_1 \colon M \times \R^N \to M$ and $\pi_2 \colon M \times \R^N \to \R^N$ are the projections, we know by definition that $\pi_1(e(v)) = f(v)$, and this is also $g(w)$, so the points in this realization of $P$ also satisfy $f(v) = g(w)$.
-	In fact, there is a canonical map between this realization of $P$ and our standard realization $\{(v,w) \in V \times W \mid f(v) = g(w)\}$ given by $(v,(w,z)) \mapsto (v,w)$ with inverse given by $(v,w) \mapsto (v,(w,\pi_2(e(v))))$.
+	In fact, there is a canonical diffeomorphism between this realization of $P$ and our standard realization $\{(v,w) \in V \times W \mid f(v) = g(w)\}$ given by $(v,(w,z)) \mapsto (v,w)$ with inverse given by $(v,w) \mapsto (v,(w,\pi_2(e(v))))$.
 
-	We also already observed in the above proof that $P$ can be identified with $(g \times \id)^{-1}(e(V)) \subset W \times \R^N$.
-	Of course when we think of $P$ as $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\}$, the embedding into $W \times \R^N$ is just the map $(v,(w,z)) \mapsto (w,z)$.
+	We also already observed in the above proof that $P$ can be identified with $(g \times \id)^{-1}(e(V)) \subset W \times \R^N$, though here we need to be a bit more careful as it is not completely clear that $(g \times \id)^{-1}(e(V))$ has the structure of an embedded submanifold with corners.
+	In fact, the notions of immersion and embedding are complex when working with manifolds with corners; for example, see \cite[Chapter 3]{MaDo92}.
+	However, we know by \cref{L: normal pullback} that $(g|_{S^0(W)} \times \id)^{-1}(e(S^0(V)))$ will be an embedded submanifolds in $S^0(W)\times \R^N$, and due to \cref{pullback,P: interior co-orientation} this will generally suffice for working with co-orientations. 
+	So, unless noted otherwise, we will below assume such restrictions, or simply that we are working with manifolds without boundary in the first place, whenever we identify $P$ with $(g \times \id)^{-1}(e(V))$. 
+	Otherwise, we assume that $P$ has its structure as a manifold with corners as a pullback as given in \cite{Joy12}.
+	Of course when we do identify $P$ with $(g \times \id)^{-1}(e(V))$, it is via the map $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\} \to W \times \R^N$ given by $(v,(w,z)) \mapsto (w,z)$.
 \end{remark}
 
 \begin{corollary}
@@ -877,11 +884,13 @@ The construction in the proof of \cref{L: co-orientable pullback} provides a roa
 For the following definition, refer again to Diagram \eqref{D: pullback}.
 
 \begin{definition}\label{D: pullback coorient}
-	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse with $f$ co-oriented and the normal bundle $\nu V$ of $e(V) \subset M \times \R^N$ given its Quillen normal orientation as defined in \cref{D: Quillen normal or}.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds without boundary to a manifold without boundary such that $f$ is co-oriented and the normal bundle $\nu V$ of $e(V) \subset M \times \R^N$ is given its Quillen normal orientation as defined in \cref{D: Quillen normal or}.
 	Then the pullback $P = V \times_M W = (g \times \id_{\R^N})^{-1}(e(V)) \subset W \times \R^N$ has an oriented normal bundle that is the pullback of $\nu V$, which, by abuse of notation, we also label $\nu V$.
 	Let $\beta_P$ and $\beta_W$ be local orientations of $P$ and $W$, and let $\beta_E$ be the standard orientation of $\R^N$.
 	Define the \textbf{pullback co-orientation} on $P \to W$ to be the composition of the normal co-orientation $(\beta_P,\beta_P \wedge \beta_{\nu V})$ with the canonical co-orientation $(\beta_W \wedge \beta_E,\beta_W)$.
 	In other words, the pullback co-orientation is $(\beta_P,\beta_W)$ if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$ and $-(\beta_P,\beta_W)$ otherwise. Equivalently, the co-orientation of the pullback is the one for which $\beta_{\nu V}$ is the compatible Quillen normal orientation.  
+
+	If $V$ and $W$ are manifolds with corners, then we define the \textbf{pullback co-orientation} on $P \to W$ by applying the above construction to the restrictions of $f$ and $g$ to $S^0(V)$ and $S^0(W)$; this is sufficient to determine the co-orientation by \cref{pullback,P: interior co-orientation}.
 
 	Following \cref{D: top pullback}, we sometimes write $f^* \colon P \to W$.
 	We also sometimes write $P = g^*V$ to emphasize that $P$ is the pullback of $V$ by $g$ to a manifold over $W$.
@@ -916,6 +925,7 @@ We will show just below that the definition is independent of $N$ and $e$ as wel
 \end{remark}
 
 \begin{proof}[Proof of \cref{L: pullback co well defined}]
+	It suffices to assume that $P$, $V$, $W$, and $M$ are all manifolds without boundary.
 	As the local orientations of $P$, $V$, $W$, and $M$ used in the construction all come in pairs (e.g.\ $\beta_P$ in $(\beta_P,\beta_P \wedge \beta_{\nu V}))$, the construction is independent of those choices.
 
 	Next, suppose we are given an embedding $e \colon V \into M \times \R^N$ and extend it to $e' = (e,0) \colon V \into M \times \R^N \times \R^n$.
@@ -1033,7 +1043,7 @@ In this case our fiber product co-orientation of $V \times_M W \subset M$ is eas
 That is, if one orients the normal bundle of the intersection by following an oriented basis of the normal bundle of $V$ with an oriented basis of the normal bundle of $W$, the associated normal co-orientation is the fiber product co-orientation.
 
 \begin{proof}
-	It suffices to demonstrate this property in the neighborhood of any intersection point, so we may assume that $f$ and $g$ are embeddings of manifolds and consider $x \in V$, $y \in W$ with $f(x) = g(y) = z \in M$.
+	It suffices to demonstrate this property in the neighborhood of any intersection point, so we may assume that $f$ and $g$ are embeddings of manifolds without corners and consider $x \in V$, $y \in W$ with $f(x) = g(y) = z \in M$.
 	Locally, for our Quillen co-orientation of $f$ we can apply the definition of the pullback co-orientation with $N = 0$ and the embedding $e \colon V \into M \times \R^N$ being simply $f$ itself.
 	As $N = 0$, in this case $\nu V$ is itself the oriented normal bundle of $e(V) = f(V)$ in $M \times \R^N = M$.
 	Pulling back via $g$ to $W$, we obtain the oriented pullback of $\nu V$ (which we also call $\nu V$) as the normal bundle of $P = g^{-1}(V)$ in $W$.
@@ -1057,7 +1067,7 @@ Establishing the rule directly for immersions, for which we can use the normal c
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary, and suppose $f$ co-oriented.
 	Let $V \times_M W \to W$ be the co-oriented pullback.
 	Then
-	$$\bd (V \times_M W) = (\bd V) \times_M W \bigsqcup (-1)^{m-v} V \times_M (\bd W),$$
+	$$\bd (V \times_M W) = \left((\bd V) \times_M W\right) \bigsqcup (-1)^{m-v} \left(V \times_M (\bd W)\right),$$
 	interpreting each of these pullback spaces as representing its co-oriented map to $W$; see Notation \ref{N: implicit notation}.\footnote{Here we interpret $V \times \bd W \to W$ as the composition of the co-oriented pullback $V \times \bd W \to \bd W$ with the co-oriented boundary immersion $\bd W \to W$.} If $g$ is also co-oriented then this formula also holds as fiber products mapping to $M$.
 \end{proposition}
 
@@ -1291,7 +1301,7 @@ Note that this is where we use the properness assumption in \cref{P: graded comm
 	Also, for each fixed $t > 0$, we have that 
 	$(DH(-,t))_0e_i = e_i$ for $i \leq k$ and $(DH(-,t))_0e_i = te_i$ for $k<i \leq \min(v,m)$.
 	Thus $DH(-,t)$ has full rank at $x$ for all $t>0$.
-	Finally, as $f$ and $g$ are proper and transverse, there is an $\epsilon$ so that $H(-,t)$ and $g$ will be transverse for $0 \leq t \leq \epsilon$ by stability of transversality\footnote{See \cite[Theorem 1.6]{GuPo74} for the case where one manifold is compact and the other is embedded as a closed submanifold. A proof for the current situation is given within our proof of \cref{T: transverse complex}, below.}.
+	Finally, as $f$ and $g$ are proper and transverse, there is an $\epsilon$ so that $H(-,t)$ and $g$ will be transverse for $0 \leq t \leq \epsilon$ by stability of transversality\footnote{See \cite[Theorem 1.6]{GuPo74} for the case where one manifold is compact and the other is embedded as a closed submanifold. A proof for the current situation is given within our proof of \cref{P: perturb transverse to map}, below.}.\greg{Note to self: Pull this out as a corollary of the proof to refer back to when I get there in proofreading.}
 	Now define $F(-,t) = H(-,\epsilon t)$.
 \end{proof}
 
@@ -1498,9 +1508,8 @@ In our notational shorthand (see \cref{N: implicit notation}), if $f \colon V \t
 
 \subsubsection{Exterior products of co-oriented maps and applications to fiber products}
 
-Next we define and study an exterior product for co-orientable maps.
-In the next subsection, we will see that such products are intimately related to fiber products, just as cup products and exterior products are related in cohomology.
-In fact, this relationship will allow us to easily proof some properties about fiber products that we have delayed.
+Next we define and study a co-oriented exterior product for co-oriented maps.
+In the next subsection, we will see that such products are intimately related to fiber products, and this will allow us to easily prove some properties about fiber products that we have delayed.
 
 \begin{comment}
 Before getting to co-orientations, we first show that a product of proper maps is proper.
