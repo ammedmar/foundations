@@ -1291,7 +1291,7 @@ Note that this is where we use the properness assumption in \cref{P: graded comm
 	Also, for each fixed $t > 0$, we have that 
 	$(DH(-,t))_0e_i = e_i$ for $i \leq k$ and $(DH(-,t))_0e_i = te_i$ for $k<i \leq \min(v,m)$.
 	Thus $DH(-,t)$ has full rank at $x$ for all $t>0$.
-	Finally, as $f$ and $g$ are proper and transverse, there is an $\epsilon$ so that $H(-,t)$ and $g$ will be transverse for $0 \leq t \leq \epsilon$ by stability of transversality\footnote{See \cite[Theorem 1.6]{GuPo74} for the case where one manifold is compact and the other is embedded. A proof for the current situation is given within our proof of \cref{T: transverse complex}, below.}.
+	Finally, as $f$ and $g$ are proper and transverse, there is an $\epsilon$ so that $H(-,t)$ and $g$ will be transverse for $0 \leq t \leq \epsilon$ by stability of transversality\footnote{See \cite[Theorem 1.6]{GuPo74} for the case where one manifold is compact and the other is embedded as a closed submanifold. A proof for the current situation is given within our proof of \cref{T: transverse complex}, below.}.
 	Now define $F(-,t) = H(-,\epsilon t)$.
 \end{proof}
 
@@ -1439,19 +1439,23 @@ We express the following corollary using Notation \ref{N: implicit notation}.
 	as spaces mapping to $W$.
 \end{proof}
 
-\subsection{Exterior products}\label{S: exterior products}
-In this section we consider products of maps that will eventually become the exterior products in geometric homology and cohomology.
-While fiber products, which will eventually be used to define cup and intersection products, require special transversality conditions in order to be defined, these exterior products are always fully defined.
-We consider first products of oriented manifolds and then products of co-oriented maps of manifolds.
+\subsection{Exterior products and their relations with fiber products}\label{S: exterior products}
+In this section we consider products of maps that will eventually become the exterior products in geometric homology and cohomology, as well as their relations to fiber products.
+While fiber products, which will eventually be used to define cup and intersection products, require special transversality conditions in order to be defined, exterior products are always fully defined.
+Of course products of oriented manifolds are familiar objects, so we treat them only briefly in the next section. 
+Then we consider products of co-oriented maps of manifolds.
+In \cref{S: product relations}, we show that the co-oriented fiber product is the pullback by the diagonal map of the co-oriented exterior product, foreshadowing the classical cohomology relation between exterior products and cup products.
+This will also allow us to prove associativity of fiber products.
 
-\subsubsection{Exterior products of maps of oriented manifolds}
 
-If we begin with maps $f \colon V \to M$ and $g \colon W \to N$, then we have the usual product map $f \times g \colon V \times W \to M \times N$ that takes $(v,w) \in V \times W$ to $(f(v),g(w)) \in M \times N$.
-If $V$ and $W$ are oriented, say by $\beta_V$ and $\beta_W$, then $V \times W$ possesses the standard product orientation via concatenation of oriented bases that can be described at each point by $\beta_V \wedge \beta_W$.
-More technically, $T(M \times N) = \pi_M^*(TM) \oplus \pi_N^*(TN)$ with $\pi_M, \pi_N$ being the projections, but we elide the pullbacks in our notation for local orientations.
-By \cref{P: oriented fiber product basic properties}, this convention is consistent with the observation that the exterior product is isomorphic to the fiber product of the unique maps $V,W \to pt$.
+\subsubsection{Exterior products of oriented manifolds}
 
-We observe the following interplay between fibered and exterior products of maps of oriented manifolds more generally.
+Recall that we defined the oriented fiber product of oriented manifolds with corners in \cref{S: orientation of fiber products}.
+In particular, if $V$ and $W$ are oriented manifolds, we saw in \cref{P: oriented fiber product basic properties} that the oriented fiber product of the maps from $V$ and $W$ to a point is just the standard product $V \times W$ oriented with the usual concatenation convention.
+In other words, if $V$ and $W$ are oriented by $\beta_V$ and $\beta_W$, then $V \times W$ is oriented at any point by $\beta_V \wedge \beta_W$.
+
+We observe the following interplay between fibered and exterior products of maps of oriented manifolds more generally. 
+In our notational shorthand (see \cref{N: implicit notation}), if $f \colon V \to M$ and $h \colon X \to N$, then we let $V \times X$ represent the product map $f \times h \colon M \times N$.
 
 \begin{proposition}\label{P: oriented interchange}
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps of oriented manifolds with corners to an oriented manifold without boundary and similarly for $h \colon X \to N$ and $k \colon Y \to N$.
@@ -1464,30 +1468,28 @@ We observe the following interplay between fibered and exterior products of maps
 	We first note that the transversality assumptions ensure also that $f \times h$ will be transverse to $g \times k$.
 	It is straightforward to verify that these are diffeomorphic spaces, so we focus on the orientations.
 	For simplicity, let us write
-	$P = (V \times X)\times_{M \times N} (W \times Y)$ and $P' = (V \times_M W) \times (X \times_N Y)$.
-	We then write orientation symbolically as $\beta_P$, etc.
-	By definition, and omitting the pullbacks from the notation, $P$ is oriented so that
+	$P = (V \times X)\times_{M \times N} (W \times Y)$ and $P' = (V \times_M W) \times (X \times_N Y)$ as oriented manifolds.
+	We then write local orientations symbolically as $\beta_P$, etc.
+	By the construction of fiber product orientations in \cref{S: orientation of fiber products}, and omitting the pullbacks from the notation, $P$ is oriented so that
 	$$\beta_P \wedge \beta_{M \times N} = (-1)^{(w+y)(m+n)}\beta_{V \times X} \wedge \beta_{W \times Y},$$
-	or, as (non-fiber) products are oriented by concatenation,
+	or, as (non-fiber) products are oriented by concatenation, we have
 	$$\beta_P \wedge \beta_M\wedge\beta_N = (-1)^{(w+y)(m+n)}\beta_V \wedge \beta_X \wedge \beta_W \wedge \beta_Y.$$
-	Here we identify $T(M \times N)$ as a summand by splitting $D(f \times h) - D(g \times k)$.
-	Similarly, we have
+	Recall that here we identify $T(M \times N)$ as a summand of $T(V \times X \times W \times Y)$ over $P$ by splitting the derivative $D(f \times h) - D(g \times k)$.
+	Similarly, for $V \times_M W$ and $X \times_N Y$ we have
 	\begin{align*}
 		\beta_{V \times_M W} \wedge \beta_M & = (-1)^{wm}\beta_V \wedge \beta_W \\
 		\beta_{X \times_N Y} \wedge \beta_N & = (-1)^{yn}\beta_X \wedge \beta_Y,
 	\end{align*}
 	using the splittings of $Df-Dg$ and $Dh-Dk$.
-	In particular, the signs of $Df$, $Dg$, $Dh$, and $Dk$ in the splitting formulas are consistent in computing the orientations for $P$ and $P'$.
-	Wedging the two sides, we have
-	\begin{equation*}
-		\beta_{V \times_M W} \wedge \beta_M \wedge \beta_{X \times_N Y} \wedge \beta_N =
-		(-1)^{wm+ny}\beta_V \wedge \beta_W\beta_X \wedge \beta_Y.
-	\end{equation*}
+	We note that the signs of $Df$, $Dg$, $Dh$, and $Dk$ in all the splitting formulas are consistent in computing the orientations for $P$ and $P'$.
+	
 	As $\beta_{P'} = \beta_{V \times_M W} \wedge \beta_{X \times_N Y}$, we have
 	\begin{align*}
-		\beta_{P'} \wedge \beta_M \wedge \beta_N & =
-		(-1)^{m(x+y-n)}\beta_{V \times_M W} \wedge \beta_M \wedge \beta_{X \times_N Y} \wedge \beta_N \\ & = (-1)^{m(x+y-n)+wm+ny}\beta_V \wedge \beta_W \wedge \beta_X \wedge \beta_Y \\ & =
-		(-1)^{m(x+y-n)+wm+ny+xw}\beta_V \wedge \beta_X \wedge \beta_W \wedge \beta_Y
+		\beta_{P'} \wedge \beta_M \wedge \beta_N 
+		&= \beta_{V \times_M W} \wedge \beta_{X \times_N Y} \wedge \beta_M \wedge \beta_N\\
+		& = (-1)^{m(x+y-n)}\beta_{V \times_M W} \wedge \beta_M \wedge \beta_{X \times_N Y} \wedge \beta_N\\ 
+		& = (-1)^{m(x+y-n)+wm+ny}\beta_V \wedge \beta_W \wedge \beta_X \wedge \beta_Y \\
+		& = (-1)^{m(x+y-n)+wm+ny+xw}\beta_V \wedge \beta_X \wedge \beta_W \wedge \beta_Y.
 	\end{align*}
 	So $\beta_P$ differs from $\beta_{P'}$ by $-1$ to the power
 	$$m(x+y-n) + wm + ny + xw - (w+y)(m+n).$$
@@ -1500,6 +1502,7 @@ Next we define and study an exterior product for co-orientable maps.
 In the next subsection, we will see that such products are intimately related to fiber products, just as cup products and exterior products are related in cohomology.
 In fact, this relationship will allow us to easily proof some properties about fiber products that we have delayed.
 
+\begin{comment}
 Before getting to co-orientations, we first show that a product of proper maps is proper.
 
 \begin{lemma}\label{L: proper product}
@@ -1514,6 +1517,8 @@ Before getting to co-orientations, we first show that a product of proper maps i
 	$$(f \times g)^{-1}(K) \subset (f \times g)^{-1}(\pi_M(K) \times \pi_N(K)) = f^{-1}(\pi_M(K)) \times g^{-1}(\pi_N(K)).$$
 	But now $f^{-1}(\pi_M(K))$ and $g^{-1}(\pi_N(K))$ are compact as $f$ and $g$ are proper and so $(f \times g)^{-1}(K)$ is a closed subset of a compact set, hence compact.
 \end{proof}
+
+\end{comment}
 
 \begin{lemma}
 	If $f \colon V \to M$ and $g \colon W \to N$ are co-orientable maps of manifolds with corners then the product map $f \times g \colon V \times W \to M \times N$ is co-orientable.
@@ -1748,7 +1753,7 @@ The next proposition shows that the exterior product construction is natural.
 	$$(\beta_P,\beta_X \wedge \beta_Y) = ((-1)^{(w+y-n)(m-v)}\beta_{h^*V} \wedge \beta_{k^*W},\beta_X \wedge \beta_Y).$$ We conclude $(h \times k)^*(V \times W) = h^*V \times k^*W$.
 \end{proof}
 
-\subsubsection{The relation between co-oriented exterior products and co-oriented fiber products}
+\subsubsection{The relation between co-oriented exterior products and co-oriented fiber products}\label{S: product relations}
 
 Having established these elementary properties for our exterior product, we can now relate co-oriented exterior products to co-oriented fiber products.
 These relationships correspond to those in singular cohomology between the exterior and cup products of cochains, though one very nice feature is that in our context these relationships all hold ``on the nose'' at the cochain level and can be proven without any need for Alexander-Whitney maps or any other approximations to the diagonal.
