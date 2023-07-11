@@ -1,0 +1,234 @@
+\documentclass[12pt]{article}
+\paperheight=11in
+%\paperwidth=8.5in
+\renewcommand{\baselinestretch}{1.04}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx, mathrsfs, hyperref,mathtools,multicol, enumitem,bbm}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amstext}
+%\usepackage{cite}
+%\usepackage[notref]{showkeys}
+\usepackage{color}
+
+
+
+\newcommand\purple[1]{\marginpar{replacement}\textcolor{Purple}{#1}}     
+\newcommand\blue[1]{\marginpar{new}\textcolor{blue}{#1}}                       %
+\newcommand\red[1]{\marginpar{??}\textcolor{red}{#1}}                         %
+\newcommand\green[1]{\marginpar{delete ok?}\textcolor{green}{#1}}
+%\newcommand\ownremark[1]{\marginpar{remark for own use}\textcolor[rgb]{0.5,0.5,0}{#1}}                   %
+
+
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newcommand{\codim}{\text{codim}}
+ 
+
+\newcommand{\primeset}[1]{#1}
+\newcommand{\id}{\textup{id}}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\hra}{\hookrightarrow} 
+\newcommand{\Td}[1]{\Tilde{#1}}
+\newcommand{\td}[1]{\tilde{#1}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\bd}{\partial}
+\newcommand{\pf}{\pitchfork}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\renewcommand{\H}{\mathbb H}
+\newcommand{\rla}{\RightLeftarrow}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\dlim}{\varinjlim}
+\newcommand{\vg}{\varGamma}
+\newcommand{\blm}[2]{\langle  #1 , #2 \rangle}
+\newcommand{\bl}[2]{\left( #1 , #2 \right)}
+\newcommand{\vs}{\varSigma}
+\newcommand{\holink}{\text{holink}}
+\newcommand{\map}{\operatorname{map}}
+\newcommand{\hl}{\operatorname{holink}}
+\newcommand{\wt}{\widetilde}
+\renewcommand{\hom}{\text{Hom}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\SHom}{\text{\emph{Hom}}}
+\newcommand{\Ext}{\text{Ext}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\ih}{IH^{\bar p}}
+\newcommand{\di}{\text{dim}}
+\newcommand{\im}{\text{im}}
+\newcommand{\cok}{\text{cok}}
+\newcommand{\coim}{\text{coim}}
+\newcommand{\bp}{\boxplus}
+%\renewcommand{\P}{\mathbb P}
+\newcommand{\q}{\mathfrak q}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\singsupp}{\text{singsupp}}
+\newcommand{\Dom}{\text{Dom}}
+\newcommand{\LPDO}{\text{LPDO}}
+\newcommand{\PsiDO}{\Psi\text{DO}}
+
+\newcommand{\ka}{\kappa}
+
+\newcommand{\fl}{\text{FL}}
+\newcommand{\wfl}{\text{WFL}}
+\newcommand{\Ker}{\mbox{Kernel }}
+%\newcommand{\p}{\mf{p}}
+\newcommand{\p}{\mathbbm{p}}
+%\newcommand{\p}{\mathpzc{p}}
+\newcommand{\Vol}{\text{Vol}}
+\newcommand{\uW}{\underline{W}}
+\newcommand{\udW}{\underline{\partial W}}
+\newcommand{\uV}{\underline{V}}
+
+
+
+\newcommand{\sect}[1]{\vskip1cm \noindent\paragraph{#1}}
+
+\newcommand{\ttau}{\text{\texthtt}}
+
+\newcommand{\xr}{\xrightarrow}
+\newcommand{\xl}{\xleftarrow}
+
+\DeclareRobustCommand{\zvec}[1]{%
+  \mathrlap{\vec{\mkern-2mu\phantom{#1}}}#1%
+}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\cman}{\mathrm{cMan}}
+
+\newcommand{\Or}{{\rm Det}}
+
+\begin{document}
+
+
+\begin{lemma}\label{L: pullback immersion}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary and that $f$ is an embedding. 
+	Then the pullback map $f^* \colon V \times_M W \to W$ is a smooth immersion that takes $V \times_M W$ bijectively onto $g^{-1}(f(V))$.
+\end{lemma}
+\begin{proof}
+	Let $P = V \times_M W$, which by definition is $\{ (v,w) \in V \times W \mid f(v) = g(w) \}$, and $f^*$ is just the projection to $W$. 
+	As $f$ is injective, for any pair $(v,w) \in P$, the element $w$ uniquely determines $v$ as $v = f^{-1}(g(w))$, so the maps $(v, w) \mapsto w$ and $w \mapsto (f^{-1}(g(w)), w)$ establish a bijection between $P$ and $g^{-1}(f(V))$. 
+	
+	The map $f^*$ is smooth by \cite[Section 6]{Joy12}.
+	
+	Now, by \cref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangents space, so if $(v,w) \in P$, then $T_{(v,w)}P = T_vV \times_{T_{f(v)}M} T_wW$. 
+	Suppose $(a,b) \in T_{(v,w)}P$ with $a \in T_vV$ and $b \in T_wW$. 
+	Let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the restrictions of the projections to $P$, in which case we know that $\pi_W = f^*$, the pullback. 
+	By assumption, $Dg_v(b) = Df_w(a)$. 
+	So if $D\pi_W(a,b) = b = 0$, then we must have $Df_w(a)=0$, but this means $a = 0$ as $f$ is an embedding.
+	So if $D\pi_W(a,b) = 0$, then $(a,b) = 0$, so $\pi_W = f^*$ is an immersion.
+\end{proof}
+
+\begin{corollary}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary and that $f$ is an embedding. 
+	If the pullback map $f^* \colon V \times_M W \to W$ is proper, then it is an embedding onto a closed submanifold with corners of $W$.
+\end{corollary}
+\begin{proof}
+By \cref{L: pullback immersion}, the map $f^*$ is injective, and every proper injective map is a closed map and a homeomorphism onto its image \cite[Proposition 10.1.2]{Bou98}.
+\end{proof}
+
+
+\begin{lemma}
+With the assumptions of the preceding lemma, $f^*$ is a local embedding, i.e.\ for any $p \in V \times_M W$ there is a neighborhood $U$ such that $f^*|_U$ is an embedding.
+\end{lemma}
+\begin{proof}
+We identify $V$ with its embedded image in $M$.
+We also write $\pi$ rather than $f^*$ for simplicity of notation in what follows.
+ 
+Let $p = (v,w) \in V \times_M W$, so $\pi(p)=w$. 
+Let $(A, \alpha)$ and $(B, \beta)$ be charts whose images containing $p$ and $w$, respectively; by choosing a smaller $A$ we may assume $\pi(\alpha(A)) \subset \beta(B)$. 
+By definition of smoothness \cite[Definition 3.1]{Joy12}, the map $\beta^{-1}\pi\alpha \colon A \to B$ is smooth, meaning that there are neighborhoods $A'$ and $B'$ of $A$ and $B$ in their respective Euclidean spaces such that $\beta^{-1}\pi\alpha$ extends to a smooth map $\pi': A' \to B'$. 
+As $\pi$ is an immersion by 
+
+
+Need to prove this week - use version for manifolds and local chart extension crap:
+1. There are charts $A$ and $B$ so that $A \to V \times_M W \to W \to B$ is smooth. 
+2. So there are ngbds $A'$ and $B'$ of $A$ and $B$ and $A' \to B'$ that is smooth in usual sense.
+3. By assumption, derivative should be injective at $p$, so $A'$ has a nice embeddings in $B'$, possibly by making things smaller by usual manifold theory.  
+So $A'$ is a homeo onto its image in B'.
+Let $P'$, $W'$ be images of charts. 
+Then we have 
+P' -> W'
+|     |
+A  -> B
+|     |
+A' -> B'
+
+bottom is homeo onto image, so restricts to A homeo onto image (should be able to cite this)
+and top verticles are homeos, so top map is homeo onto image.
+\end{proof}
+
+\begin{corollary}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse embeddings from manifolds with corners to a manifold without boundary. Then the fiber product $V \times_M W \to M$ is locally an embedding. 
+\end{corollary}
+\begin{proof}
+By the preceeding lemma, the pullback $V \times_M W \to W$ is locally an embeddings, and the fiber product is the composition of the pullback with the embedding $g$.
+\end{proof}
+
+
+\begin{corollary}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary and that $f$ is an embedding. 
+	If the pullback map $f^* \colon V \times_M W \to W$ is proper, then it is an embedding.
+\end{corollary}
+\begin{proof}
+Mirror MO argument
+\end{proof}
+
+
+Idea for gxid pullback being good:
+
+Lemma: V properly embeds in Euclidean space (generalize standard thing)
+
+Lemma: if V maps to M x R and one component is proper, the whole map is proper.
+
+
+Overall alternative idea: see if it's possible to emulate manifold proof
+
+Other alternative idea: Embedd W in manifold with boundary
+
+First idea: look in Margalef-Roig
+
+
+\bibliographystyle{amsplain}
+\bibliography{../../bib}
+
+
+
+
+\end{document}
