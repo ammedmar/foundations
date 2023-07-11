@@ -290,7 +290,7 @@ Again, we call such a choice of basis vector around a point in $W$ a \textbf{loc
 Again, abusing notation, we also often allow $\beta_W$ to refer to its equivalence class up to multiplication by a positive scalar.
 We identify $\beta_W$ with a local choice of (equivalence class of) non-zero section of\footnote{As usual, if $\dim(W) = 0$ we identify $\bigwedge^0 TW$ with the trivial $\R$ bundle, and, when forming exterior products, multiplication by a section is treated as scalar multiplication.} $\bigwedge^w TW$ in a neighborhood of a point $x$ in $W$ or, equivalently, a local smoothly varying ordered basis for the fibers of $TW$. 
 We typically do not specify the point $x$, though when necessary we write $\beta_{W,x}$.
-We then use ordered-pair notation for co-orientation homomorphisms, with $\omega_g = (\beta_W, \beta_M)$ being the \textbf{local co-orientation} that sends the local orientation $\beta_W$ at $x \in W$ to the local orientation $\beta_M$ for $g^*(TM)$ up to a positive scalar.
+We then use ordered-pair notation for co-orientation homomorphisms, with $\omega_g = (\beta_W, \beta_M)$ being the \textbf{local co-orientation} that sends the local orientation $\beta_W$ at $x \in W$ to the local orientation $\beta_M$ for $g^*(TM)$.
 We will often further abuse notation by neglecting the pullback and treating $\beta_M$ as a local orientation at $g(x)$ in $M$.
 We write the opposite co-orientation $(\beta_W,-\beta_M) = (-\beta_W,\beta_M)$ as $-(\beta_W,\beta_M)$.
 As a co-orientation at a point completely determines the co-orientation of a co-orientable map for connected $W$, it is useful to cheat further and write $\omega_g = (\beta_W,\beta_M)$ for appropriate $\beta_W$ and $\beta_M$ with the chosen points $x$ implicit.
@@ -423,14 +423,14 @@ He assumed the normal bundles to have complex structures and so called these \te
 	If $(e_1, \ldots, e_n)$ is the standard ordered basis of $\R^N$, we denote the corresponding orientation from by $\beta_E = e_1 \wedge \cdots \wedge e_N$.
 	Then the projection $\pi \colon M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E, \beta_M)$ that is well defined as $\R^N$ is contractible.
 	If $g \colon W \to M$ is co-oriented and $e \colon W \into M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
-	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu = \beta_M \wedge \beta_E$ up to positive scalar multiple.
+	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu = \beta_M \wedge \beta_E$.
 
 	We sometimes speak of the entire structure $W \into M \times \R^N \to M$ with an orientation of $\nu$ as a \textbf{Quillen co-orientation} for $W \to M$ or as a ``compatible Quillen co-orientation'' if we have already specified a co-orientation for $W \to M$ and we wish to choose the Quillen co-orientation that agrees with it.
 \end{definition}
 
 \begin{remark}\label{R: immersion}
 	In particular, if $g \colon W \to M$ is an immersion, then, by taking $N = 0$, a co-orientation of $g$ is equivalent to a Quillen normal orientation of the normal bundle $\nu$ of $W$ in $M$.
-	In particular, the co-orientation is given locally by $(\beta_W, \beta_M)$ if and only if $\nu$ is oriented so that $\beta_W \wedge \beta_\nu = \beta_M$ up to positive scalar multiple.
+	In particular, the co-orientation is given locally by $(\beta_W, \beta_M)$ if and only if $\nu$ is oriented so that $\beta_W \wedge \beta_\nu = \beta_M$.
 	If $g$ is a codimension-$0$ immersion, then $\nu$ will be $0$-dimensional, and if the co-orientation is the tautological one then $\beta_\nu$ will be the positive orientation at each point.
 \end{remark}
 
@@ -933,7 +933,7 @@ We will show just below that the definition is independent of $N$ and $e$, as we
 	As the local orientations of $P$, $V$, $W$, and $M$ used in the construction all come in pairs (e.g.\ $\beta_P$ in $(\beta_P,\beta_P \wedge \beta_{\nu V}))$, the construction is independent of those choices.
 
 	Next, suppose we are given an embedding $e \colon V \into M \times \R^N$ and extend it to $e' = (e,0) \colon V \into M \times \R^N \times \R^n$.
-	In the construction involving $e$, if we choose $\beta_V$, $\beta_M$ so that $(\beta_V,\beta_M)$ is the co-orientation for $f$, then by the definition of the Quillen orientation, $\nu V$ will be such that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$ up to positive scalar.
+	In the construction involving $e$, if we choose $\beta_V$, $\beta_M$ so that $(\beta_V,\beta_M)$ is the co-orientation for $f$, then by the definition of the Quillen orientation, $\nu V$ will be such that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_E$.
 	If we now increase the dimension of the Euclidean factor to $\R^{N+n}$ and write its canonical local orientation as $\beta_{E^N} \wedge \beta_{E^n}$ while extending $e$ to $e'$, we see that $\nu V$ becomes $\nu V \oplus \underline{\R}^n$ so that $\beta_{\nu V}$ becomes $\beta_{\nu V} \wedge \beta_{E^n}$.
 	Pulling back over $W$ we obtain the pullback co-orientation $(\beta_P,\beta_P \wedge \beta_{\nu V} \wedge \beta_{E^n})*(\beta_W \wedge \beta_{E^N} \wedge \beta_{E^n},\beta_W)$.
 	This is $(\beta_P,\beta_W)$ if and only if $\beta_P \wedge \beta_{\nu V} \wedge \beta_{E^n} = \beta_W \wedge \beta_{E^N} \wedge \beta_{E^n}$, but this condition is equivalent to having $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_{E^N}$.
