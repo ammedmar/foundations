@@ -1148,13 +1148,18 @@ We first need a lemma.
 
 \begin{lemma}\label{L: pullback boundary normal}
 	Let $V$ be a smooth manifold with boundary embedded in a manifold without boundary $M$, and suppose $g \colon W \to M$ is a map from a manifold without boundary and transverse to $V$.
-	In this case we know that $V \times_M W = g^{-1}(V)$ and the pullback of the normal bundle $\nu V$ of $V$ in $M$ is the normal bundle of $g^{-1}(V)$ in $W$, and similarly replacing $\bd V$ with $V$.
-	Let $w\in \bd (V \times_M W) = (\bd V) \times_M W$.
+	In this case we know by \cref{L: immersion pullback} that $V \times_M W \to W$ is a local embedding onto $g^{-1}(V)$ and the pullback of the normal bundle $\nu V$ of $V$ in $M$ is the normal bundle of $g^{-1}(V)$ in $W$, and similarly replacing $\bd V$ with $V$.
+	Let $w\in \bd (V \times_M W) = (\bd V) \times_M W$, which we identify as a subset of $W$.
 	Then there is a vector $b \in T_w(V \times_M W)$, not contained in $T_w((\bd V) \times_M W)$, such that $Dg(b) \in T_{g(w)}V$ but $Dg(b) \notin T_{g(w)}(\bd V)$. Furthermore, both $b$ and $Dg(b)$ can be taken to be inward pointing, toward $V \times_M W$ and $V$, respectively.
 	So, roughly speaking, there is a correspondence between the normal direction to $(\bd V) \times_M W$ in $V \times_M W$ and the normal direction to $\bd V$ in $V$ (up to the usual ambiguities in the choices of splittings for normal bundles).
 \end{lemma}
 \begin{proof}
-Let $v = g(w)$, and let $a \in T_v V \subset T_v M$ such that $a \notin T_v (\bd V)$. As $g$ is transverse to $\bd V$, there are vectors $b \in T_w W$ and $c \in T_v(\bd V)$ such that $a= Dg(b) + c$. Now rewriting as $Dg(b) = a - c$, the righthand side is contained in $T_v(V)$, but not in $T_v(\bd V)$ or else $a$ would be in $T_v(\bd V)$. As the tangent space of the pullback $g^{-1}(V)$ at $w$ is the pullback of the tangent spaces of $T_v V$ and $T_w W$ mapping to $T_v M$ by \cref{L: tangent of pullbacks}, we see that the pair $(a-c, b) \in T_v V \times_{T_v M} T_w W$ is in the tangent space of the pullback, and as the embedding $V \times_M W \to W$ corresponds to the projection in the $W$ co-ordinate, we see that $b$ must be a tangent vector to $g^{-1}(V)$ mapping to $Dg(b)$ via $Dg$ as desired. Note that $b$ cannot be in $T_w((\bd V) \times_M W)$ as such a vector would map to $T_v (\bd V)$. It is clear that $Dg$ must take inward pointing vectors to inward pointing vectors.
+Let $v = g(w)$, and let $a \in T_v V \subset T_v M$ such that $a \notin T_v (\bd V)$.
+As $g$ is transverse to $\bd V$, there are vectors $b \in T_w W$ and $c \in T_v(\bd V)$ such that $a= Dg(b) + c$.
+Now rewriting as $Dg(b) = a - c$, the righthand side is contained in $T_v(V)$, but not in $T_v(\bd V)$ or else $a$ would be in $T_v(\bd V)$.
+As the tangent space of the pullback at $w$ is the pullback of the tangent spaces of $T_v V$ and $T_w W$ mapping to $T_v M$ by \cref{L: tangent of pullbacks}, we see that the pair $(a-c, b) \in T_v V \times_{T_v M} T_w W$ is in the tangent space of the pullback, and as the derivative of the pullback map $\pi_W \colon V \times_M W \to W$ is just projection in the $W$ co-ordinate, we see that $b$ must be a tangent vector to at $w$ mapping to $Dg(b)$ via $Dg$ as desired.
+Note that $b$ cannot be in $T_w((\bd V) \times_M W)$ as such a vector would map to $T_v (\bd V)$.
+It is clear that $Dg$ must take inward pointing vectors to inward pointing vectors.
 \end{proof}
 
 The lemma will let us identify a normal direction to $\bd V$ in $V$ with a normal direction to $(\bd V) \times_M W$ in $V \times_M W$ in the following argument.
