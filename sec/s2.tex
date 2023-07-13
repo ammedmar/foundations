@@ -412,10 +412,17 @@ To generalize this theorem when $M$ is also a manifold with corners requires sub
 Such a generalization is a central result in \cite{Joy12}.
 
 There is a Leibniz rule for taking boundaries of fiber products of transverse maps \cite[Proposition~6.7]{Joy12}:
-\begin{equation}\label{E: product boundary}
-	\bd(V \times_M W) = (\bd V \times_M W) \sqcup (V \times_M \bd W),
-\end{equation}
-recalling that if $g \colon W \to M$ then we interpret $\bd W$ as equipped with the map $gi_{\bd W} \colon \bd W \to M$ and similarly for $V$.
+
+\begin{proposition}\label{P: product boundary}
+	If $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary, then
+	\begin{equation*}
+		\bd(V \times_M W) = (\bd V \times_M W) \sqcup (V \times_M \bd W),
+	\end{equation*}
+	recalling that if $g \colon W \to M$ then we interpret $\bd W$ as equipped with the map $gi_{\bd W} \colon \bd W \to M$ and similarly for $V$.
+\end{proposition}
+
+
+
 We will see versions of this formula below that take into account orientations and co-orientations.
 
 \subsubsection{Some further properties of transversality and fiber products}

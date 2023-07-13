@@ -2,7 +2,7 @@
 \paperheight=11in
 %\paperwidth=8.5in
 \renewcommand{\baselinestretch}{1.04}
-\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx, mathrsfs, hyperref,mathtools,multicol, enumitem,bbm}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx, mathrsfs, hyperref,mathtools,multicol, enumitem,bbm,cleveref}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{amstext}
 %\usepackage{cite}
@@ -279,6 +279,32 @@ Then by \cref{L: proper product} the map $(g,\alpha)$ is proper, and as $\alpha$
 In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^N$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces, and the map $\pi_{\R^N}(g,\alpha)$ equals the embedding $g$, so $D(g,\alpha)$ must be injective at each point.
 Similarly, the map $(g,\alpha)$ is itself  injective.  
 But just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}, and it is clear from the construction that $\pi (g,\alpha) = g$.
+\end{proof}
+
+
+\begin{lemma}
+	The fiber product of two transverse immersions $f \colon V \to M$ and $g \colon W \to M$ from manifolds with corners to a manifold without boundary is an immersion and so, locally in a neighborhood of each point, an embedding.
+\end{lemma}
+\begin{proof}
+	By \cref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangents space, so if $(v,w) \in P$, then $T_{(v,w)}P = T_vV \times_{T_{f(v)}M} T_wW$. 
+	Suppose $(a,b) \in T_{(v,w)}P$ with $a \in T_vV$ and $b \in T_wW$. 
+	Let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the restrictions to $P$ of the projections from $V \times W$.
+	Then, suppressing the points for the remainder of the argument, $D(f \times_M g) = D(g\pi_W) = D(f \pi_V)$.
+	But $D(g \pi_W)(a,b)=Dg\circ D\pi_W (a,b)=Dg(b)$, and $Dg$ is injective as $g$ is an immersion. 
+	So if $D(g \pi_W)(a,b)=0$, then $b=0$, and also $a=0$ by the same computation with $D(f \pi_V)$.
+	So $D(f \times_M g)$ is injective, and $f \times_M g$ is an immersion by \cite[Proposition 3.2.6]{MaDo92}.
+	It is therefore a local embedding by \cite[Proposition 3.2.13]{MaDo92}.  
+\end{proof}
+
+\begin{corollary}
+Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse immersions of manifolds with corners to a manifold without boundary. Suppose $v \in V$ and $w \in W$ with $f(v) = g(w)$. 
+Then there are open neighborhoods $U_v$ of $v$ in $V$ and $U_w$ of $w$ in $W$ such that the fiber product $f|_{U_v} \times_M g|_{U_w}$ is a local embedding onto $f(U_v) \cap g(U_w)$. 
+\end{corollary}
+
+\begin{proof}
+In general, if $a: X \to Z$ and $b: Y \to Z$ are injective maps, then $X \times_Z Y = \{(x,y) \mid f(x) = g(y)\} = \{ z \in a(x) \cap b(Y) \}$. 
+By \cite[Proposition 3.2.13]{MaDo92}, $f$ and $g$ are local embeddings, so we can choose neighborhoods $U_v$ and $U_w$ on which $f$ and $g$ are embeddings. 
+Now applying the preceding lemma to $f|_{U_v}$ and $g|_{U_w}$, the map $f|_{U_v} \times_M g|_{U_w}$ from $U_v \times_M U_w$ to $M$ has image $f(U_v) \cap (U_w)$ and restricts to an embedding in a neighborhood of each point. 
 \end{proof}
 
 

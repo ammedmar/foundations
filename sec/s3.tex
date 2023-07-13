@@ -472,7 +472,7 @@ The following example, which may at first seem a bit artificial in employing $M$
 \begin{example}\label{E: manifold decomposition}
 	Suppose we have smooth maps $g \colon W \to M$, and $\varphi \colon M \to \R$ with $0$ a regular value of $\varphi g$.
 	Consider the spaces $W^0 = (\varphi g)^{-1}(0)$, $W^- = (\varphi g)^{-1}((-\infty,0])$, and $W^+ = (\varphi g)^{-1}([0,\infty))$, which are manifolds with corners.
-	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions, and in fact $W^0$ is a submanifold (with corners) of $W$ by \cite[Proposition 4.2.9]{MaDo92}. By the boundary formula \cref{E: product boundary}, 
+	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions, and in fact $W^0$ is a submanifold (with corners) of $W$ by \cite[Proposition 4.2.9]{MaDo92}. By the boundary formula \cref{P: product boundary}, 
 	$$\bd (W^-)= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right),$$
 	and the first component is precisely $W^0$, so $W^0$ is a boundary component of $W^-$ and similarly for $W^+$.
 
@@ -541,7 +541,7 @@ The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism 
 \subsection{Co-orientation of homotopies}\label{S: co-oriented homotopy}
 
 In this section we develop co-orientations related to homotopies.
-As the product of two spaces is the same as their fiber product over a point, we have by equation \eqref{E: product boundary} and rearranging the order of components:
+As the product of two spaces is the same as their fiber product over a point, we have by \cref{P: product boundary} and rearranging the order of components:
 \begin{equation*}
 	\bd(W \times I) =
 	(\bd W \times I) \sqcup (W \times \bd I) =
@@ -1073,6 +1073,7 @@ The co-oriented pullback construction is functorial in the following sense.
 
 	For the second claim, there is a diffeomorphism between $V \times_M X = \{(v,x) \in V \times X \mid f(v) = g(h(x))\}$ and $(V \times_M W) \times_W X = \{((v,w),x) \in (V \times_M W) \times X \mid w = h(x)\}$ given by $(v,x) \mapsto (v,h(x),x)$ and $((v,w),x) \mapsto (v,x)$.
 	To see that the last map is well defined notice that $f(v) = g(h(x))$ as $h(x) = w$, and $f(v) = g(w)$ from the assumption $(v,w) \in V \times_M W$.
+	Alternatively, these two pullbacks must be diffeomorphic by general category theory, as our pullbacks are pullbacks in the category of manifolds with corners by \cite[Section 6]{Joy12}.
 
 	Compatibility of the co-orientations now follows by considering the following diagram. 
 	We may assume $V$ and $W$ are manifolds without boundary by \cref{P: interior co-orientation}, and then the map labeled $e^*$ is an embedding, as recalled in the proof of \cref{L: co-orientable pullback}. 
@@ -1103,7 +1104,7 @@ In addition, these special cases are good for building intuition about the more 
 	We will discuss that case below in \cref{E: embedded}.
 \end{example}
 
-In the key example when both $f \colon V \to M$ and $g \colon W \to M$ are immersions, we know by \cref{L: fiber product of embeddings,S: normal orientation} that the co-orientations correspond locally to orientations of the normal bundles $\nu V$ and $\nu W$ and the fiber product $V \times_M W \to M$ correspnds locally to the intersection of the images of $V$ and $W$.
+In the key example when both $f \colon V \to M$ and $g \colon W \to M$ are immersions, we know by \cref{L: fiber product of embeddings,S: normal orientation} that the co-orientations correspond locally to orientations of the normal bundles $\nu V$ and $\nu W$ and the fiber product $V \times_M W \to M$ corresponds locally to the intersection of the images of $V$ and $W$.
 In this case our fiber product co-orientation of $V \times_M W \subset M$ is easily determined in terms of the orientations of $\nu V$ and $\nu W$. 
 Again, \cref{pullback,P: interior co-orientation} allow us to focus on the case where $V$ and $W$ lack boundaries.
 
@@ -1391,7 +1392,7 @@ Note that this is where we use the properness assumption in \cref{P: graded comm
 
 	First consider $F$.
 	As $f$ is co-oriented, $F$ is co-orientable by \cref{L: co-orientable homotopies}, and we co-orient it via \cref{D: homotopy co-orientation}.
-	Then $(V \times I) \times_M W$ will have its fiber product co-orientation, and by \cref{leibniz} two of its boundary components will be (topologically) $f \times_M g \colon (V \times 0) \times_M W \to M$ and
+	Then $(V \times I) \times_M W$ will have its fiber product co-orientation, and by \cref{P: product boundary} two of its boundary components will be (topologically) $f \times_M g \colon (V \times 0) \times_M W \to M$ and
 	$f' \times_M g \colon (V \times 1) \times_M W \to M$ with appropriate boundary co-orientations.
 	Similarly, two of the boundary components of $W \times_M (V \times I)$ will be $g \times_M f: W \times_M (V \times 0) \to M$ and
 	$g \times_M f' \colon W \times_M (V \times 1) \to M$ with appropriate co-orientations. 
