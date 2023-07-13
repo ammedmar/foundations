@@ -297,6 +297,7 @@ But just as for ordinary manifolds, an injective proper immersion is a closed em
 \end{proof}
 
 \begin{corollary}
+XXXX
 Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse immersions of manifolds with corners to a manifold without boundary. Suppose $v \in V$ and $w \in W$ with $f(v) = g(w)$. 
 Then there are open neighborhoods $U_v$ of $v$ in $V$ and $U_w$ of $w$ in $W$ such that the fiber product $f|_{U_v} \times_M g|_{U_w}$ is a local embedding onto $f(U_v) \cap g(U_w)$. 
 \end{corollary}
@@ -305,6 +306,25 @@ Then there are open neighborhoods $U_v$ of $v$ in $V$ and $U_w$ of $w$ in $W$ su
 In general, if $a: X \to Z$ and $b: Y \to Z$ are injective maps, then $X \times_Z Y = \{(x,y) \mid f(x) = g(y)\} = \{ z \in a(x) \cap b(Y) \}$. 
 By \cite[Proposition 3.2.13]{MaDo92}, $f$ and $g$ are local embeddings, so we can choose neighborhoods $U_v$ and $U_w$ on which $f$ and $g$ are embeddings. 
 Now applying the preceding lemma to $f|_{U_v}$ and $g|_{U_w}$, the map $f|_{U_v} \times_M g|_{U_w}$ from $U_v \times_M U_w$ to $M$ has image $f(U_v) \cap (U_w)$ and restricts to an embedding in a neighborhood of each point. 
+\end{proof}
+
+
+
+
+\begin{lemma}
+	The $f \colon V \to M$ be an immersion of a manifold with corners into a manifold without boundary, let $W$ be a manifold without boundary, and let $g \colon W \to M$ be transverse to $V$. 
+	Then the pullback $\pi_W: V \times_M W \to W$ is an immersion and so, locally in a neighborhood of each point, an embedding.
+\end{lemma}
+\begin{proof}
+	By \cref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangents space, so if $(v,w) \in P$, then $T_{(v,w)}P = T_vV \times_{T_{f(v)}M} T_wW$. 
+	Suppose $(a,b) \in T_{(v,w)}P$ with $a \in T_vV$ and $b \in T_wW$. 
+	Let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the restrictions to $P$ of the projections from $V \times W$.
+	Then, suppressing the basepoints for the remainder of the argument, $D(f \times_M g) = D(g\pi_W) = D(f \pi_V)$.
+	Suppose $D\pi_W(a,b)= b = 0$. 
+	Then $$0 = Dg(D\pi_W(a,b))= D(g\pi_W)(a,b) = D(f \pi_V)(a,b) = Df(a).$$
+	But $f$ is an immersion, so $Df_v$ is injective REF and hence $a=0$. 
+	So $D(\pi_W)$ is injective and therefore $\pi_W$ is an immersion by \cite[Proposition 3.2.6]{MaDo92}.
+	It is therefore a local embedding by \cite[Proposition 3.2.13]{MaDo92}.  
 \end{proof}
 
 

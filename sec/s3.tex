@@ -1049,7 +1049,7 @@ The co-oriented pullback construction is functorial in the following sense.
 	Then the pullback of $f$ by the identity $\id_M \colon M \to M$ is (diffeomorphic to) $f \colon V \to M$ with the same co-orientation.
 
 	Suppose further that $W$ and $M$ are manifolds without boundary, that $g \colon W \to M$ is transverse to $f$ and that $h \colon X \to W$ is transverse to $V \times_M W \to W$ (or, equivalently by \cref{L: transverse to pullback}, that $gh$ is transverse to $f$).
-	Then $(gh)^*V \cong h^*g^*V$ as co-oriented manifolds over $M$.
+	Then $(gh)^*V \cong h^*g^*V$ as co-oriented manifolds over $X$.
 \end{proposition}
 
 \begin{proof}
@@ -1072,10 +1072,10 @@ The co-oriented pullback construction is functorial in the following sense.
 
 	Compatibility of the co-orientations now follows by considering the following diagram.
 	We may assume $V$ and $W$ are manifolds without boundary by \cref{P: interior co-orientation}, and then the map labeled $e^*$ is an embedding, as recalled in the proof of \cref{L: co-orientable pullback}.
-	We then note that it is equivalent to pull back the normal $\nu V$ to $X \times \R^N$ either in two steps or all at once.
+	We then note that it is equivalent to pull back the normal bundle $\nu V$ to $X \times \R^N$ either in two steps or all at once.
 	\[
 	\begin{tikzcd}[column sep=large]
-		(V \times_M W) \times_W X \arrow[r, "\pi_{V \times_M W}"] \arrow[d] & V \times_M W \arrow[r, "\pi_V"] \arrow[d] & V \arrow[d, "e"] \\
+		(V \times_M W) \times_W X \arrow[r, "\pi_{V \times_M W}"] \arrow[d] & V \times_M W \arrow[r, "\pi_V"] \arrow[d,"e^*"] & V \arrow[d, "e"] \\
 		X \times \R^N \arrow[r, "h \times \id"] \arrow[d] & W \times \R^N \arrow[r, "g \times \id"] \arrow[d] & M \times \R^N \arrow[d, "\pi_M"] \\
 		X \arrow[r, "h"] & W \arrow[r, "g"] & M.
 	\end{tikzcd}

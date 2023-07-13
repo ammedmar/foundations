@@ -376,6 +376,7 @@ This construction extends to manifolds with corners mapping into a manifold with
 	\]
 	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times_M g \colon V \times_M W \to M$.
 	We also sometimes write $f^*$ as $\pi_W$ and $g^*$ as $\pi_V$, as these maps are induced by restricting to $V \times_MW$ the projections from $V \times W$ to $V$ and $W$.
+	We also often abbreviate $V \times_M W$ as $P$.
 
 	We will generally use the term \textit{pullback} when we want to emphasize $V \times_M W$ with its map to $V$ or $W$, while the \textit{fiber product} is to be considered as mapping to $M$.
 	When treating $V \times_M W$ as a pullback, we also sometimes use the notation $g^*V \to W$ or $f^*W \to V$; this notation is consistent with the analogous notation for pullbacks of fiber bundles, which is a special case.
@@ -427,7 +428,7 @@ We will see versions of this formula below that take into account orientations a
 
 \subsubsection{Some further properties of transversality and fiber products}
 
-In this section we collect some well-known, though not always easy to find in the literature, results about transversality and fiber products.
+In this section we mostly collect some well-known, though not always easy to find in the literature, results about transversality and fiber products.
 We state these results mainly in the classical setting of manifolds without boundary, though they generally extend to the case of transverse maps of manifolds with corners mapping to a manifold without boundary, either by applying them to the pairwise transverse strata or by thinking in terms of the ``plain transversality'' of \cref{D: plain transversality}.
 
 \begin{lemma}[Tangent spaces of pullbacks]\label{L: tangent of pullbacks}
@@ -439,9 +440,12 @@ We state these results mainly in the classical setting of manifolds without boun
 	or ``the tangent space of the fiber product is the fiber product of the tangent spaces.''
 \end{lemma}
 
+\begin{proof}
 For manifolds without boundary, a proof can be found in \cite[Theorem 5.47]{Wed16}.
 Wedhorn proves this theorem for ``premanifolds,'' which are essentially manifolds minus the Hausdorff and second countability conditions; these conditions will be automatic in our setting, so Wedhorn's proof applies.
-For manifolds with corners, see \cite[Proposition 7.2.7.c]{MaDo92} (note that manifolds with corners are just called ``manifolds'' in \cite{MaDo92}, where they may also be infinite dimensional!).
+For manifolds with corners, see \cite[Proposition 7.2.7.c]{MaDo92}; note that manifolds with corners are just called ``manifolds'' in \cite{MaDo92}, where they may also be infinite dimensional!
+\end{proof}
+
 In many circumstances, this lemma allows us to reduce arguments about fiber products of maps of manifolds to arguments about fiber products of linear maps.
 
 \begin{corollary}\label{C: tangent map of pullbacks}
@@ -455,7 +459,7 @@ But this projection is precisely $D_{(x,y)} \pi_W$, so the maps agree.
 
 \begin{lemma}\label{L: normal pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ is an embedding so that $V$ has a normal bundle $\nu V$ in $M$.
-	Then the pullback map $g^*V = V \times_MW \to W$ is an embedding and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$.
+	Then the pullback map $g^*V = V \times_MW \to W$ is an embedding onto $g^{-1}(f(V))$ and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$.
 	In other words,
 	$$\nu(g^*V) \cong \left(g|_{V\times_M W}\right)^*(\nu V),$$
 	or ``the pullback of the normal bundle is the normal bundle of the pullback.''
@@ -478,7 +482,52 @@ But this projection is precisely $D_{(x,y)} \pi_W$, so the maps agree.
 	The second claim is now a special case of \cref{L: normal pullback}, using the splitting of surjective vector bundle maps \cite[Theorem 3.9.6]{Hus75} to identify the normal bundle of $V \cap W$ in $W$ with a subbundle of $TW$. 
 \end{proof}
 
-The next lemma is a bit more specific but will be useful later in proving certain formulas.
+The preceding statements are not so evident in the case of manifolds with corners, as even how to extend the notions of immersions and embeddings when the target space is a manifold with corners is not so obvious. Joyce enforces his stronger version of smoothness in \cite{Joy12}, while the definition of immersion in \cite[Section 3.2]{MaDo92} has conditions beyond the classical injectivity of the tangent map. However, we have the following useful facts.
+
+\begin{lemma}\label{L: immersions}
+	Let $f \colon V \to M$ be a map from a manifold with corners to a manifold without boundary.
+	Then:
+	\begin{enumerate}
+		\item $f$ is an immersion at $x \in V$ if and only if $Df_x$ is injective.
+		\item If $f$ is an immersion at all points and a homeomorphism onto its image, then it is an embedding.
+		\item If $f$ is an immersion at $x$, then it restricts to an embedding on an open neighborhood of $x$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	See \cite[Theorem 3.2.6, Proposition 3.2.13, and Definition 3.3.1]{MaDo92}. 
+	Note that when working with finite dimensional manifolds, as we always do, the ``topological supplement'' condition that appears often in \cite{MaDo92} is automatic \cite[page 7]{MaDo92}.
+\end{proof}
+
+The third statement of \cref{L: immersions} holds even when $M$ is a manifold with corners but requires the more sophisticated definition of immersion in \cite{MaDo92}.
+
+
+\begin{lemma}\label{L: immersion pullback}
+	Let $f \colon V \to M$ be an immersion of a manifold with corners into a manifold without boundary, let $W$ be a manifold without boundary, and let $g \colon W \to M$ be transverse to $V$. 
+	Then the pullback $\pi_W: V \times_M W \to W$ is an immersion and so, locally in a neighborhood of each point, an embedding.
+\end{lemma}
+\begin{proof}
+	By \cref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangents space, so if we write $P = V \times_M W$ and suppose $(v,w) \in P$, then $T_{(v,w)}P = T_vV \times_{T_{f(v)}M} T_wW$. 
+	Suppose $(a,b) \in T_{(v,w)}P$ with $a \in T_vV$ and $b \in T_wW$. 
+	Let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the restrictions to $P$ of the projections from $V \times W$, and recall that $\pi_W = f^*$, the pullback of $f$.
+	Then, suppressing the basepoints for the remainder of the argument, $D(f \times_M g) = D(g\pi_W) = D(f \pi_V)$.
+	Suppose $D\pi_W(a,b)= b = 0$. 
+	Then $$0 = Dg(D\pi_W(a,b))= D(g\pi_W)(a,b) = D(f \pi_V)(a,b) = Df(a).$$
+	But $f$ is an immersion, so $Df_v$ is injective by \cref{L: immersions}, and hence $a=0$. 
+	So $D\pi_W$ is injective, and therefore $\pi_W$ is an immersion, and so a local embedding, again by \cref{L: immersions}. 
+\end{proof}
+
+
+\begin{lemma}
+	The fiber product of two transverse immersions $f \colon V \to M$ and $g \colon W \to M$ from manifolds with corners to a manifold without boundary is an immersion and so, locally in a neighborhood of each point, an embedding onto its image.
+\end{lemma}
+\begin{proof}
+	Even though $W$ may have corners, the argument in the proof of \cref{L: immersion pullback} still holds to show that $D \pi_W$ is an injection at each point of $V \times_M W$. 
+	Then, as $g$ is an immersion, the composition $D(g \pi_W)$ is also injective at each point.
+	So the lemma follows by \cref{L: immersions}.
+\end{proof}
+
+The next lemma, concerning transversality with respect to pullbacks, will be useful later in proving certain functoriality formulas. 
+By \cref{pullback} and the fact that transversality of manifolds with corners reduces to transversality of manifolds without corners (looking at all the pairs of strata), it suffices to state the lemma just for manifolds without boundary.
 
 \begin{lemma}\label{L: transverse to pullback}
 	Let $f \colon V \to M$, $g \colon W \to M$, and $h \colon X \to W$ be smooth maps of manifolds without boundary, and suppose $f$ is transverse to $g$.
