@@ -328,6 +328,33 @@ Now applying the preceding lemma to $f|_{U_v}$ and $g|_{U_w}$, the map $f|_{U_v}
 \end{proof}
 
 
+\begin{lemma}
+	The $f \colon V \to M$ be an immersion of a manifold with corners into a manifold without boundary, let $W$ be a manifold without boundary, and let $g \colon W \to M$ be transverse to $V$. 
+	Then the fact that the pullback of the (local) normal bundle of $V$ in $M$ is the (local) normal bundle of $V \times_M W$ in $W$ extends to the boundary.
+\end{lemma}
+\begin{proof}
+	Let $v$ be a boundary point of $V$, and let $(U;\phi)$ be a chart for $V$ at $v$ such that $\phi(0)=v$.
+	Then by the definition of smooth maps, $\phi f$ extends smoothly to a neighborhood of the origin in $\R^v$.
+	As $f$ is an embedding, $D(\phi f)_0$ must be injective, so there is a neighborhood of $0$ on which $f\phi$ extends to an embedding with $v$ in the interior. 
+	In other words, the embedding of $V$ can be extended locally to a neighborhood $v$ in the union of $V$ with an exterior boundary collar. 
+	Let us denote such an embedded manifold neighborhood of $v$ by $V'$. 
+	By restricting the codomain to a sufficiently small neighborhood of $v$ in $M$ and restriction $V'$ further if necessary, we can assume that $V'$ is a closed embedding.
+	For simplicitly, we assume from here on that we have made such restrictions and reset the notation so that $V'$ is a closed submanifold (without boundary) of $M$.  
+	
+	Next suppose that $w \in W$ with $g(w) = v$.
+	Since $g$ is transverse to $V$ at $w$, it will be transverse to $V'$ at $w$, and so $g$ will be transverse to $V'$ on a neighborhood $W'$ of $w$ \cite[Proposition 7.1.18]{MaDo92}.
+
+	So now $V' \times_M W'$ will be a neighborhood of $w$ in $V' \times_M W$, which is a submanifold of $W$ by the classical theory (see \cref{L: normal pullback}), which also tells us that the pullback of the normal bundle is the normal bundle of the pullback. 
+	In particular, the normal space\footnote{Really the quotient $T_vM/T_vV'$.} of $V'$ at $v$ is also the normal space of $V$ at $v$, and so we identify this normal space also with the normal space over $w$ in the normal bundle over $V' \times_M W '$. 
+	As $T_wW = T_w W'$ and $T_vV' = T_vV$, and so also $\nu_vV = \nu_v V'$, by \cref{L: tangent of pullbacks} we have $T_w(V' \times_M W')= T_w(V \times W')$ and so 
+	$$\nu_w(V\times_M W) = T_wW/T_w(V \times_M W) = T_wW'/T_w(V' \times_M W') = \nu_w(V' \times_M W') = g^*(\nu V')_w = g^*(\nu V)_w.$$  
+\end{proof}
+
+As we have $T_v{\bd V} \subset T_v V  \subset T_vM$, 
+
+
+
+
 \bibliographystyle{amsplain}
 \bibliography{../../bib}
 
