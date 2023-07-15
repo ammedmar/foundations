@@ -1628,27 +1628,29 @@ Before getting to co-orientations, we first show that a product of proper maps i
 	\begin{multline*}
 		(f \times g)^*\Or(T(M \times N)) \cong \Or((f \times g)^*T(M \times N))\\ \cong \Or(\pi_V^*f^*TM) \otimes \Or(\pi_W^*g^*TN) \cong \pi_V^*f^*\Or(TM) \otimes \pi_W^*g^*\Or(TN).
 	\end{multline*}
-	Thus if $\Or(TV) \cong f^*\Or(TM)$ and $\Or(TW) \cong g^*\Or(TN)$, we can construct isomorphisms $\Or(T(V \times W)) \cong (f \times g)^*\Or(T(M \times N))$.
+	Thus if $\Or(TV) \cong f^*\Or(TM)$ and $\Or(TW) \cong g^*\Or(TN)$, we can construct an isomorphism $\Or(T(V \times W)) \cong (f \times g)^*\Or(T(M \times N))$.
 \end{proof}
 
 \begin{definition}\label{D: co-oriented exterior}
 	If $f \colon V \to M$ and $g \colon W \to N$ are co-oriented maps of manifolds with corners with co-orientations given by isomorphisms $\phi \colon \Or(TV) \to f^*\Or(TM)$ and $\psi \colon \Or(TW) \to g^*\Or(TN)$, we define the \textbf{product co-orientation} of $f \times g \colon V \times W \to M \times N$ by the isomorphism $(-1)^{(m-v)w}\pi_V^*\phi \otimes \pi_W^*\psi$.
-	In particular, if at $x \in V$ the co-orientation of $f$ is given locally by $(\beta_V,\beta_M)$ and at $y \in W$ the co-orientation of $g$ is given locally by $(\beta_W,\beta_N)$, then up to standard abuses of notation the product co-orientation is locally represented at $(x,y)$ by $$(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
+	In particular, if at $x \in V$ the co-orientation of $f$ is given locally by $(\beta_V,\beta_M)$ and at $y \in W$ the co-orientation of $g$ is given locally by $(\beta_W,\beta_N)$, then the product co-orientation is locally represented at $(x,y)$ by $$(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
 
-	Following our standard conventions, we often denote this product manifold over $M \times N$ by simply $V \times W$.
+	Following our standard convention from \cref{N: implicit notation}, we often write simply $V \times W$ to represent the co-oriented product. 
 \end{definition}
 
 \begin{remark}
 	The sign in the definition is not at first obvious, though it will be justified in the following lemmas.
-	One way to think of it is as follows: If we we take $V$ and $W$ as immersed submanifolds co-oriented by orienting their normal bundles as in \cref{normal co-or}, then $V \times W$ is also immersed, and at an image point we have $T(M \times N) \cong TV \oplus \nu V \oplus TW \oplus \nu W$.
-	The sign $(-1)^{(m-v)w}$ is the sign needed in the orientation to permute this to $TV \oplus TW \oplus \nu V \oplus \nu W$ so that we can properly utilize the normal co-orientation for $\nu(V \times W) \cong \nu V \oplus \nu W$.
+	One way to think of it is as follows: If we we take $V$ and $W$ as immersed submanifolds co-oriented by orienting their normal bundles as in \cref{normal co-or}, then $V \times W$ is also immersed, and at an image point we have $T(M \times N) \cong TV \oplus \nu V \oplus TW \oplus \nu W$, letting $\nu V$ and $\nu W$ stand for the normal bundles of $V$ and $W$ in $M$ and $N$, respectively.
+	The sign $(-1)^{(m-v)w}$ is the sign needed in the local orientation to permute this to $TV \oplus TW \oplus \nu V \oplus \nu W$ so that we can properly utilize the normal co-orientation for $\nu(V \times W) \cong \nu V \oplus \nu W$.
 	While this argument is essentially heuristic, it is borne out in the computations below.
 \end{remark}
+
+The following example will be useful in the proof of \cref{T: intersection is cup product}.
 
 \begin{example}\label{E: sphere product}
 	Let $S^p$ and $S^q$ be oriented spheres with $p,q>0$.
 	Let $V = W = pt$, and let $f \colon V \to S^p$ and $g \colon W \to S^q$ be embeddings to points $x \in S^p$, $y \in S^q$.
-	Let $f$ be co-oriented by $(1,\beta_{S^p})$; in other words $V$ is normally co-oriented by orientation of its normal bundle that agrees with the orientation of $S^p$.
+	Let $f$ be co-oriented by $(1,\beta_{S^p})$; in other words $V$ is normally co-oriented by the orientation of its normal bundle that agrees with the orientation of $S^p$.
 	Let $g$ be co-oriented similarly.
 	Then $V \times W$ is represented by the embedding of the point to $(x,y) \in S^p \times S^q$ with normal bundle oriented consistently with the product orientation of $S^p \times S^q$.
 	There is no extra sign in this case as $\dim(W) = 0$.
@@ -1661,7 +1663,7 @@ Before getting to co-orientations, we first show that a product of proper maps i
 
 \begin{proof}
 	This is obvious ignoring co-orientations.
-	Considering co-orientations, if $f$ is co-oriented at a point by $(\beta_V,\beta_M)$, then the co-orientation of $f \times g$ is simply $(\beta_V \wedge \R,\beta_M \wedge \R) = (\beta_V,\beta_M)$, noting that
+	Considering co-orientations, if $f$ is co-oriented at a point by $(\beta_V,\beta_M)$, then the co-orientation of $f \times g$ is simply $(\beta_V \wedge 1,\beta_M \wedge 1) = (\beta_V,\beta_M)$, noting that
 	the sign $(-1)^{(m-v)\cdot 0} = 1$ in this case.
 	The case $g \times f$ is similar, though due to the transposition the sign is now $(-1)^{(0-0)v}$, which is again $1$.
 \end{proof}
@@ -1674,7 +1676,7 @@ Before getting to co-orientations, we first show that a product of proper maps i
 \begin{proof}
 	We know that this expression is an identity ignoring co-orientations, so we must establish the agreement of the co-orientations for each component.
 	As usual, it suffices to consider points in the top dimensional strata of $\bd(V \times W)$.
-	In what follows, let $(\beta_V,\beta_M)$, $(\beta_W,\beta_N)$, and $(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N)$ denote the co-orientations of $V$, $W$, and $V \times W$ at the point under consideration.
+	In what follows, we fix $\beta_V$, $\beta_W$, $\beta_M$, and $\beta_N$, so that $(\beta_V,\beta_M)$, $(\beta_W,\beta_N)$, and $(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N)$ denote the co-orientations of $V$, $W$, and $V \times W$ at the point under consideration.
 
 	Let $\nu$ denote an inward pointing normal to $V \times W$ at such a point.
 	Then the inclusion $\bd(V \times W) \to V \times W$ is co-oriented at that point by $(\beta_{\bd(V \times W)},\beta_{\bd(V \times W)} \wedge \beta_\nu)$ for any $\beta_{\bd(V \times W)}$.
@@ -1682,8 +1684,9 @@ Before getting to co-orientations, we first show that a product of proper maps i
 	We fix such a choice in what follows.
 
 	Now suppose our point is more specifically in the top-dimensional stratum of $(\bd V) \times W$.
-	If we choose $\beta_{\bd V}$ so that $\beta_{\bd V} \wedge \beta_\nu = \beta_V$, then $\bd V \to M$ is co-oriented by $(\beta_{\bd V},\beta_M)$ and so $(\bd V) \times W$ is co-oriented by $(-1)^{(m-v+1)w}(\beta_{\bd V} \wedge \beta_W,\beta_M \wedge \beta_N)$.
-	On the other hand, the co-orientation of $V \times W$ can then be written $(-1)^{(m-v)w}(\beta_{\bd V} \wedge \beta_\nu \wedge \beta_W,\beta_M \wedge \beta_N) = (-1)^{(m-v)w+w}(\beta_{\bd V} \wedge \beta_W \wedge \beta_\nu,\beta_M \wedge \beta_N)$, so the boundary co-orientation of $\bd(V \times W)$ is $(-1)^{(m-v)w+w}(\beta_{\bd V} \wedge \beta_W,\beta_M \wedge \beta_N)$, which agrees with our co-orientation for $(\bd V) \times W$.
+	If we choose $\beta_{\bd V}$ so that $\beta_{\bd V} \wedge \beta_\nu = \beta_V$, then $\bd V \to M$ is co-oriented by $(\beta_{\bd V},\beta_M)$ and so $(\bd V) \times W \to M \times N$ is co-oriented by $(-1)^{(m-v+1)w}(\beta_{\bd V} \wedge \beta_W,\beta_M \wedge \beta_N)$.
+	On the other hand, the co-orientation of $V \times W$ can then be written $(-1)^{(m-v)w}(\beta_{\bd V} \wedge \beta_\nu \wedge \beta_W,\beta_M \wedge \beta_N) = (-1)^{(m-v)w+w}(\beta_{\bd V} \wedge \beta_W \wedge \beta_\nu,\beta_M \wedge \beta_N)$, so the boundary co-orientation of $\bd(V \times W)$ is $$(\beta_{\bd V} \wedge \beta_W,\beta_{\bd V} \wedge \beta_W \wedge \beta_\nu)*(-1)^{(m-v)w+w}(\beta_{\bd V} \wedge \beta_W \wedge \beta_\nu,\beta_M \wedge \beta_N) = (-1)^{(m-v)w+w}(\beta_{\bd V} \wedge \beta_W,\beta_M \wedge \beta_N),$$ 
+	which agrees with our co-orientation for $(\bd V) \times W$.
 
 	Next consider a point in the top-dimensional stratum of $V \times \bd W$.
 	If we choose $\beta_{\bd W}$ so that $\beta_{\bd W} \wedge \beta_\nu = \beta_W$ then we have $\bd W$ co-oriented by $(\beta_{\bd W},\beta_N)$ and so $V \times \bd W$ is co-oriented by $(-1)^{(m-v)(w-1)}(\beta_{V} \wedge \beta_{\bd W},\beta_M \wedge \beta_N)$.
@@ -1697,7 +1700,6 @@ Before getting to co-orientations, we first show that a product of proper maps i
 \end{proposition}
 
 \begin{proof}
-	Let $v = \dim(V)$, etc.
 	If $f,g,h$ are co-oriented by $(\beta_V,\beta_M)$, etc., then both products are co-oriented up to sign by $(\beta_V \wedge \beta_W \wedge \beta_X,\beta_M \wedge \beta_N \wedge \beta_P)$.
 	In forming $(V \times W) \times X$ we first have the sign $(-1)^{(m-v)w}$ from $V \times W$, then taking the product with $X$ on the right multiplies by $(-1)^{(m+n-v-w)x}$.
 	So the total sign is $(-1)^{(m-v)w+(m+n-v-w)x}$.
@@ -1714,58 +1716,59 @@ Before getting to co-orientations, we first show that a product of proper maps i
 	Presumably if I didn't do this there would be a bunch of extra signs that miraculous cancel out, but I'm not so excited about trying that out in detail to see.
 \end{comment}
 
-The following lemma provides a nice description of the Quillen co-orientation of product of co-oriented maps.
+The following lemma provides a nice description of the Quillen co-orientation of a product of co-oriented maps.
 Among other things, it will help us to next demonstrate a commutativity property for exterior products of co-oriented maps.
+We assume for convenience that our Euclidean factors are even dimensional, which simplifies the computations and will be sufficient for what follows; of course if $V$ embeds in $M \times \R^n$, it also embeds in $M \times \R^{n+1}$, and we have shown that our fiber product co-orientations do not depend on such choices. 
 
 \begin{lemma}\label{L: Quillen product co-orientation}
 	Let $f \colon V \to M$ and $g \colon W \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary.
-	Consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V \colon V \into M \times \R^a$ and $e_W \colon W \into N \times \R^b \to N$ with $a$ and $b$ even.
+	Consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V \colon V \into M \times \R^a$ and $e_W \colon W \into N \times \R^b$ with $a$ and $b$ even.
 	Denote the normal bundles of $V$ and $W$ in $M \times \R^a$ and $N \times \R^b$ by $\nu V$ and $\nu W$.
 	Let $T \colon M \times \R^a \times N \times \R^b \to M \times N \times \R^{a+b}$ be the diffeomorphism that interchanges the middle two factors.
 	Then
 	$T(e_V \times e_W)$ gives an embedding $V \times W \to M \times N \times \R^{a+b}$ with normal bundle isomorphic to the sum of the pullbacks of $\nu V$ and $\nu W$ by the projections of $V \times W \to M \times N \times \R^a \times \R^b$ to either the first and third factor or the second and fourth factors.
 	For simplicity, we simply write $\nu V \oplus \nu W$.
 
-	Then the Quillen co-orientation of $f \times g \colon V \times W \to M \times N$ has Quillen co-orientation given by $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W},$$
+	Then the Quillen normal orientation of the normal bundle of $f \times g \colon V \times W \to M \times N$ is given by $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W},$$
 	suitably interpreting the relevant coordinates in $M \times N \times \R^a \times \R^b$.
 \end{lemma}
+
+The last line simply means that if an element of $\nu V$ has coordinates $(x,y)$ in $M \times \R^a$, then this cooresponds to a normal vector with coordinates $(x,0,y,0)$ in $M \times N \times \R^a \times \R^b$ for which we do not create a new notation, and similarly for $\nu_W$. 
 
 \begin{proof}
 	Let $\beta_a$ and $\beta_b$ denote the standard orientations for $\R^a$ and $\R^b$.
 	By definition, $\nu V$ and $\nu W$ are oriented so that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ and $\beta_W \wedge \beta_{\nu W} = \beta_N \wedge \beta_b$.
 
-	By definition, the Quillen orientation of $\nu V \oplus \nu W$ corresponding to the product co-orientation of $V \times W$ is the orientation $\beta_{\nu V \oplus \nu W}$ such that
+	By definition, the Quillen orientation of $\nu V \oplus \nu W$ corresponding to the product co-orientation of $V \times W$ is the local orientation $\beta_{\nu V \oplus \nu W}$ such that
 	$$(\beta_{V \times W}, \beta_{V \times W} \wedge \beta_{\nu V \oplus \nu W})*(\beta_{M \times N} \wedge \beta_{a+b},\beta_{M \times N}) = (-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
 	Taking $\beta_{M \times N} = \beta_M \wedge \beta_N$ and $\beta_{V \times W} = \beta_V \wedge \beta_W$ and noting $\beta_{a+b} = \beta_a \wedge \beta_b$, this formula becomes
 	$$(\beta_V \wedge \beta_W, \beta_V \wedge \beta_W \wedge \beta_{\nu V \oplus \nu W})*(\beta_M \wedge \beta_N \wedge \beta_a \wedge \beta_b,\beta_M \wedge \beta_N) = (-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
 	We also have $$\beta_M \wedge \beta_N \wedge \beta_a \wedge \beta_b = \beta_M \wedge \beta_a \wedge \beta_N \wedge \beta_b,$$ as $a$ is even, so using $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ and $\beta_W \wedge \beta_{\nu W} = \beta_N \wedge \beta_b$, we require
 	$$(\beta_V \wedge \beta_W, \beta_V \wedge \beta_W \wedge \beta_{\nu V \oplus \nu W})*(\beta_V \wedge \beta_{\nu V}\wedge\beta_W \wedge \beta_{\nu W} ,\beta_M \wedge \beta_N) = (-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
 	But now $$\beta_V \wedge \beta_{\nu V}\wedge\beta_W \wedge \beta_{\nu W} = (-1)^{(m-v)w} \beta_V \wedge \beta_{W}\wedge\beta_{\nu V} \wedge \beta_{\nu W},$$
-	so, after all that, we see that the Quillen orientation of the normal bundle to $V \times W$ is simply $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W},$$
-	suitably interpreting the relevant coordinates in $M \times N \times \R^a \times \R^b$.
+	so, after all that, we see that the Quillen orientation of the normal bundle to $V \times W$ is simply $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}.$$
 \end{proof}
 
 \begin{proposition}\label{P: exterior commutativity}
 	Let $f \colon V \to M$ and $g \colon W \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary and suppose $f \times g \colon V \times W \to M \times N$ is given the product co-orientation.
 	Let $\tau \colon N \times M \to M \times N$ be the diffeomorphism that interchanges coordinates.
-	Then the pullback of $V \times W$ by $\tau$ is
-	$$\tau^*(V \times W) = (-1)^{(m-v)(n-w)}W \times V,$$
-	where $m = \dim M$, etc.
+	Denote the pullback of $f \times g$ by $\tau$ as $\tau^*(V \times W) \to N \times M$. Then this pullback is diffeomorphic, as co-oriented maps, to $(-1)^{(m-v)(n-w)}W \times V \to N \times M$. In other words,
+	$$\tau^*(V \times W) = (-1)^{(m-v)(n-w)}W \times V.$$
 \end{proposition}
 We assume $M$ and $N$ to be without corners so that we can properly use the pullback construction, which requires transversality, in the proposition and its proof.
 However, the pullback is by a diffeomorphism, so this result should extend without problem to more general settings.
 \begin{proof}
+	This is clear at the level of spaces, so we focus on co-orientations. 
 	Let $(\beta_V,\beta_M)$ and $(\beta_W,\beta_N)$ be local representations of the co-orientations at some points.
 	The product co-orientation of $V \times W \to M \times N$ is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N)$.
 
-	As in \cref{L: Quillen product co-orientation},we consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V \colon V \into M \times \R^a$ and $e_W \colon W \into N \times \R^b \to N$ with $a$ and $b$ even.
+	As in \cref{L: Quillen product co-orientation}, we consider Quillen co-orientations representing $f$ and $g$ via embeddings $e_V \colon V \into M \times \R^a$ and $e_W \colon W \into N \times \R^b \to N$ with $a$ and $b$ even.
 	This is sufficient as we know that the pullback construction is independent of $a$ and $b$ for sufficiently large dimensions by \cref{L: pullback co well defined}.
-	Assuming the other notation from \cref{L: Quillen product co-orientation}, the lemma tells us that $f \times g \colon V \times W \to M \times N$ has Quillen co-orientation given by $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W},$$
-	suitably interpreting the relevant coordinates in $M \times N \times \R^a \times \R^b$.
+	Assuming the other notation from \cref{L: Quillen product co-orientation}, that lemma tells us that the normal co-orientation of $V \times W$ in $M \times N \times \R^a \times \R^b$ is $$\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}.$$
 
 	Now using this Quillen co-orientation for $f \times g$, we pull back by the diffeomorphism $\tau \colon N \times M \to M \times N$, obtaining the composition we can write $W \times V \into N \times M \times \R^a \times \R^b \to N \times M$.
 	The pulled back normal bundle is still oriented in each fiber as $\beta_{\nu V} \wedge \beta_{\nu W}$ (though of course the order of actual local coordinates have now been jumbled around).
-	By definition, the pullback co-orientation is $(\beta_W \wedge \beta_V,\beta_N \wedge \beta_M)$ if and only if $$\beta_W \wedge \beta_V \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_N \wedge \beta M \wedge \beta_{a+b},$$
+	By definition, the pullback co-orientation is $(\beta_W \wedge \beta_V,\beta_N \wedge \beta_M)$ if and only if $$\beta_W \wedge \beta_V \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_N \wedge \beta_M \wedge \beta_{a+b},$$
 	and as $a$ and $b$ are even this last expression is equal to
 	$\beta_N \wedge \beta_b \wedge \beta_M \wedge \beta_{a}.$ But by the previous choices, $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ and $\beta_W \wedge \beta_{\nu W} = \beta_N \wedge \beta_b$.
 	So
@@ -1781,10 +1784,11 @@ However, the pullback is by a diffeomorphism, so this result should extend witho
 	Therefore, the pullback co-orientation is $(-1)^{v(n-w)+(m-v)(n-w)}(\beta_W \wedge \beta_V,\beta_N \wedge \beta_M)$, which is $(-1)^{(m-v)(n-w)}$ times the product co-orientation of $W \times V$, as claimed.
 \end{proof}
 
-The next result relates co-oriented products in which one map is the identity with pullbacks by projections.
+The next result concerns co-oriented products in which one map is the identity.
+We show that such products are simply pullbacks by projections.
 
 \begin{proposition}\label{P: projection pullbacks}
-	Let $f \colon V \to M$ be a co-oriented map from a manifolds with corners to a manifold without boundary, and let $\id_N \colon N \to N$ be the identity map of a manifold with corners with the canonical co-orientation.
+	Let $f \colon V \to M$ be a co-oriented map from a manifolds with corners to a manifold without boundary, and let $\id_N \colon N \to N$ be the identity map of a manifold with corners with the tautological co-orientation.
 	\begin{enumerate}
 		\item The co-oriented pullback of $V$ by the projection $\pi_1 \colon M \times N \to M$ is $f \times \id_N \colon V \times N \to M \times N$ with its product co-orientation, i.e.\ $\pi_1^*V = V \times N$.
 		\item The co-oriented pullback of $V$ by the projection $\pi_2 \colon N \times M \to M$ is $\id_N \times f \colon N \times V \to N \times M$ with its product co-orientation, i.e.\ $\pi_2^*V = N \times V$.
@@ -1796,12 +1800,12 @@ The next result relates co-oriented products in which one map is the identity wi
 	These claims are then clear concerning maps of topological spaces, so we need only verify the co-orientations.
 
 	As in the preceding argument, we start again with an embedding $e \colon V \into M \times \R^a$ to establish a Quillen co-orientation for $f$.
-	We again may assume $a$ be even for simplicity.
+	We again may assume $a$ to be even for simplicity.
 	We write the co-orientation of $f$ as $(\beta_V,\beta_M)$, and we let $\nu V$ denote the normal to $e(V)$ and orient $\nu V$ so that $\beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$, writing $\beta_a$ for the standard orientation of $\R^a$.
 
 	For the second statement, the product co-orientation of $\id_N \times f \colon N \times V \to N \times M$ is $(\beta_N \wedge \beta_V,\beta_N \wedge \beta_M)$, as the domain and codomain of $\id_N$ have the same dimension.
 	The pullback by the projection $N \times M \to M$ gives us the embedding/projection sequence $N \times V\xhookrightarrow{\id_N \times e} N \times M \times \R^a \to N \times M$, and the orientations of the pullback of the normal bundle $\nu V$ by $\pi_2 \times \id_{\R^a}$ is again $\beta_{\nu V}$ at each point of $N \times e(V)$.
-	So now from the definition, the pullback has the product co-orientation if and only if $\beta_N \wedge \beta_V \wedge \beta_{\nu V} = \beta_N \wedge \beta_M \wedge \beta_a$.
+	So now from \cref{D: pullback coorient}, the pullback has the product co-orientation if and only if $\beta_N \wedge \beta_V \wedge \beta_{\nu V} = \beta_N \wedge \beta_M \wedge \beta_a$.
 	But $ \beta_V \wedge \beta_{\nu V} = \beta_M \wedge \beta_a$ by assumption, so this holds.
 
 	For the first statement, the product co-orientation of $f \times \id_N \colon V \times N \to M \times N$ is $(-1)^{(m-v)n}(\beta_V \wedge \beta_N,\beta_M \wedge \beta_N)$.
@@ -1820,16 +1824,16 @@ The next proposition shows that the exterior product construction is natural.
 \begin{proposition}\label{P: natural exterior}
 	Let $f \colon V \to M$ and $g \colon W \to N$ be co-oriented maps of manifolds with corners with $M$ and $N$ having no boundaries.
 	Let $h \colon X \to M$ and $k \colon Y \to N$ be maps of manifolds with corners that are transverse to $f$ and $g$ respectively.
-	Then $(h \times k)^*(V \times W) = h^*V \times k^*W$ spaces with co-oriented maps to $X \times Y$.
+	Then $(h \times k)^*(V \times W) = h^*V \times k^*W$ as spaces with co-oriented maps to $X \times Y$.
 \end{proposition}
 
 \begin{proof}
-	It is easy to show that $h \times k$ is transverse to $f \times g$ so we focus on co-orientation.
-	As in the preceding proofs, we write the Quillen orientation of the normal to the image of $V \times W \into M \times N \times \R^a \times \R^b$ as $\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}$.
+	It is easy to show that $h \times k$ is transverse to $f \times g$, so we focus on co-orientation.
+	As in the preceding proofs, we write the Quillen orientation of the normal bunle to the embedded image of $V \times W \into M \times N \times \R^a \times \R^b$ as $\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}$.
 	Then the pullback $P = (h \times k)^*(V \times W)$ is co-oriented by $(\beta_P,\beta_{X \times Y})$ if and only if we choose $\beta_P$ and $\beta_{X \times Y}$ so that
 	$$\beta_{P} \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_{X \times Y} \wedge \beta_{a+b}.$$
 
-	On the other hand, we know $h^*V$ is co-oriented by $(\beta_{h^*V},\beta_X)$ if an only if $\beta_{h^*V} \wedge \beta_{\nu V} = \beta_X \wedge \beta_a$ and $k^*W$ is co-oriented by $(\beta_{k^*W},\beta_Y)$ if an only if $\beta_{k^*W} \wedge \beta_{\nu W} = \beta_Y \wedge \beta_b$.
+	On the other hand, we know $h^*V$ is co-oriented by $(\beta_{h^*V},\beta_X)$ if an only if $\beta_{h^*V} \wedge \beta_{\nu V} = \beta_X \wedge \beta_a$, and $k^*W$ is co-oriented by $(\beta_{k^*W},\beta_Y)$ if an only if $\beta_{k^*W} \wedge \beta_{\nu W} = \beta_Y \wedge \beta_b$.
 	Assuming these hold, then $h^*V \times k^*W$ is co-oriented by $$(-1)^{(x-(v+x-m))(w+y-n)}(\beta_{h^*V} \wedge \beta_{k^*W},\beta_X \wedge \beta_Y) = (-1)^{(m-v)(w+y-n)}(\beta_{h^*V} \wedge \beta_{k^*W},\beta_X \wedge \beta_Y).$$
 
 	Now, continuing to assume the equalities of the last paragraph and taking $a$ and $b$ even as usual, we have
