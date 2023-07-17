@@ -3,7 +3,8 @@
 \section{Manifolds with corners}\label{S: manifolds with corners}
 
 In this section, we provide an overview of manifolds with corners, which are the main geometric objects in the definitions of geometric chains and cochains.
-Our reference for this material is Joyce \cite{Joy12}.
+Our main references for this material are Joyce \cite{Joy12} and Margalef-Roig and Outerelo Dominguez \cite{MaDo92}. In \cite{MaDo92}, manifolds with corners (which they simply call ``manifolds'') may be infinite-dimensional and may fail to be Hausdorff, so there is some work involved in seeing that their definition agrees with Joyce's when one assumes, as we shall, that all spaces are finite-dimensional, Hausdorff, and second countable. 
+
 By \textbf{smooth} we always mean differentiable of all orders.
 Throughout the paper, all manifolds and maps will be in the smooth category unless noted otherwise.
 
@@ -59,7 +60,7 @@ By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts)
 	is smooth.
 
 	The \textbf{tangent bundle} of a manifold with corners is the space of derivations of the ring of smooth real-valued functions.
-	Analogously to smooth manifolds with boundary, if $(U,\phi)$ is a chart of $W$ then $d\phi$ takes the tangent space to $\R^n$ at $x \in U$ isomorphically to the tangent spaces of $W$ at $\phi(x)$.
+	Analogously to smooth manifolds with boundary, if $(U,\phi)$ is a chart of $W$ then $D\phi$ takes the tangent space to $\R^n$ at $x \in U$ isomorphically to the tangent spaces of $W$ at $\phi(x)$.
 	In particular, if $W$ is $n$-dimensional and $x \in W$, then the tangent space at $x$, denoted $T_xW$, is isomorphic to $\R^n$.
 \end{definition}
 
@@ -67,6 +68,14 @@ In \cite{Joy12}, Joyce reserves the word \textit{smooth} for weakly smooth maps 
 When the codomain is a manifold without boundary, which will be our primary situation of interest, the weaker and stronger notions coincide.
 In the few other cases in which we need to consider maps whose codomains have boundary, in particular boundary immersions and projections of pullbacks, the maps will also satisfy Joyce's stronger condition, though we will never need to utilize this explicitly.
 Thus we will feel justified in simply using the word ``smooth'' throughout, referring the reader to \cite[Definition 3.1]{Joy12} for the full definition.
+
+While the notion of embeddings of manifolds with corners into manifolds with corners is not straightforward (and it is not clear that these notions in \cite{Joy12} and \cite{MaDo92} agree), the following observation concerning embeddings of manifolds with corners into manifolds without boundary is reassuring. 
+Suppose a manifold with corners $V$ is embedded in a manifold without boundary $M$, meaning, as in the classical sense, that there is a map $f \colon V \to M$ that is a homeomorphism onto its image and such that $Df$ is injective at each point of $V$; see \cite[Definition 3.3.1 and Theorem 3.2.6]{MaDo92}. 
+Let $x$ be a boundary point of $V$, and let $(U,\phi)$ be a chart for $V$ at $x$ such that $\phi(0)=x$.
+Then, by the definition of smooth maps, $f \phi$ extends smoothly to a neighborhood of the origin in $\R^v$.
+As $f$ is an embedding, $D(\phi f)_0$ must be injective, so by classical differential topology there is a neighborhood of $0$ in $\R^v$ on which $f\phi$ extends to an embedding with $x$ in the interior \cite[Section 1.3]{GuPo74}. 
+In other words, the embedding of $V$ can be extended (locally in some neighborhood of $x$) to an embedding of an ordinary manifold without boundary, and the neighborhood of $x$ in $V$ sits inside a Euclidean neighborhood of this embedding as the diffeomorphic image of $\R^v_k$ for some $k$. 
+ 
 
 \begin{notation}
 	Our default notation for manifolds with corners will be capital letters with the corresponding lower case letter denoting the dimension.
@@ -443,7 +452,7 @@ We state these results mainly in the classical setting of manifolds without boun
 \begin{proof}
 For manifolds without boundary, a proof can be found in \cite[Theorem 5.47]{Wed16}.
 Wedhorn proves this theorem for ``premanifolds,'' which are essentially manifolds minus the Hausdorff and second countability conditions; these conditions will be automatic in our setting, so Wedhorn's proof applies.
-For manifolds with corners, see \cite[Proposition 7.2.7.c]{MaDo92}; note that manifolds with corners are just called ``manifolds'' in \cite{MaDo92}, where they may also be infinite dimensional!
+For manifolds with corners, see \cite[Proposition 7.2.7.c]{MaDo92}.
 \end{proof}
 
 In many circumstances, this lemma allows us to reduce arguments about fiber products of maps of manifolds to arguments about fiber products of linear maps.
