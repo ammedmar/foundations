@@ -1045,15 +1045,15 @@ We will show just below that the definition is independent of $N$ and $e$, as we
 The co-oriented pullback construction is functorial in the following sense.
 
 \begin{proposition}\label{P: pullback functoriality}
-	Suppose $f \colon V \to M$ is co-oriented.
+	Suppose $f \colon V \to M$ is a co-oriented map from a manifold with corners to a manifold without boundary.
 	Then the pullback of $f$ by the identity $\id_M \colon M \to M$ is (diffeomorphic to) $f \colon V \to M$ with the same co-orientation.
 
-	Suppose further that $W$ and $M$ are manifolds without boundary, that $g \colon W \to M$ is transverse to $f$ and that $h \colon X \to W$ is transverse to $V \times_M W \to W$ (or, equivalently by \cref{L: transverse to pullback}, that $gh$ is transverse to $f$).
+	Suppose further that $X$ is a manifold with corners, that $W$ is a manifold without boundary, that $g \colon W \to M$ is transverse to $f$ and that $h \colon X \to W$ is transverse to $V \times_M W \to W$ (or, equivalently by \cref{L: transverse to pullback}, that $gh$ is transverse to $f$).
 	Then $(gh)^*V \cong h^*g^*V$ as co-oriented manifolds over $X$.
 \end{proposition}
 
 \begin{proof}
-	By \cref{pullback,P: interior co-orientation} it suffices to assume
+	By \cref{pullback,P: interior co-orientation} it suffices to assume that all manifolds are without boundary.
 
 	We first note that there is a diffeomorphism between $V$ and $V \times_M M = \{(v,x) \in V \times M \mid f(v) = x\}$ given by $v \mapsto (v,f(v))$ with inverse $(v,x) \mapsto v$.
 	Then, given a compatible Quillen co-orientation of $f$, we can form the pullback diagram as
@@ -1957,13 +1957,14 @@ We start with the following version of a well-known fact.
 \end{proof}
 
 \begin{corollary}\label{C: fiber natural pullback}
-	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps of manifolds with corners to a manifold without boundary, that $N$ is a manifold with corners, and that $h \colon N \to M$ is transverse to $f$, $g$, and $f \times_M g$.
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps of manifolds with corners to a manifold without boundary, that $N$ is a manifold with corners, and that $h \colon N \to M$ is transverse to $f$, $g$, and $f \times_M g \colon V \times_M W \to M$.
 	Then
 	$$h^*(V \times_M W) = h^*V \times_N h^*W$$
 	as manifolds with co-oriented maps to $N$.
 \end{corollary}
 
 \begin{proof}
+	Let $\diag_M \colon M \to M \times M$ and $\diag_N \colon N \to N \times N$ denote the diagonal maps.
 	Using \cref{P: cross to cup,P: pullback functoriality,P: natural exterior}, and that $\diag_M h = (h \times h) \circ \diag_N$,
 	we compute
 	\begin{align*}
@@ -2024,7 +2025,7 @@ We start with the following version of a well-known fact.
 \end{corollary}
 
 \begin{proof}
-	By \cref{P: projection pullbacks}, $\pi_M^*(V) = V \times N$ and $\pi_N^*(W) = M \times W$, so these are transverse in $M \times N$.
+	By \cref{P: projection pullbacks}, $\pi_M^*(V) = V \times N$ and $\pi_N^*(W) = M \times W$, so these are transverse as spaces mapping to $M \times N$.
 	Then by \cref{C: criss cross,C: cup with identity}, we have
 	\begin{align*}
 		\pi_M^*(V)\times_{M \times N}\pi_N^*(W)& = (V \times N)\times_{M \times N} (M \times W)\\
