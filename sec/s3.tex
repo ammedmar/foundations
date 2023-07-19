@@ -1590,7 +1590,7 @@ In our notational shorthand (see \cref{N: implicit notation}), if $f \colon V \t
 	An elementary computation now shows that this is $(m-w)(n-x)$ as desired.
 \end{proof}
 
-\subsubsection{Exterior products of co-oriented maps and applications to fiber products}
+\subsubsection{Exterior products of co-oriented maps}
 
 Next we define and study a co-oriented exterior product for co-oriented maps.
 In the next subsection, we will see that such products are intimately related to fiber products, and this will allow us to easily prove some properties about fiber products that we have delayed.
@@ -1734,7 +1734,7 @@ We assume for convenience that our Euclidean factors are even dimensional, which
 	suitably interpreting the relevant coordinates in $M \times N \times \R^a \times \R^b$.
 \end{lemma}
 
-The last line simply means that if an element of $\nu V$ has coordinates $(x,y)$ in $M \times \R^a$, then this cooresponds to a normal vector with coordinates $(x,0,y,0)$ in $M \times N \times \R^a \times \R^b$ for which we do not create a new notation, and similarly for $\nu_W$. 
+The last line simply means that if an element of $\nu V$ has coordinates $(x,y)$ in $M \times \R^a$, then this corresponds to a normal vector with coordinates $(x,0,y,0)$ in $M \times N \times \R^a \times \R^b$ for which we do not create a new notation, and similarly for $\nu_W$. 
 
 \begin{proof}
 	Let $\beta_a$ and $\beta_b$ denote the standard orientations for $\R^a$ and $\R^b$.
@@ -1852,20 +1852,23 @@ The next proposition shows that the exterior product construction is natural.
 
 \subsubsection{The relation between co-oriented exterior products and co-oriented fiber products}\label{S: product relations}
 
-Having established these elementary properties for our exterior product, we can now relate co-oriented exterior products to co-oriented fiber products.
+Having established some elementary properties for our exterior product, we can now relate co-oriented exterior products to co-oriented fiber products.
 These relationships correspond to those in singular cohomology between the exterior and cup products of cochains, though one very nice feature is that in our context these relationships all hold ``on the nose'' at the cochain level and can be proven without any need for Alexander-Whitney maps or any other approximations to the diagonal.
 This will also be useful for proving some properties of the co-oriented fiber product that we have deferred so far.
 
-\begin{proposition}\label{P: cross to cup}
-	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
-	Let $\diag \colon M \to M \times M$ be the diagonal map $\diag(x) = (x,x)$.
-	Then $f \times g$ is transverse to $\diag$, and the pullback of $V \times W \to M \times M$ by $\diag$ is the co-oriented fiber product $V \times_M W \to M$, i.e.\ $$V \times_M W = \diag^*(V \times W).$$
-\end{proposition}
+We start with the following version of a well-known fact. 
 
+
+\begin{lemma}\label{L: alternative transversality}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are co-oriented maps from manifolds with corners to a manifold without boundary.
+	Let $\diag \colon M \to M \times M$ be the diagonal map $\diag(x) = (x,x)$.
+	Then $f$ and $g$ are transverse if and only if $f \times g$ is transverse to $\diag$.
+\end{lemma}
 \begin{proof}
-	It is standard that if $f$ and $g$ are transverse then $f \times g$ is transverse to the diagonal map.
-	We briefly recall the argument.
-	Suppose $f(x) = g(y) = z \in M$.
+	As transversality is determined stratum by stratum, it suffices to suppose $V$ and $W$ are manifolds without boundary. 
+	We briefly recall the argument in this case.
+	
+	First suppose $f$ and $g$ are transverse and that $f(x) = g(y) = z \in M$.
 	Then $Df(T_xV)+Dg(T_yW) = T_zM$.
 	Now suppose $(a,b) \in T_{(z,z)}(M \times M) \cong T_zM \oplus T_zM$.
 	Write $a = v_a+w_a$ with $v_a \in Df(T_xV)$ and $w_a \in Dg(T_yW)$.
@@ -1877,29 +1880,80 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 		& = (v_a-v_b,-w_a+w_b)+(v_b+w_a, v_b+w_a),
 	\end{align*}
 	which is in $D(f \times g)(T_xV \times T_yW)+D\diag(T_zM)$.
-	Hence the pullback by the diagonal is a manifold with corners.
+	So $f \times g$ is transverse to $\diag$.
 
-	This pullback consists precisely of those $(v,w,z) \in V \times W \times M$ such that $(f(v),g(w)) = (z,z)$, which is diffeomorphic to $V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$ via the projection $(v,w,z) \to (v,w)$ with inverse $(v,w) \to (v,w,f(v))$.
-	So we consider the co-orientations.
+	Conversely, suppose $f \times g$ is transverse to $\diag$, and continue to assume that $f(x) = g(y) = z \in M$ so that $(f \times g)(x,y) = \diag(z)$. 
+	Let $v \in T_zM$.
+	Then there are $a\in T_x V$, $b \in T_y W$, and $c \in T_zM$ such that $$(v,0) = D(f \times g)(a,b) + D\diag(c) = (Df(a), Dg(b)) + (c,c).$$
+	Then $Df(a) + c = v$ and $Dg(b) + c = 0$, so $Df(a) - Dg(b) = Df(a) + Dg(-b) = v$.
+	So $f$ and $g$ are transverse.
+\end{proof}
 
-	Proceeding as in the proof of \cref{P: exterior commutativity} (with now $M = N$), if $f$ and $g$ are co-oriented (at appropriate points) by $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$ and if we we take Quillen co-orientations coming from $V\xhookrightarrow{e_v} M \times \R^a \to M$ and $W\xrightarrow{e_W} M \times \R^b \to M$ (with $a$ and $b$ assumed even) by orienting $\nu V$ and $\nu W$ in $M \times \R^a$ and $M \times \R^b$, then the co-orientation of the product $f \times g$ has Quillen co-orientation with the normal bundle to $V \times W$ in $M \times M \times \R^{a+b}$ oriented $\beta_{\nu V} \wedge \beta_{\nu W}$.
+\begin{proposition}\label{P: cross to cup}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
+	Then the pullback of $V \times W \to M \times M$ by $\diag$ is the co-oriented fiber product $V \times_M W \to M$, i.e.\ $$V \times_M W = \diag^*(V \times W).$$
+\end{proposition}
 
-	Pulling back by the diagonal, we thus obtain from the definition that the pullback $P$ is co-oriented by $(\beta_P,\beta_M)$ if and only if $\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M \wedge \beta_{a+b}$.
+\begin{proof}
+	By \cref{L: alternative transversality}, we know $f \times g$ is transverse to $\diag$, so the pullback is defined, and it is a manifold with corners by \cref{pullback}.
+	This pullback by $\diag$ is $$P' = \{(v,w,z) \in V \times W \times M \mid (f(v),g(w)) = \diag(z) = (z,z)\},$$ which is diffeomorphic to $$P = V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$$ via the projection $(v,w,z) \mapsto (v,w)$ with inverse $(v,w) \mapsto (v,w,f(v))$.
+	So we consider the co-orientations, for which we may assume as usual that all manifolds are without boundary by \cref{pullback,P: interior co-orientation}.
 
-	On the other hand, using the Quillen co-orientation for $V$, the co-orientation of the fiber product $P = V \times_M W \to W \to M$ is $(\beta_P,\beta_M)$ if and only if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_a$.
+	By \cref{L: Quillen product co-orientation}, now with $M = N$, if $f$ and $g$ are co-oriented (at appropriate points) by $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$ and if we we take Quillen co-orientations coming from $V \xhookrightarrow{e_V} M \times \R^a \to M$ and $W \xhookrightarrow{e_W} M \times \R^b \to M$ (with $a$ and $b$ assumed even) by orienting $\nu V$ and $\nu W$ in $M \times \R^a$ and $M \times \R^b$, then the co-orientation of the product $f \times g$ has Quillen co-orientation with the normal bundle to $V \times W$ in $M \times M \times \R^{a+b}$ oriented by $\beta_{\nu V} \wedge \beta_{\nu W}$.
+	Recall that we interpret this expression so that $\nu V$ is our standard normal bundle to $V$ in $M \times \R^a$ embedded into the first and third factors of $M \times M \times \R^a \times \R^b$ and analogous for $\nu W$.
 
-	Note that even though these local orientations do not all live on the same spaces, they are essentially just statements about the relative orders of coordinates on the spaces where those coordinates occur; this point of view allows us to elide the pullback maps that would be necessary needed (and messy) to formally pull all our comparisons onto the same space.
-	With these thoughts in mind, we can conclude as follows.
+	Pulling back by the diagonal, we thus obtain from \cref{D: pullback coorient} that the pullback co-orientation is $(\beta_{P'},\beta_M)$ if and only if $\beta_{P'} \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M \wedge \beta_{a+b}$.
+	On the other hand, using the same Quillen co-orientation for $V$, the co-orientation of the fiber product $V \times_M W \to W \to M$ is $(\beta_P,\beta_M)$ if and only if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_a$.
 
-	If we assume that we do have $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_a$ then
+	Consider now the following computation, where we use that $\beta_W \wedge \beta_{\nu W} = \beta_{M\times \R^b} = \beta_M \wedge \beta_b$ from the definition of the Quillen orientation of the normal bundle:
 	\begin{align*}
 		\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}& = \beta_W \wedge \beta_a \wedge \beta_{\nu W}\\
 		& = \beta_W \wedge \beta_{\nu W} \wedge \beta_a\\
-		& = \beta_M \wedge \beta_b \wedge \beta_a\\
-		& = \beta_M \wedge \beta_{a+b}.
+		& = \beta_M \wedge \beta_b \wedge \beta_a \\
+		& = \beta_M \wedge \beta_{a+b}\\
+		& = \beta_{P'} \wedge \beta_{\nu V} \wedge \beta_{\nu W}.
 	\end{align*}
-	So the two co-orientations for $P \to M$ are either both $(\beta_P,\beta_M)$ or both the opposite co-orientation.
-	In other words, they agree.
+	This appears to demonstrate that, if we fix $\beta_M$, we get corresponding $\beta_P$ and $\beta_P'$. 
+	The trouble with this argument, however, is that we've been very free about what spaces exactly all these various local orientations live over.
+	Even with our given identification of $P$ and $P'$, the symbol $\nu V$ here represents a normal bundle in at least two or three different spaces. 
+	To solidify the argument, we need a bit more care.
+
+	First, we recall that our model of $P = V \times_M W$ when computing pullback co-orientations is technically $V \times_{M \times \R^a} (W \times_M \R^a)$, identified with $V \times_M W$ in the obvious way, and similarly for $P'$; see \cref{R: pullback representative 2}. 
+	It will be convenient here to use these representations, so, relabeling for convenience and letting $e_V(v) = (f(v),e_a(v))$ and $e_W(w) = (g(w),e_b(w))$, we let
+	\begin{align*}
+		P &= \{(v,w,s)\in V\times W\times \R^a\mid (g(w),s)=e_V(v)\}\\
+		P' &= \{(v,w,z,s,t)\in V\times W\times M \times \R^a \times \R^b \mid (z,z,s,t)=(f(v),g(w),e_a(v),e_b(w))\}.
+	\end{align*}
+	Then $P$ is diffeomorphic to our standard $V \times_M W$ via $(v,w) \leftrightarrow (v,w,e_a(v))$, and $P'$ is diffeomorphic to $(V \times W) \times_{M \times M} M$ via $(v,w,z) \leftrightarrow (v,w,z,e_a(v),e_b(w))$. Furthermore, $P \cong P'$ via $(v,w,s)\leftrightarrow (v,w,g(w),s,e_b(w))$. 
+
+	We now consider the following diagram, in which the righthand horizontal maps are those occuring in the pullback co-orientation construction:
+	\begin{diagram}
+		P&\rInto^{\pi_{W\times \R^a}}& W \times \R^a &\rTo^{g \times \id_{\R^a}}& M\times \R^a\\
+		\dTo^\cong && \dInto^{h} &&\uTo^{\Pi}\\
+		P'&\rInto^{\pi_{M\times \R^a \times \R^b}}& M \times \R^a \times \R^b &\rInto^{\diag \times \id_{\R^a}\times \id_{\R^b}}& M \times M\times \R^a \times \R^b.
+	\end{diagram}	
+	The lefthand vertical map is our diffeomorphism $P \cong P'$. We let $h$ be the map $h(w,s) = (g(w),s,e_b(w))$, and we let $\Pi$ be the projection onto the first and third factors. 
+	One readily checks that this diagram commutes and that the maps with hooks are embeddings. 
+	
+	Let $p = (v,w,s)\in P$, let $p' = (v,w,z,s,t)$ be the corresponding point in $P'$, so in particular  $z = f(v) = g(w)$. 
+	Then taking derivatives at these points and their images, we obtain the diagram
+
+	\begin{diagram}
+		T_pP&\rInto^{D\pi_{W\times \R^a}}& T_wW \oplus T_s\R^a &\rTo^{D(g \times \id_{\R^a})}& T_zM \oplus T_s\R^a\\
+		\dTo^\cong && \dInto^{Dh} &&\uTo^{\Pi}\\
+		T_{p'}P'&\rInto^{D\pi_{M\times \R^a \times \R^b}}& T_zM \oplus T_s\R^a \oplus T_t\R^b &\rInto^{D(\diag \times \id_{\R^a}\times \id_{\R^b})}& T_zM \oplus T_zM\oplus T_s\R^a \oplus T_t\R^b.\\
+	\end{diagram}
+
+	Now the normal bundle $\nu V$ to $e_V(V) \subset M \times \R^a$ is our standard normal bundle for the construction of a co-orientation of $V \times_M W$, and we know it pulls back to the normal bundle of $P$, identified with $(g \times \id_{\R^a})^{-1}(e_V(V)) \subset W \times \R^a$. 
+	
+	By construction, we typically think of choosing a splitting so that we can identify a normal space $\nu V$ of $P$ in $W \times \R^a$ at $p$ with a subspace $N$ of $T_{w,s}(W \times \R^a)=T_wW \oplus T_s\R^a$ such that the restriction to $N$ of the composition of $D(g \times \id_{\R_a})$ with the quotient map to $T_{(g(w),s)}(M \times \R^a)/ T_{(g(w),s)}V$ is an isomorphism. 
+	With such a choice, it follows that the composition the other way around the righthand square, followed by the quotient map, is also an isomorphism onto $T_{(g(w),s)}(M \times \R^a)/ T_{(g(w),s)}V$, and so we can identify the image of $N$ under $D(\diag \times \id_{\R^a}\times \id_{\R^b}) Dh$ with the fiber of the pullback of $\nu V$ by $\Pi$. But now we observe that if $(\xi,\eta) \in T_wW \oplus T_s\R^a$, then
+	$$D(\diag \times \id_{\R^a}\times \id_{\R^b}) Dh(\xi,\eta) = (Dg(\xi),Dg(\xi), \eta, De_b(\xi)).$$
+	But $(Dg(\xi),De_b(\xi)) = De_W(\xi)$, so $(0, Dg(\xi),0, De_b(\xi))$ is in the tangent space of our chosen embedding of $V \times W$ into $M \times M \times \R^a \times \R^b$. 
+	So, the image $D(\diag \times \id_{\R^a}\times \id_{\R^b})Dh(N)$ represents our standard choice of a $\nu V$ summand in the normal bundle to $V \times W$, it simply corresponds to a different choice of splitting. 
+	In particular, this image and the $\nu V$ summand from \cref{L: Quillen product co-orientation} project to isomorphic images in $T(M \times M \times \R^a \times \R^b)/T(V \times W)$. 
+
+	The upshot is that we can thus identify our versions of $\nu V$ in $W \times \R^a$ and $M \times \R^a \times \R^b$ via $Dh$, and similarly identify $T_pP$ and $T_{p'}P'$ via the diagram. In fact, the lefthand square consist entirely of embeddings, we can now properly interpret the above computation as a computation entirely with elements of $T_zM \oplus T_s\R^a \oplus T_t\R^b$ with $\nu W$ being the normal from the embedding of $W$ into the first and third coordinates of $M \times \R^a \times \R^b$.
 \end{proof}
 
 \begin{corollary}\label{C: fiber natural pullback}
