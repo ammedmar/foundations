@@ -395,7 +395,7 @@ The reason for the transversality requirement in \cref{D: top pullback} is that 
 
 \begin{theorem}\label{pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
-	Then $V \times_M W$ is a manifold with corners with
+	Then $V \times_M W$ is a manifold with corners of dimension $v+w-m$ with
 	\begin{equation*}
 		S^i(V \times_M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
 	\end{equation*}
@@ -467,12 +467,14 @@ But this projection is precisely $D_{(x,y)} \pi_W$, so the maps agree.
 
 
 \begin{lemma}\label{L: normal pullback}
-	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ is an embedding so that $V$ has a normal bundle $\nu V$ in $M$.
-	Then the pullback map $g^*V = V \times_MW \to W$ is an embedding onto $g^{-1}(f(V))$ and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$.
+	Let $W$ be a manifold with boundary and $V$ and $M$ manifolds without boundary. Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse smooth maps and that $f$ is an embedding so that $V$ is a submanifold of $M$ with normal bundle $\nu V$.
+	Then the pullback map $g^*V = V \times_MW \to W$ is an embedding onto the neat submanifold $g^*V \cong g^{-1}(V)$ and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$.
 	In other words,
-	$$\nu(g^*V) \cong \left(g|_{V\times_M W}\right)^*(\nu V),$$
+	$$\nu(g^*V) \cong \left(g|_{g^*V}\right)^*(\nu V),$$
 	or ``the pullback of the normal bundle is the normal bundle of the pullback.''
 \end{lemma}
+
+Here ``neat'' means that $\bd (g^*V) \subset \bd W$ and at each such point there is a chart $(U,\phi)$ of $W$ such $\phi$ is a diffeomorphism between $(U, U\cap g^*V)$ and $(\R^w_1, \R^{v+w-m}_1)$; see \cite[Definition II.2.2]{Kos93}.  
 
 \begin{proof}
 	See \cite[Proposition IV.1.4]{Kos93}.

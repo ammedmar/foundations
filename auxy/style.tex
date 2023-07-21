@@ -12,6 +12,7 @@
 \usepackage{babel}
 \usepackage{standalone}
 \usepackage{todo}
+\usepackage{diagrams}
 \def\todoname{Comments, remarks and to-do's}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathmorphing}
@@ -51,3 +52,9 @@ pdfpagelabels]{hyperref}
 \newcommand{\anibal}[1]{\todo[A.\!]{#1}}
 \newcommand{\dev}[1]{\todo[D.\!]{#1}}
 \newcommand{\greg}[1]{\todo[G.\!]{#1}}
+
+%diagrams.sty fix
+\makeatletter
+\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
+\expandafter\foo\row@to@buffer\foo
+\makeatother
