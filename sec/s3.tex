@@ -1439,16 +1439,16 @@ They will be useful when working with the creasing construction for geometric co
 	Let $V$ be an embedded codimension $0$ submanifold with corners in the manifold without boundary $M$, and let $f \colon V \to M$ be the embedding, co-oriented by the tautological co-orientation.
 	Let $W$ be a manifold with corners and suppose $g \colon W \to M$ is transverse to $f$.
 	Then the co-oriented pullback $V \times_M W \to W$ is the inclusion of the codimension $0$ manifold with corners $g^{-1}(V) \into W$, co-oriented by the tautological co-orientation.
-	Consequently, if $g$ is co-oriented, the co-oriented fiber product $V \times_M W \to M$ is just the restriction of the co-oriented map $g$ to the embedded codimension $0$ submanifold with corners $g^{-1}(V)$.
+	Consequently, if $g$ is co-oriented, the co-oriented fiber product $V \times_M W \to M$ is just the restriction of the co-oriented map $g$ to $g^{-1}(V)$.
 \end{proposition}
 
 \begin{proof}
 	It is clear topologically that the pullback is $g^{-1}(V)$, and it must be a codimension $0$ manifold with corners of $W$ by Joyce \cite[Theorem 6.4]{Joy12}.
-	So we consider co-orientations.
+	So we consider co-orientations, for which we can assume $V$ and $W$ are without boundary by  \cref{pullback,P: interior co-orientation}.
 	As $f$ is an embedding we may choose $N = 0$ and $e = f$ in \cref{D: pullback coorient}.
 	As $V \to M$ is tautologically co-oriented, we can identify $\beta_V$ with $\beta_M$ at any point via the embedding.
 	The Quillen normal bundle of $V$ in $M$ is then the positively oriented $\R^0$-bundle.
-	So then the definition says that the pullback co-orientation at any point is $(\beta_P, \beta_W)$ when $\beta_P = \beta_W$, i.e.\ the pullback co-orientation is $(\beta_P, \beta_P)$, the tautological co-orientation of the embedding.
+	So then the definition says that the pullback co-orientation at any point is $(\beta_P, \beta_W)$ when $\beta_P = \beta_W$, i.e.\ the pullback co-orientation is $(\beta_P, \beta_P)$, the tautological co-orientation.
 \end{proof}
 
 \begin{corollary}\label{C: cup with identity}
@@ -1457,7 +1457,7 @@ They will be useful when working with the creasing construction for geometric co
 \end{corollary}
 
 \begin{proof}
-	The first case follows from the preceding lemma, and the other then follows from the graded commutativity of the fiber product, \cref{P: graded comm}.
+	The case of $M \times_M V \to M$ follows from the preceding lemma, and the other is the first statement of \cref{P: pullback functoriality}.
 \end{proof}
 
 \begin{example}\label{E: codim 0 and 1 co-or as fiber products}
@@ -2331,7 +2331,7 @@ In our remaining constructions in this section we take all introduced Euclidean 
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary.
 	Let $V\xhookrightarrow{e}M \times \R^{2a} \to M$ be a Quillen co-orientation for $f$.
 
-	Then $V \times_M W$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically orientated diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$ (with its orientation induced by the fiber product co-orientation and the orientation of $M \times \R^{2a}$).
+	Then $V \times_M W$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically oriented diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$ (with its orientation induced by the fiber product co-orientation and the orientation of $M \times \R^{2a}$).
 	Here the maps for the second fiber product are $e \colon V \to M \times \R^{2a}$ and $g \times \id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
 	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V \into M \times \R^{2a}$ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M}\wedge\beta_a,\beta_M)$ is the co-orientation of $f$.
 	We also take $g \times \id_{\R^{2a}}$ to be co-oriented by the product co-orientation $(\beta_W \wedge \beta_a,\beta_M \wedge \beta_a)$ if $(\beta_W,\beta_M)$ is the co-orientation of $g$.

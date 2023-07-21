@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+\paperheight=11in
+%\paperwidth=8.5in
+\renewcommand{\baselinestretch}{1.04}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx, mathrsfs, hyperref,mathtools,multicol, enumitem,bbm,cleveref,diagrams}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amstext}
+%\usepackage{cite}
+%\usepackage[notref]{showkeys}
+\usepackage{color}
+
+
+%diagrams.sty fix
+\makeatletter
+\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
+\expandafter\foo\row@to@buffer\foo
+\makeatother
+
+\newcommand\purple[1]{\marginpar{replacement}\textcolor{Purple}{#1}}     
+\newcommand\blue[1]{\marginpar{new}\textcolor{blue}{#1}}                       %
+\newcommand\red[1]{\marginpar{??}\textcolor{red}{#1}}                         %
+\newcommand\green[1]{\marginpar{delete ok?}\textcolor{green}{#1}}
+%\newcommand\ownremark[1]{\marginpar{remark for own use}\textcolor[rgb]{0.5,0.5,0}{#1}}                   %
+
+
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newcommand{\codim}{\text{codim}}
+ 
+
+\newcommand{\primeset}[1]{#1}
+\newcommand{\id}{\textup{id}}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\hra}{\hookrightarrow} 
+\newcommand{\Td}[1]{\Tilde{#1}}
+\newcommand{\td}[1]{\tilde{#1}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\diag}{\mathbf{d}}
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\bd}{\partial}
+\newcommand{\pf}{\pitchfork}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\renewcommand{\H}{\mathbb H}
+\newcommand{\rla}{\RightLeftarrow}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\dlim}{\varinjlim}
+\newcommand{\vg}{\varGamma}
+\newcommand{\blm}[2]{\langle  #1 , #2 \rangle}
+\newcommand{\bl}[2]{\left( #1 , #2 \right)}
+\newcommand{\vs}{\varSigma}
+\newcommand{\holink}{\text{holink}}
+\newcommand{\map}{\operatorname{map}}
+\newcommand{\hl}{\operatorname{holink}}
+\newcommand{\wt}{\widetilde}
+\renewcommand{\hom}{\text{Hom}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\SHom}{\text{\emph{Hom}}}
+\newcommand{\Ext}{\text{Ext}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\ih}{IH^{\bar p}}
+\newcommand{\di}{\text{dim}}
+\newcommand{\im}{\text{im}}
+\newcommand{\cok}{\text{cok}}
+\newcommand{\coim}{\text{coim}}
+\newcommand{\bp}{\boxplus}
+%\renewcommand{\P}{\mathbb P}
+\newcommand{\q}{\mathfrak q}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\singsupp}{\text{singsupp}}
+\newcommand{\Dom}{\text{Dom}}
+\newcommand{\LPDO}{\text{LPDO}}
+\newcommand{\PsiDO}{\Psi\text{DO}}
+
+\newcommand{\ka}{\kappa}
+
+\newcommand{\fl}{\text{FL}}
+\newcommand{\wfl}{\text{WFL}}
+\newcommand{\Ker}{\mbox{Kernel }}
+%\newcommand{\p}{\mf{p}}
+\newcommand{\p}{\mathbbm{p}}
+%\newcommand{\p}{\mathpzc{p}}
+\newcommand{\Vol}{\text{Vol}}
+\newcommand{\uW}{\underline{W}}
+\newcommand{\udW}{\underline{\partial W}}
+\newcommand{\uV}{\underline{V}}
+
+
+
+\newcommand{\sect}[1]{\vskip1cm \noindent\paragraph{#1}}
+
+\newcommand{\ttau}{\text{\texthtt}}
+
+\newcommand{\xr}{\xrightarrow}
+\newcommand{\xl}{\xleftarrow}
+
+\DeclareRobustCommand{\zvec}[1]{%
+  \mathrlap{\vec{\mkern-2mu\phantom{#1}}}#1%
+}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\cman}{\mathrm{cMan}}
+
+\newcommand{\Or}{{\rm Det}}
+
+\begin{document}
+
+\begin{proposition}\label{P: graded comm}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
+	Then as co-oriented fiber products over $M$ we have $\omega_{g \times_M f} = (-1)^{(m-v)(m-w)} \omega_{f \times_M g}$, or, using Notation \ref{R: precise commutativity},
+	$$V \times_M W = (-1)^{(m-v)(m-w)} W \times_M V.$$
+\end{proposition}
+\begin{proof}
+	By \cref{P: cross to cup}, the fiber products $V \times_M W \to M$ and $W \times_M V \to M$ are respectively the pullbacks of $V \times W \to M \times M$ and $W \times V \to M \times M$ by the diagonal map $\diag \colon M \to M \times M$. 
+	Meanwhile, by \cref{P: exterior commutativity}, we have 
+	$$\tau^*(V \times W) = (-1)^{(m-v)(m-w)}W \times V,$$
+	where $\tau \colon M \times M \to M \times M$ is the map that interchanges the factors. 
+	We observe that $\tau \diag = \diag$, so we can compute
+	\begin{align*}
+	W \times_M V &= \diag^*(W \times V)\\
+	&= (-1)^{(m-v)(m-w)} \diag^* \tau^*(V \times W)\\
+	&= (-1)^{(m-v)(m-w)}(\tau \diag)^*(V \times W)\\
+	&= (-1)^{(m-v)(m-w)}(\diag)^*(V \times W)\\
+	&= (-1)^{(m-v)(m-w)} V \times_M W.
+	\end{align*} 
+\end{proof}
+
+
+\bibliographystyle{amsplain}
+\bibliography{../../bib}
+
+
+
+
+\end{document}

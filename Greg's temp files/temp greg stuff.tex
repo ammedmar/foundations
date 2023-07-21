@@ -1,0 +1,439 @@
+\documentclass[12pt]{article}
+\paperheight=11in
+%\paperwidth=8.5in
+\renewcommand{\baselinestretch}{1.04}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx, mathrsfs, hyperref,mathtools,multicol, enumitem,bbm,cleveref,diagrams}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amstext}
+%\usepackage{cite}
+%\usepackage[notref]{showkeys}
+\usepackage{color}
+
+
+%diagrams.sty fix
+\makeatletter
+\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
+\expandafter\foo\row@to@buffer\foo
+\makeatother
+
+\newcommand\purple[1]{\marginpar{replacement}\textcolor{Purple}{#1}}     
+\newcommand\blue[1]{\marginpar{new}\textcolor{blue}{#1}}                       %
+\newcommand\red[1]{\marginpar{??}\textcolor{red}{#1}}                         %
+\newcommand\green[1]{\marginpar{delete ok?}\textcolor{green}{#1}}
+%\newcommand\ownremark[1]{\marginpar{remark for own use}\textcolor[rgb]{0.5,0.5,0}{#1}}                   %
+
+
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newcommand{\codim}{\text{codim}}
+ 
+
+\newcommand{\primeset}[1]{#1}
+\newcommand{\id}{\textup{id}}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\hra}{\hookrightarrow} 
+\newcommand{\Td}[1]{\Tilde{#1}}
+\newcommand{\td}[1]{\tilde{#1}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\diag}{\mathbf{d}}
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\bd}{\partial}
+\newcommand{\pf}{\pitchfork}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\renewcommand{\H}{\mathbb H}
+\newcommand{\rla}{\RightLeftarrow}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\dlim}{\varinjlim}
+\newcommand{\vg}{\varGamma}
+\newcommand{\blm}[2]{\langle  #1 , #2 \rangle}
+\newcommand{\bl}[2]{\left( #1 , #2 \right)}
+\newcommand{\vs}{\varSigma}
+\newcommand{\holink}{\text{holink}}
+\newcommand{\map}{\operatorname{map}}
+\newcommand{\hl}{\operatorname{holink}}
+\newcommand{\wt}{\widetilde}
+\renewcommand{\hom}{\text{Hom}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\SHom}{\text{\emph{Hom}}}
+\newcommand{\Ext}{\text{Ext}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\ih}{IH^{\bar p}}
+\newcommand{\di}{\text{dim}}
+\newcommand{\im}{\text{im}}
+\newcommand{\cok}{\text{cok}}
+\newcommand{\coim}{\text{coim}}
+\newcommand{\bp}{\boxplus}
+%\renewcommand{\P}{\mathbb P}
+\newcommand{\q}{\mathfrak q}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\singsupp}{\text{singsupp}}
+\newcommand{\Dom}{\text{Dom}}
+\newcommand{\LPDO}{\text{LPDO}}
+\newcommand{\PsiDO}{\Psi\text{DO}}
+
+\newcommand{\ka}{\kappa}
+
+\newcommand{\fl}{\text{FL}}
+\newcommand{\wfl}{\text{WFL}}
+\newcommand{\Ker}{\mbox{Kernel }}
+%\newcommand{\p}{\mf{p}}
+\newcommand{\p}{\mathbbm{p}}
+%\newcommand{\p}{\mathpzc{p}}
+\newcommand{\Vol}{\text{Vol}}
+\newcommand{\uW}{\underline{W}}
+\newcommand{\udW}{\underline{\partial W}}
+\newcommand{\uV}{\underline{V}}
+
+
+
+\newcommand{\sect}[1]{\vskip1cm \noindent\paragraph{#1}}
+
+\newcommand{\ttau}{\text{\texthtt}}
+
+\newcommand{\xr}{\xrightarrow}
+\newcommand{\xl}{\xleftarrow}
+
+\DeclareRobustCommand{\zvec}[1]{%
+  \mathrlap{\vec{\mkern-2mu\phantom{#1}}}#1%
+}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\cman}{\mathrm{cMan}}
+
+\newcommand{\Or}{{\rm Det}}
+
+\begin{document}
+
+
+\begin{lemma}\label{L: pullback immersion}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary and that $f$ is an embedding. 
+	Then the pullback map $f^* \colon V \times_M W \to W$ is a smooth immersion that takes $V \times_M W$ bijectively onto $g^{-1}(f(V))$.
+\end{lemma}
+\begin{proof}
+	Let $P = V \times_M W$, which by definition is $\{ (v,w) \in V \times W \mid f(v) = g(w) \}$, and $f^*$ is just the projection to $W$. 
+	As $f$ is injective, for any pair $(v,w) \in P$, the element $w$ uniquely determines $v$ as $v = f^{-1}(g(w))$, so the maps $(v, w) \mapsto w$ and $w \mapsto (f^{-1}(g(w)), w)$ establish a bijection between $P$ and $g^{-1}(f(V))$. 
+	
+	The map $f^*$ is smooth by \cite[Section 6]{Joy12}.
+	
+	Now, by \cref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangents space, so if $(v,w) \in P$, then $T_{(v,w)}P = T_vV \times_{T_{f(v)}M} T_wW$. 
+	Suppose $(a,b) \in T_{(v,w)}P$ with $a \in T_vV$ and $b \in T_wW$. 
+	Let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the restrictions of the projections to $P$, in which case we know that $\pi_W = f^*$, the pullback. 
+	By assumption, $Dg_v(b) = Df_w(a)$. 
+	So if $D\pi_W(a,b) = b = 0$, then we must have $Df_w(a)=0$, but this means $a = 0$ as $f$ is an embedding.
+	So if $D\pi_W(a,b) = 0$, then $(a,b) = 0$, so $\pi_W = f^*$ is an immersion.
+\end{proof}
+
+\begin{corollary}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary and that $f$ is an embedding. 
+	If the pullback map $f^* \colon V \times_M W \to W$ is proper, then it is an embedding onto a closed submanifold with corners of $W$.
+\end{corollary}
+\begin{proof}
+By \cref{L: pullback immersion}, the map $f^*$ is injective, and every proper injective map is a closed map and a homeomorphism onto its image \cite[Proposition 10.1.2]{Bou98}.
+\end{proof}
+
+
+\begin{lemma}
+With the assumptions of the preceding lemma, $f^*$ is a local embedding, i.e.\ for any $p \in V \times_M W$ there is a neighborhood $U$ such that $f^*|_U$ is an embedding.
+\end{lemma}
+\begin{proof}
+We identify $V$ with its embedded image in $M$.
+We also write $\pi$ rather than $f^*$ for simplicity of notation in what follows.
+ 
+Let $p = (v,w) \in V \times_M W$, so $\pi(p)=w$. 
+Let $(A, \alpha)$ and $(B, \beta)$ be charts whose images containing $p$ and $w$, respectively; by choosing a smaller $A$ we may assume $\pi(\alpha(A)) \subset \beta(B)$. 
+By definition of smoothness \cite[Definition 3.1]{Joy12}, the map $\beta^{-1}\pi\alpha \colon A \to B$ is smooth, meaning that there are neighborhoods $A'$ and $B'$ of $A$ and $B$ in their respective Euclidean spaces such that $\beta^{-1}\pi\alpha$ extends to a smooth map $\pi': A' \to B'$. 
+As $\pi$ is an immersion by 
+
+
+Need to prove this week - use version for manifolds and local chart extension crap:
+1. There are charts $A$ and $B$ so that $A \to V \times_M W \to W \to B$ is smooth. 
+2. So there are ngbds $A'$ and $B'$ of $A$ and $B$ and $A' \to B'$ that is smooth in usual sense.
+3. By assumption, derivative should be injective at $p$, so $A'$ has a nice embeddings in $B'$, possibly by making things smaller by usual manifold theory.  
+So $A'$ is a homeo onto its image in B'.
+Let $P'$, $W'$ be images of charts. 
+Then we have 
+P' -> W'
+|     |
+A  -> B
+|     |
+A' -> B'
+
+bottom is homeo onto image, so restricts to A homeo onto image (should be able to cite this)
+and top verticles are homeos, so top map is homeo onto image.
+\end{proof}
+
+\begin{corollary}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse embeddings from manifolds with corners to a manifold without boundary. Then the fiber product $V \times_M W \to M$ is locally an embedding. 
+\end{corollary}
+\begin{proof}
+By the preceeding lemma, the pullback $V \times_M W \to W$ is locally an embeddings, and the fiber product is the composition of the pullback with the embedding $g$.
+\end{proof}
+
+
+\begin{corollary}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary and that $f$ is an embedding. 
+	If the pullback map $f^* \colon V \times_M W \to W$ is proper, then it is an embedding.
+\end{corollary}
+\begin{proof}
+Mirror MO argument
+\end{proof}
+
+
+Idea for gxid pullback being good:
+
+Lemma: V properly embeds in Euclidean space (generalize standard thing)
+
+Lemma: if V maps to M x R and one component is proper, the whole map is proper.
+
+
+Overall alternative idea: see if it's possible to emulate manifold proof
+
+Other alternative idea: Embedd W in manifold with boundary
+
+First idea: look in Margalef-Roig
+
+
+
+
+
+----------
+
+\begin{proposition}
+Let $H \colon W \times I \to M$ and $f \colon V \to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $f$ is proper and that $g = H(-,0)$ are transverse. Suppose further that $H$ is a constant homotopy outside a compact set $K \subset W$. Then there is an $\epsilon>0$ such that $H(-,t)$ is transverse to $f$ for every $0\leq t <\epsilon$. 
+\end{proposition}
+
+\begin{proof}
+We will show that for every point $x \in K$ there is an open neighborhood $U_x$ of $x$ in $W \times I$ such that $H(-,t)$ is transverse to $f$ at $x$ for all $(x,t) \in U_x$. 
+Then $\cup_x U_x$ covers a neighborhood of $K$ in $W \times I$, and by the Tube Lemma (REF) there is therefore an $\epsilon$ such that $K \times [0,\epsilon) \subset \cup_x U_x$. 
+As $H$ is constant in $t$ off of $K$ and $g = H(-,0)$ is transverse to $K$, this $\epsilon$ will suffice. 
+
+So suppose $x \in K$. 
+First, suppose $g(x) \cap f(V) = \emptyset$. 
+By assumption, $V$ is a closed subset of $M$; thus we can take $U_x=H^{-1}(M-V)$.
+
+
+
+Next suppose that $g(x) = f(y)$ for some $y \in V$. 
+Let $z\in M$ be this common value. Using a chart to establish local coordinates for $M$ about $z$, we can identify $Df_x(T_xV)$ with a $v$-dimensional subspace of  
+\end{proof}
+
+
+
+
+\begin{lemma}\label{L: proper product}
+	Let $f \colon X \to Y$ be an arbitrary map and $g \colon X \to Z$ a proper map. 
+	Then the map $(f,g) \colon X \to Y \times Z$ given by $(f,g)(x)=(f(x),g(x))$ is proper.
+\end{lemma}
+\begin{proof}
+	Let $K \subset Y \times Z$ be compact. 
+	Let $\pi_Y,\pi_Z$ be the projectiond of $Y \times Z$ to $Y$ and $Z$. Then 
+	\begin{align*}
+		(f,g)^{-1}(K) &= \{x \in X \mid (f(x),g(x)) \in K \}\\
+		&\subset \{ x \in X \mid f(x) \in \pi_X(K), g(x) \in \pi_Y(K)\}\\
+		&\subset \{ x \in X \mid g(x) \in \pi_Y(K)\}\\
+		&= g^{-1}(\pi_Y(K)).
+	\end{align*} 
+	As $K$ is compact and $g$ is proper, $g^{-1}(\pi_Y(K))$ is compact. 
+	So $(f,g)^{-1}(K)$ is a closed subset of a compact set, and so compact.
+\end{proof}
+
+\begin{corollary}\label{C: embed V}
+Let $g \colon W \to M$ be a map from a manifold with corners to a manifold without boundary. 
+Then for some $N$ there exists a closed embedding $e \colon W \to M \times \R^N$ such that, if $\pi \colon M \times \R^N \to M$ is the projection, then $\pi e = g$. 
+\end{corollary}
+\begin{proof}
+By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^N$ for some $N$. 
+Then by \cref{L: proper product} the map $(g,\alpha)$ is proper, and as $\alpha$ is an immersion, so is $(g,\alpha)$.
+In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^N$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces, and the map $\pi_{\R^N}(g,\alpha)$ equals the embedding $g$, so $D(g,\alpha)$ must be injective at each point.
+Similarly, the map $(g,\alpha)$ is itself  injective.  
+But just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}, and it is clear from the construction that $\pi (g,\alpha) = g$.
+\end{proof}
+
+
+\begin{lemma}
+	The fiber product of two transverse immersions $f \colon V \to M$ and $g \colon W \to M$ from manifolds with corners to a manifold without boundary is an immersion and so, locally in a neighborhood of each point, an embedding.
+\end{lemma}
+\begin{proof}
+	By \cref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangents space, so if $(v,w) \in P$, then $T_{(v,w)}P = T_vV \times_{T_{f(v)}M} T_wW$. 
+	Suppose $(a,b) \in T_{(v,w)}P$ with $a \in T_vV$ and $b \in T_wW$. 
+	Let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the restrictions to $P$ of the projections from $V \times W$.
+	Then, suppressing the points for the remainder of the argument, $D(f \times_M g) = D(g\pi_W) = D(f \pi_V)$.
+	But $D(g \pi_W)(a,b)=Dg\circ D\pi_W (a,b)=Dg(b)$, and $Dg$ is injective as $g$ is an immersion. 
+	So if $D(g \pi_W)(a,b)=0$, then $b=0$, and also $a=0$ by the same computation with $D(f \pi_V)$.
+	So $D(f \times_M g)$ is injective, and $f \times_M g$ is an immersion by \cite[Proposition 3.2.6]{MaDo92}.
+	It is therefore a local embedding by \cite[Proposition 3.2.13]{MaDo92}.  
+\end{proof}
+
+\begin{corollary}
+XXXX
+Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse immersions of manifolds with corners to a manifold without boundary. Suppose $v \in V$ and $w \in W$ with $f(v) = g(w)$. 
+Then there are open neighborhoods $U_v$ of $v$ in $V$ and $U_w$ of $w$ in $W$ such that the fiber product $f|_{U_v} \times_M g|_{U_w}$ is a local embedding onto $f(U_v) \cap g(U_w)$. 
+\end{corollary}
+
+\begin{proof}
+In general, if $a: X \to Z$ and $b: Y \to Z$ are injective maps, then $X \times_Z Y = \{(x,y) \mid f(x) = g(y)\} = \{ z \in a(x) \cap b(Y) \}$. 
+By \cite[Proposition 3.2.13]{MaDo92}, $f$ and $g$ are local embeddings, so we can choose neighborhoods $U_v$ and $U_w$ on which $f$ and $g$ are embeddings. 
+Now applying the preceding lemma to $f|_{U_v}$ and $g|_{U_w}$, the map $f|_{U_v} \times_M g|_{U_w}$ from $U_v \times_M U_w$ to $M$ has image $f(U_v) \cap (U_w)$ and restricts to an embedding in a neighborhood of each point. 
+\end{proof}
+
+
+
+
+\begin{lemma}
+	The $f \colon V \to M$ be an immersion of a manifold with corners into a manifold without boundary, let $W$ be a manifold without boundary, and let $g \colon W \to M$ be transverse to $V$. 
+	Then the pullback $\pi_W: V \times_M W \to W$ is an immersion and so, locally in a neighborhood of each point, an embedding.
+\end{lemma}
+\begin{proof}
+	By \cref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangents space, so if $(v,w) \in P$, then $T_{(v,w)}P = T_vV \times_{T_{f(v)}M} T_wW$. 
+	Suppose $(a,b) \in T_{(v,w)}P$ with $a \in T_vV$ and $b \in T_wW$. 
+	Let $\pi_V \colon P \to V$ and $\pi_W \colon P \to W$ be the restrictions to $P$ of the projections from $V \times W$.
+	Then, suppressing the basepoints for the remainder of the argument, $D(f \times_M g) = D(g\pi_W) = D(f \pi_V)$.
+	Suppose $D\pi_W(a,b)= b = 0$. 
+	Then $$0 = Dg(D\pi_W(a,b))= D(g\pi_W)(a,b) = D(f \pi_V)(a,b) = Df(a).$$
+	But $f$ is an immersion, so $Df_v$ is injective REF and hence $a=0$. 
+	So $D(\pi_W)$ is injective and therefore $\pi_W$ is an immersion by \cite[Proposition 3.2.6]{MaDo92}.
+	It is therefore a local embedding by \cite[Proposition 3.2.13]{MaDo92}.  
+\end{proof}
+
+
+\begin{lemma}
+	The $f \colon V \to M$ be an immersion of a manifold with corners into a manifold without boundary, let $W$ be a manifold without boundary, and let $g \colon W \to M$ be transverse to $V$. 
+	Then the fact that the pullback of the (local) normal bundle of $V$ in $M$ is the (local) normal bundle of $V \times_M W$ in $W$ extends to the boundary.
+\end{lemma}
+\begin{proof}
+	Let $v$ be a boundary point of $V$, and let $(U;\phi)$ be a chart for $V$ at $v$ such that $\phi(0)=v$.
+	Then by the definition of smooth maps, $\phi f$ extends smoothly to a neighborhood of the origin in $\R^v$.
+	As $f$ is an embedding, $D(\phi f)_0$ must be injective, so there is a neighborhood of $0$ on which $f\phi$ extends to an embedding with $v$ in the interior. 
+	In other words, the embedding of $V$ can be extended locally to a neighborhood $v$ in the union of $V$ with an exterior boundary collar. 
+	Let us denote such an embedded manifold neighborhood of $v$ by $V'$. 
+	By restricting the codomain to a sufficiently small neighborhood of $v$ in $M$ and restriction $V'$ further if necessary, we can assume that $V'$ is a closed embedding.
+	For simplicitly, we assume from here on that we have made such restrictions and reset the notation so that $V'$ is a closed submanifold (without boundary) of $M$.  
+	
+	Next suppose that $w \in W$ with $g(w) = v$.
+	Since $g$ is transverse to $V$ at $w$, it will be transverse to $V'$ at $w$, and so $g$ will be transverse to $V'$ on a neighborhood $W'$ of $w$ \cite[Proposition 7.1.18]{MaDo92}.
+
+	So now $V' \times_M W'$ will be a neighborhood of $w$ in $V' \times_M W$, which is a submanifold of $W$ by the classical theory (see \cref{L: normal pullback}), which also tells us that the pullback of the normal bundle is the normal bundle of the pullback. 
+	In particular, the normal space\footnote{Really the quotient $T_vM/T_vV'$.} of $V'$ at $v$ is also the normal space of $V$ at $v$, and so we identify this normal space also with the normal space over $w$ in the normal bundle over $V' \times_M W '$. 
+	As $T_wW = T_w W'$ and $T_vV' = T_vV$, and so also $\nu_vV = \nu_v V'$, by \cref{L: tangent of pullbacks} we have $T_w(V' \times_M W')= T_w(V \times W')$ and so 
+	$$\nu_w(V\times_M W) = T_wW/T_w(V \times_M W) = T_wW'/T_w(V' \times_M W') = \nu_w(V' \times_M W') = g^*(\nu V')_w = g^*(\nu V)_w.$$  
+\end{proof}
+
+As we have $T_v{\bd V} \subset T_v V  \subset T_vM$, 
+
+
+--------------------
+
+\pagebreak
+
+
+\begin{proposition}\label{P: cross to cup}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
+	Then the pullback of $V \times W \to M \times M$ by $\diag$ is the co-oriented fiber product $V \times_M W \to M$, i.e.\ $$V \times_M W = \diag^*(V \times W).$$
+\end{proposition}
+
+\begin{proof}
+	By \cref{L: alternative transversality}, we know $f \times g$ is transverse to $\diag$, so the pullback is defined, and it is a manifold with corners by \cref{pullback}.
+	This pullback by $\diag$ is $$P' = \{(v,w,z) \in V \times W \times M \mid (f(v),g(w)) = \diag(z) = (z,z)\},$$ which is diffeomorphic to $$P = V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$$ via the projection $(v,w,z) \mapsto (v,w)$ with inverse $(v,w) \mapsto (v,w,f(v))$.
+	So we consider the co-orientations, for which we may assume as usual that all manifolds are without boundary by \cref{pullback,P: interior co-orientation}.
+
+	By \cref{L: Quillen product co-orientation}, now with $M = N$, if $f$ and $g$ are co-oriented (at appropriate points) by $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$ and if we we take Quillen co-orientations coming from $V \xhookrightarrow{e_V} M \times \R^a \to M$ and $W \xhookrightarrow{e_W} M \times \R^b \to M$ (with $a$ and $b$ assumed even) by orienting $\nu V$ and $\nu W$ in $M \times \R^a$ and $M \times \R^b$, then the co-orientation of the product $f \times g$ has Quillen co-orientation with the normal bundle to $V \times W$ in $M \times M \times \R^{a+b}$ oriented by $\beta_{\nu V} \wedge \beta_{\nu W}$.
+	Recall that we interpret this expression so that $\nu V$ is our standard normal bundle to $V$ in $M \times \R^a$ embedded into the first and third factors of $M \times M \times \R^a \times \R^b$ and analogous for $\nu W$.
+
+	Pulling back by the diagonal, we thus obtain from \cref{D: pullback coorient} that the pullback co-orientation is $(\beta_{P'},\beta_M)$ if and only if $\beta_{P'} \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M \wedge \beta_{a+b}$.
+	On the other hand, using the same Quillen co-orientation for $V$, the co-orientation of the fiber product $V \times_M W \to W \to M$ is $(\beta_P,\beta_M)$ if and only if $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_a$.
+
+	Consider now the following computation, where we use that $\beta_W \wedge \beta_{\nu W} = \beta_{M\times \R^b} = \beta_M \wedge \beta_b$ from the definition of the Quillen orientation of the normal bundle:
+	\begin{align*}
+		\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W}& = \beta_W \wedge \beta_a \wedge \beta_{\nu W}\\
+		& = \beta_W \wedge \beta_{\nu W} \wedge \beta_a\\
+		& = \beta_M \wedge \beta_b \wedge \beta_a \\
+		& = \beta_M \wedge \beta_{a+b}\\
+		& = \beta_{P'} \wedge \beta_{\nu V} \wedge \beta_{\nu W}.
+	\end{align*}
+	This appears to demonstrate that, if we fix $\beta_M$, we get corresponding $\beta_P$ and $\beta_P'$. 
+	The trouble with this argument, however, is that we've been very free about what spaces exactly all these various local orientations live over.
+	Even with our given identification of $P$ and $P'$, the symbol $\nu V$ here represents a normal bundle in at least two or three different spaces. 
+	To solidify the argument, we need a bit more care.
+
+	First, we recall that our model of $P = V \times_M W$ when computing pullback co-orientations is technically $V \times_{M \times \R^a} (W \times_M \R^a)$, identified with $V \times_M W$ in the obvious way, and similarly for $P'$; see \cref{R: pullback representative 2}. 
+	It will be convenient here to use these representations, so, relabeling for convenience and letting $e_V(v) = (f(v),e_a(v))$ and $e_W(w) = (g(w),e_b(w))$, we let
+	\begin{align*}
+		P &= \{(v,w,s)\in V\times W\times \R^a\mid (g(w),s)=e_V(v)\}\\
+		P' &= \{(v,w,z,s,t)\in V\times W\times M \times \R^a \times \R^b \mid (z,z,s,t)=(f(v),g(w),e_a(v),e_b(w))\}.
+	\end{align*}
+	Then $P$ is diffeomorphic to our standard $V \times_M W$ via $(v,w) \leftrightarrow (v,w,e_a(v))$, and $P'$ is diffeomorphic to $(V \times W) \times_{M \times M} M$ via $(v,w,z) \leftrightarrow (v,w,z,e_a(v),e_b(w))$. Furthermore, $P \cong P'$ via $(v,w,s)\leftrightarrow (v,w,g(w),s,e_b(w))$. 
+
+	We now consider the following diagram, in which the righthand horizontal maps are those occuring in the pullback co-orientation construction:
+	\begin{diagram}
+		P&\rInto^{\pi_{W\times \R^a}}& W \times \R^a &\rTo^{g \times \id_{\R^a}}& M\times \R^a\\
+		\dTo^\cong && \dInto^{h} &&\uTo^{\Pi}\\
+		P'&\rInto^{\pi_{M\times \R^a \times \R^b}}& M \times \R^a \times \R^b &\rInto^{\diag \times \id_{\R^a}\times \id_{\R^b}}& M \times M\times \R^a \times \R^b.
+	\end{diagram}	
+	The lefthand vertical map is our diffeomorphism $P \cong P'$. We let $h$ be the map $h(w,s) = (g(w),s,e_b(w))$, and we let $\Pi$ be the projection onto the first and third factors. 
+	One readily checks that this diagram commutes and that the maps with hooks are embeddings. 
+	
+	Let $p = (v,w,s)\in P$, let $p' = (v,w,z,s,t)$ be the corresponding point in $P'$, so in particular  $z = f(v) = g(w)$. 
+	Then taking derivatives at these points and their images, we obtain the diagram
+
+	\begin{diagram}
+		T_pP&\rInto^{D\pi_{W\times \R^a}}& T_wW \oplus T_s\R^a &\rTo^{D(g \times \id_{\R^a})}& T_zM \oplus T_s\R^a\\
+		\dTo^\cong && \dInto^{Dh} &&\uTo^{\Pi}\\
+		T_{p'}P'&\rInto^{D\pi_{M\times \R^a \times \R^b}}& T_zM \oplus T_s\R^a \oplus T_t\R^b &\rInto^{D(\diag \times \id_{\R^a}\times \id_{\R^b})}& T_zM \oplus T_zM\oplus T_s\R^a \oplus T_t\R^b.\\
+	\end{diagram}
+
+	Now the normal bundle $\nu V$ to $e_V(V) \subset M \times \R^a$ is our standard normal bundle for the construction of a co-orientation of $V \times_M W$, and we know it pulls back to the normal bundle of $P$, identified with $(g \times \id_{\R^a})^{-1}(e_V(V)) \subset W \times \R^a$. 
+	
+	By construction, we typically think of choosing a splitting so that we can identify a normal space $\nu V$ of $P$ in $W \times \R^a$ at $p$ with a subspace $N$ of $T_{w,s}(W \times \R^a)=T_wW \oplus T_s\R^a$ such that the restriction to $N$ of the composition of $D(g \times \id_{\R_a})$ with the quotient map to $T_{(g(w),s)}(M \times \R^a)/ T_{(g(w),s)}V$ is an isomorphism. 
+	With such a choice, it follows that the composition the other way around the righthand square, followed by the quotient map, is also an isomorphism onto $T_{(g(w),s)}(M \times \R^a)/ T_{(g(w),s)}V$, and so we can identify the image of $N$ under $D(\diag \times \id_{\R^a}\times \id_{\R^b}) Dh$ with the fiber of the pullback of $\nu V$ by $\Pi$. But now we observe that if $(\xi,\eta) \in T_wW \oplus T_s\R^a$, then
+	$$D(\diag \times \id_{\R^a}\times \id_{\R^b}) Dh(\xi,\eta) = (Dg(\xi),Dg(\xi), \eta, De_b(\xi)).$$
+	But $(Dg(\xi),De_b(\xi)) = De_W(\xi)$, so $(0, Dg(\xi),0, De_b(\xi))$ is in the tangent space of our chosen embedding of $V \times W$ into $M \times M \times \R^a \times \R^b$. 
+	So, the image $D(\diag \times \id_{\R^a}\times \id_{\R^b})Dh(N)$ represents our standard choice of a $\nu V$ summand in the normal bundle to $V \times W$, it simply corresponds to a different choice of splitting. 
+	In particular, this image and the $\nu V$ summand from \cref{L: Quillen product co-orientation} project to isomorphic images in $T(M \times M \times \R^a \times \R^b)/T(V \times W)$. 
+
+	The upshot is that we can thus identify our versions of $\nu V$ in $W \times \R^a$ and $M \times \R^a \times \R^b$ via $Dh$, and similarly identify $T_pP$ and $T_{p'}P'$ via the diagram. In fact, the lefthand square consist entirely of embeddings, we can now properly interpret the above computation as a computation entirely with elements of $T_zM \oplus T_s\R^a \oplus T_t\R^b$ with $\nu W$ being the normal from the embedding of $W$ into the first and third coordinates of $M \times \R^a \times \R^b$.
+\end{proof}
+
+\bibliographystyle{amsplain}
+\bibliography{../../bib}
+
+
+
+
+\end{document}
