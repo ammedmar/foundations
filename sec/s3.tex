@@ -83,7 +83,7 @@ By choosing a splitting, this sequence determines an isomorphism
 	TP \oplus (f\pi_V)^*TM\cong\pi_V^*(TV) \oplus \pi_W^*(TW).
 \end{equation*}
 The choices of orientations on $V$, $W$, and $M$ determine orientations on all summands in this expression except $TP$.
-The orientation on $TP$ is then chosen so that the two direct sums differ in orientation by a factor of $(-1)^{\dim(W)\dim(M)}$.
+The orientation on $TP$ is then chosen so that the two direct sums differ in orientation by a factor of $(-1)^{wm}$, recalling that $w=\dim(W)$, etc.
 
 Much more about the orientations of fiber products can be found in the technical report of Ramshaw and Basch \cite{RamBas09}.
 While the focus there is on manifolds without boundary, and sometimes just fiber products of linear maps of vector spaces, the results about orientations extend to manifolds with corners by employing them on the top-dimensional stratum and utilizing their stability property, by which orientation properties of fiber products of linear maps extend to properties of fiber products of transverse manifolds (see \cite[Sections 6.3, 9.1.2, and 9.3]{RamBas09}).
@@ -467,7 +467,7 @@ The following example, which may at first seem a bit artificial in employing $M$
 \begin{example}\label{E: manifold decomposition}
 	Suppose we have smooth maps $g \colon W \to M$, and $\varphi \colon M \to \R$ with $0$ a regular value of $\varphi g$.
 	Consider the spaces $W^0 = (\varphi g)^{-1}(0)$, $W^- = (\varphi g)^{-1}((-\infty,0])$, and $W^+ = (\varphi g)^{-1}([0,\infty))$, which are manifolds with corners.
-	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions, and in fact $W^0$ is a submanifold (with corners) of $W$ by \cite[Proposition 4.2.9]{MaDo92}. By the boundary formula \cref{E: product boundary}, 
+	In fact, it is clear from the definitions that $W^0 = 0 \times_{\R} W$, the fiber product of the embedding of $0$ into $\R$ and $\varphi g$, and similarly $W^-$ and $W^+$ are $(-\infty,0] \times_{\R} W$ and $[0,\infty) \times_{\R} W$. So these are manifolds with corners due to the transversality assumptions, and in fact $W^0$ is a submanifold (with corners) of $W$ by \cite[Proposition 4.2.9]{MaDo92}. By the boundary formula \cref{P: product boundary}, 
 	$$\bd (W^-)= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right),$$
 	and the first component is precisely $W^0$, so $W^0$ is a boundary component of $W^-$ and similarly for $W^+$.
 
@@ -675,30 +675,38 @@ It is not obvious how to define the co-orientations of pullbacks and fiber produ
 Our goal in this section is to provide a definition such that co-orientations of fiber products of co-oriented maps possess the following desirable properties:
 
 \begin{enumerate}
-	\item If $f$ and $g$ are transverse co-oriented embeddings, then their fiber product is just the (embedding of the) intersection of the images of $V$ and $W$ in $M$.\greg{Is this always an embedding? Do we care?}
+	\item Embedding property: If $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented embeddings, then their fiber product is just the (embedding of the) intersection of the images of $V$ and $W$ in $M$.\greg{Is this always an embedding? Do we care?}
 	If $f$ and $g$ are normally co-oriented (see \cref{normal co-or}), then the intersection should be normally co-oriented with the orientation of the normal bundle of the intersection given by concatenating the orientation for the normal bundle of $V$ followed by the orientation for the normal bundle of $W$.
 
-	\item Graded commutativity: Letting $v = \dim(V)$, $w = \dim W$, and $m = \dim(M)$, we should have $V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V$ as fiber product, using Notation \ref{N: implicit notation} to allow the domain to represent also the map.
+	\item Associativity: If $V$, $W$, and $X$ are all manifolds with corners mapping to the manifold without boundary $M$ and if all the required transversality assumptions hold for the following statement to involve only well-defined fiber products, then, using Notation \ref{N: implicit notation} to allow the domain to represent also the co-oriented map, we should have 
+	$$(V \times_M W) \times_M X = V \times_M (W \times_M X).$$
 
-	\item Leibniz rule: we should have $\bd (V \times_M W) = (\bd V \times_M W)\amalg (-1)^{m-v}(V \times_M \bd W)$, again using Notation \ref{N: implicit notation}.
+	\item Graded commutativity: We should have 
+	$$V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V$$
+	as fiber products, using Notation \ref{N: implicit notation}.
+	See \cref{R: precise commutativity}, below, for further remarks on how to interpret this formula.
+
+	\item Leibniz rule: We should have
+	$$\bd (V \times_M W) = (\bd V \times_M W)\amalg (-1)^{m-v}(V \times_M \bd W),$$
+	 again using Notation \ref{N: implicit notation}.
 	This formula will hold for pullbacks as well as fiber products.
 \end{enumerate}
 Of course the latter two properties will later correspond to the graded commutativity and boundary formulas for geometric cup products.
 
 Before getting into the specifics of the construction, we conclude this introductory section with some important general observations.
 In the following subsections, we first show that pullbacks of co-orientable maps are co-orientable; the proof will then become the roadmap for defining a specific pullback co-orientation convention.
-We then demonstrate that our convention yields pullback and fiber product co-orientations satisfying a number of desireable properties, including those listed above.
-Further properties of co-orientations of fiber products will be proven in \cref{S: exterior products} using a co-orientation we will define there for direct (exterior) products of co-oriented maps.
+We then demonstrate that our convention yields pullback and fiber product co-orientations satisfying a number of desireable properties, including the above Leibniz rule.
+Further properties of co-orientations of fiber products, including associativity and graded commutativity, will be proven in \cref{S: exterior products}, using a co-orientation we will define there for direct (exterior) products of co-oriented maps.
 
 \begin{remark}\label{R: pullback representative}
 	While our canonical pullback $P$ has been defined as $V \times_M W = \{(x,y) \in V \times W \mid f(x) = g(y)\}$, categorically the pullback $P$ is technically only well defined up to canonical diffeomorphisms.
 	In particular, if $P$ and $P'$ are two specific representatives of the pullback categorically, we have commutative diagrams
-	\begin{equation}\label{D: comm triangle}
+	\begin{equation*}
 		\begin{tikzcd}[column sep=small]
 			P \arrow[rr, "\cong"] \arrow[dr] & & P' \arrow[dl] \\
 			& W. &
 		\end{tikzcd}
-	\end{equation}
+	\end{equation*}
 	But, as we have observed in \cref{D: tautological co-orientation}, diffeomorphisms come equipped with tautological co-orientations, and so a co-orientation of $P \to M$ determines a unique co-orientation of $P' \to M$ by composition and vice versa.
 	Thus, when working with co-orientations of pullbacks, we typically think of selecting a fixed representative $P \to W$ to work with for computations, though not always the canonical one.
 	This observation shows that we are free to do so, and typically we will do so tacitly.
@@ -706,7 +714,7 @@ Further properties of co-orientations of fiber products will be proven in \cref{
 \end{remark}
 
 \begin{remark}\label{R: precise commutativity}
-	This is also a good place to point out exactly what we mean by writing $V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V$ in our commutativity statement, as $V \times_M W \subset V \times W$ and $W \times_M V \subset W \times V$ are different spaces, though canonically identified via the map $\tau \colon V \times W \to W \times V$ that switches the coordinates.
+	This is also a good place to point out exactly what we mean by writing $V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V$ in our graded commutativity statement, as, using the canonical pullbacks, $V \times_M W \subset V \times W$ and $W \times_M V \subset W \times V$ are different spaces, though canonically identified via the map $\tau \colon V \times W \to W \times V$ that switches the coordinates.
 	This map fits into a commutative diagram of fiber products
 	\[
 	\begin{tikzcd}[column sep=tiny]
@@ -1219,6 +1227,8 @@ The lemma will let us identify a normal direction to $\bd V$ in $V$ with a norma
 	But in defining the boundary co-orientation we assumed that $\beta_P \wedge \beta_{\nu V} = \beta_{W} \wedge \beta_E$, so two co-orientations agree or disagree according to the sign $(-1)^{m-v}$ as claimed.
 \end{proof}
 
+
+\begin{comment}
 \subsubsection{Graded commutativity}
 
 We demonstrate here graded commutativity of fiber product co-orientations.
@@ -1352,14 +1362,14 @@ Again, by applying \cref{pullback,P: interior co-orientation}, we may typically 
 	Note that while the statement of \cref{L: im/sub} assumes $f$ is the submersion and $g$ the immersion, we obtain the opposite case by reversing the roles of $g$ and $f$ in the statement of \cref{P: graded comm}.
 \end{proof}
 
-\begin{comment}
+BEGIN OLD COMMENT
 	If they are both immersions, apply Lemma \ref{L: im/im}.
 	If $f$ is a submersion, it is also a submersion in a neighborhood of $U$ and so it is a submersion on a neighborhood $U$ of $x$.
 	Let $A$ be the intersection of $U$ with the interior of $V$.
 	By the transversality of $f$ and $g$, if $g(y) = f(x)$, there must be points in a neighborhood of $B$ of $y$ in $W$ that map to $f(A)$, and as a map is a submersion or immersion on an open set, there is a $y'$ in the interior of $B$ that maps to $f(A)$.
 	Taking $x'$ in $f^{-1}(y')$, if $g$ is an immersion we apply Lemma \ref{L: im/sub} to $x', y'$, and if $g$ is a submersion we apply Lemma \ref{L: sub/sub}.
 	If $f$ is an immersion and $g$ a submersion, we reverse the roles in the argument.
-\end{comment}
+END OLD COMMENT
 
 We now show that for arbitrary proper transverse intersecting $f$ and $g$ there are always homotopies that maintain these properties while taking $f$ and $g$ each to maps of full rank at a given intersection point.
 Note that this is where we use the properness assumption in \cref{P: graded comm}.
@@ -1405,7 +1415,7 @@ Note that this is where we use the properness assumption in \cref{P: graded comm
 	But this last equality is true by \cref{C: if full}.
 \end{proof}
 
-\begin{comment}
+BEGIN OLD COMMENT
 	OLD PROOF
 	As noted, it suffices to verify the claim at one point of each connected component of $P$.
 	As $f$ and $g$ are transverse, if a component $P_0$ of $V \times_M W$ is nonempty, by Theorem \ref{pullback} we can find $x \in V$, $y \in W$, each point in the interior, so that $(x,y) \in P_0$.
@@ -1416,9 +1426,9 @@ Note that this is where we use the properness assumption in \cref{P: graded comm
 	Similarly, $g \times_M F$ can be co-oriented as a co-oriented homotopy from $g \times_M f$ to $g \times_M f'$.
 	Identifying these pullback as in Diagram \eqref{D: comm triangle}, we see that $\omega_{f \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f}$ if and only if $\omega_{f' \times_M g} = (-1)^{(m-v)(m-w)}\omega_{g \times_M f'}$.
 	Analogously, this holds if and only if $\omega_{f' \times_M g'} = (-1)^{(m-v)(m-w)}\omega_{g' \times_M f'}$, which holds by Corollary \ref{C: if full}.
-\end{comment}
+END OLD COMMENT
 
-\begin{comment}
+BEGIN OLD COMMENT
 	\begin{corollary}
 		Let $f \colon V \to M$ and $g \colon W \to M$ be transverse proper maps from manifolds with corners to a manifold without boundary.
 		Suppose $x \in V$ and $y \in W$ such that $f(x) = g(y)$.
@@ -1427,6 +1437,8 @@ Note that this is where we use the properness assumption in \cref{P: graded comm
 	\begin{proof}
 		We can apply Lemma \ref{L: make full} twice in succession with time rescalings, once with a homotopy of $f$ that holds $g$ fixed for $t\in[0,1/2]$ and then with a homotopy of $g$.
 	\end{proof}
+
+END OLD COMMENT
 
 \end{comment}
 
@@ -1852,11 +1864,11 @@ The next proposition shows that the exterior product construction is natural.
 	$$(\beta_P,\beta_X \wedge \beta_Y) = ((-1)^{(w+y-n)(m-v)}\beta_{h^*V} \wedge \beta_{k^*W},\beta_X \wedge \beta_Y).$$ We conclude $(h \times k)^*(V \times W) = h^*V \times k^*W$.
 \end{proof}
 
-\subsubsection{The relation between co-oriented exterior products and co-oriented fiber products}\label{S: product relations}
+\subsubsection{Applications of co-oriented exterior products to co-oriented fiber products}\label{S: product relations}
 
 Having established some elementary properties for our exterior product, we can now relate co-oriented exterior products to co-oriented fiber products.
 These relationships correspond to those in singular cohomology between the exterior and cup products of cochains, though one very nice feature is that in our context these relationships all hold ``on the nose'' at the cochain level and can be proven without any need for Alexander-Whitney maps or any other approximations to the diagonal.
-This will also be useful for proving some properties of the co-oriented fiber product that we have deferred so far.
+This will also be useful for proving some properties of the co-oriented fiber product that we have deferred so far, inclusing associativity and graded commutativity.
 
 We start with the following version of a well-known fact. 
 
@@ -1998,6 +2010,63 @@ We start with the following version of a well-known fact.
 		& = V \times_M (W \times_M X).\qedhere
 	\end{align*}
 \end{proof}
+
+
+\begin{proposition}[Graded commutativity of co-oriented fiber products]\label{P: graded comm}
+	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary.
+	Then as co-oriented fiber products over $M$ we have $\omega_{g \times_M f} = (-1)^{(m-v)(m-w)} \omega_{f \times_M g}$, or, using Notation \ref{R: precise commutativity},
+	$$V \times_M W = (-1)^{(m-v)(m-w)} W \times_M V.$$
+\end{proposition}
+
+\begin{proof}		
+	By \cref{P: cross to cup}, the fiber products $V \times_M W \to M$ and $W \times_M V \to M$ are respectively the pullbacks of $f \times g \colon V \times W \to M \times M$ and $g \times f \colon W \times V \to M \times M$ by the diagonal map $\diag \colon M \to M \times M$. 
+	Meanwhile, by \cref{P: exterior commutativity}, we have 
+	$$\tau^*(V \times W) = (-1)^{(m-v)(m-w)}W \times V,$$
+	where $\tau \colon M \times M \to M \times M$ is the map that interchanges the factors. 
+	We observe that $\tau \diag = \diag$, so using the functoriality of pullbacks from \cref{P: pullback functoriality} we can compute
+	\begin{align*}
+	W \times_M V &= \diag^*(W \times V)\\
+	&= (-1)^{(m-v)(m-w)} \diag^* \tau^*(V \times W)\\
+	&= (-1)^{(m-v)(m-w)}(\tau \diag)^*(V \times W)\\
+	&= (-1)^{(m-v)(m-w)}(\diag)^*(V \times W)\\
+	&= (-1)^{(m-v)(m-w)} V \times_M W.\qedhere
+	\end{align*} 
+\end{proof}
+
+\begin{example}\label{E: embedded}
+	In \cref{E: V embedded}, we considered pullback co-orientations $V \times_M W \to W$ when $V \into M$ was embedded.
+	In this example, we discuss the case where $W$ is embedded.
+
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to a manifold without boundary.
+	Suppose $f$ is co-oriented and $g \colon W \to M$ is an embedding, which we use throughout the example to identify $W$ with its image.
+	Let $(x,y) \in V \times_M W$.
+	For the remainder of the argument, we fix a local orientation $\beta_M$ at $f(x) \in M$, and we choose $\beta_V$ at $x$ so that $(\beta_V,\beta_M)$ is the co-orientation of $V$ at $x$.
+	Furthermore, even though $g$ might not be co-oriented, let us choose a Euclidean neighborhood $U$ of $y$ in $W$ and an arbitrary co-orientation $(\beta_U,\beta_M)$ on the restriction of $g$ to $U$.
+	This can be done as $U$ is contractible and so $g|_U$ is co-orientable.
+
+
+	Although we are interested in $V \times_M U$, the definition of the pullback co-orientation makes it easier to work with $U \times_M V$ when $U$ is embedded; see \cref{E: V embedded}.
+	As we have chosen a co-orientation for $U \into M$ and as $V \to M$ comes with a co-orientation, we can consider the fiber product $P_U = U \times_M V \to M$.
+	As $U$ is embedded in $M$, we have $P_U = f^{-1}(U) \subset V$.
+	If we choose an orientation $\beta_{\nu U}$ of the normal bundle to $U$ in $M$ at $y$ so that $\beta_U \wedge \beta_{\nu U} = \beta_M$, then by \cref{E: V embedded} and the definition of fiber product co-orientation, the map $P_U \xr{f} M$ is co-oriented by $(\beta_P,\beta_M)$, where $\beta_P$ is chosen so that $\beta_P \wedge \beta_{\nu U} = \beta_V$, as usual letting $\nu U$ here also stand for its pullback as a normal bundle of $P_U$ in $V$.
+	We note that if we had chosen the opposite co-orientation for $U \into M$ then, as we have fixed $\beta_V$ and $\beta_M$, the result would be to replace our current $\beta_U$ with $-\beta_U$, which would result in also reversing the signs of $\beta_{\nu U}$ and $\beta_P$.
+	In particular, the fiber product would have the opposite co-orientation.
+
+	Next, we will apply graded commutativity.
+	By \cref{P: graded comm}, we have $U \times_M V = (-1)^{(m-v)(m-w)}V \times_M U$ as co-oriented fiber products over $M$.
+	By \cref{R: precise commutativity}, this means that the fiber product $V \times_M U \to M$ with its fiber product co-orientation corresponds to the fiber product $U \times_M V = f^{-1}(U) \xr{f} M$ with co-orientation at $(x,y)$ given by $(-1)^{(m-v)(m-w)}(\beta_P, \beta_M)$.
+	But decomposing the fiber product as the pullback $V \times_M U \to U$ and the inclusion $U \into M$, we write $(-1)^{(m-v)(m-w)}(\beta_P, \beta_M)$ as the composite co-orientation
+	$$(-1)^{(m-v)(m-w)}(\beta_P, \beta_M) = (-1)^{(m-v)(m-w)}(\beta_P, \beta_U)*(\beta_U, \beta_M).$$
+	As $(\beta_U, \beta_M)$ is our chosen co-orientation for $g|_U$, the pullback co-orientation of $V \times_M U \to U$ must be $(-1)^{(m-v)(m-w)}(\beta_P, \beta_U)$.
+	But we have already observed that if we had chosen the opposite co-orientation for $g|_U$, that would reverse the signs of both $\beta_U$ and $\beta_P$, so in either case we obtain the same pullback co-orientation for $V \times_M U \to U$.
+	In other words, this description of the co-oriented pullback $V \times_M U \to U$ is independent of our choice of co-orientation for $g|_U$, and so it extends globally to give our pullback co-orientation of $V \times_M W \to W$.
+
+	Summarizing then, as a space we have $P = V \times_M W = f^{-1}(W)$, and the pullback and fiber product are the first map and composite of $f^{-1}(W) \xr{f} W \into M$ (analogously to the case where $f$ was an embedding in \cref{E: V embedded}).
+	Furthermore, fixing the co-orientation of $f$ as $(\beta_V, \beta_M)$, the co-orientation of the pullback $V \times_M W \to W$ is by $(-1)^{(m-v)(m-w)}(\beta_P, \beta_W)$, where, if we choose any local orientation $\beta_{\nu W}$ for the normal bundle of $W$ in $M$, then $\beta_W \wedge \beta_{\nu W} = \beta_M$ in $M$ and $\beta_P \wedge \beta_{\nu W} = \beta_V$ after pulling back to $V$.
+
+	It is a nice exercise to confirm that this agrees with the computation of \cref{P: normal pullback} when $V$ and $W$ are both embedded.
+\end{example}
+
 
 \begin{corollary}\label{C: criss cross}
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented maps from manifolds with corners to a manifold without boundary and similarly for $h \colon X \to N$ and $k \colon Y \to N$.
@@ -2234,14 +2303,14 @@ The following property will eventually manifest itself in geometric (co)homology
 
 Suppose $f \colon V \to M$ and $g \colon W \to M$ are two transverse co-oriented maps from manifolds with corners to a manifold without boundary.
 Further, suppose $M$ oriented.
-Then we know there is a bijection between co-orientations of $f$ and orientations of $V$: an orientation of $V$ induces a co-orientation of $f$ and vice versa.
+Then we know from the discussion in \cref{S: co-orientations} that there is a bijection between co-orientations of $f$ and orientations of $V$; an orientation of $V$ induces a co-orientation of $f$ and vice versa.
 Of course the same is true of $W$ and $g$.
 In this scenario, we have two different ways to orient $V \times_M W$, depending on whether we start by thinking of $V$ and $W$ as oriented or by thinking of $f$ and $g$ as co-oriented.
 If we think of $V$ and $W $as oriented, we have the fiber product orientation of $V \times_M W$
 discussed in \cref{S: orientations}.
 Alternatively, if we think of $f$ and $g$ as co-oriented, we can form the fiber product co-orientation of $V \times_M W \to M$ as in \cref{S: co-orientation of pullbacks} and then consider the induced orientation given the orientation of $M$.
 
-Our goal in this section is to compare these two orientations.
+Our goal in this section is to compare these two orientations on $V \times_M W$.
 To attempt to avoid confusion, we will write $V \times_M ^oW$ for the fiber product orientation of \cref{S: orientations} and $V \times_M ^cW$ for the co-oriented fiber product or, equivalently, the resulting induced orientation.
 
 The reader might have noticed that a third way to orient $V \times_M W$ is to consider $f$ to be co-oriented and $W$ to be oriented and then form the cap orientation that we studied in detail in the preceding section.
@@ -2249,7 +2318,7 @@ However, we already know this to be identical to $V \times_M ^cW$ by \cref{L: sa
 By contrast, these are not always the same as $V \times_M ^oW$.
 
 When we move on to geometric homology, $V \times_M ^oW$ will correspond to the classical intersection product of homology classes, as described for example in \cite[Section VI.11]{Bred97}, while $V \times_M ^cW$ will correspond to the cup product of cohomology classes.
-When $M$ is closed and oriented, switching between thinking of $V$ and $W$ as oriented vs. co-oriented will be the Poincar\'e duality isomorphism.
+When $M$ is closed and oriented, switching between thinking of $V$ and $W$ as oriented vs. co-oriented will be precisely the Poincar\'e duality isomorphism.
 So this proposition will ultimately demonstrate that the intersection product is Poincar\'e dual to the cup product, up to a sign; see \cref{S: PD}.
 
 \begin{proposition}\label{P: compare cup and intersection orientations}
@@ -2258,15 +2327,19 @@ So this proposition will ultimately demonstrate that the intersection product is
 \end{proposition}
 
 The proof will take a bit of work.
-Our strategy will be as follows: First, we will prove in \cref{L: compare cup and intersection for immersions} that the result holds when $f$ and $g$ are immersions.
+Our strategy will be as follows. 
+We recall by \cref{pullback,P: interior co-orientation} that co-orientations are determined entirely by what happens on the pullbacks of the interiors, and this is also a standard fact for orientations of topological manifolds with boundary. 
+So it suffices in what follows to consider only manifolds without boundary.	
+
+First, we will prove in \cref{L: compare cup and intersection for immersions} that the result holds when $f$ and $g$ are immersions.
 Then we will show, first for co-orientations and then for orientations, that we can replace the fiber product of
 $$V \xr{f} M \xleftarrow{g} W$$
 with the fiber product
-$$V \times \R^{2b}\xhookrightarrow{e \times \id_{\R^{2b}}} M \times \R^{2a} \times \R^{2b} \xhookleftarrow W \times \R^{2a},$$
-where $e$ is the embedding $V \into M \times \R^{2a}$ of a Quillen co-orientation of $f$ and the leftward arrow is the identity between the $\R^{2a}$ factors and takes the $W$ factor into $M \times \R^{2b}$ by the embedding map of a Quillen co-orientation of $g$.
-By ``replace,'' we mean in the orientated case that the two fiber products are canonically oriented diffeomorphic.
+$$V \times \R^b \xhookrightarrow{e \times \id_{\R^b }} M \times \R^a  \times \R^b  \hookleftarrow W \times \R^a ,$$
+where $a$ and $b$ are even, the map $e$ is the embedding $V \into M \times \R^a $ of a Quillen co-orientation of $f$, and the leftward arrow is the identity between the $\R^a $ factors and takes the $W$ factor into $M \times \R^b $ by the embedding map of a Quillen co-orientation of $g$.
+By ``replace,'' we mean in the oriented case that the two fiber products are canonically oriented diffeomorphic.
 In the co-oriented case we mean that we have a canonical oriented diffeomorphism
-between the domains of the two co-oriented fiber products, oriented with their induced orientations coming respectively from the orientation of $M$ and from the concatenation orientation of $M \times \R^{2a} \times \R^{2b}$ using the standard orientations of the Euclidean terms.
+between the domains of the two co-oriented fiber products, oriented with their induced orientations coming respectively from the orientation of $M$ and from the concatenation orientation of $M \times \R^a  \times \R^b $ using the standard orientations of the Euclidean terms.
 The maps of this second fiber product are embeddings for which the proposition holds by \cref{L: compare cup and intersection for immersions}, and so the general case will follow.
 The even dimensions of the Euclidean factors are chosen to avoid some extraneous signs in the arguments below.
 
@@ -2293,26 +2366,26 @@ In the latter remark, we provide exactly such a canonical identification between
 We begin with the case where $V$ and $W$ are immersions and then work toward the general case.
 
 \begin{lemma}\label{L: compare cup and intersection for immersions}
-	If $f$ and $g$ are transverse immersions of oriented manifolds with corners into an oriented manifold without boundary, then $V \times_M ^oW = (-1)^{(m-v)(m-w)} V \times_M ^cW$.
+	If $f$ and $g$ are transverse immersions of oriented manifolds without boundary into an oriented manifold without boundary, then $V \times_M ^oW = (-1)^{(m-v)(m-w)} V \times_M ^cW$.
 \end{lemma}
 
 \begin{proof}
-	It suffices to consider small neighborhoods on which $f$ and $g$ are embeddings.
-	Let $\beta_V$, $\beta_W$, and $\beta_M$ denote the orientations of $V$, $W$, and $M$, respectively.
-	Assuming $f$ and $g$ to be co-oriented with the compatible co-orientations, we have the resulting Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ of the normal bundles of $V$ and $W$.
+	It suffices to consider small neighborhoods of interior points on which $f$ and $g$ are embeddings.
+	Let $\beta_V$, $\beta_W$, and $\beta_M$ denote the local orientations of $V$, $W$, and $M$, respectively, at such a point.
+	Assuming $f$ and $g$ to be co-oriented with the compatible co-orientations $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$, we have the resulting Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ of the normal bundles of $V$ and $W$.
 	Recall that these are defined so that $(\beta_V,\beta_V \wedge \beta_{\nu V})$ and $(\beta_W,\beta_W \wedge \beta_{\nu W})$ are the co-orientations of $f$ and $g$, respectively.
 	In this scenario, with $\beta_V$ and $\beta_W$ fixed as the orientations of $V$ and $W$, this is equivalent to requiring $\beta_V \wedge \beta_{\nu V} = \beta_M$ and $\beta_W \wedge \beta_{\nu W} = \beta_M$.
-	Again to keep the contexts clear, for the remainder of the argument we will write $\beta^c_{\nu V}$ and $\beta^c_{\nu W}$ for the orientations of $\nu V$ and $\nu W$.
+	Again, to keep the contexts clear, for the remainder of the argument we will write $\beta^c_{\nu V}$ and $\beta^c_{\nu W}$ for the Quillen orientations of $\nu V$ and $\nu W$.
 
-	By \cref{P: normal pullback}, the co-orientation of the fiber product $V\times^cW$ is $(\beta_P,\beta_P \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W})$.
-	In particular, the induced orientation of $V\times^cW$ is the orientation $\beta_P^c$ such that $\beta_P^c \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W} = \beta_M$.
+	By \cref{P: normal pullback}, the co-orientation of the fiber product $V \times_M^c W$ is $(\beta_P,\beta_P \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W})$.
+	In particular, the induced orientation of $V\times_m^c W$ is the orientation $\beta_P^c$ such that $\beta_P^c \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W} = \beta_M$.
 
 	On the other hand, in \cref{P: orient intersection}, $\beta^o_P$ is such that if $\beta^o_P \wedge \beta^o_{\nu W} = \beta_V$ and $\beta^o_P \wedge \beta^o_{\nu V} = \beta_W$ then $\beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = \beta_M.$ A priori these may be different orientations of $\nu V$ and $\nu W$ than those of the preceding paragraph, so we use these alternate labels.
 	In fact, let us suppose $\beta^o_P$, $\beta^o_{\nu V}$, and $\beta^o_{\nu W}$ chosen so that these expressions all hold.
 	Then we have
 	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = \beta_{W} \wedge \beta^o_{\nu W},$$
 	so
-	$$\beta_W^o = \beta_W^c.$$
+	$$\beta_{\nu W}^o = \beta_{\nu W}^c.$$
 	Similarly,
 	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = (-1)^{(m-v)(m-w)}\beta^o_P \wedge \beta^o_{\nu W} \wedge \beta^o_{\nu V} = (-1)^{(m-v)(m-w)}\beta^o_V \wedge \beta^o_{\nu V},$$
 	so
@@ -2325,116 +2398,122 @@ We begin with the case where $V$ and $W$ are immersions and then work toward the
 \end{proof}
 
 Now we show how to replace a general co-oriented fiber product with a co-oriented fiber product whose maps are embeddings.
-In our remaining constructions in this section we take all introduced Euclidean spaces to be even-dimensional to simplify the signs.
+In our remaining constructions in this section we take all introduced Euclidean spaces to be even-dimensional to simplify the signs in our computations.
 
 \begin{lemma}
-	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary.
-	Let $V\xhookrightarrow{e}M \times \R^{2a} \to M$ be a Quillen co-orientation for $f$.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds without boundary to an oriented manifold without boundary.
+	Let $V\xhookrightarrow{e}M \times \R^a  \to M$ be a Quillen co-orientation for $f$ with $a$ even.
 
-	Then $V \times_M W$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically oriented diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$ (with its orientation induced by the fiber product co-orientation and the orientation of $M \times \R^{2a}$).
-	Here the maps for the second fiber product are $e \colon V \to M \times \R^{2a}$ and $g \times \id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
-	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V \into M \times \R^{2a}$ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M}\wedge\beta_a,\beta_M)$ is the co-orientation of $f$.
-	We also take $g \times \id_{\R^{2a}}$ to be co-oriented by the product co-orientation $(\beta_W \wedge \beta_a,\beta_M \wedge \beta_a)$ if $(\beta_W,\beta_M)$ is the co-orientation of $g$.
-	Finally, $M \times \R^{2a}$ is given the product orientation with $\R^{2a}$ having the standard orientation.
+	Then $V \times_M W$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically oriented diffeomorphic to $V\times_{M \times \R^a }(W \times \R^a )$ (with its orientation induced by the fiber product co-orientation and the orientation of $M \times \R^a $).
+	Here the maps for the second fiber product are $e \colon V \to M \times \R^a $ and $g \times \id_{\R^a } \colon W \times \R^a  \to M \times \R^a $.
+	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V \into M \times \R^a $ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M}\wedge\beta_a,\beta_M)$ is the co-orientation of $f$.
+	We also take $g \times \id_{\R^a }$ to be co-oriented by the product co-orientation $(\beta_W \wedge \beta_a,\beta_M \wedge \beta_a)$ if $(\beta_W,\beta_M)$ is the co-orientation of $g$.
+	Finally, $M \times \R^a $ is given the product orientation with $\R^a $ having the standard orientation.
 \end{lemma}
 
 \begin{proof}
-	By the definitions of the induced orientation and the fiber product co-orientation, the orientation of the fiber product $V \times_M W \to M$ is $\beta_P$ where $\beta_P \wedge \beta_{\nu V} = \beta_M\wedge\beta_a$.
-	We recall that the $\nu V$ in this formula is actually the pullback of the normal bundle of $e(V) \subset M \times \R^{2a}$ via the map $g \times \id_{\R^{2a}}: W \times \R^{2a} \to M \times \R^{2a}$.
-	But this is also precisely the description of the induced fiber product orientation from the co-oriented fiber product $V\times_{M \times \R^{2a}}(W \times \R^{2a})$, treating $e \colon V \into M \times \R^{2a}$ as its own Quillen co-orientation with $N = 0$ in \cref{D: pullback coorient}.
+	By the definitions of the induced orientation and the fiber product co-orientation, the co-orientation of the fiber product is obtained by identifying $V \times_M W$ with $(g\times \id_{\R^a})^{-1}(e(V)) \subset W \times \R^a$, and then induced orientation is $\beta_P$, where $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_a$.
+	We recall that the $\nu V$ in this formula is actually the pullback of the normal bundle of $e(V) \subset M \times \R^a $ via the map $g \times \id_{\R^a }: W \times \R^a  \to M \times \R^a $.
+	But this is also exactly the description of the induced fiber product orientation from the co-oriented fiber product $V\times_{M \times \R^a }(W \times \R^a )$, treating $e \colon V \into M \times \R^a $ as its own Quillen co-orientation with $N = 0$ in \cref{D: pullback coorient}.
+	In fact, the co-orientation of \cref{D: pullback coorient} is obtained precisely by identifying these two forms of the pullback.
 \end{proof}
 
 \begin{corollary}\label{C: co-oriented full transition to embedded}
-	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary.
-	Let $V \xhookrightarrow{r} M \times \R^{2a} \to M$ and $W\xhookrightarrow{s} M \times \R^{2b} \to M$ be Quillen co-orientations compatible with $f$ and $g$.
-	Then the fiber product $V \times_M W$ (with its orientation induced from the co-oriented fiber product) is canonically oriented diffeomorphic to the fiber product $(V \times \R^{2b}) \times_{M \times \R^{2a} \times \R^{2b}}(W \times \R^{2a})$ (with its orientation induced from the co-oriented fiber product), in which the first map is $r \times \id_{\R^{2b}}$ and the second map takes $(w,z) \in W \times \R^{2a}$ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds without boundary to an oriented manifold without boundary.
+	Let $V \xhookrightarrow{r} M \times \R^a  \to M$ and $W\xhookrightarrow{s} M \times \R^b  \to M$ be Quillen co-orientations compatible with $f$ and $g$.
+	Then the fiber product $V \times_M W$ (with its orientation induced from the co-oriented fiber product) is canonically oriented diffeomorphic to the fiber product $(V \times \R^b ) \times_{M \times \R^a  \times \R^b }(W \times \R^a )$ (with its orientation induced from the co-oriented fiber product), in which the first map is $r \times \id_{\R^b }$ and the second map takes $(w,z) \in W \times \R^a $ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
 \end{corollary}
 
 \begin{proof}
-	By the preceding lemma we have $V \times_M W$ canonically oriented diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$ with $V \to M \times \R^{2a}$ an embedding.
-	By \cref{P: graded comm}, the transposition map from this space to $(W \times \R^{2a}) \times_{M \times \R^{2a}}V$ is $(-1)^{(m-v)(m-w)}$-orientation preserving, using that all our Euclidean spaces are taken even-dimensional.
-	We next observe the map described for $W \times \R^{2a} \to M \times \R^{2a} \times \R^{2b}$ is an embedding whose composition with the projection to $M \times \R^{2a}$ gives a Quillen co-orientation for $g \times \id_{\R^{2a}}$.
-	Now we can apply the lemma again and then transpose again.
+	By the preceding lemma we have $V \times_M W$ canonically oriented diffeomorphic to $V\times_{M \times \R^a }(W \times \R^a )$ with $V \to M \times \R^a $ an embedding.
+	By \cref{P: graded comm}, the transposition map from this space to $(W \times \R^a ) \times_{M \times \R^a }V$ is $(-1)^{(m-v)(m-w)}$-orientation preserving, using that all our Euclidean spaces are taken even-dimensional.
+	We next observe the map described for $W \times \R^a  \to M \times \R^a  \times \R^b $ is an embedding whose composition with the projection to $M \times \R^a $ gives a Quillen co-orientation for $g \times \id_{\R^a }$.
+	Now we can apply the lemma again and then transpose again with the same sign, so that the signs cancel out.
 \end{proof}
 
-Next we show how to replace a general oriented fiber product with an oriented fiber product whose maps are embeddings.
+The preceding lemma and corollary concerned orientations obtained from co-orientations. 
+Next we consider oriented manifolds and maps that are not necessarily co-oriented and show how to replace the oriented fiber product with an oriented fiber product whose maps are embeddings.
 Again, we take all introduced Euclidean spaces to be even-dimensional to simplify the signs.
 
 \begin{lemma}
-	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
-	Let $V \xhookrightarrow{e}M \times \R^{2a} \to M$ be a factorization of $f$ with $e$ an embedding.
-	Then $V \times_M W$ is canonically oriented diffeomorphic to the oriented fiber product $V\times_{M \times \R^{2a}} (W \times \R^{2a})$ of $e \colon V \to M \times \R^{2a}$ and $g \times \id_{\R^{2a}} \colon W \times \R^{2a} \to M \times \R^{2a}$.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds without boundary to an oriented manifold without boundary.
+	Let $V \xhookrightarrow{e}M \times \R^a  \to M$ be a factorization of $f$ with $e$ an embedding.
+	Then $V \times_M W$ is canonically oriented diffeomorphic to the oriented fiber product $V\times_{M \times \R^a } (W \times \R^a )$ of $e \colon V \to M \times \R^a $ and $g \times \id_{\R^a } \colon W \times \R^a  \to M \times \R^a $.
 \end{lemma}
 
 \begin{proof}
-	We will first show that $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $V\times_{M \times \R^{2a}} (W \times \R^{2a})$ with the map $V \to M \times \R^{2a}$ being the composition of $f$ with the inclusion $M = M \times \{0\} \into M \times \R^{2a}$.
+	We will first show that $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $V\times_{M \times \R^a } (W \times \R^a )$ with the map $V \to M \times \R^a $ being the composition of $f$ with the inclusion $M = M \times \{0\} \into M \times \R^a $.
 	We will write this composite as $f_0$.
-	It is clear that $f_0$ and $g \times \id_{\R^{2a}}$ are transverse as $f$ and $g$ are transverse in $M$ and the $\id_{\R^{2a}}$ factor takes care of the $\R^{2a}$ factor of the tangent spaces.
+	It is clear that $f_0$ and $g \times \id_{\R^a }$ are transverse as $f$ and $g$ are transverse in $M$ and the $\id_{\R^a }$ factor takes care of the $\R^a $ factor of the tangent spaces.
 	We also observe that the two fiber products are canonically the same as spaces, as $V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$, while the other fiber product is $\{(v,w,0) \in V \times W \times \R^a \mid f(v) = g(w)\}$.
 
-	Now we consider the orientations.
-	As the tangent space of the pullback is the pullback of the tangent space, it suffices to assume that all spaces and maps are linear; in the general case we replace all the following spaces with their bundles and all maps with their derivatives.
-	For $P = V \times_M W$, we look at the map
+	Now we consider the orientations. 
+	Let us choose a point $p = (v,w) \in P$ and let $z=f(v)=g(w)\in M$.
+	As the tangent space of the pullback is the pullback of the tangent space by \cref{L: tangent of pullbacks}, we have $T_pP = T_vV \times_{T_z(M)} T_wW \subset T_vV \oplus T_wW$.
+	We consider the map
 	\begin{equation}\label{E: fiber orient}
-		\Phi \colon P \oplus M \to V \oplus W
+		\Phi \colon T_pP \oplus T_zM \to T_vV \oplus T_wW
 	\end{equation}
-	given by $((v,w),x) \to (v,w)+s(x)$, where $s$ is a splitting of the map $V \oplus W \to M$ that takes $(v,w)$ to $f(v)-g(w)$.
-	We recall that the orientation of $P$ is chosen so that $\Phi$ is an orientation preserving isomorphism up to a sign of $(-1)^{\dim(W)\dim(M)}$.
+	given by $\Phi((a,b),c) =(a,b)+s(c)$, where $s$ is a splitting of the map $T_vV \oplus T_wW \to T_zM$ that takes $(a,b)$ to $Df(a)-Dg(b)$.
+	We recall from \cref{S: orientation of fiber products} that the orientation of $P$ is chosen so that $\Phi$ is an orientation preserving isomorphism up to a sign of $(-1)^{wm}$.
 
-	In the case of $V\times_{M \times \R^{2a}} (W \times \R^{2a})$, if we abuse notation and again write $P$ for the fiber product, then we have instead a map
+	In the case of $V\times_{M \times \R^a } (W \times \R^a )$, if we write $P'$ for the fiber product, 
+	we have $T_{(p,0)}P' = T_vV \times_{T_z(M)} T_{(w,0)}(W \oplus \R^a) \subset T_vV \oplus T_{(w,0)}(W \oplus \R^a)$.
+	As $Df_0 = (Df,0)$, we have $T_{(p,0)}P' = \{(a,b,0) \in T_vV \oplus T_{(w,0)}(W \oplus \R^a) \mid Df(a)=Dg(b)\}$, so $T_{(p,0)}P'$ is canonically isomorphic to $T_pP =  \{(a,b) \in T_vV \oplus T_wW  \mid Df(a)=Dg(b)\}$.
+	In this case, we consider the map 
 	\begin{equation}\label{E: fiber plus euclidean}
-		\Psi: P \oplus M \oplus \R^{2a} \to V \oplus W \oplus \R^{2a},
+		\Psi: T_{(p,0)}P' \oplus T_zM \oplus T_0\R^a  \to T_vV \oplus T_wW \oplus T_0\R^a ,
 	\end{equation}
-	with $\Psi$ again the restriction to $P$ of the projections to $V$ and $W \oplus \R^{2a}$, while the restriction to $M$ must be a splitting of the map $\Upsilon: V \oplus W \oplus \R^{2a} \to M \oplus \R^{2a}$ that is $f_0$ on the first factor and $-(g \oplus \id_{\R^{2a}})$ on the last two factors.
-	We claim that we can take $\Psi((v,w,0),x,z) = (v,w,0)+(s(x),0)-(0,0,z)$.
+	with the restriction of $\Psi$ to $P'$ again being the projection maps, while the restriction to $M$ must be a splitting of the map $\Upsilon: T_vV \oplus T_{(w,0)}(W \oplus \R^a)  \to T_{(z,0)}(M \oplus \R^a)$ that is $Df_0$ on the first factor and $-D(g \oplus \id_{\R^a })$ on the last two factors.
+	We claim that we can take $\Psi((a,b,0),c,u) = (a,b,0)+(s(c),0)-(0,0,u)$, with the splitting map $s$ as above.
 	This is certainly correct on the $P$ factor.
-	For the $M \oplus \R^{2a}$ factor, we must show $\Upsilon \Psi(0,x,z) = (x,z)$.
-	We have $\Psi(0,x,z) = (s(x),0)-(0,0,z)$, noting that $s(x) \in V \oplus W$.
-	If we write $s(x) = (s_V(x),s_W(x))$, then by definition $f(s_V(x))-g(s_W(x)) = x$.
+	For the $M \oplus \R^a $ factor, we must show $\Upsilon \Psi(0,c,u) = (c,u)$.
+	We have $\Psi(0,c,u) = (s(c),0)-(0,0,u)$, noting that $s(c) \in T_vV \oplus T_wW$.
+	If we write $s(x) = (s_V(x),s_W(x))$, then by definition $Df(s_V(c))-Dg(s_W(c)) = c$.
 	So we have
 	\begin{align*}
-		\Upsilon((s(x),0)-(0,0,z))& =
-		\Upsilon(s_V(x),s_W(x),z)\\& =
-		f_0(s_V(x))-(g(s_W(x)),z)\\& =
-		(f(s_V(x)),0)-(g(s_W(x)),z)\\& =
-		(f(s_V(x))-g(s_W(x)),z)\\& =
-		(x,z).
+		\Upsilon((s(c),0)-(0,0,u))& =
+		\Upsilon(s_V(c),s_W(c),-u)\\& =
+		f_0(s_V(c))-(g(s_W(c)),-u)\\& =
+		(f(s_V(c)),0)-(g(s_W(c)),-u)\\& =
+		(f(s_V(c))-g(s_W(c)),u)\\& =
+		(c,u).
 	\end{align*}
 	So our definition of $\Psi$ is correct.
 
-	As $\Phi$ and $\Psi$ agree in the first two factors and the dimension of $\R^{2a}$ is even, we see that $\Psi$ is orientation-preserving if and only if $\Phi$ is.
-	Furthermore, we have $(-1)^{\dim(W) \dim(M \times \R^{2a})} = (-1)^{\dim(W)\dim(M)}$, so the two fiber product orientations agree in this case.
+	As $\Phi$ and $\Psi$ agree in the first two factors (identifying $T_pP$ and $T_{(p,0)}P'$ in the obvious way) and the dimension of $\R^a $ is even, we see that $\Psi$ is orientation-preserving if and only if $\Phi$ is.
+	Furthermore, we have $(-1)^{w(m+a)} = (-1)^{wm}$, so the two fiber product orientations agree in this case.
 
-	Next we must generalize from $f_0 \colon V \to M \times \R^{2a}$ to the general case of $e \colon V \to M \times \R^{2a}$.
-	By assumption, $f \colon V \to M$ is the composition of $e$ with the projection $M \times \R^{2a} \to M$, so we may write $e(v) = (f(v), e_{\R}(v))$, and there is a fiberwise homotopy $H \colon V \times I \to M \times \R^{2a}$ from $e$ to $f_0$ given by $H(v,t) = (f(v), te_{\R}(v))$.
-	We note that $H$ and $e$ are each transverse to $g \times \id_{\R^{2a}}$.
-	Indeed, if $e(v) = (g \times \id_{\R^{2a}})(w,z)$, then $(f(v),e_{\R}(v)) = (g(w),z)$.
-	The image of the derivative of $g \times \id_{\R^{2a}}$ at such a point will span $Dg(T_wW) \oplus T(\R^{2a}) = Dg(T_wW) \oplus \R^{2a}$, while the derivative of $e$ will have the form $(Df,De_{\R})$.
-	But the image of $D(g \times \id_{\R^{2a}})$ already spans $0\oplus \R^{2a}$, so $De+D(g \times \id_{\R^{2a}}) = (Df,0)+(Dg,0)+(0,\id_{\R^{2a}}) = T(M \times \R^{2a})$.
+	Next we must generalize from $f_0 \colon V \to M \times \R^a $ to the general case of $e \colon V \to M \times \R^a $.
+	By assumption, $f \colon V \to M$ is the composition of $e$ with the projection $M \times \R^a  \to M$, so we may write $e(v) = (f(v), e_{\R}(v))$, and there is a fiberwise homotopy $H \colon V \times I \to M \times \R^a $ from $e$ to $f_0$ given by $H(v,t) = (f(v), te_{\R}(v))$.
+	We note that $H$ and $e$ are each transverse to $g \times \id_{\R^a }$.
+	Indeed, if $e(v) = (g \times \id_{\R^a })(w,u)$, then $(f(v),e_{\R}(v)) = (g(w),u)$.
+	The image of the derivative of $g \times \id_{\R^a }$ at such a point will span $Dg(T_wW) \oplus T(\R^a )$, while the derivative of $e$ will have the form $(Df,De_{\R})$.
+	But the image of $D(g \times \id_{\R^a })$ already spans $0\oplus \R^a $, so $De(T_vV)+D(g \times \id_{\R^a })T_{(w,u)} = (Df,0)T_vV+(Dg,0)T_wW+(0,\id_{\R^a })T_u\R^a = T_{(z,u)}(M \times \R^a )$.
 	The same argument holds for $H(-,t)$ for any fixed $t$, replacing $De_{\R}$ with $tDe_{\R}$.
-	But if each $H(-,t)$ is transverse to $g \times \id_{\R^{2a}}$ then so is $H$.
+	But if each $H(-,t)$ is transverse to $g \times \id_{\R^a }$ then so is $H$.
 
-	It follows that we can form the oriented fiber product of $H$ and $g \times \id_{\R^{2a}}$ over $M \times \R^{2a}$.
-	In fact, this fiber product is diffeomorphic to $P \times I$: Noting that we have $H(v,t) = (f(v),te_{\R}(v)) = (g(w),z)$ if and only if $f(v) = g(w)$ and $te_{\R}(v) = z$, we obtain a diffeomorphism $P \times I \to (V \times I)\times_{M \times \R^{2a}}(W \times \R^{2a})$ given by $((v,w),t) \to ((v,t),(w, te_{\R}(v))$ with inverse $((v,t),(w,z)) \to ((v,w),t)$.
-	The two ends of the cylinder correspond to our two versions of $V\times_{M \times \R^{2a}} (W \times \R^{2a})$, one mapping $V$ by $f_0$ and the other by $e$.
-	Hence these spaces are oriented diffeomorphic, and canonically so by our construction.
+	It follows that we can form the oriented fiber product of $H$ and $g \times \id_{\R^a }$ over $M \times \R^a $.
+	In fact, this fiber product is diffeomorphic to $P \times I$: Noting that we have $H(v,t) = (f(v),te_{\R}(v)) = (g(w),u)$ if and only if $f(v) = g(w)$ and $te_{\R}(v) = u$, we obtain a diffeomorphism $P \times I \to (V \times I)\times_{M \times \R^a }(W \times \R^a )$ given by $((v,w),t) \mapsto ((v,t),(w, te_{\R}(v))$ with inverse $((v,t),(w,u)) \mapsto ((v,w),t)$.
+	So this space is a cylinder and the two ends correspond to our two versions of $V\times_{M \times \R^a } (W \times \R^a )$, one mapping $V$ by $f_0$ and the other by $e$.
+	Since we have a cylinder, these two end spaces are oriented diffeomorphic, and canonically so by our construction.
 
-	Putting this canonical diffeomorphism together with the one constructed above gives the desired oriented canonical diffeomorphism with the original $V \times_M W$.
+	Putting this oriented diffeomorphism together with the one constructed above gives the desired oriented canonical diffeomorphism with the original $V \times_M W$.
 \end{proof}
 
 \begin{corollary}\label{C: oriented full transition to embedded}
-	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
-	Let $V\xhookrightarrow{r} M \times \R^{2a} \to M$ and $W\xhookrightarrow{s} M \times \R^{2b} \to M$ be factorizations of $f$ and $g$ with $r$ and $s$ embeddings.
-	Then the oriented fiber product $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $(V \times \R^{2b})\times_{M \times \R^{2a} \times \R^{2b}}(W \times \R^{2a})$ in which the first map is $r \times \id_{\R^{2b}}$ and the second map takes $(w,z) \in W \times \R^{2a}$ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds without boundary to an oriented manifold without boundary.
+	Let $V\xhookrightarrow{r} M \times \R^a  \to M$ and $W\xhookrightarrow{s} M \times \R^b  \to M$ be factorizations of $f$ and $g$ with $r$ and $s$ embeddings.
+	Then the oriented fiber product $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $(V \times \R^b )\times_{M \times \R^a  \times \R^b }(W \times \R^a )$, in which the first map is $r \times \id_{\R^b }$ and the second map takes $(w,z) \in W \times \R^a $ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
 \end{corollary}
 
 \begin{proof}
 	As in the proof of \cref{C: co-oriented full transition to embedded},
-	we apply the preceding lemma to get $V \times_M W$ canonically oriented diffeomorphic to $V\times_{M \times \R^{2a}}(W \times \R^{2a})$.
-	Then we use the graded commutativity rule for oriented fiber product as given by \cref{P: commute oriented fiber},
+	we apply the preceding lemma to get $V \times_M W$ canonically oriented diffeomorphic to $V\times_{M \times \R^a }(W \times \R^a )$.
+	Then we use the graded commutativity rule for oriented fiber product, as given by \cref{P: commute oriented fiber},
 	by which
-	the transposition map to $(W \times \R^{2a})\times_{M \times \R^{2a}}V$ is $(-1)^{(m-v)(m-w)}$-orientation preserving, using that all our Euclidean spaces are taken even-dimensional.
-	Then we observe the map described for $W \times \R^{2a} \to M \times \R^{2a} \times \R^{2b}$ is an embedding whose composition with the projection to $M \times \R^{2a}$ is $g \times \id_{\R^{2b}}$.
+	the transposition map to $(W \times \R^a )\times_{M \times \R^a }V$ is $(-1)^{(m-v)(m-w)}$-orientation preserving, using that all our Euclidean spaces are taken even-dimensional.
+	Then we observe the map described for $W \times \R^a  \to M \times \R^a  \times \R^b $ is an embedding whose composition with the projection to $M \times \R^a $ is $g \times \id_{\R^b }$.
 	Now we apply the lemma again and then transpose again.
 \end{proof}
 
@@ -2445,7 +2524,7 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 \subsection{Appendix: Lipyanskiy's co-orientations}\label{S: Lipyanskiy co-orientations}
 
 In \cite{Lipy14}, Lipyanskiy uses a different notion of co-orientation from the one we have used to define geometric cochains.
-We here discuss Lipyanskiy's co-orientation, which he initially refers to as \textit{orientations of maps}, and show that when we have smooth maps $f \colon M \to N$, it is equivalent to our definition, up to possible sign conventions.
+We here discuss Lipyanskiy's co-orientations, which he initially refers to as \textit{orientations of maps}, and show that for a smooth map $f \colon M \to N$, his definition is equivalent to our definition, up to possible sign conventions.
 In other words, we show that a smooth map is co-orientable in our sense if and only if it is co-orientable in Lipyanskiy's sense.
 We will not explore the precise differences between the specific co-orientation conventions.
 We will also see that this alternative framework is in some sense dual to Quillen's approach to co-orientations that we presented in \cref{S: Quillen}: while Quillen's formulation involves replacing arbitrary maps with embeddings, the formulation here involves replacing arbitrary bundle maps with surjective bundle maps.
@@ -2479,7 +2558,7 @@ For the statement of the lemma, recall our definition of $\Or(V)$ in \cref{D: de
 	\bigotimes_{i\ \text{odd}} \Or(V_i)\, \cong
 	\bigotimes_{i\ \text{odd}} \Or(\im(d_{i-1}) \oplus \im(d_i))\, \cong
 	\bigotimes_{i\ \text{odd}} \Or(\im(d_{i-1})) \otimes \Or(\im(d_i))\, \cong
-	\bigotimes_i \Or(\im(d_{i})),
+	\bigotimes_{\text{all}\ i} \Or(\im(d_{i})),
 	\]
 	and similarly for the other tensor product.
 \end{proof}
@@ -2518,10 +2597,10 @@ We leave it to the reader to define the isomorphisms in sufficient detail to car
 The problem with the preceding analysis is that in general $\ker(Df)$ and $\cok(Df)$ do not necessarily have the same dimensions from fiber to fiber, and so $\ker(Df)$ and $\cok(Df)$ are not necessarily well defined as vector bundles.
 The solution is to reframe the definition of the determinant line bundle as in \cite{DoKr90} so that it is always well defined and such that it is isomorphic to $\Or(\ker(F)) \otimes \Or(\cok(F))^*$ when it is also well defined.
 
-For this, let $\underline{\R}^n$ be the trivial $\R^n$ bundle over $M$, and suppose we have a map $\psi \colon \underline{\R}^n \to E'$ such that $F \oplus \psi \colon E \oplus \underline{\R}^n \to E'$ is surjective\footnote{Donaldson and Kronheimer work with complex vector bundles, so \cite{DoKr90} features $\underline{\C}^n$ rather than $\underline{\R}^n$.}.
-This will always be true in our setting, as we observed in \cref{S: manifolds with corners} that work of Joyce and Melrose implies that smooth manifolds with corners can always be embedded in finite dimensional Euclidean space.
-Hence tangent bundles are subbundles of trivial bundles and so the images of projections of trivial bundles (or, up isomorphism, quotients of the trivial bundle by their orthogonal complements after endowing the trivial bundle with a Riemannian structure).
-The gain is that $F \oplus \psi$ now has trivial cokernel and a kernel that is a vector bundle, as now the fibers of the kernel have a fixed dimension.
+For this, let $\underline{\R}^n$ be the trivial $\R^n$ bundle over $M$, and suppose we have a map $\psi \colon \underline{\R}^n \to E'$ such that $F \oplus \psi \colon E \oplus \underline{\R}^n \to E'$ is surjective\footnote{Donaldson and Kronheimer work with complex vector bundles, so \cite{DoKr90} features $\underline{\C}^n$ rather than $\underline{\R}^n$.}; here we write $F \oplus \psi$ for the map $(x,y) \to F(x) + \psi(y)$. 
+Such a map will always exist in our setting, as we defined manifolds with corners to be embedded in finite dimensional Euclidean space.
+Hence tangent bundles are subbundles of trivial bundles and so also the images of projections of trivial bundles (or, up isomorphism, quotients of the trivial bundle by their orthogonal complements after endowing the trivial bundle with a Riemannian structure).
+The gain is that $F \oplus \psi$ then has trivial cokernel and a kernel that is a vector bundle, as now the fibers of the kernel have a fixed dimension.
 We then define the determinant line bundle to be
 $$\mathscr L = \Or(\ker(F \oplus \psi)) \otimes \Or(\underline{\R}^n)^* \cong \Or(\ker(F \oplus \psi)).$$
 
@@ -2531,7 +2610,7 @@ In the case where $\ker(F)$ and $\cok(F)$ were already vector bundles, $\mathscr
 	If $F \colon E \to E'$ and $\psi \colon \underline{\R}^n \to E'$ are bundle maps with $F \oplus \psi \colon E \oplus \underline{\R}^n \to E'$ surjective and $\ker(F)$ and $\cok(F)$ well-defined vector bundles, then the following sequence is exact\footnote{This exact sequence appears incorrectly in \cite{DoKr90} with the $\psi$ in place of $F$ in the first and last terms.}:
 	\[
 	\begin{tikzcd}[column sep=small]
-		0 \arrow[r] & \ker(F) \arrow[r] & \ker(F \oplus \psi) \arrow[r] & \underline{\R}^n \arrow[r] & \cok(F) \arrow[r] & 0
+		0 \arrow[r] & \ker(F) \arrow[r] & \ker(F \oplus \psi) \arrow[r] & \underline{\R}^n \arrow[r] & \cok(F) \arrow[r] & 0.
 	\end{tikzcd}
 	\]
 \end{lemma}
@@ -2552,11 +2631,11 @@ Combining this lemma with \cref{L: det sequence} gives us an isomorphism
 $$\Or(\ker(F)) \otimes \Or(\underline{\R}^n) \cong \Or(\ker(F \oplus \psi)) \otimes \Or(\cok(F)).$$
 Multiplying both sides by $\Or(\underline{\R}^n)^* \otimes \Or(\cok(F))^*$ and using again that for a line bundle $L$ we have $L \otimes L^* \cong \underline{\R}$, we obtain
 $$\Or(\ker(F)) \otimes \Or(\cok(F))^* \cong \Or(\ker(F \oplus \psi)) \otimes \Or(\underline{\R}^n)^*.$$
-So, as promised, the two definitions agree (up to canonical isomorphisms) when $\ker(F)$ and $\cok(F)$ are defined.
+So, as promised, the two definitions of the Donaldson-Kronheimer determinant line bundle agree (up to canonical isomorphisms) when $\ker(F)$ and $\cok(F)$ are defined.
 
 Finally, we should observe that the construction of $\mathscr L$ is independent, at least up to isomorphism, of the choice of $\psi$ and $n$.
 Clearly $\Or(\underline{\R}^n) \cong \Or(\underline{\R}^n)^* \cong \underline{\R}$ for all $n$, so we must only show that if $\psi_1 \colon \underline{\R}^n \to E'$ and $\psi_2 \colon \underline{\R}^m \to E'$ are two maps satisfying the requirement of the definition then $\Or(\ker(F \oplus \psi_1)) \cong \Or(\ker(F \oplus \psi_2))$.
-Adapting an argument in \cite[Section 5.1.3]{DoKr90}, we note that the bundles maps
+Adapting an argument in \cite[Section 5.1.3]{DoKr90}, we note that the bundle maps
 \begin{align*}
 	F \oplus \psi_1 \oplus 0 \colon &E \oplus \underline{\R}^{n+m} \to E'\\
 	F \oplus 0 \oplus \psi_2 \colon &E \oplus \underline{\R}^{n+m} \to E'

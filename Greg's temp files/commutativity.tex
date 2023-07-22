@@ -146,12 +146,12 @@
 	Then as co-oriented fiber products over $M$ we have $\omega_{g \times_M f} = (-1)^{(m-v)(m-w)} \omega_{f \times_M g}$, or, using Notation \ref{R: precise commutativity},
 	$$V \times_M W = (-1)^{(m-v)(m-w)} W \times_M V.$$
 \end{proposition}
-\begin{proof}
+\begin{proof}		
 	By \cref{P: cross to cup}, the fiber products $V \times_M W \to M$ and $W \times_M V \to M$ are respectively the pullbacks of $V \times W \to M \times M$ and $W \times V \to M \times M$ by the diagonal map $\diag \colon M \to M \times M$. 
 	Meanwhile, by \cref{P: exterior commutativity}, we have 
 	$$\tau^*(V \times W) = (-1)^{(m-v)(m-w)}W \times V,$$
 	where $\tau \colon M \times M \to M \times M$ is the map that interchanges the factors. 
-	We observe that $\tau \diag = \diag$, so we can compute
+	We observe that $\tau \diag = \diag$, so using the functoriality of pullbacks from \cref{P: pullback functoriality} we can compute
 	\begin{align*}
 	W \times_M V &= \diag^*(W \times V)\\
 	&= (-1)^{(m-v)(m-w)} \diag^* \tau^*(V \times W)\\
