@@ -9,15 +9,15 @@ They are thus akin to de Rham theory in the sense that chains and cochains are d
 
 Our definitions of geometric chains and cochains will be a modification of those given by Lipyanskiy in \cite{Lipy14}, though his results will continue to hold with our modified definitions.
 As Lipyanskiy primarily focuses on geometric chains and geometric homology, our focus, where the theories diverge, will primarily be on geometric cochains and cohomology, for which Lipyanskiy's account is much less complete despite the cohomological setting having its own subtleties.
-We also take the opportunity to fill in some of the details missing from Lipyanskiy's account more generally, especially utilizing the more thorough foundations on manifolds with corners provided by Joyce \cite{Joy12}.
+We also take the opportunity to fill in some of the details missing from Lipyanskiy's account more generally, especially utilizing the more thorough foundations on manifolds with corners provided by \cite{Joy12,MaDo92}.
 
 \subsection{Preliminary definitions}
 
-We first identify certain types of ``manifolds over $M$.'' In future sections $M$ will most typically be a manifold without boundary, as that is the case where we obtain agreement between geometric (co)homology and singular (co)homology, but in this section (and anywhere else we do not require transversality of maps to $M$), we allow it to be a manifold with corners anywhere that the extra generality may be useful but so long as it does not create more technical work (such as when utilizing smoothing, as happens below).
-In this case, we may interpret ``smooth'' to mean either ``smooth'' or ``weakly smooth'' in the sense of \cite{Joy12}, so long as we are consistent in this interpretation.
+We first identify certain types of ``manifolds over $M$.'' In future sections $M$ will most typically be a manifold without boundary, as that is the case where we obtain agreement between geometric (co)homology and singular (co)homology, but in this section we allow it to be a manifold with corners anywhere that the extra generality may be useful but so long as it does not create more technical work.
+
 
 \begin{definition}\label{V: maps are co-oriented}
-	A \textbf{manifold over $\mathbf{M}$} is a manifold with corners $W$ with a smooth map $r_W \colon W \to M$,
+	Let $M$ be a smooth manifold, possibly with corners. A \textbf{manifold over $\mathbf{M}$} is a manifold with corners $W$ with a smooth map $r_W \colon W \to M$,
 	called the \textbf{reference map}.
 	We freely and almost always abuse notation
 	by using the domain $W$ to refer to the manifold over $M$, not $r_W$ or some other symbol, letting
@@ -34,7 +34,7 @@ In this case, we may interpret ``smooth'' to mean either ``smooth'' or ``weakly 
 	If $W$ is oriented or co-oriented, then $\bd W$ inherits an orientation or co-orientation as in \cref{Con: oriented boundary} or \cref{D: boundary co-orientation}.
 	By \cite[Lemma 2.8]{Joy12}, $i_{\bd W}$ is proper, so, as the composition of proper maps is proper, if $W$ is a proper manifold over $M$ then so is $\bd W$.
 
-	If $W$ is oriented or co-oriented we write $-W$ to refer to the manifold over $M$ with the opposite orientation or co-orientation; it should always be clear from context which structure we are replacing with its opposite.
+	If $W$ is oriented or co-oriented, we write $-W$ to refer to the manifold over $M$ with the opposite orientation or co-orientation; it should always be clear from context which structure we are replacing with its opposite.
 \end{definition}
 
 %The most important case of manifolds over $M$ are submanifolds.
@@ -48,14 +48,14 @@ the definitions of \cite{Lipy14}.
 	\begin{itemize}
 		\item If $V$ and $W$ are oriented, we say they are \textbf{(oriented) isomorphic} if there is an orientation-preserving diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$.
 		If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic} if there is a diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$ and the composition of the
-		co-orientation induced by $\phi$
-		with the co-orientation of $r_V$ agrees with the co-orientation of $r_W$.
+		tautological co-orientation of $\phi$ (\cref{D: tautological co-orientation}) with the co-orientation of $r_V$ agrees with the co-orientation of $r_W$.
 
 		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial} if there is an orientation-reversing diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
-		If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$ and the composite of the co-orientation induced by $\rho$ with the co-orientation of $r_W$ is the opposite of the co-orientation of $r_W$.
+		If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$ and the composite of the tautological co-orientation of $\rho$ with the co-orientation of $r_W$ is the opposite of the co-orientation of $r_W$.
 		We call such a map $\rho$ \textbf{co-orientation reversing}.
 
-		\item $W$ has \textbf{small rank} if the differential $D r_W$ is less than full rank everywhere.
+		\item $W$ has \textbf{small rank} if the differential $D r_W$ is less than full rank at all $w\in W$.
+
 		\item If $W$ is (co-)oriented, then it is \textbf{((co-)oriented) degenerate} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co-)oriented manifold over $M$ and one with small rank.
 	\end{itemize}
 \end{definition}
@@ -65,7 +65,8 @@ Note that isomorphism is an equivalence relation and that it preserves trivialit
 Rather than small rank, Lipyanskiy uses the condition of \textbf{small image}.
 In our notation, a map $r_W \colon W \to M$ has small image if there is another map $r_T \colon T \to M$ such that $r_T(T)\supset r_W(W)$ but $\dim(T)<\dim(W)$.
 However, the small rank condition turns out to be more manageable for our purposes while still providing geometric homology and cohomology theories that are equivalent to singular homology and cohomology.
-Roughly speaking, the geometric chains and cochains of a manifold $M$ will consist of isomorphism classes of oriented or proper co-oriented manifolds with corners over $M$ modulo the trivial and degenerate chains and cochains.
+Roughly speaking, the geometric chains and cochains of a manifold $M$ will consist of isomorphism classes of oriented or proper co-oriented manifolds with corners over $M$ modulo the trivial and degenerate chains or cochains.
+
 The most obvious use of the notion of triviality will be to ensure that $\bd^2 = 0$ so that we have a chain complex.
 The degeneracy comes into play in ensuring that geometric homology and cohomology satisfy the dimension axiom; see \cref{E: dimension} and \cref{R: degen1}.
 
@@ -77,13 +78,15 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 
 	Alternatively, let $\pi \colon S^1 \to \R$ be co-oriented by $(e_\theta,e_x)$, where $e_x$ is the standard positively-directed unit vector in $\R$ and $e_\theta$ is the counterclockwise tangent vector in $S^1$.
 	This map is trivial as a co-oriented map, again via the reflection $\rho$ across the $x$-axis.
-	Indeed, we still have $\pi \rho = \pi$, and the co-orientation induced by $\rho$ is $(e_\theta,-e_\theta)$ so that the composite co-orientation of $\pi\rho$ is $-(e_\theta,e_x)$.
+	Indeed, we still have $\pi \rho = \pi$, and the tautological co-orientation of $\rho$ is $(e_\theta,-e_\theta)$ so that the composite co-orientation of $\pi\rho$ is $-(e_\theta,e_x)$.
 \end{example}
 
 \begin{example}
-	If $r_V \colon V \to M$ is any oriented or co-oriented map and $-r_V \colon V \to M$ is the same map with the opposite orientation or co-orientation, then $r_V \sqcup -r_V$ is trivial, taking $\rho$ to be the map that switches the two copies of $V$.
-	To be technically accurate, we should not think of a single instance of $V$ as being the domain for both maps in order for $r_V \sqcup -r_V$ to have a well-defined domain that is a submanifold of some $\R^N$.
-	However, recall that we are always free to replace $r_V \colon V \to M$ with an isomorphic map whose domain is a disjoint, diffeomorphic, ``copy'' of $V$ in $\R^N$.
+	If $r_V \colon V \to M$ is any oriented or co-oriented map and $-r_V \colon V \to M$ is the same map with the opposite orientation or co-orientation, then $r_V \sqcup -r_V \colon V \sqcup V \to M$ is trivial, taking $\rho$ to be the map that switches the two copies of $V$.
+
+	To be technically accurate, the space $V \sqcup V$ is not clearly defined as a manifold with corners, as we have defined our manifolds with corners in \cref{D: MWC} to be submanifolds of some $\R^N$. We solve this problem below by working, usually implicitly, with isomorphism classes of maps. 
+	In this case we could take $V \sqcup V$ to mean $V \sqcup W$ where $V$ and $W$ are isomorphic as manifolds over $M$, and such choices all lie in a unique isomorphism class. 
+	We will usually do this without comment and abuse notation by continuing to write $V \sqcup V$. 
 \end{example}
 
 \begin{example}
@@ -97,11 +100,11 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 
 \begin{example}
 	Let $V = W = M = \R^1$.
-	Let $r_W \colon W \to M$ be the identity map of $\R^1$ with the canonical co-orientation, which we can write $(e_1,e_1)$, letting $e_1$ be a positively-oriented tangent vector to $\R^1$.
-	Let $r_V \colon V \to M$ be given by $g(t) = -t$ with co-orientation $(-e_1,e_1)$.
+	Let $r_W \colon W \to M$ be the identity map of $\R^1$ with its tautological co-orientation, which we can write $(e_1,e_1)$, letting $e_1$ be a positively-oriented tangent vector to $\R^1$.
+	Let $r_V \colon V \to M$ be given by $r_V(t) = -t$ with co-orientation $(-e_1,e_1)$.
 	Let $\phi \colon W \to V$ be given by $\phi(t) = -t$.
-	Then the canonical co-orientation of $\phi$ is $(e_1,-e_1)$.
-	Then $r_V\phi = r_W$ as co-oriented maps, so $\phi$ provides a co-oriented equivalence between $r_W$ and $r_V$ even though they are very different maps.
+	Then the tautological co-orientation of $\phi$ is $(e_1,-e_1)$.
+	So $r_V\phi = r_W$ as co-oriented maps, and $\phi$ provides a co-oriented isomorphism between $r_W$ and $r_V$ even though they are very different maps.
 \end{example}
 
 \subsection{Geometric homology and cohomology}

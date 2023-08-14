@@ -2444,16 +2444,16 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 \begin{proof}
 	We will first show that $V \times_M W$ is canonically oriented diffeomorphic to the fiber product $V\times_{M \times \R^a } (W \times \R^a )$ with the map $V \to M \times \R^a $ being the composition of $f$ with the inclusion $M = M \times \{0\} \into M \times \R^a $.
 	We will write this composite as $f_0$.
-	It is clear that $f_0$ and $g \times \id_{\R^a }$ are transverse as $f$ and $g$ are transverse in $M$ and the $\id_{\R^a }$ factor takes care of the $\R^a $ factor of the tangent spaces.
+	The maps $f_0$ and $g \times \id_{\R^a }$ are transverse as $f$ and $g$ are transverse in $M$ and the $\id_{\R^a }$ factor takes care of the $\R^a $ factor of the tangent spaces.
 	We also observe that the two fiber products are canonically the same as spaces, as $V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$, while the other fiber product is $\{(v,w,0) \in V \times W \times \R^a \mid f(v) = g(w)\}$.
 
 	Now we consider the orientations. 
-	Let us choose a point $p = (v,w) \in P$ and let $z=f(v)=g(w)\in M$.
-	As the tangent space of the pullback is the pullback of the tangent space by \cref{L: tangent of pullbacks}, we have $T_pP = T_vV \times_{T_z(M)} T_wW \subset T_vV \oplus T_wW$.
-	We consider the map
-	\begin{equation}\label{E: fiber orient}
+	Let us choose a point $p = (v,w) \in P = V \times_M W$ and let $z=f(v)=g(w)\in M$.
+	As the tangent space of the pullback is the pullback of the tangent spaces by \cref{L: tangent of pullbacks}, we have $T_pP = T_vV \times_{T_z(M)} T_wW \subset T_vV \oplus T_wW$.
+	By the definition of the fiber product orientation in \cref{S: orientation of fiber products}, we consider the map
+	\begin{equation*}
 		\Phi \colon T_pP \oplus T_zM \to T_vV \oplus T_wW
-	\end{equation}
+	\end{equation*}
 	given by $\Phi((a,b),c) =(a,b)+s(c)$, where $s$ is a splitting of the map $T_vV \oplus T_wW \to T_zM$ that takes $(a,b)$ to $Df(a)-Dg(b)$.
 	We recall from \cref{S: orientation of fiber products} that the orientation of $P$ is chosen so that $\Phi$ is an orientation preserving isomorphism up to a sign of $(-1)^{wm}$.
 
@@ -2464,22 +2464,23 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 	\begin{equation}\label{E: fiber plus euclidean}
 		\Psi: T_{(p,0)}P' \oplus T_zM \oplus T_0\R^a  \to T_vV \oplus T_wW \oplus T_0\R^a ,
 	\end{equation}
-	with the restriction of $\Psi$ to $P'$ again being the projection maps, while the restriction to $M$ must be a splitting of the map $\Upsilon: T_vV \oplus T_{(w,0)}(W \oplus \R^a)  \to T_{(z,0)}(M \oplus \R^a)$ that is $Df_0$ on the first factor and $-D(g \oplus \id_{\R^a })$ on the last two factors.
+	with the restriction of $\Psi$ to $T_{(p,0)}P'$ again being the projection maps, while the restriction to $T_zM \oplus T_0\R^a$ must be a splitting of the map $\Upsilon: T_vV \oplus T_{(w,0)}(W \oplus \R^a)  \to T_{(z,0)}(M \oplus \R^a)$ that is $Df_0$ on the first factor and $-D(g \oplus \id_{\R^a })$ on the last two factors.
 	We claim that we can take $\Psi((a,b,0),c,u) = (a,b,0)+(s(c),0)-(0,0,u)$, with the splitting map $s$ as above.
 	This is certainly correct on the $P$ factor.
 	For the $M \oplus \R^a $ factor, we must show $\Upsilon \Psi(0,c,u) = (c,u)$.
 	We have $\Psi(0,c,u) = (s(c),0)-(0,0,u)$, noting that $s(c) \in T_vV \oplus T_wW$.
-	If we write $s(x) = (s_V(x),s_W(x))$, then by definition $Df(s_V(c))-Dg(s_W(c)) = c$.
+	If we write $s(c) = (s_V(c),s_W(c))$, then by definition $Df(s_V(c))-Dg(s_W(c)) = c$.
 	So we have
 	\begin{align*}
-		\Upsilon((s(c),0)-(0,0,u))& =
+		\Upsilon \Psi(0,c,u) & =
+		\Upsilon((s(c),0)-(0,0,u))\\& =
 		\Upsilon(s_V(c),s_W(c),-u)\\& =
-		f_0(s_V(c))-(g(s_W(c)),-u)\\& =
-		(f(s_V(c)),0)-(g(s_W(c)),-u)\\& =
-		(f(s_V(c))-g(s_W(c)),u)\\& =
+		Df_0(s_V(c))-(Dg(s_W(c)),-u)\\& =
+		(Df(s_V(c)),0)-(Dg(s_W(c)),-u)\\& =
+		(Df(s_V(c))-Dg(s_W(c)),u)\\& =
 		(c,u).
 	\end{align*}
-	So our definition of $\Psi$ is correct.
+	So our definition of $\Psi$ suffices for determining the orientation of the fiber product.
 
 	As $\Phi$ and $\Psi$ agree in the first two factors (identifying $T_pP$ and $T_{(p,0)}P'$ in the obvious way) and the dimension of $\R^a $ is even, we see that $\Psi$ is orientation-preserving if and only if $\Phi$ is.
 	Furthermore, we have $(-1)^{w(m+a)} = (-1)^{wm}$, so the two fiber product orientations agree in this case.
