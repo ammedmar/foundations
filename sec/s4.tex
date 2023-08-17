@@ -409,64 +409,78 @@ The following algebraic property will be useful below as we consider homological
 
 \subsubsection{Products of manifolds over \texorpdfstring{$M$}{M}}
 
-In this section we define various products of elements of $PC_*^\Gamma(M)$ and $PC^*_\Gamma(M)$, all coming from the external products of fiber products defined above.
+In this section we define various products of elements of $PC_*^\Gamma(M)$ and $PC^*_\Gamma(M)$, all coming from the external products or fiber products defined above.
 These products will ultimately become our cup, cap, intersection, and exterior products, but we introduce them here as products on $PC_*^\Gamma(M)$ and $PC^*_\Gamma(M)$ and derive some further properties as we will need some of this material in the next section to define creasing.
 The first time reader can fairly safely skip this section for now and return to it later as needed.
 
+We begin with the products coming from fiber products. 
+These are only partially defined, as fiber products require transversality.
+
 \begin{definition}\label{D: PC products}
-	Given a manifold without boundary $M$, the fiber product $(V,W) \to V \times_M W$, with the appropriate corresponding fiber product orientation or co-orientation, determines partially-defined products of the following forms:
+	Given a manifold without boundary $M$, the fiber products of transverse manifolds over $M$ determine partially-defined products of the following forms:
 	\begin{align*}
 		PC^*_\Gamma(M) \times PC^*_\Gamma(M)& \to PC^*_\Gamma(M)\\
 		PC^*_\Gamma(M) \times PC_*^\Gamma(M)& \to PC_*^\Gamma(M).
 	\end{align*}
 	If, furthermore, $M$ is oriented, then there is also a partially-defined product
-	$$PC_*^\Gamma(M) \times PC_*^\Gamma(M) \to PC^*_\Gamma(M).$$
+	$$PC_*^\Gamma(M) \times PC_*^\Gamma(M) \to PC_*^\Gamma(M).$$
 	In each case, the product is defined when the reference maps $r_V \colon V \to M$ and $r_W \colon W \to M$ are transverse.
+
+		\begin{itemize}
+			\item If $V,W\in PC^*_\Gamma(M)$ are transverse, we define their product to be the fiber product $V \times_M W$ with its fiber product co-orientation of \cref{D: pullback coorient}. Note that the fiber product is proper by \cref{L: co-orientable pullback} as the composition of proper maps is proper.
+
+			\item If $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ are transverse, we define their product to be $V \times_M W$ with the orientation induced from the orientation of $W$ and the co-orientation of the pullback $V \times_M W \to W$; see \cref{D: pullback coorient} and  the discussion following \cref{D: co-orientations}. 
+			Note that $V \times_M W$ is compact as $W$ is compact and the pullback map is proper by \cref{L: co-orientable pullback}.
+
+			\item If $M$ is oriented and $V,W \in PC_*^\Gamma(M)$, we define their product to be $V \times_M W$ with the fiber product orientation of \cref{S: orientation of fiber products}. 
+			Note that $V \times_M W$ is compact as a closed subset of the compact set $V \times W$.
+	\end{itemize}
+
+	These products are all well defined when the transversality conditions are met, as transversality is preserved if we replace transverse manifolds over $M$ with isomorphic manifolds over $M$, in which case we obtain isomorphic fiber products. 
+
+	In all cases we continue to denote the product by $V \times_M W$, allowing context to determine which (co-)orientations apply.
 \end{definition}
 
-To define these products, in each case we suppose transverse maps $r_V \colon V \to M$ and $r_W \colon W \to M$ representing elements of
-$PC^*_\Gamma(M)$ or $PC_*^\Gamma(M)$ and form the fiber product $V \times_M W \to M$.
-Then the first product is well defined by the definition of the fiber product co-orientation, \cref{L: co-orientable pullback}, and that the composition of proper maps is proper.
-For the second product, we have the pullback co-orientation $V \times_M W \to W$, and $W$ is compact and oriented by definition.
-So $V \times_M W$ is compact by \cref{L: co-orientable pullback} as a proper map to a compact space must have compact domain.
-We also recall that given a smooth map of manifolds with oriented codomain, an orientation of the domain determines a co-orientation of the map and vice versa; see the discussion following \cref{D: co-orientations}.
-So $V \times_M W$ is compact, and if we give it the orientation we obtain from the pullback co-orientation of $V \times_M W \to W$, we obtain an element of $PC_*^\Gamma(M)$.
-For the third map, we use the convention of Joyce recalled in \cref{S: orientations} to oriented a fiber product of oriented manifolds with corners and observe that $V \times_M W$ is compact as a closed subset of the compact $V \times W$.
-Thus we obtain an element $PC_*^\Gamma(M)$.
-In this last case, we really need $M$ to be oriented in general, as we have observed in \cref{R: what products exist} that if $M$ is not orientable the fiber product of orientable manifolds over $M$ may be non-orientable.
 
+
+In the last case, we really need $M$ to be oriented in general, as we have observed in \cref{R: what products exist} that if $M$ is not orientable the fiber product of orientable manifolds over $M$ may note be orientable.
+
+\begin{comment}
 In the cases where $r_V$ and $r_W$ are transverse embeddings, these products are represented by just taking intersections, with the orientations or co-orientations given explicitly in \cref{P: normal pullback,P: cap of immersions,P: orient intersection}.
 If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
+\end{comment}
 
-The next Lemma will be critical in \cref{S: products} toward showing that these products extend to well-defined, though only partially-defined, products of geometric chains and cochains.
+The next lemma will be critical in \cref{S: products} toward showing that these products extend to well-defined, though only partially-defined, products of geometric chains and cochains.
 It will also be needed much sooner to show that the creasing construction is well defined.
 This construction is used, in turn, to demonstrate the existence of Mayer-Vietoris sequences.
 
+For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ as appropriate. 
+
 \begin{lemma}\label{L: pullback with Q}
-	For any of the products above, if either $V$ or $W$ is in $Q(M)$ then so is $V \times_M W$.
-	In fact, if $V$ or $W$ is trivial then $V \times_M W$ is trivial, and if $V$ or $W$ has small rank then $V \times_M W$ has small rank.
+	For any of the products of \cref{D: PC products}, if either $V$ or $W$ is in $Q(M)$ then so is $V \times_M W$.
+	In fact, if $V$ or $W$ is trivial then $V \times_M W$ is trivial, if $V$ or $W$ has small rank then $V \times_M W$ has small rank, and if $V$ or $W$ is degenerate then $V \times_M W$ is degenerate.
 \end{lemma}
 
 \begin{proof}
 	We provide the proof if $V \in Q(M)$; the other case is similar.
 	By assumption $V$ is the disjoint union of trivial and degenerate chains or cochains, so it suffices to consider independently the possibilities that $V$ is trivial or degenerate.
 
-	If $\rho$ is a (co-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times_M \id_W$ is a (co-)orientation reversing diffeomorphism of $V \times_M W$, by Joyce's construction in the oriented case and by \cref{R: co-or restriction or switch} in the co-oriented case.
+	If $\rho$ is a (co-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times_M \id_W$ is a (co-)orientation reversing diffeomorphism of $V \times_M W$, by the construction in \cref{S: orientation of fiber products} in the oriented case and by \cref{R: co-or restriction or switch} in the co-oriented case.
 
 	Next assume that $V$ is degenerate, so in particular it has small rank.
-	Recall that the tangent bundle of a fiber product is the fiber product of the tangent bundles \cite[Theorem 5.47]{Wed16}, and so the derivative is the fiber product of derivatives.
+	Recall that the tangent bundle of a fiber product is the fiber product of the tangent bundles by \cref{L: tangent of pullbacks}, and so the derivative is the fiber product of derivatives.
 	Note that the fiber product of two linear maps, one with a non-trivial kernel, must also have a non-trivial kernel: If $A,B$ are linear maps with a common codomain and $v \in \ker(A)$, then $(v,0)$ is in the kernel of the fiber product of $A$ and $B$.
-	So if the differential of $r_W$ has non-trivial kernel everywhere so will the derivative of any fiber product with $r_W$.
+	So if the differential of $r_V$ has non-trivial kernel everywhere so will the derivative of any fiber product with $r_V$.
 	Thus $V \times_M W$ has small rank.
 
-	Now we recall that $\bd(V \times_M W)$ is, up to (co-)orientations, the union of $(\bd V) \times_M W$ and $V \times_M (\bd W)$.
+	Now we recall that $\bd(V \times_M W)$ is, up to (co-)orientations, the disjoint union of $(\bd V) \times_M W$ and $V \times_M (\bd W)$.
 	We have just shown that $V \times_M (\bd W)$ must have small rank.
 	As $V$ is degenerate, $\bd V$ is a disjoint of trivial and small rank manifolds over $M$, and so by the preceding arguments $(\bd V) \times_M W$ will be a union of trivial and small rank manifolds over $M$.
 	Altogether, $V \times_M W$ is degenerate.
 \end{proof}
 
 \begin{remark}\label{R: degen2}
-	As noted in \cref{R: degen1}, it is this lemma that fails if we attempt to simplify the definition of degeneracy by requiring each connected component of a degenerate prechain or precochain to have small rank and boundary that is a union of trivial and small rank pre(co)chains.
+	As noted in \cref{R: degen1}, it is this lemma that fails if we attempt to simplify the definition of degeneracy by requiring each connected component of a degenerate prechain or precochain to have small rank and a boundary that is a union of trivial and small rank pre(co)chains.
 	In fact, it is possible to construct a $V$ and $W$ such that $V$ is a non-trivial prechain that is degenerate in this stronger sense but such that $V \times_M W$ has multiple components that are each non-trivial and of small rank but such that the boundary of each component is non-trivial and not of small rank.
 	So $V \times_M W$ would not be in a version of $Q(M)$ defined using this stronger, but simpler, notion of degeneracy.
 	Of course it is in $Q(M)$ with our actual definitions by the preceding lemma.
@@ -487,10 +501,10 @@ We have a similar result for the exterior products studied in \cref{S: exterior 
 	So if $V$ is trivial so is $V \times W$.
 
 	Next assume that $V$ is degenerate, so in particular it has small rank.
-	The derivative of $f \times g$ is matrix with $Df$ and $Dg$ on the block diagonals, so $f \times g$ has small rank.
-	Now we recall that $\bd(V \times W)$ is, up to co-orientations, the union of $(\bd V) \times_M W$ and $V \times_M (\bd W)$.
+	At any point, the derivative of $f \times g$ is a matrix with $Df$ and $Dg$ on the block diagonals, so $f \times g$ has small rank.
+	Now we recall that $\bd(V \times W)$ is, up to co-orientations, the disjoint union of $(\bd V) \times_M W$ and $V \times_M (\bd W)$.
 	We have just shown that $V \times_M (\bd W)$ must have small rank.
-	As $V$ is degenerate, $\bd V$ is a disjoint of trivial and small rank manifolds over $M$, and so by the preceding arguments $(\bd V) \times_M W$ will be a union of trivial and small rank manifolds over $M$.
+	As $V$ is degenerate, $\bd V$ is a disjoint union of trivial and small rank manifolds over $M$, and so by the preceding arguments $(\bd V) \times_M W$ will be a union of trivial and small rank manifolds over $M$.
 	Altogether, $V \times_M W$ is degenerate.
 \end{proof}
 
