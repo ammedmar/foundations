@@ -8,19 +8,21 @@ It is more challenging to find an explicit isomorphism in the case of cohomology
 
 \subsection{Functoriality and homotopy properties}\label{S: functoriality}
 
-Given a continuous map of manifolds $f \colon M \to N$, we define in this section the induced maps $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ and $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ and show that they are independent of $f$ up to homotopy.
-We also treat the case that $f$ is proper and co-oriented, in which case it induces a covariant map $f_* \colon H^*_\Gamma(M) \to H^{*+n-m}_\Gamma(N)$ independent of $f$ up to proper homotopy.
-In the covariant cases, $M$ and $N$ may both be manifolds with corners.
-In the contravariant case we need to use transversality, and so $N$ will be without boundary.
-One could also construct a contravariant homology map $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$ via fiber products with the assumption that $M$ is compact and oriented, but we will not need this and so leave it to the interested reader.
-\greg{Do we actually use the covariant cohomology map anywhere?}
+Given a \textit{continuous} map of manifolds $f \colon M \to N$, we define in this section the induced maps $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ and $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ and show that they are independent of $f$ up to homotopy.
+We also treat ``wrong way'' maps, though they require extra hypotheses.
+In particular, if $f$ is proper and co-oriented it induces a covariant map on cohomology $f_* \colon H^*_\Gamma(M) \to H^{*+n-m}_\Gamma(N)$ independent of $f$ up to proper homotopy, 
+while if $f$ is proper and $M$ is oriented, we have a contravariant homology map $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
 
-In construction of $f_*$ for homology is relatively straightforward and can essentially be found in \cite[Section 6]{Lipy14}, though we provide additional details.
+In the covariant cases, $M$ and $N$ may both be manifolds with corners if we assume all maps and homotopies to be smooth (primarily to avoid smoothing arguments for maps of manifolds with corners).
+In the contravariant case we need to use both transversality and smoothing, and so for this case we consider only $M$ and $N$ without boundary.
+
+The construction of $f_*$ for homology is relatively straightforward and can essentially be found in \cite[Section 6]{Lipy14}, though we provide additional details.
 The covariant case of cohomology is similar to that for homology.
-For the contravariant case of cohomology, there is slightly more work, and our argument here parallels Kreck's in \cite{Krec10}, which is slightly different than the sketch in Lipyanskiy \cite[Section 6]{Lipy14} in that we choose to perturb $f$ rather than the reference map for the cohomology class in order to obtain transversality.
+For the contravariant cases, there is slightly more work, and our argument here for cohomology parallels Kreck's in \cite{Krec10}, which is slightly different than the sketch in Lipyanskiy \cite[Section 6]{Lipy14} in that we choose to perturb $f$ rather than the reference map for the cohomology class in order to obtain transversality.
 
 As part of our constructions, we will see that if $F \colon M \times I \to N$ is a homotopy (proper or co-oriented as need be) and $r_W \colon W \to M$ represents a geometric cycle or cocycle, then the composition $F \circ (r_W \times \id_I)$ provides a homology or cohomology from $F(-,0)r_W \colon W \to N$ to $F(-,1)r_W \colon W \to N$.
-However, we remark that, somewhat contrary to intuition, homotopies $W \times I \to N$ will not generally generate geometric homologies or cohomologies, as membership in $Q(N)$ is not generally preserved by homotopies of this form.
+Such homotopies, which we dub ``universal homotopies,'' will be critical in later sections for making geometric chains and cochains transverse to each other.
+
 
 \subsubsection{Covariant functoriality of geometric homology and cohomology}\label{S: covariant functoriality}
 
@@ -58,7 +60,7 @@ This is the content of the following lemma.
 	Given a smooth proper co-oriented map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map $C^*_\Gamma(M) \to C^{*+n-m}_\Gamma(N)$ given by $\uW \to \underline{f(W)}$, and this construction gives a covariant functor from the category of smooth manifolds and smooth maps to cochain complexes over $\Z$ with chain maps of appropriate degree.
 \end{corollary}
 
-\noindent\textbf{Homotopies.} Next we consider behavior with respect to homotopies. 
+Next we consider behavior with respect to homotopies. 
 For the remainder of the section, and for simplicity of notation, we leave degree shifts tacit in the notation; for example, for a chain complex $A_*$, we write $x \in A_*$ to mean an element of any degree and simply write $f \colon A_* \to B_*$ even when $f$ is a chain map of non-zero degree.
 
 \begin{convention}\label{homotopy product co-orientation convention}
@@ -189,12 +191,13 @@ The next lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a man
 	that $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent cohomologous cocycles.
 \end{proof}
 
-The first part of the following proposition is Lipyanskiy's Theorem 5 in \cite{Lipy14}.
+We now come to the culmination of this section. 
+The first part of the following theorem is Lipyanskiy's Theorem 5 in \cite{Lipy14}.
 
-\begin{proposition}\label{P: homology homotopy functor}
+\begin{theorem}\label{T: homology homotopy functor}
 	Given a \textnormal{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$.
-	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$ that depends only on the proper homotopy class and co-orientation of $f$.
-\end{proposition}
+	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$, which depends only on the proper homotopy class and co-orientation of $f$.
+\end{theorem}
 
 \begin{proof}
 	First consider the case of homology.
@@ -239,26 +242,29 @@ The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and let
 
 \subsubsection{Contravariant functoriality of geometric cohomology}\label{S: cohomology pullback}
 
-In this section we assign to a continuous map $f \colon M \to N$ of manifolds without boundary a map $H^*_\Gamma(N) \to H^*_\Gamma(M)$.
+In this section, we assign to a continuous map $f \colon M \to N$ of manifolds without boundary a map $H^*_\Gamma(N) \to H^*_\Gamma(M)$.
+If $f$ is proper and $M$ is oriented, we also have a map $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
+As in the preceding section, we first consider a smooth map $f$ and then generalize to the continuous case using smooth approximations. 
 
-First suppose $W \in PC^*_\Gamma(N)$ is represented by a proper co-oriented map $r_W \colon W \to N$, and let
-$g \colon M \to N$ be a \textit{smooth} (not necessarily co-oriented or proper) map such that $g$ is transverse to $r_W$.
-Then we define $g^*(W)$ to be the pullback $r_W \times_N g \colon W \times_N M \to M$, co-oriented as described in \cref{D: pullback coorient}.
-Note that the pullback is proper by \cref{L: co-orientable pullback}.
-Also, the pullback has dimension $\dim(W)+\dim(M)-\dim(N) = \dim(M)-(\dim(N)-\dim(W)) = \dim(M)-\codim_N(W)$ by \cite[Theorem 6.4]{Joy12} so that the cohomological index is preserved by the pullback construction.
+First, suppose $W \in PC^*_\Gamma(N)$ is represented by a proper co-oriented map $r_W \colon W \to N$, and let $g \colon M \to N$ be a \textit{smooth} map such that $g$ is transverse to $r_W$.
+We emphasize that there is no need for assumptions that $g$ be co-oriented or proper.
+We define $g^*(W)$ to be the pullback $r_W \times_N g \colon W \times_N M \to M$, co-oriented by our standard convention from \cref{D: pullback coorient}.
+The pullback is proper by \cref{L: co-orientable pullback}.
+Also, using our standard convention for notating dimensions, the pullback has dimension $w+m-n$, and we have $m - (w+m-n) = n - w$. In other words, the index of $W$ as a precochain of $N$ is the same as the index of $W \times_N M$ as a precochain of $M$. 
+So, when defined,  $g^*$ takes elements of $PC_\Gamma^i(N)$ to elements of $PC_\Gamma^i(M)$.
 
-The following lemma is similar to \cref{L: pullback with Q}, as are their proofs, though in that context the analog of $M$ was permitted to have corners so that $Q^*(M)$ would not technically be defined.
-We also here continue to assume that $g \colon M \to N$ is transverse to the cochain so that the pullback of the cochain has the same codimension as the original cochain.
+The following lemma is similar to \cref{L: pullback with Q}, as is its proof, though there the focus was on fiber products, not pullbacks.
+It will be useful later to allow $M$ to be a manifold with corners here.
 
 \begin{comment}
 	\red{GBF: Might want to try to combine those into a single lemma somewhere at some point, but it looks like it might be less messy, if a bit redundant, not to.}
 \end{comment}
 
 \begin{lemma}\label{L: pullback map Q}
-	Suppose $N$ is a manifold without boundary and $r_S \colon S \to N$ is trivial or has small rank.
-	Let $M$ be a manifold with corners, and let $g \colon M \to N$ be a smooth map transverse to $r_S$.
-	Then $S \times_N M \to M$ is also trivial or has small rank, respectively.
-	Consequently, if $S \in Q^k(N)$ then $S \times_N M \to M$ is in $Q^k(M)$.
+	Suppose $M$ is a manifold with corners and $N$ is a manifolds without boundary.
+	Suppose $r_S \colon S \to N$ is trivial or has small rank, and let $g \colon M \to N$ be a smooth map transverse to $r_S$.
+	Then the pullback $g^*(S) = S \times_N M \to M$ is also trivial or has small rank, respectively.
+	Consequently, if $S \in Q^*(N)$ then $S \times_N M \to M$ is in $Q^*(M)$.
 \end{lemma}
 
 \begin{proof}
@@ -266,8 +272,8 @@ We also here continue to assume that $g \colon M \to N$ is transverse to the coc
 
 	Similarly, suppose $r_S \colon S \to N$ has small rank.
 	Suppose at the point $x \in S$ we have $v \in \ker(D_x r_S)$.
-	The tangent space of the pullback is the pullback of the tangent spaces \cite[Theorem 5.47]{Wed16}, so $T_{(x,y)}(S \times_N M)$ is the pullback $T_{(x,y)}P = T_xS\times_{T_{(r_S(x),g(y))}N} T_y M$, and we are interested in the map from this space under the derivative of the projection $\pi \colon S \times M \to M$.
-	As $v \in \ker D_xr_S$, we have $(v,0) \in T_{(x,y)}P$, and this projects to $0$ in $T_yM$.
+	By \cref{L: tangent of pullbacks}, if $(x,y) \in S \times M$, the tangent space $T_{(x,y)}(S \times_N M)$ is the pullback $T_xS\times_{T_{(r_S(x),g(y))}N} T_y M$, and we are interested in the map from this space under the derivative of the projection $\pi \colon S \times M \to M$.
+	As $v \in \ker D_xr_S$, we have $(v,0) \in T_{(x,y)}(S \times_N M)$, and this projects to $0$ in $T_yM$.
 	So $(v,0) \in \ker(D_{(x,y)}\pi)$.
 	This shows that the pullback has small rank.
 
@@ -290,25 +296,25 @@ Nonetheless, given any continuous $f \colon M \to N$ of manifolds without bounda
 
 \begin{proof}
 	First, let $r_W \colon W \to N$ represent a cocycle, and suppose we have two maps $g_0, g_1 \colon M \to N$ that are smooth, homotopic to $f$, and transverse to $r_W$.
-	Let $G \colon M \times I \to N$ be a homotopy from $g_0$ to $g_1$, which exists by \cref{T: basic trans}.
-	We can find such a $G$ that is smooth and transverse to $r_W$.
-	Consider the composition $W \times_N (M \times I) \to M \times I \to M$ of the pullback $r_W$ by $G$ and the projection $M \times I \to M$.
+	By \cref{T: basic trans} there exists a smooth homotopy $G \colon M \times I \to N$ from $g_0$ to $g_1$ such that $G$ is transverse to $r_W$; in particular we apply \cref{T: basic trans} with the $f$ of that theorem being an arbitrary homotopy from $g_0$ to $g_1$, and then the resulting $h(-,1)$ of the theorem is our $G$ with $G = h(-,1)$ agreeing with $g_0 \sqcup g_1$ on $\bd (M \times I) = M \times \{0,1\}$. 
+
+	Now, consider the composition $W \times_N (M \times I) \xr{r_W \times_N G} M \times I \to M$ of the pullback of $r_W$ by $G$ and the projection $M \times I \to M$.
 	As $r_W$ is proper and co-oriented so is the pullback, and the the projection $M \times I \to M$ has its standard co-orientation $(\beta_M \wedge \beta_I,\beta_M)$ and is proper.
-	Its boundary is the sum of $\bd W \times_N (M \times I) \to M \times I \to M$ and, up to sign, $$W \times_N (M \times \{1\}) - W \times_N (M \times \{0\}) \to M \times I \to M.$$ As $W$ is assumed to be a cocycle, $\bd W \in Q^*(N)$.
+	So this composition represents a geometric cochain in $M$.
+	Furthermore, the boundary of this composition is the disjoint union of $\bd W \times_N (M \times I) \to M \times I \to M$ and, up to sign, $$W \times_N (M \times \{1\}) \sqcup - W \times_N (M \times \{0\}) \to M \times I \to M.$$ As $W$ is assumed to be a cocycle, $\bd W \in Q^*(N)$.
 	So $\bd W \times_N (M \times I) \to M \times I$ is in\footnote{Note that even if $M$ is without boundary, $M \times I$ will have boundary (unless $M$ is empty).
 		This instance is the main reason we have allowed such constructions as $PC^*(-)$ and $Q^*(-)$ to take manifolds with non-empty boundary as inputs up to this point.
-		In this particular case, since $N$ does not have boundary, all ``smooth'' maps to $N$ are automatically smooth in the strong sense of \cite{Joy12}, as are then $W \times_N (M \times I) \to M \times I$ and $M \times I \to M$ as these are both pullbacks in the smooth category.
+		In this particular case, since $N$ does not have boundary, all ``smooth'' maps to $N$ are automatically smooth in the strong sense of \cite{Joy12}, as is then $W \times_N (M \times I) \to M \times I$ as these are both pullbacks in the smooth category.
 		Thus we obtain an element of $Q^*(M)$ whether one prefers to define $Q^*(-)$ in general using smooth or weakly smooth maps.} $Q^*(M \times I)$ by \cref{L: pullback map Q}, and it is then easy to see that the projection to $M$ preserve triviality and small rank.
-	The other terms correspond to the pullbacks of $W$ via $g_0$ and $g_1$.
-	Thus $f^*$ is independent of the choice of $g$ within the homotopy class of $f$.
+	The other terms correspond to the pullbacks of $W$ via $g_0$ and $g_1$, so $g_0^*(W)$ and $g_1^*(W)$ are cohomologous.
 
-	Next, as we have noted that $f^*$ is not a fully-defined chain map, we must show that $f^*$ as a cohomology map does not depend on the representative of $\uW$.
+	Next, as we have noted that $f^*$ is not a fully-defined chain map, we must show directly that $f^*$ as a cohomology map does not depend on the choice of precocycle representing a cohomology class.
 	So suppose $r_{W_0} \colon W_0 \to N$ and $r_{W_1} \colon W_1 \to N$ represent the same cohomology class.
-	In this case there will be a $Z \in C^*_\Gamma(N)$ with $\bd Z = W_0-W_1+T$ with $T \in Q^*(N)$.
-	We may choose a smooth $g$ homotopic to $f$ that is transverse to $Z$ (and hence also $W_0,W_1, T$).
+	In this case there will be a $Z \in PC^*_\Gamma(N)$ with $\bd Z = W_0 \sqcup -W_1 \sqcup T$ with $T \in Q^*(N)$.
+	We may choose a smooth $g$ homotopic to $f$ that is transverse to $Z$ (and hence also $W_0$, $W_1$, and $T$).
 	Then considering $Z \times_N M \to M$ we have, as $M$ is without boundary,
-	$$\bd(Z \times_N M) = \bd Z \times_N M = W_1 \times_N M -W_2 \times_N M+T \times_N M.$$
-	By \cref{L: pullback map Q} the last term will be in $Q^*(M)$, and so $Z \times_N M$ provides a cohomology between $W_0 \times_N M$ and $W_1 \times_N M$ over $M$, demonstrating independence of the choice of representative for $\uW$.
+	$$\bd(Z \times_N M) = (\bd Z) \times_N M = (W_0 \times_N M) \sqcup -(W_1 \times_N M) \sqcup (T \times_N M).$$
+	By \cref{L: pullback map Q}, the last term will be in $Q^*(M)$, and so $Z \times_N M$ provides a cohomology between $\underline{W_0 \times_N M}$ and $\underline{W_1 \times_N M}$ in $C^*_\Gamma(M)$, demonstrating independence of the choice of representative for the cohomology class.
 
 	Thus $f^*$ does not depend on our choices and depends on $f$ only through its homotopy class.
 \end{proof}
