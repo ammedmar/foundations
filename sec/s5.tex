@@ -3,7 +3,7 @@
 \section{Basic properties of geometric (co)homology and equivalence with singular (co)homology}\label{S: basic properties}
 
 In this section we establish the basic properties of geometric homology and cohomology, eventually showing that they are equivalent to (absolute) singular homology and cohomology on manifolds using a result of Kreck and Singhof.
-In the case of homology, we will also construct an explicit isomorphism from smooth singular homology to geometric homology. 
+In the case of homology, we will also construct an explicit isomorphism from smooth singular homology to geometric homology.
 It is more challenging to find an explicit isomorphism in the case of cohomology, and, in fact, the bulk of \cref{S: transversality} will be dedicated to such a construction.
 
 \subsection{Functoriality and homotopy properties}\label{S: functoriality}
@@ -58,7 +58,7 @@ This is the content of the following lemma.
 	Given a smooth proper co-oriented map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map $C^*_\Gamma(M) \to C^{*+n-m}_\Gamma(N)$ given by $\uW \to \underline{f(W)}$, and this construction gives a covariant functor from the category of smooth manifolds and smooth maps to cochain complexes over $\Z$ with chain maps of appropriate degree.
 \end{corollary}
 
-\noindent\textbf{Homotopies.} Next we consider behavior with respect to homotopies. 
+\noindent\textbf{Homotopies.} Next we consider behavior with respect to homotopies.
 For the remainder of the section, and for simplicity of notation, we leave degree shifts tacit in the notation; for example, for a chain complex $A_*$, we write $x \in A_*$ to mean an element of any degree and simply write $f \colon A_* \to B_*$ even when $f$ is a chain map of non-zero degree.
 
 \begin{convention}\label{homotopy product co-orientation convention}
@@ -72,18 +72,20 @@ We will also need the following observations for the co-oriented cases.
 	Let $r_W \colon W \to M$ be co-oriented, and let $r_W \times \id \colon W \times I \to M \times I$ be co-oriented by \cref{homotopy product co-orientation convention}.
 	For $j = 0,1$, let $i_j \colon W = W \times j \to W \times I$ and $k_j \colon M = M \times j \to M \times I$ be the inclusions, co-oriented with the usual boundary co-orientation (\cref{D: boundary co-orientation}).
 	Then for $j = 0,1$, the following diagram of co-oriented maps commutes:
-	\begin{diagram}
-	W & \rTo^{r_W} & M\\
-	\dTo^{i_j}&&\dTo^{k_j}\\
-	W \times I &\rTo^{r_W \times \id} & M \times I.
-	\end{diagram}
+	\[
+	\begin{tikzcd}[column sep=large]
+		W \arrow[r, "r_W"] \arrow[d, "i_j"'] & M \arrow[d, "k_j"] \\
+		W \times I \arrow[r, "r_W \times \id"] & M \times I
+	\end{tikzcd}
+	\]
 \end{lemma}
+
 \begin{proof}
 	Commutativity as maps is clear, so we focus on the co-orientations.
-	
-	Let $w \in W$, and suppose the co-orientation of $r_W$ at $w$ is represented by $(\beta_W, \beta_M)$. 
+
+	Let $w \in W$, and suppose the co-orientation of $r_W$ at $w$ is represented by $(\beta_W, \beta_M)$.
 	Let $\nu_W$ and $\nu_M$ denote inward pointing normal vector fields to $W \times j$ and $M \times j$ in $W \times I$ and $M \times I$, respectively. If $j=0$, then the co-orientation of $i_0$ at $w$ is $(\beta_W, \beta_W \wedge \beta_{\nu_W}) = (\beta_W, \beta_W \wedge \beta_I)$, where $\beta_I$ is the standard orientation of $I$, while if $j=1$, the co-orientation of $i_1$ is  $(\beta_W, \beta_W \wedge \beta_{\nu_W}) = (\beta_W, \beta_W \wedge (-\beta_I))$. The co-orientations of $k_0$ and $k_1$ are analogous.
-	
+
 	So for $j=0$, the co-orientation of the composition down then right is $$(\beta_W, \beta_W \wedge \beta_I) * (\beta_W \wedge \beta_I, \beta_M \wedge \beta_I) = (\beta_W, \beta_M \wedge \beta_I).$$
 	The composition right then down is $$(\beta_W, \beta_M) * (\beta_M, \beta_M \wedge \beta_I) = (\beta_W , \beta_M \wedge \beta_I).$$
 	So we have commutativity.
@@ -91,21 +93,22 @@ We will also need the following observations for the co-oriented cases.
 \end{proof}
 
 \begin{corollary}\label{C: universal homotopy boundary co-orientation}
-Let $F \colon M \times I \to N$ be a co-oriented homotopy from $f$ to $g$ (see \cref{D: co-oriented homotopy}), and let $r_W \colon W \to M$ be a co-oriented map.
-Then $F \circ (r_W \times \id_I)$ is a co-oriented homotopy from $fr_W$ to $gr_W$.
+	Let $F \colon M \times I \to N$ be a co-oriented homotopy from $f$ to $g$ (see \cref{D: co-oriented homotopy}), and let $r_W \colon W \to M$ be a co-oriented map.
+	Then $F \circ (r_W \times \id_I)$ is a co-oriented homotopy from $fr_W$ to $gr_W$.
 \end{corollary}
+
 \begin{proof}
-Again, the thing to check is the co-orientations. We continue to utilize the notation of the preceding lemma.
+	Again, the thing to check is the co-orientations. We continue to utilize the notation of the preceding lemma.
 
-By definition \cref{D: co-oriented homotopy}, the composition of the co-oriented boundary inclusion $k_0 \colon M = M \times 0 \into M \times I$ with $F$ is the co-oriented map $-f$, while the composition of the co-oriented boundary inclusion $k_1 \colon M = M \times 1 \into M \times I$ with $F$ is the co-oriented map
-$g$. On the other hand, the ``top and bottom'' components of the boundary of $F \circ (r_W \times \id_I)$ are the co-oriented compositions $F (r_W\times \id) i_0$ and $F (r_W\times \id) i_1$. 
-But by the preceding lemma, for $j=0,1$, we have $F (r_W\times \id) i_j = F k_j r_W$.
-So when $j=0$, we have 
-$$ F (r_W\times \id) i_0 = F k_0 r_W = -f r_W,$$ 
-and when $j=1$, we have 
-$$ F (r_W\times \id) i_1 = F k_1 r_W = g r_W.$$
+	By definition \cref{D: co-oriented homotopy}, the composition of the co-oriented boundary inclusion $k_0 \colon M = M \times 0 \into M \times I$ with $F$ is the co-oriented map $-f$, while the composition of the co-oriented boundary inclusion $k_1 \colon M = M \times 1 \into M \times I$ with $F$ is the co-oriented map
+	$g$. On the other hand, the ``top and bottom'' components of the boundary of $F \circ (r_W \times \id_I)$ are the co-oriented compositions $F (r_W\times \id) i_0$ and $F (r_W\times \id) i_1$.
+	But by the preceding lemma, for $j=0,1$, we have $F (r_W\times \id) i_j = F k_j r_W$.
+	So when $j=0$, we have
+	$$ F (r_W\times \id) i_0 = F k_0 r_W = -f r_W,$$
+	and when $j=1$, we have
+	$$ F (r_W\times \id) i_1 = F k_1 r_W = g r_W.$$
 
-So $F (r_W\times \id)$ is a co-oriented homotopy from $fr_W$ to $gr_W$ as desired.
+	So $F (r_W\times \id)$ is a co-oriented homotopy from $fr_W$ to $gr_W$ as desired.
 \end{proof}
 
 
@@ -144,8 +147,8 @@ The next lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a man
 	But $\bd W \times I = (T \times I) \sqcup (S \times I)$, which by our previous
 	arguments are trivial and of small rank respectively.
 	And the components of $W \times \bd I$ can be written for $j = 0, 1$ as $W \times j = W \xr{r_W} M \xr{F(-,j)} N$, and thus are of small rank since $r_W$ is.
-	This completes the argument for $PC_*^\Gamma(M)$. 
-	
+	This completes the argument for $PC_*^\Gamma(M)$.
+
 	If $W \in PC^*_\Gamma(M)$, then $F$ is proper and co-oriented by assumption, and we noted above our co-orientation convention for $r_W \times \id_I$.
 	To see the latter is proper, if $K$ is compact in $M \times I$, then $K \subset \pi_M(K) \times I$, which is also compact.
 	Then $(r_W \times \id_I)^{-1}(K) \subset (r_W \times \id_I)^{-1}(\pi_M(K) \times I) = r_W^{-1}(\pi_M(K)) \times I$, which is compact as $r_W$ is proper.
@@ -208,7 +211,6 @@ The first part of the following proposition is Lipyanskiy's Theorem 5 in \cite{L
 \end{proof}
 
 
-
 There is another very useful application of \cref{C: homotopy} that will be needed frequently below.
 To explain, we first observe that if we have a map $f \colon V\to M$ representing an element of $H_*^\Gamma(M)$, then, in general, this homology classes is not preserved under homotopies of $f$.
 In fact, a map representing a cycle might be homotopic to maps that do not represent cycles by pulling apart cancelling boundary components.
@@ -216,26 +218,20 @@ So, in general, geometric homology and cohomology do not behave well with respec
 This will be a problem below, for example when we want to alter a map representing a cycle by a homotopy to make it transverse to some other cycle.
 The solution will be to define and use what we call universal homotopies.
 
-
 \begin{definition}\label{D: universal homotopy}
-Given two maps $f,g \colon W\to M$, we say that there is a \textbf{universal homotopy} from $f$ to $g$ if there is a smooth homotopy $H \colon M\times I\to M$ with $H(-,0)=\id_M$ and such that $g=H(-,1)\circ f$; in other words, if  $f$ and $g$ are homotopic by a  composition of the form  $W \times I \xr{f\times \id} M \times I \xr{H} M$ with $H(-,0)$ the identity. In this case, we call the composition a \textbf{universal homotopy} from $f$ to $g$. We say that the universal homotopy is proper if $f$, $g$, and $H$ are proper maps.
+	Given two maps $f,g \colon W\to M$, we say that there is a \textbf{universal homotopy} from $f$ to $g$ if there is a smooth homotopy $H \colon M\times I\to M$ with $H(-,0)=\id_M$ and such that $g=H(-,1)\circ f$; in other words, if  $f$ and $g$ are homotopic by a  composition of the form  $W \times I \xr{f\times \id} M \times I \xr{H} M$ with $H(-,0)$ the identity. In this case, we call the composition a \textbf{universal homotopy} from $f$ to $g$. We say that the universal homotopy is proper if $f$, $g$, and $H$ are proper maps.
 \end{definition}
 
 If one thinks of an ordinary homotopy from $f$ to $g$ as a way of obtaining $g$ by deforming $f$, then we think of a universal homotopy as deforming $f$ by first performing $f$ and then deforming $M$.
 
 
 \begin{proposition}\label{P: universal homotopy}
-Suppose there is a universal homotopy from $f \colon W\to M$ to $g \colon W\to M$. If $f \colon W\to M$ represents an element of $H_*^\Gamma(M)$, then $g = H(-,1)f \colon W\to M$ represents the same element. Similarly, if $f \colon W\to M$ represents an element of $H^*_\Gamma(M)$ and the universal homotopy is proper, then $g \colon W\to M$ represents the same element.
+	Suppose there is a universal homotopy from $f \colon W\to M$ to $g \colon W\to M$. If $f \colon W\to M$ represents an element of $H_*^\Gamma(M)$, then $g = H(-,1)f \colon W\to M$ represents the same element. Similarly, if $f \colon W\to M$ represents an element of $H^*_\Gamma(M)$ and the universal homotopy is proper, then $g \colon W\to M$ represents the same element.
 \end{proposition}
+
 \begin{proof}
-The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we co-orient $H$ using the co-orientation induced by tautological co-orientation of $\id \colon M \to M$; see \cref{D: homotopy co-orientation}.
+	The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we co-orient $H$ using the co-orientation induced by tautological co-orientation of $\id \colon M \to M$; see \cref{D: homotopy co-orientation}.
 \end{proof}
-
-
-
-
-
-
 
 \subsubsection{Contravariant functoriality of geometric cohomology}\label{S: cohomology pullback}
 
@@ -389,7 +385,7 @@ The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U 
 \begin{theorem}\label{T: relative MV}
 	Let $M$ be a manifold without boundary.
 	For any pair of open sets $U$ and $V$ in $M$ there are Mayer-Vietoris exact sequences
-%	\red{Fix tikz arrows?}
+	%	\red{Fix tikz arrows?}
 	\begin{equation*}
 		\begin{tikzcd}[
 			column sep = small,
