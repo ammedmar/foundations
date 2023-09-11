@@ -245,6 +245,7 @@ The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and let
 In this section, we assign to a continuous map $f \colon M \to N$ of manifolds without boundary a map $H^*_\Gamma(N) \to H^*_\Gamma(M)$.
 If $f$ is proper and $M$ is oriented, we also have a map $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
 As in the preceding section, we first consider a smooth map $f$ and then generalize to the continuous case using smooth approximations. 
+For simplicity of notation in what follows, we will not always explicitly write the degree shift for the homology map.
 
 First, suppose $W \in PC^*_\Gamma(N)$ is represented by a proper co-oriented map $r_W \colon W \to N$, and let $g \colon M \to N$ be a \textit{smooth} map such that $g$ is transverse to $r_W$.
 We emphasize that there is no need for assumptions that $g$ be co-oriented or proper.
@@ -252,6 +253,21 @@ We define $g^*(W)$ to be the pullback $r_W \times_N g \colon W \times_N M \to M$
 The pullback is proper by \cref{L: co-orientable pullback}.
 Also, using our standard convention for notating dimensions, the pullback has dimension $w+m-n$, and we have $m - (w+m-n) = n - w$. In other words, the index of $W$ as a precochain of $N$ is the same as the index of $W \times_N M$ as a precochain of $M$. 
 So, when defined,  $g^*$ takes elements of $PC_\Gamma^i(N)$ to elements of $PC_\Gamma^i(M)$.
+
+Similarly, if $W \in PC_*^\Gamma(N)$ and $g \colon M \to N$ is smooth and transverse to $r_W$ and if $M$ is oriented, the pullback $W \times_N M$ has the pullback orientation of \cref{S: orientation of fiber products} and maps to $M$ by projection. 
+Furthermore, if $g$ is proper, then $W \times_N M$ is compact, as we show in the following lemma.
+
+\begin{lemma}\label{L: compact pullback}
+	Suppose $g \colon M \to N$ is a proper map from a manifold with corners to a manifold without boundary. 
+	Suppose $V$ is a compact manifold with corners and that $r_V \colon V \to N$ is transverse to $g$.
+	Then $V \times_N M$ is compact.
+\end{lemma}
+
+\begin{proof}
+	As $V$ is compact, so is $r_V(V)$, and as $g$ is proper, $g^{-1}(r_V(V))$ is compact.
+	Now we observe that we must have $V \times_N M \subset V \times g^{-1}(r_V(V)) \subset V \times M$.
+	So $V \times_N M$ is compact.
+\end{proof}
 
 The following lemma is similar to \cref{L: pullback with Q}, as is its proof, though there the focus was on fiber products, not pullbacks.
 It will be useful later to allow $M$ to be a manifold with corners here.
@@ -262,15 +278,15 @@ It will be useful later to allow $M$ to be a manifold with corners here.
 
 \begin{lemma}\label{L: pullback map Q}
 	Suppose $M$ is a manifold with corners and $N$ is a manifolds without boundary.
-	Suppose $r_S \colon S \to N$ is trivial or has small rank, and let $g \colon M \to N$ be a smooth map transverse to $r_S$.
+	Suppose $r_S \colon S \to N$ is trivial (oriented or co-oriented) or has small rank, and let $g \colon M \to N$ be a smooth map transverse to $r_S$.
 	Then the pullback $g^*(S) = S \times_N M \to M$ is also trivial or has small rank, respectively.
-	Consequently, if $S \in Q^*(N)$ then $S \times_N M \to M$ is in $Q^*(M)$.
+	Consequently, if $S \in Q(N)$ then $S \times_N M \to M$ is in $Q(M)$.
 \end{lemma}
 
 \begin{proof}
-	If $\rho$ is a co-orientation reversing diffeomorphism of $S$ over $N$, then $\rho \times_N \id_M$ is a co-orientation reversing diffeomorphism of $S \times_N M$ over $M$ by \cref{R: co-or restriction or switch}.
+	If $\rho$ is a (co-)orientation reversing diffeomorphism of $S$ over $N$, then $\rho \times_N \id_M$ is a (co-)orientation reversing diffeomorphism of $S \times_N M$ over $M$ by \cref{R: co-or restriction or switch} or the definition of the fiber product orientation in \cref{S: orientation of fiber products}.
 
-	Similarly, suppose $r_S \colon S \to N$ has small rank.
+	Next, suppose $r_S \colon S \to N$ has small rank.
 	Suppose at the point $x \in S$ we have $v \in \ker(D_x r_S)$.
 	By \cref{L: tangent of pullbacks}, if $(x,y) \in S \times M$, the tangent space $T_{(x,y)}(S \times_N M)$ is the pullback $T_xS\times_{T_{(r_S(x),g(y))}N} T_y M$, and we are interested in the map from this space under the derivative of the projection $\pi \colon S \times M \to M$.
 	As $v \in \ker D_xr_S$, we have $(v,0) \in T_{(x,y)}(S \times_N M)$, and this projects to $0$ in $T_yM$.
@@ -280,21 +296,26 @@ It will be useful later to allow $M$ to be a manifold with corners here.
 	The final statement is then a consequence of the definitions as in the proof of \cref{L: Q preservation}.
 \end{proof}
 
-The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemma we cannot define a chain map $g^*:C^*_\Gamma(N) \to C^*_\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$.
-Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ as follows.
+The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemma we cannot define chain maps $g^* \colon C^*_\Gamma(N) \to C^*_\Gamma(M)$ or $g^* \colon C_*^\Gamma(N) \to C_*^\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$.
+Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$, and if $M$ is oriented and $f$ is proper, we can further define a map in geometric homology $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
+The constructions is as follows.
 
-\begin{definition}
+\begin{definition}\label{D: cohomology pullback and homology transfer}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary and $\uW \in H^*_\Gamma(N)$ is represented by $r_W \colon W \to N$.
 	Let $g \colon M \to N$ be any smooth approximation of $f$ that is transverse to $r_W$ (which we know exists by \cref{T: basic trans}).
 	Then we define $f^*(\uW) \in H^*_\Gamma(M)$ as the cohomology class represented by $r_W \times_N g \colon W \times_N M \to M$.
+	If $M$ is oriented, $f$ is proper, and $\uW \in H_*^\Gamma(N)$ is represented by $r_W \colon W \to N$, then we also take $g$ to be proper, in which case we define $f^*(\uW) \in H_*^\Gamma(M)$ as the homology class represented by $r_W \times_N g \colon W \times_N M \to M$.
 \end{definition}
 
 \begin{proposition}\label{P: cohomology pullback}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary.
 	The map $f^* \colon H^k_\Gamma(N) \to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
+	Similarly, if $M$ is oriented and $f$ is proper, then the map $f_* \colon H_k^\Gamma(N) \to H_{k+m-n}^\Gamma(M)$ is well defined and depends only on the proper homotopy class of $f$
 \end{proposition}
 
 \begin{proof}
+	We treat only the cohomology case, as the homology arguments are analogous taking the appropriate maps and homotopies to be proper. \greg{NEED TO ADDRESS EXISTENCE OF PROPER HOMOTOPIES.}
+	
 	First, let $r_W \colon W \to N$ represent a cocycle, and suppose we have two maps $g_0, g_1 \colon M \to N$ that are smooth, homotopic to $f$, and transverse to $r_W$.
 	By \cref{T: basic trans} there exists a smooth homotopy $G \colon M \times I \to N$ from $g_0$ to $g_1$ such that $G$ is transverse to $r_W$; in particular we apply \cref{T: basic trans} with the $f$ of that theorem being an arbitrary homotopy from $g_0$ to $g_1$, and then the resulting $h(-,1)$ of the theorem is our $G$ with $G = h(-,1)$ agreeing with $g_0 \sqcup g_1$ on $\bd (M \times I) = M \times \{0,1\}$. 
 
@@ -319,23 +340,15 @@ Nonetheless, given any continuous $f \colon M \to N$ of manifolds without bounda
 	Thus $f^*$ does not depend on our choices and depends on $f$ only through its homotopy class.
 \end{proof}
 
+\begin{comment}
 \begin{remark}\label{R: homology transfer}
 	Analogously, given $f \colon M \to N$, one could also define a contravariant pullback functor of homology groups $f^*: H_*^\Gamma(N) \to H_*^\Gamma(M)$ if $f$ is proper and $M$ and $N$ are both oriented (so that the pullback can be oriented).
 	The following lemma shows that the pullback of a compact map by a proper map is compact.
 	For the orientation, we observe that given an oriented map $r_V \colon V \to N$ that represents $\uV$ and a map $g \colon M \to N$ that is properly homotopic to $f$ and transverse to $r_V$, the orientations of $V$ and $N$ induce a co-orientation on $r_V$ and so a co-orientation on the pullback $V \times_N M \to M$ by \cref{D: pullback coorient}.
 	This in turn induces an orientation on $V \times_N M$ given the orientation of $M$.
 \end{remark}
+\end{comment}
 
-\begin{lemma}\label{L: compact pullback}
-	Suppose $f \colon M \to N$ is a proper map of spaces and $r_V \colon V \to N$ is a map with $V$ compact.
-	Then $V \times_N M$ is compact.
-\end{lemma}
-
-\begin{proof}
-	As $V$ is compact, so is $r_V(V)$, and as $f$ is proper, $f^{-1}(r_V(V))$ is compact.
-	Now we observe that we must have $V \times_N M \subset V \times f^{-1}(r_V(V)) \subset V \times M$.
-	So $V \times_N M$ is compact.
-\end{proof}
 
 \subsection{Mayer-Vietoris sequences}
 

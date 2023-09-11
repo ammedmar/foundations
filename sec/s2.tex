@@ -34,7 +34,7 @@ These charts collectively give an atlas, and every atlas extends to a unique max
 So our manifolds with corners are also manifolds with corners by Joyce's definition.
 
 On the other hand, Joyce notes in \cite[Remark 2.11 (see also Remark 6.3)]{Joy12} that his version of manifolds with corners agrees with that of Margalef-Roig and Outerelo Dominguez \cite{MaDo92} (except that they consider the much more general case of possibly infinite-dimensional manifolds and possibly of differentiable class $p<\infty$). 
-They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92}.  
+They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth closed embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92} (in particular, the embeddings are proper maps \cite[Proposition 3.3.4]{MaDo92}.  
 Joyce already assumes his manifolds with corners to be paracompact Hausdorff in \cite[Definition 2.1]{Joy12}, so if we add the second countable condition to his definition,\footnote{For us this will not be a terrible restriction, as in this case being second countable is the same as being paracompact with a countable number of components. 
 Indeed, every regular second countable space is metrizable \cite[Theorem 34.1]{Mu00}, and hence paracompact, and clearly a locally connected second countable space must have a countable number of connected components. 
 Conversely, each connected component of a paracompact manifold with corners will be closed, paracompact \cite[Theorem 41.2]{Mu00}, and locally compact (via our charts), so it will be $\sigma$-compact \cite[Appendix A.1]{Sp79}. 
@@ -228,8 +228,9 @@ Note that, a priori, the latter is a stronger condition as it imposes conditions
 
 Throughout this text, we will need a series of increasingly more general results guaranteeing that we can make certain maps transverse to each other.
 We begin here with a relatively simple case that will be first used in \cref{S: basic properties} to show that geometric cohomology is contravariantly functorial with respect to continuous maps of manifolds without boundary.
+We put this first result here, as some of the fundamental ideas will be used in a number of places throughout the text.
 
-All of our transversality theorems will be built using some basic tools that can be found in \cite[Section 2.3]{GuPo74}.
+Our transversality theorems will be built primarily using some basic tools that can be found in \cite[Section 2.3]{GuPo74}.
 In particular, we record the following results, referring the reader to \cite[Section 2.3]{GuPo74} for the proofs\footnote{We rephrase the statements of these theorems slightly to better fit our context and notation.}:
 
 \begin{theorem}[Transversality Theorem]\label{T: GP transversality}
@@ -325,29 +326,64 @@ But just as for ordinary manifolds, an injective proper immersion is a closed em
 	So applying $D\pi$ to equation \eqref{E: Quillen transverse}, we get $Df(T_vV)+Dg(T_wW) = T_{f(v)}M$, and $f$ is transverse to $g$.
 \end{proof}
 
-We now apply our technical results to demonstrate that we can make maps transverse via homotopies. 
+We now need one more particular technical result that will allow us to achieve transversality while keeping proper maps proper. 
+This will occasionally be useful below.
+
+\begin{lemma}\label{L: nearby proper homotopy}
+	Let $X$ be a topological space and $M$ a manifold without boundary possessing a metric $d$.
+	Suppose $f \colon X \to M$ is a proper map.
+	Then there exists a function $\varepsilon \colon X \to (0,\infty)$ such that every map $g \colon X \to M$ satisfying $d(f(x),g(x)) < \varepsilon(x)$ for all $x$ is proper and homotopic to $f$ by a proper homotopy.
+	Furthermore, if $X$ is a manifold with corners and $f$ and $g$ are smooth and homotopic by a proper homotopy, then they are homotopic by a smooth proper homotopy.
+\end{lemma}
+\begin{proof}
+	Let $C(X,M)$ be the set of continuous maps from $X$ to $M$. 
+	By \cite[Proposition 9.2.28]{MaDo92}, there is an open neighborhood $V^f$ of $f$ in the topology $T_s$ on $C(X,M)$ (defined in \cite[Proposition 9.2.1]{MaDo92}) such that every $g \in V^f$ is proper and homotopic to $f$ by a proper homotopy. 
+	Furthermore, by \cite[Proposition 9.3.9]{MaDo92} there is a local basis at $f$ in the $T_s$ topology consisting of the sets
+	$$B_\varepsilon^d = \{g \in C(X,M) \mid d(f(x),g(x)) < \varepsilon (x) \text{ for all } x \in X\}$$
+	as $\varepsilon$ ranges over all continuous functions $X \to (0,\infty)$. 
+	So, in particular, there is an $\varepsilon$ such that $B_\varepsilon^d \subset V^f$, which proves the first part of the lemma. 
+	When $X$ is a manifold with corners and $f$ and $g$ are smooth, we can take the proper homotopy between them to be proper and smooth by \cite[Proposition 9.2.35]{MaDo92}; note that $X$ satisfies the hypotheses of having partitions of unity by \cite[Corollary 1.5.14]{MaDo92}.
+\end{proof}
+
+
+We now apply the above results to demonstrate that we can make maps transverse via homotopies. 
 We will various alternative, and in some cases fancier, versions of this theorem below.
 See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
 \begin{theorem}\label{T: basic trans}
-	Let $f \colon M \to N$ be a continuous map from a manifold with (possibly empty) boundary to a manifold without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
+	Let $f \colon M \to N$ be a continuous map of manifolds without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
 	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, and $h(-,1)$ is smooth and transverse to $g$.
-	If $f|_{\bd M}$ is already smooth and transverse to $g$, then we can find such an $h$ with $h(-,1) = f$ on $\bd M$.
+	Furthermore, if $f$ is proper, then we can find such an $h$ so that both $h$ and $h(-,1)$ are proper. 
 \end{theorem}
+\greg{Old version of this had a bit about $M$ having boundary and keeping the $f$ restricted to boundary fixed if it was already good. Got rid of that to add proper without trouble. Need to make sure I never really need the boundary thing. Changeover around 9-11-23.}
 
 \begin{proof}
 	By \cref{C: embed V}, there is a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, so by that lemma it suffices to find a homotopy such that $h(-,0) = f$ and $h(-,1) \times \id_{\R^k} \colon M \times \R^k \to N \times \R^k$ is smooth and transverse to $e(V)$.
 
-	We first find a homotopy from $f$ to a smooth map that agrees with $f$ on $\bd M$ if $f|_{\bd M}$ is already smooth.
-	This can be done by the smooth approximation theorem; see \cite[Theorem III.2.5]{Kos93}.
+	We first find a homotopy from $f$ to a smooth map.
+	This can be done by the smooth approximation theorem; see \cite[Corollary 9.2.32]{MaDo92}.
+	Furthermore, if $f$ is proper, then we can take the smooth map and the homotopy between it and $f$ to be proper by \cite[Corollary 9.2.36]{MaDo92}
 	So we assume for the rest of the proof that this first homotopy has been completed and that $f$ is a smooth map.
+	\begin{comment}
 	We will next construct our homotopy to achieve transversality without consideration of whether or not $f$ is already transverse to $g$ on $\bd M$, and then we show how to modify the construction for that case.
+	\end{comment}
 
-	We can think of $N$ as properly embedded in some $\R^K$ by the Whitney Embedding Theorem \cite[Section 1.8]{GuPo74}, and we let $N_\epsilon$ be an $\epsilon$ neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$ (see \cref{T: epsilon neighborhood}).
+	Next, we can think of $N$ as properly embedded in some $\R^K$ by the Whitney Embedding Theorem \cite[Section 1.8]{GuPo74}, and we give $N$ the corresponding metric.
+	We let $N_\epsilon$ be an $\epsilon$ neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$ (see \cref{T: epsilon neighborhood}).
 	Let $D$ be the open unit ball in $\R^K$.
 	We define a composite map $H \colon M \times D \to \R^K \to N$ by
-	$$H(x,s) = \pi(f(x)+ \epsilon(f(x))s).$$
-	We have $H(x,0) = \pi(f(x)) = f(x)$, and, since $\epsilon(x)>0$ for all $x$, the map $(x,s) \to f(x)+ \epsilon(f(x))s$ is a submersion onto its image in $\R^K$.
+	$$H(x,s) = \pi(f(x)+ \eta(x)s)$$
+	where $\eta \colon M \to (0,\infty)$ is defined as follows.
+	
+	First, we want $f(x)+ \eta(x)s$ to land in $N_\epsilon$ for all $x$, and for this it is sufficient to have $\eta(x) = \epsilon(f(x))$. 
+	If $f$ is not proper or we do not need the last clause of the theorem to hold, this will be sufficient. 
+	If $f$ is proper and we want the last clause of the theorem to hold, then we next choose a function $\varepsilon \colon M \to (0,\infty)$ to meet the requirements of \cref{L: nearby proper homotopy} with $d$ being the distance on $N$ chosen above. 
+	Letting $|\cdot|$ be the norm on $R^K$, we then want to choose $\eta$ so that $|f(x) - H(x,1)| < \varepsilon(x)$. 
+	Clearly, $|f(x) - (f(x)+ \eta(x)s)| = |\eta(x)s| < \eta(x)$, and by definition $\pi$ takes points of $N_\epsilon$ to the nearest point in $N$. So, assuming $f(x)+ \eta(x)s \in N_\epsilon$, then $|f(x)+ \eta(x)s - \pi(f(x)+ \eta(x)s)| < \eta(x)|$.
+	So by the triangle inequality, $|f(x) - H(x,s)| < 2\eta(x)|$.
+	Thus if we take $\eta(x) < \min(\epsilon(f(x)), \varepsilon(x)/2)$, we will have $H$ well defined and both $f(x) - H(x,s)| < \varepsilon(x)$ for any $x \in M$ and $s \i D$ by \cref{L: nearby proper homotopy}. 
+
+	Now, we have $H(x,0) = \pi(f(x)) = f(x)$, and, since $\eta(x)>0$ for all $x$, the map $(x,s) \to f(x)+ \eta(f(x))s$ is a submersion onto its image in $\R^K$.
 	As $\pi$ is also a submersion, so is $H$, and then $H \times \id_{\R^k} \colon M \times D \times \R^k \to N \times \R^k$ is a submersion.
 	In particular, $H \times \id_{\R^k}$ is transverse to $e(V)$ and to $e(S^i(V))$ for each stratum $S^i(V)$ of $V$.
 	We can now apply the Transversality Theorem, (\cref{T: GP transversality}, though with the parameter space $D$ in a slightly nontraditional location in the ordering of factors) to obtain that $H(-,s) \times \id_{\R^k}$ is transverse to $e(V) \times \R^k$ for almost every $s \in D$.
@@ -356,13 +392,15 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	Since $V$ has a finite number of strata and $M$ and $\bd M$ are only two spaces, and since the intersection of a finite number of dense subsets is dense, it holds for almost every $s \in D$ that both $H(-,s) \times \id_{\R^k}$ and its restriction to $\bd M \times \R^k$ are transverse to every stratum of $V$.
 	Now let $s_0$ be one such $s$, and let $h \colon M \times I \to N$ be given by $h(x,t) = H(x,ts_0)$.
 	Then $h(x,0) = H(x,0) = \pi(f(x)) = f(x)$.
-	While $h(-,1) = H(-,s_0)$ has the desired properties by construction.
-
+	While $h(-,1) = H(-,s_0)$ has the desired properties by construction, including being proper and properly homotopic to $f$ if $f$ is proper. \qedhere
+	
+	\begin{comment}
 	If $f|_{\bd M}$ is already transverse to $g$, we modify the construction as follows: Let $\rho \colon M \to [0,1]$ be a smooth function that is $0$ on $\bd M$ and $>0$ on $M-\bd M$.
 	Then we define
 	$$H(x,s) = \pi(f(x)+ \epsilon(f(x))\rho(x)s).$$
 	Then when $x \in \bd M$, we have $H(x,s) = \pi(f(x)) = f(x)$, so $h$ is constant along $\bd M$.
 	For $x \notin \bd M$, the argument goes through exactly as above.
+	\end{comment}
 \end{proof}
 
 \subsection{Pullbacks and fiber products}
