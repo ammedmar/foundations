@@ -252,8 +252,8 @@ These theorems are used in \cite{GuPo74} to prove the following basic transversa
 	For any smooth map $f \colon X \to Y$ and any boundaryless submanifold $Z$ of the boundaryless manifold $Y$, there exists a smooth map $g \colon X \to Y$ homotopic to $f$ such that $g$ is transverse to $Z$ and $g|_{\bd X}$ is transverse to $Z$.
 \end{theorem}
 
-Among other generalizations as we progress, we will extend these results to maps of manifolds with corners.
-We will also often require that the homotopies take a special form, i.e.\ that they are \textit{universal} homotopies as defined in \cref{S: transverse cochains}.
+Among other generalizations as we progress, we will extend these results to maps of manifolds with corners to manifolds without boundary.
+We will also often require that the homotopies take a special form, i.e.\ that they are \textit{universal} homotopies as defined in \cref{D: universal homotopy}.
 See, for example, \cref{P: perturb transverse to map}.
 
 When working with transversality, it is often much easier to work with the case where one of the maps is an embedding. 
@@ -268,10 +268,9 @@ The following technical results will facilitate that and help us to extend the r
 \end{lemma}
 \begin{proof}
 	Let $K \subset Y \times Z$ be compact. 
-	Let $\pi_Y,\pi_Z$ be the projectiond of $Y \times Z$ to $Y$ and $Z$. Then 
+	Let $\pi_Y,\pi_Z$ be the projections of $Y \times Z$ to $Y$ and $Z$. Then 
 	\begin{align*}
 		(f,g)^{-1}(K) &= \{x \in X \mid (f(x),g(x)) \in K \}\\
-		&\subset \{ x \in X \mid f(x) \in \pi_X(K), g(x) \in \pi_Y(K)\}\\
 		&\subset \{ x \in X \mid g(x) \in \pi_Y(K)\}\\
 		&= g^{-1}(\pi_Y(K)).
 	\end{align*} 
@@ -281,14 +280,18 @@ The following technical results will facilitate that and help us to extend the r
 
 \begin{corollary}\label{C: embed V}
 Let $g \colon W \to M$ be a map from a manifold with corners to a manifold without boundary. 
-Then for some $N$ there exists a closed embedding $e \colon W \to M \times \R^N$ such that, if $\pi \colon M \times \R^N \to M$ is the projection, then $\pi e = g$. 
+Then for some $k$ there exists a closed embedding $e \colon W \to M \times \R^k$ such that, if $\pi \colon M \times \R^k \to M$ is the projection, then $\pi e = g$. 
 \end{corollary}
 \begin{proof}
-By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^N$ for some $N$. 
-Then by \cref{L: proper product} the map $(g,\alpha)$ is proper, and as $\alpha$ is an immersion, so is $(g,\alpha)$.
-In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^N$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces, and the map $\pi_{\R^N}(g,\alpha)$ equals the embedding $g$, so $D(g,\alpha)$ must be injective at each point.
-Similarly, the map $(g,\alpha)$ is itself  injective.  
-But just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}, and it is clear from the construction that $\pi (g,\alpha) = g$.
+By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^k$ for some $k$. 
+The map $\alpha$ is proper, as if $K$ is a compact subset of $\R^k$, the inverse image $\alpha^{-1}(K)$ is homeomorphic to the intersection of $K$ with the closed set $\alpha(W)$.
+So, by \cref{L: proper product}, the map $(g,\alpha) \colon W \to M \times \R^k$ is proper.
+Further, $\alpha$ is an immersion, so is $(g,\alpha)$.
+In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^k$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces.
+If $\pi_{\R^k} \colon M \times \R^k \to \R^k$ is the projection, the map $\pi_{\R^k}(g,\alpha)$ equals the embedding $\alpha$, so $D(g,\alpha)$ must be injective at each point.
+Similarly, the map $(g,\alpha)$ is itself injective because $\alpha$ is injective.  
+So $(g,\alpha)$ is an injective proper immersion, and just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}.
+Finally, it is clear from the construction that $\pi (g,\alpha) = g$.
 \end{proof}
 
 
@@ -327,12 +330,11 @@ But just as for ordinary manifolds, an injective proper immersion is a closed em
 \end{proof}
 
 We now need one more particular technical result that will allow us to achieve transversality while keeping proper maps proper. 
-This will occasionally be useful below.
 
 \begin{lemma}\label{L: nearby proper homotopy}
 	Let $X$ be a topological space and $M$ a manifold without boundary possessing a metric $d$.
 	Suppose $f \colon X \to M$ is a proper map.
-	Then there exists a function $\varepsilon \colon X \to (0,\infty)$ such that every map $g \colon X \to M$ satisfying $d(f(x),g(x)) < \varepsilon(x)$ for all $x$ is proper and homotopic to $f$ by a proper homotopy.
+	Then there exists a function $\varepsilon \colon X \to (0,\infty)$ such that if $g \colon X \to M$ satisfies $d(f(x),g(x)) < \varepsilon(x)$ for all $x \in X$, then $g$ is proper and homotopic to $f$ by a proper homotopy.
 	Furthermore, if $X$ is a manifold with corners and $f$ and $g$ are smooth and homotopic by a proper homotopy, then they are homotopic by a smooth proper homotopy.
 \end{lemma}
 \begin{proof}
@@ -346,14 +348,14 @@ This will occasionally be useful below.
 \end{proof}
 
 
-We now apply the above results to demonstrate that we can make maps transverse via homotopies. 
-We will various alternative, and in some cases fancier, versions of this theorem below.
+We now apply the above results to demonstrate that we can make certain maps transverse via homotopies. 
+We will see various alternative, and in some cases fancier, versions of this theorem below.
 See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
 \begin{theorem}\label{T: basic trans}
 	Let $f \colon M \to N$ be a continuous map of manifolds without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
 	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, and $h(-,1)$ is smooth and transverse to $g$.
-	Furthermore, if $f$ is proper, then we can find such an $h$ so that both $h$ and $h(-,1)$ are proper. 
+	Furthermore, if $f$ is proper, then there is such an $h$ so that both $h$ and $h(-,1)$ are proper. 
 \end{theorem}
 \greg{Old version of this had a bit about $M$ having boundary and keeping the $f$ restricted to boundary fixed if it was already good. Got rid of that to add proper without trouble. Need to make sure I never really need the boundary thing. Changeover around 9-11-23.}
 
@@ -361,8 +363,8 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	By \cref{C: embed V}, there is a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, so by that lemma it suffices to find a homotopy such that $h(-,0) = f$ and $h(-,1) \times \id_{\R^k} \colon M \times \R^k \to N \times \R^k$ is smooth and transverse to $e(V)$.
 
 	We first find a homotopy from $f$ to a smooth map.
-	This can be done by the smooth approximation theorem; see \cite[Corollary 9.2.32]{MaDo92}.
-	Furthermore, if $f$ is proper, then we can take the smooth map and the homotopy between it and $f$ to be proper by \cite[Corollary 9.2.36]{MaDo92}
+	This can be done by the smooth approximation theorem; see \cite[Corollary 9.2.31]{MaDo92}.
+	Furthermore, if $f$ is proper, then we can take the smooth map and the homotopy between it and $f$ to be proper by \cite[Corollary 9.2.36]{MaDo92}.
 	So we assume for the rest of the proof that this first homotopy has been completed and that $f$ is a smooth map.
 	\begin{comment}
 	We will next construct our homotopy to achieve transversality without consideration of whether or not $f$ is already transverse to $g$ on $\bd M$, and then we show how to modify the construction for that case.
@@ -375,24 +377,22 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	$$H(x,s) = \pi(f(x)+ \eta(x)s)$$
 	where $\eta \colon M \to (0,\infty)$ is defined as follows.
 	
-	First, we want $f(x)+ \eta(x)s$ to land in $N_\epsilon$ for all $x$, and for this it is sufficient to have $\eta(x) = \epsilon(f(x))$. 
+	First, so that $H(x,s)$ will be well defined, we want $f(x)+ \eta(x)s$ to land in $N_\epsilon$ for all $x$, and for this it is sufficient to have $\eta(x) = \epsilon(f(x))$. 
 	If $f$ is not proper or we do not need the last clause of the theorem to hold, this will be sufficient. 
 	If $f$ is proper and we want the last clause of the theorem to hold, then we next choose a function $\varepsilon \colon M \to (0,\infty)$ to meet the requirements of \cref{L: nearby proper homotopy} with $d$ being the distance on $N$ chosen above. 
-	Letting $|\cdot|$ be the norm on $R^K$, we then want to choose $\eta$ so that $|f(x) - H(x,1)| < \varepsilon(x)$. 
-	Clearly, $|f(x) - (f(x)+ \eta(x)s)| = |\eta(x)s| < \eta(x)$, and by definition $\pi$ takes points of $N_\epsilon$ to the nearest point in $N$. So, assuming $f(x)+ \eta(x)s \in N_\epsilon$, then $|f(x)+ \eta(x)s - \pi(f(x)+ \eta(x)s)| < \eta(x)|$.
-	So by the triangle inequality, $|f(x) - H(x,s)| < 2\eta(x)|$.
-	Thus if we take $\eta(x) < \min(\epsilon(f(x)), \varepsilon(x)/2)$, we will have $H$ well defined and both $f(x) - H(x,s)| < \varepsilon(x)$ for any $x \in M$ and $s \i D$ by \cref{L: nearby proper homotopy}. 
+	Letting $|\cdot|$ be the norm on $\R^K$, we then want to choose $\eta$ so that $|f(x) - H(x,1)| < \varepsilon(x)$. 
+	Clearly, $|f(x) - (f(x)+ \eta(x)s)| = |\eta(x)s| < \eta(x)$, and by definition $\pi$ takes points of $N_\epsilon$ to the nearest point in $N$. So, assuming $f(x)+ \eta(x)s \in N_\epsilon$, then $|f(x)+ \eta(x)s - \pi(f(x)+ \eta(x)s)| < \eta(x)|$, as $f(x) \in N$.
+	So by the triangle inequality, $|f(x) - H(x,s)| < 2\eta(x)$.
+	Thus if we take $\eta(x) < \min(\epsilon(f(x)), \varepsilon(x)/2)$, we will have $H$ well defined and $|f(x) - H(x,s)| < \varepsilon(x)$ for any $x \in M$ and $s \in D$ by \cref{L: nearby proper homotopy}. 
 
-	Now, we have $H(x,0) = \pi(f(x)) = f(x)$, and, since $\eta(x)>0$ for all $x$, the map $(x,s) \to f(x)+ \eta(f(x))s$ is a submersion onto its image in $\R^K$.
+	Now, we have $H(x,0) = \pi(f(x)) = f(x)$, and, since $\eta(x)>0$ for all $x$, the map $(x,s) \to f(x)+ \eta(x)s$ is a submersion onto its image in $\R^K$; in fact, for $x$ fixed, $H(x,s)$ maps $D$ linear onto a ball neighborhood of $f(x)$.
 	As $\pi$ is also a submersion, so is $H$, and then $H \times \id_{\R^k} \colon M \times D \times \R^k \to N \times \R^k$ is a submersion.
 	In particular, $H \times \id_{\R^k}$ is transverse to $e(V)$ and to $e(S^i(V))$ for each stratum $S^i(V)$ of $V$.
-	We can now apply the Transversality Theorem, (\cref{T: GP transversality}, though with the parameter space $D$ in a slightly nontraditional location in the ordering of factors) to obtain that $H(-,s) \times \id_{\R^k}$ is transverse to $e(V) \times \R^k$ for almost every $s \in D$.
-	If $W$ is a stratum of $V$, then this statement also holds replacing $V$ with $W$.
-	It also holds, for the same reasons, replacing $M$ with $\bd M$.
-	Since $V$ has a finite number of strata and $M$ and $\bd M$ are only two spaces, and since the intersection of a finite number of dense subsets is dense, it holds for almost every $s \in D$ that both $H(-,s) \times \id_{\R^k}$ and its restriction to $\bd M \times \R^k$ are transverse to every stratum of $V$.
+	We can now apply the Transversality Theorem, (\cref{T: GP transversality}, though with the parameter space $D$ in a slightly nontraditional location in the ordering of factors) to obtain that $H(-,s) \times \id_{\R^k}$ is transverse to $e(V) \times \R^k$ for almost every $s \in D$ and similarly for each $S^i(V)$.
+	Since $V$ has a finite number of strata, and since the intersection of a finite number of sets whose complements have measure zero is another set whose complement has measure zero, it holds for almost every $s \in D$ that $H(-,s) \times \id_{\R^k}$ is transverse to every stratum of $V$.
 	Now let $s_0$ be one such $s$, and let $h \colon M \times I \to N$ be given by $h(x,t) = H(x,ts_0)$.
-	Then $h(x,0) = H(x,0) = \pi(f(x)) = f(x)$.
-	While $h(-,1) = H(-,s_0)$ has the desired properties by construction, including being proper and properly homotopic to $f$ if $f$ is proper. \qedhere
+	Then $h(x,0) = H(x,0) = \pi(f(x)) = f(x)$, and $h(-,1) = H(-,s_0)$ is smooth and transverse to every stratum of $V$ by \cref{L: all transversality is wrt embeddings}.
+	Furthermore, if $f$ is proper, then by \cref{L: nearby proper homotopy} and our choice of $\eta$, the map $h(-,1)$ is proper and if necessary we can replace $h$ with a proper homotopy from $f$ to $h(-,1)$. \qedhere
 	
 	\begin{comment}
 	If $f|_{\bd M}$ is already transverse to $g$, we modify the construction as follows: Let $\rho \colon M \to [0,1]$ be a smooth function that is $0$ on $\bd M$ and $>0$ on $M-\bd M$.
