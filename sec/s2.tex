@@ -64,10 +64,12 @@ By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts)
 	In particular, if $W$ is $n$-dimensional and $x \in W$, then the tangent space at $x$, denoted $T_xW$, is isomorphic to $\R^n$.
 \end{definition}
 
-In \cite{Joy12}, Joyce reserves the word \textit{smooth} for weakly smooth maps that also satisfy an additional condition concerning how they interact with the boundaries of their codomains.
-When the codomain is a manifold without boundary, which will be our primary situation of interest, the weaker and stronger notions coincide.
-In the few other cases in which we need to consider maps whose codomains have boundary, in particular boundary immersions and projections of pullbacks, the maps will also satisfy Joyce's stronger condition, though we will never need to utilize this explicitly.
-Thus we will feel justified in simply using the word ``smooth'' throughout, referring the reader to \cite[Definition 3.1]{Joy12} for the full definition.
+\begin{remark}\label{R: weakly smooth}
+	In \cite{Joy12}, Joyce reserves the word \textit{smooth} for weakly smooth maps that also satisfy an additional condition concerning how they interact with the boundaries of their codomains.
+	When the codomain is a manifold without boundary, which will be our primary situation of interest, the weaker and stronger notions coincide.
+	In the few other cases in which we need to consider maps whose codomains have boundary, in particular boundary immersions and projections of pullbacks, the maps will also satisfy Joyce's stronger condition, though we will never need to utilize this explicitly.
+	Thus we will feel justified in simply using the word ``smooth'' throughout, referring the reader to \cite[Definition 3.1]{Joy12} for the full definition.
+\end{remark}
 
 While the notion of embeddings of manifolds with corners into manifolds with corners is not straightforward (and it is not clear that these notions in \cite{Joy12} and \cite{MaDo92} agree), the following observation concerning embeddings of manifolds with corners into manifolds without boundary is reassuring. 
 Suppose a manifold with corners $V$ is embedded in a manifold without boundary $M$, meaning, as in the classical sense, that there is a map $f \colon V \to M$ that is a homeomorphism onto its image and such that $Df$ is injective at each point of $V$; see \cite[Definition 3.3.1 and Theorem 3.2.6]{MaDo92}. 
@@ -227,8 +229,8 @@ Note that, a priori, the latter is a stronger condition as it imposes conditions
 \subsubsection{Achieving transversality}
 
 Throughout this text, we will need a series of increasingly more general results guaranteeing that we can make certain maps transverse to each other.
-We begin here with a relatively simple case that will be first used in \cref{S: basic properties} to show that geometric cohomology is contravariantly functorial with respect to continuous maps of manifolds without boundary.
-We put this first result here, as some of the fundamental ideas will be used in a number of places throughout the text.
+We begin here with two relatively simple cases that will be used in \cref{S: basic properties} to show that geometric cohomology is contravariantly functorial with respect to continuous maps of manifolds without boundary.
+We put these first transversality results here, as some of the fundamental ideas will be used in a number of places throughout the text.
 
 Our transversality theorems will be built primarily using some basic tools that can be found in \cite[Section 2.3]{GuPo74}.
 In particular, we record the following results, referring the reader to \cite[Section 2.3]{GuPo74} for the proofs\footnote{We rephrase the statements of these theorems slightly to better fit our context and notation.}:
@@ -258,9 +260,6 @@ See, for example, \cref{P: perturb transverse to map}.
 
 When working with transversality, it is often much easier to work with the case where one of the maps is an embedding. 
 The following technical results will facilitate that and help us to extend the results of \cite{GuPo74} from transversality with respect to submanifolds to transversality with respect to maps.
-
-
-
 
 \begin{lemma}\label{L: proper product}
 	Let $f \colon X \to Y$ be an arbitrary map and $g \colon X \to Z$ a proper map. 
@@ -294,14 +293,11 @@ So $(g,\alpha)$ is an injective proper immersion, and just as for ordinary manif
 Finally, it is clear from the construction that $\pi (g,\alpha) = g$.
 \end{proof}
 
-
-
 \begin{lemma}\label{L: all transversality is wrt embeddings}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary.
 	Let $e \colon W \to M \times \R^n$ be an embedding such that $\pi e = g$, where $\pi$ is the projection $M \times \R^n \to M$.
 	Then $f$ and $g$ are transverse if and only if $e$ is transverse to $f \times \id_{\R^n} \colon V \times \R^n \to M \times \R^n$.
 \end{lemma}
-
 \begin{proof}
 	It suffices to assume that $V$ and $W$ are without boundary.
 	Otherwise we can apply the following argument to each pair of strata of $V$ and $W$.
@@ -349,7 +345,8 @@ We now need one more particular technical result that will allow us to achieve t
 
 
 We now apply the above results to demonstrate that we can make certain maps transverse via homotopies. 
-We will see various alternative, and in some cases fancier, versions of this theorem below.
+Then, as a second result, we show how to make homotopies transverse while fixing their already transverse ends.
+We will see various alternative, and in some cases fancier, versions of these theorems below.
 See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
 \begin{theorem}\label{T: basic trans}
@@ -403,6 +400,30 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	\end{comment}
 \end{proof}
 
+Our second theorem will be applied below when $M$ is of the form $Y \times I$ for $Y$ a manifold without boundary in order to improve a homotopy between maps that are transverse another given map $g$ to a homotopy that is transverse to $g$. 
+
+\begin{theorem}\label{T: homotopy trans}
+	Let $f \colon M \to N$ be a smooth map from a manifold with boundary to a manifold without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
+	Suppose $\bd f \colon \bd M \to N$ is transverse to $g$.
+	Then there is a smooth homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, $h(-,1)$ is smooth and transverse to $g$, and $h$ fixes $\bd M$, i.e.\ $h(x,t)=f(x)$ for all $x \in \bd M$ and all $t \in I$.
+	Furthermore, if $f$ is proper, then there is such an $h$ so that both $h$ and $h(-,1)$ are proper. 
+\end{theorem}
+
+\begin{proof}
+	We continue with the same notation as the proof of \cref{T: basic trans}.
+	In particular, we again assume a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, a proper embedding of $N$ in $\R^K$ with an $\epsilon$ neighborhood $N_\epsilon$, a submersion $\pi \colon N_\epsilon \to N$, and, in the proper case, a function $\varepsilon \colon M \to (0,\infty)$ to meet the requirements of \cref{L: nearby proper homotopy}.
+
+	In this case $f$ is already assumed to be smooth, but we alter our definition of the the map $H \colon M \times D \to \R^K \to N$ as follows. 
+	Let $\rho \colon M \to [0,1]$ be a smooth function that is $0$ on $\bd M$ and $>0$ on $M-\bd M$.
+	Then we define
+	$$H(x,s) = \pi(f(x)+ \rho(x)\eta(x)s),$$
+	where $\eta$ is defined as above.
+	Then when $x \in \bd M$, we have $H(x,s) = \pi(f(x)) = f(x)$, so $H$ does not depend on $s$ for points $x \in \bd M$.
+	The remainder of the argument is now identical to the rest of the proof of \cref{T: basic trans}.
+	In particular, for almost all $s$, the restriction of $H(-,s)$ to $M - \bd M$ will be transverse to $g$, while restriction of $H(-,s)$ to $\bd M$ is just $f(x)$ and so transverse to $g$ by assumption. 
+	We then define $h$ from $H$ exactly as for \cref{T: basic trans}, and the conditions in the proper case are satisfied as $\rho(x)\leq 1$.
+\end{proof}
+
 \subsection{Pullbacks and fiber products}
 
 When two embedded submanifolds of a manifold meet transversely, their intersection is again a submanifold.
@@ -437,7 +458,7 @@ The reason for the transversality requirement in \cref{D: top pullback} is that 
 	\begin{equation*}
 		S^i(V \times_M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
 	\end{equation*}
-	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are (weakly) smooth.
+	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are smooth in the strong sense of \cite[Definition 3.1]{Joy12} (see \cref{R: weakly smooth}).
 \end{theorem}
 \begin{proof}
 By  \cite[Theorem 6.4]{Joy12} or \cite[Theorem 7.2.7]{MaDo92}, the pullback is a manifold with corners; see \cite[Remark 6.3]{Joy12} for the equivalence of the definitions of transversality in the two papers given our assumptions.
@@ -446,7 +467,7 @@ However, products and subspaces of second countable spaces are also second count
 
 As we have realized $V \times_M W$ as a subset of $V \times W$, we meet our condition of \cref{D: MWC} that our manifolds with corners be contained in some Euclidean space, as by hypothesis this is the case for $V$ and $W$.
 
-The statements that the projections are weakly smooth also follows from \cite[Theorem 6.4]{Joy12}, which states that $V\times_MW$ is a fiber product in the category of manifolds with corners (with smooth maps), and this includes the statement that the projection maps are maps in the category and hence smooth; see the introduction to \cite[Section 6]{Joy12}.
+The statements that the projections are smooth also follows from \cite[Theorem 6.4]{Joy12}, which states that $V\times_MW$ is a fiber product in the category of manifolds with corners (with smooth maps), and this includes the statement that the projection maps are maps in the category and hence smooth; see the introduction to \cite[Section 6]{Joy12}.
 
 For the decomposition, we refer to \cite[Theorem 7.2.7.a]{MaDo92}, which says that $V\times_MW$ is a \textit{totally neat} submanifold of $V\times W$.
 By \cite[Definition 3.1.10]{MaDo92}, the definition of ``totally neat submanifold'' includes the condition that the \textit{index} of a point in the submanifold is equal to its index in the ambient manifold.

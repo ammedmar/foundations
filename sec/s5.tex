@@ -316,17 +316,18 @@ The constructions is as follows.
 \begin{proof}
 	We treat only the cohomology case, as the homology arguments are analogous taking the appropriate maps and homotopies to be proper, which is consistent with our application of \cref{T: basic trans}.
 	
-	First, let $r_W \colon W \to N$ represent a cocycle, and suppose we have two maps $g_0, g_1 \colon M \to N$ that are smooth, homotopic to $f$, and transverse to $r_W$.
-	By \cref{T: basic trans} there exists a smooth homotopy $G \colon M \times I \to N$ from $g_0$ to $g_1$ such that $G$ is transverse to $r_W$; in particular we apply \cref{T: basic trans} with the $f$ of that theorem being an arbitrary homotopy from $g_0$ to $g_1$, and then the resulting $h(-,1)$ of the theorem is our $G$ with $G = h(-,1)$ agreeing with $g_0 \sqcup g_1$ on $\bd (M \times I) = M \times \{0,1\}$. 
-
+	First, let $r_W \colon W \to N$ represent a cocycle, and suppose we have two maps $g_0, g_1 \colon M \to N$ that are smooth, homotopic to $f$, and transverse to $r_W$. 
+	Let $G'$ be a smooth homotopy from $g_0$ to $g_1$, which exists by \cite[Proposition 9.2.33]{MaDo92}  (or, if $f$ is proper and $g_0$ and $g_1$ are smooth maps properly homotopic to $f$, by \cite[Proposition 9.2.35]{MaDo92}).
+	By \cref{T: homotopy trans} there exists a smooth homotopy $G \colon M \times I \to N$ from $g_0$ to $g_1$ such that $G$ is transverse to $r_W$; in particular we apply \cref{T: basic trans} with the map $f$ of that theorem being our smooth homotopy $G'$ here from $g_0$ to $g_1$, and then the resulting map $h(-,1)$ of that theorem will be our desired $G$, while the restriction of $G = h(-,1)$ to $\bd (M \times I) = M \times \{0,1\}$ remains $g_0 \sqcup g_1$. 
+		
 	Now, consider the composition $W \times_N (M \times I) \xr{r_W \times_N G} M \times I \to M$ of the pullback of $r_W$ by $G$ and the projection $M \times I \to M$.
-	As $r_W$ is proper and co-oriented so is the pullback, and the the projection $M \times I \to M$ has its standard co-orientation $(\beta_M \wedge \beta_I,\beta_M)$ and is proper.
+	As $r_W$ is proper and co-oriented, so is the pullback, and the projection $M \times I \to M$ has its standard co-orientation $(\beta_M \wedge \beta_I,\beta_M)$ and is proper.
 	So this composition represents a geometric cochain in $M$.
 	Furthermore, the boundary of this composition is the disjoint union of $\bd W \times_N (M \times I) \to M \times I \to M$ and, up to sign, $$W \times_N (M \times \{1\}) \sqcup - W \times_N (M \times \{0\}) \to M \times I \to M.$$ As $W$ is assumed to be a cocycle, $\bd W \in Q^*(N)$.
 	So $\bd W \times_N (M \times I) \to M \times I$ is in\footnote{Note that even if $M$ is without boundary, $M \times I$ will have boundary (unless $M$ is empty).
 		This instance is the main reason we have allowed such constructions as $PC^*(-)$ and $Q^*(-)$ to take manifolds with non-empty boundary as inputs up to this point.
 		In this particular case, since $N$ does not have boundary, all ``smooth'' maps to $N$ are automatically smooth in the strong sense of \cite{Joy12}, as is then $W \times_N (M \times I) \to M \times I$ as these are both pullbacks in the smooth category.
-		Thus we obtain an element of $Q^*(M)$ whether one prefers to define $Q^*(-)$ in general using smooth or weakly smooth maps.} $Q^*(M \times I)$ by \cref{L: pullback map Q}, and it is then easy to see that the projection to $M$ preserve triviality and small rank.
+		Thus we obtain an element of $Q^*(M)$ whether one prefers to define $PC_\Gamma^*(-)$ in general using smooth or weakly smooth maps.} $Q^*(M \times I)$ by \cref{L: pullback map Q}, and it is then easy to see that the projection to $M$ preserve triviality and small rank.
 	The other terms correspond to the pullbacks of $W$ via $g_0$ and $g_1$, so $g_0^*(W)$ and $g_1^*(W)$ are cohomologous.
 
 	Next, as we have noted that $f^*$ is not a fully-defined chain map, we must show directly that $f^*$ as a cohomology map does not depend on the choice of precocycle representing a cohomology class.
