@@ -8,13 +8,13 @@ It is more challenging to find an explicit isomorphism in the case of cohomology
 
 \subsection{Functoriality and homotopy properties}\label{S: functoriality}
 
-Given a \textit{continuous} map of manifolds $f \colon M \to N$, we define in this section the induced maps $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ and $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ and show that they are independent of $f$ up to homotopy.
+Given a \textit{continuous} map of smooth manifolds $f \colon M \to N$, we define in this section the induced maps $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ and $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ and show that they are independent of $f$ up to homotopy.
 We also treat ``wrong way'' maps, though they require extra hypotheses.
 In particular, if $f$ is proper and co-oriented it induces a covariant map on cohomology $f_* \colon H^*_\Gamma(M) \to H^{*+n-m}_\Gamma(N)$ independent of $f$ up to proper homotopy, 
 while if $f$ is proper and $M$ is oriented, we have a contravariant homology map $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
 
 In the covariant cases, $M$ and $N$ may both be manifolds with corners if we assume all maps and homotopies to be smooth (primarily to avoid smoothing arguments for maps of manifolds with corners).
-In the contravariant case we need to use both transversality and smoothing, and so for this case we consider only $M$ and $N$ without boundary.
+In the contravariant case, we need to use both transversality and smoothing, and so for this case we consider only $M$ and $N$ without boundary.
 
 The construction of $f_*$ for homology is relatively straightforward and can essentially be found in \cite[Section 6]{Lipy14}, though we provide additional details.
 The covariant case of cohomology is similar to that for homology.
@@ -52,12 +52,12 @@ This is the content of the following lemma.
 	The proof for $W \in Q^*(M)$ is the same using that the composition of proper maps is proper and the composition of co-oriented maps is co-oriented.
 \end{proof}
 
-\begin{corollary}[Lipyanskiy's Theorem 4]
+\begin{corollary}[Lipyanskiy's Theorem 4]\label{C: homology chain map}
 	Given a smooth map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map $C_*^\Gamma(M) \to C_*^\Gamma(N)$ given by $\uW \to \underline{f(W)}$, and this construction gives a covariant functor from the category of smooth manifolds and smooth maps to chain complexes over $\Z$.
 \end{corollary}
 
 \begin{corollary}
-	Given a smooth proper co-oriented map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map $C^*_\Gamma(M) \to C^{*+n-m}_\Gamma(N)$ given by $\uW \to \underline{f(W)}$, and this construction gives a covariant functor from the category of smooth manifolds and smooth maps to cochain complexes over $\Z$ with chain maps of appropriate degree.
+	Given a smooth proper co-oriented map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map $C^*_\Gamma(M) \to C^{*+n-m}_\Gamma(N)$ given by $\uW \to \underline{f(W)}$, and this construction gives a covariant functor from the category of smooth manifolds and smooth maps to cochain complexes over $\Z$ with chain maps of degree $n-m$.
 \end{corollary}
 
 Next we consider behavior with respect to homotopies. 
@@ -99,7 +99,7 @@ Then $F \circ (r_W \times \id_I)$ is a co-oriented homotopy from $fr_W$ to $gr_W
 \begin{proof}
 Again, the thing to check is the co-orientations. We continue to utilize the notation of the preceding lemma.
 
-By definition \cref{D: co-oriented homotopy}, the composition of the co-oriented boundary inclusion $k_0 \colon M = M \times 0 \into M \times I$ with $F$ is the co-oriented map $-f$, while the composition of the co-oriented boundary inclusion $k_1 \colon M = M \times 1 \into M \times I$ with $F$ is the co-oriented map
+By \cref{D: co-oriented homotopy}, the composition of the co-oriented boundary inclusion $k_0 \colon M = M \times 0 \into M \times I$ with $F$ is the co-oriented map $-f$, while the composition of the co-oriented boundary inclusion $k_1 \colon M = M \times 1 \into M \times I$ with $F$ is the co-oriented map
 $g$. On the other hand, the ``top and bottom'' components of the boundary of $F \circ (r_W \times \id_I)$ are the co-oriented compositions $F (r_W\times \id) i_0$ and $F (r_W\times \id) i_1$. 
 But by the preceding lemma, for $j=0,1$, we have $F (r_W\times \id) i_j = F k_j r_W$.
 So when $j=0$, we have 
@@ -119,13 +119,13 @@ The next lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a man
 	Then $F \circ (r_W \times \id_I) \colon W \times I \to N$ is in $PC_*^\Gamma(N)$ (or $PC^*_\Gamma(N))$.
 	Furthermore,
 	if $r_W \colon W \to M$ is trivial, of small rank, or degenerate then so are
-	$F \circ (r_W \times id_I) \colon W \times I \to N$ and $F(-,j) \circ r_W \colon W \to N$ for $j=0,1$ (for either co-orientation of $F(-,j)$; see \cref{L: co-orientable homotopies}).
+	$F \circ (r_W \times id_I) \colon W \times I \to N$ and $F(-,j) \circ r_W \colon W \to N$ for $j=0,1$ (for either co-orientation of $F(-,j)$, which is co-orientable by \cref{L: co-orientable homotopies}).
 \end{lemma}
 
 \begin{proof}
 	The last statement concerning $F(-,j) \circ r_W \colon W \to N$ holds by \cref{L: Q preservation} and its proof.
 
-	We first suppose $W \in PC_*^\Gamma(M)$.
+	For	$F \circ (r_W \times id_I)$, we first suppose $W \in PC_*^\Gamma(M)$.
 	In this case it is clear that $F \circ (r_W \times \id_I) \in PC_*^\Gamma(N)$ using the product orientation on $W \times I$.
 
 	If $\rho \colon W \to W$ is an orientation reversing diffeomorphism such that $r_W \circ \rho = r_W$, then
@@ -138,7 +138,7 @@ The next lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a man
 
 	Next, if the derivative of the reference map $Dr_W$ has non-trivial kernel at a point $x \in W$ then so does the derivative $D(r_W \times \id_I)$ at each $(x,t) \in W \times I$, and thus so
 	will $D(F \circ (r_W \times id_I)) = DF \circ D(r_W \times id_I)$.
-	Thus $W \times I \to N$ has small rank if $r_W$ does.
+	So $W \times I \to N$ has small rank if $r_W$ does.
 
 	By definition, if $W \to M$ is degenerate then it has small rank and $\bd W = T \sqcup S$ with $T$ trivial and $S$ small rank.
 	We have shown that $W \times I \to N$ then has small rank, so its suffices to consider its boundary,
@@ -196,25 +196,25 @@ The first part of the following theorem is Lipyanskiy's Theorem 5 in \cite{Lipy1
 
 \begin{theorem}\label{T: homology homotopy functor}
 	Given a \textnormal{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$.
-	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$, which depends only on the proper homotopy class and co-orientation of $f$.
+	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$ of degree $n-m$, which depends only on the proper homotopy class and co-orientation of $f$.
 \end{theorem}
 
 \begin{proof}
 	First consider the case of homology.
 	Let $g$ be any smooth approximation to $f$.
-	Then by the preceding proposition $g$ induces a chain map $C_*^\Gamma(M) \to C_*^\Gamma(N)$ and hence a map $H_*^\Gamma(M) \to H_*^\Gamma(N)$.
+	Then by \cref{C: homology chain map}, $g$ induces a chain map $C_*^\Gamma(M) \to C_*^\Gamma(N)$ and hence a map $H_*^\Gamma(M) \to H_*^\Gamma(N)$.
 	Let $h$ be any other smooth map homotopic to $f$ (and so also homotopic to $g$).
 	The continuous homotopy from $g$ to $h$ can be smoothly approximated by a smooth homotopy $H \colon M \times I \to N$ from $g$ to $h$ \cite[Theorem III.2.5]{Kos93}.
 	The cycles represented by $g(W)$ and $h(W)$ are homologous by \cref{C: homotopy}.
 
-	The cohomological case is the same by taking proper smooth approximations and co-orienting the homotopies using \cref{L: co-orientable homotopies} so that the approximations $g$ and $h$ are co-oriented homotopic to $f$.
+	The cohomological case is the same by taking proper smooth approximations, which we show can be found in the proof of \cref{T: basic trans}, and co-orienting the homotopies using \cref{L: co-orientable homotopies} so that the approximations $g$ and $h$ are co-oriented homotopic to $f$.
 \end{proof}
 
 
 
 There is another very useful application of \cref{C: homotopy} that will be needed frequently below.
-To explain, we first observe that if we have a map $f \colon V\to M$ representing an element of $H_*^\Gamma(M)$, then, in general, this homology classes is not preserved under homotopies of $f$.
-In fact, a map representing a cycle might be homotopic to maps that do not represent cycles by pulling apart cancelling boundary components.
+To explain, we first observe that if we have a map $r_W \colon W \to M$ representing an element of $H_*^\Gamma(M)$, then, in general, this homology classes is not preserved under homotopies of $r_W$.
+In fact, a map representing a cycle might be homotopic to maps that do not represent cycles by pulling apart cancelling boundary components during the homotopy.
 So, in general, geometric homology and cohomology do not behave well with respect to homotopies of the elements of $PC(M)$.
 This will be a problem below, for example when we want to alter a map representing a cycle by a homotopy to make it transverse to some other cycle.
 The solution will be to define and use what we call universal homotopies.
@@ -231,7 +231,7 @@ If one thinks of an ordinary homotopy from $f$ to $g$ as a way of obtaining $g$ 
 Suppose there is a universal homotopy from $f \colon W\to M$ to $g \colon W\to M$. If $f \colon W\to M$ represents an element of $H_*^\Gamma(M)$, then $g = H(-,1)f \colon W\to M$ represents the same element. Similarly, if $f \colon W\to M$ represents an element of $H^*_\Gamma(M)$ and the universal homotopy is proper, then $g \colon W\to M$ represents the same element.
 \end{proposition}
 \begin{proof}
-The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we co-orient $H$ using the co-orientation induced by tautological co-orientation of $\id \colon M \to M$; see \cref{D: homotopy co-orientation}.
+The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we co-orient $H$ using the co-orientation induced by the tautological co-orientation of $H(-,0) = \id \colon M \to M$; see \cref{D: homotopy co-orientation}.
 \end{proof}
 
 
@@ -259,14 +259,14 @@ Furthermore, if $g$ is proper, then $W \times_N M$ is compact, as we show in the
 
 \begin{lemma}\label{L: compact pullback}
 	Suppose $g \colon M \to N$ is a proper map from a manifold with corners to a manifold without boundary. 
-	Suppose $V$ is a compact manifold with corners and that $r_V \colon V \to N$ is transverse to $g$.
-	Then $V \times_N M$ is compact.
+	Suppose $W$ is a compact manifold with corners and that $r_W \colon W \to N$ is transverse to $g$.
+	Then $W \times_N M$ is compact.
 \end{lemma}
 
 \begin{proof}
-	As $V$ is compact, so is $r_V(V)$, and as $g$ is proper, $g^{-1}(r_V(V))$ is compact.
-	Now we observe that we must have $V \times_N M \subset V \times g^{-1}(r_V(V)) \subset V \times M$.
-	So $V \times_N M$ is compact.
+	As $W$ is compact, so is $r_W(W)$, and as $g$ is proper, $g^{-1}(r_W(W))$ is compact.
+	Now we observe that we must have $W \times_N M \subset W \times g^{-1}(r_W(W)) \subset W \times M$.
+	So $W \times_N M$ is compact.
 \end{proof}
 
 The following lemma is similar to \cref{L: pullback with Q}, as is its proof, though there the focus was on fiber products, not pullbacks.
@@ -284,7 +284,7 @@ It will be useful later to allow $M$ to be a manifold with corners here.
 \end{lemma}
 
 \begin{proof}
-	If $\rho$ is a (co-)orientation reversing diffeomorphism of $S$ over $N$, then $\rho \times_N \id_M$ is a (co-)orientation reversing diffeomorphism of $S \times_N M$ over $M$ by \cref{R: co-or restriction or switch} or the definition of the fiber product orientation in \cref{S: orientation of fiber products}.
+	If $\rho$ is a (co-)orientation reversing diffeomorphism of $S$ over $N$, then the restriction of $\rho \times \id_M$ to $S \times_N M \subset S \times M$ is a (co-)orientation reversing diffeomorphism of $S \times_N M$ over $M$ by \cref{R: co-or restriction or switch} or the definition of the fiber product orientation in \cref{S: orientation of fiber products}.
 
 	Next, suppose $r_S \colon S \to N$ has small rank.
 	Suppose at the point $x \in S$ we have $v \in \ker(D_x r_S)$.
@@ -303,8 +303,8 @@ The constructions is as follows.
 \begin{definition}\label{D: cohomology pullback and homology transfer}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary and $\uW \in H^*_\Gamma(N)$ is represented by $r_W \colon W \to N$.
 	Let $g \colon M \to N$ be any smooth approximation of $f$ that is transverse to $r_W$ (which we know exists by \cref{T: basic trans}).
-	Then we define $f^*(\uW) \in H^*_\Gamma(M)$ as the cohomology class represented by $r_W \times_N g \colon W \times_N M \to M$.
-	If $M$ is oriented, $f$ is proper, and $\uW \in H_*^\Gamma(N)$ is represented by $r_W \colon W \to N$, then we also take $g$ to be proper, in which case we define $f^*(\uW) \in H_*^\Gamma(M)$ as the homology class represented by $r_W \times_N g \colon W \times_N M \to M$.
+	Then we define $f^*(\uW) \in H^*_\Gamma(M)$ as the cohomology class represented by the pullback $W \times_N M \to M$.
+	If $M$ is oriented, $f$ is proper, and $\uW \in H_*^\Gamma(N)$ is represented by $r_W \colon W \to N$, then we also take $g$ to be proper (also by \cref{T: basic trans}), in which case we define $f^*(\uW) \in H_*^\Gamma(M)$ as the homology class represented by the pullback $W \times_N M \to M$.
 \end{definition}
 
 \begin{proposition}\label{P: cohomology pullback}

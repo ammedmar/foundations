@@ -421,7 +421,7 @@ This construction extends to manifolds with corners mapping into a manifold with
 		W \arrow[r, "g"] & M.
 	\end{tikzcd}
 	\]
-	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times_M g \colon V \times_M W \to M$.
+	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times_M g \colon V \times_M W \to M$ for the composition around the square.
 	We also sometimes write $f^*$ as $\pi_W$ and $g^*$ as $\pi_V$, as these maps are induced by restricting to $V \times_MW$ the projections from $V \times W$ to $V$ and $W$.
 	We also often abbreviate $V \times_M W$ as $P$.
 
@@ -429,7 +429,7 @@ This construction extends to manifolds with corners mapping into a manifold with
 	When treating $V \times_M W$ as a pullback, we also sometimes use the notation $g^*V \to W$ or $f^*W \to V$; this notation is consistent with the analogous notation for pullbacks of fiber bundles, which is a special case.
 \end{definition}
 
-The reason for the transversality requirement in \cref{D: top pullback} is that this ensures that $V\times_MW$ is itself a manifold with corners, as follows from \cite[Theorem 7.2.7]{MaDo92} or \cite[Theorem 6.4]{Joy12}. In fact, we have the following.
+The reason for the transversality requirement in \cref{D: top pullback} is that this ensures that $V \times_M W$ is itself a manifold with corners, as follows from \cite[Theorem 7.2.7]{MaDo92} or \cite[Theorem 6.4]{Joy12}. In fact, we have the following.
 
 \begin{theorem}\label{pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
@@ -498,7 +498,7 @@ For manifolds with corners, see \cite[Proposition 7.2.7.c]{MaDo92}.
 In many circumstances, this lemma allows us to reduce arguments about fiber products of maps of manifolds to arguments about fiber products of linear maps.
 
 \begin{corollary}\label{C: tangent map of pullbacks}
-With the notation of \cref{L: tangent of pullbacks}, $D_{(x,y)}(f\times_Mg)=D_xf \times_{T_zM} D_yg$ as maps from $T_{(x,y)}(V \times_M W) = T_xV \times_{T_zM} T_yW$ to $T_z(M)$.
+With the notation of \cref{L: tangent of pullbacks}, $D_{(x,y)}(f \times_M g)=D_xf \times_{T_zM} D_yg$ as maps from $T_{(x,y)}(V \times_M W) = T_xV \times_{T_zM} T_yW$ to $T_z(M)$.
 \end{corollary}
 \begin{proof}
 By definition, the map $f \times_M g$ is either of the compositions $f \pi_V = g \pi_W$. So $D_{(x,y)} (f \times_M g) = D_yg \circ D_{(x,y)} \pi_W$. On the other hand, considering the fiber product $D_xf \times_{T_z M} D_y g$ of the maps $D_x f \colon T_xV \to T_zM$ and $D_y g \colon T_yW \to T_zM$, it is the composition of the projection $T_xV \times_{T_zM} T_yW \to  T_yW$ and $D_y g$. 
