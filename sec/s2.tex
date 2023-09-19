@@ -254,7 +254,7 @@ These theorems are used in \cite{GuPo74} to prove the following basic transversa
 	For any smooth map $f \colon X \to Y$ and any boundaryless submanifold $Z$ of the boundaryless manifold $Y$, there exists a smooth map $g \colon X \to Y$ homotopic to $f$ such that $g$ is transverse to $Z$ and $g|_{\bd X}$ is transverse to $Z$.
 \end{theorem}
 
-Among other generalizations as we progress, we will extend these results to maps of manifolds with corners to manifolds without boundary.
+Among other generalizations as we progress, we will extend these results to maps that go from manifolds with corners to manifolds without boundary.
 We will also often require that the homotopies take a special form, i.e.\ that they are \textit{universal} homotopies as defined in \cref{D: universal homotopy}.
 See, for example, \cref{P: perturb transverse to map}.
 
@@ -344,8 +344,7 @@ We now need one more particular technical result that will allow us to achieve t
 \end{proof}
 
 
-We now apply the above results to demonstrate that we can make certain maps transverse via homotopies. 
-Then, as a second result, we show how to make homotopies transverse while fixing their already transverse ends.
+We now apply the above results to demonstrate two transversality theorems that we will need in \cref{S: cohomology pullback} to obtain contravariant functoriality of geometric homology and cohomology. 
 We will see various alternative, and in some cases fancier, versions of these theorems below.
 See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
@@ -354,7 +353,7 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, and $h(-,1)$ is smooth and transverse to $g$.
 	Furthermore, if $f$ is proper, then there is such an $h$ so that both $h$ and $h(-,1)$ are proper. 
 \end{theorem}
-\greg{Old version of this had a bit about $M$ having boundary and keeping the $f$ restricted to boundary fixed if it was already good. Got rid of that to add proper without trouble. Need to make sure I never really need the boundary thing. Changeover around 9-11-23.}
+\greg{Old version of this had a bit about $M$ having boundary and keeping the $f$ restricted to boundary fixed if it was already good. Got rid of that to add proper without trouble. Need to make sure I never really need the boundary thing. Changeover around 9-11-23. Though see also the next theorem I added for homotopies.}
 
 \begin{proof}
 	By \cref{C: embed V}, there is a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, so by that lemma it suffices to find a homotopy such that $h(-,0) = f$ and $h(-,1) \times \id_{\R^k} \colon M \times \R^k \to N \times \R^k$ is smooth and transverse to $e(V)$.
@@ -370,15 +369,15 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	Next, we can think of $N$ as properly embedded in some $\R^K$ by the Whitney Embedding Theorem \cite[Section 1.8]{GuPo74}, and we give $N$ the corresponding metric.
 	We let $N_\epsilon$ be an $\epsilon$ neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$ (see \cref{T: epsilon neighborhood}).
 	Let $D$ be the open unit ball in $\R^K$.
-	We define a composite map $H \colon M \times D \to \R^K \to N$ by
+	We define a smooth composite map $H \colon M \times D \to \R^K \to N$ by
 	$$H(x,s) = \pi(f(x)+ \eta(x)s)$$
 	where $\eta \colon M \to (0,\infty)$ is defined as follows.
 	
-	First, so that $H(x,s)$ will be well defined, we want $f(x)+ \eta(x)s$ to land in $N_\epsilon$ for all $x$, and for this it is sufficient to have $\eta(x) = \epsilon(f(x))$. 
-	If $f$ is not proper or we do not need the last clause of the theorem to hold, this will be sufficient. 
+	First, so that $H(x,s)$ will be well defined, we want $f(x)+ \eta(x)s$ to land in $N_\epsilon$ for all $x$, and for this it is sufficient to have $0< \eta(x) < \epsilon(f(x))$. 
+	If $f$ is not proper or we do not need the last clause of the theorem to hold, any such $\eta$ will be sufficient. 
 	If $f$ is proper and we want the last clause of the theorem to hold, then we next choose a function $\varepsilon \colon M \to (0,\infty)$ to meet the requirements of \cref{L: nearby proper homotopy} with $d$ being the distance on $N$ chosen above. 
 	Letting $|\cdot|$ be the norm on $\R^K$, we then want to choose $\eta$ so that $|f(x) - H(x,1)| < \varepsilon(x)$. 
-	Clearly, $|f(x) - (f(x)+ \eta(x)s)| = |\eta(x)s| < \eta(x)$, and by definition $\pi$ takes points of $N_\epsilon$ to the nearest point in $N$. So, assuming $f(x)+ \eta(x)s \in N_\epsilon$, then $|f(x)+ \eta(x)s - \pi(f(x)+ \eta(x)s)| < \eta(x)|$, as $f(x) \in N$.
+	Clearly, $|f(x) - (f(x)+ \eta(x)s)| = |\eta(x)s| < \eta(x)$, and by definition $\pi$ takes points of $N_\epsilon$ to the nearest point in $N$. So, assuming $f(x)+ \eta(x)s \in N_\epsilon$, then $|f(x)+ \eta(x)s - \pi(f(x)+ \eta(x)s)| < \eta(x)$, as $f(x) \in N$.
 	So by the triangle inequality, $|f(x) - H(x,s)| < 2\eta(x)$.
 	Thus if we take $\eta(x) < \min(\epsilon(f(x)), \varepsilon(x)/2)$, we will have $H$ well defined and $|f(x) - H(x,s)| < \varepsilon(x)$ for any $x \in M$ and $s \in D$ by \cref{L: nearby proper homotopy}. 
 
@@ -400,7 +399,7 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	\end{comment}
 \end{proof}
 
-Our second theorem will be applied below when $M$ is of the form $Y \times I$ for $Y$ a manifold without boundary in order to improve a homotopy between maps that are transverse another given map $g$ to a homotopy that is transverse to $g$. 
+Our second theorem will be applied below when $M$ is of the form $Y \times I$ for $Y$ a manifold without boundary in order to improve a homotopy between maps that are both transverse to another given map $g$ to a homotopy that is transverse to $g$. 
 
 \begin{theorem}\label{T: homotopy trans}
 	Let $f \colon M \to N$ be a smooth map from a manifold with boundary to a manifold without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
@@ -410,18 +409,18 @@ Our second theorem will be applied below when $M$ is of the form $Y \times I$ fo
 \end{theorem}
 
 \begin{proof}
-	We continue with the same notation as the proof of \cref{T: basic trans}.
+	We continue with the same notation as in the proof of \cref{T: basic trans}.
 	In particular, we again assume a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, a proper embedding of $N$ in $\R^K$ with an $\epsilon$ neighborhood $N_\epsilon$, a submersion $\pi \colon N_\epsilon \to N$, and, in the proper case, a function $\varepsilon \colon M \to (0,\infty)$ to meet the requirements of \cref{L: nearby proper homotopy}.
 
 	In this case $f$ is already assumed to be smooth, but we alter our definition of the the map $H \colon M \times D \to \R^K \to N$ as follows. 
-	Let $\rho \colon M \to [0,1]$ be a smooth function that is $0$ on $\bd M$ and $>0$ on $M-\bd M$.
+	Let $\rho \colon M \to [0,1]$ be a smooth function that is $0$ on $\bd M$ and $>0$ on $M-\bd M$ \cite[Proposition 5.43]{Lee13}.
 	Then we define
 	$$H(x,s) = \pi(f(x)+ \rho(x)\eta(x)s),$$
 	where $\eta$ is defined as above.
-	Then when $x \in \bd M$, we have $H(x,s) = \pi(f(x)) = f(x)$, so $H$ does not depend on $s$ for points $x \in \bd M$.
+	Then when $x \in \bd M$, we have $H(x,s) = \pi(f(x)) = f(x)$, so $H$ does not depend on $s$ when $x \in \bd M$.
 	The remainder of the argument is now identical to the rest of the proof of \cref{T: basic trans}.
-	In particular, for almost all $s$, the restriction of $H(-,s)$ to $M - \bd M$ will be transverse to $g$, while restriction of $H(-,s)$ to $\bd M$ is just $f(x)$ and so transverse to $g$ by assumption. 
-	We then define $h$ from $H$ exactly as for \cref{T: basic trans}, and the conditions in the proper case are satisfied as $\rho(x)\leq 1$.
+	In particular, for almost all $s$, the restriction of $H(-,s)$ to $M - \bd M$ will be transverse to $g$, while the restriction of $H(-,s)$ to $\bd M$ is just $f(x)$ and so transverse to $g$ by assumption. 
+	We then define $h$ from $H$ exactly as in the proof of \cref{T: basic trans}, and the conditions in the proper case are satisfied as $\rho(x)\leq 1$.
 \end{proof}
 
 \subsection{Pullbacks and fiber products}

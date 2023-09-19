@@ -298,13 +298,15 @@ It will be useful later to allow $M$ to be a manifold with corners here.
 
 The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemma we cannot define chain maps $g^* \colon C^*_\Gamma(N) \to C^*_\Gamma(M)$ or $g^* \colon C_*^\Gamma(N) \to C_*^\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$.
 Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$, and if $M$ is oriented and $f$ is proper, we can further define a map in geometric homology $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
-The constructions is as follows.
+The constructions are as follows.
 
 \begin{definition}\label{D: cohomology pullback and homology transfer}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary and $\uW \in H^*_\Gamma(N)$ is represented by $r_W \colon W \to N$.
-	Let $g \colon M \to N$ be any smooth approximation of $f$ that is transverse to $r_W$ (which we know exists by \cref{T: basic trans}).
-	Then we define $f^*(\uW) \in H^*_\Gamma(M)$ as the cohomology class represented by the pullback $W \times_N M \to M$.
-	If $M$ is oriented, $f$ is proper, and $\uW \in H_*^\Gamma(N)$ is represented by $r_W \colon W \to N$, then we also take $g$ to be proper (also by \cref{T: basic trans}), in which case we define $f^*(\uW) \in H_*^\Gamma(M)$ as the homology class represented by the pullback $W \times_N M \to M$.
+	Let $g \colon M \to N$ be any smooth map homotopic to $f$ that is transverse to $r_W$ (which we know exists by \cref{T: basic trans}).
+	Then we define $f^*(\uW) \in H^*_\Gamma(M)$ as the cohomology class represented by the pullback of $W$ by $g$, i.e.\ $g^*(W) = W \times_N M \to M$.
+
+	If also $M$ is oriented and $f$ is proper, and if $\uW \in H_*^\Gamma(N)$ is represented by $r_W \colon W \to N$, then let $g$ be a smooth proper map properly homotopic to $f$ and transverse to $r_W$ (also by \cref{T: basic trans}).
+	Then we define $f^*(\uW) \in H_*^\Gamma(M)$ as the homology class represented by the pullback of $W$ by $g$, i.e.\ $g^*(W) = W \times_N M \to M$.
 \end{definition}
 
 \begin{proposition}\label{P: cohomology pullback}
@@ -314,29 +316,35 @@ The constructions is as follows.
 \end{proposition}
 
 \begin{proof}
-	We treat only the cohomology case, as the homology arguments are analogous taking the appropriate maps and homotopies to be proper, which is consistent with our application of \cref{T: basic trans}.
+	We treat only the cohomology case, as the homology arguments are analogous taking the appropriate maps and homotopies to be proper, which is consistent with our applications of \cref{T: basic trans,T: homotopy trans}.
 	
 	First, let $r_W \colon W \to N$ represent a cocycle, and suppose we have two maps $g_0, g_1 \colon M \to N$ that are smooth, homotopic to $f$, and transverse to $r_W$. 
-	Let $G'$ be a smooth homotopy from $g_0$ to $g_1$, which exists by \cite[Proposition 9.2.33]{MaDo92}  (or, if $f$ is proper and $g_0$ and $g_1$ are smooth maps properly homotopic to $f$, by \cite[Proposition 9.2.35]{MaDo92}).
-	By \cref{T: homotopy trans} there exists a smooth homotopy $G \colon M \times I \to N$ from $g_0$ to $g_1$ such that $G$ is transverse to $r_W$; in particular we apply \cref{T: basic trans} with the map $f$ of that theorem being our smooth homotopy $G'$ here from $g_0$ to $g_1$, and then the resulting map $h(-,1)$ of that theorem will be our desired $G$, while the restriction of $G = h(-,1)$ to $\bd (M \times I) = M \times \{0,1\}$ remains $g_0 \sqcup g_1$. 
+	Let $G'$ be a smooth homotopy from $g_0$ to $g_1$, which exists by \cite[Proposition 9.2.33]{MaDo92}  (or, if $f$ is proper and $g_0$ and $g_1$ are smooth proper maps properly homotopic to $f$, there is a smooth proper such $G'$ by \cite[Proposition 9.2.35]{MaDo92}).
+	By \cref{T: homotopy trans} there exists a smooth homotopy $G \colon M \times I \to N$ from $g_0$ to $g_1$ such that $G$ is transverse to $r_W$. In particular we apply \cref{T: homotopy trans} with the map $f$ of that theorem being our smooth homotopy $G'$, whose boundary consists of $g_0$ and $g_1$; then the resulting map $h(-,1)$ of that theorem will be our desired $G$. 
 		
 	Now, consider the composition $W \times_N (M \times I) \xr{r_W \times_N G} M \times I \to M$ of the pullback of $r_W$ by $G$ and the projection $M \times I \to M$.
 	As $r_W$ is proper and co-oriented, so is the pullback, and the projection $M \times I \to M$ has its standard co-orientation $(\beta_M \wedge \beta_I,\beta_M)$ and is proper.
 	So this composition represents a geometric cochain in $M$.
-	Furthermore, the boundary of this composition is the disjoint union of $\bd W \times_N (M \times I) \to M \times I \to M$ and, up to sign, $$W \times_N (M \times \{1\}) \sqcup - W \times_N (M \times \{0\}) \to M \times I \to M.$$ As $W$ is assumed to be a cocycle, $\bd W \in Q^*(N)$.
+	Furthermore, the boundary of this composition is the disjoint union of $\bd W \times_N (M \times I) \to M \times I \to M$ and, up to sign, $$W \times_N \bd(M \times I) = \left( W \times_N (M \times \{1\})\right) \sqcup \left(- W \times_N (M \times \{0\})\right) \to M \times I \to M.$$ 
+	As $W$ is assumed to be a cocycle, $\bd W \in Q^*(N)$.
 	So $\bd W \times_N (M \times I) \to M \times I$ is in\footnote{Note that even if $M$ is without boundary, $M \times I$ will have boundary (unless $M$ is empty).
 		This instance is the main reason we have allowed such constructions as $PC^*(-)$ and $Q^*(-)$ to take manifolds with non-empty boundary as inputs up to this point.
-		In this particular case, since $N$ does not have boundary, all ``smooth'' maps to $N$ are automatically smooth in the strong sense of \cite{Joy12}, as is then $W \times_N (M \times I) \to M \times I$ as these are both pullbacks in the smooth category.
-		Thus we obtain an element of $Q^*(M)$ whether one prefers to define $PC_\Gamma^*(-)$ in general using smooth or weakly smooth maps.} $Q^*(M \times I)$ by \cref{L: pullback map Q}, and it is then easy to see that the projection to $M$ preserve triviality and small rank.
-	The other terms correspond to the pullbacks of $W$ via $g_0$ and $g_1$, so $g_0^*(W)$ and $g_1^*(W)$ are cohomologous.
+		In this particular case, since $N$ does not have boundary, all of our ``smooth'' maps to $N$ are automatically smooth in the strong sense of \cite{Joy12}, as are then $W \times_N (M \times I) \to M \times I$ and $M \times I = M \times_{pt} I \to M$ as these are both pullbacks in the smooth category.} 
+	$Q^*(M \times I)$ by \cref{L: pullback map Q}, and then by the proof of \cref{L: Q preservation} the projection to $M$ preserves triviality and small rank. 
+	Therefore, the composite $\bd W \times_N (M \times I) \to M \times I \to M$ is in $Q^*(M)$. 
+	The other terms correspond to the pullbacks of $W$ via $g_0$ and $g_1$, so $g_0^*(W)$ and $g_1^*(W)$ represent cohomologous cocycles.
 
 	Next, as we have noted that $f^*$ is not a fully-defined chain map, we must show directly that $f^*$ as a cohomology map does not depend on the choice of precocycle representing a cohomology class.
 	So suppose $r_{W_0} \colon W_0 \to N$ and $r_{W_1} \colon W_1 \to N$ represent the same cohomology class.
-	In this case there will be a $Z \in PC^*_\Gamma(N)$ with $\bd Z = W_0 \sqcup -W_1 \sqcup T$ with $T \in Q^*(N)$.
-	We may choose a smooth $g$ homotopic to $f$ that is transverse to $Z$ (and hence also $W_0$, $W_1$, and $T$).
-	Then considering $Z \times_N M \to M$ we have, as $M$ is without boundary,
-	$$\bd(Z \times_N M) = (\bd Z) \times_N M = (W_0 \times_N M) \sqcup -(W_1 \times_N M) \sqcup (T \times_N M).$$
-	By \cref{L: pullback map Q}, the last term will be in $Q^*(M)$, and so $Z \times_N M$ provides a cohomology between $\underline{W_0 \times_N M}$ and $\underline{W_1 \times_N M}$ in $C^*_\Gamma(M)$, demonstrating independence of the choice of representative for the cohomology class.
+	In this case there will be a $Z \in PC^*_\Gamma(N)$ such that $\bd \underline{Z} = \underline{W_0} - \underline{W_1}.$
+	As $\bd \underline{Z} = \underline{\bd Z}$ and $\underline{W_0} - \underline{W_1} = \underline{W_0 \sqcup - W_1}$ by \cref{D: chains and cochains,L: co/chains well defined}, the above equality means by \cref{L: co/chains well defined} that $\bd Z \sqcup -(W_0 \sqcup -W_1) \in Q^*(N)$. 
+	By \cref{T: basic trans} and its proof, we may choose a smooth $g$ homotopic to $f$ that is transverse to all of $Z$ (and so also $\bd Z$), $W_0$, and $W_1$.
+	Then by \cref{L: pullback map Q}, the pullback 
+	$$\left[\bd Z \sqcup -(W_0 \sqcup -W_1)\right] \times_N M = ((\bd Z) \times_N M) \sqcup (-W_0 \times_N M) \sqcup (W_1 \times_N M)$$
+	is in $Q^*(M)$. 
+	As $M$ has no boundary, $(\bd Z) \times_N M = \bd (Z \times_N M)$.
+	It follows that $$\bd \underline{(Z \times_N M)} = \underline{(W_0 \times_N M)} \sqcup \underline{(-W_1 \times_N M)}.$$
+	So $W_0 \times_N M$ and $W_1 \times_N M$ represent cohomologous cocycles, and $f^*$ does not depend on the choice of representing precocycle. 
 
 	Thus $f^*$ does not depend on our choices and depends on $f$ only through its homotopy class.
 \end{proof}
