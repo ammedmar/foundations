@@ -77,7 +77,7 @@ We will also need the following observations for the co-oriented cases.
 	\[
 	\begin{tikzcd}[column sep=large]
 		W \arrow[r, "r_W"] \arrow[d, "i_j"'] & M \arrow[d, "k_j"] \\
-		W \times I \arrow[r, "r_W \times \id"] & M \times I
+		W \times I \arrow[r, "r_W \times \id"] & M \times I.
 	\end{tikzcd}
 	\]
 \end{lemma}
@@ -102,20 +102,13 @@ We will also need the following observations for the co-oriented cases.
 \begin{proof}
 	Again, the thing to check is the co-orientations. We continue to utilize the notation of the preceding lemma.
 
-By \cref{D: co-oriented homotopy}, the composition of the co-oriented boundary inclusion $k_0 \colon M = M \times 0 \into M \times I$ with $F$ is the co-oriented map $-f$, while the composition of the co-oriented boundary inclusion $k_1 \colon M = M \times 1 \into M \times I$ with $F$ is the co-oriented map
-$g$. On the other hand, the ``top and bottom'' components of the boundary of $F \circ (r_W \times \id_I)$ are the co-oriented compositions $F (r_W\times \id) i_0$ and $F (r_W\times \id) i_1$. 
-But by the preceding lemma, for $j=0,1$, we have $F (r_W\times \id) i_j = F k_j r_W$.
-So when $j=0$, we have 
-$$ F (r_W\times \id) i_0 = F k_0 r_W = -f r_W,$$ 
-and when $j=1$, we have 
-$$ F (r_W\times \id) i_1 = F k_1 r_W = g r_W.$$
-By \cref{D: co-oriented homotopy}, the composition of the co-oriented boundary inclusion $k_0 \colon M = M \times 0 \into M \times I$ with $F$ is the co-oriented map $-f$, while the composition of the co-oriented boundary inclusion $k_1 \colon M = M \times 1 \into M \times I$ with $F$ is the co-oriented map
-$g$. On the other hand, the ``top and bottom'' components of the boundary of $F \circ (r_W \times \id_I)$ are the co-oriented compositions $F (r_W\times \id) i_0$ and $F (r_W\times \id) i_1$. 
-But by the preceding lemma, for $j=0,1$, we have $F (r_W\times \id) i_j = F k_j r_W$.
-So when $j=0$, we have 
-$$ F (r_W\times \id) i_0 = F k_0 r_W = -f r_W,$$ 
-and when $j=1$, we have 
-$$ F (r_W\times \id) i_1 = F k_1 r_W = g r_W.$$
+	By \cref{D: co-oriented homotopy}, the composition of the co-oriented boundary inclusion $k_0 \colon M = M \times 0 \into M \times I$ with $F$ is the co-oriented map $-f$, while the composition of the co-oriented boundary inclusion $k_1 \colon M = M \times 1 \into M \times I$ with $F$ is the co-oriented map
+	$g$. On the other hand, the ``top and bottom'' components of the boundary of $F \circ (r_W \times \id_I)$ are the co-oriented compositions $F (r_W\times \id) i_0$ and $F (r_W\times \id) i_1$. 
+	But by the preceding lemma, for $j=0,1$, we have $F (r_W\times \id) i_j = F k_j r_W$.
+	So when $j=0$, we have 
+	$$ F (r_W\times \id) i_0 = F k_0 r_W = -f r_W,$$ 
+	and when $j=1$, we have 
+	$$ F (r_W\times \id) i_1 = F k_1 r_W = g r_W.$$
 
 	So $F (r_W\times \id)$ is a co-oriented homotopy from $fr_W$ to $gr_W$ as desired.
 \end{proof}
@@ -240,7 +233,7 @@ If one thinks of an ordinary homotopy from $f$ to $g$ as a way of obtaining $g$ 
 \end{proposition}
 
 \begin{proof}
-The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we co-orient $H$ using the co-orientation induced by the tautological co-orientation of $H(-,0) = \id \colon M \to M$; see \cref{D: homotopy co-orientation}.
+	The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we co-orient $H$ using the co-orientation induced by the tautological co-orientation of $H(-,0) = \id \colon M \to M$; see \cref{D: homotopy co-orientation}.
 \end{proof}
 
 \subsubsection{Contravariant functoriality of geometric cohomology}\label{S: cohomology pullback}
