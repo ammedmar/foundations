@@ -34,7 +34,7 @@ These charts collectively give an atlas, and every atlas extends to a unique max
 So our manifolds with corners are also manifolds with corners by Joyce's definition.
 
 On the other hand, Joyce notes in \cite[Remark 2.11 (see also Remark 6.3)]{Joy12} that his version of manifolds with corners agrees with that of Margalef-Roig and Outerelo Dominguez \cite{MaDo92} (except that they consider the much more general case of possibly infinite-dimensional manifolds and possibly of differentiable class $p<\infty$). 
-They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92}.  
+They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth closed embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92} (in particular, the embeddings are proper maps \cite[Proposition 3.3.4]{MaDo92}.  
 Joyce already assumes his manifolds with corners to be paracompact Hausdorff in \cite[Definition 2.1]{Joy12}, so if we add the second countable condition to his definition,\footnote{For us this will not be a terrible restriction, as in this case being second countable is the same as being paracompact with a countable number of components. 
 Indeed, every regular second countable space is metrizable \cite[Theorem 34.1]{Mu00}, and hence paracompact, and clearly a locally connected second countable space must have a countable number of connected components. 
 Conversely, each connected component of a paracompact manifold with corners will be closed, paracompact \cite[Theorem 41.2]{Mu00}, and locally compact (via our charts), so it will be $\sigma$-compact \cite[Appendix A.1]{Sp79}. 
@@ -64,10 +64,12 @@ By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts)
 	In particular, if $W$ is $n$-dimensional and $x \in W$, then the tangent space at $x$, denoted $T_xW$, is isomorphic to $\R^n$.
 \end{definition}
 
-In \cite{Joy12}, Joyce reserves the word \textit{smooth} for weakly smooth maps that also satisfy an additional condition concerning how they interact with the boundaries of their codomains.
-When the codomain is a manifold without boundary, which will be our primary situation of interest, the weaker and stronger notions coincide.
-In the few other cases in which we need to consider maps whose codomains have boundary, in particular boundary immersions and projections of pullbacks, the maps will also satisfy Joyce's stronger condition, though we will never need to utilize this explicitly.
-Thus we will feel justified in simply using the word ``smooth'' throughout, referring the reader to \cite[Definition 3.1]{Joy12} for the full definition.
+\begin{remark}\label{R: weakly smooth}
+	In \cite{Joy12}, Joyce reserves the word \textit{smooth} for weakly smooth maps that also satisfy an additional condition concerning how they interact with the boundaries of their codomains.
+	When the codomain is a manifold without boundary, which will be our primary situation of interest, the weaker and stronger notions coincide.
+	In the few other cases in which we need to consider maps whose codomains have boundary, in particular boundary immersions and projections of pullbacks, the maps will also satisfy Joyce's stronger condition, though we will never need to utilize this explicitly.
+	Thus we will feel justified in simply using the word ``smooth'' throughout, referring the reader to \cite[Definition 3.1]{Joy12} for the full definition.
+\end{remark}
 
 While the notion of embeddings of manifolds with corners into manifolds with corners is not straightforward (and it is not clear that these notions in \cite{Joy12} and \cite{MaDo92} agree), the following observation concerning embeddings of manifolds with corners into manifolds without boundary is reassuring. 
 Suppose a manifold with corners $V$ is embedded in a manifold without boundary $M$, meaning, as in the classical sense, that there is a map $f \colon V \to M$ that is a homeomorphism onto its image and such that $Df$ is injective at each point of $V$; see \cite[Definition 3.3.1 and Theorem 3.2.6]{MaDo92}. 
@@ -227,9 +229,10 @@ Note that, a priori, the latter is a stronger condition as it imposes conditions
 \subsubsection{Achieving transversality}
 
 Throughout this text, we will need a series of increasingly more general results guaranteeing that we can make certain maps transverse to each other.
-We begin here with a relatively simple case that will be first used in \cref{S: basic properties} to show that geometric cohomology is contravariantly functorial with respect to continuous maps of manifolds without boundary.
+We begin here with two relatively simple cases that will be used in \cref{S: basic properties} to show that geometric cohomology is contravariantly functorial with respect to continuous maps of manifolds without boundary.
+We put these first transversality results here, as some of the fundamental ideas will be used in a number of places throughout the text.
 
-All of our transversality theorems will be built using some basic tools that can be found in \cite[Section 2.3]{GuPo74}.
+Our transversality theorems will be built primarily using some basic tools that can be found in \cite[Section 2.3]{GuPo74}.
 In particular, we record the following results, referring the reader to \cite[Section 2.3]{GuPo74} for the proofs\footnote{We rephrase the statements of these theorems slightly to better fit our context and notation.}:
 
 \begin{theorem}[Transversality Theorem]\label{T: GP transversality}
@@ -251,15 +254,12 @@ These theorems are used in \cite{GuPo74} to prove the following basic transversa
 	For any smooth map $f \colon X \to Y$ and any boundaryless submanifold $Z$ of the boundaryless manifold $Y$, there exists a smooth map $g \colon X \to Y$ homotopic to $f$ such that $g$ is transverse to $Z$ and $g|_{\bd X}$ is transverse to $Z$.
 \end{theorem}
 
-Among other generalizations as we progress, we will extend these results to maps of manifolds with corners.
-We will also often require that the homotopies take a special form, i.e.\ that they are \textit{universal} homotopies as defined in \cref{S: transverse cochains}.
+Among other generalizations as we progress, we will extend these results to maps that go from manifolds with corners to manifolds without boundary.
+We will also often require that the homotopies take a special form, i.e.\ that they are \textit{universal} homotopies as defined in \cref{D: universal homotopy}.
 See, for example, \cref{P: perturb transverse to map}.
 
 When working with transversality, it is often much easier to work with the case where one of the maps is an embedding. 
 The following technical results will facilitate that and help us to extend the results of \cite{GuPo74} from transversality with respect to submanifolds to transversality with respect to maps.
-
-
-
 
 \begin{lemma}\label{L: proper product}
 	Let $f \colon X \to Y$ be an arbitrary map and $g \colon X \to Z$ a proper map. 
@@ -267,10 +267,9 @@ The following technical results will facilitate that and help us to extend the r
 \end{lemma}
 \begin{proof}
 	Let $K \subset Y \times Z$ be compact. 
-	Let $\pi_Y,\pi_Z$ be the projectiond of $Y \times Z$ to $Y$ and $Z$. Then 
+	Let $\pi_Y,\pi_Z$ be the projections of $Y \times Z$ to $Y$ and $Z$. Then 
 	\begin{align*}
 		(f,g)^{-1}(K) &= \{x \in X \mid (f(x),g(x)) \in K \}\\
-		&\subset \{ x \in X \mid f(x) \in \pi_X(K), g(x) \in \pi_Y(K)\}\\
 		&\subset \{ x \in X \mid g(x) \in \pi_Y(K)\}\\
 		&= g^{-1}(\pi_Y(K)).
 	\end{align*} 
@@ -280,24 +279,25 @@ The following technical results will facilitate that and help us to extend the r
 
 \begin{corollary}\label{C: embed V}
 Let $g \colon W \to M$ be a map from a manifold with corners to a manifold without boundary. 
-Then for some $N$ there exists a closed embedding $e \colon W \to M \times \R^N$ such that, if $\pi \colon M \times \R^N \to M$ is the projection, then $\pi e = g$. 
+Then for some $k$ there exists a closed embedding $e \colon W \to M \times \R^k$ such that, if $\pi \colon M \times \R^k \to M$ is the projection, then $\pi e = g$. 
 \end{corollary}
 \begin{proof}
-By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^N$ for some $N$. 
-Then by \cref{L: proper product} the map $(g,\alpha)$ is proper, and as $\alpha$ is an immersion, so is $(g,\alpha)$.
-In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^N$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces, and the map $\pi_{\R^N}(g,\alpha)$ equals the embedding $g$, so $D(g,\alpha)$ must be injective at each point.
-Similarly, the map $(g,\alpha)$ is itself  injective.  
-But just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}, and it is clear from the construction that $\pi (g,\alpha) = g$.
+By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^k$ for some $k$. 
+The map $\alpha$ is proper, as if $K$ is a compact subset of $\R^k$, the inverse image $\alpha^{-1}(K)$ is homeomorphic to the intersection of $K$ with the closed set $\alpha(W)$.
+So, by \cref{L: proper product}, the map $(g,\alpha) \colon W \to M \times \R^k$ is proper.
+Further, $\alpha$ is an immersion, so is $(g,\alpha)$.
+In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^k$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces.
+If $\pi_{\R^k} \colon M \times \R^k \to \R^k$ is the projection, the map $\pi_{\R^k}(g,\alpha)$ equals the embedding $\alpha$, so $D(g,\alpha)$ must be injective at each point.
+Similarly, the map $(g,\alpha)$ is itself injective because $\alpha$ is injective.  
+So $(g,\alpha)$ is an injective proper immersion, and just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}.
+Finally, it is clear from the construction that $\pi (g,\alpha) = g$.
 \end{proof}
-
-
 
 \begin{lemma}\label{L: all transversality is wrt embeddings}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps from manifolds with corners to a manifold without boundary.
 	Let $e \colon W \to M \times \R^n$ be an embedding such that $\pi e = g$, where $\pi$ is the projection $M \times \R^n \to M$.
 	Then $f$ and $g$ are transverse if and only if $e$ is transverse to $f \times \id_{\R^n} \colon V \times \R^n \to M \times \R^n$.
 \end{lemma}
-
 \begin{proof}
 	It suffices to assume that $V$ and $W$ are without boundary.
 	Otherwise we can apply the following argument to each pair of strata of $V$ and $W$.
@@ -325,44 +325,102 @@ But just as for ordinary manifolds, an injective proper immersion is a closed em
 	So applying $D\pi$ to equation \eqref{E: Quillen transverse}, we get $Df(T_vV)+Dg(T_wW) = T_{f(v)}M$, and $f$ is transverse to $g$.
 \end{proof}
 
-We now apply our technical results to demonstrate that we can make maps transverse via homotopies. 
-We will various alternative, and in some cases fancier, versions of this theorem below.
+We now need one more particular technical result that will allow us to achieve transversality while keeping proper maps proper. 
+
+\begin{lemma}\label{L: nearby proper homotopy}
+	Let $X$ be a topological space and $M$ a manifold without boundary possessing a metric $d$.
+	Suppose $f \colon X \to M$ is a proper map.
+	Then there exists a function $\varepsilon \colon X \to (0,\infty)$ such that if $g \colon X \to M$ satisfies $d(f(x),g(x)) < \varepsilon(x)$ for all $x \in X$, then $g$ is proper and homotopic to $f$ by a proper homotopy.
+	Furthermore, if $X$ is a manifold with corners and $f$ and $g$ are smooth and homotopic by a proper homotopy, then they are homotopic by a smooth proper homotopy.
+\end{lemma}
+\begin{proof}
+	Let $C(X,M)$ be the set of continuous maps from $X$ to $M$. 
+	By \cite[Proposition 9.2.28]{MaDo92}, there is an open neighborhood $V^f$ of $f$ in the topology $T_s$ on $C(X,M)$ (defined in \cite[Proposition 9.2.1]{MaDo92}) such that every $g \in V^f$ is proper and homotopic to $f$ by a proper homotopy. 
+	Furthermore, by \cite[Proposition 9.3.9]{MaDo92} there is a local basis at $f$ in the $T_s$ topology consisting of the sets
+	$$B_\varepsilon^d = \{g \in C(X,M) \mid d(f(x),g(x)) < \varepsilon (x) \text{ for all } x \in X\}$$
+	as $\varepsilon$ ranges over all continuous functions $X \to (0,\infty)$. 
+	So, in particular, there is an $\varepsilon$ such that $B_\varepsilon^d \subset V^f$, which proves the first part of the lemma. 
+	When $X$ is a manifold with corners and $f$ and $g$ are smooth, we can take the proper homotopy between them to be proper and smooth by \cite[Proposition 9.2.35]{MaDo92}; note that $X$ satisfies the hypotheses of having partitions of unity by \cite[Corollary 1.5.14]{MaDo92}.
+\end{proof}
+
+
+We now apply the above results to demonstrate two transversality theorems that we will need in \cref{S: cohomology pullback} to obtain contravariant functoriality of geometric homology and cohomology. 
+We will see various alternative, and in some cases fancier, versions of these theorems below.
 See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
 \begin{theorem}\label{T: basic trans}
-	Let $f \colon M \to N$ be a continuous map from a manifold with (possibly empty) boundary to a manifold without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
+	Let $f \colon M \to N$ be a continuous map of manifolds without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
 	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, and $h(-,1)$ is smooth and transverse to $g$.
-	If $f|_{\bd M}$ is already smooth and transverse to $g$, then we can find such an $h$ with $h(-,1) = f$ on $\bd M$.
+	Furthermore, if $f$ is proper, then there is such an $h$ so that both $h$ and $h(-,1)$ are proper. 
 \end{theorem}
+\greg{Old version of this had a bit about $M$ having boundary and keeping the $f$ restricted to boundary fixed if it was already good. Got rid of that to add proper without trouble. Need to make sure I never really need the boundary thing. Changeover around 9-11-23. Though see also the next theorem I added for homotopies.}
 
 \begin{proof}
 	By \cref{C: embed V}, there is a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, so by that lemma it suffices to find a homotopy such that $h(-,0) = f$ and $h(-,1) \times \id_{\R^k} \colon M \times \R^k \to N \times \R^k$ is smooth and transverse to $e(V)$.
 
-	We first find a homotopy from $f$ to a smooth map that agrees with $f$ on $\bd M$ if $f|_{\bd M}$ is already smooth.
-	This can be done by the smooth approximation theorem; see \cite[Theorem III.2.5]{Kos93}.
+	We first find a homotopy from $f$ to a smooth map.
+	This can be done by the smooth approximation theorem; see \cite[Corollary 9.2.31]{MaDo92}.
+	Furthermore, if $f$ is proper, then we can take the smooth map and the homotopy between it and $f$ to be proper by \cite[Corollary 9.2.36]{MaDo92}.
 	So we assume for the rest of the proof that this first homotopy has been completed and that $f$ is a smooth map.
+	\begin{comment}
 	We will next construct our homotopy to achieve transversality without consideration of whether or not $f$ is already transverse to $g$ on $\bd M$, and then we show how to modify the construction for that case.
+	\end{comment}
 
-	We can think of $N$ as properly embedded in some $\R^K$ by the Whitney Embedding Theorem \cite[Section 1.8]{GuPo74}, and we let $N_\epsilon$ be an $\epsilon$ neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$ (see \cref{T: epsilon neighborhood}).
+	Next, we can think of $N$ as properly embedded in some $\R^K$ by the Whitney Embedding Theorem \cite[Section 1.8]{GuPo74}, and we give $N$ the corresponding metric.
+	We let $N_\epsilon$ be an $\epsilon$ neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$ (see \cref{T: epsilon neighborhood}).
 	Let $D$ be the open unit ball in $\R^K$.
-	We define a composite map $H \colon M \times D \to \R^K \to N$ by
-	$$H(x,s) = \pi(f(x)+ \epsilon(f(x))s).$$
-	We have $H(x,0) = \pi(f(x)) = f(x)$, and, since $\epsilon(x)>0$ for all $x$, the map $(x,s) \to f(x)+ \epsilon(f(x))s$ is a submersion onto its image in $\R^K$.
+	We define a smooth composite map $H \colon M \times D \to \R^K \to N$ by
+	$$H(x,s) = \pi(f(x)+ \eta(x)s)$$
+	where $\eta \colon M \to (0,\infty)$ is defined as follows.
+	
+	First, so that $H(x,s)$ will be well defined, we want $f(x)+ \eta(x)s$ to land in $N_\epsilon$ for all $x$, and for this it is sufficient to have $0< \eta(x) < \epsilon(f(x))$. 
+	If $f$ is not proper or we do not need the last clause of the theorem to hold, any such $\eta$ will be sufficient. 
+	If $f$ is proper and we want the last clause of the theorem to hold, then we next choose a function $\varepsilon \colon M \to (0,\infty)$ to meet the requirements of \cref{L: nearby proper homotopy} with $d$ being the distance on $N$ chosen above. 
+	Letting $|\cdot|$ be the norm on $\R^K$, we then want to choose $\eta$ so that $|f(x) - H(x,1)| < \varepsilon(x)$. 
+	Clearly, $|f(x) - (f(x)+ \eta(x)s)| = |\eta(x)s| < \eta(x)$, and by definition $\pi$ takes points of $N_\epsilon$ to the nearest point in $N$. So, assuming $f(x)+ \eta(x)s \in N_\epsilon$, then $|f(x)+ \eta(x)s - \pi(f(x)+ \eta(x)s)| < \eta(x)$, as $f(x) \in N$.
+	So by the triangle inequality, $|f(x) - H(x,s)| < 2\eta(x)$.
+	Thus if we take $\eta(x) < \min(\epsilon(f(x)), \varepsilon(x)/2)$, we will have $H$ well defined and $|f(x) - H(x,s)| < \varepsilon(x)$ for any $x \in M$ and $s \in D$ by \cref{L: nearby proper homotopy}. 
+
+	Now, we have $H(x,0) = \pi(f(x)) = f(x)$, and, since $\eta(x)>0$ for all $x$, the map $(x,s) \to f(x)+ \eta(x)s$ is a submersion onto its image in $\R^K$; in fact, for $x$ fixed, $H(x,s)$ maps $D$ linear onto a ball neighborhood of $f(x)$.
 	As $\pi$ is also a submersion, so is $H$, and then $H \times \id_{\R^k} \colon M \times D \times \R^k \to N \times \R^k$ is a submersion.
 	In particular, $H \times \id_{\R^k}$ is transverse to $e(V)$ and to $e(S^i(V))$ for each stratum $S^i(V)$ of $V$.
-	We can now apply the Transversality Theorem, (\cref{T: GP transversality}, though with the parameter space $D$ in a slightly nontraditional location in the ordering of factors) to obtain that $H(-,s) \times \id_{\R^k}$ is transverse to $e(V) \times \R^k$ for almost every $s \in D$.
-	If $W$ is a stratum of $V$, then this statement also holds replacing $V$ with $W$.
-	It also holds, for the same reasons, replacing $M$ with $\bd M$.
-	Since $V$ has a finite number of strata and $M$ and $\bd M$ are only two spaces, and since the intersection of a finite number of dense subsets is dense, it holds for almost every $s \in D$ that both $H(-,s) \times \id_{\R^k}$ and its restriction to $\bd M \times \R^k$ are transverse to every stratum of $V$.
+	We can now apply the Transversality Theorem, (\cref{T: GP transversality}, though with the parameter space $D$ in a slightly nontraditional location in the ordering of factors) to obtain that $H(-,s) \times \id_{\R^k}$ is transverse to $e(V) \times \R^k$ for almost every $s \in D$ and similarly for each $S^i(V)$.
+	Since $V$ has a finite number of strata, and since the intersection of a finite number of sets whose complements have measure zero is another set whose complement has measure zero, it holds for almost every $s \in D$ that $H(-,s) \times \id_{\R^k}$ is transverse to every stratum of $V$.
 	Now let $s_0$ be one such $s$, and let $h \colon M \times I \to N$ be given by $h(x,t) = H(x,ts_0)$.
-	Then $h(x,0) = H(x,0) = \pi(f(x)) = f(x)$.
-	While $h(-,1) = H(-,s_0)$ has the desired properties by construction.
-
+	Then $h(x,0) = H(x,0) = \pi(f(x)) = f(x)$, and $h(-,1) = H(-,s_0)$ is smooth and transverse to every stratum of $V$ by \cref{L: all transversality is wrt embeddings}.
+	Furthermore, if $f$ is proper, then by \cref{L: nearby proper homotopy} and our choice of $\eta$, the map $h(-,1)$ is proper and if necessary we can replace $h$ with a proper homotopy from $f$ to $h(-,1)$. \qedhere
+	
+	\begin{comment}
 	If $f|_{\bd M}$ is already transverse to $g$, we modify the construction as follows: Let $\rho \colon M \to [0,1]$ be a smooth function that is $0$ on $\bd M$ and $>0$ on $M-\bd M$.
 	Then we define
 	$$H(x,s) = \pi(f(x)+ \epsilon(f(x))\rho(x)s).$$
 	Then when $x \in \bd M$, we have $H(x,s) = \pi(f(x)) = f(x)$, so $h$ is constant along $\bd M$.
 	For $x \notin \bd M$, the argument goes through exactly as above.
+	\end{comment}
+\end{proof}
+
+Our second theorem will be applied below when $M$ is of the form $Y \times I$ for $Y$ a manifold without boundary in order to improve a homotopy between maps that are both transverse to another given map $g$ to a homotopy that is transverse to $g$. 
+
+\begin{theorem}\label{T: homotopy trans}
+	Let $f \colon M \to N$ be a smooth map from a manifold with boundary to a manifold without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
+	Suppose $\bd f \colon \bd M \to N$ is transverse to $g$.
+	Then there is a smooth homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, $h(-,1)$ is smooth and transverse to $g$, and $h$ fixes $\bd M$, i.e.\ $h(x,t)=f(x)$ for all $x \in \bd M$ and all $t \in I$.
+	Furthermore, if $f$ is proper, then there is such an $h$ so that both $h$ and $h(-,1)$ are proper. 
+\end{theorem}
+
+\begin{proof}
+	We continue with the same notation as in the proof of \cref{T: basic trans}.
+	In particular, we again assume a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, a proper embedding of $N$ in $\R^K$ with an $\epsilon$ neighborhood $N_\epsilon$, a submersion $\pi \colon N_\epsilon \to N$, and, in the proper case, a function $\varepsilon \colon M \to (0,\infty)$ to meet the requirements of \cref{L: nearby proper homotopy}.
+
+	In this case $f$ is already assumed to be smooth, but we alter our definition of the the map $H \colon M \times D \to \R^K \to N$ as follows. 
+	Let $\rho \colon M \to [0,1]$ be a smooth function that is $0$ on $\bd M$ and $>0$ on $M-\bd M$ \cite[Proposition 5.43]{Lee13}.
+	Then we define
+	$$H(x,s) = \pi(f(x)+ \rho(x)\eta(x)s),$$
+	where $\eta$ is defined as above.
+	Then when $x \in \bd M$, we have $H(x,s) = \pi(f(x)) = f(x)$, so $H$ does not depend on $s$ when $x \in \bd M$.
+	The remainder of the argument is now identical to the rest of the proof of \cref{T: basic trans}.
+	In particular, for almost all $s$, the restriction of $H(-,s)$ to $M - \bd M$ will be transverse to $g$, while the restriction of $H(-,s)$ to $\bd M$ is just $f(x)$ and so transverse to $g$ by assumption. 
+	We then define $h$ from $H$ exactly as in the proof of \cref{T: basic trans}, and the conditions in the proper case are satisfied as $\rho(x)\leq 1$.
 \end{proof}
 
 \subsection{Pullbacks and fiber products}
@@ -383,7 +441,7 @@ This construction extends to manifolds with corners mapping into a manifold with
 		W \arrow[r, "g"] & M.
 	\end{tikzcd}
 	\]
-	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times_M g \colon V \times_M W \to M$.
+	We typically suppress the maps from the notation, though we sometimes label them as in the diagram and sometimes write $f \times_M g \colon V \times_M W \to M$ for the composition around the square.
 	We also sometimes write $f^*$ as $\pi_W$ and $g^*$ as $\pi_V$, as these maps are induced by restricting to $V \times_MW$ the projections from $V \times W$ to $V$ and $W$.
 	We also often abbreviate $V \times_M W$ as $P$.
 
@@ -391,7 +449,7 @@ This construction extends to manifolds with corners mapping into a manifold with
 	When treating $V \times_M W$ as a pullback, we also sometimes use the notation $g^*V \to W$ or $f^*W \to V$; this notation is consistent with the analogous notation for pullbacks of fiber bundles, which is a special case.
 \end{definition}
 
-The reason for the transversality requirement in \cref{D: top pullback} is that this ensures that $V\times_MW$ is itself a manifold with corners, as follows from \cite[Theorem 7.2.7]{MaDo92} or \cite[Theorem 6.4]{Joy12}. In fact, we have the following.
+The reason for the transversality requirement in \cref{D: top pullback} is that this ensures that $V \times_M W$ is itself a manifold with corners, as follows from \cite[Theorem 7.2.7]{MaDo92} or \cite[Theorem 6.4]{Joy12}. In fact, we have the following.
 
 \begin{theorem}\label{pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
@@ -399,7 +457,7 @@ The reason for the transversality requirement in \cref{D: top pullback} is that 
 	\begin{equation*}
 		S^i(V \times_M W) = \bigsqcup_{k + \ell = i} S^k(V) \times_M S^\ell(W).
 	\end{equation*}
-	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are (weakly) smooth.
+	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are smooth in the strong sense of \cite[Definition 3.1]{Joy12} (see \cref{R: weakly smooth}).
 \end{theorem}
 \begin{proof}
 By  \cite[Theorem 6.4]{Joy12} or \cite[Theorem 7.2.7]{MaDo92}, the pullback is a manifold with corners; see \cite[Remark 6.3]{Joy12} for the equivalence of the definitions of transversality in the two papers given our assumptions.
@@ -408,7 +466,7 @@ However, products and subspaces of second countable spaces are also second count
 
 As we have realized $V \times_M W$ as a subset of $V \times W$, we meet our condition of \cref{D: MWC} that our manifolds with corners be contained in some Euclidean space, as by hypothesis this is the case for $V$ and $W$.
 
-The statements that the projections are weakly smooth also follows from \cite[Theorem 6.4]{Joy12}, which states that $V\times_MW$ is a fiber product in the category of manifolds with corners (with smooth maps), and this includes the statement that the projection maps are maps in the category and hence smooth; see the introduction to \cite[Section 6]{Joy12}.
+The statements that the projections are smooth also follows from \cite[Theorem 6.4]{Joy12}, which states that $V\times_MW$ is a fiber product in the category of manifolds with corners (with smooth maps), and this includes the statement that the projection maps are maps in the category and hence smooth; see the introduction to \cite[Section 6]{Joy12}.
 
 For the decomposition, we refer to \cite[Theorem 7.2.7.a]{MaDo92}, which says that $V\times_MW$ is a \textit{totally neat} submanifold of $V\times W$.
 By \cite[Definition 3.1.10]{MaDo92}, the definition of ``totally neat submanifold'' includes the condition that the \textit{index} of a point in the submanifold is equal to its index in the ambient manifold.
@@ -460,7 +518,7 @@ For manifolds with corners, see \cite[Proposition 7.2.7.c]{MaDo92}.
 In many circumstances, this lemma allows us to reduce arguments about fiber products of maps of manifolds to arguments about fiber products of linear maps.
 
 \begin{corollary}\label{C: tangent map of pullbacks}
-With the notation of \cref{L: tangent of pullbacks}, $D_{(x,y)}(f\times_Mg)=D_xf \times_{T_zM} D_yg$ as maps from $T_{(x,y)}(V \times_M W) = T_xV \times_{T_zM} T_yW$ to $T_z(M)$.
+With the notation of \cref{L: tangent of pullbacks}, $D_{(x,y)}(f \times_M g)=D_xf \times_{T_zM} D_yg$ as maps from $T_{(x,y)}(V \times_M W) = T_xV \times_{T_zM} T_yW$ to $T_z(M)$.
 \end{corollary}
 \begin{proof}
 By definition, the map $f \times_M g$ is either of the compositions $f \pi_V = g \pi_W$. So $D_{(x,y)} (f \times_M g) = D_yg \circ D_{(x,y)} \pi_W$. On the other hand, considering the fiber product $D_xf \times_{T_z M} D_y g$ of the maps $D_x f \colon T_xV \to T_zM$ and $D_y g \colon T_yW \to T_zM$, it is the composition of the projection $T_xV \times_{T_zM} T_yW \to  T_yW$ and $D_y g$. 
