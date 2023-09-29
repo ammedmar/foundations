@@ -108,6 +108,29 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 	So $r_V\phi = r_W$ as co-oriented maps, and $\phi$ provides a co-oriented isomorphism between $r_W$ and $r_V$ even though they are very different maps.
 \end{example}
 
+The notions of orientation-preserving and -reversing diffeomorphisms are fairly standard, and oriented isomorphisms and triviality of oriented manifolds over $M$ are simply such diffeomorphisms that commute with the reference maps. 
+By contrast, the corresponding notions for co-orientation are less familiar, but the following statement shows how the situation for co-orientations is locally similar to that for orientations. 
+
+\begin{lemma}\label{L: co-or preserving/reversing}
+	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$. 
+	For $x \in W$, let $(\beta_{W,x},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_W$ and let $(\beta_{V, \phi(x)},\beta_{M,r_W(x)})$  be a local representation of the co-orientation of $r_V$,  noting $r_V\phi(x)=r_W(x)$. 
+	Then $\phi$ provides a co-oriented isomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.
+	Similarly, the map $\phi$ is a co-orientation reversing diffeomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $-\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.  
+\end{lemma}
+
+In the statement of the lemma, by $D_x\phi$ taking an orientation of $T_xW$ to an orientation of $T_{\phi(x)}V$, we mean that $D_x\phi$ takes an ordered basis consistent with the given orientation of $T_xW$ to an ordered basis consistent with the given orientation of $T_{\phi(x)}V$.
+We could equivalently phrase this in terms of the map $\textstyle{\bigwedge^w}D_x\phi$ as in \cref{D: tautological co-orientation}.
+
+\begin{proof}[Proof of \cref{L: co-or preserving/reversing}]
+By definition, $\phi$ is an isomorphism if and only if $\omega_{r_W} = \omega_{\phi} * \omega_{r_V}$, where $\omega_\phi$ is the tautological co-orientation of $\phi$. 
+This will be the case if and only if for each $x$ we have $\omega_\phi = (\beta_{W,x}, \beta_{V, \phi(x)})$. 
+But by the definition of the tautological co-orientation, if $e_1 \wedge \cdots \wedge e_w$ represents an oriented basis for $T_xW$, then $\omega_\phi$ is represented at $x$ by the pair $(e_1 \wedge \cdots \wedge e_w, D_x\phi(e_1) \wedge \cdots \wedge D_x\phi(e_w))$. 
+So $\phi$ is an isomorphism if and only if $D_x\phi$ takes an ordered basis representing the local orientation $\beta_{W,x}$ to an ordered basis representing the local orientation $\beta_{V, \phi(x)}$.
+
+The orientation-reversing case is equivalent, considering instead the requirement $\omega_{r_W} = - \omega_{\phi} * \omega_{r_V}$.
+\end{proof}
+
+
 \subsection{Geometric homology and cohomology}
 
 We can now move toward defining geometric homology and cohomology, starting with ``prechains'' and ``precochains.''
