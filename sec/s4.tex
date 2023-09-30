@@ -46,22 +46,21 @@ the definitions of \cite{Lipy14}.
 \begin{definition}\label{D: equiv triv and small}
 	Let $V, W$ be manifolds over $M$ with reference maps $r_V$ and $r_W$.
 	\begin{itemize}
+		\item Suppose $V$ and $W$ are co-oriented and $\phi \colon W \to V$ is a diffeomorphism such that $r_V \circ \phi = r_W$.
+		We say that $\phi$ is \textbf{co-orientation preserving (or co-orientation reversing)} if the composition of the tautological co-orientation of $\phi$ (\cref{D: tautological co-orientation}) with the co-orientation of $r_V$ agrees with (or disagrees with) the co-orientation of $r_W$.
 		\item If $V$ and $W$ are oriented, we say they are \textbf{(oriented) isomorphic} if there is an orientation-preserving diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$.
-		If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic} if there is a diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$ and the composition of the
-		tautological co-orientation of $\phi$ (\cref{D: tautological co-orientation}) with the co-orientation of $r_V$ agrees with the co-orientation of $r_W$.
-
+		\item If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic} if there is a co-orientation-preserving diffeomorphism $\phi \colon W \to V$. 
 		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial} if there is an orientation-reversing diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
-		If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$ and the composite of the tautological co-orientation of $\rho$ with the co-orientation of $r_W$ is the opposite of the co-orientation of $r_W$.
-		We call such a map $\rho$ \textbf{co-orientation reversing}.
-
+		\item If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a co-orientation-reversing diffeomorphism $\rho \colon W \to W$.
 		\item $W$ has \textbf{small rank} if the differential $D r_W$ is less than full rank at all $w\in W$.
-
 		\item If $W$ is (co-)oriented, then it is \textbf{((co-)oriented) degenerate} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co-)oriented manifold over $M$ and one with small rank.
 	\end{itemize}
 	We declare the empty map $\emptyset \to M$ to be both trivial and degenerate.
 \end{definition}
 
-Note that isomorphism is an equivalence relation and that it preserves triviality and degeneracy.
+Note that while we can speak of a diffeomorphism being orientation-preserving or -reversing without it necessarily commuting with the reference maps, the notion of being co-orientation-preserving or -reversing is only defined when $r_V \circ \phi = r_W$.
+
+We observe that isomorphism is an equivalence relation and that it preserves triviality and degeneracy.
 
 Rather than small rank, Lipyanskiy uses the condition of \textbf{small image}.
 In our notation, a map $r_W \colon W \to M$ has small image if there is another map $r_T \colon T \to M$ such that $r_T(T)\supset r_W(W)$ but $\dim(T)<\dim(W)$.
@@ -115,7 +114,7 @@ By contrast, the corresponding notions for co-orientation are less familiar, but
 	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$. 
 	For $x \in W$, let $(\beta_{W,x},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_W$ and let $(\beta_{V, \phi(x)},\beta_{M,r_W(x)})$  be a local representation of the co-orientation of $r_V$,  noting $r_V\phi(x)=r_W(x)$. 
 	Then $\phi$ provides a co-oriented isomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.
-	Similarly, the map $\phi$ is a co-orientation reversing diffeomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $-\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.  
+	Similarly, the map $\phi$ is a co-orientation-reversing diffeomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $-\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.  
 \end{lemma}
 
 In the statement of the lemma, by $D_x\phi$ taking an orientation of $T_xW$ to an orientation of $T_{\phi(x)}V$, we mean that $D_x\phi$ takes an ordered basis consistent with the given orientation of $T_xW$ to an ordered basis consistent with the given orientation of $T_{\phi(x)}V$.
@@ -129,6 +128,13 @@ So $\phi$ is an isomorphism if and only if $D_x\phi$ takes an ordered basis repr
 
 The orientation-reversing case is equivalent, considering instead the requirement $\omega_{r_W} = - \omega_{\phi} * \omega_{r_V}$.
 \end{proof}
+
+The following corollary is now immediate from \cref{L: co-or preserving/reversing} and the definitions.
+
+\begin{corollary}
+	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over the oriented manifold $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$. Then $\phi$ is co-orientation preserving (reversing) if and only if it is orientation preserving (reversing) with respect to the orientations of $V$ and $W$ induced by the co-orientations and the orientation of $M$ (\cref{S: co-orientations}).
+\end{corollary}
+
 
 
 \subsection{Geometric homology and cohomology}

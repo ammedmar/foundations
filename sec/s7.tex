@@ -415,8 +415,8 @@ We first build toward showing in \cref{P: multicup} that the products can be mad
 	We know each $W_{i,TI}$ is in $Q(M)$, so by \cref{L: Lipy12}, $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI}) \in Q(M)$.
 	By definition, each $W_{i,NI}$ has small rank, while each component of $W_{i,E}$ does not have small rank.
 	So in any decomposition of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ into a trivial precochain and a degenerate precochain, which is possible as we know this is in $Q(M)$, the components of the $W_{i,E}$ must be part of the trivial precochain (the components of $W_{i, NI}$ may be part of either the trivial precochain or the degenerate precochain).
-	As in the proof of \cref{L: Lip L10}, this implies that each connected component, say $\mf W$, appearing in one of the $W_{i,E}$ either has a co-orientation reversing automorphism or appears zero times in all of in $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ when counting with co-orientation.
-	If $\mf W$ has a co-orientation reversing automorphism, then $\mf W$ is trivial.
+	As in the proof of \cref{L: Lip L10}, this implies that each connected component, say $\mf W$, appearing in one of the $W_{i,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of in $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ when counting with co-orientation.
+	If $\mf W$ has a co-orientation-reversing automorphism, then $\mf W$ is trivial.
 	Otherwise, for each occurrence of $\mf W$ in some $W_{i,E}$, there is an occurrence of $-\mf W$ in some $W_{j,E}$, and $\mf W \sqcup -\mf W$ is trivial.
 	So altogether, $\bigsqcup_i W_{i,E}$ decomposes into a union of trivial precochains.
 	It follows that $\bigsqcup_i W_{i,E} \in Q(M)$, and so again by \cref{L: Lipy12}, $\bigsqcup_i W_{i,NI} \in Q(M)$.
@@ -454,8 +454,8 @@ We first build toward showing in \cref{P: multicup} that the products can be mad
 	As each $W_{k,TI} \in Q^*(M)$, we have each $V_k \times_M W_{k,TI} \in Q^*(M)$ by \cref{L: pullback with Q}.
 
 	We next consider $\bigsqcup_k V_k \times_M W_{k,E}$, which is trivial by \cref{L: Q essential}.
-	So as in the proof of \cref{L: Lip L10}, each connected component, say $\mf W$, appearing in one of the $W_{k,E}$ either has a co-orientation reversing automorphism or appears zero times in all of in $\bigsqcup_k W_{k,E}$ when counting with co-orientation.
-	If $\mf W$ has a co-orientation reversing automorphism, then $\mf W$ is trivial and $V_k \times \mf W$ is trivial for any $V_k$ transverse to $\mf W$.
+	So as in the proof of \cref{L: Lip L10}, each connected component, say $\mf W$, appearing in one of the $W_{k,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of in $\bigsqcup_k W_{k,E}$ when counting with co-orientation.
+	If $\mf W$ has a co-orientation-reversing automorphism, then $\mf W$ is trivial and $V_k \times \mf W$ is trivial for any $V_k$ transverse to $\mf W$.
 	Otherwise, for each occurrence of $\mf W$ in some $W_{k,E}$, there is an occurrence of $-\mf W$ in some $W_{\ell,E}$.
 	By \cref{T: cochain product}, $V_k \times_M \mf W$ and $V_\ell \times \mf W$ represent the same cochain, so
 	$$(V_k \times_M \mf W) \sqcup -(V_\ell \times_M \mf W) = (V_k \times_M \mf W)\sqcup(V_\ell \times_M -\mf W) \in Q^*(M).$$
@@ -464,7 +464,7 @@ We first build toward showing in \cref{P: multicup} that the products can be mad
 	It remains to show that $\bigsqcup_k V_k \times_M W_{k,NI} \in Q^*(M)$.
 	By \cref{L: Q essential}, we have $\bigsqcup_k W_{k,NI} \in Q^*(M)$.
 	By definition, we can write $\bigsqcup_k W_{k,NI} = \mc W_{tr} \sqcup \mc W_{d}$ as the disjoint union of a trivial precochain and a degenerate precochain.
-	By the same procedure as just above, if $\mf W$ is a connected component of $\mc W_{tr}$, then either it has a co-orientation reversing automorphism or it appears zero times in all $\mc W_{tr}$ counting with co-orientation.
+	By the same procedure as just above, if $\mf W$ is a connected component of $\mc W_{tr}$, then either it has a co-orientation-reversing automorphism or it appears zero times in all $\mc W_{tr}$ counting with co-orientation.
 	Thus either either $V_k \times_M \mf W \in Q^*(M)$, assuming $\mf W$ is a component of $W_{k,NI}$, or we can have pairs $V_k$ and $V_\ell$ with $(V_k \times_M \mf W) \sqcup (V_\ell \times_M -\mf W) \in Q^*(M)$.
 	So it remains to consider the case of $\bigsqcup_k V_k \times_M Z_k$ where $\mc W_d = \bigsqcup_k Z_k$ with $Z_k$ being the contribution to $\mc W_d$ from $W_{k,NI}$.
 
@@ -474,7 +474,7 @@ We first build toward showing in \cref{P: multicup} that the products can be mad
 	We note that these terms are defined as the transversality of $V_k$ and $Z_k$ includes transversality with the boundaries.
 	As the $Z_k$ have small rank, each $(\bd V_k) \times_M Z_k$ has small rank by \cref{L: pullback with Q}.
 	As $\bigsqcup_k Z_k$ is degenerate, $\bd (\bigsqcup_k Z_k) = \bigsqcup_k \bd Z_k$ can be written as $\bigsqcup_k\bd Z_k = A_{tr} \sqcup A_{sm}$ with $A_{tr}$ trivial and $A_{sm}$ of small rank.
-	But then if $\mf A$ is a component of $\bd Z_k$ in $A_{sm}$, we have $V_k \times \mf A$ of small rank, and for the connected components of $A_{tr}$ we can once again recognize that either $\mf A$ has a co-orientation reversing automorphism or appears zero times in all of $A_{tr}$ counting with co-orientation.
+	But then if $\mf A$ is a component of $\bd Z_k$ in $A_{sm}$, we have $V_k \times \mf A$ of small rank, and for the connected components of $A_{tr}$ we can once again recognize that either $\mf A$ has a co-orientation-reversing automorphism or appears zero times in all of $A_{tr}$ counting with co-orientation.
 	So again repeating our earlier argument either $V_k \times_M \mf A$ is trivial or we can find pairs of components $\mf A$ in $\bd Z_k$ and $-\mf A$ in $\bd Z_\ell$ with $(V_k \times_M \mf A) \sqcup (V_\ell \times_M -\mf A) \in Q^*(M)$.
 	So in particular this expression is a union of a trivial precochain and one of small rank by definition of $Q^*(M)$.
 	Continuing in this way through all connected components, all of $\bigsqcup_k(V_k \times_M \bd Z_k)$ can be partitioned into trivial precochains and precochains of small rank.
@@ -525,8 +525,8 @@ Again, this requires enough transversality for all fiber products to be defined,
 
 	We have $(\bigsqcup_j W_{j}) \sqcup (-\bigsqcup_\ell W'_{\ell}) \in Q^*(M)$ by assumption, so
 	by \cref{L: Q essential}, $\left(\bigsqcup_j W_{j,E}\right) \sqcup \left(\bigsqcup_\ell W'_{\ell,E}\right)$ must be trivial.
-	Therefore, as in the proof of \cref{L: Lip L10}, each connected component, say $\mf W$, appearing in one of the $W_{j,E}$ or $W'_{\ell, E}$ either has a co-orientation reversing automorphism or appears zero times in all of $(\bigsqcup_j W_{j,E}) \sqcup (-\bigsqcup_\ell W'_{\ell,E})$ when counting with co-orientation.
-	If $\mf W$ has a co-orientation reversing automorphism, then $\mf W$ is trivial and $V_{ij} \times \mf W$ is trivial for any $V_{ij}$ transverse to $\mf W$.
+	Therefore, as in the proof of \cref{L: Lip L10}, each connected component, say $\mf W$, appearing in one of the $W_{j,E}$ or $W'_{\ell, E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $(\bigsqcup_j W_{j,E}) \sqcup (-\bigsqcup_\ell W'_{\ell,E})$ when counting with co-orientation.
+	If $\mf W$ has a co-orientation-reversing automorphism, then $\mf W$ is trivial and $V_{ij} \times \mf W$ is trivial for any $V_{ij}$ transverse to $\mf W$.
 	Otherwise, for each occurrence of $\mf W$ in $(\bigsqcup_j W_{j,E}) \sqcup (-\bigsqcup_\ell W'_{\ell,E})$, there is an occurrence of $-\mf W$.
 	Suppose $\mf W \in W_{a,E}$ and $-\mf W \in W_{b,E}$.
 	We know $\sqcup_i V_{ia}$ and $\sqcup_i V_{ib}$ represent the same element of $C^*_\Gamma(M)$ and are transverse to $\mf W$.
