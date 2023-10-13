@@ -53,7 +53,7 @@ the definitions of \cite{Lipy14}.
 		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial} if there is an orientation-reversing diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
 		\item If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a co-orientation-reversing diffeomorphism $\rho \colon W \to W$.
 		\item $W$ has \textbf{small rank} if the differential $D r_W$ is less than full rank at all $w\in W$.
-		\item If $W$ is (co-)oriented, then it is \textbf{((co-)oriented) degenerate} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co-)oriented manifold over $M$ and one with small rank.
+		\item If $W$ is (co\nobreakdash-)oriented, then it is \textbf{((co\nobreakdash-)oriented) degenerate} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co\nobreakdash-)oriented manifold over $M$ and one with small rank.
 	\end{itemize}
 	We declare the empty map $\emptyset \to M$ to be both trivial and degenerate.
 \end{definition}
@@ -131,7 +131,7 @@ The orientation-reversing case is equivalent, considering instead the requiremen
 
 The following corollary is now immediate from \cref{L: co-or preserving/reversing} and the definitions.
 
-\begin{corollary}
+\begin{corollary}\label{C: co-or preserving is or preserving}
 	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over the oriented manifold $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$. Then $\phi$ is co-orientation preserving (reversing) if and only if it is orientation preserving (reversing) with respect to the orientations of $V$ and $W$ induced by the co-orientations and the orientation of $M$ (\cref{S: co-orientations}).
 \end{corollary}
 
@@ -199,12 +199,12 @@ Lipyanskiy's proofs assume small image rather than small rank, but the proofs ar
 \end{lemma}
 
 \begin{proof}
-	We can write $W$ as the disjoint union of a (possibly infinite) number of isomorphism classes of connected components and then group the isomorphism classes together up to (co-)orientation as $W = W_1 \sqcup W_2 \sqcup \cdots$ so that all connected components of each $W_i$ are isomorphic (ignoring (co-)orientations) for each $i$ and so that no connected component of $W_i$ is isomorphic to a connected component of $W_j$ for $i\neq j$.
+	We can write $W$ as the disjoint union of a (possibly infinite) number of isomorphism classes of connected components and then group the isomorphism classes together up to (co\nobreakdash-)orientation as $W = W_1 \sqcup W_2 \sqcup \cdots$ so that all connected components of each $W_i$ are isomorphic (ignoring (co\nobreakdash-)orientations) for each $i$ and so that no connected component of $W_i$ is isomorphic to a connected component of $W_j$ for $i\neq j$.
 	As either $W$ is compact or $r_W$ is proper, each $W_i$ is the union of a finite number of connected components; if not, then there would be a $W_i$ with an infinite number of connected components and, since the components of $W_i$ are isomorphic to each other, a point $x\in M$ such that $r_W^{-1}$ has infinite components, violating that $r_W$ is proper. 
-	Any automorphism of $W$ preserves the decomposition into $W_i$, and so $W$ is trivial if and only if for all $i$ either $W_i$ has zero components when counting with (co-)orientation or each component of $W_i$ has a (co-)orientation reversing automorphism.
+	Any automorphism of $W$ preserves the decomposition into $W_i$, and so $W$ is trivial if and only if for all $i$ either $W_i$ has zero components when counting with (co\nobreakdash-)orientation or each component of $W_i$ has a (co\nobreakdash-)orientation reversing automorphism.
 
-	Similarly, since $V$ is trivial, $V$ can be decomposed into unions of isomorphism classes, up to (co-)orienta\-tion, of connected components, each with zero components when counting with sign or with all components having (co-)orientation reversing automorphisms.
-	In particular, forming $V \sqcup W$ adds to $W$ zero components when counting with sign or components with (co-)orientation reversing automorphisms, so if $V \sqcup W$ is trivial, $W$ must have already been trivial.
+	Similarly, since $V$ is trivial, $V$ can be decomposed into unions of isomorphism classes, up to (co\nobreakdash-)orienta\-tion, of connected components, each with zero components when counting with sign or with all components having (co\nobreakdash-)orientation reversing automorphisms.
+	In particular, forming $V \sqcup W$ adds to $W$ zero components when counting with sign or components with (co\nobreakdash-)orientation reversing automorphisms, so if $V \sqcup W$ is trivial, $W$ must have already been trivial.
 \end{proof}
 
 \begin{lemma}[Lipyanskiy Lemma 11]\label{L: bd defined}
@@ -213,9 +213,9 @@ Lipyanskiy's proofs assume small image rather than small rank, but the proofs ar
 
 \begin{proof}
 	We first check that if $W$ is trivial then so is its boundary $r_{\bd W} = r_Wi_{\bd W} \colon \bd W \to M$.
-	If $\rho \colon W \to W$ is (co-)orientation reversing, then we can consider $\rho_\bd$ as defined in \cref{R: bd diff}.
+	If $\rho \colon W \to W$ is (co\nobreakdash-)orientation reversing, then we can consider $\rho_\bd$ as defined in \cref{R: bd diff}.
 	As $r_W\rho = r_W$ we also have $r_Wi_{\bd W} = r_W\rho i_{\bd W} = r_W i_{\bd W} \rho_\bd$.
-	Thus we only need see that $\rho_\bd$ is (co-)orientation reversing.
+	Thus we only need see that $\rho_\bd$ is (co\nobreakdash-)orientation reversing.
 	It is sufficient to consider what happens at points on the interior of $\bd W$ so working locally we may identify such points of $\bd W$ with points of $W$ itself and similarly identify $\rho_\bd$ with $\rho$.
 	In the oriented case, the orientation of $W$ determines orientations of $T_xW$ and $T_{\rho(x)}W$, and by assumption $D\rho: T_xW \to T_{\rho(x)}W$ takes the orientation of $T_xW$ to the opposite of the orientation of $T_{\rho(x)}W$.
 	But also $D\rho$ must preserve inward/outward pointing vectors.
@@ -379,7 +379,7 @@ We present here some computational examples, mostly without proofs, to aid the r
 
 \begin{example}[Dimension axiom]\label{E: dimension}
 	If $M$ is a point, then every $r_W \colon W \to M$ with $\dim(W)>0$ is degenerate: If $\dim(W)>1$, both $W$ and $\bd W$ must have small rank.
-	If $\dim(W) = 1$ then $W$ is a union of closed intervals and circles, so it has small rank, while $\bd W$ is trivial, consisting of pairs of maps $pt \to pt$ with opposite (co-)orientations.
+	If $\dim(W) = 1$ then $W$ is a union of closed intervals and circles, so it has small rank, while $\bd W$ is trivial, consisting of pairs of maps $pt \to pt$ with opposite (co\nobreakdash-)orientations.
 	Thus $C_*^\Gamma(pt) = C^{-*}_\Gamma(pt) = 0$ unless $* = 0$, and so $H_*^\Gamma(pt) = H^{-*}_\Gamma(pt) = 0$ unless $* = 0$.
 	When $* = 0$, the identity $pt \to pt$ is a cycle (or cocycle) that does not (co)bound, and as in ordinary bordism theory we have $H_0^\Gamma(pt) \cong H^0_\Gamma(pt) \cong \Z$.
 \end{example}
@@ -465,9 +465,9 @@ These are only partially defined, as fiber products require transversality.
 			Note that $V \times_M W$ is compact as a closed subset of the compact set $V \times W$.
 	\end{itemize}
 
-	These products are all well defined when the transversality conditions are met, as transversality is preserved under isomorphisms of manifolds over $M$, and isomorphic manifolds over $M$ have isomorphic fiber products over $M$.
+	We show below that these products are all well defined when the transversality conditions are met, as transversality is preserved under isomorphisms of manifolds over $M$, and isomorphic manifolds over $M$ have isomorphic fiber products over $M$.
 
-	In all cases we continue to denote the product by $V \times_M W$, allowing context to determine which (co-)orientations apply.
+	In all cases we continue to denote the product by $V \times_M W$, allowing context to determine which (co\nobreakdash-)orientations apply.
 \end{definition}
 
 
@@ -478,6 +478,57 @@ In the last case, we really need $M$ to be oriented in general, as we have obser
 In the cases where $r_V$ and $r_W$ are transverse embeddings, these products are represented by just taking intersections, with the orientations or co-orientations given explicitly in \cref{P: normal pullback,P: cap of immersions,P: orient intersection}.
 If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 \end{comment}
+
+\begin{lemma}\label{L: product preserves iso}
+	When the transversality conditions are met, the products of \cref{D: PC products} are well defined.
+	In particular, the isomorphism classes of the fiber products depend only on the isomorphism classes of the inputs.
+\end{lemma}
+\begin{proof}
+	It is clear that the transversality conditions are preserved if representatives $r_V \colon V \to M$ or $r_W \colon W \to M$ are replaced with (oriented or co-oriented) isomorphic manifolds over $M$.
+	It is also clear from the universal property that isomorphic manifolds over $M$ lead to diffeomorphic fiber products.
+	So our main challenge is to verify the correct behavior of orientations and co-orientations. 
+
+	We first consider $V$, $W$, and $M$ all oriented. 
+	Suppose we have $f \colon V \to M$ isomorphic to $f' \colon V' \to M$ via $\phi_V \colon V \to V'$ and similarly for $W$; see \cref{D: equiv triv and small}. 
+	The map $\phi_V \times \phi_W$ restricts to give our diffeomorphism from $P = V \times_M W$ to $P' = V' \times_M W'$, so, considering the definition of the fiber product orientation in \cref{S: orientation of fiber products}, we obtain bundle map isomorphisms covering $\phi_V \times \phi_W \colon P \to P'$ of the following exact sequences (or we can think of the bottom sequence as pulled back to $P$ by $\phi_V \times \phi_W$).
+	\begin{diagram}\label{E: fiber orientation}
+		0 &\rTo & TP & \rTo^{D\pi_V \oplus D\pi_W} & \pi_V^*(TV) \oplus \pi_W^*(TW) & \rTo^{\pi_V^*(Df)-\pi_W^*(Dg)} & (f\pi_V)^*TM &\rTo 0\\
+		&& \dTo &&\dTo && \dTo \\
+		0 &\rTo & TP' & \rTo^{D\pi_{V'} \oplus D\pi_{W'}} & \pi_{V'}^*(TV') \oplus \pi_{W'}^*(TW') & \rTo^{\pi_{V'}^*(Df')-\pi_{W'}^*(Dg')} & (f'\pi_{V'})^*TM & \rTo 0.
+	\end{diagram}
+	As the maps $\phi_V$ and $\phi_W$ are orientation preserving, it follows that the two righthand vertical maps are oriented bundle isomorphisms. 
+	Consequently, if we orient $TP$ and $TP'$ as in \cref{S: orientation of fiber products} and use the isomorphisms to make the splittings of the sequences compatible, then the lefthand map must also be an isomorphism of oriented bundles. 
+	(Looking at the level of individual tangent space fibers, the reader can also compare with \cite[Sections 9.1.1 and 9.3.1]{RamBas09}.)
+
+	For the other cases, we first observe that being an orientation or co-orientation preserving isomorphism is a local property.
+	In particular, a diffeomorphism $V \to V'$ is orientation preserving if and only its derivative is orientation preserving at each $x \in V$, and by \cref{L: co-or preserving/reversing} a similar statement holds for co-orientations. 
+	Consequently, to show that a diffeomorphism over $M$ is (co-)orientation preserving, it suffices to show that this property holds over each set of an open cover of $M$.  
+
+	So let $U$ be any Euclidean subset of $M$, and suppose we give $U$ an arbitrary orientation.
+	Considering the case of co-oriented precochains, by \cref{C: co-or preserving is or preserving} the restrictions of $\phi_V$ and $\phi_W$ to $f^{-1}(U)$ and $g^{-1}(U)$ are co-orientation preserving if and only if they are orientation preserving with respect to the induced orientations.
+	Note that this statement is independent of the choice of fixed orientation for $U$. 
+	Since we assume that $\phi_V$ and $\phi_W$ are co-orientation preserving, they are thus orientation preserving over $U$ with respect to the induced orientations. 
+	It follows from the preceding argument that $\phi_V \times \phi_W$ restricts to an orientation-preserving diffeomorphism of the fiber products over $U$.
+	By \cref{P: compare cup and intersection orientations}, there is a fixed sign relation depending only on the dimensions between the fiber product orientations obtained by the above construction and the orientations of the fiber products induced from the orientation of $U$ and the co-oriented fiber product (this is the distinction considered there between $V \times^o_M W$ and $V \times^c_M W$).
+	Since $\phi_V \times \phi_W$ provides an orientation-preserving diffeomorphism with respect to the fiber product oriented the first way, it also provides an orientation-preserving diffeomorphism with respect to the fiber product oriented the other way. 
+	Hence by \cref{C: co-or preserving is or preserving} again, $\phi_V \times \phi_W$ restricts to a co-orientation-preserving diffeomorphism $f^{-1}(U) \times_U g^{-1}(U) \to (f')^{-1}(U) \times_U (g')^{-1}(U)$.
+	Since $U$ was arbitrary,  $\phi_V \times \phi_W$ gives a co-orientation-preserving diffeomorphism on all of $V \times_M W$.
+
+	Lastly, for the fiber product $PC^*_\Gamma(M) \times PC_*^\Gamma(M) \to PC_*^\Gamma(M)$, we again begin by considering what happens for the preimage of a Euclidean set $U$ in $M$ with an arbitrary orientation $\beta_U$. 
+	In this case the restriction $g \colon g^{-1}(U) \to U$ is a map between oriented manifolds and so if $W$ has orientation $\beta_W$, this map has an induced co-orientation $(\beta_W, \beta_U)$. 
+	Now, by definition, $\beta_P$ is the desired orientation of $f^{-1}(U) \times_U g^{-1}(U)$ for this kind of product if and only $(\beta_P,\beta_W)$ is the pullback co-orientation of $f^{-1}(U) \times_U g^{-1}(U) \to g^{-1}(U)$. And this is the case if and only if $(\beta_P,\beta_W)*(\beta_W,\beta_U) = (\beta_P, \beta_U)$ is the co-orientation of the the co-oriented fiber product of $f$ and $g$ restricted to $f^{-1}(U)$ and $g^{-1}(U)$, obtained from $g$ being given the induced co-orientation as above. 
+	Furthermore, as $\phi_W$ is orientation-preserving, its restriction to a diffeomorphism $g^{-1}(U)$ to $(g')^{-1}(U)$ is also co-orientation preserving with respect to the induced co-orientations by \cref{C: co-or preserving is or preserving}. 
+	But now we have seen that the product $\phi_V \times \phi_W$ of co-orientation-preserving diffeomorphisms gives a co-orientation preserving diffeomorphism on $f^{-1}(U) \times_U g^{-1}(U)$.
+	So now again by \cref{C: co-or preserving is or preserving}, $\phi_V \times \phi_W$ is an orientation-preserving diffeomorphism with respect to the orientations induced by the orientation of $U$ and the fiber product  co-orientations.
+	But we have just recalled that these are exactly the orientations that we want for these products. 
+\end{proof}
+
+\begin{remark}\label{R: product preserves reverse}
+	It is easy to modify the preceding arguments to show that if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$. 
+\end{remark}
+
+Given the preceding lemma and remark, from here on we will usually not explicitly distinguish between maps (co\nobreakdash-)oriented maps $V \to M$ and their isomorphism classes when discussing products.
+
 
 The next lemma will be critical in \cref{S: products} toward showing that these products extend to well-defined, though only partially-defined, products of geometric chains and cochains.
 It will also be needed much sooner to show that the creasing construction is well defined.
@@ -494,7 +545,7 @@ For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ a
 	We provide the proof if $V \in Q(M)$; the other case is similar.
 	By assumption $V$ is the disjoint union of trivial and degenerate chains or cochains, so it suffices to consider independently the possibilities that $V$ is trivial or degenerate.
 
-	If $\rho$ is a (co-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times_M \id_W$ is a (co-)orientation reversing diffeomorphism of $V \times_M W$, by the construction in \cref{S: orientation of fiber products} in the oriented case and by \cref{R: co-or restriction or switch} in the co-oriented case.
+	If $\rho$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times_M \id_W$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V \times_M W$ by \cref{R: product preserves reverse}.
 
 	Next assume that $V$ is degenerate, so in particular it has small rank.
 	Recall that the tangent bundle of a fiber product is the fiber product of the tangent bundles by \cref{L: tangent of pullbacks}, and so the derivative is the fiber product of derivatives.
@@ -502,7 +553,7 @@ For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ a
 	So if the differential of $r_V$ has non-trivial kernel everywhere so will the derivative of any fiber product with $r_V$.
 	Thus $V \times_M W$ has small rank.
 
-	Now we recall that $\bd(V \times_M W)$ is, up to (co-)orientations, the disjoint union of $(\bd V) \times_M W$ and $V \times_M (\bd W)$.
+	Now we recall that $\bd(V \times_M W)$ is, up to (co\nobreakdash-)orientations, the disjoint union of $(\bd V) \times_M W$ and $V \times_M (\bd W)$.
 	We have just shown that $V \times_M (\bd W)$ must have small rank.
 	As $V$ is degenerate, $\bd V$ is a disjoint of trivial and small rank manifolds over $M$, and so by the preceding arguments $(\bd V) \times_M W$ will be a union of trivial and small rank manifolds over $M$.
 	Altogether, $V \times_M W$ is degenerate.
@@ -526,7 +577,7 @@ We have a similar result for the exterior products studied in \cref{S: exterior 
 	We provide the proof if both maps are in $PC^*$ and $V \in Q^*(M)$; the other cases are similar.
 	By assumption $V$ is the disjoint union of trivial and degenerate chains or cochains, so it suffices to consider independently the possibilities that $V$ is trivial or degenerate.
 
-	If $\rho$ is a (co-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times \id_W$ is a (co-)orientation reversing diffeomorphism of $V \times_M W$.
+	If $\rho$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times \id_W$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V \times_M W$.
 	So if $V$ is trivial so is $V \times W$.
 
 	Next assume that $V$ is degenerate, so in particular it has small rank.
@@ -763,7 +814,7 @@ To next promote the construction $\Cre(-)$ to an operator on $C_*^{\Gamma}(M)$ o
 		We consider only $T \times_M W$ as the arguments for $W \times_M T$ are the same.
 		By assumption $T$ is the disjoint union of trivial and degenerate chains, so it suffices to consider independently the possibilities that $T$ is trivial or degenerate.
 
-		If $\rho$ is a (co-)orientation reversing diffeomorphism of $T$ over $M$, then $\rho \times_M \id_W$ is a (co-)orientation reversing diffeomorphism of $T \times_M W$, by Joyce's construction in the oriented case and by Remark \ref{R: co-or restriction or switch} in the co-oriented case.
+		If $\rho$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $T$ over $M$, then $\rho \times_M \id_W$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $T \times_M W$, by Joyce's construction in the oriented case and by Remark \ref{R: co-or restriction or switch} in the co-oriented case.
 
 		Next assume that $T$ is degenerate, so in particular it has small rank.
 		Recall that the tangent bundle of a fiber product is the fiber product of the tangent bundles \cite[Theorem 5.47]{Wed16}, and so the derivative is the fiber product of derivatives.
