@@ -481,7 +481,9 @@ If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 
 \begin{lemma}\label{L: product preserves iso}
 	When the transversality conditions are met, the products of \cref{D: PC products} are well defined.
-	In particular, the isomorphism classes of the fiber products depend only on the isomorphism classes of the inputs.
+	In particular, if $\phi_V \colon V \to V'$ and $\phi_W \colon W \to W'$ are orientation- or co-orientation-preserving diffeomorphisms of transverse manifolds over $M$, then $\phi_V \times \phi_W$ restricts, as appropriate to the products of \cref{D: PC products}, to a corresponding orientation- or co-orientation-preserving diffeomorphism $V \times_M W \to V' \times_M W'$. 
+
+	Similarly, if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts, as appropriate to the products of \cref{D: PC products}, to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$. 
 \end{lemma}
 \begin{proof}
 	It is clear that the transversality conditions are preserved if representatives $r_V \colon V \to M$ or $r_W \colon W \to M$ are replaced with (oriented or co-oriented) isomorphic manifolds over $M$.
@@ -523,11 +525,17 @@ If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 	But we have just recalled that these are exactly the orientations that we want for these products. 
 \end{proof}
 
+\begin{comment}
 \begin{remark}\label{R: product preserves reverse}
 	It is easy to modify the preceding arguments to show that if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$. 
 \end{remark}
+\end{comment}
 
-Given the preceding lemma and remark, from here on we will usually not explicitly distinguish between maps (co\nobreakdash-)oriented maps $V \to M$ and their isomorphism classes when discussing products.
+Given the preceding lemma, from here on we will usually not explicitly distinguish between maps (co\nobreakdash-)oriented maps $V \to M$ and their isomorphism classes when discussing products.
+
+
+
+
 
 
 The next lemma will be critical in \cref{S: products} toward showing that these products extend to well-defined, though only partially-defined, products of geometric chains and cochains.
@@ -545,7 +553,7 @@ For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ a
 	We provide the proof if $V \in Q(M)$; the other case is similar.
 	By assumption $V$ is the disjoint union of trivial and degenerate chains or cochains, so it suffices to consider independently the possibilities that $V$ is trivial or degenerate.
 
-	If $\rho$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times_M \id_W$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V \times_M W$ by \cref{R: product preserves reverse}.
+	If $\rho$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times_M \id_W$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V \times_M W$ by \cref{L: product preserves iso}.
 
 	Next assume that $V$ is degenerate, so in particular it has small rank.
 	Recall that the tangent bundle of a fiber product is the fiber product of the tangent bundles by \cref{L: tangent of pullbacks}, and so the derivative is the fiber product of derivatives.
@@ -566,7 +574,23 @@ For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ a
 	Of course it is in $Q(M)$ with our actual definitions by the preceding lemma.
 \end{remark}
 
-We have a similar result for the exterior products studied in \cref{S: exterior products}, which are always fully defined:
+We have similar results for the exterior products studied in \cref{S: exterior products}, which are always fully defined:
+
+
+\begin{lemma}\label{L: ext product preserves iso}
+	Suppose $f \colon V \to M$ and $g \colon W \to N$ are maps of manifolds with corners with either $V$ and $W$ both oriented or $f$ and $g$ both co-oriented. 
+	Then the corresponding exterior product $PC_*^\Gamma(M) \otimes PC_*^\Gamma(N) \to PC_*^\Gamma(M \times N)$ or $PC^*_\Gamma(M) \otimes PC^*_\Gamma(N) \to PC^*_\Gamma(M \times N)$ is well defined. 
+
+	In particular, if $\phi_V \colon V \to V'$ and $\phi_W \colon W \to W'$ are orientation- or co-orientation-preserving diffeomorphisms over $M$ and $N$, respectively, then $\phi_V \times \phi_W$ is a corresponding orientation- or co-orientation-preserving diffeomorphism $V \times W \to V' \times W'$. 
+
+	Similarly, if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ is a corresponding orientation- or co-orientation-reversing diffeomorphism $V \times W \to V' \times W'$. 
+\end{lemma}
+\begin{proof}
+	The oriented case is standard. For the co-oriented case, we can proceed analogously to the proof of \cref{L: product preserves iso}.
+	In particular, we can choose Euclidean neighborhoods $A \subset M$ and $B \subset N$ given arbitrary orientations.
+	Then, as in that preceding proof, isomorphisms of product co-orientations over $A \times B$ follow from isomorphisms of product orientations over $A \times B$, now using \cref{P: compare exterior orientations} rather than \cref{P: compare cup and intersection orientations}.
+\end{proof}
+
 
 \begin{lemma}\label{L: exterior Q}
 	Consider two pre(co)chains $f \colon V \to M$ and $g \colon W \to N$.
@@ -577,7 +601,7 @@ We have a similar result for the exterior products studied in \cref{S: exterior 
 	We provide the proof if both maps are in $PC^*$ and $V \in Q^*(M)$; the other cases are similar.
 	By assumption $V$ is the disjoint union of trivial and degenerate chains or cochains, so it suffices to consider independently the possibilities that $V$ is trivial or degenerate.
 
-	If $\rho$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V$ over $M$, then $\rho \times \id_W$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $V \times_M W$.
+	If $\rho$ is a co-orientation-reversing diffeomorphism of $V$ over $M$, then $\rho \times \id_W$ is a co-orientation-reversing diffeomorphism of $V \times_M W$ by \cref{L: ext product preserves iso}.
 	So if $V$ is trivial so is $V \times W$.
 
 	Next assume that $V$ is degenerate, so in particular it has small rank.

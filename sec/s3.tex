@@ -2124,7 +2124,7 @@ In this section we study properties that involve both orientations and co-orient
 In particular, we are mostly interested in the pullback of a co-oriented map $V \to M$ by a map $W \to M$ with $W$ oriented, in which case the co-orientation of the pullback $V \times_M W \to W$ together with the orientation of $W$ produces an induced orientation on $V \times_M W$ as described in \cref{S: co-orientations}.
 As $V \times_M W \to M$ with this orientation will eventually correspond to the cap product when we get to geometric homology and cohomology, we will here refer to this orientation as the \textbf{cap orientation}.
 
-The following results all concern cap orientations on $V \times_M W$.
+The next results concern cap orientations on $V \times_M W$.
 We note that, by construction, this oriented manifold comes equipped with a map to $W$ and, by composing with the given map $W \to M$, a map to $M$.
 
 We start with the next result, which is yet another Leibniz formula. 
@@ -2312,7 +2312,7 @@ The following property will eventually manifest itself in geometric (co)homology
 	Therefore, the induced cap orientations agree.
 \end{proof}
 
-\subsubsection{Comparing the oriented and co-oriented fiber products}
+\subsubsection{Comparing the oriented and co-oriented products}
 
 Suppose $f \colon V \to M$ and $g \colon W \to M$ are two transverse co-oriented maps from manifolds with corners to a manifold without boundary.
 Further, suppose $M$ oriented.
@@ -2336,7 +2336,7 @@ So this proposition will ultimately demonstrate that the intersection product is
 
 \begin{proposition}\label{P: compare cup and intersection orientations}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary or, equivalently, suppose $V$, $W$, and $M$ all oriented.
-	Then $$V \times_M ^oW = (-1)^{(m-v)(m-w)} V \times_M ^cW$$ as oriented manifolds with corners.
+	Then $$V \times_M^o W = (-1)^{(m-v)(m-w)} V \times_M^c W$$ as oriented manifolds with corners.
 \end{proposition}
 
 The proof will take a bit of work.
@@ -2534,6 +2534,29 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 \begin{proof}[Proof of \cref{P: compare cup and intersection orientations}]
 	By \cref{C: co-oriented full transition to embedded,C: oriented full transition to embedded}, the proposition reduces to \cref{L: compare cup and intersection for immersions}.
 \end{proof}
+
+We can similarly consider the exterior products. 
+
+Suppose $f \colon V \to M$ and $g \colon W \to N$ are co-oriented maps from manifolds with corners to oriented manifolds with corners.
+Then by \cref{S: co-orientations} we have induced orientations on $V$ and $W$. 
+For this section, write $V \times^o W$ for $V \times W$ with the product orientation. 
+Let $V \times^c W$ be $V \times W$ with the orientation obtained by considering the product co-orientation of \cref{D: co-oriented exterior} on $f \times g$ and then taking the orientation on $V \times W$ induced by the product orientation on $M \times N$ (which is $M \times^o N$). 
+
+ 
+
+\begin{proposition}\label{P: compare exterior orientations}
+	Let $f \colon V \to M$ and $g \colon W \to N$ be co-oriented maps from manifolds with corners to oriented manifolds with corneres. 
+	Then $$V \times^o W = (-1)^{(m-v)w} V \times^c W$$ as oriented manifolds with corners.
+\end{proposition}
+\begin{proof}
+Let $\beta_M$ and $\beta_N$ be the orientations of $M$ and $N$, and let $\beta_V$ and $\beta_W$ be the induced orientations on $V$ and $W$. 
+Then the orientation of $V \times^o W$ is $\beta_V \wedge \beta_W$, and the orientation for $M \times^o N$ is $(\beta_M \wedge \beta_N)$. 
+The co-orientations of $f$ and $g$ are then, respectively, $(\beta_V, \beta_M)$ and $(\beta_W, \beta_N)$. 
+By \cref{D: co-oriented exterior}, the product co-orientation is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N),$ and so the induced orientation on $V \times^c W$ is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W)$.
+\end{proof}
+
+
+
 
 \subsection{Appendix: Lipyanskiy's co-orientations}\label{S: Lipyanskiy co-orientations}
 
