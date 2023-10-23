@@ -112,7 +112,7 @@ By contrast, the corresponding notions for co-orientation are less familiar, but
 
 \begin{lemma}\label{L: co-or preserving/reversing}
 	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$.
-	For $x \in W$, let $(\beta_{W,x},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_W$ and let $(\beta_{V, \phi(x)},\beta_{M,r_W(x)})$  be a local representation of the co-orientation of $r_V$,  noting $r_V\phi(x)=r_W(x)$.
+	For $x \in W$, let $(\beta_{W,x},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_W$ and let $(\beta_{V, \phi(x)},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_V$, noting $r_V\phi(x)=r_W(x)$.
 	Then $\phi$ provides a co-oriented isomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.
 	Similarly, the map $\phi$ is a co-orientation-reversing diffeomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $-\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.
 \end{lemma}
@@ -285,7 +285,7 @@ We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every
 	For simplicity we work with $Q_*(M)$ and $C^\Gamma_*(M)$, but the identical arguments hold with $Q^*(M)$ and $C_\Gamma^*(M)$.
 
 	Suppose $\uV,\uW \in C^\Gamma_*(M)$ with $V$ and $V'$ in the class $\uV$ and $W$ and $W'$ in the class $\uW$.
-	Then the sum $\uV+\uW$ is well defined as the class $\underline{V \sqcup W}$ because $(V \sqcup W) \sqcup -(V' \sqcup W') = (V \sqcup -V') \sqcup (W \sqcup -W')$, and $V \sqcup -V'$ and  $W \sqcup -W'$ are both in $Q_*(M)$ by assumption.
+	Then the sum $\uV+\uW$ is well defined as the class $\underline{V \sqcup W}$ because $(V \sqcup W) \sqcup -(V' \sqcup W') = (V \sqcup -V') \sqcup (W \sqcup -W')$, and $V \sqcup -V'$ and $W \sqcup -W'$ are both in $Q_*(M)$ by assumption.
 
 	The identity in each degree is represented by $\emptyset$ with the unique empty map to $M$ (with either orientation or co-orientation).
 	In fact, every element of $Q_*(M)$ represents $0$ in $C^\Gamma_*(M)$ as elements of $Q_*(M)$ are all equivalent to $\emptyset$.
@@ -349,7 +349,7 @@ We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every
 	In Section 6 of \cite{Lipy14}, Lipyanskiy shows that the homology of $C_\Gamma^*(M)$, which we denote by $H_\Gamma^*(M)$,
 	agrees with singular cohomology
 	through the verification of homotopy and excision axioms.
-	We find Mayer-Vietoris better for our applications, and we review both its verification
+	We find Mayer--Vietoris better for our applications, and we review both its verification
 	and that of homotopy invariance as we need details about such constructions in our work.
 \end{comment}
 
@@ -398,7 +398,7 @@ We present here some computational examples, mostly without proofs, to aid the r
 	One variant that comes to mind would be defining degeneracy so that each individual component must have a boundary consisting of trivial and small rank (co)chains.
 	This would seem to be sufficient for the dimension axiom and would eliminate the difficulty described above.
 	Unfortunately, with such an alternative definition of degeneracy, it will not generally be true that if $V \in Q(M)$ then fiber products $V \times_M W$ are also in $Q(M)$.
-	This is an important property that will arise in the next section and then be needed both to construct cup and cap products and to prove the existence of Mayer-Vietoris sequences.
+	This is an important property that will arise in the next section and then be needed both to construct cup and cap products and to prove the existence of Mayer--Vietoris sequences.
 	See \cref{R: degen2} for further discussion of this point.
 \end{remark}
 
@@ -419,7 +419,7 @@ The following algebraic property will be useful below as we consider homological
 	Then $n \uW$ is represented by taking $n$ copies of each $W_i$ if $n > 0$ or, if $n < 0$, taking $|n|$ copies of each $-W_i$.
 	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so each component of $n W_i$ is trivial or has small image.
 
-	Suppose  $n W_i$ is trivial for some $i$.
+	Suppose $n W_i$ is trivial for some $i$.
  	Then each component of $n W_i$ is trivial or the total number of components of $n W_i$ is zero when counted with sign.
 	But this implies that each component of $W_i$ is trivial or that $W_i$ must also have the total number of components be zero when counted with sign.
 	So $W_i$ is trivial.
@@ -458,7 +458,7 @@ These are only partially defined, as fiber products require transversality.
 		\begin{itemize}
 			\item If $V,W\in PC^*_\Gamma(M)$ are transverse, we define their product to be the fiber product $V \times_M W$ with its fiber product co-orientation of \cref{D: pullback coorient}. Note that the fiber product is proper by \cref{L: co-orientable pullback} as the composition of proper maps is proper.
 
-			\item If $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ are transverse, we define their product to be $V \times_M W$ with the orientation induced from the orientation of $W$ and the co-orientation of the pullback $V \times_M W \to W$; see \cref{D: pullback coorient} and  the discussion following \cref{D: co-orientations}.
+			\item If $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ are transverse, we define their product to be $V \times_M W$ with the orientation induced from the orientation of $W$ and the co-orientation of the pullback $V \times_M W \to W$; see \cref{D: pullback coorient} and the discussion following \cref{D: co-orientations}.
 			Note that $V \times_M W$ is compact, as $W$ is compact and the pullback map is proper by \cref{L: co-orientable pullback} and the properness of $r_V$.
 
 			\item If $M$ is oriented and $V,W \in PC_*^\Gamma(M)$, we define their product to be $V \times_M W$ with the fiber product orientation of \cref{S: orientation of fiber products}.
@@ -515,14 +515,14 @@ If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 	By \cref{P: compare cup and intersection orientations}, there is a fixed sign relation depending only on the dimensions between the fiber product orientations obtained by the above construction and the orientations of the fiber products induced from the orientation of $U$ and the co-oriented fiber product (this is the distinction considered there between $V \times^o_M W$ and $V \times^c_M W$).
 	Since $\phi_V \times \phi_W$ provides an orientation-preserving diffeomorphism with respect to the fiber product oriented the first way, it also provides an orientation-preserving diffeomorphism with respect to the fiber product oriented the other way.
 	Hence by \cref{C: co-or preserving is or preserving} again, $\phi_V \times \phi_W$ restricts to a co-orientation-preserving diffeomorphism $f^{-1}(U) \times_U g^{-1}(U) \to (f')^{-1}(U) \times_U (g')^{-1}(U)$.
-	Since $U$ was arbitrary,  $\phi_V \times \phi_W$ gives a co-orientation-preserving diffeomorphism on all of $V \times_M W$.
+	Since $U$ was arbitrary, $\phi_V \times \phi_W$ gives a co-orientation-preserving diffeomorphism on all of $V \times_M W$.
 
 	Lastly, for the fiber product $PC^*_\Gamma(M) \times PC_*^\Gamma(M) \to PC_*^\Gamma(M)$, we again begin by considering what happens for the preimage of a Euclidean set $U$ in $M$ with an arbitrary orientation $\beta_U$.
 	In this case the restriction $g \colon g^{-1}(U) \to U$ is a map between oriented manifolds and so if $W$ has orientation $\beta_W$, this map has an induced co-orientation $(\beta_W, \beta_U)$.
 	Now, by definition, $\beta_P$ is the desired orientation of $f^{-1}(U) \times_U g^{-1}(U)$ for this kind of product if and only $(\beta_P,\beta_W)$ is the pullback co-orientation of $f^{-1}(U) \times_U g^{-1}(U) \to g^{-1}(U)$. And this is the case if and only if $(\beta_P,\beta_W)*(\beta_W,\beta_U) = (\beta_P, \beta_U)$ is the co-orientation of the the co-oriented fiber product of $f$ and $g$ restricted to $f^{-1}(U)$ and $g^{-1}(U)$, obtained from $g$ being given the induced co-orientation as above.
 	Furthermore, as $\phi_W$ is orientation-preserving, its restriction to a diffeomorphism $g^{-1}(U)$ to $(g')^{-1}(U)$ is also co-orientation preserving with respect to the induced co-orientations by \cref{C: co-or preserving is or preserving}.
 	But now we have seen that the product $\phi_V \times \phi_W$ of co-orientation-preserving diffeomorphisms gives a co-orientation preserving diffeomorphism on $f^{-1}(U) \times_U g^{-1}(U)$.
-	So now again by \cref{C: co-or preserving is or preserving}, $\phi_V \times \phi_W$ is an orientation-preserving diffeomorphism with respect to the orientations induced by the orientation of $U$ and the fiber product  co-orientations.
+	So now again by \cref{C: co-or preserving is or preserving}, $\phi_V \times \phi_W$ is an orientation-preserving diffeomorphism with respect to the orientations induced by the orientation of $U$ and the fiber product co-orientations.
 	But we have just recalled that these are exactly the orientations that we want for these products.
 \end{proof}
 
@@ -541,7 +541,7 @@ Given the preceding lemma, from here on we will usually not explicitly distingui
 
 The next lemma will be critical in \cref{S: products} toward showing that these products extend to well-defined, though only partially-defined, products of geometric chains and cochains.
 It will also be needed much sooner to show that the creasing construction is well defined.
-This construction is used, in turn, to demonstrate the existence of Mayer-Vietoris sequences.
+This construction is used, in turn, to demonstrate the existence of Mayer--Vietoris sequences.
 
 For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ as appropriate.
 
@@ -683,7 +683,7 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 
 \subsection{Creasing}\label{S: creasing}
 
-We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, which is essential for Mayer-Vietoris sequences, though we use different orientation conventions and also consider versions involving co-orientations.
+We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, which is essential for Mayer--Vietoris sequences, though we use different orientation conventions and also consider versions involving co-orientations.
 The idea of creasing is to show that if $W$ is a cycle (or cocycle) over $M$ then we can split it along a codimension one submanifold with corners into two manifolds with corners, $W^+$ and $W^-$, and show that $W$ is homologous (or cohomologous) to $W^+ + W^-$.
 This is the analog in geometric homology/cohomology of subdivision of singular simplices.
 
