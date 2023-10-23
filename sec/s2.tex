@@ -3,7 +3,7 @@
 \section{Manifolds with corners}\label{S: manifolds with corners}
 
 In this section, we provide an overview of manifolds with corners, which are the main geometric objects in the definitions of geometric chains and cochains.
-Our main references for this material are Joyce \cite{Joy12} and Margalef-Roig and Outerelo Dominguez \cite{MaDo92}. In \cite{MaDo92}, manifolds with corners (which they simply call ``manifolds'') may be infinite-dimensional and may fail to be Hausdorff, so there is some work involved in seeing that their definition agrees with Joyce's when one assumes, as we shall, that all spaces are finite-dimensional, Hausdorff, and second countable.
+Our main references for this material are Joyce \cite{Joy12} and Margalef--Roig and Outerelo Dominguez \cite{MaDo92}. In \cite{MaDo92}, manifolds with corners (which they simply call ``manifolds'') may be infinite-dimensional and may fail to be Hausdorff, so there is some work involved in seeing that their definition agrees with Joyce's when one assumes, as we shall, that all spaces are finite-dimensional, Hausdorff, and second countable.
 
 By \textbf{smooth} we always mean differentiable of all orders.
 Throughout the paper, all manifolds and maps will be in the smooth category unless noted otherwise.
@@ -33,7 +33,7 @@ We note that these local diffeomorphisms provide charts $\phi \colon U \subset \
 These charts collectively give an atlas, and every atlas extends to a unique maximal one.
 So our manifolds with corners are also manifolds with corners by Joyce's definition.
 
-On the other hand, Joyce notes in \cite[Remark 2.11 (see also Remark 6.3)]{Joy12} that his version of manifolds with corners agrees with that of Margalef-Roig and Outerelo Dominguez \cite{MaDo92} (except that they consider the much more general case of possibly infinite-dimensional manifolds and possibly of differentiable class $p<\infty$).
+On the other hand, Joyce notes in \cite[Remark 2.11 (see also Remark 6.3)]{Joy12} that his version of manifolds with corners agrees with that of Margalef--Roig and Outerelo Dominguez \cite{MaDo92} (except that they consider the much more general case of possibly infinite-dimensional manifolds and possibly of differentiable class $p<\infty$).
 They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth closed embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92} (in particular, the embeddings are proper maps \cite[Proposition 3.3.4]{MaDo92}.
 Joyce already assumes his manifolds with corners to be paracompact Hausdorff in \cite[Definition 2.1]{Joy12}, so if we add the second countable condition to his definition,\footnote{For us this will not be a terrible restriction, as in this case being second countable is the same as being paracompact with a countable number of components.
 Indeed, every regular second countable space is metrizable \cite[Theorem 34.1]{Mu00}, and hence paracompact, and clearly a locally connected second countable space must have a countable number of connected components.
@@ -43,10 +43,8 @@ And then a countable union of second countable spaces is second countable.
 So the only effect of our second countability condition is to rule out manifolds with corners in Joyce's sense that have uncountably many connected components.}
 any one of Joyce's manifolds with corners is diffeomorphic to a manifold with corners in our sense.
 
-As noted in \cite[Remark 2.11]{Joy12}, his definition of manifolds with corners agrees with those of Cerf \cite{Ce61}, Douady \cite{Doua61}, and Margalef-Roig and Outerelo Dominguez \cite{MaDo92}, and they also correspond to Melrose's t-manifolds in \cite{Melrose}.
+As noted in \cite[Remark 2.11]{Joy12}, his definition of manifolds with corners agrees with those of Cerf \cite{Ce61}, Douady \cite{Doua61}, and Margalef--Roig and Outerelo Dominguez \cite{MaDo92}, and they also correspond to Melrose's t-manifolds in \cite{Melrose}.
 As an alternative to citing \cite{MaDo92} in the preceding paragraph, we can also observe that Melrose shows in \cite[Proposition 1.14.1]{Melrose} that t-manifolds can be embedded into manifolds without boundary; so, when second countable, these can then be embedded into Euclidean space by the Whitney Embedding Theorem.
-
-
 
 By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts) and manifolds with boundary ($k \leq 1$ in all charts), as well as cubes and simplices, but not the octahedron, for example, as the cone on $[0,1] \times [0,1]$ is not modeled by any $\R^n_k$.
 
@@ -77,7 +75,6 @@ Let $x$ be a boundary point of $V$, and let $(U,\phi)$ be a chart for $V$ at $x$
 Then, by the definition of smooth maps, $f \phi$ extends smoothly to a neighborhood of the origin in $\R^v$.
 As $f$ is an embedding, $D(\phi f)_0$ must be injective, so by classical differential topology there is a neighborhood of $0$ in $\R^v$ on which $f\phi$ extends to an embedding with $x$ in the interior \cite[Section 1.3]{GuPo74}.
 In other words, the embedding of $V$ can be extended (locally in some neighborhood of $x$) to an embedding of an ordinary manifold without boundary, and the neighborhood of $x$ in $V$ sits inside a Euclidean neighborhood of this embedding as the diffeomorphic image of $\R^v_k$ for some $k$.
-
 
 \begin{notation}
 	Our default notation for manifolds with corners will be capital letters with the corresponding lower case letter denoting the dimension.
@@ -265,6 +262,7 @@ The following technical results will facilitate that and help us to extend the r
 	Let $f \colon X \to Y$ be an arbitrary map and $g \colon X \to Z$ a proper map.
 	Then the map $(f,g) \colon X \to Y \times Z$ given by $(f,g)(x)=(f(x),g(x))$ is proper.
 \end{lemma}
+
 \begin{proof}
 	Let $K \subset Y \times Z$ be compact.
 	Let $\pi_Y,\pi_Z$ be the projections of $Y \times Z$ to $Y$ and $Z$. Then
@@ -281,16 +279,17 @@ The following technical results will facilitate that and help us to extend the r
 Let $g \colon W \to M$ be a map from a manifold with corners to a manifold without boundary.
 Then for some $k$ there exists a closed embedding $e \colon W \to M \times \R^k$ such that, if $\pi \colon M \times \R^k \to M$ is the projection, then $\pi e = g$.
 \end{corollary}
+
 \begin{proof}
-By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^k$ for some $k$.
-The map $\alpha$ is proper, as if $K$ is a compact subset of $\R^k$, the inverse image $\alpha^{-1}(K)$ is homeomorphic to the intersection of $K$ with the closed set $\alpha(W)$.
-So, by \cref{L: proper product}, the map $(g,\alpha) \colon W \to M \times \R^k$ is proper.
-Further, $\alpha$ is an immersion, so is $(g,\alpha)$.
-In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^k$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces.
-If $\pi_{\R^k} \colon M \times \R^k \to \R^k$ is the projection, the map $\pi_{\R^k}(g,\alpha)$ equals the embedding $\alpha$, so $D(g,\alpha)$ must be injective at each point.
-Similarly, the map $(g,\alpha)$ is itself injective because $\alpha$ is injective.
-So $(g,\alpha)$ is an injective proper immersion, and just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}.
-Finally, it is clear from the construction that $\pi (g,\alpha) = g$.
+	By \cite[Corollary 11.3.10]{MaDo92}, there is a closed embedding $\alpha \colon W \to \R^k$ for some $k$.
+	The map $\alpha$ is proper, as if $K$ is a compact subset of $\R^k$, the inverse image $\alpha^{-1}(K)$ is homeomorphic to the intersection of $K$ with the closed set $\alpha(W)$.
+	So, by \cref{L: proper product}, the map $(g,\alpha) \colon W \to M \times \R^k$ is proper.
+	Further, $\alpha$ is an immersion, so is $(g,\alpha)$.
+	In fact, by \cite[Theorem 3.2.6]{MaDo92} and the fact that $M$ and $\R^k$ do not have boundary, a map is an immersion in this context if and only if it is injective on tangent spaces.
+	If $\pi_{\R^k} \colon M \times \R^k \to \R^k$ is the projection, the map $\pi_{\R^k}(g,\alpha)$ equals the embedding $\alpha$, so $D(g,\alpha)$ must be injective at each point.
+	Similarly, the map $(g,\alpha)$ is itself injective because $\alpha$ is injective.
+	So $(g,\alpha)$ is an injective proper immersion, and just as for ordinary manifolds, an injective proper immersion is a closed embedding \cite[Proposition 3.3.4]{MaDo92}.
+	Finally, it is clear from the construction that $\pi (g,\alpha) = g$.
 \end{proof}
 
 \begin{lemma}\label{L: all transversality is wrt embeddings}
@@ -298,6 +297,7 @@ Finally, it is clear from the construction that $\pi (g,\alpha) = g$.
 	Let $e \colon W \to M \times \R^n$ be an embedding such that $\pi e = g$, where $\pi$ is the projection $M \times \R^n \to M$.
 	Then $f$ and $g$ are transverse if and only if $e$ is transverse to $f \times \id_{\R^n} \colon V \times \R^n \to M \times \R^n$.
 \end{lemma}
+
 \begin{proof}
 	It suffices to assume that $V$ and $W$ are without boundary.
 	Otherwise we can apply the following argument to each pair of strata of $V$ and $W$.
@@ -333,6 +333,7 @@ We now need one more particular technical result that will allow us to achieve t
 	Then there exists a function $\varepsilon \colon X \to (0,\infty)$ such that if $g \colon X \to M$ satisfies $d(f(x),g(x)) < \varepsilon(x)$ for all $x \in X$, then $g$ is proper and homotopic to $f$ by a proper homotopy.
 	Furthermore, if $X$ is a manifold with corners and $f$ and $g$ are smooth and homotopic by a proper homotopy, then they are homotopic by a smooth proper homotopy.
 \end{lemma}
+
 \begin{proof}
 	Let $C(X,M)$ be the set of continuous maps from $X$ to $M$.
 	By \cite[Proposition 9.2.28]{MaDo92}, there is an open neighborhood $V^f$ of $f$ in the topology $T_s$ on $C(X,M)$ (defined in \cite[Proposition 9.2.1]{MaDo92}) such that every $g \in V^f$ is proper and homotopic to $f$ by a proper homotopy.
@@ -459,23 +460,24 @@ The reason for the transversality requirement in \cref{D: top pullback} is that 
 	\end{equation*}
 	Moreover, the maps from the fiber product to $V$, $W$, and $M$ are smooth in the strong sense of \cite[Definition 3.1]{Joy12} (see \cref{R: weakly smooth}).
 \end{theorem}
+
 \begin{proof}
-By \cite[Theorem 6.4]{Joy12} or \cite[Theorem 7.2.7]{MaDo92}, the pullback is a manifold with corners; see \cite[Remark 6.3]{Joy12} for the equivalence of the definitions of transversality in the two papers given our assumptions.
-Beyond Joyce's definition of manifolds with corners, we have also assumed that our manifolds with corners are second countable.
-However, products and subspaces of second countable spaces are also second countable \cite[Theorem 30.2]{Mu00}, so if $V$ and $W$ are second countable then so is $V \times_M W$.
+	By \cite[Theorem 6.4]{Joy12} or \cite[Theorem 7.2.7]{MaDo92}, the pullback is a manifold with corners; see \cite[Remark 6.3]{Joy12} for the equivalence of the definitions of transversality in the two papers given our assumptions.
+	Beyond Joyce's definition of manifolds with corners, we have also assumed that our manifolds with corners are second countable.
+	However, products and subspaces of second countable spaces are also second countable \cite[Theorem 30.2]{Mu00}, so if $V$ and $W$ are second countable then so is $V \times_M W$.
 
-As we have realized $V \times_M W$ as a subset of $V \times W$, we meet our condition of \cref{D: MWC} that our manifolds with corners be contained in some Euclidean space, as by hypothesis this is the case for $V$ and $W$.
+	As we have realized $V \times_M W$ as a subset of $V \times W$, we meet our condition of \cref{D: MWC} that our manifolds with corners be contained in some Euclidean space, as by hypothesis this is the case for $V$ and $W$.
 
-The statements that the projections are smooth also follows from \cite[Theorem 6.4]{Joy12}, which states that $V\times_MW$ is a fiber product in the category of manifolds with corners (with smooth maps), and this includes the statement that the projection maps are maps in the category and hence smooth; see the introduction to \cite[Section 6]{Joy12}.
+	The statements that the projections are smooth also follows from \cite[Theorem 6.4]{Joy12}, which states that $V\times_MW$ is a fiber product in the category of manifolds with corners (with smooth maps), and this includes the statement that the projection maps are maps in the category and hence smooth; see the introduction to \cite[Section 6]{Joy12}.
 
-For the decomposition, we refer to \cite[Theorem 7.2.7.a]{MaDo92}, which says that $V\times_MW$ is a \textit{totally neat} submanifold of $V\times W$.
-By \cite[Definition 3.1.10]{MaDo92}, the definition of ``totally neat submanifold'' includes the condition that the \textit{index} of a point in the submanifold is equal to its index in the ambient manifold.
-But the notion of index in \cite{MaDo92} is precisely our notion of depth. So $V\times_MW$ being a totally neat submanifold implies that $S^i(V\times_MW)$ must consist of those points of $V\times_MW$ in $S^i(V\times W)$.
-But clearly from the definitions,
-$$S^i(V\times W)=\bigsqcup_{k + \ell = i} S^k(V) \times S^\ell(W).$$
-So a point of $S^i(V\times_M W)$ consists of a pair $(x,y)\in V\times W$ with $f(x)=g(y)$ and such that $x\in S^k(V)$ and $y\in S^\ell(W)$ for some $k,\ell$ with $k+\ell=i$.
-But this means precisely that $(x,y)\in S^k(V) \times_M S^\ell(W)$ for some $k,\ell$ with $k+\ell=i$.
-Conversely, if $(x,y)\in S^k(V) \times_M S^\ell(W)$ and $k+\ell=i$, then $(x,y)\in V\times_MW$ and, since $(x,y)$ has index $i$ in $V\times W$, it must in fact be in $S^i(V\times_M W)$.
+	For the decomposition, we refer to \cite[Theorem 7.2.7.a]{MaDo92}, which says that $V\times_MW$ is a \textit{totally neat} submanifold of $V\times W$.
+	By \cite[Definition 3.1.10]{MaDo92}, the definition of ``totally neat submanifold'' includes the condition that the \textit{index} of a point in the submanifold is equal to its index in the ambient manifold.
+	But the notion of index in \cite{MaDo92} is precisely our notion of depth. So $V\times_MW$ being a totally neat submanifold implies that $S^i(V\times_MW)$ must consist of those points of $V\times_MW$ in $S^i(V\times W)$.
+	But clearly from the definitions,
+	$$S^i(V\times W)=\bigsqcup_{k + \ell = i} S^k(V) \times S^\ell(W).$$
+	So a point of $S^i(V\times_M W)$ consists of a pair $(x,y)\in V\times W$ with $f(x)=g(y)$ and such that $x\in S^k(V)$ and $y\in S^\ell(W)$ for some $k,\ell$ with $k+\ell=i$.
+	But this means precisely that $(x,y)\in S^k(V) \times_M S^\ell(W)$ for some $k,\ell$ with $k+\ell=i$.
+	Conversely, if $(x,y)\in S^k(V) \times_M S^\ell(W)$ and $k+\ell=i$, then $(x,y)\in V\times_MW$ and, since $(x,y)$ has index $i$ in $V\times W$, it must in fact be in $S^i(V\times_M W)$.
 \end{proof}
 
 To generalize this theorem when $M$ is also a manifold with corners requires substantial additional hypotheses in the definition of transverse smooth maps.
@@ -485,13 +487,11 @@ There is a Leibniz rule for taking boundaries of fiber products of transverse ma
 
 \begin{proposition}\label{P: product boundary}
 	If $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary, then
-	\begin{equation*}
-		\bd(V \times_M W) = (\bd V \times_M W) \sqcup (V \times_M \bd W),
-	\end{equation*}
+	\[
+	\bd(V \times_M W) = (\bd V \times_M W) \sqcup (V \times_M \bd W),
+	\]
 	recalling that if $g \colon W \to M$ then we interpret $\bd W$ as equipped with the map $gi_{\bd W} \colon \bd W \to M$ and similarly for $V$.
 \end{proposition}
-
-
 
 We will see versions of this formula below that take into account orientations and co-orientations.
 
@@ -520,11 +520,11 @@ In many circumstances, this lemma allows us to reduce arguments about fiber prod
 \begin{corollary}\label{C: tangent map of pullbacks}
 With the notation of \cref{L: tangent of pullbacks}, $D_{(x,y)}(f \times_M g)=D_xf \times_{T_zM} D_yg$ as maps from $T_{(x,y)}(V \times_M W) = T_xV \times_{T_zM} T_yW$ to $T_z(M)$.
 \end{corollary}
-\begin{proof}
-By definition, the map $f \times_M g$ is either of the compositions $f \pi_V = g \pi_W$. So $D_{(x,y)} (f \times_M g) = D_yg \circ D_{(x,y)} \pi_W$. On the other hand, considering the fiber product $D_xf \times_{T_z M} D_y g$ of the maps $D_x f \colon T_xV \to T_zM$ and $D_y g \colon T_yW \to T_zM$, it is the composition of the projection $T_xV \times_{T_zM} T_yW \to T_yW$ and $D_y g$.
-But this projection is precisely $D_{(x,y)} \pi_W$, so the maps agree.
-\end{proof}
 
+\begin{proof}
+	By definition, the map $f \times_M g$ is either of the compositions $f \pi_V = g \pi_W$. So $D_{(x,y)} (f \times_M g) = D_yg \circ D_{(x,y)} \pi_W$. On the other hand, considering the fiber product $D_xf \times_{T_z M} D_y g$ of the maps $D_x f \colon T_xV \to T_zM$ and $D_y g \colon T_yW \to T_zM$, it is the composition of the projection $T_xV \times_{T_zM} T_yW \to T_yW$ and $D_y g$.
+	But this projection is precisely $D_{(x,y)} \pi_W$, so the maps agree.
+\end{proof}
 
 \begin{lemma}\label{L: normal pullback}
 	Let $W$ be a manifold with boundary and $V$ and $M$ manifolds without boundary. Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse smooth maps and that $f$ is an embedding so that $V$ is a submanifold of $M$ with normal bundle $\nu V$.
@@ -541,7 +541,6 @@ Here ``neat'' means that $\bd (g^*V) \subset \bd W$ and at each such point there
 \end{proof}
 
 As we like to think geometrically where possibly, we will generally perform the common abuse of thinking of normal bundles as subbundles of the tangent bundle of the ambient space over the embedded submanifold via a (usually tacit) choice of splitting of the quotient map to the true normal bundle.
-
 
 \begin{lemma}\label{L: fiber product of embeddings}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ and $g$ are both embeddings.
@@ -567,6 +566,7 @@ The preceding statements are not so evident in the case of manifolds with corner
 		\item If $f$ is an immersion at $x$, then it restricts to an embedding on an open neighborhood of $x$.
 	\end{enumerate}
 \end{lemma}
+
 \begin{proof}
 	See \cite[Theorem 3.2.6, Proposition 3.2.13, and Definition 3.3.1]{MaDo92}.
 	Note that when working with finite dimensional manifolds, as we always do, the ``topological supplement'' condition that appears often in \cite{MaDo92} is automatic \cite[page 7]{MaDo92}.
@@ -574,11 +574,11 @@ The preceding statements are not so evident in the case of manifolds with corner
 
 The third statement of \cref{L: immersions} holds even when $M$ is a manifold with corners but requires the more sophisticated definition of immersion in \cite{MaDo92}.
 
-
 \begin{lemma}\label{L: immersion pullback}
 	Let $f \colon V \to M$ be an immersion of a manifold with corners into a manifold without boundary, let $W$ be a manifold without boundary, and let $g \colon W \to M$ be transverse to $V$.
 	Then the pullback $\pi_W: V \times_M W \to W$ is an immersion and so, locally in a neighborhood of each point, an embedding.
 \end{lemma}
+
 \begin{proof}
 	By \cref{L: tangent of pullbacks}, the tangent space of the pullback is the pullback of the tangents space, so if we write $P = V \times_M W$ and suppose $(v,w) \in P$, then $T_{(v,w)}P = T_vV \times_{T_{f(v)}M} T_wW$.
 	Suppose $(a,b) \in T_{(v,w)}P$ with $a \in T_vV$ and $b \in T_wW$.
@@ -590,10 +590,10 @@ The third statement of \cref{L: immersions} holds even when $M$ is a manifold wi
 	So $D\pi_W$ is injective, and therefore $\pi_W$ is an immersion, and so a local embedding, again by \cref{L: immersions}.
 \end{proof}
 
-
 \begin{lemma}
 	The fiber product of two transverse immersions $f \colon V \to M$ and $g \colon W \to M$ from manifolds with corners to a manifold without boundary is an immersion and so, locally in a neighborhood of each point, an embedding onto its image.
 \end{lemma}
+
 \begin{proof}
 	Even though $W$ may have corners, the argument in the proof of \cref{L: immersion pullback} still holds to show that $D \pi_W$ is an injection at each point of $V \times_M W$.
 	Then, as $g$ is an immersion, the composition $D(g \pi_W)$ is also injective at each point.
