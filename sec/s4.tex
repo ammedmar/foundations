@@ -49,7 +49,7 @@ the definitions of \cite{Lipy14}.
 		\item Suppose $V$ and $W$ are co-oriented and $\phi \colon W \to V$ is a diffeomorphism such that $r_V \circ \phi = r_W$.
 		We say that $\phi$ is \textbf{co-orientation preserving (or co-orientation reversing)} if the composition of the tautological co-orientation of $\phi$ (\cref{D: tautological co-orientation}) with the co-orientation of $r_V$ agrees with (or disagrees with) the co-orientation of $r_W$.
 		\item If $V$ and $W$ are oriented, we say they are \textbf{(oriented) isomorphic} if there is an orientation-preserving diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$.
-		\item If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic} if there is a co-orientation-preserving diffeomorphism $\phi \colon W \to V$. 
+		\item If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic} if there is a co-orientation-preserving diffeomorphism $\phi \colon W \to V$.
 		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial} if there is an orientation-reversing diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
 		\item If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a co-orientation-reversing diffeomorphism $\rho \colon W \to W$.
 		\item $W$ has \textbf{small rank} if the differential $D r_W$ is less than full rank at all $w\in W$.
@@ -84,9 +84,9 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 \begin{example}
 	If $r_V \colon V \to M$ is any oriented or co-oriented map and $-r_V \colon V \to M$ is the same map with the opposite orientation or co-orientation, then $r_V \sqcup -r_V \colon V \sqcup V \to M$ is trivial, taking $\rho$ to be the map that switches the two copies of $V$.
 
-	To be technically accurate, the space $V \sqcup V$ is not clearly defined as a manifold with corners, as we have defined our manifolds with corners in \cref{D: MWC} to be submanifolds of some $\R^N$. We solve this problem below by working with isomorphism classes of maps. 
-	In this case we could take $V \sqcup V$ up to isomorphism to be $V \sqcup W$ where $V$ and $W$ are isomorphic as manifolds over $M$. 
-	See \cref{D: prechain sum} below for precise details. 
+	To be technically accurate, the space $V \sqcup V$ is not clearly defined as a manifold with corners, as we have defined our manifolds with corners in \cref{D: MWC} to be submanifolds of some $\R^N$. We solve this problem below by working with isomorphism classes of maps.
+	In this case we could take $V \sqcup V$ up to isomorphism to be $V \sqcup W$ where $V$ and $W$ are isomorphic as manifolds over $M$.
+	See \cref{D: prechain sum} below for precise details.
 \end{example}
 
 \begin{example}
@@ -107,23 +107,23 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 	So $r_V\phi = r_W$ as co-oriented maps, and $\phi$ provides a co-oriented isomorphism between $r_W$ and $r_V$ even though they are very different maps.
 \end{example}
 
-The notions of orientation-preserving and -reversing diffeomorphisms are fairly standard, and oriented isomorphisms and triviality of oriented manifolds over $M$ are simply such diffeomorphisms that commute with the reference maps. 
-By contrast, the corresponding notions for co-orientation are less familiar, but the following statement shows how the situation for co-orientations is locally similar to that for orientations. 
+The notions of orientation-preserving and -reversing diffeomorphisms are fairly standard, and oriented isomorphisms and triviality of oriented manifolds over $M$ are simply such diffeomorphisms that commute with the reference maps.
+By contrast, the corresponding notions for co-orientation are less familiar, but the following statement shows how the situation for co-orientations is locally similar to that for orientations.
 
 \begin{lemma}\label{L: co-or preserving/reversing}
-	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$. 
-	For $x \in W$, let $(\beta_{W,x},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_W$ and let $(\beta_{V, \phi(x)},\beta_{M,r_W(x)})$  be a local representation of the co-orientation of $r_V$,  noting $r_V\phi(x)=r_W(x)$. 
+	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$.
+	For $x \in W$, let $(\beta_{W,x},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_W$ and let $(\beta_{V, \phi(x)},\beta_{M,r_W(x)})$  be a local representation of the co-orientation of $r_V$,  noting $r_V\phi(x)=r_W(x)$.
 	Then $\phi$ provides a co-oriented isomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.
-	Similarly, the map $\phi$ is a co-orientation-reversing diffeomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $-\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.  
+	Similarly, the map $\phi$ is a co-orientation-reversing diffeomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $-\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.
 \end{lemma}
 
 In the statement of the lemma, by $D_x\phi$ taking an orientation of $T_xW$ to an orientation of $T_{\phi(x)}V$, we mean that $D_x\phi$ takes an ordered basis consistent with the given orientation of $T_xW$ to an ordered basis consistent with the given orientation of $T_{\phi(x)}V$.
 We could equivalently phrase this in terms of the map $\textstyle{\bigwedge^w}D_x\phi$ as in \cref{D: tautological co-orientation}.
 
 \begin{proof}[Proof of \cref{L: co-or preserving/reversing}]
-By definition, $\phi$ is an isomorphism if and only if $\omega_{r_W} = \omega_{\phi} * \omega_{r_V}$, where $\omega_\phi$ is the tautological co-orientation of $\phi$. 
-This will be the case if and only if for each $x$ we have $\omega_\phi = (\beta_{W,x}, \beta_{V, \phi(x)})$. 
-But by the definition of the tautological co-orientation, if $e_1 \wedge \cdots \wedge e_w$ represents an oriented basis for $T_xW$, then $\omega_\phi$ is represented at $x$ by the pair $(e_1 \wedge \cdots \wedge e_w, D_x\phi(e_1) \wedge \cdots \wedge D_x\phi(e_w))$. 
+By definition, $\phi$ is an isomorphism if and only if $\omega_{r_W} = \omega_{\phi} * \omega_{r_V}$, where $\omega_\phi$ is the tautological co-orientation of $\phi$.
+This will be the case if and only if for each $x$ we have $\omega_\phi = (\beta_{W,x}, \beta_{V, \phi(x)})$.
+But by the definition of the tautological co-orientation, if $e_1 \wedge \cdots \wedge e_w$ represents an oriented basis for $T_xW$, then $\omega_\phi$ is represented at $x$ by the pair $(e_1 \wedge \cdots \wedge e_w, D_x\phi(e_1) \wedge \cdots \wedge D_x\phi(e_w))$.
 So $\phi$ is an isomorphism if and only if $D_x\phi$ takes an ordered basis representing the local orientation $\beta_{W,x}$ to an ordered basis representing the local orientation $\beta_{V, \phi(x)}$.
 
 The orientation-reversing case is equivalent, considering instead the requirement $\omega_{r_W} = - \omega_{\phi} * \omega_{r_V}$.
@@ -142,7 +142,7 @@ The following corollary is now immediate from \cref{L: co-or preserving/reversin
 We can now move toward defining geometric homology and cohomology, starting with ``prechains'' and ``precochains.''
 
 \begin{definition}
-	Let $M$ be a smooth manifold with corners. 
+	Let $M$ be a smooth manifold with corners.
 	Denote by $PC^\Gamma_*(M)$ the set of oriented isomorphism classes of compact oriented manifolds over $M$, $r_W \colon W \to M$,
 	graded by dimension $\dim(W)$.
 	Denote by $PC_\Gamma^*(M)$ the set of co-oriented isomorphism classes of proper co-oriented manifolds over $M$, $r_W \colon W \to M$,
@@ -183,9 +183,9 @@ We now return to denoting isomorphism classes by their representatives, noting a
 Our first lemma is immediate:
 
 \begin{lemma}\label{L: sum of trivial/degenerate}
-If $V$ and $W$ are trivial, then $V \sqcup W$ is trivial. 
+If $V$ and $W$ are trivial, then $V \sqcup W$ is trivial.
 If $V$ and $W$ are degenerate, then $V \sqcup W$ is degenerate.
-If $V,W\in Q_*(M)$ (or $Q^*(M)$), then $V \sqcup W \in Q_*(M)$ (or $Q^*(M)$). 
+If $V,W\in Q_*(M)$ (or $Q^*(M)$), then $V \sqcup W \in Q_*(M)$ (or $Q^*(M)$).
 \end{lemma}
 
 The following useful basic properties are proven in \cite{Lipy14}; for completeness we provide versions of the arguments here, occasionally augmenting those of \cite{Lipy14}.
@@ -200,7 +200,7 @@ Lipyanskiy's proofs assume small image rather than small rank, but the proofs ar
 
 \begin{proof}
 	We can write $W$ as the disjoint union of a (possibly infinite) number of isomorphism classes of connected components and then group the isomorphism classes together up to (co\nobreakdash-)orientation as $W = W_1 \sqcup W_2 \sqcup \cdots$ so that all connected components of each $W_i$ are isomorphic (ignoring (co\nobreakdash-)orientations) for each $i$ and so that no connected component of $W_i$ is isomorphic to a connected component of $W_j$ for $i\neq j$.
-	As either $W$ is compact or $r_W$ is proper, each $W_i$ is the union of a finite number of connected components; if not, then there would be a $W_i$ with an infinite number of connected components and, since the components of $W_i$ are isomorphic to each other, a point $x\in M$ such that $r_W^{-1}$ has infinite components, violating that $r_W$ is proper. 
+	As either $W$ is compact or $r_W$ is proper, each $W_i$ is the union of a finite number of connected components; if not, then there would be a $W_i$ with an infinite number of connected components and, since the components of $W_i$ are isomorphic to each other, a point $x\in M$ such that $r_W^{-1}$ has infinite components, violating that $r_W$ is proper.
 	Any automorphism of $W$ preserves the decomposition into $W_i$, and so $W$ is trivial if and only if for all $i$ either $W_i$ has zero components when counting with (co\nobreakdash-)orientation or each component of $W_i$ has a (co\nobreakdash-)orientation reversing automorphism.
 
 	Similarly, since $V$ is trivial, $V$ can be decomposed into unions of isomorphism classes, up to (co\nobreakdash-)orienta\-tion, of connected components, each with zero components when counting with sign or with all components having (co\nobreakdash-)orientation reversing automorphisms.
@@ -276,8 +276,8 @@ We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every
 
 
 \begin{lemma}\label{L: co/chains well defined}
-	The chain complexes $C_\Gamma^*(M)$ and $C_\Gamma^*(M)$ are well defined with the properties claimed in the definition. 
-	In particular, $\uW = 0$ in $C^\Gamma_*(M)$ (respectively $C_\Gamma^*(M)$) if and only if $W$ is in $Q_*(M)$ (respectively $Q^*(M)$), and the additive inverse of $\uW$ is $\underline{-W}$. 
+	The chain complexes $C_\Gamma^*(M)$ and $C_\Gamma^*(M)$ are well defined with the properties claimed in the definition.
+	In particular, $\uW = 0$ in $C^\Gamma_*(M)$ (respectively $C_\Gamma^*(M)$) if and only if $W$ is in $Q_*(M)$ (respectively $Q^*(M)$), and the additive inverse of $\uW$ is $\underline{-W}$.
 \end{lemma}
 
 \begin{proof}
@@ -285,7 +285,7 @@ We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every
 	For simplicity we work with $Q_*(M)$ and $C^\Gamma_*(M)$, but the identical arguments hold with $Q^*(M)$ and $C_\Gamma^*(M)$.
 
 	Suppose $\uV,\uW \in C^\Gamma_*(M)$ with $V$ and $V'$ in the class $\uV$ and $W$ and $W'$ in the class $\uW$.
-	Then the sum $\uV+\uW$ is well defined as the class $\underline{V \sqcup W}$ because $(V \sqcup W) \sqcup -(V' \sqcup W') = (V \sqcup -V') \sqcup (W \sqcup -W')$, and $V \sqcup -V'$ and  $W \sqcup -W'$ are both in $Q_*(M)$ by assumption. 
+	Then the sum $\uV+\uW$ is well defined as the class $\underline{V \sqcup W}$ because $(V \sqcup W) \sqcup -(V' \sqcup W') = (V \sqcup -V') \sqcup (W \sqcup -W')$, and $V \sqcup -V'$ and  $W \sqcup -W'$ are both in $Q_*(M)$ by assumption.
 
 	The identity in each degree is represented by $\emptyset$ with the unique empty map to $M$ (with either orientation or co-orientation).
 	In fact, every element of $Q_*(M)$ represents $0$ in $C^\Gamma_*(M)$ as elements of $Q_*(M)$ are all equivalent to $\emptyset$.
@@ -414,26 +414,26 @@ The following algebraic property will be useful below as we consider homological
 	The proof for geometric cochains, even accounting for our different definition of degeneracy, is the same.
 	We give the argument for chains.
 
-	Suppose $\uW$ satisfies $n \uW = 0$ for some $n \in \Z$ with $n \neq 0$. 
-	Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: Lip L10,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct of $i\neq j$. 
-	Then $n \uW$ is represented by taking $n$ copies of each $W_i$ if $n > 0$ or, if $n < 0$, taking $|n|$ copies of each $-W_i$. 
-	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so each component of $n W_i$ is trivial or has small image. 
-	
-	Suppose  $n W_i$ is trivial for some $i$. 
- 	Then each component of $n W_i$ is trivial or the total number of components of $n W_i$ is zero when counted with sign.  
+	Suppose $\uW$ satisfies $n \uW = 0$ for some $n \in \Z$ with $n \neq 0$.
+	Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: Lip L10,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct of $i\neq j$.
+	Then $n \uW$ is represented by taking $n$ copies of each $W_i$ if $n > 0$ or, if $n < 0$, taking $|n|$ copies of each $-W_i$.
+	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so each component of $n W_i$ is trivial or has small image.
+
+	Suppose  $n W_i$ is trivial for some $i$.
+ 	Then each component of $n W_i$ is trivial or the total number of components of $n W_i$ is zero when counted with sign.
 	But this implies that each component of $W_i$ is trivial or that $W_i$ must also have the total number of components be zero when counted with sign.
 	So $W_i$ is trivial.
-	It is also clear that if $W_i$ is trivial, then so is $n W_i$, so $W_i$ is trivial if and only if $n W_i$ is trivial. 
+	It is also clear that if $W_i$ is trivial, then so is $n W_i$, so $W_i$ is trivial if and only if $n W_i$ is trivial.
 
-	Now let $W'$ be the union of those components $W_i$ that are not trivial. 
+	Now let $W'$ be the union of those components $W_i$ that are not trivial.
 	Then $nW$ is the union of trivial components and $n W'$, so by \cref{L: Lipy12}, we have $n W' \in Q_*(M)$.
-	Furthermore, since none of the components of $n W'$ are trivial, $n W'$ must be degenerate. 
-	In particular, $n W'$ must have small rank, which implies that $W'$ must have small rank. 
-	Further, since $n W' \in Q_*(M)$, we have $\bd (n W') = n (\bd W') \in Q_*(M)$ by \cref{L: bd defined}. 
+	Furthermore, since none of the components of $n W'$ are trivial, $n W'$ must be degenerate.
+	In particular, $n W'$ must have small rank, which implies that $W'$ must have small rank.
+	Further, since $n W' \in Q_*(M)$, we have $\bd (n W') = n (\bd W') \in Q_*(M)$ by \cref{L: bd defined}.
 	So by the same argument as above, $\bd W'$ must be a union of prechains that are trivial or of small rank.
-	So $W'$ is degenerate.  
+	So $W'$ is degenerate.
 
-	Altogether, we have now shown that $W$ is the union of a trivial prechain and a degenerate prechain, so $W \in Q_*(M)$. 
+	Altogether, we have now shown that $W$ is the union of a trivial prechain and a degenerate prechain, so $W \in Q_*(M)$.
 \end{proof}
 
 \subsubsection{Products of manifolds over \texorpdfstring{$M$}{M}}
@@ -442,7 +442,7 @@ In this section we define various products of elements of $PC_*^\Gamma(M)$ and $
 These products will ultimately become our cup, cap, intersection, and exterior products, but we introduce them here as products on $PC_*^\Gamma(M)$ and $PC^*_\Gamma(M)$ and derive some further properties as we will need some of this material in the next section to define creasing.
 The first time reader can fairly safely skip this section for now and return to it later as needed.
 
-We begin with the products coming from fiber products. 
+We begin with the products coming from fiber products.
 These are only partially defined, as fiber products require transversality.
 
 \begin{definition}\label{D: PC products}
@@ -458,10 +458,10 @@ These are only partially defined, as fiber products require transversality.
 		\begin{itemize}
 			\item If $V,W\in PC^*_\Gamma(M)$ are transverse, we define their product to be the fiber product $V \times_M W$ with its fiber product co-orientation of \cref{D: pullback coorient}. Note that the fiber product is proper by \cref{L: co-orientable pullback} as the composition of proper maps is proper.
 
-			\item If $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ are transverse, we define their product to be $V \times_M W$ with the orientation induced from the orientation of $W$ and the co-orientation of the pullback $V \times_M W \to W$; see \cref{D: pullback coorient} and  the discussion following \cref{D: co-orientations}. 
+			\item If $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ are transverse, we define their product to be $V \times_M W$ with the orientation induced from the orientation of $W$ and the co-orientation of the pullback $V \times_M W \to W$; see \cref{D: pullback coorient} and  the discussion following \cref{D: co-orientations}.
 			Note that $V \times_M W$ is compact, as $W$ is compact and the pullback map is proper by \cref{L: co-orientable pullback} and the properness of $r_V$.
 
-			\item If $M$ is oriented and $V,W \in PC_*^\Gamma(M)$, we define their product to be $V \times_M W$ with the fiber product orientation of \cref{S: orientation of fiber products}. 
+			\item If $M$ is oriented and $V,W \in PC_*^\Gamma(M)$, we define their product to be $V \times_M W$ with the fiber product orientation of \cref{S: orientation of fiber products}.
 			Note that $V \times_M W$ is compact as a closed subset of the compact set $V \times W$.
 	\end{itemize}
 
@@ -481,53 +481,54 @@ If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 
 \begin{lemma}\label{L: product preserves iso}
 	When the transversality conditions are met, the products of \cref{D: PC products} are well defined.
-	In particular, if $\phi_V \colon V \to V'$ and $\phi_W \colon W \to W'$ are orientation- or co-orientation-preserving diffeomorphisms of transverse manifolds over $M$, then $\phi_V \times \phi_W$ restricts, as appropriate to the products of \cref{D: PC products}, to a corresponding orientation- or co-orientation-preserving diffeomorphism $V \times_M W \to V' \times_M W'$. 
+	In particular, if $\phi_V \colon V \to V'$ and $\phi_W \colon W \to W'$ are orientation- or co-orientation-preserving diffeomorphisms of transverse manifolds over $M$, then $\phi_V \times \phi_W$ restricts, as appropriate to the products of \cref{D: PC products}, to a corresponding orientation- or co-orientation-preserving diffeomorphism $V \times_M W \to V' \times_M W'$.
 
-	Similarly, if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts, as appropriate to the products of \cref{D: PC products}, to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$. 
+	Similarly, if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts, as appropriate to the products of \cref{D: PC products}, to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$.
 \end{lemma}
 \begin{proof}
 	It is clear that the transversality conditions are preserved if representatives $r_V \colon V \to M$ or $r_W \colon W \to M$ are replaced with (oriented or co-oriented) isomorphic manifolds over $M$.
 	It is also clear from the universal property that isomorphic manifolds over $M$ lead to diffeomorphic fiber products.
-	So our main challenge is to verify the correct behavior of orientations and co-orientations. 
+	So our main challenge is to verify the correct behavior of orientations and co-orientations.
 
-	We first consider $V$, $W$, and $M$ all oriented. 
-	Suppose we have $f \colon V \to M$ isomorphic to $f' \colon V' \to M$ via $\phi_V \colon V \to V'$ and similarly for $W$; see \cref{D: equiv triv and small}. 
+	We first consider $V$, $W$, and $M$ all oriented.
+	Suppose we have $f \colon V \to M$ isomorphic to $f' \colon V' \to M$ via $\phi_V \colon V \to V'$ and similarly for $W$; see \cref{D: equiv triv and small}.
 	The map $\phi_V \times \phi_W$ restricts to give our diffeomorphism from $P = V \times_M W$ to $P' = V' \times_M W'$, so, considering the definition of the fiber product orientation in \cref{S: orientation of fiber products}, we obtain bundle map isomorphisms covering $\phi_V \times \phi_W \colon P \to P'$ of the following exact sequences (or we can think of the bottom sequence as pulled back to $P$ by $\phi_V \times \phi_W$).
-	\begin{diagram}\label{E: fiber orientation}
-		0 &\rTo & TP & \rTo^{D\pi_V \oplus D\pi_W} & \pi_V^*(TV) \oplus \pi_W^*(TW) & \rTo^{\pi_V^*(Df)-\pi_W^*(Dg)} & (f\pi_V)^*TM &\rTo 0\\
-		&& \dTo &&\dTo && \dTo \\
-		0 &\rTo & TP' & \rTo^{D\pi_{V'} \oplus D\pi_{W'}} & \pi_{V'}^*(TV') \oplus \pi_{W'}^*(TW') & \rTo^{\pi_{V'}^*(Df')-\pi_{W'}^*(Dg')} & (f'\pi_{V'})^*TM & \rTo 0.
-	\end{diagram}
-	As the maps $\phi_V$ and $\phi_W$ are orientation preserving, it follows that the two righthand vertical maps are oriented bundle isomorphisms. 
-	Consequently, if we orient $TP$ and $TP'$ as in \cref{S: orientation of fiber products} and use the isomorphisms to make the splittings of the sequences compatible, then the lefthand map must also be an isomorphism of oriented bundles. 
+	\begin{equation}
+	\begin{tikzcd}\label{E: fiber orientation}
+		0 \arrow[r] & TP \arrow[r,"D\pi_V \oplus D\pi_W"] \arrow[d] &[1cm] \pi_V^*(TV) \oplus \pi_W^*(TW) \arrow[r,"\pi_V^*(Df)-\pi_W^*(Dg)"] \arrow[d] &[1.7cm] (f\pi_V)^*TM \arrow[r] \arrow[d] & 0 \\
+		0 \arrow[r] & TP' \arrow[r,"D\pi_{V'} \oplus D\pi_{W'}"] & \pi_{V'}^*(TV') \oplus \pi_{W'}^*(TW') \arrow[r,"\pi_{V'}^*(Df')-\pi_{W'}^*(Dg')"] & (f'\pi_{V'})^*TM \arrow[r] & 0
+	\end{tikzcd}
+	\end{equation}
+	As the maps $\phi_V$ and $\phi_W$ are orientation preserving, it follows that the two righthand vertical maps are oriented bundle isomorphisms.
+	Consequently, if we orient $TP$ and $TP'$ as in \cref{S: orientation of fiber products} and use the isomorphisms to make the splittings of the sequences compatible, then the lefthand map must also be an isomorphism of oriented bundles.
 	(Looking at the level of individual tangent space fibers, the reader can also compare with \cite[Sections 9.1.1 and 9.3.1]{RamBas09}.)
 
 	For the other cases, we first observe that being an orientation or co-orientation preserving isomorphism is a local property.
-	In particular, a diffeomorphism $V \to V'$ is orientation preserving if and only its derivative is orientation preserving at each $x \in V$, and by \cref{L: co-or preserving/reversing} a similar statement holds for co-orientations. 
-	Consequently, to show that a diffeomorphism over $M$ is (co-)orientation preserving, it suffices to show that this property holds over each set of an open cover of $M$.  
+	In particular, a diffeomorphism $V \to V'$ is orientation preserving if and only its derivative is orientation preserving at each $x \in V$, and by \cref{L: co-or preserving/reversing} a similar statement holds for co-orientations.
+	Consequently, to show that a diffeomorphism over $M$ is (co-)orientation preserving, it suffices to show that this property holds over each set of an open cover of $M$.
 
 	So let $U$ be any Euclidean subset of $M$, and suppose we give $U$ an arbitrary orientation.
 	Considering the case of co-oriented precochains, by \cref{C: co-or preserving is or preserving} the restrictions of $\phi_V$ and $\phi_W$ to $f^{-1}(U)$ and $g^{-1}(U)$ are co-orientation preserving if and only if they are orientation preserving with respect to the induced orientations.
-	Note that this statement is independent of the choice of fixed orientation for $U$. 
-	Since we assume that $\phi_V$ and $\phi_W$ are co-orientation preserving, they are thus orientation preserving over $U$ with respect to the induced orientations. 
+	Note that this statement is independent of the choice of fixed orientation for $U$.
+	Since we assume that $\phi_V$ and $\phi_W$ are co-orientation preserving, they are thus orientation preserving over $U$ with respect to the induced orientations.
 	It follows from the preceding argument that $\phi_V \times \phi_W$ restricts to an orientation-preserving diffeomorphism of the fiber products over $U$.
 	By \cref{P: compare cup and intersection orientations}, there is a fixed sign relation depending only on the dimensions between the fiber product orientations obtained by the above construction and the orientations of the fiber products induced from the orientation of $U$ and the co-oriented fiber product (this is the distinction considered there between $V \times^o_M W$ and $V \times^c_M W$).
-	Since $\phi_V \times \phi_W$ provides an orientation-preserving diffeomorphism with respect to the fiber product oriented the first way, it also provides an orientation-preserving diffeomorphism with respect to the fiber product oriented the other way. 
+	Since $\phi_V \times \phi_W$ provides an orientation-preserving diffeomorphism with respect to the fiber product oriented the first way, it also provides an orientation-preserving diffeomorphism with respect to the fiber product oriented the other way.
 	Hence by \cref{C: co-or preserving is or preserving} again, $\phi_V \times \phi_W$ restricts to a co-orientation-preserving diffeomorphism $f^{-1}(U) \times_U g^{-1}(U) \to (f')^{-1}(U) \times_U (g')^{-1}(U)$.
 	Since $U$ was arbitrary,  $\phi_V \times \phi_W$ gives a co-orientation-preserving diffeomorphism on all of $V \times_M W$.
 
-	Lastly, for the fiber product $PC^*_\Gamma(M) \times PC_*^\Gamma(M) \to PC_*^\Gamma(M)$, we again begin by considering what happens for the preimage of a Euclidean set $U$ in $M$ with an arbitrary orientation $\beta_U$. 
-	In this case the restriction $g \colon g^{-1}(U) \to U$ is a map between oriented manifolds and so if $W$ has orientation $\beta_W$, this map has an induced co-orientation $(\beta_W, \beta_U)$. 
-	Now, by definition, $\beta_P$ is the desired orientation of $f^{-1}(U) \times_U g^{-1}(U)$ for this kind of product if and only $(\beta_P,\beta_W)$ is the pullback co-orientation of $f^{-1}(U) \times_U g^{-1}(U) \to g^{-1}(U)$. And this is the case if and only if $(\beta_P,\beta_W)*(\beta_W,\beta_U) = (\beta_P, \beta_U)$ is the co-orientation of the the co-oriented fiber product of $f$ and $g$ restricted to $f^{-1}(U)$ and $g^{-1}(U)$, obtained from $g$ being given the induced co-orientation as above. 
-	Furthermore, as $\phi_W$ is orientation-preserving, its restriction to a diffeomorphism $g^{-1}(U)$ to $(g')^{-1}(U)$ is also co-orientation preserving with respect to the induced co-orientations by \cref{C: co-or preserving is or preserving}. 
+	Lastly, for the fiber product $PC^*_\Gamma(M) \times PC_*^\Gamma(M) \to PC_*^\Gamma(M)$, we again begin by considering what happens for the preimage of a Euclidean set $U$ in $M$ with an arbitrary orientation $\beta_U$.
+	In this case the restriction $g \colon g^{-1}(U) \to U$ is a map between oriented manifolds and so if $W$ has orientation $\beta_W$, this map has an induced co-orientation $(\beta_W, \beta_U)$.
+	Now, by definition, $\beta_P$ is the desired orientation of $f^{-1}(U) \times_U g^{-1}(U)$ for this kind of product if and only $(\beta_P,\beta_W)$ is the pullback co-orientation of $f^{-1}(U) \times_U g^{-1}(U) \to g^{-1}(U)$. And this is the case if and only if $(\beta_P,\beta_W)*(\beta_W,\beta_U) = (\beta_P, \beta_U)$ is the co-orientation of the the co-oriented fiber product of $f$ and $g$ restricted to $f^{-1}(U)$ and $g^{-1}(U)$, obtained from $g$ being given the induced co-orientation as above.
+	Furthermore, as $\phi_W$ is orientation-preserving, its restriction to a diffeomorphism $g^{-1}(U)$ to $(g')^{-1}(U)$ is also co-orientation preserving with respect to the induced co-orientations by \cref{C: co-or preserving is or preserving}.
 	But now we have seen that the product $\phi_V \times \phi_W$ of co-orientation-preserving diffeomorphisms gives a co-orientation preserving diffeomorphism on $f^{-1}(U) \times_U g^{-1}(U)$.
 	So now again by \cref{C: co-or preserving is or preserving}, $\phi_V \times \phi_W$ is an orientation-preserving diffeomorphism with respect to the orientations induced by the orientation of $U$ and the fiber product  co-orientations.
-	But we have just recalled that these are exactly the orientations that we want for these products. 
+	But we have just recalled that these are exactly the orientations that we want for these products.
 \end{proof}
 
 \begin{comment}
 \begin{remark}\label{R: product preserves reverse}
-	It is easy to modify the preceding arguments to show that if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$. 
+	It is easy to modify the preceding arguments to show that if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$.
 \end{remark}
 \end{comment}
 
@@ -542,7 +543,7 @@ The next lemma will be critical in \cref{S: products} toward showing that these 
 It will also be needed much sooner to show that the creasing construction is well defined.
 This construction is used, in turn, to demonstrate the existence of Mayer-Vietoris sequences.
 
-For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ as appropriate. 
+For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ as appropriate.
 
 \begin{lemma}\label{L: pullback with Q}
 	For any of the products of \cref{D: PC products}, if either $V$ or $W$ is in $Q(M)$ then so is $V \times_M W$.
@@ -578,12 +579,12 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 
 
 \begin{lemma}\label{L: ext product preserves iso}
-	Suppose $f \colon V \to M$ and $g \colon W \to N$ are maps of manifolds with corners with either $V$ and $W$ both oriented or $f$ and $g$ both co-oriented. 
-	Then the corresponding exterior product $PC_*^\Gamma(M) \otimes PC_*^\Gamma(N) \to PC_*^\Gamma(M \times N)$ or $PC^*_\Gamma(M) \otimes PC^*_\Gamma(N) \to PC^*_\Gamma(M \times N)$ is well defined. 
+	Suppose $f \colon V \to M$ and $g \colon W \to N$ are maps of manifolds with corners with either $V$ and $W$ both oriented or $f$ and $g$ both co-oriented.
+	Then the corresponding exterior product $PC_*^\Gamma(M) \otimes PC_*^\Gamma(N) \to PC_*^\Gamma(M \times N)$ or $PC^*_\Gamma(M) \otimes PC^*_\Gamma(N) \to PC^*_\Gamma(M \times N)$ is well defined.
 
-	In particular, if $\phi_V \colon V \to V'$ and $\phi_W \colon W \to W'$ are orientation- or co-orientation-preserving diffeomorphisms over $M$ and $N$, respectively, then $\phi_V \times \phi_W$ is a corresponding orientation- or co-orientation-preserving diffeomorphism $V \times W \to V' \times W'$. 
+	In particular, if $\phi_V \colon V \to V'$ and $\phi_W \colon W \to W'$ are orientation- or co-orientation-preserving diffeomorphisms over $M$ and $N$, respectively, then $\phi_V \times \phi_W$ is a corresponding orientation- or co-orientation-preserving diffeomorphism $V \times W \to V' \times W'$.
 
-	Similarly, if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ is a corresponding orientation- or co-orientation-reversing diffeomorphism $V \times W \to V' \times W'$. 
+	Similarly, if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ is a corresponding orientation- or co-orientation-reversing diffeomorphism $V \times W \to V' \times W'$.
 \end{lemma}
 \begin{proof}
 	The oriented case is standard. For the co-oriented case, we can proceed analogously to the proof of \cref{L: product preserves iso}.
@@ -682,12 +683,12 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 
 \subsection{Creasing}\label{S: creasing}
 
-We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, which is essential for Mayer-Vietoris sequences, though we use different orientation conventions and also consider versions involving co-orientations. 
+We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, which is essential for Mayer-Vietoris sequences, though we use different orientation conventions and also consider versions involving co-orientations.
 The idea of creasing is to show that if $W$ is a cycle (or cocycle) over $M$ then we can split it along a codimension one submanifold with corners into two manifolds with corners, $W^+$ and $W^-$, and show that $W$ is homologous (or cohomologous) to $W^+ + W^-$.
 This is the analog in geometric homology/cohomology of subdivision of singular simplices.
 
-To make this precise, suppose we are given a function $\varphi \colon W \to (-1,1)$ with $0$ a regular value. 
-We define $W^+$ to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$, and we define $W^0 = \varphi^{-1}(0)$. 
+To make this precise, suppose we are given a function $\varphi \colon W \to (-1,1)$ with $0$ a regular value.
+We define $W^+$ to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$, and we define $W^0 = \varphi^{-1}(0)$.
 We have already seen this construction in \cref{E: manifold decomposition} and the examples in \cref{S: codim 0 and 1 co-or}, although we here replace the codomain $\R$ with $(-1,1)$ for reasons that will become apparent momentarily.
 Nonetheless, the results of those examples carry over in the obvious way.
 
@@ -698,7 +699,7 @@ We will need that setting soon once we have finished with some preliminaries.
 
 By \cite[Lemma~9]{Lipy14}, the topological space $W \times [0,1]$ can be given the structure of a manifold with corners, which we will write $\Cre(W)$, satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
 We call the manifold with corners $\Cre(W)$ the \textbf{creasing homotopy} of $W$.
-The creasing homotopy depends on $\varphi$, but we usually leave it tacit in the notation. 
+The creasing homotopy depends on $\varphi$, but we usually leave it tacit in the notation.
 We will define $\Cre(W)$ by using pullbacks, which will provide an arguably simpler description of $\Cre(W)$ than found in \cite{Lipy14}.
 
 To define $\Cre(W)$ via pullbacks, we need another map in addition to $\varphi$.
@@ -716,7 +717,7 @@ $$\bd D = D_x \sqcup -D_- \sqcup -D_+.$$
 The projection $\pi \colon D \to (-1,1)$ restricts to submersions from $D_x$, $D_+$, and $D_-$ onto their images, and so a map $\varphi \colon W \to (-1,1)$ from a manifold with corners is transverse to $\pi$ if and only if it is transverse to the map from the point at the tip of the pentagon to $(-1,1)$.
 This is equivalent to the requirement that the restriction of $\varphi$ to every stratum of $W$ have $0$ as a regular value, in which case we will simply say that ``$\varphi$ has a regular value at $0$.''
 
-We can now officially define creasing. 
+We can now officially define creasing.
 
 \begin{definition}
 	Suppose $W$ is a manifold with corners and $\varphi \colon W \to (-1,1)$ is a smooth map with a regular value at $0$.
@@ -756,7 +757,7 @@ Given instead a smooth $\phi \colon W \to \R$ with regular value at $0$ as in th
 	If we are treating $\varphi \colon W \to (-1,1)$ as co-oriented, then we interpret $\Cre(W)$ as co-oriented.
 \end{comment}
 
-To justify the notion of creasing as a type of homotopy, at least topologically, we have the following lemma and corollary. 
+To justify the notion of creasing as a type of homotopy, at least topologically, we have the following lemma and corollary.
 Note that these results are purely in the topological category, not the smooth category.
 
 \begin{lemma}
@@ -790,7 +791,7 @@ See \cref{F: creasing} for a sketch of a creasing homotopy of the teardrop manif
 \begin{lemma}\label{E: bd crease}
 	Let $M$ be a manifold without boundary.
 	Suppose given $\phi \colon M \to (-1,1)$ with $0$ a regular value and $r_W \colon W \to M$ transverse to $M^0 = \phi^{-1}(0)$, representing an element of $PC^\Gamma_*(M)$ or $W \in PC_\Gamma^*(M)$.
-	Then 
+	Then
 \begin{equation*}
 	\bd(\Cre_\phi(W)) = (D_x \sqcup -D_- \sqcup -D_+)\times_{(-1,1)} W \bigsqcup -D\times_{(-1,1)}\bd W = W \sqcup -W^- \sqcup -W^+ \sqcup -\Cre_\phi(\bd W),
 \end{equation*}
