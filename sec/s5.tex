@@ -18,7 +18,7 @@ In the contravariant case, we need to use both transversality and smoothing, and
 
 The construction of $f_*$ for homology is relatively straightforward and can essentially be found in \cite[Section 6]{Lipy14}, though we provide additional details.
 The covariant case of cohomology is similar to that for homology.
-For the contravariant cases, there is slightly more work, and our argument here for cohomology parallels Kreck's in \cite{Krec10}, which is slightly different than the sketch in Lipyanskiy \cite[Section 6]{Lipy14} in that we choose to perturb $f$ rather than the reference map for the cohomology class in order to obtain transversality.
+For the contravariant cases, there is slightly more work, and our argument here for cohomology parallels Kreck's in \cite{Krec10}, which is slightly different than the sketch in Lipyanskiy \cite[Section 6]{Lipy14} in that we choose to perturb $f$ rather than the reference map for the cohomology class in order to obtain transversality for the purpose of performing pullbacks.
 
 As part of our constructions, we will see that if $F \colon M \times I \to N$ is a homotopy (proper or co-oriented as need be) and $r_W \colon W \to M$ represents a geometric cycle or cocycle, then the composition $F \circ (r_W \times \id_I)$ provides a homology or cohomology from $F(-,0)r_W \colon W \to N$ to $F(-,1)r_W \colon W \to N$.
 Such homotopies, which we dub ``universal homotopies,'' will be critical in later sections for making geometric chains and cochains transverse to each other.
@@ -27,11 +27,12 @@ Such homotopies, which we dub ``universal homotopies,'' will be critical in late
 
 In this section we consider the covariant behavior of geometric chains and cochains under maps and homotopies.
 Both $M$ and $N$ may have corners in this section unless noted otherwise.
+We begin with smooth maps but will generalize later to continuous maps via smooth approximation, at which time we will assume $M$ and $N$ are without boundary.
 
 If $r_W \colon W \to M$ is in $PC_*^\Gamma(M)$ and $f \colon M \to N$ is a smooth map, then the composition $fr_W \colon W \to N$ is in $PC^\Gamma_*(N)$.
 Consistent with our notation of writing $W \in PC_*^\Gamma(M)$, we write the image in $PC_*^\Gamma(N)$ as $f(W)$.
 Similarly, if $f$ is proper and co-oriented we obtain a map $PC^*_\Gamma(M) \to PC^{*+n-m}_\Gamma(N)$ that we also write as $W \to f(W)$.
-In this case the change of degree is because $W$ represents an element of degree $m-w$ in $PC^*_\Gamma(M)$ and of degree $n-w$ in $PC^{*+n-m}_\Gamma(N)$.
+In this case the change of degree is because $W$ represents an element of degree $m-w$ in $PC^*_\Gamma(M)$ and of degree $n-w$ in $PC^{*}_\Gamma(N)$.
 Functoriality is clear, and both $\bd(f(W))$ and $f(\bd W)$ are represented by $fr_Wi_{\bd W}$.
 To obtain chain maps\footnote{We will not require here the signs that sometimes accompany chain maps of non-zero degree.} $C_*^\Gamma(M) \to C_*^\Gamma(N)$ and $C^*_\Gamma(M) \to C^{*+n-m}_\Gamma(N)$
 (that we also write as $f$), it suffices to show that if $W \in Q(M)$ then $f(W) \in Q(N)$.
@@ -70,11 +71,11 @@ We will also need the following observations for the co-oriented cases.
 
 \begin{lemma}
 	Let $r_W \colon W \to M$ be co-oriented, and let $r_W \times \id \colon W \times I \to M \times I$ be co-oriented by \cref{homotopy product co-orientation convention}.
-	For $j = 0,1$, let $i_j \colon W = W \times j \to W \times I$ and $k_j \colon M = M \times j \to M \times I$ be the inclusions, co-oriented with the usual boundary co-orientation (\cref{D: boundary co-orientation}).
+	For $j = 0,1$, let $i_j \colon W = W \times j \into W \times I$ and $k_j \colon M = M \times j \into M \times I$ be the inclusions, co-oriented with the usual boundary co-orientation (\cref{D: boundary co-orientation}).
 	Then for $j = 0,1$, the following diagram of co-oriented maps commutes:
 	\[
 	\begin{tikzcd}[column sep=large]
-		W \arrow[r, "r_W"] \arrow[d, "i_j"'] & M \arrow[d, "k_j"] \\
+		W \arrow[r, "r_W"] \arrow[hookrightarrow,d, "i_j"'] & M \arrow[hookrightarrow,d, "k_j"] \\
 		W \times I \arrow[r, "r_W \times \id"] & M \times I.
 	\end{tikzcd}
 	\]
@@ -111,7 +112,7 @@ We will also need the following observations for the co-oriented cases.
 	So $F (r_W\times \id)$ is a co-oriented homotopy from $fr_W$ to $gr_W$ as desired.
 \end{proof}
 
-The next lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a manifold over $M$ that is in $Q(M)$ to one that is not in $Q(N)$.
+The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot ``promote'' a manifold over $M$ that is in $Q(M)$ to one that is not in $Q(N)$.
 
 \begin{lemma}\label{L: dessicated homotopy}
 	Let $W \in PC_*^\Gamma(M)$ (or $W \in PC^*_\Gamma(M)$).
@@ -128,7 +129,7 @@ The next lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a man
 	For	$F \circ (r_W \times id_I)$, we first suppose $W \in PC_*^\Gamma(M)$.
 	In this case it is clear that $F \circ (r_W \times \id_I) \in PC_*^\Gamma(N)$ using the product orientation on $W \times I$.
 
-	If $\rho \colon W \to W$ is an orientation reversing diffeomorphism such that $r_W \circ \rho = r_W$, then
+	If $\rho \colon W \to W$ is an orientation-reversing diffeomorphism such that $r_W \circ \rho = r_W$, then
 	$\rho \times \id_I \colon W \times I \to W \times I$ is an orientation-reversing self-diffeomorphism of $W \times I$ such that $F \circ (r_W \times id_I) \circ (\rho \times \id_I) = F \circ (r_W \times id_I)$.
 	So $W \times I \to N$ is trivial.
 
@@ -136,12 +137,12 @@ The next lemma shows that a homotopy $M \times I \to N$ cannot ``promote'' a man
 		% $F \circ (f \times id_I) \circ (\rho \times \id_I) = F \circ (f\rho \times \id_I) = F \circ (f \times \id _I)$.
 	\end{comment}
 
-	Next, if the derivative of the reference map $Dr_W$ has non-trivial kernel at a point $x \in W$ then so does the derivative $D(r_W \times \id_I)$ at each $(x,t) \in W \times I$, and thus so
+	Next, if the derivative $Dr_W$ of the reference map $r_W$ has non-trivial kernel at a point $x \in W$ then so does the derivative $D(r_W \times \id_I)$ at each $(x,t) \in W \times I$, and thus so
 	will $D(F \circ (r_W \times id_I)) = DF \circ D(r_W \times id_I)$.
 	So $W \times I \to N$ has small rank if $r_W$ does.
 
 	By definition, if $W \to M$ is degenerate then it has small rank and $\bd W = T \sqcup S$ with $T$ trivial and $S$ small rank.
-	We have shown that $W \times I \to N$ then has small rank, so its suffices to consider its boundary,
+	We have shown that $W \times I \xr{F\circ(r_W\times\id_I)} N$ then has small rank, so its suffices to consider its boundary,
 	which is the union (up to signs) of $\bd W \times I$ and $W \times \bd I$.
 	But $\bd W \times I = (T \times I) \sqcup (S \times I)$, which by our previous
 	arguments are trivial and of small rank respectively.
@@ -203,18 +204,20 @@ The first part of the following theorem is Lipyanskiy's Theorem 5 in \cite{Lipy1
 	First consider the case of homology.
 	Let $g$ be any smooth approximation to $f$.
 	Then by \cref{C: homology chain map}, $g$ induces a chain map $C_*^\Gamma(M) \to C_*^\Gamma(N)$ and hence a map $H_*^\Gamma(M) \to H_*^\Gamma(N)$.
+	We show that this map is independent of the choice of $g$.
 	Let $h$ be any other smooth map homotopic to $f$ (and so also homotopic to $g$).
 	The continuous homotopy from $g$ to $h$ can be smoothly approximated by a smooth homotopy $H \colon M \times I \to N$ from $g$ to $h$ \cite[Theorem III.2.5]{Kos93}.
 	The cycles represented by $g(W)$ and $h(W)$ are homologous by \cref{C: homotopy}.
+
 
 	The cohomological case is the same by taking proper smooth approximations, which we show can be found in the proof of \cref{T: basic trans}, and co-orienting the homotopies using \cref{L: co-orientable homotopies} so that the approximations $g$ and $h$ are co-oriented homotopic to $f$.
 \end{proof}
 
 There is another very useful application of \cref{C: homotopy} that will be needed frequently below.
-To explain, we first observe that if we have a map $r_W \colon W \to M$ representing an element of $H_*^\Gamma(M)$, then, in general, this homology classes is not preserved under homotopies of $r_W$.
-In fact, a map representing a cycle might be homotopic to maps that do not represent cycles by pulling apart cancelling boundary components during the homotopy.
-So, in general, geometric homology and cohomology do not behave well with respect to homotopies of the elements of $PC(M)$.
-This will be a problem below, for example when we want to alter a map representing a cycle by a homotopy to make it transverse to some other cycle.
+To explain, we first observe that if we have a map $r_W \colon W \to M$ representing an element of $H_*^\Gamma(M)$, then, in general, this homology class is not preserved under homotopies of $r_W$.
+For example, a map representing a cycle might be homotopic to maps that do not represent cycles by pulling apart cancelling boundary components during the homotopy or maps of small rank may be homotopic to maps that do not have small rank.
+So, in general, geometric homology and cohomology do not behave well with respect to homotopies of the elements of $PC(M)$; this is the case also with ordinary singular chains modeled on simplices.
+This will cause difficulties below, for example when we want to alter a map representing a cycle by a homotopy to make it transverse to some other cycle.
 The solution will be to define and use what we call universal homotopies.
 
 \begin{definition}\label{D: universal homotopy}
@@ -269,26 +272,26 @@ It will be useful later to allow $M$ to be a manifold with corners here.
 \end{comment}
 
 \begin{lemma}\label{L: pullback map Q}
-	Suppose $M$ is a manifold with corners and $N$ is a manifolds without boundary.
+	Suppose $M$ is a manifold with corners and $N$ is a manifold without boundary.
 	Suppose $r_S \colon S \to N$ is trivial (oriented or co-oriented) or has small rank, and let $g \colon M \to N$ be a smooth map transverse to $r_S$.
 	Then the pullback $g^*(S) = S \times_N M \to M$ is also trivial or has small rank, respectively.
 	Consequently, if $S \in Q(N)$ then $S \times_N M \to M$ is in $Q(M)$.
 \end{lemma}
 
 \begin{proof}
-	If $\rho$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $S$ over $N$, then the restriction of $\rho \times \id_M$ to $S \times_N M \subset S \times M$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $S \times_N M$ over $M$ by \cref{R: product preserves iso}.
+	If $\rho$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $S$ over $N$, then the restriction of $\rho \times \id_M$ to $S \times_N M \subset S \times M$ is a (co\nobreakdash-)orientation reversing diffeomorphism of $S \times_N M$ over $M$ by \cref{L: product preserves iso}.
 
 	Next, suppose $r_S \colon S \to N$ has small rank.
 	Suppose at the point $x \in S$ we have $v \in \ker(D_x r_S)$.
 	By \cref{L: tangent of pullbacks}, if $(x,y) \in S \times M$, the tangent space $T_{(x,y)}(S \times_N M)$ is the pullback $T_xS\times_{T_{(r_S(x),g(y))}N} T_y M$, and we are interested in the map from this space under the derivative of the projection $\pi \colon S \times M \to M$.
-	As $v \in \ker D_xr_S$, we have $(v,0) \in T_{(x,y)}(S \times_N M)$, and this projects to $0$ in $T_yM$.
+	As $v \in \ker (D_xr_S)$, we have $(v,0) \in T_{(x,y)}(S \times_N M)$, and this projects to $0$ in $T_yM$.
 	So $(v,0) \in \ker(D_{(x,y)}\pi)$.
 	This shows that the pullback has small rank.
 
 	The final statement is then a consequence of the definitions as in the proof of \cref{L: Q preservation}.
 \end{proof}
 
-The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemma we cannot define chain maps $g^* \colon C^*_\Gamma(N) \to C^*_\Gamma(M)$ or $g^* \colon C_*^\Gamma(N) \to C_*^\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$.
+The requirement that $g \colon M \to N$ must be transverse to $W$ means that even with the preceding lemmas we cannot define chain maps $g^* \colon C^*_\Gamma(N) \to C^*_\Gamma(M)$ or $g^* \colon C_*^\Gamma(N) \to C_*^\Gamma(M)$ because for any fixed $g$ there may be geometric cochains none of whose representatives are transverse to $g$.
 Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$, and if $M$ is oriented and $f$ is proper, we can further define a map in geometric homology $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
 The constructions are as follows.
 
@@ -308,17 +311,25 @@ The constructions are as follows.
 \end{proposition}
 
 \begin{proof}
-	We treat only the cohomology case, as the homology arguments are analogous taking the appropriate maps and homotopies to be proper, which is consistent with our applications of \cref{T: basic trans,T: homotopy trans}.
+	We treat only the cohomology case, as the homology arguments are analogous taking the appropriate maps and homotopies to be proper, which is consistent with our applications of \cref{T: basic trans,T: homotopy trans} below.
 
-	First, let $r_W \colon W \to N$ represent a cocycle, and suppose we have two maps $g_0, g_1 \colon M \to N$ that are smooth, homotopic to $f$, and transverse to $r_W$.
+	First, let $r_W \colon W \to N$ represent a cocycle, and suppose $g_0 \colon M \to N$ is smooth, homotopic to $f$, and transverse to $r_W$.
+	By \cref{D: cohomology pullback and homology transfer}, $f^*(\uW)$ is represented by the pullback $g^*(W) = W \times_N M \to M$.
+	We first observe this represents a cocycle.
+	Because  $M$ is without boundary, we have by \cref{leibniz} that $\bd(W\times_N M) = (\bd W) \times_N M$.
+	Then as $\bd W \in Q^*(N)$ by assumption, we have $(\bd W) \times_N M \in Q^*(M)$ by \cref{L: pullback map Q}.
+	Hence $g^*(W) = W \times_N M \to M$ represents a cocycle.
+
+	Next suppose we have two maps $g_0, g_1 \colon M \to N$ that are smooth, homotopic to $f$, and transverse to $r_W$.
 	Let $G'$ be a smooth homotopy from $g_0$ to $g_1$, which exists by \cite[Proposition 9.2.33]{MaDo92} (or, if $f$ is proper and $g_0$ and $g_1$ are smooth proper maps properly homotopic to $f$, there is a smooth proper such $G'$ by \cite[Proposition 9.2.35]{MaDo92}).
-	By \cref{T: homotopy trans} there exists a smooth homotopy $G \colon M \times I \to N$ from $g_0$ to $g_1$ such that $G$ is transverse to $r_W$. In particular we apply \cref{T: homotopy trans} with the map $f$ of that theorem being our smooth homotopy $G'$, whose boundary consists of $g_0$ and $g_1$; then the resulting map $h(-,1)$ of that theorem will be our desired $G$.
+	Then by \cref{T: homotopy trans} there exists a smooth homotopy $G \colon M \times I \to N$ from $g_0$ to $g_1$ such that $G$ is transverse to $r_W$.
+	In particular, we apply \cref{T: homotopy trans} with the map $f$ of that theorem being our smooth homotopy $G'$, whose boundary consists of $g_0$ and $g_1$; then the resulting map $h(-,1)$ of that theorem will be our desired $G$.
 
 	Now, consider the composition $W \times_N (M \times I) \xr{r_W \times_N G} M \times I \to M$ of the pullback of $r_W$ by $G$ and the projection $M \times I \to M$.
 	As $r_W$ is proper and co-oriented, so is the pullback, and the projection $M \times I \to M$ has its standard co-orientation $(\beta_M \wedge \beta_I,\beta_M)$ and is proper.
 	So this composition represents a geometric cochain in $M$.
-	Furthermore, the boundary of this composition is the disjoint union of $\bd W \times_N (M \times I) \to M \times I \to M$ and, up to sign, $$W \times_N \bd(M \times I) = \left( W \times_N (M \times \{1\})\right) \sqcup \left(- W \times_N (M \times \{0\})\right) \to M \times I \to M.$$
-	As $W$ is assumed to be a cocycle, $\bd W \in Q^*(N)$.
+	Furthermore, the boundary of this composition is the disjoint union of $\bd W \times_N (M \times I) \to M \times I \to M$ and, up to sign, $$W \times_N \bd(M \times I) = \left( W \times_N (M \times \{1\})\right) \sqcup \left(- W \times_N (M \times \{0\})\right) \to M \times I \to M$$ as $M$ is a manifold without boundary.
+	Since $W$ is assumed to be a cocycle, $\bd W \in Q^*(N)$.
 	So $\bd W \times_N (M \times I) \to M \times I$ is in\footnote{Note that even if $M$ is without boundary, $M \times I$ will have boundary (unless $M$ is empty).
 	This instance is the main reason we have allowed such constructions as $PC^*(-)$ and $Q^*(-)$ to take manifolds with non-empty boundary as inputs up to this point.
 	In this particular case, since $N$ does not have boundary, all of our ``smooth'' maps to $N$ are automatically smooth in the strong sense of \cite{Joy12}, as are then $W \times_N (M \times I) \to M \times I$ and $M \times I = M \times_{pt} I \to M$ as these are both pullbacks in the smooth category.}
@@ -326,12 +337,12 @@ The constructions are as follows.
 	Therefore, the composite $\bd W \times_N (M \times I) \to M \times I \to M$ is in $Q^*(M)$.
 	The other terms correspond to the pullbacks of $W$ via $g_0$ and $g_1$, so $g_0^*(W)$ and $g_1^*(W)$ represent cohomologous cocycles.
 
-	Next, as we have noted that $f^*$ is not a fully-defined chain map, we must show directly that $f^*$ as a cohomology map does not depend on the choice of precocycle representing a cohomology class.
+	Finally, as we have noted that $f^*$ is not a fully-defined chain map, we must show directly that $f^*$ as a cohomology map does not depend on the choice of precocycle representing a cohomology class.
 	So suppose $r_{W_0} \colon W_0 \to N$ and $r_{W_1} \colon W_1 \to N$ represent the same cohomology class.
 	In this case there will be a $Z \in PC^*_\Gamma(N)$ such that $\bd \underline{Z} = \underline{W_0} - \underline{W_1}.$
 	As $\bd \underline{Z} = \underline{\bd Z}$ and $\underline{W_0} - \underline{W_1} = \underline{W_0 \sqcup - W_1}$ by \cref{D: chains and cochains,L: co/chains well defined}, the above equality means by \cref{L: co/chains well defined} that $\bd Z \sqcup -(W_0 \sqcup -W_1) \in Q^*(N)$.
 	By \cref{T: basic trans} and its proof, we may choose a smooth $g$ homotopic to $f$ that is transverse to all of $Z$ (and so also $\bd Z$), $W_0$, and $W_1$.
-	Then by \cref{L: pullback map Q}, the pullback
+	Then by \cref{L: pullback map Q}, the pullback by $g$ given by
 	$$\left[\bd Z \sqcup -(W_0 \sqcup -W_1)\right] \times_N M = ((\bd Z) \times_N M) \sqcup (-W_0 \times_N M) \sqcup (W_1 \times_N M)$$
 	is in $Q^*(M)$.
 	As $M$ has no boundary, $(\bd Z) \times_N M = \bd (Z \times_N M)$.
