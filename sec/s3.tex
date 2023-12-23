@@ -465,7 +465,7 @@ In \cref{S: geometric cochains}, we will use induced co-orientations on boundari
 The following example will be very important later for breaking geometric chains and cochains into pieces.
 
 \begin{example}\label{E: manifold decomposition}
-	Suppose we have a smooth map $\varphi \colon W \to \R$ and that $0$ is a regular value of $\varphi$.
+	Suppose we have a smooth map $\varphi \colon W \to \R$ and that $0$ is a regular value of $\varphi$, meaning in this case that $\varphi$ is transverse to the inclusion of $0$ into $\R$.
 	Consider the spaces $W^0 = (\varphi)^{-1}(0)$, $W^- = (\varphi)^{-1}((-\infty,0])$, and $W^+ = (\varphi)^{-1}([0,\infty))$.
 	We can identify $W^0$ with the fiber product $0 \times_{\R} W$ of $\varphi$ with the embedding of $0$ into $\R$, as our canonical realization of this fiber product is
 	$$\{(0,x) \in 0 \times W \mid \varphi (x)= 0\}.$$
@@ -474,7 +474,7 @@ The following example will be very important later for breaking geometric chains
 	which is simply the graph of $\varphi$ over $W^+$;
 	so there is a diffeomorphism between the fiber product and $W^+$ determined by the inverse maps $(t,x) \mapsto x$ and $x \mapsto (\varphi(x), x)$.
 	The case of $W^-$ is analogous.
-	That $0$ is a regular value of $\varphi$ implies that $\varphi$ is transverse to the embedding of $0$ into $\R$, and it follows by \cref{pullback} that $W^0$, $W^+$, and $W^-$ are manifolds with corners.
+	By \cref{pullback}, the spaces $W^0$, $W^+$, and $W^-$ are manifolds with corners.
 	In fact, $W^0$ is a submanifold (with corners) of $W$ by \cite[Proposition 4.2.9]{MaDo92}.
 	By the boundary formula of \cref{P: product boundary},
 	$$\bd (W^-)= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right) = W^0 \sqcup (\bd W)^-,$$
@@ -487,7 +487,9 @@ The following example will be very important later for breaking geometric chains
 
 	Next we suppose that $\varphi$ is the composition $\varphi = \phi g$ of two smooth maps $W \xr{g} M \xr{\phi}\R$, where $M$ is a manifold without boundary.
 	This may at first seem a bit artificial, but such a setting will arise in the creasing construction in \cref{S: creasing} for breaking up geometric chains and cochains.
-	We further suppose $0$ is a regular value for $\phi$ and for $\phi g$ and note that $0$ being a regular value for $\varphi = \phi g$ is equivalent to $g$ being transverse to $M^0 = \phi^{-1}(0)$, which is a codimension-one submanifold of $M$ by the preceding discussion.
+	We further suppose $0$ is a regular value for $\phi$ and for $\phi g$.
+	In the latter case, we mean that $\phi g$ is transverse to the inclusion of $0$ into $\R$.
+	Note that $0$ being a regular value for $\varphi = \phi g$ is equivalent to $g$ being transverse to $M^0 = \phi^{-1}(0)$, which is a codimension-one submanifold of $M$ by the preceding discussion.
 	In fact, by the applying the preceding discussion to $\phi$, we obtain spaces $M^0$ and $M^\pm$, and applying the discussion to $\varphi = \phi g$, we obtain spaces $W^0$ and $W^\pm$.
 	Furthermore, we notice for use later that $W^0$ and $W^\pm$ are diffeomorphic to the respective fiber products $M^0 \times_M W$ and $M^{\pm} \times_M W$ by an argument analogous to that above for the fiber products over $\R$; in particular, these are just the graphs of $g$ over $W^0$ and $W^\pm$.
 

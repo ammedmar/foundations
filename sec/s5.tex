@@ -9,6 +9,8 @@ It is more challenging to find an explicit isomorphism in the case of cohomology
 \subsection{Functoriality and homotopy properties}\label{S: functoriality}
 
 Given a \textit{continuous} map of smooth manifolds $f \colon M \to N$, we define in this section the induced maps $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ and $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ and show that they are independent of $f$ up to homotopy.
+In subsequent sections, we will sometimes write the homology map simply as $f$ when the context is clear.
+
 We also treat ``wrong way'' maps, though they require extra hypotheses.
 In particular, if $f$ is proper and co-oriented it induces a covariant map on cohomology $f_* \colon H^*_\Gamma(M) \to H^{*+n-m}_\Gamma(N)$ independent of $f$ up to proper homotopy,
 while if $f$ is proper and $M$ is oriented, we have a contravariant homology map $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
@@ -364,28 +366,19 @@ The constructions are as follows.
 \subsection{Mayer--Vietoris sequences}
 
 In this sections we consider Mayer--Vietoris sequences for homology and cohomology.
-As in the previous section, we present covariant homology and cohomology sequences and a contravariant cohomology sequence.
+In particular, we present covariant homology and cohomology sequences and a contravariant cohomology sequence.
 
-A key tool in proving the existence of these sequences will be creasing; see \cref{S: creasing}.
-The following definition will be useful.
+For the covariant homology sequence, the maps $H_*^\Gamma(U) \to H_*^\Gamma(M)$, etc., induced by inclusion will be those defined in \cref{S: covariant functoriality}.
+For a covariant cohomology sequence, however, the maps of the preceding section will not work, as the inclusion of an open set into a manifold is not generally proper.
+Rather, to obtain a covariant cohomology sequence we will need to use in at least some of the terms a variant of geometric cohomology supported on open subsets, denoted $H^*_\Gamma(M|_U)$.
+We will not provide an in-depth study of this variant cohomology, but it will not take us too far afield to introduce it here and treat its Mayer--Vietoris sequence in parallel with the homology sequence.
+We justify this added effort by observing that we will have $H^*_\Gamma(M|_M) = H^*_\Gamma(M)$, so this sequence may be useful in studying our usual geometric cohomology.
+However, the reader more interested in our standard geometric homology and cohomology can bypass this next section and go right to the following section.
 
-\begin{definition}
-	Let $U,V$ be open subsets of a manifold $M$.
-	We will call a smooth non-constant\footnote{The extra condition that $\phi$ not be constant is required if $U\setminus V$ or $V\setminus U$ is empty, i.e.\ if $U \subset V$ or $V \subset U$.} function $\phi \colon U \cup V \to [-1,1]$ a \textbf{separating function} for $U$ and $V$ if $\phi(U\setminus V) = -1$ and $\phi(V\setminus U) = 1$.
-	Such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
 
-	Suppose now $\phi$ is a separating function for $U$ and $V$ and that we have a map $r_W \colon W \to U \cup V$.
-	The subset of $(-1,1)$ of regular values for the composite $\phi r_W$ is dense in $(-1,1)$ by Sard's Theorem.
-	We will say that such a regular value $p$ is a \textbf{separating point} for $W$.
-	In this case we may perform creasing of $W$ along $(\phi r_W)^{-1}(p)$.
-	By composing with an orientation-preserving diffeomorphism of $(-1,1)$ we may always assume $p = 0$ for notational convenience.
-\end{definition}
+\subsubsection{Cohomology supported on open sets}
 
-\subsubsection{Covariant Mayer--Vietoris sequences and cohomology with support}
-
-For the homology Mayer--Vietoris sequences, the maps $H_*^\Gamma(U) \to H_*^\Gamma(M)$, etc., induced by inclusion will be those defined in the preceding section.
-For cohomology, however, the map of the preceding section will not work, as the inclusion of an open set into a manifold is not generally proper.
-Rather, for the covariant cohomology sequence we will need to use the following variant of geometric cohomology supported on open subsets:
+In this brief section we provide the definition and some immediate properties for cohomology supported on open sets.
 
 \begin{definition}
 	Let $M$ be a manifold without boundary and $U \subset M$ an open subset.
@@ -393,19 +386,18 @@ Rather, for the covariant cohomology sequence we will need to use the following 
 	Let $H_\Gamma^*(M|_U) = H^*(C_\Gamma^*(M|_U))$.
 \end{definition}
 
-In general, $C_\Gamma^*(M|_U)$ does not agree with the image of $C_\Gamma^*(U)$ in $C_\Gamma^*(M)$ as defined in the preceding section, as the inclusion $U \into M$ is not generally proper.
+It is easy to observe that $C_\Gamma^*(M|_U)$ is a chain complex as it is closed under addition and taking boundaries using that the sum $\underline{W_1}+\underline{W_2}$ of two elements of $C^*_\Gamma(M|_U)$ represented by elements of $PC^*_\Gamma(M)$ with image in $U$ can be represented by the disjoint union $W_1 \sqcup W_2$ with image in $U$, and similarly the boundary of a precochain with image in $U$ has image in $U$.
 
-It is easy to observe that $C_\Gamma^*(M|_U)$ is a chain complex as it is closed under addition and taking boundaries using that the sum $W_1+W_2$ of two elements of $PC^*_\Gamma(M)$ with image in $U$ can be represented by the disjoint union $W_1 \sqcup W_2$ with image in $U$, and similarly the boundary of a map with image in $U$ has image in $U$.
 In fact, we can reformulate this definition as follows.
 
 \begin{lemma}
 	Let $PC_\Gamma^*(M|_U) \subset PC_\Gamma^*(M)$ be the subset consisting of $r_W \colon W \to M$ with image in $U$, and let $Q^*(M|_U)$ be the elements of $Q^*(M)$ with image in $U$.
-	Then $C_\Gamma^*(M|_U)$ is isomorphic to the set of equivalence class of $PC_\Gamma^*(M|_U)$ under the relation $V\sim_U W$ if $V \sqcup -W \in Q^*(M|_U)$.
+	Then $C_\Gamma^*(M|_U)$ is isomorphic to the set of equivalence classes of $PC_\Gamma^*(M|_U)$ under the relation $V\sim_U W$ if $V \sqcup -W \in Q^*(M|_U)$.
 \end{lemma}
 
 \begin{proof}
 	We first observe that $\sim_U$ is an equivalence relation on $PC_\Gamma^*(M|_U)$ by the same proof as \cref{L: cancel Q}, assuming all maps have image in $U$.
-	Clearly if $V,W \in PC_\Gamma^*(M|_U)$ and $V\sim_UW$ then $V\sim W$ in the sense of \cref{L: cancel Q}.
+	Furthermore, if $V,W \in PC_\Gamma^*(M|_U)$ and $V\sim_UW$ then $V\sim W$ in the sense of \cref{L: cancel Q}.
 	So letting $\hat C_\Gamma^*(M|_U)$ temporarily denote the
 	equivalence classes under $\sim_U$, we have a well-defined map $f \colon \hat C_\Gamma^*(M|_U) \to C_\Gamma^*(M|_U)$.
 	By definition, elements of $C_\Gamma^*(M|_U)$ can be represented by elements of $PC_\Gamma^*(M|_U)$, so $f$ is surjective.
@@ -415,6 +407,57 @@ In fact, we can reformulate this definition as follows.
 \end{proof}
 
 The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U \subset W \subset M$ are open sets then we have $C_\Gamma^*(M|_U) \subset C_\Gamma^*(M|_W) \subset C_\Gamma^*(M|_M) = C_\Gamma^*(M)$, and these induce maps $H_\Gamma^*(M|_U) \to H_\Gamma^*(M|_W) \to H_\Gamma^*(M)$.
+
+
+As Mayer--Vietoris sequences are often the engines of induction arguments and as many inductions start with Euclidean balls, we provide the following computation, which is akin to the dimension axiom or the Poincar\'e lemma; see \cref{E: dimension}.
+
+\begin{proposition}\label{P: P lemma}
+	Let $M$ be an $m$-dimensional smooth manifold, and $U \subset M$ an open set that is diffeomorphic to an open ball and whose closure in $M$ is compact.
+	Then $H^n_\Gamma(M|_U)$ is $\Z$ if $n = m$ and is zero otherwise.
+\end{proposition}
+
+
+\begin{proof}[Proof of \cref{P: P lemma}]
+	If $r_W \colon W \to M$ is proper and has image in $U$, then $W$, as the preimage of the closure of $U$, must be compact.
+	Also, $U$ is orientable, and so by choosing an orientation of $U$ every co-oriented $r_W \colon W \to U$ determines an orientation of $W$ as explained in \cref{S: co-orientations}.
+	Thus $C^*_\Gamma(M|_U) \cong C_{m-*}^\Gamma(U)$, and the result follows from \cref{E: dimension} (the dimension axiom), homotopy functoriality of geometric homology, and that $U$ is homotopy equivalent to a point.
+\end{proof}
+
+
+
+\subsubsection{Covariant Mayer--Vietoris sequences}
+
+We now turn to our covariant Mayer--Vietoris sequences.
+
+
+A key tool in proving the existence of these sequences will be creasing, which we introduced in \cref{S: creasing}.
+For geometric homology and cohomology, creasing replaces the role that subdivision plays in the classical singular theories.
+In some sense creasing is simpler, as creasing only needs to be applied once while subdivision often needs to be iterated.
+In order to perform creasing, the following definitions will be useful.
+
+\begin{definition}
+	Let $U,V$ be non-empty open subsets of a manifold $M$.
+	We will call a smooth non-constant\footnote{The extra condition that $\phi$ not be constant is required if $U\setminus V$ or $V\setminus U$ is empty, i.e.\ if $U \subset V$ or $V \subset U$.} function $\phi \colon U \cup V \to [-1/2,1/2]$ a \textbf{separating function for $\mathbf U$ and $\mathbf V$} if $\phi(U\setminus V) = -1/2$ and $\phi(V\setminus U) = 1/2$.
+	Such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
+	We use $\pm 1/2$ as our endpoints to be consistent with the maps $\phi \colon M \to (-1,1)$ used in the definition of creasing.
+	Note that we only assume that $U \setminus V \subset \phi^{-1}(-1/2)$ and not that $U \setminus V  = \phi^{-1}(-1/2)$, and similarly for $V \setminus U$.
+
+	Suppose now $\phi$ is a separating function for $U$ and $V$ and that we have a map $r_W \colon W \to U \cup V$.
+	We will say that $\phi$ \textbf{separates $\mathbf W$ over $\mathbf U$ and $\mathbf V$} if $0$ is a regular value for the composite $\phi r_W$, meaning that $\phi r_W$ is transverse to the inclusion of $0$ into $[-1/2,1/2]$.
+	In particular, $0$ is a regular value for the restriction of $\phi r_W$ to each stratum of $W$.
+	Again, such $\phi$ exist, as for an arbitrary separating function the set of regular values is the complement of a set of measure zero in $[-1/2,1/2]$ by Sard's Theorem.
+	This is the standard statement of Sard's Theorem when $W$ is a smooth manifold without boundary, but note that for any countable set of maps $W_i \to U \cup V$ from smooth manifolds without boundary we can find a value that is regular for all of them, as a countable union of sets of measure zero still has measure $0$.
+	In particular, we can take the $W_i$ to be the strata of a manifold with corners or even of multiple manifolds with corners.
+    Once we have found such a common regular value $p$, we can then replace $\phi$ by its composition with an orientation-preserving diffeomorphism of $[-1/2,1/2]$ that takes $p$ to $0$, for example the linear fractional transformation $x \mapsto \frac{x-p}{-4px+1}$.
+
+
+	If $\phi$ is separating for $W$ over $U$ and $V$, we may perform creasing of $W$ along $(\phi r_W)^{-1}(0)$.
+\end{definition}
+
+We are now ready to demonstrate the existence of covariant Mayer--Vietoris sequences.
+In the following statements, we let $i_U \colon U \cap V \to U$ and $i_V \colon U \cap V \to V$ be the inclusion maps, and we write $(i_U, -i_V)$ for the map $C_*^{\Gamma}(U \cap V) \to C_*^{\Gamma}(U) \oplus C_*^{\Gamma}(V)$ that takes $\uW$ to $(i_U(\uW), -i_V(\uW))$.
+More generally, we use the notation $(a,b)$ for elements of a direct sum of groups.
+
 
 \begin{theorem}\label{T: relative MV}
 	Let $M$ be a manifold without boundary.
@@ -426,24 +469,25 @@ The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U 
 			arrow style = math font,
 			cells = {nodes = {text height = 2ex,text depth = 0.75ex}}
 			]
-			\cdots \arrow[r] & H^{\Gamma}_{k}(U \cap V) \arrow[r] & H^{\Gamma}_k(U) \oplus H^{\Gamma}_{k}(V)
-			\arrow[r] & H_{k}^{\Gamma}(U \cup V) \arrow[r] & H_{k-1}^{\Gamma}(U \cap V) \arrow[r] & \cdots.
+			\cdots \arrow[r] & H^{\Gamma}_{k}(U \cap V) \arrow[r, "(i_U{,} -i_V)"] & [25pt] H^{\Gamma}_k(U) \oplus H^{\Gamma}_{k}(V)
+			\arrow[r] & H_{k}^{\Gamma}(U \cup V) \arrow[r] & H_{k-1}^{\Gamma}(U \cap V) \arrow[r] & \cdots
 		\end{tikzcd}
 	\end{equation*}
+	and
 	\begin{equation*}
 		\begin{tikzcd}[
 			column sep = small,
 			arrow style = math font,
 			cells = {nodes = {text height = 2ex,text depth = 0.75ex}}
 			]
-			\cdots \arrow[r] & H_{\Gamma}^{k}(M|_{U \cap V}) \arrow[r] & H_{\Gamma}^k(M|_U) \oplus H_{\Gamma}^{k}(M|_V)
+			\cdots \arrow[r] & H_{\Gamma}^{k}(M|_{U \cap V}) \arrow[r, "(i_U{,} -i_V)"] & [25pt] H_{\Gamma}^k(M|_U) \oplus H_{\Gamma}^{k}(M|_V)
 			\arrow[r] & H^{k}_{\Gamma}(M|_{U \cup V}) \arrow[r] & H^{k+1}_{\Gamma}(M|_{U \cap V}) \arrow[r] & \cdots.
 		\end{tikzcd}
 	\end{equation*}
 \end{theorem}
 
 \begin{proof}
-	The proof parallels standard proofs of Mayer--Vietoris for singular homology, and is in fact simpler than those relying on barycentric subdivision since ``creasing subdivision'' only needs to be applied once.
+	The proof parallels standard proofs of the existence of Mayer--Vietoris sequences for singular homology.
 	The proofs for homology and cohomology are analogous, so we give the cohomological case, which is slightly more exotic.
 
 	Let $S^*$ denote the quotient of $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V)$ by the image of $C_{\Gamma}^*(M|_{U \cap V})$ under the map $(i_U, -i_V)$, with $i_U$ and $i_V$ being the inclusions.
@@ -461,26 +505,73 @@ The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U 
 			0.
 		\end{tikzcd}
 	\end{equation}
-	The theorem will follow from showing there is a quasi-isomorphism $\psi \colon S^* \to C_{\Gamma}^*(M|_{U \cup V})$.
-	Our quasi-isomorphism will be induced by the map $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V) \to C_{\Gamma}^*(M|_{U \cup V})$ that takes $\uW_1 \oplus \uW_2$ to $\uW_1+\uW_2$.
-	This is well defined as it clearly takes elements in the image of $(i_U{,}-i_V)$ to $0$.
+	This short exact sequence generates a long exact cohomology sequence, and the theorem will follow from showing there is a quasi-isomorphism $\psi \colon S^* \to C_{\Gamma}^*(M|_{U \cup V})$.
+	Our quasi-isomorphism will be induced by the map $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V) \to C_{\Gamma}^*(M|_{U \cup V})$ that takes $(\underline{W_1},  \underline{W_2})$ to $\underline{W_1}+\underline{W_2}$, letting context determine whether we think of $\underline{W_1}$ as an element of $C_{\Gamma}^*(M|_U)$ or $C_{\Gamma}^*(M|_{U \cup V})$ and similarly for $\underline{W_2}$.
+	This induces a well defined map $\psi \colon S^* \to C_{\Gamma}^*(M|_{U \cup V})$ as it takes elements in the image of $(i_U,-i_V)$ to $0$.
 	To establish the quasi-isomorphism, we use creasing.
 
 	First suppose a cocycle $\uW \in C_{\Gamma}^*(M|_{U \cup V})$ represented by $r_W \colon W \to U \cup V$.
-	Let $\phi \colon U \cup V \to (-1,1)$ be a separating function with $0$ a separating point.
+	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $W$ over $U$ and $V$.
 	Then $W^- \in C_{\Gamma}^*(M|_{U})$ and $W^+ \in C_{\Gamma}^*(M|_{V})$, and by \cref{T: cohomology creasing}, we have $\uW = \underline{W^-}+\underline{W^+} \in H^*_\Gamma(M)$.
 	But by the creasing construction if $W$ has image in $U \cup V$ then so does $\Cre(W)$, so also $\uW = \underline{W^-}+\underline{W^+} \in H_*^\Gamma(M|_{U \cup V})$.
-	We have $\bd W \in Q^*(U \cup V)$ by assumption that $W$ is a cocycle.
-	By the computation in \cref{E: codim 1 pullbacks}, we have $\bd( W^-) = (-W^0) \sqcup (\bd W)^-$, and $\bd (W^+) = W^0 \sqcup (\bd W)^+$.
-	AS $\bd W \in Q^*(M)$ with image in $U \cup V$, we have $(\bd W)^\pm \in Q^*(M)$ with respective images in $U$ and $V$ by \cref{C: creasing Q}, i.e.\ $(\bd W)^- = 0 \in C^*_\Gamma(M|_U)$ and similarly $(\bd W)^+ = 0 \in C^*_\Gamma(M|_V)$.
-	Thus $(W^-, W^+)$ represents an element of $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V)$ whose boundary is $(-W^0,W^0)$, which is in the image of $(i_U,-i_V)$.
-	Therefore, $(W^-, W^+)$ represents an element of
+	We have $\bd W \in Q^*(U \cup V) \subset Q^*(M)$ by assumption that $W$ is a cocycle.
+	By the computation in \cref{E: codim 1 pullbacks}, we have $\bd( W^-) = -(W^0) \sqcup (\bd W)^-$, and $\bd (W^+) = W^0 \sqcup (\bd W)^+$.
+	AS $\bd W \in Q^*(M)$ with image in $U \cup V$, we have $(\bd W)^\pm \in Q^*(M)$ with respective images in $U$ and $V$ by \cref{C: creasing Q}, so $(\bd W)^- = 0 \in C^*_\Gamma(M|_U)$ and similarly $(\bd W)^+ = 0 \in C^*_\Gamma(M|_V)$.
+	Thus $(\underline{W^-}, \underline{W^+})$ is an element of $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V)$ whose boundary is $(-\underline{W^0},\underline{W^0})$, which is in the image of $(i_U,-i_V)$.
+	Therefore, $(\underline{W^-}, \underline{W^+})$ represents an element of
 	$H^*(S^*)$ that maps to $\uW \in H^*_\Gamma(M_{U \cup V})$.
 	Thus $\psi$ is surjective.
 
+	Next, suppose $\uW$ is a cocycle in $S^*$, represented by $(\underline{W_1},\underline{W_2}) \in C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V)$, that maps to zero in $H_{\Gamma}^*(M|_{U \cup V})$.
+	Thus there is
+	some $Z \in PC^*_\Gamma(M|_{U \cup V})$ such that $\bd Z \sqcup - W_1 \sqcup -W_2 = T \in Q^*(M|_{U \cup V})$.
+	Using that $\underline T = 0$ in $C^*_\Gamma(M|_{U \cup V})$, it will be useful to write this as $\underline{\bd Z} = \bd \underline{Z} = \underline{W_1} + \underline {W_2} \in C^*_\Gamma(M|_{U \cup V})$.
+
+	Now let us choose a function $\phi \colon U \cup V \to [-1/2,1/2]$ that is separating for $Z$, $W_1$, and $W_2$ over $U$ and $V$.
+  	We claim that $(\underline{Z^-}+\underline{\Cre(W_1)},\underline{Z^+}+\underline{\Cre(W_2)}) \in C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V)$ represents an element of $S^*$ whose boundary is $\uW$.
+	More specifically, we claim the boundary of this element will be
+	\[(\underline{W_1},\underline{W_2}) + (-\underline{Z^0},\underline{Z^0}) + (\underline{W_2^-}-\underline{W_1^+}, \underline{W_1^+} -\underline{W_2^-}) -(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2)}) \in C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V).\]
+	But the middle two terms are in the image of $(i_U, -i_V)$ and we will show that the last term is also $0$ in $S^*$, so this will suffice to show that $(\underline{W_1}, \underline{W_2})$ bounds in $S_*$.
+
+	To compute we use that $\bd \underline{Z} = \underline{W_1} + \underline {W_2} \in C^*_\Gamma(M|_{U \cup V})$ implies by \cref{C: creasing Q} that $(\bd Z)^\pm \sqcup (- W_1)^\pm \sqcup (-W_2)^\pm \in Q^*(M|_{U \cup V})$.
+	Furthermore, as all the ``minus'' terms are supported in $U$ and all the ``plus'' terms are supported in $V$, we have $\underline{(\bd Z)^- }= \underline{W_1^-} + \underline{W_2^-}$ and $\underline{(\bd Z)^+} = \underline{W_1^+} + \underline{W_2^+}$ in $C^*_\Gamma(M|_U)$ and $C^*_\Gamma(M|_V)$, respectively.
+
+	Now we compute using again \cref{E: codim 1 pullbacks,E: bd crease}:
+	\begin{align*}
+		\bd (\underline{Z^-}+\underline{\Cre(W_1)},\underline{Z^+}+\underline{\Cre(W_2)})& = (\bd (\underline{Z^-})+\bd \underline{\Cre(W_1)},\bd (\underline{Z^+})+\bd\underline{\Cre(W_2)})\\
+		& = (-\underline{Z^0} + \underline{(\bd Z)^-}+\underline{W_1} -\underline{W_1^-} - \underline{W_1^+} -\underline{\Cre(\bd W_1)},\\
+		&\qquad\qquad \underline{Z^0} + \underline{(\bd Z)^-} +\underline{W_2} -\underline{W_2^-} -\underline{W_2^+} -\underline{\Cre(\bd W_2)})\\
+		& = (-\underline{Z^0} + \underline{W_1^-} + \underline{W_2^-} +\underline{W_1} -\underline{W_1^-} -\underline{W_1^+} -\underline{\Cre(\bd W_1)},\\
+		&\qquad\qquad \underline{Z^0}+ \underline{W_1^+}+ \underline{W_2^+} +\underline{W_2} -\underline{W_2^-} -\underline{W_2^+} -\underline{\Cre(\bd W_2)})\\
+		& = (-\underline{Z^0} + \underline{W_2^-} + \underline{W_1} -\underline{W_1^+} -\underline{\Cre(\bd W_1)},\\
+		&\qquad\qquad \underline{Z^0}+ \underline{W_1^+} + \underline{W_2} -\underline{W_2^-} -\underline{\Cre(\bd W_2))})\\
+		& = (\underline{W_1},\underline{W_2})+ (\underline{-Z^0},\underline{Z^0}) + (\underline{W_2^-}-\underline{W_1^+}, \underline{W_1^+} -\underline{W_2^-}) \\
+		&\qquad\qquad -(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2)}).
+	\end{align*}
+	This is the formula claimed above.
+
+	It remains to show that $(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2))})=0$ in $S^*$. This term is obtained by applying the creasing construction to the entries of $(\bd W_1,\bd W_2)$, which by assumption is $0$ in $S^*$.
+	So $(\bd W_1,\bd W_2)$ can be represented as the union of an element of $Q^*(M|_U) \oplus Q^*(M|_V)$ with an element in the image of $(i_U,-i_V)$.
+	But creasing preserves both support and membership in $Q^*$ by definition and by \cref{C: creasing Q}, and if $(A,-B) = (i_U,-i_V)(C) = (i_U(C),-i_V(C))$, then $(\Cre(A),\Cre(-B)) = (i_U(\Cre(C)),-i_V(\Cre(C)))$.
+	Altogether, we obtain $$(\underline{W_1},\underline{W_2}) = \bd (\underline{Z^-}+\underline{\Cre(W_1)},\underline{Z^+}+\underline{\Cre(W_2)})$$ in $S^*$.
+	So $\psi$ is injective.
+\end{proof}
+
+\begin{comment}
+
+
+
+
+
+
+
+
 	Next, suppose $\uW$ is a cocycle in $S^*$, represented by $(W_1,W_2) \in PC^*_\Gamma(M|_U) \oplus PC^*_\Gamma(M|_V)$, that maps to zero in $H_{\Gamma}^*(M|_{U \cup V})$.
 	Thus there is
-	some $Z \in PC^*_\Gamma(M|_{U \cup V})$ such that $\bd Z = W_1+W_2+T$ for some $T \in Q^*(M|_{U \cup V})$.
+	some $Z \in PC^*_\Gamma(M|_{U \cup V})$ such that $\bd Z \sqcup - W_1 \sqcup -W_2 = T \in Q^*(M|_{U \cup V})$.
+	In $PC^*_\Gamma(M|_{U \cup V})$, we can write
+	\[\bd \underline{Z} = \underline{bd Z} = \underline{W_1} + \underline{W_2} + \underline T.\]
+	Of course $\underline{T} = 0 \in PC^*_\Gamma(M|_{U \cup V})$, but it will be useful in the following computation
 	Now let us choose a separating function and consider $(Z^-+\Cre(W_1),Z^++\Cre(W_2)) \in PC^*_\Gamma(M|_U) \oplus PC^*_\Gamma(M|_V)$; note that as $W_1$ and $W_2$ are in the boundary of $Z$, a separating function for $Z$ can also be used for creasing $W_1$ and $W_2$.
 	We compute using again \cref{E: codim 1 pullbacks,E: bd crease}:
 	\begin{align*}
@@ -498,7 +589,8 @@ The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U 
 	But creasing preserves both support and membership in $Q^*$ by definition and by \cref{C: creasing Q}, and if $(A,-B) = (i_U,-i_V)(C) = (i_U(C),-i_V(C))$, then $(\Cre(A),\Cre(-B)) = (i_U(\Cre(C)),-i_V(\Cre(C)))$.
 	Altogether, we obtain $$(W_1,W_2) = \bd (Z^-+\Cre(W_1),Z^++\Cre(W_2))$$ in $S^*$.
 	So $\psi$ is injective.
-\end{proof}
+\end{comment}
+
 
 \begin{remark}\label{R: MV boundary}
 	The connecting homomorphism in this long exact sequence, as defined through this proof, is given by taking a cocycle in $M|_{U \cup V}$,
@@ -507,24 +599,6 @@ The cohomology groups $H_\Gamma^*(M|_U)$ are functorial in the sense that if $U 
 
 	The description for the homology sequence is identical.
 \end{remark}
-
-Mayer--Vietoris sequences are the engines of inductive arguments, especially for isomorphisms.
-To show that in many cases of
-interest, geometric cohomology coincides with singular cohomology, the induction starts with Euclidean balls.
-
-\begin{proposition}\label{P: P lemma}
-	Let $M$ be an $m$-dimensional smooth manifold, and $U \subset M$ an open set that is diffeomorphic to an open ball and whose closure in $M$ is compact.
-	Then $H^n_\Gamma(M|_U)$ is $\Z$ if $n = m$ and is zero otherwise.
-\end{proposition}
-
-This observation is akin to the dimension axiom or the Poincar\'e lemma, but with the cohomology concentrated in top degree rather than degree zero; cf.
-the standard dimension axiom in \cref{E: dimension}.
-
-\begin{proof}[Proof of \cref{P: P lemma}]
-	If $r_W \colon W \to M$ is proper and has image in $U$, then $W$, as the preimage of the closure of $U$, must be compact.
-	Also, $U$ is orientable, and so by choosing an orientation of $U$ every co-oriented $r_W \colon W \to U$ determines an orientation of $W$ as explained in \cref{S: co-orientations}.
-	Thus $C^*_\Gamma(M|_U) \cong C_{m-*}^\Gamma(U)$, and the result follows from \cref{E: dimension} (the dimension axiom), homotopy functoriality of geometric homology, and that $U$ is homotopy equivalent to a point.
-\end{proof}
 
 \begin{comment}
 	Since $U$ is diffeomorphic
