@@ -368,6 +368,10 @@ The constructions are as follows.
 In this sections we consider Mayer--Vietoris sequences for homology and cohomology.
 In particular, we present covariant homology and cohomology sequences and a contravariant cohomology sequence.
 
+Throughout our treatment, we will assume that $U$ and $V$ are open subsets of a manifold without boundary $M$ and that $U \cap V \neq \emptyset$.
+If $U \cap V = \emptyset$, the Mayer--Vietoris sequences follow from more elementary considerations.
+We do allow the possibility that $U \subset V$ or $V \subset U$.
+
 For the covariant homology sequence, the maps $H_*^\Gamma(U) \to H_*^\Gamma(M)$, etc., induced by inclusion will be those defined in \cref{S: covariant functoriality}.
 For a covariant cohomology sequence, however, the maps of the preceding section will not work, as the inclusion of an open set into a manifold is not generally proper.
 Rather, to obtain a covariant cohomology sequence we will need to use in at least some of the terms a variant of geometric cohomology supported on open subsets, denoted $H^*_\Gamma(M|_U)$.
@@ -436,8 +440,8 @@ In some sense creasing is simpler, as creasing only needs to be applied once whi
 In order to perform creasing, the following definitions will be useful.
 
 \begin{definition}
-	Let $U,V$ be non-empty open subsets of a manifold $M$.
-	We will call a smooth non-constant\footnote{The extra condition that $\phi$ not be constant is required if $U\setminus V$ or $V\setminus U$ is empty, i.e.\ if $U \subset V$ or $V \subset U$.} function $\phi \colon U \cup V \to [-1/2,1/2]$ a \textbf{separating function for $\mathbf U$ and $\mathbf V$} if $\phi(U\setminus V) = -1/2$ and $\phi(V\setminus U) = 1/2$.
+	Let $U,V$ be non-empty open subsets of a manifold $M$ such that $U \cap V \neq \emptyset$.
+	We will call a surjective\footnote{The condition that $\phi$ be surjective is required if $U\setminus V$ or $V\setminus U$ is empty, i.e.\ if $U \subset V$ or $V \subset U$.} function $\phi \colon U \cup V \to [-1/2,1/2]$ a \textbf{separating function for $\mathbf U$ and $\mathbf V$} if $\phi(U\setminus V) = -1/2$ and $\phi(V\setminus U) = 1/2$.
 	Such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
 	We use $\pm 1/2$ as our endpoints to be consistent with the maps $\phi \colon M \to (-1,1)$ used in the definition of creasing.
 	Note that we only assume that $U \setminus V \subset \phi^{-1}(-1/2)$ and not that $U \setminus V  = \phi^{-1}(-1/2)$, and similarly for $V \setminus U$.
@@ -446,7 +450,7 @@ In order to perform creasing, the following definitions will be useful.
 	We will say that $\phi$ \textbf{separates $\mathbf W$ over $\mathbf U$ and $\mathbf V$} if $0$ is a regular value for the composite $\phi r_W$, meaning that $\phi r_W$ is transverse to the inclusion of $0$ into $[-1/2,1/2]$.
 	In particular, $0$ is a regular value for the restriction of $\phi r_W$ to each stratum of $W$.
 	Again, such $\phi$ exist, as for an arbitrary separating function the set of regular values is the complement of a set of measure zero in $[-1/2,1/2]$ by Sard's Theorem.
-	This is the standard statement of Sard's Theorem when $W$ is a smooth manifold without boundary, but note that for any countable set of maps $W_i \to U \cup V$ from smooth manifolds without boundary we can find a value that is regular for all of them, as a countable union of sets of measure zero still has measure $0$.
+	This is the standard statement of Sard's Theorem when $W$ is a smooth manifold without boundary, but note that for any countable set of maps $W_i \to U \cup V$ from smooth manifolds without boundary we can find a value that is regular for all $\phi r_{W_i}$, as a countable union of sets of measure zero still has measure $0$.
 	In particular, we can take the $W_i$ to be the strata of a manifold with corners or even of multiple manifolds with corners.
     Once we have found such a common regular value $p$, we can then replace $\phi$ by its composition with an orientation-preserving diffeomorphism of $[-1/2,1/2]$ that takes $p$ to $0$, for example the linear fractional transformation $x \mapsto \frac{x-p}{-4px+1}$.
 
@@ -529,9 +533,7 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum of grou
 
 	Now let us choose a function $\phi \colon U \cup V \to [-1/2,1/2]$ that is separating for $Z$, $W_1$, and $W_2$ over $U$ and $V$.
   	We claim that $(\underline{Z^-}+\underline{\Cre(W_1)},\underline{Z^+}+\underline{\Cre(W_2)}) \in C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V)$ represents an element of $S^*$ whose boundary is $\uW$.
-	More specifically, we claim the boundary of this element will be
-	\[(\underline{W_1},\underline{W_2}) + (-\underline{Z^0},\underline{Z^0}) + (\underline{W_2^-}-\underline{W_1^+}, \underline{W_1^+} -\underline{W_2^-}) -(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2)}) \in C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V).\]
-	But the middle two terms are in the image of $(i_U, -i_V)$ and we will show that the last term is also $0$ in $S^*$, so this will suffice to show that $(\underline{W_1}, \underline{W_2})$ bounds in $S_*$.
+
 
 	To compute we use that $\bd \underline{Z} = \underline{W_1} + \underline {W_2} \in C^*_\Gamma(M|_{U \cup V})$ implies by \cref{C: creasing Q} that $(\bd Z)^\pm \sqcup (- W_1)^\pm \sqcup (-W_2)^\pm \in Q^*(M|_{U \cup V})$.
 	Furthermore, as all the ``minus'' terms are supported in $U$ and all the ``plus'' terms are supported in $V$, we have $\underline{(\bd Z)^- }= \underline{W_1^-} + \underline{W_2^-}$ and $\underline{(\bd Z)^+} = \underline{W_1^+} + \underline{W_2^+}$ in $C^*_\Gamma(M|_U)$ and $C^*_\Gamma(M|_V)$, respectively.
@@ -548,13 +550,22 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum of grou
 		& = (\underline{W_1},\underline{W_2})+ (\underline{-Z^0},\underline{Z^0}) + (\underline{W_2^-}-\underline{W_1^+}, \underline{W_1^+} -\underline{W_2^-}) \\
 		&\qquad\qquad -(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2)}).
 	\end{align*}
-	This is the formula claimed above.
+	It remains to show that this is equal to $\uW = (\underline{W_1},\underline{W_2})$ in $S^*$.
+	The middle two terms are in the image of $(i_U, -i_V)$, so they represent $0$ in $S^*$.
+	It remains to show that $(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2))})=0$ in $S^*$.
 
-	It remains to show that $(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2))})=0$ in $S^*$. This term is obtained by applying the creasing construction to the entries of $(\bd W_1,\bd W_2)$, which by assumption is $0$ in $S^*$.
-	So $(\bd W_1,\bd W_2)$ can be represented as the union of an element of $Q^*(M|_U) \oplus Q^*(M|_V)$ with an element in the image of $(i_U,-i_V)$.
-	But creasing preserves both support and membership in $Q^*$ by definition and by \cref{C: creasing Q}, and if $(A,-B) = (i_U,-i_V)(C) = (i_U(C),-i_V(C))$, then $(\Cre(A),\Cre(-B)) = (i_U(\Cre(C)),-i_V(\Cre(C)))$.
-	Altogether, we obtain $$(\underline{W_1},\underline{W_2}) = \bd (\underline{Z^-}+\underline{\Cre(W_1)},\underline{Z^+}+\underline{\Cre(W_2)})$$ in $S^*$.
-	So $\psi$ is injective.
+    This term is obtained by applying the creasing construction to the entries of $(\bd W_1,\bd W_2)$, which by assumption is $0$ in $S^*$.
+	In general, suppose $A \in PC^*_{\Gamma}(M|_U)$ and $B \in PC^*_\Gamma(M|_V)$ such that $(\underline{A}, \underline{B}) \in C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V)$ represents zero in $S^*$.
+	This means that $(A,B)$ is equivalent in $C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V)$ to an element of the form $(i_U,-i_V)(\underline{C})$ for some $C \in PC^*_{\Gamma}(M|_{U \cap V})$, i.e.\ that $A \sqcup -i_U(C) \in Q^*(M|_U)$ and $B \sqcup i_V(C) \in Q^*(V)$.
+	Creasing preserves both support and membership in $Q^*$ by definition and by \cref{C: creasing Q}, so we have
+	$$\Cre(A \sqcup -i_U(C)) = \Cre(A) \sqcup -\Cre(i_U(C)) = \Cre(A) \sqcup -i_U(\Cre(C))$$
+	and this is an element of $Q^*(M|_U)$.
+	The equivalent computations holds for the other term.
+	So in $C^*_\Gamma(M|_U)\oplus C^*_\Gamma(M|_U)$, we have
+    $$0= (\underline{\Cre(A)} -\underline{i_U(\Cre(C))}, \underline{\Cre(B)} + \underline{i_V(\Cre(C))}) = (\underline{\Cre(A)},\underline{\Cre(B)}) +(i_U(\underline{\Cre(C)}), -i_V(\underline{\Cre(C)})).$$
+	Consequently $(\underline{\Cre(A)},\underline{\Cre(B)})$ represents $0$ in $S^*$.
+
+	Altogether, we have show $\psi$ is injective.
 \end{proof}
 
 \begin{comment}
@@ -594,8 +605,8 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum of grou
 
 \begin{remark}\label{R: MV boundary}
 	The connecting homomorphism in this long exact sequence, as defined through this proof, is given by taking a cocycle in $M|_{U \cup V}$,
-	using the creasing construction to write it as a sum of cochains in $C^*_\Gamma(M|_{U})$ and $C^*_\Gamma(M|_{V})M$, and taking the boundary of the cochain in $M_U$.
-	In short, it takes a cocycle represented by $W \to U \cup V$ and sends it to $-W^0 \to U \cap V$ determined by an appropriate separating function and separating point.
+	using the creasing construction to write it as a sum of cochains in $C^*_\Gamma(M|_{U})$ and $C^*_\Gamma(M|_{V})$, and taking the boundary of the cochain in $M_U$.
+	In short, it takes a cocycle represented by $W \to U \cup V$ and sends it to $-W^0 \to U \cap V$ determined by a function that separates $W$ over $U$ and $V$.
 
 	The description for the homology sequence is identical.
 \end{remark}
@@ -634,53 +645,89 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum of grou
 
 In this section we show that geometric cohomology possesses a contravariant Mayer--Vietoris sequence on manifolds.
 This does not seem possible by deriving a long exact sequence from a short exact sequence.
-For example, in general restriction maps $C^*_\Gamma(M) \to C^*_\Gamma(U)$ will not be surjective.
+For example, in general the restriction map $C^*_\Gamma(M) \to C^*_\Gamma(U)$ will not be surjective.
 Consequently, this sequence will take more work than the covariant ones.
 
 Instead, we proceed with a direct analysis at each term of the exact sequence as in Kreck's proof of the Mayer--Vietoris sequence for his cohomology theory using stratifolds in \cite{Krec10}.
 In fact, our argument for exactness parallel's Kreck's fairly closely.
 However, our proof that the connecting map is well defined is more complicated than the analogous proof in Kreck (ignoring the extra complications in \cite{Krec10} arising from considerations of collars that we do not need).
-This is because Kreck is able to define the splitting functions directly on his representing objects as $\varphi \colon W \to [0,1]$, which then makes it possible to compare two different $\varphi$s using a cylinder $W \times I$ with different versions of $\varphi$ on each end.
+This is because Kreck is able to define his version of separating functions directly on his representing objects as $\varphi \colon W \to [0,1]$, which then makes it possible to compare two different $\varphi$s using a cylinder $W \times I$ with different versions of $\varphi$ on each end.
 Here, however, we must always use splitting maps that factor through $M$ or risk that even if $W$ is trivial $W^{\pm}$ may not be.
 This complicates the proof of \cref{P: connecting} below.
 
 \begin{definition}
-	Suppose $U,V \subset M$ are open subsets and $\uW \in H^k_\Gamma(U \cap V)$ represented by $r_W \colon W \to U \cap V$.
+	Suppose $U,V \subset M$ are non-empty open subsets and $\uW \in H^k_\Gamma(U \cap V)$ represented by $r_W \colon W \to U \cap V$.
 	Of course we can also consider $r_W$ to have image in $U \cup V$.
-	Let $\phi \colon M \to [-1,1]$ be a separating function for $U$ and $V$ such that $0$ is a separating point for $W$.
+	Let $\phi \colon M \to [-1/2,1/2]$ separate $W$ over $U$ and $V$.
 	Define $\delta(\uW) \in H^{k+1}_\Gamma(U \cup V)$ to be represented by $-W^0 = -\phi^{-1}(0)\times_{U \cup V}W$.
+	We recall here that $\phi^{-1}(0)$ can be considered a precochain in $U \cap V$ or $U \cup V$ by the constructions in \cref{S: codim 0 and 1 co-or}.
 \end{definition}
 
 The choice to use $-W^0$ rather than $W^0$ in the definition is explained by \cref{R: MV boundary}.
 An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-i_U,i_V)$ rather than $(i_U,-i_V)$ in our covariant Mayer--Vietoris sequences and the map $\uW \to (-\uW|_U, \uW|_V)$ rather than $\uW \to (\uW|_U, -\uW|_V)$ in our contravariant Mayer--Vietoris sequence below.
+
+Our next goal is to show that $\delta$ is well defined, i.e.\ that it does not depend on the choice of representing precochain or the choice of $\phi$.
+We begin with the following lemma:
+
+\begin{lemma}\label{L: different point}
+	Suppose $U,V \subset M$ are open subsets of $M$ with $U \cap V$ nonempty.
+	Suppose $W \in PC^*_\Gamma(U \cap V)$ represents an element of $H^*_\Gamma(U \cap V)$ and that $\phi \colon U \cup V \to [-1/2,1/2]$ separates $U$ and $V$.
+	Let $p, q\in (-1/2,1/2)$ be any points such that $\phi r_W$ is transverse to the inclusions of $p$ and $q$ into $(-1/2,1/2)$, and let $W^p$ and $W^{q}$ be the fiber products $\phi^{-1}(p) \times_M W$ and $\phi^{-1}(q) \times_M W$ considered as elements of  $PC^*_\Gamma(U \cap V)$.
+	Then $W^p$ and $W^q$ represent the same element of $H^*_\Gamma(U \cup V)$.
+\end{lemma}
+
+\begin{proof}
+	We first observe that $\phi^{-1}(p) \to U \cup V$ is a closed inclusion and so proper.
+	Thus $r_{W^p} \colon W^p \to U \cup V$ is proper by \cref{L: co-orientable pullback} as the composition of $r_W^* \colon \phi^{-1}(p)\times_{U \cup V}W \to \phi^{-1}(p)$ and $\phi^{-1}(p) \into U \cup V$.
+	So $W^p$ represents an element of $PC^*_\Gamma(U \cap V)$, as does $W^q$ for the same reason, noting that the constructions of $W^p$ and $W^q$ are completely analogous.
+
+	Next, we assume without loss of generality that $p<q$.
+	Then $\phi^{-1}([p,q])$ will be transverse to $r_W \colon W \to M$, and we have $\phi^{-1}([p,q]) \subset U \cap V$.
+	As $\phi^{-1}([p,q])$ is closed in $U \cup V$, its inclusion is proper, and the inclusion can be tautologically co-oriented as a codimension $0$ embedding (see \cref{D: tautological co-orientation}).
+	Thus $$\bd(\varphi^{-1}([p,q])\times_{U \cup V} W = (\varphi^{-1}(q)\times_{U \cup V} W)-(\varphi^{-1}(p)\times_{U \cup V} W)+ \varphi^{-1}([p,q])\times_{U \cup V} \bd W.$$
+	As $W$ is a cocycle, the last term is in $Q^*(U \cup V)$ (with support in $U \cap V$) by \cref{L: pullback with Q}, so $\varphi^{-1}(p)\times_{U \cup V} W$ and $\varphi^{-1}(q)\times_{U \cup V} W$ are cohomologous.
+\end{proof}
+
+\begin{lemma}\label{L: different W}
+	Suppose $U,V \subset M$ are open subsets of $M$ with $U \cap V$ nonempty.
+	Suppose $W_1, W_2 \in PC^*_\Gamma(U \cap V)$ represent the same element of $H^*_\Gamma(U \cap V)$.
+	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$ and suppose $q \in (-1/2,1/2)$ is a regular value for both $\phi r_{W_1}$ and $\phi r_{W_2}$.
+	Then $W_1^q$ and $W_2^q$ represent the same element of $H^*_\Gamma(U \cup V)$.
+\end{lemma}
+
+\begin{proof}
+	By assumption, there is a $Z \in PC^*_{\Gamma}(U \cap V)$ with $\bd Z \sqcup -W_1 \sqcup W_2 \in Q^*(U \cap V)$.
+	For our fixed $\phi$, there is by Sard's Theorem a $p \in (-1/2,1/2)$ such that $p \into (-1/2,1/2)$ is transverse to $\phi r_Z$, $\phi r_{W_1}$, and $\phi r_{W_2}$.
+	By the preceding lemma, it suffices to show that $W_1^p$ and $W_2^p$ represent the same element of $H^*_\Gamma(U \cup V)$.
+	As fiber products with elements of $Q^*(U \cap V)$ are in $Q^*(U \cap V)$ by \cref{L: pullback with Q},
+	we have that
+	$$\phi^{-1}(p)\times_{U \cap V}(\bd Z \sqcup -W_1 \sqcup W_2) = (\bd Z)^p \sqcup -W_1^p \sqcup W_2^p \in Q^*(U \cap V).$$
+	Furthermore, by an obvious modification to \cref{C: co-orient W0}, we have $\bd (Z^p) = -(\bd Z)^p$.
+	So  $$-\bd (Z^p) \sqcup -W_1^p \sqcup W_2^p in Q^*(U \cap V),$$
+	which implies that $W_1^p$ and $W_2^p$ represent the same cohomology class in $U \cap V$.
+
+	But by the same argument presented at the start of the proof of \cref{L: different point}, the spaces $Z^p$, $W_1^p$, and $W_2^p$ all map properly in $U \cup V$, and so $W_1^p$ and $W_2^p$ also represent the same cohomology class in $U \cup V$.
+	We note that they do indeed represent cocycles as $\bd (W_1^p) = - (\bd W_1)^p = -\phi^{-1}(p) \times_{U \cup V} (\bd W_1)$, and since $\bd W_1 \in Q^*(U \cap V)$ by assumption, and so is a union of trivial and degenerate precochains, the same is true of $\phi^{-1}(p) \times_{U \cup V} (\bd W_1)$ by \cref{L: pullback with Q}.
+\end{proof}
 
 \begin{proposition}\label{P: connecting}
 	The map $H^k_\Gamma(U \cap V) \xr{\delta} H^{k+1}_\Gamma(U \cup V)$ is well defined.
 \end{proposition}
 
 \begin{proof}
-	Note that the $\phi^{-1}(0) \to U \cup V$ is a closed inclusion and so proper.
-	Thus $r_{W^0} \colon W^0 \to U \cup V$ is proper by \cref{L: co-orientable pullback} as the composition of $r_W^* \colon \phi^{-1}(0)\times_{U \cup V}W \to \phi^{-1}(0)$ and $\phi^{-1}(0) \into U \cup V$.
+	Given the preceding lemmas, it suffices to show that if $W \in PC^*_\Gamma(U \cap V)$ represents a cocyle and we have two separating functions  $\phi_1,\phi_2:U \cup V \to [-1/2,1/2]$ and a $p \in (-1/2,1/2)$ that is a regular value for both $\phi_1 r_W$ and $\phi_2 r_W$, then $\phi_1^{-1}(p)\times_{U \cup W} W$ and $\phi_1^{-1}(p)\times_{U \cup W} W$ represent the same element of $H^*_\Gamma(U \cup W)$.
+	Indeed, suppose $W_1$ and $W_2$ represent the same element of $H^*_\Gamma(U \cup V)$ and that we choose functions $\phi_1,\phi_2$ that separate that are respectively separating for $W_1$ and $W_2$ over $U$ and $V$, as in the construction of $\delta$.
+	Again by Sard's Theorem, we can find a point $p_3 \in (-1/2,1/2)$ such that $p_3$ is a regular value for all three of $\phi_1 r_{W_1}$, $\phi_2 r_{W_1}$, and $\phi_2 r_{W_2}$.
+	Then by \cref{L: different point}, $\phi_1^{-1}(0) \times_{U \cup V} W_1$ and $\phi_2^{-1}(0) \times_{U \cup V} W_2$ represent the same elements of $H^*_\Gamma(U \cup V)$ respectively as $\phi_1^{-1}(p_3) \times_{U \cup V} W_1$ and $\phi_2^{-1}(p_3) \times_{U \cup V} W_2$.
+	But by \cref{L: different W}, $\phi_2^{-1}(p_3) \times_{U \cup V} W_2$ represents the same cohomology class as $\phi_2^{-1}(p_3) \times_{U \cup V} W_1$.
+	So it suffices to show that $\phi_1^{-1}(p_3) \times_{U \cup V} W_1$ represents the same cohomology class as $\phi_2^{-1}(p_3) \times_{U \cup V} W_1$.
 
-	We next fix $\phi$ and show independence of the choices of separating point and representative for $\uW$.
+ 	So let us suppose a single precochain $W$ and two separating functions $\phi_1,\phi_2$. The preceding argument shows it suffices to show for some common regular value $p$ that $\phi_1^{-1}(p) \times_{U \cup V} W$  and $\phi_2^{-1}(p) \times_{U \cup V} W$ represent the same element of $H^*_\Gamma(U \cap V)$.
+	Actually it will be simpler to show instead that for regular values $p_1 < p_2$ are $\phi_1,\phi_2$, respectively, that  $\phi_1^{-1}(p_1) \times_{U \cup V} W$  and $\phi_2^{-1}(p_2) \times_{U \cup V} W$ represent the same element of $H^*_\Gamma(U \cap V)$.
+	This suffices again by \cref{L: different point}.
+	Again there is no trouble finding such $p_1$ and $p_2$ by Sard's Theorem.
 
-	Suppose $p,p'$ are separating points for $W$.
-	Without lose of generality, we assume $p<p'$.
-	Then $\phi^{-1}([p,p'])$ will be transverse to $r_W \colon W \to M$, and we have $\phi^{-1}([p,p']) \subset U \cap V$.
-	As $\phi^{-1}([p,p'])$ is closed in $U \cup V$, its inclusion is proper, and the inclusion can be tautologically co-oriented as a codimension $0$ embedding (see \cref{D: tautological co-orientation}).
-	Thus $$\bd(\varphi^{-1}([p,p'])\times_{U \cup V} W = (\varphi^{-1}(p')\times_{U \cup V} W)-(\varphi^{-1}(p)\times_{U \cup V} W)+ \varphi^{-1}([p,p'])\times_{U \cup V} \bd W.$$ As $W$ is a cocycle, the last term is in $Q^*(U \cup V)$ (with support in $U \cap V$) by \cref{L: pullback with Q}, so $\varphi^{-1}(p')\times_{U \cup V} W$ and $\varphi^{-1}(p)\times_{U \cup V} W$ are cohomologous.
-	This shows independence of choice of separating point.
-
-	Next suppose $W_1$ and $W_2$ cohomologous in $U \cap V$, so there is a $Z$ in $U \cap V$ with $\bd Z = W_1-W_2+T$ and $T \in Q^*(U \cap V)$.
-	Let $p$ be a separating point for all of $Z,W_1,W_2,T$.
-	Then (continuing to write, e.g., $W^0$ even when the separating point is $p$), by \cref{C: co-orient W0} $$\bd (Z^0) = -(\bd Z)^0 = -W_1^0+W_2^0-T^0,$$ with the last term in $Q^*(U \cup V)$, and so $W_1^0$ and $W_2^0$ are cohomologous.
-	This establishes independence of the representing object for $\uW$.
-
-	Finally, we must show independence of the choice of $\phi$.
-	This is clear in the case that we vary $\phi$ by postcomposing with an orientation-preserving diffeomorphism $\psi$ of $[-1,1]$ and replace the splitting point $p$ by $\psi(p)$.
-	Suppose more generally we have two separating functions $\phi_1,\phi_2:U \cup V \to [-1,1]$ and corresponding $p_1,p_2$ that are separating for $W$.
-
-	Next suppose there exists $q$ with $-1<q<p_2$ such that $\phi_1^{-1}(p_1) \subset \phi_2^{-1}([-1,q])$.
+	Now, suppose there exists $q$ with $-1<q<p_2$ such that $\phi_1^{-1}(p_1) \subset \phi_2^{-1}([-1,q])$.
 	By postcomposing $\phi_1$ with a diffeomorphism of $[-1,1]$, we may suppose that $p_1<q$.
 	Let us choose $u_1,u_2$ such that $-1<u_1<p_1<u_1<q$.
 	Using the Urysohn lemma we can find a continuous $\hat \Phi$ on $U \cup V$ such that:
