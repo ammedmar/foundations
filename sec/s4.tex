@@ -52,7 +52,7 @@ the definitions of \cite{Lipy14}.
 		\item If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic} if there is a co-orientation-preserving diffeomorphism $\phi \colon W \to V$.
 		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial} if there is an orientation-reversing diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
 		\item If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a co-orientation-reversing diffeomorphism $\rho \colon W \to W$.
-		\item $W$ has \textbf{small rank} if the differential $D r_W$ is less than full rank at all $w\in W$.
+		\item $W$ has \textbf{small rank} if the differential $D r_W$ is everywhere less than full rank, in other words if the rank of $D_w r_W$ is less than $\dim(W)$ for all $w\in W$.
 		\item If $W$ is (co\nobreakdash-)oriented, then it is \textbf{((co\nobreakdash-)oriented) degenerate} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co\nobreakdash-)oriented manifold over $M$ and one with small rank.
 	\end{itemize}
 	We declare the empty map $\emptyset \to M$ to be both trivial and degenerate.
@@ -352,6 +352,12 @@ We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every
 	We find Mayer--Vietoris better for our applications, and we review both its verification
 	and that of homotopy invariance as we need details about such constructions in our work.
 \end{comment}
+
+\begin{remark}
+	Suppose $W \in PC_*^{\Gamma}(M)$. It follows directly from \cref{{D: chains and cochains},L: co/chains well defined} that $W$ represents a cycle in $C_*^{\Gamma}(M)$, i.e.\ $\bd \uW=0$, if and only if $\bd W \in Q_*(M)$.
+	We also observe that $W$ represents a boundary precisely when there is some $Z \in PC_*^\Gamma(M)$ such that $\bd \underline{Z} = \underline{\bd Z} = \uW$, which translates to $(\bd Z) \sqcup -W \in Q_*(M)$.
+	The corresponding statements for cohomology are analogous.
+\end{remark}
 
 In Section 6 of \cite{Lipy14}, Lipyanskiy shows that the homology theory based on geometric chains satisfies some of the Eilenberg-Steenrod axioms.
 This is enough to state in Section 10 of \cite{Lipy14} that geometric homology is isomorphic to singular homology on the fixed manifold $M$, though we provide our own proofs below in \cref{T: geometric is singular,T: hom iso map}.
