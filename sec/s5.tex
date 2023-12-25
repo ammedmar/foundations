@@ -615,39 +615,63 @@ For example, in general the restriction map $C^*_\Gamma(M) \to C^*_\Gamma(U)$ wi
 Consequently, this sequence will take more work than the covariant ones.
 
 Instead, we proceed with a direct analysis at each term of the exact sequence as in Kreck's proof of the Mayer--Vietoris sequence for his cohomology theory using stratifolds in \cite{Krec10}.
-In fact, our argument for exactness parallel's Kreck's fairly closely.
+In fact, our argument for exactness parallels Kreck's fairly closely.
 However, our proof that the connecting map is well defined is more complicated than the analogous proof in Kreck (ignoring the extra complications in \cite{Krec10} arising from considerations of collars that we do not need).
 This is because Kreck is able to define his version of separating functions directly on his representing objects as $\varphi \colon W \to [0,1]$, which then makes it possible to compare two different $\varphi$s using a cylinder $W \times I$ with different versions of $\varphi$ on each end.
 Here, however, we must always use splitting maps that factor through $M$ or risk that even if $W$ is trivial $W^{\pm}$ may not be.
-This complicates the proof of \cref{P: connecting} below.
 
-\begin{definition}
-	Suppose $U,V \subset M$ are non-empty open subsets and $\uW \in H^k_\Gamma(U \cap V)$ represented by $r_W \colon W \to U \cap V$.
+
+\begin{definition}\label{D: connecting}
+	Suppose $U, V, U \cap V \subset M$ are non-empty open subsets of a manifold without boundary and $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
 	Of course we can also consider $r_W$ to have image in $U \cup V$.
-	Let $\phi \colon M \to [-1/2,1/2]$ separate $W$ over $U$ and $V$.
-	Define $\delta(\uW) \in H^{k+1}_\Gamma(U \cup V)$ to be represented by $-W^0 = -\phi^{-1}(0)\times_{U \cup V}W$.
-	We recall here that $\phi^{-1}(0)$ can be considered a precochain in $U \cap V$ or $U \cup V$ by the constructions in \cref{S: codim 0 and 1 co-or}.
+	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $W$ over $U$ and $V$.
+	Define $\delta(\uW) \in H^{k+1}_\Gamma(U \cup V)$ to be represented by $-W^0 = -\phi^{-1}(0)\times_{U \cup V} W$.
 \end{definition}
 
 The choice to use $-W^0$ rather than $W^0$ in the definition is explained by \cref{R: MV boundary}.
 An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-i_U,i_V)$ rather than $(i_U,-i_V)$ in our covariant Mayer--Vietoris sequences and the map $\uW \to (-\uW|_U, \uW|_V)$ rather than $\uW \to (\uW|_U, -\uW|_V)$ in our contravariant Mayer--Vietoris sequence below.
 
 Our next goal is to show that $\delta$ is well defined, i.e.\ that it does not depend on the choice of representing precochain or the choice of $\phi$.
-We begin with the following lemma:
+We begin with a series of lemmas.
+Although we use $\phi^{-1}(0)$ in our construction of $\delta$, it will be useful in our arguments to allow our regular value to be anywhere in $(-p,p)$, and we immediately work in this generality.
+
+\begin{lemma}
+	Suppose $U, V, U \cap V \subset M$ are non-empty open subsets of a manifold without boundary and $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
+	Consider $r_W$ to have image in $U \cup V$.
+	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$, and let $p \in (-1/2, 1/2)$ be a regular value for $\phi r_W$.
+	Then $W^p = \phi^{-1}(p) \times_{U \cup V} W$ is an element of $PC^*_\Gamma(U \cup V)$ with boudnary in $Q^*(U \cup V)$, so it represents an element of $H^*_\Gamma(U \cup V)$.
+\end{lemma}
+
+\begin{proof}
+	For simplicity and consistency with the notation in \cref{S: codim 0 and 1 co-or}, we take $p = 0$, but the same argument works for any regular value $p \in (-1/2, 1/2)$.
+
+	We first note that we may consider $r_W$ as mapping to $U \cup V$ by composing with the inclusion $U \cap V \into U \cup V$, although $W \to U \cup V$ may no longer be proper.
+	By assumption, $0$ is a regular value of $\phi r_W$, and we recall from \cref{E: manifold decomposition} that this implies $r_W$ is transverse to $\phi^{-1}(0)$ and allows us to identify $W^0$ with $\phi^{-1}(0) \times_{U \cup V} W$.
+
+	Next we show that the map $W^0 \to U \cup V$ is proper.
+	The space $\phi^{-1}(0)$ is a closed subset, so its embedding into $U \cup V$ is proper.
+	By \cref{L: co-orientable pullback}, the pullback $W \times_{U \cup V} \phi^{-1}(0) \to \phi^{-1}(0)$ is proper.
+	As the composition of proper maps is proper, the composite  $W \times_{U \cup V} \phi^{-1}(0) \to \phi^{-1}(0) \to U \cup V$ is proper.
+	But this is the fiber product $W \times_{U \cup V} \phi^{-1}(0) \to U \cup V$, which is symmetric topologically, so $W^0 = \phi^{-1}(0) \times_{U \cup V} W \to U \cup V$ is proper.
+
+	We co-oriented $W^0 \to U \cup V$ as in \cref{E: codim 1 pullbacks} in \cref{S: codim 0 and 1 co-or}, so we have a precochain.
+	Finally, as $\phi^{-1}(0)$ has no boundary, we compute using \cref{leibniz} that
+	$$\bd W^0 = \pm \phi^{-1}(0) \times_{U \cup V} \bd W,$$
+	which will be proper in $U \cup V$ for the same reasons as for $W^0$.
+	But $W$ represents a cocycle in $U \cap V$, so $\bd W$ is a union of trivial and degenerate precochains in $U \cap V$.
+	The definitions of trivial and degenerate do not rely on the properness of the map, so $\bd W$ will also be a union of trivial and degenerate manifolds over $U \cup V$.
+	Consequently, the same is true of $\phi^{-1}(0) \times_{U \cup V} \bd W$ by \cref{L: pullback with Q}, noting the proof of that result does not rely on $V$ or $W$ being proper.
+\end{proof}
 
 \begin{lemma}\label{L: different point}
 	Suppose $U,V \subset M$ are open subsets of $M$ with $U \cap V$ nonempty.
 	Suppose $W \in PC^*_\Gamma(U \cap V)$ represents an element of $H^*_\Gamma(U \cap V)$ and that $\phi \colon U \cup V \to [-1/2,1/2]$ separates $U$ and $V$.
-	Let $p, q\in (-1/2,1/2)$ be any points such that $\phi r_W$ is transverse to the inclusions of $p$ and $q$ into $(-1/2,1/2)$, and let $W^p$ and $W^{q}$ be the fiber products $\phi^{-1}(p) \times_M W$ and $\phi^{-1}(q) \times_M W$ considered as elements of  $PC^*_\Gamma(U \cap V)$.
+	Let $p, q\in (-1/2,1/2)$ be any points such that $\phi r_W$ is transverse to the inclusions of $p$ and $q$ into $(-1/2,1/2)$, and let $W^p$ and $W^{q}$ be the fiber products $\phi^{-1}(p) \times_M W$ and $\phi^{-1}(q) \times_{U \cup V} W$ considered as elements of  $PC^*_\Gamma(U \cap V)$.
 	Then $W^p$ and $W^q$ represent the same element of $H^*_\Gamma(U \cup V)$.
 \end{lemma}
 
 \begin{proof}
-	We first observe that $\phi^{-1}(p) \to U \cup V$ is a closed inclusion and so proper.
-	Thus $r_{W^p} \colon W^p \to U \cup V$ is proper by \cref{L: co-orientable pullback} as the composition of $r_W^* \colon \phi^{-1}(p)\times_{U \cup V}W \to \phi^{-1}(p)$ and $\phi^{-1}(p) \into U \cup V$.
-	So $W^p$ represents an element of $PC^*_\Gamma(U \cap V)$, as does $W^q$ for the same reason, noting that the constructions of $W^p$ and $W^q$ are completely analogous.
-
-	Next, we assume without loss of generality that $p<q$.
+	Suppose without loss of generality that $p<q$.
 	Then $\phi^{-1}([p,q])$ will be transverse to $r_W \colon W \to M$, and we have $\phi^{-1}([p,q]) \subset U \cap V$.
 	As $\phi^{-1}([p,q])$ is closed in $U \cup V$, its inclusion is proper, and the inclusion can be tautologically co-oriented as a codimension $0$ embedding (see \cref{D: tautological co-orientation}).
 	Thus $$\bd(\varphi^{-1}([p,q])\times_{U \cup V} W = (\varphi^{-1}(q)\times_{U \cup V} W)-(\varphi^{-1}(p)\times_{U \cup V} W)+ \varphi^{-1}([p,q])\times_{U \cup V} \bd W.$$
@@ -669,7 +693,7 @@ We begin with the following lemma:
 	we have that
 	$$\phi^{-1}(p)\times_{U \cap V}(\bd Z \sqcup -W_1 \sqcup W_2) = (\bd Z)^p \sqcup -W_1^p \sqcup W_2^p \in Q^*(U \cap V).$$
 	Furthermore, by an obvious modification to \cref{C: co-orient W0}, we have $\bd (Z^p) = -(\bd Z)^p$.
-	So  $$-\bd (Z^p) \sqcup -W_1^p \sqcup W_2^p in Q^*(U \cap V),$$
+	So  $$-\bd (Z^p) \sqcup -W_1^p \sqcup W_2^p \in Q^*(U \cap V),$$
 	which implies that $W_1^p$ and $W_2^p$ represent the same cohomology class in $U \cap V$.
 
 	But by the same argument presented at the start of the proof of \cref{L: different point}, the spaces $Z^p$, $W_1^p$, and $W_2^p$ all map properly in $U \cup V$, and so $W_1^p$ and $W_2^p$ also represent the same cohomology class in $U \cup V$.
