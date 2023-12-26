@@ -445,11 +445,13 @@ In order to perform creasing, the following definitions will be useful.
 	Such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
 	We use $\pm 1/2$ as our endpoints to be consistent with the maps $\phi \colon M \to (-1,1)$ used in the definition of creasing.
 	Note that we only assume that $U \setminus V \subset \phi^{-1}(-1/2)$ and not that $U \setminus V  = \phi^{-1}(-1/2)$, and similarly for $V \setminus U$.
+	However, it will be useful to keep in mind that $\phi^{-1}([-1/2,1/2)) \subset U$ and $\phi^{-1}((-1/2,1/2]) \subset V$.
 
 	Suppose now $\phi$ is a separating function for $U$ and $V$ and that we have a map $r_W \colon W \to U \cup V$.
-	We will say that $\phi$ \textbf{separates $\mathbf W$ over $\mathbf U$ and $\mathbf V$} if $0$ is a regular value for the composite $\phi r_W$, meaning that $\phi r_W$ is transverse to the inclusion of $0$ into $[-1/2,1/2]$.
+	We will say that $\phi$ \textbf{separates $\mathbf W$ over $\mathbf U$ and $\mathbf V$} if $0$ is a regular value for $\phi$ and for the composite $\phi r_W$, meaning that $\phi$ and $\phi r_W$ are transverse to the inclusion of $0$ into $[-1/2,1/2]$.
 	In particular, $0$ is a regular value in the usual sense for the restriction of $\phi r_W$ to each stratum of $W$.
-	Consequently, if $\phi$ is separating for $W$ over $U$ and $V$, we may perform creasing of $W$ along $(\phi r_W)^{-1}(0)$.
+	Consequently, if $\phi$ is separating for $W$ over $U$ and $V$, we may perform creasing of $W$ along $(\phi r_W)^{-1}(0)$ as defined in \cref{S: creasing}.
+	More generally, we can form $W^+$, $W^-$, and $W^0$ as discussed in \cref{E: manifold decomposition,S: codim 0 and 1 co-or}.
 \end{definition}
 
 \begin{lemma}\label{L: existence of separating}
@@ -460,8 +462,8 @@ In order to perform creasing, the following definitions will be useful.
 
 \begin{proof}
 	Let $\phi$ be a separating function for $U$ and $V$; we have already observed these exist.
-	By Sard's Theorem, when $W$ is a smooth manifold without boundary the set of regular values of $\phi r_W$ is a set whose complement has measure zero.
-	So for any countable set of maps $W_j \to U \cup V$ from smooth manifolds without boundary we can find a value $p \in (-1/2, 1/2)$ that is a regular value for all $\phi r_{W_j}$, as a countable union of sets of measure zero still has measure $0$.
+	By Sard's Theorem, when $M$ is any smooth manifold without boundary the set of regular values of $\phi \colon M \to [-1/2,1/2]$ is a set whose complement has measure zero.
+	So for any countable set of maps $W_j \to U \cup V$ from smooth manifolds without boundary we can find a value $p \in (-1/2, 1/2)$ that is a regular value for $\phi$ and for all $\phi r_{W_j}$, as a countable union of sets of measure zero still has measure $0$.
 	In particular, we can take the $W_j$ to be the strata of a single manifold with corners or even all the strata of a countable collection of manifolds with corners.
     Once we have found such a common regular value $p$, we can then replace $\phi$ by its composition with an orientation-preserving diffeomorphism of $[-1/2,1/2]$ that takes $p$ to $0$, for example the linear fractional transformation $x \mapsto \frac{x-p}{-4px+1}$.
 	This composition is our desired function.
@@ -526,11 +528,12 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum.
 
 	First suppose a cocycle $\uW \in C_{\Gamma}^*(M|_{U \cup V})$ represented by $r_W \colon W \to U \cup V$.
 	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $W$ over $U$ and $V$.
-	Then $W^- \in C_{\Gamma}^*(M|_{U})$ and $W^+ \in C_{\Gamma}^*(M|_{V})$, and by \cref{T: cohomology creasing}, we have $\uW = \underline{W^-}+\underline{W^+} \in H^*_\Gamma(M)$.
-	But by the creasing construction, if $W$ has image in $U \cup V$ then so does $\Cre(W)$, so also $\uW = \underline{W^-}+\underline{W^+} \in H_*^\Gamma(M|_{U \cup V})$.
-	We have $\bd W \in Q^*(M|_{U \cup V}) \subset Q^*(M)$ by assumption that $W$ is a cocycle.
-	By the computation in \cref{E: codim 1 pullbacks}, we have $\bd( W^-) = -(W^0) \sqcup (\bd W)^-$, and $\bd (W^+) = W^0 \sqcup (\bd W)^+$.
-	AS $\bd W \in Q^*(M)$ with image in $U \cup V$, we have $(\bd W)^\pm \in Q^*(M)$ with respective images in $U$ and $V$ by \cref{C: creasing Q}, so $(\bd W)^-$ represents $0$ $C^*_\Gamma(M|_U)$ and similarly $(\bd W)^+$ represents $0$ in $C^*_\Gamma(M|_V)$.
+	By \cref{T: cohomology creasing}, we have $\uW = \underline{W^-}+\underline{W^+} \in H^*_\Gamma(M)$.
+	But by the creasing construction, if $W$ has image in $U \cup V$ then so does $\Cre(W)$, so the equality $\uW = \underline{W^-}+\underline{W^+}$ also holds in $H_*^\Gamma(M|_{U \cup V})$.
+	Similarly, $\underline{W^-} \in C_{\Gamma}^*(M|_{U})$ and $\underline{W^+} \in C_{\Gamma}^*(M|_{V})$.
+	We also have $\bd W \in Q^*(M|_{U \cup V}) \subset Q^*(M)$ by assumption that $W$ is a cocycle.
+	By the computation in \cref{E: codim 1 pullbacks}, we have $\bd(W^-) = -(W^0) \sqcup (\bd W)^-$, and $\bd (W^+) = W^0 \sqcup (\bd W)^+$.
+	As $\bd W \in Q^*(M)$ with image in $U \cup V$, we have $(\bd W)^\pm \in Q^*(M)$ with respective images in $U$ and $V$ by \cref{C: creasing Q}, so $(\bd W)^-$ represents in $0$ in $C^*_\Gamma(M|_U)$ and similarly $(\bd W)^+$ represents $0$ in $C^*_\Gamma(M|_V)$.
 	Thus $(\underline{W^-}, \underline{W^+})$ is an element of $C_{\Gamma}^*(M|_U) \oplus C_{\Gamma}^{*}(M|_V)$ whose boundary is $(-\underline{W^0},\underline{W^0})$, which is in the image of $(i_U,-i_V)$.
 	Therefore, $(\underline{W^-}, \underline{W^+})$ represents an element of
 	$H^*(S^*)$ that maps to $\uW \in H^*_\Gamma(M_{U \cup V})$.
@@ -541,7 +544,7 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum.
 	Using that $\underline T = 0$ in $C^*_\Gamma(M|_{U \cup V})$, it will be useful to write this as $\bd \underline{Z} = \underline{\bd Z} = \underline{W_1} + \underline {W_2}$ in $C^*_\Gamma(M|_{U \cup V})$.
 	By \cref{L: existence of separating} there is a function $\phi \colon U \cup V \to [-1/2,1/2]$ that is separating for $Z$, $W_1$, and $W_2$ over $U$ and $V$.
   	We claim that $(\underline{Z^-}+\underline{\Cre(W_1)},\underline{Z^+}+\underline{\Cre(W_2)}) \in C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V)$ represents an element of $S^*$ whose boundary is $\uW$.
-
+	We observe again that $Z^-$ and $Z^+$ represent respective elements of $PC^*_\Gamma(M|_U)$ and $PC^*_\Gamma(M|_V)$, as they are closed subsets of $Z$, so their inclusions to $Z$ composed with $Z \to M$ are proper, and we utilize the tautological co-orientations of $Z^\pm \into Z$ as in \cref{E: codim 0 and 1 co-or as fiber products}.
 
 	As $\bd Z \sqcup - W_1 \sqcup -W_2 \in Q^*(M|_{U \cup V})$, \cref{C: creasing Q} implies that $(\bd Z)^- \sqcup (- W_1)^- \sqcup (-W_2)^- \in Q^*(M|_U)$ and $(\bd Z)^+ \sqcup (- W_1)^+ \sqcup (-W_2)^+ \in Q^*(M|_V)$, so $\underline{(\bd Z)^- }= \underline{W_1^-} + \underline{W_2^-}$ and $\underline{(\bd Z)^+} = \underline{W_1^+} + \underline{W_2^+}$ in $C^*_\Gamma(M|_U)$ and $C^*_\Gamma(M|_V)$, respectively.
 	So we can compute using \cref{E: codim 1 pullbacks,E: bd crease}:
@@ -633,13 +636,14 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 
 Our next goal is to show that $\delta$ is well defined, i.e.\ that it does not depend on the choice of representing precochain or the choice of $\phi$.
 We begin with a series of lemmas.
-Although we use $\phi^{-1}(0)$ in our construction of $\delta$, it will be useful in our arguments to allow our regular value to be anywhere in $(-p,p)$, and we immediately work in this generality.
+Although we use $\phi^{-1}(0)$ in our construction of $\delta$, it will be useful in our arguments to allow our regular value to be anywhere in $(-1/2,1/2)$, and we immediately work in this generality.
+
 
 \begin{lemma}
 	Suppose $U, V, U \cap V \subset M$ are non-empty open subsets of a manifold without boundary and $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
 	Consider $r_W$ to have image in $U \cup V$.
 	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$, and let $p \in (-1/2, 1/2)$ be a regular value for $\phi r_W$.
-	Then $W^p = \phi^{-1}(p) \times_{U \cup V} W$ is an element of $PC^*_\Gamma(U \cup V)$ with boudnary in $Q^*(U \cup V)$, so it represents an element of $H^*_\Gamma(U \cup V)$.
+	Then $W^p = \phi^{-1}(p) \times_{U \cup V} W$ is an element of $PC^*_\Gamma(U \cup V)$ with boundary in $Q^*(U \cup V)$, so it represents an element of $H^*_\Gamma(U \cup V)$.
 \end{lemma}
 
 \begin{proof}
@@ -666,7 +670,7 @@ Although we use $\phi^{-1}(0)$ in our construction of $\delta$, it will be usefu
 \begin{lemma}\label{L: different point}
 	Suppose $U,V \subset M$ are open subsets of $M$ with $U \cap V$ nonempty.
 	Suppose $W \in PC^*_\Gamma(U \cap V)$ represents an element of $H^*_\Gamma(U \cap V)$ and that $\phi \colon U \cup V \to [-1/2,1/2]$ separates $U$ and $V$.
-	Let $p, q\in (-1/2,1/2)$ be any points such that $\phi r_W$ is transverse to the inclusions of $p$ and $q$ into $(-1/2,1/2)$, and let $W^p$ and $W^{q}$ be the fiber products $\phi^{-1}(p) \times_M W$ and $\phi^{-1}(q) \times_{U \cup V} W$ considered as elements of  $PC^*_\Gamma(U \cap V)$.
+	Let $p, q\in (-1/2,1/2)$ be any points such that $\phi$ and $\phi r_W$ are transverse to the inclusions of $p$ and $q$ into $(-1/2,1/2)$, and let $W^p$ and $W^{q}$ be the fiber products $\phi^{-1}(p) \times_M W$ and $\phi^{-1}(q) \times_{U \cup V} W$ considered as elements of  $PC^*_\Gamma(U \cap V)$.
 	Then $W^p$ and $W^q$ represent the same element of $H^*_\Gamma(U \cup V)$.
 \end{lemma}
 

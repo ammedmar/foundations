@@ -687,23 +687,44 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 	}.
 \end{comment}
 
-\subsection{Creasing}\label{S: creasing}
+\subsection{Splitting and creasing}\label{S: creasing}
 
-We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, which is essential for Mayer--Vietoris sequences, though we use different orientation conventions and also consider versions involving co-orientations.
-The idea of creasing is to show that if $W$ is a cycle (or cocycle) over $M$ then we can split it along a codimension one submanifold with corners into two manifolds with corners, $W^+$ and $W^-$, and show that $W$ is homologous (or cohomologous) to $W^+ + W^-$.
-This is the analog in geometric homology/cohomology of subdivision of singular simplices.
+In this section we discuss the closely related notions of splitting and creasing, both of which are concerned with breaking chains and cochains into smaller pieces.
+The idea is somewhat analogous to the role subdivisions play in classical singular homology and cohomology theory, and both will be essential in our discussion of Mayer--Vietoris sequences,
 
+The idea of splitting is to take a manifold with corners $W$ over a manifold without boundary $M$ and split it along a codimension one submanifold with corners into two manifolds with corners, $W^+$ and $W^-$.
+This have various uses.
+In particular, when $W$ represents a cycle or cocycle, the creasing construction then shows that $W$ is homologous (or cohomologous) to $W^+ + W^-$.
+
+
+
+\subsubsection{Splitting}
+
+
+\subsubsection{Creasing}\label{S: creasing}
+
+
+
+\begin{comment}
 To make this precise, suppose we are given a function $\varphi \colon W \to (-1,1)$ with $0$ a regular value, i.e.\ that $\varphi$ is transverse to the inclusion of $0$ into $(-1,1)$.
 We define $W^+$ to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$, and we define $W^0 = \varphi^{-1}(0)$.
 We have already seen this construction in \cref{E: manifold decomposition} and the examples in \cref{S: codim 0 and 1 co-or}, although we here replace the codomain $\R$ with $(-1,1)$ for reasons that will become apparent momentarily.
 Nonetheless, the results of those examples carry over in the obvious way.
 
-As in those earlier examples, $W^+$, $W^-$, and $W^0$
-are manifolds with corners as they are also the fiber products $[0,1)\times_\R W$, $(-1,0] \times_\R W$ and $0 \times_\R W$.
-In those previous examples, we also considered the case of having an intermediary manifold $M$ so that $\varphi$ was a composition $W \to M \xr{\phi} \R$.
-We will need that setting soon once we have finished with some preliminaries.
+As in those earlier examples, $W^+$, $W^-$, and $W^0$ are manifolds with corners whose inclusions into $W$ are proper maps.
+They are also the fiber products $[0,1)\times_\R W$, $(-1,0] \times_\R W$ and $0 \times_\R W$.
+In those previous examples, we also considered the case of having an intermediary manifold $M$ so that $\varphi$ was a composition $W \xr{r_W} M \xr{\phi} \R$ with $0$ a regular value of both $\phi$ and $\phi r_W$.
+In this case we also observed in \cref{E: manifold decomposition} that $W^0$ and $W^\pm$ are diffeomorphic to the respective fiber products $M^0 \times_M W$ and $M^{\pm} \times_M W$.
+We will need these settings once we have finished with some preliminaries.
+\end{comment}
 
-By \cite[Lemma~9]{Lipy14}, the topological space $W \times [0,1]$ can be given the structure of a manifold with corners, which we will write $\Cre(W)$, satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
+We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, though we use different orientation conventions and also consider versions involving co-orientations.
+
+Suppose we are given a function $\varphi \colon W \to (-1,1)$ with $0$ a regular value, i.e.\ that $\varphi$ is transverse to the inclusion of $0$ into $(-1,1)$.
+Below $\varphi$ will typically be a composition $W \xr{r_W} M \xr{\phi} (-1,1)$.
+As in the preceding section, we define $W^+$ to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$, and we define $W^0 = \varphi^{-1}(0)$.
+
+By \cite[Lemma~9]{Lipy14}, the idea of creasing is that the topological space $W \times [0,1]$ can be given the structure of a manifold with corners, which we will write $\Cre(W)$, satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
 We call the manifold with corners $\Cre(W)$ the \textbf{creasing homotopy} of $W$.
 The creasing homotopy depends on $\varphi$, but we usually leave it tacit in the notation.
 We will define $\Cre(W)$ by using pullbacks, which will provide an arguably simpler description of $\Cre(W)$ than found in \cite{Lipy14}.
