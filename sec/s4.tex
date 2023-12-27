@@ -687,7 +687,7 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 	}.
 \end{comment}
 
-\subsection{Splitting and creasing}\label{S: creasing}
+\subsection{Splitting and creasing}\label{S: splitting and creasing}
 
 In this section we discuss the closely related notions of splitting and creasing, both of which are concerned with breaking chains and cochains into smaller pieces.
 The idea is somewhat analogous to the role subdivisions play in classical singular homology and cohomology theory, and both will be essential in our discussion of Mayer--Vietoris sequences,
@@ -697,8 +697,140 @@ This have various uses.
 In particular, when $W$ represents a cycle or cocycle, the creasing construction then shows that $W$ is homologous (or cohomologous) to $W^+ + W^-$.
 
 
-
 \subsubsection{Splitting}
+In this section, we begin by consolidating and extending some results previously encountered in \cref{E: manifold decomposition,S: codim 0 and 1 co-or}, namely the splitting of a manifold with corners over a manifold without boundary $r_W \colon W \to M$ into pieces $W^+$ and $W^-$ with common boundary $W^0$ using a function $\phi \colon M \to \R$.
+In this subsection, we use our previous results to establish the facts we will need in the context of prechains and precochains, and in the next subsection we will utilize these spaces to perform creasing.
+
+Our standing assumptions throughout this section will be that $M$ is a manifold without boundary and $\phi \colon M \to \R$ is a smooth map having $0$ as a regular value in the classical sense, i.e.\ for all $x \in \phi^{-1}(0)$ the differential $D_x\phi$ is nonzero.
+We also assume an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$ represented by $r_W \colon W \to M$ such that $0$ is also a regular value for $\phi r_W$.
+By \cref{D: regular value} this means that $\phi r_W$ is transverse to $0$, which is equivalent to assuming $0$ is a regular value in the classical sense for the restriction of $\phi r_W$ to each stratum of $W$.
+By \cref{L: transverse to pullback}, $0$ is a regular value for $\phi r_W$ precisely when $r_W$ is transverse to $0 \times_\R M$, which is simply $\phi^{-1}(0)$, as observed in \cref{E: manifold decomposition}.
+
+We let
+\begin{align*}
+M^0 = \phi^{-1}(0) && M^- = \phi^{-1}((-\infty,0]) &&M^+ = \phi^{-1}([0,\infty)).
+\end{align*}
+ Analogously,
+\begin{align*}
+W^0 = (\phi r_W)^{-1}(0) && W^- = (\phi r_W)^{-1}((-\infty,0]) && W^+ = (\phi r_W)^{-1}([0,\infty)).
+\end{align*}
+We sometimes write $M^\pm$ for statements that could involve either $M^+$ or $M^-$, and similarly for $W$.
+
+\begin{remark}
+	For simplicity of notation, we primarily use $0$ as our value in $\R$ at which to perform splittings, though it should be clear that we could split $W$ using any regular value of $\phi$ and $\phi r_W$ to obtain analogous results.
+\end{remark}
+
+\begin{comment}
+\begin{lemma}\label{L: 0 transverse M0}
+	Zero is a regular value for $\phi r_W$ if and only if $r_W$ is transverse to the inclusion of $M^0$ into $M$.
+\end{lemma}
+\begin{proof}
+	As $0$ is a regular value for $\phi$, by classical differential topology $M^0$ is an embedded codimension-one submanifold of $M$, and in a neighborhood of each point of $M^0$, the map $\phi$ behaves up to diffeomorphisms like the standard projection of $\R^m$ to the first coordinate; see Section 1.4 \cite{GuPo74}.
+	In particular, at each $z \in M^0$, we have $T_zM^0 = \ker(D_z\phi)$.
+	So the linear subspace spanned by a vector $v \in T_zM$ is transverse to $T_zM^0$ if and only if its image under $D_z\phi$ is non-zero.
+	It follows that $r_W$ is transverse to $M^0$ if and only if $\phi r_W$ is transverse to $0$.
+\end{proof}
+\end{comment}
+
+\begin{lemma}\label{L: pm0 as fiber products}
+	With our standing assumptions, there are diffeomorphisms
+	\begin{align*}
+		M^0 & \cong 0 \times_{\R} M &W^0 & \cong 0 \times_{\R} W & W^0& \cong M^0 \times_M W \\
+		M^- & \cong (-\infty,0] \times_{\R} M &W^- & \cong (-\infty,0] \times_{\R} W& W^-  &\cong M^- \times_M W\\
+		M^+ & \cong [0,\infty) \times_{\R} M & W^+ & \cong [0,\infty) \times_{\R} W& W^+ &\cong M^+ \times_M W.
+	\end{align*}
+	In particular, these spaces are all manifolds with corners.
+	Note that it is possible for some of these spaces to be empty.
+\end{lemma}
+\begin{proof}
+	These diffeomorphisms are discussed in \cref{E: manifold decomposition}.
+	The first two columns hold by direct observation, while the rightmost column is a consequence of \cref{P: pullback functoriality}.
+\end{proof}
+
+The rightmost column above demonstrates $W^0$, $W^-$, and $W^+$ as fiber products over $M$.
+We can use these descriptions to realize these spaces as prechains or precochains.
+Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which case appropriate versions of the following statements hold vacuously.
+
+\begin{lemma}\label{L: W0 cochain}
+	Suppose $W \in PC^*_\Gamma(M)$, and $0$ is a regular value of $\phi \colon M \to \R$ and $\phi r_W \colon W \to \R$.
+	Let the inclusions $M^\pm \into M$ have their tautological co-orientations, and give the inclusion $M^0 \into M$ the co-orientation determined by its normal vector field oriented by pulling back the positively-oriented normal vector field over $0$ in $\R$.
+	Then $W^0$, $W^-$, and $W^+$, defined as the fiber products of $M^0$, $M^-$, and $M^+$ with $W$ over $M$, are elements of $PC^*_\Gamma(M)$.
+	The co-orientations of $W^\pm \to M$ are the restrictions to $W^\pm$ of the co-orientation of $W$.
+	Furthermore,
+	\begin{align*}
+		\bd(W^-) &=  (-W^0) \bigsqcup (\bd W)^- \\
+		\bd (W^+) &= W^0 \bigsqcup (\bd W)^+\\
+		(\bd W)^0 &= -\bd (W^0).
+	\end{align*}
+\end{lemma}
+\begin{proof}
+	As $M^\pm$ and $M^0$ are all closed subsets of $M$, their inclusions are all proper maps, so with the co-orientations assigned above, they all represent elements of $PC^*_\Gamma(M)$.
+	By \cref{L: transverse to pullback}, the map $r_W \colon W \to M$ is transverse to $M^0$ and $M^\pm$.
+	It follows that $W^0$, $W^-$, and $W^+$, defined as the fiber products of $M^0$, $M^-$, and $M^+$ with $W$, are elements of $PC^*_\Gamma(M)$ by \cref{D: PC products,L: product preserves iso}.
+	The co-orientations have been discussed previously in \cref{S: codim 0 and 1 co-or}, and in particular we have the boundary computations from \cref{E: codim 1 pullbacks,C: co-orient W0}.
+\end{proof}
+
+
+\begin{lemma}\label{L: W0 chain}
+	Suppose $W \in PC_*^\Gamma(M)$, and $0$ is a regular value of $\phi \colon M \to \R$ and $\phi r_W \colon W \to \R$.
+	Let $\R$, $(-\infty, 0]$, and $[0,\infty)$ have their standard orientations, and give $0$ its positive orientation.
+	Now orient $W^0$, $W^-$, and $W^+$ by realizing them as oriented fiber products of $0$,  $(-\infty, 0]$, and $[0,\infty)$ with $\phi r_W \colon W \to \R$ over $\R$.
+	Then the restrictions of $r_W \colon W \to M$ to $W^0$, $W^-$, and $W^+$ realize elements of $PC_*^\Gamma(M)$.
+	When $W^\pm$ are nonempty, their orientations agree with the orientation of $W$.
+	Furthermore, as elements of $PC_*^\Gamma(M)$, we have\footnote{Compare the signs with those in \cref{L: W0 cochain}.}
+	\begin{align*}
+	\bd(W^-) &=  W^0 \bigsqcup (\bd W)^- \\
+	\bd(W^+) &= (-W^0) \bigsqcup (\bd W)^+\\
+	(\bd W)^0 &= -\bd (W^0).
+	\end{align*}
+\end{lemma}
+
+\begin{proof}
+	Since $W$ is compact, so will be $W^0$, $W^-$, and $W^+$ as closed subsets of $W$.
+	So giving each space the orientation from the statement of the lemma, the restrictions of $r_W$ to $W^0$, $W^-$, and $W^+$ are elements of $PC_*^\Gamma(M)$.
+
+	We consider a point $x$ in the interior of $W^+$ with an open neighborhood $N$ also in the interior of $W^+$ and given the orientation restricted from $W$.
+	As the orientations of the fiber products are determined locally, the orientation of $W^+$ at $x$ will be consistent with its orientation in the restricted fiber product $[0,\infty) \times_\R N$, which will be the same as its orientation in $(0,\infty) \times_{(0,\infty)} N$.
+	But this is the same as the initial orientation of $N$ as a subset of $W$ by \cref{P: oriented fiber product basic properties}.
+	The same argument holds for $W^-$.
+
+	We then have by \cref{P: oriented fiber boundary}, our conventions for oriented boundaries, and the standard computations for the boundaries of $(-\infty,0]$ and $[0,\infty)$ that
+	\begin{equation*}
+			\bd W^- = \bd ((-\infty,0] \times_\R W) = (0 \times_\R W)  \sqcup ((-\infty,0] \times_\R \bd 	W) = W^0 \sqcup (\bd W)^-,
+	\end{equation*}
+	and
+	\begin{equation*}
+			\bd W^+ = \bd ([0,\infty) \times_\R W) = (-0 \times_\R W)  \sqcup ([0,\infty) \times_\R \bd W) 	= (-W^0) \sqcup (\bd W)^+.
+	\end{equation*}
+	We also compute
+	\begin{equation*}
+			\bd W^0 = \bd (0 \times_\R W) = - 0 \times_\R \bd W = -(\bd W)^0. \qedhere
+\end{equation*}
+\end{proof}
+
+Lastly, we will occasionally need to consider the preimage of an interval $[p,q] \subset \R$.
+If $p < q$ are regular values for $\phi$, then $\phi^{-1}([p,q])$ will be an embedded manifold with boundary in $M$ that we denote $M^{[p,q]}$.
+If further $\phi r_W$ is transverse $p$ and $q$ then we can form $W^{[p,q]} = M^{[p,q]} \times_M W$.
+We also let $W^p = \phi^{-1}(p) \times_M W$, and similarly for $q$.
+
+\begin{lemma}
+	If $p < q$ are regular values for $\phi \colon M \to \R$, if $W \in PC^*_\Gamma(M)$, and if the inclusion $M^{[p,q]} \into M$ is given its tautological co-orientation, then
+	$W^{[p,q]} \in PC^*_\Gamma(M)$ and
+	$$\bd W^{[p,q]} = W^p \sqcup -W^q \sqcup (\bd W)^{[p,q]}.$$
+	Similarly, if $W \in PC_*^\Gamma(M)$, then so is $W^{[p,q]}$, its orientation agrees with that of $W$, and
+	$$\bd W^{[p,q]} = -W^p \sqcup W^q \sqcup (\bd W)^{[p,q]}.$$
+\end{lemma}
+\begin{proof}
+	As $M^{[p,q]}$ is a closed subset of $M$, its inclusion into $M$ is proper, so with the tautological co-orientation,  $M^{[p,q]} \into M$ is an element of $PC^*_\Gamma(M)$.
+	We note that we only need to check transversality at $p$ and $q$, as the inclusion of the interior of $M^{[p,q]}$ to $M$ is transverse to any map.
+
+	In the precochain case, as $M^{[p,q]}$ is a closed subset of $M$, its inclusion into $M$ is proper, so with the tautological co-orientation,  $M^{[p,q]} \into M$ is an element of $PC^*_\Gamma(M)$.  Thus the fiber product $W^{[p,q]} = M^{[p,q]} \times_M W$ is an element of $PC^*_\Gamma(M)$ by \cref{D: PC products,L: product preserves iso}, and the boundary formula follows from the Leibniz rule analogously to our computations above for $W^\pm$.
+
+	In the prechain case, we observe that $W^{[p,q]} \cong (\phi r_W)^{-1}([p,q])$ by similar arguments as for $W^\pm$ in \cref{E: manifold decomposition}, so $W^{[p,q]}$ is compact.
+	The agreement of orientation and the boundary formula are similar to the arguments of \cref{L: W0 chain}.
+\end{proof}
+
+
 
 
 \subsubsection{Creasing}\label{S: creasing}
@@ -723,6 +855,7 @@ We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, though w
 Suppose we are given a function $\varphi \colon W \to (-1,1)$ with $0$ a regular value, i.e.\ that $\varphi$ is transverse to the inclusion of $0$ into $(-1,1)$.
 Below $\varphi$ will typically be a composition $W \xr{r_W} M \xr{\phi} (-1,1)$.
 As in the preceding section, we define $W^+$ to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$, and we define $W^0 = \varphi^{-1}(0)$.
+Note that here our codomain is $(-1,1)$ for reasons that will become apparent momentarily, though this is certainly still consistent with our maps being to $\R$ as above, using $(-1,1) \subset \R$.
 
 By \cite[Lemma~9]{Lipy14}, the idea of creasing is that the topological space $W \times [0,1]$ can be given the structure of a manifold with corners, which we will write $\Cre(W)$, satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
 We call the manifold with corners $\Cre(W)$ the \textbf{creasing homotopy} of $W$.
@@ -754,7 +887,7 @@ We can now officially define creasing.
 	When necessary for clarity, we may write $\Cre_\varphi(W)$.
 
 	Typically in practice, $W$ will arise with a map $r_W \colon W \to M$ representing an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$, and in this case our map $\varphi \colon W \to (-1,1)$ will generally be given as a composition $W \xr{r_W}M \xr{\phi} (-1,1)$ for some smooth $\phi \colon M \to (-1,1)$ with $0$ as a regular value.
-	In this case, the condition that $\varphi$ have $0$ as a regular value is equivalent to the condition that $r_W$ be transverse to the submanifold $M^0 = \phi^{-1}(0)$, and as the creasing is governed by $\phi$, we sometimes write $\Cre_\phi(W)$ when we want to emphasize the dependence on $\phi$.
+	In this case, the condition that $\varphi$ have $0$ as a regular value is equivalent to the condition that $r_W$ be transverse to the submanifold $M^0 = \phi^{-1}(0)$ by \cref{L: transverse to pullback}, and as the creasing is governed by $\phi$, we sometimes write $\Cre_\phi(W)$ when we want to emphasize the dependence on $\phi$.
 	When $r_W \colon W \to M$ represents an element of $PC_*^\Gamma(M)$, we treat $D\times_{(-1,1)} W$ as oriented by the convention for fiber products of oriented manifolds from \cref{S: orientation of fiber products}, using our fixed orientation of $D$, and we will show in a moment that if $W$ is compact so is $\Cre(W)$.
 	Thus composing the pullback map $\Cre(W) \to W$ with $r_W$, we obtain another element of $PC_*^\Gamma(M)$ given by $D\times_{(-1,1)} W \to W \xr{r_W}M$.
 	Similarly, when $r_W \colon W \to M$ represents an element of $PC^*_\Gamma(M)$, we treat $\Cre(W) \to W$ as co-oriented by the pullback conventions of \cref{D: pullback coorient}, using our given co-orientation of $D \to (-1,1)$, and this is a proper map by \cref{L: co-orientable pullback}.

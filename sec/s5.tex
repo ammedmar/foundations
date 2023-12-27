@@ -554,7 +554,7 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum.
 		& = (-\underline{Z^0} + \underline{(\bd Z)^-}+\underline{W_1} -\underline{W_1^-} - \underline{W_1^+} -\underline{\Cre(\bd W_1)},\underline{Z^0} + \underline{(\bd Z)^+} +\underline{W_2} -\underline{W_2^-} -\underline{W_2^+} -\underline{\Cre(\bd W_2)})\\
 		& = (-\underline{Z^0} + \underline{W_1^-} + \underline{W_2^-} +\underline{W_1} -\underline{W_1^-} -\underline{W_1^+} -\underline{\Cre(\bd W_1)},\underline{Z^0}+ \underline{W_1^+}+ \underline{W_2^+} +\underline{W_2} -\underline{W_2^-} -\underline{W_2^+} -\underline{\Cre(\bd W_2)})\\
 		& = (-\underline{Z^0} + \underline{W_2^-} + \underline{W_1} -\underline{W_1^+} -\underline{\Cre(\bd W_1)},\underline{Z^0}+ \underline{W_1^+} + \underline{W_2} -\underline{W_2^-} -\underline{\Cre(\bd W_2))})\\
-		& = (\underline{W_1},\underline{W_2})+ (\underline{-Z^0},\underline{Z^0}) + (\underline{W_2^-}-\underline{W_1^+}, \underline{W_1^+} -\underline{W_2^-}) -(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2)}).
+		& = (\underline{W_1},\underline{W_2})+ (-\underline{Z^0},\underline{Z^0}) + (\underline{W_2^-}-\underline{W_1^+}, \underline{W_1^+} -\underline{W_2^-}) -(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2)}).
 	\end{align*}
 	To see that this is equal to $\uW = (\underline{W_1},\underline{W_2})$ in $S^*$, we first note the middle two terms are each in the image of $(i_U, -i_V)$, so they represent $0$ in $S^*$.
 	It remains to show that $(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2))})=0$ in $S^*$.
@@ -572,6 +572,9 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum.
 
 	Applying this argument to $(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2))})$, we conclude that
 	$\bd (\underline{Z^-} + \underline{\Cre(W_1)},\underline{Z^+} + \underline{\Cre(W_2)}) = (\underline{W_1},\underline{W_2}) = \uW$ in $S^*$, and so $\psi$ is injective.
+
+	The one difference in the homological case is that in our above computation of $$\bd (\underline{Z^-} + \underline{\Cre(W_1)},\underline{Z^+} + \underline{\Cre(W_2)})$$ the term $(-\underline{Z^0},\underline{Z^0})$ will instead be $(\underline{Z^0},-\underline{Z^0})$ due to the difference in signs in the boundary formulas in \cref{L: W0 cochain,L: W0 chain}.
+	However, this does not alter the overall argument.
 \end{proof}
 
 \begin{remark}\label{R: MV boundary}
