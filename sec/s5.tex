@@ -615,7 +615,7 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum.
 		PLEASE DO NOT ERASE THIS NOTE UNTIL THESE FORMULAS HAVE BEEN ESTABLISHED AND WRITTEN INTO THE PAPER SOMEWHERE]}
 \end{comment}
 
-In this section we show that geometric cohomology possesses a contravariant Mayer--Vietoris sequence on manifolds.
+In this section, we show that geometric cohomology possesses a contravariant Mayer--Vietoris sequence on manifolds.
 This does not seem possible by deriving a long exact sequence from a short exact sequence.
 For example, in general the restriction map $C^*_\Gamma(M) \to C^*_\Gamma(U)$ will not be surjective.
 Consequently, this sequence will take more work than the covariant ones.
@@ -631,7 +631,7 @@ Here, however, we must always use splitting maps that factor through $M$ or risk
 	Suppose $U, V, U \cap V \subset M$ are non-empty open subsets of a manifold without boundary and $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
 	Of course we can also consider $r_W$ to have image in $U \cup V$.
 	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $W$ over $U$ and $V$.
-	Define $\delta(\uW) \in H^{k+1}_\Gamma(U \cup V)$ to be represented by $-W^0 = -\phi^{-1}(0)\times_{U \cup V} W$.
+	Define $\delta(\uW) \in H^{k+1}_\Gamma(U \cup V)$ to be represented by $-W^0 = -(\phi r_W)^{-1}(0)$, which we recall can be identified with $-\phi^{-1}(0)\times_{U \cup V} W$ by \cref{L: pm0 as fiber products}.
 \end{definition}
 
 The choice to use $-W^0$ rather than $W^0$ in the definition is explained by \cref{R: MV boundary}.
@@ -639,72 +639,78 @@ An alternative convention that uses $W^0$ rather than $-W^0$ would be to use $(-
 
 Our next goal is to show that $\delta$ is well defined, i.e.\ that it does not depend on the choice of representing precochain or the choice of $\phi$.
 We begin with a series of lemmas.
-Although we use $\phi^{-1}(0)$ in our construction of $\delta$, it will be useful in our arguments to allow our regular value to be anywhere in $(-1/2,1/2)$, and we immediately work in this generality.
+Although we use $0$ as our regular value in our construction of $\delta$, it will be useful in our arguments to allow our regular value to be anywhere in $(-1/2,1/2)$, and we immediately work in this generality.
+So for $p \in (-1/2,1/2)$, we let $M^p = \phi^{-1}(p)$ and $W^p = (\phi r_W)^{-1}(p) \cong M^p \times_{U \cup V} W$.
+Note that as $\phi$ separates $U$ and $V$, we have $M^p \subset U \cap V \subset U \cup V \subset M$ for all $p \in (-1/2,1/2)$, so the space $M^p$ is unambiguous whether we consider the domain of $\phi$ to be $U \cup V$ or $U \cap V$.
 
+We first show our construction does give an element of $H^*_\Gamma(U \cup V)$.
 
 \begin{lemma}
 	Suppose $U, V, U \cap V \subset M$ are non-empty open subsets of a manifold without boundary and $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
 	Consider $r_W$ to have image in $U \cup V$.
-	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$, and let $p \in (-1/2, 1/2)$ be a regular value for $\phi r_W$.
-	Then $W^p = \phi^{-1}(p) \times_{U \cup V} W$ is an element of $PC^*_\Gamma(U \cup V)$ with boundary in $Q^*(U \cup V)$, so it represents an element of $H^*_\Gamma(U \cup V)$.
+	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$, and let $p \in (-1/2, 1/2)$ be a regular value for $\phi$ and $\phi r_W$.
+	Then $W^p = M^p \times_{U \cup V} W$ is an element of $PC^*_\Gamma(U \cup V)$ with boundary in $Q^*(U \cup V)$, so it represents an element of $H^*_\Gamma(U \cup V)$.
 \end{lemma}
 
 \begin{proof}
-	For simplicity and consistency with the notation in \cref{S: codim 0 and 1 co-or}, we take $p = 0$, but the same argument works for any regular value $p \in (-1/2, 1/2)$.
+	For simplicity and consistency with the notation in \cref{S: codim 0 and 1 co-or,S: splitting}, we take $p = 0$, but the same argument works for any $p \in (-1/2, 1/2)$ satisfying the hypotheses. By \cref{L: W0 cochain}, $M^0 \times_{U\cap V} W$ is an element of $PC^*_\Gamma(U \cap V)$, and this provides a co-orientation of $M^0 \times_{U \cap V} W \to U \cup V$, but we must show that the resulting map to $U \cup V$ is proper.
 
-	We first note that we may consider $r_W$ as mapping to $U \cup V$ by composing with the inclusion $U \cap V \into U \cup V$, although $W \to U \cup V$ may no longer be proper.
-	By assumption, $0$ is a regular value of $\phi r_W$, and we recall from \cref{E: manifold decomposition} that this implies $r_W$ is transverse to $\phi^{-1}(0)$ and allows us to identify $W^0$ with $\phi^{-1}(0) \times_{U \cup V} W$.
+	We may consider $r_W$ as mapping to $U \cup V$ by composing with the inclusion $U \cap V \into U \cup V$ with its tautological co-orientation, although the composite $W \to U \cup V$ may no longer be proper.
+	By assumption, $0$ is a regular value of $\phi$ and $\phi r_W$, and we recall from \cref{E: manifold decomposition,L: pm0 as fiber products} that this implies $r_W$ is transverse to the embedded submanifold $M^0 \subset U \cup V$ and allows us to identify $W^0$ with $M^0 \times_{U \cup V} W$.
 
-	Next we show that the map $W^0 \to U \cup V$ is proper.
-	The space $\phi^{-1}(0)$ is a closed subset, so its embedding into $U \cup V$ is proper.
-	By \cref{L: co-orientable pullback}, the pullback $W \times_{U \cup V} \phi^{-1}(0) \to \phi^{-1}(0)$ is proper.
-	As the composition of proper maps is proper, the composite  $W \times_{U \cup V} \phi^{-1}(0) \to \phi^{-1}(0) \to U \cup V$ is proper.
-	But this is the fiber product $W \times_{U \cup V} \phi^{-1}(0) \to U \cup V$, which is symmetric topologically, so $W^0 = \phi^{-1}(0) \times_{U \cup V} W \to U \cup V$ is proper.
+	Next we show that this fiber product $W^0 \to U \cup V$ is proper.
+	The space $M^0$ is a closed subset of $U \cup V$, so its embedding into $U \cup V$ is proper.
+	By \cref{L: co-orientable pullback}, the pullback $W \times_{U \cup V} M^0 \to \phi^{-1}(0)$ is proper.
+	As the composition of proper maps is proper, the composite  $W \times_{U \cup V} M^0 \to \phi^{-1}(0) \to U \cup V$ is proper.
+	But this is the fiber product $W \times_{U \cup V} M^0 \to U \cup V$, which is symmetric topologically, so $W^0 \cong M^0 \times_{U \cup V} W \to U \cup V$ is proper.
+	We co-oriented $W^0 \to U \cup V$ as a fiber product as in \cref{L: W0 cochain}, so we have $W^0 \in PC^*_\Gamma(U \cup V)$.
 
-	We co-oriented $W^0 \to U \cup V$ as in \cref{E: codim 1 pullbacks} in \cref{S: codim 0 and 1 co-or}, so we have a precochain.
-	Finally, as $\phi^{-1}(0)$ has no boundary, we compute using \cref{leibniz} that
-	$$\bd W^0 = \pm \phi^{-1}(0) \times_{U \cup V} \bd W,$$
-	which will be proper in $U \cup V$ for the same reasons as for $W^0$.
+	Finally, as $M^0$ has no boundary, we compute using \cref{leibniz} that
+	$$\bd (W^0) = - M^0 \times_{U \cup V} \bd W.$$
 	But $W$ represents a cocycle in $U \cap V$, so $\bd W$ is a union of trivial and degenerate precochains in $U \cap V$.
 	The definitions of trivial and degenerate do not rely on the properness of the map, so $\bd W$ will also be a union of trivial and degenerate manifolds over $U \cup V$.
-	Consequently, the same is true of $\phi^{-1}(0) \times_{U \cup V} \bd W$ by \cref{L: pullback with Q}, noting the proof of that result does not rely on $V$ or $W$ being proper.
+	Consequently, the same is true of $M^0 \times_{U \cup V} \bd W$ by \cref{L: pullback with Q}, noting the proof of that result does not rely on any map being proper.
 \end{proof}
+
+The next lemma shows that our construction of $\delta$ does not depend on the use of $0$ as our regular value.
+The proof uses $\phi^{-1}([p,q])$, so the reader should compare with \cref{L: Wpq cochain}.
 
 \begin{lemma}\label{L: different point}
 	Suppose $U,V \subset M$ are open subsets of $M$ with $U \cap V$ nonempty.
 	Suppose $W \in PC^*_\Gamma(U \cap V)$ represents an element of $H^*_\Gamma(U \cap V)$ and that $\phi \colon U \cup V \to [-1/2,1/2]$ separates $U$ and $V$.
-	Let $p, q\in (-1/2,1/2)$ be any points such that $\phi$ and $\phi r_W$ are transverse to the inclusions of $p$ and $q$ into $(-1/2,1/2)$, and let $W^p$ and $W^{q}$ be the fiber products $\phi^{-1}(p) \times_M W$ and $\phi^{-1}(q) \times_{U \cup V} W$ considered as elements of  $PC^*_\Gamma(U \cap V)$.
-	Then $W^p$ and $W^q$ represent the same element of $H^*_\Gamma(U \cup V)$.
+	Let $p, q\in (-1/2,1/2)$ be any regular values for $\phi$ and $\phi r_W$.
+	Then $W^p$ and $W^q$, as defined just above, represent the same element of $H^*_\Gamma(U \cup V)$.
 \end{lemma}
 
 \begin{proof}
 	Suppose without loss of generality that $p<q$.
-	Then $\phi^{-1}([p,q])$ will be transverse to $r_W \colon W \to M$, and we have $\phi^{-1}([p,q]) \subset U \cap V$.
+	Then the submanifold $\phi^{-1}([p,q]) \subset U \cap V \subset U \cup V$ will be transverse to $r_W \colon W \to M$.
 	As $\phi^{-1}([p,q])$ is closed in $U \cup V$, its inclusion is proper, and the inclusion can be tautologically co-oriented as a codimension $0$ embedding (see \cref{D: tautological co-orientation}).
-	Thus $$\bd(\varphi^{-1}([p,q])\times_{U \cup V} W = (\varphi^{-1}(q)\times_{U \cup V} W)-(\varphi^{-1}(p)\times_{U \cup V} W)+ \varphi^{-1}([p,q])\times_{U \cup V} \bd W.$$
-	As $W$ is a cocycle, the last term is in $Q^*(U \cup V)$ (with support in $U \cap V$) by \cref{L: pullback with Q}, so $\varphi^{-1}(p)\times_{U \cup V} W$ and $\varphi^{-1}(q)\times_{U \cup V} W$ are cohomologous.
+	Thus, as in \cref{L: Wpq cochain}, $$\bd(\varphi^{-1}([p,q])\times_{U \cup V} W = (M^p \times_{U \cup V} W)\sqcup -(M^q \times_{U \cup V} W) \sqcup (\phi^{-1}([p,q])\times_{U \cup V} \bd W).$$
+	As $W$ is a cocycle, the last term is in $Q^*(U \cup V)$ (with support in $U \cap V$) by \cref{L: pullback with Q}, so $M^p \times_{U \cup V} W$ and $M^q \times_{U \cup V} W$ represent cohomologous cocycles.
 \end{proof}
+
+Next, we show independence of the representative $W$, assuming a fixed $\phi$.
 
 \begin{lemma}\label{L: different W}
 	Suppose $U,V \subset M$ are open subsets of $M$ with $U \cap V$ nonempty.
 	Suppose $W_1, W_2 \in PC^*_\Gamma(U \cap V)$ represent the same element of $H^*_\Gamma(U \cap V)$.
-	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$ and suppose $q \in (-1/2,1/2)$ is a regular value for both $\phi r_{W_1}$ and $\phi r_{W_2}$.
+	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$ and suppose $q \in (-1/2,1/2)$ is a regular value for $\phi$, $\phi r_{W_1}$, and $\phi r_{W_2}$.
 	Then $W_1^q$ and $W_2^q$ represent the same element of $H^*_\Gamma(U \cup V)$.
 \end{lemma}
 
 \begin{proof}
 	By assumption, there is a $Z \in PC^*_{\Gamma}(U \cap V)$ with $\bd Z \sqcup -W_1 \sqcup W_2 \in Q^*(U \cap V)$.
-	For our fixed $\phi$, there is by Sard's Theorem a $p \in (-1/2,1/2)$ such that $p \into (-1/2,1/2)$ is transverse to $\phi r_Z$, $\phi r_{W_1}$, and $\phi r_{W_2}$.
+	For our fixed $\phi$, there is by Sard's Theorem a $p \in (-1/2,1/2)$ such that $p \into (-1/2,1/2)$ is transverse to $\phi$, $\phi r_Z$, $\phi r_{W_1}$, and $\phi r_{W_2}$.
 	By the preceding lemma, it suffices to show that $W_1^p$ and $W_2^p$ represent the same element of $H^*_\Gamma(U \cup V)$.
-	As fiber products with elements of $Q^*(U \cap V)$ are in $Q^*(U \cap V)$ by \cref{L: pullback with Q},
-	we have that
-	$$\phi^{-1}(p)\times_{U \cap V}(\bd Z \sqcup -W_1 \sqcup W_2) = (\bd Z)^p \sqcup -W_1^p \sqcup W_2^p \in Q^*(U \cap V).$$
-	Furthermore, by an obvious modification to \cref{C: co-orient W0}, we have $\bd (Z^p) = -(\bd Z)^p$.
-	So  $$-\bd (Z^p) \sqcup -W_1^p \sqcup W_2^p \in Q^*(U \cap V),$$
-	which implies that $W_1^p$ and $W_2^p$ represent the same cohomology class in $U \cap V$.
 
-	But by the same argument presented at the start of the proof of \cref{L: different point}, the spaces $Z^p$, $W_1^p$, and $W_2^p$ all map properly in $U \cup V$, and so $W_1^p$ and $W_2^p$ also represent the same cohomology class in $U \cup V$.
-	We note that they do indeed represent cocycles as $\bd (W_1^p) = - (\bd W_1)^p = -\phi^{-1}(p) \times_{U \cup V} (\bd W_1)$, and since $\bd W_1 \in Q^*(U \cap V)$ by assumption, and so is a union of trivial and degenerate precochains, the same is true of $\phi^{-1}(p) \times_{U \cup V} (\bd W_1)$ by \cref{L: pullback with Q}.
+	As in the proofs of the preceding lemmas, the fiber product with $M^p$ over $U \cup V$ takes an element of $PC^*_\Gamma(U \cap V)$ to $PC^*_\Gamma(U \cup V)$ and an element of $Q^*(U \cap V)$ to $Q^*(U \cup V)$.
+	So
+	$$M^p \times_{U \cup V}(\bd Z \sqcup -W_1 \sqcup W_2) = (\bd Z)^p \sqcup -W_1^p \sqcup W_2^p$$
+	is an element of $Q^*(U \cup V)$.
+	Furthermore, by an obvious modification to \cref{C: co-orient W0}, we have $\bd (Z^p) = -(\bd Z)^p$.
+	So  $$-\bd (Z^p) \sqcup -W_1^p \sqcup W_2^p \in Q^*(U \cup V),$$
+	which implies that $W_1^p$ and $W_2^p$ represent the same cohomology class in $U \cup V$.
 \end{proof}
 
 \begin{proposition}\label{P: connecting}
@@ -712,47 +718,50 @@ Although we use $\phi^{-1}(0)$ in our construction of $\delta$, it will be usefu
 \end{proposition}
 
 \begin{proof}
-	Suppose $W_1$ and $W_2$ represent the same element of $H^*_\Gamma(U \cup V)$ and that we choose functions $\phi_1,\phi_2$ that are respectively separating for $W_1$ and $W_2$ over $U$ and $V$.
-	We must show that $\phi_1^{-1}(0)\times_{U \cup W} W_1$ and $\phi_2^{-1}(0)\times_{U \cup W} W_2$ represent the same element of $H^*_\Gamma(U \cup W)$.
+	Suppose $W_1$ and $W_2$ represent the same element of $H^*_\Gamma(U \cap V)$ and that we choose functions $\phi_1,\phi_2$ that are respectively separating for $W_1$ and $W_2$ over $U$ and $V$.
+	We must show that $\phi_1^{-1}(0)\times_{U \cup W} W_1$ and $\phi_2^{-1}(0)\times_{U \cup W} W_2$ represent the same element of $H^*_\Gamma(U \cup V)$.
 
-	By Sard's Theorem, we can find points $p_1<p_2$ in $(-1/2,1/2)$ such that $p_1$ is a regular value for $\phi_1 r_{W_1}$ and $p_2$ is a regular value for all three of $\phi_1 r_{W_1}$, $\phi_2 r_{W_1}$, and $\phi_2 r_{W_2}$.
+	By Sard's Theorem, we can find points $p_1<p_2$ in $(-1/2,1/2)$ such that $p_1$ is a regular value for $\phi$ and $\phi_1 r_{W_1}$ and $p_2$ is a regular value for all of $\phi$, $\phi_1 r_{W_1}$, $\phi_2 r_{W_1}$, and $\phi_2 r_{W_2}$.
 	By \cref{L: different point}, $\phi_1^{-1}(0) \times_{U \cup V} W_1$ and $\phi_2^{-1}(0) \times_{U \cup V} W_2$ represent the same elements of $H^*_\Gamma(U \cup V)$ respectively as $\phi_1^{-1}(p_1) \times_{U \cup V} W_1$ and $\phi_2^{-1}(p_2) \times_{U \cup V} W_2$.
 	Further, by \cref{L: different W}, $\phi_2^{-1}(p_2) \times_{U \cup V} W_2$ represents the same cohomology class as $\phi_2^{-1}(p_2) \times_{U \cup V} W_1$.
 	So it suffices to show that $\phi_1^{-1}(p_1) \times_{U \cup V} W_1$ represents the same cohomology class as $\phi_2^{-1}(p_2) \times_{U \cup V} W_1$.
 
- 	So for simplicity of notation, let us suppose a single precochain $W$ and two separating functions $\phi_1,\phi_2$ such that $p_1 < p_2$ are respective regular values for $\phi_1 r_W$ and $\phi_2 r_W$.
+ 	So for simplicity of notation, let us suppose a single precochain $W$ and two separating functions $\phi_1,\phi_2$ such that $p_1 < p_2$ are respective regular values for $\phi$, $\phi_1 r_W$, and $\phi_2 r_W$.
 
-	Now, suppose there exists $q$ with $-1<q<p_2$ such that $\phi_1^{-1}(p_1) \subset \phi_2^{-1}([-1,q])$.
-	By postcomposing $\phi_1$ with a diffeomorphism of $[-1,1]$, we may suppose that $p_1<q$.
-	Let us choose $u_1,u_2$ such that $-1<u_1<p_1<u_1<q$.
+	First, suppose there exists $q$ with $-1/2<q<p_2$ such that $\phi_1^{-1}(p_1) \subset \phi_2^{-1}([-1/2,q])$.
+	By postcomposing $\phi_1$ with a diffeomorphism of $[-1/2,1/2]$, we may suppose that $p_1<q$.
+	Let us choose $u_1,u_2$ such that $-1/2<u_1<p_1<u_1<q$.
 	Using the Urysohn lemma we can find a continuous $\hat \Phi$ on $U \cup V$ such that:
 
 	\begin{enumerate}
 		\item $\hat \Phi$ is equal to $\phi_1$ on $\phi_1^{-1}[u_1,u_2]$,
-		\item $\hat\Phi$ is equal to $\phi_2$ on $\phi_2^{-1}([q,1])$,
+		\item $\hat\Phi$ is equal to $\phi_2$ on $\phi_2^{-1}([q,1/2])$,
 
-		\item $\hat\Phi$ takes $U\setminus V$ to $-1$,
+		\item $\hat\Phi$ takes $U\setminus V$ to $-1/2$,
 
 		\item $\hat\Phi^{-1}(p_1) = \phi_1^{-1}(p_1)$,
 
 		\item $\hat\Phi^{-1}(p_2) = \phi_2^{-1}(p_2)$.
 	\end{enumerate}
-	Furthermore, by a sufficiently small homotopy $\hat\Phi$ can be approximated by a smooth function $\Phi$ that preserves the last two properties and is still separating.
-	Thus by using $\Phi$ and applying the previous case for a single separating function but two different separating points, we see that splitting at $\phi_1^{-1}(p_1)$ and $\phi_2^{-1}(p_2)$ produce the same image of $\delta$.
+	Furthermore, by a sufficiently small homotopy $\hat\Phi$ can be approximated by a smooth function $\Phi$ that is still separating, preserves the last two properties, and, for some $\epsilon >0$, agrees with $\phi_1$ on $\phi_1^{-1}((p_1-\epsilon,p_2+\epsilon))$ and with $\phi_2$ on  $\phi_2^{-1}((p_2-\epsilon,p_2+\epsilon))$.
+	Then $p_1$ and $p_2$ are regular values for $\Phi$ and $\Phi r_W$, and
+	we have $\Phi^{-1}(p_1) \times_{U \cup V} W \cong \phi_1^{-1}(p_1) \times_{U \cup V} W$ and similar for $p_2$ and $\phi_2$.
+	So now  $\Phi^{-1}(p_1) \times_{U \cup V} W$ and  $\Phi^{-1}(p_2) \times_{U \cup V} W$ represent the same element in $H^*_\Gamma(U \cup V)$ by \cref{L: different point}.
+
 	While this argument is written for $\phi_1^{-1}(p_1)$ ``below some $q<p_2$,'' clearly an analogous argument holds for $\phi_1^{-1}(p_1)$ ``above some $q>p_2$,'' or with the roles of $\phi_1$ and $\phi_2$ reversed.
 
 	Lastly, we have to consider the case where there is not a $q$ as in the preceding paragraph that allows us to separate $\phi_1^{-1}(p_1)$ from $\phi_2^{-1}(p_2)$.
 	In this case we will modify $\phi_2$ in an appropriate way.
-	Let use choose $r$ with $p_2 <r<1$.
+	Let use choose $r$ with $p_2 <r<1/2$.
 	Define $\hat \Phi$ as follows:
 
 	\begin{enumerate}
-		\item On $\phi_2^{-1}([-1,r])$, take $\hat \Phi = \phi_2$,
+		\item On $\phi_2^{-1}([-1/2,r])$, take $\hat \Phi = \phi_2$,
 
-		\item On $\phi_2^{-1}([r,1])$ use the Urysohn Lemma to construct a continuous function $\phi_2^{-1}([r,1]) \to [r,1]$ that takes $\phi_2^{-1}(r) \cup [\phi_2^{-1}([r,1]) \cap \phi_1^{-1}(p_1)]$ to $r$ and $V\setminus U$ to $1$; let $\hat \Phi$ be this constructed function on $\phi_2^{-1}([r,1]$.
+		\item On $\phi_2^{-1}([r,1/2])$ use the Urysohn Lemma to construct a continuous function $\phi_2^{-1}([r,1/2]) \to [r,1/2]$ that takes $\phi_2^{-1}(r) \cup [\phi_2^{-1}([r,1/2]) \cap \phi_1^{-1}(p_1)]$ to $r$ and $V\setminus U$ to $1/2$; let $\hat \Phi$ be this constructed function on $\phi_2^{-1}([r,1/2]$.
 	\end{enumerate}
 
-	Now, we can modify $\hat \Phi$ by an $\epsilon$-homotopy fixing $\phi_2^{-1}([-1,r])$ and $\Phi^{-1}(1)$ to a smooth $\Phi$ with $\Phi^{-1}(p_2) = \phi_2^{-1}(p_2)$ and such that there is a $q$, $r<q<1$, with $\phi_1^{-1}(p_1) \subset \Phi^{-1}([-1,q])$.
+	Now, we can modify $\hat \Phi$ by an $\epsilon$-homotopy fixing $\phi_2^{-1}([-1/2,r])$ and $\Phi^{-1}(1/2)$ to a smooth $\Phi$ with $\Phi^{-1}(p_2) = \phi_2^{-1}(p_2)$ and such that there is a $q$, $r<q<1$, with $\phi_1^{-1}(p_1) \subset \Phi^{-1}([-1/2,q])$.
 	We can now choose a $p_2'$ with $q<p_2'<1$ that separates $W$ via $\Phi$.
 	From our previous cases, we know $\Phi^{-1}(p_2')\times_{U \cup V}W$ is cohomologous to $\Phi^{-1}(p_2)\times_{U \cup V}W = \phi_2^{-1}(p_2)\times_{U \cup V}W$, but $\Phi^{-1}(p_2')$ and $\phi_1^{-1}(p_1)$ are now related as in the preceding case.
 
