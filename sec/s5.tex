@@ -368,9 +368,8 @@ The constructions are as follows.
 In this section, we consider Mayer--Vietoris sequences for homology and cohomology.
 In particular, we present covariant homology and cohomology sequences and a contravariant cohomology sequence.
 
-Throughout our treatment, we will assume that $U$ and $V$ are open subsets of a manifold without boundary $M$ and that $U \cap V \neq \emptyset$.
-If $U \cap V = \emptyset$, the Mayer--Vietoris sequences follow from more elementary considerations.
-We do allow the possibility that $U \subset V$ or $V \subset U$.
+Throughout our treatment, we will assume that $U$ and $V$ are open subsets of a manifold without boundary $M$.
+Note that any of $U$, $V$, or $U \cap V$ may be empty.
 
 For the covariant homology sequence, the maps $H_*^\Gamma(U) \to H_*^\Gamma(M)$, etc., induced by inclusion will be those defined in \cref{S: covariant functoriality}.
 For a covariant cohomology sequence, however, the maps of the preceding section will not work, as the inclusion of an open set into a manifold is not generally proper.
@@ -440,9 +439,9 @@ In some sense creasing is simpler, as creasing only needs to be applied once whi
 In order to perform creasing, the following definitions will be useful.
 
 \begin{definition}
-	Let $U,V$ be non-empty open subsets of a manifold $M$ such that $U \cap V \neq \emptyset$.
-	We will call a smooth surjective\footnote{The condition that $\phi$ be surjective is required if $U\setminus V$ or $V\setminus U$ is empty, i.e.\ if $U \subset V$ or $V \subset U$.} function $\phi \colon U \cup V \to [-1/2,1/2]$ a \textbf{separating function for $\mathbf U$ and $\mathbf V$} if $\phi(U\setminus V) = -1/2$ and $\phi(V\setminus U) = 1/2$.
-	Such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
+	Let $U,V$ be open subsets of a manifold $M$.
+	We will call a smooth function $\phi \colon U \cup V \to [-1/2,1/2]$ a \textbf{separating function for $\mathbf U$ and $\mathbf V$} if $U\setminus V \subset \phi^{-1}(-1/2)$ and $V\setminus U \subset \phi^{-1}(1/2)$.
+	As $U \setminus V$ and $V \setminus U$ are disjoint closed subsets of $U \cup V$ and all of our spaces are normal by assumption, such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
 	We use $\pm 1/2$ as our endpoints to be consistent with the maps $\phi \colon M \to (-1,1)$ used in the definition of creasing.
 	Note that we only assume that $U \setminus V \subset \phi^{-1}(-1/2)$ and not that $U \setminus V  = \phi^{-1}(-1/2)$, and similarly for $V \setminus U$.
 	However, it will be useful to keep in mind that $\phi^{-1}([-1/2,1/2)) \subset U$ and $\phi^{-1}((-1/2,1/2]) \subset V$.
@@ -452,6 +451,7 @@ In order to perform creasing, the following definitions will be useful.
 	In particular, $0$ is a regular value in the usual sense for the restriction of $\phi r_W$ to each stratum of $W$.
 	Consequently, if $\phi$ is separating for $W$ over $U$ and $V$, we may perform creasing of $W$ along $(\phi r_W)^{-1}(0)$ as defined in \cref{S: creasing}.
 	More generally, we can form $W^+$, $W^-$, and $W^0$ as discussed in \cref{E: manifold decomposition,S: codim 0 and 1 co-or}.
+	Note that some of these spaces may be empty depending on the configuration of $U$ and $V$.
 \end{definition}
 
 \begin{lemma}\label{L: existence of separating}
@@ -630,7 +630,7 @@ Throughout, there will be no loss of generality in taking $U \cup V = M$, and it
 
 
 \begin{definition}\label{D: connecting}
-	Suppose that $U$, $V$, and $U \cap V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$ and that $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
+	Suppose that $U$ and $V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$ and that $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
 	Of course we can also consider $r_W$ to have image in $U \cup V$.
 	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $W$ over $U$ and $V$.
 	Define $\delta(\uW) \in H^{k+1}_\Gamma(U \cup V) = H^{k+1}_\Gamma(M)$ to be represented by $-W^0 = -(\phi r_W)^{-1}(0)$, which we recall can be identified with $-\phi^{-1}(0)\times_M W$ by \cref{L: pm0 as fiber products}.
@@ -648,7 +648,7 @@ Note that as $\phi$ separates $U$ and $V$, we have $M^p \subset U \cap V \subset
 We first show our construction does give an element of $H^*_\Gamma(M)$.
 
 \begin{lemma}
-	Suppose that $U$, $V$, and $U \cap V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$  and that $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
+	Suppose that $U$ and $V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$ and that $\uW \in H^k_\Gamma(U \cap V)$ is represented by $r_W \colon W \to U \cap V$.
 	Consider $r_W$ to have image in $U \cup V = M$.
 	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$, and let $p \in (-1/2, 1/2)$ be a regular value for $\phi$ and $\phi r_W$.
 	Then $W^p = M^p \times_{M} W$ is an element of $PC^*_\Gamma(M)$ with boundary in $Q^*(M)$, so it represents an element of $H^*_\Gamma(M)$.
@@ -675,7 +675,7 @@ The next lemma shows that our construction of $\delta$ does not depend on the us
 The proof uses $\phi^{-1}([p,q])$, so the reader should compare with \cref{L: Wpq cochain}.
 
 \begin{lemma}\label{L: different point}
-	Suppose that $U$, $V$, and $U \cap V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$.
+	Suppose that $U$ and $V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$.
 	Suppose $W \in PC^*_\Gamma(U \cap V)$ represents an element of $H^*_\Gamma(U \cap V)$ and that $\phi \colon M = U \cup V \to [-1/2,1/2]$ separates $U$ and $V$.
 	Let $p, q\in (-1/2,1/2)$ be any regular values for $\phi$ and $\phi r_W$.
 	Then $W^p$ and $W^q$, as defined just above, represent the same element of $H^*_\Gamma(M)$.
@@ -692,7 +692,7 @@ The proof uses $\phi^{-1}([p,q])$, so the reader should compare with \cref{L: Wp
 Next, we show independence of the representative $W$, assuming a fixed $\phi$.
 
 \begin{lemma}\label{L: different W}
-	Suppose that $U$, $V$, and $U \cap V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$.
+	Suppose that $U$ and $V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$.
 	Suppose $W_1, W_2 \in PC^*_\Gamma(U \cap V)$ represent the same element of $H^*_\Gamma(U \cap V)$.
 	Let $\phi \colon U \cup V \to [-1/2,1/2]$ separate $U$ and $V$ and suppose $q \in (-1/2,1/2)$ is a regular value for $\phi$, $\phi r_{W_1}$, and $\phi r_{W_2}$.
 	Then $W_1^q$ and $W_2^q$ represent the same element of $H^*_\Gamma(M)$.
@@ -713,7 +713,7 @@ Next, we show independence of the representative $W$, assuming a fixed $\phi$.
 \end{proof}
 
 \begin{proposition}\label{P: connecting}
-	Suppose that $U$, $V$, and $U \cap V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$.
+	Suppose that $U$ and $V$ are non-empty open subsets of a manifold without boundary $M = U \cup V$.
 	The map $H^k_\Gamma(U \cap V) \xr{\delta} H^{k+1}_\Gamma(U \cup V) = H^{k+1}_\Gamma(M)$ is well defined.
 \end{proposition}
 
