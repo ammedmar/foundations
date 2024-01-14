@@ -204,7 +204,7 @@ The first part of the following theorem is Lipyanskiy's Theorem 5 in \cite{Lipy1
 	The constructions are both functorial.
 	In other words:
 	\begin{enumerate}
-		\item If $\id \colon M \to M$ is the identity map with its tautological co-orientation, then $\id_*$ is the identity map on $H_*^\Gamma(M)$ and $H^*_\Gamma(M)$.
+		\item If $\id \colon M \to M$ is the identity map, then $\id_*$ is the identity map on $H_*^\Gamma(M)$ and $H^*_\Gamma(M)$, using the tautological co-orientation of $\id$ for the latter.
 		\item  If $f_1 \colon M \to N$ and $f_2 \colon N \to X$ are continuous maps of manifolds without boundary, then $(f_2f_1)_* = f_{2*}f_{1*} \colon H_*^\Gamma(M) \to H_*^\Gamma(X)$; if $f_1$ and $f_2$ are also co-oriented and proper, then $(f_2f_1)_* = f_{2*}f_{1*} \colon H^*_\Gamma(M) \to H^*_\Gamma(X)$.
 	\end{enumerate}
 \end{theorem}
@@ -368,11 +368,11 @@ The constructions are as follows.
 	In other words:
 		\begin{enumerate}
 			\item If $\id \colon M \to M$ is the identity map, then $\id^*$ is the identity map on $H^*_\Gamma(M)$; if $M$ is also oriented, then $\id^*$ is the identity map on $H_*^\Gamma(M)$.
-			\item  If $f_1 \colon M \to N$ and $f_2 \colon N \to X$ are continuous maps of manifolds without boundary, then $(f_2f_1)^* = f_1^*f_2^* \colon H^*_\Gamma(X) \to H^*_\Gamma(M)$; if $f_1$ and $f_2$ are also proper maps and $M$ and $N$ are oriented, then $(f_2f_1)^* = f_1^*f_2^* \colon  H_*^\Gamma(X) \to H_*^\Gamma(M)$.
+			\item  If $f_1 \colon M \to N$ and $f_2 \colon N \to X$ are continuous maps of manifolds without boundary, then $(f_2f_1)^* = f_1^*f_2^* \colon H^*_\Gamma(X) \to H^*_\Gamma(M)$; if $f_1$ and $f_2$ are also proper maps and $M$, $N$, and $X$ are oriented, then $(f_2f_1)^* = f_1^*f_2^* \colon  H_*^\Gamma(X) \to H_*^\Gamma(M)$.
 		\end{enumerate}
 \end{corollary}
 \begin{proof}
-	We first consider the map on cohomology.
+	We first consider cohomology.
 	In this case, both statements follow from \cref{P: pullback functoriality}.
 	For the second statement, given a cocycle represented by $r_W \colon W \to X$, we first apply \cref{T: basic trans} to obtain a smooth approximation $g_2$ to $f_2$ that is transverse to $r_W$ and then again to obtain a smooth approximation $g_1$ to $f_1$ that is transverse to the pullback $W \times_X N \to N$.
 
@@ -1076,21 +1076,20 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 
 \begin{proof}
 	We first make some general observations that will apply throughout the proof.
-
 	Notationally, we always assume $\uW$ is represented by $W$, etc.
 	In the following, we typically assume an appropriate separating function $\phi \colon U \cup V \to [-1/2,1/2]$.
-	We further assume $\phi$ has been chosen to separate any precochain under discussion.
-	See \cref{D: separating function}.
+	We further assume $\phi$ has been chosen to separate any precochain under discussion;
+	see \cref{D: separating function}.
 
 
-	We observe that $(U \cap V)^+ = \phi^{-1}([0,1/2])\cap(U \cap V)$ is a closed subspace of both $U \cap V$ and of $U$, as $\phi^{-1}([0,1/2]) \cap (U \cap V) = \phi|_U^{-1}([0,1/2])$ given that $\phi(U\setminus V) = -1/2$.
+	We observe that $(U \cap V)^+ = \phi^{-1}([0,1/2])\cap(U \cap V)$ is a closed subspace both of $U \cap V$ and of $U$, as $\phi^{-1}([0,1/2]) \cap (U \cap V) = \phi|_U^{-1}([0,1/2])$ given that $\phi(U\setminus V) = -1/2$.
 	So the inclusions $(U \cap V)^+ \into U \cap V$ and $(U \cap V)^+ \into U$ are both proper maps.
 	Thus if $W \in PC^*_\Gamma(U \cap V)$, in which case in particular $r_W \colon W \to U \cap V$ is proper, and assuming $\phi$ separates $W$ over $U$ and $V$, both the fiber products $(U \cap V)^+\times_{U \cap V} W \to U \cap V$ and $(U \cap V)^+\times_{U} W \to U$ will be proper maps.
-	In fact, they both have the same domain, which is just $W^+$, and we will write $W^+$ for the corresponding elements of $PC^*_\Gamma(U \cap V)$ or $PC^*_\Gamma(U)$, determining which via context.
-	Similarly, we obtain $W^-$ in $PC^*_\Gamma(U \cap V)$ or $PC^*_\Gamma(V)$.
+	In fact, they both have the same domain, which is just $W^+$, and we will write $W^+$ for the corresponding elements of both $PC^*_\Gamma(U \cap V)$ or $PC^*_\Gamma(U)$, determining which is meant by context.
+	Similarly, $W^-$ can represent an element of either $PC^*_\Gamma(U \cap V)$ or $PC^*_\Gamma(V)$.
 	See \cref{F: MV1}.
 	On the other hand, $(U \cap V)^- = \phi^{-1}([-1/2,0])\cap(U \cap V)$ is not generally closed in $U$, and so we do not obtain an element $W^-$ in $PC^*_\Gamma(U)$.
-	Similarly, there is no $W^+$ in $PC^*_\Gamma(V)$.
+	Similarly, there is generally no $W^+$ in $PC^*_\Gamma(V)$.
 
 	\begin{figure}[h]
 		\input{auxy/mayer_vietoris1.tex}
@@ -1098,10 +1097,10 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 		\label{F: MV1}
 	\end{figure}
 
-	Similarly, we have $\phi^{-1}([-1/2,0]) = \phi|_U^{-1}([-1/2,0])$, and so $\phi^{-1}([-1/2,0])$ is a closed subset of $U$ and of $U \cup V$.
-	Therefore, the inclusions $\phi^{-1}([-1/2,0]) \into U$ and $\phi^{-1}([-1/2,0]) \into U \cup V$ are proper so that if $W \in PC^*_\Gamma(U)$, then $W^-$ is well-defined in both $PC^*_\Gamma(U)$ and $PC^*_\Gamma(U \cup V)$.
+	Analogously, we have $\phi^{-1}([-1/2,0]) = \phi|_U^{-1}([-1/2,0])$, and so $\phi^{-1}([-1/2,0])$ is a closed subset of $U$ and of $U \cup V$.
+	Therefore, the inclusions $\phi^{-1}([-1/2,0]) \into U$ and $\phi^{-1}([-1/2,0]) \into U \cup V$ are proper so that if $W \in PC^*_\Gamma(U)$, then $W^-$ can represent an element of either $PC^*_\Gamma(U)$ and $PC^*_\Gamma(U \cup V)$.
 	See \cref{F: MV2}.
-	Analogously, if $W \in PC^*_\Gamma(V)$ then we obtain $W^+$ in both $PC^*_\Gamma(V)$ and $PC^*_\Gamma(U \cup V)$.
+	Likewise, if $W \in PC^*_\Gamma(V)$ then we obtain $W^+$ in both $PC^*_\Gamma(V)$ and $PC^*_\Gamma(U \cup V)$.
 
 	\begin{figure}[h]
 		\input{auxy/mayer_vietoris2.tex}
@@ -1109,26 +1108,27 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 		\label{F: MV2}
 	\end{figure}
 
-	We also note that $\phi^{-1}(0)$ is closed in $U \cap V$, $U$, $V$, and $U \cup V$, so for any $W$ in $PC_\Gamma^*(-)$ for any of these spaces, $W^0$ is also in $PC^*_\Gamma(-)$ for all these spaces.
+	We also note that $\phi^{-1}(0)$ is closed in $U \cap V$, $U$, $V$, and $U \cup V$, so if $W$ is an element of any of $PC_\Gamma^*(U \cap V)$, $PC_\Gamma^*(U)$, $PC_\Gamma^*(V)$, or $PC_\Gamma^*(U \cup V)$, then $W^0$ represents an element of all of these sets.
 
-	Finally, we note that if $W \in Q^*(U \cap V)$ is also well defined as an element of $PC^*(U)$, then $W \in Q^*(U)$ as, directly from the definitions, being trivial or degenerate with image in $U \cap V$ implies being trivial or degenerate in $U$.
-	The same consideration holds replacing $U$ with $V$ or for the inclusions of $U$ and $V$ into $U \cup V$.
+	Finally, let $A \subset B$ be any subsets of $M$, and suppose $W \xr{r_W} A$ and $r_W \xr{r_W} A \into B$ both represent precochains.
+	Suppose further that $W \in Q^*(A)$; then also $W \in Q^*(B)$.
+	This follows directly from the definitions, as being trivial or degenerate with image in $A$ implies being trivial or degenerate with image in $B$.
 
-	These observations will be used freely in the remainder of the proof.
+	These observations will all be used freely in the remainder of the proof, in which we proceed to consider exactness at each term of the sequence in turn.
 
-	\textbf{Exactness at $H^k_\Gamma(U \cup V)$.}
+	\textbf{Exactness at $\mathbf{H^k_\Gamma(U \cup V)}$.}
 	Let $\uW \in H^{k-1}(U \cap V)$.
 	Then $i\delta(\uW)$ is represented by $(-W^0|_U, W^0|_V)$.
-	As $W^0$ already maps to $U \cap V$, we can write simply $(-W^0, W^0)$.
-	By the above discussion, we have $W^+ \in PC^*_\Gamma(U)$, and by \cref{L: W0 cochain} as well as applying the discussion above to $\bd (W^+)$, we have $\bd (W^+) = W^0 \sqcup (\bd W)^+$ in $PC^*_\Gamma(U)$.
-	Now $\bd W \in Q^*(U \cap V)$ as $W$ is a cocycle, so $(\bd W)^+ \in Q^*(U \cap V)$ by \cref{C: creasing Q} and so also $(\bd W)^+ \in Q^*(U)$.
-	Passing to chains, we thus have $\bd \underline{W^+} = \underline{W^0}$ in $C^*_\Gamma(U)$, so $W^0$ represents $0 \in H^k_\Gamma(U)$.
+	As $W^0$ already maps to $U \cap V$, we will write simply $(-W^0, W^0)$.
+	By the above discussion, we have $W^+ \in PC^*_\Gamma(U)$, and by \cref{L: W0 cochain} as well as applying the discussion above to $(\bd W)^+$, we have $\bd (W^+) = W^0 \sqcup (\bd W)^+$ in $PC^*_\Gamma(U)$.
+	Now $\bd W \in Q^*(U \cap V)$ as $W$ is a cocycle, so $(\bd W)^+ \in Q^*(U \cap V)$ by \cref{C: creasing Q} and so also $(\bd W)^+ \in Q^*(U)$ by the preceding discussion.
+	Passing to cochains, we thus have $\bd (\underline{W^+}) = \underline{W^0}$ in $C^*_\Gamma(U)$, so $W^0$ represents $0 \in H^k_\Gamma(U)$.
 	Similarly, $W^0$ represents $0 \in H^k_\Gamma(V)$ using $W^-$.
 	So $i\delta = 0$.
 
 	Next suppose $\uW \in H^k_\Gamma(U \cup V)$ with $i(\uW) = 0$.
-	Representing $\uW$ by $W$, this means that $W|_U$ and $W|_V$ each bound, in $U$ and $V$ respectively.
-	So by \cref{R: cycles and boundaries} there exists $A \in PC^*_\Gamma(U)$ with $\bd A \sqcup - W|_U \in Q^*(U)$ and $B \in PC^*_\Gamma(V)$ with $\bd B \sqcup - W|_V \in Q^*(V)$.
+	So $\uW|_U$ and $\uW|_V$ cobound in $U$ and $V$, respectively.
+	By \cref{R: cycles and boundaries} there exists $A \in PC^*_\Gamma(U)$ with $\bd A \sqcup - W|_U \in Q^*(U)$ and $B \in PC^*_\Gamma(V)$ with $\bd B \sqcup - W|_V \in Q^*(V)$.
 	We assume the separating function $\phi$ chosen so that it separates $W$, $A$, and $B$, considering each as mapping into $U \cup V$.
 	Then $(\bd A \sqcup - W|_U)^- = (\bd A)^- \sqcup - (W|_U)^-$ is in $Q^*(U)$ by \cref{C: creasing Q}.
 	By the above discussion, we can consider this equality holding in $PC^*_\Gamma(U \cup V)$, where also $(W|_U)^- = W^-$.
@@ -1146,16 +1146,15 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 	as elements of $Q^*(U \cup V)$ represent $0$ in $C^*_\Gamma(U \cup V)$.
 	So
 		\[	\bd (\underline{A^- \sqcup B^+}) =  \underline{W^-} + \underline{W^+} -(\underline{A^0}-\underline{B^0}).\]
-
-	But $\underline{W^-} + \underline{W^+}$ is cohomologous to $\uW$ by creasing, \cref{T: cohomology creasing}, so $W$ is cohomologous to $\underline{A^0}-\underline{B^0}$, which represents $\delta(\underline{B}|_{U \cap V}-\underline{A}|_{U \cap V})$ in $H^*_\Gamma(U \cup V)$.
+	But $\underline{W^-} + \underline{W^+}$ is cohomologous to $\uW$ in $U \cup V$ by creasing, \cref{T: cohomology creasing}, so $W$ is cohomologous to $\underline{A^0}-\underline{B^0}$, which represents $\delta(\underline{B}|_{U \cap V}-\underline{A}|_{U \cap V})$ in $H^*_\Gamma(U \cup V)$.
 	So $\uW \in H^*_\Gamma(U \cup V)$ is in the image of $\delta$.
 
-	\textbf{Exactness at $H^k_\Gamma(U) \oplus H^k_\Gamma(V)$.}
-	It is immediate that the composition $ji = 0$.
+	\textbf{Exactness at $\mathbf{H^k_\Gamma(U) \oplus H^k_\Gamma(V)}$.}
+	It is immediate that the composition $ji$ is the $0$ map.
 
-	Now suppose $(\uW_1,\uW_2) \in \ker j \subset H^k_\Gamma(U) \oplus H^k_\Gamma(V)$.
+	Suppose $(\uW_1,\uW_2) \in \ker j \subset H^k_\Gamma(U) \oplus H^k_\Gamma(V)$.
 	Using representatives $W_1,W_2$, this means that there is a $Z \in C^k_\Gamma(U \cap V)$ with $\bd Z \sqcup - W_1|_{U \cap V} \sqcup - W_2|_{U \cap V} \in Q^*(U \cap V)$.
-	We choose $\phi$ to be separating point for $Z$, $W_1$, and $W_2$.
+	We choose $\phi$ to separate $Z$, $W_1$, and $W_2$ over $U$ and $V$.
 	We claim that $\gamma = W_1^- \sqcup -Z^0 \sqcup -W_2^+$ represents an element of $H^k_\Gamma(U \cup V)$ whose image under $i$ is $(\uW_1,\uW_2)$.
 	We compute using \cref{L: W0 cochain}:
 	\begin{align*}
@@ -1163,45 +1162,45 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 		& = -W_1^0 \sqcup (\bd W_1)^- \sqcup (\bd Z)^0 \sqcup - W_2^0 \sqcup - (\bd W_2)^+\\
 		& =  (\bd W_1)^- \sqcup - (\bd W_2)^+ \sqcup (\bd Z \sqcup -W_1 \sqcup - W_2)^0.
 	\end{align*}
-	As $W_1$ and $W_2$ are cycles in $U$ and $V$ respectively, $(\bd W_1)^-$ and $(\bd W_2)^+$ are in $Q^*(U)$ and $Q^*(V)$ by \cref{R: cycles and boundaries,C: creasing Q}, and so they are also in $Q^*(U \cup V)$.
+	As $W_1$ and $W_2$ are cycles in $U$ and $V$ respectively, $(\bd W_1)^-$ and $(\bd W_2)^+$ are in $Q^*(U)$ and $Q^*(V)$ by \cref{R: cycles and boundaries,C: creasing Q}, and so they are also in $Q^*(U \cup V)$ by our discussion above.
 	We also know $\bd Z \sqcup - W_1|_{U \cap V} \sqcup - W_2|_{U \cap V} \in Q^*(U \cap V)$, so its splitting at $0$ is also in $Q^*(U \cap V)$ by \cref{C: creasing Q}; hence $(\bd Z \sqcup -W_1 \sqcup - W_2)^0 \in Q^*(U \cup V)$.
-	But $(W_1|_{U \cap V})^0 = W_1^0$ and similarly for $W_2$.
-	So this boundary is $0$ in $C^*_\Gamma(U \cup V)$, and $\gamma$ represents an element of $H^k_\Gamma(U \cup V)$.
+	So $\bd \gamma$ represents $0$ in $C^*_\Gamma(U \cup V)$, and $\gamma$ represents an element of $H^k_\Gamma(U \cup V)$.
 
 	Next we show that $\gamma|_U$ is cohomologous to $W_1$ in $U$.
 	In fact, in $U$ we have
-	\[\bd (Z^+) \sqcup \gamma|_U = Z^0 \sqcup (\bd Z)^+ \sqcup W_1^- \sqcup -Z^0 \sqcup -(W_2^+),\]
-	using that the components of $\gamma$ are already precochains in both $U \cap V$ and $U$.
-	So passing to chains and undertaking some further manipulations, we have in $C^*_\Gamma(U)$ that
+	\[\bd (Z^+) \sqcup \gamma|_U = Z^0 \sqcup (\bd Z)^+ \sqcup W_1^- \sqcup -Z^0 \sqcup -(W_2^+)|_U,\]
+	using that $W_1^-$ and $Z^0$ are already precochains in both $U \cap V$ and $U$.
+	So using \cref{L: W0 cochain}, passing to cochains, and undertaking some further manipulations, we have in $C^*_\Gamma(U)$ that
 	\begin{align*}
-	\bd (\underline{Z^+}) + \underline{\gamma|_U} &
-		= \underline Z^0 + \underline{(\bd Z)^+} + \underline{W_1^-} - \underline Z^0 -\underline{W_2^+|_U} + \underline{W_1^+} - \underline{W_1^+}\\
-		&= \underline{(\bd Z)^+} + \underline{W_1^-}  -\underline{W_2^+} + \underline{W_1^+} - \underline{W_1^+}\\
+	\bd (\underline{Z^+}) + \underline{\gamma}|_U &
+		= \underline Z^0 + \underline{(\bd Z)^+} + \underline{W_1^-} - \underline Z^0 -\underline{W_2^+|_U} + (\underline{W_1^+} - \underline{W_1^+})\\
+		&= \underline{(\bd Z)^+} + \underline{W_1^-}  -\underline{W_2^+}|_U + \underline{W_1^+} - \underline{W_1^+}\\
 		&= \underline{(\bd Z \sqcup - W_1|_{U \cap V} \sqcup - W_2|_{U \cap V})^+}  + \underline{W_1^-}   + \underline{W_1^+}\\
 		&=\underline{W_1^-}   + \underline{W_1^+}\\
 		&=\underline{W_1}.
 	\end{align*}
-	Here we have used that $\bd Z \sqcup - W_1|_{U \cap V} \sqcup - W_2|_{U \cap V} \in Q^*(U \cap V)$, which implies that $(\bd Z \sqcup - W_1|_{U \cap V} \sqcup - W_2|_{U \cap V})^+ \in Q^*(U)$, employing \cref{C: creasing Q}, and that $\underline{W_1^-}   + \underline{W_1^+}= \underline{W_1}$ in $H^*_\Gamma(U)$ by creasing, \cref{T: creasing}.
-	So $\underline{W_1} = \underline{\gamma|_U} = \underline{\gamma}|_U$, as claimed.
+	Here we have used that $\bd Z \sqcup - W_1|_{U \cap V} \sqcup - W_2|_{U \cap V} \in Q^*(U \cap V)$, which implies that it is also in \cref{C: creasing Q},
+	and that $\underline{W_1^-}   + \underline{W_1^+}= \underline{W_1}$ in $H^*_\Gamma(U)$ by creasing, \cref{T: cohomology creasing}.
+	So $\underline{W_1} = \underline{\gamma}|_U \in H^*_\Gamma(U)$, as claimed.
 
 	Similarly, in $V$ we have
 	\begin{align*}
-	\bd (\underline{Z^-}) - \underline{\gamma|_V} &
-		= - \underline Z^0 + \underline{(\bd Z)^-} - \underline{W_1^-} + \underline Z^0 +\underline{W_2^+|_V} + \underline{W_2^-} - \underline{W_2^-}\\
-		&= \underline{(\bd Z)^-} - \underline{W_1^-}  + \underline{W_2^+} + \underline{W_2^-} - \underline{W_2^-}\\
-		&= -\underline{(\bd Z \sqcup + W_1|_{U \cap V} \sqcup + W_2|_{U \cap V})^-}  + \underline{W_2^-}   + \underline{W_2^+}\\
+	\bd (\underline{Z^-}) - \underline{\gamma}|_V &
+		= - \underline Z^0 + \underline{(\bd Z)^-} - \underline{W_1^-}|_V + \underline Z^0 +\underline{W_2^+} + (\underline{W_2^-} - \underline{W_2^-})\\
+		&= \underline{(\bd Z)^-} - \underline{W_1^-}|_V  + \underline{W_2^+} + \underline{W_2^-} - \underline{W_2^-}\\
+		&= \underline{(\bd Z \sqcup - W_1|_{U \cap V} \sqcup - W_2|_{U \cap V})^-}  + \underline{W_2^-}   + \underline{W_2^+}\\
 		&=\underline{W_2^-}   + \underline{W_2^+}\\
 		&=\underline{W_2}.
 	\end{align*}
-	So $\underline{W_2} = -\underline{\gamma|_V} = -\underline{\gamma}|_V$.
+	So $\underline{W_2} = -\underline{\gamma}|_V$ in $H^*_\Gamma(V)$.
 
 
 	Altogether, we have $(\uW_1,\uW_2) = \left(\underline{\gamma}|_U, -\underline{\gamma}|_V\right) = i\left(\underline{\gamma}\right)$.
 
-	\textbf{Exactness at $H^k_\Gamma(U \cap V)$.}
+	\textbf{Exactness at $\mathbf{H^k_\Gamma(U \cap V)}$.}
 	Consider a cocycle $W$ in $C^k_\Gamma(U)$.
 	Then $\delta j(\uW)$ is represented by $-W^0$.
-	By the discussion above, $W^- \in PC^*_\Gamma(U \cup V)$, and $$\bd (W^-) = -W^0 \sqcup (\bd W)^-.$$ As $W$ is a cocycle, $\bd W \in Q^*(U)$, and so $(\bd W)^-$ is in $Q^*(U)$ and $Q^*(U \cup V)$ via \cref{C: creasing Q}.
+	By the discussion above, $W^- \in PC^*_\Gamma(U \cup V)$, and $$\bd (W^-) = -W^0 \sqcup (\bd W)^-.$$ As $W$ is a cocycle, $\bd W \in Q^*(U)$, and so $(\bd W)^-$ is in $Q^*(U)$ and $Q^*(U \cup V)$ via \cref{C: creasing Q} and the preceding discussion.
 	So $\bd (\underline{W^-}) = - \underline{W^0}$ in $C^*_\Gamma(U \cup V)$, and consequently
     $\delta j(\uW) = 0 \in H^*_\Gamma(U \cup V)$.
 	A similar argument holds for elements of $H^k_\Gamma(V)$.
@@ -1209,7 +1208,7 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 	Now suppose $\uW \in H^k_\Gamma(U \cap V)$ and $\delta(\uW) = 0$.
 	Representing $\uW$ by $W$, this means there is a $Z$ in $U \cup V$ such that $\bd Z \sqcup W^0 \in Q^*(U \cup V)$.
 	Let $A = Z|_U \sqcup W^+ \in PC^*_\Gamma(U)$ and $B = -Z|_V \sqcup W^- \in PC^*_\Gamma(V)$.
-	Then by \cref{L: W0 cochain}
+	Then by \cref{L: W0 cochain},
 	\begin{align*}
 		\bd A& = \phantom{-}\bd Z|_U \sqcup \bd( W^+) = \phantom{-}\bd Z|_U \sqcup \phantom{-} W^0 \sqcup (\bd W)^{+} \in PC^*_\Gamma(U)\\
 		\bd B& = -\bd Z|_V \sqcup \bd (W^-) = -\bd Z|_V \sqcup -W^0 \sqcup (\bd W)^{-}  \in PC^*_\Gamma(V).
@@ -1224,7 +1223,7 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 		& = \underline{Z}|_{U \cap V}+ \underline{W^+} - \underline{Z}|_{U \cap V} + \underline{W^-}\\
 		& = \underline{W^+} + \underline{W^-}.
 	\end{align*}
-	The cochain $\underline{W^+} + \underline{W^-}$ represents $\uW \in H^*_\Gamma(U \cap V)$ via creasing, \cref{T: cohomology creasing}.
+	The cochain $\underline{W^+} + \underline{W^-}$ represents $\uW \in H^*_\Gamma(U \cap V)$ via creasing, \cref{T: cohomology creasing}, so $\uW \in \im(j)$.
 \end{proof}
 
 \begin{comment}
