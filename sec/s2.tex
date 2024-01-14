@@ -34,7 +34,7 @@ These charts collectively give an atlas, and every atlas extends to a unique max
 So our manifolds with corners are also manifolds with corners by Joyce's definition.
 
 On the other hand, Joyce notes in \cite[Remark 2.11 (see also Remark 6.3)]{Joy12} that his version of manifolds with corners agrees with that of Margalef--Roig and Outerelo Dominguez \cite{MaDo92} (except that they consider the much more general case of possibly infinite-dimensional manifolds and possibly of differentiable class $p<\infty$).
-They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth closed embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92} (in particular, the embeddings are proper maps \cite[Proposition 3.3.4]{MaDo92}.
+They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth closed embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92} (in particular, the embeddings are proper maps \cite[Proposition 3.3.4]{MaDo92}).
 Joyce already assumes his manifolds with corners to be paracompact Hausdorff in \cite[Definition 2.1]{Joy12}, so if we add the second countable condition to his definition,\footnote{For us this will not be a terrible restriction, as in this case being second countable is the same as being paracompact with a countable number of components.
 Indeed, every regular second countable space is metrizable \cite[Theorem 34.1]{Mu00}, and hence paracompact, and clearly a locally connected second countable space must have a countable number of connected components.
 Conversely, each connected component of a paracompact manifold with corners will be closed, paracompact \cite[Theorem 41.2]{Mu00}, and locally compact (via our charts), so it will be $\sigma$-compact \cite[Appendix A.1]{Sp79}.
@@ -181,9 +181,16 @@ More general versions of transversality can be found in \cite[Section 6]{Joy12}.
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps of manifolds with corners to a manifold without boundary.
 	We say $f$ and $g$ are \textbf{transverse} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$, if $x\in S^j(V)$ and $y \in S^k(W)$ then $Df|_{S^j(V)}(T_xS^j(V))+Dg|_{S^k(W)}(T_yS^k(W)) = T_zM$.
 	In this case, we often abuse notation by saying that $V$ and $W$ are transverse, leaving the maps tacit.
+	Note that the empty map $\emptyset \to M$ is transverse to all other maps.
 \end{definition}
 
 Note that in our version of the definition, we use maps of the form $f|_{S^j(V)}$, which are classical smooth maps, as the strata $S^j(V)$ are smooth manifolds. Joyce takes a slightly different approach, first noting that if $f:V\to M$ is a smooth map of manifolds with corners then there is an induced map $Df$ ``in the usual way'' \cite[Definition 3.2]{Joy12} and then restricting $Df$ to $T_xS^j(V)\subset T_xV$ (see also \cite[Proposition 2.4]{Joy12}). However, some thinking through the definitions shows that the resulting spaces $D(f|_{S^j(V)})(T_xS^j(V))$ and $Df(T_xS^j(V))$ are identical, both being the derivations that act on functions $h:M\to \R$ by taking the derivatives of $hf$ in the directions tangent to $S^k(V)$. We somewhat prefer our formulation as it expresses transversality entirely in terms of properties of maps of smooth manifolds (without corners).
+
+The following special case of the definition will also sometimes be useful:
+
+\begin{definition}\label{D: regular value}
+If $M = \R$ and $g$ is the inclusion of the point $p$ into $\R$, we will say that $p$ is a \textbf{regular value} for $f \colon V \to M$ when $f$ and $g$ are transverse.
+\end{definition}
 
 While this definition of transversality is given in terms of the behavior of $f$ and $g$ on the strata $S^j(V)$ and $S^k(W)$, it is sometimes useful to have a reformulation in terms of the boundaries $\bd^j V$ and $\bd^kW$.
 This is the content of \cref{L: simple trans} below, for which we need a further definition.
@@ -377,8 +384,8 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	First, so that $H(x,s)$ will be well defined, we want $f(x)+ \eta(x)s$ to land in $N_\epsilon$ for all $x$, and for this it is sufficient to have $0< \eta(x) < \epsilon(f(x))$.
 	If $f$ is not proper or we do not need the last clause of the theorem to hold, any such $\eta$ will be sufficient.
 	If $f$ is proper and we want the last clause of the theorem to hold, then we next choose a function $\varepsilon \colon M \to (0,\infty)$ to meet the requirements of \cref{L: nearby proper homotopy} with $d$ being the distance on $N$ chosen above.
-	Letting $|\cdot|$ be the norm on $\R^K$, we then want to choose $\eta$ so that $|f(x) - H(x,1)| < \varepsilon(x)$.
-	Clearly, $|f(x) - (f(x)+ \eta(x)s)| = |\eta(x)s| < \eta(x)$, and by definition $\pi$ takes points of $N_\epsilon$ to the nearest point in $N$. So, assuming $f(x)+ \eta(x)s \in N_\epsilon$, then $|f(x)+ \eta(x)s - \pi(f(x)+ \eta(x)s)| < \eta(x)$, as $f(x) \in N$.
+	Letting $|\cdot|$ be the norm on $\R^K$, we then want to choose $\eta$ so that $|f(x) - H(x,s)| < \varepsilon(x)$.
+	Clearly, $|f(x) - (f(x)+ \eta(x)s)| = |\eta(x)s| < \eta(x)$, and by definition $\pi$ takes points of $N_\epsilon$ to the nearest point in $N$. So, assuming $f(x)+ \eta(x)s \in N_\epsilon$, then $|f(x)+ \eta(x)s - \pi(f(x)+ \eta(x)s)| < \eta(x)$, as $f(x) \in N$ and so the distance from $f(x)+ \eta(x)s$ to $N$ must be $\leq |\eta(x)s| < \eta(x)$.
 	So by the triangle inequality, $|f(x) - H(x,s)| < 2\eta(x)$.
 	Thus if we take $\eta(x) < \min(\epsilon(f(x)), \varepsilon(x)/2)$, we will have $H$ well defined and $|f(x) - H(x,s)| < \varepsilon(x)$ for any $x \in M$ and $s \in D$ by \cref{L: nearby proper homotopy}.
 
@@ -448,6 +455,8 @@ This construction extends to manifolds with corners mapping into a manifold with
 
 	We will generally use the term \textit{pullback} when we want to emphasize $V \times_M W$ with its map to $V$ or $W$, while the \textit{fiber product} is to be considered as mapping to $M$.
 	When treating $V \times_M W$ as a pullback, we also sometimes use the notation $g^*V \to W$ or $f^*W \to V$; this notation is consistent with the analogous notation for pullbacks of fiber bundles, which is a special case.
+
+	Note that if one of $V$ or $W$ is empty, then $V \times_M W = \emptyset$.
 \end{definition}
 
 The reason for the transversality requirement in \cref{D: top pullback} is that this ensures that $V \times_M W$ is itself a manifold with corners, as follows from \cite[Theorem 7.2.7]{MaDo92} or \cite[Theorem 6.4]{Joy12}. In fact, we have the following.

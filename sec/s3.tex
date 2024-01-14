@@ -96,7 +96,7 @@ We state these properties in the following two propositions.
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
 	\begin{enumerate}
 		\item When $M$ is a point, the oriented fiber product $V \times_M W$ is simply $V \times W$, and in this case the fiber product orientation is consistent with the basic concatenation rule for products.
-		\item When one of the maps is the identity $\id_M \colon M \to M$, the projection maps to the other factors are orientation preserving diffeomorphisms
+		\item When one of the maps is the identity $\id_M \colon M \to M$, the projection map to the other factor is an orientation preserving diffeomorphisms
 		\begin{equation*}
 			M \times_M V = V\quad\text{and}\quad V \times_M M = V.
 		\end{equation*}
@@ -436,7 +436,7 @@ We discuss Lipyanskiy's co-orientations in an appendix at the end of this sectio
 Given a co-oriented map $g \colon W \to M$ where $W$ is a manifold with corners, we can use a normal co-orientation of $\bd W$ in $W$ together with the composition of co-orientations noted in \cref{R: cooriented composition} to define ``boundary co-orientations'':
 
 \begin{definition}\label{D: boundary co-orientation}
-	Let $\nu$ be the normal bundle of $\bd W$ as an immersed with corners of $W$.
+	Let $\nu$ be the normal bundle of $\bd W$ as an immersed manifold with corners of $W$ (recall that $i_{\bd W} \colon \bd W \to W$ is a smooth immersion by \cite[Theorem 3.4]{Joy12}).
 	The \textbf{standard co-orientation of a boundary immersion} $i_{\bd W} \colon \bd W \into W$ is the normal co-orientation (see \cref{normal co-or}) associated to the \textit{inward}-pointing\footnote{The outward-pointing normal would also work to provide a co-orientation convention for which the Leibniz formula of \cref{S: co-orient pullbacks} holds.
 	However, using an outward normal is not consistent with the intersection map $\mc I$ of \cref{S: intersection map} being a chain map with our other conventions, while using the inward normal does make $\mc I$ a chain map.} orientation of $\nu$.
 
@@ -459,13 +459,13 @@ In \cref{S: geometric cochains}, we will use induced co-orientations on boundari
 	By \cref{normal co-or,D: boundary co-orientation}, the standard co-orientation of the boundary inclusion $\{0\} \into (-\infty, 0]$ is $(1, 1 \wedge -e_1) = (1, -e_1)$.
 	The boundary co-orientation of the inclusion $\{0\} \to \R$ induced by the tautological co-orientation of the inclusion $g^- \colon (-\infty, 0] \to \R$ is then the composition of $(1, -e_1)$ with $(e_1, e_1)=(-e_1,-e_1)$, which is again $(1,-e_1) = -(1,e_1)$ (all bases interpreted in the appropriate spaces).
 	As the inward normal to $[0,\infty)$ at $0$ is $e_1$, the inclusion $g^+ \colon [0,\infty) \to \R$ induces the opposite co-orientation $(1, e_1)$ on the inclusion $\{0\} \to \R$.
-	So we see in this case different co-orientations of the same inclusion $0\into \R$ depending on which conventions and which contexts we choose to employ.
+	So the inclusion $\{0\} \into \R$ has opposite co-orientations as the boundary of $(-\infty, 0] \into \R$ versus as the boundary of $[0,\infty) \into \R$.
 \end{example}
 
 The following example will be very important later for breaking geometric chains and cochains into pieces.
 
 \begin{example}\label{E: manifold decomposition}
-	Suppose we have a smooth map $\varphi \colon W \to \R$ and that $0$ is a regular value of $\varphi$.
+	Suppose we have a smooth map $\varphi \colon W \to \R$ and that $0$ is a regular value of $\varphi$, meaning by \cref{D: regular value} that $\varphi$ is transverse to the inclusion of $0$ into $\R$.
 	Consider the spaces $W^0 = (\varphi)^{-1}(0)$, $W^- = (\varphi)^{-1}((-\infty,0])$, and $W^+ = (\varphi)^{-1}([0,\infty))$.
 	We can identify $W^0$ with the fiber product $0 \times_{\R} W$ of $\varphi$ with the embedding of $0$ into $\R$, as our canonical realization of this fiber product is
 	$$\{(0,x) \in 0 \times W \mid \varphi (x)= 0\}.$$
@@ -474,31 +474,32 @@ The following example will be very important later for breaking geometric chains
 	which is simply the graph of $\varphi$ over $W^+$;
 	so there is a diffeomorphism between the fiber product and $W^+$ determined by the inverse maps $(t,x) \mapsto x$ and $x \mapsto (\varphi(x), x)$.
 	The case of $W^-$ is analogous.
-	That $0$ is a regular value of $\varphi$ implies that $\varphi$ is transverse to the embedding of $0$ into $\R$, and it follows by \cref{pullback} that $W^0$, $W^+$, and $W^-$ are manifolds with corners.
+	By \cref{pullback}, the spaces $W^0$, $W^+$, and $W^-$ are manifolds with corners.
 	In fact, $W^0$ is a submanifold (with corners) of $W$ by \cite[Proposition 4.2.9]{MaDo92}.
-	By the boundary formula of \cref{P: product boundary},
+	By the boundary formula of \cref{P: product boundary} (which is purely topological, we do not yet take into account co-orientations),
 	$$\bd (W^-)= \left(0 \times_{\R} W\right) \sqcup \left((-\infty,0] \times_{\R} \bd W\right) = W^0 \sqcup (\bd W)^-,$$
 	so $W^0$ is a boundary component of $W^-$ and similarly for $W^+$.
+	We also observe that as the inclusions of $0$, $(-\infty,0]$, and $[0,\infty)$ into $\R$ are all proper, it will follow from \cref{L: co-orientable pullback}, below, that the inclusions of $W^0$, $W^-$, and $W^+$ into $W$ are all proper.
 
-	Now, at least over its interior, the normal bundle of $W^0$ in $W$ is the pullback via $\varphi$ of the normal bundle of $0$ in $\R$ by \cref{L: normal pullback}. Giving the normal bundle of $0$ in $\R$ the standard orientation in the positive direction, denoted by the basis vector $e_1$, this orientation pulls back to a natural orientation of the normal bundle to the interior of $W^0$ in $W$. Applying \cref{normal co-or,P: interior co-orientation}, we obtain a normal co-orientation for $W^0$ in $W$, which we call the \textbf{co-orientation of $W^0$ in $W$ induced by $\varphi$}. This is the co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge (\varphi)^*e_1)$.
+	Now, at least over its interior, the normal bundle of $W^0$ in $W$ is the pullback via $\varphi$ of the normal bundle of $0$ in $\R$ by \cref{L: normal pullback}. Giving the normal bundle of $0$ in $\R$ the standard orientation in the positive direction, denoted by the basis vector $e_1$, this orientation pulls back to a natural orientation of the normal bundle to the interior of $W^0$ in $W$. Applying \cref{normal co-or,P: interior co-orientation}, we obtain a normal co-orientation for $W^0$ in $W$, which we call the \textbf{co-orientation of $W^0$ in $W$ induced by $\varphi$}. At a point $x$ in the interior of $W^0$, this is the co-orientation $(\beta_{W^0}, \beta_{W^0} \wedge v)$, where $v$ is any vector in $T_x W$ such that $D_x \varphi (v) \in T_0 \R$ points in the positive direction.
 
-	We also have the boundary co-orientations of the inclusions of $W^0$ into $W^{\pm}$.
-	Analogously to \cref{E: splitting example 1}, the boundary co-orientation from the composite $W^0 \to W^- \into W$ is the opposite of the co-orientation of $W^0\into W$ induced by $\varphi$, while the boundary co-orientation from the composite $W^0 \to W^+ \into W$ agrees with the co-orientation of $W^0\into W$ induced by $\varphi$
+	We also have the co-orientations of the inclusion of $W^0$ into $W$ arising from taking the boundary of the inclusions of $W^{\pm}$ into $W$.
+	As these boundary co-orientations are the normal co-orientations associated with inward pointing normal vectors, we have completely analogously to \cref{E: splitting example 1} that the boundary co-orientation for the composite $W^0 \to W^- \into W$ is the opposite of the co-orientation of $W^0\into W$ induced by $\varphi$, while the boundary co-orientation from the composite $W^0 \to W^+ \into W$ agrees with the co-orientation of $W^0\into W$ induced by $\varphi$.
 
-	Next we suppose that $\varphi$ is the composition $\varphi = \phi g$ of two smooth maps $W \xr{g} M \xr{\phi}\R$, where $M$ is a manifold without boundary.
-	This may at first seem a bit artificial, but such a setting will arise in the creasing construction in \cref{S: creasing} for breaking up geometric chains and cochains.
-	We further suppose $0$ is a regular value for $\phi$ and for $\phi g$ and note that $0$ being a regular value for $\varphi = \phi g$ is equivalent to $g$ being transverse to $M^0 = \phi^{-1}(0)$, which is a codimension-one submanifold of $M$ by the preceding discussion.
-	In fact, by the applying the preceding discussion to $\phi$, we obtain spaces $M^0$ and $M^\pm$, and applying the discussion to $\varphi = \phi g$, we obtain spaces $W^0$ and $W^\pm$.
-	Furthermore, we notice for use later that $W^0$ and $W^\pm$ are diffeomorphic to the respective fiber products $M^0 \times_M W$ and $M^{\pm} \times_M W$ by an argument analogous to that above for the fiber products over $\R$; in particular, these are just the graphs of $g$ over $W^0$ and $W^\pm$.
+	Next we suppose that $\varphi$ is the composition $\varphi = \phi g$ of two smooth maps $W \xr{g} M \xr{\phi}\R$, where $M$ is a manifold without boundary.\footnote{This may at first seem a bit artificial, but such a setting will be important below when $W \to M$ represents a geometric cochain; see in particular the splitting and creasing constructions of \cref{S: splitting and creasing} that will be used for breaking up geometric chains and cochains into smaller pieces.}
+	We further suppose $0$ is a regular value for $\phi$ and for $\phi g$; see \cref{D: regular value}.
+	Note that when $0$ is a regular value for $\phi$, then \cref{L: transverse to pullback} implies that $0$ being a regular value for $\varphi = \phi g$ is equivalent to $g$ being transverse to $M^0 = \phi^{-1}(0)$, which is a codimension-one submanifold of $M$ by the preceding discussion.
+	By the applying the preceding discussion to $\phi$, we obtain spaces $M^0$ and $M^\pm$, and applying the discussion to $\varphi = \phi g$, we obtain spaces $W^0$ and $W^\pm$.
+	Furthermore, by considering $M^0$ and $M^\pm$ as pullbacks over $M$ as above, we observe that $W^0$ and $W^\pm$ are diffeomorphic to the respective fiber products $M^0 \times_M W$ and $M^{\pm} \times_M W$ by \cref{P: pullback functoriality}.
 
 
 	Now suppose that $g$ is co-oriented with local representatives $(\beta_W, \beta_M)$.
-	If we precompose this co-orientation of $g$ with the tautological co-orientations of the inclusions $W^\pm \into W$, we can co-orient $g|_{W^\pm}$ by $(\beta_W, \beta_M)$.
+	If we precompose this co-orientation of $g$ with the tautological co-orientations of the inclusions $W^\pm \into W$, we can co-orient $g|_{W^\pm}$ also by $(\beta_W, \beta_M)$.
 	This is simply the restriction to $W^\pm$ of the co-orientation of $g$.
-	Similarly, by composing the co-orientation of $g$ with the $\varphi$-induced co-orientation of $W^0 \into W$, we obtain the \textbf{co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\phi$}, which in symbols is just $(\beta_{W^0}, \beta_{W^0} \wedge (\phi g)^*e_1)*(\beta_W,\beta_M)$.
+	Similarly, by composing the co-orientation of $g$ with the $\varphi$-induced co-orientation of $W^0 \into W$, we obtain the \textbf{co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\phi$}, which in symbols is just $(\beta_{W^0}, \beta_{W^0} \wedge v)*(\beta_W,\beta_M)$, where $D\varphi(v)$ points in the positive direction.
 	Furthermore, as in \cref{E: splitting example 1}, the co-orientation of $g|_{W^0} \colon W^0 \to M$ induced by $\phi$ disagrees with its boundary co-orientation as a component of $\bd(g|_{W^-})$, while it agrees with its co-orientation as a component of $\bd(g|_{W^+})$.
 
-	When $g$ is co-oriented, our co-orientation computations here for the restrictions of $g$ to $W^0$ and $W^\pm$ will later be seen to be consistent with the co-orientations we define for fiber products of co-oriented maps; see \cref{E: codim 0 and 1 co-or as fiber products}.
+	When $g$ is co-oriented, our co-orientation computations here for the restrictions of $g$ to $W^0$ and $W^\pm$ will later be seen to be consistent with the co-orientations we define for fiber products of co-oriented maps; see \cref{E: codim 0 and 1 co-or as fiber products,E: codim 1 pullbacks}.
 	In \cref{C: co-orient W0}, we will use that technology to see that $\bd (W^0)$ and $(\bd W)^0$ agree as spaces, but their maps to $M$ will have opposite co-orientations under our conventions, i.e.\ ``$\bd (W^0) = -(\bd W)^0$,'' eliding the maps.
 \end{example}
 
@@ -1458,7 +1459,7 @@ END OLD COMMENT
 \subsubsection{Codimension $0$ and $1$ pullbacks}\label{S: codim 0 and 1 co-or}
 
 The results in this section should be compared with, and justify, the discussion and choices in \cref{E: splitting example 1,E: manifold decomposition}.
-They will be useful when working with the creasing construction for geometric cochains introduced in \cref{S: creasing}.
+They will be useful when working with the splitting and creasing constructions for geometric cochains in \cref{S: splitting and creasing}.
 
 \begin{proposition}\label{P: codim 0 pullback}
 	Let $V$ be an embedded codimension $0$ submanifold with corners in the manifold without boundary $M$, and let $f \colon V \to M$ be the embedding, co-oriented by the tautological co-orientation.
@@ -1487,23 +1488,23 @@ They will be useful when working with the creasing construction for geometric co
 
 \begin{example}\label{E: codim 0 and 1 co-or as fiber products}
 	Let $\phi \colon M \to \R$ be a smooth function from a manifold without boundary to $\R$ that is transverse to $0$.
-	Then, as $[0, \infty)$, $(-\infty, 0]$ and $0$ are all embedded manifolds with corners in $\R$, we know (ignoring co-orientations for the moment) that $[0,\infty) \times_\R M = \phi^{-1}([0,\infty))$, that $(-\infty,0] \times_\R M = \phi^{-1}((-\infty,0])$, and that $0 \times_\R M = \phi^{-1}(0)$.
+	By \cref{E: manifold decomposition}, we know (ignoring co-orientations for the moment) that $[0,\infty) \times_\R M = \phi^{-1}([0,\infty))$, that $(-\infty,0] \times_\R M = \phi^{-1}((-\infty,0])$, and that $0 \times_\R M = \phi^{-1}(0)$.
 	As in \cref{E: manifold decomposition}, we denote these respectively as $M^+$, $M^-$, and $M^0$.
-	By \cite[Proposition 4.2.9]{MaDo92}, the inclusion of $M^0$ into $M$ is a closed embedding and by \cite[Proposition 6.7]{Joy12}, we have $\bd M^\pm = M^0$.
+	By \cite[Proposition 4.2.9]{MaDo92}, the inclusion of $M^0$ into $M$ is a closed embedding and by \cite[Proposition 6.7]{Joy12}, we have $\bd M^\pm = M^0$ as spaces.
 
-	Suppose the embeddings $M^\pm \into M$ are given the tautological co-orientations of \cref{D: tautological co-orientation}, and let $g \colon W \to M$ be transverse to $M^\pm$, which in this case is equivalent to being transverse to $M^0$, which is also equivalent to $\phi g$ being transverse to $0$ in $\R$.
-	Then let $W^\pm = M^\pm \times_M W$, which map onto $g^{-1}(M^\pm)$, diffeomorphically on their interiors.
-	By \cref{P: codim 0 pullback}, the pullback co-orientations of $W^\pm \into W$ are again the tautological co-orientations of the embeddings.
+	Suppose the inclusions $M^\pm \into M$ are given the tautological co-orientations of \cref{D: tautological co-orientation}, and let $g \colon W \to M$ be transverse to $M^\pm$, which in this case is equivalent to being transverse to $M^0$, which is also equivalent to $\phi g$ being transverse to $0$ in $\R$ by \cref{L: transverse to pullback}.
+	Then let $W^\pm = M^\pm \times_M W$.
+	By \cref{P: codim 0 pullback}, the pullback map $W^\pm \to W$ is just the inclusion $g^{-1}(V) \into W$ with its tautological co-orientation.
 	If $g$ is co-oriented, the compositions $W^\pm \into W \to M$ are then the fiber products $M^\pm \times_M W \to M$, and by \cref{P: codim 0 pullback} their co-orientations are just the restrictions of the co-orientation of $g$ to $W^\pm$.
-	This agrees with the co-orientations in \cref{E: manifold decomposition}.
+	This agrees with the co-orientations discussed in \cref{E: manifold decomposition}.
 \end{example}
 
 \begin{proposition}\label{P: codim 1 co-orient}
 	Suppose $V \subset M$ is a closed codimension $1$ submanifold without boundary in the manifold without boundary $M$.
 	Further suppose $V$ has oriented normal bundle $\nu$.
 	Let the embedding $f \colon V \into M$ be co-oriented by the normal co-orientation $(\beta_V, \beta_V \wedge \beta_\nu)$.
-	Let $W$ be a manifold without corners and suppose $g \colon W \to M$ is transverse to $f$.
-	Then $W^0 \defeq g^{-1}(V)$ is a codimension $1$ submanifold with corners with oriented pullback normal vector bundle $\nu_0$, and the co-oriented pullback $V \times_M W \to W$ is the embedding $W^0 \into W$, co-oriented by $(\beta_P, \beta_P \wedge \beta_{\nu_0})$.
+	Let $W$ be a manifold with corners and suppose $g \colon W \to M$ is transverse to $f$.
+	Then $W^0 \defeq g^{-1}(V)$ is a codimension $1$ submanifold with corners of $W$ with oriented pullback normal vector bundle $\nu_0$, and the co-oriented pullback $V \times_M W \to W$ is the embedding $W^0 \into W$, co-oriented by $(\beta_P, \beta_P \wedge \beta_{\nu_0})$.
 \end{proposition}
 
 \begin{proof}
@@ -1516,15 +1517,15 @@ They will be useful when working with the creasing construction for geometric co
 
 \begin{example}\label{E: codim 1 pullbacks}
 	We continue with the assumptions and notation of \cref{E: codim 0 and 1 co-or as fiber products}, but now let $V = M^0 = \phi^{-1}(0)$ with normal bundle oriented by the pullback of the standard (positive-direction) orientation of the normal bundle of $0 \in \R$.
-	This determines the normal co-orientation of the embedding $M^0 \to M$.
+	This determines a normal co-orientation of the embedding $M^0 \to M$.
 	Then, by \cref{P: codim 1 co-orient}, the pullback co-orientation of $W^0 = M^0 \times_M W \into W$ agrees with the $\phi$-induced co-orientation of $W^0$ defined in \cref{E: manifold decomposition}.
 	We can also confirm now, using the Leibniz rule and that the codimension of $M^-$ in $M$ is $0$, that as spaces with co-oriented maps to $W$ we have
 	\begin{multline*}
 		\bd(W^-) = \bd(M^- \times_M W) = \left( (\bd (M^-)) \times_M W \right) \bigsqcup \left( M^- \times_M \bd W \right)\\
 		= \left( -(M^0) \times_M W \right) \bigsqcup \left( M^- \times_M \bd W \right)= -(W^0) \bigsqcup (\bd W)^-.
 	\end{multline*}
-	Here we also use that the orientation of the normal bundle to $M^0$ is outward pointing from $M^-$ and so disagrees with the inward-pointing normal used to co-orient the boundary inclusion; hence $\bd(M^-) = -(M^0)$.
-	We also note that, by the preceding, $(\bd W)^- \to W$ is co-oriented by the tautological co-orientation $(\bd W)^- \to \bd W$ followed by the boundary co-orientation of $i_{\bd W} \colon \bd W \to W$.
+	Here we also use that the orientation of the normal bundle to $M^0$ is outward pointing from $M^-$ and so disagrees with the inward-pointing normal used to co-orient the boundary inclusion; hence $\bd(M^-) = -(M^0)$ as spaces with co-oriented maps to $M$.
+	We also note that, by \cref{E: codim 0 and 1 co-or as fiber products}, $(\bd W)^- \to W$ is co-oriented by the tautological co-orientation $(\bd W)^- \to \bd W$ followed by the boundary co-orientation of $i_{\bd W} \colon \bd W \to W$.
 
 	Analogously,
 	$$\bd (W^+) = W^0 \bigsqcup (\bd W)^+,$$

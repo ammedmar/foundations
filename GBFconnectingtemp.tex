@@ -1,0 +1,304 @@
+\documentclass[12pt]{article}
+\paperheight=11in
+\paperwidth=8.5in
+\renewcommand{\baselinestretch}{1.05}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd,diagrams, graphicx, mathrsfs, mathtools}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amstext}
+%\usepackage{cite}
+%\usepackage[notref]{showkeys}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{tikz-cd}
+\newcommand{\uW}{\underline{W}}
+\newcommand\purple[1]{\marginpar{replacement}\textcolor{Purple}{#1}}
+\newcommand\blue[1]{\marginpar{new}\textcolor{blue}{#1}}                       %
+\newcommand\red[1]{\marginpar{??}\textcolor{red}{#1}}                         %
+\newcommand\green[1]{\marginpar{delete ok?}\textcolor{green}{#1}}
+%\newcommand\ownremark[1]{\marginpar{remark for own use}\textcolor[rgb]{0.5,0.5,0}{#1}}                   %
+
+
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+
+
+\setcounter{tocdepth}{3}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{sublemma}[theorem]{Sublemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\codim}{\textup{codim}}
+\newarrow{ul}---->
+\newarrow{Backwards}<----
+
+
+\newcommand{\ilim}{\varprojlim}
+\newcommand{\Lk}{\textup{Lk}}
+\newcommand{\xr}{\xrightarrow}
+\newcommand{\xl}{\xleftarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\hra}{\hookrightarrow}
+\newcommand{\Td}[1]{\Tilde{#1}}
+\newcommand{\td}[1]{\tilde{#1}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\bd}{\partial}
+\newcommand{\pf}{\pitchfork}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\Ra}{\Rightarrow}
+\renewcommand{\H}{\mathbb H}
+\newcommand{\rla}{\RightLeftarrow}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\dlim}{\varinjlim}
+\newcommand{\vg}{\varGamma}
+\newcommand{\blm}[2]{\langle  #1 , #2 \rangle}
+\newcommand{\bl}[2]{\left( #1 , #2 \right)}
+\newcommand{\vs}{\varSigma}
+\newcommand{\holink}{\textup{holink}}
+\newcommand{\map}{\operatorname{map}}
+\newcommand{\hl}{\operatorname{holink}}
+\newcommand{\wt}{\widetilde}
+\renewcommand{\hom}{\textup{Hom}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\Hom}{\textup{Hom}}
+\newcommand{\SHom}{\textup{\emph{Hom}}}
+\newcommand{\Ext}{\textup{Ext}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\ih}{IH^{\bar p}}
+\newcommand{\di}{\textup{dim}}
+\newcommand{\im}{\textup{im}}
+\newcommand{\cok}{\textup{cok}}
+\newcommand{\coim}{\textup{coim}}
+\newcommand{\bp}{\boxplus}
+\renewcommand{\i}{\mathfrak i}
+\renewcommand{\j}{\mathfrak j}
+\newcommand{\ka}{\kappa}
+\renewcommand{\Cup}{\smile}
+\renewcommand{\Cap}{\frown}
+\newarrow{Onto}----{>>}
+\newarrow{Equals}=====
+\newcommand{\fl}{\textup{FL}}
+\newcommand{\wfl}{\textup{WFL}}
+\newcommand{\Ker}{\mbox{Kernel }}
+\newcommand{\sgn}{\textup{sgn}}
+\newcommand{\sect}[1]{\vskip1cm \noindent\paragraph{#1}}
+\newcommand{\id}{\textup{id}}
+\newcommand{\IAW}{\textup{IAW}}
+\newcommand{\pt}{\textup{pt}}
+\newcommand{\diag}{\mathbf{d}}
+\newcommand{\aug}{\mathbf{a}}
+
+\begin{document}
+
+
+\begin{theorem}\label{T: natural connection}
+	The connecting map $\delta$ is natural, i.e.\ for a continuous map  $f \colon U' \cup V' \to U \cup V$ such that $f(U') \subset U$ and $f(V') \subset V$, the following diagram commutes for all $k$:
+	\[
+	\begin{tikzcd}
+		H^k_\Gamma(U \cap V) \arrow[r, "\delta"] \arrow[d, "f^*"] & H^{k+1}_\Gamma(U \cup V) \arrow[d, "f^*"] \\
+		H^k_\Gamma(U' \cap V') \arrow[r, "\delta"] & H^{k+1}_\Gamma(U' \cup V').
+	\end{tikzcd}
+	\]
+\end{theorem}
+
+We start with a lemma that will be needed in the proof of \cref{P: natural connection} and is of somewhat independent interest.
+
+\begin{lemma}\label{L: cut pullback}
+	Suppose $M$ and $N$ are manifolds without corners and that $\phi \colon N \to \R$ is smooth with $0$ a regular value.
+	Suppose $W \in PC^*_\Gamma(N)$ and that $r_W \colon W \to N$ is transverse to $N^0$.
+	Further, suppose $g \colon M \to N$ is smooth and transverse to both $W \to N$ and $W^0 \to N$.
+	Then the pullback $W^0 \times_N M \to M$ is co-oriented isomorphic to $(W \times_N M)^0 \to M$, where this splitting of $W \times_N M$ is with respect to the composite $\phi g$.
+\end{lemma}
+\begin{proof}
+	We first note that $W^0 \times_N M$ is well defined as we assume $g$ is transverse to $W^0 \to N$.
+
+	Now, let us write the pullback of $W$ by $g$, which exists by the transversality of $g$ and $r_W$, as $r_W^* \colon W \times_N M \to M$.
+	To see that $(W \times_N M)^0$ is well defined, it suffices to show that the transversality of $g$ with $r_{W^0}$ implies that $0$ is a regular value for the composition $\phi g r_W^*$.
+	So we must show that the restriction of $\phi gr_W^*$ to each stratum of $W \times_N M$ is transverse to $0$.
+	Recall by \cref{pullback} that $S^k(W \times_N M) = S^k(W) \times_N M$, as $M$ is without boundary.
+	Similarly, we note for a bit later that $$S^k(W^0) = S^k(N^0 \times_N W) = N^0 \times_N S^k(W) = (S^k(W))^0.$$
+	So let $(x,y) \in S^k(W) \times_N M$ with $x \in S^k(W)$ and $y \in M$ such that $\phi g(y)=0$, and let $z = r_W(x) = g(y) \in N$.
+	As $D_x(r_W|_{S^k(W)}) = (D_xr_W)|_{T_xS^k(W)}$, we will simply write $D_xr_W$ rather than $D_x(r_W|_{S^k(W)})$ in what follows.
+	We recall that the tangent bundle of the pullback is the pullback of the tangent bundles by \cref{L: tangent of pullbacks}, so the tangent space of $S^k(W) \times_N M$ is $T_x S^k(W) \times_{T_{z}N} T_yM$.
+	As $r_W$ to transverse to $N^0$, we know $0$ is a regular value for $\phi r_W$; see \cref{S: splitting}.
+	So, in particular, zero is a regular value for $\phi \circ r_W|_{S^k(W)}$, so there must be a vector $\xi \in T_xS^k(W)$ with $D_x(\phi r_W)(\xi)\neq 0$.
+	Thus $D_xr_W(\xi) \neq 0$.
+	As $g$ is assumed transverse to $W^0 \to N$, there must be $\alpha \in T_xS^k(W^0)$ and $\beta \in T_yM$ such that $D_xr_W(\xi) = D_xr_W(\alpha) + D_yg (\beta)$.
+	Rewriting, $D_yg (\beta) = D_xr_W(\xi-\alpha)$.
+	As $\alpha \in T_xW^0 \in \ker(D_x (\phi r_W))$, we have $$D_{z}\phi(D_yg (\beta)) = D_{z}\phi \circ D_xr_W(\xi-\alpha) = D_x(\phi r_W)(\xi)-D_x(\phi r_W)(\alpha) = D_x(\phi r_W)(\xi)\neq 0.$$
+	So, recalling that $Dr_W^*$ is simply the projection to $T_yM$, the pair $( \xi-\alpha, \beta)$ is a non-zero vector in $$T_{(x,y)}(S^k(W) \times_N M) = T_x S^k(W) \times_{T_{z}N} T_yM$$ that maps by $D(\phi gr_W^*)$ to $D_{z}\phi(D_yg (\beta)) \neq 0 \in T_{0}[-1,1]$.
+	As $(x,y)$ was an arbitrary point of $(\phi gr^*_{W})^{-1}(0) \subset W \times_N M$, this shows that $0$ is a regular value for $\phi gr^*_W$.
+	So $(W \times_N M)^0$ is well defined.
+
+	Now, from the definitions and \cref{S: splitting}, $W^0 \times_N M = (N^0 \times_N W) \times_N M$, treating $N^0 \times_N W$ as a fiber product and $W^0 \times_N M$ as a pullback over $M$.
+	On the other hand, $(W \times_N  M)^0 = M^0 \times_M (W \times_N M)$, where $W \times_N M$ is the pullback to $M$ and then we take the fiber product with $M^0$.
+	In both cases, these translate to the pairs of points $(x,y) \in W \times M$ with $r_W(x) = g(y)$ and $\phi(r_W(x)) = \phi(g(y)) = 0$.
+	In other words, as spaces these are both precisely the limit of the following diagram together with its map to $M$:
+	\[
+	\begin{tikzcd}
+		& M \arrow[d,"g"] & \\
+		W \arrow[r, "r_W"] & N \arrow[r, "\phi"] & \R & \arrow[l,hook'] 0.
+	\end{tikzcd}
+	\]
+	Thus $(W \times_N M)^0$ and $W^0 \times_N M$ are diffeomorphic over $M$, and it remains to check the co-orientations.
+
+	We return to the definitions of the pullback and fiber product co-orientations.
+	It suffices to compare $(W \times_N M)^0$ and $W^0 \times_N M$ at an arbitrary point of the top stratum.
+	We first consider the co-orientation of $(W \times_N M)^0$.
+	Let $(x,y) \in (W \times_N M)^0$ with $r_W(x) = g(y) = z$.
+	Choose $e \colon W \into N \times \R^K$, fix $\beta_N$ at $z$, and choose $\beta_W$ at $x$ so that $\omega_{r_W} = (\beta_W,\beta_N)$.
+	Let $\nu$ be the Quillen-oriented normal bundle of $W$ in $N \times \R^K$ so that $\beta_W \wedge \beta_\nu = \beta_N \wedge \beta_E$, where $\beta_E$ is the standard orientation of $\R^K$.
+	Then, by definition, the pullback map from $P = W \times_N M \subset M \times \R^K$ to $M$ is co-oriented by $(\beta_P,\beta_M)$ if we choose $\beta_P$ and $\beta_M$ such that $\beta_P \wedge \beta_\nu = \beta_M \times \beta_E$, recalling that we let $\nu$ also denote the pulled back normal bundle of $P$ in $M \times \R^K$.
+	We suppose we have chosen such $\beta_P$ and $\beta_M$.
+	Next, let $M^0 \subset M$ have normal co-orientation $\beta_\phi$ determined by pulling back the standard orientation from $\R$, and similarly let $\beta_\phi$ denote the pullback normal co-orientation to $(W \times_N M)^0$.
+	Then by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $(W \times_N M)^0 = M^0 \times_M (W \times_N M) \to W \times_N M$ is $(\beta_Q,\beta_Q \wedge \beta_\phi)$ for any $\beta_Q$.
+	The fiber product $(W \times_N M)^0 \into M$ is then co-oriented by the composition $(\beta_Q,\beta_Q \wedge \beta_\phi)*(\beta_P,\beta_M)$.
+	So if we choose $\beta_Q$ so that $\beta_Q \wedge \beta_\phi = \beta_P$ (or equivalently $\beta_Q$ and $\beta_M$ so that $\beta_Q \wedge \beta_\phi \wedge \beta_\nu = \beta_M \wedge \beta_E$), the co-orientation is $(\beta_Q,\beta_M)$.
+
+	On the other hand, consider $(N^0 \times_N W) \times_N M = W^0 \times_N M \to M$.
+	Once again, at the same points, we fix $\beta_N$ and $\beta_W$ so that $\omega_{r_W} = (\beta_W,\beta_N)$.
+	Again by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $N^0 \times_N W \to W$ is $(\beta_{W^0},\beta_{W^0} \wedge \beta_\phi)$ for any $\beta_{W^0}$, continuing to let $\beta_\phi$ denote any normal co-orientation pulled back via $\phi$.
+	If we choose $\beta_{W^0}$ so that $\beta_{W^0} \wedge \beta_\phi = \beta_W$ then we have $r_{W^0} \colon W^0 \to N$ co-oriented by $(\beta_{W^0},\beta_N)$.
+	As $W^0 \subset W$, we can embed $W^0$ in $N \times \R^K$ via the composition $W^0 \into W \xhookrightarrow{e}N \times \R^K$, using the same $e$ and $K$ as above.
+	We also assume the same oriented normal bundle $\nu$.
+	As $\beta_W \wedge \beta_\nu = \beta_N \wedge \beta_E$ and $\beta_W = \beta_{W^0} \wedge \beta_\phi$, we have $\beta_{W^0} \wedge \beta_\phi \wedge \beta_\nu = \beta_N \wedge \beta_E$ so that $\beta_\phi \wedge \beta_\nu$ is the Quillen orientation for the normal bundle of $W^0$ in $N \times \R^K$.
+	Using this to pull back $W^0 \to N$ to $W^0 \times_N M \to M$, by definition the pullback co-orientation is $(\beta_Q,\beta_M)$ when $\beta_Q$ and $\beta_M$ are chosen so that $\beta_Q \wedge \beta_\phi \wedge \beta_\nu = \beta_M \wedge \beta_E$.
+	But this is exactly the same co-orientation we arrived at in the preceding paragraph.
+	Thus the co-orientations of the two constructions agree.
+\end{proof}
+
+
+\begin{proof}[Proof of \cref{T: natural connection}]
+	We first establish some notation.
+	Let $M = U' \cup V'$ and $N = U \cup V$.
+	Let $A = U' \cap V'$ and $B = U \cap V$.
+	Let $r_W \colon W \to B \subset N$ represent an element $\uW \in H^*_\Gamma(B)$.
+	Let $\psi \colon M \to [-1/2, 1/2]$ be separating for $U'$ and $V'$, and let $\phi \colon N \to [-1/2, 1/2]$ be separating for $U$ and $V$.
+	We further suppose $0$ is a regular value for $\psi$ and that $\phi$ separates $W$ over $U$ and $V$, treating $W$ as having image in $N$.
+	Let $N^0$ and $W^0$ be determined by $\phi$ as in \cref{S: splitting}, and similarly, let $M^0$ be determined by $\psi$.
+	We let $r_{W^0} \colon W^0 \to N$ be the reference map for $W^0$.
+	By postcomposing $\psi$ with an orientation preserving-diffeomorphism of $[-1/2, 1/2]$, we may assume that $\pm 1/4$ are regular values for $\psi$, and we let $K = \psi^{-1}([-1/4, 1/4]) \subset M$.
+
+	Now, noting that $f(A) \subset B$, apply\footnote{To obtain transversality to both $W$ and $W^0$, it suffices to choose $g_1$ transverse to the disjoint union of $r_{W^+} \colon W^+ \to M$ and $r_{W^-} \colon W^- \to M$. For both $g_1$ and $g_1|_{M^0}$ to have the desired transversality, we note that the restriction of the function $H$ constructed in the proof of \cref{T: basic trans} to $M^0 \times D$ has the desired transversality at almost every $s \in D$ by the same argument as for $H$ on all of $M \times D$. As the intersection of two almost everywhere sets also has measure zero complement, we can choose an $s \in D$ that gives transversality for both $M$ and $M^0$. Compare the proof of the Transversality Homotopy Theorem in \cite{GuPo74}, which allows that our analogue of $M$ have boundary.} \cref{T: basic trans} to obtain $g_1 \colon A \to B$, a smooth approximation to $f|_A$ that is transverse to $r_W$ and $r_{W^0}$ and so that the restriction to $M^0$ is also transverse to $W$.
+	Then $f^*(\uW) \in H^*_\Gamma(A)$ is represented by the pullback of $W$ by $g_1$ by \cref{D: cohomology pullback and homology transfer}.
+	For clarity, we write this pullback as $g_1^*(W) = W \times_B A$.
+	By \cref{L: transverse to pullback}, as $g_1|_{M^0}$ is transverse to $W$, the inclusion of $M^0$ into $M$ is transverse to $g_1^*(W)$.
+	The fiber product $ - M^0 \times_M g_1^*(W)$ represents $\delta f^* (W)$ by \cref{D: connecting}.
+
+\begin{comment}
+	Next, let $K' = \psi^{-1}([-3/8, 3/8]) \subset A \subset M$.
+	We may assume that $\psi$ was chosen so that $\pm 3/8$ are also regular values.
+\end{comment}
+
+	Next, as $\psi^{-1}(\pm 1/4)$ are bicollared submanifolds of $M$, the submanifold $K \subset A$ is collared, so the inclusion map is a cofibration, e.g. via\footnote{We define a map $M \to [0,1]$ as in the cited theorem by taking $K$ to $0$, projecting the parts of the collars isomorphic to $\psi^{-1}(\pm 1/4) \times [0,1]$ to the second factor, and taking everything else to $1$.} \cite[Theorem VII.1.5]{Bred97}.
+	Therefore, the restriction to $K \times I$ of our homotopy from $f|_A$ to $g_1$ can be extended to a continuous map $M \times I \to N$ from $f$ to a continuous map we will call $f' \colon M \to N$.
+	So by construction, $f' = g_1$ on $K$.
+	Furthermore, choosing the collars to be contained in $A$, which is an open neighborhood of $K$ in $M$, then by the usual construction of a homotopy extension using a neighborhood deformation retraction (see \cite[Section VII.1]{Bred97}), we have a neighborhood $L$ of $K$ such that $f'$ takes $L$ to $B$ (because our homotopy of $f|_A$ maps to $B$) and so that $f' = f$ on $M \setminus L$.
+	In particular, $f'$ takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$.
+
+	Next, we wish to approximate $f'$ by a homotopic map $g_2 \colon M \to N$ such that
+	\begin{enumerate}
+		\item $g_2 = g_1$ on $K$,
+		\item $g_2$ is smooth,
+		\item $g_2$ is transverse to $W$ and $W^0$
+		\item $g_2$ takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$.
+	\end{enumerate}
+	We will show that we can construct such a $g_2$ in a lemma following the remainder of the proof of \cref{P: natural connection}.
+
+	Assuming $g_2$ exists, by definition $f^* \delta (\uW)$ is represented by the pullback of $-W^0 \to N$ by $g_2$, which we will write $g_2^*(-W^0) = - g_2^*(W^0) \to M$.
+	Now we apply \cref{L: cut pullback} to see that $g_2^*(W^0)$ is isomorphic to $(g_2^*(W))^0$, where the latter expression is the splitting with respect to the composite $\phi g_2$.
+	In other words, $g_2^*(W^0) = M^0_{\phi g_2} \times_M g_2^*(W)$, writing $M^0_{\phi g_2}$ for the splitting of $M$ determined by the function $\phi g_2$.
+
+	So to complete the proof we must show that this $M^0_{\phi g_2} \times_M g_2^*(W)$ represents the same cohomology class in $M$ as $M^0_\psi \times_M g_1^*(W)$, where $M^0_\psi$ is the splitting of $M$ using $\psi$.
+
+	We next observe that as $M^0_\psi$ is in the interior of $K$, where we know $g_1 = g_2$, we must have $M^0_\psi \times_M g_1^*(W) = M^0_\psi \times_M g_2^*(W)$.
+	So we compare $M^0_{\phi g_2} \times_M g_2^*(W)$ with $M^0_\psi \times_M g_2^*(W)$.
+	The rough idea of the remainder of the proof is to show that $\psi$ and $\phi g_2$ are both separating functions for $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$, which will allow us to invoke \cref{P: connecting}, though there remain some technicalities, including replacing $\psi$ with a slight modification.
+
+	So, consider $g_2^{-1}(U)$ and $g_2^{-1}(V)$. As $N = U \cup V$, we must have $M = g_2^{-1}(U) \cup g^{-1}(V)$.
+	We have $g_2^{-1}(U)\setminus g_2^{-1}(V) = g_2^{-1}(U \setminus V)$, so $\phi g_2(g_2^{-1}(U)\setminus g_2^{-1}(V)) = \phi g_2(g_2^{-1}(U \setminus V)) \subset \phi(U \setminus V) =   -1/2$, and similarly  $\phi g_2(g_2^{-1}(V) \setminus g_2^{-1}(U)) = 1/2$.
+	So $\phi g_2$ is a separating function on $M$ for $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
+	We also know $M^0_{\phi g_2}$ is transverse to $g_2^*(W)$, so $\phi g_2$ separates $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
+
+	As we chose $g_2$ so that $g_2 = g_1$ on $K$ and so that it takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$, we have $g_2^{-1}(U \setminus V) \subset \psi^{-1}([-1/2,-1/4])$ and $g_2^{-1}(V \setminus U) \subset \psi^{-1}([1/4,1/2])$.
+	Let $\psi_1$ be the composition of $\psi$ with a smooth non-decreasing map $a: [-1/2,1/2] \to [-1/2,1/2]$ such that
+	\begin{enumerate}
+		\item $a([-1/2,-1/4]) = -1/2$
+		\item $a(x)=x$ on a neighborhood of $0$
+		\item $a([1/4,1/2]) = 1/2$
+	\end{enumerate}
+	In this case, $M^0_\psi = M^0_{\psi_1}$, so we have $M^0_\psi \times_M g_2^*(W) = M^0_{\psi_1} \times_M g_2^*(W)$.
+	Furthermore, as $g_2^{-1}(U) \setminus g_2^{-1}(V) = g_2^{-1}(U \setminus V)$, and similarly reversing the roles of $U$ and $V$, we see $\psi_1$ separates $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
+
+	Lastly, we observe that $g_2^{-1}(U) \cap g_2^{-1}(V) = g_2^{-1} (U \cap V) = g_2^{-1}(B)$, so $g_2$ maps this intersection into $B = U \cap V$.
+	Therefore, the pullback $(g_2|_{g_2^{-1} (B)})^* (W)$ is an element of $PC^*_\Gamma(g_2^{-1} (B))$.
+	But, $M^0_{\phi g_2} \times_M	(g_2|_{g_2^{-1} (B)})^* (W) = M^0_{\phi g_2} \times_M g_2^*(W)$ and $M^0_{\psi_1} \times_M g_2|_{g_2^{-1} (B)}^* (W) = M^0_{\psi_1} \times_M g_2^*(W)$, as $M^0_{\phi g_2}$ and $M^0_{\psi_1}$ are both in $g_2^{-1} (B)$.
+	Now, as desired,  $M^0_{\phi g_2} \times_M	(g_2|_{g_2^{-1} (B)})^* (W)$ and $M^0_{\psi_1} \times_M g_2|_{g_2^{-1} (B)}^* (W)$ are two splittings of the same element of $PC^*_\Gamma(g_2^{-1} (B)) = PC^*_\Gamma(g_2^{-1}(U) \cap g_2^{-1}(V)) $ with respect to different separating functions over $g_2^{-1}(U)$ and $g_2^{-1}(V)$, and so they represent the same element of $H^*_\Gamma(M)$ by \cref{P: connecting}.
+\end{proof}
+
+\begin{lemma}
+There exists a $g_2$ as claimed in the proof of \cref{T: natural connection}.
+\end{lemma}
+\begin{proof}
+	We will modify the proof of \cref{T: basic trans}.
+	As in that argument, we suppose $N$ properly embedded as a closed manifold in some Euclidean space; then $N$ has a distance function inherited from Euclidean space, which we will denote $d$.
+
+	First, on $\psi^{-1}([-1/2,-1/4])$, we consider the function $x \mapsto d(f'(x), V \setminus U)$.
+	As distance to a closed set is a continuous function and $f'$ takes $\psi^{-1}([-1/2,1/4])$ to $U$, this is a continuous function $\psi^{-1}([-1/2,-1/4]) \to (0,\infty)$.
+	Similarly, $x \mapsto d(f'(x), U \setminus V)$ is a positive function on $\psi^{-1}([1/4, 1/2])$.
+	As $(0,\infty) \cong \R$, by the Tietze Extension Theorem we can extend these functions to a single function $\delta \colon M \to (0, \infty)$.
+	We now apply Smooth Approximation\footnotemark to replace $f'$ with a homotopic function $g'$ that is smooth, such that $g' = f' = g_1$ on $K$, and such that $d(f'(x),g'(x))<\delta(x)/2$ for all $x \in M$.
+	\footnotetext{A good proof that $f'$ is homotopic rel $K$ to a smooth map can be found in \cite[Theorem 6.26]{Lee13}. To obtain the distance bound, we modify the argument there to require that the function called $\td \delta$ in that proof satisfies $\td \delta(x) < \delta(x)/4$ in addition to the other requirements on $\td \delta$ in the proof. Noting that the tubular neighborhood in \cite{Lee13} is the same as an $\epsilon$-neighborhood in \cite{GuPo74}, we can now use a triangle inequality argument as in our proof of \cref{T: basic trans} to see that the smooth approximation satisfies $d(f'(x),g'(x))<\delta(x)/2$.}
+
+
+	Next, we modify the transversality portion of the proof of \cref{T: basic trans} to obtain $g_2$ from $g'$.
+	For the modification, we replace the smooth function $\eta$ in the definition of $H(x,s)$ with one that satisfies all the properties stated there except
+	\begin{enumerate}
+		\item we take $\eta(x)=0$ on $K$, and
+		\item on $M \setminus K$, we take $\eta(x) > 0$ and, in addition to its other size constraints, we take $\eta$ sufficiently small that $d(H(x,s),g'(x)) < \delta(x)/2$.
+		This can be done using the same argument as in the proof of \cref{T: basic trans} for the case of proper maps, using $\delta/2$ in the role of $\varepsilon$ (that part of the argument did not rely on any map being proper).
+	\end{enumerate}
+	Then, continuing the transversality argument of \cref{T: basic trans}, $H(-,s)|_{M-K}$ is transverse to $W$ and $W^0$ for almost every $s \in D$, so we again choose such an $s_0$ and let $$h(x,t) = H(x, ts_0) = \pi(g'(x) + \eta(x)ts_0),$$ for all $x \in M$ and $t \in [0,1]$.
+	Let $g_2 = h(-,1)$.
+
+	Altogether now, $g_2$ is smooth, and it is equal to $g_1$ on $K$ by construction.
+	It is transverse to $W$ and $W^0$ on $K$ because $g_1$ is, and it is transverse to $W$ and $W^0$ on $M \setminus K$ by the argument from \cref{T: basic trans} with our choice of $s_0$.
+	Finally, we see $g_2$ takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$: On $K$, we have $g_2(K) = g_1(K) \subset B = U \cap V$ from the construction of $g_1$.
+	For $x\in \psi^{-1}([-1/2,-1/4])$, our definition of the bounding function $\delta$ above and the choice of $\delta/2$-small homotopies in the steps from $f'$ to $g'$ and $g'$ to $g_2$ ensure that $d(f'(x), g_2(x)) < \delta(x)$, so $g_2(x)$ is a positive distance from $V \setminus U$.
+	Similarly for $\psi^{-1}([1/4,1/2])$ and $U \setminus V$.
+\end{proof}
+
+
+\bibliographystyle{amsplain}
+\bibliography{./auxy/foundations}
+
+
+\end{document}
