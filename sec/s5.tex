@@ -2,8 +2,9 @@
 
 \section{Basic properties of geometric (co)homology and equivalence with singular (co)homology}\label{S: basic properties}
 
-In this section we establish the basic properties of geometric homology and cohomology, eventually showing that they are equivalent to (absolute) singular homology and cohomology on manifolds using a result of Kreck and Singhof.
-In the case of homology, we will also construct an explicit isomorphism from smooth singular homology to geometric homology.
+In this section, we establish the basic properties of geometric homology and cohomology, including functoriality with respect to \textit{continuous} maps in \cref{S: functoriality} and Mayer-Vietoris sequences in \cref{S: MV}.
+In \cref{S: homology is homology}, this allows us to show that geometric homology and cohomology are equivalent to (absolute) singular homology and cohomology on manifolds, using a result of Kreck and Singhof.
+In the case of homology, we will also construct in \cref{S: homology direct} an explicit isomorphism from smooth singular homology to geometric homology.
 It is more challenging to find an explicit isomorphism in the case of cohomology, and, in fact, the bulk of \cref{S: transversality} will be dedicated to such a construction.
 
 \subsection{Functoriality and homotopy properties}\label{S: functoriality}
@@ -363,7 +364,7 @@ The constructions are as follows.
 	Thus $f^*$ does not depend on our choices and depends on $f$ only through its homotopy class.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{C: contra funct}
 	The assignment taking $f$ to $f^*$ is functorial.
 	In other words:
 		\begin{enumerate}
@@ -390,7 +391,7 @@ The constructions are as follows.
 \end{remark}
 \end{comment}
 
-\subsection{Mayer--Vietoris sequences}
+\subsection{Mayer--Vietoris sequences}\label{S: MV}
 
 In this section, we consider Mayer--Vietoris sequences for homology and cohomology.
 In particular, we present covariant homology and cohomology sequences and a contravariant cohomology sequence.
@@ -1318,41 +1319,44 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 
 \subsection{Geometric homology and cohomology are singular homology and cohomology}\label{S: homology is homology}
 
-In this section we apply a theorem of Kreck and Singhof to show that geometric homology and cohomology are isomorphic to singular homology and cohomology on smooth manifolds.
+In this section, we apply a theorem of Kreck and Singhof to show that geometric homology and cohomology are isomorphic to singular homology and cohomology on smooth manifolds.
 
 \begin{theorem}\label{T: geometric is singular}
-	On the category of smooth manifolds (without boundary) and continuous maps, geometric homology and cohomology are respectively isomorphic to singular homology and cohomology with integer coefficients, i.e.\ $H_*^\Gamma \cong H_*(\cdot ;\Z)$ and $H^*_\Gamma \cong H^*(\cdot ;\Z)$ as functors.
+	On the category of smooth manifolds (without boundary) and continuous maps, geometric homology and cohomology are respectively isomorphic to singular homology and cohomology with integer coefficients, i.e.\ $H_*^\Gamma(-) \cong H_*(- ;\Z)$ and $H^*_\Gamma(-) \cong H^*(-;\Z)$ as functors.
 \end{theorem}
 
 \begin{proof}
-	This is a consequence of \cite[Theorem 10]{Krec10b} once we verify that $H_*^\Gamma$ and $H^*_\Gamma$ are respectively an ordinary homology theory and an ordinary cohomology theory on the category of smooth manifolds as defined in \cite{Krec10b}.
-	This requires the following axioms:
+	This is a consequence of \cite[Proposition 10]{Krec10b} once we verify that $H_*^\Gamma$ and $H^*_\Gamma$ are respectively an ordinary homology theory and an ordinary cohomology theory on the category of smooth manifolds and continuous maps as defined in \cite{Krec10b}.
+	Putting together the definitions and axioms of Sections 4 and 5 of \cite{Krec10b}, we must show the following:
 
 	\begin{enumerate}
-		\item\label{I: homotopy functor} $H_*^\Gamma$ is a covariant functor on the category of smooth manifolds (without boundary) and continuous maps between them, and $H^*_\Gamma$ is a contravariant homotopy functor on the same category.
+		\item\label{I: homotopy functor} $H_*^\Gamma$ is a covariant homotopy functor on the category of smooth manifolds (without boundary) and continuous maps between them, and $H^*_\Gamma$ is a contravariant homotopy functor on the same category.
 
-		\item For each triple $(M;U,V)$ with $M$ a smooth manifold and $U,V$ open subsets such that $U \cup V = M$ there are exact (homological or cohomological) Mayer--Vietoris sequences with natural connecting maps $\delta$.
+		\item For each triple $(M;U,V)$ with $M$ a smooth manifold and $U,V$ open subsets there are exact (homological or cohomological) Mayer--Vietoris sequences with natural connecting maps $\delta$.
 
 		\item\label{I: neg dim} For all $M$, $H_k^\Gamma(M) = H^k_\Gamma(M) = 0$ for $k<0$.
 
-		\item The Dimension Axiom: $H_k^\Gamma(pt) = H^k_\Gamma(pt) = 0$ for $k\neq 0$ and $H^\Gamma_0(pt) \cong H_\Gamma^0(pt) \cong \Z$.
+		\item The Dimension Axiom: $H_k^\Gamma(pt) = H^k_\Gamma(pt) = 0$ for $k\neq 0$.
 
 		\item $H_*^\Gamma$ and $H^*_\Gamma$ are additive: for a manifold $M$ of dimension $0$, each $H_k^\Gamma(M)$ is canonically isomorphic to $\oplus_{x \in M} H_k^\Gamma(x)$ and each $H^k_\Gamma(M)$ is canonically isomorphic to $\prod_{x \in M} H^k_\Gamma(x)$.
 	\end{enumerate}
 
-	Axiom \ref{I: homotopy functor} holds from the definitions and \cref{T: homology homotopy functor,P: cohomology pullback}.
+	Axiom \ref{I: homotopy functor} holds from the definitions, \cref{T: homology homotopy functor,P: cohomology pullback,C: contra funct}.
 	We have Mayer--Vietoris sequences by \cref{T: relative MV,T: absolute MV}.
 	The connecting map for the cohomology sequence is natural by \cref{T: natural connection}.
-	The connecting map for the homology sequence is natural just as in the standard argument for singular homology: given a map of triples $(M;U',V') \to (N;U,V)$ there is a map of Mayer--Vietoris sequences induced by a map of short exactly sequences of chain complexes of the form of diagram \eqref{E: homology MV SES} (replacing supported cochains complexes with chain complexes), itself induced by functoriality from the maps of chain complexes $C_*^{\Gamma}(U') \to C_*^{\Gamma}(U)$ and similarly for $V$ and $U \cap V$.
-	This map of Mayer--Vietoris sequences in particular shows that the connecting map is natural.
+	The connecting map for the homology sequence is natural just as in the standard argument for singular homology: given a map of triples $(M;U',V') \to (N;U,V)$ there is a map of Mayer--Vietoris sequences induced by a map of short exactly sequences of chain complexes of the form of diagram \eqref{E: homology MV SES} (replacing supported cochain complexes with chain complexes), itself induced by functoriality from the maps of chain complexes $C_*^{\Gamma}(U') \to C_*^{\Gamma}(U)$ and similarly for $V$ and $U \cap V$.
+	The resulting map of Mayer--Vietoris sequences shows that the connecting map is natural.
 
-	Axiom \ref{I: neg dim} holds trivially for homology as there are no chains of degree $<0$.
-	It also holds for cohomology because for $k<0$ any representing cocycle must have small rank and boundary in $Q^*(M)$.
-	Thus any such cocycle must be $0 \in C^k_\Gamma(M)$.
+	Axiom \ref{I: neg dim} holds trivially for homology as there are no non-empty prechains of degree $<0$.
+	It also holds for cohomology because for $k<0$ any representing precocycle must have small rank and its boundary must be in $Q^*(M)$ by \cref{R: cycles and boundaries}.
+	Thus such a precocycle is degenerate and must represent $0 \in C^k_\Gamma(M)$.
 
 	The Dimension Axiom has been proven in \cref{E: dimension}.
 
 	The Additivity Axiom is apparent.
+
+	As $H_*^\Gamma$ and $H^*_\Gamma$ satisfy all the axioms, \cite[Proposition 10]{Krec10b} says that for any isomorphism $H_0(pt) \xr{\cong} H^\Gamma_0(pt)$ there is a unique isomorphism of homology theories $H_*(- ;\Z) \xr{\cong} H_*^\Gamma(-)$, and similarly for cohomology.
+	As we know that $H_0^\Gamma(pt) \cong H_\Gamma^0(pt) \cong \Z$ by \cref{E: dimension}, our theorem follows.
 \end{proof}
 
 \begin{example}
@@ -1366,34 +1370,74 @@ In this section we apply a theorem of Kreck and Singhof to show that geometric h
 			0,&\text{otherwise.}
 		\end{cases}
 	\end{equation*}
-	From the viewpoint of geometric cohomology, $H^0(\R P^2)$ is generated by the identity map $\R P^2 \to \R P^2$, which is co-oriented at each point by $(\beta,\beta)$ for any local orientation $\beta$.
+	From the viewpoint of geometric cohomology, $H^0(\R P^2)$ is generated by the identity map $\R P^2 \to \R P^2$ with its tautological co-orientation.
 
 	In degree $1$, cochains are represented by co-oriented maps from (unions of) closed intervals or circles.
 	For a map from the circle to be co-oriented it cannot represent the non-trivial element $\alpha \in \pi_1(\R P^2)$, and so it must be contractible.
 	Any map from a disk must be co-orientable, as the disk is contractible (this can be considered an extension of \cref{L: co-orientable homotopies}).
 	Thus by smooth approximation, any smooth co-oriented map from the circle to $\R P^2$ is the boundary of a smooth co-oriented map from the disk, and so represents $0$ in cohomology.
-	The same is true for any ``circle of intervals'' that does not represent $\alpha \in \pi_2(\R P^2)$; via homotopy and creasing, such a ``circle'' is the boundary of a polygon.
-	On the other hand, consider a map $g \colon \interval \to \R P^2$ that does represent $\alpha$.
-	As $\interval$ is contractible, such a map can always be co-oriented.
-	We can let $e$ represent the standard unit vector of $\interval$ and suppose that $g$ is co-oriented so that at $0 \in \interval$ the co-orientation is represented by $(e,\beta)$ for some local orientation $\beta$ of $\R P^2$ at $f(0)$.
+	The same is true for any circle decomposed into intervals that does not represent $\alpha \in \pi_2(\R P^2)$; via homotopy and creasing, such a ``circle'' is the boundary of a polygon.
+	On the other hand, consider a map $g \colon [0,1] \to \R P^2$ that does represent $\alpha$.
+	As $[0,1]$ is contractible, such a map can always be co-oriented.
+	We can let $e$ represent the standard unit vector of $[0,1]$ and suppose that $g$ is co-oriented so that at $0 \in [0,1]$ the co-orientation is represented by $(e,\beta)$ for some local orientation $\beta$ of $\R P^2$ at $g(0)$.
 	Traversing the path, the representation for the co-orientation at $1$ is then $(e,-\beta)$.
-	Recalling our boundary conventions, the boundary of $f$ therefore consists of the maps $f|_0:0 \to \R P^2$ co-oriented by $(1,e)*(e,\beta) = (e,\beta)$ and $f|_1:1 \to \R P^2$ co-oriented by $(1,-e)*(e,-\beta) = (e,\beta)$.
-	Thus with these co-orientations, $f|_0:0 \to \R P^2$ and $f|_1:1 \to \R P^2$ represent isomorphic manifolds over $\R P^2$.
-	As a co-oriented map from any single point to $\R P^2$ is a cocycle, we see by choosing the image to be the basepoint for $\pi_1(\R P^2)$ that twice any such map is a boundary.
-	We leave it to the reader to verify that any two such points generate the same cohomology class, and so we have verified that $H^1_\Gamma(\R P^2) = 0$ and $H_\Gamma^2(\R P^2) \cong \Z_2$.
+	Recalling our boundary conventions, the boundary of $g$ therefore consists of the maps $g|_0:0 \to \R P^2$ co-oriented by $(1,e)*(e,\beta) = (e,\beta)$ and $g|_1:1 \to \R P^2$ co-oriented by $(1,-e)*(e,-\beta) = (1,\beta)$.
+	Thus with these co-orientations, $g|_0:0 \to \R P^2$ and $g|_1:1 \to \R P^2$ represent isomorphic manifolds over $\R P^2$.
+	So $g$ does not represent a cocycle.
+	On the other hand, as a co-oriented map from any single point to $\R P^2$ is a cocycle, this shows that by choosing the image to be the basepoint for $\pi_1(\R P^2)$ that twice any such map is a boundary.
+	We leave it to the reader to verify that any two such points generate the same cohomology class and that a map from a single point cannot represent a coboundary, and so we have verified that $H^1_\Gamma(\R P^2) = 0$ and $H_\Gamma^2(\R P^2) \cong \Z_2$.
 \end{example}
 
-\subsubsection{A more direct comparison of singular and geometric homology}
+\subsubsection{A more direct comparison of singular and geometric homology}\label{S: homology direct}
 
-While it was convenient to cite simultaneously the homology and cohomology versions of the Kreck-Singhof theorem, we can provide a second proof in the homology case that says a bit more.
-In particular, as simplices are manifolds with corners and as the standard model simplex comes equipped with an orientation, if we let $S^{sm}_*(M)$ denote the chain complex of smooth singular chains, there is an obvious inclusion map $S^{sm}_*(M) \into PC_*^\Gamma(M)$.
-It is not hard to check consistency of the boundary orientations so that this induces a chain map $S^{sm}_*(M) \to C_*^\Gamma(M)$.
-We will see that this is a quasi-isomorphism.
-Combined with the well-known fact that the inclusion $S^{sm}_*(M) \into S_*(M)$ is a chain homotopy equivalence if $S_*(M)$ is the full singular chain complex on $M$ \cite[Theorem 18.7]{Lee13}, this provides a concrete chain of isomorphisms $H_*(M) \cong H_*^\Gamma(M)$.
+While \cref{T: geometric is singular} says that geometric homology and cohomology are isomorphic to singular homology and cohomology, it does not provide actual isomorphisms, which we would like to have.
+In this section, we provide a second proof that singular and geometric homology are isomorphic, in this case providing the isomorphism.
+We will consider the case of cohomology in \cref{S: transversality}.
 
-It will also be useful below to have the analogous result for cubical singular homology in addition to the more common simplicial singular homology.
-Details of cubical singular homology can be found, for example, in (see, e.g., \cite{Mas91} or \cite[Section 8.3]{HW60}).
-Rather than maps of simplices $\Delta^k \to M$, the cubical singular chain complex $SK_*(M)$ is generated by maps $\interval^k \to M$ with $\interval$ being the standard interval $\interval = [0,1]$.
+The basic idea for homology is that, as simplices are manifolds with corners and as the standard model simplex comes equipped with an orientation, smooth singular simplices correspond to geometric chains.
+In other words, if we let $S^{sm}_*(M)$ denote the chain complex of smooth singular chains on the manifold without boundary $M$, then the generators, which are smooth singular simplices $\sigma \colon \Delta^i \to M$, are prechains, and so they represent elements of $C_*^\Gamma(M)$.
+As $S^{sm}_*(M)$ is freely generated by the smooth singular simplices, this determines a map of graded abelian groups $S^{sm}_*(M) \to C_*^\Gamma(M)$.
+We will see that there is consistency of the boundary orientations so that this is a chain map $S^{sm}_*(M) \to C_*^\Gamma(M)$.
+We will show that it is, in fact, a quasi-isomorphism, i.e.\ it induces isomorphisms of homology groups.
+Combined with the well-known fact that the inclusion $S^{sm}_*(M) \into S_*(M)$ is a chain homotopy equivalence if $S_*(M)$ is the full singular chain complex on $M$ \cite[Theorem 18.7]{Lee13}, this will provide a concrete chain of isomorphisms $H_*(M) \cong H_*^\Gamma(M)$.
+
+It will be useful in what follows to have the analogous result for cubical singular homology in addition to the more common simplicial singular homology.
+Details of cubical singular homology can be found, for example, in \cite{Mas91} or \cite[Section 8.3]{HW60}, though we provide a brief overview.
+
+Rather than maps of simplices $\Delta^k \to M$, the cubical singular chain complex, which we denote $SK_*(M)$, is generated by maps $\interval^k \to M$ with $\interval$ being the standard interval $\interval = [0,1]$ (it will be convenient henceforth to use this notation for the interval).
+The boundary formula is defined so that if $\sigma: \interval^k \to M$ is a singular cube, then
+\begin{equation}\label{E: cube bd}
+	\bd \sigma = \sum_{i = 1}^k (-1)^i(\sigma \delta_i^0-\sigma \delta^1_i),
+\end{equation}
+where for $\epsilon\in\{0,1\}$, the map $\delta_i^\epsilon \colon \interval^{k-1} \to \interval^k$ is defined by
+$$\delta_i^\epsilon(x_1,\ldots,x_{k-1}) = (x_1,\ldots,\epsilon,\ldots, x_k)$$
+with $\epsilon$ in the $i$th slot.
+The homology of the chain complex $SK_*(M)$ is not isomorphic to singular homology, as it does not satisfy the dimension axiom, so one instead forms the normalized complex $NK_*(M)$ by quotienting out the subcomplex of \textit{degenerate singular cubes}, generated by singular cubes $\sigma \colon \interval^k \to M$ such that $\sigma$ does not depend on at least one of the variables.
+In other words, the degenerate singular cubes are those maps $\sigma \colon \interval^k \to M$ that factor through one of the coordinate projections $\interval^k \to \interval^{k-1}$.
+It then holds that $NK_*(M)$ is chain homotopy equivalent to $S_*(M)$, the complex of singular simplicial chains.
+In fact, this holds for $M$ any space and not just a manifold \cite[Theorem 8.4.7]{HW60}.
+Of course we will need the smooth version $NK^{sm}_*(M)$ generated by smooth singular cubes and modulo degenerate smooth singular cubes.
+We defer to an appendix to this section the proof that $NK^{sm}_*(M) \into NK_*(M)$ is a chain homotopy equivalence.
+
+As the cubes $\interval^k$ are compact manifolds with corners equipped with their standard orientations,
+we have, analogously to the simplicial case, maps $SK^{sm}_i(M) \to C_i^\Gamma(M)$ for each $i$.
+We will show that this is a chain map and that it induces a chain map $NK^{sm}_*(M) \to C_*^\Gamma(M)$.
+
+
+
+
+\begin{comment}
+The basic ideas is that, as simplices are manifolds with corners and as the standard model simplex comes equipped with an orientation, if we let $S^{sm}_*(M)$ denote the chain complex of smooth singular chains on the manifold without boundary $M$, there is an inclusion map of sets $S^{sm}_*(M) \into PC_*^\Gamma(M)$.
+To handle coefficients, an expression of the form $k \sigma \in S^{sm}_*(M)$ with $0 \neq k \in \Z$ and $\sigma$ a singular simplex corresponds to the disjoint union of $|k|$ isomorphic copies of $\sigma$ or $-\sigma$, according to the sign of $k$.
+Of course sums in $S^{sm}_*(M)$ correspond to disjoint unions in $PC_*^\Gamma(M)$.
+We will see that there is consistency of the boundary orientations so that this induces a chain map $S^{sm}_*(M) \to C_*^\Gamma(M)$.
+We will show that this is a quasi-isomorphism, i.e.\ it induces isomorphisms of homology groups.
+Combined with the well-known fact that the inclusion $S^{sm}_*(M) \into S_*(M)$ is a chain homotopy equivalence if $S_*(M)$ is the full singular chain complex on $M$ \cite[Theorem 18.7]{Lee13}, this will provide a concrete chain of isomorphisms $H_*(M) \cong H_*^\Gamma(M)$.
+
+It will be useful in what follows to have the analogous result for cubical singular homology in addition to the more common simplicial singular homology.
+Details of cubical singular homology can be found, for example, in \cite{Mas91} or \cite[Section 8.3]{HW60}, though we provide a brief overview.
+
+Rather than maps of simplices $\Delta^k \to M$, the cubical singular chain complex, which we denote $SK_*(M)$, is generated by maps $\interval^k \to M$ with $\interval$ being the standard interval $\interval = [0,1]$ (it will be convenient henceforth to use this notation for the interval).
 The boundary formula is defined so that if $\sigma: \interval^k \to M$ is a singular cube, then
 \begin{equation}\label{E: cube bd}
 	\bd \sigma = \sum_{i = 1}^k (-1)^i(\sigma \delta_i^0-\sigma \delta^1_i),
@@ -1401,35 +1445,59 @@ The boundary formula is defined so that if $\sigma: \interval^k \to M$ is a sing
 where for $\epsilon\in\{0,1\}$, the map $\delta_i^\epsilon \colon \interval^{k-1} \to \interval^k$ is defined by
 $$\delta_i^\epsilon(x_1,\ldots,x_k) = (x_1,\ldots,\epsilon,\ldots, x_k)$$
 with $\epsilon$ in the $i$th slot.
-The homology of the chain complex $SK_*(M)$ is not isomorphic to singular homology as it does not satisfy the dimension axiom, so one instead forms the normalized complex $NK_*(M)$ by quotienting out the subcomplex of degenerate singular cubes, generated by singular cubes $\sigma \colon \interval^k \to M$ such that $\sigma$ does not depend on at least one of the variables.
-In other words, the degenerate singular cubes are those maps $\sigma \colon \interval^k \to M$ that factor through one of the standard projections $\interval^k \to \interval^{k-1}$.
-It then holds that $NK_*(M)$ is chain homotopy equivalent to $S_*(M)$.
-In fact this holds for $M$ any space and not just a manifold \cite[Theorem 8.4.7]{HW60}.
+The homology of the chain complex $SK_*(M)$ is not isomorphic to singular homology, as it does not satisfy the dimension axiom, so one instead forms the normalized complex $NK_*(M)$ by quotienting out the subcomplex of degenerate singular cubes, generated by singular cubes $\sigma \colon \interval^k \to M$ such that $\sigma$ does not depend on at least one of the variables.
+In other words, the degenerate singular cubes are those maps $\sigma \colon \interval^k \to M$ that factor through one of the coordinate projections $\interval^k \to \interval^{k-1}$.
+It then holds that $NK_*(M)$ is chain homotopy equivalent to $S_*(M)$, the complex of singular simplicial chains.
+In fact, this holds for $M$ any space and not just a manifold \cite[Theorem 8.4.7]{HW60}.
 Of course we will need the smooth version $NK^{sm}_*(M)$ generated by smooth singular cubes and modulo degenerate smooth singular cubes.
 We defer to an appendix to this section the proof that $NK^{sm}_*(M) \into NK_*(M)$ is a chain homotopy equivalence.
 
 As the cubes $\interval^k$ are compact manifolds with corners equipped with their standard orientations,
-we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
+we have, analogously to the simplicial case, a set inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for each $i$.
+\end{comment}
 
-\begin{lemma}
-	The inclusion $SK^{sm}_*(M) \into PC_*^\Gamma(M)$ determines a chain map $NK^{sm}_*(M) \to C_*^\Gamma(M)$.
+\begin{lemma}\label{L: singular and cubical chain maps}
+	The maps $S^{sm}_*(M) \to C_*^\Gamma(M)$ and $SK^{sm}_*(M) \to C_*^\Gamma(M)$ are well-defined chain maps.
+	The latter induces a chain map $NK^{sm}_*(M) \to C_*^\Gamma(M)$.
 \end{lemma}
 
 \begin{proof}
-	Any degenerate singular cube $\sigma \colon \interval^k \to M$ is also degenerate in the sense of \cref{D: equiv triv and small}.
+	We first consider the simplicial case, for which we need only verify that our boundary orientation convention for manifold with corners is consistent with the simplicial boundary formula.
+
+	We will think of the model $k$-simplex $\Delta^k$ as being the convex hull in $\R^k$ of the origin and the points $(0, \ldots , 1, \ldots, 0)$ as the $1$ varies through the $k$ coordinates.
+	We will also use the abstract simplicial notation $[0,\ldots,k]$ when convenient, identifying the vertex $0$ with the origin and the vertex $i$ with the points $(0, \ldots , 1, \ldots, 0)$ with $1$ in the $i$th place.
+	Then, letting $e_i$ denote the $i$th standard unit basis vector, the standard orientation of $\Delta^k$ is $e_1 \wedge \cdots \wedge e_k$.
+	The simplicial boundary formula, written in terms of manifolds with corners, is then
+	\[\bd [0,\ldots,k] = \amalg_i (-1)^i [0,\ldots, \hat i,\ldots, k].\]
+	Let $F_i$ denote the face $[0,\ldots, \hat i,\ldots, k]$.
+	We first consider the $F_i$ for $i > 0$.
+	In this case, the vector $-e_i$ can be taken as our outward pointing normal to $F_i$ and the remaining $e_j$ are in the tangent space to $F_i$.
+	So, by definition, the boundary orientation $\beta_i$ of $F_i$ as a manifold with corners boundary is the one such that $-e_i \wedge \beta_i$ agrees with $e_1 \wedge \cdots \wedge e_k$.
+	We observe that
+	\[ -e_i \wedge e_1 \wedge \cdots \wedge \hat e_i \wedge \cdots \wedge e_k = (-1)^ie_1 \wedge \cdots \wedge e_k,\]
+	so $\beta_i = (-1)^i e_1 \wedge \cdots \wedge \hat e_i \wedge \cdots \wedge e_k$.
+	Thus the corresponding simplicial boundary term is $(-1)^i [0,\ldots, \hat i,\ldots, k]$, as desired, observing that the standard simplicial orientation of $[0,\ldots, \hat i,\ldots, k]$ is $e_1 \wedge \cdots \wedge \hat e_i \wedge \cdots \wedge e_k$.
+	Now, we consider $F_0$.
+	For $2\leq j\leq k$, let $w_j$ be the vector from the vertex $(1,0,\ldots,0)$ to the $j$th vertex of $\Delta^k$.
+ 	These $w_j$ span the tangent space of $F_0$, and the simplicial orientation of $F_0$ is $w_2 \wedge \cdots \wedge w_k$.
+	Taking $e_1$ to be an outward pointing normal at $F_0$, the orientation $\beta_0$ of $F_0$ as a manifold with corners boundary is the one such that $e_1 \wedge \beta_0 = e_1 \wedge \cdots \wedge e_k$.
+	But now we observe that projection to the $x_1 = 0$ plane takes $w_j$ to $e_j$, which is sufficient to conclude that $e_1 \wedge w_2 \wedge \cdots \wedge w_k = e_1 \wedge \cdots \wedge e_k$, so $\beta_0 = w_2 \wedge \cdots \wedge w_k$, and this corresponds simplicially to $[1,\ldots, k]$, as desired in the simplicial boundary formula.
+
+	We turn now to cubes.
+
+	Any degenerate singular cube $\sigma \colon \interval^k \to M$ is also degenerate as a prechain in the sense of \cref{D: equiv triv and small}.
 	In fact, it will have small rank as it filters through a projection.
-	Furthermore, if that projection collapses the $i$th coordinate then each face $\sigma \delta_j^\epsilon$ for $j\neq i$ will also be a degenerate small cube and so have small rank, while the term $\pm (\sigma \delta_i^0-\sigma \delta_i^1)$ will be trivial with the trivializing map $\rho$ being the interchange of the two faces.
+	Furthermore, if that projection collapses the $i$th coordinate, then each face $\sigma \delta_j^\epsilon$ for $j\neq i$ will also be a degenerate small cube and so have small rank, while the term $\pm (\sigma \delta_i^0-\sigma \delta_i^1)$ will be trivial with the trivializing map $\rho$ being the interchange of the two faces.
 	Thus, the degenerate smooth singular cubes are elements of $Q_*(M)$, and our map is well defined in each degree.
 
-	We check compatibility of boundary orientations.
-	Consider the $n-1$ face $F$ of $\interval^n$ given by $x_i = j$ with $j\in\{0,1\}$.
-	Then we have an outward pointing vector given by $(-1)^{j+1}e_i$, where $e_i$ is the vector in the positive $i$th direction.
-	In general if we let $\beta_k$ denote the positive orientation corresponding to the $k$th coordinate, then the boundary orientation for $\beta_F$ is the one such that
-	$(-1)^{j+1}\beta_i \wedge \beta_F$ is the orientation $\beta_1 \wedge\cdots\wedge \beta_n$ of $\interval^n$.
-	Thus the boundary orientation is $(-1)^{j+1+i-1}\beta_1 \wedge \cdots \wedge \hat{\beta}_i \wedge \cdots\beta_n$.
-	On the other hand, $\beta_1 \wedge \cdots \wedge \hat{\beta}_i \wedge \cdots\beta_n$ is precisely the standard orientation of $F$ when considering $\interval^n$ as a cubical complex.
-	So the boundary orientation of $F$ is $(-1)^{i+j}$ times its orientation in the cubical complex.
-	But this corresponds precisely to the formula for the boundary in $K^{sm}_*(M)$ coming from equation \eqref{E: cube bd}.
+	For compatibility of boundary orientations, consider the $k-1$ dimensional face $F$ of $\interval^k$ given by $x_i = j$ with $j\in\{0,1\}$.
+	Then we have an outward pointing vector given by $(-1)^{j+1}e_i$, where $e_i$ is the standard unit vector in the $i$th direction.
+	The boundary orientation $\beta_F$ for $F$ as a manifold with corners is the one such that
+	$(-1)^{j+1}e_i \wedge \beta_F$ is the orientation $e_1 \wedge\cdots\wedge e_k$ of $\interval^k$.
+	Thus $\beta_F = (-1)^{j+1+i-1}e_1 \wedge \cdots \wedge \hat{e}_i \wedge \cdots e_j$.
+	On the other hand, $e_1 \wedge \cdots \wedge \hat{e}_i \wedge \cdots e_k$ is precisely the standard orientation of $F$ when considering $\interval^k$ as a cubical complex.
+	So the manifold with corners boundary orientation of $F$ is $(-1)^{i+j}$ times its standard orientation as a cube.
+	But this corresponds precisely to the formula for the boundary in $K^{sm}_*(M)$ given by \eqref{E: cube bd}.
 \end{proof}
 
 \begin{comment}
@@ -1449,10 +1517,11 @@ we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
 
 \begin{proof}
 	Both $H_*(S^{sm}_*(M))$ and $H_*(NK^{sm}_*(M))$ are isomorphic to the standard singular homology groups, so in the following we simply write $H_*$ for either of these theories and provide a uniform proof.
+	We let $\Phi: H_*(-) \to H_*^\Gamma(-)$ denote either of the maps induced by the chain maps of \cref{L: singular and cubical chain maps}, using the normalized chains in the cubical case.
 
-	We apply Theorem \cite[5.1.1]{Frie20}, which is based on standard Mayer--Vietoris techniques.
-	In particular, on the category consisting of the open sets of $M$, the maps $\Phi: H_*(-) \to H_*^\Gamma(-)$ provide a natural transformation of functors.
-	We need to check the following three properties:
+	We apply \cite[Theorem 5.1.1]{Frie20}, which is based on standard Mayer--Vietoris techniques.
+	We first observe that on the category consisting of the open subsets of $M$, the maps $\Phi: H_*(-) \to H_*^\Gamma(-)$ determined by the chain maps of \cref{L: singular and cubical chain maps} provide natural transformations of functors, which is clear from the definitions.
+	We need to verify the following three properties:
 
 	1.
 	On $\emptyset$ or $U \subset M$ with $U$ homeomorphic to $\R^m$, the map $\Phi: H_*(U) \to H_*^\Gamma(U)$ is an isomorphism.
@@ -1468,10 +1537,10 @@ we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
 
 	2.
 	$\Phi$ induces a commutative diagram of long exact Mayer--Vietoris sequences.
-	This follows from basic homological algebra given the commutativity of the following diagram and its analogue for singular cubical chains
+	This follows from basic homological algebra given the commutativity of the following diagram and its analogue for normalized smooth singular cubical chains
 	\[
 	\begin{tikzcd}[column sep=large]
-		S_*(U \cap V) \arrow[r, "{(i_U, -i_V)}", hook] \arrow[d, "\Phi"] & S_*(U) \oplus S_*(V) \arrow[d, "\Phi \oplus \Phi"] \\
+		S^{sm}_*(U \cap V) \arrow[r, "{(i_U, -i_V)}", hook] \arrow[d, "\Phi"] & S^{sm}_*(U) \oplus S^{sm}_*(V) \arrow[d, "\Phi \oplus \Phi"] \\
 		C_*^\Gamma(U \cap V) \arrow[r, "{(i_U, -i_V)}", hook] & C_*^\Gamma(U) \oplus C_*^\Gamma(V).
 	\end{tikzcd}
 	\]
@@ -1480,8 +1549,8 @@ we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
 	If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi \colon H_*(U_\alpha) \to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism.
 	This argument is standard given that both singular (simplicial or cubical) chains and geometric chains are represented by compact spaces: If $W$ represents a cycle in $C_*^\Gamma(\cup_\alpha U_\alpha)$, then $W \to \cup_\alpha U_\alpha$ factors through some particular $U_\beta$, so, as $H_*(U_\beta) \xr{\Phi}H_*^\Gamma(U_\beta)$ is an isomorphism, $\uW$ is in the image of $H_*(U_\beta) \xr{\Phi}H_*^\Gamma(U_\beta) \to H_*^\Gamma(\cup_\alpha U_\alpha)$.
 	But then $\uW$ is in the image of composition $H_*(U_\beta) \to H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective.
-	Similarly, if $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, say $\bd W = \xi+T$ for some $T \in Q_*(U)$.
-	But by compactness, there is some $\beta$ so that $W$, $T$, and $\xi$ all have image in $U_\beta$.
+	Similarly, if $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a smooth singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, so by \cref{R: cycles and boundaries} there is some $Z \in PC_*^\Gamma(\cup_\alpha U_\alpha)$ so that $\bd Z \amalg -\xi \in Q_*(\cup_\alpha U_\alpha)$.
+	But by compactness, there is some $\beta$ so that $Z$ and $\xi$ both have image in $U_\beta$.
 	So $\xi$ represents a class in $H_*(U_\beta)$ that maps to $0$ in $H_*^\Gamma(U_\beta)$.
 	As $\Phi$ is assumed an isomorphism on $U_\beta$, it must be that $\xi$ represents $0$ in $H_*(U_\beta)$, and so it also represents $0$ in $H_*(\cup_\alpha U_\alpha)$.
 
@@ -1489,12 +1558,14 @@ we have inclusion $SK^{sm}_i(M) \into PC_i^\Gamma(M)$ for all $i$.
 \end{proof}
 
 \cref{T: hom iso map} is claimed without proof in \cite[Section 10]{Lipy14}.
-Lipyanskiy states ``The fact that the natural maps induce isomorphisms follow from the standard Mayer--Vietoris arguments.'' However, these arguments are not given and, in fact, no Mayer--Vietoris sequence is proven to exist in \cite{Lipy14}, though the main required tool, creasing, is provided.
+Lipyanskiy states ``The fact that the natural maps induce isomorphisms follow from the standard Mayer--Vietoris arguments.'' However, these arguments are not given and no Mayer--Vietoris sequence is proven to exist in \cite{Lipy14}, though the main required tool, creasing, is provided.
 
 Unfortunately, providing a direct comparison for cohomology theories is not so straight forward as there is no obvious map between $C^*_\Gamma(M)$ and $S^*(M) = \Hom(S_*(M),\Z)$.
 It will take some work in the following sections to develop a geometric connection between these cohomology theories.
 
 \subsection{Appendix: smooth singular cubes}
+
+In this appendix, we show that normalized singular cubical chains and normalized smooth singular cubical chains provide the same homology theory, analogous to the case for the perhaps more familiar simplicial chains.
 
 \begin{proposition}\label{P: singular smooth cubes}
 	The inclusion $\psi: NK^{sm}_*(M) \into NK_*(M)$ is a chain homotopy equivalence.
@@ -1515,9 +1586,9 @@ It will take some work in the following sections to develop a geometric connecti
 		\item\label{I: faces} $H_{\sigma \delta_i^\epsilon} = H_\sigma \circ (\delta_i^\epsilon \times \id_\interval)$ so that the construction is compatible along faces.
 		More explicitly, $H_{\sigma \delta_i^\epsilon}(x,t) = H_\sigma(\delta_i^\epsilon(x),t)$.
 
-		\item If $\sigma$ is smooth then $H_{\sigma}(x,t) = \sigma(x)$, i.e.\ the homotopy is constant.
+		\item\label{I: already smooth} If $\sigma$ is already smooth then $H_{\sigma}(x,t) = \sigma(x)$, i.e.\ the homotopy is constant.
 
-		\item\label{I: degen} If $\sigma$ is independent of the coordinate $x_i$ then so is $H_\sigma$.
+		\item\label{I: degen} If $\sigma$ is independent of the coordinate $x_i$, then so is $H_\sigma$.
 	\end{enumerate}
 
 	The last condition, which we have added for cubes, ensures that if $\sigma$ is degenerate so will be $H_\sigma$ and $\td \sigma$.
@@ -1530,9 +1601,10 @@ It will take some work in the following sections to develop a geometric connecti
 	If $\sigma$ is not smooth, we consider separately the two cases when $\sigma$ is degenerate or nondegenerate.
 
 	First suppose $\sigma$ is not degenerate.
-	By the induction hypothesis and Condition \eqref{I: faces}, $H_\sigma$ is determined on $(\interval^k \times 0) \cup (\bd \interval^k \times \interval)$.
+	By the induction hypothesis and Condition \eqref{I: faces}, $H_\sigma$ is determined on the subspace $(\interval^k \times 0) \cup ((\bd \interval^k) \times \interval)$.
 	One can check as in the proof of \cite[Lemma 18.8]{Lee13} that Condition \eqref{I: faces} guarantees that the faces glue to form a continuous map.
-	As $\bd \interval^k \into \interval^k$ is a cofibration, there is a retraction $\interval^k \times \interval \to (\interval^k \times 0) \cup (\bd \interval^k \times \interval)$, and the composition determines a homotopy $F \colon \interval^k \times \interval \to M$ such that $F(-,1)$ is smooth on each $k-1$ face of $\bd \interval^k$.
+	As $\bd \interval^k \into \interval^k$ is a the inclusion of a CW subcomplex, it is a cofibration, so there is a retraction $\interval^k \times \interval \to (\interval^k \times 0) \cup ((\bd \interval^k) \times \interval)$ \cite[Theorem VII.1.3]{Bred97}.
+	The composition of the retraction with $H_\sigma$ as defined on the subspace determines a homotopy $F \colon \interval^k \times \interval \to M$ such that $F(-,1)$ is smooth on each $k-1$ face of $\bd \interval^k$.
 	In fact, this implies that $F(-,1)$ is smooth on all of $\bd \interval^k$ by a minor modification of \cite[Lemma 18.9]{Lee13}.
 	So by the Whitney Approximation Theorem \cite[Theorem 6.26]{Lee13}, there is a homotopy rel $\bd \interval^k$ from $F(-,1)$ to a smooth map $\td \sigma \colon \interval^k \to M$; we denote this homotopy $G$.
 	Finally, let $u \colon \interval^k \to (0,1]$ be a continuous function that takes $\bd\interval^k$ to $1$ and the interior of the cube to $(0,1)$.
@@ -1546,25 +1618,27 @@ It will take some work in the following sections to develop a geometric connecti
 	\end{equation*}
 	One can check as in the proof of \cite[Lemma 18.8]{Lee13} that this is a continuous homotopy that satisfies the first two conditions above, as required.
 
-	Next suppose $\sigma$ is degenerate, i.e.\ there is some coordinate $x_i$ so that $\sigma$ does not depend on $x_i$.
+	Next, suppose $\sigma$ is degenerate, i.e.\ there is some coordinate $x_i$ so that $\sigma$ does not depend on $x_i$.
 	Let $\pi_i \colon \interval^k\to\interval^{k-1}$ be given by $\pi_i(x_1,\ldots, x_k) = (x_1,\ldots, \hat x_i, \ldots, x_k)$ with the $x_i$ term omitted.
-	In this case we let $H_\sigma(x,t) \defeq H_{\sigma \delta_i^0}(\pi_i(x),t) = H_{\sigma \delta_i^1}(\pi_i(x),t)$.
+	In this case, we define $H_\sigma(x,t)$ by
+	\[H_\sigma(x,t) = H_{\sigma \delta_i^0}(\pi_i(x),t) = H_{\sigma \delta_i^1}(\pi_i(x),t).\]
+	The two expressions on the right are equal due to $\sigma$ not depending on $x_i$.
 	We claim that if there are multiple coordinates of which $\sigma$ is independent then this definition is independent of the choice of such coordinate.
 	This is clear for $1$-cubes for which there is only one possible coordinate.
-	Suppose then the claim proven in dimensions $<k$ and that $\sigma \colon \interval^k \to M$ is independent of $x_i$ and $x_j$ with $j<i$.
+	Suppose then the claim proven in dimensions $<k$ and that $\sigma \colon \interval^k \to M$ is independent of $x_j$ and $x_i$ with $j<i$.
 	Since $\sigma$ is independent of $x_j$, so is $\sigma \circ \delta_i^0$, so inductively $H_{\sigma \delta_i^0}(\pi_i(x),t) = H_{\sigma \delta_i^0\delta_j^0}(\pi_j\pi_i(x),t)$.
 	Similarly, using that the $i$th coordinate of the cube is the $i-1$-st coordinate of the $j$th faces, we have $H_{\sigma \delta_j^0}(\pi_j(x),t) = H_{\sigma \delta_j^0\delta_{i-1}^0}(\pi_{i-1}\pi_j(x),t)$.
 	But $\delta_i^0\delta_j^0$ and $\delta_j^0\delta_{i-1}^0$ determine the same $k-2$ face of $\interval^k$, and $\pi_j\pi_i(x) = \pi_{i-1}\pi_j(x)$.
 	So both constructions give the same $H_\sigma$.
 
-	In this case, Conditions \eqref{I: smooth} and \eqref{I: degen} hold by construction and by induction.
+	With this definition of $H_\sigma$, Conditions \eqref{I: smooth}, \eqref{I: already smooth}, and \eqref{I: degen} hold by construction and by induction.
 	We must verify Condition \eqref{I: faces}.
 	If $\sigma$ is independent of $x_i$, the condition is clear by construction for the faces $\sigma\delta_i^0$ and $\sigma\delta_i^1$.
 	For $j\neq i$, first suppose $i<j$.
-	As $\sigma$ is independent of $x_i$, so is $\sigma\delta^j_\epsilon$, so
+	As $\sigma$ is independent of $x_i$, so is $\sigma\delta_j^\epsilon$, so
 	\begin{align*}
 		H_{\sigma\delta_j^\epsilon}(x,t)& = H_{\sigma\delta_j^\epsilon \delta_i^0}(\pi_i(x),t)\\
-		& = H_{\sigma \delta_i^0\delta^{j-1}_\epsilon}(\pi_i(x)),t)\\
+		& = H_{\sigma \delta_i^0\delta_{j-1}^\epsilon}(\pi_i(x)),t)\\
 		& = H_{\sigma \delta_i^0}(\delta_{j-1}^\epsilon\pi_i(x)),t)\\
 		& = H_{\sigma \delta_i^0}(\pi_i(\delta_j^\epsilon(x)),t)\\
 		& = H_\sigma(\delta_j^\epsilon(x),t).
@@ -1584,24 +1658,33 @@ It will take some work in the following sections to develop a geometric connecti
 		& = H_\sigma(\delta_j^\epsilon(x),t).
 	\end{align*}
 
-	This completes our construction of the homotopies $H_\sigma$.
+	This completes our construction of the homotopies $H_\sigma$ satisfying the desired conditions.
 	We can now define $\td s \colon SK_*(M) \to SK^{sm}_*(M)$ by $\td s(\sigma) = H_\sigma(-,1)$.
-	Then if $\td \psi: SK_*^{sm}(M) \to SK_*(M)$ is the inclusion, we have by definition that $\td s \td \psi = \id$.
-	We show that $\td\psi\td s$ is chain homotopic to the identity\footnote{Here, finally, is a step that is easier in the cubical setting as we do not need to subdivide prisms into simplices.}.
+	This is a chain map thanks to Condition \eqref{I: faces}:
+	\begin{align*}
+	\bd \td s(\sigma) &= \bd H_\sigma(-,1)\\
+	&=\sum_{i=1}^k (-1)^i (H_\sigma(-,1) \delta_i^0 - H_\sigma(-,1) \delta_i^1)\\
+	&=\sum_{i=1}^k (-1)^i (H_{\sigma \delta_i^0}(-,1) - H_{\sigma \delta_i^1}(-,1))\\
+	&=\sum_{i=1}^k (-1)^i (\td s(\sigma \delta_i^0) - \td s(\sigma \delta_i^1))\\
+	&= \td s(\bd \sigma).
+	\end{align*}
+
+	If $\td \psi: SK_*^{sm}(M) \to SK_*(M)$ is the inclusion, we have by definition that $\td s \td \psi = \id$.
+	We show that $\td\psi\td s$ is chain homotopic to the identity.\footnote{Here, finally, is a step that is easier in the cubical setting as we do not need to subdivide prisms into simplices.}
 	Indeed, if $\sigma$ is a singular $k$-cube then treating $H_\sigma$ as a singular $k+1$ cube we have
 
 	\begin{align*}
 		\bd H_\sigma& = \sum_{i = 1}^{k+1} (-1)^i\left(H_\sigma \delta_i^0-H_\sigma \delta^1_i\right)\\
 		& = \left(\sum_{i = 1}^{k} (-1)^i\left(H_\sigma (\delta_i^0 \times \id_\interval)-H_\sigma (\delta^1_i \times \id_\interval)\right)\right) +(-1)^{k+1}(H_\sigma(-,0)-H_\sigma(-,1))\\
-		& = \left(\sum_{i = 1}^{k} (-1)^i\left(H_{\sigma \delta_i^0}-H_{\sigma\delta^1_i}\right)\right) +(-1)^{k+1}(\sigma(-)-\td \psi\td s(\sigma)).
+		& = \left(\sum_{i = 1}^{k} (-1)^i\left(H_{\sigma \delta_i^0}-H_{\sigma\delta^1_i}\right)\right) +(-1)^{k+1}(\sigma -\td \psi\td s(\sigma)).
 	\end{align*}
-	So if we define $\td J(\sigma) = (-1)^{k+1}H_\sigma$, we obtain
+	So if we define $\td J(\sigma) = (-1)^{k+1}H_\sigma$ for a singular $k$-cube $\sigma$, we obtain
 	\begin{align*}
 		(-1)^{k+1}\bd \td J(\sigma)& = \left(\sum_{i = 1}^{k} (-1)^i\left( (-1)^k\td J(\sigma \delta_i^0)-(-1)^k\td J(\sigma\delta^1_i)\right)\right) +(-1)^{k+1}\left(\sigma(-)-\td \psi\td s(\sigma)\right)\\
-		& = (-1)^k\td J(\bd \sigma)+(-1)^{k+1}(\sigma(-)-\td \psi\td s(\sigma)),
+		& = (-1)^k\td J(\bd \sigma)+(-1)^{k+1}(\sigma - \td \psi\td s(\sigma)),
 	\end{align*}
-	so $$\bd \td J(\sigma)+\td J(\bd \sigma) = \sigma(-,0)-\td \psi\td s(\sigma),$$
+	so $$\bd \td J(\sigma)+\td J(\bd \sigma) = \sigma - \td \psi\td s(\sigma),$$
 	which shows that $\td \psi\td s$ is chain homotopic to the identity.
 
-	Finally, we note that, by definition and construction, $\td \psi$, $\td s$, and $\td J$ all take degenerate simplices to degenerate simplices so that these descend to chain maps $\psi \colon NK_*^{sm}(M) \to NK_*(M)$ and $s \colon NK_*(M) \to NK_*^{sm}(M)$ with $s\psi = \id$ and a chain homotopy $J \colon NK_*(M) \to NK_{*+1}(M)$.
+	Finally, we note that $\td \psi$, $\td s$, and $\td J$ all take degenerate simplices to degenerate simplices by definition and construction, so $\td \psi$ and $\td s$  descend to chain maps $\psi \colon NK_*^{sm}(M) \to NK_*(M)$ and $s \colon NK_*(M) \to NK_*^{sm}(M)$ with $s\psi = \id$ and $\td J$ descends to a chain homotopy $J \colon NK_*(M) \to NK_{*+1}(M)$.
 \end{proof}
