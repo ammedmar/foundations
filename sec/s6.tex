@@ -56,6 +56,25 @@ For $\varepsilon \in \{0, 1\}$ and $i \in \overline{n}$, we define maps $\delta_
 \end{align*}
 Any composition of these is referred to as a \textbf{face inclusion map}.
 
+We also have projection maps $\pi_i \colon \interval^n \to \interval^{n-1}$ such that
+\[\pi_i(x_1, \ldots, x_n) = (x_1, \ldots, \hat x_i, \ldots, x_n),\]
+with $\hat x_i$ as usual denoting the omission of the $x_i$ term.
+Analogous to the face and degeneracy identities for simplicial sets, these operators satisfy the following relations \cite[Section 4]{GrMa03} (it is also easy and illuminating to work these out on one's own):
+
+\[
+	\begin{array}{rlc}
+		\delta_j^\eta \delta_i^\varepsilon &= \delta_{i+1}^\varepsilon \delta_j^\eta, &j\leq i,\\
+		\pi_i \pi_j &= \pi_j \pi_{i+1}, & j \leq i,\\
+		\pi_j \delta^\varepsilon_i &=
+			\begin{cases}
+				\delta_{i-1}^\varepsilon \pi_j, \\
+				\id,\\
+				\delta_i^\varepsilon \pi_{j-1},
+			\end{cases}
+		&\begin{array}{lll}j<i, \\ j=i, \\ j>i.  \end{array}
+	\end{array}
+\]
+
 For $v \in \vertices(\interval^n)$ all coordinates are bound -- that is, $v_{01} = \emptyset$.
 Thus
 $v$ is determined by the partition of $\overline n$ into $v_0$ and $v_1$, so
