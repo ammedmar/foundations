@@ -528,6 +528,14 @@ Furthermore, in a neighborhood of $x$ the co-orientation of $r_W$ determines an 
 	For the second equality, we use \cref{P: Leibniz cap} together with the facts that the augmentations are both trivial unless $\dim(W \times_M f) = 1$ and that $\aug(\bd (W \times_M F)) = 0$.
 \end{proof}
 
+\begin{example}\label{E: coho 0 generator}
+	Let $M$ be any connected manifold without boundary and given a cubulation $X$, let $\uW \in C^*_{\Gamma \pf X}(M)$ be represented by the tautologically co-oriented identity map $M \to M$, and let $v$ be a (positively-oriented) $0$-dimensional vertex of $X$.
+	By \cref{P: cap with 1}, we have $M \times_M v = v$, and so
+	\[\mc I(\uW)(v) = \aug(M \times_M v) = \aug(v) = 1.\]
+	In other words, $\mc I(\uW)$ takes the value $1$ on each vertex of $X$, so it is the standard generator of $H^0(K^*_X(M)) \cong \Z$.
+	It will therefore follow from \cref{T: intersection qi}, below, that the tautologically co-oriented identity map $M \to M$ generates $H^0_\Gamma(M) \cong \Z$, as promised in \cref{E: first examples}.
+\end{example}
+
 Our goal now is to show that the intersection map $\mc I$ induces an isomorphism $H^i_{\Gamma \pf X}(M) \to H^i(K^*(M))$ whenever $H^i_\Gamma(M)$ and $H^i(K^*(M))$ are finitely generated.
 Recall that we already know these groups are abstractly isomorphic by \cref{T: transverse complex,T: geometric is singular} and the footnote on page \pageref{FN: cubical and singular}.
 We begin in the next section by using the cubical structure to start building an inverse map.
