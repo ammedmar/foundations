@@ -1095,7 +1095,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jW}$ are proper maps, so $W_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Proposition I.10.1.1]{Bou98}).
 
 	Now, suppose $(x,z) \in X \times \bar B^n_L$.
-	As $f \times \id_{\R^n} = H_1(-,0) \times \id_{\R^n}$ is transverse $e \colon W \to M \times \R^n$, either $(r_X(x),z)\notin W_j$ or $r_X \times \id_{\R^n}$ is (plainly) transverse to $ei_{\bd^jW}$ at $(r_X(x),z)$.
+	As $f \times \id_{\R^n} = H_1(-,0) \times \id_{\R^n}$ is transverse $e \colon W \to M \times \R^n$, either $(r_X(x),z)\notin W_j$ or $r_X \times \id_{\R^n}$ is (naively) transverse to $ei_{\bd^jW}$ at $(r_X(x),z)$.
 	In the former case, as $W_j$ is closed, there is an open neighborhood $A_{(x,z)}$ of $(x,0,z) \in X \times D^N \times \R^n$ such that $(H_1 \times \id_{\R^n})(A_x) \cap W_j = \emptyset$.
 	Now suppose that $(r_X(x),z) \in W_j$ and is transverse there to $ei_{\bd^jW} \colon \bd^jW \to M \times \R^n$.
 	As $e$ is an embedding, the preimage of $(r_X(x),z)$ in $\bd^jW$ is the preimage of a point of $W$ under the boundary map $i_{\bd^jW}$, which is a finite set of points.
@@ -1111,7 +1111,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	Now, taking the union of the $A_{(x,z)}$ over all $(x,z) \in X \times \bar B^n_L$ gives a neighborhood $G_j$ of $X \times 0 \times \bar B^n_L$ in $X \times D_{1/2}^N \times \bar B^n_L$, and by the Tube Lemma, as $X \times \bar B^n_L$ is compact, there is a neighborhood of $X \times 0 \times \bar B^n_L$ of the form $X \times U_j \times \bar B^n_L$ in $G_j$.
 	For each $s \in U_j$, we have $H_1(-,s) \times \id_{\R^n}:X \times \bar B^n_L \to M \times \R^n$ transverse to $ei_{\bd^jW}$.
 	Furthermore, by the choice of $\bar B^n_L$, the map $H_1(-,s) \times \id_{\R^n}$ takes no point of $X \times \R^n$ that is in the complement of $X \times \bar B^n_L$ to the image of $W$.
-	Repeating the argument for all of the finite $j$ such that $\bd^jW\neq \emptyset$ and taking $U = \cap_j U_j$, we obtain a neighborhood of $0$ in $D_{1/2}^N$ on which $H_1(-,s) \times \id_{\R^n}:X \times \R^n \to M \times \R^n$ is (plainly) transverse to all $ei_{\bd^jW}$.
+	Repeating the argument for all of the finite $j$ such that $\bd^jW\neq \emptyset$ and taking $U = \cap_j U_j$, we obtain a neighborhood of $0$ in $D_{1/2}^N$ on which $H_1(-,s) \times \id_{\R^n}:X \times \R^n \to M \times \R^n$ is (naively) transverse to all $ei_{\bd^jW}$.
 	By the same argument, we can then find an even smaller $U$ such that $H_k(-,s) \times \id_{\R^n} \colon \bd^{k}V \times \R^n \to M \times \R^n$ is (simply) transverse to all $ei_{\bd^jW}$ for all $k\geq 1$.
 
 	This completes the proof of the proposition for $V$ compact.
@@ -1125,7 +1125,7 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 	Choosing a $W_j$ as above and taking the union of the resulting $A_{(x,z)} \subset X \times D_{1/2}^N \times \R^n$ over all $(x,z) \in K \times \bar B^n_L$ and intersecting with $K \times D^N \times \bar B^n_L$ gives an open neighborhood $G_j$ of $K \times 0 \times \bar B^n_L$ in $K \times D^N \times \bar B^n_L$, such that
 	$H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ for all $(x,z) \in K \times \bar B^n_L$.
 	Again we can use the Tube Lemma to find a neighborhood $U_j$ of $0$ in $D^N$ so that $K \times U_j \times \bar B^n_L \subset G_j$, and then for every $s \in U_k$, we know that $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ at every point of $K \times \R^n$, as points of $K \times \R^n$ outside of $K \times \bar B^n_L$ do not intersect $W_j$.
-	Now, as above, by ranging over all of the finite options for $j$ and $k$, we can then find a neighborhood $U$ of $0$ in $D^N_{1/2}$ such that for all $s \in U$ we have $H_k(-,s) \times \id_{\R^n}$ (plainly) transverse to all $ei_{\bd^jW}$ at all points of $\bd^kV \times \R^n$, $k\geq 1$, that map to $K \times \R^n$ via the boundary immersions.
+	Now, as above, by ranging over all of the finite options for $j$ and $k$, we can then find a neighborhood $U$ of $0$ in $D^N_{1/2}$ such that for all $s \in U$ we have $H_k(-,s) \times \id_{\R^n}$ (naively) transverse to all $ei_{\bd^jW}$ at all points of $\bd^kV \times \R^n$, $k\geq 1$, that map to $K \times \R^n$ via the boundary immersions.
 
 	Let $\{\mc U_\ell\}$ be a locally finite covering of $M$ such that each $\bar{\mc U_\ell}$ is compact.
 	As $f \colon V \to M$ and $r_X = f \circ i_{X}$ are proper, each $r^{-1}_X(\bar {\mc U_\ell})$ is compact in $X$.

@@ -195,39 +195,39 @@ If $M = \R$ and $g$ is the inclusion of the point $p$ into $\R$, we will say tha
 While this definition of transversality is given in terms of the behavior of $f$ and $g$ on the strata $S^j(V)$ and $S^k(W)$, it is sometimes useful to have a reformulation in terms of the boundaries $\bd^j V$ and $\bd^kW$.
 This is the content of \cref{L: simple trans} below, for which we need a further definition.
 
-\begin{definition}\label{D: plain transversality}
+\begin{definition}\label{D: naive transversality}
 Let $f \colon V \to M$ and $g \colon W \to M$ be maps from manifolds with corners to a manifold without boundary.
-We say that $f$ and $g$ are \textbf{plainly transverse} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$ we have $Df(T_xV)+Dg(T_yW) = T_z M$. Note that $x$ and $y$ may be boundary points of $V$ and $W$, the maps $Df$ and $Dg$ being those of \cite[Definition 3.2]{Joy12}.
+We say that $f$ and $g$ are \textbf{naively transverse} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$ we have $Df(T_xV)+Dg(T_yW) = T_z M$. Note that $x$ and $y$ may be boundary points of $V$ and $W$, the maps $Df$ and $Dg$ being those of \cite[Definition 3.2]{Joy12}.
 \end{definition}
 
 \begin{comment}
 To be explicit in the case that $x \in V-S^0(V)$ or $y \in W-S^0(W)$ with $f(x) = g(y)$, let $(U_x,\phi_x)$ and $(U_y,\phi_y)$ be charts with $\phi_x(0) = x$ and $\phi_y(0) = y$.
 By definition of smoothness, there exist neighborhoods $N_x$ and $N_y$ of $0$ in $\R^v$ and $\R^w$, respectively, so that $f\phi_x$ and $g\phi_y$ extend to smooth maps $\psi_x \colon N_x \to M$ and $\psi_y \colon N_y \to M$.
-Then $f$ and $g$ are plainly transverse at $x$ and $y$ if $D\psi_x(T_0 \R^v)+D\psi_y(T_0\R^w) = T_{f(x)}M$.
+Then $f$ and $g$ are naively transverse at $x$ and $y$ if $D\psi_x(T_0 \R^v)+D\psi_y(T_0\R^w) = T_{f(x)}M$.
 This property is independent of the involved choices as $D\psi_x(T_0 \R^v)$ is the limit of $D\psi_x(T_{a} \R^v)$ for $a$ taken along any smooth path in $U_x$, and this does not depend on the choice of $N_x$ or $\psi_x$, and similarly for $\psi_y$.
 \end{comment}
 
 \begin{lemma}\label{L: simple trans}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be maps from manifolds with corners to a manifold without boundary.
-	Then $f$ and $g$ are transverse if and only if $fi_{\bd^j} \colon \bd^jV \to M$ and $gi_{\bd^k} \colon \bd^kW \to M$ are plainly transverse for all $j,k$.
+	Then $f$ and $g$ are transverse if and only if $fi_{\bd^j} \colon \bd^jV \to M$ and $gi_{\bd^k} \colon \bd^kW \to M$ are naively transverse for all $j,k$.
 \end{lemma}
 
 Note that, a priori, the latter is a stronger condition as it imposes conditions not just on the interior of strata but on their closures.
 
 \begin{proof}
-	First suppose $fi_{\bd^j}$ and $gi_{\bd^k}$ are plainly transverse for all $j,k$.
+	First suppose $fi_{\bd^j}$ and $gi_{\bd^k}$ are naively transverse for all $j,k$.
 	Suppose $x \in S^j(V)$ and $y \in S^k(W)$ for some fixed $j,k$ and $f(x) = g(y)$.
 	The preimage of $x$ under $i_{\bd^j}$ consists of $j!$ points in $S^0(\bd^jV)$, and $i_{\bd^j}$ maps a neighborhood of each such preimage point diffeomorphically to a neighborhood of $x$ in $S^j(V)$, and similarly for $y$.
 	Let $\psi_x$ be the inverse diffeomorphism from a neighborhood of $x$ in $S^j(V)$ to a neighborhood of one of the preimages.
 	Then $f|_{S^j(V)} = fi_{\bd^j}\psi_x$ in a neighborhood of $x$, and similarly for $y$.
-	Since $fi_{\bd^j}$ and $gi_{\bd^k}$ are plainly transverse, and $\psi_x$ and $\psi_y$ are diffeomorphisms, it follows that $f|_{S^j(V)}$ and $g|_{S^k(W)}$ are transverse at $f(x) = g(y)$.
+	Since $fi_{\bd^j}$ and $gi_{\bd^k}$ are naively transverse, and $\psi_x$ and $\psi_y$ are diffeomorphisms, it follows that $f|_{S^j(V)}$ and $g|_{S^k(W)}$ are transverse at $f(x) = g(y)$.
 
 	Conversely, suppose $f|_{S^j(V)}$ and $g|_{S^k(W)}$ are transverse for all $j,k$, and suppose $x \in \bd^jV$ and $y \in \bd^kW$ for some fixed $j,k$ with $fi_{\bd^j}(x) = gi_{\bd^k}(y) = z$.
 	Furthermore, suppose $i_{\bd^j}(x) \in S^a(V)$ and $i_{\bd^k}(y) \in S^b(W)$, which implies $x \in S^{a-j}(\bd^j V)$.
 	By focusing on local charts, there is a neighborhood of $x$ in $\bd^j(V)$ whose intersection with $S^{a-j}(\bd^j V)$ maps diffeomorphically via $i_{\bd^j}$ onto a neighborhood of $i_{\bd^j}(x)$ in $S^a(V)$, and analogously for $y$.
 	Thus, $f|_{S^a(V)}i_{\bd^j}|_{S^{a-j}(\bd^j V)}$ and the analogous $g|_{S^b(W)}i_{\bd^k}|_{S^{b-k}(\bd^k W)}$ are transverse at $f(x) = g(y)$ as they precompose transverse maps with local diffeomorphisms.
 	But the image of $D_x(fi_{\bd^j})$ contains the image of $D_x(f|_{S^j(V)}i_{\bd^j}|_{S^{a-j}(\bd^j V)})$ and similarly for $y$, and thus the images of $D_x(fi_{\bd^j})$ and $D_y(gi_{\bd^k})$ must also span $T_{z}M$.
-	Therefore, $fi_{\bd^j}$ and $gi_{\bd^k}$ are plainly transverse at $f(x)$.
+	Therefore, $fi_{\bd^j}$ and $gi_{\bd^k}$ are naively transverse at $f(x)$.
 \end{proof}
 
 \subsubsection{Achieving transversality}
@@ -507,7 +507,7 @@ We will see versions of this formula below that take into account orientations a
 \subsubsection{Some further properties of transversality and fiber products}
 
 In this section we mostly collect some well-known, though not always easy to find in the literature, results about transversality and fiber products.
-We state these results mainly in the classical setting of manifolds without boundary, though they generally extend to the case of transverse maps of manifolds with corners mapping to a manifold without boundary, either by applying them to the pairwise transverse strata or by thinking in terms of the ``plain transversality'' of \cref{D: plain transversality}.
+We state these results mainly in the classical setting of manifolds without boundary, though they generally extend to the case of transverse maps of manifolds with corners mapping to a manifold without boundary, either by applying them to the pairwise transverse strata or by thinking in terms of the ``naive transversality'' of \cref{D: naive transversality}.
 
 \begin{lemma}[Tangent spaces of pullbacks]\label{L: tangent of pullbacks}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds with corners to a manifold without boundary.
