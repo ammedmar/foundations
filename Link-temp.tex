@@ -47,6 +47,11 @@
 \newarrow{ul}---->
 \newarrow{Backwards}<----
 
+\newcommand{\uW}{\underline{W}}
+\newcommand{\udW}{\underline{\partial W}}
+\newcommand{\uV}{\underline{V}}
+\newcommand{\uM}{\underline{M}}
+\newcommand{\uN}{\underline{N}}
 
 \newcommand{\ilim}{\varprojlim}
 \newcommand{\Lk}{\textup{Lk}}
@@ -56,6 +61,8 @@
 \newcommand{\hra}{\hookrightarrow}
 \newcommand{\Td}[1]{\Tilde{#1}}
 \newcommand{\td}[1]{\tilde{#1}}
+\newcommand{\mr}[1]{\mathring{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
 \newcommand{\into}{\hookrightarrow}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\X}{\mathbb{X}}
@@ -275,6 +282,65 @@ Of course the real power of geometric cohomology is that we can also derive cons
 For example, if it is possible to choose Seifert surfaces $S_a$ simultaneously that are disjoint or intersect only in closed curves, then all cup product on $H^1_\Gamma(M)$ vanish.
 On the other hand, if two Seifert surfaces $S_a$ and $S_b$ intersect in just an arc between $L_a$ and $L_b$, then this corresponds to the cup product of two generators of $H^1_\Gamma(M)$ being a generator of $H^2_\Gamma(M)$.
 \end{comment}
+
+
+--------------------------------------------
+Alex
+
+We saw in \cref{T: PD} that Poincar\'e duality takes a very strong chain-level form in the world of geometric chains and cochains.
+It is not clear that we can provide quite the same chain-level version of Alexander duality, but nonetheless the duality in homology and cohomology can be expressed by pleasingly geometric maps, at least when our subspaces of $S^n$ are taken to be embedded submanifolds.
+This is the case, for example, when studying links.
+
+So for this section let us assume an underlying sphere $S^n$ and subspace $L$ that is the union of smoothly embedded closed manifolds, not necessarily of the same dimension.
+We recall that Alexander duality is the statement that $\td H_i(L) \cong \td H^{n-i-1}(S^n-L)$ for all $i \geq 0$.
+The standard proof REF proceeds by using relative homology, Lefschetz duality, excision, and some homotopy equivalences. We will define two maps that will be inverses in most dimensions, though we'll have to take some extra care when $i=0$ or $n-i$.
+
+First, let $\mc K_i = \ker(H_i^\Gamma(L) \to H_i^\Gamma(S^n)$, where the map is induced by the inclusion $L \into S^n$.
+In all degrees $i>0$, this will simply be $H_i(\Gamma(L))$.
+For $0<i<n$, this follows immediately from the computation of the homology of spheres REF.
+In dimension $n$, we observe that $H_n^\Gamma(L) = 0$ by \cref{E: dimension range}, as all the manifold components of $L$ must have dimension $<n$.
+In degree $0$, if $L$ has $\ell$ components, we have the obvious surjection $H_0^\Gamma(L) \cong \Z^\ell
+\to H_0^\Gamma(S^n) \cong \Z$, so the kernel $\mc K_0$ is isomorphic to $\Z^{\ell-1}$.
+Generators of $\mc K_0$ can be represented by prechains consisting of pairs of points in separate components of $L$ with opposite orientations, as if they were in the same component then they would represent $0$ in $H_0^\Gamma(L)$.
+If $g_{ij}$ is a homology class represented by a prechain with a positive point in component $L_i$ and a negative point in component $L_j$, then we also have the relations $g_{ij}+g_{jk}=g_{ik}$.
+So we can take $\mc K_0$ to be the free abelian group on generators $g_{1i}$ of $i>1$ or on generators $g_{i,i+1}$ for $1\leq i\leq \ell-1$.
+
+Now, let $V$ be a prechain representing an element of $\mc K_i$.
+We can think of $V$ as being a prechain in $L$ or in $S^n$, and as it represents the trivial homology class in $S^n$, there is by \cref{R: cycles and boundaries} some $Z \in PC^\Gamma_{i+1}(S^n)$ such that $\bd Z \amalg -V \in Q_*(S^n)$.
+Now let $\mathring Z = r_Z^{-1}(S^n-L)$, and let $\mathring r_Z$ be the restriction of $r_Z$ to be a map from $\mathring Z$ to $S^n-L$.
+The space $\mathring Z$ is an open subset of $Z$, and so it is a manifold with corners.
+As $Z$ and $S^n$ are oriented, we have the induced co-orientation on $r_Z$ and hence on $\mathring r_Z$.  We also note that $\mathring r_Z$ is proper: if $C \subset S^n-L$ is compact, then $r_Z^{-1}(C) = \mathring r_Z^{-1}(C)$ is compact, as all maps with compact domains are proper.
+Alternatively, we can observe that $\mr r_Z$ is simply the pullback to $S^n-L$ of $Z$ after we convert it to a precochain by taking the induced co-orientation.
+So $\mathring r_Z \colon \mathring Z \to S^N - L$ is a precochian.
+In fact, it is a precocyle, as by \cite{leibniz} we know $\bd{\mr Z}$ is the pullback to the boundaryless $S^n-L$ of $\bd Z$, which is in $Q^*(S^n-L)$ because $\bd Z \amalg -V$ pulls back to an element of $Q(S^n-L)$ by \cref{L: pullback map Q}, while the pullback of $V$ is $\emptyset$.
+We will show that this construction gives a well defined homomorphism $\mc Z \colon \mc K_i \to H^{n-i-1}_\Gamma(S^n-L)$.
+
+\begin{proposition}
+The map $\mc Z \colon \mc K_i \to H^{n-i-1}_\Gamma(S^n-L)$ is a well-defined homomorphism.
+In particular, it does not depend on the choices involved in the definition.
+\end{proposition}
+\begin{proof}
+Once we show that $\mc Z$ is independent of the specific choices of $V$ (representing $\uV \in H_i(L)$) and $Z$, it will follow immediately that $\mc Z$ is a homomorphism as given $V,W\in PC_i^\Gamma(L)$ representing homology classes and $Z$ and $Y$ as constructed above from $V$ and $W$ respectively, then we may represent $\mc Z(\uV + \uW)$ by $\mathring Z \amalg \mr Y$, which will represent $\underline{\mr Z}+\underline{\mr Y}\in H^{n-i-1}_\Gamma(S^n-L)$.
+
+So suppose that $V,V' \in PC_i^\Gamma(L)$ represent the same homology class $\uV$ in $\mc K_i$, possibly with $V = V'$.
+Let $Z,Z' \in PC_{i+1}(S^n)$ be such that $\bd Z \amalg -V, \bd Z' \amalg -V' \in Q_*(S^n)$.
+As $\uV=\underline{V'} \in H_i^\Gamma(L)$, there is an $S \in PC_{i+1}(L)$ such that $\bd S \amalg -V \amalg V' \in Q_*(L)$.
+We note that prechains in $Q_*(L)$ also represent elements of $Q_*(S^n)$.
+So now consider $S \amalg -Z \amalg Z'$.
+By taking boundaries and rearranging, we have $$\bd (S \amalg -Z \amalg Z')\amalg -V \amalg V' \amalg V \amalg -V' = (\bd S \amalg -V \amalg V')\amalg -(\bd Z \amalg -V) \amalg (Z'\amalg -V')\in Q_*(S^n).$$
+But  $-V \amalg V' \amalg V \amalg -V'$ is trivial, so by \cref{L: Lipy12} we have $S \amalg -Z \amalg Z'\in Q_*(S^n)$, i.e.\ $S \amalg -Z \amalg Z'$ represents an $i+1$ cycle by \cref{R: cycles and boundaries}.
+
+We first suppose $i+1\neq n$, so that $H_{i+1}^\Gamma(S^n) = 0$ and there exists $Y \in PC_{i+1}(S^n)$ such that $\bd Y \amalg -(S \amalg -Z \amalg Z') \in Q_*(S^n)$.
+Let us now restrict to $S^n-L$ by converting orientations of domains to the induced co-orientations of their maps and then performing the pullback to $S^n-L$.
+As $S$ maps into $L$, we have $\mr S = \emptyset$.
+As pullbacks of elements in $Q$ remain in $Q$ by \cref{L: pullback map Q} and using the Leibniz rule \cred{leibniz}, we obtain that $$\bd \mr Y \amalg \pm (-\mr Z \amalg \mr Z') \in Q_*(S^n-L).$$
+The $\pm$ allows us to avoid thinking about any signs that might be introduced by switching from chains to cochains in two different indices, and it is sufficient for $\mr Z$ and $\mr Z'$ to represent the same cohomology class, again by \cref{R: cycles and boundaries}.
+
+
+
+
+\end{proof}
+
 
 
 
