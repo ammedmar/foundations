@@ -288,13 +288,14 @@ On the other hand, if two Seifert surfaces $S_a$ and $S_b$ intersect in just an 
 Alex
 
 We saw in \cref{T: PD} that Poincar\'e duality takes a very strong chain-level form in the world of geometric chains and cochains.
-It is not clear that we can provide quite the same chain-level version of Alexander duality, but nonetheless the duality in homology and cohomology can be expressed by pleasingly geometric maps, at least when our subspaces of $S^n$ are taken to be embedded submanifolds.
-This is the case, for example, when studying links.
+It is not clear that we can provide quite the same chain-level version of Alexander duality, but nonetheless the Alexander duality isomorphisms can be expressed in geometric homology and cohomology by pleasingly geometric maps, at least when our subspaces of $S^n$ are taken to be embedded submanifolds.
+This is the case, for example, when studying classical link theory.
 
-So for this section let us assume an underlying sphere $S^n$ and subspace $L$ that is the union of smoothly embedded closed manifolds, not necessarily of the same dimension.
-We recall that Alexander duality is the statement that $\td H_i(L) \cong \td H^{n-i-1}(S^n-L)$ for all $i \geq 0$.
-The standard proof REF proceeds by using relative homology, Lefschetz duality, excision, and some homotopy equivalences. We will define two maps that will be inverses in most dimensions, though we'll have to take some extra care when $i=0$ or $n-i$.
+So for this section let us assume an underlying sphere $S^n$ and subspace $L$ that is the union of smoothly embedded closed manifolds $L_i$, not necessarily of the same dimension, such that each has a tubular neighborhood $U_i$ with $U_i \cap U_j = \emptyset$ for $i \neq j$.
+In this context, we will show the Alexander duality statement that $\td H_i(L) \cong \td H^{n-i-1}(S^n-L)$ for all $i \geq 0$.
+The standard proof proceeds by using relative homology, Lefschetz duality, excision, and some homotopy equivalences. We will define two maps that will be inverses in most dimensions, though we'll have to take some extra care when $i=0$ or $n-i$.
 
+\begin{comment}
 First, let $\mc K_i = \ker(H_i^\Gamma(L) \to H_i^\Gamma(S^n)$, where the map is induced by the inclusion $L \into S^n$.
 In all degrees $i>0$, this will simply be $H_i(\Gamma(L))$.
 For $0<i<n$, this follows immediately from the computation of the homology of spheres REF.
@@ -304,52 +305,230 @@ In degree $0$, if $L$ has $\ell$ components, we have the obvious surjection $H_0
 Generators of $\mc K_0$ can be represented by prechains consisting of pairs of points in separate components of $L$ with opposite orientations, as if they were in the same component then they would represent $0$ in $H_0^\Gamma(L)$.
 If $g_{ij}$ is a homology class represented by a prechain with a positive point in component $L_i$ and a negative point in component $L_j$, then we also have the relations $g_{ij}+g_{jk}=g_{ik}$.
 So we can take $\mc K_0$ to be the free abelian group on generators $g_{1i}$ of $i>1$ or on generators $g_{i,i+1}$ for $1\leq i\leq \ell-1$.
+\end{comment}
 
-Now, let $V$ be a prechain representing an element of $\mc K_i$.
-We can think of $V$ as being a prechain in $L$ or in $S^n$, and as it represents the trivial homology class in $S^n$, there is by \cref{R: cycles and boundaries} some $Z \in PC^\Gamma_{i+1}(S^n)$ such that $\bd Z \amalg -V \in Q_*(S^n)$.
-Now let $\mathring Z = r_Z^{-1}(S^n-L)$, and let $\mathring r_Z$ be the restriction of $r_Z$ to be a map from $\mathring Z$ to $S^n-L$.
+\paragraph{Homology to cohomology.} We first define the map from homology to cohomology.
+
+Let $V$ be a prechain representing an element of $\td H_i^\Gamma(L)$.
+We first observe that $V$ represents the $0$ element of $H_i^\Gamma(S^n)$ when we consider $L$ as a subset of $S_n$.
+This is trivial when $i \neq 0,n$ as then $H_i^\Gamma(S^n)=0$.
+When $i = n$, we have $H_n^\Gamma(L) = 0$ by \cref{E: dimension range}, as all the manifold components of $L$ must have dimension $<n$.
+For $i=0$, we recall from \cref{R: reduced h} that the generators of $\td H_0^\Gamma(L)$ can be represented by prechains $g_{ij}$, each consisting of a pair of oppositely-oriented points in separate components of $L$.
+As we can connect such a pair with a path in $S^n$, the $g_{ij}$ each represent $0$ in $H_0^\Gamma(S^n)$.
+
+So each prechain $V$ that represents an element of $\td H_i^\Gamma(L)$ represents the $0$ homology class in $S^n$. By \cref{R: cycles and boundaries}, there is thus some $Z \in PC^\Gamma_{i+1}(S^n)$ such that $\bd Z \sqcup -V \in Q_*(S^n)$.
+Let $\mathring Z = r_Z^{-1}(S^n-L)$, and let $\mathring r_Z$ be the restriction of $r_Z$ to be a map from $\mathring Z$ to $S^n-L$.
 The space $\mathring Z$ is an open subset of $Z$, and so it is a manifold with corners.
-As $Z$ and $S^n$ are oriented, we have the induced co-orientation on $r_Z$ and hence on $\mathring r_Z$.  We also note that $\mathring r_Z$ is proper: if $C \subset S^n-L$ is compact, then $r_Z^{-1}(C) = \mathring r_Z^{-1}(C)$ is compact, as all maps with compact domains are proper.
+As $Z$ and $S^n$ are oriented, we have the induced co-orientation on $r_Z$ and hence on $\mathring r_Z$.  We also note that $\mathring r_Z$ is proper: if $K \subset S^n-L$ is compact, then $\mathring r_Z^{-1}(K) = r_Z^{-1}(K)$ is compact, as all maps with compact domains are proper.
 Alternatively, we can observe that $\mr r_Z$ is simply the pullback to $S^n-L$ of $Z$ after we convert it to a precochain by taking the induced co-orientation.
-So $\mathring r_Z \colon \mathring Z \to S^N - L$ is a precochian.
-In fact, it is a precocyle, as by \cite{leibniz} we know $\bd{\mr Z}$ is the pullback to the boundaryless $S^n-L$ of $\bd Z$, which is in $Q^*(S^n-L)$ because $\bd Z \amalg -V$ pulls back to an element of $Q(S^n-L)$ by \cref{L: pullback map Q}, while the pullback of $V$ is $\emptyset$.
-We will show that this construction gives a well defined homomorphism $\mc Z \colon \mc K_i \to H^{n-i-1}_\Gamma(S^n-L)$.
+So $\mathring r_Z \colon \mathring Z \to S^n - L$ is a precochain.
+In fact, it is a precocycle, as by \cref{leibniz} we know $\bd{\mr Z}$ is the pullback to the boundaryless $S^n-L$ of $\bd Z$, which is in $Q^*(S^n-L)$ because $\bd Z \sqcup -V$ pulls back to an element of $Q(S^n-L)$ by \cref{L: pullback map Q}, while the pullback of $V$ is $\emptyset$.
+We will show that this construction gives a well-defined homomorphism $\mc Z \colon \td H_i^\Gamma(L) \to \td H^{n-i-1}_\Gamma(S^n-L)$ so long as $i \neq n-1$; the case $i = n-1$ has to be handled somewhat differently, which we will do below.
+
+
 
 \begin{proposition}
-The map $\mc Z \colon \mc K_i \to H^{n-i-1}_\Gamma(S^n-L)$ is a well-defined homomorphism.
+The map $\mc Z \colon \td H_i^\Gamma(L) \to H^{n-i-1}_\Gamma(S^n-L)$ is a well-defined homomorphism for all $i \geq 0$, $i \neq n-1$.
 In particular, it does not depend on the choices involved in the definition.
 \end{proposition}
 \begin{proof}
-Once we show that $\mc Z$ is independent of the specific choices of $V$ (representing $\uV \in H_i(L)$) and $Z$, it will follow immediately that $\mc Z$ is a homomorphism as given $V,W\in PC_i^\Gamma(L)$ representing homology classes and $Z$ and $Y$ as constructed above from $V$ and $W$ respectively, then we may represent $\mc Z(\uV + \uW)$ by $\mathring Z \amalg \mr Y$, which will represent $\underline{\mr Z}+\underline{\mr Y}\in H^{n-i-1}_\Gamma(S^n-L)$.
+Once we show that $\mc Z$ is independent of the specific choices of $V$ (representing a given $\uV$ in $H_i^\Gamma(L)$) and of $Z$, it will follow immediately that $\mc Z$ is a homomorphism, as given $V,W\in PC_i^\Gamma(L)$ representing homology classes and $Z$ and $Y$ as constructed above from $V$ and $W$ respectively, then we may represent $\mc Z(\uV + \uW)$ by $\mathring Z \sqcup \mr Y$, which will represent $\underline{\mr Z}+\underline{\mr Y}\in \td H^{n-i-1}_\Gamma(S^n-L)$.
 
-So suppose that $V,V' \in PC_i^\Gamma(L)$ represent the same homology class $\uV$ in $\mc K_i$, possibly with $V = V'$.
-Let $Z,Z' \in PC_{i+1}(S^n)$ be such that $\bd Z \amalg -V, \bd Z' \amalg -V' \in Q_*(S^n)$.
-As $\uV=\underline{V'} \in H_i^\Gamma(L)$, there is an $S \in PC_{i+1}(L)$ such that $\bd S \amalg -V \amalg V' \in Q_*(L)$.
+So suppose that $V,V' \in PC_i^\Gamma(L)$ represent the same homology class $\uV$ in $\td H_i^\Gamma(L)$, possibly with $V = V'$.
+Let $Z,Z' \in PC_{i+1}^\Gamma(S^n)$ be such that $\bd Z \sqcup -V$ and $\bd Z' \sqcup -V'$ are in $Q_*(S^n)$.
+As $\uV=\underline{V'} \in H_i^\Gamma(L)$, there is an $S \in PC_{i+1}(L)$ such that $\bd S \sqcup -V \sqcup V' \in Q_*(L)$.
 We note that prechains in $Q_*(L)$ also represent elements of $Q_*(S^n)$.
-So now consider $S \amalg -Z \amalg Z'$.
-By taking boundaries and rearranging, we have $$\bd (S \amalg -Z \amalg Z')\amalg -V \amalg V' \amalg V \amalg -V' = (\bd S \amalg -V \amalg V')\amalg -(\bd Z \amalg -V) \amalg (Z'\amalg -V')\in Q_*(S^n).$$
-But  $-V \amalg V' \amalg V \amalg -V'$ is trivial, so by \cref{L: Lipy12} we have $S \amalg -Z \amalg Z'\in Q_*(S^n)$, i.e.\ $S \amalg -Z \amalg Z'$ represents an $i+1$ cycle by \cref{R: cycles and boundaries}.
+So now consider $S \sqcup -Z \sqcup Z'$.
+By taking boundaries and rearranging, we have $$\bd (S \sqcup -Z \sqcup Z')\sqcup -V \sqcup V' \sqcup V \sqcup -V' = (\bd S \sqcup -V \sqcup V')\sqcup -(\bd Z \sqcup -V) \sqcup (\bd Z'\sqcup -V')\in Q_*(S^n).$$
+But  $-V \sqcup V' \sqcup V \sqcup -V'$ is trivial, so by \cref{L: Lipy12} we have $\bd(S \sqcup -Z \sqcup Z')\in Q_*(S^n)$, i.e.\ $S \sqcup -Z \sqcup Z'$ represents an $i+1$ cycle by \cref{R: cycles and boundaries}.
 
-We first suppose $i+1\neq n$, so that $H_{i+1}^\Gamma(S^n) = 0$ and there exists $Y \in PC_{i+1}(S^n)$ such that $\bd Y \amalg -(S \amalg -Z \amalg Z') \in Q_*(S^n)$.
+Since we suppose $i+1\neq n$, we have $H_{i+1}^\Gamma(S^n) = 0$, so there exists $Y \in PC_{i+1}(S^n)$ such that $\bd Y \sqcup -(S \sqcup -Z \sqcup Z') \in Q_*(S^n)$.
 Let us now restrict to $S^n-L$ by converting orientations of domains to the induced co-orientations of their maps and then performing the pullback to $S^n-L$.
 As $S$ maps into $L$, we have $\mr S = \emptyset$.
-As pullbacks of elements in $Q$ remain in $Q$ by \cref{L: pullback map Q} and using the Leibniz rule \cred{leibniz}, we obtain that $$\bd \mr Y \amalg \pm (-\mr Z \amalg \mr Z') \in Q_*(S^n-L).$$
-The $\pm$ allows us to avoid thinking about any signs that might be introduced by switching from chains to cochains in two different indices, and it is sufficient for $\mr Z$ and $\mr Z'$ to represent the same cohomology class, again by \cref{R: cycles and boundaries}.
+As pullbacks of elements in $Q$ remain in $Q$ by \cref{L: pullback map Q} and using the Leibniz rule \cref{leibniz}, we obtain that $$\bd \mr Y \sqcup \pm (-\mr Z \sqcup \mr Z') \in Q^*(S^n-L).$$
+The $\pm$ allows us to avoid thinking about any signs that might be introduced by switching from chains to cochains in two different indices, and this is sufficient for $\mr Z$ and $\mr Z'$ to represent the same cohomology class, again by \cref{R: cycles and boundaries}.
+\end{proof}
 
+One can see the trouble with the case $i = n-1$ at the place in the proof where we needed $H_{i+1}^\Gamma (S^n) = 0$.
+We consider that case separately here, after which we will proceed on with our general consideration of Alexander duality.
+We first have the following lemma.
 
+\begin{lemma}
+Let $K$ be a connected, closed $n-1$ dimensional submanifold of $S^n$ with $n>1$.
+Then $K$ separates $S^n$ into two components.
+\end{lemma}
+\begin{proof}
+Consider a fiber $F$ of the $1$-dimensional normal bundle of $K$, identified with a tubular neighborhood of $K$ in $S^n$.
+Identifying the fiber with $\R$, and let $x >0$ and $y < 0$ be two points of the fiber.
+Consider the interval $[y,x]$ as a path in $S^n$.
+If $K$ does not separate $S^n$, then there is another path connecting $x$ and $y$ in $S^n$ that does not intersect $K$.
+Together, these two paths form a loop $\gamma$ in $S^n$ that intersects $K$ in one point.
+As $n>1$, there is a map $g \colon D^2 \to S^n$ whose boundary is $\gamma$.
+By taking small approximations, we can assume that $g$ is smooth and transverse to $K$ while still only intersecting $K$ in one point.
+But then $D_2 \times_{S^n} K$ must be a compact $1$-dimensional manifold with corners having boundary $$\bd (D_2 \times_{S^n} K) = \gamma \times_{S^n} K,$$
+which consists of a single point.
+This is impossible, as the boundary of any compact $1$-dimensional manifold with corners must have an even-dimensional number of points.
+\end{proof}
 
-
+\begin{corollary}\label{C: codim 1 oriented}
+Let $K$ be a connected, closed $n-1$ dimensional submanifold of $S^n$ with $n>1$.
+Then $K$ is oriented.
+\end{corollary}
+\begin{proof}
+As $K$ disconnects $S^n$, its normal bundle must be orientable.
+But then as $S^n$ is orientable, the tangent bundle of $K$ must also be orientable, as $TK \oplus \nu K$ is the restriction of $TS^n$ to $K$, but the sum of an orientable bundle and a non-orientable bundle would be non-orientable.
 \end{proof}
 
 
 
+So now suppose that $L \subset S^n$ as above has nontrivial $H_{n-1}^\Gamma(L)$.
+This is possible only if $L$ possesses $n-1$ dimensional oriented components, as
+
+\begin{itemize}
+\item $L$ cannot have any higher-dimensional components since we have assumed $L$ consists of closed submanifolds,
+
+\item no component of $L$ of dimension $<n-1$ can have $n-1$ dimensional homology by \cref{E: dimension range},
+
+\item any $n-1$ dimensional component of $L$ must be oriented by \cref{C: codim 1 oriented}.
+\end{itemize}
+
+By \cref{E: coho 0 generator,T: intersection qi,T: PD}, if $L_i$ is an oriented $n-1$ dimensional component of $L$, then $H_{n-1}^\Gamma(L_i) \cong \Z$ is generated by the identity map $\id \colon L_i \to L_i$.
+As $L_i$ separates $S^n$, there is a ``half'' $Z_i$ of $S^n$, such that $\bd Z = L_i$ as oriented manifolds with corners.
+In general, $H_{n-1}^\Gamma(L_i)$ will be a free abelian group generated by the $\underline{L_i}$ as $L_i$ varies over the necessarily finite number of connected, oriented, $n-1$ dimensional components of $L$.
+We then define $\mc Z \colon H_{n-1}^\Gamma(L) \to \td H^{0}_\Gamma(S^n-L)$ so that $$\mc Z(\sum n_i \underline{L_i}) = \sum n_i \underline{\mathring Z_i},$$
+Here we think of the right hand side as representing a class in $\td H^{0}_\Gamma(S^n-L)$, which we recall from \cite{D: reduced c} is the quotient of $H^{0}_\Gamma(S^n-L)$ by the group generated by the class of the identity map of $S^n-L$, tautologically co-oriented.
+
+Compared with $\mc Z$ for $i \neq n-1$, which allowed for various choices in the construction but required us to check that $\mc Z$ is well defined, in the case $i = n-1$, we have made $\mc Z$ well defined by fiat but we have taken away the choices.
+This is justified by the generators of $H_{n-1}^\Gamma(L)$ and the choices of $Z$ being quite canonical.
+However, let us note that we would get the same map if instead of letting $L_i$ be cobounded by $Z_i$ we instead chose the ``other half'' of the sphere.
+In other words, let $Z'_i$ be the closure of $S^n-Z_i$.
+Then $\bd -Z'_i = L_i$.
+The resulting $-\underline{\mathring Z'_i}$ represents a different element of $H^{0}_\Gamma(S^n-L)$ than $\underline {\mathring Z_i}$.
+However, $\mathring Z_i \sqcup \mathring Z_i' = S^n-L$, and so $\underline {\mathring Z_i}$ and  $-\underline{\mathring Z'_i}$ represent the same element of $\td H^0_\Gamma(S^n - L)$.
 
 
 
+\paragraph{Cohomology to homology.} Next we'll define a map $\mc A \colon \td H^{n-i-1}_\Gamma(S^n-L) \to H_i^\Gamma(L)$ that we will later show is an inverse to $\mc Z$.
+
+We suppose $S^n$ is the standard unit sphere in $\R^{n+1}$ with the induced metric; this assumption is convenient to start, though we will see later that it is not critical.
+Let $\mathbb{d} \colon S^n \to [0,\infty)$ be the distance function to $L$.
+As a subset of $\R^n$, the subspace $L$ will have an $\epsilon$-neighborhood $Y_\epsilon$ in in the sense of \cite[Section 2.3]{GuPo74}, and so also a retraction $\pi \colon Y_\epsilon \to L$ that takes a point in $Y_\epsilon$ to the nearest point in $L$.
+We let $U = Y_\epsilon \cap S^n$ and also write $\pi$ for the restriction to $U$.
+We can further extent $\pi$ to a deformation retraction $h \colon U \times I \to L$ by setting
+$$h(x,t) = \frac{(1-t)x + t\pi(x)}{|(1-t)x + t\pi(x) |},$$
+where the addition and scalar division are in $\R^{n+1}$ and $|-|$ is the norm in $\R^{n+1}$.
+For small $\epsilon$, the denominator will never vanish.
+
+Next, let $\mathbb{d} \colon S^n \to [0,\infty)$ be the distance function to $L$.
+By Sard's Theorem, almost every point of $[0,\infty)$ is a regular point for $\mathbb{d}$, and for such a regular point $x$, the subspace $S_x = \mathbb{d}^{-1}(x)$ will be a smooth $n-1$ dimensional submanifold of $S^n$ \cite[Section 2.1]{GuPo74}.
+If we choose $x < \epsilon$, then $S_x$ will be contained in our $\epsilon$-neighborhood $U$.
+Furthermore, $D_x = \mathbb{d}^{-1}([0,x])$ will be a smooth $n$-dimensional submanifolds with boundary of $S^n$.
+We assume $D_x$ oriented consistently with $S^n$ and give $S_x$ the boundary orientation.
 
 
+\begin{comment}
+Recall that we assume the components $L_i$ of $L$ have pairwise disjoint tubular neighborhoods $U_i$.
+We identify these neighborhoods with normal bundles that we may further assume have been given smooth Riemannian bundle metrics.
+This allows us to identify sphere bundles $S_a$ and the disk bundles $D_a$ consisting respectively of the elements of length $a$ or $\leq a$ in each Euclidean fiber.
+Identifying the normal bundles with $U_i$, we think of the $S_a$ as smooth $n-1$ dimensional submanifolds of $S^n$ and of the $D_a$ as smooth $n$-dimensional submanifolds with boundary.
+We can take $D_a$ to be oriented consistently with $S^n$ and let $S_a$ have the boundary orientation.
+
+We next construct a locally collapsing map near $L$.
+Let $\eta \colon [0,\infty) \to [0,\infty)$ be a smooth map that
+\begin{itemize}
+\item $\eta([0,1]) = 0$,
+\item $\eta$ is strictly increasing on $[1,2]$, and
+\item $\eta(x)=x$ for $x \geq 2$.
+\end{itemize}
+We then define $\rho \colon S^n \to S^n$ such that
+\begin{itemize}
+\item $\rho(x) = x$ if $x \in S^n - (\sqcup U_i)$,x
+\item $\rho(x) = \eta(d(x))x$ if $x \in \sqcup U_i$, where $d(x)$ is the distance from the origin in the fiber of the bundle $U_i$ containing $x$, and $\eta(d(x))x$ is similarly the scalar multiplication in the fiber.
+\end{itemize}
+By construction, $\rho$ is the identity map outside of $\sqcup U_i$, it is a diffeomorphism from $S^n-D_1$ onto $S^n-L$, and it retracts $D_1$ onto $L$ by the bundle projection.
+\end{comment}
 
 
+Define $\mc A \colon \td H^{n-i-1}_\Gamma(S^n-L) \to H_i^\Gamma(L)$ as follows.
+We choose a sufficiently small regular point $x \in [0,\infty)$.
+Let $\uV \in \td H^{n-i-1}_\Gamma(S^n-L)$ be represented by $r_V \colon V \to S^n - L$, which we can assume is transverse to $S_x$ by \cref{P: perturb transverse to map,P: universal homotopy}.
+As $V$ is a precochain and $S_x$ is oriented, we obtain an orientation on $V \times_{S^n} S_x$ by \cref{D: PC products}.
+Technically the fiber product happens in $S^n-L$ with the resulting prechain supported in $U-L$, but the notation $\times_{S^n}$ should be simpler and unambiguous.
+As $V$ has dimensional $i+1$, the prechain $V \times_{S^n} S_x$ has dimension $i$.
+We define $\mc A(\uV)$ to be represented by $\pi(V \times_{S^n} S_x)$.
+
+
+Once again, we need to show we have independence of the choices.
+
+\begin{proposition}
+The map $\mc A \colon \td H^{n-i-1}_\Gamma(S^n-L) \to H_i^\Gamma(L)$ is a well-defined homomorphism.
+In particular, it does not depend on the choices of $V$ or $x$ in the above definition.
+\end{proposition}
+\begin{proof}
+Once we show that $\mc A$ is independent of the specific choices of $V$ (representing a given $\uV$ in $H^i_\Gamma(S^n-L)$) and $x$, it will follow immediately that $\mc A$ is a homomorphism, as given $V,W\in PC^i_\Gamma(S^n-L)$ representing cohomology classes and transverse to $S_x$, then $\mc A(\uV + \uW)$ will be represented by $\pi((V \sqcup W) \times_{S^n} S_x)$, which is the precochain as $\pi(V  \times_{S^n} S_x) \sqcup \pi(W \times_{S^n} S_x)$.
+
+Next, suppose $V' \in PC^*_\Gamma(S^n-L)$ also represents $\uV \in H^*_\Gamma(S^n-L)$ and is transverse to $S_x$.
+As $V$ and $V'$ represent the same cohomology class, by \cref{R: cycles and boundaries} there exists $Z \in PC^*_\Gamma(S^n-L)$ so that $\bd Z\sqcup -V \sqcup V' \in Q^*(S^n-L)$; we may also assume $Z$ transverse to $S_x$ by REF FIX THIS - SEE BOTTOM OF FILE.
+Then $\bd Z \sqcup -V \sqcup V') \times_{S^n} S_x \in Q_*(S^n-L)$ by \cref{L: pullback with Q}.
+This prechain can also be considered to be in $Q_*(U) \subset PC_*^\Gamma(U)$, where $U$ is the $\epsilon$-neighborhood described above.
+So then $\pi((\bd Z \sqcup -V \sqcup V') \times_{S^n} S_x ) \in Q_*(L)$ by \cref{L: Q preservation}.
+But, as above, this is the same precochain as  $\pi((\bd Z)) \times_{S^n} S_x ) \sqcup -\pi(V  \times_{S^n} S_x) \sqcup \pi(V \times_{S^n} S_x)$.
+Furthermore, as $S_x$ is boundaryless, $\pi((\bd Z)) \times_{S^n} S_x) = \bd \pi((Z \times_{S^n} S_x)$
+So $\pi(V  \times_{S^n} S_x)$ and $\pi(V  \times_{S^n} S_x)$ represent the same element of $H_*^\Gamma(L)$, again by \cref{R: cycles and boundaries}, and this shows $\mc A$ is independent of the choice of $V$.
+
+Next consider $0 < x, y < \epsilon$ for our $\epsilon$-neighborhood of $L$ such that $x$ and $y$ are both regular values of the distance function $\mathbb d$.
+Without loss of generality, suppose $x < y$, and let $D_{x,y} = \mathbb d^{-1}([x,y])$, which is a manifold with boundary in $S^n-L$.
+Given our convention for orienting $S_x$ and $S_y$, we have $\bd D_{x,y} = S_y \sqcup -S_x$.
+Let $V \in PC^*_\Gamma(S^n-L)$ represent $\uV \in H^*_\Gamma(S^n - L)$, and we suppose $V$ transverse to $S_x$ and $S_y$ by \cref{P: perturb transverse to map,P: universal homotopy}.
+As $V$ must represent a cocycle, we have $\bd V \in Q^*(M)$.
+We now compute using \cref{P: Leibniz cap} that
+\begin{align*}
+\bd \pi(V \times_{S^n} D_{x,y}) &= \pi(\bd (V \times_{S^n} D_{x,y}))\\
+&= \pi\left(\left[(-1)^{v+1} (\bd V) \times_{S^n}D_{x,y} \right] \bigsqcup (V \times_{S^n} \bd D_{x,y})\right)\\
+&= \pi\left(\left[(-1)^{v+1} (\bd V) \times_{S^n}D_{x,y} \right] \bigsqcup (V \times_{S^n} S_y)\bigsqcup (V \times_{S^n} -S_x)\right)\\
+&=(-1)^{v+1} \pi((\bd V) \times_{S^n}D_{x,y}) \sqcup \pi(V \times_{S^n} S_y) \sqcup -\pi(V \times_{S^n} S_x).
+\end{align*}
+Since $\bd V \in Q^*(S^n-L)$, we have the first term in $Q_*(L)$, and so pairing the other two terms with their opposite orientations,
+$$\bd \pi(V \times_{S^n} D_{x,y})\sqcup -\pi(V \times_{S^n} S_y) \sqcup \pi(V \times_{S^n} S_x) \in Q_*(L).$$
+Thus $\pi(V \times_{S^n} S_y)$ and $\pi(V \times_{S^n} S_x)$ are in the same homology class.
+\end{proof}
+
+
+\paragraph{The duality isomorphisms.} We now show that $\mc A$ and $\mc Z$ are inverse isomorphisms.
+
+\begin{theorem}\label{T: alex duality}
+For $i \geq 0$, the maps  $(-1)^{i}\mc A \colon \td H^{n-i-1}_\Gamma(S^n-L) \to H_i^\Gamma(L)$ and $\mc Z \colon \td H_i^\Gamma(L) \to H^{n-i-1}_\Gamma(S^n-L)$ are inverse isomorphisms.
+\end{theorem}
+The need for the sign will come from the Leibniz rule for cap products, \cref{P: Leibniz cap}, which will be used in the proof.
+
+\begin{proof}[Proof of \cref{T: alex duality}]
+First suppose $\uV \in \td H_i^\Gamma(L)$ represented by $r_V \colon V \to L$.
+Then $\mc Z(\uV)$ is represented by $\mathring r_Z \colon \mathring Z \to S^n-L$, where $Z \in PC_{i+1}^\Gamma(S^n)$ is such that $\bd Z \sqcup -V \in Q(S^n)$.
+Let us choose an $x \in (0,\epsilon)$.
+By REF we may suppose $Z$ is transverse to $S_x$, and then $\mc A \mc Z(\uV)$ is represented by $\pi(\mathring Z \times_{S^n} S_x)$, which we denote $V'$.
+
+Now consider $Y = \pi(Z \times_{S^n} D_x)$.
+Using \cref{P: Leibniz cap}, we compute
+\begin{align*}
+\bd Y &= \pi\left(\bd(Z \times_{S^n} D_x)\right)\\
+& =(-1)^{i+1}\pi\left((\bd Z) \times_{S^n} D_x\right) \bigsqcup \pi\left(Z \times_{S^n} S_x)\right)\\
+(-1)^{i+1}\pi\left((\bd Z) \times_{S^n} D_x\right) \bigsqcup V'.\\
+\end{align*}
+
+So let us consider
+\begin{align*}
+\bd Y \sqcup (-1)^{i}V\sqcup -V'&=
+(-1)^{i+1}\pi\left([(\bd Z) \sqcup -V] \times_{S^n} D_x\right) \bigsqcup V'\sqcup -V'.
+\end{align*}
+First we consider the composition $(-1)^i\mc A \mc Z$.
+Here we have used that the image of $V$ is in $L$, which is in the interior of $D_x$, and so $V \times_{S^n} D_x = V$ as in \cref{P: cap with identity M}.
+As we know that $(\bd Z) \sqcup -V \in Q_*(S^n)$ by definition of $Z$, we have $\left([(\bd Z) \sqcup -V] \times_{S^n} D_x\right) \in Q_*(S^n)$ by \cref{L: pullback with Q}, and in fact it is in $Q_(U)$ as the image is in $U$.
+Then $\pi$ takes this to $Q_*(L)$ by \cref{L: Q preservation}.
+Clearly, $V'\sqcup -V' \in Q^*(L)$.
+So the whole previous expression is in $Q_*(L)$, which shows that $\uV$ is homologous to $(-1)^{i}\uV$, as claimed.
+
+We note that this argument holds as written for those indices for which we consider reduced homology or cohomology.
+\end{proof}
 
 
 
@@ -360,6 +539,20 @@ The $\pm$ allows us to avoid thinking about any signs that might be introduced b
 \bibliographystyle{amsplain}
 \bibliography{../bib}
 
+\begin{comment}
+
+Suppose V is a cycle transverse to N that bounds. Then there is a Z transverse to N that realizes it:
+
+Choose Y so that \bd Y \sqcup  -V \in Q. Y may not be transverse.
+
+Do a universal homotopy on Y \sqcup V so that Y becomes transverse and the trace of V is transverse. Let Y’ and V’ be the results and let W be the trace of the V homotopy. Let Z = Y’ \sqcup -W, which is transverse. Also \bd Y’ \sqcup -V’ is in Q.
+
+Then \bd Z \sqcup -V is
+                                                          (\bd Y’ \sqcup - V’ \sqcup V \sqcup -V)
+Which is in Q.
+
+
+\end{comment}
 
 
 Several diagrams in this paper were typeset using the \TeX\, commutative

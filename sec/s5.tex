@@ -231,9 +231,17 @@ With functoriality of geometric homology established, we can introduce reduced h
 
 \begin{definition}\label{D: reduced}
 The \textbf{reduced geometric homology} $\td H_*^\Gamma(M)$ of the manifold without corners $M$ is defined to be the kernel of the homormorphism $H_*^\Gamma(M) \to H_*^\Gamma(pt)$ induced by the unique map of $M$ to a point.
-
-Given the observations of \cref{E: first examples} and the splitting of surjective maps to free modules, we have the standard facts that $\td H_i^\Gamma(M) = H_i^\Gamma(M)$ when $i \neq 0$, while $$H_0^\Gamma(M) \cong \td H_0^\Gamma(M) \oplus H_0^\Gamma(pt) \cong \td H_0^\gamma(M) \oplus \Z.$$
 \end{definition}
+
+\begin{remark}\label{R: reduced h}
+Given the observations of \cref{E: first examples} and the splitting of surjective maps to free modules, we have the standard facts that $\td H_i^\Gamma(M) = H_i^\Gamma(M)$ when $i \neq 0$, while $$H_0^\Gamma(M) \cong \td H_0^\Gamma(M) \oplus H_0^\Gamma(pt) \cong \td H_0^\Gamma(M) \oplus \Z.$$
+
+As for reduced singular homology, generators of $\td H_0^\Gamma(M)$ can be represented by prechains consisting of pairs of points with opposite orientations in separate components of $M$, as if they were in the same component then we could connect them with a path and they would represent $0$ in $\td H_0^\Gamma(M)$.
+
+We recall that $M$ must have at most a countable number of components by the footnote on page \pageref{F: countable}, so let us write $M = \amalg M_i$ for connected components $M_i$ of $M$.
+Then if $g_{ij}$, $i \neq j$, is a homology class represented by a prechain with a positive point in component $M_i$ and a negative point in component $M_j$, then we also have the relations $g_{ij}+g_{jk}=g_{ik}$.
+So $\td H_0^\Gamma(M)$ can be identified with either the free abelian group on generators $g_{1i}$, $i>1$, or on generators $g_{i,i+1}$ for $i \geq 1$ so long as $i+1$ exists as an index.
+\end{remark}
 
 We can also now establish the standard additivity property.
 
