@@ -15,9 +15,9 @@ We also take the opportunity to fill in some of the details missing from Lipyans
 
 We first identify certain types of ``manifolds over $M$.'' In future sections $M$ will most typically be a manifold without boundary, as that is the case where we obtain agreement between geometric (co)homology and singular (co)homology, but in this section we allow it to be a manifold with corners anywhere that the extra generality may be useful but so long as it does not create more technical work.
 
-
 \begin{definition}\label{V: maps are co-oriented}
-	Let $M$ be a smooth manifold, possibly with corners. A \textbf{manifold over $\mathbf{M}$} is a manifold with corners $W$ with a smooth map $r_W \colon W \to M$,
+	Let $M$ be a smooth manifold, possibly with corners.
+	A \textbf{manifold over $\mathbf{M}$} is a manifold with corners $W$ with a smooth map $r_W \colon W \to M$,
 	called the \textbf{reference map}.
 	We freely and almost always abuse notation
 	by using the domain $W$ to refer to the manifold over $M$, not $r_W$ or some other symbol, letting
@@ -84,7 +84,8 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 \begin{example}
 	If $r_V \colon V \to M$ is any oriented or co-oriented map and $-r_V \colon V \to M$ is the same map with the opposite orientation or co-orientation, then $r_V \sqcup -r_V \colon V \sqcup V \to M$ is trivial, taking $\rho$ to be the map that switches the two copies of $V$.
 
-	To be technically accurate, the space $V \sqcup V$ is not clearly defined as a manifold with corners, as we have defined our manifolds with corners in \cref{D: MWC} to be submanifolds of some $\R^N$. We solve this problem below by working with isomorphism classes of maps.
+	To be technically accurate, the space $V \sqcup V$ is not clearly defined as a manifold with corners, as we have defined our manifolds with corners in \cref{D: MWC} to be submanifolds of some $\R^N$.
+	We solve this problem below by working with isomorphism classes of maps.
 	In this case we could take $V \sqcup V$ up to isomorphism to be $V \sqcup W$ where $V$ and $W$ are isomorphic as manifolds over $M$.
 	See \cref{D: prechain sum} below for precise details.
 \end{example}
@@ -121,21 +122,20 @@ In the statement of the lemma, by $D_x\phi$ taking an orientation of $T_xW$ to a
 We could equivalently phrase this in terms of the map $\textstyle{\bigwedge^w}D_x\phi$ as in \cref{D: tautological co-orientation}.
 
 \begin{proof}[Proof of \cref{L: co-or preserving/reversing}]
-By definition, $\phi$ is an isomorphism if and only if $\omega_{r_W} = \omega_{\phi} * \omega_{r_V}$, where $\omega_\phi$ is the tautological co-orientation of $\phi$.
-This will be the case if and only if for each $x$ we have $\omega_\phi = (\beta_{W,x}, \beta_{V, \phi(x)})$.
-But by the definition of the tautological co-orientation, if $e_1 \wedge \cdots \wedge e_w$ represents an oriented basis for $T_xW$, then $\omega_\phi$ is represented at $x$ by the pair $(e_1 \wedge \cdots \wedge e_w, D_x\phi(e_1) \wedge \cdots \wedge D_x\phi(e_w))$.
-So $\phi$ is an isomorphism if and only if $D_x\phi$ takes an ordered basis representing the local orientation $\beta_{W,x}$ to an ordered basis representing the local orientation $\beta_{V, \phi(x)}$.
+	By definition, $\phi$ is an isomorphism if and only if $\omega_{r_W} = \omega_{\phi} * \omega_{r_V}$, where $\omega_\phi$ is the tautological co-orientation of $\phi$.
+	This will be the case if and only if for each $x$ we have $\omega_\phi = (\beta_{W,x}, \beta_{V, \phi(x)})$.
+	But by the definition of the tautological co-orientation, if $e_1 \wedge \cdots \wedge e_w$ represents an oriented basis for $T_xW$, then $\omega_\phi$ is represented at $x$ by the pair $(e_1 \wedge \cdots \wedge e_w, D_x\phi(e_1) \wedge \cdots \wedge D_x\phi(e_w))$.
+	So $\phi$ is an isomorphism if and only if $D_x\phi$ takes an ordered basis representing the local orientation $\beta_{W,x}$ to an ordered basis representing the local orientation $\beta_{V, \phi(x)}$.
 
-The orientation-reversing case is equivalent, considering instead the requirement $\omega_{r_W} = - \omega_{\phi} * \omega_{r_V}$.
+	The orientation-reversing case is equivalent, considering instead the requirement $\omega_{r_W} = - \omega_{\phi} * \omega_{r_V}$.
 \end{proof}
 
 The following corollary is now immediate from \cref{L: co-or preserving/reversing} and the definitions.
 
 \begin{corollary}\label{C: co-or preserving is or preserving}
-	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over the oriented manifold $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$. Then $\phi$ is co-orientation preserving (reversing) if and only if it is orientation preserving (reversing) with respect to the orientations of $V$ and $W$ induced by the co-orientations and the orientation of $M$ (\cref{S: co-orientations}).
+	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over the oriented manifold $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$.
+	Then $\phi$ is co-orientation preserving (reversing) if and only if it is orientation preserving (reversing) with respect to the orientations of $V$ and $W$ induced by the co-orientations and the orientation of $M$ (\cref{S: co-orientations}).
 \end{corollary}
-
-
 
 \subsection{Geometric homology and cohomology}
 
@@ -156,7 +156,6 @@ We can now move toward defining geometric homology and cohomology, starting with
 \end{definition}
 
 When necessary, as in the following definition, we may write prechains or precochains as $[W]$ to emphasize that they are isomorphism classes.
-
 
 \begin{definition}\label{D: prechain sum}
 	If $V,W$ are compact oriented manifolds over $M$ (respectively proper co-oriented manifolds over $M$), then define $[V] \sqcup [W] = [V' \sqcup W']$, where on the right $\sqcup$ denotes disjoint union and $V'$ and $W'$ are compact oriented manifolds over $M$ (respectively proper co-oriented manifolds over $M$) such $[V]=[V']$, $[W]=[W']$, and $V'$ and $W'$ are disjoint in $\R^\infty$ (cf.
@@ -183,16 +182,14 @@ We now return to denoting isomorphism classes by their representatives, noting a
 Our first lemma is immediate:
 
 \begin{lemma}\label{L: sum of trivial/degenerate}
-If $V$ and $W$ are trivial, then $V \sqcup W$ is trivial.
-If $V$ and $W$ are degenerate, then $V \sqcup W$ is degenerate.
-If $V,W\in Q_*(M)$ (or $Q^*(M)$), then $V \sqcup W \in Q_*(M)$ (or $Q^*(M)$).
+	If $V$ and $W$ are trivial, then $V \sqcup W$ is trivial.
+	If $V$ and $W$ are degenerate, then $V \sqcup W$ is degenerate.
+	If $V,W\in Q_*(M)$ (or $Q^*(M)$), then $V \sqcup W \in Q_*(M)$ (or $Q^*(M)$).
 \end{lemma}
 
 The following useful basic properties are proven in \cite{Lipy14}; for completeness we provide versions of the arguments here, occasionally augmenting those of \cite{Lipy14}.
 In each case, ``isomorphic,'' ``trivial,'' or ``degenerate'' should be read consistently to refer to the compact oriented case or the proper co-oriented case.
 Lipyanskiy's proofs assume small image rather than small rank, but the proofs are equivalent.
-
-
 
 \begin{lemma}[Lipyanskiy Lemma 10]\label{L: Lip L10}
 	If $V$ is trivial and $V \sqcup W$ is trivial, then $W$ is trivial.
@@ -355,7 +352,8 @@ We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every
 \end{comment}
 
 \begin{remark}\label{R: cycles and boundaries}
-	Suppose $W \in PC_*^{\Gamma}(M)$. It follows directly from \cref{{D: chains and cochains},L: co/chains well defined} that $W$ represents a cycle in $C_*^{\Gamma}(M)$, i.e.\ $\bd \uW=0$, if and only if $\bd W \in Q_*(M)$.
+	Suppose $W \in PC_*^{\Gamma}(M)$.
+	It follows directly from \cref{{D: chains and cochains},L: co/chains well defined} that $W$ represents a cycle in $C_*^{\Gamma}(M)$, i.e.\ $\bd \uW=0$, if and only if $\bd W \in Q_*(M)$.
 	We also observe that $W$ represents a boundary precisely when there is some $Z \in PC_*^\Gamma(M)$ such that $\bd \underline{Z} = \underline{\bd Z} = \uW$, which translates to $(\bd Z) \sqcup -W \in Q_*(M)$.
 	The corresponding statements for cohomology are analogous.
 \end{remark}
@@ -364,7 +362,8 @@ In Section 6 of \cite{Lipy14}, Lipyanskiy shows that the homology theory based o
 This is enough to state in Section 10 of \cite{Lipy14} that geometric homology is isomorphic to singular homology on the fixed manifold $M$, though we provide our own proofs below in \cref{T: geometric is singular,T: hom iso map}.
 Unfortunately, Lipyanskiy does not provided a detailed treatment of geometric cohomology, which is different from geometric homology in several respects, though we will also show that it is isomorphic to singular cohomology in \cref{T: geometric is singular,T: intersection qi}.
 
-We next present some immediate examples and observations. The first is that geometric homology and cohomology satisfy a very strong form of Poincar\'e duality.
+We next present some immediate examples and observations.
+The first is that geometric homology and cohomology satisfy a very strong form of Poincar\'e duality.
 
 \begin{theorem}[Poincar\'e Duality]\label{T: PD}
 	If $M$ is closed and oriented then tautologically $C_*^\Gamma(M) = C_\Gamma^{m-*}(M)$.
@@ -388,19 +387,21 @@ We next present some immediate examples and observations. The first is that geom
 	So it follows that a positively-oriented point mapping to $M$ generates an infinite cyclic subgroup of $H_0^\Gamma(M)$.
 	Altogether, $H_0^\Gamma(M) \cong \oplus \Z$, where the sum is taken over the connected components of $M$.
 
-	Next, suppose $M$ is a closed, connected manifold. The considerations for $H^m_\Gamma(M)$ are similar to those for $H_0^\Gamma(M)$, noting that elements of $PC^m_\Gamma(M)$ are represented by proper co-oriented maps of $0$-manifolds to $M$.
+	Next, suppose $M$ is a closed, connected manifold.
+	The considerations for $H^m_\Gamma(M)$ are similar to those for $H_0^\Gamma(M)$, noting that elements of $PC^m_\Gamma(M)$ are represented by proper co-oriented maps of $0$-manifolds to $M$.
 	However, in this case if we are given a map $r \colon [0,1] \to M$ with $r(0) = r(1) = z \in M$, the signs of the boundary components will depend on whether or not the loop determined by $r$ preserves or reverse the orientation of $M$.
-	More specifically, let $r_0$ denote the map that takes the point to $z \in M$ with the co-orientation  $(1, \beta_M)$.
-	Treating $r$ as a homotopy, by \cref{R: stationary homotopy} the boundary of $r$ will be the disjoint union of $-r_0$  and $r_1$, where $r_1$ takes the point to $z$ with co-orientation $(1, r_*\beta_M)$. Recall $r_*\beta_M$ is the orientation of $M$ at $z$ obtained by starting with the orientation $\beta_M$ at $z$ and traveling around the loop $r$; see \cref{S: co-orientations}.
+	More specifically, let $r_0$ denote the map that takes the point to $z \in M$ with the co-orientation $(1, \beta_M)$.
+	Treating $r$ as a homotopy, by \cref{R: stationary homotopy} the boundary of $r$ will be the disjoint union of $-r_0$ and $r_1$, where $r_1$ takes the point to $z$ with co-orientation $(1, r_*\beta_M)$.
+	Recall $r_*\beta_M$ is the orientation of $M$ at $z$ obtained by starting with the orientation $\beta_M$ at $z$ and traveling around the loop $r$; see \cref{S: co-orientations}.
 	If $r_*\beta_M = \beta_M$, then $r_1 = r_0$ and we have $\bd r = r_1 - r_0 = 0$, which is analogous to the homology computation.
 	But if $r_*\beta_M = -\beta_M$, then $r_1 = -r_0$ and we have $\bd r = r_1 - r_0 = -2 r_0$, so twice $r_0$ is a boundary.
 	Furthermore, for any two maps $r_0$ and $s_0$ taking the point to the same component of $M$ (with either co-orientation), by joining them with a smooth path, we see that the maps will be cohomologous up to sign.
 	So we conclude that if $M$ is connected then
 	\[H^m_\Gamma(M) =
-		\begin{cases}
+	\begin{cases}
 		\Z, & M \text{ is orientable},\\
 		\Z_2, & M \text{ is not orientable}.
-		\end{cases}
+	\end{cases}
 	\]
 
 
@@ -416,7 +417,7 @@ We next present some immediate examples and observations. The first is that geom
 	At the opposite end of the spectrum, the groups $H_m^\Gamma(M)$ and $H^0_\Gamma(M)$ are represented by maps of $m$-dimensional manifolds with corners.
 	If $M$ is connected, then $H^0_\Gamma(M) \cong \Z$ with a generator represented by the identity map $M \to M$ with its tautological co-orientation.
 	This will follow most readily from \cref{E: coho 0 generator,T: intersection qi}, below.
-	Consequently, if $M$ is closed and oriented, then  \cref{T: PD} implies $H_m^\Gamma(M) \cong \Z$ generated by the identity map.
+	Consequently, if $M$ is closed and oriented, then \cref{T: PD} implies $H_m^\Gamma(M) \cong \Z$ generated by the identity map.
 \end{example}
 
 \begin{example}\label{E: dimension range}
@@ -473,7 +474,7 @@ The following algebraic property will be useful below as we consider homological
 	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so each component of $n W_i$ is trivial or has small image.
 
 	Suppose $n W_i$ is trivial for some $i$.
- 	Then each component of $n W_i$ is trivial or the total number of components of $n W_i$ is zero when counted with sign.
+	Then each component of $n W_i$ is trivial or the total number of components of $n W_i$ is zero when counted with sign.
 	But this implies that each component of $W_i$ is trivial or that $W_i$ must also have the total number of components be zero when counted with sign.
 	So $W_i$ is trivial.
 	It is also clear that if $W_i$ is trivial, then so is $n W_i$, so $W_i$ is trivial if and only if $n W_i$ is trivial.
@@ -509,14 +510,15 @@ These are only partially defined, as fiber products require transversality.
 	$$PC_*^\Gamma(M) \times PC_*^\Gamma(M) \to PC_*^\Gamma(M).$$
 	In each case, the product is defined when the reference maps $r_V \colon V \to M$ and $r_W \colon W \to M$ are transverse.
 
-		\begin{itemize}
-			\item If $V,W\in PC^*_\Gamma(M)$ are transverse, we define their product to be the fiber product $V \times_M W$ with its fiber product co-orientation of \cref{D: pullback coorient}. Note that the fiber product is proper by \cref{L: co-orientable pullback} as the composition of proper maps is proper.
+	\begin{itemize}
+		\item If $V,W\in PC^*_\Gamma(M)$ are transverse, we define their product to be the fiber product $V \times_M W$ with its fiber product co-orientation of \cref{D: pullback coorient}.
+		Note that the fiber product is proper by \cref{L: co-orientable pullback} as the composition of proper maps is proper.
 
-			\item If $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ are transverse, we define their product to be $V \times_M W$ with the orientation induced from the orientation of $W$ and the co-orientation of the pullback $V \times_M W \to W$; see \cref{D: pullback coorient} and the discussion following \cref{D: co-orientations}.
-			Note that $V \times_M W$ is compact, as $W$ is compact and the pullback map is proper by \cref{L: co-orientable pullback} and the properness of $r_V$.
+		\item If $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ are transverse, we define their product to be $V \times_M W$ with the orientation induced from the orientation of $W$ and the co-orientation of the pullback $V \times_M W \to W$; see \cref{D: pullback coorient} and the discussion following \cref{D: co-orientations}.
+		Note that $V \times_M W$ is compact, as $W$ is compact and the pullback map is proper by \cref{L: co-orientable pullback} and the properness of $r_V$.
 
-			\item If $M$ is oriented and $V,W \in PC_*^\Gamma(M)$, we define their product to be $V \times_M W$ with the fiber product orientation of \cref{S: orientation of fiber products}.
-			Note that $V \times_M W$ is compact as a closed subset of the compact set $V \times W$.
+		\item If $M$ is oriented and $V,W \in PC_*^\Gamma(M)$, we define their product to be $V \times_M W$ with the fiber product orientation of \cref{S: orientation of fiber products}.
+		Note that $V \times_M W$ is compact as a closed subset of the compact set $V \times W$.
 	\end{itemize}
 
 	We show below that these products are all well defined when the transversality conditions are met, as transversality is preserved under isomorphisms of manifolds over $M$, and isomorphic manifolds over $M$ have isomorphic fiber products over $M$.
@@ -529,8 +531,8 @@ These are only partially defined, as fiber products require transversality.
 In the last case, we really need $M$ to be oriented in general, as we have observed in \cref{R: what products exist} that if $M$ is not orientable the fiber product of orientable manifolds over $M$ may note be orientable.
 
 \begin{comment}
-In the cases where $r_V$ and $r_W$ are transverse embeddings, these products are represented by just taking intersections, with the orientations or co-orientations given explicitly in \cref{P: normal pullback,P: cap of immersions,P: orient intersection}.
-If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
+	In the cases where $r_V$ and $r_W$ are transverse embeddings, these products are represented by just taking intersections, with the orientations or co-orientations given explicitly in \cref{P: normal pullback,P: cap of immersions,P: orient intersection}.
+	If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 \end{comment}
 
 \begin{lemma}\label{L: product preserves iso}
@@ -548,10 +550,10 @@ If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 	Suppose we have $f \colon V \to M$ isomorphic to $f' \colon V' \to M$ via $\phi_V \colon V \to V'$ and similarly for $W$; see \cref{D: equiv triv and small}.
 	The map $\phi_V \times \phi_W$ restricts to give our diffeomorphism from $P = V \times_M W$ to $P' = V' \times_M W'$, so, considering the definition of the fiber product orientation in \cref{S: orientation of fiber products}, we obtain bundle map isomorphisms covering $\phi_V \times \phi_W \colon P \to P'$ of the following exact sequences (or we can think of the bottom sequence as pulled back to $P$ by $\phi_V \times \phi_W$).
 	\begin{equation}
-	\begin{tikzcd}
-		0 \arrow[r] & TP \arrow[r,"D\pi_V \oplus D\pi_W"] \arrow[d] &[1cm] \pi_V^*(TV) \oplus \pi_W^*(TW) \arrow[r,"\pi_V^*(Df)-\pi_W^*(Dg)"] \arrow[d] &[1.7cm] (f\pi_V)^*TM \arrow[r] \arrow[d] & 0 \\
-		0 \arrow[r] & TP' \arrow[r,"D\pi_{V'} \oplus D\pi_{W'}"] & \pi_{V'}^*(TV') \oplus \pi_{W'}^*(TW') \arrow[r,"\pi_{V'}^*(Df')-\pi_{W'}^*(Dg')"] & (f'\pi_{V'})^*TM \arrow[r] & 0
-	\end{tikzcd}
+		\begin{tikzcd}
+			0 \arrow[r] & TP \arrow[r,"D\pi_V \oplus D\pi_W"] \arrow[d] &[1cm] \pi_V^*(TV) \oplus \pi_W^*(TW) \arrow[r,"\pi_V^*(Df)-\pi_W^*(Dg)"] \arrow[d] &[1.7cm] (f\pi_V)^*TM \arrow[r] \arrow[d] & 0 \\
+			0 \arrow[r] & TP' \arrow[r,"D\pi_{V'} \oplus D\pi_{W'}"] & \pi_{V'}^*(TV') \oplus \pi_{W'}^*(TW') \arrow[r,"\pi_{V'}^*(Df')-\pi_{W'}^*(Dg')"] & (f'\pi_{V'})^*TM \arrow[r] & 0
+		\end{tikzcd}
 	\end{equation}
 	As the maps $\phi_V$ and $\phi_W$ are orientation preserving, it follows that the two righthand vertical maps are oriented bundle isomorphisms.
 	Consequently, if we orient $TP$ and $TP'$ as in \cref{S: orientation of fiber products} and use the isomorphisms to make the splittings of the sequences compatible, then the lefthand map must also be an isomorphism of oriented bundles.
@@ -573,7 +575,8 @@ If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 
 	Lastly, for the fiber product $PC^*_\Gamma(M) \times PC_*^\Gamma(M) \to PC_*^\Gamma(M)$, we again begin by considering what happens for the preimage of a Euclidean set $U$ in $M$ with an arbitrary orientation $\beta_U$.
 	In this case the restriction $g \colon g^{-1}(U) \to U$ is a map between oriented manifolds and so if $W$ has orientation $\beta_W$, this map has an induced co-orientation $(\beta_W, \beta_U)$.
-	Now, by definition, $\beta_P$ is the desired orientation of $f^{-1}(U) \times_U g^{-1}(U)$ for this kind of product if and only $(\beta_P,\beta_W)$ is the pullback co-orientation of $f^{-1}(U) \times_U g^{-1}(U) \to g^{-1}(U)$. And this is the case if and only if $(\beta_P,\beta_W)*(\beta_W,\beta_U) = (\beta_P, \beta_U)$ is the co-orientation of the co-oriented fiber product of $f$ and $g$ restricted to $f^{-1}(U)$ and $g^{-1}(U)$, obtained from $g$ being given the induced co-orientation as above.
+	Now, by definition, $\beta_P$ is the desired orientation of $f^{-1}(U) \times_U g^{-1}(U)$ for this kind of product if and only $(\beta_P,\beta_W)$ is the pullback co-orientation of $f^{-1}(U) \times_U g^{-1}(U) \to g^{-1}(U)$.
+	And this is the case if and only if $(\beta_P,\beta_W)*(\beta_W,\beta_U) = (\beta_P, \beta_U)$ is the co-orientation of the co-oriented fiber product of $f$ and $g$ restricted to $f^{-1}(U)$ and $g^{-1}(U)$, obtained from $g$ being given the induced co-orientation as above.
 	Furthermore, as $\phi_W$ is orientation-preserving, its restriction to a diffeomorphism $g^{-1}(U)$ to $(g')^{-1}(U)$ is also co-orientation preserving with respect to the induced co-orientations by \cref{C: co-or preserving is or preserving}.
 	But now we have seen that the product $\phi_V \times \phi_W$ of co-orientation-preserving diffeomorphisms gives a co-orientation preserving diffeomorphism on $f^{-1}(U) \times_U g^{-1}(U)$.
 	So now again by \cref{C: co-or preserving is or preserving}, $\phi_V \times \phi_W$ is an orientation-preserving diffeomorphism with respect to the orientations induced by the orientation of $U$ and the fiber product co-orientations.
@@ -581,9 +584,9 @@ If $r_V$ and $r_W$ are immersions, these descriptions hold locally.
 \end{proof}
 
 \begin{comment}
-\begin{remark}\label{R: product preserves reverse}
-	It is easy to modify the preceding arguments to show that if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$.
-\end{remark}
+	\begin{remark}\label{R: product preserves reverse}
+		It is easy to modify the preceding arguments to show that if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$.
+	\end{remark}
 \end{comment}
 
 Given the preceding lemma, from here on we will usually not explicitly distinguish between maps (co\nobreakdash-)oriented maps $V \to M$ and their isomorphism classes when discussing products.
@@ -641,7 +644,8 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 	Similarly, if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ is a corresponding orientation- or co-orientation-reversing diffeomorphism $V \times W \to V' \times W'$.
 \end{lemma}
 \begin{proof}
-	The oriented case is standard. For the co-oriented case, we can proceed analogously to the proof of \cref{L: product preserves iso}.
+	The oriented case is standard.
+	For the co-oriented case, we can proceed analogously to the proof of \cref{L: product preserves iso}.
 	In particular, we can choose Euclidean neighborhoods $A \subset M$ and $B \subset N$ given arbitrary orientations.
 	Then, as in that preceding proof, isomorphisms of product co-orientations over $A \times B$ follow from isomorphisms of product orientations over $A \times B$, now using \cref{P: compare exterior orientations} rather than \cref{P: compare cup and intersection orientations}.
 \end{proof}
@@ -756,11 +760,11 @@ By \cref{L: transverse to pullback}, $0$ is a regular value for $\phi r_W$ preci
 
 We let
 \begin{align*}
-M^0 = \phi^{-1}(0) && M^- = \phi^{-1}((-\infty,0]) &&M^+ = \phi^{-1}([0,\infty)).
+	M^0 = \phi^{-1}(0) && M^- = \phi^{-1}((-\infty,0]) &&M^+ = \phi^{-1}([0,\infty)).
 \end{align*}
- Analogously,
+Analogously,
 \begin{align*}
-W^0 = (\phi r_W)^{-1}(0) && W^- = (\phi r_W)^{-1}((-\infty,0]) && W^+ = (\phi r_W)^{-1}([0,\infty)).
+	W^0 = (\phi r_W)^{-1}(0) && W^- = (\phi r_W)^{-1}((-\infty,0]) && W^+ = (\phi r_W)^{-1}([0,\infty)).
 \end{align*}
 We sometimes write $M^\pm$ for statements that could involve either $M^+$ or $M^-$, and similarly for $W$.
 
@@ -769,22 +773,22 @@ We sometimes write $M^\pm$ for statements that could involve either $M^+$ or $M^
 \end{remark}
 
 \begin{comment}
-\begin{lemma}\label{L: 0 transverse M0}
-	Zero is a regular value for $\phi r_W$ if and only if $r_W$ is transverse to the inclusion of $M^0$ into $M$.
-\end{lemma}
-\begin{proof}
-	As $0$ is a regular value for $\phi$, by classical differential topology $M^0$ is an embedded codimension-one submanifold of $M$, and in a neighborhood of each point of $M^0$, the map $\phi$ behaves up to diffeomorphisms like the standard projection of $\R^m$ to the first coordinate; see Section 1.4 \cite{GuPo74}.
-	In particular, at each $z \in M^0$, we have $T_zM^0 = \ker(D_z\phi)$.
-	So the linear subspace spanned by a vector $v \in T_zM$ is transverse to $T_zM^0$ if and only if its image under $D_z\phi$ is non-zero.
-	It follows that $r_W$ is transverse to $M^0$ if and only if $\phi r_W$ is transverse to $0$.
-\end{proof}
+	\begin{lemma}\label{L: 0 transverse M0}
+		Zero is a regular value for $\phi r_W$ if and only if $r_W$ is transverse to the inclusion of $M^0$ into $M$.
+	\end{lemma}
+	\begin{proof}
+		As $0$ is a regular value for $\phi$, by classical differential topology $M^0$ is an embedded codimension-one submanifold of $M$, and in a neighborhood of each point of $M^0$, the map $\phi$ behaves up to diffeomorphisms like the standard projection of $\R^m$ to the first coordinate; see Section 1.4 \cite{GuPo74}.
+		In particular, at each $z \in M^0$, we have $T_zM^0 = \ker(D_z\phi)$.
+		So the linear subspace spanned by a vector $v \in T_zM$ is transverse to $T_zM^0$ if and only if its image under $D_z\phi$ is non-zero.
+		It follows that $r_W$ is transverse to $M^0$ if and only if $\phi r_W$ is transverse to $0$.
+	\end{proof}
 \end{comment}
 
 \begin{lemma}\label{L: pm0 as fiber products}
 	With our standing assumptions, there are diffeomorphisms
 	\begin{align*}
 		M^0 & \cong 0 \times_{\R} M &W^0 & \cong 0 \times_{\R} W & W^0& \cong M^0 \times_M W \\
-		M^- & \cong (-\infty,0] \times_{\R} M &W^- & \cong (-\infty,0] \times_{\R} W& W^-  &\cong M^- \times_M W\\
+		M^- & \cong (-\infty,0] \times_{\R} M &W^- & \cong (-\infty,0] \times_{\R} W& W^- &\cong M^- \times_M W\\
 		M^+ & \cong [0,\infty) \times_{\R} M & W^+ & \cong [0,\infty) \times_{\R} W& W^+ &\cong M^+ \times_M W.
 	\end{align*}
 	In particular, these spaces are all manifolds with corners.
@@ -806,7 +810,7 @@ Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which
 	The co-orientations of $W^\pm \to M$ are the restrictions to $W^\pm$ of the co-orientation of $W$.
 	Furthermore,
 	\begin{align*}
-		\bd(W^-) &=  (-W^0) \bigsqcup (\bd W)^- \\
+		\bd(W^-) &= (-W^0) \bigsqcup (\bd W)^- \\
 		\bd (W^+) &= W^0 \bigsqcup (\bd W)^+\\
 		(\bd W)^0 &= -\bd (W^0).
 	\end{align*}
@@ -822,14 +826,14 @@ Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which
 \begin{lemma}\label{L: W0 chain}
 	Suppose $W \in PC_*^\Gamma(M)$, and $0$ is a regular value of $\phi \colon M \to \R$ and $\phi r_W \colon W \to \R$.
 	Let $\R$, $(-\infty, 0]$, and $[0,\infty)$ have their standard orientations, and give $0$ its positive orientation.
-	Now orient $W^0$, $W^-$, and $W^+$ by realizing them as oriented fiber products of $0$,  $(-\infty, 0]$, and $[0,\infty)$ with $\phi r_W \colon W \to \R$ over $\R$.
+	Now orient $W^0$, $W^-$, and $W^+$ by realizing them as oriented fiber products of $0$, $(-\infty, 0]$, and $[0,\infty)$ with $\phi r_W \colon W \to \R$ over $\R$.
 	Then the restrictions of $r_W \colon W \to M$ to $W^0$, $W^-$, and $W^+$ realize elements of $PC_*^\Gamma(M)$.
 	When $W^\pm$ are nonempty, their orientations agree with the orientation of $W$.
 	Furthermore, as elements of $PC_*^\Gamma(M)$, we have\footnote{Compare the signs with those in \cref{L: W0 cochain}.}
 	\begin{align*}
-	\bd(W^-) &=  W^0 \bigsqcup (\bd W)^- \\
-	\bd(W^+) &= (-W^0) \bigsqcup (\bd W)^+\\
-	(\bd W)^0 &= -\bd (W^0).
+		\bd(W^-) &= W^0 \bigsqcup (\bd W)^- \\
+		\bd(W^+) &= (-W^0) \bigsqcup (\bd W)^+\\
+		(\bd W)^0 &= -\bd (W^0).
 	\end{align*}
 \end{lemma}
 
@@ -844,16 +848,16 @@ Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which
 
 	We then have by \cref{P: oriented fiber boundary}, our conventions for oriented boundaries, and the standard computations for the boundaries of $(-\infty,0]$ and $[0,\infty)$ that
 	\begin{equation*}
-			\bd W^- = \bd ((-\infty,0] \times_\R W) = (0 \times_\R W)  \sqcup ((-\infty,0] \times_\R \bd 	W) = W^0 \sqcup (\bd W)^-,
+		\bd W^- = \bd ((-\infty,0] \times_\R W) = (0 \times_\R W) \sqcup ((-\infty,0] \times_\R \bd W) = W^0 \sqcup (\bd W)^-,
 	\end{equation*}
 	and
 	\begin{equation*}
-			\bd W^+ = \bd ([0,\infty) \times_\R W) = (-0 \times_\R W)  \sqcup ([0,\infty) \times_\R \bd W) 	= (-W^0) \sqcup (\bd W)^+.
+		\bd W^+ = \bd ([0,\infty) \times_\R W) = (-0 \times_\R W) \sqcup ([0,\infty) \times_\R \bd W) = (-W^0) \sqcup (\bd W)^+.
 	\end{equation*}
 	We also compute
 	\begin{equation*}
-			\bd W^0 = \bd (0 \times_\R W) = - 0 \times_\R \bd W = -(\bd W)^0. \qedhere
-\end{equation*}
+		\bd W^0 = \bd (0 \times_\R W) = - 0 \times_\R \bd W = -(\bd W)^0.\qedhere
+	\end{equation*}
 \end{proof}
 
 Lastly, we will occasionally need to consider the preimage of an interval $[p,q] \subset \R$.
@@ -869,10 +873,11 @@ We also let $W^p = \phi^{-1}(p) \times_M W$, and similarly for $q$.
 	$$\bd W^{[p,q]} = -W^p \sqcup W^q \sqcup (\bd W)^{[p,q]}.$$
 \end{lemma}
 \begin{proof}
-	As $M^{[p,q]}$ is a closed subset of $M$, its inclusion into $M$ is proper, so with the tautological co-orientation,  $M^{[p,q]} \into M$ is an element of $PC^*_\Gamma(M)$.
+	As $M^{[p,q]}$ is a closed subset of $M$, its inclusion into $M$ is proper, so with the tautological co-orientation, $M^{[p,q]} \into M$ is an element of $PC^*_\Gamma(M)$.
 	We note that we only need to check transversality at $p$ and $q$, as the inclusion of the interior of $M^{[p,q]}$ to $M$ is transverse to any map.
 
-	In the precochain case, as $M^{[p,q]}$ is a closed subset of $M$, its inclusion into $M$ is proper, so with the tautological co-orientation,  $M^{[p,q]} \into M$ is an element of $PC^*_\Gamma(M)$.  Thus the fiber product $W^{[p,q]} = M^{[p,q]} \times_M W$ is an element of $PC^*_\Gamma(M)$ by \cref{D: PC products,L: product preserves iso}, and the boundary formula follows from the Leibniz rule analogously to our computations above for $W^\pm$.
+	In the precochain case, as $M^{[p,q]}$ is a closed subset of $M$, its inclusion into $M$ is proper, so with the tautological co-orientation, $M^{[p,q]} \into M$ is an element of $PC^*_\Gamma(M)$.
+	Thus the fiber product $W^{[p,q]} = M^{[p,q]} \times_M W$ is an element of $PC^*_\Gamma(M)$ by \cref{D: PC products,L: product preserves iso}, and the boundary formula follows from the Leibniz rule analogously to our computations above for $W^\pm$.
 
 	In the prechain case, we observe that $W^{[p,q]} \cong (\phi r_W)^{-1}([p,q])$ by similar arguments as for $W^\pm$ in \cref{E: manifold decomposition}, so $W^{[p,q]}$ is compact.
 	The agreement of orientation and the boundary formula are similar to the arguments of \cref{L: W0 chain}.
@@ -886,16 +891,16 @@ We also let $W^p = \phi^{-1}(p) \times_M W$, and similarly for $q$.
 
 
 \begin{comment}
-To make this precise, suppose we are given a function $\varphi \colon W \to (-1,1)$ with $0$ a regular value, i.e.\ that $\varphi$ is transverse to the inclusion of $0$ into $(-1,1)$.
-We define $W^+$ to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$, and we define $W^0 = \varphi^{-1}(0)$.
-We have already seen this construction in \cref{E: manifold decomposition} and the examples in \cref{S: codim 0 and 1 co-or}, although we here replace the codomain $\R$ with $(-1,1)$ for reasons that will become apparent momentarily.
-Nonetheless, the results of those examples carry over in the obvious way.
+	To make this precise, suppose we are given a function $\varphi \colon W \to (-1,1)$ with $0$ a regular value, i.e.\ that $\varphi$ is transverse to the inclusion of $0$ into $(-1,1)$.
+	We define $W^+$ to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$, and we define $W^0 = \varphi^{-1}(0)$.
+	We have already seen this construction in \cref{E: manifold decomposition} and the examples in \cref{S: codim 0 and 1 co-or}, although we here replace the codomain $\R$ with $(-1,1)$ for reasons that will become apparent momentarily.
+	Nonetheless, the results of those examples carry over in the obvious way.
 
-As in those earlier examples, $W^+$, $W^-$, and $W^0$ are manifolds with corners whose inclusions into $W$ are proper maps.
-They are also the fiber products $[0,1)\times_\R W$, $(-1,0] \times_\R W$ and $0 \times_\R W$.
-In those previous examples, we also considered the case of having an intermediary manifold $M$ so that $\varphi$ was a composition $W \xr{r_W} M \xr{\phi} \R$ with $0$ a regular value of both $\phi$ and $\phi r_W$.
-In this case we also observed in \cref{E: manifold decomposition} that $W^0$ and $W^\pm$ are diffeomorphic to the respective fiber products $M^0 \times_M W$ and $M^{\pm} \times_M W$.
-We will need these settings once we have finished with some preliminaries.
+	As in those earlier examples, $W^+$, $W^-$, and $W^0$ are manifolds with corners whose inclusions into $W$ are proper maps.
+	They are also the fiber products $[0,1)\times_\R W$, $(-1,0] \times_\R W$ and $0 \times_\R W$.
+	In those previous examples, we also considered the case of having an intermediary manifold $M$ so that $\varphi$ was a composition $W \xr{r_W} M \xr{\phi} \R$ with $0$ a regular value of both $\phi$ and $\phi r_W$.
+	In this case we also observed in \cref{E: manifold decomposition} that $W^0$ and $W^\pm$ are diffeomorphic to the respective fiber products $M^0 \times_M W$ and $M^{\pm} \times_M W$.
+	We will need these settings once we have finished with some preliminaries.
 \end{comment}
 
 We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, though we use different orientation conventions and also consider versions involving co-orientations.
@@ -930,7 +935,9 @@ We can now officially define creasing.
 \begin{definition}
 	Suppose $W$ is a manifold with corners and $\varphi \colon W \to (-1,1)$ is a smooth map with a regular value at $0$.
 	We define the \textbf{creasing homotopy} to be the pullback
-	$$\Cre(W) = D\times_{(-1,1)} W \to W.$$
+	\[
+	\Cre(W) = D\times_{(-1,1)} W \to W.
+	\]
 	We note that $\Cre(W)$ does depend on the map $\varphi$, though we typically omit it from the notation as the choice of $\varphi$ will usually be clear from context.
 	When necessary for clarity, we may write $\Cre_\varphi(W)$.
 
@@ -945,7 +952,6 @@ We can now officially define creasing.
 	We will regularly abuse notation by allowing $\Cre(W)$ to refer to the space $D\times_{(-1,1)} W$, the pullback $D\times_{(-1,1)} W \to W$, or the element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$ formed by the preceding constructions.
 	It should usually be clear from context which is meant at any point.
 \end{definition}
-
 
 \begin{comment}
 	\begin{convention}\label{C: regular value setup}
@@ -974,7 +980,8 @@ Note that these results are purely in the topological category, not the smooth c
 \end{proof}
 
 \begin{corollary}
-	$\Cre(W)$ is homeomorphic to $I \times W$. In particular, if $W$ is compact then so is $\Cre(W)$.
+	$\Cre(W)$ is homeomorphic to $I \times W$.
+	In particular, if $W$ is compact then so is $\Cre(W)$.
 \end{corollary}
 
 \begin{proof}
@@ -995,16 +1002,16 @@ See \cref{F: creasing} for a sketch of a creasing homotopy of the teardrop manif
 	Let $M$ be a manifold without boundary.
 	Suppose given $\phi \colon M \to (-1,1)$ with $0$ a regular value and $r_W \colon W \to M$ transverse to $M^0 = \phi^{-1}(0)$, representing an element of $PC^\Gamma_*(M)$ or $W \in PC_\Gamma^*(M)$.
 	Then
-\begin{equation*}
-	\bd(\Cre_\phi(W)) = (D_x \sqcup -D_- \sqcup -D_+)\times_{(-1,1)} W \bigsqcup -D\times_{(-1,1)}\bd W = W \sqcup -W^- \sqcup -W^+ \sqcup -\Cre_\phi(\bd W),
-\end{equation*}
+	\begin{equation*}
+		\bd(\Cre_\phi(W)) = (D_x \sqcup -D_- \sqcup -D_+)\times_{(-1,1)} W \bigsqcup -D\times_{(-1,1)}\bd W = W \sqcup -W^- \sqcup -W^+ \sqcup -\Cre_\phi(\bd W),
+	\end{equation*}
 	again interpreting these formulas in $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$, respectively, by composing the pullback maps to $W$ with $r_W \colon W \to M$ and the pullback maps to $\bd W$ with $\bd r_W \colon \bd W \to M$.
 \end{lemma}
 
 \begin{proof}
-The first equality comes from our boundary formulas for $D$ and our Leibniz rules for pullbacks from \cref{P: oriented fiber boundary,leibniz}.
-For the second equality we use, for example, that $\pi$ is an orientation preserving diffeomorphism over $(-1,1)$ from $D_+ \cong [0,1)$ onto its image in $(-1,1)$, and so we have an orientation-preserving diffeomorphism over $W$ given by $D_+\times_{(-1,1)} W \cong [0,1)\times_{(-1,1)} W = W^+$, and similarly in the co-oriented case.
-The argument is analogous for the $W^-$ and $W$ terms.
+	The first equality comes from our boundary formulas for $D$ and our Leibniz rules for pullbacks from \cref{P: oriented fiber boundary,leibniz}.
+	For the second equality we use, for example, that $\pi$ is an orientation preserving diffeomorphism over $(-1,1)$ from $D_+ \cong [0,1)$ onto its image in $(-1,1)$, and so we have an orientation-preserving diffeomorphism over $W$ given by $D_+\times_{(-1,1)} W \cong [0,1)\times_{(-1,1)} W = W^+$, and similarly in the co-oriented case.
+	The argument is analogous for the $W^-$ and $W$ terms.
 \end{proof}
 
 \begin{comment}
@@ -1020,12 +1027,12 @@ The argument is analogous for the $W^-$ and $W$ terms.
 \end{comment}
 
 \begin{comment}
-\begin{convention}\label{C: regular value setup}
-	In order to crease an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$ represented by $r_W \colon W \to M$, we need a smooth map $\varphi \colon W \to (-1,1)$ so that the composite $\varphi \colon W \xr{r_W}M \xr{\phi} (-1,1)$ has $0$ as a regular value.
-	In this case $M^0$ and $M^\pm$ are fiber products and thus manifolds with corners as in \cref{E: manifold decomposition}.
-	Also as observed there, in this case $\varphi$ has $0$ as a regular value if and only if $r_W$ is transverse to $M^0$, in which case we also have $W^0 = M^0 \times_M W$ and $W^\pm = M^\pm \times_M W$.
-	Unless noted, we will always assume this situation when working with creasing, i.e.\ that we have a fixed $\phi \colon M \to (-1,1)$ with $0$ a regular value and that creasing is defined with respect to the composition $\varphi = \phi r_W$ with $r_W$ transverse to $M^0$.
-\end{convention}
+	\begin{convention}\label{C: regular value setup}
+		In order to crease an element of $PC_*^\Gamma(M)$ or $PC^*_\Gamma(M)$ represented by $r_W \colon W \to M$, we need a smooth map $\varphi \colon W \to (-1,1)$ so that the composite $\varphi \colon W \xr{r_W}M \xr{\phi} (-1,1)$ has $0$ as a regular value.
+		In this case $M^0$ and $M^\pm$ are fiber products and thus manifolds with corners as in \cref{E: manifold decomposition}.
+		Also as observed there, in this case $\varphi$ has $0$ as a regular value if and only if $r_W$ is transverse to $M^0$, in which case we also have $W^0 = M^0 \times_M W$ and $W^\pm = M^\pm \times_M W$.
+		Unless noted, we will always assume this situation when working with creasing, i.e.\ that we have a fixed $\phi \colon M \to (-1,1)$ with $0$ a regular value and that creasing is defined with respect to the composition $\varphi = \phi r_W$ with $r_W$ transverse to $M^0$.
+	\end{convention}
 \end{comment}
 
 To next promote the construction $\Cre(-)$ to an operator on $C_*^{\Gamma}(M)$ or $C^*_\Gamma(M)$, we will need the following corollary of \cref{L: pullback with Q}.
