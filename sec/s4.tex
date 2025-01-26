@@ -130,11 +130,16 @@ We could equivalently phrase this in terms of the map $\textstyle{\bigwedge^w}D_
 	The orientation-reversing case is equivalent, considering instead the requirement $\omega_{r_W} = - \omega_{\phi} * \omega_{r_V}$.
 \end{proof}
 
-The following corollary is now immediate from \cref{L: co-or preserving/reversing} and the definitions.
+The following corollaries are now immediate from \cref{L: co-or preserving/reversing} and the definitions.
 
 \begin{corollary}\label{C: co-or preserving is or preserving}
 	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over the oriented manifold $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$.
 	Then $\phi$ is co-orientation preserving (reversing) if and only if it is orientation preserving (reversing) with respect to the orientations of $V$ and $W$ induced by the co-orientations and the orientation of $M$ (\cref{S: co-orientations}).
+\end{corollary}
+
+\begin{corollary}\label{C: induced triviality}
+	Let $r_V \colon V \to M$ be a map from a manifold with corners to an oriented manifold $M$, and let $\check V$ denote $V$ with the induced orientation; equivalently, we could start with an oriented $\check V$ over $M$ and write $V$ when considering the induced co-orientation.
+	Then $V$ is co-oriented trivial if and only if $\check V$ is oriented trivial.
 \end{corollary}
 
 \subsection{Geometric homology and cohomology}
@@ -185,6 +190,13 @@ Our first lemma is immediate:
 	If $V$ and $W$ are trivial, then $V \sqcup W$ is trivial.
 	If $V$ and $W$ are degenerate, then $V \sqcup W$ is degenerate.
 	If $V,W\in Q_*(M)$ (or $Q^*(M)$), then $V \sqcup W \in Q_*(M)$ (or $Q^*(M)$).
+\end{lemma}
+
+We also have the following directly from \cref{C: induced triviality} and the fact that the small rank property does not depend on (co-)orientation information.
+
+\begin{lemma}\label{L: Q switch}
+	Suppose $V \in PC^*_\Gamma(M)$ with $V$ compact and $M$ oriented, and let $\check V \in PC_*^\Gamma(M)$ denote $V$ with the induced orientation.
+	Then $V \in Q^*(M)$ if and only if $\check V \in Q_*(M)$.
 \end{lemma}
 
 The following useful basic properties are proven in \cite{Lipy14}; for completeness we provide versions of the arguments here, occasionally augmenting those of \cite{Lipy14}.
