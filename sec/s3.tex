@@ -2409,9 +2409,9 @@ We begin with the case where $V$ and $W$ are immersions and then work toward the
 	so
 	$$\beta_{\nu W}^o = \beta_{\nu W}^c.$$
 	Similarly,
-	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = (-1)^{(m-v)(m-w)}\beta^o_P \wedge \beta^o_{\nu W} \wedge \beta^o_{\nu V} = (-1)^{(m-v)(m-w)}\beta^o_V \wedge \beta^o_{\nu V},$$
+	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = (-1)^{(m-v)(m-w)}\beta^o_P \wedge \beta^o_{\nu W} \wedge \beta^o_{\nu V} = (-1)^{(m-v)(m-w)}\beta_V \wedge \beta^o_{\nu V},$$
 	so
-	$$\beta^0_{\nu V} = (-1)^{(m-v)(m-w)}\beta^c_{\nu V}.$$
+	$$\beta^o_{\nu V} = (-1)^{(m-v)(m-w)}\beta^c_{\nu V}.$$
 
 	Thus
 	$$\beta_M = \beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = (-1)^{(m-v)(m-w)}\beta^o_P \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W}.$$
@@ -2543,6 +2543,41 @@ Again, we take all introduced Euclidean spaces to be even-dimensional to simplif
 \begin{proof}[Proof of \cref{P: compare cup and intersection orientations}]
 	By \cref{C: co-oriented full transition to embedded,C: oriented full transition to embedded}, the proposition reduces to \cref{L: compare cup and intersection for immersions}.
 \end{proof}
+
+\begin{comment}
+DO WE WANT TO INCLUDE THIS??
+As a corollary of  \cref{P: compare cup and intersection orientations,P: OC mixed associativity}, we can show the following, which will eventually become the associativity of cap products and intersection products.
+
+\begin{proposition}[Mixed associativity II]\label{P: mixed cap intersection}
+	Let $f \colon V \to M$ be a co-oriented map from a manifold with corners to a manifold without boundary.
+	Let $g \colon W \to M$ and $h \colon Z \to M$ be maps from oriented manifold with corners.
+	Then, assuming sufficient transversality for all terms to be defined (see \cref{R: multiproducts}),
+	$$(V \times_M W) \times_M^o Z = ??? V \times_M (W \times_M^o Z),$$
+	as oriented manifolds.
+\end{proposition}
+\begin{proof}
+	By \cref \cref{P: compare cup and intersection orientations}, we know $W \times_M^o Z = (-1)^{(m-w)(m-z)} W \times_M^c Z$, where $W \times_M^c Z$ is obtained my considering $W$ and $Z$ as co-oriented with the induced co-orientations, forming their co-oriented fiber product, and then taking the induced orientation.
+	Let us write $\hat W$ and $\hat Z$ for $W$ and $Z$ with the induced co-orientations.
+	Then $W \times_M^c Z = (\hat W \times_M \hat V) \times_M M$, by \cref{P: cap with identity M}.
+	So
+	\begin{align*}
+		V \times_M (W \times_M^o Z) &= (-1)^{(m-w)z} V \times_M (W \times_M^c Z)\\
+		&= (-1)^{(m-w)z} V \times_M ((\hat W \times_M \hat Z) \times_M M)\\
+		&= (-1)^{(m-w)z} (V \times_M (\hat W \times_M \hat Z))\times_M M &\text{\cref{P: OC mixed associativity}}\\
+		&= (-1)^{(m-w)z} ((V \times_M \hat W) \times_M \hat Z)\times_M M &\text{\cref{C: fiber assoc}}\\
+		&= (-1)^{(m-w)z} ((V \times_M \hat W) \times_M \hat Z)\times_M M &\text{\cref{C: fiber assoc}}\\
+		&= (-1)^{(m-w)z} (V \times_M \hat W) \times_M^c Z&\text{Definition}\\
+		&= (-1)^{(m-w)z}(-1)^{(m-(v+w-m))z} (V \times_M \hat W) \times_M^o Z&\text{\cref{P: compare cup and intersection orientations}}\\
+		&= (-1)^{(m-v)z} (V \times_M \hat W) \times_M^o Z&\text{\cref{P: compare cup and intersection orientations}}\\
+		&= (-1)^{(m-v)z} ((V \times_M \hat W)\times_M M) \times_M^o Z\\
+		&= (-1)^{(m-v)z} (V \times_M (\hat W\times_M M)) \times_M^o Z &\text{\cref{P: OC mixed associativity}}\\
+		&= (-1)^{(m-v)z} (V \times_M W) \times_M^o Z.
+	\end{align*}
+\end{proof}
+
+\end{comment}
+
+
 
 We can similarly consider the exterior products.
 

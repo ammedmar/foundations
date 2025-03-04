@@ -42,7 +42,7 @@ To obtain chain maps\footnote{We will not require here the signs that sometimes 
 This is the content of the following lemma.
 
 \begin{lemma}\label{L: Q preservation}
-	If $r_W \colon W \to M$ represents an element of $Q_*(M)$ (or $Q^*(M)$) and $f \colon M \to N$ is any (co-oriented proper) smooth map, then $fr_W \colon W \to N$ is in $Q_*(N)$ (or $Q^{*+n-m}(N)$, co-orienting $fr_W$ with the composition co-orientation.).
+	If $r_W \colon W \to M$ represents an element of $Q_*(M)$ (or $Q^*(M)$) and $f \colon M \to N$ is any (co-oriented proper) smooth map, then $fr_W \colon W \to N$ is in $Q_*(N)$ (or $Q^{*+n-m}(N)$, co-orienting $fr_W$ with the composition co-orientation).
 \end{lemma}
 
 \begin{proof}
@@ -200,7 +200,7 @@ The first part of the following theorem is Lipyanskiy's Theorem 5 in \cite{Lipy1
 
 \begin{theorem}\label{T: homology homotopy functor}
 	Given a \textnormal{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$.
-	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$ of degree $n-m$, which depends only on the proper homotopy class and co-orientation of $f$.
+	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^{*+n-m}_\Gamma(N)$, which depends only on the proper homotopy class and co-orientation of $f$.
 
 	The constructions are both functorial.
 	In other words:
@@ -268,7 +268,7 @@ So $i$ is injective.
 
 There is another very useful application of \cref{C: homotopy} that will be needed frequently below.
 To explain, we first observe that if we have a map $r_W \colon W \to M$ representing an element of $H_*^\Gamma(M)$, then, in general, this homology class is not preserved under homotopies of $r_W$.
-For example, a map representing a cycle might be homotopic to maps that do not represent cycles by pulling apart cancelling boundary components during the homotopy or maps of small rank may be homotopic to maps that do not have small rank.
+For example, a map representing a cycle might be homotopic to maps that do not represent cycles by pulling apart cancelling boundary components during the homotopy, or maps of small rank may be homotopic to maps that do not have small rank.
 So, in general, geometric homology and cohomology do not behave well with respect to homotopies of the elements of $PC(M)$; this is the case also with ordinary singular chains modeled on simplices.
 This will cause difficulties below, for example when we want to alter a map representing a cycle by a homotopy to make it transverse to some other cycle.
 The solution will be to define and use what we call universal homotopies.
@@ -448,14 +448,14 @@ The argument is analogous to that for \cref{P: additive h}.
 
 \begin{proposition}\label{P: additive c}
 Let $M = \amalg{M_a}$, and let $i_a \colon M_a \into M$ be the inclusion.
-Define $i^* \colon H_*^\Gamma(M) \to \prod_a H_*^\Gamma(M_a)$ by $i^*(\uV) = \prod i^*_a(\uV)$.
+Define $i^* \colon H^*_\Gamma(M) \to \prod_a H^*_\Gamma(M_a)$ by $i^*(\uV) = \prod i^*_a(\uV)$.
 Then $i^*$ is an isomorphism.
 \end{proposition}
 \begin{proof}
 We observe that if $r_V \colon V \to M$ represents a cochain, then $i^*_a(\uV)$ is simply the restriction of $r_V$ to those connected components of $V$ that map to $M_a$, which we write as $r_{V_a} \colon V_a \to M_a$.
 
 
-So first consider $\prod_a \underline{W_a} \in \prod_a H_*^\Gamma(M_a)$ with each $\underline{W_a}$ represented by $r_{W_a} \colon W_a \to M_a$.
+So first consider $\prod_a \underline{W_a} \in \prod_a H^*_\Gamma(M_a)$ with each $\underline{W_a}$ represented by $r_{W_a} \colon W_a \to M_a$.
 As noted in the footnote on page \pageref{F: countable}, $M$ and each representative precochain $W_a$ must have a countable number of components, and so $W = \sqcup W_a$ can be embedded in $\R^\infty$.
 We define $r_W \colon W \to M$ by letting $r_W = r_{W_a}$ on $W_a$, and $r_W$ is proper since it maps properly to each $M_a$.
 Then $i^*(\uW) = \prod i^*_a(\uW) = \prod \underline{W_a}$.
@@ -478,7 +478,7 @@ As $H^i_\Gamma(pt) = 0$ for $i \neq 0$, we have the standard fact that  $\td H^i
 When $i=0$, the generator of $H^0_\Gamma(pt) \cong \Z$, which is represented by the identity map of the point, maps to the class of $H^0_\Gamma(M)$ represented by the pullback of identity map of the point, which is the identity map of $M$ with its tautological co-orientation.
 As noted in \cref{E: first examples}, we will show below that when $M$ is connected this map generates $H^0_\Gamma(M) \cong \Z$.
 So by \cref{P: additive c}, we have $H^0_\Gamma(M) \cong \prod \Z$, where the product is indexed over the components of $M$ with each factor generated by the identity map of that component with its tautological co-orientation.
-Then $H^0_\Gamma(M)$ is the quotient of this $\prod \Z$ by the subgroup generated by $(1,1,\ldots)$.
+Then $\td H^0_\Gamma(M)$ is the quotient of this $\prod \Z$ by the subgroup generated by $(1,1,\ldots)$.
 \end{definition}
 
 
@@ -677,7 +677,7 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum.
 		& = (\underline{W_1},\underline{W_2})+ (-\underline{Z^0},\underline{Z^0}) + (\underline{W_2^-}-\underline{W_1^+}, \underline{W_1^+} -\underline{W_2^-}) -(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2)}).
 	\end{align*}
 	To see that this is equal to $\uW = (\underline{W_1},\underline{W_2})$ in $S^*$, we first note the middle two terms are each in the image of $(i_U, -i_V)$, so they represent $0$ in $S^*$.
-	It remains to show that $(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2))})=0$ in $S^*$.
+	It remains to show that $(\underline{\Cre(\bd W_1)},\underline{\Cre(\bd W_2)})=0$ in $S^*$.
 
  This term is obtained by applying the creasing construction to the entries of $(\bd W_1,\bd W_2)$, which by assumption represents $0$ in $S^*$.
 	In general, suppose $A \in PC^*_{\Gamma}(M|_U)$ and $B \in PC^*_\Gamma(M|_V)$ such that $(\underline{A}, \underline{B}) \in C^*_\Gamma(M|_U) \oplus C^*_\Gamma(M|_V)$ represents zero in $S^*$.
@@ -700,7 +700,7 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum.
 \begin{remark}\label{R: MV boundary}
 	By the computations above and the standard zig-zag construction of long exact sequences from short exact sequences, the connecting homomorphism in our Mayer--Vietoris sequence takes the cohomology class represented by the cocycle $\uW \in C^*_\Gamma(M|_{U \cup V})$ to the class represented by $-\underline{W^0} \in C^*_\Gamma(M|_{U \cap V})$, where $W^0$ is determined by a function that separates $W$ over $U$ and $V$.
 
-	The description for the homology sequence is identical.
+	The description for the homology sequence is similar, except that, using \cref{L: W0 chain}, the connecting homomorphism takes the homology class represented by the cycle $\uW \in C_*^\Gamma(U \cup V)$ to the class represented by $\underline{W^0} \in C_*^\Gamma(U \cap V)$.
 \end{remark}
 
 \begin{comment}

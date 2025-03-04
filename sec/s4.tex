@@ -8,7 +8,7 @@ at the chain/cochain level, they provide geometric approaches to both theory and
 They are thus akin to de Rham theory in the sense that chains and cochains are defined through the smooth structure rather than continuous maps or open sets, but they are defined over the integers and not just the real numbers.
 
 Our definitions of geometric chains and cochains will be a modification of those given by Lipyanskiy in \cite{Lipy14}, though his results will continue to hold with our modified definitions.
-As Lipyanskiy primarily focuses on geometric chains and geometric homology, our focus, where the theories diverge, will primarily be on geometric cochains and cohomology, for which Lipyanskiy's account is much less complete despite the cohomological setting having its own subtleties.
+As Lipyanskiy primarily focuses on geometric chains and geometric homology, our focus, where the theories diverge, will primarily be on geometric cochains and cohomology, for which Lipyanskiy's account is less complete despite the cohomological setting having its own subtleties.
 We also take the opportunity to fill in some of the details missing from Lipyanskiy's account more generally, especially utilizing the more thorough foundations on manifolds with corners provided by \cite{Joy12,MaDo92}.
 
 \subsection{Preliminary definitions}
@@ -174,6 +174,7 @@ We observe that this definition is itself well defined, since if $V''$ and $W''$
 With $\sqcup$, $PC^\Gamma_*(M)$ and $PC_\Gamma^*(M)$ become commutative monoids in each degree with the empty maps $r_\emptyset \colon \emptyset \to M$ as the identities.
 
 We now return to denoting isomorphism classes by their representatives, noting again that triviality and small rank are properties of the isomorphism classes.
+In particular, when we write $V \sqcup W$, we assume that $V$ and $W$ are disjoint in $\R^\infty$.
 
 \begin{definition}
 	Let $Q_*(M) \subset PC_*(M)$ denote the set of (isomorphism classes of) compact oriented manifolds over $M$ of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate.
@@ -372,7 +373,7 @@ We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every
 
 In Section 6 of \cite{Lipy14}, Lipyanskiy shows that the homology theory based on geometric chains satisfies some of the Eilenberg-Steenrod axioms.
 This is enough to state in Section 10 of \cite{Lipy14} that geometric homology is isomorphic to singular homology on the fixed manifold $M$, though we provide our own proofs below in \cref{T: geometric is singular,T: hom iso map}.
-Unfortunately, Lipyanskiy does not provided a detailed treatment of geometric cohomology, which is different from geometric homology in several respects, though we will also show that it is isomorphic to singular cohomology in \cref{T: geometric is singular,T: intersection qi}.
+Lipyanskiy does not provided a detailed treatment of geometric cohomology, which is different from geometric homology in several respects, though we will also show that it is isomorphic to singular cohomology in \cref{T: geometric is singular,T: intersection qi}.
 
 We next present some immediate examples and observations.
 The first is that geometric homology and cohomology satisfy a very strong form of Poincar\'e duality.
@@ -452,7 +453,7 @@ The first is that geometric homology and cohomology satisfy a very strong form o
 
 \begin{remark}\label{R: degen1}
 	It is in these examples that we most obviously see the need to include degenerate chains and cochains in $Q(M)$.
-	On the other hand, the formulation of degeneracy as given will create some difficult for us in \cref{S: products} when it comes to consider notions of transversality for geometric chains and cochains.
+	On the other hand, the formulation of degeneracy as given will create some difficulty for us in \cref{S: products} when it comes to consider notions of transversality for geometric chains and cochains.
 	The reason is that degeneracy causes much of the problematic ambiguity in choosing representatives for chains and cochains.
 	For example, consider a connected prechain $V \in PC_*(M)$ with small rank but a boundary that is not in $Q_*(M)$.
 	If $V'$ is any other such prechain with small rank and $\bd V = \bd V'$, then $V \sqcup -V' \in Q_*(M)$ since it will have small rank and trivial boundary.
@@ -540,7 +541,7 @@ These are only partially defined, as fiber products require transversality.
 
 
 
-In the last case, we really need $M$ to be oriented in general, as we have observed in \cref{R: what products exist} that if $M$ is not orientable the fiber product of orientable manifolds over $M$ may note be orientable.
+In the last case, we really need $M$ to be oriented in general, as we have observed in \cref{R: what products exist} that if $M$ is not orientable the fiber product of orientable manifolds over $M$ may not be orientable.
 
 \begin{comment}
 	In the cases where $r_V$ and $r_W$ are transverse embeddings, these products are represented by just taking intersections, with the orientations or co-orientations given explicitly in \cref{P: normal pullback,P: cap of immersions,P: orient intersection}.
@@ -601,7 +602,7 @@ In the last case, we really need $M$ to be oriented in general, as we have obser
 	\end{remark}
 \end{comment}
 
-Given the preceding lemma, from here on we will usually not explicitly distinguish between maps (co\nobreakdash-)oriented maps $V \to M$ and their isomorphism classes when discussing products.
+Given the preceding lemma, from here on we will usually not explicitly distinguish between (co\nobreakdash-)oriented maps $V \to M$ and their isomorphism classes when discussing products.
 
 
 
@@ -754,11 +755,11 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 \subsection{Splitting and creasing}\label{S: splitting and creasing}
 
 In this section we discuss the closely related notions of splitting and creasing, both of which are concerned with breaking chains and cochains into smaller pieces.
-The idea is somewhat analogous to the role subdivisions play in classical singular homology and cohomology theory, and both will be essential in our discussion of Mayer--Vietoris sequences,
+The idea is somewhat analogous to the role subdivisions play in classical singular homology and cohomology theory, and both will be essential in our discussion of Mayer--Vietoris sequences.
 
 The idea of splitting is to take a manifold with corners $W$ over a manifold without boundary $M$ and split it along a codimension one submanifold with corners into two manifolds with corners, $W^+$ and $W^-$.
-This have various uses.
-In particular, when $W$ represents a cycle or cocycle, the creasing construction then shows that $W$ is homologous (or cohomologous) to $W^+ + W^-$.
+This has various uses.
+In particular, when $W$ represents a cycle or cocycle, the creasing construction then shows that $\uW$ is homologous (or cohomologous) to $\underline{W^+} + \underline{W^-}$.
 
 
 \subsubsection{Splitting}\label{S: splitting}
@@ -874,7 +875,7 @@ Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which
 
 Lastly, we will occasionally need to consider the preimage of an interval $[p,q] \subset \R$.
 If $p < q$ are regular values for $\phi$, then $\phi^{-1}([p,q])$ will be an embedded manifold with boundary in $M$ that we denote $M^{[p,q]}$.
-If further $\phi r_W$ is transverse $p$ and $q$ then we can form $W^{[p,q]} = M^{[p,q]} \times_M W$.
+If further $\phi r_W$ is transverse to $p$ and $q$ then we can form $W^{[p,q]} = M^{[p,q]} \times_M W$.
 We also let $W^p = \phi^{-1}(p) \times_M W$, and similarly for $q$.
 
 \begin{lemma}\label{L: Wpq cochain}
