@@ -98,7 +98,7 @@ We have the following cubical analogue.
 	$\vertices(X)$, together with, for each $\sigma \in X$, an order-preserving bijection $\iota_\sigma \colon \sigma \to \mathcal P(\overline n)$ for some $n$, such that:
 	\begin{enumerate}
 		\item For all $v \in \vertices(X)$, $\{v\} \in X$,
-		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w]) \in X$ and the following commutes
+		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w])$ is in  $X$ and the following diagram commutes
 		\begin{equation*}
 			\begin{tikzcd} [row sep = tiny, column sep = small]
 				\sigma \arrow[rr, "\iota_\sigma"] && \mathcal P(\overline n) \\
@@ -114,7 +114,7 @@ We have the following cubical analogue.
 	We identify elements in $\vertices(X)$ with the singleton subsets in $X$, referring to them as vertices.
 \end{definition}
 
-In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we only work with these and have seen little use elsewhere for the unordered version.
+In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we have no use for the unordered version.
 Our definition sits between cubical sets \cite{jardine2002cubical} and cellular subsets of the cubical lattice of $\R^\infty$ \cite{kaczynski2006computational}, analogously to the way that abstract ordered simplicial complexes sit between simplicial sets and simplicial complexes.
 The following geometric realization construction makes our definition and the cubical lattice definition essentially equivalent.
 Just as is the case for simplicial complexes, faces in cubical complexes are completely determined by their vertices.
