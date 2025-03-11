@@ -33,12 +33,28 @@
 		\draw[-{Latex[length=2mm]}] (\xMin, -.5)--(\xMax, -.5);
 		\draw[-{Latex[length=2mm]}] (\xMin, 4.5)--(\xMax, 4.5);
 
-		\foreach \i in {\xMin,...,\xMax} {
-			\draw [very thin,gray] (\i,\yMin) -- (\i,\yMax);
-		}
-		\foreach \i in {\yMin,...,\yMax} {
-			\draw [very thin,gray] (\xMin,\i) -- (\xMax,\i);
+		\foreach \i in {0,...,4} {
+			\foreach \j in {0,...,3} {
+				\draw [-{Latex[length=1mm]}, very thin, gray] (\i,\j) -- (\i,\j+1);
+				\draw [-{Latex[length=1mm]}, very thin, gray] (\j,\i) -- (\j+1,\i);
+			}
 		}
 	\end{tikzpicture}
+%	\begin{tikzpicture}[scale=.8]
+%		\draw[-{Latex[length=2mm]}] (-.5,\yMin)--(-.5,\yMax);
+%		\draw[-{Latex[length=2mm]}] (-.5,\yMin)--(-.5,\yMax-.5);
+%		\draw[-{Latex[length=2mm]}] (4.5,\yMin)--(4.5,\yMax);
+%		\draw[-{Latex[length=2mm]}] (4.5,\yMin)--(4.5,\yMax-.5);
+%
+%		\draw[-{Latex[length=2mm]}] (\xMin, -.5)--(\xMax, -.5);
+%		\draw[-{Latex[length=2mm]}] (\xMin, 4.5)--(\xMax, 4.5);
+%
+%		\foreach \i in {\xMin,...,\xMax} {
+%			\draw [very thin,gray] (\i,\yMin) -- (\i,\yMax);
+%		}
+%		\foreach \i in {\yMin,...,\yMax} {
+%			\draw [very thin,gray] (\xMin,\i) -- (\xMax,\i);
+%		}
+%	\end{tikzpicture}
 	\caption{A cubulation of the torus}
 \end{subfigure}

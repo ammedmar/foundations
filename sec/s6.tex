@@ -107,7 +107,7 @@ We have the following cubical analogue.
 	$\vertices(X)$, together with, for each $\sigma \in X$, an order-preserving bijection $\iota_\sigma \colon \sigma \to \mathcal P(\overline n)$ for some $n$, such that:
 	\begin{enumerate}
 		\item For all $v \in \vertices(X)$, $\{v\} \in X$,
-		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w]) \in X$ and the following commutes
+		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w])$ is in  $X$ and the following diagram commutes
 		\begin{equation*}
 			\begin{tikzcd} [row sep = tiny, column sep = small]
 				\sigma \arrow[rr, "\iota_\sigma"] && \mathcal P(\overline n) \\
@@ -123,6 +123,7 @@ We have the following cubical analogue.
 	We identify elements in $\vertices(X)$ with the singleton subsets in $X$, referring to them as vertices.
 \end{definition}
 
+<<<<<<< HEAD
 In the definition, the role of the characteristic maps $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ is to combinatorially identify the poset structure on each cube $\sigma$ with the poset structure on the vertices of the topological cube $\interval^n$ that we previously established by identifying the vertices of $\interval^n$ with $\mathcal P(\overline n)$.
 The first condition then says that every vertex is a cube of the cubical complex, while the second says that every face of a cube is also a cube in the complex with its compatible subposet structure.
 
@@ -130,6 +131,9 @@ The first condition then says that every vertex is a cube of the cubical complex
 
 
 In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we only work with these and have seen little use elsewhere for the unordered version.
+=======
+In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we have no use for the unordered version.
+>>>>>>> origin/main
 Our definition sits between cubical sets \cite{jardine2002cubical} and cellular subsets of the cubical lattice of $\R^\infty$ \cite{kaczynski2006computational}, analogously to the way that abstract ordered simplicial complexes sit between simplicial sets and simplicial complexes.
 The following geometric realization construction makes our definition and the cubical lattice definition essentially equivalent.
 Just as is the case for simplicial complexes, faces in cubical complexes are completely determined by their vertices.
@@ -156,11 +160,16 @@ See \cite{ShSh92} for details.
 
 \begin{figure}
 	\input{auxy/torus.tex}
+<<<<<<< HEAD
 	\caption{The first cellular decomposition of a torus pictured above does not represent the geometric realization of a cubical complex: If we give the vertices of each square the standard poset ordering as squares in the plane with initial vertex in the lower left corner and final vertex in the upper right corner, we run into a contradiction, as the lower middle vertex precedes the central vertex in the bottom squares, while the upper middle vertex succeeds the central vertex in the top squares.
 	But the top and bottom middle vertices are identified in the torus, contradicting a global partial ordering on the vertices of the torus that is compatible with the given partial orderings on each face, even though each gluing happens along compatibly-ordered pairs of edges.
 	On the right, however, each square can be coherently identified with the standard square with initial vertex in the lower left corner and final vertex in the upper right corner.
+=======
+	\caption{The first cellular decomposition of a torus pictured above does not represent the geometric realization of a cubical complex, as each square has the same set of vertices.
+	On the right, each square has been coherently identified with the standard square.
+>>>>>>> origin/main
 	Therefore, (B) depicts a cubical structure on the torus.}
-\label{F: cubical structure}
+	\label{F: cubical structure}
 \end{figure}
 \greg{The example on the right of the figure \cref{F: cubical structure} is wrong - need to fix}
 
