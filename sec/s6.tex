@@ -2,33 +2,35 @@
 
 \section{Interaction with cubical structures}\label{S: transversality}
 
-In this section we bring in some auxiliary structures that will help us further develop geometric cohomology and its connections to singular cohomology.
+In this section we bring in some auxiliary structures that will help us further develop geometric cohomology and its connections o singular cohomology.
 In particular, we equip our manifolds with smooth cubulations.
 Many of our results would apply just as well with the more familiar smooth triangulations, but we find cubulations to be more convenient.
 In particular, in \cite{FMS-flows} we have considered geometric cochains in the presence of cubulations, demonstrating how to obtain a fully-defined cochain-level cup product via intersection using certain flows developed in terms of the cubulation.
 Cup products in geometric cohomology will be discussed in the following section.
 
 Smooth cubulations are analogous to smooth triangulations in that they involve a homeomorphism $M \cong |X|$ between a manifold $M$ and the geometric realization $|X|$ of a cubical complex $X$ such that the restriction to each cubical face is a smooth embedding.
-What is slightly different, aside from substituting cubes (i.e.\ copies of $\interval^k$) for simplices, is that cubical complexes are required to have a bit more structure than simplicial complexes, which can always be constructed just by gluing together simplices along faces.
+What is slightly different, aside from substituting cubes (i.e.\ copies of $\interval^k$) for simplices, is that cubical complexes require a bite more combinatorial structure; simplicial complexes can always be constructed just by gluing together simplices along faces, while gluing of cubical faces requires a certain combinatorial compatibility among the faces being glued.
+
 The issue is that any simplicial complex can be given a total ordering of its vertices, and this ordering provides a canonical identification between any simplicial face and the standard model simplex of the same dimension.
 By contrast, the natural combinatorial structure on the vertices of the standard cube is not a total ordering but rather a partial ordering.
 In particular, if we take the standard cube to be $\interval^k = [0,1]^k \subset \R^k$, then we have $v \leq w$ for two vertices if each coordinate of $v$ is less than or equal to the corresponding coordinate of $w$.
-There turn out to be spaces obtained from naively gluing cubes that do not support compatible partial orderings of this type.
-So rather when we speak of cubical complexes we will restrict ourselves to complexes that do admit such combinatorial data.
+There turn out to be spaces obtained from naively gluing cubes that do not support compatible partial orderings of this type among their cubes; for example, see \cref{F: cubical structure}, below.
+
+So when we speak of cubical complexes we will restrict ourselves to complexes that do admit such combinatorial data.
 Consequently, each cubical $k$-face comes equipped with an identification with the standard $k$-cube, and hence also a standard orientation.
 As we will note below, smooth cubulations of this form exist for any smooth manifold.
 In the remainder of this work, ``cubulation'' will always mean a smooth cubulation.
 
-Also analogously to simplicial complexes, cubical complexes possess algebraic cubical chain and cochain complexes and so cubical homology and cohomology that coincides with singular homology and cohomology\footnote{We will show below that cubical homology coincide with singular cubical homology, which coincide with simplicial singular homology by \cite{EM53}.
+Analogously to simplicial complexes, cubical complexes possess algebraic cubical chain and cochain complexes and so cubical homology and cohomology that coincide with singular homology and cohomology\footnote{We will show below that cubical homology coincide with singular cubical homology, which coincide with simplicial singular homology by \cite{EM53}.
 As all of the involved chain complexes are free, the corresponding cohomologies are also isomorphic by basic homological algebra \cite[Theorem 45.5]{Mun84}.\label{FN: cubical and singular}}.
-Our primary goal in this section is to see that there are direct geometrically-defined isomorphisms between cubical (co)homology nd geometric (co)homology.
+Our primary goal in this section is to see that there are direct geometrically-defined isomorphisms between cubical (co)homology and geometric (co)homology.
 
 For this, we first provide some background on cubical complexes and cubical homology and cohomology in \cref{S: cubes,S: cubical cochains}.
 Then in \cref{S: cubical and geometric homology} we show that the obvious map that takes a face of a cube complex to its corresponding geometric chain induces an isomorphism from cubical homology to geometric homology.
 Next, in \cref{S: transverse cochains}, we consider those geometric cochains that are transverse to a given cubulation and show that their cohomology agrees with the geometric cohomology obtained without that constraint.
 
 The motivation for our interest in cochains that are transverse to the cubulation is that they allow us to define an \textit{intersection map} $\mc I$ from these transverse geometric cochains to the cubical cochains.
-If $F$ is a face of the cubulation, $F^*$ its dual cochain, and $W$ is a geometric cochain of complementary dimension to $F$, then the coefficient of $F^*$ in $\mc I(W)$ is simply the geometric intersection number of $W$ with $F$.
+If $F$ is a face of the cubulation, $F^*$ its dual cochain, and $W$ represents a geometric cochain of complementary dimension to $F$, then the coefficient of $F^*$ in $\mc I(W)$ is simply the geometric intersection number of $W$ with $F$.
 This intersection map is defined in \cref{S: intersection map}, which also contains our proof that the intersection map induces a cohomology isomorphism when $H^*(M)$ is finitely generated in each degree.
 To implement this proof, we include in \cref{S: dual cubes} a discussion of what we call ``central subdivisions'' of cubical complexes, which are analogous to barycentric subdivisions of simplicial complexes and allow us to construct the cubical dual cells to faces of the cubulation.
 
@@ -39,7 +41,7 @@ In the context of cubical complexes we write the unit interval as $\interval = [
 \begin{equation*}
 	\interval^n = \big\{ (x_1, \dots, x_n) \in \R^n\ |\ 0 \leq x_i \leq 1 \big\}.
 \end{equation*}
-Denote $\{1, \dots, n\}$ by $\overline{n}$.
+Denote the set $\{1, \dots, n\}$ by $\overline{n}$.
 
 Given a partition $F = (F_0, F_{01}, F_1)$ of $\overline n$, it determines a \textbf{face} of $\interval^n$ given by
 \begin{equation*}
@@ -49,6 +51,13 @@ We abuse notation and write $F$ for both the partition and its associated face.
 We refer to coordinates $x_i$ with $i \in F_{01}$ as \textbf{free} and to the others as \textbf{bound}.
 The \textbf{dimension} of $F$ is its number of free coordinates, and as usual the faces of dimension $0$ and $1$ are called vertices and edges, respectively.
 The set of vertices of $\interval^n$ is denoted by $\vertices(\interval^n)$.
+Given any face $F$, its \textbf{initial vertex} is obtained by setting all free coordinates to $0$, and its \textbf{terminal vertex} is obtained by setting all free coordinates to $1$.
+We note that $F$ is determined completely by its initial and terminal vertices: $F_0$ is the set of coordinates that are $0$ for both vertices, $F_1$ is the set of coordinates that are $1$ for both vertices, and $F_{01}$ is the set of coordinates that disagree.
+
+\begin{example}
+	The partition $(\{1,4,6\},\{3,5\}, \{2\})$ corresponds to the $2$-dimensional face of $\interval^6$ determined by $x_1=x_4=x_6=0$, $x_2=1$, and with $x_3$ and $x_5$ a free to vary in $\interval = [0,1]$.
+	Its initial vertex is $(0,1,0,0,0,0)$ and its terminal vertex is  $(0,1,1,0,1,0)$.
+\end{example}
 
 For $\varepsilon \in \{0, 1\}$ and $i \in \overline{n}$, we define maps $\delta_i^\varepsilon \colon \interval^{n-1} \to \interval^{n}$ by
 \begin{align*}
@@ -76,21 +85,21 @@ Analogous to the face and degeneracy identities for simplicial sets, these opera
 \]
 
 For $v \in \vertices(\interval^n)$ all coordinates are bound -- that is, $v_{01} = \emptyset$.
-Thus
-$v$ is determined by the partition of $\overline n$ into $v_0$ and $v_1$, so
+Thus $v$ is determined by the partition of $\overline n$ into $v_0$ and $v_1$, so
 we have a bijection from the set of vertices of $\interval^n$ to the power set $\mathcal P(\overline n)$ of $\overline n$, sending $v$ to $v_1$.
 The inclusion relation in the power set induces a poset structure on $\vertices(\interval^n)$ given explicitly by
 \begin{equation*}
 	v = (\epsilon_1, \dots, \epsilon_n) \leq w = (\eta_1, \dots, \eta_n) \iff \forall i,\ \epsilon_i \leq \eta_i.
 \end{equation*}
-We will freely use the identification of these two posets.
-Face embedding maps induce order-preserving maps at the level of vertices.
+We will freely use the identification of these two posets, thinking of $\mathcal P(\overline n)$ as a combinatorial model for $\interval^n$ in the same way that one identifies the totally ordered set $[0,\dots, n]$ with the $n$-simplex $\Delta^n$ in the simplicial setting.
+Note that face embedding maps induce order-preserving maps at the level of vertices.
 
 An \textbf{interval subposet} of $\mathcal P(\overline n)$ is one of the form $[v, w] = \{u \in \mathcal P(\overline n)\ |\ v \leq u \leq w\}$ for a pair of vertices $v \leq w$.
-There is a canonical bijection between faces of $\interval^n$ and such subposets, associating to $[v, w]$ the face $F$ defined by $F_\varepsilon = \{i \in \overline{n}\ |\ v_i = w_i = \varepsilon\}$ for $\varepsilon \in \{0, 1\}$.
+This is precisely the set of vertices of the unique face $F$ of $\interval^n$ with $v$ as its initial vertex and $w$ as its terminal vertex.
+This association determines a canonical bijection between faces of $\interval^n$ and such subposets; explicitly, to $[v, w]$ we associate the face $F$ defined by $F_\varepsilon = \{i \in \overline{n}\ |\ v_i = w_i = \varepsilon\}$ for $\varepsilon \in \{0, 1\}$.
 
 The posets $\{\mathcal P(\overline n)\}_{n \geq 1}$ play the role for cubical complexes that finite totally ordered sets play for simplicial complexes.
-Recall for comparison that one definition of an abstract ordered simplicial complex is as a pair $(V, X)$, where $V$ is a poset and $X$ is a collection of subsets of $V$, each with an induced total order, such that all singletons are in $X$ and subsets of sets in $X$ are also in $X$.
+Recall for comparison that one definition of an abstract ordered simplicial complex is as a pair $(V, X)$, where $V$ is a poset and $X$ is a collection of subsets of $V$ (the simplices), each with an induced total order, such that all singletons are in $X$ (the vertices) and subsets of sets in $X$ (faces of simplices) are also in $X$.
 We have the following cubical analogue.
 
 \begin{definition}\label{D:cubical}
@@ -110,40 +119,56 @@ We have the following cubical analogue.
 	\end{enumerate}
 	We refer to an element $\sigma \in X$ as a \textbf{cube} or \textbf{face} of $X$, refer to $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ as its \textbf{characteristic map},
 	and refer to $n$ as its \textbf{dimension}.
-	If $\rho \subseteq \sigma \in X$, we say that $\rho$ is a \textbf{face} of $\sigma$ in $X$.
+	If $\rho \subseteq \sigma \in X$, we say that $\rho$ is a \textbf{face} of $\sigma$ in $X$, and this determines a poset structure on $X$ itself.
 	We identify elements in $\vertices(X)$ with the singleton subsets in $X$, referring to them as vertices.
 \end{definition}
+
+In the definition, the role of the characteristic maps $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ is to combinatorially identify the poset structure on each cube $\sigma$ with the poset structure on the vertices of the topological cube $\interval^n$ that we previously established by identifying the vertices of $\interval^n$ with $\mathcal P(\overline n)$.
+The first condition then says that every vertex is a cube of the cubical complex, while the second says that every face of a cube is also a cube in the complex with its compatible subposet structure.
+
+
+
 
 In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we only work with these and have seen little use elsewhere for the unordered version.
 Our definition sits between cubical sets \cite{jardine2002cubical} and cellular subsets of the cubical lattice of $\R^\infty$ \cite{kaczynski2006computational}, analogously to the way that abstract ordered simplicial complexes sit between simplicial sets and simplicial complexes.
 The following geometric realization construction makes our definition and the cubical lattice definition essentially equivalent.
 Just as is the case for simplicial complexes, faces in cubical complexes are completely determined by their vertices.
 
-Consider the category defined by the inclusion poset of a cubical complex $X$ and the subcategory ${\tt Cube}$ of the category ${\tt Top}$ of topological spaces whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
-The characteristic maps of $X$ define a functor from its poset category to $\mathtt{Cube}$, and we define its \textbf{geometric realization} as the colimit of this functor.
-A \textbf{cubical structure} or \textbf{cubulation} on a space $S$ is a homeomorphism $h \colon |X| \to S$ from the geometric realization of a cubical complex.
-We abuse notation and write $h \circ \iota_{|\sigma|}$ simply as $\iota_\sigma$ for any $\sigma \in X$ when a cubical structure $h \colon |X| \to S$ is understood.
 
-A smooth cubulation is one for which characteristic maps are smooth maps of manifolds with corners.
+Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$ be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
+The poset of faces of a cubical complex $X$ also determines a category, and the characteristic maps of $X$ determine a functor from this poset category to $\mathtt{Cube}$.
+We define the \textbf{geometric realization} $|X|$ of $X$ as the colimit of this functor; in other words, we glue topological cubes together according to the combinatorial data of the cubical complex $X$ in the evident way.
+A \textbf{cubical structure} or \textbf{cubulation} on a space $S$ is a homeomorphism $h \colon |X| \to S$ for some cubical complex $X$.
+
+\begin{comment}
+	We abuse notation and write $h \circ \iota_{|\sigma|}$ simply as $\iota_\sigma$ for any $\sigma \in X$ when a cubical structure $h \colon |X| \to S$ is understood.
+\end{comment}
+
+A smooth cubulation is one for which the restriction of $h \colon |X| \to S$ to each cube is a smooth map of manifolds with corners.
+For a given face of $F$ of $X$, we will also refer to the corresponding map $\interval^n \to S$ as the characteristic map of the face.
 Smooth cubulations exist for any smooth manifold, as in the following construction of \cite{ShSh92}.
 Start with a smooth triangulation (see for example \cite[Theorem 10.6]{MUNK66} for the existence of such).
 Consider the cell complex that is dual to its barycentric subdivision.
 Intersecting those dual cells with each simplex in the triangulation provides a subdivision of the simplex into cells that are linearly isomorphic to cubes.
 Moreover, starting with an ordered triangulation -- obtained for example by taking a barycentric subdivision -- such a cubical decomposition embeds cellularly into the cubical lattice of $\R^\infty$, and thus it is the geometric realization of a cubical complex.
+See \cite{ShSh92} for details.
+
 
 \begin{figure}
 	\input{auxy/torus.tex}
-	\caption{The first cellular decomposition of a torus pictured above does not represent the geometric realization of a cubical complex, as each square has the same set of vertices.
-	On the right, each square can be coherently identified with the standard square with initial vertex in the lower left corner and final vertex in the upper right corner.
+	\caption{The first cellular decomposition of a torus pictured above does not represent the geometric realization of a cubical complex: If we give the vertices of each square the standard poset ordering as squares in the plane with initial vertex in the lower left corner and final vertex in the upper right corner, we run into a contradiction, as the lower middle vertex precedes the central vertex in the bottom squares, while the upper middle vertex succeeds the central vertex in the top squares.
+	But the top and bottom middle vertices are identified in the torus, contradicting a global partial ordering on the vertices of the torus that is compatible with the given partial orderings on each face, even though each gluing happens along compatibly-ordered pairs of edges.
+	On the right, however, each square can be coherently identified with the standard square with initial vertex in the lower left corner and final vertex in the upper right corner.
 	Therefore, (B) depicts a cubical structure on the torus.}
 \label{F: cubical structure}
 \end{figure}
+\greg{The example on the right of the figure \cref{F: cubical structure} is wrong - need to fix}
 
 \subsection{Cubical chains and cochains}\label{S: cubical cochains}
 
 We can also define an ``algebraic realization" for a cubical complex in analogy to its geometric realization.
-Let $K_*(\interval^1)$ be the usual cellular chain complex of the interval with integral coefficients.
-Explicitly, $K_0(\interval^1)$ is generated by the vertices $[\underline{0}]$ and $[\underline{1}]$, and $K_1(\interval^1)$ is generated by the unique 1-dimensional face, denoted $[\underline{0},\underline{1}]$ in the interval subposet notation.
+Let $K_*(\interval^1)$ be the usual cellular chain complex of the interval with integer coefficients.
+Explicitly, $K_0(\interval^1)$ is generated by the vertices, which we write in this context as $[\underline{0}]$ and $[\underline{1}]$, and $K_1(\interval^1)$ is generated by the unique 1-dimensional face, denoted $[\underline{0},\underline{1}]$ in the interval subposet notation.
 The boundary map is $\bd [\underline{0},\underline{1}] = [\underline{1}]-[\underline{0}]$.
 
 Let $K_*(\interval^n) = K_*(\interval^1)^{ \otimes n}$, with differential defined by the graded Leibniz rule.
@@ -156,17 +181,17 @@ Regarding a cubical complex $X$ as a functor to $\mathtt{Cube}$, we can compose 
 The complex of \textbf{cubical chains} of $X$, denoted $K_*(X)$, is defined to be the colimit of this composition.
 As one would expect, in each degree it is a free abelian group generated by the cubes of that dimension, and its boundary homomorphism sends the
 generator associated to a cube to a sum of generators associated to its codimension-one faces with appropriate signs.
-By abuse, we use the same notation and terminology for an element in $X$, its geometric realization in $|X|$,
+By abuse, we will use the same notation and terminology for an element in $X$, its geometric realization in $|X|$,
 and the corresponding basis element in $K_*(X)$.
 Most commonly we will write $F$ and refer simply to a ``face of $X$.''
 
 We note that for each $\interval^n$ we have the ordered set $\{\e_1, \dots, \e_n\}$ where $\e_i = \frac{\bd\ }{\bd x_i}$.
 For any face $F$ of $\interval^n$, the ordered subset $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ defines the \textbf{canonical orientation} of $F$.
 In forming the cubical complex $X$, these orientations are preserved, and so each face of $X$ carries an orientation.
-These orientations are compatible with our standard generators of $K_*(X)$ in the sense that if we identify $[0,1]^{ \otimes k}$ with $\interval^k$ with its standard orientation then, in the boundary formula, $k-1$ faces appear sign $1$ or $-1$ according to whether or not their standard orientations agree with the boundary orientation of $\interval^k$ as a manifold with corners.
+These orientations are compatible with our standard generators of $K_*(X)$ in the sense that if we identify $[0,1]^{ \otimes k}$ with $\interval^k$ with its standard orientation then, in the boundary formula, $k-1$ faces appear with sign $1$ or $-1$ according to whether or not their standard orientations agree with the boundary orientation of $\interval^k$ as a manifold with corners.
 
 The \textbf{cubical cochain complex} of $X$ (with $\Z$ coefficients) is the chain complex $K^*(X) = \Hom_\Z(K_*(X), \Z)$.
-If $F$ is a face of $X$, and correspondingly a generator of $K_*(X)$, then we will write $F^*$ for the dual, i.e.\ the generator of $K^*(X)$ such that $F^*(F) = 1$ and $F^*(E) = 0$ for all other faces $E\neq F$ of $X$.
+If $F$ is a face of $X$, and correspondingly a generator of $K_*(X)$, then we will write $F^*$ for the dual, i.e.\ the element of $K^*(X)$ such that $F^*(F) = 1$ and $F^*(E) = 0$ for all other faces $E\neq F$ of $X$.
 We will use the convention as in \cite{Mun84} that
 $$(dF^*)(\xi) = F^*(\bd \xi).$$
 
@@ -184,11 +209,11 @@ As expected this gives the standard homology:
 \begin{proof}
 	The proof is analogous to the proof of \cite[Proposition V.8.3]{Dol72}, which provides an isomorphism between simplicial and singular homology.
 
-	Let $NK_*(M)$ be the normalized singular cubical chain complex of $M$ as in recalled in \cref{S: homology is homology}, and let $NK^{sm}_*(M)$ be the subcomplex generated by smooth cubes.
-	By \cref{P: singular smooth cubes,T: hom iso map}, there are quasi-isomorphisms $NK_*(M) \xr{\psi} NK^{sm}_*(M) \to C^\Gamma_*(M)$, the latter induced by observing that smooth singular cubes are elements of $PC^\Gamma_*(M)$ and that degenerate cubes are elements of $Q_*(M)$.
+	Let $NK_*(M)$ be the normalized singular cubical chain complex of $M$ as recalled in \cref{S: homology is homology}, and let $NK^{sm}_*(M)$ be the subcomplex generated by smooth cubes.
+	By \cref{T: hom iso map,P: singular smooth cubes}, there are quasi-isomorphisms $NK_*(M) \xleftarrow{\psi} NK^{sm}_*(M) \xr{\phi} C^\Gamma_*(M)$, the latter induced by observing that smooth singular cubes are elements of $PC^\Gamma_*(M)$ and that degenerate cubes are elements of $Q_*(M)$.
 
 	Next we observe that there is a map $\eta: K^X_*(M) \to NK^{sm}_*(M)$ that takes each cube into its embedding to $M$ (recall that we assume the cubulation is smooth) and that the composition $\phi\eta$ is the map $\mc J \colon K^X_*(M) \to C^\Gamma_*(M)$ of the theorem statement.
-	So it suffices to show that $\eta$ is an isomorphism.
+	So it suffices to show that $\eta$ is a quasi-isomorphism.
 
 	For this, we have the diagram
 	\[
@@ -198,17 +223,17 @@ As expected this gives the standard homology:
 	\end{tikzcd}
 	\]
 	in which $CW_*(M)$ is the CW chain complex of $M$ corresponding to the CW complex structure given by the cubulation and $\Theta$ is the standard isomorphism between CW homology and singular homology as in Dold \cite[Proposition V.1.9]{Dol72}.
-	The isomorphism in Dold is developed using simplicial singular homology, but as simplicial singular and cubical singular homology are isomorphic, the argument goes through identically using singular cubes.
+	The isomorphism in Dold is developed using simplicial singular homology, but as simplicial singular and cubical singular homology are isomorphic, the argument there goes through identically using singular cubes.
 	The map on the left is an isomorphism at the chain level as there is an evident isomorphism in this case between the cubical chain complex and the CW chain complex that takes an embedding of a $k$-cube to the corresponding generator of $CW_k(M) = H_k(X^k, X^{k-1})$ (where we assume the expression on the right is singular cubical homology).
-	As in Dold, the map $\Theta$ takes a class in $H_k(CW_*(M))$ represented to by a $k$-cycle $z$ in $CW_k(M)$ to the class in $H_k(NK_*(M))$ represented by a singular (cubical) cycle in $NK_k(M)$ that represents the same class as $z$ in $H_k(X^k,X^{k-1})$.
+	As in Dold, the map $\Theta$ takes a class in $H_k(CW_*(M))$ represented by a $k$-cycle $z$ in $CW_k(M)$ to the class in $H_k(NK_*(M))$ represented by a singular (cubical) cycle in $NK_k(M)$ that represents the same class as $z$ in $H_k(X^k,X^{k-1})$.
 	But all cycles in the image of the vertical map of the diagram are already represented by singular cycles in $NK^{sm}_k(M)$, so the diagram commutes, and it follows that $\eta_*$ is an isomorphism.
 
-	The isomorphism of the theorem is now obtained by composing the maps $K_*^X(M) \to NK^{sm}_*(M) \to C_*^\Gamma(M)$.
+	The isomorphism of the theorem is now obtained by composing the quasi-isomorphisms $K_*^X(M) \xr{\eta} NK^{sm}_*(M) \xr{\phi} C_*^\Gamma(M)$.
 \end{proof}
 
-As a corollary of the proof, we have the following useful result concerning the cohomology groups of the complexes
+As a corollary of the proof, we have the following useful result concerning the cohomology groups of the complexes, which we obtain using the following definitions:
 \begin{align*}
-	NK^*(M))& \defeq \Hom(NK_*(M),\Z)\\
+	NK^*(M)& \defeq \Hom(NK_*(M),\Z)\\
 	NK_{sm}^*(M)& \defeq \Hom(NK^{sm}_*(M),\Z)\\
 	K^*_X(M)& \defeq \Hom(K^X_*(M),\Z).
 \end{align*}
@@ -218,7 +243,7 @@ As a corollary of the proof, we have the following useful result concerning the 
 \end{corollary}
 
 \begin{proof}
-	This follows from basic homological algebra \cite[Theorem 45.5]{Mun84} as $NK_*(M)$, $NK^{sm}_*(M)$, and $K^X_*(M)$ are all free chain complexes, observing that even though $NK_*(M)$ are $NK^{sm}_*(M)$ are defined by taking the quotients of the groups of all singular cubes, $SK_*(M)$ and $SK^{sm}_*(M)$, by the subgroups of degenerate cubes, the degenerate cubes correspond to generators of $SK_*(M)$ and $SK^{sm}_*(M)$, and so each $NK_i(M)$ and $NK^{sm}_i(M)$ is freely generated by the nondegenerate, respectively nondegenerate and smooth, singular $i$-cubes.
+	This follows from basic homological algebra \cite[Theorem 45.5]{Mun84} as $NK_*(M)$, $NK^{sm}_*(M)$, and $K^X_*(M)$ are all free chain complexes, observing that even though $NK_*(M)$ are $NK^{sm}_*(M)$ are defined by taking quotients of the groups of singular cubical chains $SK_*(M)$ and $SK^{sm}_*(M)$ by the subgroups of degenerate cubes, the degenerate cubes correspond to generators of $SK_*(M)$ and $SK^{sm}_*(M)$, and so each $NK_i(M)$ and $NK^{sm}_i(M)$ is freely generated by the nondegenerate, respectively nondegenerate and smooth, singular $i$-cubes.
 \end{proof}
 
 \subsection{Cubically transverse geometric cohomology}\label{S: transverse cochains}
@@ -229,7 +254,7 @@ In this section we consider the cochains on $M$ represented by maps $W \to M$ th
 	Let $M$ be equipped with a smooth cubulation $|X| \to M$.
 	We say that $r_W \colon W \to M$ is \textbf{transverse} to $X$ if $r_W \colon W \to M$ is transverse to each characteristic map of the cubulation.
 	In particular, this implies by \cref{L: simple trans} that each induced $\bd^kW \to M$ is naively transverse to each face of the cubulation.
-	If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$ , and so we can define $PC^*_{\Gamma \pf X}(M)$ to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
+	If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$, and so we can define $PC^*_{\Gamma \pf X}(M)$ to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
 
 	We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma \pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma \pf X}^*(M)$ such that $V\sim W$ if and only if $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$.
 	The \textbf{geometric cochains of $M$ transverse to $X$}, denoted $C_{\Gamma \pf X}^*(M)$, are the equivalence classes in $PC_{\Gamma \pf X}^*(M)$.
@@ -240,7 +265,7 @@ In this section we consider the cochains on $M$ represented by maps $W \to M$ th
 \end{definition}
 
 The proof of \cref{L: co/chains well defined} continues to hold for transverse cochains, and so $r_W \colon W \to M$ represents $0$ in $C^*_{\Gamma \pf X}(M)$ if and only if it is in $Q^*_{\Gamma \pf X}(M)$.
-Therefore, the evident map $C^*_{\Gamma \pf X}(M) \to C^*_\Gamma(M)$, which takes the element of $C^*_{\Gamma \pf X}(M)$ represented by $r_W \colon W \to M$ to the element $C^*_\Gamma(M)$ represented by the same map, is a monomorphism of chain complexes, for such an $r_W$ is transverse to $X$ by definition and if it is also in $Q^*(M)$ then it is in $Q^*_{\Gamma \pf X}(M)$.
+Therefore, the evident map $C^*_{\Gamma \pf X}(M) \to C^*_\Gamma(M)$, which takes the element of $C^*_{\Gamma \pf X}(M)$ represented by $r_W \colon W \to M$ to the element of $C^*_\Gamma(M)$ represented by the same map, is a monomorphism of chain complexes, for such an $r_W$ is transverse to $X$ by definition and if it is also in $Q^*(M)$ then it is in $Q^*_{\Gamma \pf X}(M)$.
 Thus we will think of $C^*_{\Gamma \pf X}(M)$ as a subcomplex of $C^*_\Gamma(M)$.
 A key technical result, which will take the remainder of this section to prove,
 is that this inclusion induces a cohomology isomorphism.
@@ -259,7 +284,7 @@ We will construct a homotopy $h \colon V \times I \to M$ such that $g(-,0) = r_V
 The technique for constructing such homotopies will be modeled on a variety of results in \cite{GuPo74}.
 We use the Transversality Theorem and Transversality Homotopy Theorem of \cite[Section 2.3]{GuPo74} as stated.
 However, for the Stability Theorem of \cite[Section 1.6]{GuPo74} we will provide details of the proof because the proof is only sketched in \cite{GuPo74} and we will need the result to be generalized in several ways.
-Also, the Stability Theorem is not completely correct as stated in \cite[Section 1.6]{GuPo74}; the requirement that the submanifolds of the target be closed sets is omitted\footnote{As stated in \cite{GuPo74}, the claim is that if $f \colon X \to Y$ is transverse to any submanifold $Z$ of $Y$ then this property is stable under small homotopies of $f$; more specifically that if $f_t:X \times I \to Y$ is a homotopy with $f_0$ transverse to $Z$ then there is an $\epsilon>0$ such that $f_t$ is transverse to $Z$ for all $t\in[0,\epsilon)$.
+Also, the Stability Theorem was not stated correct in early printings of \cite{GuPo74}, where the requirement that the submanifold of the target be a closed set was omitted\footnote{As stated in early printings of \cite{GuPo74}, the claim was that if $f \colon X \to Y$ is transverse to any submanifold $Z$ of $Y$ then this property is stable under small homotopies of $f$; more specifically that if $f_t:X \times I \to Y$ is a homotopy with $f_0$ transverse to $Z$ then there is an $\epsilon>0$ such that $f_t$ is transverse to $Z$ for all $t\in[0,\epsilon)$.
 Here is a counterexample:
 
 In the plane $\R^2$, let $Z = \{(x,y)|y = x^2, x\neq 0\}$ and consider maps $g_t: \R \to \R^2$ with
@@ -268,19 +293,17 @@ For each fixed $t$, the image is the line given by $y-t^2 = 2t(x-t)$, which has 
 So the map $g_0$ embeds $\R$ as the x-axis, and as the image does not intersect $Z$, the map $g_0$ is transverse to $Z$.
 But for all $t\neq 0$, $g_t$ takes $\R$ to a line that is tangent to $Z$, and so $g_t$ is not transverse to $Z$ for $t\neq 0$, violating the Stability Theorem as stated on page 35 of \cite{GuPo74}.
 
-The error in the proof comes from considering only what happens in neighborhoods of points $x$ such that $f(x) \in Z$ but not points $x$ with $f(x)\notin Z$.
+The error in the original proof comes from considering only what happens in neighborhoods of points $x$ such that $f(x) \in Z$ but not points $x$ with $f(x)\notin Z$.
 As we can see, the claim breaks down when $f(x)\notin Z$ but every neighborhood of $(x,0)$ in $X \times I$ has a point with image in $Z$.
-However, this can be avoided if $Z$ is a closed set in $Y$.}.
+However, this can be avoided if $Z$ is a closed set in $Y$, as is the case for the statement of the theorem in later printings of \cite{GuPo74}.}.
 The needed versions of these results is established in the following proposition:
 
 \begin{proposition}\label{P: ball stability}
 	Suppose $r_V \colon V \to M$ is a proper map from a manifold with corners to a cubulated manifold without boundary.
-	Then there is a proper universal homotopy $h \colon V \times I \to M$ such that:
-	\begin{enumerate}
-		\item $h(-,0) = r_V$,
-		\item $h(-,1) \colon V \to M$ is transverse to the cubulation,
-		\item if $i_W \colon W \to V$ is the inclusion of a union of boundary components of $V$ with $r_W = r_Vi_W \colon W \to M$ transverse to the cubulation then $h \circ (i_{W} \times \id) \colon W \times I \to M$ is transverse to the cubulation.
-	\end{enumerate}
+	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id_M$ and $H(-,1) r_V \colon V \to M$ is transverse to the cubulation.
+	In other words, there is a proper universal homotopy from $r_V$ to a map that is transverse to the cubulation.
+
+	Furthermore, given another proper map $r_W \colon W \to M$ that is transverse to the cubulation, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to the cubulation.
 \end{proposition}
 
 Before proving the proposition, which is somewhat technical, we use it to prove \cref{T: transverse complex}, which states that $H^*(C^*_{\Gamma \pf X}(M)) \to H^*(C_\Gamma^*(M))$ is an isomorphism.
@@ -290,30 +313,49 @@ Before proving the proposition, which is somewhat technical, we use it to prove 
 	We elaborate upon that argument.
 
 	Suppose $\uV \in C_\Gamma^*(M)$ is a cocycle represented by $r_V \colon V \to M$.
-	By \cref{P: ball stability}, there is a proper universal homotopy $h \colon V \times I \to M$ from $r_V$ to $r_{V'} \colon V' \to M$ with $V'$ transverse to the cubulation.
+	By \cref{P: ball stability}, there is a proper universal homotopy $h \colon V \times I \to M$ from $r_V$ to $H(-,1)r_{V} \colon V \to M$ and this latter map is transverse to the cubulation.
+	Let us call the transverse map $r_{V'} \colon V' \to M$ with $V' \cong V$.
 	By \cref{C: homotopy}, $r_V$ and $r_{V'}$ represent the same cohomology class in $H^*_{\Gamma}(M)$, but the class represented by $r_{V'}$ is in the image of $H^*(C^*_{\Gamma \pf X}(M))$.
 
 	For injectivity, suppose $W \in PC^*_{\Gamma \pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
-	Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V = W+T$ for some
-	$T \in Q^*(M)$.
-	By \cref{P: ball stability} there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1)$ and $h \circ (i_{W} \times \id)$ are both transverse to the cubulation.
-	Let $V', W',T' \in PC^*_\Gamma(M)$ be $W$, $V$, and $T$ but with reference maps given respectively by $h(-,1)$, $h(-,1)i_W$, and $h(-,1)i_T$, where $i_W \colon W \to V$ and $i_T \colon T \to V$ are the boundary inclusion maps restricted to the components of $W$ and $T$, respectively.
-	As $h \circ (i_{W} \times \id)$ is transverse to the cubulation, $W$ and $W'$ represent the same element of $H^*_{\Gamma \pf X}(M)$ by arguments analogous to the proof of \cref{C: homotopy}.
-	But we also have $\bd V' = W'+T'$ with $V'$ in $C^*_{\Gamma \pf X}(M)$ and, by \cref{L: Q preservation}, $T' \in Q^*(M)$.
-	So $W'$ represents $0 \in H^*(C^*_{\Gamma \pf X}(M))$.
+	Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V \sqcup -W \in Q^*(M)$.
+	By \cref{P: ball stability}, there is a proper homotopy $H \colon M \times I \to M$ such that both $H(-,1)r_V$ and $H\circ (r_W \times \id_I)$ are transverse to the cubulation.
+	Let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, let $W'$ be the precochain $W \xr{H(-,1)r_W} M$, and let $Y$ be the precochain $W \times I \xr{H\circ (r_W \times \id_I)} M$.
+	Let $Z$ be the precochain $V' \sqcup -Y$, which is transverse to the cubulation.
+	We note that $\bd V' \sqcup -W'$ is the image of $\bd V \sqcup -W$ after composing with $H(-,1)$, and so it is in $Q^*(M)$ by \cref{L: Q preservation}, using that we can co-orient $H$ and $H(-,1)$ as in \cref{S: co-oriented homotopy}.
+	We compute
+	\begin{align*}
+		\bd Z \sqcup -W &= \bd V' \sqcup -\bd Y \sqcup -W\\
+		&= \bd V' \sqcup -(W' \sqcup -W) \sqcup -W\\
+		&= \bd V' \sqcup -W' \sqcup W \sqcup -W.
+	\end{align*}
+	We have already noted $\bd V' \sqcup -W' \in Q^*(M)$ and $W \sqcup -W$ is trivial.
+	So $\bd Z \sqcup -W \in Q^*(M)$ and $Z$ is transverse to the cubulation, which tells us that $W$ represents $0$ in $H^*_{\Gamma \pf X}(M)$.
 \end{proof}
 
-It remains to prove \cref{P: ball stability}, which will requires the following technical lemma that is also useful below in the proof of \cref{T: intersection qi}.
+	\begin{comment}
+			For injectivity, suppose $W \in PC^*_{\Gamma \pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
+			Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V = W+T$ for some
+			$T \in Q^*(M)$.
+			By \cref{P: ball stability} there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1)$ and $h \circ (i_{W} \times \id)$ are both transverse to the cubulation.
+			Let $V', W',T' \in PC^*_\Gamma(M)$ be $W$, $V$, and $T$ but with reference maps given respectively by $h(-,1)$, $h(-,1)i_W$, and $h(-,1)i_T$, where $i_W \colon W \to V$ and $i_T \colon T \to V$ are the boundary inclusion maps restricted to the components of $W$ and $T$, respectively.
+			As $h \circ (i_{W} \times \id)$ is transverse to the cubulation, $W$ and $W'$ represent the same element of $H^*_{\Gamma \pf X}(M)$ by arguments analogous to the proof of \cref{C: homotopy}.
+			But we also have $\bd V' = W'+T'$ with $V'$ in $C^*_{\Gamma \pf X}(M)$ and, by \cref{L: Q preservation}, $T' \in Q^*(M)$.
+			So $W'$ represents $0 \in H^*(C^*_{\Gamma \pf X}(M))$.
+	\end{comment}
+
+
+It remains to prove \cref{P: ball stability}, which will require the following technical lemma that is also useful below in the proof of \cref{T: intersection qi}.
 
 \begin{lemma}\label{L: minimizer}
-	Let $M$ be a manifold without boundary, and let $\mc U = \{U_j\}$ be a locally finite open covering such that each $\bar U_j$ is compact.
+	Let $M$ be a manifold without boundary, and let $\mc U = \{U_j\}$ be a locally finite open cover such that each $\bar U_j$ is compact.
 	Suppose given $\varepsilon_j>0$ for each $j$.
 	Then there exists a smooth function $\phi \colon M \to \R$ such that $0<\phi(x)<\varepsilon_j$ if $x \in \bar U_j$.
 \end{lemma}
 
 \begin{proof}
 	Let $\eta_j = \min\{\varepsilon_k \mid \bar U_j \cap \bar U_k\neq \emptyset\}$.
-	By the local finiteness and compactness conditions, $\{k \mid \bar U_j \cap \bar U_k\neq \emptyset\}$ is a finite sets and so the $\eta_j$ are well defined.
+	By the local finiteness and compactness conditions, $\{k \mid \bar U_j \cap \bar U_k\neq \emptyset\}$ is a finite set and so the $\eta_j$ are well defined.
 	Let $\{\psi_j\}$ be a partition of unity subordinate to $\mc U$ and let $\phi_1 = \sum \eta_j\psi_j$.
 	For any $x \in M$, this sum is positive.
 	If $x \in \bar U_j$ then $\phi_1(x) = \sum_{\{k \mid \bar U_j \cap \bar U_k\neq \emptyset\}} \eta_k\psi_k$.
@@ -323,120 +365,131 @@ It remains to prove \cref{P: ball stability}, which will requires the following 
 \end{proof}
 
 We can now prove \cref{P: ball stability}.
-In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N_r$ the open ball of radius $r$.
+In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N_r$ is the open ball of radius $r$.
 
 \begin{proof}[Proof of \cref{P: ball stability}]
-	We begin with the case that $V$ is compact, and then we will show how to use the arguments of the compact case to obtain the general case.
-	We first construct $F \colon M \times D^N \to M$, for some $N$, such that
+	We begin with the case that $W$ is compact, and then we will show how to use the arguments of the compact case to obtain the general case.
+	We first construct a map $F \colon M \times D^N \to M$, for some $N$, such that
 
 	\begin{enumerate}
 		\item $F(-,0) = \id \colon M \to M$,
 		\item for almost all $s \in D^N$ the composition $V \xr{r_V} M \xr{F(-,s)}M$ is transverse to the cubulation,
-		\item there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $W \xr{i_{W}} V \xr{r_V} M \xr{F(-,s)}M$ is transverse to the cubulation.
+		\item there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $W \xr{r_W} M \xr{F(-,s)}M$ is transverse to the cubulation.
 	\end{enumerate}
 
-	This will suffice in the compact case as then we can let $s_0$ be any point in $D_r^N$ such that the composition $V \xr{r_V} M \xr{F(-,s_0)}M$ is transverse to the cubulation and define $h(-,t) = F(-,ts_0)r_V$, i.e.\ $h(x,t) = F(r_V(x),ts_0)$.
-	The first property of the proposition holds since $F(-,0) = \id$.
-	The second property holds by our choice of $s_0$.
-	The last property then holds as $ts_0 \in D_r^N$ for all $t \in I$; thus each $h(-,ts_0)i_W$ is transverse to the cubulation, which then implies that $h \circ (i_{W} \times \id)$ is transverse to it as well.
-	Furthermore, for $V$ compact any map and homotopy are proper, and this homotopy is universal as it can be decomposed into $r_V \colon V \times I \to M \times I$ and the homotopy $M \times I \to M$ taking $(z,t)$ to $F(z,ts_0)$.
+	This will suffice to provide the transversality required in the $W$ compact case as then we can let $s_0$ be any point in $D_r^N$ such that the composition $V \xr{r_V} M \xr{F(-,s_0)}M$ is transverse to the cubulation and define $H(-,t) = F(-,ts_0)$.
+	Then $H(-,0) = \id_M$ since $F(-,0) = \id$.
+	We will have $H(-,1) r_V \colon V \to M$ transverse to the cubulation by our choice of $s_0$.
+	Finally, as $ts_0 \in D_r^N$ for all $t \in I$, each $F(-,ts_0)r_W$ is transverse to the cubulation, which then implies that $H \circ (r_{W} \times \id)$ is transverse to it as well.
+	This will not provide the properness of $H$, but that will follow from our construction of $F$.
+	\begin{comment}Furthermore, for $V$ compact any map and homotopy are proper, and this homotopy is universal as it can be decomposed into $r_V \colon V \times I \to M \times I$ and the homotopy $M \times I \to M$ taking $(z,t)$ to $F(z,ts_0)$.
+	\end{comment}
 
 	The construction of $F$ is a small variation of the construction in the Transversality Homotopy Theorem of \cite[Section 2.3]{GuPo74}:
 	Let $M_\epsilon$ be an $\epsilon$-neighborhood of $M$ in some $\R^N$ in the sense of the $\epsilon$-Neighborhood Theorem of \cite[Section 2.3]{GuPo74}; in particular,
 	$M_\epsilon$ is an $\epsilon$-neighborhood of a proper embedding of $M$ into $\R^N$ that possesses a submersion $\pi \colon M_\epsilon \to M$.
-	If $M$ is not compact, then $\epsilon$ is a smooth positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
+	If $M$ is not compact, then $\epsilon$ is a smooth bounded positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
 	Let $f \colon M \times D^N \to M_\epsilon$ be given by $f(y, s) = y + \epsilon(y) s$; as $\epsilon(y)>0$, this is clearly a submersion (onto its image) at all points.
 	We let $F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{f}M_\epsilon \xr{\pi}M$.
-	Furthermore, the map $H \colon V \times D^N \to M$ given by the composition $$V \times D^N \xr{r_V \times \id} M \times D^N \xr{F} M$$ as well as all the restrictions $H|_{S^k(V)}$
+	Furthermore, the map $\ms F \colon V \times D^N \to M$ given by the composition $$V \times D^N \xr{r_V \times \id} M \times D^N \xr{F} M$$ as well as all the restrictions $\ms F|_{S^k(V)}$
 	are submersions.
-	In particular, each $H|_{S^k(V)}$ is transverse to any submanifold of $M$, so it follows by the Transversality Theorem of \cite[Section 2.3]{GuPo74} that for any fixed submanifold $Z$ of $M$, each $H|_{S^k(V)}(-,s)$ is transverse to $Z$ for almost all $s \in D^N$.
+	In particular, each $\ms F|_{S^k(V)}$ is transverse to any submanifold of $M$, so it follows by the Transversality Theorem of \cite[Section 2.3]{GuPo74} that for any fixed submanifold $Z$ of $M$, each $\ms F|_{S^k(V)}(-,s)$ is transverse to $Z$ for almost all $s \in D^N$.
 	In particular, we may take $Z$ to be the interior of any cube $E$ (of any dimension) of the cubulation.
-	However, there are countably many cubes in the cubulation of $M$ and finitely many manifolds $S^k(V)$.
-	As the countable union of measure zero sets has measure zero, for almost all $s \in D^N$ we have all $H|_{S^k(V)}(-,s) = F(-,s)r_V|_{S^k(V)}$ transverse to all cubical faces.
+	There are countably many cubes in the cubulation of $M$ and finitely many manifolds $S^k(V)$.
+	As the countable union of measure zero sets has measure zero, for almost all $s \in D^N$ we have for all $k$ that $\ms F|_{S^k(V)}(-,s) = F(-,s)r_V|_{S^k(V)}$ is transverse to all cubical faces.
+	We also observe that the homotopy $H$ obtained from this $F$ is proper as any sequence of $M \times I$ that ``escapes to infinity'' must similarly have image that escapes to infinity under $H$.
 
-	It is clear that $F(-,0) = \id_M$, so next we show that if $W$ is a union of boundary components of $V$ with $r_W = r_Vi_W \colon W \to M$ transverse to the cubulation then $F(-,s)r_Vi_W = H(-,s)i_W$ is transverse to the cubulation for all $s$ in some neighborhood $U$ of $0$ in $D^N$.
+
+	It remains in the compact $W$ setting to show that if we are given compact $W$ with $r_W \colon W \to M$ transverse to the cubulation then $F(-,s)r_W$ is transverse to the cubulation for all $s$ in some neighborhood $D_r^N$ of $0$ in $D^N$.
 	It is here that we need to generalize the Stability Theorem of \cite[Section 1.6]{GuPo74}.
-	As the Stability Theorem is not necessarily true when the manifolds involved are not closed submanifolds, compact, or controlled in some other way, it is more convenient here to work with the closed cubical faces of the cubulation and with $\bd^kV$ rather than $S^k(V)$.
-	We recall that by \cref{L: simple trans}, to prove that two maps of manifolds with corners are transverse it is sufficient to show that their compositions with all pairs of boundary inclusions are naively transverse.
+	As the Stability Theorem is not necessarily true when the manifolds involved are not closed submanifolds, compact, or controlled in some other way, it is more convenient here to work with the closed cubical faces of the cubulation and with $\bd^kW$ rather than $S^k(W)$.
+	We recall that by \cref{L: simple trans}, to prove that two maps of manifolds with corners are transverse it is sufficient to show that their compositions with all pairs of boundary inclusions are naively transverse (see \cref{D: naive transversality}).
 
-	Let $H_k$ denote the composition $H_k \colon \bd^kV \times D^N \xr{i_{\bd^kV} \times \id}V \times D^N \xr{r_V \times \id} M \times D^N \xr{F} M$.
-	As $W$ consists of boundary components of $V$, we must consider the $H_k$, $k\geq 1$.
-	We provide the details for $H_1$, the other cases being similar.
-	For simplicity of notation, we also assume for the remainder of the proof that $W = \bd V$; in case $W$ is a union of only some of the components of $\bd V$, we can restrict $H_k$, $k>0$, in the following to just those components of $W$.
+	Let $\Upsilon_k$ denote the composition $$\Upsilon_k \colon \bd^kW \times \id_{D^N}  \xr{i_{\bd^ kW} \times \id_{D^N}} W \times D^N \xr{r_W \times \id_{D^N} } M \times D^N \xr{F} M.$$
+	We provide the details primarily for $\Upsilon_0$, with $\bd^0 W$ being $W$ itself, the other cases being analogous.
 
-	Let $E$ be a (closed) face of the cubulation and let $x \in W$.
-	As $r_W = H_1(-,0)$ is transverse to the cubulation, for any $x \in W$, either $r_W(x)\notin E$ or $r_W$ is transverse to $E$ at $r_W(x)$.
-	In the former case, as $E$ is closed, there is an open neighborhood $A_x$ of $(x,0) \in W \times D^N$ such that $H_1(A_x) \cap E = \emptyset$.
+
+	Let $E$ be a (closed) face of the cubulation.
+	Recall that $F(-,0) = \id_M$, so $\Upsilon_0(-,0) = r_W$ is transverse to the cubulation.
+	Thus for any $x \in W$, either $r_W(x)\notin E$ or $r_W$ is (naively) transverse to $E$ at $r_W(x)$.
+	In the former case, as $E$ is closed, there is an open neighborhood $A_x$ of $(x,0) \in W \times D^N$ such that $\Upsilon_0(A_x) \cap E = \emptyset$.
 	Now suppose that $r_W(x) \in E$ and is transverse there.
-	By appealing to charts, we can suppose without loss of generality (as least locally in a neighborhood of $r_W(x)$) that $M = \R^m$ with $m = \dim(M)$ and $r_W(x) = 0$ and that $E = \{(y_1,\ldots,y_m) \mid y_i\geq 0\text{ for } i \leq \dim E\text{ and } y_i = 0 \text{ for } i>\dim(E)\}$.
+	By appealing to charts, we can suppose without loss of generality (at least locally in neighborhoods of $x$ and $r_W(x)$) that $M = \R_j^m$ for some $j$ with $m = \dim(M)$ and $x = 0$ and that $E = \{(y_1,\ldots,y_m) \mid y_i\geq 0\text{ for } i \leq \dim E\text{ and } y_i = 0 \text{ for } i>\dim(E)\}$.
 	The transversality assumption means that the composition of $D_xr_W \colon T_xW \to T_{r_W(x)}M$ with the projection to the last $m-\dim(E)$ coordinates is a linear surjection.
-	As this is an open condition on the Jacobian matrix of $r_W$ at $x$, it follows again that there is an open neighborhood $A_x$ of $(x,0) \in W \times D^N$ such that for each $(x',s)$ in the neighborhood $H_1(-,s)$ is transverse to $E$ at $x'$ (it is possible that $H_1(x',s)$ no longer intersects $E$, but this is fine).
+	As this is an open condition on the Jacobian matrix of $r_W$ at $x$, it follows again that there is an open neighborhood $A_x$ of $(x,0) \in W \times D^N$ such that for each $(x',s)$ in the neighborhood $\Upsilon_0(-,s)$ is transverse to $E$ at $x'$ (it is possible that $\Upsilon_0(x',s)$ no longer intersects $E$, but this is fine).
 	Taking the union of the $A_x$ over all $x \in W$ gives a neighborhood $B_E$ of $W \times 0$ in $W \times D^N$, and by the Tube Lemma, as $W$ is compact there is a neighborhood of $W \times 0$ of the form $W \times U_E \subset B_E$.
-	For each $s \in U_E$, we have $H_1(-,s)$ transverse to $E$.
+	For each $s \in U_E$, we have $\Upsilon_0(-,s)$ transverse to $E$.
 	Now let $D^N_{1/2}$ be the open ball of radius $1/2$ and $\bar D^N_{1/2}$ its closure.
-	As $W \times \bar D^N_{1/2}$ is compact, its image under $H_1$ can intersect only a finite number of faces of the cubulation of $M$; call this collection $\mc E$.
-	Then let $U_1$ be the finite intersection $U_1 = D^N_{1/2} \cap \bigcap_{E\in\mc E} U_E$.
-	Then $W \times U_1 \subset W \times D^N$ is a neighborhood of $W \times 0$ on which $H_1(-,s)$ is transverse to every cubical face that its image intersects.
-	Let $U_k$ be defined similarly for each $k\geq 1$.
+	As $W \times \bar D^N_{1/2}$ is compact, its image under $\Upsilon_0$ can intersect only a finite number of faces of the cubulation of $M$; call this collection $\mc E$.
+	Then let $U_0$ be the finite intersection $U_0 = D^N_{1/2} \cap \bigcap_{E\in\mc E} U_E$.
+	Then $W \times U_0 \subset W \times D^N$ is a neighborhood of $W \times 0$ on which $\Upsilon_0(-,s)$ is transverse to every cubical face that its image intersects.
+	Let $U_k$ be defined similarly for each $k\geq 1$ using $\bd^kW$ in place of $W$ and $\Upsilon_k$ in place of $\Upsilon_0$.
 	As $W$ has finite depth, $U = \cap U_k$ is a neighborhood of $0$ in $D^N$.
 	Let $r>0$ be such that $D^N_r \subset U$.
-	Then for every $s \in D^N_r$ we have $H_k(-,s) \colon \bd^kV \to M$ transverse to all $E$ for all $k$ as required.
+	Then for every $s \in D^N_r$ we have $\Upsilon_k(-,s) \colon \bd^kW \to M$ transverse to all $E$ for all $k$ as required.
 
-	This completes the proof of the proposition for $V$ compact.
+	This completes the proof of the proposition for $W$ compact.
 
-	Next suppose that $V$ is no longer necessarily compact.
+	Next suppose that $W$ is no longer necessarily compact.
 	We show how to apply and extend the preceding arguments.
-	We will define a new homotopy $\hat h \colon V \times I \to M$ with the desired three properties of the proposition.
+	We will define a new homotopy $\hat H \colon M \times I \to M$ with the desired properties of the proposition.
 
-	To begin we will construct $F \colon M \times I \to M$ exactly as above, as its definition did not depend on the compactness of $V$.
-	For $V$ not compact, the first two properties listed above for $F$ will continue to hold, but the third relied on compactness and so will not hold any long in general.
-	However, let
-	$K \subset W$ be compact and $E$ be a closed cube.
-	Taking the union of the $A_x$ over all $x \in K$ and intersecting with $K \times D^N$ gives an open neighborhood $B_E$ of $K \times 0$ in $K \times D^N$, such that
-	$H_1(-,s)$ is transverse to $E$ at all $x \in K$.
-	Furthermore, as $K \times \bar D^N_{1/2}$ is compact, its image under $H_1$ can intersect only a finite number of faces of the cubulation of $M$, so again by applying the tube lemma and then intersecting tubular neighborhoods, we find an open ball $D_{r,K}^N \subset D^N$ centered at $0$ such that for all $x \in K$ and $s \in D_{r,K}^N$ we have $H_1(-,s)$ transverse to the cubulation at $x$.
-	Furthermore, as the inclusions $\bd^kV \into W$ for $k\geq 1$ are all proper, we can similarly find $D_{r,K}^N$ so that for all $s \in D_{r,K}^N$ and all $k\geq 1$, we have $H_k(-,s) \colon \bd^kV \to M$ transverse to the cubulation for any $x \in \bd^{k}V$ whose image in $W$ is in $K$.
+	To begin we construct $F \colon M \times I \to M$ exactly as above, as its definition did not depend on the compactness of $W$.
+	Let $K \subset W$ be compact and $E$ be a closed cube.
+	Taking the union of the $A_x$ as defined above over all $x \in K$ and intersecting with $K \times D^N$ gives an open neighborhood $B_E$ of $K \times 0$ in $K \times D^N$, such that
+	$\Upsilon_0(-,s) \colon W \to M$ is transverse to $E$ at all $x \in K$.
+	Furthermore, as $K \times \bar D^N_{1/2}$ is compact, its image under $\Upsilon_0$ can intersect only a finite number of faces of the cubulation of $M$, so again by applying the tube lemma and then intersecting tubular neighborhoods, we find an open ball $D_{r,K}^N \subset D^N$ centered at $0$ such that for all $x \in K$ and $s \in D_{r,K}^N$ we have $\Upsilon_0(-,s)$ transverse to the cubulation at $x$.
+	As the maps $\bd^kW \into W$ for $k\geq 1$ are all proper, we can similarly find $D_{r,K}^N$ so that for all $s \in D_{r,K}^N$ and all $k\geq 0$, we have $\Upsilon_k(-,s) \colon \bd^kW \to M$ transverse to the cubulation at any $x \in \bd^{k}W$ whose image in $W$ is in $K$.
 
 	Let $\{\mc U_j\}$ be a locally finite covering of $M$ such that each $\bar{\mc U_j}$ is compact.
-	As $r_V$ and $r_W = r_V \circ i_{W}$ are proper, each $r^{-1}_W(\bar {\mc U_j})$ is compact in $W$.
-	Proceeding as just above with $r_W^{-1}(\bar U_j)$ in place of $W$, we can find for each $j$ an $\varepsilon_{j,1} \leq 1$ so that for every $s \in D^N_{\varepsilon_{j,1}}$ we have $H_1(-,s)$ transverse to all cubical faces of $M$ at every $x \in r^{-1}_W(\bar {\mc U_j})$.
-	Analogously, we have $\varepsilon_{j,k}$ for all $k\geq 1$ using $(r_Vi_{\bd^kV})^{-1}(\bar {\mc U_j})$.
-	Let $\varepsilon_j = \min\{\varepsilon_{j,k} \mid k\geq 1\}$.
-	These minima exist as $V$ has finite depth.
+	As $r_W$ is proper, each $r^{-1}_W(\bar {\mc U_j})$ is compact in $W$.
+	Proceeding as just above with $r_W^{-1}(\bar U_j)$ in place of $K$, we can find for each $j$ an $\varepsilon_{j,0} \leq 1$ so that for every $s \in D^N_{\varepsilon_{j,0}}$ we have $\Upsilon_0(-,s)$ transverse to all cubical faces of $M$ at every $x \in r^{-1}_W(\bar {\mc U_j})$.
+	Analogously, we have $\varepsilon_{j,k}$ for all $k\geq 1$ using $(r_{\bd^k W})^{-1}(\bar {\mc U_j})$.
+	Let $\varepsilon_j = \min\{\varepsilon_{j,k} \mid k\geq 0\}$.
+	These minima exist as $W$ has finite depth.
 
 	Now, using \cref{L: minimizer}, we choose a smooth function $\phi \colon M \to \R$ such that for all $x \in M$ we have $0<\phi(x)<\epsilon_j$ if $x \in \bar{\mc U_j}$.
 	Let $M\times_\phi D^N = \{(y,s) \in M \times D^N \mid |s|<\phi(y)\}$.
-	By our construction, $H_k(-,s) \colon \bd^{k-1}W \to M$ is transverse to the cubulation at each $x$ such that $(x,s)\in(r_Wi_{\bd^{k-1}W} \times \id)^{-1}(M\times_\phi D^N) = \{(x,s) \in \bd^{k-1}W \times I \mid |s|<\phi(r_Wi_{\bd^kW}(x))\}$.
+	By our construction, $\Upsilon_k(-,s) \colon \bd^{k}W \to M$ is transverse to the cubulation at each $x$ such that $(x,s)\in(r_{\bd^{k}W} \times \id)^{-1}(M\times_\phi D^N) = \{(x,s) \in \bd^{k}W \times D^N \mid |s|<\phi(r_{\bd^kW}(x))\}$.
 	Unfortunately, however, while $M\times_\phi D^N$ is a neighborhood of $M \times 0$ in $M \times D^N$, there is not necessarily a $U \in D^M$ so that $M \times U \subset M\times_\phi D^M$.
 	Thus,
-	we cannot construct $h$ from $F$ as above using a fixed $s_0$ as there may be no single $s_0\neq 0$ so that $W \times s_0 \subset M\times_\phi D^N$.
+	we cannot construct $H$ from $F$ as above using a fixed $s_0$ as there may be no single $s_0\neq 0$ so that $W \times s_0 \subset M\times_\phi D^N$.
 
 	To account for this, we modify our functions above as follows: Let $\hat f \colon M \times D^N \to M_\epsilon$ be given by $\hat f(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points.
-	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat f}M_\epsilon \xr{\pi}M$, and let $\hat H_k$ be the composition $\bd^kV \times D^N \xr{i_{\bd^kV} \times \id}V \times D^N \xr{r_V \times \id} M \times D^N \xr{\hat F} M$ for $k\geq 0$.
-	Once again by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for almost all $s \in D^N$ we have $\hat H_k(-,s)$ transverse to all cubical faces for all $k\geq 0$.
-	Letting $s_0$ be any such point we define $\hat h \colon V \times I \to M$ to be $\hat h(x,t) = \hat H(x,ts_0)$, and we claim that this $\hat h$ satisfies the conditions of the proposition.
+	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat f}M_\epsilon \xr{\pi}M$, and let $\hat \Upsilon_k$ be the composition $\bd^kW \times D^N \xr{r_{\bd^kW} \times \id}M \times D^N \xr{\hat F} M$ for $k\geq 0$.
+	Once again by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for almost all $s \in D^N$ we have $V \xr{r_V} M \xr{\hat F(-,s)} M$ transverse to all cubical faces of $M$.
+	Letting $s_0 \neq 0$ be any such point\footnote{If $s_0 = 0$ satisfies the conditions, we can finish immediately by letting $H$ be the constant homotopy.} we define $\hat H \colon M \times I \to M$ by $\hat H(x,t) = \hat F(x,ts_0)$, and we claim that this $\hat H$ satisfies the conditions required for the proposition.
 
-	The map $\hat h$ is proper, and the first two conditions of the proposition follow immediately from the construction.
-	It remains to verify that $\hat h (i_W \times \id) \colon W \times I \to M$ is transverse to the cubulation, and similarly for the higher boundaries.
+	The map $\hat H$ is proper because again any sequence of $M \times I$ that escapes to infinity must similarly have image that escapes to infinity under $\hat H$.
+	The conditions of the proposition for $V$ follow immediately from the construction.
+	It remains to verify that each $\hat h_k \defeq \hat H \circ (r_{\bd^k W} \times \id_I) \colon \bd^k W \times I \to M$ is transverse to the cubulation, and similarly for the higher boundaries.
+	Again, we focus primarily on $\hat h_0$.
+
+	\begin{comment}
 	Note: we are not claiming an analogue of the third condition above holds for $\hat F$, nor do we need to.
 	As we already know from the second condition of the proposition that $\hat h(-,1)$ is transverse to the cubulation and from the hypotheses that $\hat h(-,0)$ is transverse to the cubulation on $W$, it suffices to demonstrated transversality to the cubulation on the restriction of $\hat h$ to $W \times (0,1)$.
+	\end{comment}
 
-	We begin by observing that for $(x,t) \in W \times I$ we can write $\hat h(x,t) \circ (i_W \times \id_I) \colon W \times I \to M$ explicitly as
-	$$\hat h(x,t) = \pi(r_W(x)+\phi(r_W(x))\epsilon(r_W(x))ts_0).$$
-	So, alternatively, we can observe that $\hat h(x,t) \circ (i_W \times \id_I)$ is the composition
+	We begin by observing that for $(x,t) \in W \times I$ we can write $\hat h_0(x,t) \in M$ explicitly as
+	$$\hat h_0(x,t) = \pi(r_W(x)+\phi(r_W(x))\epsilon(r_W(x))ts_0).$$
+	So, alternatively, we can observe that $\hat h_0$ is the composition
 	\begin{equation}\label{E: alt hat h}
 		W \times I \xr{\Phi} W \times I \xhookrightarrow{\Psi} W \times D^N \xr{r_W \times \id} M \times D^N \xr{F} M,
 	\end{equation}
 	with $\Phi(x,t) = (x,\phi(r_W(x))t)$, $\Psi(x,t) = (x,ts_0)$, and noting that on the right we do mean our original $F$ and not $\hat F$.
 
-	The first map $\Phi$ is a diffeomorphism onto its image, which is a neighborhood of $W \times 0$ in $W \times I$, and the map $\Psi$ embeds this linearly into $W \times D^N$.
-	The composition of the last two maps is just our earlier map $H_1$.
-	By construction, the map $r_W \times \id$ now takes the image of $\Psi\Phi$ into $M\times_\phi D^N$, and so at each point $(z,s)$ in the image of $\Psi\Phi$ if we fix $s$ and consider $H_1(-,s)$ we get by construction a map on $W$ that is transverse to the cubulation.
-	But as $\Phi$ is a diffeomorphism onto its image and $\Psi$ is an embedding that is the identity with respect to $W$, we see $\Psi\Phi$ takes a neighborhood of any $(x,t) \in W \times (0,1)$ to a neighborhood of its image in $W \times \R s_0$, where $\R s_0$ is the line in $\R^N$ spanned by $s_0$.
-	In particular, the derivative of $\Psi\Phi$ maps the tangent space to $W \times (0,1)$ at $(x,t)$ onto $ T_xW \times \R s_0 \subset T_{\Psi\Phi(x,t)}(W \times D^N)$.
-	In particular, this image contains $T_xW \times 0$, and by construction $DH_1$ takes this tangent space to a tangent subspace in $M$ at $\hat h(x,t)$ that is transverse to the tangent space there of any face of the cubulation containing $\hat h(x,t)$.
-	The same holds for $k>1$ replacing $W$ in with $\bd^{k-1}W$ in \eqref{E: alt hat h} and $r_W$ with $r_{\bd^{k-1}W}$.
-	So we see that $\hat h$ satisfies all the requirements of the proposition.
+	The first map $\Phi$ is a diffeomorphism onto its image, which is a neighborhood of $W \times 0$ in $W \times I$, and the map $\Psi$ embeds this into $W \times D^N$ by a product map that is constant in the $W$ direction and nontrivial linear in the second factor.
+	The composition of the last two maps is just our earlier map $\Upsilon_0$.
+	By construction, the map $r_W \times \id$ now takes the image of $\Psi\Phi$ into $M\times_\phi D^N$, and so at each point $(z,s)$ in the image of $\Psi\Phi$ if we fix $s$ and consider $\Upsilon_0(-,s)$ we get by construction a map on $W$ that is transverse at $z$ to the cubulation of $M$.
+	Let $(x,t) \in W \times I$, let $\Psi \Phi(x,t) = (z,s)$, and let $\R s_0$ denote the line in $\R^N = T_sD^N$ spanned by the position vector of $s_0$.
+	As $\Phi$ is a diffeomorphism onto its image and $\Psi$ is an embedding that is the identity with respect to $W$ and nontrivial linear on $I$, we see
+	\begin{comment}
+	$\Psi\Phi$ takes a neighborhood of any $(x,t) \in W \times [0,1]$ to a neighborhood of its image in $W \times \R s_0$, where $\R s_0$ is the line in $\R^N$ spanned by $s_0$.
+	\end{comment}
+	that the derivative of $\Psi\Phi$ maps the tangent space $T_{(x,t)}(W \times [0,1])$ onto $ T_zW \times \R s_0 \subset T_{(z,s)}(W \times D^N)$.
+	In particular, this image contains $T_zW \times 0$, and by construction $D\Upsilon_0$ takes $T_zW \times 0$ to a tangent subspace in $M$ at $\hat h_0(x,t)$ that is transverse to the tangent space there of any closed face of the cubulation containing $\hat h_0(x,t)$.
+	The same holds for $k>0$ replacing $W$ with $\bd^{k}W$ in \eqref{E: alt hat h} and $r_W$ with $r_{\bd^{k}W}$.
+	So we see that $\hat H$ satisfies all the requirements of the proposition.
 \end{proof}
 
 \subsection{The intersection map and the isomorphism between cubical and geometric cohomology}\label{S: intersection map}

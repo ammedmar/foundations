@@ -731,13 +731,13 @@ More generally, we use the notation $(a,b)$ for elements of a direct sum.
 \begin{example}[Homology of spheres]\label{E: sphere homology}
 Given the dimension axiom (\cref{E: dimension}), homotopy invariance, and Mayer-Vietoris sequences, the geometric homology groups of spheres can now be computed formally to agree with the singular homology of spheres, i.e.\ for $n>0$ we have $H_0^{\Gamma}(S^n)\cong H_n^\Gamma(S^n)\cong \Z$ and all other homology groups are $0$.
 By \cref{E: first examples}, a generator of $H_0^{\Gamma}(S^n)$ is represented by the inclusion of any point.
-By the same example, a generator of $H^0_{\Gamma}(S^n)$ is represented by the oriented identity map $\id \colon S^n \to S^n$, although the argument there for general closed, oriented manifolds relies on results we have not yet reached.
+By the same example, a generator of $H_n^{\Gamma}(S^n)$ is represented by the oriented identity map $\id \colon S^n \to S^n$, although the argument there for general closed, oriented manifolds relies on results we have not yet reached.
 For spheres, however, we can see this by induction.
 
 By applying creasing at the equator $S^{n-1}\subset S^n$, we can write the homology class of $\id: S^n \to S^n$ as the union of the inclusions of the closed northern and southern hemispheres. Then writing $S^n$, $n>1$, as the union of the two overlapping disks $U$ and $V$ that extend the hemispheres in the usual way, we see by a diagram chase that the Mayer-Vietoris boundary map $H_n^\Gamma(S^n)\xr{\cong} H_{n-1}^\Gamma(U \cap V)$ is an isomorphism with the image of the class of $\id: S^n \to S^n$ represented, up to sign, by the inclusion of the equator.
 But $U \cap V$ has a deformation retraction to the equator $S^{n-1}$.
 So if we assume inductively that $\id \colon S^{n-1} \to S^{n-1}$ represents a generator of $H_{n-1}^\Gamma(S^{n-1})\cong \Z$, the same will be true for $H_n^\Gamma(S^n)$.
-The base case for $n=1$ is a bit more involved as in this case $H_1^\Gamma(S^1) \to H_{0}^\Gamma(U \cap V) \cong H_0^\Gamma(S^0) \cong \Z^2$ is only injective, not an isomorphism, but the necessary exact sequence computations in degree $0$ to show that the boundary map of the sequence takes the class represented by $\id \colon S^1 \to S^1$ onto a $\Z$ summand is nonetheless a standard exercise that we leave for the reader.
+The base case for $n=1$ is a bit more involved as in this case $H_1^\Gamma(S^1) \to H_{0}^\Gamma(U \cap V) \cong H_0^\Gamma(S^0) \cong \Z^2$ is only injective, not an isomorphism, but the necessary exact sequence computations in degree $0$ to show that the boundary map of the sequence takes the class represented by $\id \colon S^1 \to S^1$ onto a generator of a $\Z$ summand is nonetheless a standard exercise that we leave for the reader.
 \end{example}
 
 \subsubsection{Contravariant Mayer--Vietoris sequence}
@@ -792,7 +792,7 @@ We first show our construction does give an element of $H^*_\Gamma(M)$.
 
 \begin{proof}
 	For simplicity and consistency with the notation in \cref{S: codim 0 and 1 co-or,S: splitting}, we take $p = 0$, but the same argument works for any $p \in (-1/2, 1/2)$ satisfying the hypotheses.
-	By \cref{L: W0 cochain}, $M^0 \times_{U\cap V} W$ is an element of $PC^*_\Gamma(U \cap V)$, but we must show that the resulting map from including this fiber product into $M$ is proper.
+	By \cref{L: W0 cochain}, $M^0 \times_{U\cap V} W$ is an element of $PC^*_\Gamma(U \cap V)$, but we must show that the map including this fiber product into $M$ is proper.
 
 	We know that $W \to U \cap V$ is proper by hypothesis and that the inclusion $M^0 \into M$ has image in $U \cap V$, so by \cref{L: co-orientable pullback} the pullback $W \times_{U \cap V} M^0 \to M^0$ is proper.
 	And as $M^0$ is a closed subset of $M$, the inclusion $M^0 \into M$ is proper.
@@ -821,7 +821,7 @@ The proof uses $\phi^{-1}([p,q])$, so the reader should compare with \cref{L: Wp
 	Suppose without loss of generality that $p<q$.
 	Then the submanifold $\phi^{-1}([p,q]) \subset U \cap V \subset M$ will be transverse to $r_W \colon W \to M$.
 	As $\phi^{-1}([p,q])$ is closed in $M$, its inclusion is proper, and the inclusion can be tautologically co-oriented as a codimension $0$ embedding (see \cref{D: tautological co-orientation}).
-	Thus, as in \cref{L: Wpq cochain}, $$\bd(\varphi^{-1}([p,q])\times_{M} W = (M^p \times_{M} W)\sqcup -(M^q \times_{M} W) \sqcup (\phi^{-1}([p,q])\times_{M} \bd W).$$
+	Thus, as in \cref{L: Wpq cochain}, $$\bd(\varphi^{-1}([p,q])\times_{M} W ) = (M^p \times_{M} W)\sqcup -(M^q \times_{M} W) \sqcup (\phi^{-1}([p,q])\times_{M} \bd W).$$
 	As $W$ is a cocycle, the last term is in $Q^*(M)$ (with support in $U \cap V$) by \cref{L: pullback with Q}, so $M^p \times_{M} W$ and $M^q \times_{M} W$ represent cohomologous cocycles.
 \end{proof}
 
@@ -856,7 +856,7 @@ Next, we show independence of the representative $W$, assuming a fixed $\phi$.
 
 \begin{proof}
 	Suppose $W_1$ and $W_2$ represent the same element of $H^*_\Gamma(U \cap V)$ and that we choose functions $\phi_1,\phi_2$ that are respectively separating for $W_1$ and $W_2$ over $U$ and $V$.
-	We must show that $\phi_1^{-1}(0)\times_{U \cup W} W_1$ and $\phi_2^{-1}(0)\times_{U \cup W} W_2$ represent the same element of $H^*_\Gamma(M)$.
+	We must show that $\phi_1^{-1}(0)\times_{M} W_1$ and $\phi_2^{-1}(0)\times_{M} W_2$ represent the same element of $H^*_\Gamma(M)$.
 
 	By Sard's Theorem, we can find points $p_1<p_2$ in $(-1/2,1/2)$ such that $p_1$ is a regular value for $\phi$ and $\phi_1 r_{W_1}$ and $p_2$ is a regular value for all of $\phi$, $\phi_1 r_{W_1}$, $\phi_2 r_{W_1}$, and $\phi_2 r_{W_2}$.
 	By \cref{L: different point}, $\phi_1^{-1}(0) \times_{M} W_1$ and $\phi_2^{-1}(0) \times_{M} W_2$ represent the same elements of $H^*_\Gamma(M)$ respectively as $\phi_1^{-1}(p_1) \times_{M} W_1$ and $\phi_2^{-1}(p_2) \times_{M} W_2$.
@@ -1013,20 +1013,20 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 	So let $(x,y) \in S^k(W) \times_N M$ with $x \in S^k(W)$ and $y \in M$ such that $\phi g(y)=0$, and let $z = r_W(x) = g(y) \in N$.
 	As $D_x(r_W|_{S^k(W)}) = (D_xr_W)|_{T_xS^k(W)}$, we will simply write $D_xr_W$ rather than $D_x(r_W|_{S^k(W)})$ in what follows.
 	We recall that the tangent bundle of the pullback is the pullback of the tangent bundles by \cref{L: tangent of pullbacks}, so the tangent space of $S^k(W) \times_N M$ is $T_x S^k(W) \times_{T_{z}N} T_yM$.
-	As $r_W$ to transverse to $N^0$, we know $0$ is a regular value for $\phi r_W$; see \cref{S: splitting}.
+	As $r_W$ is transverse to $N^0$, we know $0$ is a regular value for $\phi r_W$; see \cref{S: splitting}.
 	So, in particular, zero is a regular value for $\phi \circ r_W|_{S^k(W)}$, so there must be a vector $\xi \in T_xS^k(W)$ with $D_x(\phi r_W)(\xi)\neq 0$.
 	Thus $D_xr_W(\xi) \neq 0$.
 	As $g$ is assumed transverse to $W^0 \to N$, there must be $\alpha \in T_xS^k(W^0)$ and $\beta \in T_yM$ such that $D_xr_W(\xi) = D_xr_W(\alpha) + D_yg (\beta)$.
 	Rewriting, $D_yg (\beta) = D_xr_W(\xi-\alpha)$.
 	As $\alpha \in T_xW^0 \in \ker(D_x (\phi r_W))$, we have $$D_{z}\phi(D_yg (\beta)) = D_{z}\phi \circ D_xr_W(\xi-\alpha) = D_x(\phi r_W)(\xi)-D_x(\phi r_W)(\alpha) = D_x(\phi r_W)(\xi)\neq 0.$$
-	So, recalling that $Dr_W^*$ is simply the projection to $T_yM$, the pair $( \xi-\alpha, \beta)$ is a non-zero vector in $$T_{(x,y)}(S^k(W) \times_N M) = T_x S^k(W) \times_{T_{z}N} T_yM$$ that maps by $D(\phi gr_W^*)$ to $D_{z}\phi(D_yg (\beta)) \neq 0 \in T_{0}[-1,1]$.
+	So, recalling that $Dr_W^*$ is simply the projection to $T_yM$, the pair $( \xi-\alpha, \beta)$ is a non-zero vector in $$T_{(x,y)}(S^k(W) \times_N M) = T_x S^k(W) \times_{T_{z}N} T_yM$$ that maps by $D(\phi gr_W^*)$ to $D_{z}\phi(D_yg (\beta)) \neq 0 \in T_{0}[-1/2, 1/2]$.
 	As $(x,y)$ was an arbitrary point of $(\phi gr^*_{W})^{-1}(0) \subset W \times_N M$, this shows that $0$ is a regular value for $\phi gr^*_W$.
 	So $(W \times_N M)^0$ is well defined.
 
 	Now, from the definitions and \cref{S: splitting}, $W^0 \times_N M = (N^0 \times_N W) \times_N M$, treating $N^0 \times_N W$ as a fiber product and $W^0 \times_N M$ as a pullback over $M$.
 	On the other hand, $(W \times_N M)^0 = M^0 \times_M (W \times_N M)$, where $W \times_N M$ is the pullback to $M$ and then we take the fiber product with $M^0$.
 	In both cases, these translate to the pairs of points $(x,y) \in W \times M$ with $r_W(x) = g(y)$ and $\phi(r_W(x)) = \phi(g(y)) = 0$.
-	In other words, as spaces these are both precisely the limit of the following diagram together with its map to $M$:
+	In other words, as spaces these are both precisely the limit of the following diagram, together with its map to $M$:
 	\[
 	\begin{tikzcd}
 		& M \arrow[d,"g"] & \\
@@ -1044,7 +1044,7 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 	Then, by definition, the pullback map from $P = W \times_N M \subset M \times \R^K$ to $M$ is co-oriented by $(\beta_P,\beta_M)$ if we choose $\beta_P$ and $\beta_M$ such that $\beta_P \wedge \beta_\nu = \beta_M \times \beta_E$, recalling that we let $\nu$ also denote the pulled back normal bundle of $P$ in $M \times \R^K$.
 	We suppose we have chosen such $\beta_P$ and $\beta_M$.
 	Next, let $M^0 \subset M$ have normal co-orientation $\beta_\phi$ determined by pulling back the standard orientation from $\R$, and similarly let $\beta_\phi$ denote the pullback normal co-orientation to $(W \times_N M)^0$.
-	Then by \cref{P: codim 1 co-orient}, the co-orientation of the pullback $(W \times_N M)^0 = M^0 \times_M (W \times_N M) \to W \times_N M$ is $(\beta_Q,\beta_Q \wedge \beta_\phi)$ for any $\beta_Q$.
+	Then by \cref{P: codim 1 co-orient}, the co-orientation of the inclusion $(W \times_N M)^0 = M^0 \times_M (W \times_N M) \hookrightarrow W \times_N M$ is $(\beta_Q,\beta_Q \wedge \beta_\phi)$ for any $\beta_Q$.
 	The fiber product $(W \times_N M)^0 \into M$ is then co-oriented by the composition $(\beta_Q,\beta_Q \wedge \beta_\phi)*(\beta_P,\beta_M)$.
 	So if we choose $\beta_Q$ so that $\beta_Q \wedge \beta_\phi = \beta_P$ (or equivalently $\beta_Q$ and $\beta_M$ so that $\beta_Q \wedge \beta_\phi \wedge \beta_\nu = \beta_M \wedge \beta_E$), the co-orientation is $(\beta_Q,\beta_M)$.
 
@@ -1082,13 +1082,7 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 	We may assume that $\psi$ was chosen so that $\pm 3/8$ are also regular values.
 \end{comment}
 
-	Next, as $\psi^{-1}(\pm 1/4)$ are bicollared submanifolds of $M$, the submanifold $K \subset A$ is collared, so the inclusion map is a cofibration, e.g. via\footnote{We define a map $M \to [0,1]$ as in the cited theorem by taking $K$ to $0$, projecting the parts of the collars isomorphic to $\psi^{-1}(\pm 1/4) \times [0,1]$ to the second factor, and taking everything else to $1$.} \cite[Theorem VII.1.5]{Bred97}.
-	Therefore, the restriction to $K \times I$ of our homotopy from $f|_A$ to $g_1$ can be extended to a continuous map $M \times I \to N$ from $f$ to a continuous map we will call $f' \colon M \to N$.
-	So by construction, $f' = g_1$ on $K$.
-	Furthermore, choosing the collars to be contained in $A$, which is an open neighborhood of $K$ in $M$, then by the usual construction of a homotopy extension using a neighborhood deformation retraction (see \cite[Section VII.1]{Bred97}), we have a neighborhood $L$ of $K$ such that $f'$ takes $L$ to $B$ (because our homotopy of $f|_A$ maps to $B$) and so that $f' = f$ on $M \setminus L$.
-	In particular, $f'$ takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$.
-
-	Next, we wish to approximate $f'$ by a homotopic map $g_2 \colon M \to N$ such that
+	Next, to consider $f^* \delta (\uW)$, we wish to construct a homotopy from $f$ to a map $g_2 \colon M \to N$ such that
 	\begin{enumerate}
 		\item $g_2 = g_1$ on $K$,
 		\item $g_2$ is smooth,
@@ -1107,7 +1101,7 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 	So we compare $M^0_{\phi g_2} \times_M g_2^*(W)$ with $M^0_\psi \times_M g_2^*(W)$.
 	The rough idea of the remainder of the proof is to show that $\psi$ and $\phi g_2$ are both separating functions for $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$, which will allow us to invoke \cref{P: connecting}, though there remain some technicalities, including replacing $\psi$ with a slight modification.
 
-	So, consider $g_2^{-1}(U)$ and $g_2^{-1}(V)$. As $N = U \cup V$, we must have $M = g_2^{-1}(U) \cup g^{-1}(V)$.
+	So, consider $g_2^{-1}(U)$ and $g_2^{-1}(V)$. As $N = U \cup V$, we must have $M = g_2^{-1}(U) \cup g_2^{-1}(V)$.
 	We have $g_2^{-1}(U)\setminus g_2^{-1}(V) = g_2^{-1}(U \setminus V)$, so $\phi g_2(g_2^{-1}(U)\setminus g_2^{-1}(V)) = \phi g_2(g_2^{-1}(U \setminus V)) \subset \phi(U \setminus V) = -1/2$, and similarly $\phi g_2(g_2^{-1}(V) \setminus g_2^{-1}(U)) = 1/2$.
 	So $\phi g_2$ is a separating function on $M$ for $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
 	We also know $M^0_{\phi g_2}$ is transverse to $g_2^*(W)$, so $\phi g_2$ separates $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
@@ -1122,10 +1116,10 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 	In this case, $M^0_\psi = M^0_{\psi_1}$, so we have $M^0_\psi \times_M g_2^*(W) = M^0_{\psi_1} \times_M g_2^*(W)$.
 	Furthermore, as $g_2^{-1}(U) \setminus g_2^{-1}(V) = g_2^{-1}(U \setminus V)$, and similarly reversing the roles of $U$ and $V$, we see $\psi_1$ separates $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
 
-	Lastly, we observe that $g_2^{-1}(U) \cap g_2^{-1}(V) = g_2^{-1} (U \cap V) = g_2^{-1}(B)$, so $g_2$ maps this intersection into $B = U \cap V$.
+	Lastly, we observe that $g_2^{-1}(U) \cup g_2^{-1}(V) = M$ and $g_2^{-1}(U) \cap g_2^{-1}(V) = g_2^{-1} (U \cap V) = g_2^{-1}(B)$, so $g_2$ maps this intersection into $B = U \cap V$.
 	Therefore, the pullback $(g_2|_{g_2^{-1} (B)})^* (W)$ is an element of $PC^*_\Gamma(g_2^{-1} (B))$.
-	But, $M^0_{\phi g_2} \times_M	(g_2|_{g_2^{-1} (B)})^* (W) = M^0_{\phi g_2} \times_M g_2^*(W)$ and $M^0_{\psi_1} \times_M g_2|_{g_2^{-1} (B)}^* (W) = M^0_{\psi_1} \times_M g_2^*(W)$, as $M^0_{\phi g_2}$ and $M^0_{\psi_1}$ are both in $g_2^{-1} (B)$.
-	Now, as desired, $M^0_{\phi g_2} \times_M	(g_2|_{g_2^{-1} (B)})^* (W)$ and $M^0_{\psi_1} \times_M g_2|_{g_2^{-1} (B)}^* (W)$ are two splittings of the same element of $PC^*_\Gamma(g_2^{-1} (B)) = PC^*_\Gamma(g_2^{-1}(U) \cap g_2^{-1}(V)) $ with respect to different separating functions over $g_2^{-1}(U)$ and $g_2^{-1}(V)$, and so they represent the same element of $H^*_\Gamma(M)$ by \cref{P: connecting}.
+	But, $M^0_{\phi g_2} \times_M	(g_2|_{g_2^{-1} (B)})^* (W) = M^0_{\phi g_2} \times_M g_2^*(W)$ and $M^0_{\psi_1} \times_M (g_2|_{g_2^{-1} (B)})^* (W) = M^0_{\psi_1} \times_M g_2^*(W)$, as $M^0_{\phi g_2}$ and $M^0_{\psi_1}$ are both in $g_2^{-1} (B)$.
+	Now, as desired, $M^0_{\phi g_2} \times_M	(g_2|_{g_2^{-1} (B)})^* (W)$ and $M^0_{\psi_1} \times_M (g_2|_{g_2^{-1} (B)})^* (W)$ are two splittings of the same element of $PC^*_\Gamma(g_2^{-1} (B)) = PC^*_\Gamma(g_2^{-1}(U) \cap g_2^{-1}(V)) $ with respect to different separating functions over $g_2^{-1}(U)$ and $g_2^{-1}(V)$, and so they represent the same element of $H^*_\Gamma(M)$ by \cref{P: connecting}.
 \end{proof}
 
 \begin{lemma}
@@ -1133,7 +1127,13 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 \end{lemma}
 
 \begin{proof}
-	We will modify the proof of \cref{T: basic trans}.
+	As $\psi^{-1}(\pm 1/4)$ are bicollared submanifolds of $M$, the submanifold $K \subset A$ is collared, so the inclusion map $K \into A$ is a cofibration, e.g. via\footnote{We define a map $M \to [0,1]$ as in the cited theorem by taking $K$ to $0$, projecting the parts of the collars isomorphic to $\psi^{-1}(\pm 1/4) \times [0,1]$ to the second factor, and taking everything else to $1$.} \cite[Theorem VII.1.5]{Bred97}.
+	Therefore, the restriction to $K \times I$ of the homotopy from $f|_A$ to $g_1$ used at the start of the proof of \cref{T: natural connection} can be extended to a continuous homotopy $M \times I \to N$ from $f$ to a continuous map we will call $f' \colon M \to N$.
+	So by construction, $f' = g_1$ on $K$.
+	Furthermore, choosing the collars to be contained in $A$, which is an open neighborhood of $K$ in $M$, then by the usual construction of a homotopy extension using a neighborhood deformation retraction (see \cite[Section VII.1]{Bred97}), we can construct the homotopy such that we have a neighborhood $L$ of $K$ such that $f'$ takes $L$ to $B$ (because our homotopy of $f|_A$ maps to $B$) and so that $f' = f$ on $M \setminus L$.
+	In particular, $f'$ takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$.
+
+	From here, we will modify the proof of \cref{T: basic trans}.
 	As in that argument, we suppose $N$ properly embedded as a closed manifold in some Euclidean space; then $N$ has a distance function inherited from Euclidean space, which we will denote $d$.
 
 	First, on $\psi^{-1}([-1/2,-1/4])$, we consider the function $x \mapsto d(f'(x), V \setminus U)$.
@@ -1279,7 +1279,7 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 	So using \cref{L: W0 cochain}, passing to cochains, and undertaking some further manipulations, we have in $C^*_\Gamma(U)$ that
 	\begin{align*}
 	\bd (\underline{Z^+}) + \underline{\gamma}|_U &
-		= \underline Z^0 + \underline{(\bd Z)^+} + \underline{W_1^-} - \underline Z^0 -\underline{W_2^+|_U} + (\underline{W_1^+} - \underline{W_1^+})\\
+		= \underline Z^0 + \underline{(\bd Z)^+} + \underline{W_1^-} - \underline Z^0 -\underline{W_2^+}|_U + (\underline{W_1^+} - \underline{W_1^+})\\
 		&= \underline{(\bd Z)^+} + \underline{W_1^-} -\underline{W_2^+}|_U + \underline{W_1^+} - \underline{W_1^+}\\
 		&= \underline{(\bd Z \sqcup - W_1|_{U \cap V} \sqcup - W_2|_{U \cap V})^+} + \underline{W_1^-} + \underline{W_1^+}\\
 		&=\underline{W_1^-} + \underline{W_1^+}\\
@@ -1336,9 +1336,9 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 Analogous to our observation about homology of spheres in \cref{E: sphere homology}, once one has a dimension axiom (\cref{E: dimension}), homotopy invariance, and Mayer-Vietoris sequences, the geometric cohomology groups of spheres follow from formal computations, and we have $H^0_{\Gamma}(S^n)\cong H^n_\Gamma(S^n)\cong \Z$ with all other cohomology groups zero.
 For $n>0$, by \cref{E: sphere homology} and our strong form of Poincar\'e duality in \cref{T: PD}, $H^0_{\Gamma}(S^n)$ is generated by the class of $\id \colon S^n \to S^n$ and $H^n_{\Gamma}(S^n)$ is generated by the class of the inclusion of a point, each with either co-orientation.
 
-We can also see this by induction, again analogously to the arguments in \cref{E: sphere homology} but with some interesting geometric differences. Let us start with $n>1$ and write $S^n$ again as the union of open disks $U$ and $V$ that extend the hemispheres. Then the Mayer-Vietoris sequence starts out as
+We can also see this by induction, again analogously to the arguments in \cref{E: sphere homology}, but with some interesting geometric differences. Let us start with $n>1$ and write $S^n$ again as the union of open disks $U$ and $V$ that extend the hemispheres. Then the Mayer-Vietoris sequence starts out as
 \begin{equation*}
-0\to H^0_\Gamma(S^n) \to H^0_\Gamma(U) \oplus H^0_\Gamma(V) \to H^0_\Gamma(U\cap V) \to H^1_\Gamma(S^n) \to H^1_\Gamma(U) \oplus H^1_\Gamma(V) \to
+0\to H^0_\Gamma(S^n) \to H^0_\Gamma(U) \oplus H^0_\Gamma(V) \to H^0_\Gamma(U\cap V) \to H^1_\Gamma(S^n) \to H^1_\Gamma(U) \oplus H^1_\Gamma(V) \to.
 \end{equation*}
 The extended hemispheres $U$ and $V$ are contractible and so by \cref{E: contractible} the only nontrivial cohomology of each is $H^0_\Gamma(U) \cong H^0_\Gamma(V) \cong \Z$, in each case generated by the class of the tautologically co-oriented identity map.
 The tautologically co-oriented identity map $\id_{S^n} \colon S^n \to S^n$ thus represents an element of $H^0_\Gamma(S^n)$ that restricts to generators of $H^0_\Gamma(U)$ and $H^0_\Gamma(V)$.
@@ -1348,7 +1348,8 @@ As $H^1_\Gamma(U) = H^1_\Gamma(V) = 0$, it follows that $H^1_\Gamma(S^1) = 0$ an
 
 Continuing to assume $n>1$ and that we know $H^*_\Gamma(S^{n-1})$, all $H^i_\Gamma(S^n)$ for $i>0$ must be zero from the long exact sequence until we reach degree $n$, where the Mayer-Vietoris sequence collapses to the isomorphism $H^{n-1}_\Gamma(U \cap V) \xr{\delta} H^n_\Gamma(S^n)$.
 If we assume inductively that $H^{n-1}_\Gamma(S^{n-1}) \cong \Z$ is generated by the inclusion of a point $f \colon pt \into S^{n-1}$, then, by \cref{E: contractible}, if we identify $U \cap V$ again with $S^{n-1} \times (-1,1)$ we have $H^{n-1}_\Gamma(U \cap V) \cong H^{n-1}_\Gamma(S^{n-1} \times (-1,1))\cong \Z$ generated by $f \times \id_{(-1,1)}$.
-By the definition of $\delta$ in \cref{D: connecting}, the image of this generator in $H^n_\Gamma(S^n)$ is represented up to sign by the composition $f \times \id_{0} \colon pt \times 0 \to S^{n-1} \times (-1,1) \into S^n$.
+We can choose a separating function $\phi$ so that $\phi^{-1}(0) = S^{n-1} \times 0 \subset S^n$.
+Then by the definition of $\delta$ in \cref{D: connecting}, the image of this generator in $H^n_\Gamma(S^n)$ is represented up to sign by the composition $f \times \id_{0} \colon pt \times 0 \to S^{n-1} \times (-1,1) \into S^n$.
 
 The base case $n=1$ is again a bit more complicated and left as a good exercise for the reader.
 \end{example}
@@ -1508,10 +1509,10 @@ In this section, we apply a theorem of Kreck and Singhof to show that geometric 
 	As $[0,1]$ is contractible, such a map can always be co-oriented.
 	We can let $e$ represent the standard unit vector of $[0,1]$ and suppose that $g$ is co-oriented so that at $0 \in [0,1]$ the co-orientation is represented by $(e,\beta)$ for some local orientation $\beta$ of $\R P^2$ at $g(0)$.
 	Traversing the path, the representation for the co-orientation at $1$ is then $(e,-\beta)$.
-	Recalling our boundary conventions, the boundary of $g$ therefore consists of the maps $g|_0:0 \to \R P^2$ co-oriented by $(1,e)*(e,\beta) = (e,\beta)$ and $g|_1:1 \to \R P^2$ co-oriented by $(1,-e)*(e,-\beta) = (1,\beta)$.
+	Recalling our boundary conventions, the boundary of $g$ therefore consists of the maps $g|_0:0 \to \R P^2$ co-oriented by $(1,e)*(e,\beta) = (1,\beta)$ and $g|_1:1 \to \R P^2$ co-oriented by $(1,-e)*(e,-\beta) = (1,\beta)$.
 	Thus with these co-orientations, $g|_0:0 \to \R P^2$ and $g|_1:1 \to \R P^2$ represent isomorphic manifolds over $\R P^2$.
 	So $g$ does not represent a cocycle.
-	On the other hand, as a co-oriented map from any single point to $\R P^2$ is a cocycle, this shows that by choosing the image to be the basepoint for $\pi_1(\R P^2)$ that twice any such map is a boundary.
+	On the other hand, as a co-oriented map from any single point to $\R P^2$ is a $2$-cocycle, this shows that by choosing the image to be the basepoint for $\pi_1(\R P^2)$ that twice any such map is a boundary.
 	We leave it to the reader to verify that any two such points generate the same cohomology class and that a map from a single point cannot represent a coboundary, and so we have verified that $H^1_\Gamma(\R P^2) = 0$ and $H_\Gamma^2(\R P^2) \cong \Z_2$.
 \end{example}
 
@@ -1521,7 +1522,7 @@ While \cref{T: geometric is singular} says that geometric homology and cohomolog
 In this section, we provide a second proof that singular and geometric homology are isomorphic, in this case providing the isomorphism.
 We will consider the case of cohomology in \cref{S: transversality}.
 
-The basic idea for homology is that, as simplices are manifolds with corners and as the standard model simplex comes equipped with an orientation, smooth singular simplices correspond to geometric chains.
+The basic idea for homology is that, as simplices are manifolds with corners and as the standard model simplex comes equipped with an orientation, smooth singular simplices are geometric chains.
 In other words, if we let $S^{sm}_*(M)$ denote the chain complex of smooth singular chains on the manifold without boundary $M$, then the generators, which are smooth singular simplices $\sigma \colon \Delta^i \to M$, are prechains, and so they represent elements of $C_*^\Gamma(M)$.
 As $S^{sm}_*(M)$ is freely generated by the smooth singular simplices, this determines a map of graded abelian groups $S^{sm}_*(M) \to C_*^\Gamma(M)$.
 We will see that there is consistency of the boundary orientations so that this is a chain map $S^{sm}_*(M) \to C_*^\Gamma(M)$.
@@ -1531,7 +1532,7 @@ Combined with the well-known fact that the inclusion $S^{sm}_*(M) \into S_*(M)$ 
 It will be useful in what follows to have the analogous result for cubical singular homology in addition to the more common simplicial singular homology.
 Details of cubical singular homology can be found, for example, in \cite{Mas91} or \cite[Section 8.3]{HW60}, though we provide a brief overview.
 
-Rather than maps of simplices $\Delta^k \to M$, the cubical singular chain complex, which we denote $SK_*(M)$, is generated by maps $\interval^k \to M$ with $\interval$ being the standard interval $\interval = [0,1]$ (it will be convenient henceforth to use this notation for the interval).
+Rather than maps of simplices $\Delta^k \to M$, the cubical singular chain complex, which we denote $SK_*(M)$, is generated by maps $\interval^k \to M$ with $\interval$ being the standard interval $\interval = [0,1]$ (it will be convenient henceforth to use this notation for the interval in this context).
 The boundary formula is defined so that if $\sigma: \interval^k \to M$ is a singular cube, then
 \begin{equation}\label{E: cube bd}
 	\bd \sigma = \sum_{i = 1}^k (-1)^i(\sigma \delta_i^0-\sigma \delta^1_i),
@@ -1539,7 +1540,7 @@ The boundary formula is defined so that if $\sigma: \interval^k \to M$ is a sing
 where for $\epsilon\in\{0,1\}$, the map $\delta_i^\epsilon \colon \interval^{k-1} \to \interval^k$ is defined by
 $$\delta_i^\epsilon(x_1,\ldots,x_{k-1}) = (x_1,\ldots,\epsilon,\ldots, x_k)$$
 with $\epsilon$ in the $i$th slot.
-The homology of the chain complex $SK_*(M)$ is not isomorphic to singular homology, as it does not satisfy the dimension axiom, so one instead forms the normalized complex $NK_*(M)$ by quotienting out the subcomplex of \textit{degenerate singular cubes}, generated by singular cubes $\sigma \colon \interval^k \to M$ such that $\sigma$ does not depend on at least one of the variables.
+The homology of the chain complex $SK_*(M)$ is not isomorphic to singular homology, as it does not satisfy the dimension axiom, so one instead forms the normalized complex $NK_*(M)$ by quotienting out the subcomplex of \textit{degenerate singular cubes} that is generated by singular cubes $\sigma \colon \interval^k \to M$ such that $\sigma$ does not depend on at least one of the variables.
 In other words, the degenerate singular cubes are those maps $\sigma \colon \interval^k \to M$ that factor through one of the coordinate projections $\interval^k \to \interval^{k-1}$.
 It then holds that $NK_*(M)$ is chain homotopy equivalent to $S_*(M)$, the complex of singular simplicial chains.
 In fact, this holds for $M$ any space and not just a manifold \cite[Theorem 8.4.7]{HW60}.
@@ -1589,10 +1590,10 @@ we have, analogously to the simplicial case, a set inclusion $SK^{sm}_i(M) \into
 \end{lemma}
 
 \begin{proof}
-	We first consider the simplicial case, for which we need only verify that our boundary orientation convention for manifold with corners is consistent with the simplicial boundary formula.
+	We first consider the simplicial case, for which we need only verify that our boundary orientation convention for manifolds with corners is consistent with the simplicial boundary formula.
 
 	We will think of the model $k$-simplex $\Delta^k$ as being the convex hull in $\R^k$ of the origin and the points $(0, \ldots , 1, \ldots, 0)$ as the $1$ varies through the $k$ coordinates.
-	We will also use the abstract simplicial notation $[0,\ldots,k]$ when convenient, identifying the vertex $0$ with the origin and the vertex $i$ with the points $(0, \ldots , 1, \ldots, 0)$ with $1$ in the $i$th place.
+	We will also use the abstract simplicial notation $[0,\ldots,k]$ when convenient, identifying the vertex $0$ with the origin and the vertex $i$ with the point $(0, \ldots , 1, \ldots, 0)$ with $1$ in the $i$th place.
 	Then, letting $e_i$ denote the $i$th standard unit basis vector, the standard orientation of $\Delta^k$ is $e_1 \wedge \cdots \wedge e_k$.
 	The simplicial boundary formula, written in terms of manifolds with corners, is then
 	\[\bd [0,\ldots,k] = \amalg_i (-1)^i [0,\ldots, \hat i,\ldots, k].\]
@@ -1644,7 +1645,7 @@ we have, analogously to the simplicial case, a set inclusion $SK^{sm}_i(M) \into
 
 \begin{proof}
 	Both $H_*(S^{sm}_*(M))$ and $H_*(NK^{sm}_*(M))$ are isomorphic to the standard singular homology groups, so in the following we simply write $H_*$ for either of these theories and provide a uniform proof.
-	We let $\Phi: H_*(-) \to H_*^\Gamma(-)$ denote either of the maps induced by the chain maps of \cref{L: singular and cubical chain maps}, using the normalized chains in the cubical case.
+	We let $\Phi$ denote either of the chain maps of \cref{L: singular and cubical chain maps}, using the normalized chains in the cubical case.
 
 	We apply \cite[Theorem 5.1.1]{Frie20}, which is based on standard Mayer--Vietoris techniques.
 	We first observe that on the category consisting of the open subsets of $M$, the maps $\Phi: H_*(-) \to H_*^\Gamma(-)$ determined by the chain maps of \cref{L: singular and cubical chain maps} provide natural transformations of functors, which is clear from the definitions.
@@ -1662,6 +1663,8 @@ we have, analogously to the simplicial case, a set inclusion $SK^{sm}_i(M) \into
 	The horizontal maps are isomorphisms because these are homotopy functors, and the left hand vertical map is an isomorphism because $\Phi$ takes a generator of $H_0(pt) \cong \Z$ to a generator of $H_0^\Gamma(pt) \cong \Z$; see again \cref{E: dimension}.
 	So the right hand map is also an isomorphism.
 
+	The case of the empty set is clear as in this case both groups are trivial.
+
 	2.
 	$\Phi$ induces a commutative diagram of long exact Mayer--Vietoris sequences.
 	This follows from basic homological algebra given the commutativity of the following diagram and its analogue for normalized smooth singular cubical chains
@@ -1675,7 +1678,7 @@ we have, analogously to the simplicial case, a set inclusion $SK^{sm}_i(M) \into
 	3.
 	If $\{U_\alpha\}$ is an increasing collection of open submanifolds of $M$ such that $\Phi \colon H_*(U_\alpha) \to H_*^\Gamma(U_\alpha)$ is an isomorphism for all $\alpha$, then $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is an isomorphism.
 	This argument is standard given that both singular (simplicial or cubical) chains and geometric chains are represented by compact spaces: If $W$ represents a cycle in $C_*^\Gamma(\cup_\alpha U_\alpha)$, then $W \to \cup_\alpha U_\alpha$ factors through some particular $U_\beta$, so, as $H_*(U_\beta) \xr{\Phi}H_*^\Gamma(U_\beta)$ is an isomorphism, $\uW$ is in the image of $H_*(U_\beta) \xr{\Phi}H_*^\Gamma(U_\beta) \to H_*^\Gamma(\cup_\alpha U_\alpha)$.
-	But then $\uW$ is in the image of composition $H_*(U_\beta) \to H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective.
+	But then $\uW$ is in the image of the composition $H_*(U_\beta) \to H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$, so $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ is surjective.
 	Similarly, if $\Phi \colon H_*(\cup_\alpha U_\alpha) \to H_*^\Gamma(\cup_\alpha U_\alpha)$ maps a class represented by a smooth singular cycle $\xi$ to $0$, then $\xi$ bounds as a geometric cycle, so by \cref{R: cycles and boundaries} there is some $Z \in PC_*^\Gamma(\cup_\alpha U_\alpha)$ so that $\bd Z \amalg -\xi \in Q_*(\cup_\alpha U_\alpha)$.
 	But by compactness, there is some $\beta$ so that $Z$ and $\xi$ both have image in $U_\beta$.
 	So $\xi$ represents a class in $H_*(U_\beta)$ that maps to $0$ in $H_*^\Gamma(U_\beta)$.
