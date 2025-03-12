@@ -499,19 +499,19 @@ For this we first need a quick lemma.
 \end{lemma}
 
 \begin{proof}
-	As elements of $PC_0^\Gamma(M)$ cannot be degenerate, if $W \in Q_0$ then $W$ must be trivial, and so there is an orientation-reversing diffeomorphism $\rho$ of $W$ such that $r_W\rho = r_W$.
+	As elements of $PC_0^\Gamma(M)$ cannot be degenerate, if $W \in Q_0(M)$ then $W$ must be trivial, and so there is an orientation-reversing diffeomorphism $\rho$ of $W$ such that $r_W\rho = r_W$.
 	But a compact $0$-manifold has an orientation-reversing diffeomorphism if and only there are the same number of points with each orientation.
 \end{proof}
 
 \begin{definition}\label{D: aug}
-	We define the \textbf{augmentation map} $\aug \colon PC^\Gamma_0(M) \to \Z$ as follows: If $W \in PC^\Gamma_0(M)$ then $W$ is the disjoint union of a finite number of points, each with orientation denoted $1$ or $-1$.
+	We define the \textbf{augmentation map} $\aug \colon PC^\Gamma_0(M) \to \Z$ as follows: If $W \in PC^\Gamma_0(M)$, then $W$ is the disjoint union of a finite number of points, each with orientation denoted $1$ or $-1$.
 	We let $\aug(W)$ be the sum of the orientations of the points in $W$, interpreting $1$ and $-1$ as integers.
 	By \cref{L: Q0}, an element of $PC^\Gamma_0(M)$ can be in $Q_0(M)$ only if this sum is $0$, so the augmentation descends to a homomorphism $\aug \colon C^\Gamma_0(M) \to \Z$.
-	Furthermore, if $W \in PC_1^\Gamma(M)$ then, as usual, $\aug(\bd W) = 0$, so $\aug$ further descends to a homomorphism $\aug \colon H_0^\Gamma(M) \to \Z$.
+	Furthermore, if $W \in PC_1^\Gamma(M)$ then $\aug(\bd W) = 0$, so $\aug$ further descends to a homomorphism $\aug \colon H_0^\Gamma(M) \to \Z$.
 \end{definition}
 
 Later, we will construct in general a partially-defined intersection map $C^*_\Gamma(M) \otimes C_*^\Gamma(M) \to C_*^\Gamma(M)$.
-In general, this is delicate as geometric chains and cochains do not have fixed representatives.
+In general, this is delicate, as geometric chains and cochains do not have fixed representatives.
 However, at the moment we do not need this full generality to define the intersection map we will need to compare geometric cohomology and cubical cohomology.
 This is reflected in the following more limited definition:
 
@@ -575,7 +575,7 @@ Furthermore, in a neighborhood of $x$ the co-orientation of $r_W$ determines an 
 		& = \aug(W \times_M \bd f)\\
 		& = \mc I(\uW)(\bd f).
 	\end{align*}
-	For the second equality, we use \cref{P: Leibniz cap} together with the facts that the augmentations are both trivial unless $\dim(W \times_M f) = 1$ and that $\aug(\bd (W \times_M F)) = 0$.
+	For the second equality, we use \cref{P: Leibniz cap} together with the facts that the augmentations are both trivial unless $\dim(W \times_M f) = 1$ and that $\aug(\bd (W \times_M f)) = 0$.
 \end{proof}
 
 \begin{example}\label{E: coho 0 generator}
@@ -594,10 +594,10 @@ We begin in the next section by using the cubical structure to start building an
 
 Analogous to barycentric subdivisions of simplices, we will need to consider standard subdivisions of cubes.
 For this we let $\jinterval$ denote the interval $\interval = [0,1]$ thought of as the (non-disjoint) union $[0,1/2] \cup [1/2,1]$.
-We can then write $\jinterval^n = \left([0,1/2] \cup [1/2,1]\right)^n$, with the idea being that we consider $\interval^n$ as the union of $2^n$ \textit{subcubes} of side length $1/2$, each of which is the product within $\interval^n$ of $n$ factors, each factor is equal to either $[0,1/2]$ or $[1/2,1]$.
+We can then write $\jinterval^n = \left([0,1/2] \cup [1/2,1]\right)^n$, with the idea being that we consider $\interval^n$ as the union of $2^n$ \textit{subcubes} of side length $1/2$, each of which is the product within $\interval^n$ of $n$ factors, each factor equal to either $[0,1/2]$ or $[1/2,1]$.
 We refer to $\jinterval^n$ with this structure as the \textbf{central subdivision} of $\interval^n$.
 
-Analogously to the case with $\interval^n$, each cube $S$ of $\jinterval^n$ possesses faces (some of which it shares with other $n$-cubes) consisting of the subsets of $S$ in which some variables have been bound to the values $0$, $1$, or $1/2$.
+Analogously to the case with $\interval^n$, each cube $S$ of $\jinterval^n$ possesses faces (some of which it shares with other $n$-cubes) consisting of subsets of $S$ in which some variables have been bound to the values $0$, $1$, or $1/2$.
 In general we refer to such faces as \textbf{faces of $\jinterval^n$}.
 If no variable of such a face is bound to $0$ or $1$, we say that we have an \textbf{internal face of $\jinterval^n$}, otherwise we call it an \textbf{external} face.
 External faces are all subsets of $\bd \interval^n$; internal faces are not subsets of $\bd \interval^n$.
@@ -631,68 +631,69 @@ It is clear that $F$ and $F^\vee$ have complementary dimensions and that they in
 As each face $F$ of $\interval^n$ carries a natural orientation $\beta_F$ determined by the order of its free variables (or the orientation $1$ for vertices), this provides $F^\vee$ with the corresponding normal co-orientation.
 In other words, $F^\vee$ is co-oriented at all points by the co-orientation $(\beta_{F^\vee}, \beta_{F^\vee} \wedge \beta_F)$, where $\beta_{F^\vee}$ is an arbitrary orientation of $F^\vee$.
 Assigning $F^\vee$ this co-orientation, we interpret its embedding in $\interval^n$ as representing a cochain in $\interval^n$ of index $\dim(F)$.
-We define a map $\Psi \colon K^*(\interval^n) \to PC_\Gamma^*(\interval)$ by $\Psi(F^*) = F^\vee$.
+We define a map $\Psi \colon K^*(\interval^n) \to PC_\Gamma^*(\interval^n)$ by $\Psi(F^*) = F^\vee$, recalling that geometric chains and cochains can be defined on manifolds with corners --- see \cref{D: PC,D: chains and cochains}.
 
 We introduce one more piece of notation for the following lemma.
-If $f$ is a face in $\jinterval^n$ co-oriented and considered as an element of $PC^*_\Gamma(\interval^n)$, we let $\bd_{\text{int}}f$ denote the union of the internal faces of $\bd f$ and $\bd_{\text{ext}}f$ denote the union of the external faces of $f$.
-If $f$ is co-oriented, then we interpret the terms of $\bd_{\text{int}}f$ and $\bd_{\text{out}}f$ as co-oriented with the boundary co-orientations.
-We extend $\bd_{\text{int}}$ to a linear operator in the obvious way.
+If $f$ is a face in $\jinterval^n$, we let $\bd_{\text{int}}f$ denote the union of the internal $\dim(f)-1$ faces of $\bd f$ and $\bd_{\text{ext}}f$ denote the union of the $\dim(f)-1$ external faces of $f$.
+If $f$ is co-oriented, then we interpret the terms of $\bd_{\text{int}}f$ and $\bd_{\text{ext}}f$ as co-oriented with the boundary co-orientations.
+We extend $\bd_{\text{int}}$ and $\bd_{\text{ext}}$ to linear operators in the obvious way.
 
 \begin{lemma}\label{L: dualizing bijection}
-	For any face $F$ of $\interval^n$, we have $$\Psi(d F^*) = \bd_{\text{int}}\Psi(F^*) = \bd_{\text{int}}F^\vee.$$
+	For any face $F$ of $\interval^n$, we have $\Psi(d F^*) = \bd_{\text{int}}\Psi(F^*).$
 \end{lemma}
 
 \begin{proof}
-	We first show that there is a bijection between the interior faces of $\Psi(d F^*)$ and the set of $f^\vee$ such that the corresponding $f^*$ have non-zero coefficients in $dF^*$.
+	We first show that there is a bijection between the internal faces of $\Psi(F^*)$ and the set of $E^\vee$ such that $E^*$ has non-zero coefficients in $dF^*$.
 	Then we will return to carefully consider the co-orientations.
 
 	So let $F$ be a face of $\interval^n$.
 	Recall that $F$ is determined by the partition $(F_0,F_{01}, F_1)$ of $\overline{n}$ corresponding respectively to variables set to $0$, free variables of $F$, and variables set to $1$.
-	By definition, $(dF^*)(f) = F^*(\bd f)$ and so the only faces participating in $dF^*$ are those that have $F$ as a boundary, in other words those faces whose free variables are those in $F_{01}$ plus one more variable from $F_0$ or $F_1$.
+	By definition, $(dF^*)(E) = F^*(\bd E)$ and so the only faces participating in $dF^*$ are those $\dim(F)+1$ faces that have $F$ as a boundary, in other words those faces whose free variables are those in $F_{01}$ plus one more variable from $F_0$ or $F_1$.
 
-	Now let us consider again $F^\vee$, which we recall is obtained by setting all variables in $F_{01}$ to $1/2$ and letting the variables in $F_0$ and $F_1$ become free variables on $[0,1/2]$ or $[1/2,1]$ respectively.
+	Now let us consider again $F^\vee$, which we recall is obtained by setting all variables in $F_{01}$ to $1/2$ and letting the variables in $F_0$ and $F_1$ become free variables on $[0,1/2]$ and $[1/2,1]$, respectively.
 	Each boundary face of $F^\vee$ is then obtained by either setting one of the variables in $F_0$ to $0$ or $1/2$ or one of the variables in $F_1$ to $1/2$ or $1$.
 	Furthermore, the internal faces are those where the variable in $F_0$ or $F_1$ has been set to $1/2$.
 	So, in summary, an internal face of $F^\vee$ has all of the variables in $F_{01}$ as well as exactly one other variable set to $1/2$ and the rest remain free over the appropriate domains, namely $[0,1/2]$ for those in $F_0$ and $[1/2,1]$ for those in $F_1$.
-	But, from the definition of dualization $f \to f^\vee$, this exactly describes the duals $f^\vee$ of the faces participating in $dF^*$, which is sufficient due to the bijection of \cref{L: dualizing bijection}.
+	But, from the definition of dualization $E \to E^\vee$, this exactly describes the duals $E^\vee$ of the faces participating in $dF^*$, which is sufficient for our desired bijection due to the bijection of \cref{L: dualizing bijection}.
 
 	It remains now to consider the signs.
 	We recall that the boundary formula for cubes has the form
-	$$\bd f = \sum_{i = 1}^k (-1)^i(f \delta_i^0-f \delta^1_i),$$ where the $\delta$s denote the embeddings of the faces.
-	In $K_*(\interval^n)$, we can shorten this notation to $$\bd f = \sum_{i = 1}^k (-1)^i(f_i^0-f^1_i),$$ letting $f_i^j$, $j \in \{0,1\}$, denote the $i$th ``front or back face'' according to $j = 1$ or $j = 0$.
+	$$\bd E = \sum_{i = 1}^k (-1)^i(E \delta_i^0-E \delta^1_i),$$ where the $\delta$s denote the embeddings of the faces.
+	In $K_*(\interval^n)$, we can shorten this notation to $$\bd E = \sum_{i = 1}^k (-1)^i(E_i^0-E^1_i),$$ letting $E_i^j$, $j \in \{0,1\}$, denote the $i$th ``front or back face'' according to $j = 1$ or $j = 0$.
 	In particular, we note that there are two factors, both $i$ and $j$, affecting sign.
 
-	So now let us again fix a face $F$ of $\interval^n$ and let $f$ be a face of dimension $\dim(F)+1$ that includes $F$ in its boundary as $F = f_i^j$.
-	Representing $f$ as $f = (f_0,f_{01},f_1)$, we obtain $F$ by setting the $i$th variable of $f_{01}$ to $j$.
+	So now let us again fix a face $F$ of $\interval^n$ and let $E$ be a face of dimension $\dim(F)+1$ that includes $F$ in its boundary as $F = E_i^j$.
+	Representing $E$ as $E = (E_0,E_{01},E_1)$, we obtain $F$ by setting the $i$th variable, which is in $E_{01}$, to $j$.
 	From the coboundary formula, we have
 	\begin{equation*}
-		(dF^*)(f) = F^*(\bd f) = (f_i^j)^*\left(\sum_{i = 1}^k (-1)^i(f_i^0-f^1_i)\right)
-		= (f_i^j)^*((-1)^{i+j}f_i^j) = (-1)^{i+j}.
+		(dF^*)(E) = F^*(\bd E) = (E_i^j)^*\left(\sum_{i = 1}^k (-1)^i(E_i^0-E^1_i)\right)
+		= (E_i^j)^*((-1)^{i+j}E_i^j) = (-1)^{i+j}.
 	\end{equation*}
-	So
-	$f^*$ occurs in $dF^*$ with coefficient $(-1)^{i+j}$.
-	Thus we must show that the coefficient of $f^\vee$ in $\bd_{\text{int}} (F^\vee)$ is $(-1)^{i+j}$.
+	So 	$E^*$ occurs in $dF^*$ with coefficient $(-1)^{i+j}$.
+	Thus we must show that $\Psi(E^*) = E^\vee$ disagrees by a sign of $(-1)^{i+j}$ from the co-orientation assigned to $E^\vee$ as a member of $\bd_{\text{int}} \Psi(F^*) = \bd_{\text{int}} (F^\vee)$.
 
-	Now consider $F^\vee$.
-	We can write its normal co-orientation as $(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})$.
-	Let $k \in F_0 \cup F_1$ be the unique index that is free in $f$ but bound in $F$ and so also free in $F^\vee$.
-	Then $f^\vee$ is the boundary component of $F^\vee$ with $x_k$ set to $1/2$.
-	In this case the boundary co-orientation of $f^\vee$ in $F^\vee$ is $(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} \beta_{e_k})$, where $e_k$ is the unit vector in the direction of increasing $x_k$.
-	The sign $(-1)^{j+1}$ is because if $j = 1$ then in $F^\vee$ the variable $x_k$ is free on $[1/2,1]$ so the inward normal vector at $1/2$ points in the direction of $e_k$, and the opposite if $j = 0$.
-	So the boundary co-orientation for $f^\vee$ in $\interval^n$ as a piece of $\bd F^\vee$ is the composition $$(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}}).$$
+	We continue to assume $F = E_i^j$ and now consider $F^\vee$.
+	If $A=(a,b,\ldots)$ is an ordered subset of $\overline{n}$, we let $\beta_A = e_a \wedge e_b \wedge \cdots$, where $e_a$ is, as usual, the standard unit vector in the $a$th coordinate.
+	If $A, B$ are disjoint ordered subsets sets, we write $A \cup B$ for their concatenation.
+	With this notation, we can write the normal co-orientation of $F^\vee$ as $(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})$.
+	Let $k \in F_0 \cup F_1$ be the unique index that is free in $E$ but bound in $F$ and so also free in $F^\vee$.
+	Then $E^\vee$ is the boundary component of $F^\vee$ with $x_k$ set to $1/2$.
+	In this case the boundary co-orientation of $E^\vee$ in $F^\vee$ is $(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} e_k)$.
+	The sign $(-1)^{j+1}$ is because if $j = 1$ then in $F^\vee$ the variable $x_k$ is free on $[1/2,1]$ so the inward normal vector at $1/2$ points in the direction of $e_k$, and if $j = 0$ then in $F^\vee$ the variable $x_k$ is free on $[0,1/2]$ so the inward normal vector at $1/2$ points in the direction of $-e_k$.
+	So the boundary co-orientation for $E^\vee$ in $\interval^n$ as a piece of $\bd F^\vee$ is the composition $$(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}}).$$
 
-	Meanwhile, the natural co-orientation for $f^\vee$ is $$(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{f_{01}}).$$ But now we observe that $f_0 \cup f_1 = F_0 \cup F_1 \setminus \{k\}$.
-	So
+	Meanwhile, the natural co-orientation for $E^\vee$ is $(\beta_{E_0 \cup E_1},\beta_{E_0 \cup E_1} \wedge \beta_{E_{01}}).$
+	But $E_0 \cup E_1 = F_0 \cup F_1 \setminus \{k\}$, so
 	\begin{align*}
-		(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} \beta_{e_k})&*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})\\
-		& = (-1)^{j+1}(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{e_k})*(\beta_{f_0 \cup f_1} \wedge \beta_{e_k},\beta_{f_0 \cup f_1} \wedge \beta_{e_k} \wedge \beta_{F_{01}})\\
-		& = (-1)^{j+1}(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{e_k} \wedge \beta_{F_{01}})\\
-		& = (-1)^{j+i}(\beta_{f_0 \cup f_1},\beta_{f_0 \cup f_1} \wedge \beta_{f_{01}})\\
+		(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}}& \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})\\
+		& = (-1)^{j+1}(\beta_{E_0 \cup E_1},\beta_{E_0 \cup E_1} \wedge \beta_{e_k})*(\beta_{E_0 \cup E_1} \wedge \beta_{e_k},\beta_{E_0 \cup E_1} \wedge \beta_{e_k} \wedge \beta_{F_{01}})\\
+		& = (-1)^{j+1}(\beta_{E_0 \cup E_1},\beta_{E_0 \cup E_1} \wedge \beta_{e_k} \wedge \beta_{F_{01}})\\
+		& = (-1)^{j+i}(\beta_{E_0 \cup E_1},\beta_{E_0 \cup E_1} \wedge \beta_{E_{01}}).
 	\end{align*}
-	In the second express after the first equal sign we have used that the expression for the co-orientation of $F^\vee$ is independent of the choice of local orientation for $F^\vee$.
-	So we replace $\beta_{F_0 \cup F_1}$ with $\beta_{f_0 \cup f_1} \wedge \beta_{e_k}$.
-	But we know that $k$ is the $i$th variable of $f_{01}$, so
-	$\beta_{e_k} \wedge \beta_{F_{01}} = (-1)^{i-1}\beta_{f_{01}}$, which we use in the last equality.
+	In the second line, we use that expressions of the form $(\beta_A, \beta_A \wedge \beta_B)$ are independent of the choice of $\beta_A$, so we replace $\beta_{F_0 \cup F_1}$ with $\beta_{E_0 \cup E_1} \wedge \beta_{e_k}$.
+	But as $F = E_i^j$, we know that $k$ is the $i$th variable of $E_{01}$, so
+	$\beta_{e_k} \wedge \beta_{F_{01}} = (-1)^{i-1}\beta_{E_{01}}$, which we use in the last equality.
+	Thus the two co-orientations disagree by $(-1)^{i+j}$ as required.
 \end{proof}
 
 \begin{lemma}\label{L: ext faces}
