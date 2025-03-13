@@ -125,7 +125,7 @@ We have the following cubical analogue.
 
 In the definition, the role of the characteristic maps $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ is to combinatorially identify the poset structure on each cube $\sigma$ with the poset structure on the vertices of the topological cube $\interval^n$ that we previously established by identifying the vertices of $\interval^n$ with $\mathcal P(\overline n)$.
 The first condition then says that every vertex is a cube of the cubical complex, while the second says that every face of a cube is also a cube in the complex with its compatible subposet structure.
-
+We also note that the definition guarantees that no two cubes of a cubical complex can share the same set of vertices, i.e.\ a cube is completely determined by its set of vertices; cf.\ \cref{F: cubical structure}.
 
 In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we have no use for the unordered version.
 Our definition sits between cubical sets \cite{jardine2002cubical} and cellular subsets of the cubical lattice of $\R^\infty$ \cite{kaczynski2006computational}, analogously to the way that abstract ordered simplicial complexes sit between simplicial sets and simplicial complexes.
@@ -596,6 +596,8 @@ Analogous to barycentric subdivisions of simplices, we will need to consider sta
 For this we let $\jinterval$ denote the interval $\interval = [0,1]$ thought of as the (non-disjoint) union $[0,1/2] \cup [1/2,1]$.
 We can then write $\jinterval^n = \left([0,1/2] \cup [1/2,1]\right)^n$, with the idea being that we consider $\interval^n$ as the union of $2^n$ \textit{subcubes} of side length $1/2$, each of which is the product within $\interval^n$ of $n$ factors, each factor equal to either $[0,1/2]$ or $[1/2,1]$.
 We refer to $\jinterval^n$ with this structure as the \textbf{central subdivision} of $\interval^n$.
+It is a cubical complex with the evident partial orders obtained from $0 < 1/2 < 1$.
+The resulting subdivision of each cubical face of $\interval^n$ is precisely the central subdivision obtained by treating that face as some $\interval^k$ in its own right.
 
 Analogously to the case with $\interval^n$, each cube $S$ of $\jinterval^n$ possesses faces (some of which it shares with other $n$-cubes) consisting of subsets of $S$ in which some variables have been bound to the values $0$, $1$, or $1/2$.
 In general we refer to such faces as \textbf{faces of $\jinterval^n$}.
@@ -696,51 +698,67 @@ We extend $\bd_{\text{int}}$ and $\bd_{\text{ext}}$ to linear operators in the o
 	Thus the two co-orientations disagree by $(-1)^{i+j}$ as required.
 \end{proof}
 
+
+We need some additional notation for the next lemma.
+Suppose $F$ is a face of $E$, which we will write $F \subseteq E$, recalling that we identify faces of a cubical complex with their vertex sets.
+Let $F_E^\vee$ denote the dual of $F$ in $E$.
+In other words, we identify $E$ with $\interval^k$ for an appropriate $k$ and form the dual of the face corresponding to $F$ in $E$.
+
 \begin{lemma}\label{L: ext faces}
-	Suppose for any $n-1$ face $E$ of $\interval^n$ with $F<E$ we let $F_E^\vee$ denote the dual of $F$ in $E$ (ignoring co-orientation).
-	Then the exterior faces $\bd_{\text{ext}}F^\vee$ of $F^\vee$ correspond exactly to the $F_E^\vee$ as $E$ ranges over the $n-1$ faces of $\interval^n$ containing $F$.
-	Furthermore, if $F^\vee$ is given the normal co-orientation induced by $F$ as above, then the co-orientation of $F^\vee_E \to F^\vee \to \interval^n$ as a piece of the boundary of $F^\vee$ is given by $(\beta_{F_E^\vee},\beta_{F_E^\vee} \wedge \beta_v \wedge \beta_F)$, where $\beta_{F_E^\vee}$ is any arbitrary orientation for $F_E^\vee$, $v$ is an inward pointing normal at $E$, and $\beta_F$ is the orientation of $F$.
+	Let $F$ be a face of $\interval^n$.
+	Then the external faces $\bd_{\text{ext}}F^\vee$ of $F^\vee$ correspond exactly to the $F_E^\vee$ as $E$ ranges over the $n-1$ faces of $\interval^n$ containing $F$.
+	Furthermore, if $F^\vee$ is given the normal co-orientation induced by $F$ as above, then the co-orientation of $F^\vee_E \to F^\vee \to \interval^n$ considered as a piece of the boundary of $F^\vee$ is given by $(\beta_{F_E^\vee},\beta_{F_E^\vee} \wedge \beta_v \wedge \beta_F)$, where $\beta_{F_E^\vee}$ is any arbitrary orientation for $F_E^\vee$, $v$ is an inward pointing normal to $\interval^n$ at $E$, and $\beta_F$ is the orientation of $F$ as a face of $\interval^n$.
 \end{lemma}
 
 \begin{proof}
-	The $n-1$ face $E$ contains $F$ if and only if there is an $i \in F_0$ such that $i \in E_0$ or an $i \in F_1$ such that $i \in E_1$.
-	Now from the definitions, a face $f$ of $F^\vee$ is an external face if and only if there is an $i \in F_0$ such that $x_i$ is bound to $0$ in $f$ or an $i \in F_1$ such that $x_i$ is bound to $1$ in $f$.
-	Thus any $f$ in $\bd_{ext}F^\vee$ must be contained in an $E$ that contains $F$.
-	Conversely, if $F<E$ and $i \in F_0$ with $x_i = 0$ defining $E$, then there is an external face of $F^\vee$ for which $x_i = 0$, $x_k = 1/2$ for all $k \in F_{01}$, and all other variables are free.
-	Similarly, if $F<E$ and $i \in F_1$ with $x_i = 1$ defining $E$, then there is an external face of $F^\vee$ for which $x_i = 1$, $x_k = 1/2$ for all $k \in F_{01}$, and all other variables are free.
+	We first observe that each $n-1$ cube $E$ is determined by its single bound variable, and any cube $F$ in $E$ must share that bound variable.
+	Conversely, given $F$, to obtain an $n-1$ cube containing it, we free all but one of its bound variables.
+	So the $n-1$ cube $E$ contains $F$ if and only if there is an $i \in F_0$ such that $i \in E_0$ or an $i \in F_1$ such that $i \in E_1$.
+
+	Now from the definitions, we recall that $F^\vee$ is obtained by setting the free variables of $F$ to $1/2$ and the bound variables of $F$ to be free, with the variables of $F_0$ running over $[0,1/2]$ and the variables of $F_1$ running over $[1/2,1]$.
+	So if $f$ is an external face of $F^\vee$, it is obtained from the conditions defining $F^\vee$ by setting $x_i=0$ for an $i \in F_0$ or $x_i$ to $1$ for an $i \in F_1$.
+	Thus $x_i$ is the only variable of $f$ bound to $0$ or $1$, and so the corresponding $E$ determined by $x_i = 0$ or $x_i = 1$ is the unique $n-1$ cube of $\interval^n$ containing $f$, and it also contains $F$ (since $i$ is in both $F_0$ and $E_0$ or both $F_1$ and $E_1$).
+	Conversely, if $F \subseteq E$ and $i \in F_0$ with $x_i = 0$ defining $E$, then there is a unique external face of $F^\vee$ for which $x_i = 0$, namely the one with $x_i=0$, $x_k = 1/2$ for all $k \in F_{01}$, and all other variables free.
+	Similarly, if $F \subseteq E$ and $i \in F_1$ with $x_i = 1$ defining $E$.
 	So we have a bijection between external faces of $\bd F^\vee$ and the $n-1$ faces $E$ containing $F$.
-	Furthermore, after we have set $x_i$ to $0$ or $1$ as appropriate, the behavior in the remaining variables shows that such a face has precisely the form of $F^\vee_E$.
+	Furthermore, after we have set $x_i$ to $0$ or $1$ as appropriate, the behavior in the remaining variables shows that the external face of $\bd F^\vee$ contained in $E$ is precisely $F^\vee_E$.
 
 	It remains to consider the co-orientations.
 	Suppose $f$ is an external face of $F^\vee$ in the $n-1$ face $E$, i.e.\ $f = F^\vee_E$.
 	The co-orientation of $F^\vee$ in $\interval^n$ and the co-orientation of $f$ in $E$ are both the normal co-orientations determined by the orientation of $F$.
-	As $f$ is part of $\bd F^\vee$, its orientation in $\interval^n$ is therefore the composite $$(\beta_f,\beta_f \wedge \beta_v)*(\beta_f \wedge \beta_v,\beta_f \wedge \beta_v \wedge \beta_F) = (\beta_f,\beta_f \wedge \beta_v \wedge \beta_F),$$ where $\beta_f$ is any arbitrary orientation for $f$, $v$ is the inward pointing normal of $f$ in $F^\vee$, which in this case is also an outward pointing normal of $E$ in $\interval^n$, and we use $\beta_f \wedge \beta_v$ as a convenient orientation for $F^\vee$.
+	As $f$ is part of $\bd F^\vee$, its boundary co-orientation in $\interval^n$ is therefore the composite $$(\beta_f,\beta_f \wedge \beta_v)*(\beta_f \wedge \beta_v,\beta_f \wedge \beta_v \wedge \beta_F) = (\beta_f,\beta_f \wedge \beta_v \wedge \beta_F),$$ where $\beta_f$ is any arbitrary orientation for $f$, $v$ is the inward pointing normal of $f$ in $F^\vee$, which in this case is also an inward pointing normal of $E$ in $\interval^n$, and we use $\beta_f \wedge \beta_v$ as a convenient orientation for $F^\vee$.
 \end{proof}
 
 \subsubsection{Dualization in cubical complexes}
 
 Now suppose that $X$ is any cubical complex.
 We obtain the \textbf{centrally subdivided cubical complex $sd(X)$} by replacing each cube $\interval^n$ with $\jinterval^n$.
+This is well defined as we have noted that the central subdivision of each cube is consistent with the central subdivision of each cube of which it is a face.
+
 Now suppose that $M$ is an $n$-manifold without boundary cubulated by the cubical complex $X$ via $\phi \colon |X| \to M$.
-For a given face $F$ of an $n$-cube $B$ of $X$, we can extend the above definitions, and abuse notation, by letting $F$ refer also to the image of $F$ in $M$ and letting $F_B^\vee$ also denote the composition $F_B^\vee \into \interval^n \into |X| \xr{\phi} M$, where $F_B^\vee$ is the dual of $F$ in $B$.
+For a given face $F$ of an $n$-cube $B$ of $X$, we can extend the above definitions, and abuse notation, by letting $F$ refer also to the image of $F$ in $M$ and letting $F_B^\vee$ also denote the composition $F_B^\vee \into \interval^n \into |X| \xr{\phi} M$, where $F_B^\vee$ is the dual of $F$ in $B$ as above.
 Similarly, we consider this version of $F_B^\vee$ in $M$ to be co-oriented by the normal co-orientation obtained from the orientation of $F$.
-Moreover, in the cubulated $M$ we extend our earlier definition and write $F^\vee = \sqcup_{F<B} F^\vee_B$, where the union is taken over all $n$-cubes $B$ having $F$ as a face.
-We similarly extend $\Psi$ so that $\Psi(F^*) = F^\vee = \sum_{F<B} F_{B}^\vee$.
+Moreover, in the cubulated $M$ we extend our earlier definition and write $F^\vee = \sqcup_{F \subseteq B} F^\vee_B$, where the union is taken over all $n$-cubes $B$ having $F$ as a face.
+We similarly let $\Psi_B(F^*) = F_B^\vee$, which is consistent with the dualization within a single cube defined above, and then set $\Psi(F^*) = \sum_{F \subseteq B} \Psi_B(F^*) = \sum_{F \subseteq B} F_{B}^\vee = F^\vee$.
 
 \begin{lemma}\label{L: dual chain map}
 	$\Psi$ gives a chain map $K_X^*(M) \to C_\Gamma^*(M)$.
 \end{lemma}
 
 \begin{proof}
-	We will show that for any face $F$ of the cubulation $X$ of $M$ we have $\Psi(\bd F^*) = \bd\Psi(F^*)$.
+	We will show that for any face $F$ of the cubulation $X$ of $M$ we have $\Psi(d F^*) = \bd\Psi(F^*)$.
 
-	By \cref{L: dualizing bijection} and the definition of the extended $\Psi$, we know that $\Psi(dF^*) = \sum_{F<B} \bd_{\text{int}}F^\vee_B$, so we must only show that $\sum_{F<B} \bd (F^\vee_B) = \sum_{F<B} \bd_{\text{int}}(F^\vee_B)$, in other words that all of the external faces of the terms of $\Psi(dF^*)$ cancel in the sum $\sum_{F<B} \bd (F^\vee_B)$.
+	By \cref{L: dualizing bijection} and the definition of the extended $\Psi$, we know that
+	$$\Psi(dF^*) =  \sum_{F \subseteq B} \Psi_B(dF^*) = \sum_{F \subseteq B}\bd_{\text{int}} \Psi_B(F^*) = \sum_{F \subseteq B} \bd_{\text{int}}F^\vee_B,$$
+	where $\bd_{\text{int}}$ refers to the internal boundary in the appropriate $B$, so we must show that $\sum_{F \subseteq B} \bd_{\text{int}}(F^\vee_B) = \sum_{F \subseteq B} \bd (F^\vee_B)$, in other words that all of the external faces of the terms of $\bd\Psi(F^*) = \sum_{F \subseteq B} \bd (F^\vee_B)$ cancel in the sum, or, more precisely, that they constitute a trivial pair of precochains.
 
 	For this, let us fix an $n$-cube $B$ containing $F$, and let $E$ be an $n-1$ face of $B$ containing $F$.
 	As $M$ is an $n$-manifold, there is exactly one other $n$-cube, say $B_1$, in the cubulation that shares the face $E$ with $B$.
 	Furthermore, by \cref{L: ext faces}, $E$ contains external faces of $\bd(F^\vee_B)$ and $\bd(F^\vee_{B_1})$ and they both correspond geometrically to $F^\vee_E$.
 	Also by the lemma, the co-orientation as a boundary piece of $F^\vee_B$ is $(\beta_{F_E^\vee},\beta_{F_E^\vee} \wedge \beta_{v_B} \wedge \beta_F)$, where $v_B$ is an inward pointing vector of $B$ at $E$, and the co-orientation as a boundary piece of $F^\vee_{B_1}$ is $(\beta_{F_E^\vee},\beta_{F_E^\vee} \wedge \beta_{v_{B_1}} \wedge \beta_F)$, where $v_{B_1}$ is an inward pointing vector of $B_1$ at $E$.
-	Since a normal vector to $E$ that is inward pointing with respect to $B_1$ is outward pointing with respect to $B$, and vice versa, these are opposite co-orientations, so these two boundary pieces cancel in $\bd \Psi(F^*)$.
+	Since a normal vector to $E$ that is inward pointing with respect to $B_1$ is outward pointing with respect to $B$, and vice versa, these are opposite co-orientations, so these two boundary pieces constitute a trivial pair.
+
+	Applying this argument to all $n-1$ cubes that contain $F$ completes the argument by \cref{L: ext faces}.
 \end{proof}
 
 Morally speaking, $\Psi$ will be our inverse to the intersection map $\mc I$, but unfortunately the elements of $PC^*_\Gamma(M)$ that represent the image of $\Psi$ are not transverse to the cubulation.
