@@ -35,6 +35,10 @@ We first identify certain types of ``manifolds over $M$.'' In future sections $M
 	By \cite[Lemma 2.8]{Joy12}, $i_{\bd W}$ is proper, so, as the composition of proper maps is proper, if $W$ is a proper manifold over $M$ then so is $\bd W$.
 
 	If $W$ is oriented or co-oriented, we write $-W$ to refer to the manifold over $M$ with the opposite orientation or co-orientation; it should always be clear from context which structure we are replacing with its opposite.
+
+	If $V$ and $W$ are manifolds over $M$ that are disjoint\footnote{See \cref{E: copies,D: prechain sum} for the case where $V$ and $W$ are not necessarily disjoint.} as submanifolds of $\R^\infty$, we let $V \sqcup W$ be a manifold over $M$ with reference map $r_{V \sqcup W}$ such that $r_{V \sqcup W}(x) = r_V(x)$ when $x \in V$ and $r_{V \sqcup W}(x) = r_W(x)$ when $x \in W$.
+	We call this construction the \textbf{disjoint union} of $V$ and $W$.
+	If $V$ and $W$ are both oriented, co-oriented, compact, or proper, then so is $V \sqcup W$.
 \end{definition}
 
 %The most important case of manifolds over $M$ are submanifolds.
@@ -81,7 +85,7 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 	Indeed, we still have $\pi \rho = \pi$, and the tautological co-orientation of $\rho$ is $(e_\theta,-e_\theta)$ so that the composite co-orientation of $\pi\rho$ is $-(e_\theta,e_x)$.
 \end{example}
 
-\begin{example}
+\begin{example}\label{E: copies}
 	If $r_V \colon V \to M$ is any oriented or co-oriented map and $-r_V \colon V \to M$ is the same map with the opposite orientation or co-orientation, then $r_V \sqcup -r_V \colon V \sqcup V \to M$ is trivial, taking $\rho$ to be the map that switches the two copies of $V$.
 
 	To be technically accurate, the space $V \sqcup V$ is not clearly defined as a manifold with corners, as we have defined our manifolds with corners in \cref{D: MWC} to be submanifolds of some $\R^N$.
@@ -284,7 +288,8 @@ We will show that the claims of the following definition hold in \cref{L: co/cha
 	we define the \textbf{geometric cohomology} of $M$, written $H^*_\Gamma(M)$ to be $H^*(C_\Gamma^*(M))$.
 \end{definition}
 
-We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every geometric chain or geometric cochain can be represented by a single map $r_W \colon W \to M$ for appropriate (possibly disconnected) $W$.
+We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every geometric chain or geometric cochain can be represented by a single map $r_Z \colon Z \to M$ for appropriate (possibly disconnected) $Z$.
+In particular, $k \uV$ for $k>0$ can be represented by a single map consisting of the disjoint union of $k$ (co-)oriented isomorphic pre(co)chains, while $k \uV$ for $k<0$ is represented by the same map with the opposite (co-)orientations; see \cref{E: copies,D: prechain sum}.
 
 
 \begin{lemma}\label{L: co/chains well defined}
