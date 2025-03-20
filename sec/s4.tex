@@ -36,9 +36,10 @@ We first identify certain types of ``manifolds over $M$.'' In future sections $M
 
 	If $W$ is oriented or co-oriented, we write $-W$ to refer to the manifold over $M$ with the opposite orientation or co-orientation; it should always be clear from context which structure we are replacing with its opposite.
 
-	If $V$ and $W$ are manifolds over $M$ that are disjoint\footnote{See \cref{E: copies,D: prechain sum} for the case where $V$ and $W$ are not necessarily disjoint.} as submanifolds of $\R^\infty$, we let $V \sqcup W$ be a manifold over $M$ with reference map $r_{V \sqcup W}$ such that $r_{V \sqcup W}(x) = r_V(x)$ when $x \in V$ and $r_{V \sqcup W}(x) = r_W(x)$ when $x \in W$.
+	If $V$ and $W$ are manifolds over $M$ that are disjoint\footnote{Recall that all of our manifolds with corners are subsets of $\R^\infty$.} as submanifolds of $\R^\infty$, we let the disjoint union $V \sqcup W$ be a manifold over $M$ with reference map $r_{V \sqcup W}$ such that $r_{V \sqcup W}(x) = r_V(x)$ when $x \in V$ and $r_{V \sqcup W}(x) = r_W(x)$ when $x \in W$.
 	We call this construction the \textbf{disjoint union} of $V$ and $W$.
 	If $V$ and $W$ are both oriented, co-oriented, compact, or proper, then so is $V \sqcup W$.
+	In \cref{E: copies,D: prechain sum} we consider disjoint union for the case where $V$ and $W$ are not necessarily disjoint in $\R^\infty$ using the notion of isomorphism classes, which we introduce next.
 \end{definition}
 
 %The most important case of manifolds over $M$ are submanifolds.
@@ -175,7 +176,7 @@ The last clause in the definition is due to our requirement that all manifolds w
 As given, the definition allows constructions like $[W]\sqcup[W]$ to be well defined.
 We observe that this definition is itself well defined, since if $V''$ and $W''$ are two other disjoint manifolds over $M$ isomorphic to $V$ and $W$ (in the appropriate sense), then we can compose the diffeomorphisms $V'\xleftarrow{\phi'}V \xr{\phi''} V''$ and $W'\xleftarrow{\psi'}W \xr{\psi''} W''$ to obtain an isomorphism $\phi''(\phi')^{-1} \sqcup \psi''(\psi')^{-1} \colon V' \sqcup W' \to V'' \sqcup W''$.
 
-With $\sqcup$, $PC^\Gamma_*(M)$ and $PC_\Gamma^*(M)$ become commutative monoids in each degree with the empty maps $r_\emptyset \colon \emptyset \to M$ as the identities.
+With the operation $\sqcup$, the sets $PC^\Gamma_*(M)$ and $PC_\Gamma^*(M)$ become commutative monoids in each degree with the empty maps $r_\emptyset \colon \emptyset \to M$ as the identities.
 
 We now return to denoting isomorphism classes by their representatives, noting again that triviality and small rank are properties of the isomorphism classes.
 In particular, when we write $V \sqcup W$, we assume that $V$ and $W$ are disjoint in $\R^\infty$.

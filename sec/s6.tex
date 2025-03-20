@@ -593,8 +593,8 @@ Recall that we already know these groups are abstractly isomorphic by \cref{T: t
 Here is the formal statement of the theorem:
 
 \begin{theorem}\label{T: intersection qi}
-	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$ is an isomorphism whenever $H^i(M)$ is finitely generated.
-	It is a surjection even if $H^i(M)$ is not finitely generated.
+	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$ is a surjection.
+	If, in addition, $H^i(M)$ is finitely generated, then $\mc I$ is an isomorphism.
 \end{theorem}
 
 The proof will take us the remainder of \cref{S: transversality}.
@@ -754,7 +754,7 @@ For a given face $F$ of an $n$-cube $B$ of $X$, we can extend the above definiti
 Similarly, we consider this version of $F_B^\vee$ in $M$ to be co-oriented by the normal co-orientation obtained from the orientation of $F$, and we can then further abuse notation and consider $F_B^\vee$ to also represent a geometric cochain.
 Moreover, in the cubulated $M$ we extend our earlier definition and write $F^\vee = \sqcup_{F \subseteq B} F^\vee_B$, where the union is taken over all $n$-cubes $B$ having $F$ as a face; when considering these as geometric cochains, we can replace union with sum.
 We similarly define $\Psi_B(F^*) = F_B^\vee$, which is consistent with the dualization within a single cube defined above, and then set $\Psi(F^*) = \sum_{F \subseteq B} \Psi_B(F^*) = \sum_{F \subseteq B} F_{B}^\vee = F^\vee$.
-This is sufficient to determine a homomorphism $\Psi \colon K_X^*(M) \to C_\Gamma^*(M)$, thinking of elements of $K_X^*(M)$ as possibly infinite formal sums $\sum n_i F^*$ with the sum taken over all faces of a given dimension; compare \cite[Section 42]{Mun84}. Note that the image of such an element corresponds to a proper map from a manifold with corners to $M$, as the domain of such a precochain must be a countable collection of cubes, and their images in $M$ will be locally finite.
+This is sufficient to determine a homomorphism $\Psi \colon K_X^*(M) \to C_\Gamma^*(M)$, thinking of elements of $K_X^*(M)$ as possibly infinite formal sums $\sum n_i F^*$ with the sum taken over all faces of a given dimension; compare \cite[Section 42]{Mun84}. The image of such an element of $K_X^*(M)$ under $\Psi$ corresponds to a map from a manifold with corners to $M$ whose domain is a countable collection of cubes, and this map is proper as every point of $M$ has a neighborhood that intersects only finitely many image cubes.
 
 \begin{lemma}\label{L: dual chain map}
 	$\Psi$ gives a chain map $K_X^*(M) \to C_\Gamma^*(M)$.
@@ -785,11 +785,10 @@ To remedy the problem with the image of $\Psi$ consisting of elements of $PC^*_\
 Moreover, we want to do so in a way such that the intersection number of the pushed $F^\vee$ with $F$ will be $1$, as expected.
 Constructing such a homotopy is the purpose of the following technical lemma.
 As we will see in the proof, the actual construction is a bit fiddly in order to ensure all the needed properties.
-The payoff is in \cref{T: intersection qi}, which can be found in the next subsection.
 
 \begin{lemma}\label{L: push dual}
 	Suppose $M$ is a manifold without boundary with a cubulation $X$.
-	Then there is a smooth homotopy from the identity to a map $h \colon M \to M$ such that for each face $F$ of $X$ the following hold:
+	Then there is a proper smooth homotopy from the identity to a map $h \colon M \to M$ such that for each face $F$ of $X$ the following hold:
 	\begin{enumerate}
 		\item $h|_{F^\vee} \colon F^\vee \to M$ is transverse to $X$
 		\item the only $\dim(F)$-face of $X$ that intersects $h(F^\vee)$ is $F$
@@ -799,69 +798,93 @@ The payoff is in \cref{T: intersection qi}, which can be found in the next subse
 
 \begin{proof}
 	We will construct our homotopy in multiple steps.
-	The basic idea is first to construct small isotopies near the centers $\hat F$ of the faces $F$ that push the corresponding $F^\vee$ into transverse position with $F$ and so that the intersection number of the shifted $F^\vee$ with $F$ is $1$, giving the third condition.
+	The basic idea is first to construct small isotopies near the centers $\hat F$ of the faces $F$ of $X$ that push the corresponding $F^\vee$ into transverse position with $F$ and so that the intersection number of the shifted $F^\vee$ with $F$ is $1$, giving the third condition.
 	These will also be designed to ensure enough transversality in neighborhoods of the $\hat F$.
 	Then we perform a more global shift to push the rest of $sd(X)$ into transverse position with $X$ to achieve the first condition, while leaving fixed the isotopies already constructed near the $\hat F$.
-	We also ensure the global shift is small enough to provide the second condition wile also not disrupting the third.
+	We also ensure the global shift is small enough to provide the second condition while also not disrupting the third.
 
-	Throughout we may assume that $M$ is embedded properly in some $\R^N$ with an $\epsilon$-neighborhood $M^\epsilon$ (with $\epsilon$ a function of $x \in N$) and a submersion $\pi \colon M^\epsilon \to M$; see \cite[Section 2.3]{GuPo74}.
-	We can then consider $M$ as a metric space with the subspace metric.
+	Throughout we may assume that $M$ is embedded properly in some $\R^N$ with an $\epsilon$-neighborhood $M^\epsilon$ (with $\epsilon$ a function of $x \in M$) and a submersion $\pi \colon M^\epsilon \to M$; see \cite[Section 2.3]{GuPo74}.
+	We may further assume that $\epsilon(x) < 1$ for all $x \in M$.
+	As a subspace of $\R^N$, we can consider $M$ as a metric space with the subspace metric.
 
 	To create a template and explain the basic idea, we first consider the standard $m = \dim(M)$-cube $\interval^m = [0,1]^m \subset \R^m$.
 	Let $e_i$ denote the unit tangent vector of $\R^m$ pointing in the positive $i$th direction.
-	Let $f = (f_0,f_{01},f_1)$ be a face of $\interval^m$, let $\hat f$ be its center, and define the vector $v_f$ by $v = \sum_{i \in f_1} e_i-\sum_{i \in f_0} e_i$ (if $f_0 = f_1 = \emptyset$, let $v = 0$).
+	Let $f = (f_0,f_{01},f_1)$ be a face of $\interval^m$, let $\hat f$ be its center, and define the vector $v_f$ to be the unit vector in the direction $\sum_{i \in f_1} e_i-\sum_{i \in f_0} e_i$ (if $f_0 = f_1 = \emptyset$, let $v = 0$; we leave the reader to adjust for this case in what follows, noting that in this case $f^\vee = \hat f$ is already transverse to $f = \interval^m$).
 	At points of $f$, the vector $v_f$ points outward from the cube $\interval^m$.
-	The vector $v_f$ is also tangent to $f^\vee$ at $f \cap f^\vee = \hat f$, and for small $\delta>0$ the points $\hat f-\delta v_f$ lie in the interior of the face $f^\vee$.
+	The vector $v_f$ is also tangent to $f^\vee$ at any point of $f^\vee$, and for small $\delta>0$ the points $\hat f-\delta v_f$ lie in the interior of the face $f^\vee$.
 	So, if we were to translate $f^\vee$ by $\delta v_f$ for a sufficiently small positive $\delta$, we would obtain a translate of $f^\vee$ within the $m-\dim(f)$ plane containing it.
 	As this plane is orthogonal to $f$ and intersects it at the single point $\hat f$, the only intersection of $f$ with the translated $f^\vee+\delta v_f$ is at $\hat f$ with a point in the image of the interior of $f^\vee$.
-	As the translation preserve the tangent plane of $f^\vee$, this is a transverse intersection, and the translation preserves the normal co-orientation so that the intersection number of $f^\vee+\delta v_f$ with $f$ is $1$.
-	Furthermore, these properties are preserved under a small perturbation of $v_f$.
-	But now we note that by the Transversality Theorem of \cite{GuPo74} that for almost all vectors $u$ in $\R^m$, translation by $u$ takes all open faces of $\jinterval^m$ into transverse position with respect to all open faces of $\interval^m$.
-	In particular, there is such a vector $z_f$ arbitrarily close to $\delta v_f$.
+	As the translation preserves the tangent plane of $f^\vee$, this is a transverse intersection, and the translation preserves the normal co-orientation so that the intersection number of $f^\vee+\delta v_f$ with $f$ is $1$.
+	Furthermore, under a sufficiently small perturbation of $\delta v_f$ to a nearby $z_f$ it remains the case that the translate $f^\vee + z_f$ intersects $f$ transversely in a single point, and the only intersection of $f$ with $f^\vee + z_f$ is with the translate of a point in the interior of $f^\vee$ (though this intersection need not be at $\hat f$) and the intersection number is 1.
+	Additionally, by the Transversality Theorem of \cite{GuPo74}, for almost all vectors $u$ in $\R^m$, translation by $u$ takes all open faces of $\jinterval^m$ into transverse position with respect to all open faces of $\interval^m$.
+	So almost all vectors $z_f$ sufficiently close to $\delta v_f$ have the property that translation by $z_f$ both makes all open faces of $\jinterval^m$ transverse to all open faces of $F$ and satisfies that the intersection number of $f^\vee$ and $f$ is $1$.
 
-	Next, suppose we are given a small closed ball $D^f_r$ centered at $\hat f$ in $\R^m$ with $r<1/4$ so that $D^f_r$ does not intersect any faces of $\interval^m$ that do not intersect $f$ (and in particular $D^f_r$ does not intersect any other faces of the same dimension as $f$).
-	Next choose numbers $0<r_4 < r_3 < r_2<r_1<r$, and let $D^f_{r_j}$ similarly be balls of radius $r_j$ centered at $\hat f$.
+	Next, suppose we are given a small closed ball $D^f_r$ centered at $\hat f$ in $\R^m$ with $r$ sufficiently small that $D^f_r$ does not intersect any faces of $\interval^m$ that do not contain $f$ (and in particular $D^f_r$ does not intersect any other faces of the same dimension as $f$ besides $f$ itself).
+	We choose numbers $0<r_4 < r_3 < r_2<r_1<r$ and let $D^f_{r_j}$ be closed balls of radius $r_j$ centered at $\hat f$.
 	In the first part of the argument we will be concerned primarily with $r$, $r_1$, and $r_2$, but we will need $r_3$ and $r_4$ later.
 	We choose a smooth function $\eta \colon \R^m \to [0,1]$ such that $\eta(x) = 1$ on $D^f_{r_2}$ and $\eta(x) = 0$ outside of $D^f_{r_1}$.
-	Let $\delta \ll \min\left\{\frac{r_4}{2}, \frac{r-r_1}{2}\right\}$, and let $\delta_1 < \delta$ be such that $\delta_1$ is smaller than any of the coordinates of $\delta v_f$.
-	Next, let $z_f$ be a vector in $\R^m$ such that $|z_f-\delta v_f|\ll \delta_1$; by the condition on $\delta_1$, the signs of the coordinates of $z_f$ if $f_0$ and $f_1$ agree with those of $\delta v_f$, so $z_f$ continues to point outward from $\interval^m$ at all points of $f$.
-	Finally, let $Z$ be the vector field on $\R^m$ given by $Z(x) = \eta(x)z_f$, and let $\Phi \colon \R^m \to \R^m$ be the map obtained by flowing by $Z$ from $t = 0$ to $t = 1$.
-	Outside of $D^f_{r_1}$, the map $\Phi$ is the identity.
-	We note $|z_f|\leq \delta+\delta_1 \leq 2\delta < r_4$, so the interior of $D_{r_4}^f$ (and hence all $D_{r_j}^f$) contains both $\hat f$ and $\hat f-z_f$.
-	On $D_{r_2}^f$, the map $\Phi$ acts identically to the translation of the preceding paragraph.
-	As $|z_f| < r-r_1$, and no point moves further than $|z_f$ under $\Phi$, we have $\Phi(D^f_r)\subset D^f_r$, so in particular the distance between the set $\Phi(f^\vee-(f^\vee \cap W^2_f))$ and the union of $\dim(f)$-faces of $\interval^m$ is positive.
-	Also, as $z_f$ points outward from $\interval^m$ in the $f_0$ and $f_1$ directions, we have that $\Phi(\interval^m)$ contains $f$ with $\hat f$ in its interior.
+	Let $\delta, \delta_1 > 0$ satisfy $0 < \delta \ll \min\left\{\frac{r_4}{2}, \frac{r-r_1}{2}\right\}$, $0 < \delta_1 < \delta$, and $\delta_1$ is smaller than any of the non-zero coordinates of $\delta v_f$.
+	We will impose an additional condition on $\delta_1$ below.
+	Next, let $z_f$ be a vector in $\R^m$ such that $|z_f-\delta v_f|\ll \delta_1$; by the condition on $\delta_1$, the signs of the coordinates of $z_f$ in $f_0$ and $f_1$ agree with those of $\delta v_f$, so $z_f$ continues to point outward from $\interval^m$ at all points of $f$.
+	Finally, let $\Phi \colon \R^m \to \R^m$ be defined by $\Phi(x) = x+ \eta(x) z_f$.
 
-	We now translate this procedure to the cubulation of $M$.
-	Suppose $F$ is a face of the cubulation $X$, and choose an $m$-cube $B$ of the cubulation containing $F$ as a face.
+	The map $\Phi$ has the following properties:
+	\begin{enumerate}
+		\item Outside of $D^f_{r_1}$, the map $\Phi$ is the identity.
+
+		\item As $|z_f|\leq |v_f| + |z_f-\delta v_f| < \delta+\delta_1 < 2 \delta < r-r_1$ and no point moves further than $|z_f|$ under $\Phi$, we have $\Phi(D^f_{r_1})\subset D^f_r$.
+
+		\item On $D_{r_2}^f$, the map $\Phi$ is translation by $z_f$ as in the preceding paragraph.
+			As $\delta < r_4 < r_2$, if we translate $f^\vee \cap D_{r_2}^f$ by $\delta v_f$, then there is exactly one intersection point between $(f^\vee \cap D_{r_2}^f) + \delta v_f$ and $f$, and the resulting intersection number is $1$.
+			As in the preceding paragraph, we choose $\delta_1$ so small that this property is maintained replacing $\delta v_f$ with $z_f$.
+			Then there is exactly one intersection point between $\Phi(f^\vee \cap D_{r_2}^f)$ and $f$, and the resulting intersection number is $1$.
+
+			\begin{comment}	\item As $|z_f| < 2\delta < r_4$, the interior of $D_{r_4}^f$ (and hence all $D_{r_j}^f$) contains both $\hat f$ and $\hat f-z_f$, the latter of which is in the interior of $\interval^m$ as $z_f$ points outward from $\interval^m$, in the $f_0$ and $f_1$ directions.
+			\end{comment}
+
+		\item\label{I: pushout} As $\Phi$ only moves points in $D_{r_1}^f$ and acts on all of $\R^m$ by translation by a non-negative scalar multiple of $z_f$ (which is a positive scalar multiple on $D_{r_2}^f$) and as $z_f$ points outward from $\interval^m$ at $f$ in the $f_0$ and $f_1$ directions, it holds for any $x \in \R^m \setminus \interval^m$ or any $x \in f \cap D_{r_2}^f$ that $\Phi(x) \in \R^m \setminus \interval^m$.
+
+		\item As $|z_f| < 2\delta < r_4$, together with the above facts, the distance between the set $\Phi(f^\vee-(f^\vee \cap D_{r_4}^f))$ and the union of $\dim(f)$-faces of $\interval^m$ is positive.
+
+		\item\label{I: Phi homotopy} $\Phi$ is homotopic to the identity via the homotopy $(x,t) \mapsto x+ t \eta(x) z_f$.
+	\end{enumerate}
+
+	We now translate this procedure to the cubulation $X$ of $M$.
+	Suppose $F$ is a face of the cubulation, and choose an $m$-cube $B$ of the cubulation containing $F$ as a face.
 	By assumption there is a smooth diffeomorphism $\phi$ from $\interval^m$ to $B$ that is compatible with the cubical structure.
 	Let $f$ be the face of $\interval^m$ that maps to $F$.
-	Then $\phi$ takes $\hat f$ to the center $\hat F$ and $f^\vee_{\interval^m}$, the dual of $f$ in $\interval^m$, to one of the components of $F^\vee$.
+	Then $\phi$ takes $\hat f$ to the center $\hat F$ and $f^\vee_{\interval^m}$, the dual of $f$ in $\interval^m$, to the component of $F_B^\vee$ of $F^\vee$.
 	By the definition of smooth maps, there is a neighborhood $U$ of $\hat f$ in $\R^m$ on which there is defined a smooth map $\phi_U \colon U \to M$ and such that $\phi_U$ agrees with $\phi$ on $U \cap \interval^m$.
-	As $\phi$ is an embedding at $\hat f$, by the Inverse Function Theorem we may choose $U$ such that $\phi_U$ is a diffeomorphism from $U$ onto its image, and by making $U$ smaller if necessary, we can also assume $U$ maps by $\phi_U$ to a Euclidean ball $D^F_r$ centered at $\hat f$ whose image in $M$ intersects only faces of $X$ that contain $F$.
-	Identifying this ball in $\R^m$ with its image in $M$ via $\phi$, we can use this $r$ to choose quantities and perform a flow $\Phi$ as in the preceding paragraph to push $F^\vee_B$ into transverse position with $F$ (note: we keep $F$ fixed under the flow) and with intersection number $1$.
-	We will henceforth abuse notation and use the same symbols for subsets of $\R^m$ and the corresponding subsets of $M$.
-	Furthermore, this procedure pushes the other components $F^\vee_C$ for $C\neq B$ away from $F$ (slightly), and so $I(\Phi(F^\vee),F) = 1$ and also the distance between the set $\Phi(F^\vee-(F^\vee \cap D_{r^4}^F))$ and the union of $\dim(F)$-faces of $\interval^M$ is positive.
-	As in the proof of the Transversality Theorem of \cite{GuPo74}, by rechoosing our $z_f$ if necessary (still with $|z_f - \delta v_f| < \delta_1$), we can ensure that the restriction of $\Phi$ to the intersection of any face of $sd(X)$ with $int(D_{r_2}^F)$ is transverse to the cubulation\footnotemark.
+	As $\phi$ is an embedding at $\hat f$, by the Inverse Function Theorem we may choose $U$ such that $\phi_U$ is a diffeomorphism from $U$ onto its image, and by making $U$ smaller if necessary, we can assume its image in $M$ intersects only faces of $X$ that contain $F$, and in particular no other $\dim(F)$ face of $X$ besides $F$.
+	We then choose a ball $D_r^f \subset U$ centered at $\hat f$.
+	With this ball $D_r^f$, we can now choose quantities and define a $\Phi$ as in the preceding paragraph that is the identity outside of $D_r^f$ and that pushes $f^\vee_{\interval^m}$ into transverse position with $f$ with intersection number $1$.
+	Identifying $D_r^f$ in $\R^m$ with its image in $M$ via $\phi_U$ and using that $\Phi$ is fixed outside $D_{r_1}^f$, we obtain a map of $M$ to itself that corresponds to $\Phi$ under the identification this.
+	We will henceforth abuse notation and use the same symbols for subsets of $\R^m$ and the corresponding subsets of $M$; under this identification, we identify $F$ with $f$ in a neighborhood of their centers.
+	By property \eqref{I: pushout} of $\Phi$ listed above, the corresponding map $\Phi$ on $M$ pushes the other components $F^\vee_C$ of $F^\vee$ for $C\neq B$ away from $B$, and so it continues to hold that $I(\Phi(F^\vee),F) = 1$ and also the distance between the set $\Phi(F^\vee-(F^\vee \cap D_{r^4}^F))$ and the union of $\dim(F)$-faces of $X$ is positive.
+	To see this last fact, we can use that $\Phi$ fixes the complement of $D_{r_1}^f$, and consider the intersections $D_{r_1}^f \cap F^\vee_C$ as subsets of $\R^m$ via the identification above.
+	Once again, as $|z_f| < 2 \delta < r_4$ and as $\Phi(D_{r_1}^f)\subset D_r^f$, we can find a fixed positive lower bound for the distances between $\Phi(F^\vee-(F^\vee \cap D_{r^4}^F))$ and $F$ or any other $\dim(F)$ face of $X$.
+	As in the proof of the Transversality Theorem of \cite{GuPo74}, by rechoosing our $z_f$ if necessary (still with $|z_f - \delta v_f| < \delta_1$), we can maintain the above properties and also ensure that the restriction of $\Phi$ to the intersection of any face of $sd(X)$ with $int(D_{r_2}^F)$ is transverse to the cubulation\footnotemark.
 
-		\footnotetext{Let $e$ and $c$ be respectively the intersections of faces of $sd(X)$ and $X$ with $U$; via $\phi$ we identify these as submanifolds of $\R^m$.
-		On the $D_{r_2}^F$ in $\R^m$, the flow acts by translation.
+		\footnotetext{Let $e$ and $c$ be respectively the intersections of faces of $sd(X)$ and $X$ with $\phi_U$; via $\phi_U$ we identify these as submanifolds of $\R^m$.
+		On $D_{r_2}^F$ in $\R^m$, the map $\Phi$ acts by translation.
 		But the map $\tau \colon e \times \R^m \to \R^m$ given by translation by the second coordinate is a submersion, so by the Transversality Theorem the map $\tau(-,y)$ is transverse to $c$ for almost all $y$.
-		As a finite number of cubes of $X$ intersect $U$, almost all vectors in any neighborhood of $v_f$ will satisfy the claim.}
+		As a finite number of cubes of $X$ and $sd(X)$ intersect $U$, almost all vectors in any neighborhood of $v_f$ will thus satisfy the claim.}
 
-	Next, we can apply this procedure at all faces $F$ simultaneously by choosing a sufficiently small $D^F_r$ neighborhood of each $\hat F$ so that they are all disjoint; we let each $r$, $r_1$, $r_2$, $\delta$ and $\delta_1$ depend on $F$ though we do not include this in the notation.
-	We then generalize $\Phi$ by allowing a corresponding flow on all balls simultaneously.
-	This provides a smooth map $\Phi \colon M \to M$ that satisfies the second two conditions of the theorem, as we can also choose the balls small enough that the ball around $\hat F$ does not intersect any other $\dim(F)$ face of $X$.
-	We define $W_j = \cup_F D^F_{r_j}$.
+	Next, we can apply this procedure at all faces $F$ of $X$ of all dimensions simultaneously by choosing a sufficiently small $D^F_r$ neighborhood of each $\hat F$ so that they are all pairwise disjoint; we let each $r$, $r_1$, $r_2$, $\delta$ and $\delta_1$ depend on $F$ though we do not include this in the notation.
+	We then generalize $\Phi$ by allowing a corresponding map on all balls $D_r^F$ simultaneously, which is well defined letting $\Phi$ be the identity outside of the disjoint $D_{r_1}^F$.
+	This provides a smooth map $\Phi \colon M \to M$ that satisfies the second two conditions of the theorem.
+	We also observe that $\Phi$ is homotopic to the identity by extending the homotopies observed in property \eqref{I: Phi homotopy} of $\Phi$ to be the identity outside of the $D_{r_1}^F$.
+	To complete the proof, we must further modify $\Phi$ to ensure transversality beyond the interiors of the $D_{r_2}^F$ and without destroying the other required properties.
+
+	Let $W_j = \cup_F D^F_{r_j}$, where the union is taken over all faces of $X$ of all dimensions.
 	By construction, the restriction of $\Phi$ to the intersection of the interior of $W_2$ with any face of $sd(X)$ is transverse to all faces of $X$.
-	We must further modify $\Phi$ to ensure transversality in general.
 
 	As in the proof of \cref{T: transverse complex}, we next follow the construction in \cite[Section 2.3]{GuPo74}.
 	We have $M$ embedded in some Euclidean space $\R^N$ with an $\epsilon$-neighborhood $M^\epsilon$ and a submersion $\pi \colon M^\epsilon \to M$; we also assume $\epsilon(x)<1$ for all $x \in M$.
-	As we are happy with the map $\Phi$ as constructed so far on the interior of $W_2$, we let $\rho \colon M \to [0,1)$ be a smooth function that is $0$ on $W_3$ and $>0$ on $M-W_3$.
+	As we are happy with the map $\Phi$ as constructed so far on the interior of $W_2$, we let $\rho \colon M \to [0,1)$ be a smooth function that is $0$ on $W_3$ and positive on $M-W_3$.
 	We will fine tune $\rho$ a bit more soon.
 	Let $S$ be the open unit ball in $\R^N$.
-	We now consider the map $H \colon M \times S \to M$ defined by $H(x,s) = \pi(\Phi(x)+\rho(x)\epsilon s)$.
+	We now consider the map $H \colon M \times S \to M$ defined by $H(x,s) = \pi(\Phi(x)+\rho(x)\epsilon(\Phi(x)) s)$.
 	At all points $(x,s)$ such that $\rho(x)>0$, i.e.\ on $M-W_3$, this is a submersion (and so transverse to all faces of $X$), and for all $(x,s)$ such that $\rho(x) = 0$, i.e.\ on $W_3$, we have $H(x,s) = \Phi(x)$.
 
 	Now let $G$ be the interior of any face of the cubical subdivision $sd(X)$.
@@ -869,59 +892,89 @@ The payoff is in \cref{T: intersection qi}, which can be found in the next subse
 	Furthermore, by the Transversality Theorem of \cite{GuPo74}, for almost every $s_0 \in S$ and for any face $F$ of $X$, the map $H|_G(-,s_0)$ is transverse to the interior of $F$ at all points on the submanifold $G-G \cap W_3$ of $G$.
 	But there are a countable number of faces of $X$, so for almost every $s_0 \in S$ and for every face $F$ of $X$, the map $H|_G(-,s_0)$ is transverse to the interior of $F$.
 	But there are also only a countable number of faces of $sd(X)$, and so for almost every $s_0 \in S$, $H|_G(-,s_0)$ is transverse to the interior of $F$ at every point in the interior of $G$, for every $G$ and every $F$.
-	In particular, each $H|_{F^\vee}(-,s_0)$ determines an element of $PC^*_{\Gamma \pf X}(M)$, co-orienting the map using that it is homotopic to the embedding of $F^\vee$ into $M$ (see \cref{S: co-oriented homotopy}) and that $F^\vee$ is normally co-oriented by the orientation of $F$.
+	Lastly, $H(-,s_0)$ is homotopic to $\Phi$ via $H(-, ts_0)$.
 
-	To complete the proof we must do one last thing: we must fine tune $\rho$ to ensure that in forming $H(-,s_0)$ to obtain the required transversality we have not pushed any $F^\vee$ so far as to create new intersections with faces of $X$ of complementary dimensions beyond the single intersection of $H(F^\vee,s_0)$ with $F$ inside $W_2$ that was obtained early using the flow $\Phi$.
+	To complete the proof we must do one last thing: we must fine tune $\rho$ to ensure that in forming $H(-,s_0)$ to obtain the required transversality we have not pushed any $F^\vee$ so far as to create new intersections with $\dim(F)$ faces of $X$ beyond the single desired intersection of $H(F^\vee,s_0)$ with $F$ that was obtained early using the map $\Phi$.
 	For this we do the following.
 
+	Recall that $H(-,s_0) = \Phi$ on $W_3$, and that $\Phi$ already creates the desired intersection between each $F$ and a point in the image of $W_4$.
 	As noted above, if $F$ is any face of $X$ then the distance between $\Phi(F^\vee-(F^\vee \cap W_4))$ and the union of $\dim(F)$-faces of $X$ is positive.
 	Now suppose $x \in M-W_4$ and consider a compact neighborhood $\bar U_x$ of $x$ in $M-W_4$.
 	By the above, if $\bar U_x \cap F^\vee \neq \emptyset$, then there is a positive distance $\varepsilon_{x,F}$ between $\bar U_x \cap F^\vee$ and the $\dim(F)$-skeleton of the cubulation.
 	As $\bar U_x$ is compact, it intersects only a finite number of $F^\vee$ as $F$ ranges over all faces of $X$, and we let $$\varepsilon_x = \min\{\varepsilon_{x,F} \mid \bar U_x \cap F^\vee\neq \emptyset\}.$$
 	So, by construction, any map $g \colon M \to M$ such that $d(z,g(z))<\varepsilon_x$ for all $z \in \bar U_x$ satisfies the property that if $z \in F^\vee \cap \bar U_x$ then $g(z)$ is not contained in a $\dim(F)$ face of $X$.
 
-	Now, suppose we have constructed such an $\varepsilon_x$ for all $x$ in $M-W_4$.
-	Then the interiors $U_x$ of the $\bar U_x$ cover $M-W_4$, and since $M-W_4$ is a subspace of the Euclidean metric space $\R^N$, we can take a locally finite refinement $\mc U$.
-	By \cref{L: minimizer}, we can find a smooth function $\rho_1 \colon M-W_4 \to \R$ so that $0<\rho_1(z)<\varepsilon_x$ if $z \in \bar U_x$ for $U_x \in \mc U$.
-	Let $\rho_2 = \rho\rho_1 \colon M \to \R$.
+	Now, suppose we have constructed such an $\varepsilon_x$ for all $x$ in $M \setminus W_4$.
+	Then the interiors $U_x$ of the $\bar U_x$ cover $M \setminus W_4$, and since $M \setminus W_4$ is a subspace of the Euclidean metric space $\R^N$, we can take a locally finite refinement $\mc U$.
+	By \cref{L: minimizer}, we can find a smooth function $\rho_1 \colon M \setminus W_4 \to \R$ so that $0<\rho_1(z)<\varepsilon_x$ if $z \in \bar U_x$ for $U_x \in \mc U$.
+	Let $\rho_2 = \rho\rho_1 \colon M \to \R$, where $\rho$ is as chosen above.
 	This is smooth and well defined on all of $M$ as $\rho(x) = 0$ for all $x \in W_3$ and $W_4 \subset int(W_3)$.
-	We also see that $0<\rho_2(x)<\rho_1(x)$ for all $x \in M-W_4$.
-	So now if we replace $H$ with $H_2 \colon M \times S \to M$ defined by $H_2(x,s) = \pi(\Phi(x)+\rho_2(x)\epsilon s)$, then for any $s_0$ and for any $x \in (M-W_4) \cap F^\vee$, we have that $H_2(x,s_0)$ does not intersect any face of dimension $\dim(F)$ as desired.
+	We also see that $0<\rho_2(x)<\rho_1(x)$ for all $x \in M \setminus W_4$.
+	So now if we replace $H$ with $H_2 \colon M \times S \to M$ defined by $H_2(x,s) = \pi(\Phi(x)+\rho_2(x)\epsilon(\Phi(x)) s)$, then for any $s_0 \in S$ and for any $x \in (M \setminus W_4) \cap F^\vee$, we have that $H_2(x,s_0)$ does not intersect any face of dimension $\dim(F)$ as desired.
 	We can now set $h(-) = H_2(-,s_0)$ for almost all $s_0$ to achieve all three required conditions, noting that the conclusions of the preceding paragraphs did not depend on the choice of $\rho$.
+
+	\greg{Need to relate $\rho_2$ to distance in $M$ from $\Phi(x)$}
+
+	Lastly, we observe that the homotopies from the identity to $\Phi$ and from $\Phi$ to $h$ (given by $H_2(-,ts_0)$) are proper as it is clear from the construction that sequences that ``escape to infinity'' in $M \times I$ in each case continue to do so after applying the homotopy.
 \end{proof}
 
 \subsubsection{The intersection map is an isomorphism for finitely-generated cohomology groups}
 
-At last, we have all the pieces needed to prove \cref{T: intersection qi}, which we restate here:
+We are nearly ready to prove \cref{T: intersection qi}, which we restate here:
+
+
 
 \begin{theorem*}[\cref{T: intersection qi}]
-	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$ is an isomorphism whenever $H^i(M)$ is finitely generated.
-	It is a surjection even if $H^i(M)$ is not finitely generated.
+	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$ is a surjection.
+	If, in addition, $H^i(M)$ is finitely generated, then $\mc I$ is an isomorphism.
 \end{theorem*}
 
+The last piece is a basic fact about finitely-generated abelian groups:
+
+
+\begin{lemma}\label{L: surjection of isomorphic groups}
+Every surjection of isomorphic finitely-generated abelian groups is an isomorphism.
+\end{lemma}
 \begin{proof}
-	In \cref{S: dualization of complexes} we constructed a chain map $\Psi \colon K_X^*(M) \to C_\Gamma^*(M)$ by taking $F^*$ to the geometric cochain represented by the inclusion of $F^\vee$ into $M$, but the image did not lie in $C^*_{\Gamma \pf X}(M)$.
-	We now modify that construction to define $\psi:K_X^*(M) \to C_{\Gamma \pf X}^*(M)$ by taking $F^*$ to the element of $C^*_{\Gamma \pf X}(M)$ represented by the composition of the inclusion of $F^\vee$ into $M$ with the map $h$ constructed in \cref{L: push dual}.
-	To see that this is a chain map, we observed that $\Psi$ commutes with boundaries in the proof of \cref{L: dual chain map}, and we know that $h$ commutes with boundaries by the discussion leading up to \cref{T: homology homotopy functor}, co-orienting $h$ using that it is homotopic to the identity.
-	Furthermore, for each face $F^*$ of $K_X^*(M)$, by construction $\psi(F^*)$ represents a map that is transverse to the cubulation.
-	So $\psi$ determined a chain map to $C_{\Gamma \pf X}^*(M)$ as desired.
-
-	Furthermore, we see by the preceding lemma and the definition that $\mc I\psi$ is the identity map.
-	In particular, then, $\mc I$ induces a cohomology surjection $H^*_{\Gamma \pf X}(M)\onto H^*(K_X^*(M))$.
-
-	Now, we know from \cref{T: geometric is singular} and the isomorphism between cubical and singular cubical cohomologies that these groups are both isomorphic to $H^*(M)$, and a surjective map of isomorphic finitely-generated abelian groups is an isomorphism\footnotemark.
-\end{proof}
-
-\footnotetext{Let $A$ be a finitely-generated abelian group, and let $f \colon A \to A$ be a surjection.
+First, let $A$ be a finitely-generated abelian group, and let $f \colon A \to A$ be a surjection.
 Let $f^p$ denote the $p$-th iteration of $f$.
 We have $\ker(f)\subseteq \ker (f^2) \subseteq \cdots$, but since $A$ is a finitely-generated module over the Noetherian ring $\Z$, this sequence stabilizes; say $\ker(f^n)=\ker(f^{n+1})$ for some $n$.
-Now suppose $x \in A$ with $x \neq 0$.
-As $f$ is surjective, $x = f^n(y)$ for some $y \in A$, and as $x \neq 0$, also $y \neq 0$.
-Suppose $f(x)=0$.
-Then $f(f^n(y)) = f^{n+1}(y)=0$.
-But $\ker(f^n) = \ker(f^{n+1})$, so $f^n(y) = x = 0$, a contradiction.
-So $f(x)=0$ only if $x=0$.
-Thus $f$ is injective and surjective, i.e.\ an isomorphism.}
+Suppose $x \in A$ with $f(x) = 0$. As $f$ is surjective, so is each $f^p$ and thus $x = f^n(y)$ for some $y \in A$.
+Then $0 = f(x) = f(f^n(y)) = f^{n+1}(y)$.
+But $\ker(f^n) = \ker(f^{n+1})$, so $x= f^n(y) = 0$.
+Thus $f$ is also injective and so an isomorphism.
+
+If instead $f: A \to B$ is a surjection of isomorphic abelian groups with $\phi: B \to A$ the isomorphism, then the above applies to $\phi f \colon A \to A$, and so $\phi^{-1}(\phi f) = f$ is a composition of isomorphisms and so an isomorphism.
+\end{proof}
+
+At last we prove \cref{T: intersection qi}.
+
+
+\begin{proof}[Proof of \cref{T: intersection qi}]
+	In \cref{S: dualization of complexes} we constructed a chain map $\Psi \colon K_X^*(M) \to C_\Gamma^*(M)$ by taking each $F^* \in K^*_X(M)$ to the geometric cochain represented by the inclusion of $F^\vee$ into $M$, but the image did not lie in $C^*_{\Gamma \pf X}(M)$.
+	To remedy this, we define $\psi:K_X^*(M) \to C_{\Gamma \pf X}^*(M)$ as the composition of $\Psi$ with the chain map on $C^*_{\Gamma}(M)$ determined by the map $h$ constructed in \cref{L: push dual}.
+	This last is a chain map by \cref{C: proper cofunctoriality}, taking the co-orientation on $h$ to be that induced by the tautological co-orientation on the identity map of $M$, to which $h$ is properly homotopic --- see \cref{D: homotopy co-orientation}.
+	Furthermore, for each face $F^*$ of $K_X^*(M)$, by construction $\psi(F^*)$ represents a map that is transverse to the cubulation.
+	So $\psi$ has image in $C_{\Gamma \pf X}^*(M)$ as desired.
+
+	By \cref{L: push dual} and the definitions, we have for each pair of faces $F$ and $f$ of $X$ of the same dimension that
+	\begin{equation*}
+		(\mc I \psi(F^*))(f) = (\mc I h \Psi(F^*))(f)\\
+		= (\mc I h (F^\vee))(f)\\
+		= I( h (F^\vee) , f) \\
+		=
+			\begin{cases}
+				1, &  F=f,\\
+				0, & \text{otherwise.}
+			\end{cases}
+	\end{equation*}
+	So the composition $\mc I \psi$ is the identity on $K^*_X(M)$, and it follows that $\mc I$ induces a cohomology surjection $H^*_{\Gamma \pf X}(M)\onto H^*(K_X^*(M))$.
+
+	We know from \cref{T: geometric is singular} and the isomorphisms among cubical, singular cubical, and singular simplicial cohomologies that $H^i_{\Gamma \pf X}(M)$ and $H^i(K_X^*(M))$ are both isomorphic to $H^i(M)$.
+	So the last claim holds by \cref{L: surjection of isomorphic groups}.
+\end{proof}
+
+
 
 We conjecture that $\mc I$ is an isomorphism in the general case but have not been able to prove this.
 
