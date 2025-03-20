@@ -560,10 +560,10 @@ In order to perform creasing, the following definitions will be useful.
 
 \begin{definition}\label{D: separating function}
 	Let $U,V$ be open subsets of a manifold $M$.
-	We will call a smooth function $\phi \colon U \cup V \to [-1/2,1/2]$ a \textbf{separating function for $\mathbf U$ and $\mathbf V$} if $U\setminus V \subset \phi^{-1}(-1/2)$ and $V\setminus U \subset \phi^{-1}(1/2)$.
-	As $U \setminus V$ and $V \setminus U$ are disjoint closed subsets of $U \cup V$ and all of our spaces are normal by assumption, such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
+	We will call a smooth function $\phi \colon U \cup V \to [-1/2,1/2]$ a \textbf{separating function for $\mathbf U$ and $\mathbf V$} if $U - V \subset \phi^{-1}(-1/2)$ and $V - U \subset \phi^{-1}(1/2)$.
+	As $U  - V$ and $V  - U$ are disjoint closed subsets of $U \cup V$ and all of our spaces are normal by assumption, such a function can always be found by an application of Urysohn's Lemma to find a continuous function with this property and then applying the Smooth Approximation Theorem \cite[Theorem III.2.5]{Kos93}.
 	We use $\pm 1/2$ as our endpoints to be consistent with the maps $\phi \colon M \to (-1,1)$ used in the definition of creasing.
-	Note that we only assume that $U \setminus V \subset \phi^{-1}(-1/2)$ and not that $U \setminus V = \phi^{-1}(-1/2)$, and similarly for $V \setminus U$.
+	Note that we only assume that $U  - V \subset \phi^{-1}(-1/2)$ and not that $U  - V = \phi^{-1}(-1/2)$, and similarly for $V  - U$.
 	However, it will be useful to keep in mind that $\phi^{-1}([-1/2,1/2)) \subset U$ and $\phi^{-1}((-1/2,1/2]) \subset V$.
 
 	Suppose now $\phi$ is a separating function for $U$ and $V$ and that we have a map $r_W \colon W \to U \cup V$.
@@ -874,7 +874,7 @@ Next, we show independence of the representative $W$, assuming a fixed $\phi$.
 		\item $\hat \Phi$ is equal to $\phi_1$ on $\phi_1^{-1}[u_1,u_2]$,
 		\item $\hat\Phi$ is equal to $\phi_2$ on $\phi_2^{-1}([q,1/2])$,
 
-		\item $\hat\Phi$ takes $U\setminus V$ to $-1/2$,
+		\item $\hat\Phi$ takes $U - V$ to $-1/2$,
 
 		\item $\hat\Phi^{-1}(p_1) = \phi_1^{-1}(p_1)$,
 
@@ -895,7 +895,7 @@ Next, we show independence of the representative $W$, assuming a fixed $\phi$.
 	\begin{enumerate}
 		\item On $\phi_2^{-1}([-1/2,r])$, take $\hat \Phi = \phi_2$,
 
-		\item On $\phi_2^{-1}([r,1/2])$ use the Urysohn Lemma to construct a continuous function $\phi_2^{-1}([r,1/2]) \to [r,1/2]$ that takes $\phi_2^{-1}(r) \cup [\phi_2^{-1}([r,1/2]) \cap \phi_1^{-1}(p_1)]$ to $r$ and $V\setminus U$ to $1/2$; let $\hat \Phi$ be this constructed function on $\phi_2^{-1}([r,1/2]$.
+		\item On $\phi_2^{-1}([r,1/2])$ use the Urysohn Lemma to construct a continuous function $\phi_2^{-1}([r,1/2]) \to [r,1/2]$ that takes $\phi_2^{-1}(r) \cup [\phi_2^{-1}([r,1/2]) \cap \phi_1^{-1}(p_1)]$ to $r$ and $V - U$ to $1/2$; let $\hat \Phi$ be this constructed function on $\phi_2^{-1}([r,1/2]$.
 	\end{enumerate}
 
 	Now, we can modify $\hat \Phi$ by an $\epsilon$-homotopy fixing $\phi_2^{-1}([-1/2,r])$ and $\Phi^{-1}(1/2)$ to a smooth $\Phi$ with $\Phi^{-1}(p_2) = \phi_2^{-1}(p_2)$ and such that there is a $q$, $r<q<1$, with $\phi_1^{-1}(p_1) \subset \Phi^{-1}([-1/2,q])$.
@@ -1102,11 +1102,11 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 	The rough idea of the remainder of the proof is to show that $\psi$ and $\phi g_2$ are both separating functions for $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$, which will allow us to invoke \cref{P: connecting}, though there remain some technicalities, including replacing $\psi$ with a slight modification.
 
 	So, consider $g_2^{-1}(U)$ and $g_2^{-1}(V)$. As $N = U \cup V$, we must have $M = g_2^{-1}(U) \cup g_2^{-1}(V)$.
-	We have $g_2^{-1}(U)\setminus g_2^{-1}(V) = g_2^{-1}(U \setminus V)$, so $\phi g_2(g_2^{-1}(U)\setminus g_2^{-1}(V)) = \phi g_2(g_2^{-1}(U \setminus V)) \subset \phi(U \setminus V) = -1/2$, and similarly $\phi g_2(g_2^{-1}(V) \setminus g_2^{-1}(U)) = 1/2$.
+	We have $g_2^{-1}(U) - g_2^{-1}(V) = g_2^{-1}(U  - V)$, so $\phi g_2(g_2^{-1}(U) - g_2^{-1}(V)) = \phi g_2(g_2^{-1}(U  - V)) \subset \phi(U  - V) = -1/2$, and similarly $\phi g_2(g_2^{-1}(V)  - g_2^{-1}(U)) = 1/2$.
 	So $\phi g_2$ is a separating function on $M$ for $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
 	We also know $M^0_{\phi g_2}$ is transverse to $g_2^*(W)$, so $\phi g_2$ separates $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
 
-	As we chose $g_2$ so that $g_2 = g_1$ on $K$ and so that it takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$, we have $g_2^{-1}(U \setminus V) \subset \psi^{-1}([-1/2,-1/4])$ and $g_2^{-1}(V \setminus U) \subset \psi^{-1}([1/4,1/2])$.
+	As we chose $g_2$ so that $g_2 = g_1$ on $K$ and so that it takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$, we have $g_2^{-1}(U  - V) \subset \psi^{-1}([-1/2,-1/4])$ and $g_2^{-1}(V  - U) \subset \psi^{-1}([1/4,1/2])$.
 	Let $\psi_1$ be the composition of $\psi$ with a smooth non-decreasing map $a \colon [-1/2,1/2] \to [-1/2,1/2]$ such that:
 	\begin{enumerate}
 		\item $a([-1/2,-1/4]) = -1/2$,
@@ -1114,7 +1114,7 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 		\item $a([1/4,1/2]) = 1/2$.
 	\end{enumerate}
 	In this case, $M^0_\psi = M^0_{\psi_1}$, so we have $M^0_\psi \times_M g_2^*(W) = M^0_{\psi_1} \times_M g_2^*(W)$.
-	Furthermore, as $g_2^{-1}(U) \setminus g_2^{-1}(V) = g_2^{-1}(U \setminus V)$, and similarly reversing the roles of $U$ and $V$, we see $\psi_1$ separates $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
+	Furthermore, as $g_2^{-1}(U) - g_2^{-1}(V) = g_2^{-1}(U - V)$, and similarly reversing the roles of $U$ and $V$, we see $\psi_1$ separates $g_2^*(W)$ over $g_2^{-1}(U)$ and $g_2^{-1}(V)$.
 
 	Lastly, we observe that $g_2^{-1}(U) \cup g_2^{-1}(V) = M$ and $g_2^{-1}(U) \cap g_2^{-1}(V) = g_2^{-1} (U \cap V) = g_2^{-1}(B)$, so $g_2$ maps this intersection into $B = U \cap V$.
 	Therefore, the pullback $(g_2|_{g_2^{-1} (B)})^* (W)$ is an element of $PC^*_\Gamma(g_2^{-1} (B))$.
@@ -1130,15 +1130,15 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 	As $\psi^{-1}(\pm 1/4)$ are bicollared submanifolds of $M$, the submanifold $K \subset A$ is collared, so the inclusion map $K \into A$ is a cofibration, e.g. via\footnote{We define a map $M \to [0,1]$ as in the cited theorem by taking $K$ to $0$, projecting the parts of the collars isomorphic to $\psi^{-1}(\pm 1/4) \times [0,1]$ to the second factor, and taking everything else to $1$.} \cite[Theorem VII.1.5]{Bred97}.
 	Therefore, the restriction to $K \times I$ of the homotopy from $f|_A$ to $g_1$ used at the start of the proof of \cref{T: natural connection} can be extended to a continuous homotopy $M \times I \to N$ from $f$ to a continuous map we will call $f' \colon M \to N$.
 	So by construction, $f' = g_1$ on $K$.
-	Furthermore, choosing the collars to be contained in $A$, which is an open neighborhood of $K$ in $M$, then by the usual construction of a homotopy extension using a neighborhood deformation retraction (see \cite[Section VII.1]{Bred97}), we can construct the homotopy such that we have a neighborhood $L$ of $K$ such that $f'$ takes $L$ to $B$ (because our homotopy of $f|_A$ maps to $B$) and so that $f' = f$ on $M \setminus L$.
+	Furthermore, choosing the collars to be contained in $A$, which is an open neighborhood of $K$ in $M$, then by the usual construction of a homotopy extension using a neighborhood deformation retraction (see \cite[Section VII.1]{Bred97}), we can construct the homotopy such that we have a neighborhood $L$ of $K$ such that $f'$ takes $L$ to $B$ (because our homotopy of $f|_A$ maps to $B$) and so that $f' = f$ on $M - L$.
 	In particular, $f'$ takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$.
 
 	From here, we will modify the proof of \cref{T: basic trans}.
 	As in that argument, we suppose $N$ properly embedded as a closed manifold in some Euclidean space; then $N$ has a distance function inherited from Euclidean space, which we will denote $d$.
 
-	First, on $\psi^{-1}([-1/2,-1/4])$, we consider the function $x \mapsto d(f'(x), V \setminus U)$.
+	First, on $\psi^{-1}([-1/2,-1/4])$, we consider the function $x \mapsto d(f'(x), V - U)$.
 	As distance to a closed set is a continuous function and $f'$ takes $\psi^{-1}([-1/2,1/4])$ to $U$, this is a continuous function $\psi^{-1}([-1/2,-1/4]) \to (0,\infty)$.
-	Similarly, $x \mapsto d(f'(x), U \setminus V)$ is a positive function on $\psi^{-1}([1/4, 1/2])$.
+	Similarly, $x \mapsto d(f'(x), U - V)$ is a positive function on $\psi^{-1}([1/4, 1/2])$.
 	As $(0,\infty) \cong \R$, by the Tietze Extension Theorem we can extend these functions to a single function $\delta \colon M \to (0, \infty)$.
 	We now apply smooth approximation\footnotemark to replace $f'$ with a homotopic function $g'$ that is smooth, such that $g' = f' = g_1$ on $K$, and such that $d(f'(x),g'(x))<\delta(x)/2$ for all $x \in M$.
 	\footnotetext{A good proof that $f'$ is homotopic rel $K$ to a smooth map can be found in \cite[Theorem 6.26]{Lee13}. To obtain the distance bound, we modify the argument there to require that the function called $\td \delta$ in that proof satisfies $\td \delta(x) < \delta(x)/4$ in addition to the other requirements on $\td \delta$ in the proof. Noting that the tubular neighborhood in \cite{Lee13} is the same as an $\epsilon$-neighborhood in \cite{GuPo74}, we can now use a triangle inequality argument as in our proof of \cref{T: basic trans} to see that the smooth approximation satisfies $d(f'(x),g'(x))<\delta(x)/2$.}
@@ -1147,17 +1147,17 @@ We start with a lemma that will be needed in the proof of \cref{T: natural conne
 	For the modification, we replace the smooth function $\eta$ in the definition of $H(x,s)$ with one that satisfies all the properties stated there except
 	\begin{enumerate}
 		\item we take $\eta(x)=0$ on $K$, and
-		\item on $M \setminus K$, we take $\eta(x) > 0$ and, in addition to its other size constraints, we take $\eta$ sufficiently small that $d(H(x,s),g'(x)) < \delta(x)/2$.
+		\item on $M - K$, we take $\eta(x) > 0$ and, in addition to its other size constraints, we take $\eta$ sufficiently small that $d(H(x,s),g'(x)) < \delta(x)/2$.
 		This can be done using the same argument as in the proof of \cref{T: basic trans} for the case of proper maps, using $\delta/2$ in the role of $\varepsilon$ (that part of the argument did not rely on any map being proper).
 	\end{enumerate}
 	Then, continuing the transversality argument of \cref{T: basic trans}, $H(-,s)|_{M-K}$ is transverse to $W$ and $W^0$ for almost every $s \in D$, so we again choose such an $s_0$ and let $$h(x,t) = H(x, ts_0) = \pi(g'(x) + \eta(x)ts_0),$$ for all $x \in M$ and $t \in [0,1]$.
 	Let $g_2 = h(-,1)$.
 
 	Altogether now, $g_2$ is smooth, and it is equal to $g_1$ on $K$ by construction.
-	It is transverse to $W$ and $W^0$ on $K$ because $g_1$ is, and it is transverse to $W$ and $W^0$ on $M \setminus K$ by the argument from \cref{T: basic trans} with our choice of $s_0$.
+	It is transverse to $W$ and $W^0$ on $K$ because $g_1$ is, and it is transverse to $W$ and $W^0$ on $M - K$ by the argument from \cref{T: basic trans} with our choice of $s_0$.
 	Finally, we see $g_2$ takes $\psi^{-1}([-1/2,1/4])$ to $U$ and $\psi^{-1}([-1/4,1/2])$ to $V$: On $K$, we have $g_2(K) = g_1(K) \subset B = U \cap V$ from the construction of $g_1$.
-	For $x\in \psi^{-1}([-1/2,-1/4])$, our definition of the bounding function $\delta$ above and the choice of $\delta/2$-small homotopies in the steps from $f'$ to $g'$ and $g'$ to $g_2$ ensure that $d(f'(x), g_2(x)) < \delta(x)$, so $g_2(x)$ is a positive distance from $V \setminus U$.
-	Similarly for $\psi^{-1}([1/4,1/2])$ and $U \setminus V$.
+	For $x\in \psi^{-1}([-1/2,-1/4])$, our definition of the bounding function $\delta$ above and the choice of $\delta/2$-small homotopies in the steps from $f'$ to $g'$ and $g'$ to $g_2$ ensure that $d(f'(x), g_2(x)) < \delta(x)$, so $g_2(x)$ is a positive distance from $V - U$.
+	Similarly for $\psi^{-1}([1/4,1/2])$ and $U - V$.
 \end{proof}
 
 
@@ -1188,7 +1188,7 @@ In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the co
 	see \cref{D: separating function}.
 
 
-	We observe that $(U \cap V)^+ = \phi^{-1}([0,1/2])\cap(U \cap V)$ is a closed subspace both of $U \cap V$ and of $U$, as $\phi^{-1}([0,1/2]) \cap (U \cap V) = \phi|_U^{-1}([0,1/2])$ given that $\phi(U\setminus V) = -1/2$.
+	We observe that $(U \cap V)^+ = \phi^{-1}([0,1/2])\cap(U \cap V)$ is a closed subspace both of $U \cap V$ and of $U$, as $\phi^{-1}([0,1/2]) \cap (U \cap V) = \phi|_U^{-1}([0,1/2])$ given that $\phi(U - V) = -1/2$.
 	So the inclusions $(U \cap V)^+ \into U \cap V$ and $(U \cap V)^+ \into U$ are both proper maps.
 	Thus if $W \in PC^*_\Gamma(U \cap V)$, in which case in particular $r_W \colon W \to U \cap V$ is proper, and assuming $\phi$ separates $W$ over $U$ and $V$, both the fiber products $(U \cap V)^+\times_{U \cap V} W \to U \cap V$ and $(U \cap V)^+\times_{U} W \to U$ will be proper maps.
 	In fact, they both have the same domain, which is just $W^+$, and we will write $W^+$ for the corresponding elements of both $PC^*_\Gamma(U \cap V)$ or $PC^*_\Gamma(U)$, determining which is meant by context.

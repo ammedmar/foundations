@@ -694,14 +694,14 @@ We can then extend $\bd_{\text{int}}$ and $\bd_{\text{ext}}$ to linear operators
 	With this notation, we can write the normal co-orientation of $F^\vee$ as $(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})$.
 	Let $k \in F_0 \cup F_1$ be the unique index that is free in $E$ but bound in $F$ and so also free in $F^\vee$.
 	Then $E^\vee$ is the boundary component of $F^\vee$ with $x_k$ set to $1/2$.
-	In this case the boundary co-orientation of $E^\vee$ in $F^\vee$ is $(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} e_k)$.
+	In this case the boundary co-orientation of $E^\vee$ in $F^\vee$ is $(\beta_{F_0 \cup F_1 - \{k\}},\beta_{F_0 \cup F_1 - \{k\}} \wedge (-1)^{j+1} e_k)$.
 	The sign $(-1)^{j+1}$ is because if $j = 1$ then in $F^\vee$ the variable $x_k$ is free on $[1/2,1]$ so the inward normal vector at $1/2$ points in the direction of $e_k$, and if $j = 0$ then in $F^\vee$ the variable $x_k$ is free on $[0,1/2]$ so the inward normal vector at $1/2$ points in the direction of $-e_k$.
-	So the boundary co-orientation for $E^\vee$ in $\interval^n$ as a piece of $\bd F^\vee$ is the composition $$(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}} \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}}).$$
+	So the boundary co-orientation for $E^\vee$ in $\interval^n$ as a piece of $\bd F^\vee$ is the composition $$(\beta_{F_0 \cup F_1 - \{k\}},\beta_{F_0 \cup F_1 - \{k\}} \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}}).$$
 
 	Meanwhile, the natural co-orientation for $E^\vee$ is $(\beta_{E_0 \cup E_1},\beta_{E_0 \cup E_1} \wedge \beta_{E_{01}}).$
-	But $E_0 \cup E_1 = F_0 \cup F_1 \setminus \{k\}$, so
+	But $E_0 \cup E_1 = F_0 \cup F_1 - \{k\}$, so
 	\begin{align*}
-		(\beta_{F_0 \cup F_1 \setminus \{k\}},\beta_{F_0 \cup F_1 \setminus \{k\}}& \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})\\
+		(\beta_{F_0 \cup F_1 - \{k\}},\beta_{F_0 \cup F_1 - \{k\}}& \wedge (-1)^{j+1} \beta_{e_k})*(\beta_{F_0 \cup F_1},\beta_{F_0 \cup F_1} \wedge \beta_{F_{01}})\\
 		& = (-1)^{j+1}(\beta_{E_0 \cup E_1},\beta_{E_0 \cup E_1} \wedge \beta_{e_k})*(\beta_{E_0 \cup E_1} \wedge \beta_{e_k},\beta_{E_0 \cup E_1} \wedge \beta_{e_k} \wedge \beta_{F_{01}})\\
 		& = (-1)^{j+1}(\beta_{E_0 \cup E_1},\beta_{E_0 \cup E_1} \wedge \beta_{e_k} \wedge \beta_{F_{01}})\\
 		& = (-1)^{j+i}(\beta_{E_0 \cup E_1},\beta_{E_0 \cup E_1} \wedge \beta_{E_{01}}).
@@ -842,7 +842,7 @@ As we will see in the proof, the actual construction is a bit fiddly in order to
 			\begin{comment}	\item As $|z_f| < 2\delta < r_4$, the interior of $D_{r_4}^f$ (and hence all $D_{r_j}^f$) contains both $\hat f$ and $\hat f-z_f$, the latter of which is in the interior of $\interval^m$ as $z_f$ points outward from $\interval^m$, in the $f_0$ and $f_1$ directions.
 			\end{comment}
 
-		\item\label{I: pushout} As $\Phi$ only moves points in $D_{r_1}^f$ and acts on all of $\R^m$ by translation by a non-negative scalar multiple of $z_f$ (which is a positive scalar multiple on $D_{r_2}^f$) and as $z_f$ points outward from $\interval^m$ at $f$ in the $f_0$ and $f_1$ directions, it holds for any $x \in \R^m \setminus \interval^m$ or any $x \in f \cap D_{r_2}^f$ that $\Phi(x) \in \R^m \setminus \interval^m$.
+		\item\label{I: pushout} As $\Phi$ only moves points in $D_{r_1}^f$ and acts on all of $\R^m$ by translation by a non-negative scalar multiple of $z_f$ (which is a positive scalar multiple on $D_{r_2}^f$) and as $z_f$ points outward from $\interval^m$ at $f$ in the $f_0$ and $f_1$ directions, it holds for any $x \in \R^m - \interval^m$ or any $x \in f \cap D_{r_2}^f$ that $\Phi(x) \in \R^m - \interval^m$.
 
 		\item As $|z_f| < 2\delta < r_4$, together with the above facts, the distance between the set $\Phi(f^\vee-(f^\vee \cap D_{r_4}^f))$ and the union of $\dim(f)$-faces of $\interval^m$ is positive.
 
@@ -904,13 +904,13 @@ As we will see in the proof, the actual construction is a bit fiddly in order to
 	As $\bar U_x$ is compact, it intersects only a finite number of $F^\vee$ as $F$ ranges over all faces of $X$, and we let $$\varepsilon_x = \min\{\varepsilon_{x,F} \mid \bar U_x \cap F^\vee\neq \emptyset\}.$$
 	So, by construction, any map $g \colon M \to M$ such that $d(z,g(z))<\varepsilon_x$ for all $z \in \bar U_x$ satisfies the property that if $z \in F^\vee \cap \bar U_x$ then $g(z)$ is not contained in a $\dim(F)$ face of $X$.
 
-	Now, suppose we have constructed such an $\varepsilon_x$ for all $x$ in $M \setminus W_4$.
-	Then the interiors $U_x$ of the $\bar U_x$ cover $M \setminus W_4$, and since $M \setminus W_4$ is a subspace of the Euclidean metric space $\R^N$, we can take a locally finite refinement $\mc U$.
-	By \cref{L: minimizer}, we can find a smooth function $\rho_1 \colon M \setminus W_4 \to \R$ so that $0<\rho_1(z)<\varepsilon_x$ if $z \in \bar U_x$ for $U_x \in \mc U$.
+	Now, suppose we have constructed such an $\varepsilon_x$ for all $x$ in $M - W_4$.
+	Then the interiors $U_x$ of the $\bar U_x$ cover $M - W_4$, and since $M - W_4$ is a subspace of the Euclidean metric space $\R^N$, we can take a locally finite refinement $\mc U$.
+	By \cref{L: minimizer}, we can find a smooth function $\rho_1 \colon M - W_4 \to \R$ so that $0<\rho_1(z)<\varepsilon_x$ if $z \in \bar U_x$ for $U_x \in \mc U$.
 	Let $\rho_2 = \rho\rho_1 \colon M \to \R$, where $\rho$ is as chosen above.
 	This is smooth and well defined on all of $M$ as $\rho(x) = 0$ for all $x \in W_3$ and $W_4 \subset int(W_3)$.
-	We also see that $0<\rho_2(x)<\rho_1(x)$ for all $x \in M \setminus W_4$.
-	So now if we replace $H$ with $H_2 \colon M \times S \to M$ defined by $H_2(x,s) = \pi(\Phi(x)+\rho_2(x)\epsilon(\Phi(x)) s)$, then for any $s_0 \in S$ and for any $x \in (M \setminus W_4) \cap F^\vee$, we have that $H_2(x,s_0)$ does not intersect any face of dimension $\dim(F)$ as desired.
+	We also see that $0<\rho_2(x)<\rho_1(x)$ for all $x \in M - W_4$.
+	So now if we replace $H$ with $H_2 \colon M \times S \to M$ defined by $H_2(x,s) = \pi(\Phi(x)+\rho_2(x)\epsilon(\Phi(x)) s)$, then for any $s_0 \in S$ and for any $x \in (M - W_4) \cap F^\vee$, we have that $H_2(x,s_0)$ does not intersect any face of dimension $\dim(F)$ as desired.
 	We can now set $h(-) = H_2(-,s_0)$ for almost all $s_0$ to achieve all three required conditions, noting that the conclusions of the preceding paragraphs did not depend on the choice of $\rho$.
 
 	\greg{Need to relate $\rho_2$ to distance in $M$ from $\Phi(x)$}
