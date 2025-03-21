@@ -251,6 +251,8 @@ In particular, we record the following results, referring the reader to \cite[Se
 	When $Y$ is not compact, there still exists a submersion $\pi \colon Y_\epsilon \to Y$ that is the identity on $Y$, but now $\epsilon$ must be allowed to be a smooth positive function on $Y$, and $Y_\epsilon$ is defined as $\{w \in \R^m \mid |w-y|<\epsilon(y) \text{\ for some\ } y \in Y\}$.
 \end{theorem}
 
+\greg{The closest point characterization of the map is not necessarily correct when $Y$ is not compact. Need to prove that $|\pi(x)-x|$ can still be controlled. Going to look at tubular neighborhood proof in Lee. Note tubular neighbohroods should be sufficient for transversality arguments.}
+
 These theorems are used in \cite{GuPo74} to prove the following basic transversality result:
 
 \begin{theorem}[Transversality Homotopy Theorem]
@@ -375,7 +377,7 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	\end{comment}
 
 	Next, we can think of $N$ as properly embedded in some $\R^K$ by the Whitney Embedding Theorem \cite[Section 1.8]{GuPo74}, and we give $N$ the corresponding metric.
-	We let $N_\epsilon$ be an $\epsilon$ neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$ (see \cref{T: epsilon neighborhood}).
+	We let $N_\epsilon$ be an $\epsilon$-neighborhood of $N$ in $\R^K$ with submersion $\pi \colon N_\epsilon \to N$ (see \cref{T: epsilon neighborhood}).
 	Let $D$ be the open unit ball in $\R^K$.
 	We define a smooth composite map $H \colon M \times D \to \R^K \to N$ by
 	$$H(x,s) = \pi(f(x)+ \eta(x)s)$$
