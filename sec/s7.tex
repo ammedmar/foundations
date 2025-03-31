@@ -347,7 +347,7 @@ By contrast, \cref{L: essential}, which we will prove momentarily, shows that es
 \begin{proof}
 	By assumption $V\sqcup-W = (V_E \sqcup V_{TI} \sqcup V_{NI}) \sqcup -(W_E \sqcup W_{TI} \sqcup W_{NI})$ is in $Q(M)$.
 	We know $V_{TI} \sqcup -W_{TI} \in Q(M)$ as each of $V_{TI}$ and $W_{TI}$ is in $Q(M)$, and $V_E \sqcup -W_E \in Q(M)$ by \cref{L: essential}.
-	Thus $V_{NI} \sqcup -W_{NI} \in Q(M)$ by \cref{L: Lipy12}, and the second equality follows similarly after taking boundaries.
+	Thus $V_{NI} \sqcup -W_{NI} \in Q(M)$ by \cref{L: Lipy12}, and the second equality follows by \cref{L: bd defined}.
 \end{proof}
 
 \subsubsection{Simply transverse products are well defined}\label{S: simple proof}
@@ -364,7 +364,7 @@ We can now demonstrate that products of simply transverse chains and cochains ar
 
 	Let $\uV,\uW$ be simply transverse geometric cochains with simple transverse representation $(V, W)$ as in \cref{D: cochain trans}.
 	Similarly, let $(V',W')$ be another simple transverse representation.
-	By assumption, $V-V', W-W' \in Q(M)$.
+	By assumption, $V-V', W-W' \in Q^*(M)$.
 	For each of these precochains, we have their essential decompositions $V = V_E \sqcup V_{TI} \sqcup V_{NI}$, etc.
 
 	We must show that $V \times_M W$ and $V' \times_M W'$ represent the same element of $C^*_\Gamma(M)$, i.e.\ that
@@ -374,26 +374,24 @@ We can now demonstrate that products of simply transverse chains and cochains ar
 	\begin{align*}(V_E+V_{TI}+V_{NI}) \times_M (W_E+W_{TI}+W_{NI}) = &V_E \times_M W_E+V_E \times_M W_{NI}+V_{NI} \times_M W_E+V_{NI} \times_M W_{NI}\\
 		&+V_{TI} \times_M (W_E+W_{TI}+W_{NI})+(V_E+V_{NI}) \times_M W_{TI}.
 	\end{align*}
-	As $V_{TI},W_{TI} \in Q(M)$, the terms on the second line are all in $Q(M)$ by \cref{L: pullback with Q}.
+	As $V_{TI},W_{TI} \in Q^*(M)$, the terms on the second line are all in $Q^*(M)$ by \cref{L: pullback with Q}.
 	A similar decomposition holds for the primed versions, so we must show that
 	\begin{equation}\label{E: intersect}
 		(V_E \times_M W_E+V_E \times_M W_{NI}+V_{NI} \times_M W_E+V_{NI} \times_M W_{NI})-(V'_E \times_M W'_E+V'_E \times_M W'_{NI}+V'_{NI} \times_M W'_E+V'_{NI} \times_M W'_{NI})
 	\end{equation}
-	is in $Q(M)$.
+	is in $Q^*(M)$.
 
 	From \cref{C: essential trans} we know that if $V_E$ is transverse to $W$, and in particular $W_E$, then so is $V'_E$, and so we can form $V'_E \times_M W$.
-	Thus, up to the element $-V'_E \times_M W_E+V'_E \times_M W_E \in Q(M)$, we have
-
-	\begin{align}
-		V_E \times_M W_E -V'_E \times_M W'_E& = V_E \times_M W_E-V'_E \times_M W_E+V'_E \times_M W_E-V'_E \times_M W'_E\notag\\
-		& = (V_E-V'_E) \times_M W_E+V' \times_M (W_E-W'_E).\label{E: transfer}
-	\end{align}
-	By \cref{L: essential}, $V_E-V'_E$ and $W_E-W'_E$ are trivial, and the transverse intersection of any cochain with a trivial cochain is in $Q^*(M)$ by
-	\cref{L: pullback with Q}.
+	Thus, taking the union of $V_E \times_M W_E -V'_E \times_M W'_E$ with the trivial precochain $-V'_E \times_M W_E+V'_E \times_M W_E$, we have
+	\begin{equation*}
+		V_E \times_M W_E-V'_E \times_M W_E+V'_E \times_M W_E-V'_E \times_M W'_E = (V_E-V'_E) \times_M W_E+V' \times_M (W_E-W'_E).
+	\end{equation*}
+	By \cref{L: essential}, $V_E-V'_E$ and $W_E-W'_E$ are trivial, and the transverse intersection of any cochain with a trivial cochain is in $Q^*(M)$ by \cref{L: pullback with Q}.
+	Thus $V_E \times_M W_E -V'_E \times_M W'_E \in Q^*(M)$ by \cref{L: Lipy12} (which says that if we take the disjoint union of a precochain with an element of $Q^*(M)$ and obtain an element of $Q^*(M)$ then our original precochain is in $Q^*(M)$).
 
 	The remaining terms of \eqref{E: intersect} each involve an element of small rank and so are of small rank by \cref{L: pullback with Q}.
-	So to see that what's left is an element of $Q(M)$, it suffices to show that the boundary of the remaining terms consists of cochains that are trivial or of small rank.
-	Letting $m = \dim M$ and $v = \dim V$, this boundary is
+	So to see that what's left is an element of $Q^*(M)$, it suffices to show that the boundary of the remaining terms consists of cochains that are trivial or of small rank.
+	By \cref{leibniz}, this boundary is
 	\begin{multline}\label{E: boundary}
 		(\bd V_E) \times_M W_{NI}+(-1)^{m-v}V_E \times_M \bd W_{NI}+
 		(\bd V_{NI}) \times_M W_E+(-1)^{m-v}V_{NI} \times_M \bd W_E\\
@@ -401,30 +399,29 @@ We can now demonstrate that products of simply transverse chains and cochains ar
 		-(\bd V'_E) \times_M W'_{NI}-(-1)^{m-v}V'_E \times_M \bd W'_{NI}\\
 		-(\bd V'_{NI}) \times_M W'_E-(-1)^{m-v}V'_{NI} \times_M \bd W'_E- (\bd V'_{NI}) \times_M W'_{NI}-(-1)^{m-v}V'_{NI} \times_M \bd W'_{NI}.
 	\end{multline}
-	Every term except for the pairs $(-1)^{m-v}V_E \times_M \bd W_{NI}-(-1)^{m-v}V'_E \times_M \bd W'_{NI}$ and $(\bd V_{NI}) \times_M W_E-(\bd V'_{NI}) \times_M W'_E$ involves an intersection with a summand of small rank and so is of small rank by \cref{L: pullback with Q}.
+	Every term except for the pairs $(-1)^{m-v}V_E \times_M \bd W_{NI}-(-1)^{m-v}V'_E \times_M \bd W'_{NI}$ and $(\bd V_{NI}) \times_M W_E-(\bd V'_{NI}) \times_M W'_E$ involves a fiber product with an element of small rank and so is of small rank by \cref{L: pullback with Q}.
 
 	For $V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI}$, we recall that the data of two maps being transverse includes the assumption of transversality on boundaries.
 	So as in our argument employed above to show $V_E \times_M W_E -V'_E \times_M W'_E$ is trivial, we know that $V_E$ and $V'_E$ must each be transverse to both $\bd W_{NI}$ and $\bd W'_{NI}$ by \cref{C: essential trans}.
 	So by an analogous computation we arrive at
 	\begin{equation*}
-		V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI} = (V_E- V'_E) \times_M \bd W_{NI}+ V'_E \times_M (\bd W_{NI}-\bd W'_{NI}),
+		V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI} + V'_E \times_M \bd W_{NI} - V'_E \times_M \bd W_{NI} = (V_E- V'_E) \times_M \bd W_{NI}+ V'_E \times_M (\bd W_{NI}-\bd W'_{NI}).
 	\end{equation*}
-	up to an element of $Q(M)$.
-	We then have that $V_E - V'_E$ is trivial by \cref{L: essential}, and $\bd W_{NI}-\bd W'_{NI}$ is in $Q(M)$ by \cref{L: same NI}.
-	Thus these are in $Q(M)$ by \cref{L: pullback with Q}, and so $V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI} \in Q(M)$.
-	By an analogous argument $(\bd V_{NI}) \times_M W_E-(\bd V'_{NI}) \times_M W'_E \in Q(M)$.
+	We then have that $V_E - V'_E$ is trivial by \cref{L: essential}, and $\bd W_{NI}-\bd W'_{NI}$ is in $Q^*(M)$ by \cref{L: same NI}.
+	Thus these fiber products are in $Q^*(M)$ by \cref{L: pullback with Q}, and so $V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI} \in Q^*(M)$ by \cref{L: Lipy12}.
+	By an analogous argument $(\bd V_{NI}) \times_M W_E-(\bd V'_{NI}) \times_M W'_E \in Q^*(M)$.
 	In particular, these can be written as disjoint unions of components that are trivial or of small rank.
 
 	Therefore, the boundary \eqref{E: boundary} can be completely decomposed into cochains that are trivial or have small rank,
-	and this completes our proof that $V \times_M W-V' \times_M W' \in Q(M)$.
+	and this completes our proof that $V \times_M W-V' \times_M W' \in Q^*(M)$.
 \end{proof}
 
 \subsubsection{Chain and cochains transversality and products}\label{S: trans products}
 
-Now, suppose a geometric cochain $\uV$ is simply transverse to two other geometric cochains of the same degee, $\underline{W_1}$ and $\underline{W_2}$.
-This means we can form $\uV\uplus \uW_1+\uV\uplus \uW_2$, and we would like for this to equal $\uV\uplus (\uW_1+\uW_2)$.
-The problem is that it is not apparent from the definitions whether or not $\uV$ is simply transverse to $\uW_1+\uW_2$ as the transversality of the pairs $(\uV,\underline{W_1})$ and $(\uV,\underline{W_2})$ might be realize by representatives $V_1,V_2, W_1,W_2 \in PC^*_\Gamma(M)$ with $\underline{V_1} = \underline{V_2}$ so that $V_1$ and $W_1$ are transverse as spaces mapping into to $M$ and $V_2$ and $W_2$ are transverse as spaces mapping to $M$, but neither $V_1$ nor $V_2$ is transverse to $W_1 \sqcup W_2$.
-It is also not apparent how to find a $V_3$ representing $\uV$ that is transverse to $W_1$, $W_2$, and $W_1 \sqcup W_2$.
+Now, suppose a geometric cochain $\uV$ is simply transverse to two other geometric cochains of the same degree, $\underline{W_1}$ and $\underline{W_2}$.
+This means we can form $\uV\uplus \underline{W_1}+\uV\uplus \underline{W_2}$, and we would like for this to equal $\uV\uplus (\underline{W_1} + \underline{W_2})$.
+The problem is that it is not apparent from the definitions whether or not $\uV$ is simply transverse to $\uW_1+\uW_2$ as the transversality of the pairs $(\uV,\underline{W_1})$ and $(\uV,\underline{W_2})$ might be realize by representatives $V_1,V_2, W_1,W_2 \in PC^*_\Gamma(M)$ with $\underline{V_1} = \underline{V_2}$ so that $V_1$ and $W_1$ are transverse as spaces mapping to $M$ and $V_2$ and $W_2$ are transverse as spaces mapping to $M$, but neither $V_1$ nor $V_2$ is transverse to $W_1 \sqcup W_2$.
+It is also not apparent how to find a $V_3$ representing $\uV$ that is transverse to both $W_1$ and $W_2$.
 The simplest solution would then seem to be to just define
 $\uV\uplus (\underline{W_1}+\underline{W_2})$ to be represented by $(V_1 \times_M W_1) \sqcup (V_2 \times_M W_2)$.
 To do so, however, we must make sure that such a construction is independent of the choices involved.
@@ -433,19 +430,19 @@ We first build toward showing in \cref{P: multicup} that the products can be mad
 
 \begin{lemma}\label{L: Q essential}
 	Suppose $\bigsqcup_i W_i \in Q(M)$, and let $W_i = W_{i,E} \sqcup W_{i,TI} \sqcup W_{i,NI}$ be the essential decomposition for each $W_i$.
-	Then $\bigsqcup_i W_{i,E}$ is trivial and $\bigsqcup_i W_{i,NI} \in Q(M)$.
+	Then $\bigsqcup_i W_{i,E}$ and $\bigsqcup_i W_{i,TI}$ are trivial and $\bigsqcup_i W_{i,NI} \in Q(M)$.
 \end{lemma}
 
 \begin{proof}
 	We write the proof for cochains, but the argument for chains is equivalent.
-	We know each $W_{i,TI}$ is in $Q(M)$, so by \cref{L: Lipy12}, $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI}) \in Q(M)$.
+	We know each $W_{i,TI}$ is trivial and thus in $Q(M)$, so by \cref{L: Lipy12}, $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI}) \in Q(M)$.
 	By definition, each $W_{i,NI}$ has small rank, while each component of $W_{i,E}$ does not have small rank.
 	So in any decomposition of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ into a trivial precochain and a degenerate precochain, which is possible as we know this is in $Q(M)$, the components of the $W_{i,E}$ must be part of the trivial precochain (the components of $W_{i, NI}$ may be part of either the trivial precochain or the degenerate precochain).
-	As in the proof of \cref{L: Lip L10}, this implies that each connected component, say $\mf W$, appearing in one of the $W_{i,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of in $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ when counting with co-orientation.
-	If $\mf W$ has a co-orientation-reversing automorphism, then $\mf W$ is trivial.
-	Otherwise, for each occurrence of $\mf W$ in some $W_{i,E}$, there is an occurrence of $-\mf W$ in some $W_{j,E}$, and $\mf W \sqcup -\mf W$ is trivial.
+	As in the proof of \cref{L: Lip L10}, this implies that each connected component, say $\mc W$, appearing in one of the $W_{i,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ when counting with sign.
+	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial.
+	Otherwise, for each occurrence of $\mc W$ in some $W_{i,E}$, there is an occurrence of $-\mc W$ in some $W_{j,E}$, and $\mc W \sqcup -\mc W$ is trivial.
 	So altogether, $\bigsqcup_i W_{i,E}$ decomposes into a union of trivial precochains.
-	It follows that $\bigsqcup_i W_{i,E} \in Q(M)$, and so again by \cref{L: Lipy12}, $\bigsqcup_i W_{i,NI} \in Q(M)$.
+	It follows that $\bigsqcup_i W_{i,E} \in Q(M)$ is trivial, and so again by \cref{L: Lipy12}, $\bigsqcup_i W_{i,NI} \in Q(M)$.
 \end{proof}
 
 \begin{corollary}\label{C: Q essential}
@@ -454,12 +451,16 @@ We first build toward showing in \cref{P: multicup} that the products can be mad
 
 \begin{proof}
 	By \cref{L: Q essential}, $W_{1,E} \sqcup -W_{2,E}$ is trivial.
-	Let $\mf W$ be a connected component of $W_{1,E} \sqcup -W_{2,E}$.
-	If $\mf W$ is itself trivial, then we assign it to $T_1$ or $T_2$ according to whether it is in $W_{1,E}$ or $W_{2,E}$.
-	If there is a pair $\mf W \sqcup -\mf W$ in $W_{1,E}$, then we assign the pair to $T_1$ and similarly for $W_{2,E}$.
-	This leaves only pairs $\mf W \sqcup -\mf W$ so that $\mf W \in W_{1,E}$ and $-\mf W \in W_{2,E}$ (reversing the sign of $\mf W$ if necessary).
-	We let $Z$ be the disjoint union of the $\mf W$ in this last category, and corollary follows.
+	Let $\mc W$ be a connected component of $W_{1,E} \sqcup -W_{2,E}$.
+	Then $\mc W$ cannot itself be trivial since then it would be in $W_{1,TI}$ or $-W_{2,TI}$ instead of $W_{1,E}$ or $-W_{2,E}$
+	If there is a pair $\mc W \sqcup -\mc W$ in $W_{1,E}$, then we assign the pair to $T_1$ and similarly for $W_{2,E}$.
+	This leaves only pairs $\mc W \sqcup -\mc W$ so that $\mc W \in W_{1,E}$ and $-\mc W \in W_{2,E}$ (reversing the sign of $\mc W$ if necessary).
+	We let $Z$ be the disjoint union of the $\mc W$ in this last category, and the corollary follows.
 \end{proof}
+
+\begin{definition}
+We refer to the prechain or precochain $Z$ of the preceding corollary as the \textbf{minimal essential prechain or precochain of $\underline{W_1} = \underline{W_2}$}.
+\end{definition}
 
 \begin{proposition}\label{P: multicup}
 	Suppose $\sum_i \underline{W_i} = \sum_j \underline{W'_j} \in C_\Gamma^a(M)$ and that all $\underline{W_i}$ and $\underline{W_j'}$ are simply transverse to $\uV \in C_\Gamma^b(M)$.
