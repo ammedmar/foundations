@@ -510,12 +510,11 @@ The following algebraic property will be useful below as we consider homological
 	Altogether, we have now shown that $W$ is the union of a trivial prechain and a degenerate prechain, so $W \in Q_*(M)$.
 \end{proof}
 
-\subsubsection{Products of manifolds over \texorpdfstring{$M$}{M}}
+\subsection{Products of manifolds over \texorpdfstring{$M$}{M}}
 
 In this section we define various products of elements of $PC_*^\Gamma(M)$ and $PC^*_\Gamma(M)$, all coming from the external products or fiber products defined above.
 When we need transversality, $M$ will be without boundary.
-These products will ultimately become our cup, cap, intersection, and exterior products, but we introduce them here as products on $PC_*^\Gamma(M)$ and $PC^*_\Gamma(M)$ and derive some further properties as we will need some of this material in the next section to define creasing.
-The first time reader can fairly safely skip this section for now and return to it later as needed.
+These products will ultimately become our cup, cap, intersection, and exterior products, but we introduce them here as products on $PC_*^\Gamma(M)$ and $PC^*_\Gamma(M)$ and derive some further properties that we will need in the following sections.
 
 We begin with the products coming from fiber products.
 These are only partially defined, as fiber products require transversality.
@@ -616,9 +615,9 @@ Given the preceding lemma, from here on we will usually not explicitly distingui
 
 
 
-The next lemma will be critical in \cref{S: products} toward showing that these products extend to well-defined, though only partially-defined, products of geometric chains and cochains.
-It will also be needed much sooner to show that the creasing construction is well defined.
-This construction is used, in turn, to demonstrate the existence of Mayer--Vietoris sequences.
+The next lemma is critical and will be used repeatedly.
+Among its applications, it will be used in \cref{S: products} toward showing that our fiber products products extend to well-defined, though only partially-defined, products of geometric chains and cochains.
+It will also be needed much sooner to show that the creasing construction is well defined; this construction is used, in turn, to demonstrate the existence of Mayer--Vietoris sequences.
 
 For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ as appropriate.
 
@@ -758,6 +757,235 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 		We'll have to think some more about this.
 	}.
 \end{comment}
+
+
+\subsection{Essential decompositions}\label{S: essential decomp}
+
+The material in this subsection will not be needed until \cref{S: products}, but we present it here both because it involves fundamental properties of chains and cochains and because it may be illuminating for the reader concerning the ambiguities involved when considering prechain and precochain representatives of chains and cochains.
+
+
+It will be useful to adopt the following conventions.
+Let $W$ be a connected manifold with corners over $M$.
+We say that ``$V$ is isomorphic to $\pm W$'' if $V$ and $W$ are either both elements of $PC_*^\Gamma(M)$ or both elements of $PC^*_\Gamma(M)$ and $V$ is oriented or co-oriented isomorphic\footnote{Recall \cref{D: equiv triv and small}.} either to $W$ or to $W$ with its opposite orientation or co-orientation, as appropriate.
+We will say that ``$V$ has $n$ components isomorphic to $W$, counting without sign'' if $V$ has exactly $n$ components, each of which is isomorphic to $\pm W$.
+We will say that ``$V$ has $n$ components isomorphic to $W$, counting with sign'' if $n$ is the number of components of $V$ isomorphic to $W$ minus the number of components of $V$ isomorphic to $-W$.
+We will only count with sign in contexts in which $W$ is not isomorphic to $-W$, so there should be no ambiguity.
+We also note that $W$ being isomorphic to $-W$ is the same as $W$ being trivial.
+
+Also, analogously to our ambiguous notation $Q(M)$ established in \cref{D: Q}, we will sometimes write $W \in PC(M)$ to mean $W \in PC^\Gamma_*(M)$ or $W \in PM_\Gamma^*(M)$ for definitions or arguments that are analogous in the two cases.
+
+
+\begin{comment}
+For example, consider a cochain represented by an element $V \in PC(M)$ that has a single connected component and small rank but whose boundary is not trivial or degenerate.
+Suppose further that $V$ is transverse to some $W \in PC(M)$.
+Then $(V,W)$ is a simply transverse pair.
+But now if we replace $V$ with another connected element $V'$ that also has small rank but with $\bd V = \bd V'$, then $\uV = \underline{V'}$ as $V\sqcup-V' \in Q(M)$, and $V'$ may or may not be transverse to $W$, though $V'$ may be transverse to some other $W'$ with $\uW = \underline{W'}$.
+There is some finer work to be done in showing that $V \times_M W $ and $V' \times_M W'$ represent the same (co)chain.
+\end{comment}
+\begin{comment}
+	\red{REDO/MOVE THIS
+		Once that is proven, basic results are immediate.
+		NEED TO PROVE WITH SIGNS: Because categorical pullbacks are distributive, associative, and commutative, so will be the pullback product on geometric cochains and thus cohomology.
+		The Leibniz rule implies that the product descends to cohomology, and we address that it is fully defined -- rather than partially defined as on cochains -- in \red{D: need to do this! probably goes at the end of this section - I say something there as well.}
+		At the end of Section~5 of \cite{Lipy14} it is also stated without proof that pullback product coincides with the usual cup product.
+		Traditionally the proof of such in the setting of intersections uses Thom isomorphisms,
+		but a more explicit chain-level proof follows from our work on Section \ref{S: flow comparison theorem}.}
+\end{comment}
+
+\begin{comment}
+	A first step in showing well-definedness is the following.
+
+	\begin{lemma}
+		The pullback of a co-oriented manifold over $M$ with one which is trivial or degenerate is itself trivial or degenerate.
+	\end{lemma}
+	\red{I think this fact needs to go much earlier.
+		This has been moved earlier}
+	\begin{proof}
+		If $W$ is trivial, the co-orientation-reversing involution on $W$ defines one on $W \times V$ which restricts to the pullback.
+
+		Similarly, recall that the tangent bundle of the pullback is the pullback of tangent bundles, and the derivative is the pullback of derivatives.
+		\red{This needs citations.}
+		Note that the pullback of two linear maps, one with a non-trivial kernel must also have a non-trivial kernel: If $A,B$ are linear maps with a common codomain and $v \in \ker(A)$, then $(v,0)$ is in the kernel of the pullback of $A$ and $B$.
+		So if the differential of $r_W$ has non-trivial kernel everywhere so will the derivative of any pullback with $r_W$.
+	\end{proof}
+
+	Despite this, showing this product is well-defined at the cochain level is substantial work, essentially because
+	the inclusion of $Q^*(M)$ into $PC^*_\Gamma(M)$
+	is not split, at least in any way we can see.
+	\red{D: example of square with a tail here.} Seeing such examples, it is surprising that quotienting
+	by trivial and degenerate pre-cochains, as needed to have $d^2 = 0$ and the appropriate cohomology respectively, allows for a product
+	to descend to equivalence classes.
+	This story would be simplified if we could forgo the quotienting by small rank co-oriented manifolds, but
+	we do not know whether the resulting theory agrees with ordinary cohomology.
+
+	BCOMMENT
+	\begin{lemma}
+		Suppose $[f \colon V \to M]$ or $[g \colon W \to M]$ is $0$ in $C^*_\Gamma(M)$.
+		Then $V_T \cap W_T \in Q(M)$ for any decompositions $V = V_T \amalg V_Q$ and $W = W_T\amalg W_Q$ of precochains representing $f$ and $g$.
+	\end{lemma}
+	\begin{proof}
+		Without loss of generality, suppose $[f] = 0$.
+		Then any representative of $[f]$ is an element of $Q(M)$.
+		Suppose we have representatives that decompose as $V = V_T \amalg V_Q$ and $W = W_T\amalg W_Q$.
+		By \cite[Lemma 12]{Lip14}, as $f \in Q(M)$ and $f|_{V_Q} \in Q(M)$, also $f|_{V_T} \in Q(M)$.
+		By \red{SOMEWHERE ABOVE}, the intersection of an element of $Q(M)$ with any transverse cochain is in $Q(M)$.
+	\end{proof}
+
+	\begin{lemma}\label{L: one fixed}
+		Let $f \colon V \to M$ and $f' \colon V' \to M$ be two representatives of the same class in $C^*_\Gamma(M)$ with decompositions $V = V_T \amalg V_Q$ and $V' = V'_T \amalg V'_Q$.
+		Suppose $g \colon W \to M$ is another class with decomposition $W = W_T\amalg W_Q$ and that $W_T$ is transverse to $V_T$ and $V_T'$.
+		Then $V_T \cap W_T = V_T' \cap W_T \in C^*_\Gamma(M)$.
+	\end{lemma}
+	\begin{proof}
+		As $f$ and $f'$ represent the same element of $C^*_\Gamma(M)$, we have $f\amalg -f' \in Q(M)$.
+		Furthermore, as $f|_{V_Q}$ and $f'|_{V'_Q}$ are in $Q(M)$ we have $f|_{V_T}-f'|_{V'_T} \in Q(M)$ by \cite[Lemma 12]{Lip14}.
+		Thus by \red{SAME REF AS ABOVE}, $V_T \cap W_T -V'_T \cap W_T = (V_T -V'_T) \cap W_T \in Q(M)$.
+		So $V_T \cap W_T = V'_T \cap W_T \in C^*_\Gamma(M)$.
+	\end{proof}
+	ECOMMENT
+
+\end{comment}
+
+
+
+\begin{definition}\label{D: essential}
+	Suppose $V \in PC(M)$ and $V_1$ is a connected component of $V$.
+	\begin{itemize}
+		\item We call $V_1$ \textbf{trivially inessential} if either
+		$V_1$ is trivial or if the number of components of
+		$V$ isomorphic to $\pm V_1$ is $0$, counting with signs.
+
+		\item We call ${V_1}$ \textbf{non-trivially inessential} if it is not trivially inessential but it is of small rank.
+
+		\item We call ${V_1}$ \textbf{essential} if it is not (trivially or non-trivially) inessential.
+	\end{itemize}
+
+	Each connected component of $V$ falls into exactly one of these categories by definition.
+
+	The \textbf{essential decomposition} of $V$ is the unique decomposition of $V$ into essential, trivially inessential, and non-trivially inessential components,
+	written $V = V_E \sqcup V_{TI} \sqcup V_{NI}$.
+\end{definition}
+
+In an essential decomposition, $V_{TI} \in Q(M)$, and in fact $V_{TI}$ is trivial as it decomposes as a union of connected trivial components and pairs of connected components of the form $V_1 \sqcup -V_1$.
+On the other hand, $V_{NI}$ may or may not be in $Q(M)$ depending on whether or not $\bd V_{NI}$
+contains any essential components.
+Nonetheless, a component $V_1$ of $V_{NI}$ is ``inessential to $V$'' in the sense that if $V_1'$ is another small rank element of $PC(M)$ with $\bd V_1 = \bd V_1'$ then $\underline{V_1} = \underline{V_1'}$ in $C_\Gamma^*(M)$ or $C_*^\Gamma(M)$ as $V_1 \sqcup -V_1' \in Q(M)$.
+Thus $V_1$ is not required to appear as a component in a representative of $\uV$; for example, in any representative of $\uV$ we could replace each $V_1$ with $V_1'$ and still have the same (co)chain.
+By contrast, \cref{L: essential}, which we will prove momentarily, shows that essential components really are essential in that they appear in any representation of $\uV$.
+
+\begin{example}
+	Let $V$ be any connected oriented manifold with corners that does not possess an orientation reversing diffeomorphism, and let $r_V \colon V \to M$ be any map that is not of small rank.
+	Then $V = V_E$ is essential.
+\end{example}
+
+\begin{example}\label{E: bad transversality}
+	Consider \cref{E: projected triangle}, which consisted of the projection of the 2-simplex $V \subset \R^2$ with vertices at $(1,0)$, $(-1,0)$, and $(0,1)$ to the $x$-axis.
+	This map has small rank but is not trivial.
+	In this case $V = V_{NI}$.
+
+	We can make this example a bit more interesting as follows.
+	Instead of the codomain being $\R^1$, we let the codomain be $\R^2$.
+	We continue to let most of the map $r_V \colon V \to \R^2$ be the projection to the $x$-axis, but let us choose a Euclidean ball in the interior of the simplex and draw its image out into a 1-dimensional ``thread'' in the plane, analogously to how one changes basepoints for an element of some $\pi_2(M)$.
+	With some care, this can be done smoothly.
+	Any two such maps represent the same chain or cochain (depending on whether we assign orientations or co-orientations), but depending on the choice of thread, one such example may be simply transverse to some other pre(co)chain $W$ while another such example may not be transverse to $W$.
+\end{example}
+
+\begin{lemma}\label{L: essential}
+	Let $\uV = \uW \in C^*_\Gamma(M)$ (or $\uV = \uW \in C_*^\Gamma(M)$) be represented by $V,W \in PC^*_\Gamma(M)$ (or $PC^\Gamma_*(M)$), and suppose $V_1$ is an essential component of $V$.
+	Then the number of components isomorphic to ${V_1}$ in $V_E$ is equal to the number of such components
+	in $W_E$, counting with sign.
+	In particular, $V_E \sqcup -W_E$ is trivial
+	and each component of $V_E \sqcup -W_E$ appears an even number of times when counting without sign.
+	Furthermore, if ${V_1}$ is an essential component of $V$ then it is also an essential component of $W$.
+\end{lemma}
+
+\begin{proof}
+	We first note that if a component $V_1$ of $V$ is in $V_E$ then every component of $V$ isomorphic to $\pm V_1$ must also be in $V_E$.
+	%If $\uV = \uW$, then .
+
+	Let $V_1$ be an essential component of $V$.
+	Then $V_1$ is also a component of $V \sqcup -W \in Q(M)$.
+	We write $V \sqcup -W = T \sqcup D$, where $T$ is trivial and $D$ degenerate.
+	As $V_1$ does not have small rank, it cannot be a component of $D$; thus $V_1$ must be a component of $T$.
+	Moreover, it cannot possess a (co-)orientation-reversing self-diffeomorphism $\rho$ such that $r_{V_1} \circ \rho = r_{V_1}$ or it would not be essential.
+	Therefore, $T$
+	must contain a number of components isomorphic to $\pm V_1$ that is $0$ when counted with sign (compare with the proof of \cref{L: Lip L10})
+	and so an even number when counted without sign.
+	Since $V_1$ is essential in $V$, all components of $V$ isomorphic to $\pm V_1$ must also be contained in $V_E$ and
+	the number of such components cannot be $0$ when counted with sign in $V$ alone or $V_1$ would not be essential.
+	So there must be isomorphic components (up to sign) in $W$, and the number of such components in $W$ also cannot be $0$ when counted
+	with sign.
+	Thus all such components in $W$ must be in $W_E$.
+
+	Altogether, we have shown that for each component $V_1$ of $V_E$, there are isomorphic components (up to sign) contained in $W_E$
+	and the total number of components isomorphic to $\pm V_1$ in $V_E\sqcup-W_E$, counted with sign, is $0$.
+	As this applies for all components of $V_E$, and similarly for all components of $W_E$, we see that $V_E \sqcup -W_E$ is trivial, and that the number of
+	components isomorphic to $V_1$, counted with sign, in $V_E$ must equal the number, counted with sign, in $W_E$.
+	It follows that $V_1$ appears an
+	even number of times in $V_E\sqcup-W_E$ when counted without sign.
+\end{proof}
+
+\begin{corollary}\label{C: essential trans}
+	Suppose $\uV = \uV' \in C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) and that $V_E$ is transverse to some $r_W \colon W \to M$.
+	Then $V'_E$ is also transverse to $W$.
+\end{corollary}
+
+\begin{proof}
+	By the lemma, any component of $V_E$ is also a component of $V'_E$ and vice versa.
+\end{proof}
+
+\begin{lemma}\label{L: same NI}
+	If $\uV = \uW \in C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) then
+	$\underline{ V_{NI}} = \underline{ W_{NI}}$ and
+	$\underline{\bd V_{NI}} = \underline{\bd W_{NI}}$.
+\end{lemma}
+
+\begin{proof}
+	By assumption $V\sqcup-W = (V_E \sqcup V_{TI} \sqcup V_{NI}) \sqcup -(W_E \sqcup W_{TI} \sqcup W_{NI})$ is in $Q(M)$.
+	We know $V_{TI} \sqcup -W_{TI} \in Q(M)$ as each of $V_{TI}$ and $W_{TI}$ is in $Q(M)$, and $V_E \sqcup -W_E \in Q(M)$ by \cref{L: essential}.
+	Thus $V_{NI} \sqcup -W_{NI} \in Q(M)$ by \cref{L: Lipy12}, and the second equality follows by \cref{L: bd defined}.
+\end{proof}
+
+
+\begin{lemma}\label{L: Q essential}
+	Suppose $\bigsqcup_i W_i \in Q(M)$, and let $W_i = W_{i,E} \sqcup W_{i,TI} \sqcup W_{i,NI}$ be the essential decomposition for each $W_i$.
+	Then $\bigsqcup_i W_{i,E}$ and $\bigsqcup_i W_{i,TI}$ are trivial and $\bigsqcup_i W_{i,NI} \in Q(M)$.
+\end{lemma}
+
+\begin{proof}
+	We write the proof for cochains, but the argument for chains is equivalent.
+	We know each $W_{i,TI}$ is trivial and thus in $Q(M)$, so by \cref{L: Lipy12}, $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI}) \in Q(M)$.
+	By definition, each $W_{i,NI}$ has small rank, while each component of $W_{i,E}$ does not have small rank.
+	So in any decomposition of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ into a trivial precochain and a degenerate precochain, which is possible as we know this is in $Q(M)$, the components of the $W_{i,E}$ must be part of the trivial precochain (the components of $W_{i, NI}$ may be part of either the trivial precochain or the degenerate precochain).
+	As in the proof of \cref{L: Lip L10}, this implies that each connected component, say $\mc W$, appearing in one of the $W_{i,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ when counting with sign.
+	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial.
+	Otherwise, for each occurrence of $\mc W$ in some $W_{i,E}$, there is an occurrence of $-\mc W$ in some $W_{j,E}$, and $\mc W \sqcup -\mc W$ is trivial.
+	So altogether, $\bigsqcup_i W_{i,E}$ decomposes into a union of trivial precochains.
+	It follows that $\bigsqcup_i W_{i,E} \in Q(M)$ is trivial, and so again by \cref{L: Lipy12}, $\bigsqcup_i W_{i,NI} \in Q(M)$.
+\end{proof}
+
+\begin{corollary}\label{C: Q essential}
+	If $W_1$ and $W_2$ represent the same element of $C^*_\Gamma(M)$ or $C_*^\Gamma(M)$ then there is some $Z$ so that $W_{1,E} = Z \sqcup T_1$ and $W_{2,E} = Z \sqcup T_2$ with $T_1$ and $T_2$ trivial.
+\end{corollary}
+
+\begin{proof}
+	By \cref{L: Q essential}, $W_{1,E} \sqcup -W_{2,E}$ is trivial.
+	Let $\mc W$ be a connected component of $W_{1,E} \sqcup -W_{2,E}$.
+	Then $\mc W$ cannot itself be trivial since then it would be in $W_{1,TI}$ or $-W_{2,TI}$ instead of $W_{1,E}$ or $-W_{2,E}$
+	If there is a pair $\mc W \sqcup -\mc W$ in $W_{1,E}$, then we assign the pair to $T_1$ and similarly for $W_{2,E}$.
+	This leaves only pairs $\mc W \sqcup -\mc W$ so that $\mc W \in W_{1,E}$ and $-\mc W \in W_{2,E}$ (reversing the sign of $\mc W$ if necessary).
+	We let $Z$ be the disjoint union of the $\mc W$ in this last category, and the corollary follows.
+\end{proof}
+
+\begin{definition}
+We refer to the prechain or precochain $Z$ of the preceding corollary as the \textbf{minimal essential prechain or precochain of $\underline{W_1} = \underline{W_2}$}.
+\end{definition}
+
+
+
+
+
+
 
 \subsection{Splitting and creasing}\label{S: splitting and creasing}
 
