@@ -103,11 +103,11 @@ Recall for comparison that one definition of an abstract ordered simplicial comp
 We have the following cubical analogue.
 
 \begin{definition}\label{D:cubical}
-	A \textbf{cubical complex} $X$ is a collection $\{ \sigma \}$ of finite non-empty subsets of a poset
-	$\vertices(X)$, together with, for each $\sigma \in X$, an order-preserving bijection $\iota_\sigma \colon \sigma \to \mathcal P(\overline n)$ for some $n$, such that:
+	A \textbf{cubical complex} $X$ is a collection $\{ \sigma \}$ of finite non-empty subsets of a set
+	$\vertices(X)$, together with, for each $\sigma \in X$, a bijection $\iota_\sigma \colon \sigma \to \mathcal P(\overline n)$ for some $n$, such that:
 	\begin{enumerate}
 		\item For all $v \in \vertices(X)$, $\{v\} \in X$,
-		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w])$ is in  $X$ and the following diagram commutes
+		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w])$ is in  $X$ and the following diagram commutes, with the two diagonal maps being order preserving:
 		\begin{equation*}
 			\begin{tikzcd} [row sep = tiny, column sep = small]
 				\sigma \arrow[rr, "\iota_\sigma"] && \mathcal P(\overline n) \\
@@ -123,15 +123,20 @@ We have the following cubical analogue.
 	We identify elements in $\vertices(X)$ with the singleton subsets in $X$, referring to them as vertices.
 \end{definition}
 
-In the definition, the role of the characteristic maps $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ is to combinatorially identify the poset structure on each cube $\sigma$ with the poset structure on the vertices of the topological cube $\interval^n$ that we previously established by identifying the vertices of $\interval^n$ with $\mathcal P(\overline n)$.
+In the definition, the role of the characteristic maps $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ is to endow each cube $\sigma$ with a poset structure on its vertices that mirrors the poset structure on the topological cube $\interval^n$ that we previously established by identifying the vertices of $\interval^n$ with $\mathcal P(\overline n)$.
 The first condition then says that every vertex is a cube of the cubical complex, while the second says that every face of a cube is also a cube in the complex with its compatible subposet structure.
 We also note that the definition guarantees that no two cubes of a cubical complex can share the same set of vertices, i.e.\ a cube is completely determined by its set of vertices; cf.\ \cref{F: cubical structure}.
 
-In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we have no use for the unordered version.
+In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we will not need the unordered version.
 Our definition sits between cubical sets \cite{jardine2002cubical} and cellular subsets of the cubical lattice of $\R^\infty$ \cite{kaczynski2006computational}, analogously to the way that abstract ordered simplicial complexes sit between simplicial sets and simplicial complexes.
+\begin{comment}
 The following geometric realization construction makes our definition and the cubical lattice definition essentially equivalent.
-Just as is the case for simplicial complexes, faces in cubical complexes are completely determined by their vertices.
+\end{comment}
 
+\begin{remark}
+	In \cite{FMS-flows} we assumed $\vertices(X)$ to be a poset, but this extra condition was not used and is not necessary for what follows.
+	It does, however, sometimes occur naturally, such as when a cubical complex is a subcomplex of a lattice, as will be the case in our construction below of cubulations of smooth manifolds.
+\end{remark}
 
 Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$ be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
 The poset of faces of a cubical complex $X$ also determines a category, and the characteristic maps of $X$ determine a functor from this poset category to $\mathtt{Cube}$.
@@ -155,11 +160,10 @@ See \cite{ShSh92} for details.
 \begin{figure}
 	\input{auxy/torus.tex}
 	\caption{The first cellular decomposition of a torus pictured above does not represent the geometric realization of a cubical complex, as each square has the same set of vertices.
-	On the right, each square has been coherently identified with the standard square.
+	On the right, each square has been coherently identified with the standard square and has a unique set of vertices.
 	Therefore, (B) depicts a cubical structure on the torus.}
 	\label{F: cubical structure}
 \end{figure}
-\greg{The example on the right of the figure \cref{F: cubical structure} is wrong - need to fix}
 
 \subsection{Cubical chains and cochains}\label{S: cubical cochains}
 
