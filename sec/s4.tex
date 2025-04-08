@@ -965,23 +965,58 @@ By contrast, \cref{L: essential}, which we will prove momentarily, shows that es
 \end{proof}
 
 \begin{corollary}\label{C: Q essential}
-	If $W_1$ and $W_2$ represent the same element of $C^*_\Gamma(M)$ or $C_*^\Gamma(M)$ then there is some $Z$ so that $W_{1,E} = Z \sqcup T_1$ and $W_{2,E} = Z \sqcup T_2$ with $T_1$ and $T_2$ trivial.
+	Let $\uW$ be an element of $C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) then there is some prechain (or precochain) $Z$ so that for any prechain (or precochain) $W$ representing $\uW$, we have $W_E = Z \sqcup T$ for some trivial $T$.
 \end{corollary}
 
 \begin{proof}
+	Suppose $W_1, W_2$ both represent $\uW$.
 	By \cref{L: Q essential}, $W_{1,E} \sqcup -W_{2,E}$ is trivial.
 	Let $\mc W$ be a connected component of $W_{1,E} \sqcup -W_{2,E}$.
-	Then $\mc W$ cannot itself be trivial since then it would be in $W_{1,TI}$ or $-W_{2,TI}$ instead of $W_{1,E}$ or $-W_{2,E}$
+	Then $\mc W$ cannot itself be trivial since then it would be in $W_{1,TI}$ or $-W_{2,TI}$ instead of $W_{1,E}$ or $-W_{2,E}$.
 	If there is a pair $\mc W \sqcup -\mc W$ in $W_{1,E}$, then we assign the pair to $T_1$ and similarly for $W_{2,E}$.
 	This leaves only pairs $\mc W \sqcup -\mc W$ so that $\mc W \in W_{1,E}$ and $-\mc W \in W_{2,E}$ (reversing the sign of $\mc W$ if necessary).
-	We let $Z$ be the disjoint union of the $\mc W$ in this last category, and the corollary follows.
+	We let $Z$ be the disjoint union of the $\mc W$ in this last category, and then $W_{1,E} = Z \sqcup T_1$ and $W_{2,E} = Z \sqcup T_2$.
+
+	We must show that this construction of $Z$ did not depend on our choice of $W_1$ and $W_2$.
+
+	Next, consider $V = Z \sqcup W_{1,NI}$.
+	From the preceding paragraph, we know that $W_{1,E} = Z \sqcup T_1$, so
+	\begin{align*}
+			W_1 \sqcup V &= Z \sqcup W_{1,NI} \sqcup W_{1,TI} T_1 \sqcup - (Z \sqcup W_{1,NI} \sqcup W_{1,TI})\\
+			&=Z \sqcup -Z \sqcup T_1 \sqcup W_{1,NI} \sqcup -W_{1,NI} \sqcup -W_{1,TI}),
+	\end{align*}
+	which is in $Q(M)$.
+	So $V$ also represents $\uW$, and $V_E = Z$, as $Z$ contains no trivial or small rank components as each component is in $W_{1,E}$.
+	But now let us compare $V$ with any other $W_3$, also representing $\uW$.
+	Proceeding as in the first paragraph of the proof, there are $Z'$, $T_1'$, and $T_2'$ such that $V_E = Z = Z' \sqcup T'_1$ and $W_{2,E} = Z' \sqcup T'_2$.
+	But by the construction of $Z$ above, $Z$ cannot contain any pair $\mc W \sqcup -\mc W$.
+	So it follows from that construction that $T'_1 = \emptyset$, so $Z' = Z$ and $W_{3,E} = Z \sqcup T'_2$.
+
+	Thus any prechain or precochain representing $\uW$ has the form $Z \sqcup T$ for the same $Z$ as initially constructed and for some trivial $T$.
 \end{proof}
 
+
 \begin{definition}
-We refer to the prechain or precochain $Z$ of the preceding corollary as the \textbf{minimal essential prechain or precochain of $\underline{W_1} = \underline{W_2}$}.
+We refer to the prechain or precochain $Z$ of the preceding corollary as the \textbf{minimal essential prechain or precochain of $\uW$}.
+It is constructed from the representative $W$ if $\uW$ by removing any trivial pairs of components $\mc W \sqcup - \mc W$ from $W_E$.
 \end{definition}
 
+The preceding work now implies the following:
 
+\begin{theorem}\label{T: minimal rep}
+	Suppose $\uV \in C_*^\Gamma(M)$ or $\uV \in C^*_\Gamma(M)$ can be represented by $V = V_E \sqcup V_{TI} \sqcup V_{NI}$.
+	Then $\uV$ can also be represented by $Z \sqcup V_{NI}$, where $Z$ is the minimal essential prechain or precochain of $\uV$.
+\end{theorem}
+\begin{proof}
+	By \cref{C: Q essential}, we know $V_E = Z \sqcup T$ for some trivial $T$.
+	So
+	\begin{align*}
+		Z \sqcup V_{NI} \sqcup -(V) &= 	Z \sqcup V_{NI} \sqcup - (V_E \sqcup V_{TI} \sqcup V_{NI})\\
+		&= Z \sqcup V_{NI} \sqcup - (Z \sqcup T \sqcup V_{TI} \sqcup V_{NI})\\
+		&= Z \sqcup -Z \sqcup V_{NI} \sqcup - V_{NI} \sqcup T \sqcup V_{TI}.
+	\end{align*}
+	As this consists of trivial objects and pairs, it is in $Q(M)$, which demonstrates the claim.
+\end{proof}
 
 
 

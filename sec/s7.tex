@@ -253,40 +253,43 @@ We first show in \cref{P: multicup} that the products can be made linear in one 
 	We suppose each $\underline{W_i}$ represented by $W_i \in PC^*_\Gamma(M)$, and similarly for each $\underline{W'_j}$.
 	Let $V_i$ and $V_j'$ all be representatives of $\uV$ with $V_i$ transverse to $W_i$ and $V'_j$ transverse to $W'_j$.
 	We must show that $\bigsqcup_i V_i \times_M W_i$ and $\bigsqcup_j V'_j \times_M W'_j$ represent the same cochain, i.e.\ that $$\left(\bigsqcup_i V_i \times_M W_i\right) \sqcup \left(-\bigsqcup_j V'_j \times_M W'_j\right) \in Q^*(M).$$
-	As our assumption is that $\bigsqcup_i W_i$ and $\bigsqcup_j W'_j$ represent the same geometric cochain, it suffices to reformulate the lemma as follows: Suppose $\bigsqcup_k W_k \in Q^*(M)$ and $V_k$ is transverse to $W_k$ with all $V_k$ representing the same geometric cochain, then we must show
-	$$\bigsqcup_k V_k \times_M W_k \in Q^*(M).$$
+	As $\bigsqcup_i W_i$ and $\bigsqcup_j W'_j$ represent the same geometric cochain, we have $\left(\bigsqcup_i W_i\right) \sqcup - \left(\bigsqcup_j W'_j \right) \in Q^*(M)$, so it suffices to prove the following:
+	If $\bigsqcup_k W_k \in Q^*(M)$, $V_k$ is transverse to $W_k$ for all $k$, and all $V_k$ represent the same geometric cochain, then $$\bigsqcup_k V_k \times_M W_k \in Q^*(M).$$
 
 	For each $W_k$, we consider its essential decomposition $$W_k = W_{k,E} \sqcup W_{k,TI} \sqcup W_{k,NI}.$$
 	As each $W_{k,TI} \in Q^*(M)$, we have each $V_k \times_M W_{k,TI} \in Q^*(M)$ by \cref{L: pullback with Q}.
 
-	We next consider $\bigsqcup_k V_k \times_M W_{k,E}$, which is trivial by \cref{L: Q essential}.
-	So as in the proof of \cref{L: Lip L10}, each connected component, say $\mf W$, appearing in one of the $W_{k,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of in $\bigsqcup_k W_{k,E}$ when counting with co-orientation.
-	If $\mf W$ has a co-orientation-reversing automorphism, then $\mf W$ is trivial and $V_k \times \mf W$ is trivial for any $V_k$ transverse to $\mf W$.
-	Otherwise, for each occurrence of $\mf W$ in some $W_{k,E}$, there is an occurrence of $-\mf W$ in some $W_{\ell,E}$.
-	By \cref{T: cochain product}, $V_k \times_M \mf W$ and $V_\ell \times \mf W$ represent the same cochain, so
-	$$(V_k \times_M \mf W) \sqcup -(V_\ell \times_M \mf W) = (V_k \times_M \mf W)\sqcup(V_\ell \times_M -\mf W) \in Q^*(M).$$
-	Continuing this way with pairs of oppositely-co-oriented components of $\bigsqcup_k W_{k,E}$, and noting as in the proof of \cref{L: Lip L10} that each $\mf W$ occurs only a finite number of times, we see that $\bigsqcup_k V_k \times_M W_{k,E} \in Q^*(M)$.
+	We next consider $\bigsqcup_k W_{k,E}$, which is trivial by \cref{L: Q essential}.
+	So as in the proof of \cref{L: Lip L10}, each connected component, say $\mc W$, appearing in one of the $W_{k,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_k W_{k,E}$ when counting with sign.
+	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial and $V_k \times \mc W$ is trivial for any $V_k$ transverse to $\mc W$ by \cref{L: pullback with Q}.
+	Otherwise, for each occurrence of $\mc W$ in some $W_{k,E}$, there is an occurrence of $-\mc W$ in some $W_{\ell,E}$.
+	By \cref{T: cochain product}, $V_k \times_M \mc W$ and $V_\ell \times_m \mc W$ represent the same cochain, so
+	$$(V_k \times_M \mc W) \sqcup -(V_\ell \times_M \mc W) = (V_k \times_M \mc W)\sqcup(V_\ell \times_M -\mc W) \in Q^*(M).$$
+	Continuing this way with pairs of oppositely-co-oriented components of $\bigsqcup_k W_{k,E}$, and noting as in the proof of \cref{L: Lip L10} that each $\mc W$ occurs only a finite number of times, we see that $\bigsqcup_k V_k \times_M W_{k,E} \in Q^*(M)$.
 
 	It remains to show that $\bigsqcup_k V_k \times_M W_{k,NI} \in Q^*(M)$.
 	By \cref{L: Q essential}, we have $\bigsqcup_k W_{k,NI} \in Q^*(M)$.
-	By definition, we can write $\bigsqcup_k W_{k,NI} = \mc W_{tr} \sqcup \mc W_{d}$ as the disjoint union of a trivial precochain and a degenerate precochain.
-	By the same procedure as just above, if $\mf W$ is a connected component of $\mc W_{tr}$, then either it has a co-orientation-reversing automorphism or it appears zero times in all $\mc W_{tr}$ counting with co-orientation.
-	Thus either either $V_k \times_M \mf W \in Q^*(M)$, assuming $\mf W$ is a component of $W_{k,NI}$, or we can have pairs $V_k$ and $V_\ell$ with $(V_k \times_M \mf W) \sqcup (V_\ell \times_M -\mf W) \in Q^*(M)$.
-	So it remains to consider the case of $\bigsqcup_k V_k \times_M Z_k$ where $\mc W_d = \bigsqcup_k Z_k$ with $Z_k$ being the contribution to $\mc W_d$ from $W_{k,NI}$.
+	By definition, we can write $\bigsqcup_k W_{k,NI} = W_{tr} \sqcup W_{d}$ as the disjoint union of a trivial precochain and a degenerate precochain.
+	By the same procedure as just above, if $\mc W$ is a connected component of $W_{tr}$, then either it has a co-orientation-reversing automorphism or it appears zero times in all $W_{tr}$ counting with sign.
+	So, again as above, either either $V_k \times_M \mc W \in Q^*(M)$ or we can have pairs $V_k$ and $V_\ell$ with $(V_k \times_M \mc W) \sqcup (V_\ell \times_M -\mc W) \in Q^*(M)$.
+	So it remains to consider the terms involving $W_d$.
 
-	In this case, each $Z_k$ has small rank, hence so does each $V_k \times_M Z_k$ by \cref{L: pullback with Q}, so $\bigsqcup_k (V_k \times_M Z_k)$ has small rank and it suffices to show that $\bd (\bigsqcup_k V_k \times_M Z_k)$ is the union of a trivial precochain and one of small rank.
+	Let $W_d = \bigsqcup_k Y_k$, where $Y_k$ consists of those components of $W_d$ contributed by $W_{k,NI}$.
+	We consider $\bigsqcup_k V_k \times_M Y_k$.
+	Each $Y_k$ has small rank, hence so does each $V_k \times_M Y_k$ by \cref{L: pullback with Q}.
+	Therefore, $\bigsqcup_k (V_k \times_M Y_k)$ has small rank, and it suffices to show that $\bd (\bigsqcup_k V_k \times_M Y_k)$ is the union of a trivial precochain and one of small rank.
 	By \cref{leibniz},
-	$$\bd \left(\bigsqcup_k V_k \times_M Z_k\right) = \bigsqcup_k ((\bd V_k) \times_M Z_k ) \sqcup (-1)^{m-v} (V_k \times_M \bd Z_k).$$
-	We note that these terms are defined as the transversality of $V_k$ and $Z_k$ includes transversality with the boundaries.
-	As the $Z_k$ have small rank, each $(\bd V_k) \times_M Z_k$ has small rank by \cref{L: pullback with Q}.
-	As $\bigsqcup_k Z_k$ is degenerate, $\bd (\bigsqcup_k Z_k) = \bigsqcup_k \bd Z_k$ can be written as $\bigsqcup_k\bd Z_k = A_{tr} \sqcup A_{sm}$ with $A_{tr}$ trivial and $A_{sm}$ of small rank.
-	But then if $\mf A$ is a component of $\bd Z_k$ in $A_{sm}$, we have $V_k \times \mf A$ of small rank, and for the connected components of $A_{tr}$ we can once again recognize that either $\mf A$ has a co-orientation-reversing automorphism or appears zero times in all of $A_{tr}$ counting with co-orientation.
-	So again repeating our earlier argument either $V_k \times_M \mf A$ is trivial or we can find pairs of components $\mf A$ in $\bd Z_k$ and $-\mf A$ in $\bd Z_\ell$ with $(V_k \times_M \mf A) \sqcup (V_\ell \times_M -\mf A) \in Q^*(M)$.
+	$$\bd \left(\bigsqcup_k V_k \times_M Y_k\right) = \bigsqcup_k ((\bd V_k) \times_M Y_k ) \sqcup (-1)^{m-v} (V_k \times_M \bd Y_k).$$
+	We note that these terms are defined as the transversality of $V_k$ and $Y_k$ includes transversality with the boundaries.
+	As the $Y_k$ have small rank, each $(\bd V_k) \times_M Y_k$ has small rank by \cref{L: pullback with Q}.
+	As $W_d = \bigsqcup_k Y_k$ is degenerate by definition, $\bd (\bigsqcup_k Y_k) = \bigsqcup_k \bd Y_k$ can be written as $\bigsqcup_k\bd Y_k = A_{tr} \sqcup A_{sm}$, with $A_{tr}$ trivial and $A_{sm}$ of small rank.
+	But then if $\mc A$ is a component of $\bd Y_k$ in $A_{sm}$, we have $V_k \times \mc A$ of small rank, and for the connected components of $A_{tr}$ we can once again recognize that either $\mc A$ has a co-orientation-reversing automorphism or appears zero times in all of $A_{tr}$ counting with co-orientation.
+	So again repeating our earlier argument either $V_k \times_M \mc A$ is trivial or we can find pairs of components $\mc A$ in $\bd Y_k$ and $-\mc A$ in $\bd Y_\ell$ (possibly with $k=\ell$) such that $(V_k \times_M \mc A) \sqcup (V_\ell \times_M -\mc A) \in Q^*(M)$.
 	So in particular this expression is a union of a trivial precochain and one of small rank by definition of $Q^*(M)$.
-	Continuing in this way through all connected components, all of $\bigsqcup_k(V_k \times_M \bd Z_k)$ can be partitioned into trivial precochains and precochains of small rank.
+	Continuing in this way through all connected components, all of $\bigsqcup_k(V_k \times_M \bd Y_k)$ can be partitioned into trivial precochains and precochains of small rank.
 \end{proof}
 
-We now generalize yet again to a fully multilinear version of the cup product.
+We now generalize yet again to fully multilinear versions of the cup, cap, and intersection products.
 Again, this requires enough transversality for all fiber products to be defined, but now we allow cochain representatives in both the first and second factors to vary.
 
 \begin{definition}\label{D: multicup}
@@ -296,7 +299,7 @@ Again, this requires enough transversality for all fiber products to be defined,
 	where the cup products on the right are those of \cref{D: cochain products}, which are well defined by \cref{T: cochain product}.
 	We extend the definition of the cap and intersection products analogously.
 
-	In particular, if $(\underline{V_i},\underline{W_j})$ is a simply transverse pair, then there are transverse representatives $V_{ij}$ of $\underline{V_i}$ and $W_{ji}$ of $\underline{W_j}$, and $\uV\uplus \uW$ (or $\uV\nplus \uW$ or $\uV\bullet\uW$) is represented by $\sum_{ij}V_{ij} \times_M W_{ji}$.
+	In particular, for each simply transverse pair $(\underline{V_i},\underline{W_j})$ as above, there is a simple transverse representation $(V_{ij}, W_{ji})$, and the product $\uV\uplus \uW$, $\uV\nplus \uW$, or $\uV\bullet\uW$ is represented by $\sum_{ij}V_{ij} \times_M W_{ji}$.
 \end{definition}
 
 \begin{theorem}\label{T: multicup}
@@ -305,72 +308,71 @@ Again, this requires enough transversality for all fiber products to be defined,
 \end{theorem}
 
 \begin{proof}
-	The proof is essentially a more complicated version of the proof of \cref{P: multicup}, though at one point here we will want to use \cref{P: multicup}, so it would not be convenient to try to fuse these into a single proof and thus we go through the details again.
-
 	We provide the argument for the cup product, the other proofs being analogous.
 	Suppose $\uV = \sum_i \underline{V_i} = \sum_k \underline{V'_k}$ and $\uW = \sum_j \underline{W_j} = \sum_\ell \underline{W'_\ell}$.
 	Suppose the pairs $(\underline{V_i},\underline{W_j})$ and $(\underline{V'_k},\underline{W'_\ell})$ are simply transverse.
 	We must show that $\sum_{i,j} \underline{V_i}\uplus \underline{W_j} = \sum_{k,\ell} \underline{V'_k}\uplus \underline{W'_\ell}$.
-	The assumptions mean that for each pair $(\underline{V_i},\underline{W_j})$, there are transverse representatives we can choose and call $(V_{ij}, W_{ji})$, and similarly for the primed versions.
+	The assumptions mean that for each pair $(\underline{V_i},\underline{W_j})$, there are simple transverse representatives we can choose and call $(V_{ij}, W_{ji})$, and similarly for the primed versions.
 	Then we must show that $$\left(\bigsqcup_{i,j} V_{ij} \times_M W_{ji}\right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell k}\right) \in Q^*(M).$$
 
-	For each $W_{ji}$, we have its essential decomposition $$W_{ji} = W_{ji,E} \sqcup W_{ji,TI} \sqcup W_{ji,NI},$$
-	and by \cref{L: essential}, we know that for any $i,a$ the precochains $W_{ji,E}$ and $W_{ja,E}$ agree up to the disjoint union with some trivial terms.
-	As fiber products involving trivial factors are trivial, it is safe to ignore these trivial precochains and, abusing notation, consider $W_{ji,E}$ and $W_{ja,E}$ as agreeing exactly.
-	We call this common precochain $W_{j,E}$.
+	For each $V_{ij}$, we have its essential decomposition $$V_{ij} = V_{ij,E} \sqcup V_{ij,TI} \sqcup V_{ij,NI},$$
+	and by \cref{T: minimal rep}, the cochain $\underline{V_{ij}}$ is also represented by a precochain of the form $Z \sqcup V_{ij,NI}$, where $Z$ is the minimal essential precochain of $\underline{V_{ij}}$.
+	As $Z \sqcup V_{ij,NI}$ is obtained from $V_{ij}$ by removing some components, we may assume that all $V_{ij}$ in fact have this form without disturbing our transversality assumptions, and similarly for the $W_{ji}$, $V'_{k\ell}$, and $W'_{\ell k}$.
+	Furthermore, as $V_{ia}$ and $V_{ib}$ represent the same $\underline{V_i}$, they will have the same minimal essential cochain, which we can write simply as $V_{i,E}$, and again similarly for the other precochains.
 
+	\begin{comment}
 	Next, let us choose for each $j$ and $\ell$ particular representatives $W_j$ and $W'_\ell$ for $\underline{W_j}$ and $\underline{W'_\ell}$.
 	By the same argument as just above, the essential component of this $W_j$ is the same as that of the other $W_{ji,E}$ up to trivial terms, so, again abusing notation but with no negative impact, we can take the essential component of $W_j$ to also be $W_{j,E}$, and the notation is consistent.
 	Similarly for the $W'_\ell$.
-
+	\end{comment}
 	\begin{comment} Again we can decompose each $W_j$ into $W_{j,E} \sqcup W_{j,TI} \sqcup W_{j,NI}$, and by Corollary \ref{C: Q essential}, we can throw out some trivial components (which contribute trivial fiber products) and assume that these are the same $W_{j,E}$ as above.
 		Similarly for the $W'_\ell$.
 		As each $W_{j,TI}$ and $W'_{\ell,TI}$ is in $Q^*(M)$, it follow from Lemma \ref{L: Lipy12} that
 		$$\left(\bigsqcup_j \left(W_{j,E} \sqcup W_{j,NI}\right)\right) \sqcup \left(-\bigsqcup_\ell \left(W'_{\ell,E} \sqcup W'_{\ell,NI}\right)\right) \in Q^*(M).$$
 	\end{comment}
 
-	We have $(\bigsqcup_j W_{j}) \sqcup (-\bigsqcup_\ell W'_{\ell}) \in Q^*(M)$ by assumption, so
-	by \cref{L: Q essential}, $\left(\bigsqcup_j W_{j,E}\right) \sqcup \left(\bigsqcup_\ell W'_{\ell,E}\right)$ must be trivial.
-	Therefore, as in the proof of \cref{L: Lip L10}, each connected component, say $\mf W$, appearing in one of the $W_{j,E}$ or $W'_{\ell, E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $(\bigsqcup_j W_{j,E}) \sqcup (-\bigsqcup_\ell W'_{\ell,E})$ when counting with co-orientation.
-	If $\mf W$ has a co-orientation-reversing automorphism, then $\mf W$ is trivial and $V_{ij} \times \mf W$ is trivial for any $V_{ij}$ transverse to $\mf W$.
-	Otherwise, for each occurrence of $\mf W$ in $(\bigsqcup_j W_{j,E}) \sqcup (-\bigsqcup_\ell W'_{\ell,E})$, there is an occurrence of $-\mf W$.
-	Suppose $\mf W \in W_{a,E}$ and $-\mf W \in W_{b,E}$.
-	We know $\sqcup_i V_{ia}$ and $\sqcup_i V_{ib}$ represent the same element of $C^*_\Gamma(M)$ and are transverse to $\mf W$.
-	So
-	$$\left(\bigsqcup_i V_{ia} \times_M \mf W\right) \sqcup \left(-\bigsqcup_i V_{ib} \times_M \mf W\right) \in Q^*(M)$$
-	by
-	\cref{P: multicup}, and similarly if one or both occurrences of $\pm \mf W$ are components of one of the $W'_{\ell, E}$.
-
+	We have $\left(\bigsqcup_j W_{j}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell}\right) \in Q^*(M)$ by assumption, so by \cref{L: Q essential}, $\left(\bigsqcup_j W_{j,E}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell,E}\right)$ must be trivial.
+	Therefore, as in the proof of \cref{L: Lip L10}, each connected component, say $\mc W$, appearing in one of the $W_{j,E}$ or $W'_{\ell, E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\left(\bigsqcup_j W_{j,E}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell,E}\right)$ when counting with sign.
+	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial and so cannot appear in $W_{j,E}$ or $W'_{\ell,E}$.
+	So, for each occurrence of $\mc W$ in $\left(\bigsqcup_j W_{j,E}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell,E}\right)$, there is an occurrence of $-\mc W$.
+	Suppose $\mc W \subset W_{a,E}$ and $-\mc W \subset W_{b,E}$.
+	Then, in particular, $\mc W \subset W_{ai}$ and $-\mc W \subset W_{bi}$ for all $i$, and so $\mc W$ is simply transverse to each $V_{ia}$ and $V_{ib}$.
+	So $\bigsqcup_i V_{ia}$ and $\bigsqcup_i V_{ib}$ both represent $\uV \in C^*_\Gamma(M)$ and are transverse to $\mc W$.
+	Thus
+	$$\left(\bigsqcup_i V_{ia} \times_M \mc W\right) \sqcup \left(\bigsqcup_i V_{ib} \times_M -\mc W\right) = \left(\bigsqcup_i V_{ia} \times_M \mc W\right) \sqcup \left(-\bigsqcup_i V_{ib} \times_M \mc W\right) \in Q^*(M)$$
+	by \cref{L: pullback with Q}, and similarly if one or both occurrences of $\pm \mc W$ are components of one of the $W'_{\ell, E}$, in which case the corresponding $V_{ia}$ or $V_{ib}$ is replaced with $V'_{ka}$ or $V'_{kb}$ .
 	Continuing in this way, all of $$\left(\bigsqcup_{i,j} V_{ij} \times W_{j,E}\right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell,E}\right)$$
 	is in $Q^*(M)$.
-	Also, each $V_{ij} \times_M W_{ji,TI} \in Q^*(M)$ by \cref{L: pullback with Q}, as $W_{ji,TI} \in Q^*(M)$.
+
 	So it remains to show that
 	\begin{equation}\label{E: multicup NI}
 		\left(\bigsqcup_{i,j} V_{ij} \times W_{ji,NI} \right) \sqcup \left(- \bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell k,NI}\right)
 	\end{equation}
 	is in $Q^*(M)$.
-	As each $W_{j,NI}$ and $W'_{\ell,NI}$ has small rank, each component of \eqref{E: multicup NI} is of small rank by \cref{L: pullback with Q}.
+	As each $W_{ji,NI}$ and $W'_{\ell k,NI}$ has small rank, each component of \eqref{E: multicup NI} is of small rank by \cref{L: pullback with Q}.
 	So it suffices to show that the boundary of \eqref{E: multicup NI} is a union of trivial and small rank precochains.
-	The boundary terms of the form $(\bd V_{ij}) \times W_{ji,NI}$ and $(\bd V'_{k\ell}) \times_M W'_{\ell k,NI}$ all have small rank by \cref{L: pullback with Q}.
+	The boundary terms of the form $(\bd V_{ij}) \times W_{ji,NI}$ and $(\bd V'_{k\ell}) \times_M W'_{\ell k,NI}$ all have small rank, again by \cref{L: pullback with Q}.
 	So we consider
 	$$\left(\bigsqcup_{i,j} V_{ij} \times \bd W_{ji,NI} \right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M \bd W'_{\ell k,NI}\right)$$
 	(we can ignore the sign, as all terms are multiplied by the same sign $(-1)^{m-v}$ in taking the boundary).
 
-	We now consider the essential decompositions of the $\bd W_{ji,NI}$ and $\bd W'_{\ell i,NI}$.
+	We now consider the essential decompositions of the $\bd W_{ji,NI}$ and $\bd W'_{\ell k,NI}$.
 	By \cref{L: pullback with Q}, any fiber product involving a TI component will be trivial and any fiber product involving an NI component will have small rank.
 	So we must consider the terms $V_{ij} \times \left(\bd W_{ji,NI}\right)_E$.
 	By \cref{L: same NI}, since $W_{ji}$ and $W_{ja}$ represent the same cochain for any $i,a$, we have that $\bd W_{ji,NI}$ and $\bd W_{ja,NI}$ represent the same cochain (and similar for the $W'$).
-	So by \cref{L: essential}, these have the same essential part (up to trivial components or pairs of components), which we can write as $\left(\bd W_{j,NI}\right)_E$.
+	So by \cref{C: Q essential}, these have the same minimal essential part and $\left(\bd W_{j,NI}\right)_E$ is the minimal essential part together with something trivial.
+	As any fiber product with something trivial is trivial, we can concentrate on the minimal essential part; we now abuse notation and let $\left(\bd W_{j,NI}\right)_E$ stand just for the minimal essential part.
 	So if we can show that
-	$$\left(\bigsqcup_j \bd W_{j,NI}\right) \sqcup \left(\bigsqcup_\ell \bd W'_{\ell,NI}\right)$$
-	is in $Q^*(M)$ then we can conclude by the same argument we used above to show that any components coming from the $W_{j,E}$ and $W'_{\ell,E}$ are trivial or occur in canceling pairs.
+	$$\left(\bigsqcup_j \bd W_{j,NI}\right) \sqcup -\left(\bigsqcup_\ell \bd W'_{\ell,NI}\right)$$
+	is in $Q^*(M)$ then we can proceed by the same argument we used above for $\left(\bigsqcup_j W_{j,E}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell,E}\right)$ to show that $\left(\bigsqcup_{i,j} V_{ij} \times W_{j,E}\right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell,E}\right) \in Q^*(M)$.
+
 	But, again, we know that
-	$(\bigsqcup_j W_{j}) \sqcup (-\bigsqcup_\ell W'_{\ell}) \in Q^*(M)$, so by \cref{L: Lipy12} again
+	$\left(\bigsqcup_j W_{j}\right) \sqcup \left(-\bigsqcup_\ell W'_{\ell}\right) \in Q^*(M)$, so by \cref{L: Lipy12}
 	$$\left(\bigsqcup_j \left(W_{j,E} \sqcup W_{j,NI}\right)\right) \sqcup \left(-\bigsqcup_\ell \left(W'_{\ell,E} \sqcup W'_{\ell,NI}\right)\right) \in Q^*(M),$$
 	as the $W_{j,TI}$ and $W'_{\ell, TI}$ are in $Q^*(M)$.
-	Thus by \cref{L: Q essential}, $$\left(\bigsqcup_j W_{j,NI}\right) \sqcup \left(-\bigsqcup_\ell W'_{\ell,NI}\right) \in Q^*(M).$$ Thus by \cref{L: bd defined}, the boundary
-	$$\left(\bigsqcup_j \bd W_{j,NI}\right) \sqcup \left(-\bigsqcup_\ell \bd W'_{\ell,NI}\right)$$ is in $Q^*(M)$
-	as required.
+	Thus by \cref{L: Q essential}, $$\left(\bigsqcup_j W_{j,NI}\right) \sqcup \left(-\bigsqcup_\ell W'_{\ell,NI}\right) \in Q^*(M).$$
+	So by \cref{L: bd defined}, the boundary
+	$$\left(\bigsqcup_j \bd W_{j,NI}\right) \sqcup \left(-\bigsqcup_\ell \bd W'_{\ell,NI}\right)$$ is in $Q^*(M)$, as required.
 \end{proof}
 
 \subsubsection{Pullbacks of cochains}\label{S: product pullbacks}
