@@ -2,14 +2,14 @@
 
 \section{Interaction with cubical structures}\label{S: transversality}
 
-In this section we bring in some auxiliary structures that will help us further develop geometric cohomology and its connections o singular cohomology.
+In this section we bring in some auxiliary structures that will help us further develop geometric cohomology and its connections to singular cohomology.
 In particular, we equip our manifolds with smooth cubulations.
 Many of our results would apply just as well with the more familiar smooth triangulations, but we find cubulations to be more convenient.
 In particular, in \cite{FMS-flows} we have considered geometric cochains in the presence of cubulations, demonstrating how to obtain a fully-defined cochain-level cup product via intersection using certain flows developed in terms of the cubulation.
 Cup products in geometric cohomology will be discussed in the following section.
 
 Smooth cubulations are analogous to smooth triangulations in that they involve a homeomorphism $M \cong |X|$ between a manifold $M$ and the geometric realization $|X|$ of a cubical complex $X$ such that the restriction to each cubical face is a smooth embedding.
-What is slightly different, aside from substituting cubes (i.e.\ copies of $\interval^k$) for simplices, is that cubical complexes require a bite more combinatorial structure; simplicial complexes can always be constructed just by gluing together simplices along faces, while gluing of cubical faces requires a certain combinatorial compatibility among the faces being glued.
+What is slightly different, aside from substituting cubes (i.e.\ copies of $\interval^k$) for simplices, is that cubical complexes require a bit more combinatorial structure; simplicial complexes can always be constructed just by gluing together simplices along faces, while gluing of cubical faces requires a certain combinatorial compatibility among the faces being glued.
 
 The issue is that any simplicial complex can be given a total ordering of its vertices, and this ordering provides a canonical identification between any simplicial face and the standard model simplex of the same dimension.
 By contrast, the natural combinatorial structure on the vertices of the standard cube is not a total ordering but rather a partial ordering.
@@ -21,7 +21,7 @@ Consequently, each cubical $k$-face comes equipped with an identification with t
 As we will note below, smooth cubulations of this form exist for any smooth manifold.
 In the remainder of this work, ``cubulation'' will always mean a smooth cubulation.
 
-Analogously to simplicial complexes, cubical complexes possess algebraic cubical chain and cochain complexes and so cubical homology and cohomology that coincide with singular homology and cohomology\footnote{We will show below that cubical homology coincide with singular cubical homology, which coincide with simplicial singular homology by \cite{EM53}.
+Analogously to simplicial complexes, cubical complexes possess algebraic cubical chain and cochain complexes and so cubical homology and cohomology that coincide with singular homology and cohomology\footnote{We will show below that cubical homology coincides with singular cubical homology, which coincide with simplicial singular homology by \cite{EM53}.
 As all of the involved chain complexes are free, the corresponding cohomologies are also isomorphic by basic homological algebra \cite[Theorem 45.5]{Mun84}.\label{FN: cubical and singular}}.
 Our primary goal in this section is to see that there are direct geometrically-defined isomorphisms between cubical (co)homology and geometric (co)homology.
 
@@ -56,7 +56,7 @@ We note that $F$ is determined completely by its initial and terminal vertices: 
 
 \begin{example}
 	The partition $(\{1,4,6\},\{3,5\}, \{2\})$ corresponds to the $2$-dimensional face of $\interval^6$ determined by $x_1=x_4=x_6=0$, $x_2=1$, and with $x_3$ and $x_5$ a free to vary in $\interval = [0,1]$.
-	Its initial vertex is $(0,1,0,0,0,0)$ and its terminal vertex is  $(0,1,1,0,1,0)$.
+	Its initial vertex is $(0,1,0,0,0,0)$ and its terminal vertex is $(0,1,1,0,1,0)$.
 \end{example}
 
 For $\varepsilon \in \{0, 1\}$ and $i \in \overline{n}$, we define maps $\delta_i^\varepsilon \colon \interval^{n-1} \to \interval^{n}$ by
@@ -71,17 +71,17 @@ with $\hat x_i$ as usual denoting the omission of the $x_i$ term.
 Analogous to the face and degeneracy identities for simplicial sets, these operators satisfy the following relations \cite[Section 4]{GrMa03} (it is also easy and illuminating to work these out on one's own):
 
 \[
-	\begin{array}{rlc}
-		\delta_j^\eta \delta_i^\varepsilon &= \delta_{i+1}^\varepsilon \delta_j^\eta, &j\leq i,\\
-		\pi_i \pi_j &= \pi_j \pi_{i+1}, & j \leq i,\\
-		\pi_j \delta^\varepsilon_i &=
-			\begin{cases}
-				\delta_{i-1}^\varepsilon \pi_j, \\
-				\id,\\
-				\delta_i^\varepsilon \pi_{j-1},
-			\end{cases}
-		&\begin{array}{lll}j<i, \\ j=i, \\ j>i. \end{array}
-	\end{array}
+\begin{array}{rlc}
+	\delta_j^\eta \delta_i^\varepsilon &= \delta_{i+1}^\varepsilon \delta_j^\eta, &j\leq i,\\
+	\pi_i \pi_j &= \pi_j \pi_{i+1}, & j \leq i,\\
+	\pi_j \delta^\varepsilon_i &=
+	\begin{cases}
+		\delta_{i-1}^\varepsilon \pi_j, \\
+		\id,\\
+		\delta_i^\varepsilon \pi_{j-1},
+	\end{cases}
+	&\begin{array}{lll}j<i, \\ j=i, \\ j>i. \end{array}
+\end{array}
 \]
 
 For $v \in \vertices(\interval^n)$ all coordinates are bound -- that is, $v_{01} = \emptyset$.
@@ -107,7 +107,7 @@ We have the following cubical analogue.
 	$\vertices(X)$, together with, for each $\sigma \in X$, a bijection $\iota_\sigma \colon \sigma \to \mathcal P(\overline n)$ for some $n$, such that:
 	\begin{enumerate}
 		\item For all $v \in \vertices(X)$, $\{v\} \in X$,
-		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w])$ is in  $X$ and the following diagram commutes, with the two diagonal maps being order preserving:
+		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w])$ is in $X$ and the following diagram commutes, with the two diagonal maps being order preserving:
 		\begin{equation*}
 			\begin{tikzcd} [row sep = tiny, column sep = small]
 				\sigma \arrow[rr, "\iota_\sigma"] && \mathcal P(\overline n) \\
@@ -130,7 +130,7 @@ We also note that the definition guarantees that no two cubes of a cubical compl
 In analogy with the usual terminology in the simplicial setting, one could call these ``ordered cubical complexes," but we will not need the unordered version.
 Our definition sits between cubical sets \cite{jardine2002cubical} and cellular subsets of the cubical lattice of $\R^\infty$ \cite{kaczynski2006computational}, analogously to the way that abstract ordered simplicial complexes sit between simplicial sets and simplicial complexes.
 \begin{comment}
-The following geometric realization construction makes our definition and the cubical lattice definition essentially equivalent.
+	The following geometric realization construction makes our definition and the cubical lattice definition essentially equivalent.
 \end{comment}
 
 \begin{remark}
@@ -160,8 +160,8 @@ See \cite{ShSh92} for details.
 \begin{figure}
 	\input{auxy/torus.tex}
 	\caption{The first cellular decomposition of a torus pictured above does not represent the geometric realization of a cubical complex, as each square has the same set of vertices.
-	On the right, each square has been coherently identified with the standard square and has a unique set of vertices.
-	Therefore, (B) depicts a cubical structure on the torus.}
+		On the right, each square has been coherently identified with the standard square and has a unique set of vertices.
+		Therefore, (B) depicts a cubical structure on the torus.}
 	\label{F: cubical structure}
 \end{figure}
 
@@ -288,17 +288,17 @@ The technique for constructing such homotopies will be modeled on a variety of r
 We use the Transversality Theorem and Transversality Homotopy Theorem of \cite[Section 2.3]{GuPo74} as stated.
 However, for the Stability Theorem of \cite[Section 1.6]{GuPo74} we will provide details of the proof because the proof is only sketched in \cite{GuPo74} and we will need the result to be generalized in several ways.
 Also, the Stability Theorem was not stated correct in early printings of \cite{GuPo74}, where the requirement that the submanifold of the target be a closed set was omitted\footnote{As stated in early printings of \cite{GuPo74}, the claim was that if $f \colon X \to Y$ is transverse to any submanifold $Z$ of $Y$ then this property is stable under small homotopies of $f$; more specifically that if $f_t:X \times I \to Y$ is a homotopy with $f_0$ transverse to $Z$ then there is an $\epsilon>0$ such that $f_t$ is transverse to $Z$ for all $t\in[0,\epsilon)$.
-Here is a counterexample:
+	Here is a counterexample:
 
-In the plane $\R^2$, let $Z = \{(x,y)|y = x^2, x\neq 0\}$ and consider maps $g_t: \R \to \R^2$ with
-$g_t(x) = (x,t^2+2t(x-t))$.
-For each fixed $t$, the image is the line given by $y-t^2 = 2t(x-t)$, which has slope $2t$ and passes through the point $(t,t^2)$.
-So the map $g_0$ embeds $\R$ as the x-axis, and as the image does not intersect $Z$, the map $g_0$ is transverse to $Z$.
-But for all $t\neq 0$, $g_t$ takes $\R$ to a line that is tangent to $Z$, and so $g_t$ is not transverse to $Z$ for $t\neq 0$, violating the Stability Theorem as stated on page 35 of \cite{GuPo74}.
+	In the plane $\R^2$, let $Z = \{(x,y)|y = x^2, x\neq 0\}$ and consider maps $g_t: \R \to \R^2$ with
+	$g_t(x) = (x,t^2+2t(x-t))$.
+	For each fixed $t$, the image is the line given by $y-t^2 = 2t(x-t)$, which has slope $2t$ and passes through the point $(t,t^2)$.
+	So the map $g_0$ embeds $\R$ as the x-axis, and as the image does not intersect $Z$, the map $g_0$ is transverse to $Z$.
+	But for all $t\neq 0$, $g_t$ takes $\R$ to a line that is tangent to $Z$, and so $g_t$ is not transverse to $Z$ for $t\neq 0$, violating the Stability Theorem as stated on page 35 of \cite{GuPo74}.
 
-The error in the original proof comes from considering only what happens in neighborhoods of points $x$ such that $f(x) \in Z$ but not points $x$ with $f(x)\notin Z$.
-As we can see, the claim breaks down when $f(x)\notin Z$ but every neighborhood of $(x,0)$ in $X \times I$ has a point with image in $Z$.
-However, this can be avoided if $Z$ is a closed set in $Y$, as is the case for the statement of the theorem in later printings of \cite{GuPo74}.}.
+	The error in the original proof comes from considering only what happens in neighborhoods of points $x$ such that $f(x) \in Z$ but not points $x$ with $f(x)\notin Z$.
+	As we can see, the claim breaks down when $f(x)\notin Z$ but every neighborhood of $(x,0)$ in $X \times I$ has a point with image in $Z$.
+	However, this can be avoided if $Z$ is a closed set in $Y$, as is the case for the statement of the theorem in later printings of \cite{GuPo74}.}.
 The needed versions of these results is established in the following proposition:
 
 \begin{proposition}\label{P: ball stability}
@@ -336,16 +336,16 @@ Before proving the proposition, which is somewhat technical, we use it to prove 
 	So $\bd Z \sqcup -W \in Q^*(M)$ and $Z$ is transverse to the cubulation, which tells us that $W$ represents $0$ in $H^*_{\Gamma \pf X}(M)$.
 \end{proof}
 
-	\begin{comment}
-			For injectivity, suppose $W \in PC^*_{\Gamma \pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
-			Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V = W+T$ for some
-			$T \in Q^*(M)$.
-			By \cref{P: ball stability} there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1)$ and $h \circ (i_{W} \times \id)$ are both transverse to the cubulation.
-			Let $V', W',T' \in PC^*_\Gamma(M)$ be $W$, $V$, and $T$ but with reference maps given respectively by $h(-,1)$, $h(-,1)i_W$, and $h(-,1)i_T$, where $i_W \colon W \to V$ and $i_T \colon T \to V$ are the boundary inclusion maps restricted to the components of $W$ and $T$, respectively.
-			As $h \circ (i_{W} \times \id)$ is transverse to the cubulation, $W$ and $W'$ represent the same element of $H^*_{\Gamma \pf X}(M)$ by arguments analogous to the proof of \cref{C: homotopy}.
-			But we also have $\bd V' = W'+T'$ with $V'$ in $C^*_{\Gamma \pf X}(M)$ and, by \cref{L: Q preservation}, $T' \in Q^*(M)$.
-			So $W'$ represents $0 \in H^*(C^*_{\Gamma \pf X}(M))$.
-	\end{comment}
+\begin{comment}
+	For injectivity, suppose $W \in PC^*_{\Gamma \pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
+	Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V = W+T$ for some
+	$T \in Q^*(M)$.
+	By \cref{P: ball stability} there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1)$ and $h \circ (i_{W} \times \id)$ are both transverse to the cubulation.
+	Let $V', W',T' \in PC^*_\Gamma(M)$ be $W$, $V$, and $T$ but with reference maps given respectively by $h(-,1)$, $h(-,1)i_W$, and $h(-,1)i_T$, where $i_W \colon W \to V$ and $i_T \colon T \to V$ are the boundary inclusion maps restricted to the components of $W$ and $T$, respectively.
+	As $h \circ (i_{W} \times \id)$ is transverse to the cubulation, $W$ and $W'$ represent the same element of $H^*_{\Gamma \pf X}(M)$ by arguments analogous to the proof of \cref{C: homotopy}.
+	But we also have $\bd V' = W'+T'$ with $V'$ in $C^*_{\Gamma \pf X}(M)$ and, by \cref{L: Q preservation}, $T' \in Q^*(M)$.
+	So $W'$ represents $0 \in H^*(C^*_{\Gamma \pf X}(M))$.
+\end{comment}
 
 
 It remains to prove \cref{P: ball stability}, which will require the following technical lemma that is also useful below in the proof of \cref{T: intersection qi}.
@@ -408,7 +408,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	As the Stability Theorem is not necessarily true when the manifolds involved are not closed submanifolds, compact, or controlled in some other way, it is more convenient here to work with the closed cubical faces of the cubulation and with $\bd^kW$ rather than $S^k(W)$.
 	We recall that by \cref{L: simple trans}, to prove that two maps of manifolds with corners are transverse it is sufficient to show that their compositions with all pairs of boundary inclusions are naively transverse (see \cref{D: naive transversality}).
 
-	Let $\Upsilon_k$ denote the composition $$\Upsilon_k \colon \bd^kW \times \id_{D^N}  \xr{i_{\bd^ kW} \times \id_{D^N}} W \times D^N \xr{r_W \times \id_{D^N} } M \times D^N \xr{F} M.$$
+	Let $\Upsilon_k$ denote the composition $$\Upsilon_k \colon \bd^kW \times \id_{D^N} \xr{i_{\bd^ kW} \times \id_{D^N}} W \times D^N \xr{r_W \times \id_{D^N} } M \times D^N \xr{F} M.$$
 	We provide the details primarily for $\Upsilon_0$, with $\bd^0 W$ being $W$ itself, the other cases being analogous.
 
 
@@ -469,8 +469,8 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	Again, we focus primarily on $\hat h_0$.
 
 	\begin{comment}
-	Note: we are not claiming an analogue of the third condition above holds for $\hat F$, nor do we need to.
-	As we already know from the second condition of the proposition that $\hat h(-,1)$ is transverse to the cubulation and from the hypotheses that $\hat h(-,0)$ is transverse to the cubulation on $W$, it suffices to demonstrated transversality to the cubulation on the restriction of $\hat h$ to $W \times (0,1)$.
+		Note: we are not claiming an analogue of the third condition above holds for $\hat F$, nor do we need to.
+		As we already know from the second condition of the proposition that $\hat h(-,1)$ is transverse to the cubulation and from the hypotheses that $\hat h(-,0)$ is transverse to the cubulation on $W$, it suffices to demonstrated transversality to the cubulation on the restriction of $\hat h$ to $W \times (0,1)$.
 	\end{comment}
 
 	We begin by observing that for $(x,t) \in W \times I$ we can write $\hat h_0(x,t) \in M$ explicitly as
@@ -487,7 +487,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	Let $(x,t) \in W \times I$, let $\Psi \Phi(x,t) = (z,s)$, and let $\R s_0$ denote the line in $\R^N = T_sD^N$ spanned by the position vector of $s_0$.
 	As $\Phi$ is a diffeomorphism onto its image and $\Psi$ is an embedding that is the identity with respect to $W$ and nontrivial linear on $I$, we see
 	\begin{comment}
-	$\Psi\Phi$ takes a neighborhood of any $(x,t) \in W \times [0,1]$ to a neighborhood of its image in $W \times \R s_0$, where $\R s_0$ is the line in $\R^N$ spanned by $s_0$.
+		$\Psi\Phi$ takes a neighborhood of any $(x,t) \in W \times [0,1]$ to a neighborhood of its image in $W \times \R s_0$, where $\R s_0$ is the line in $\R^N$ spanned by $s_0$.
 	\end{comment}
 	that the derivative of $\Psi\Phi$ maps the tangent space $T_{(x,t)}(W \times [0,1])$ onto $ T_zW \times \R s_0 \subset T_{(z,s)}(W \times D^N)$.
 	In particular, this image contains $T_zW \times 0$, and by construction $D\Upsilon_0$ takes $T_zW \times 0$ to a tangent subspace in $M$ at $\hat h_0(x,t)$ that is transverse to the tangent space there of any closed face of the cubulation containing $\hat h_0(x,t)$.
@@ -768,7 +768,7 @@ This is sufficient to determine a homomorphism $\Psi \colon K_X^*(M) \to C_\Gamm
 	It suffices to show that for any face $F$ of the cubulation $X$ of $M$ we have $\Psi(d F^*) = \bd\Psi(F^*)$.
 
 	By \cref{L: dualizing bijection} and the definition of the extended $\Psi$, we know that
-	$$\Psi(dF^*) =  \sum_{F \subseteq B} \Psi_B(dF^*) = \sum_{F \subseteq B}\bd_{\text{int}} \Psi_B(F^*) = \sum_{F \subseteq B} \bd_{\text{int}}F^\vee_B,$$
+	$$\Psi(dF^*) = \sum_{F \subseteq B} \Psi_B(dF^*) = \sum_{F \subseteq B}\bd_{\text{int}} \Psi_B(F^*) = \sum_{F \subseteq B} \bd_{\text{int}}F^\vee_B,$$
 	where $\bd_{\text{int}}$ refers to the internal boundary in the appropriate $B$, so we must show that $\sum_{F \subseteq B} \bd_{\text{int}}(F^\vee_B) = \sum_{F \subseteq B} \bd (F^\vee_B)$, in other words that all of the external faces of the terms of $\bd\Psi(F^*) = \sum_{F \subseteq B} \bd (F^\vee_B)$ cancel in the sum.
 
 	For this, let us fix an $n$-cube $B$ containing $F$, and let $E$ be an $n-1$ face of $B$ containing $F$.
@@ -839,12 +839,12 @@ As we will see in the proof, the actual construction is a bit fiddly in order to
 		\item As $|z_f|\leq |v_f| + |z_f-\delta v_f| < \delta+\delta_1 < 2 \delta < r-r_1$ and no point moves further than $|z_f|$ under $\Phi$, we have $\Phi(D^f_{r_1})\subset D^f_r$.
 
 		\item On $D_{r_2}^f$, the map $\Phi$ is translation by $z_f$ as in the preceding paragraph.
-			As $\delta < r_4 < r_2$, if we translate $f^\vee \cap D_{r_2}^f$ by $\delta v_f$, then there is exactly one intersection point between $(f^\vee \cap D_{r_2}^f) + \delta v_f$ and $f$, and the resulting intersection number is $1$.
-			As in the preceding paragraph, we choose $\delta_1$ so small that this property is maintained replacing $\delta v_f$ with $z_f$.
-			Then there is exactly one intersection point between $\Phi(f^\vee \cap D_{r_2}^f)$ and $f$, and the resulting intersection number is $1$.
+		As $\delta < r_4 < r_2$, if we translate $f^\vee \cap D_{r_2}^f$ by $\delta v_f$, then there is exactly one intersection point between $(f^\vee \cap D_{r_2}^f) + \delta v_f$ and $f$, and the resulting intersection number is $1$.
+		As in the preceding paragraph, we choose $\delta_1$ so small that this property is maintained replacing $\delta v_f$ with $z_f$.
+		Then there is exactly one intersection point between $\Phi(f^\vee \cap D_{r_2}^f)$ and $f$, and the resulting intersection number is $1$.
 
-			\begin{comment}	\item As $|z_f| < 2\delta < r_4$, the interior of $D_{r_4}^f$ (and hence all $D_{r_j}^f$) contains both $\hat f$ and $\hat f-z_f$, the latter of which is in the interior of $\interval^m$ as $z_f$ points outward from $\interval^m$, in the $f_0$ and $f_1$ directions.
-			\end{comment}
+		\begin{comment}	\item As $|z_f| < 2\delta < r_4$, the interior of $D_{r_4}^f$ (and hence all $D_{r_j}^f$) contains both $\hat f$ and $\hat f-z_f$, the latter of which is in the interior of $\interval^m$ as $z_f$ points outward from $\interval^m$, in the $f_0$ and $f_1$ directions.
+		\end{comment}
 
 		\item\label{I: pushout} As $\Phi$ only moves points in $D_{r_1}^f$ and acts on all of $\R^m$ by translation by a non-negative scalar multiple of $z_f$ (which is a positive scalar multiple on $D_{r_2}^f$) and as $z_f$ points outward from $\interval^m$ at $f$ in the $f_0$ and $f_1$ directions, it holds for any $x \in \R^m - \interval^m$ or any $x \in f \cap D_{r_2}^f$ that $\Phi(x) \in \R^m - \interval^m$.
 
@@ -869,7 +869,7 @@ As we will see in the proof, the actual construction is a bit fiddly in order to
 	Once again, as $|z_f| < 2 \delta < r_4$ and as $\Phi(D_{r_1}^f)\subset D_r^f$, we can find a fixed positive lower bound for the distances between $\Phi(F^\vee-(F^\vee \cap D_{r^4}^F))$ and $F$ or any other $\dim(F)$ face of $X$.
 	As in the proof of the Transversality Theorem of \cite{GuPo74}, by rechoosing our $z_f$ if necessary (still with $|z_f - \delta v_f| < \delta_1$), we can maintain the above properties and also ensure that the restriction of $\Phi$ to the intersection of any face of $sd(X)$ with $int(D_{r_2}^F)$ is transverse to the cubulation\footnotemark.
 
-		\footnotetext{Let $e$ and $c$ be respectively the intersections of faces of $sd(X)$ and $X$ with $\phi_U$; via $\phi_U$ we identify these as submanifolds of $\R^m$.
+	\footnotetext{Let $e$ and $c$ be respectively the intersections of faces of $sd(X)$ and $X$ with $\phi_U$; via $\phi_U$ we identify these as submanifolds of $\R^m$.
 		On $D_{r_2}^F$ in $\R^m$, the map $\Phi$ acts by translation.
 		But the map $\tau \colon e \times \R^m \to \R^m$ given by translation by the second coordinate is a submersion, so by the Transversality Theorem the map $\tau(-,y)$ is transverse to $c$ for almost all $y$.
 		As a finite number of cubes of $X$ and $sd(X)$ intersect $U$, almost all vectors in any neighborhood of $v_f$ will thus satisfy the claim.}
@@ -938,18 +938,18 @@ The last piece is a basic fact about finitely-generated abelian groups:
 
 
 \begin{lemma}\label{L: surjection of isomorphic groups}
-Every surjection of isomorphic finitely-generated abelian groups is an isomorphism.
+	Every surjection of isomorphic finitely-generated abelian groups is an isomorphism.
 \end{lemma}
 \begin{proof}
-First, let $A$ be a finitely-generated abelian group, and let $f \colon A \to A$ be a surjection.
-Let $f^p$ denote the $p$-th iteration of $f$.
-We have $\ker(f)\subseteq \ker (f^2) \subseteq \cdots$, but since $A$ is a finitely-generated module over the Noetherian ring $\Z$, this sequence stabilizes; say $\ker(f^n)=\ker(f^{n+1})$ for some $n$.
-Suppose $x \in A$ with $f(x) = 0$. As $f$ is surjective, so is each $f^p$ and thus $x = f^n(y)$ for some $y \in A$.
-Then $0 = f(x) = f(f^n(y)) = f^{n+1}(y)$.
-But $\ker(f^n) = \ker(f^{n+1})$, so $x= f^n(y) = 0$.
-Thus $f$ is also injective and so an isomorphism.
+	First, let $A$ be a finitely-generated abelian group, and let $f \colon A \to A$ be a surjection.
+	Let $f^p$ denote the $p$-th iteration of $f$.
+	We have $\ker(f)\subseteq \ker (f^2) \subseteq \cdots$, but since $A$ is a finitely-generated module over the Noetherian ring $\Z$, this sequence stabilizes; say $\ker(f^n)=\ker(f^{n+1})$ for some $n$.
+	Suppose $x \in A$ with $f(x) = 0$. As $f$ is surjective, so is each $f^p$ and thus $x = f^n(y)$ for some $y \in A$.
+	Then $0 = f(x) = f(f^n(y)) = f^{n+1}(y)$.
+	But $\ker(f^n) = \ker(f^{n+1})$, so $x= f^n(y) = 0$.
+	Thus $f$ is also injective and so an isomorphism.
 
-If instead $f: A \to B$ is a surjection of isomorphic abelian groups with $\phi: B \to A$ the isomorphism, then the above applies to $\phi f \colon A \to A$, and so $\phi^{-1}(\phi f) = f$ is a composition of isomorphisms and so an isomorphism.
+	If instead $f: A \to B$ is a surjection of isomorphic abelian groups with $\phi: B \to A$ the isomorphism, then the above applies to $\phi f \colon A \to A$, and so $\phi^{-1}(\phi f) = f$ is a composition of isomorphisms and so an isomorphism.
 \end{proof}
 
 At last we prove \cref{T: intersection qi}.
@@ -968,18 +968,16 @@ At last we prove \cref{T: intersection qi}.
 		= (\mc I h (F^\vee))(f)\\
 		= I( h (F^\vee) , f) \\
 		=
-			\begin{cases}
-				1, &  F=f,\\
-				0, & \text{otherwise.}
-			\end{cases}
+		\begin{cases}
+			1, & F=f,\\
+			0, & \text{otherwise.}
+		\end{cases}
 	\end{equation*}
 	So the composition $\mc I \psi$ is the identity on $K^*_X(M)$, and it follows that $\mc I$ induces a cohomology surjection $H^*_{\Gamma \pf X}(M)\onto H^*(K_X^*(M))$.
 
 	We know from \cref{T: geometric is singular} and the isomorphisms among cubical, singular cubical, and singular simplicial cohomologies that $H^i_{\Gamma \pf X}(M)$ and $H^i(K_X^*(M))$ are both isomorphic to the singular simplicial cohomology group $H^i(M)$.
 	So the last claim holds by \cref{L: surjection of isomorphic groups}.
 \end{proof}
-
-
 
 We conjecture that $\mc I$ is an isomorphism in the general case but have not been able to prove this.
 
