@@ -376,56 +376,58 @@ Again, this requires enough transversality for all fiber products to be defined,
 \end{proof}
 
 \subsubsection{Pullbacks of cochains}\label{S: product pullbacks}
+\greg{Should this section go here?}
 
-In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon M \to N$ of manifolds without boundary yields a well-defined cohomology map $h^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$.
+In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon M \to N$ of manifolds without boundary yields a well-defined cohomology map $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$.
 In this section we utilize the notions of the preceding section to consider $f^*$ as a partially-defined map of cochain complexes $C^*_\Gamma(N) \to C^*_\Gamma(M)$.
 Then, by similar arguments, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
 
 
 \begin{definition}\label{D: transverse to map}
-	Let $h \colon M \to N$ be a smooth map of manifolds without boundary, and let $\uV \in C^*_\Gamma(N)$.
-	We will say that $\uV$ is \textbf{transverse to $h$} if $\uV$ has a representative $f \colon V \to N$ such that $f$ is transverse to $h$.
-	In this case we define the pullback $h^*(\uV)$ to be $\underline{h^*(V)} \in C^*_\Gamma(M)$.
+	Let $f \colon M \to N$ be a smooth map of manifolds without boundary, and let $\uV \in C^*_\Gamma(N)$.
+	We will say that $\uV$ is \textbf{transverse to $f$} if $\uV$ has a representative $r_V \colon V \to N$ such that $r_V$ is transverse to $f$.
+	In this case we define the pullback $f^*(\uV)$ to be $\underline{f^*(V)} \in C^*_\Gamma(M)$.
 
-	We will write the set of cochains transverse to $h$ as $C^*_{\Gamma \pf h}(N)$.
+	We will write the set of cochains transverse to $h$ as $C^*_{\Gamma \pf f}(N)$.
 \end{definition}
 
-We notice that the transversality situation here is simpler than the more general ones in the preceding section, as $h$ is a fixed map.
+We notice that the transversality situation here is simpler than the more general ones in the preceding section, as $f$ is a fixed map.
 
 \begin{proposition}
-	Given a smooth map of manifolds without boundary $h \colon M \to N$, the set $C^*_{\Gamma \pf h}(N)$ is a subcomplex of $C^*_{\Gamma}(N)$, and the map $h^*:C^*_{\Gamma \pf h}(N) \to C^*_{\Gamma}(M)$ is a well-defined chain map.
+	Given a smooth map of manifolds without boundary $f \colon M \to N$, the set $C^*_{\Gamma \pf f}(N)$ is a subcomplex of $C^*_{\Gamma}(N)$, and the map $f^*:C^*_{\Gamma \pf f}(N) \to C^*_{\Gamma}(M)$ is a well-defined chain map.
 \end{proposition}
 
 \begin{proof}
-	If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $f \colon V \to N$ and $g \colon W \to N$ that are transverse to $h$, then $\uV+\uW$ can be represented by $V \sqcup W$, which will also be transverse to $h$.
-	So $C^*_{\Gamma \pf h}(N)$ is closed under addition.
-	If $f \colon V \to N$ is transverse to $h$ then so is $-f$, i.e.\ $f$ with the opposite co-orientation, so $C^*_{\Gamma \pf h}(N)$ is closed under negation.
-	The empty map $\emptyset \to N$ is always transverse to $h$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma \pf h}(N)$.
-	Finally, if $\uV$ is represented by $f \colon V \to N$ transverse to $h$, then by definition $\bd V \to N$ is transverse to $h$, so $\bd \uV \in C^*_{\Gamma \pf h}(N)$.
-	Therefore, $C^*_{\Gamma \pf h}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
+	To show that $f^*$ is well defined on $C^*_{\Gamma \pf f}(N)$ we must show that it does not depend on the choice of representative $V$.
+	Suppose $V$ and $V'$ both represent $\uV$ and are transverse to $f$.
+	Then $V \sqcup -V'$ is transverse to $f$ and an element of $Q^*(N)$.
+	So by \cref{L: pullback map Q}, $f^*(V \sqcup -V')$, which is by definition $(V \sqcup -V') \times_N M = (V \times_N M) \sqcup (-V' \times_N M)$ mapping to $M$, is an element of $Q^*(M)$.
+	So $f^*(V)$ and $f^*(V')$ represent the same element of $C^*_{\Gamma}(M)$.
+	Thus $f^*$ is well defined.
 
-	To how that $h^*$ is well defined on $C^*_{\Gamma \pf h}(N)$ we must show that it does not depend on the choice of representative $V$.
-	Suppose $V$ and $V'$ both represent $\uV$ and are transverse to $h$.
-	Then $V \sqcup -V'$ is transverse to $h$ and an element of $Q^*(N)$.
-	So by \cref{L: pullback map Q}, $h^*(V \sqcup -V')$, which is by definition $(V \sqcup -V') \times_N M = (V \times_N M) \sqcup (-V' \times_N M)$ mapping to $M$, is an element of $Q^*(M)$.
-	So $h^*(V)$ and $h^*(V')$ represent the same element of $C^*_{\Gamma}(M)$.
-	Thus $h^*$ is well defined.
+	If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $r_V \colon V \to N$ and $r_W \colon W \to N$ that are transverse to $f$, then $\uV+\uW$ can be represented by $V \sqcup W$, which will also be transverse to $f$.
+	So $C^*_{\Gamma \pf f}(N)$ is closed under addition.
+	If $r_V \colon V \to N$ is transverse to $f$ then so is $-r_V$, i.e.\ $r_V$ with the opposite co-orientation, so $C^*_{\Gamma \pf f}(N)$ is closed under negation.
+	The empty map $\emptyset \to N$ is always transverse to $f$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma \pf f}(N)$.
+	Finally, if $\uV$ is represented by $r_V \colon V \to N$ transverse to $f$, then by definition $\bd V \to N$ is transverse to $f$, so $\bd \uV \in C^*_{\Gamma \pf f}(N)$.
+	Therefore, $C^*_{\Gamma \pf f}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
 
-	To see that $h^*$ is a homomorphism, let $V,W \to N$ represent elements of $C^*_{\Gamma}(N)$ that are transverse to $h$.
+	To see that $f^*$ is a homomorphism, let $V,W \to N$ represent elements of $C^*_{\Gamma}(N)$ that are transverse to $f$.
 	Then
-	$$h^*(\uV+\uW) = \underline{h^*(V \sqcup W)} = \underline{h^*(V) \sqcup h^*(W)} = \underline{h^*(V)}+\underline{h^*(W)},$$
-	using the definitions, obvious properties of the pullback and \cref{L: co/chains well defined}.
-	Furthermore, $h^*$ is a chain map by \cref{leibniz}, as $\bd M = \emptyset$.
+	$$f^*(\uV+\uW) = \underline{f^*(V \sqcup W)} = \underline{f^*(V) \sqcup f^*(W)} = \underline{f^*(V)}+\underline{f^*(W)},$$
+	using the definitions and obvious properties of the pullback.
+	Furthermore, as $\bd M = \emptyset$, $f^*$ is a chain map by \cref{leibniz}, .
 \end{proof}
 
 \begin{remark}
-	While $C^*_{\Gamma \pf h}(N)$ is a subcomplex, it is not closed under taking cup products, even when they are well defined.
-	As an example, let $h \colon M \to N$ be the inclusion of the $x$-axis into the plane $\R^2$.
+	While $C^*_{\Gamma \pf f}(N)$ is a subcomplex, it is not closed under taking cup products, even when they are well defined.
+	As an example, let $f \colon M \to N$ be the inclusion of the $x$-axis into the plane $\R^2$.
 	Let $V$ be represented by an embedding of $\R$ into $\R^2$ as the line $y = x$, and let $W$ similarly correspond to $y = -x$, with any co-orientations.
-	Then $\uV \uplus \uW$ is represented by the embedding of the origin into $\R^2$, but this is not transverse to $h$, even though both $V$ and $W$ are transverse to $h$.
+	Then $\uV \uplus \uW$ is represented by the embedding of the origin into $\R^2$, but this is not transverse to $f$, even though both $V$ and $W$ are transverse to $f$.
 \end{remark}
 
 \subsubsection{Kronecker pairing}\label{S: Kronecker}
+\greg{Should this section go here?}
 
 The partially-defined cap product becomes a partially-defined pairing
 $$C^i_\Gamma(M) \times C_i^\Gamma(M) \xr{\nplus} C_0^\Gamma(M) \xr{\aug}\Z,$$
