@@ -24,9 +24,9 @@ We think of the inverse operations $\hat{\phantom{a}}$ and $\check{\phantom{a}}$
 If $V$ is replaced by a complicated expression, we sometimes write $V\,\hat{\vrule height1.3ex width0pt}$ or $V\,\check{\vrule height1.3ex width0pt}$.
 By \cref{L: Q switch}, the operations $\hat{\phantom{a}}$ and $\check{\phantom{a}}$ preserve membership in $Q(M)$.
 We also note, using \cref{P: Leibniz cap}, that if $V$ is a prechain then
- $$\bd V = \bd(\hat V \times_{S^n} S^n) = (-1)^{v} (\bd \hat V) \times_{S^n} S^n,$$
+$$\bd V = \bd(\hat V \times_{S^n} S^n) = (-1)^{v} (\bd \hat V) \times_{S^n} S^n,$$
 and so $(\bd V)\hat{\vrule height1.3ex width0pt} = (-1)^{v} \bd \hat V$.
-Similarly, if $V$ is a precochain,  $$\bd(\check V) = \bd(V \times_{S^n} S^n) = (-1)^{v} (\bd V) \times_{S^n} S^n = (-1)^v (\bd V)\check{\vrule height1.3ex width0pt}.$$
+Similarly, if $V$ is a precochain, $$\bd(\check V) = \bd(V \times_{S^n} S^n) = (-1)^{v} (\bd V) \times_{S^n} S^n = (-1)^v (\bd V)\check{\vrule height1.3ex width0pt}.$$
 
 We also commit the following abuse of notation.
 Suppose $U$ is an open subset of $S^n$ and $W$ is a prechain supported in the interior of $U$.
@@ -72,10 +72,10 @@ We will show that this construction gives a well-defined homomorphism $\mc Z \co
 	We note that prechains in $Q_*(L)$ also represent elements of $Q_*(S^n)$.
 	So now consider $S \sqcup -Z \sqcup Y$.
 	By taking boundaries and rearranging, we have $$\bd (S \sqcup -Z \sqcup Y)\sqcup -V \sqcup W \sqcup V \sqcup -W = (\bd S \sqcup -V \sqcup W)\sqcup -(\bd Z \sqcup -V) \sqcup (\bd Y\sqcup -W)\in Q_*(S^n).$$
-	But  $-V \sqcup W \sqcup V \sqcup -W$ is trivial, so by \cref{L: Lipy12} we have $\bd(S \sqcup -Z \sqcup Y)\in Q_*(S^n)$, i.e.\ $S \sqcup -Z \sqcup Y$ represents an $i+1$ cycle by \cref{R: cycles and boundaries}.
+	But $-V \sqcup W \sqcup V \sqcup -W$ is trivial, so by \cref{L: Lipy12} we have $\bd(S \sqcup -Z \sqcup Y)\in Q_*(S^n)$, i.e.\ $S \sqcup -Z \sqcup Y$ represents an $i+1$ cycle by \cref{R: cycles and boundaries}.
 
 	Next, suppose $i+1\neq n$, we have $H_{i+1}^\Gamma(S^n) = 0$, so there exists $R \in PC_{i+2}^\Gamma(S^n)$ such that $\bd R \sqcup -(S \sqcup -Z \sqcup Y) \in Q_*(S^n)$.
-	When we convert this last element to a precochain, we obtain  $(-1)^{i+2}\bd \hat R \sqcup -(\hat S \sqcup -\hat Z \sqcup \hat Y) \in Q^*(S^n)$.
+	When we convert this last element to a precochain, we obtain $(-1)^{i+2}\bd \hat R \sqcup -(\hat S \sqcup -\hat Z \sqcup \hat Y) \in Q^*(S^n)$.
 	Pulling back to $S^n - L$ and using that $S$ is supported in $L$ and that $S^n - L$ has no boundary, we get
 	$(-1)^{i+2}\bd \mr R \sqcup \mr Z \sqcup -\mr {Y} \in Q^*(S^n - L)$.
 	Thus $\mr Z$ and $\mr {Y}$ represent the same cohomology class, again by \cref{R: cycles and boundaries}.
@@ -91,63 +91,63 @@ We will show that this construction gives a well-defined homomorphism $\mc Z \co
 \end{proof}
 
 \begin{comment}
-One can see the trouble with the case $i = n-1$ at the place in the proof where we needed $H_{i+1}^\Gamma (S^n) = 0$.
-We consider that case separately here, after which we will proceed on with our general consideration of Alexander duality.
-We first have the following lemma.
+	One can see the trouble with the case $i = n-1$ at the place in the proof where we needed $H_{i+1}^\Gamma (S^n) = 0$.
+	We consider that case separately here, after which we will proceed on with our general consideration of Alexander duality.
+	We first have the following lemma.
 
-\begin{lemma}
-	Let $K$ be a connected, closed $n-1$ dimensional submanifold of $S^n$ with $n>1$.
-	Then $K$ separates $S^n$ into two components.
-\end{lemma}
-\begin{proof}
-	Consider a fiber $F$ of the $1$-dimensional normal bundle of $K$, identified with a tubular neighborhood of $K$ in $S^n$.
-	Identifying some fiber with $\R$ in the usual way, let $x >0$ and $y < 0$ be two points of the fiber.
-	Consider the interval $[y,x]$ as a path in $S^n$.
-	If $K$ does not separate $S^n$, then there is another path connecting $x$ and $y$ in $S^n$ that does not intersect $K$.
-	Together, these two paths form a loop $\gamma$ in $S^n$ that intersects $K$ in one point.
-	As $n>1$, there is a map $g \colon D^2 \to S^n$ whose boundary is $\gamma$.
-	By taking small approximations, we can assume that $g$ is smooth and transverse to $K$ while its boundary still only intersecting $K$ in one point.
-	But then $D_2 \times_{S^n} K$ must be a compact $1$-dimensional manifold with corners having boundary $$\bd (D^2 \times_{S^n} K) = (\bd D^2) \times_{S^n} K,$$
-	which consists of a single point.
-	This is impossible, as the boundary of any compact $1$-dimensional manifold with corners must have an even-dimensional number of points.
-\end{proof}
+	\begin{lemma}
+		Let $K$ be a connected, closed $n-1$ dimensional submanifold of $S^n$ with $n>1$.
+		Then $K$ separates $S^n$ into two components.
+	\end{lemma}
+	\begin{proof}
+		Consider a fiber $F$ of the $1$-dimensional normal bundle of $K$, identified with a tubular neighborhood of $K$ in $S^n$.
+		Identifying some fiber with $\R$ in the usual way, let $x >0$ and $y < 0$ be two points of the fiber.
+		Consider the interval $[y,x]$ as a path in $S^n$.
+		If $K$ does not separate $S^n$, then there is another path connecting $x$ and $y$ in $S^n$ that does not intersect $K$.
+		Together, these two paths form a loop $\gamma$ in $S^n$ that intersects $K$ in one point.
+		As $n>1$, there is a map $g \colon D^2 \to S^n$ whose boundary is $\gamma$.
+		By taking small approximations, we can assume that $g$ is smooth and transverse to $K$ while its boundary still only intersecting $K$ in one point.
+		But then $D_2 \times_{S^n} K$ must be a compact $1$-dimensional manifold with corners having boundary $$\bd (D^2 \times_{S^n} K) = (\bd D^2) \times_{S^n} K,$$
+		which consists of a single point.
+		This is impossible, as the boundary of any compact $1$-dimensional manifold with corners must have an even-dimensional number of points.
+	\end{proof}
 
-\begin{corollary}\label{C: codim 1 oriented}
-	Let $K$ be a closed $n-1$ dimensional submanifold of $S^n$ with $n>0$.
-	Then $K$ is orientable.
-\end{corollary}
-\begin{proof}
-	If $n=1$ this is clear.
-	If $n>1$, then as each component of $K$ disconnects $S^n$ by the preceding lemma, its normal bundle must be orientable.
-	But then since $S^n$ is orientable, the tangent bundle of $K$ must also be orientable, as $TK \oplus \nu K$ is the restriction of $TS^n$ to $K$, but the sum of an orientable bundle and a non-orientable bundle would be non-orientable.
-\end{proof}
+	\begin{corollary}\label{C: codim 1 oriented}
+		Let $K$ be a closed $n-1$ dimensional submanifold of $S^n$ with $n>0$.
+		Then $K$ is orientable.
+	\end{corollary}
+	\begin{proof}
+		If $n=1$ this is clear.
+		If $n>1$, then as each component of $K$ disconnects $S^n$ by the preceding lemma, its normal bundle must be orientable.
+		But then since $S^n$ is orientable, the tangent bundle of $K$ must also be orientable, as $TK \oplus \nu K$ is the restriction of $TS^n$ to $K$, but the sum of an orientable bundle and a non-orientable bundle would be non-orientable.
+	\end{proof}
 
 
 
-So now suppose that $L \subset S^n$, $n>1$, as above has nontrivial $\td H_{n-1}^\Gamma(L)$.
-This is possible only if $L$ possesses $n-1$ dimensional orientable components, as
+	So now suppose that $L \subset S^n$, $n>1$, as above has nontrivial $\td H_{n-1}^\Gamma(L)$.
+	This is possible only if $L$ possesses $n-1$ dimensional orientable components, as
 
-\begin{itemize}
-	\item $L$ cannot have any higher-dimensional components since we have assumed $L$ consists of closed submanifolds,
+	\begin{itemize}
+		\item $L$ cannot have any higher-dimensional components since we have assumed $L$ consists of closed submanifolds,
 
-	\item no component of $L$ of dimension $<n-1$ can have $n-1$ dimensional homology by \cref{E: dimension range},
+		\item no component of $L$ of dimension $<n-1$ can have $n-1$ dimensional homology by \cref{E: dimension range},
 
-	\item any $n-1$ dimensional component of $L$ must be orientable by \cref{C: codim 1 oriented}.
-\end{itemize}
+		\item any $n-1$ dimensional component of $L$ must be orientable by \cref{C: codim 1 oriented}.
+	\end{itemize}
 
-Now assume that each $n-1$ dimensional component $L_i$ of $L$ is oriented.
-By \cref{E: coho 0 generator,T: intersection qi,T: PD}, if $L_i$ is an oriented $n-1$ dimensional component of $L$, then $\td H_{n-1}^\Gamma(L_i) \cong \Z$ is generated by the identity map $\id \colon L_i \to L_i$.
-As $L_i$ separates $S^n$, there is a ``half'' $Z_i$ of $S^n$, such that $\bd Z_i = L_i$ as oriented manifolds with corners.
-In general, $\td H_{n-1}^\Gamma(L_i)$ will be a free abelian group generated by the $\underline{L_i}$ as $L_i$ varies over the necessarily finite number of connected $n-1$ dimensional components of $L$.
-We then define $\mc Z \colon H_{n-1}^\Gamma(L) \to \td H^{0}_\Gamma(S^n-L)$ so that $$\mc Z \left(\sum n_i \underline{L_i}\right) = \sum n_i \underline{\mr Z_i}.$$
-Here we think of the righthand side as representing a class in $\td H^{0}_\Gamma(S^n-L)$, which we recall from \cref{D: reduced c} is the quotient of $H^{0}_\Gamma(S^n-L)$ by the group generated by the class of the identity map of $S^n-L$, tautologically co-oriented.
+	Now assume that each $n-1$ dimensional component $L_i$ of $L$ is oriented.
+	By \cref{E: coho 0 generator,T: intersection qi,T: PD}, if $L_i$ is an oriented $n-1$ dimensional component of $L$, then $\td H_{n-1}^\Gamma(L_i) \cong \Z$ is generated by the identity map $\id \colon L_i \to L_i$.
+	As $L_i$ separates $S^n$, there is a ``half'' $Z_i$ of $S^n$, such that $\bd Z_i = L_i$ as oriented manifolds with corners.
+	In general, $\td H_{n-1}^\Gamma(L_i)$ will be a free abelian group generated by the $\underline{L_i}$ as $L_i$ varies over the necessarily finite number of connected $n-1$ dimensional components of $L$.
+	We then define $\mc Z \colon H_{n-1}^\Gamma(L) \to \td H^{0}_\Gamma(S^n-L)$ so that $$\mc Z \left(\sum n_i \underline{L_i}\right) = \sum n_i \underline{\mr Z_i}.$$
+	Here we think of the righthand side as representing a class in $\td H^{0}_\Gamma(S^n-L)$, which we recall from \cref{D: reduced c} is the quotient of $H^{0}_\Gamma(S^n-L)$ by the group generated by the class of the identity map of $S^n-L$, tautologically co-oriented.
 
-Compared with $\mc Z$ for $i \neq n-1$, which allowed for various choices in the construction but required us to check that $\mc Z$ is well defined, our only choice in the case $i = n-1$ was of orientations for the components $L_i$ and the construction is well defined up to that choice.
-This is possible because the generators of $\td H_{n-1}^\Gamma(L)$ and the corresponding choices of $Z_i$ are quite canonical once we have chosen orientations.
-However, we can also observe that the choice of orientations of the $L_i$ does not matter as follows.
-We continue to consider the same element of $\td H_{n-1}^\Gamma(L)$ represented by our originally-oriented $L_i$, but if we had chosen the opposite orientation for $L_i$ as a space, then instead of $Z_i$ we would write $\mc Z(L_i) = -\mr{\ms Z_i}$, where $\ms Z_i$ is the ``other half'' of the sphere from $Z_i$, though with the same orientation so that $\bd \ms Z_i = -L_i$.
-The resulting $-\mr {\ms Z_i}$ represents a different element of $H^{0}_\Gamma(S^n-L)$ than does $\mr Z_i$.
-However, $\mr Z_i \sqcup \mr{\ms Z_i} = S^n-L$, and so $\underline {\mr Z_i} = -\underline{\mr {\ms Z_i}}$ as elements of $\td H^0_\Gamma(S^n - L)$, as required.
+	Compared with $\mc Z$ for $i \neq n-1$, which allowed for various choices in the construction but required us to check that $\mc Z$ is well defined, our only choice in the case $i = n-1$ was of orientations for the components $L_i$ and the construction is well defined up to that choice.
+	This is possible because the generators of $\td H_{n-1}^\Gamma(L)$ and the corresponding choices of $Z_i$ are quite canonical once we have chosen orientations.
+	However, we can also observe that the choice of orientations of the $L_i$ does not matter as follows.
+	We continue to consider the same element of $\td H_{n-1}^\Gamma(L)$ represented by our originally-oriented $L_i$, but if we had chosen the opposite orientation for $L_i$ as a space, then instead of $Z_i$ we would write $\mc Z(L_i) = -\mr{\ms Z_i}$, where $\ms Z_i$ is the ``other half'' of the sphere from $Z_i$, though with the same orientation so that $\bd \ms Z_i = -L_i$.
+	The resulting $-\mr {\ms Z_i}$ represents a different element of $H^{0}_\Gamma(S^n-L)$ than does $\mr Z_i$.
+	However, $\mr Z_i \sqcup \mr{\ms Z_i} = S^n-L$, and so $\underline {\mr Z_i} = -\underline{\mr {\ms Z_i}}$ as elements of $\td H^0_\Gamma(S^n - L)$, as required.
 \end{comment}
 
 \subsubsection{Cohomology to homology}
@@ -160,7 +160,7 @@ As a subset of $\R^n$, the subspace $L$ will have an $\epsilon$-neighborhood $Y_
 We let $U = Y_\epsilon \cap S^n$ and also write $\pi$ for the restriction to $U$.
 We can further extend $\pi$ to a deformation retraction $h \colon U \times I \to L$ by setting
 \begin{equation}\label{E: alex retraction}
-h(x,t) = \frac{(1-t)x + t\pi(x)}{|(1-t)x + t\pi(x)|},
+	h(x,t) = \frac{(1-t)x + t\pi(x)}{|(1-t)x + t\pi(x)|},
 \end{equation}
 where the addition and scalar division are in $\R^{n+1}$ and $|-|$ is the norm in $\R^{n+1}$.
 For small $\epsilon$, the denominator will never vanish, and for $x \in S^n -L$, we have $h(x,t) \in S^n -L$ for $t < 1$.
@@ -183,14 +183,14 @@ We assume $D^{\pm}_x$ oriented consistently with $S^n$ and give $S_x$ the bounda
 	We next construct a locally collapsing map near $L$.
 	Let $\eta \colon [0,\infty) \to [0,\infty)$ be a smooth map that
 	\begin{itemize}
-	\item $\eta([0,1]) = 0$,
-	\item $\eta$ is strictly increasing on $[1,2]$, and
-	\item $\eta(x)=x$ for $x \geq 2$.
+		\item $\eta([0,1]) = 0$,
+		\item $\eta$ is strictly increasing on $[1,2]$, and
+		\item $\eta(x)=x$ for $x \geq 2$.
 	\end{itemize}
 	We then define $\rho \colon S^n \to S^n$ such that
 	\begin{itemize}
-	\item $\rho(x) = x$ if $x \in S^n - (\sqcup U_i)$,x
-	\item $\rho(x) = \eta(d(x))x$ if $x \in \sqcup U_i$, where $d(x)$ is the distance from the origin in the fiber of the bundle $U_i$ containing $x$, and $\eta(d(x))x$ is similarly the scalar multiplication in the fiber.
+		\item $\rho(x) = x$ if $x \in S^n - (\sqcup U_i)$,x
+		\item $\rho(x) = \eta(d(x))x$ if $x \in \sqcup U_i$, where $d(x)$ is the distance from the origin in the fiber of the bundle $U_i$ containing $x$, and $\eta(d(x))x$ is similarly the scalar multiplication in the fiber.
 	\end{itemize}
 	By construction, $\rho$ is the identity map outside of $\sqcup U_i$, it is a diffeomorphism from $S^n-D_1$ onto $S^n-L$, and it retracts $D_1$ onto $L$ by the bundle projection.
 \end{comment}
@@ -209,8 +209,8 @@ We define $\mc A(\uV)$ to be represented by $\pi(V \times_{S^n} S_x)$.
 \begin{comment}
 	It will be useful to note for later that if $W \in PC^{i+1}(S^n)$ then by \cref{P: Leibniz cap},
 	\begin{align}
-	\bd (W \times_{S^n} D_x^-) &= \left[(-1)^{i+1} (\bd W) \times_{S^n} D_x^-\right] \bigsqcup (W \times_{S^n} \bd D_x^-)\notag\\
-	&= \left[(-1)^{i+1} (\bd W) \times_{S^n} D_x^-\right] \bigsqcup - (W \times_{S^n} S_x). \label{E: leib bd}
+		\bd (W \times_{S^n} D_x^-) &= \left[(-1)^{i+1} (\bd W) \times_{S^n} D_x^-\right] \bigsqcup (W \times_{S^n} \bd D_x^-)\notag\\
+		&= \left[(-1)^{i+1} (\bd W) \times_{S^n} D_x^-\right] \bigsqcup - (W \times_{S^n} S_x). \label{E: leib bd}
 	\end{align}
 \end{comment}
 
@@ -224,16 +224,16 @@ It will follow later from \cref{R: Alex tubular} that $\mc A$ is also independen
 	In particular, it does not depend on the choices of $V$ or $x$ in the above definition.
 \end{proposition}
 \begin{proof}
-	Once we show that $\mc A$ is independent of the specific choices of $V$ (representing a given $\uV$ in $H^*_\Gamma(S^n-L)$) and $x$, it will follow immediately that $\mc A$ is a homomorphism, as given $V,W\in PC^*_\Gamma(S^n-L)$ representing cohomology classes and transverse to $S_x$, then $\mc A(\uV + \uW)$ will be represented by $\pi((V \sqcup W) \times_{S^n} S_x)$, which is the same precochain as $\pi(V  \times_{S^n} S_x) \sqcup \pi(W \times_{S^n} S_x)$.
+	Once we show that $\mc A$ is independent of the specific choices of $V$ (representing a given $\uV$ in $H^*_\Gamma(S^n-L)$) and $x$, it will follow immediately that $\mc A$ is a homomorphism, as given $V,W\in PC^*_\Gamma(S^n-L)$ representing cohomology classes and transverse to $S_x$, then $\mc A(\uV + \uW)$ will be represented by $\pi((V \sqcup W) \times_{S^n} S_x)$, which is the same precochain as $\pi(V \times_{S^n} S_x) \sqcup \pi(W \times_{S^n} S_x)$.
 
 	Next, suppose $V' \in PC^*_\Gamma(S^n-L)$ also represents $\uV \in H^*_\Gamma(S^n-L)$ and is transverse to $S_x$.
 	As $V$ and $V'$ represent the same cohomology class, by \cref{R: cycles and boundaries} there exists $Z \in PC^*_\Gamma(S^n-L)$ so that $\bd Z\sqcup -V \sqcup V' \in Q^*(S^n-L)$; we may also assume $Z$ transverse to $S_x$ by REFERENCE NEEDED\greg{This needs a reference after editing Chapter 7 - can be pulled out of proof of 7.22 and 7.24 as of Feb 3, 2025 version.}.
 	Then $(\bd Z \sqcup -V \sqcup V') \times_{S^n} S_x \in Q_*(S^n-L)$ by \cref{L: pullback with Q}.
 	This prechain can also be considered to be in $Q_*(U) \subset PC_*^\Gamma(U)$, where $U$ is the $\epsilon$-neighborhood described above.
 	So then $\pi((\bd Z \sqcup -V \sqcup V') \times_{S^n} S_x ) \in Q_*(L)$ by \cref{L: Q preservation}.
-	But, as above, this is the same precochain as  $\pi((\bd Z) \times_{S^n} S_x ) \sqcup -\pi(V  \times_{S^n} S_x) \sqcup \pi(V' \times_{S^n} S_x)$.
+	But, as above, this is the same precochain as $\pi((\bd Z) \times_{S^n} S_x ) \sqcup -\pi(V \times_{S^n} S_x) \sqcup \pi(V' \times_{S^n} S_x)$.
 	Furthermore, as $S_x$ is boundaryless, $\pi((\bd Z)) \times_{S^n} S_x) = \pm \bd \pi((Z \times_{S^n} S_x)$.
-	So $\pi(V  \times_{S^n} S_x)$ and $\pi(V'  \times_{S^n} S_x)$ represent the same element of $H_*^\Gamma(L)$, again by \cref{R: cycles and boundaries}, and this shows $\mc A$ is independent of the choice of $V$.
+	So $\pi(V \times_{S^n} S_x)$ and $\pi(V' \times_{S^n} S_x)$ represent the same element of $H_*^\Gamma(L)$, again by \cref{R: cycles and boundaries}, and this shows $\mc A$ is independent of the choice of $V$.
 
 	Next consider $0 < x, y < \epsilon$, for our $\epsilon$-neighborhood of $L$, such that $x$ and $y$ are both regular values of the distance function $\bar d$.
 	Without loss of generality, suppose $x < y$, and let $D_{x,y} = \bar d^{-1}([x,y])$, which is a manifold with boundary in $S^n-L$.
@@ -242,10 +242,10 @@ It will follow later from \cref{R: Alex tubular} that $\mc A$ is also independen
 	As $V$ must represent a cocycle, we have $\bd V \in Q^*(S^n - L)$.
 	We now compute using \cref{P: Leibniz cap} that
 	\begin{align*}
-	\bd \pi(V \times_{S^n} D_{x,y}) &= \pi(\bd (V \times_{S^n} D_{x,y}))\\
-	&= \pi\left(\left[(-1)^{i+1} (\bd V) \times_{S^n}D_{x,y} \right] \bigsqcup (V \times_{S^n} \bd D_{x,y})\right)\\
-	&= \pi\left(\left[(-1)^{i+1} (\bd V) \times_{S^n}D_{x,y} \right] \bigsqcup (V \times_{S^n} S_x)\bigsqcup (V \times_{S^n} -S_y)\right)\\
-	&=(-1)^{i+1} \pi((\bd V) \times_{S^n}D_{x,y}) \sqcup \pi(V \times_{S^n} S_x) \sqcup -\pi(V \times_{S^n} S_y).
+		\bd \pi(V \times_{S^n} D_{x,y}) &= \pi(\bd (V \times_{S^n} D_{x,y}))\\
+		&= \pi\left(\left[(-1)^{i+1} (\bd V) \times_{S^n}D_{x,y} \right] \bigsqcup (V \times_{S^n} \bd D_{x,y})\right)\\
+		&= \pi\left(\left[(-1)^{i+1} (\bd V) \times_{S^n}D_{x,y} \right] \bigsqcup (V \times_{S^n} S_x)\bigsqcup (V \times_{S^n} -S_y)\right)\\
+		&=(-1)^{i+1} \pi((\bd V) \times_{S^n}D_{x,y}) \sqcup \pi(V \times_{S^n} S_x) \sqcup -\pi(V \times_{S^n} S_y).
 	\end{align*}
 	Since $\bd V \in Q^*(S^n-L)$, we have the first term in $Q_*(L)$, and so pairing the other two terms with their opposite orientations,
 	$$\bd \pi(V \times_{S^n} D_{x,y})\sqcup -\pi(V \times_{S^n} S_x) \sqcup \pi(V \times_{S^n} S_y) \in Q_*(L).$$
@@ -259,11 +259,11 @@ First suppose $i = 0$.
 Then, as we assume $n > 1$, an element $\uV \in \td H^{n-i-1}_\Gamma(S^n-L) = H^{n-i-1}_\Gamma(S^n-L)$ is represented by a $1$-dimensional precochain $V$.
 We compute
 $$\bd(V \times_{S^n} D^+_x) = -(\bd V \times_{S^n} D^+_x) \sqcup (V \times_{S_n} S_x).$$
-As $V$ represents a cocycle, $\bd V \in Q^*(S^n-L)$, and so $\bd V \times_{S^n} D^+_x \in Q_*(S^n-L) \subset Q_*(S^n)$ by  \cref{L: pullback with Q}.
+As $V$ represents a cocycle, $\bd V \in Q^*(S^n-L)$, and so $\bd V \times_{S^n} D^+_x \in Q_*(S^n-L) \subset Q_*(S^n)$ by \cref{L: pullback with Q}.
 Thus $\bd(V \times_{S^n} D^+_x) \sqcup -(V \times_{S_n} S_x) \in Q_*(S^n)$.
 But the only way for a $0$-dimensional prechain to be in $Q_*(S^n)$ is if it consists of pairs of ``cancelling'' points with opposite signs.
 As $\bd(V \times_{S^n} D^+_x)$ is the boundary of a compact $1$-manifold, it must also consist of pairs of oppositely-signed points (though they do not necessarily cancel as they do not necessarily have the same image in $S^n$).
-But then $V \times_{S_n} S_x$ must also consist of pairs of oppositely-signed points, and hence this is  also true of $\pi(V \times_{S_n} S_x)$, which represents $\mc A(\uV)$.
+But then $V \times_{S_n} S_x$ must also consist of pairs of oppositely-signed points, and hence this is also true of $\pi(V \times_{S_n} S_x)$, which represents $\mc A(\uV)$.
 This suffices to imply that $\mc A(\uV) \in \td H_0^\Gamma(L)$.
 
 Next, suppose $i = n-1$ so that $\uV \in \td H^0_\Gamma(S^n-L)$.
@@ -280,7 +280,7 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 
 
 \begin{theorem}\label{T: alex duality}
-	For $i \geq 0$, the maps  $\mc A \colon \td H^{n-i-1}_\Gamma(S^n-L) \to \td H_i^\Gamma(L)$ and $\mc Z \colon \td H_i^\Gamma(L) \to \td H^{n-i-1}_\Gamma(S^n-L)$ are inverse isomorphisms.
+	For $i \geq 0$, the maps $\mc A \colon \td H^{n-i-1}_\Gamma(S^n-L) \to \td H_i^\Gamma(L)$ and $\mc Z \colon \td H_i^\Gamma(L) \to \td H^{n-i-1}_\Gamma(S^n-L)$ are inverse isomorphisms.
 \end{theorem}
 
 \begin{proof}
@@ -299,15 +299,15 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	\end{equation*}
 	We consider
 	\begin{equation*}
-	\bd Y \sqcup -V\sqcup W =\pi\left((\bd Z)\hat{\vrule height1.3ex width0pt} \times_{S^n} D_x^- \right) \bigsqcup -W \sqcup -V \sqcup W.
+		\bd Y \sqcup -V\sqcup W =\pi\left((\bd Z)\hat{\vrule height1.3ex width0pt} \times_{S^n} D_x^- \right) \bigsqcup -W \sqcup -V \sqcup W.
 	\end{equation*}
 	The terms involving $W$ form a trivial pair, so we consider the other terms $\pi\left((\bd Z)\hat{\vrule height1.3ex width0pt} \times_{S^n} D_x^- \right) \sqcup -V$.
 	As $V$ is contained in $L$, we have $V = \pi(\hat V \times_{S^n} D_x^-)$, and so
-	$$\pi\left((\bd Z)\hat{\vrule height1.3ex width0pt} \times_{S^n} D_x^- \right) \bigsqcup -V = \pi(((\bd  Z)\hat{\vrule height1.3ex width0pt} \sqcup -\hat V) \times_{S^n} D_x^-).$$
-	But now $\bd Z \sqcup -V \in Q_*(S^n)$, so $(\bd  Z)\,\hat{\vrule height1.3ex width0pt} \sqcup -\hat V \in Q^*(S^n)$, and thus $(\bd  Z)\hat{\vrule height1.3ex width0pt} \sqcup -\hat V) \times_{S^n} D_x^- \in Q_*(S^n)$ by \cref{L: pullback with Q}.
+	$$\pi\left((\bd Z)\hat{\vrule height1.3ex width0pt} \times_{S^n} D_x^- \right) \bigsqcup -V = \pi(((\bd Z)\hat{\vrule height1.3ex width0pt} \sqcup -\hat V) \times_{S^n} D_x^-).$$
+	But now $\bd Z \sqcup -V \in Q_*(S^n)$, so $(\bd Z)\,\hat{\vrule height1.3ex width0pt} \sqcup -\hat V \in Q^*(S^n)$, and thus $(\bd Z)\hat{\vrule height1.3ex width0pt} \sqcup -\hat V) \times_{S^n} D_x^- \in Q_*(S^n)$ by \cref{L: pullback with Q}.
 	Then $\pi$ takes this to $Q_*(L)$ by \cref{L: Q preservation}.
 	So $\bd Y \sqcup -V \sqcup W \in Q_*(L)$, and therefore $\uV = \uW \in \td H_i^\Gamma(L)$.
-	We conclude  $\uV = \mc A \mc Z(\uV) \in \td H_i^\Gamma(L)$, as claimed.
+	We conclude $\uV = \mc A \mc Z(\uV) \in \td H_i^\Gamma(L)$, as claimed.
 
 	We note that this argument holds as written for those indices for which we consider reduced homology or cohomology.
 
@@ -328,21 +328,21 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	Later, we will need to compare $V_0$ with $V^0$, so we make the following computations.
 	First, using \cref{P: Leibniz cap} and that $S_x = \bd D_x^+$, we have
 	\begin{align*}
-	\bd(V \times_{S^n} D^+_x) &= [(-1)^{i+1} (\bd V)\times_{S^n} D^+_x] \sqcup (V \times_{S^n} \bd D^+_x)\\
-	&=[(-1)^{i+1} (\bd V)\times_{S^n} D^+_x] \sqcup V_0.
+		\bd(V \times_{S^n} D^+_x) &= [(-1)^{i+1} (\bd V)\times_{S^n} D^+_x] \sqcup (V \times_{S^n} \bd D^+_x)\\
+		&=[(-1)^{i+1} (\bd V)\times_{S^n} D^+_x] \sqcup V_0.
 	\end{align*}
-	On the other hand, by \cref{P: OC mixed associativity} and the formulas $D^+_x = \hat D^+_x \times_{S^n} S^n$ and $V^+ = V \times_{S^n} \hat D^+_x$, we see $$V \times_{S^n} D^+_x = V \times_{S^n}(\hat D^+_x \times_{S^n} S^n) = (V \times_{S^n} \hat D^+_x ) \times_{S^n} S^n = V^+  \times_{S^n} S^n.$$
+	On the other hand, by \cref{P: OC mixed associativity} and the formulas $D^+_x = \hat D^+_x \times_{S^n} S^n$ and $V^+ = V \times_{S^n} \hat D^+_x$, we see $$V \times_{S^n} D^+_x = V \times_{S^n}(\hat D^+_x \times_{S^n} S^n) = (V \times_{S^n} \hat D^+_x ) \times_{S^n} S^n = V^+ \times_{S^n} S^n.$$
 	So we compute using \cref{P: Leibniz cap,L: W0 cochain} that
 	\begin{align*}
-	\bd(V \times_{S^n} D^+_x) &= \bd(V^+  \times_{S^n} S^n )\\
-	 &= (-1)^{i+1}\bd (V^+) \times_{S^n} S^n\\
-	 &= (-1)^{i+1} (V^0 \sqcup (\bd V)^+) \times_{S^n} S^n.
+		\bd(V \times_{S^n} D^+_x) &= \bd(V^+ \times_{S^n} S^n )\\
+		&= (-1)^{i+1}\bd (V^+) \times_{S^n} S^n\\
+		&= (-1)^{i+1} (V^0 \sqcup (\bd V)^+) \times_{S^n} S^n.
 	\end{align*}
 	Comparing the corresponding components, we see that $(V^0)\check{\vrule height1.3ex width0pt} = (-1)^{i+1}V_0$.
 
 
 	\begin{comment}
-	Let us determine the relationship between $V_0$ and $(V^0)\check{\vrule height1.3ex width0pt}$ COME BACK IF WE NEED THIS
+		Let us determine the relationship between $V_0$ and $(V^0)\check{\vrule height1.3ex width0pt}$ COME BACK IF WE NEED THIS
 	\end{comment}
 
 	We next define $Z$. The basic idea, up to orientation information, is to replace $V$ with $V^+ \sqcup T$, where we have better control over $T$ than $V^-$.
@@ -352,30 +352,31 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	Then $h(-,0) = r_{V_0}$ and $h(-,1)$ is the reference map for $\pi(V_0) = \pi(V \times_{S^n} S_x)$, which represents $\mc A(\uV)$.
 	By \cref{P: oriented fiber boundary},
 	\begin{equation}\label{E: alex cylinder bdry}
-	\bd T = \bd (V_0 \times I) = (\bd (V_0) \times I) \sqcup (-1)^{i} (V_0 \times \{1,-0\}) =  (\bd (V_0) \times I) \sqcup (-1)^i\pi(V_0)\sqcup (-1)^{i+1} V_0,
+		\bd T = \bd (V_0 \times I) = (\bd (V_0) \times I) \sqcup (-1)^{i} (V_0 \times \{1,-0\}) = (\bd (V_0) \times I) \sqcup (-1)^i\pi(V_0)\sqcup (-1)^{i+1} V_0,
 	\end{equation}
 	as $V_0 \times 1$ maps under $h$ by $\pi$.
 	We define $Z = \check V^+ \sqcup (-1)^i T$.
 
 	\begin{comment}
-	In particular, by \cref{D: PC products,L: W0 cochain},  $\check V^+ = V \times_{S^n-L} D_x^+$,\footnote{Note that, before taking the induced orientation for the cap product, we have $V \times_{S^n-L} M_x = M_x \times_{S^n-L} V$ as fiber products of precochains by the commutativity formula, so this agrees with the definition of $V^+$ in \cref{S: splitting}.} and this is the same as first taking the induced orientation and then restricting to the space $V^+$ DOUBLE CHECK.
-	%Similarly, take $\check V^- = V \times_{S^n-L} D^-_x$.
+		In particular, by \cref{D: PC products,L: W0 cochain}, $\check V^+ = V \times_{S^n-L} D_x^+$,\footnote{Note that, before taking the induced orientation for the cap product, we have $V \times_{S^n-L} M_x = M_x \times_{S^n-L} V$ as fiber products of precochains by the commutativity formula, so this agrees with the definition of $V^+$ in \cref{S: splitting}.} and this is the same as first taking the induced orientation and then restricting to the space $V^+$ DOUBLE CHECK.
+		%Similarly, take $\check V^- = V \times_{S^n-L} D^-_x$.
 	\end{comment}
 
 	\begin{comment}
-	To check that $Z$ has the desired properties, we will use the following computations.
-	By definition, $S_x = \bd D_x^+$ with $D_x^+$ oriented compatibly with $S^n$,
-	so $V_0 =  V \times_{S^n} S_x = V \times_{S^n} \bd D_x^+$, and so .
-	By \cref{P: Leibniz cap}, $$\bd \check V^+ = \bd(V \times_{S^n} D_x^+) = \left[(-1)^{i+1} (\bd V) \times_{S^n} D_x^+\right] \sqcup (V \times_{S^n} \bd D_x^+) = \left[(-1)^{i+1} (\bd V) \times_{S^n} D_x^+\right] \sqcup V_0,$$
+		To check that $Z$ has the desired properties, we will use the following computations.
+		By definition, $S_x = \bd D_x^+$ with $D_x^+$ oriented compatibly with $S^n$,
+		so $V_0 = V \times_{S^n} S_x = V \times_{S^n} \bd D_x^+$, and so .
+		By \cref{P: Leibniz cap}, $$\bd \check V^+ = \bd(V \times_{S^n} D_x^+) = \left[(-1)^{i+1} (\bd V) \times_{S^n} D_x^+\right] \sqcup (V \times_{S^n} \bd D_x^+) = \left[(-1)^{i+1} (\bd V) \times_{S^n} D_x^+\right] \sqcup V_0,$$
 	\end{comment}
-	\begin{comment}Similarly,  $$\bd \check V^+ = \bd(V \times_{S^n} M_x) = \left[(-1)^{i+1} (\bd V) \times_{S^n} D_x\right] \sqcup (V \times_{S^n} \bd M_x)=(-1)^{i+1} ((\bd V)^+)^\vee \sqcup -V_0.$$
-	\end{comment}
-
 
 	\begin{comment}
-	DO I NEED THIS:::
-	So, $V_0 = V \times_{S^n} \bd D_x$ represents the same chain as $$\bd(V \times_{S^n} D_x) \sqcup (-1)^{i+1} (\bd V) \times_{S^n} D_x = \bd \check  V^- \sqcup (-1)^{i+1} (\bd V) \times_{S^n} D_x.$$
-	In particular, the orientation of $V_0$ is the same as the orientation of $\bd \check  V^-$.
+		Similarly, $$\bd \check V^+ = \bd(V \times_{S^n} M_x) = \left[(-1)^{i+1} (\bd V) \times_{S^n} D_x\right] \sqcup (V \times_{S^n} \bd M_x)=(-1)^{i+1} ((\bd V)^+)^\vee \sqcup -V_0.$$
+	\end{comment}
+
+	\begin{comment}
+		DO I NEED THIS:::
+		So, $V_0 = V \times_{S^n} \bd D_x$ represents the same chain as $$\bd(V \times_{S^n} D_x) \sqcup (-1)^{i+1} (\bd V) \times_{S^n} D_x = \bd \check V^- \sqcup (-1)^{i+1} (\bd V) \times_{S^n} D_x.$$
+		In particular, the orientation of $V_0$ is the same as the orientation of $\bd \check V^-$.
 	\end{comment}
 
 
@@ -383,10 +384,10 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	We now check that $\bd Z \sqcup -\pi(V_0) \in Q_*(S^n)$ so that $\bd \underline{Z} = \mc A(\uV)$ in $C_*^\Gamma(S^n)$, as desired.
 	Using \cref{L: W0 chain,P: oriented fiber boundary} in the second line below, as well as our computations above of $\bd T$ and of $\bd \check V^+$, which is just $\bd (V \times_{S^n} D^+_x)$, we have
 	\begin{align*}
-	\bd Z \sqcup -\pi(V_0) & = \bd \check V^+ \sqcup \bd (-1)^i T \sqcup  -\pi(V_0)\\
-	&=\left[(-1)^{i+1} (\bd V) \times_{S^n} D_x^+\right] \sqcup V_0 \sqcup
-	(-1)^i(\bd (V_0) \times I) \sqcup \pi(V_0)\sqcup -V_0
-	\sqcup  -\pi(V_0).
+		\bd Z \sqcup -\pi(V_0) & = \bd \check V^+ \sqcup \bd (-1)^i T \sqcup -\pi(V_0)\\
+		&=\left[(-1)^{i+1} (\bd V) \times_{S^n} D_x^+\right] \sqcup V_0 \sqcup
+		(-1)^i(\bd (V_0) \times I) \sqcup \pi(V_0)\sqcup -V_0
+		\sqcup -\pi(V_0).
 	\end{align*}
 	We have two trivial pairs $V_0 \sqcup - V_0$ and $ -\pi(V_0) \sqcup \pi(V_0)$ in this expression.
 	That leaves the terms involving $(\bd V) \times_{S^n} D_x^+$ and $(\bd V_0) \times I$.
@@ -406,8 +407,8 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	We co-orient $H$ as a homotopy as in \cref{S: co-oriented homotopy} so that it is a homotopy from $(-1)^{i+1}\mr T \sqcup V^-$; in particular, its boundary will include the term $(-1)^{i}\mr T \sqcup - V^-$.
 	So we can now compute
 	\begin{align*}
-	\bd Y \sqcup (-1)^{i+1} \mr T \sqcup V^-
-	&= [(-1)^{i}\mr T \sqcup - V^-] \sqcup \mc H \sqcup [(-1)^{i+1} \mr T \sqcup V^-],
+		\bd Y \sqcup (-1)^{i+1} \mr T \sqcup V^-
+		&= [(-1)^{i}\mr T \sqcup - V^-] \sqcup \mc H \sqcup [(-1)^{i+1} \mr T \sqcup V^-],
 	\end{align*}
 	where $\mc H$ is a one-ended homotopy of $\bd[ (-1)^i\mr T \sqcup - V^-]$ by \cref{D: co-oriented homotopy,L: co-oriented homotopy}.
 	The two bracketed terms give us a trivial pair, so we consider
@@ -419,7 +420,7 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	\begin{align*}
 		\bd (\hat T) &= (-1)^{i+1}(\bd T)\hat{\vrule height1.3ex width0pt}\\
 		&=(-1)^{i+1}[(\bd (V_0) \times I) \sqcup (-1)^i\pi(V_0)\sqcup (-1)^{i+1} V_0]\,\hat{\vrule height1.3ex width0pt}\\
-	&=[(-1)^{i+1}(\bd (V_0) \times I) \sqcup -\pi(V_0)\sqcup V_0]\,\hat{\vrule height1.3ex width0pt}.
+		&=[(-1)^{i+1}(\bd (V_0) \times I) \sqcup -\pi(V_0)\sqcup V_0]\,\hat{\vrule height1.3ex width0pt}.
 	\end{align*}
 	The terms of $\bd[ (-1)^i\mr T \sqcup - V^-]$ that come from these computations and involve $\bd V$ and $\bd V_0$ are all in $Q^*(S^n-L)$ by the assumption that $V$ represents a cocycle and \cref{L: pullback with Q,L: W0 cochain,L: dessicated homotopy}.
 	The $\pi(V_0)$ term has image in $L$ and so vanishes when we restrict to $S^n - L$.
@@ -430,20 +431,20 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 \end{proof}
 
 
-	\begin{comment}
-    \begin{align*}
-	\bd[ (-1)^i\mr T \sqcup - V^-]
-	&=(-1)^i (\bd T)\hat{\vrule height1.3ex width0pt}\\
-	& = (-1)^{i+1} [ (\bd (V_0) \times I) \sqcup (-1)^i\pi(V_0)\sqcup (-1)^{i+1} V_0]\hat{\vrule height1.3ex width0pt}
+\begin{comment}
+	\begin{align*}
+		\bd[ (-1)^i\mr T \sqcup - V^-]
+		&=(-1)^i (\bd T)\hat{\vrule height1.3ex width0pt}\\
+		& = (-1)^{i+1} [ (\bd (V_0) \times I) \sqcup (-1)^i\pi(V_0)\sqcup (-1)^{i+1} V_0]\hat{\vrule height1.3ex width0pt}
 	\end{align*}
 	Restricting to $S^n-L$ and simplifying, we get
-	$$\bd \mr T = (-1)^{i+1} [ (\bd (V_0) \times I)]\hat{\vrule height1.3ex width0pt} \sqcup  (V_0)\hat{\vrule height1.3ex width0pt}.$$
+	$$\bd \mr T = (-1)^{i+1} [ (\bd (V_0) \times I)]\hat{\vrule height1.3ex width0pt} \sqcup (V_0)\hat{\vrule height1.3ex width0pt}.$$
 	We note $$\bd V_0 = \bd (V \times_{S^n - L} S_x) = (-1)^{i+1} (\bd V) \times_{S^n-L} S_x$$ is in $Q_*(S^n - L)$, as $V$ represents a cocycle.
-	On the other hand, by \cref{L: W0 cochain}, we have $\bd(V^-) = -V^0 \sqcup (\bd V)^-$, and similarly  $(\bd V)^- \in Q_*(S^n-L)$, as $V$ represents a cocycle.
+	On the other hand, by \cref{L: W0 cochain}, we have $\bd(V^-) = -V^0 \sqcup (\bd V)^-$, and similarly $(\bd V)^- \in Q_*(S^n-L)$, as $V$ represents a cocycle.
 	Finally we consider the pieces of $\bd[ (-1)^i\mr T \sqcup - V^-]$ that involve $V^0$.
 	These are $(-1)^i(V_0)\hat{\vrule height1.3ex width0pt} \sqcup - V^0$.
 
- 	NOWHERE
+	NOWHERE
 
 
 
@@ -461,36 +462,27 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	So, converting orientations to co-orientations, it must be that the components of $\bd V^+ \sqcup \bd (-1)^i \mr T$ involving $V^0$ (as a space) form a trivial pair (even though the co-orientation of $V^0$ is no necessarily the co-orientation induced from the orientation of $V_0$).
 	But $\bd V^+ = - \bd V^-$, so the components of $-\bd V^- \sqcup \bd (-1)^i \mr T$ are a trivial precochain.
 	It follows now that all of $-\bd V^- \sqcup \bd (-1)^i \mr T$ is in $Q^*(S^n-L)$, and hence so is the homotopy $\mc H$.
-	\end{comment}
-	\begin{comment}
 
 	we need to consider the co-orientation of the the piece of $\bd \mr T$ corresponding to $V^0$.
 	We have
 
-
 	Once again,
 	\begin{itemize}
-	\item the $V^0$ terms should cancel once I get the signs right,
-	\item since $\bd V \in Q^*(S^n-L)$ it follows that $(\bd V)^-$ and $\bd V^0=-(\bd V)^0$ are in $Q^*(S^n-L)$,
-	\item and then $\bd V^0 \times [0,1) \in Q^*(S^n-L)$ since the homotopy is universal.
+		\item the $V^0$ terms should cancel once I get the signs right,
+		\item since $\bd V \in Q^*(S^n-L)$ it follows that $(\bd V)^-$ and $\bd V^0=-(\bd V)^0$ are in $Q^*(S^n-L)$,
+		\item and then $\bd V^0 \times [0,1) \in Q^*(S^n-L)$ since the homotopy is universal.
 	\end{itemize}
-	\end{comment}
-
-
-
-
-
+\end{comment}
 
 \begin{remark}\label{R: Alex tubular}
-So far for definiteness we have assumed $S^n$ to be the unit sphere in $\R^{n+1}$ and made use of an $\epsilon$ neighborhood of $L$.
-However, this is not always convenient to work with, and we now provide an alternative.
-Rather than the $\epsilon$ neighborhood $U$ of $L$, we can instead choose disjoint tubular neighborhoods of the components that collectively form a neighborhood $\mc U$ of $L$.
-We can identify the tubular neighborhoods with normal bundles and replace $S_x$ with an appropriate sphere bundle $\mc S$.
-As the sphere bundles, and their associated disk bundles, also permit deformation retractions to $L$, the constructions and (co)homological arguments above go through in this setting in complete analogy with the preceding proofs.
-As inverses to isomorphisms are unique, we establish that the map $\mc A$ constructed using tubular neighborhoods is identical to the map $\mc A$ as we originally defined it.
-Similarly, we could proceed with a different distance function on $S^n$ using an alternative retraction of a neighborhood of $L$ to $L$.
+	So far for definiteness we have assumed $S^n$ to be the unit sphere in $\R^{n+1}$ and made use of an $\epsilon$ neighborhood of $L$.
+	However, this is not always convenient to work with, and we now provide an alternative.
+	Rather than the $\epsilon$ neighborhood $U$ of $L$, we can instead choose disjoint tubular neighborhoods of the components that collectively form a neighborhood $\mc U$ of $L$.
+	We can identify the tubular neighborhoods with normal bundles and replace $S_x$ with an appropriate sphere bundle $\mc S$.
+	As the sphere bundles, and their associated disk bundles, also permit deformation retractions to $L$, the constructions and (co)homological arguments above go through in this setting in complete analogy with the preceding proofs.
+	As inverses to isomorphisms are unique, we establish that the map $\mc A$ constructed using tubular neighborhoods is identical to the map $\mc A$ as we originally defined it.
+	Similarly, we could proceed with a different distance function on $S^n$ using an alternative retraction of a neighborhood of $L$ to $L$.
 \end{remark}
-
 
 
 \subsubsection{Example: Spherical links}
@@ -498,7 +490,7 @@ Similarly, we could proceed with a different distance function on $S^n$ using an
 As a sample application of Alexander duality, we consider linking of a union of embedded spheres $S^{n-2}$ in $S^n$, $n \geq 3$.
 Of course, the classical case is embedded circles in $S^3$.
 
-Here, the only nontrivial reduced homology groups of our link $L = \amalg_{a \in A} L_a$ are $\td H_0^\Gamma(L) \cong \Z^{|A|-1}$ and  $\td H_{n-2}^\Gamma(L) \cong \Z^{|A|}$.
+Here, the only nontrivial reduced homology groups of our link $L = \amalg_{a \in A} L_a$ are $\td H_0^\Gamma(L) \cong \Z^{|A|-1}$ and $\td H_{n-2}^\Gamma(L) \cong \Z^{|A|}$.
 
 As observed in \cref{R: reduced h}, $\td H_0^\Gamma(L)$ is generated by homology classes represented by prechains $g_{ab}$, $a \neq b$, consisting of a negative point in component $L_a$ and a positive point in component $L_b$, subject to the relations $g_{ab}+g_{bc}=g_{ac}$.
 Applying $\mc Z$, we see that $H^{n-1}_\Gamma(S^n - L)$ is generated by the restrictions to $S^n-L$ of maps $\gamma_{ab} \colon [0,1] \to S^n$ such that $\gamma_{ab}(0) \in L_a$ and $\gamma_{ab}(1) \in L_b$, subject to the same relations.
@@ -517,86 +509,84 @@ On the other hand, if two Seifert surfaces $S_a$ and $S_b$ intersect in just an 
 
 
 \begin{comment}
-In this extended example we will use the cohomology Mayer-Vietoris sequence to find geometric generators for the cohomology of a link complement in $S^3$.
+	In this extended example we will use the cohomology Mayer-Vietoris sequence to find geometric generators for the cohomology of a link complement in $S^3$.
 
-Let $L = \amalg_{a \in A} L_a$ be a finite collection of disjoint embedded circles in $S^3$, and let $M = S^3 - L$.
-We take each $L_a$ to be oriented as determined by its embedding, giving the domain $S^1$ its standard orientation.
-Let $U_a$ be an open tubular neighborhood of $L_a$; we may assume that the $U_a$ are also pairwise disjoint and that each is oriented as a subspace of $S^3$.
-Then each $U_a$ is diffeomorphic to $S^1 \times B^2$, with $B^2$ being the open $2$-disk, and we can identify each $U_a - L_a$ with $S^1 \times S^1 \times (0,1)$.
-We choose these diffeomorphisms so the $(0,1)$ factor runs outward from the link, $S^1 \times \phi \times t$ is a parallel to $L_a$ with the parallel orientation that does not link $L_a$, and $\theta \times S^1 \times t$ is a meridian of $L_a$, oriented according to the right hand rule: if one curves the fingers of their right hand around the meridian with fingers pointing in the direction of its orientation, then the thumb will point along the direction of $L_a$.
-If $\ell$ and $m$ denote an oriented longitude and meridian and $\beta_\ell$ and $\beta_m$ are their orientations, then this means that $\beta_\ell \wedge \beta_m \wedge \beta_{(0,1)}$, with the standard orientation on $(0,1)$, will be the \emph{opposite} of the orientation of $S^3$.
+	Let $L = \amalg_{a \in A} L_a$ be a finite collection of disjoint embedded circles in $S^3$, and let $M = S^3 - L$.
+	We take each $L_a$ to be oriented as determined by its embedding, giving the domain $S^1$ its standard orientation.
+	Let $U_a$ be an open tubular neighborhood of $L_a$; we may assume that the $U_a$ are also pairwise disjoint and that each is oriented as a subspace of $S^3$.
+	Then each $U_a$ is diffeomorphic to $S^1 \times B^2$, with $B^2$ being the open $2$-disk, and we can identify each $U_a - L_a$ with $S^1 \times S^1 \times (0,1)$.
+	We choose these diffeomorphisms so the $(0,1)$ factor runs outward from the link, $S^1 \times \phi \times t$ is a parallel to $L_a$ with the parallel orientation that does not link $L_a$, and $\theta \times S^1 \times t$ is a meridian of $L_a$, oriented according to the right hand rule: if one curves the fingers of their right hand around the meridian with fingers pointing in the direction of its orientation, then the thumb will point along the direction of $L_a$.
+	If $\ell$ and $m$ denote an oriented longitude and meridian and $\beta_\ell$ and $\beta_m$ are their orientations, then this means that $\beta_\ell \wedge \beta_m \wedge \beta_{(0,1)}$, with the standard orientation on $(0,1)$, will be the \emph{opposite} of the orientation of $S^3$.
 
-We first need to build up some information about the generators of the cohomology of $U_a$ and $U_a - L$, which starts by considering $S^1$ and $S^1 \times S^1$.
-By \cref{E: cohomology of spheres}, we know that $H^0_\Gamma(S^1) \cong \Z$, and we can take the identity map $\id \colon S^1 \to S^1$ with its tautological co-orientation to represent the generator; this is equivalent to the normal co-orientation assigning the positive co-orientation to the $0$-dimensional normal bundle.
-We also know $H^1_\Gamma(S^1) \cong \Z$, and we can take as generator the inclusion of a point; let us suppose the co-orientation is the normal co-orientation in which the orientation of the normal bundle coincides with the orientation of $S^1$.
-By the K\"unneth Theorem (\cref{T: cohomology kunneth}), and using our standard abuse of allowing the domain to represent the map, it therefore follows that $H^1_\Gamma(S^1 \times S^1) \cong \Z \oplus \Z$ is generated by $S^1 \times pt$ and $pt \times S^1$, while $H^2_\Gamma(S^1 \times S^1) \cong \Z$ is generated by $pt \times pt$.
-By \cref{L: Quillen product co-orientation}, both $S^1 \times pt$ and $pt \times S^1$ have normal co-orientations such that the normal bundle is oriented consistently with its corresponding factor; e.g.\ the normal bundle of $S^1 \times pt$ is oriented so that identifying a fiber $\theta \times \R$ in the obvious way as a subset of $\theta \times S^1$, the orientations of $\R$ and $S^1$ agree.
-The map $pt \times pt \to S^1 \times S^1$ is normally co-oriented by the orientation of the normal bundle that agrees with the product orientation of $S^1 \times S^1$.
+	We first need to build up some information about the generators of the cohomology of $U_a$ and $U_a - L$, which starts by considering $S^1$ and $S^1 \times S^1$.
+	By \cref{E: cohomology of spheres}, we know that $H^0_\Gamma(S^1) \cong \Z$, and we can take the identity map $\id \colon S^1 \to S^1$ with its tautological co-orientation to represent the generator; this is equivalent to the normal co-orientation assigning the positive co-orientation to the $0$-dimensional normal bundle.
+	We also know $H^1_\Gamma(S^1) \cong \Z$, and we can take as generator the inclusion of a point; let us suppose the co-orientation is the normal co-orientation in which the orientation of the normal bundle coincides with the orientation of $S^1$.
+	By the K\"unneth Theorem (\cref{T: cohomology kunneth}), and using our standard abuse of allowing the domain to represent the map, it therefore follows that $H^1_\Gamma(S^1 \times S^1) \cong \Z \oplus \Z$ is generated by $S^1 \times pt$ and $pt \times S^1$, while $H^2_\Gamma(S^1 \times S^1) \cong \Z$ is generated by $pt \times pt$.
+	By \cref{L: Quillen product co-orientation}, both $S^1 \times pt$ and $pt \times S^1$ have normal co-orientations such that the normal bundle is oriented consistently with its corresponding factor; e.g.\ the normal bundle of $S^1 \times pt$ is oriented so that identifying a fiber $\theta \times \R$ in the obvious way as a subset of $\theta \times S^1$, the orientations of $\R$ and $S^1$ agree.
+	The map $pt \times pt \to S^1 \times S^1$ is normally co-oriented by the orientation of the normal bundle that agrees with the product orientation of $S^1 \times S^1$.
 
-Next, we consider the deformation retractions $U_a \to L_a \cong S^1$ and $U_a - L_a \to L_a \times S^1$.
-Pulling back by the first homotopy equivalence, we have $H^1_\Gamma(U_a)$ represented by $pt \times B^2$ with the normal bundle oriented consistently with the orientation of $L_a$, and  $H^2_\Gamma(U_a) = H^3_\Gamma(U_a) = 0$. Similarly, pulling back by the second retraction, we have $H^1_\Gamma(U_a - L_a)$ generated by the classes of $S^1 \times pt \times (0,1)$ and $pt \times S^1 \times (0,1)$, while $H^2_\Gamma(U_a - L_a)$ is generated by the class of $pt \times pt \times (0,1)$.
-In all cases, the co-orientation is given by the oriented pullback of the normal bundle on $S^1$ or $L_a \times S^1$.
+	Next, we consider the deformation retractions $U_a \to L_a \cong S^1$ and $U_a - L_a \to L_a \times S^1$.
+	Pulling back by the first homotopy equivalence, we have $H^1_\Gamma(U_a)$ represented by $pt \times B^2$ with the normal bundle oriented consistently with the orientation of $L_a$, and $H^2_\Gamma(U_a) = H^3_\Gamma(U_a) = 0$. Similarly, pulling back by the second retraction, we have $H^1_\Gamma(U_a - L_a)$ generated by the classes of $S^1 \times pt \times (0,1)$ and $pt \times S^1 \times (0,1)$, while $H^2_\Gamma(U_a - L_a)$ is generated by the class of $pt \times pt \times (0,1)$.
+	In all cases, the co-orientation is given by the oriented pullback of the normal bundle on $S^1$ or $L_a \times S^1$.
 
-We can now turn to the cohomology of $M$ itself.
-As $M$ is connected but not closed, we already know from \cref{E: first examples} that $H^3_\Gamma(M) = 0$ and $H^0_\Gamma(M) \cong \Z$ with generator represented by the identity map.
-So it remains to consider $H^1_\Gamma(M)$ and $H^2_\Gamma(M)$.
+	We can now turn to the cohomology of $M$ itself.
+	As $M$ is connected but not closed, we already know from \cref{E: first examples} that $H^3_\Gamma(M) = 0$ and $H^0_\Gamma(M) \cong \Z$ with generator represented by the identity map.
+	So it remains to consider $H^1_\Gamma(M)$ and $H^2_\Gamma(M)$.
 
-Consider the Mayer-Vietoris sequence for the pair $M = S^3 - L$ and $\amalg U_a$, with union $S^3$ and intersection $\amalg (U_a - L_a)$.
-Since we know that $H^1_\Gamma(S^3) = H^2_\Gamma(S^3)=0$, we obtain from the Mayer-Vietoris sequence an isomorphism
-$$H^1_\Gamma(\amalg U_a) \oplus H^1_\Gamma(S^3 - L) \xr{j} H^1_\Gamma( \amalg(U_a - L_a)).$$
-We also know that $H^3_\Gamma(M) = H^3_\Gamma(\amalg U_a) = H^2_\Gamma(\amalg U_a) = 0$, so we have an exact sequence
-$$0 \to H^2_\Gamma(S^3 - L) \xr{j} H^2_\Gamma( \amalg(U_a - L_a)) \xr{\delta} H^3_\Gamma(S^3) \to 0.$$
+	Consider the Mayer-Vietoris sequence for the pair $M = S^3 - L$ and $\amalg U_a$, with union $S^3$ and intersection $\amalg (U_a - L_a)$.
+	Since we know that $H^1_\Gamma(S^3) = H^2_\Gamma(S^3)=0$, we obtain from the Mayer-Vietoris sequence an isomorphism
+	$$H^1_\Gamma(\amalg U_a) \oplus H^1_\Gamma(S^3 - L) \xr{j} H^1_\Gamma( \amalg(U_a - L_a)).$$
+	We also know that $H^3_\Gamma(M) = H^3_\Gamma(\amalg U_a) = H^2_\Gamma(\amalg U_a) = 0$, so we have an exact sequence
+	$$0 \to H^2_\Gamma(S^3 - L) \xr{j} H^2_\Gamma( \amalg(U_a - L_a)) \xr{\delta} H^3_\Gamma(S^3) \to 0.$$
 
-Let us first consider the isomorphism $H^1_\Gamma(\amalg U_a) \oplus H^1_\Gamma(S^3 - L) \xr{j} H^1_\Gamma( \amalg(U_a - L_a)).$
-As observed above, each $H^1_\Gamma(\amalg U_a)$ can be taken to be generated by the class of an inclusion
-$pt \times B^2 \into S^1 \times B^2$, and these maps restrict to inclusions $pt \times S^1 \times (0,1)  \into S^1 \times S^1 \times (0,1) \cong U_a - L_a$.
-This accounts for half the summands of $H^1_\Gamma( \amalg(U_a - L_a))$.
-The remainder of $H^1_\Gamma( \amalg(U_a - L_a))$ must therefore come from $H^1_\Gamma(M)$, and if we can find maps representing elements of $H^1_\Gamma(M)$ that restrict to $S^1 \times pt \times (0,1)  \into S^1 \times S^1 \times (0,1) \cong U_a - L_a$, then these must be linearly independent and generate $H^1_\Gamma(M)$.
-But now recall that any knot $K$ in $S^3$ possesses a Seifert surface, i.e.\ a compact oriented embedded manifold whose boundary is $K$ \cite{REF FOR SMOOTH}.
-Seifert surfaces are usually assumed to be connected, but that will not be necessary for us.
-So given a component $L_a$ of our link, let $S_a$ be a Seifert surface for it; we may also assume that $S_a$ is transverse to all of the other components of $L$.
-If we let $\hat S_a = S_a - (S_a \cap L)$, then the embedding of $\hat S_a$ into $S^3 - L$, with the co-orientation determined by the orientations of $S_a$ and $S^3$, is a precochain.
+	Let us first consider the isomorphism $H^1_\Gamma(\amalg U_a) \oplus H^1_\Gamma(S^3 - L) \xr{j} H^1_\Gamma( \amalg(U_a - L_a)).$
+	As observed above, each $H^1_\Gamma(\amalg U_a)$ can be taken to be generated by the class of an inclusion
+	$pt \times B^2 \into S^1 \times B^2$, and these maps restrict to inclusions $pt \times S^1 \times (0,1) \into S^1 \times S^1 \times (0,1) \cong U_a - L_a$.
+	This accounts for half the summands of $H^1_\Gamma( \amalg(U_a - L_a))$.
+	The remainder of $H^1_\Gamma( \amalg(U_a - L_a))$ must therefore come from $H^1_\Gamma(M)$, and if we can find maps representing elements of $H^1_\Gamma(M)$ that restrict to $S^1 \times pt \times (0,1) \into S^1 \times S^1 \times (0,1) \cong U_a - L_a$, then these must be linearly independent and generate $H^1_\Gamma(M)$.
+	But now recall that any knot $K$ in $S^3$ possesses a Seifert surface, i.e.\ a compact oriented embedded manifold whose boundary is $K$ \cite{REF FOR SMOOTH}.
+	Seifert surfaces are usually assumed to be connected, but that will not be necessary for us.
+	So given a component $L_a$ of our link, let $S_a$ be a Seifert surface for it; we may also assume that $S_a$ is transverse to all of the other components of $L$.
+	If we let $\hat S_a = S_a - (S_a \cap L)$, then the embedding of $\hat S_a$ into $S^3 - L$, with the co-orientation determined by the orientations of $S_a$ and $S^3$, is a precochain.
 
-Furthermore, if we consider a closed collar of $\bd S_a$, which we can write as $L_a \times [0,1]$ with $L_a \times 0 = L_a$, then $L_a \times 1$ is a parallel copy of $L_a$.
-Furthermore, as $S_a$ is assumed to be embedded in $S^3$, it must be the case that $S_a - (L_a \times [0,1))$, whose boundary is $L_a \times 1$, does not intersect $L_a$. So $L_a$ and its translate $L_a \times 1$ do not link each other (see \cite[Section 5.D]{Ro76} for a general discussion of linking numbers).
-Consequently, we can identify $U_a$ with $S^1 \times B^2$ in such a way that $S_a \cap (U_a-L_a) \cong S^1 \times pt \times (0,1)$.
-So the cochains represented by the $\hat S_a$ must generate $H^1_\Gamma(M)$.
+	Furthermore, if we consider a closed collar of $\bd S_a$, which we can write as $L_a \times [0,1]$ with $L_a \times 0 = L_a$, then $L_a \times 1$ is a parallel copy of $L_a$.
+	Furthermore, as $S_a$ is assumed to be embedded in $S^3$, it must be the case that $S_a - (L_a \times [0,1))$, whose boundary is $L_a \times 1$, does not intersect $L_a$. So $L_a$ and its translate $L_a \times 1$ do not link each other (see \cite[Section 5.D]{Ro76} for a general discussion of linking numbers).
+	Consequently, we can identify $U_a$ with $S^1 \times B^2$ in such a way that $S_a \cap (U_a-L_a) \cong S^1 \times pt \times (0,1)$.
+	So the cochains represented by the $\hat S_a$ must generate $H^1_\Gamma(M)$.
 
-To be a bit more specific for future use, let $\beta_{L_a}$ be the orientation of $L_a$. Then by \cref{Con: oriented boundary}, the orientation $\beta_{S_a}$ of $S_a$ will be such that $\beta_{\nu_a} \wedge \beta_{L_a} = \beta_{S_a}$, where $\nu_a$ is the outward pointing normal to $S_a$ at the boundary.
-So at such a point the induced co-orientation of the embedding of $S_a$ is $(\beta_{S_a},\beta_{S^3}) = (\beta_{\nu_a} \wedge \beta_{L_a},\beta_{S^3})$.
-Thus if we let $n_a$ be a normal vector to $S_a$, the corresponding normal co-orientation of $S_a$ is such that $\beta_{\nu_a} \wedge \beta_{L_a} \wedge \beta_{n_a} = \beta_{S^3}$.
-So we see the normal co-orientation is equivalent to the standard righthand rule for orienting the normal to a surface that cobounds an oriented curve in $\R^3$, and this agrees with our convention for generators of $H^1_\Gamma(U_a-L_a)$.
+	To be a bit more specific for future use, let $\beta_{L_a}$ be the orientation of $L_a$. Then by \cref{Con: oriented boundary}, the orientation $\beta_{S_a}$ of $S_a$ will be such that $\beta_{\nu_a} \wedge \beta_{L_a} = \beta_{S_a}$, where $\nu_a$ is the outward pointing normal to $S_a$ at the boundary.
+	So at such a point the induced co-orientation of the embedding of $S_a$ is $(\beta_{S_a},\beta_{S^3}) = (\beta_{\nu_a} \wedge \beta_{L_a},\beta_{S^3})$.
+	Thus if we let $n_a$ be a normal vector to $S_a$, the corresponding normal co-orientation of $S_a$ is such that $\beta_{\nu_a} \wedge \beta_{L_a} \wedge \beta_{n_a} = \beta_{S^3}$.
+	So we see the normal co-orientation is equivalent to the standard righthand rule for orienting the normal to a surface that cobounds an oriented curve in $\R^3$, and this agrees with our convention for generators of $H^1_\Gamma(U_a-L_a)$.
 
-Next we consider the sequence for $H^2_\Gamma$.
-As $H^3_\Gamma(S^3) \cong \Z$ and $H^2_\Gamma(\amalg(U_3-L_3)) \cong \Z^{|A|}$, the short exact sequence above splits, and we must have abstractly that $H^2_\Gamma(M) \cong \Z^{|A|-1}$.
-We claim in this case that $H^2_\Gamma(M)$ is generated by the classes of smooth curves that run from one link component to another.
-More precisely, suppose that $\gamma_{ab} \colon [0,1] \to S^3$ is a curve with $\gamma_{ab}(0) \in L_a$, $\gamma_{ab}(1) \in L_b$, and $\gamma_{ab}((0,1)) \cap L = \emptyset$.
-By restricting the domain to $(0,1)$ and using the co-orientation induced by the standard orientations of $(0,1)$ and $S^3$, we obtain a precochains $\hat \gamma_{ab}$.
-Now recall that $H^2_\Gamma(U_a-L_a)$ is generated by the class of $pt \times pt \times (0,1)$.
-We can clearly arrange $\hat \gamma_{ab}$ and our identification of $U_a - L_a$ with $S^1 \times S^1 \times (0,1)$ so that the restriction of $\hat \gamma_{ab}$ to $U_a - L_a$ has this form.
-The co-orientation of $\gamma_{ab}$ coming from the orientations is $(\beta_{(0,1)},\beta_{S^3})$, but near $L_a$, we have $\beta_{S^3} = \beta_{U_a - L_a} = \beta_{\ell_a} \wedge \beta_{m_a} \wedge \beta_{(0,1)} = \beta_{(0,1)} \wedge \beta_{\ell_a} \wedge \beta_{m_a}$.
-So near $L_a$, this is precisely the normal co-orientation of $pt \times pt \times (0,1)$ coming from the pullback to $U_a - L_a$ of the generator $pt \times pt$ of $H^2(S^1 \times S^1)$.
-
-
-
-So if we write these generators of $H^2_\Gamma(\amalg(U_a-L_a))$ as $\underline{x_a}$ and choose consistent co-orientations, we see that $j(\underline{\hat \gamma_{ab}}) = \underline{x_a} - \underline{x_b}$.
-Now let us order our indexing set $A$ and relabel as $A = \{1, \ldots , n\}$.
-We then have that the set $\mc G = \{\underline{\hat \gamma_{i,i+1}}\}_{i=1}^{n-1}$ maps onto the set $\{\underline{x_i}-\underline{x_{i+1}}\}_{i=1}^{n-1}$, which spans a subgroups of $H^2_\Gamma(\amalg(U_a-L_a)) \cong \Z^n$ such that the quotient is $\Z$.
-Thus the elements of $\mc G$ generate $H^2_\Gamma(M) \cong \Z^{n-1}$.
-We also see from the exact sequence that $\underline{\hat \gamma_{i,i+1}}+\underline{\hat \gamma_{i+1,i+2}} = \underline{\hat \gamma_{i, i+2}}$, as their difference maps to $0$ but $j$ is injective.
-More generally, it follows that:
-\begin{enumerate}
-\item $\underline{\hat \gamma_{ab}} + \underline{\hat \gamma_{bc}} =\underline{\hat \gamma_{a,c}}$, for any $a,b,c \in A$,
-\item $\underline{\hat \gamma_{ab}} = -\underline{\hat \gamma_{ba}}$,
-\item $\underline{\hat \gamma_{aa}}=0$.
-\end{enumerate}
+	Next we consider the sequence for $H^2_\Gamma$.
+	As $H^3_\Gamma(S^3) \cong \Z$ and $H^2_\Gamma(\amalg(U_3-L_3)) \cong \Z^{|A|}$, the short exact sequence above splits, and we must have abstractly that $H^2_\Gamma(M) \cong \Z^{|A|-1}$.
+	We claim in this case that $H^2_\Gamma(M)$ is generated by the classes of smooth curves that run from one link component to another.
+	More precisely, suppose that $\gamma_{ab} \colon [0,1] \to S^3$ is a curve with $\gamma_{ab}(0) \in L_a$, $\gamma_{ab}(1) \in L_b$, and $\gamma_{ab}((0,1)) \cap L = \emptyset$.
+	By restricting the domain to $(0,1)$ and using the co-orientation induced by the standard orientations of $(0,1)$ and $S^3$, we obtain a precochains $\hat \gamma_{ab}$.
+	Now recall that $H^2_\Gamma(U_a-L_a)$ is generated by the class of $pt \times pt \times (0,1)$.
+	We can clearly arrange $\hat \gamma_{ab}$ and our identification of $U_a - L_a$ with $S^1 \times S^1 \times (0,1)$ so that the restriction of $\hat \gamma_{ab}$ to $U_a - L_a$ has this form.
+	The co-orientation of $\gamma_{ab}$ coming from the orientations is $(\beta_{(0,1)},\beta_{S^3})$, but near $L_a$, we have $\beta_{S^3} = \beta_{U_a - L_a} = \beta_{\ell_a} \wedge \beta_{m_a} \wedge \beta_{(0,1)} = \beta_{(0,1)} \wedge \beta_{\ell_a} \wedge \beta_{m_a}$.
+	So near $L_a$, this is precisely the normal co-orientation of $pt \times pt \times (0,1)$ coming from the pullback to $U_a - L_a$ of the generator $pt \times pt$ of $H^2(S^1 \times S^1)$.
 
 
-So, in summary, the generators of $H^1_\Gamma(M)$ can be represented by Seifert surfaces, while the elements of $H^2_\Gamma(M)$ can be realized as arcs between neighboring components, subject to the above relations.
 
-Of course the real power of geometric cohomology is that we can also derive consequences for the \emph{ring} $H^*_\Gamma(M)$ from geometry.
-For example, if it is possible to choose Seifert surfaces $S_a$ simultaneously for all $a$ that are disjoint or intersect only in closed curves, then all cup product on $H^1_\Gamma(M)$ vanish.
-On the other hand, if two Seifert surfaces $S_a$ and $S_b$ intersect in just an arc between $L_a$ and $L_b$, then this corresponds to the cup product of two generators of $H^1_\Gamma(M)$ being a generator of $H^2_\Gamma(M)$.
+	So if we write these generators of $H^2_\Gamma(\amalg(U_a-L_a))$ as $\underline{x_a}$ and choose consistent co-orientations, we see that $j(\underline{\hat \gamma_{ab}}) = \underline{x_a} - \underline{x_b}$.
+	Now let us order our indexing set $A$ and relabel as $A = \{1, \ldots , n\}$.
+	We then have that the set $\mc G = \{\underline{\hat \gamma_{i,i+1}}\}_{i=1}^{n-1}$ maps onto the set $\{\underline{x_i}-\underline{x_{i+1}}\}_{i=1}^{n-1}$, which spans a subgroups of $H^2_\Gamma(\amalg(U_a-L_a)) \cong \Z^n$ such that the quotient is $\Z$.
+	Thus the elements of $\mc G$ generate $H^2_\Gamma(M) \cong \Z^{n-1}$.
+	We also see from the exact sequence that $\underline{\hat \gamma_{i,i+1}}+\underline{\hat \gamma_{i+1,i+2}} = \underline{\hat \gamma_{i, i+2}}$, as their difference maps to $0$ but $j$ is injective.
+	More generally, it follows that:
+	\begin{enumerate}
+		\item $\underline{\hat \gamma_{ab}} + \underline{\hat \gamma_{bc}} =\underline{\hat \gamma_{a,c}}$, for any $a,b,c \in A$,
+		\item $\underline{\hat \gamma_{ab}} = -\underline{\hat \gamma_{ba}}$,
+		\item $\underline{\hat \gamma_{aa}}=0$.
+	\end{enumerate}
 
+
+	So, in summary, the generators of $H^1_\Gamma(M)$ can be represented by Seifert surfaces, while the elements of $H^2_\Gamma(M)$ can be realized as arcs between neighboring components, subject to the above relations.
+
+	Of course the real power of geometric cohomology is that we can also derive consequences for the \emph{ring} $H^*_\Gamma(M)$ from geometry.
+	For example, if it is possible to choose Seifert surfaces $S_a$ simultaneously for all $a$ that are disjoint or intersect only in closed curves, then all cup product on $H^1_\Gamma(M)$ vanish.
+	On the other hand, if two Seifert surfaces $S_a$ and $S_b$ intersect in just an arc between $L_a$ and $L_b$, then this corresponds to the cup product of two generators of $H^1_\Gamma(M)$ being a generator of $H^2_\Gamma(M)$.
 \end{comment}
-
