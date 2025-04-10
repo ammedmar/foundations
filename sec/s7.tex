@@ -128,24 +128,26 @@ In \cref{S: usual cup}, we show that the cup product in geometric cohomology is 
 
 In this section, we develop chain- and cochain-level products.
 We begin in \cref{S: simple products} with the special case of ``simple products,'' in which two chains or cochains can be represented by transverse prechains or precochains, in which case we can take the fiber product.
-To show that this construction on (co)chains is independent of choices, we utilize the essential decompositions of \cref{S: essential decomp}.
-Building on this case, we define a more general notion of transversality for chains and cochains in \cref{S: trans products}, which allows us to construct multilinear pairings.
+Building on this case, we then define a more general notion of transversality for chains and cochains that allows for multilinear behavior.
 In \cref{S: product pullbacks}, we consider pullbacks of our transverse products, and in \cref{S: Kronecker} we obtain a Kronecker pairing for geometric chains and cochains.
 Finally, in \cref{S: exterior chain products}, we define exterior products of chains and cochains.
 
 
-\subsubsection{Simple transversality and products}\label{S: simple products}
-We begin by defining a simple version of transversality for geometric chains and cochains and the resulting (co)chain-level cup, cap, and intersection products.
-Geometric chains and (co)chains $\uV$ and $\uW$ will be called \textbf{simply transverse} (see \cref{D: cochain trans}) if they possess transverse representing pre(co)chains.
-This allows us to define cup, cap, and intersection products of simply transverse chains and cochains via their fiber products.
+\subsubsection{Transversality and products}\label{S: simple products}
+In this section we define a notion of transversality of geometric chains and cochains, which allows us to define (co)chain-level cup, cap, and intersection products.
 
-After a thorough study of this case, we will consider some more complex situations in later subsections.
+We begin in \cref{D: cochain trans} with the naive case in which our (co)chains possess transverse representing pre(co)chains.
+We call such (co)chains \textbf{simply transverse} (see \cref{D: cochain trans}), and this is sufficient to define cup, cap, and intersection products via fiber products.
+However, this definition is insufficient to obtain a product that behaves multilinearly.
 For example, one might consider the case where $\uV$ and $\uW$ can be represented by disjoint unions of pre(co)chains $V = \bigsqcup V_i$ and $W = \bigsqcup W_j$ such that the pairs $(V_i,W_j)$ are not necessarily transverse but such that for each such pair there are alternative representatives, say $(V'_{ij},W'_{ji})$, depending on both $i$ and $j$, with $\underline{V_i} = \underline{V'_{ij}}$, $\underline{W_j} = \underline{W'_{ji}}$, and $V'_{ij}$ transverse to $W'_{ji}$.
-Then one would like to have products of $\uV$ and $\uW$ using these representatives, but we must show independence of the choices involved.
-Such examples, and even more general ones, are critical for obtaining a version of multilinearity for our partially-defined products.
-But we begin with the more basic scenario.
+Then one would like to have products of $\uV$ and $\uW$ using these representatives.
+To obtain such a product, we proceed to a more general definition of transversality in \cref{D: multicup}.
+The bulk of our effort in this section will be in showing that we obtain products that are well defined, independent of the choices involved.
+
+We begin with simple transversality.
 
 \begin{definition}\label{D: cochain trans}
+	Let $M$ be a manifold without boundary.
 	We say that $\uV, \uW \in C^*_{\Gamma}(M)$ are \textbf{simply transverse} as geometric cochains if there exist representatives $V,W \in PC^*_\Gamma(M)$ such that $V$ and $W$ are transverse as manifolds with corners mapping to $M$.
 	We call the data of such a pair $(V,W)$ a \textbf{simple transverse representation} for the pair $(\uV,\uW)$.
 
@@ -153,6 +155,7 @@ But we begin with the more basic scenario.
 \end{definition}
 
 \begin{definition}\label{D: cochain products}
+	Let $M$ be a manifold without boundary.
 	For $\uV, \uW \in C^*_{\Gamma}(M)$ simply transverse, we define the \textbf{cup product} $\uV \uplus \uW \in C^*_\Gamma(M)$ to be the geometric cochain represented by the fiber product $V \times_M W$ for some simple transverse representation $(V,W)$ of $(\uV,\uW)$.
 
 	Analogously, if $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(M)$ are simply transverse, we define the \textbf{cap product} $\uV \nplus \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
@@ -162,6 +165,11 @@ But we begin with the more basic scenario.
 	In each context, the given product $V \times_M W$ is as defined in \cref{D: PC products}, as $V$ and $W$ are transverse by assumption.
 \end{definition}
 
+It will follow from \cref{T: multicup}, below, that these products are well defined, independent of the choices of representing chains and cochains.
+This is not immediately clear, as a geometric (co)chain $\uV$ has in general an infinite number of representatives in $PC(M)$ that may or may not be transverse to any other given element of $PC(M)$; see \cref{E: bad transversality}.
+Rather than stop to prove well-definedness in the simple transversality case, we proceed toward our more general definition of transversality.
+
+\begin{comment}
 The first main result of this section is to show that these products are well defined as operations on simply transverse geometric chains or cochains, independent of the prechain or precochain representatives chosen.
 This is not immediately clear, as a geometric (co)chain $\uV$ has in general an infinite number of representatives in $PC(M)$ that may or may not be transverse to any other given element of $PC(M)$; see \cref{E: bad transversality}.
 To proceed, we utilize the essential decompositions of prechains and precochains developed in \cref{S: essential decomp} to demonstrate that products of simply transverse chains and cochains are well defined.
@@ -229,13 +237,17 @@ To proceed, we utilize the essential decompositions of prechains and precochains
 \end{proof}
 
 \subsubsection{Chain and cochains transversality and products}\label{S: trans products}
+\end{comment}
 
-Now, suppose a geometric cochain $\uV$ is simply transverse to two other geometric cochains of the same degree, $\underline{W_1}$ and $\underline{W_2}$.
+Suppose a geometric cochain $\uV$ is simply transverse to two other geometric cochains of the same degree, $\underline{W_1}$ and $\underline{W_2}$.
 This means we can form $\uV\uplus \underline{W_1}+\uV\uplus \underline{W_2}$, and we would like for this to equal $\uV\uplus (\underline{W_1} + \underline{W_2})$.
-The problem is that it is not apparent from the definitions whether or not $\uV$ is simply transverse to $\uW_1+\uW_2$ as the transversality of the pairs $(\uV,\underline{W_1})$ and $(\uV,\underline{W_2})$ might be realize by representatives $V_1,V_2, W_1,W_2 \in PC^*_\Gamma(M)$ with $\underline{V_1} = \underline{V_2}$ so that $V_1$ and $W_1$ are transverse as spaces mapping to $M$ and $V_2$ and $W_2$ are transverse as spaces mapping to $M$, but neither $V_1$ nor $V_2$ is transverse to $W_1 \sqcup W_2$.
+The problem is that it is not apparent from the definitions whether or not $\uV$ is simply transverse to $\uW_1+\uW_2$ as the transversality of the pairs $(\uV,\underline{W_1})$ and $(\uV,\underline{W_2})$ might be realized by representatives $V_1,V_2, W_1,W_2 \in PC^*_\Gamma(M)$ with $\underline{V_1} = \underline{V_2}$ so that $V_1$ and $W_1$ are transverse as spaces mapping to $M$ and $V_2$ and $W_2$ are transverse as spaces mapping to $M$, but neither $V_1$ nor $V_2$ is transverse to $W_1 \sqcup W_2$.
 It is also not apparent how to find a $V_3$ representing $\uV$ that is transverse to both $W_1$ and $W_2$.
 The simplest solution would then seem to be to just define
 $\uV\uplus (\underline{W_1}+\underline{W_2})$ to be represented by $(V_1 \times_M W_1) \sqcup (V_2 \times_M W_2)$.
+The next definition builds on this idea.
+
+\begin{comment}
 To do so, however, we must make sure that such a construction is independent of the choices involved.
 This is what we turn to now.
 We first show in \cref{P: multicup} that the products can be made linear in one variable as just described, and then we use that to provide a more general multilinearlity in \cref{T: multicup}.
@@ -291,16 +303,33 @@ We first show in \cref{P: multicup} that the products can be made linear in one 
 
 We now generalize yet again to fully multilinear versions of the cup, cap, and intersection products.
 Again, this requires enough transversality for all fiber products to be defined, but now we allow cochain representatives in both the first and second factors to vary.
+\end{comment}
+
 
 \begin{definition}\label{D: multicup}
+	Let $M$ be a manifold without boundary.
 	Suppose $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$, $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$, and each pair $(\underline{V_i},\underline{W_j})$ is simply transverse.
-	Then we say that $\uV$ and $\uW$ are \textbf{transverse} and define $\uV\uplus\uW$ as
+	Then we say that $\uV$ and $\uW$ are \textbf{transverse} and define the cup product $\uV\uplus\uW$ as
 	$$\uV\uplus\uW = \sum_{i,j} \underline{V_i}\uplus \underline{W_j},$$
-	where the cup products on the right are those of \cref{D: cochain products}, which are well defined by \cref{T: cochain product}.
-	We extend the definition of the cap and intersection products analogously.
+	where the cup products on the right are those of \cref{D: cochain products}.
 
+	We extend the definition of the cap and intersection products analogously.
 	In particular, for each simply transverse pair $(\underline{V_i},\underline{W_j})$ as above, there is a simple transverse representation $(V_{ij}, W_{ji})$, and the product $\uV\uplus \uW$, $\uV\nplus \uW$, or $\uV\bullet\uW$ is represented by $\sum_{ij}V_{ij} \times_M W_{ji}$.
 \end{definition}
+
+\begin{theorem}
+	Let $M$ be a manifold without boundary.
+	Suppose $\underline{V_1}, \underline{V_2} \in C_\Gamma^*(M)$ are both transverse to $\uW \in C_\Gamma^*(M)$.
+	Then $\underline{V_1 + V_2}$ is transverse to $\uW$ and $$\underline{V_1 + V_2} \uplus \uW = \underline{V_1} \uplus \uW + \underline{V_2} \uplus \uW.$$
+	The equivalent statements hold for the cap and intersection products and with the sum in the second variable.
+\end{theorem}
+\begin{proof}
+	By definition, we can write
+
+\end{proof}
+
+We now demonstrate that these products are well defined, with our original simple transversality occurring as a special case.
+The proof utilizes the essential decompositions of prechains and precochains developed in \cref{S: essential decomp}.
 
 \begin{theorem}\label{T: multicup}
 	The products of \cref{D: multicup} are well defined.
