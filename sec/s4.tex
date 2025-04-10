@@ -209,17 +209,30 @@ The following useful basic properties are proven in \cite{Lipy14}; for completen
 In each case, ``isomorphic,'' ``trivial,'' or ``degenerate'' should be read consistently to refer to the compact oriented case or the proper co-oriented case.
 Lipyanskiy's proofs assume small image rather than small rank, but the proofs are equivalent.
 
-\begin{lemma}[Lipyanskiy Lemma 10]\label{L: Lip L10}
-	If $V$ is trivial and $V \sqcup W$ is trivial, then $W$ is trivial.
-\end{lemma}
+Our first lemma is contained within the proof of \cite[Lemma 10]{Lipy14}, though it will be useful to have an independent statement.
 
+\begin{lemma}\label{L: trivial structure}
+	Suppose $W$ is trivial.
+	Then
+	$$W = \left(\bigsqcup_a A_a \right) \sqcup \left(\bigsqcup_b B_b \sqcup -B_b \right),$$
+	where each $A_a$ and $B_b$ is connected and each $A_i$ is trivial.
+\end{lemma}
 \begin{proof}
 	We can write $W$ as the disjoint union of a (possibly infinite) number of isomorphism classes of connected components and then group the isomorphism classes together up to (co\nobreakdash-)orientation as $W = W_1 \sqcup W_2 \sqcup \cdots$ so that all connected components of each $W_i$ are isomorphic (ignoring (co\nobreakdash-)orientations) for each $i$ and so that no connected component of $W_i$ is isomorphic to a connected component of $W_j$ for $i\neq j$.
 	As either $W$ is compact or $r_W$ is proper, each $W_i$ is the union of a finite number of connected components; if not, then there would be a $W_i$ with an infinite number of connected components and, since the components of $W_i$ are isomorphic to each other, a point $x\in M$ such that $r_W^{-1}$ has infinite components, violating that $r_W$ is proper.
-	Any automorphism of $W$ preserves the decomposition into $W_i$, and so $W$ is trivial if and only if for all $i$ either $W_i$ has zero components when counting with (co\nobreakdash-)orientation or each component of $W_i$ has a (co\nobreakdash-)orientation reversing automorphism.
 
-	Similarly, since $V$ is trivial, $V$ can be decomposed into unions of isomorphism classes, up to (co\nobreakdash-)orienta\-tion, of connected components, each with zero components when counting with sign or with all components having (co\nobreakdash-)orientation reversing automorphisms.
-	In particular, forming $V \sqcup W$ adds to $W$ zero components when counting with sign or components with (co\nobreakdash-)orientation reversing automorphisms, so if $V \sqcup W$ is trivial, $W$ must have already been trivial.
+	Any diffeomorphism of $W$ preserves the decomposition into $W_i$.
+	So because $W$ is trivial, either $W_i$ consists of connected components each isomorphic to some $A$  that possesses a (co\nobreakdash-)orientation reversing diffeomorphism, and so $A$ is trivial, or $W_i$ has zero components when counting with (co\nobreakdash-)orientation, in which case the components of $W_i$ can be paired up into $B \sqcup -B$ pairs.
+\end{proof}
+
+\begin{lemma}[Lipyanskiy Lemma 10]\label{L: Lip L10}
+	If $V$ is trivial and $V \sqcup W$ is trivial, then $W$ is trivial.
+\end{lemma}
+\begin{proof}
+	As in the proof of \cref{L: trivial structure}, as $V$ is trivial, it can be decomposed as $V = V_1 \sqcup V_2 \sqcup \cdots$ where each $V_i$ is a union of isomorphism classes of connected components up to (co\nobreakdash-)orienta\-tion and such that either $V_i$ has zero components when counting with sign or all components of $V_i$ have (co\nobreakdash-)orientation reversing automorphisms.
+	And similarly for $V \sqcup W$.
+	But then forming $V \sqcup W$ from $W$ contributes zero components when counting with sign or components with (co\nobreakdash-)orientation reversing automorphisms.
+	So if $V \sqcup W$ is trivial, $W$ must have already been trivial.
 \end{proof}
 
 \begin{lemma}[Lipyanskiy Lemma 11]\label{L: bd defined}
@@ -250,8 +263,8 @@ Lipyanskiy's proofs assume small image rather than small rank, but the proofs ar
 \end{lemma}
 
 \begin{proof}
-	As in the proof of \cref{L: Lip L10}, decompose $W$ as $W = W_1 \sqcup W_2 \sqcup \cdots$ and $V$ as $V = V_1 \sqcup V_2 \sqcup \cdots$.
-	As $V$ and $V \sqcup W$ are in $Q(M)$, each $V_i$ has small rank or, also as in the proof of \cref{L: Lip L10}, $V_i$ is trivial, and similarly for $V \sqcup W$, from which it follows again by counting with signs in the trivial components that each $W_i$ is either trivial or has small rank.
+	As in the proof of \cref{L: trivial structure}, decompose $W$ as $W = W_1 \sqcup W_2 \sqcup \cdots$ and $V$ as $V = V_1 \sqcup V_2 \sqcup \cdots$.
+	As $V$ and $V \sqcup W$ are in $Q(M)$, each $V_i$ has small rank or, also as in the proof of \cref{L: trivial structure}, $V_i$ is trivial, and similarly for $V \sqcup W$, from which it follows again by counting with signs in the trivial components that each $W_i$ is either trivial or has small rank.
 	By grouping terms of the decomposition we can write $W = A \sqcup B$ with $A$ trivial and $B$ of small rank.
 
 	We then have $\bd V$ and $\bd (V \sqcup W) = \bd V \sqcup \bd A \sqcup \bd B$ in $Q(M)$ by \cref{L: bd defined}, and also $\bd A$ is trivial as the boundary of a trivial manifold over $M$ by the proof of \cref{L: bd defined}.
@@ -489,7 +502,7 @@ The following algebraic property will be useful below as we consider homological
 	We give the argument for chains.
 
 	Suppose $\uW$ satisfies $n \uW = 0$ for some $n \in \Z$ with $n \neq 0$.
-	Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: Lip L10,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct of $i\neq j$.
+	Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: trivial structure,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct of $i\neq j$.
 	Then $n \uW$ is represented by taking $n$ copies of each $W_i$ if $n > 0$ or, if $n < 0$, taking $|n|$ copies of each $-W_i$.
 	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so each component of $n W_i$ is trivial or has small image.
 
@@ -890,6 +903,9 @@ By contrast, \cref{L: essential}, which we will prove momentarily, shows that es
 	Any two such maps represent the same chain or cochain (depending on whether we assign orientations or co-orientations), but depending on the choice of thread, one such example may be simply transverse to some other pre(co)chain $W$ while another such example may not be transverse to $W$.
 \end{example}
 
+
+
+\begin{comment}
 \begin{lemma}\label{L: essential}
 	Let $\uV = \uW \in C^*_\Gamma(M)$ (or $\uV = \uW \in C_*^\Gamma(M)$) be represented by $V,W \in PC^*_\Gamma(M)$ (or $PC^\Gamma_*(M)$), and suppose $V_1$ is an essential component of $V$.
 	Then the number of components isomorphic to ${V_1}$ in $V_E$ is equal to the number of such components
@@ -997,6 +1013,159 @@ By contrast, \cref{L: essential}, which we will prove momentarily, shows that es
 
 
 \begin{definition}
+We refer to the prechain or precochain $Z$ of the preceding corollary as the \textbf{minimal essential prechain or precochain of $\uW$}.
+It is constructed from the representative $W$ if $\uW$ by removing any trivial pairs of components $\mc W \sqcup - \mc W$ from $W_E$.
+\end{definition}
+
+The preceding work now implies the following:
+
+\begin{theorem}\label{T: minimal rep}
+	Suppose $\uV \in C_*^\Gamma(M)$ or $\uV \in C^*_\Gamma(M)$ can be represented by $V = V_E \sqcup V_{TI} \sqcup V_{NI}$.
+	Then $\uV$ can also be represented by $Z \sqcup V_{NI}$, where $Z$ is the minimal essential prechain or precochain of $\uV$.
+\end{theorem}
+\begin{proof}
+	By \cref{C: Q essential}, we know $V_E = Z \sqcup T$ for some trivial $T$.
+	So
+	\begin{align*}
+		Z \sqcup V_{NI} \sqcup -(V) &= 	Z \sqcup V_{NI} \sqcup - (V_E \sqcup V_{TI} \sqcup V_{NI})\\
+		&= Z \sqcup V_{NI} \sqcup - (Z \sqcup T \sqcup V_{TI} \sqcup V_{NI})\\
+		&= Z \sqcup -Z \sqcup V_{NI} \sqcup - V_{NI} \sqcup T \sqcup V_{TI}.
+	\end{align*}
+	As this consists of trivial objects and pairs, it is in $Q(M)$, which demonstrates the claim.
+\end{proof}
+\end{comment}
+
+We now proceed with the following lemma, which will have several useful corollaries illuminating the structure of geometric chains and cochains.
+These culminate in \cref{D: minimal essential,T: minimal rep}, which shows that chains and cochains have certain representatives that are in some sense minimal, although they generally fail to be unique.
+The theorem further identifies that non-uniqueness as being mainly vested in the $V_{NI}$.
+We also highlight \cref{C: essential trans}, which concerns transversality and will be useful in \cref{S: products}.
+
+\begin{lemma}\label{L: Q essential}
+	Suppose $\bigsqcup_i W_i \in Q(M)$, and let $W_i = W_{i,E} \sqcup W_{i,TI} \sqcup W_{i,NI}$ be the essential decomposition for each $W_i$.
+	Then $\bigsqcup_i W_{i,E}$ and $\bigsqcup_i W_{i,TI}$ are trivial and $\bigsqcup_i W_{i,NI} \in Q(M)$.
+\end{lemma}
+
+\begin{proof}
+	We write the proof for cochains, but the argument for chains is equivalent.
+	We know each $W_{i,TI}$ is trivial and thus in $Q(M)$, so by \cref{L: Lipy12}, $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI}) \in Q(M)$.
+	By definition, each $W_{i,NI}$ has small rank, while each component of $W_{i,E}$ does not have small rank.
+	So in any decomposition of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ into a trivial precochain and a degenerate precochain, which is possible as we know this is in $Q(M)$, the components of the $W_{i,E}$ must be part of the trivial precochain (the components of $W_{i, NI}$ may be part of either the trivial precochain or the degenerate precochain).
+	By \cref{L: trivial structure}, each connected component, say $\mc W$, appearing in one of the $W_{i,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ when counting with sign.
+	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial.
+	Otherwise, for each occurrence of $\mc W$ in some $W_{i,E}$, there is an occurrence of $-\mc W$ in some $W_{j,E}$, and $\mc W \sqcup -\mc W$ is trivial.
+	So altogether, $\bigsqcup_i W_{i,E}$ decomposes into a union of trivial precochains.
+	It follows that $\bigsqcup_i W_{i,E} \in Q(M)$ is trivial, and so again by \cref{L: Lipy12}, $\bigsqcup_i W_{i,NI} \in Q(M)$.
+\end{proof}
+
+\begin{corollary}\label{C: Q essential}
+	Let $\uW$ be an element of $C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) then there is some prechain (or precochain) $Z$ so that for any prechain (or precochain) $W$ representing $\uW$, we have $W_E = Z \sqcup T$ for some trivial $T$.
+	Furthermore, for every connected component $\mc W$ of $T$, either $\mc W$ or $-\mc W$ is a connected component of $Z$.
+\end{corollary}
+
+\begin{proof}
+	Suppose $W_1, W_2$ both represent $\uW$.
+	By \cref{L: Q essential}, $W_{1,E} \sqcup -W_{2,E}$ is trivial.
+	Let $\mc W$ be a connected component of $W_{1,E} \sqcup -W_{2,E}$.
+	Then $\mc W$ cannot itself be trivial since then it would be in $W_{1,TI}$ or $-W_{2,TI}$ instead of $W_{1,E}$ or $-W_{2,E}$.
+	So $W_{1,E} \sqcup -W_{2,E}$ must consist of pairs $\mc W \sqcup -\mc W$.
+	If there is a pair $\mc W \sqcup -\mc W$ in $W_{1,E}$, then we assign the pair to $T_1$ and similarly for $W_{2,E}$.
+	This leaves only pairs $\mc W \sqcup -\mc W$ so that $\mc W \in W_{1,E}$ and $-\mc W \in W_{2,E}$ (reversing the sign of $\mc W$ if necessary).
+	We let $Z$ be the disjoint union of the $\mc W$ in this last category, and then $W_{1,E} = Z \sqcup T_1$ and $W_{2,E} = Z \sqcup T_2$.
+	We note that for any specific $\mc W$ that appears in $T_1$ or $T_2$, it must be the case that $\mc W$ also appears in $Z$, otherwise by definition either $W_{1,E}$ or $W_{2,E}$ would only contain $\mc W$ in cancelling pairs; but in that case these components would live in $W_{1,TI}$ or $W_{2,TI}$ by definition.
+
+	We must show that this construction of $Z$ did not depend on our choice of $W_1$ and $W_2$.
+
+	Next, consider $V = Z \sqcup W_{1,NI}$.
+	From the preceding paragraph, we know that $W_{1,E} = Z \sqcup T_1$, so
+	\begin{align*}
+			W_1 \sqcup V &= Z \sqcup W_{1,NI} \sqcup W_{1,TI} T_1 \sqcup - (Z \sqcup W_{1,NI} \sqcup W_{1,TI})\\
+			&=Z \sqcup -Z \sqcup T_1 \sqcup W_{1,NI} \sqcup -W_{1,NI} \sqcup -W_{1,TI}),
+	\end{align*}
+	which is in $Q(M)$.
+	So $V$ also represents $\uW$, and $V_E = Z$, as $Z$ contains no trivial or small rank components as each component is in $W_{1,E}$.
+	But now let us compare $V$ with any other $W_3$, also representing $\uW$.
+	Proceeding as in the first paragraph of the proof, there are $Z'$, $T_1'$, and $T_2'$ such that $V_E = Z = Z' \sqcup T'_1$ and $W_{2,E} = Z' \sqcup T'_2$.
+	But by the construction of $Z$ above, $Z$ cannot contain any pair $\mc W \sqcup -\mc W$.
+	So it follows from that construction that $T'_1 = \emptyset$, so $Z' = Z$ and $W_{3,E} = Z \sqcup T'_2$.
+
+	Thus any prechain or precochain representing $\uW$ has the form $Z \sqcup T$ for the same $Z$ as initially constructed and for some trivial $T$.
+\end{proof}
+
+The following corollary is immediate from \cref{C: Q essential}.
+
+\begin{corollary}\label{L: essential}
+	Let $\uV = \uW \in C^*_\Gamma(M)$ (or $\uV = \uW \in C_*^\Gamma(M)$) be represented by $V,W \in PC^*_\Gamma(M)$ (or $PC^\Gamma_*(M)$).
+	Then $V_E \sqcup -W_E$ is trivial and if $\mc W$ is a connected component of $V_E$ then $\mc W$ or $-\mc Q$ is a connected component $W_E$.
+\end{corollary}
+
+\begin{corollary}\label{C: essential trans}
+	Suppose $\uV = \uV' \in C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) and that $V_E$ is transverse to some $r_W \colon W \to M$.
+	Then $V'_E$ is also transverse to $W$.
+\end{corollary}
+
+\begin{proof}
+	By \cref{L: essential}, any component of $V_E$ is also a component of $V'_E$ (up to sign) and vice versa.
+\end{proof}
+
+
+
+
+\begin{comment}
+
+\begin{lemma}\label{L: essential}
+	Let $\uV = \uW \in C^*_\Gamma(M)$ (or $\uV = \uW \in C_*^\Gamma(M)$) be represented by $V,W \in PC^*_\Gamma(M)$ (or $PC^\Gamma_*(M)$), and suppose $V_1$ is an essential component of $V$.
+	Then the number of components isomorphic to ${V_1}$ in $V_E$ is equal to the number of such components
+	in $W_E$, counting with sign.
+	In particular, $V_E \sqcup -W_E$ is trivial
+	and each component of $V_E \sqcup -W_E$ appears an even number of times when counting without sign.
+	Furthermore, if ${V_1}$ is an essential component of $V$ then it is also an essential component of $W$.
+\end{lemma}
+
+\begin{proof}
+	We first note that if a component $V_1$ of $V$ is in $V_E$ then every component of $V$ isomorphic to $\pm V_1$ must also be in $V_E$.
+	%If $\uV = \uW$, then .
+
+	Let $V_1$ be an essential component of $V$.
+	Then $V_1$ is also a component of $V \sqcup -W \in Q(M)$.
+	We write $V \sqcup -W = T \sqcup D$, where $T$ is trivial and $D$ degenerate.
+	As $V_1$ does not have small rank, it cannot be a component of $D$; thus $V_1$ must be a component of $T$.
+	Moreover, it cannot possess a (co-)orientation-reversing self-diffeomorphism $\rho$ such that $r_{V_1} \circ \rho = r_{V_1}$ or it would not be essential.
+	Therefore, $T$
+	must contain a number of components isomorphic to $\pm V_1$ that is $0$ when counted with sign (compare with the proof of \cref{L: Lip L10})
+	and so an even number when counted without sign.
+	Since $V_1$ is essential in $V$, all components of $V$ isomorphic to $\pm V_1$ must also be contained in $V_E$ and
+	the number of such components cannot be $0$ when counted with sign in $V$ alone or $V_1$ would not be essential.
+	So there must be isomorphic components (up to sign) in $W$, and the number of such components in $W$ also cannot be $0$ when counted
+	with sign.
+	Thus all such components in $W$ must be in $W_E$.
+
+	Altogether, we have shown that for each component $V_1$ of $V_E$, there are isomorphic components (up to sign) contained in $W_E$
+	and the total number of components isomorphic to $\pm V_1$ in $V_E\sqcup-W_E$, counted with sign, is $0$.
+	As this applies for all components of $V_E$, and similarly for all components of $W_E$, we see that $V_E \sqcup -W_E$ is trivial, and that the number of
+	components isomorphic to $V_1$, counted with sign, in $V_E$ must equal the number, counted with sign, in $W_E$.
+	It follows that $V_1$ appears an
+	even number of times in $V_E\sqcup-W_E$ when counted without sign.
+\end{proof}
+\end{comment}
+
+
+
+
+\begin{corollary}\label{L: same NI}
+	If $\uV = \uW \in C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) then
+	$\underline{ V_{NI}} = \underline{ W_{NI}}$ and
+	$\underline{\bd V_{NI}} = \underline{\bd W_{NI}}$.
+\end{corollary}
+
+\begin{proof}
+	By assumption $V\sqcup-W = (V_E \sqcup V_{TI} \sqcup V_{NI}) \sqcup -(W_E \sqcup W_{TI} \sqcup W_{NI})$ is in $Q(M)$.
+	We know $V_{TI} \sqcup -W_{TI} \in Q(M)$ as each of $V_{TI}$ and $W_{TI}$ is in $Q(M)$, and $V_E \sqcup -W_E \in Q(M)$ by \cref{L: essential}.
+	Thus $V_{NI} \sqcup -W_{NI} \in Q(M)$ by \cref{L: Lipy12}, and the second equality follows by \cref{L: bd defined}.
+\end{proof}
+
+
+
+\begin{definition}\label{D: minimal essential}
 We refer to the prechain or precochain $Z$ of the preceding corollary as the \textbf{minimal essential prechain or precochain of $\uW$}.
 It is constructed from the representative $W$ if $\uW$ by removing any trivial pairs of components $\mc W \sqcup - \mc W$ from $W_E$.
 \end{definition}

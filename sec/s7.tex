@@ -260,12 +260,12 @@ We first show in \cref{P: multicup} that the products can be made linear in one 
 	As each $W_{k,TI} \in Q^*(M)$, we have each $V_k \times_M W_{k,TI} \in Q^*(M)$ by \cref{L: pullback with Q}.
 
 	We next consider $\bigsqcup_k W_{k,E}$, which is trivial by \cref{L: Q essential}.
-	So as in the proof of \cref{L: Lip L10}, each connected component, say $\mc W$, appearing in one of the $W_{k,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_k W_{k,E}$ when counting with sign.
+	By \cref{L: trivial structure}, each connected component, say $\mc W$, appearing in one of the $W_{k,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_k W_{k,E}$ when counting with sign.
 	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial and $V_k \times \mc W$ is trivial for any $V_k$ transverse to $\mc W$ by \cref{L: pullback with Q}.
 	Otherwise, for each occurrence of $\mc W$ in some $W_{k,E}$, there is an occurrence of $-\mc W$ in some $W_{\ell,E}$.
 	By \cref{T: cochain product}, $V_k \times_M \mc W$ and $V_\ell \times_m \mc W$ represent the same cochain, so
 	$$(V_k \times_M \mc W) \sqcup -(V_\ell \times_M \mc W) = (V_k \times_M \mc W)\sqcup(V_\ell \times_M -\mc W) \in Q^*(M).$$
-	Continuing this way with pairs of oppositely-co-oriented components of $\bigsqcup_k W_{k,E}$, and noting as in the proof of \cref{L: Lip L10} that each $\mc W$ occurs only a finite number of times, we see that $\bigsqcup_k V_k \times_M W_{k,E} \in Q^*(M)$.
+	Continuing this way with pairs of oppositely-co-oriented components of $\bigsqcup_k W_{k,E}$, and noting as in the proof of \cref{L: trivial structure} that each $\mc W$ occurs only a finite number of times, we see that $\bigsqcup_k V_k \times_M W_{k,E} \in Q^*(M)$.
 
 	It remains to show that $\bigsqcup_k V_k \times_M W_{k,NI} \in Q^*(M)$.
 	By \cref{L: Q essential}, we have $\bigsqcup_k W_{k,NI} \in Q^*(M)$.
@@ -332,7 +332,7 @@ Again, this requires enough transversality for all fiber products to be defined,
 	\end{comment}
 
 	We have $\left(\bigsqcup_j W_{j}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell}\right) \in Q^*(M)$ by assumption, so by \cref{L: Q essential}, $\left(\bigsqcup_j W_{j,E}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell,E}\right)$ must be trivial.
-	Therefore, as in the proof of \cref{L: Lip L10}, each connected component, say $\mc W$, appearing in one of the $W_{j,E}$ or $W'_{\ell, E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\left(\bigsqcup_j W_{j,E}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell,E}\right)$ when counting with sign.
+	Therefore, by \cref{L: trivial structure}, each connected component, say $\mc W$, appearing in one of the $W_{j,E}$ or $W'_{\ell, E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\left(\bigsqcup_j W_{j,E}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell,E}\right)$ when counting with sign.
 	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial and so cannot appear in $W_{j,E}$ or $W'_{\ell,E}$.
 	So, for each occurrence of $\mc W$ in $\left(\bigsqcup_j W_{j,E}\right) \sqcup -\left(\bigsqcup_\ell W'_{\ell,E}\right)$, there is an occurrence of $-\mc W$.
 	Suppose $\mc W \subset W_{a,E}$ and $-\mc W \subset W_{b,E}$.
