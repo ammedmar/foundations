@@ -898,9 +898,9 @@ By contrast, \cref{L: essential}, which we will prove momentarily, shows that es
 
 	We can make this example a bit more interesting as follows.
 	Instead of the codomain being $\R^1$, we let the codomain be $\R^2$.
-	We continue to let most of the map $r_V \colon V \to \R^2$ be the projection to the $x$-axis, but let us choose a Euclidean ball in the interior of the simplex and draw its image out into a 1-dimensional ``thread'' in the plane, analogously to how one changes basepoints for an element of some $\pi_2(M)$.
+	We continue to let most of the map $r_V \colon V \to \R^2$ be the projection to the $x$-axis, but let us choose a Euclidean disk in the interior of the simplex and draw its image out into a 1-dimensional ``thread'' in the plane, analogously to how one changes basepoints for an element of some $\pi_2(M)$.
 	With some care, this can be done smoothly.
-	Any two such maps represent the same chain or cochain (depending on whether we assign orientations or co-orientations), but depending on the choice of thread, one such example may be simply transverse to some other pre(co)chain $W$ while another such example may not be transverse to $W$.
+	Any two such maps represent the same chain or cochain (depending on whether we assign orientations or co-orientations).
 \end{example}
 
 
@@ -1036,7 +1036,7 @@ The preceding work now implies the following:
 \end{comment}
 
 We now proceed with the following lemma, which will have several useful corollaries illuminating the structure of geometric chains and cochains.
-These culminate in \cref{D: minimal essential,T: minimal rep}, which shows that chains and cochains have certain representatives that are in some sense minimal, although they generally fail to be unique.
+These culminate in \cref{D: minimal essential,T: minimal rep}, which shows that chains and cochains have certain prechain and precochain representatives that are in some sense minimal, although they generally fail to be unique.
 The theorem further identifies that non-uniqueness as being mainly vested in the $V_{NI}$.
 We also highlight \cref{C: essential trans}, which concerns transversality and will be useful in \cref{S: products}.
 
@@ -1050,52 +1050,77 @@ We also highlight \cref{C: essential trans}, which concerns transversality and w
 	We know each $W_{i,TI}$ is trivial and thus in $Q(M)$, so by \cref{L: Lipy12}, $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI}) \in Q(M)$.
 	By definition, each $W_{i,NI}$ has small rank, while each component of $W_{i,E}$ does not have small rank.
 	So in any decomposition of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ into a trivial precochain and a degenerate precochain, which is possible as we know this is in $Q(M)$, the components of the $W_{i,E}$ must be part of the trivial precochain (the components of $W_{i, NI}$ may be part of either the trivial precochain or the degenerate precochain).
-	By \cref{L: trivial structure}, each connected component, say $\mc W$, appearing in one of the $W_{i,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ when counting with sign.
-	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial.
+	By \cref{L: trivial structure}, each connected component, say $\mc W$, appearing in one of the $W_{i,E}$ either has a co-orientation-reversing self-diffeomorphism or appears zero times in all of $\bigsqcup_i (W_{i,E} \sqcup W_{i,NI})$ when counting with sign.
+	If $\mc W$ has a co-orientation-reversing self-diffeomorphism, then $\mc W$ is trivial.
 	Otherwise, for each occurrence of $\mc W$ in some $W_{i,E}$, there is an occurrence of $-\mc W$ in some $W_{j,E}$, and $\mc W \sqcup -\mc W$ is trivial.
 	So altogether, $\bigsqcup_i W_{i,E}$ decomposes into a union of trivial precochains.
 	It follows that $\bigsqcup_i W_{i,E} \in Q(M)$ is trivial, and so again by \cref{L: Lipy12}, $\bigsqcup_i W_{i,NI} \in Q(M)$.
 \end{proof}
 
 \begin{corollary}\label{C: Q essential}
-	Let $\uW$ be an element of $C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) then there is some prechain (or precochain) $Z$ so that for any prechain (or precochain) $W$ representing $\uW$, we have $W_E = Z \sqcup T$ for some trivial $T$.
+	Let $\uW$ be an element of $C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$).
+	Then there is some prechain (or precochain) $Z$ so that for any prechain (or precochain) $W$ representing $\uW$, we have $W_E = Z \sqcup T$ for some trivial $T$.
 	Furthermore, for every connected component $\mc W$ of $T$, either $\mc W$ or $-\mc W$ is a connected component of $Z$.
 \end{corollary}
 
 \begin{proof}
 	Suppose $W_1, W_2$ both represent $\uW$.
-	By \cref{L: Q essential}, $W_{1,E} \sqcup -W_{2,E}$ is trivial.
+	So $W_1 \sqcup -W_2 \in Q(M)$, and by \cref{L: Q essential}, $W_{1,E} \sqcup -W_{2,E}$ is trivial.
 	Let $\mc W$ be a connected component of $W_{1,E} \sqcup -W_{2,E}$.
 	Then $\mc W$ cannot itself be trivial since then it would be in $W_{1,TI}$ or $-W_{2,TI}$ instead of $W_{1,E}$ or $-W_{2,E}$.
-	So $W_{1,E} \sqcup -W_{2,E}$ must consist of pairs $\mc W \sqcup -\mc W$.
-	If there is a pair $\mc W \sqcup -\mc W$ in $W_{1,E}$, then we assign the pair to $T_1$ and similarly for $W_{2,E}$.
-	This leaves only pairs $\mc W \sqcup -\mc W$ so that $\mc W \in W_{1,E}$ and $-\mc W \in W_{2,E}$ (reversing the sign of $\mc W$ if necessary).
+	So by \cref{L: trivial structure}, $W_{1,E} \sqcup -W_{2,E}$ must consist of pairs $\mc W \sqcup -\mc W$.
+	If there is a pair $\mc W \sqcup -\mc W$ in $W_{1,E}$, then we assign the pair to $T_1$ and similarly for $-W_{2,E}$.
+	This leaves only pairs $\mc W \sqcup -\mc W$ so that $\mc W \in W_{1,E}$ and $-\mc W \in -W_{2,E}$ (reversing the sign of $\mc W$ if necessary).
 	We let $Z$ be the disjoint union of the $\mc W$ in this last category, and then $W_{1,E} = Z \sqcup T_1$ and $W_{2,E} = Z \sqcup T_2$.
-	We note that for any specific $\mc W$ that appears in $T_1$ or $T_2$, it must be the case that $\mc W$ also appears in $Z$, otherwise by definition either $W_{1,E}$ or $W_{2,E}$ would only contain $\mc W$ in cancelling pairs; but in that case these components would live in $W_{1,TI}$ or $W_{2,TI}$ by definition.
+	We note that for any specific $\mc W$ that appears in $T_1$ or $T_2$, it must be the case that $\mc W$ also appears in $Z$, otherwise by definition either $W_{1,E}$ or $W_{2,E}$ would only contain $\mc W$ in cancelling pairs; but in that case these components would live in $W_{1,TI}$ or $W_{2,TI}$ by definition, not $W_{1,E}$ or $W_{2,E}$.
 
-	We must show that this construction of $Z$ did not depend on our choice of $W_1$ and $W_2$.
+	We must show that this construction of $Z$ did not depend on our choices of $W_1$ and $W_2$.
 
 	Next, consider $V = Z \sqcup W_{1,NI}$.
 	From the preceding paragraph, we know that $W_{1,E} = Z \sqcup T_1$, so
 	\begin{align*}
-			W_1 \sqcup V &= Z \sqcup W_{1,NI} \sqcup W_{1,TI} T_1 \sqcup - (Z \sqcup W_{1,NI} \sqcup W_{1,TI})\\
-			&=Z \sqcup -Z \sqcup T_1 \sqcup W_{1,NI} \sqcup -W_{1,NI} \sqcup -W_{1,TI}),
+			W_1 \sqcup -V &= Z \sqcup T_1 \sqcup W_{1,NI} \sqcup W_{1,TI} \sqcup - (Z \sqcup W_{1,NI})\\
+			&=Z \sqcup -Z \sqcup T_1 \sqcup W_{1,NI} \sqcup -W_{1,NI} \sqcup W_{1,TI},
 	\end{align*}
 	which is in $Q(M)$.
-	So $V$ also represents $\uW$, and $V_E = Z$, as $Z$ contains no trivial or small rank components as each component is in $W_{1,E}$.
+	So $V$ also represents $\uW$, and $V_E = Z$, as $Z$ contains no trivial or small rank components or cancelling pairs.
 	But now let us compare $V$ with any other $W_3$, also representing $\uW$.
 	Proceeding as in the first paragraph of the proof, there are $Z'$, $T_1'$, and $T_2'$ such that $V_E = Z = Z' \sqcup T'_1$ and $W_{2,E} = Z' \sqcup T'_2$.
 	But by the construction of $Z$ above, $Z$ cannot contain any pair $\mc W \sqcup -\mc W$.
-	So it follows from that construction that $T'_1 = \emptyset$, so $Z' = Z$ and $W_{3,E} = Z \sqcup T'_2$.
+	So it follows from that construction that $T'_1 = \emptyset$, and so $Z' = Z$ and $W_{3,E} = Z \sqcup T'_2$.
 
 	Thus any prechain or precochain representing $\uW$ has the form $Z \sqcup T$ for the same $Z$ as initially constructed and for some trivial $T$.
 \end{proof}
 
-The following corollary is immediate from \cref{C: Q essential}.
+
+\begin{definition}\label{D: minimal essential}
+We refer to the prechain or precochain $Z$ of \cref{C: Q essential} as the \textbf{minimal essential prechain or precochain of $\uW$}.
+It is constructed from the representative $W$ of $\uW$ by starting with $W_E$ and removing any trivial pairs of components $\mc W \sqcup - \mc W$.
+\end{definition}
+
+The preceding work now implies the following:
+
+\begin{theorem}\label{T: minimal rep}
+	Suppose $\uW \in C_*^\Gamma(M)$ or $\uW \in C^*_\Gamma(M)$ can be represented by $W = W_E \sqcup W_{TI} \sqcup W_{NI}$.
+	Then $\uW$ can also be represented by $Z \sqcup W_{NI}$, where $Z$ is the minimal essential prechain or precochain of $\uW$.
+\end{theorem}
+\begin{proof}
+	By \cref{C: Q essential}, we know $W_E = Z \sqcup T$ for some trivial $T$.
+	So
+	\begin{align*}
+		Z \sqcup W_{NI} \sqcup -(W) &= 	Z \sqcup W_{NI} \sqcup - (W_E \sqcup W_{TI} \sqcup W_{NI})\\
+		&= Z \sqcup W_{NI} \sqcup - (Z \sqcup T \sqcup W_{TI} \sqcup W_{NI})\\
+		&= Z \sqcup -Z \sqcup W_{NI} \sqcup - W_{NI} \sqcup T \sqcup W_{TI}.
+	\end{align*}
+	As this consists of trivial objects and pairs, it is in $Q(M)$, which demonstrates the claim.
+\end{proof}
+
+The following further corollaries will be useful below.
+The first is an immediate consequence of \cref{C: Q essential}.
 
 \begin{corollary}\label{L: essential}
 	Let $\uV = \uW \in C^*_\Gamma(M)$ (or $\uV = \uW \in C_*^\Gamma(M)$) be represented by $V,W \in PC^*_\Gamma(M)$ (or $PC^\Gamma_*(M)$).
-	Then $V_E \sqcup -W_E$ is trivial and if $\mc W$ is a connected component of $V_E$ then $\mc W$ or $-\mc Q$ is a connected component $W_E$.
+	Then $V_E \sqcup -W_E$ is trivial and if $\mc W$ is a connected component of $V_E$ then $\mc W$ or $-\mc W$ is a connected component $W_E$.
 \end{corollary}
 
 \begin{corollary}\label{C: essential trans}
@@ -1161,30 +1186,6 @@ The following corollary is immediate from \cref{C: Q essential}.
 	By assumption $V\sqcup-W = (V_E \sqcup V_{TI} \sqcup V_{NI}) \sqcup -(W_E \sqcup W_{TI} \sqcup W_{NI})$ is in $Q(M)$.
 	We know $V_{TI} \sqcup -W_{TI} \in Q(M)$ as each of $V_{TI}$ and $W_{TI}$ is in $Q(M)$, and $V_E \sqcup -W_E \in Q(M)$ by \cref{L: essential}.
 	Thus $V_{NI} \sqcup -W_{NI} \in Q(M)$ by \cref{L: Lipy12}, and the second equality follows by \cref{L: bd defined}.
-\end{proof}
-
-
-
-\begin{definition}\label{D: minimal essential}
-We refer to the prechain or precochain $Z$ of the preceding corollary as the \textbf{minimal essential prechain or precochain of $\uW$}.
-It is constructed from the representative $W$ if $\uW$ by removing any trivial pairs of components $\mc W \sqcup - \mc W$ from $W_E$.
-\end{definition}
-
-The preceding work now implies the following:
-
-\begin{theorem}\label{T: minimal rep}
-	Suppose $\uV \in C_*^\Gamma(M)$ or $\uV \in C^*_\Gamma(M)$ can be represented by $V = V_E \sqcup V_{TI} \sqcup V_{NI}$.
-	Then $\uV$ can also be represented by $Z \sqcup V_{NI}$, where $Z$ is the minimal essential prechain or precochain of $\uV$.
-\end{theorem}
-\begin{proof}
-	By \cref{C: Q essential}, we know $V_E = Z \sqcup T$ for some trivial $T$.
-	So
-	\begin{align*}
-		Z \sqcup V_{NI} \sqcup -(V) &= 	Z \sqcup V_{NI} \sqcup - (V_E \sqcup V_{TI} \sqcup V_{NI})\\
-		&= Z \sqcup V_{NI} \sqcup - (Z \sqcup T \sqcup V_{TI} \sqcup V_{NI})\\
-		&= Z \sqcup -Z \sqcup V_{NI} \sqcup - V_{NI} \sqcup T \sqcup V_{TI}.
-	\end{align*}
-	As this consists of trivial objects and pairs, it is in $Q(M)$, which demonstrates the claim.
 \end{proof}
 
 
