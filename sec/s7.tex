@@ -124,28 +124,38 @@ In \cref{S: usual cup}, we show that the cup product in geometric cohomology is 
 
 \end{comment}
 
+
+
 \subsection{Chain- and cochain-level products and transversality}\label{S: chain products}
 
 In this section, we develop chain- and cochain-level products.
-We begin in \cref{S: simple products} with the special case of ``simple products,'' in which two chains or cochains can be represented by transverse prechains or precochains, in which case we can take the fiber product.
-To show that this construction on (co)chains is independent of choices, we utilize the essential decompositions of \cref{S: essential decomp}.
-Building on this case, we define a more general notion of transversality for chains and cochains in \cref{S: trans products}, which allows us to construct multilinear pairings.
+We begin in \cref{S: simple products} with the case of ``simple products,'' in which two chains or cochains can be represented by transverse prechains or precochains, in which case we can take the fiber product.
+Building on this case, we then define a more general notion of transversality for chains and cochains that allows for some amount of bilinear behavior.
 In \cref{S: product pullbacks}, we consider pullbacks of our transverse products, and in \cref{S: Kronecker} we obtain a Kronecker pairing for geometric chains and cochains.
 Finally, in \cref{S: exterior chain products}, we define exterior products of chains and cochains.
 
 
-\subsubsection{Simple transversality and products}\label{S: simple products}
-We begin by defining a simple version of transversality for geometric chains and cochains and the resulting (co)chain-level cup, cap, and intersection products.
-Geometric chains and (co)chains $\uV$ and $\uW$ will be called \textbf{simply transverse} (see \cref{D: cochain trans}) if they possess transverse representing pre(co)chains.
-This allows us to define cup, cap, and intersection products of simply transverse chains and cochains via their fiber products.
+\subsubsection{Transversality and products}\label{S: simple products}
+In this section we define a notion of transversality of geometric chains and cochains, which allows us to define (co)chain-level cup, cap, and intersection products.
 
-After a thorough study of this case, we will consider some more complex situations in later subsections.
-For example, one might consider the case where $\uV$ and $\uW$ can be represented by disjoint unions of pre(co)chains $V = \bigsqcup V_i$ and $W = \bigsqcup W_j$ such that the pairs $(V_i,W_j)$ are not necessarily transverse but such that for each such pair there are alternative representatives, say $(V'_{ij},W'_{ji})$, depending on both $i$ and $j$, with $\underline{V_i} = \underline{V'_{ij}}$, $\underline{W_j} = \underline{W'_{ji}}$, and $V'_{ij}$ transverse to $W'_{ji}$.
-Then one would like to have products of $\uV$ and $\uW$ using these representatives, but we must show independence of the choices involved.
-Such examples, and even more general ones, are critical for obtaining a version of multilinearity for our partially-defined products.
-But we begin with the more basic scenario.
+We begin in \cref{D: cochain trans} with the naive case in which our (co)chains possess transverse representing pre(co)chains.
+We call such (co)chains \textbf{simply transverse} (see \cref{D: cochain trans}), and this is sufficient to define cup, cap, and intersection products via fiber products.
+However, as we will discuss below, this definition is insufficient to obtain a product that behaves bilinearly.
+To obtain this property, we introduce the more general concept of compound transversality in \cref{D: multicup}.
+This allows for bilinear behavior of products of simply transverse (co)chains, although compound transversality itself does not seem to provide a satisfactory bilinear product.
+The key problem has to do with demonstrating the existence of products that are independent of choices of representing pre(co)chains.
+We will discuss the difficulties further after establishing some definitions and results.
+
+\begin{comment}
+	For example, one might consider the case where $\uV$ and $\uW$ can be represented by disjoint unions of pre(co)chains $V = \bigsqcup V_i$ and $W = \bigsqcup W_j$ such that the pairs $(V_i,W_j)$ are not necessarily transverse but such that for each such pair there are alternative representatives, say $(V'_{ij},W'_{ji})$, depending on both $i$ and $j$, with $\underline{V_i} = \underline{V'_{ij}}$, $\underline{W_j} = \underline{W'_{ji}}$, and $V'_{ij}$ transverse to $W'_{ji}$.
+	Then one would like to have products of $\uV$ and $\uW$ using these representatives.
+\end{comment}
+
+
+We begin with simple transversality.
 
 \begin{definition}\label{D: cochain trans}
+	Let $M$ be a manifold without boundary.
 	We say that $\uV, \uW \in C^*_{\Gamma}(M)$ are \textbf{simply transverse} as geometric cochains if there exist representatives $V,W \in PC^*_\Gamma(M)$ such that $V$ and $W$ are transverse as manifolds with corners mapping to $M$.
 	We call the data of such a pair $(V,W)$ a \textbf{simple transverse representation} for the pair $(\uV,\uW)$.
 
@@ -153,6 +163,7 @@ But we begin with the more basic scenario.
 \end{definition}
 
 \begin{definition}\label{D: cochain products}
+	Let $M$ be a manifold without boundary.
 	For $\uV, \uW \in C^*_{\Gamma}(M)$ simply transverse, we define the \textbf{cup product} $\uV \uplus \uW \in C^*_\Gamma(M)$ to be the geometric cochain represented by the fiber product $V \times_M W$ for some simple transverse representation $(V,W)$ of $(\uV,\uW)$.
 
 	Analogously, if $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(M)$ are simply transverse, we define the \textbf{cap product} $\uV \nplus \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
@@ -162,148 +173,185 @@ But we begin with the more basic scenario.
 	In each context, the given product $V \times_M W$ is as defined in \cref{D: PC products}, as $V$ and $W$ are transverse by assumption.
 \end{definition}
 
-The first main result of this section is to show that these products are well defined as operations on simply transverse geometric chains or cochains, independent of the prechain or precochain representatives chosen.
+\begin{comment}
+	It will follow from \cref{T: multicup}, below, that these products are well defined, independent of the choices of representing chains and cochains.
+	This is not immediately clear, as a geometric (co)chain $\uV$ has in general an infinite number of representatives in $PC(M)$ that may or may not be transverse to any other given element of $PC(M)$; see \cref{E: bad transversality}.
+	Rather than stop to prove well-definedness in the simple transversality case, we proceed toward our more general definition of transversality.
+\end{comment}
+
+The first main result of this section is that these products are well defined as operations on simply transverse geometric chains or cochains, independent of the prechain or precochain representatives chosen.
 This is not immediately clear, as a geometric (co)chain $\uV$ has in general an infinite number of representatives in $PC(M)$ that may or may not be transverse to any other given element of $PC(M)$; see \cref{E: bad transversality}.
-To proceed, we utilize the essential decompositions of prechains and precochains developed in \cref{S: essential decomp} to demonstrate that products of simply transverse chains and cochains are well defined.
 
 \begin{theorem}\label{T: cochain product}
 	Given simply transverse $\uV$ and $\uW$, the cup, cap, or intersection products of \cref{D: cochain products} are well defined, independent of choice of simple transverse representation.
 \end{theorem}
 
-\begin{proof}
-	For simplicity, we just give the proof for $\uplus$; the other arguments are identical.
-	We also write $V+W$ and $V-W$ rather than $V \sqcup W$ and $V\sqcup-W$ to make the following easier to read.
 
-	Let $\uV,\uW$ be simply transverse geometric cochains with simple transverse representation $(V, W)$ as in \cref{D: cochain trans}.
-	Similarly, let $(V',W')$ be another simple transverse representation.
-	By assumption, $V-V', W-W' \in Q^*(M)$.
-	For each of these precochains, we have their essential decompositions $V = V_E \sqcup V_{TI} \sqcup V_{NI}$, etc.
+Rather than prove this theorem here, we first provide some further discussion and development.
+\cref{T: cochain product} will then follow directly as a special case of \cref{T: multicup}, below.
 
-	We must show that $V \times_M W$ and $V' \times_M W'$ represent the same element of $C^*_\Gamma(M)$, i.e.\ that
-	$$[(V_E+V_{TI}+V_{NI}) \times_M (W_E+W_{TI}+W_{NI})] - [(V'_E+V'_{TI}+V'_{NI}) \times_M (W'_E+W'_{TI}+W'_{NI})]$$
-	is in $Q^*(M)$.
-	Writing out, we have
-	\begin{align*}(V_E+V_{TI}+V_{NI}) \times_M (W_E+W_{TI}+W_{NI}) = &V_E \times_M W_E+V_E \times_M W_{NI}+V_{NI} \times_M W_E+V_{NI} \times_M W_{NI}\\
-		&+V_{TI} \times_M (W_E+W_{TI}+W_{NI})+(V_E+V_{NI}) \times_M W_{TI}.
-	\end{align*}
-	As $V_{TI},W_{TI} \in Q^*(M)$, the terms on the second line are all in $Q^*(M)$ by \cref{L: pullback with Q}.
-	A similar decomposition holds for the primed versions, so we must show that
-	\begin{equation}\label{E: intersect}
-		(V_E \times_M W_E+V_E \times_M W_{NI}+V_{NI} \times_M W_E+V_{NI} \times_M W_{NI})-(V'_E \times_M W'_E+V'_E \times_M W'_{NI}+V'_{NI} \times_M W'_E+V'_{NI} \times_M W'_{NI})
-	\end{equation}
-	is in $Q^*(M)$.
+\begin{comment}
 
-	From \cref{C: essential trans} we know that if $V_E$ is transverse to $W$, and in particular $W_E$, then so is $V'_E$, and so we can form $V'_E \times_M W$.
-	Thus, taking the union of $V_E \times_M W_E -V'_E \times_M W'_E$ with the trivial precochain $-V'_E \times_M W_E+V'_E \times_M W_E$, we have
-	\begin{equation*}
-		V_E \times_M W_E-V'_E \times_M W_E+V'_E \times_M W_E-V'_E \times_M W'_E = (V_E-V'_E) \times_M W_E+V' \times_M (W_E-W'_E).
-	\end{equation*}
-	By \cref{L: essential}, $V_E-V'_E$ and $W_E-W'_E$ are trivial, and the transverse intersection of any cochain with a trivial cochain is in $Q^*(M)$ by \cref{L: pullback with Q}.
-	Thus $V_E \times_M W_E -V'_E \times_M W'_E \in Q^*(M)$ by \cref{L: Lipy12} (which says that if we take the disjoint union of a precochain with an element of $Q^*(M)$ and obtain an element of $Q^*(M)$ then our original precochain is in $Q^*(M)$).
+	\begin{proof}
+		For simplicity, we just give the proof for $\uplus$; the other arguments are identical.
+		We also write $V+W$ and $V-W$ rather than $V \sqcup W$ and $V\sqcup-W$ to make the following easier to read.
 
-	The remaining terms of \eqref{E: intersect} each involve an element of small rank and so are of small rank by \cref{L: pullback with Q}.
-	So to see that what's left is an element of $Q^*(M)$, it suffices to show that the boundary of the remaining terms consists of cochains that are trivial or of small rank.
-	By \cref{leibniz}, this boundary is
-	\begin{multline}\label{E: boundary}
-		(\bd V_E) \times_M W_{NI}+(-1)^{m-v}V_E \times_M \bd W_{NI}+
-		(\bd V_{NI}) \times_M W_E+(-1)^{m-v}V_{NI} \times_M \bd W_E\\
-		+(\bd V_{NI}) \times_M W_{NI}+(-1)^{m-v}V_{NI} \times_M \bd W_{NI}
-		-(\bd V'_E) \times_M W'_{NI}-(-1)^{m-v}V'_E \times_M \bd W'_{NI}\\
-		-(\bd V'_{NI}) \times_M W'_E-(-1)^{m-v}V'_{NI} \times_M \bd W'_E- (\bd V'_{NI}) \times_M W'_{NI}-(-1)^{m-v}V'_{NI} \times_M \bd W'_{NI}.
-	\end{multline}
-	Every term except for the pairs $(-1)^{m-v}V_E \times_M \bd W_{NI}-(-1)^{m-v}V'_E \times_M \bd W'_{NI}$ and $(\bd V_{NI}) \times_M W_E-(\bd V'_{NI}) \times_M W'_E$ involves a fiber product with an element of small rank and so is of small rank by \cref{L: pullback with Q}.
+		Let $\uV,\uW$ be simply transverse geometric cochains with simple transverse representation $(V, W)$ as in \cref{D: cochain trans}.
+		Similarly, let $(V',W')$ be another simple transverse representation.
+		By assumption, $V-V', W-W' \in Q^*(M)$.
+		For each of these precochains, we have their essential decompositions $V = V_E \sqcup V_{TI} \sqcup V_{NI}$, etc.
 
-	For $V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI}$, we recall that the data of two maps being transverse includes the assumption of transversality on boundaries.
-	So as in our argument employed above to show $V_E \times_M W_E -V'_E \times_M W'_E$ is trivial, we know that $V_E$ and $V'_E$ must each be transverse to both $\bd W_{NI}$ and $\bd W'_{NI}$ by \cref{C: essential trans}.
-	So by an analogous computation we arrive at
-	\begin{equation*}
-		V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI} + V'_E \times_M \bd W_{NI} - V'_E \times_M \bd W_{NI} = (V_E- V'_E) \times_M \bd W_{NI}+ V'_E \times_M (\bd W_{NI}-\bd W'_{NI}).
-	\end{equation*}
-	We then have that $V_E - V'_E$ is trivial by \cref{L: essential}, and $\bd W_{NI}-\bd W'_{NI}$ is in $Q^*(M)$ by \cref{L: same NI}.
-	Thus these fiber products are in $Q^*(M)$ by \cref{L: pullback with Q}, and so $V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI} \in Q^*(M)$ by \cref{L: Lipy12}.
-	By an analogous argument $(\bd V_{NI}) \times_M W_E-(\bd V'_{NI}) \times_M W'_E \in Q^*(M)$.
-	In particular, these can be written as disjoint unions of components that are trivial or of small rank.
+		We must show that $V \times_M W$ and $V' \times_M W'$ represent the same element of $C^*_\Gamma(M)$, i.e.\ that
+		$$[(V_E+V_{TI}+V_{NI}) \times_M (W_E+W_{TI}+W_{NI})] - [(V'_E+V'_{TI}+V'_{NI}) \times_M (W'_E+W'_{TI}+W'_{NI})]$$
+		is in $Q^*(M)$.
+		Writing out, we have
+		\begin{align*}(V_E+V_{TI}+V_{NI}) \times_M (W_E+W_{TI}+W_{NI}) = &V_E \times_M W_E+V_E \times_M W_{NI}+V_{NI} \times_M W_E+V_{NI} \times_M W_{NI}\\
+			&+V_{TI} \times_M (W_E+W_{TI}+W_{NI})+(V_E+V_{NI}) \times_M W_{TI}.
+		\end{align*}
+		As $V_{TI},W_{TI} \in Q^*(M)$, the terms on the second line are all in $Q^*(M)$ by \cref{L: pullback with Q}.
+		A similar decomposition holds for the primed versions, so we must show that
+		\begin{equation}\label{E: intersect}
+			(V_E \times_M W_E+V_E \times_M W_{NI}+V_{NI} \times_M W_E+V_{NI} \times_M W_{NI})-(V'_E \times_M W'_E+V'_E \times_M W'_{NI}+V'_{NI} \times_M W'_E+V'_{NI} \times_M W'_{NI})
+		\end{equation}
+		is in $Q^*(M)$.
 
-	Therefore, the boundary \eqref{E: boundary} can be completely decomposed into cochains that are trivial or have small rank,
-	and this completes our proof that $V \times_M W-V' \times_M W' \in Q^*(M)$.
-\end{proof}
+		From \cref{C: essential trans} we know that if $V_E$ is transverse to $W$, and in particular $W_E$, then so is $V'_E$, and so we can form $V'_E \times_M W$.
+		Thus, taking the union of $V_E \times_M W_E -V'_E \times_M W'_E$ with the trivial precochain $-V'_E \times_M W_E+V'_E \times_M W_E$, we have
+		\begin{equation*}
+			V_E \times_M W_E-V'_E \times_M W_E+V'_E \times_M W_E-V'_E \times_M W'_E = (V_E-V'_E) \times_M W_E+V' \times_M (W_E-W'_E).
+		\end{equation*}
+		By \cref{L: essential}, $V_E-V'_E$ and $W_E-W'_E$ are trivial, and the transverse intersection of any cochain with a trivial cochain is in $Q^*(M)$ by \cref{L: pullback with Q}.
+		Thus $V_E \times_M W_E -V'_E \times_M W'_E \in Q^*(M)$ by \cref{L: Lipy12} (which says that if we take the disjoint union of a precochain with an element of $Q^*(M)$ and obtain an element of $Q^*(M)$ then our original precochain is in $Q^*(M)$).
 
-\subsubsection{Chain and cochains transversality and products}\label{S: trans products}
+		The remaining terms of \eqref{E: intersect} each involve an element of small rank and so are of small rank by \cref{L: pullback with Q}.
+		So to see that what's left is an element of $Q^*(M)$, it suffices to show that the boundary of the remaining terms consists of cochains that are trivial or of small rank.
+		By \cref{leibniz}, this boundary is
+		\begin{multline}\label{E: boundary}
+			(\bd V_E) \times_M W_{NI}+(-1)^{m-v}V_E \times_M \bd W_{NI}+
+			(\bd V_{NI}) \times_M W_E+(-1)^{m-v}V_{NI} \times_M \bd W_E\\
+			+(\bd V_{NI}) \times_M W_{NI}+(-1)^{m-v}V_{NI} \times_M \bd W_{NI}
+			-(\bd V'_E) \times_M W'_{NI}-(-1)^{m-v}V'_E \times_M \bd W'_{NI}\\
+			-(\bd V'_{NI}) \times_M W'_E-(-1)^{m-v}V'_{NI} \times_M \bd W'_E- (\bd V'_{NI}) \times_M W'_{NI}-(-1)^{m-v}V'_{NI} \times_M \bd W'_{NI}.
+		\end{multline}
+		Every term except for the pairs $(-1)^{m-v}V_E \times_M \bd W_{NI}-(-1)^{m-v}V'_E \times_M \bd W'_{NI}$ and $(\bd V_{NI}) \times_M W_E-(\bd V'_{NI}) \times_M W'_E$ involves a fiber product with an element of small rank and so is of small rank by \cref{L: pullback with Q}.
 
-Now, suppose a geometric cochain $\uV$ is simply transverse to two other geometric cochains of the same degree, $\underline{W_1}$ and $\underline{W_2}$.
+		For $V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI}$, we recall that the data of two maps being transverse includes the assumption of transversality on boundaries.
+		So as in our argument employed above to show $V_E \times_M W_E -V'_E \times_M W'_E$ is trivial, we know that $V_E$ and $V'_E$ must each be transverse to both $\bd W_{NI}$ and $\bd W'_{NI}$ by \cref{C: essential trans}.
+		So by an analogous computation we arrive at
+		\begin{equation*}
+			V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI} + V'_E \times_M \bd W_{NI} - V'_E \times_M \bd W_{NI} = (V_E- V'_E) \times_M \bd W_{NI}+ V'_E \times_M (\bd W_{NI}-\bd W'_{NI}).
+		\end{equation*}
+		We then have that $V_E - V'_E$ is trivial by \cref{L: essential}, and $\bd W_{NI}-\bd W'_{NI}$ is in $Q^*(M)$ by \cref{L: same NI}.
+		Thus these fiber products are in $Q^*(M)$ by \cref{L: pullback with Q}, and so $V_E \times_M \bd W_{NI}-V'_E \times_M \bd W'_{NI} \in Q^*(M)$ by \cref{L: Lipy12}.
+		By an analogous argument $(\bd V_{NI}) \times_M W_E-(\bd V'_{NI}) \times_M W'_E \in Q^*(M)$.
+		In particular, these can be written as disjoint unions of components that are trivial or of small rank.
+
+		Therefore, the boundary \eqref{E: boundary} can be completely decomposed into cochains that are trivial or have small rank,
+		and this completes our proof that $V \times_M W-V' \times_M W' \in Q^*(M)$.
+	\end{proof}
+
+\end{comment}
+
+\begin{comment}
+	\subsubsection{Chain and cochains transversality and products}\label{S: trans products}
+\end{comment}
+
+To motivate our next step, suppose now a geometric cochain $\uV$ is simply transverse to two other geometric cochains of the same degree, $\underline{W_1}$ and $\underline{W_2}$.
 This means we can form $\uV\uplus \underline{W_1}+\uV\uplus \underline{W_2}$, and we would like for this to equal $\uV\uplus (\underline{W_1} + \underline{W_2})$.
-The problem is that it is not apparent from the definitions whether or not $\uV$ is simply transverse to $\uW_1+\uW_2$ as the transversality of the pairs $(\uV,\underline{W_1})$ and $(\uV,\underline{W_2})$ might be realize by representatives $V_1,V_2, W_1,W_2 \in PC^*_\Gamma(M)$ with $\underline{V_1} = \underline{V_2}$ so that $V_1$ and $W_1$ are transverse as spaces mapping to $M$ and $V_2$ and $W_2$ are transverse as spaces mapping to $M$, but neither $V_1$ nor $V_2$ is transverse to $W_1 \sqcup W_2$.
+The problem is that it is not apparent from the definitions whether or not $\uV$ is simply transverse to $\uW_1+\uW_2$, as the simple transversality of the pairs $(\uV,\underline{W_1})$ and $(\uV,\underline{W_2})$ might be realized by representatives $V_1,V_2, W_1,W_2 \in PC^*_\Gamma(M)$ with $\underline{V_1} = \underline{V_2}$ so that $V_1$ and $W_1$ are transverse as spaces mapping to $M$ and $V_2$ and $W_2$ are transverse as spaces mapping to $M$, but neither $V_1$ nor $V_2$ is transverse to $W_1 \sqcup W_2$.
 It is also not apparent how to find a $V_3$ representing $\uV$ that is transverse to both $W_1$ and $W_2$.
 The simplest solution would then seem to be to just define
-$\uV\uplus (\underline{W_1}+\underline{W_2})$ to be represented by $(V_1 \times_M W_1) \sqcup (V_2 \times_M W_2)$.
-To do so, however, we must make sure that such a construction is independent of the choices involved.
-This is what we turn to now.
-We first show in \cref{P: multicup} that the products can be made linear in one variable as just described, and then we use that to provide a more general multilinearlity in \cref{T: multicup}.
+$\uV\uplus (\underline{W_1}+\underline{W_2})$ to be represented by $(V_1 \times_M W_1) \sqcup (V_2 \times_M W_2)$, so long as this is well defined.
+The next definition builds on this idea.
+
+\begin{comment}
+	To do so, however, we must make sure that such a construction is independent of the choices involved.
+	This is what we turn to now.
+	We first show in \cref{P: multicup} that the products can be made linear in one variable as just described, and then we use that to provide a more general multilinearlity in \cref{T: multicup}.
 
 
-\begin{proposition}\label{P: multicup}
-	Suppose $\sum_i \underline{W_i} = \sum_j \underline{W'_j} \in C_\Gamma^a(M)$ and that all $\underline{W_i}$ and $\underline{W_j'}$ are simply transverse to $\uV \in C_\Gamma^b(M)$.
-	Then $$\sum_i \uV \uplus \underline{W_i} = \sum_j \uV\uplus \underline{W'_j}.$$
-	Analogous statements hold with the sum in the first factor and for the cap and intersection products.
-\end{proposition}
+	\begin{proposition}\label{P: multicup}
+		Suppose $\sum_i \underline{W_i} = \sum_j \underline{W'_j} \in C_\Gamma^a(M)$ and that all $\underline{W_i}$ and $\underline{W_j'}$ are simply transverse to $\uV \in C_\Gamma^b(M)$.
+		Then $$\sum_i \uV \uplus \underline{W_i} = \sum_j \uV\uplus \underline{W'_j}.$$
+		Analogous statements hold with the sum in the first factor and for the cap and intersection products.
+	\end{proposition}
 
-\begin{proof}
-	We provide the proof for the cup product, the other arguments being analogous.
+	\begin{proof}
+		We provide the proof for the cup product, the other arguments being analogous.
 
-	We suppose each $\underline{W_i}$ represented by $W_i \in PC^*_\Gamma(M)$, and similarly for each $\underline{W'_j}$.
-	Let $V_i$ and $V_j'$ all be representatives of $\uV$ with $V_i$ transverse to $W_i$ and $V'_j$ transverse to $W'_j$.
-	We must show that $\bigsqcup_i V_i \times_M W_i$ and $\bigsqcup_j V'_j \times_M W'_j$ represent the same cochain, i.e.\ that $$\left(\bigsqcup_i V_i \times_M W_i\right) \sqcup \left(-\bigsqcup_j V'_j \times_M W'_j\right) \in Q^*(M).$$
-	As $\bigsqcup_i W_i$ and $\bigsqcup_j W'_j$ represent the same geometric cochain, we have $\left(\bigsqcup_i W_i\right) \sqcup - \left(\bigsqcup_j W'_j \right) \in Q^*(M)$, so it suffices to prove the following:
-	If $\bigsqcup_k W_k \in Q^*(M)$, $V_k$ is transverse to $W_k$ for all $k$, and all $V_k$ represent the same geometric cochain, then $$\bigsqcup_k V_k \times_M W_k \in Q^*(M).$$
+		We suppose each $\underline{W_i}$ represented by $W_i \in PC^*_\Gamma(M)$, and similarly for each $\underline{W'_j}$.
+		Let $V_i$ and $V_j'$ all be representatives of $\uV$ with $V_i$ transverse to $W_i$ and $V'_j$ transverse to $W'_j$.
+		We must show that $\bigsqcup_i V_i \times_M W_i$ and $\bigsqcup_j V'_j \times_M W'_j$ represent the same cochain, i.e.\ that $$\left(\bigsqcup_i V_i \times_M W_i\right) \sqcup \left(-\bigsqcup_j V'_j \times_M W'_j\right) \in Q^*(M).$$
+		As $\bigsqcup_i W_i$ and $\bigsqcup_j W'_j$ represent the same geometric cochain, we have $\left(\bigsqcup_i W_i\right) \sqcup - \left(\bigsqcup_j W'_j \right) \in Q^*(M)$, so it suffices to prove the following:
+		If $\bigsqcup_k W_k \in Q^*(M)$, $V_k$ is transverse to $W_k$ for all $k$, and all $V_k$ represent the same geometric cochain, then $$\bigsqcup_k V_k \times_M W_k \in Q^*(M).$$
 
-	For each $W_k$, we consider its essential decomposition $$W_k = W_{k,E} \sqcup W_{k,TI} \sqcup W_{k,NI}.$$
-	As each $W_{k,TI} \in Q^*(M)$, we have each $V_k \times_M W_{k,TI} \in Q^*(M)$ by \cref{L: pullback with Q}.
+		For each $W_k$, we consider its essential decomposition $$W_k = W_{k,E} \sqcup W_{k,TI} \sqcup W_{k,NI}.$$
+		As each $W_{k,TI} \in Q^*(M)$, we have each $V_k \times_M W_{k,TI} \in Q^*(M)$ by \cref{L: pullback with Q}.
 
-	We next consider $\bigsqcup_k W_{k,E}$, which is trivial by \cref{L: Q essential}.
-	By \cref{L: trivial structure}, each connected component, say $\mc W$, appearing in one of the $W_{k,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_k W_{k,E}$ when counting with sign.
-	If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial and $V_k \times \mc W$ is trivial for any $V_k$ transverse to $\mc W$ by \cref{L: pullback with Q}.
-	Otherwise, for each occurrence of $\mc W$ in some $W_{k,E}$, there is an occurrence of $-\mc W$ in some $W_{\ell,E}$.
-	By \cref{T: cochain product}, $V_k \times_M \mc W$ and $V_\ell \times_m \mc W$ represent the same cochain, so
-	$$(V_k \times_M \mc W) \sqcup -(V_\ell \times_M \mc W) = (V_k \times_M \mc W)\sqcup(V_\ell \times_M -\mc W) \in Q^*(M).$$
-	Continuing this way with pairs of oppositely-co-oriented components of $\bigsqcup_k W_{k,E}$, and noting as in the proof of \cref{L: trivial structure} that each $\mc W$ occurs only a finite number of times, we see that $\bigsqcup_k V_k \times_M W_{k,E} \in Q^*(M)$.
+		We next consider $\bigsqcup_k W_{k,E}$, which is trivial by \cref{L: Q essential}.
+		By \cref{L: trivial structure}, each connected component, say $\mc W$, appearing in one of the $W_{k,E}$ either has a co-orientation-reversing automorphism or appears zero times in all of $\bigsqcup_k W_{k,E}$ when counting with sign.
+		If $\mc W$ has a co-orientation-reversing automorphism, then $\mc W$ is trivial and $V_k \times \mc W$ is trivial for any $V_k$ transverse to $\mc W$ by \cref{L: pullback with Q}.
+		Otherwise, for each occurrence of $\mc W$ in some $W_{k,E}$, there is an occurrence of $-\mc W$ in some $W_{\ell,E}$.
+		By \cref{T: cochain product}, $V_k \times_M \mc W$ and $V_\ell \times_m \mc W$ represent the same cochain, so
+		$$(V_k \times_M \mc W) \sqcup -(V_\ell \times_M \mc W) = (V_k \times_M \mc W)\sqcup(V_\ell \times_M -\mc W) \in Q^*(M).$$
+		Continuing this way with pairs of oppositely-co-oriented components of $\bigsqcup_k W_{k,E}$, and noting as in the proof of \cref{L: trivial structure} that each $\mc W$ occurs only a finite number of times, we see that $\bigsqcup_k V_k \times_M W_{k,E} \in Q^*(M)$.
 
-	It remains to show that $\bigsqcup_k V_k \times_M W_{k,NI} \in Q^*(M)$.
-	By \cref{L: Q essential}, we have $\bigsqcup_k W_{k,NI} \in Q^*(M)$.
-	By definition, we can write $\bigsqcup_k W_{k,NI} = W_{tr} \sqcup W_{d}$ as the disjoint union of a trivial precochain and a degenerate precochain.
-	By the same procedure as just above, if $\mc W$ is a connected component of $W_{tr}$, then either it has a co-orientation-reversing automorphism or it appears zero times in all $W_{tr}$ counting with sign.
-	So, again as above, either either $V_k \times_M \mc W \in Q^*(M)$ or we can have pairs $V_k$ and $V_\ell$ with $(V_k \times_M \mc W) \sqcup (V_\ell \times_M -\mc W) \in Q^*(M)$.
-	So it remains to consider the terms involving $W_d$.
+		It remains to show that $\bigsqcup_k V_k \times_M W_{k,NI} \in Q^*(M)$.
+		By \cref{L: Q essential}, we have $\bigsqcup_k W_{k,NI} \in Q^*(M)$.
+		By definition, we can write $\bigsqcup_k W_{k,NI} = W_{tr} \sqcup W_{d}$ as the disjoint union of a trivial precochain and a degenerate precochain.
+		By the same procedure as just above, if $\mc W$ is a connected component of $W_{tr}$, then either it has a co-orientation-reversing automorphism or it appears zero times in all $W_{tr}$ counting with sign.
+		So, again as above, either either $V_k \times_M \mc W \in Q^*(M)$ or we can have pairs $V_k$ and $V_\ell$ with $(V_k \times_M \mc W) \sqcup (V_\ell \times_M -\mc W) \in Q^*(M)$.
+		So it remains to consider the terms involving $W_d$.
 
-	Let $W_d = \bigsqcup_k Y_k$, where $Y_k$ consists of those components of $W_d$ contributed by $W_{k,NI}$.
-	We consider $\bigsqcup_k V_k \times_M Y_k$.
-	Each $Y_k$ has small rank, hence so does each $V_k \times_M Y_k$ by \cref{L: pullback with Q}.
-	Therefore, $\bigsqcup_k (V_k \times_M Y_k)$ has small rank, and it suffices to show that $\bd (\bigsqcup_k V_k \times_M Y_k)$ is the union of a trivial precochain and one of small rank.
-	By \cref{leibniz},
-	$$\bd \left(\bigsqcup_k V_k \times_M Y_k\right) = \bigsqcup_k ((\bd V_k) \times_M Y_k ) \sqcup (-1)^{m-v} (V_k \times_M \bd Y_k).$$
-	We note that these terms are defined as the transversality of $V_k$ and $Y_k$ includes transversality with the boundaries.
-	As the $Y_k$ have small rank, each $(\bd V_k) \times_M Y_k$ has small rank by \cref{L: pullback with Q}.
-	As $W_d = \bigsqcup_k Y_k$ is degenerate by definition, $\bd (\bigsqcup_k Y_k) = \bigsqcup_k \bd Y_k$ can be written as $\bigsqcup_k\bd Y_k = A_{tr} \sqcup A_{sm}$, with $A_{tr}$ trivial and $A_{sm}$ of small rank.
-	But then if $\mc A$ is a component of $\bd Y_k$ in $A_{sm}$, we have $V_k \times \mc A$ of small rank, and for the connected components of $A_{tr}$ we can once again recognize that either $\mc A$ has a co-orientation-reversing automorphism or appears zero times in all of $A_{tr}$ counting with co-orientation.
-	So again repeating our earlier argument either $V_k \times_M \mc A$ is trivial or we can find pairs of components $\mc A$ in $\bd Y_k$ and $-\mc A$ in $\bd Y_\ell$ (possibly with $k=\ell$) such that $(V_k \times_M \mc A) \sqcup (V_\ell \times_M -\mc A) \in Q^*(M)$.
-	So in particular this expression is a union of a trivial precochain and one of small rank by definition of $Q^*(M)$.
-	Continuing in this way through all connected components, all of $\bigsqcup_k(V_k \times_M \bd Y_k)$ can be partitioned into trivial precochains and precochains of small rank.
-\end{proof}
+		Let $W_d = \bigsqcup_k Y_k$, where $Y_k$ consists of those components of $W_d$ contributed by $W_{k,NI}$.
+		We consider $\bigsqcup_k V_k \times_M Y_k$.
+		Each $Y_k$ has small rank, hence so does each $V_k \times_M Y_k$ by \cref{L: pullback with Q}.
+		Therefore, $\bigsqcup_k (V_k \times_M Y_k)$ has small rank, and it suffices to show that $\bd (\bigsqcup_k V_k \times_M Y_k)$ is the union of a trivial precochain and one of small rank.
+		By \cref{leibniz},
+		$$\bd \left(\bigsqcup_k V_k \times_M Y_k\right) = \bigsqcup_k ((\bd V_k) \times_M Y_k ) \sqcup (-1)^{m-v} (V_k \times_M \bd Y_k).$$
+		We note that these terms are defined as the transversality of $V_k$ and $Y_k$ includes transversality with the boundaries.
+		As the $Y_k$ have small rank, each $(\bd V_k) \times_M Y_k$ has small rank by \cref{L: pullback with Q}.
+		As $W_d = \bigsqcup_k Y_k$ is degenerate by definition, $\bd (\bigsqcup_k Y_k) = \bigsqcup_k \bd Y_k$ can be written as $\bigsqcup_k\bd Y_k = A_{tr} \sqcup A_{sm}$, with $A_{tr}$ trivial and $A_{sm}$ of small rank.
+		But then if $\mc A$ is a component of $\bd Y_k$ in $A_{sm}$, we have $V_k \times \mc A$ of small rank, and for the connected components of $A_{tr}$ we can once again recognize that either $\mc A$ has a co-orientation-reversing automorphism or appears zero times in all of $A_{tr}$ counting with co-orientation.
+		So again repeating our earlier argument either $V_k \times_M \mc A$ is trivial or we can find pairs of components $\mc A$ in $\bd Y_k$ and $-\mc A$ in $\bd Y_\ell$ (possibly with $k=\ell$) such that $(V_k \times_M \mc A) \sqcup (V_\ell \times_M -\mc A) \in Q^*(M)$.
+		So in particular this expression is a union of a trivial precochain and one of small rank by definition of $Q^*(M)$.
+		Continuing in this way through all connected components, all of $\bigsqcup_k(V_k \times_M \bd Y_k)$ can be partitioned into trivial precochains and precochains of small rank.
+	\end{proof}
 
-We now generalize yet again to fully multilinear versions of the cup, cap, and intersection products.
-Again, this requires enough transversality for all fiber products to be defined, but now we allow cochain representatives in both the first and second factors to vary.
+	We now generalize yet again to fully multilinear versions of the cup, cap, and intersection products.
+	Again, this requires enough transversality for all fiber products to be defined, but now we allow cochain representatives in both the first and second factors to vary.
+\end{comment}
+
 
 \begin{definition}\label{D: multicup}
-	Suppose $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$, $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$, and each pair $(\underline{V_i},\underline{W_j})$ is simply transverse.
-	Then we say that $\uV$ and $\uW$ are \textbf{transverse} and define $\uV\uplus\uW$ as
-	$$\uV\uplus\uW = \sum_{i,j} \underline{V_i}\uplus \underline{W_j},$$
-	where the cup products on the right are those of \cref{D: cochain products}, which are well defined by \cref{T: cochain product}.
-	We extend the definition of the cap and intersection products analogously.
+	Let $M$ be a manifold without boundary.
+	Let $\uV, \uW \in C_\Gamma^*(M)$, and suppose $\uV$ and $\uW$ can be written as finite sums $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$ and $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$ such that each pair $(\underline{V_i},\underline{W_j})$ is simply transverse.
+	Then we say that $\uV$ and $\uW$ are \textbf{compound transverse} and define the cup product $\uV\uplus\uW$ as $$\uV\uplus\uW = \sum_{i,j} \underline{V_i}\uplus \underline{W_j},$$
+	where the cup products on the right are those of \cref{D: cochain products}.
 
+	We extend the definition of the cap and intersection products analogously.
 	In particular, for each simply transverse pair $(\underline{V_i},\underline{W_j})$ as above, there is a simple transverse representation $(V_{ij}, W_{ji})$, and the product $\uV\uplus \uW$, $\uV\nplus \uW$, or $\uV\bullet\uW$ is represented by $\sum_{ij}V_{ij} \times_M W_{ji}$.
 \end{definition}
 
+
+\begin{comment}
+	\begin{theorem}
+		Let $M$ be a manifold without boundary.
+		Suppose $\underline{V_1}, \underline{V_2} \in C_\Gamma^*(M)$ are both transverse to $\uW \in C_\Gamma^*(M)$.
+		Then $\underline{V_1 + V_2}$ is transverse to $\uW$ and $$\underline{V_1 + V_2} \uplus \uW = \underline{V_1} \uplus \uW + \underline{V_2} \uplus \uW.$$
+		The equivalent statements hold for the cap and intersection products and with the sum in the second variable.
+	\end{theorem}
+	\begin{proof}
+		By definition, we can write
+
+	\end{proof}
+\end{comment}
+
+We now demonstrate these products are well defined, noting that \cref{T: cochain product} occurs as the special case in which the sums for $\uV$ and $\uW$ in \cref{D: multicup} each have only one term.
+The proof utilizes the essential decompositions of prechains and precochains developed in \cref{S: essential decomp}.
+
 \begin{theorem}\label{T: multicup}
-	The products of \cref{D: multicup} are well defined.
+	The products of compound transverse chains and cochains of \cref{D: multicup} are well defined.
 	In particular, they do not depend on the decompositions of $\uV$ and $\uW$ into sums of geometric chains or cochains.
 \end{theorem}
 
@@ -316,9 +364,9 @@ Again, this requires enough transversality for all fiber products to be defined,
 	Then we must show that $$\left(\bigsqcup_{i,j} V_{ij} \times_M W_{ji}\right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell k}\right) \in Q^*(M).$$
 
 	For each $V_{ij}$, we have its essential decomposition $$V_{ij} = V_{ij,E} \sqcup V_{ij,TI} \sqcup V_{ij,NI},$$
-	and by \cref{T: minimal rep}, the cochain $\underline{V_{ij}}$ is also represented by a precochain of the form $Z \sqcup V_{ij,NI}$, where $Z$ is the minimal essential precochain of $\underline{V_{ij}}$.
-	As $Z \sqcup V_{ij,NI}$ is obtained from $V_{ij}$ by removing some components, we may assume that all $V_{ij}$ in fact have this form without disturbing our transversality assumptions, and similarly for the $W_{ji}$, $V'_{k\ell}$, and $W'_{\ell k}$.
-	Furthermore, as $V_{ia}$ and $V_{ib}$ represent the same $\underline{V_i}$, they will have the same minimal essential cochain, which we can write simply as $V_{i,E}$, and again similarly for the other precochains.
+	and by \cref{T: minimal rep}, the cochain $\underline{V_{ij}}$ is also represented by a precochain of the form $Z_{ij} \sqcup V_{ij,NI}$, where $Z_{ij}$ is the minimal essential precochain of $\underline{V_{ij}}$.
+	As $Z_{ij} \sqcup V_{ij,NI}$ is obtained from $V_{ij}$ by removing some components, we may assume that all $V_{ij}$ in fact have this form without disturbing our transversality assumptions, and similarly for the $W_{ji}$, $V'_{k\ell}$, and $W'_{\ell k}$.
+	Furthermore, as $V_{ia}$ and $V_{ib}$ represent the same $\underline{V_i}$, they will have the same minimal essential cochain, which we can therefore write simply as $V_{i,E}$ rather than $Z_{ij}$, and again similarly for the other precochains.
 
 	\begin{comment}
 	Next, let us choose for each $j$ and $\ell$ particular representatives $W_j$ and $W'_\ell$ for $\underline{W_j}$ and $\underline{W'_\ell}$.
@@ -340,7 +388,7 @@ Again, this requires enough transversality for all fiber products to be defined,
 	So $\bigsqcup_i V_{ia}$ and $\bigsqcup_i V_{ib}$ both represent $\uV \in C^*_\Gamma(M)$ and are transverse to $\mc W$.
 	Thus
 	$$\left(\bigsqcup_i V_{ia} \times_M \mc W\right) \sqcup \left(\bigsqcup_i V_{ib} \times_M -\mc W\right) = \left(\bigsqcup_i V_{ia} \times_M \mc W\right) \sqcup \left(-\bigsqcup_i V_{ib} \times_M \mc W\right) \in Q^*(M)$$
-	by \cref{L: pullback with Q}, and similarly if one or both occurrences of $\pm \mc W$ are components of one of the $W'_{\ell, E}$, in which case the corresponding $V_{ia}$ or $V_{ib}$ is replaced with $V'_{ka}$ or $V'_{kb}$ .
+	by \cref{L: pullback with Q}, and similarly if one or both occurrences of $\pm \mc W$ are components of one of the $W'_{\ell, E}$, in which case the corresponding $V_{ia}$ or $V_{ib}$ is replaced with $V'_{k\ell}$ or $V'_{k\ell}$ .
 	Continuing in this way, all of $$\left(\bigsqcup_{i,j} V_{ij} \times W_{j,E}\right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell,E}\right)$$
 	is in $Q^*(M)$.
 
@@ -354,11 +402,11 @@ Again, this requires enough transversality for all fiber products to be defined,
 	The boundary terms of the form $(\bd V_{ij}) \times W_{ji,NI}$ and $(\bd V'_{k\ell}) \times_M W'_{\ell k,NI}$ all have small rank, again by \cref{L: pullback with Q}.
 	So we consider
 	$$\left(\bigsqcup_{i,j} V_{ij} \times \bd W_{ji,NI} \right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M \bd W'_{\ell k,NI}\right)$$
-	(we can ignore the sign, as all terms are multiplied by the same sign $(-1)^{m-v}$ in taking the boundary).
+	(we can ignore the sign from the boundary formula, as all terms are multiplied by the same sign $(-1)^{m-v}$ in taking the boundary).
 
 	We now consider the essential decompositions of the $\bd W_{ji,NI}$ and $\bd W'_{\ell k,NI}$.
 	By \cref{L: pullback with Q}, any fiber product involving a TI component will be trivial and any fiber product involving an NI component will have small rank.
-	So we must consider the terms $V_{ij} \times \left(\bd W_{ji,NI}\right)_E$.
+	So we must consider the terms $V_{ij} \times \left(\bd W_{ji,NI}\right)_E$ and $V'_{ij} \times \left(\bd W'_{ji,NI}\right)_E$.
 	By \cref{L: same NI}, since $W_{ji}$ and $W_{ja}$ represent the same cochain for any $i,a$, we have that $\bd W_{ji,NI}$ and $\bd W_{ja,NI}$ represent the same cochain (and similar for the $W'$).
 	So by \cref{C: Q essential}, these have the same minimal essential part and $\left(\bd W_{j,NI}\right)_E$ is the minimal essential part together with something trivial.
 	As any fiber product with something trivial is trivial, we can concentrate on the minimal essential part; we now abuse notation and let $\left(\bd W_{j,NI}\right)_E$ stand just for the minimal essential part.
@@ -374,6 +422,33 @@ Again, this requires enough transversality for all fiber products to be defined,
 	So by \cref{L: bd defined}, the boundary
 	$$\left(\bigsqcup_j \bd W_{j,NI}\right) \sqcup \left(-\bigsqcup_\ell \bd W'_{\ell,NI}\right)$$ is in $Q^*(M)$, as required.
 \end{proof}
+
+
+
+\begin{comment}
+	\begin{corollary}
+		Let $M$ be a manifold without boundary.
+		Suppose $\underline{V_1}, \underline{V_2} \in C_\Gamma^*(M)$ are both simply transverse to $\uW \in C_\Gamma^*(M)$.
+		Then $\underline{V_1 + V_2}$ is compound transverse to $\uW$ and $$\underline{V_1 + V_2} \uplus \uW = \underline{V_1} \uplus \uW + \underline{V_2} \uplus \uW.$$
+		The equivalent statements hold for the cap and intersection products and with the sum in the second variable.
+	\end{corollary}
+	\begin{proof}
+	This follows immediately from the definitions and \cref{D: cochain products,D: multicup,T: multicup}, taking in the theorem statement $\uV = \underline{V_1} + \underline{V_2}$ and letting $\uW$ simply be itself without splitting it into a sum.
+	\end{proof}
+\end{comment}
+
+\cref{T: multicup} can be read to imply bilinear behavior of \textit{simply} transverse chains and cochains, although this is somewhat definitional: \cref{D: multicup} \textit{defines} $\uV \uplus (\underline{W_1} + \underline{W_2})$ as  $(\uV \uplus \underline{W_1}) + (\uV \uplus \underline{W_2})$, where the cup products on the right are those of \cref{D: cochain products}, and then \cref{T: multicup} tells us this is well defined.
+
+The conundrum is that compound transverse chains and cochains again do not necessarily behave bilinearly, for essentially the same reasons that simple transversality does not provide bilinear products without extending to a broader definition of transversality:
+The definition of compound transversality assumes fixed decompositions $\uV = \sum_i \underline{V_i}$ and $\uW = \sum_j \underline{W_j}$.
+But now suppose we have $\uV \in C_\Gamma^*(M)$ that is \textit{compound} transverse to both $\underline{W_1}, \underline{W_2} \in C_\Gamma^*(M)$.
+Again we would like $\uV \uplus (\underline{W_1} + \underline{W_2})  = (\uV \uplus \underline{W_1}) + (\uV + \underline{W_2})$, but $\uV \uplus \underline{W_1}$ and $\uV \uplus \underline{W_2}$ might be computed by the formula above using two different ways of writing $\uV$ as a sum, and \cref{T: multicup} does not cover this situation.
+
+Conjecturally, we could mirror the preceding program by introducing an appropriate even broader notion of transversality, showing it is well defined, and then declaring it to provide a notion of bilinearity for products of compound transverse chains and cochains.
+Even more conjecturally, this process can be repeated to all levels of ``$n$-transversality'' (with $n=1$ being simple transversality, $n=2$ being compound transversality, etc.) to provide well defined ``level $n$ products'' that definitionally provide bilinearity at the preceding the level.
+But we will not pursue this project here.
+
+
 
 \subsubsection{Pullbacks of cochains}\label{S: product pullbacks}
 \greg{Should this section go here?}
