@@ -128,10 +128,10 @@ In \cref{S: usual cup}, we show that the cup product in geometric cohomology is 
 
 \subsection{Chain- and cochain-level products and transversality}\label{S: chain products}
 
-In this section, we develop chain- and cochain-level products.
+In this section, we develop chain- and cochain-level products, as well as study some other aspects of chain- and cochain-level transversality.
 We begin in \cref{S: simple products} with the case of ``simple products,'' in which two chains or cochains can be represented by transverse prechains or precochains, in which case we can take the fiber product.
 Building on this case, we then define a more general notion of transversality for chains and cochains that allows for some amount of bilinear behavior.
-In \cref{S: product pullbacks}, we consider pullbacks of our transverse products, and in \cref{S: Kronecker} we obtain a Kronecker pairing for geometric chains and cochains.
+In \cref{S: product pullbacks}, we consider pullbacks of cochains, and in \cref{S: Kronecker} we obtain a Kronecker pairing for geometric chains and cochains.
 Finally, in \cref{S: exterior chain products}, we define exterior products of chains and cochains.
 
 
@@ -448,15 +448,42 @@ Conjecturally, we could mirror the preceding program by introducing an appropria
 Even more conjecturally, this process can be repeated to all levels of ``$n$-transversality'' (with $n=1$ being simple transversality, $n=2$ being compound transversality, etc.) to provide well defined ``level $n$ products'' that definitionally provide bilinearity at the preceding the level.
 But we will not pursue this project here.
 
+\subsubsection{Exterior products}\label{S: exterior chain products}
+
+As a complement to \cref{S: simple products}, we observe in this section that the exterior products defined in \cref{S: exterior products} give rise to well-defined products for geometric chains and cochains.
+Unlike the cup, cap, and intersection products, these are fully defined, as the exterior products do not require any transversality assumptions.
+
+\begin{definition}\label{D: exterior chain}
+	Suppose $\uV \in C_*^{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(N)$ are represented by $V \in PC_*^{\Gamma}(M)$ and $W \in PC_*^{\Gamma}(N)$.
+	Then we define the \textbf{exterior chain product (or chain cross product)} $$\times \colon C_*^{\Gamma}(M) \times C_*^{\Gamma}(N) \to C_*^{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$, giving the product of oriented manifolds the standard product orientation, as in \cref{S: oriented product}.
+
+	Similarly, suppose $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C^*_{\Gamma}(N)$ are represented by $V \in PC^*_{\Gamma}(M)$ and $W \in PC^*_{\Gamma}(N)$.
+	Then we define the \textbf{exterior cochain product (or cochain cross product)}
+	$$\times \colon C^*_{\Gamma}(M) \times C^*_{\Gamma}(N) \to C^*_{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$, using the co-orientation of a product of co-oriented maps as defined in \cref{D: co-oriented exterior}.
+\end{definition}
+
+As is standard for singular homology and cohomology, we use the symbol $\times$ for both products, allowing context to determine which product is meant.
+
+\begin{proposition}
+	The exterior chain and cochain products are well defined.
+\end{proposition}
+
+\begin{proof}
+	We note that product of proper maps is proper by \cite[Proposition I.10.1.4]{Bou98}.
+
+	It remains to show that if $V'$ and $W'$ are alternative representatives of $V$ and $W$ then $(V \times W) \sqcup -(V' \times W') \in Q(M \times N)$.
+	We will show that $(V \times W) \sqcup -(V' \times W) \in Q(M \times N)$, then the general case follows from an equivalent argument with $W$.
+	But we need only observe that $(V \times W) \sqcup -(V' \times W) = (V \sqcup -V') \times W$ and then apply
+	\cref{L: exterior Q}.
+\end{proof}
 
 
 \subsubsection{Pullbacks of cochains}\label{S: product pullbacks}
 \greg{Should this section go here?}
+We now return to the main program of \cref{S: chain products} --- the behavior of geometric chains and cochains, and particularly the need for transversality assumptions.
 
 In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon M \to N$ of manifolds without boundary yields a well-defined cohomology map $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$.
-In this section we utilize the notions of the preceding section to consider $f^*$ as a partially-defined map of cochain complexes $C^*_\Gamma(N) \to C^*_\Gamma(M)$.
-Then, by similar arguments, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
-
+In this section we consider $f^*$ as a partially-defined map of cochain complexes $C^*_\Gamma(N) \to C^*_\Gamma(M)$.
 
 \begin{definition}\label{D: transverse to map}
 	Let $f \colon M \to N$ be a smooth map of manifolds without boundary, and let $\uV \in C^*_\Gamma(N)$.
@@ -503,16 +530,17 @@ We notice that the transversality situation here is simpler than the more genera
 
 \subsubsection{Kronecker pairing}\label{S: Kronecker}
 \greg{Should this section go here?}
+Using similar arguments to those in \cref{S: product pullbacks}, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
 
-The partially-defined cap product becomes a partially-defined pairing
+The partially-defined cap product yields a partially-defined pairing
 $$C^i_\Gamma(M) \times C_i^\Gamma(M) \xr{\nplus} C_0^\Gamma(M) \xr{\aug}\Z,$$
 where $\aug \colon C_0^\Gamma(M) \to \Z$ is the augmentation map of \cref{D: aug}.
 We consider here the extent to which this pairing corresponds to a function $C^i_\Gamma(M) \to \Hom(C_i^\Gamma(M),\Z)$.
-The situation is very similar to the preceding discussion of pullbacks.
+This situation is closely related to the preceding discussion of pullbacks.
 
 \begin{definition}\label{D: transverse to cohain}
 	Let $\uV \in C^i_\Gamma(M)$ be a geometric cochain.
-	We write $C_i^{\Gamma \pf \uV}(M)$ for the subgroup of $C_i^\Gamma(M)$ generated by geometric $i$-chains transverse to $\uV$.
+	We write $C_i^{\Gamma \pf \uV}(M)$ for the subgroup of $C_i^\Gamma(M)$ generated by geometric $i$-chains simply transverse to $\uV$.
 \end{definition}
 
 \begin{proposition}
@@ -521,14 +549,13 @@ The situation is very similar to the preceding discussion of pullbacks.
 
 \begin{proof}
 	We first observe that $\uV\nplus -$ is defined on all elements of $C_i^{\Gamma \pf \uV}(M)$.
-	If $\uW \in C_i^\Gamma(M)$ can be written as a sum $\uW = \sum \underline{W_i}$ with each $\underline{W_i}$ transverse to $\uV$, then $\uV\nplus \uW$ is well defined as $\sum \uV\nplus \underline{W_i}$ by \cref{D: multicup} and \cref{T: multicup}.
-	This is also consistent with \cref{T: multicup}.
-	The element $0 \in C_i^\Gamma(M)$, as represented by the empty map, is transverse to $\uV$ with $\uV\nplus 0 = 0$, and if $\uW$ is transverse to $\uV$ then so is $-\uW$.
-	\cref{D: multicup,T: multicup} also imply that $\uV \nplus -$ is a homomorphism.
+	If $\uW \in C_i^\Gamma(M)$ can be written as a sum $\uW = \sum \underline{W_i}$ with each $\underline{W_i}$ simply transverse to $\uV$, then $\uV\nplus \uW$ is well defined as $\sum \uV\nplus \underline{W_i}$ by \cref{T: multicup}.
+	The element $0 \in C_i^\Gamma(M)$, as represented by the empty map, is simply transverse to $\uV$ with $\uV\nplus 0 = 0$, and if $\uW$ is transverse to $\uV$ then so is $-\uW$.
+	\cref{D: multicup,T: multicup} imply that $\uV \nplus -$ is a homomorphism.
 	We know that $\aug$ is a homomorphism, so the proposition follows.
 \end{proof}
 
-So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom(C_i^{\Gamma \pf \uV}(M),\Z)$, but of course we will not in general obtain an element of $\Hom(C_i^{\Gamma}(M),\Z)$ due to transversality requirements.
+So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom\left(C_i^{\Gamma \pf \uV}(M),\Z\right)$, but of course we will not in general obtain an element of $\Hom\left(C_i^{\Gamma}(M), \Z \right)$ due to transversality requirements.
 
 \begin{comment}
 	\begin{proof}
@@ -554,52 +581,24 @@ So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom(C_i^{\Gamma \pf 
 	\end{proof}
 \end{comment}
 
-\subsubsection{Exterior products}\label{S: exterior chain products}
-
-We observe here that the exterior products defined in \cref{S: exterior products} give rise to well-defined products for geometric chains and cochains, and, in fact, these are fully defined, unlike the cup, cap, and intersection products.
-
-\begin{definition}\label{D: exterior chain}
-	Suppose $\uV \in C_*^{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(N)$ represented by $V \in PC_*^{\Gamma}(M)$ and $W \in PC_*^{\Gamma}(N)$.
-	Then we define the \textbf{exterior chain product (or chain cross product)} $$\times \colon C_*^{\Gamma}(M) \times C_*^{\Gamma}(N) \to C_*^{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$.
-
-	Similarly, suppose $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C^*_{\Gamma}(N)$ represented by $V \in PC^*_{\Gamma}(M)$ and $W \in PC^*_{\Gamma}(N)$.
-	Then we define the \textbf{exterior cochain product (or cochain cross product)}
-	$$\times \colon C^*_{\Gamma}(M) \times C^*_{\Gamma}(N) \to C^*_{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$.
-\end{definition}
-
-As is standard for singular homology and cohomology, we use the symbol $\times$ for both products, allowing context to determine which product is meant.
-
-\begin{proposition}
-	The exterior chain and cochain products are well defined.
-\end{proposition}
-
-\begin{proof}
-	As in \cref{S: exterior products}, we give the product of oriented manifolds the standard product orientation, while co-orientations of products of co-oriented maps are defined in \cref{D: co-oriented exterior}.
-	The product of proper maps is proper by \cite[Proposition I.10.1.4]{Bou98}.
-
-	It remains to show that if $V'$ and $W'$ are alternative representatives of $V$ and $W$ then $(V \times W) \sqcup -(V' \times W') \in Q(M \times N)$.
-	We will show that $(V \times W) \sqcup -(V' \times W) \in Q(M \times N)$, then the general case follows from an equivalent argument with $W$.
-	But we need only observe that $(V \times W) \sqcup -(V' \times W) = (V \sqcup -V') \times W$ and then apply
-	\cref{L: exterior Q}.
-\end{proof}
 
 \subsection{Properties of the chain and cochain products}\label{S: (co)chain properties}
 
-Now that we have defined cup, cap, intersection, and exterior product and shown that they are well defined, at least when the necessary transversality and orientation conditions hold, they immediately inherit many of the properties demonstrated in \cref{S: orientations and co-orientations}.
+Now that we have defined cup, cap, intersection, and exterior products of geometric chains and cochains and shown that these products are well defined, at least when the necessary transversality and orientation conditions hold, they immediately inherit many of the properties demonstrated in \cref{S: orientations and co-orientations}.
 We provide below some tables listing these properties and the locations of the previous results that support them.
 The references are typically to results that involve only transversality of a pair of prechains or precochains, but in the chain and cochain setting they generalize to the more general products of \cref{D: multicup} by applying them to each summand.
 
-For example, suppose $\uV, \uW \in C^*_\Gamma(M)$ are transverse.
+For example, suppose $\uV, \uW \in C^*_\Gamma(M)$ are compound transverse.
 This means we can write $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$, $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$ with each pair $(\underline{V_i},\underline{W_j})$ simply transverse.
 And this means that there are representatives $V_{ij},W_{ji} \in PC_\Gamma^*(M)$ such that for all $i$ and $j$, we have $\underline{V_{ij}} = \underline{V_i}$, $\underline{W_{ji}} = \underline{W_j}$, and $V_{ij}$ transverse to $W_{ji}$.
 We then have $\uV\uplus \uW$ represented by
 $\sum_{i,j} V_{ij} \times_M W_{ji}$.
 By \cref{P: graded comm}, we have
 $$\sum_{i,j} V_{ij} \times_M W_{ji} = \sum_{i,j} (-1)^{(m-v)(m-w)}W_{ji} \times_M V_{ij} = (-1)^{(m-v)(m-w)}\sum_{i,j} W_{ji} \times_M V_{ij},$$
-and the sum on the right represents $\uW\uplus \uV$.
-So we obtain the cup product commutativity formula $$\uV\uplus\uW = (-1)^{(m-v)(m-w)}\uW\uplus\uV$$ for transverse cochains.
+and this last expression represents $(-1)^{(m-v)(m-w)} \uW\uplus \uV$.
+So we obtain the cup product commutativity formula $$\uV\uplus\uW = (-1)^{(m-v)(m-w)}\uW\uplus\uV$$ for compound transverse cochains.
 
-The more complicated exception to this inheritance of properties from the pre(co)chain properties concern associativity and naturality, which we will address below in a separate section.
+The more complicated exceptions to this inheritance of properties from the pre(co)chain properties concern associativity and naturality, which we will address below in a separate section.
 
 In the tables that follow, we assume to hold all transversality required for each expression to be defined.
 For intersection products, we assume that the underlying manifold is oriented.
@@ -610,7 +609,7 @@ We explain the further assumptions and notations prior to each table of formulas
 \subsubsection{Boundary formulas}
 
 For our first table, with formulas involving boundaries, we also invoke the well-definedness of boundaries of geometric chains and cochains, see \cref{L: co/chains well defined}.
-The cup, cap, and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
+The cup, cap, and intersection products require (simple or compound) transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
 
 \begin{center}
 	\begin{tabular}{|l|c|l|}
