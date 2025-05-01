@@ -610,11 +610,12 @@ We explain the further assumptions and notations prior to each table of formulas
 
 For our first table, with formulas involving boundaries, we also invoke the well-definedness of boundaries of geometric chains and cochains, see \cref{L: co/chains well defined}.
 The cup, cap, and intersection products require (simple or compound) transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
+In the first line, we use that $\uV \times \uW = \uV \times_M \uW$, when $M$ is a point.
 
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
-		Chain cross product &$\bd(\uV \times \uW) = (\bd \uV) \times \uW+ (-1)^{v}\uV \times \bd \uW$&Standard \\
+		Chain cross product &$\bd(\uV \times \uW) = (\bd \uV) \times \uW+ (-1)^{v}\uV \times \bd \uW$&\cref{P: oriented fiber boundary}\\
 		\hline
 		Cochain cross product&$\bd(\uV \times \uW) = (\bd \uV) \times \uW+ (-1)^{m-v}\uV \times \bd \uW$&\cref{P: boundary of exterior product}\\
 		\hline
@@ -650,11 +651,11 @@ The cup and intersection products require transversality of $\uV$ and $\uW$; the
 
 For the following unital properties, we write $pt$ to refer to the point with its positive orientation.
 We will write $\underline{pt}$ for the geometric chain given by $\id_{pt}:pt \to pt$ or for the geometric cochain given by the canonically co-oriented identity map $\id_{pt}:pt \to pt$.
-Similarly, $\uM$ represents the geometric chain or cochain corresponding to $\id_M \colon M \to M$, canonically co-oriented in the cochain case.
+Similarly, $\uM$ represents the geometric chain or cochain determined by $\id_M \colon M \to M$, canonically co-oriented in the cochain case.
 Technically, $M$ must be compact for $\id_M$ to represent a chain, but the corresponding formulas hold more broadly at the referenced locations and so these identities could be taken as statements involving a broader class of geometric chains.
-Note that, as a cochain, $\uM \in C^0_\Gamma(M)$, and \cref{P: projection pullbacks} shows that these correspond to the singular cochain $1$.
+Note that, as a cochain, $\uM \in C^0_\Gamma(M)$, and \cref{P: projection pullbacks} shows that these behave like the singular cochain $1$.
 We also let $\pi_1 \colon M \times N \to M$ and $\pi_2 \colon N \times M \to M$ denote the projections.
-In the first formula for the cap product with $\uM$, $M$ is oriented, and the first $\uV$ is $V \to M$ as a cochain while the second is $V \to M$ as a chain with the induced orientation on $V$; see \cref{P: cap with identity M}.
+In the first formula for the cap product with $\uM$, $M$ is assumed oriented, and the first $\uV$ in the formula is represented by $V \to M$ as a cochain while the second $\uV$ in the formula is $V \to M$ as a chain with the induced orientation on $V$; see \cref{P: cap with identity M}.
 In the second cap product formula, both instances of $\uV$ are as chains.
 As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 
