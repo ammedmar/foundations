@@ -663,7 +663,7 @@ As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
-		Identity for chain cross product&$\uV \times \underline{pt} = \underline{pt} \times \uV = \uV$& Obvious\\
+		Identity for chain cross product&$\uV \times \underline{pt} = \underline{pt} \times \uV = \uV$& Straightforward\\
 		\hline
 		Identity for cochain cross product&$\uV \times \underline{pt} = \underline{pt} \times \uV = \uV$& \cref{P: co-oriented exterior unit}\\
 		\hline
@@ -721,34 +721,46 @@ For cap and intersection products, the special cases where the (co)chains have c
 
 \subsubsection{Naturality and associativity formulas}
 
-Formulas for associativity of geometric chain and cochain products are more delicate than our preceding formulas because they require sufficient transversality of more than two objects.
-This would require some careful assumptions even for just maps of manifolds.
-But the ambiguity in representation of geometric chains and cochains makes the situation even more problematic.
-For example, if $\uV$ and $\uW$ are transverse, then by definition we can write $\uV = \sum_i \underline{V_i}$ and $\uW = \sum_j \underline{W_j}$ and then find transverse representatives $V_{ij}$ of $\underline{V_i}$ and $W_{ji}$ of $\underline{W_j}$.
-Then $\uV\uplus \uW$ is represented by $\sum_{ij}V_{ij} \times_M W_{ji}.$ Now suppose $Z$ is transverse to $\uV\uplus \uW$.
-Then there must be similar decompositions of $Z$ and $\uV\uplus \uW$ into simply transverse pairs, but it is not clear that this condition can necessarily be written in terms of the $V_{ij}$ and $W_{ji}$ so that we can advantage of \cref{C: fiber assoc}.
-So, rather than attempt to pursue the most general case, we impose some extra restrictions so that we can utilize \cref{C: fiber assoc} and its analogues for the intersection product and the cap product with a cup product.
+Formulas for associativity and naturality of geometric chain and cochain products are more delicate than our preceding formulas because they require sufficient transversality of more than two objects.
+This would require some careful assumptions even just for maps of manifolds, but the ambiguity in representation of geometric chains and cochains makes the situation even more complicated.
+To start, there is the question of which transversality we mean, as we have defined both simple and compound transversality for chains and cochains in \cref{S: simple products}.
+If we limited ourselves to simple transversality, then we would be able to invoke results like \cref{C: fiber assoc} fairly directly, though even here there are a number of conditions that must be met.
 
-Similar concerns arise for our naturality formula, as pulling back a cup product by a map $h$ requires that $h$ be transverse to the cup product, so we again have an interaction of three maps, leading to similar concerns.
+If we want to work with compound transversality, the situation quickly becomes much more complicated.
+For example, if $\uV$ and $\uW$ are compound transverse, then by definition we can write finite sums $\uV = \sum_i \underline{V_i}$ and $\uW = \sum_j \underline{W_j}$ and then find transverse representatives $V_{ij}$ and $W_{ji}$ of $\underline{V_i}$ and $\underline{W_j}$.
+Then $\uV\uplus \uW$ is represented by $\sum_{ij}V_{ij} \times_M W_{ji}.$
+Now suppose $Z$ is compound transverse to $\uV\uplus \uW$.
+Then there must be similar decompositions of $Z$ and $\uV\uplus \uW$ into simply transverse pairs, but it is not clear that this condition can necessarily be written in terms of the $V_{ij}$ and $W_{ji}$ so that we can then take advantage of \cref{C: fiber assoc}.
+So, rather than attempt to pursue the most general case, we will impose some extra restrictions in what follows so that we can utilize \cref{C: fiber assoc} and its analogues for the intersection product and for the cap product with a cup product.
+These assumptions can be simplified if we only wish to consider simple transversality.
+
+Similar concerns arise for our naturality formulas, as, for example, pulling back a cup product by a map $h$ requires that $h$ be transverse to the cup product, so we again have an interaction of three maps, leading to similar issues.
 
 \textbf{Naturality.}
 As noted above, naturality of cup and cap products requires some extra care to ensure not just that chains and cochains are appropriately transverse but that there are also the appropriate transversalities with respect to the maps we pull back by.
-This requires a good number of further assumptions; see \cref{R: multiproducts}.
-So suppose $h \colon M \to N$ is a map of manifolds without boundaries and that $\uV,\uW \in C^*_{\Gamma}(N)$.
-For naturality of cup products we assume not just that $\uV$ and $\uW$ are transverse, but we require decompositions $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$, $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$ such that each pair $(\underline{V_i},\underline{W_j})$ has representatives $V_{ij}$ and $W_{ji}$ such that:
+This requires a good number of further assumptions; see \cref{R: multiproducts,P: 3 out of 4 trans}.
+
+So suppose first $h \colon N \to M$ is a map of manifolds without boundaries and that $\uV,\uW \in C^*_{\Gamma}(M)$.
+For naturality of cup products we will assume not just that $\uV$ and $\uW$ are compound transverse, but we also require decompositions into finite sums $\uV = \sum_i \underline{V_i}$, $\uW = \sum_j \underline{W_j}$ such that each pair $(\underline{V_i},\underline{W_j})$ has representatives $V_{ij}$ and $W_{ji}$ such that:
 \begin{itemize}
 	\item $V_{ij}$ and $W_{ji}$ are transverse and
 	\item $V_{ij}$, $W_{ji}$, and $V_{ij} \times_M W_{ji}$ are all transverse to $h$.
 \end{itemize}
+If we assume that $\uV$ and $\uW$ are simply transverse, then we need only representatives $V$ and $W$ such that $V$ and $W$ are transverse and $V \times_M W$ is transverse to $h$.
 
-Similarly for cap products we require decompositions such that $V_{ij}$ and $W_{ji}$ satisfy the transversality requirements of \cref{P: natural cap}.
+For naturality of cap products, we suppose $h \colon N \to M$, $\uV \in C^*_\Gamma(M)$, and $\uW \in C_*^\Gamma(N)$.
+Then, via \cref{P: natural cap}, it is sufficient to assume decompositions $\uV = \sum_i \underline{V_i}$ and $\uW = \sum_j \underline{W_j}$ with representative pairs $(V_{ij}, W_{ji})$ such that each $V_{ij}$ is transverse to $h$ and each $W_{ji}$ is transverse to the pullback $V_{ij} \times_M N \to N$.
+In the simple version we just need $V$ and $W$ with $V$ transverse $h$ and $W$ transverse to $V \times_M N \to N$.
+
 The exterior products are simpler.
 The naturality of the chain cross product requires no assumption, while the naturality of the cochain cross product requires only that $V$ and $W$ have representatives that are respectively transverse to $h$ and $k$.
+
+With these assumptions, we have the following formulas.
 
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
-		Chain cross product&$(h \times k)(\uV \times \uW) = h(\uV) \times k(\uW)$ &Obvious\\
+		Chain cross product&$(h \times k)(\uV \times \uW) = h(\uV) \times k(\uW)$ &Straightforward\\
 		\hline
 		Cochain cross product&$(h \times k)^*(\uV \times \uW) = h^*(\uV) \times k^*(\uW)$ &\cref{P: natural exterior}\\
 		\hline
@@ -762,15 +774,17 @@ The naturality of the chain cross product requires no assumption, while the natu
 \medskip\noindent\textbf{Associativity.}
 
 For the associativity formulas we add a manifold with corners $X$ either mapping to $M$ for the cup, cap, and intersection products or to a third target manifold $Q$ for the cross products.
-Once again, there are no special requirements for the exterior products.
-For the other products, while this might not encompass the most general possibility, in order to ensure associativity we assume decompositions $\uV = \sum_i \underline{V_i}$, $\uW = \sum_j \underline{W_j}$, and $\underline{Z} = \sum_k \underline{Z_k}$ such that for each triple $(\underline{V_i},\underline{W_j}, \underline{Z_k})$ there are representatives $V_{i,jk}$, $W_{j,ik}$, and $Z_{k,ij}$ such that the following pairs are transverse: $(V_{i,jk}, W_{j,ik})$, $(W_{j,ik},Z_{k,ij})$, $(V_{i,jk} \times_M W_{j,ik},Z_{k,ij})$, and $(V_{i,jk}, W_{j,ik} \times_M Z_{k,ij})$.
+Once again, there are no special requirements for the exterior products in the first two formulas below.
+For the other associativity formulas, while this might not encompass the most general possibility, in order to ensure associativity in a compound transversality setting, we assume decompositions into finite sums $\uV = \sum_i \underline{V_i}$, $\uW = \sum_j \underline{W_j}$, and $\underline{Z} = \sum_k \underline{Z_k}$ such that for each triple $(\underline{V_i},\underline{W_j}, \underline{Z_k})$ there are representatives $V_{i,jk}$, $W_{j,ik}$, and $Z_{k,ij}$ such that the following pairs are transverse: $(V_{i,jk}, W_{j,ik})$, $(W_{j,ik},Z_{k,ij})$, $(V_{i,jk} \times_M W_{j,ik},Z_{k,ij})$, and $(V_{i,jk}, W_{j,ik} \times_M Z_{k,ij})$.
+These assumptions will allow us to invoke \cref{C: fiber assoc,P: OC mixed associativity,P: oriented fiber mixed associativity}.
+For simple transversality versions, we need only assume $V, W, Z$ such that $(V, W)$, $(W,Z)$, $(V \times_M W,Z)$, and $(V, W \times_M Z)$ are transverse pairs.
 
 We leave the reader to formulate associativity for products of larger collections of maps.
 
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
-		Chain cross product& $(\uV \times \uW) \times \uX = \uV \times (\uW \times \uX)$&Evident\\
+		Chain cross product& $(\uV \times \uW) \times \uX = \uV \times (\uW \times \uX)$&Straightforward\\
 		\hline
 		Cochain cross product& $(\uV \times \uW) \times \uX = \uV \times (\uW \times \uX)$&\cref{P: exterior associativity}\\
 		\hline
@@ -779,16 +793,16 @@ We leave the reader to formulate associativity for products of larger collection
 		Cup/cap & $(\uV \uplus \uW)\nplus \uX = \uV\nplus(\uW\nplus\uX)$& \cref{P: OC mixed associativity}\\
 		\hline
 		Intersection product &
-		$(\uV\bullet\uW)\bullet\uX = \uV\bullet(\uW\bullet \uX)$&\cref{P: oriented fiber mixed associativity}\\
+		$(\uV\bullet\uW)\bullet\uX = \uV\bullet(\uW\bullet \uX)$&\cref{P: oriented fiber mixed associativity} and following\\
 		\hline
 	\end{tabular}
 \end{center}
 
-We note that with our definitions, these triple products exhibit linearity in each variable, assuming as usual that all necessary transversality conditions are met.
+We note that with our assumptions, these triple products exhibit a form of linearity in each variable akin to that discussed in \cref{S: simple products}.
 
 \subsection{Homology and cohomology products}\label{S: homology products}
 
-In this section we observe that the partially-defined cup, cap, and intersection products of geometric chains and cochains give rise to fully-defined products of geometric homology and cohomology.
+In this section we observe that the partially-defined cup, cap, and intersection products of geometric chains and cochains give rise to fully-defined products of geometric homology and cohomology classes.
 Similarly, we obtain external homology and cohomology products, although this is more evident as external products are already fully defined for geometric chains and cochains.
 
 \begin{theorem}\label{T: (co)homology products}
