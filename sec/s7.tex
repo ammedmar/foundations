@@ -632,11 +632,12 @@ In the first line, we use that $\uV \times \uW = \uV \times_M \uW$, when $M$ is 
 
 For the commutativity properties listed below, $\tau$ is the transposition map $\tau \colon N \times M \to M \times N$.
 The cup and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
+In the first line, we again use that $\uV \times \uW = \uV \times_M \uW$, when $M$ is a point.
 
 \begin{center}
 	\begin{tabular}{|l|c|l|}
 		\hline
-		Chain cross product&$\tau(\uV \times \uW) = (-1)^{vw}\uW \times \uV$&Standard\\
+		Chain cross product&$\tau(\uV \times \uW) = (-1)^{vw}\uW \times \uV$&\cref{P: commute oriented fiber}\\
 		\hline
 		Cochain cross product&$\tau^*(\uV \times \uW) = (-1)^{(m-v)(n-w)}\uW \times \uV$&\cref{P: exterior commutativity}\\
 		\hline
@@ -647,7 +648,7 @@ The cup and intersection products require transversality of $\uV$ and $\uW$; the
 	\end{tabular}
 \end{center}
 
-\subsubsection{Unital properties}
+\subsubsection{Unital properties}\label{S: unital properties}
 
 For the following unital properties, we write $pt$ to refer to the point with its positive orientation.
 We will write $\underline{pt}$ for the geometric chain given by $\id_{pt}:pt \to pt$ or for the geometric cochain given by the canonically co-oriented identity map $\id_{pt}:pt \to pt$.
@@ -664,7 +665,7 @@ As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 		\hline
 		Identity for chain cross product&$\uV \times \underline{pt} = \underline{pt} \times \uV = \uV$& Obvious\\
 		\hline
-		Identity for chain cross product&$\uV \times \underline{pt} = \underline{pt} \times \uV = \uV$& \cref{P: co-oriented exterior unit}\\
+		Identity for cochain cross product&$\uV \times \underline{pt} = \underline{pt} \times \uV = \uV$& \cref{P: co-oriented exterior unit}\\
 		\hline
 		Cochain cross product with $1$&\begin{tabular}{c}$\pi_1^*\uV = \uV \times \underline{N}$\\$\pi_2^*\uV = \underline{N} \times \uV$ \end{tabular} &\cref{P: projection pullbacks}\\
 		\hline
@@ -681,15 +682,19 @@ As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 
 \subsubsection{Mixed properties}\label{S: mixed formulas}
 
-The next grouping concerns properties that involve multiple products.
+The next grouping concerns properties that involve multiple kinds of products.
 We recall that $\diag \colon M \to M \times M$ is the diagonal map.
 For these properties we assume maps $V,W \to M$ and $X,Y \to N$.
 We also have projections $\pi_M \colon M \times N \to M$ and $\pi_N \colon M \times N \to N$.
-The last formula follows from \cref{P: compare cup and intersection orientations} by observing from the previous list of properties that, when $M$ is oriented, the cap product with $\uM$, which represents the chain $\id_M \colon M \to M$, takes a cochain to the chain with the orientation induced by the cochain co-orientation and the orientation of $M$.
+As in \cref{S: unital properties}, $\uM$ represents the geometric chain or cochain determined by $\id_M \colon M \to M$.
+Then the last formula follows from \cref{P: compare cup and intersection orientations} by recalling from \cref{P: cap with identity M} that, when $M$ is oriented, the fiber product with $\id_M \colon M \to M$ takes a precochain to the corresponding chain with the induced orientation.
+Again, $M$ must be compact for $\id_M$ to represent a chain, but the corresponding formulas hold more broadly at the referenced locations and so these identities could be taken as statements involving a broader class of geometric chains.
 
 The first and last properties require that $\uV$ and $\uW$ be transverse.
-The second holds for all $\uV, \uW$.
+The second holds for all $\uV, \underline{X}$.
 The next three require that $\uV$ be transverse to $\uW$ and that $\underline{X}$ be transverse to $\underline{Y}$.
+
+
 
 \begin{center}
 	\begin{tabular}{|l|c|l|}
@@ -711,7 +716,7 @@ The next three require that $\uV$ be transverse to $\uW$ and that $\underline{X}
 
 \subsubsection{Immersion formulas}
 
-While geometric chains and cochains do not have unique representatives by maps of manifolds, if the two terms can be represented by transverse immersions, then we recall that we have nice computational formulas for the cup, cap, and intersection products; see \cref{P: normal pullback,P: cap of immersions,P: orient intersection}, respectively.
+While geometric chains and cochains do not have unique representatives by prechains and precochains, we recall that if the two terms can be represented by transverse embeddings, then the cup, cap, and intersection products are represented by their intersection and we have simple formulas for the orientations or co-orientations; see \cref{P: normal pullback,P: cap of immersions,P: orient intersection}, respectively.
 For cap and intersection products, the special cases where the (co)chains have complementary dimensions are further specified in \cref{C: complementary cap,C: orient complementary intersection}.
 
 \subsubsection{Naturality and associativity formulas}
