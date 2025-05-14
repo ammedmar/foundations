@@ -384,13 +384,14 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	Then $H(-,0) = \id_M$ since $F(-,0) = \id$.
 	We will have $H(-,1) r_V \colon V \to M$ transverse to the cubulation by our choice of $s_0$.
 	Finally, as $ts_0 \in D_r^N$ for all $t \in I$, each $F(-,ts_0)r_W$ is transverse to the cubulation, which then implies that $H \circ (r_{W} \times \id)$ is transverse to it as well.
-	This will not provide the properness of $H$, but that will follow from our construction of $F$.
+	This does not provide the properness of $H$, but that will follow from our construction of $F$.
 	\begin{comment}Furthermore, for $V$ compact any map and homotopy are proper, and this homotopy is universal as it can be decomposed into $r_V \colon V \times I \to M \times I$ and the homotopy $M \times I \to M$ taking $(z,t)$ to $F(z,ts_0)$.
 	\end{comment}
 
 	The construction of $F$ is a small variation of the construction in the Transversality Homotopy Theorem of \cite[Section 2.3]{GuPo74}:
 	Let $M_\epsilon$ be an $\epsilon$-neighborhood of $M$ in some $\R^N$ in the sense of the $\epsilon$-Neighborhood Theorem of \cite[Section 2.3]{GuPo74}; in particular,
 	$M_\epsilon$ is an $\epsilon$-neighborhood of a proper embedding of $M$ into $\R^N$ that possesses a submersion $\pi \colon M_\epsilon \to M$.
+	We may also assume $\epsilon$ is a bounded function.
 	If $M$ is not compact, then $\epsilon$ is a smooth bounded positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
 	Let $f \colon M \times D^N \to M_\epsilon$ be given by $f(y, s) = y + \epsilon(y) s$; as $\epsilon(y)>0$, this is clearly a submersion (onto its image) at all points.
 	We let $F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{f}M_\epsilon \xr{\pi}M$.
@@ -400,7 +401,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	In particular, we may take $Z$ to be the interior of any cube $E$ (of any dimension) of the cubulation.
 	There are countably many cubes in the cubulation of $M$ and finitely many manifolds $S^k(V)$.
 	As the countable union of measure zero sets has measure zero, for almost all $s \in D^N$ we have for all $k$ that $\ms F|_{S^k(V)}(-,s) = F(-,s)r_V|_{S^k(V)}$ is transverse to all cubical faces.
-	We also observe that the homotopy $H$ obtained from this $F$ is proper as any sequence of $M \times I$ that ``escapes to infinity'' must similarly have image that escapes to infinity under $H$.
+	We also observe that the homotopy $H$ obtained from this $F$ is proper, as any sequence of $M \times I$ that ``escapes to infinity'' must similarly have image that escapes to infinity under $H$.
 
 
 	It remains in the compact $W$ setting to show that if we are given compact $W$ with $r_W \colon W \to M$ transverse to the cubulation then $F(-,s)r_W$ is transverse to the cubulation for all $s$ in some neighborhood $D_r^N$ of $0$ in $D^N$.
@@ -465,7 +466,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 
 	The map $\hat H$ is proper because again any sequence of $M \times I$ that escapes to infinity must similarly have image that escapes to infinity under $\hat H$.
 	The conditions of the proposition for $V$ follow immediately from the construction.
-	It remains to verify that each $\hat h_k \defeq \hat H \circ (r_{\bd^k W} \times \id_I) \colon \bd^k W \times I \to M$ is transverse to the cubulation, and similarly for the higher boundaries.
+	It remains to verify that each $\hat h_k \defeq \hat H \circ (r_{\bd^k W} \times \id_I) \colon \bd^k W \times I \to M$ is transverse to the cubulation.
 	Again, we focus primarily on $\hat h_0$.
 
 	\begin{comment}

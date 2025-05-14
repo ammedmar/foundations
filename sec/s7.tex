@@ -820,12 +820,11 @@ Similarly, we obtain external homology and cohomology products, although this is
 We will prove \cref{T: (co)homology products} in a moment, but first we note the following immediate consequence.
 
 \begin{theorem}
-	The homology cross product, cohomology cross product, cohomology cup product, cohomology/homology cap product, and, if $M$ is oriented, homology intersection product satisfy the properties enumerated in \cref{S: (co)chain properties}, except for the boundary formulas.
+	The homology cross product, cohomology cross product, cup product, cap product, and, if $M$ is oriented, intersection product satisfy the properties enumerated in \cref{S: (co)chain properties}, except for the boundary formulas.
 \end{theorem}
 
 We now set to proving \cref{T: (co)homology products}.
-We first prove it up to some technical lemmas and propositions, which follow just below.\greg{Once this section is edited and fixed up, we need to pull out a theorem that says that given $W$, (1) any cocycle can be represented by a pre(co)chain $V$ transverse to $W$ and (2) given such a cocycle transverse to $W$ that bounds, we can cobound it with something transverse to $W$. For sketch of proof, see comment after this note marker
-}
+We first prove it up to some technical lemmas and propositions, which follow just below.
 
 \begin{comment}
 Suppose V is a cycle transverse to N that bounds. Then there is a Z transverse to N that realizes it:
@@ -843,56 +842,83 @@ Which is in Q.
 
 
 \begin{proof}[Proof of \cref{T: (co)homology products}]
-	For the exterior products, by \cref{S: exterior chain products} we already have full-defined maps
+	For the exterior products, by \cref{S: exterior chain products} we already have fully-defined maps
 	\begin{align*}C^\Gamma_*(M) \times C^\Gamma_*(N)& \to C^\Gamma_*(M \times N)\\ C_\Gamma^*(M) \times C_\Gamma^*(N)& \to C_\Gamma^*(M \times N).
 	\end{align*}
-	These are easily seen to be bilinear and $\Z$-balanced (i.e.\ they satisfy $(r\uV) \times \uW = r(\uV \times \uW) = \uV \times r\uW$ for any $r \in \Z$).
+	These are easily seen to be bilinear and $\Z$-balanced (i.e.\ they satisfy $(a\uV) \times \uW = a(\uV \times \uW) = \uV \times a\uW$ for any $a \in \Z$).
 	Moreover, these are chain maps: for the chain cross product this follows from the standard boundary formula for oriented products and our boundary conventions, \cref{Con: oriented boundary}, and for the cochain cross product this follows from \cref{P: boundary of exterior product}, recalling our indexing convention for cochains.
 	The existence of the homology and cohomology cross products now follows from standard homological algebra.
 
-	For the other products, we must show that if we are given homology or cohomology classes (depending on the particular product), then they can be represented by chains or cochains $\uV$ and $\uW$ that are transverse and that the product does not depend on such a choice.
-	The basic steps of the proof are relatively standard and analogous to the proof of \cref{T: transverse complex}.
-	We provide the general details here modulo a technical lemma that we will prove below.
+	For the other products, we will show that if we are given homology or cohomology classes (depending on the particular product), then they can be represented by chains or cochains $\uV$ and $\uW$ that are simply transverse and that the product does not depend on such a choice.
+	The general idea of the proof is relatively standard and analogous to the proof of \cref{T: transverse complex}.
+	We provide the details here modulo a technical lemma that we will prove below.
 
 	First we define the products.
-	Given (co)homology classes represented by $r_V \colon V \to M$ and $r_W \colon W \to M$, we will find a universal homotopy\footnote{Recall from \cref{S: transverse cochains} that a universal homotopy will be one of the form $V \times I \xr{r_V \times \id} M \times I \xr{h} M$ and that such homotopies generate (co)homologies.} of $r_V$ to a map $r_V' \colon V \to M$ that is transverse to $W$.
+	Given (co)homology classes represented by $r_V \colon V \to M$ and $r_W \colon W \to M$, we will find a (proper) universal homotopy\footnote{Recall from \cref{S: covariant functoriality} that a universal homotopy will be one of the form $V \times I \xr{r_V \times \id} M \times I \xr{h} M$ and that such homotopies generate (co)homologies.} of $r_V$ to a map $r_V' \colon V \to M$ that is transverse to $W$.
 	Then $r_V$ and $r_V'$ represent (co)homologous (co)chains, and we can represent the product by the (oriented or co-oriented) fiber product of $r_V'$ and $r_W$.
 
-	To show that this gives a well-defined (co)homology class, we can suppose that $r_V'' \colon W \to M$ is another map transverse to $r_W$ representing the same (co)homology class as $r_V \colon V \to M$ with $r_Z:Z \to M$ providing the (co)homology.
+	To show that this gives a well-defined (co)homology class, we can suppose that $r_V'' \colon V \to M$ is another map transverse to $r_W$ representing the same (co)homology class as $r_V \colon V \to M$ with $r_Z:Z \to M$ providing the (co)homology.
 	For notational purposes, let us write $r_V' \colon V' \to M$ and $r_V'' \colon V'' \to M$ with $V = V' = V''$.
-	Then $\bd Z = V' \sqcup -V'' \sqcup T$ with $T \in Q(M)$.
+	Then $\bd Z \sqcup V' \sqcup -V'' \in Q(M)$.
 	We must show that $V' \times_M W$ and $V'' \times_M W$ are (co)homologous.
-	To do so, we find a universal homotopy $H \colon Z \times I \to M$ from $r_Z$ to an $r_Z':Z' \to M$ with $Z = Z'$ such that the restrictions of $H$ to $V' \times I$ and $V'' \times I$ are transverse to $r_W$ and $r_Z'$ is also transverse to $r_W$.
-	So $H|_{V' \times I}$ and $H|_{V'' \times I}$ give (co)homologies from the (co)chains represented by $V'$ and $V''$ to (co)chains that are (co)homologous via $r_Z'$.
-	Altogether, this gives a (co)homology from $V'$ to $V''$ that is transverse to $r_W$.
-	Call the (co)chain representing the (co)homology $\mf V$.
-	Now we can consider $\mf V \times_M W$, and we have $$\bd (\mf V \times_M W) = \pm (\bd \mf V) \times_M W\pm \mf V \times_M \bd W$$ via the appropriate boundary formulas (see \cref{P: oriented fiber boundary,leibniz,P: Leibniz cap}).
-	As $W$ represents a (co)cycle, $\bd W \in Q(M)$, so $\mf V \times_M \bd W \in Q(M)$ by \cref{L: pullback with Q}.
-	Meanwhile, as $\mf V$ is a (co)homology from $V'$ to $V''$, we have $$\bd \mf V \times_M W = (V' \sqcup -V'' \sqcup T') \times_M W = (V' \times_M W) \sqcup -(V'' \times_M W) \sqcup (T' \times_M W),$$
-	with $T' \in Q(M)$.
-	So $T' \times_M W \in Q(M)$ by \cref{L: pullback with Q}, and we see that $V' \times_M W$ and $V'' \times_M W$ are (co)homologous.
+	To do so, we claim we can find a proper universal homotopy $H \colon Z \times I \to M$ from $r_Z$ to an $r_Z':Z' \to M$ with $Z = Z'$ such that the restrictions of $H$ to $V' \times I$ and $V'' \times I$ are transverse to $r_W$ and $r_Z'$ is also transverse to $r_W$.
+	We will prove this is possible in \cref{P: perturb transverse to map}.
+	Then $H|_{V' \times I}$ and $H|_{V'' \times I}$ give (co)homologies from the (co)chains represented by $V'$ and $V''$ to (co)chains that are (co)homologous to each other via $r_Z'$.
+	Altogether, this gives a (co)homology from $V'$ to $V''$ via maps that are transverse to $r_W$.
+	Call the (co)chain representing this last (co)homology $\mc V$ so that $(\bd \mc V) \sqcup V' \sqcup -V'' \in Q(M)$ and $\mc V$ is transverse to $W$.
+	Now we can consider $\mc V \times_M W$, and we have $$\bd (\mc V \times_M W) = \pm \left( (\bd \mc V) \times_M W \right) \sqcup \pm \left( \mc V \times_M \bd W \right)$$ via the appropriate boundary formulas, with the precise signs depending on which kind of product we are considering (see \cref{P: oriented fiber boundary,leibniz,P: Leibniz cap}).
+	As $W$ represents a (co)cycle, $\bd W \in Q(M)$ by \cref{R: cycles and boundaries}, so $\mc V \times_M \bd W \in Q(M)$ by \cref{L: pullback with Q}.
+	Meanwhile, we have
+	$$((\bd \mc V) \times_M W) \sqcup (V' \times_M W) \sqcup -(V'' \times_M W) = \left((\bd \mc V) \sqcup V' \sqcup -V''\right) \times_M W,$$
+	which is again in $Q(M)$ by \cref{L: pullback with Q}.
+	Altogether then,
+	\begin{multline*}
+	\bd (\mc V \times_M W)  \sqcup (V' \times_M W) \sqcup -(V'' \times_M W)\\
+	  = \pm \left( (\bd \mc V) \times_M W \right) \sqcup \pm \left( \mc V \times_M \bd W \right) \sqcup (V' \times_M W) \sqcup -(V'' \times_M W)\\
+	 = \left[\pm \mc V \times_M \bd W\right] \sqcup \left[ \pm \left((\bd \mc V) \times_M W \right) \sqcup (V' \times_M W) \sqcup -(V'' \times_M W)\right].
+	\end{multline*}
+	If we now replace $\mc V \times_M W$ in this last formula with $\pm \mc V \times_M W$ with the sign chosen so that we obtain $+(\bd \mc V) \times_M W$ in the bottom line, then the bottom line will be an element of $Q(M)$.
 
-	So to finish the proof, we need an analogue of \cref{P: ball stability} that allows us to construct the homotopy $H$.
+	So $V' \times_M W$ and $V'' \times_M W$ are (co)homologous.
+
+	To finish the proof, we need an analogue of \cref{P: ball stability} that allows us to construct the homotopy $H$.
 	This is the content of \cref{P: perturb transverse to map} below.
 \end{proof}
 
+\begin{comment}
+NEED TO PULL THIS OUT
 
-\begin{proposition}\label{P: perturb transverse to map}
-	Suppose $f \colon V \to M$ and $g \colon W \to M$ are proper maps from manifolds with corners to a manifold without boundary.
-	Then there is a proper universal homotopy $h \colon V \times I \to M$ such that:
-	\begin{enumerate}
-		\item $h(-,0) = f$,
-		\item $h(-,1) \colon V \to M$ is transverse to $g$,
-		\item if $i_{X}:X \to V$ is the inclusion of a union of boundary components of $V$ with $r_X = fi_X:X \to M$ transverse to $g$ then $h \circ (i_{X} \times \id):X \times I \to M$ is transverse to $g$.
-	\end{enumerate}
-\end{proposition}
+The arguments of the proof of \cref{T: (co)homology products} also demonstrate the following important theorem:
 
+\begin{theorem}
+Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in C_*^\Gamma(M)$ (or $C^*_\Gamma(M)$) be a cycle (or cocycle).
+Then there is an $r_V \colon V \to M$ representing $\uV$ such that $V$ is simply transverse to $W$.
+
+Furthermore, if $V$ is simply transverse $W$ and $\uV$ bounds (or cobounds), i.e.\ there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, then such a $Z$ can be chosen so that it is simply transverse to $W$.
+\end{theorem}
+
+
+\greg{Once this section is edited and fixed up, we need to pull out a theorem that says that given $W$, (1) any cocycle can be represented by a pre(co)chain $V$ transverse to $W$ and (2) given such a cocycle transverse to $W$ that bounds, we can cobound it with something transverse to $W$. For sketch of proof, see comment after this note marker
+}
+\end{comment}
+
+
+
+To complete the proof above, we require \cref{P: perturb transverse to map}, below.
 This proposition is analogous to \cref{P: ball stability} with the difference being that instead of making a map transverse to the faces of a cubulation we must make a map transverse to another map.
 We will explain how to modify the proof of \cref{P: ball stability} to accomplish this.
-This requires some lemmas.
+We change notation slightly from that of \cref{T: (co)homology products} to make it more consistent with \cref{P: ball stability}, which we hope will ease comparison of the two results for the reader.
 
-We have already seen the first relevant lemma as \cref{L: all transversality is wrt embeddings}.
-Recall that this lemma allows us to replace transversality of arbitrary maps with transversality in which one map is an embedding.
+\begin{proposition}\label{P: perturb transverse to map}
+	Suppose $r_V \colon V \to M$ and $r_X \colon X \to M$ are proper maps from manifolds with corners to a manifold without boundary.
+	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id$ and $H(-,1)r_V \colon V \to M$ is transverse to $r_X$.
+
+	Furthermore, given another proper map $r_W \colon W \to M$ that is transverse to $r_X$, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to $r_X$.
+\end{proposition}
+
+Proving \cref{P: perturb transverse to map} will involve \cref{L: all transversality is wrt embeddings}, which, in our current notation, says that two maps $r_V \colon V \to M$ and $r_X \colon X \to M$ are transverse if and only when we replace $r_X$ with an embedding $e \colon X \into M \times \R^n$ that projects to $r_X$, then $e$ is transverse to $r_V \times \id_{\R^n}$.
+So this lemma allows us to replace transversality of arbitrary maps with transversality in which one map is an embedding.
+The following lemma says, roughly speaking, that when we construct such an embedding $e$, then $e(X)$ does not run off to infinity in the $\R^n$ factors over compact subsets of $M$.
 
 \begin{comment}
 	\red{GOING TO MOVE ELSEWHERE - HEREHERE}
@@ -933,32 +959,31 @@ Recall that this lemma allows us to replace transversality of arbitrary maps wit
 
 \end{comment}
 
-The next lemma says, roughly speaking, that $e(W)$ does not run off to infinity in the $\R^n$ factors over compact subsets of $M$.
+
 
 \begin{lemma}\label{L: compact preimage}
-	Let $g \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, let $\pi_M \colon M \times \R^n \to M$ be the projection, and let $e \colon W \to M \times \R^n$ be an embedding such that $\pi_Me = g$.
-	Then if $L \subset M$ is compact, there exists a close ball $\bar B^n_L \subset \R^n$ such that $e(g^{-1}(L)) \subset L \times \bar B^n_L$.
+	Let $r_X \colon X \to M$ be a proper map from a manifold with corners to a manifold without boundary, let $\pi_M \colon M \times \R^n \to M$ be the projection, and let $e \colon X \to M \times \R^n$ be an embedding such that $\pi_Me = r_X$.
+	Then if $L \subset M$ is compact, there exists a close ball $\bar B^n_L \subset \R^n$ such that $e(r_X^{-1}(L)) \subset L \times \bar B^n_L$.
 \end{lemma}
 
 \begin{proof}
-	As $L$ is compact and $g$ is proper, $g^{-1}(L)$ is compact.
-	So $e(g^{-1}(L))$ is compact, as is its image under the projection $\pi_{\R^n} \colon M \times \R^n \to \R^n$.
+	As $L$ is compact and $g$ is proper, $r_X^{-1}(L)$ is compact.
+	So $e(r_X^{-1}(L))$ is compact, as is its image under the projection $\pi_{\R^n} \colon M \times \R^n \to \R^n$.
 	Let $\bar B^n_L \subset \R^n$ be a closed ball containing this projection.
-	Then $\pi_Me(g^{-1}(L)) = g(g^{-1}(L)) \subset L$ and $\pi_{\R^n}e(g^{-1}(L)) \subset \bar B^n_L$.
-	So $e(g^{-1}(L)) \subset L \times \bar B^n_L$.
+	Then $\pi_Me(r_X^{-1}(L)) = r_X(r_X^{-1}(L)) \subset L$ and $\pi_{\R^n}e(r_X^{-1}(L)) \subset \bar B^n_L$.
+	So $e(r_X^{-1}(L)) \subset L \times \bar B^n_L$.
 \end{proof}
 
-We can now use these two lemmas to augment the proof of \cref{P: ball stability} to a proof of
-\cref{P: perturb transverse to map}.
+We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage} to augment the proof of \cref{P: ball stability} to a proof of \cref{P: perturb transverse to map}.
 
 \begin{proof}[Proof of \cref{P: perturb transverse to map}]
-	Suppose we have an embedding $e \colon W \to M \times \R^n$ such that $\pi e = g$, with $\pi \colon M \times \R^n \to M$ the projection.
-	Such an embedding always exists by the proof of \cref{L: Quillen}.
-	By \cref{L: all transversality is wrt embeddings}, it suffices to show that there is a proper universal homotopy $h \colon V \times I \to M$ such that
+	Suppose $e \colon X \to M \times \R^n$ is an embedding such that $\pi e = r_X$, with $\pi \colon M \times \R^n \to M$ the projection.
+	Such an embedding always exists by \cref{C: embed V}.
+	By \cref{L: all transversality is wrt embeddings}, it suffices to show that there is a proper  homotopy $H \colon M \times I \to M$ such that
 	\begin{enumerate}
-		\item $h(-,0) = f$,
-		\item $h(-,1) \times \id_{\R^n} \colon V \times \R^n \to M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$, and
-		\item $(h \circ (i_{X} \times \id_I)) \times \id_{\R^n}: X \times I \times \R^n \to M \times \R^n$ is transverse to $e$.
+		\item $H(-,0) = \id$,
+		\item $(H(-,1)r_V) \times \id_{\R^n} \colon V \times \R^n \to M \times \R^n$ is transverse to $e \colon X \to M \times \R^n$, and
+		\item $(H (W \times \id_I)) \times \id_{\R^n}: W \times I \times \R^n \to M \times \R^n$ is transverse to $e$.
 	\end{enumerate}
 	To do so, we will run through the proof of \cref{P: ball stability} again, adapting it to this altered situation and referring back to that proof for some of the details.
 
@@ -966,126 +991,155 @@ We can now use these two lemmas to augment the proof of \cref{P: ball stability}
 		\red{Note to Dev and Anibal: I know this is a bit redundant and \cref{P: ball stability} is arguably a special case with $n = 0$ (though there are a few other differences), but the proof of \cref{P: ball stability} is already very complicated so I didn't want to just do this more general version earlier.}
 	\end{comment}
 
-	As in the proof of \cref{P: ball stability}, we begin with the case where $V$ is compact and construct $F \colon M \times D^N \to M$, with $D^N$ the unit ball centered at $0$ in $\R^N$ for some $N$, such that
+	As in the proof of \cref{P: ball stability}, we begin with the case where $W$ is compact.
+	We will construct $F \colon M \times D^N \to M$, with $D^N$ the unit ball centered at $0$ in $\R^N$ for some $N$, such that
 
 	\begin{enumerate}
 		\item $F(-,0) = \id \colon M \to M$,
-		\item for almost all $s \in D^N$ the composition $V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$,
+		\item for almost all $s \in D^N$ the composition $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}} M \times \R^n$ is transverse to $e \colon X \to M \times \R^n$,
 
-		\item there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $X \times \R^n \xr{i_{X} \times \id_{\R^n}} V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e$.
+		\item there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $W \times \R^n \xr{r_W \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e$.
 	\end{enumerate}
 
-	Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n \xr{f \times \id_{\R^n}} M \times \R^n \xr{F(-,s_0) \times \id_{\R^n}}M \times \R^n$ is transverse to $e \colon W \to M \times \R^n$.
-	Then let $h(-,t) = F(-,ts_0)f$, i.e.\ $h(x,t) = F(f(x),ts_0)$.
-	The first required property for $h$ holds since $F(-,0) = \id$.
-	The second property holds by our choice of $s_0$.
-	The last property then holds as $ts_0 \in D_r^N$ for all $t \in I$; thus each $(h(-,ts_0) \times \id_{\R^n})(i_X \times \id_{\R^n}) = (h(-,ts_0)i_x) \times \id_{\R^n}$ is transverse to $e$, which then implies that $(h \circ (i_{X} \times \id_I)) \times \id_{\R^n}$ is transverse to $e$ as well.
-	Furthermore, $h$ is a universal homotopy by construction, and it is automatically proper as we are assuming $V$ to be compact.
+	Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{F(-,s_0) \times \id_{\R^n}} M \times \R^n$ is transverse to $e \colon X \to M \times \R^n$.
+	Then let $H(-,t) = F(-,ts_0)$, i.e.\ $H(x,t) = F(x,ts_0)$.
+	Then $H(-,0) = F(-,0) = \id$, and $H(-,1)r_V$ will be transverse to $r_X$ by our choice of $s_0$ and \cref{L: all transversality is wrt embeddings}.
+	Finally, $ts_0 \in D_r^N$ for all $t \in I$, each $F(-,ts_0)r_W \times \id_{\R^n}$ is transverse to $e$, so $F(-,ts_0)r_W$ is transverse to $r_X$.
+	Each $F(-,ts_0)r_W$ is the restriction of $H \circ (r_W \times \id) \colon W \times I \to M$ to a fixed $W \times t$, so this implies $H \circ (r_W \times \id)$ is transverse to $r_X$.
+	This does not provide the properness of $H$, but that will follow from our construction of $F$.
 
 	We now claim that we can construct $F$ almost exactly as in \cref{P: ball stability}.
 	Recall that we let $M_\epsilon$ be an $\epsilon$-neighborhood of a proper embedding of $M$ into some $\R^N$ in the sense of the $\epsilon$-Neighborhood Theorem of \cite[Section 2.3]{GuPo74}, with $\epsilon$ a smooth positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
+	We may assume $\epsilon$ is a bounded function.
 	Let $\pi_\epsilon: M_\epsilon \to M$ be the submersion.
-	We define $\theta: M \times D^N \to M_\epsilon$ by $\theta(y, s) = y + \epsilon(y) s$, which is a submersion onto its image.
-	Then we let $F \colon M \times D^N \to M$ be the submersion $M \times D^N \xr{\theta}M_\epsilon \xr{\pi}M$ and let $H \colon V \times D^N \to M$ be the composition $F \circ (f \times \id_{D^N})$.
-	The map $H$ is also a submersion onto its image, as are its restrictions $H|_{S^k(V) \times D^N}$.
+	We define $f: M \times D^N \to M_\epsilon$ by $f(y, s) = y + \epsilon(y) s$, which is a submersion onto its image.
+	Then we let $F \colon M \times D^N \to M$ be the submersion $M \times D^N \xr{f}M_\epsilon \xr{\pi} M$ and let $\ms F \colon V \times D^N \to M$ be the composition $F \circ (r_V \times \id_{D^N})$.
+	It is clear that $F(-,0) = \id_M$,
+	Furthermore, the map $\ms F$, as well as each $\ms F|_{S^k(V)}$, is a submersion onto its image.
 	Consequently the maps
-	$$S^k(V) \times D^N \times \R^n \xr{H \times \id_{\R^n}} M \times \R^n$$
+	$$S^k(V) \times D^N \times \R^n \xr{\ms F \times \id_{\R^n}} M \times \R^n$$
 	are also submersions onto their images.
-	Thus they are all transverse to all the strata of $W$, embedded by $e$ into $M \times \R^n$.
-	It follows by the Transversality Theorem of \cite[Section 2.3]{GuPo74} that for any such stratum $S^j(W)$ of $W$, each $H|_{S^k(V)}(-,s) \times \id_{\R^n}$ is transverse to $S^j(W)$ for almost all $s \in D^N$; note that $D^N$ remains our parameter space for invoking the Transversality Theorem, though we no longer write it as the last factor.
-	However, there are finitely many strata of $W$ and $V$.
-	As the finite union of measure zero sets has measure zero, for almost all $s \in D^N$ we have all $H|_{S^k(S)}(-,s) \times \id_{\R^n}$, $k\geq 0$, transverse to all $S^j(W)$.
-	So $H(-,s) \times \id_{R^n}$ is transverse to $e$ for almost all $s \in D^N$.
+	Thus they are all transverse to all the strata of $X$, embedded by $e$ into $M \times \R^n$.
+	It follows by the Transversality Theorem of \cite[Section 2.3]{GuPo74} that for any stratum $S^j(X)$ of $X$, each $\ms F|_{S^k(V)}(-,s) \times \id_{\R^n}$ is transverse to $S^k(X)$ for almost all $s \in D^N$; note that $D^N$ remains our parameter space for invoking the Transversality Theorem, though we no longer write it as the last factor.
+	As $X$ and $V$ each have finitely many strata and as the finite union of measure zero sets has measure zero, for almost all $s \in D^N$ we have all $\ms F|_{S^k(V)}(-,s) \times \id_{\R^n}$ transverse to all $S^j(X) \subset M \times \R^n$.
+	So $\ms F(-,s) \times \id_{R^n}$ is transverse to $e$ for almost all $s \in D^N$.
 
-	Once again it is clear that $F(-,0) = \id_M$, so it remains to show that if $X$ is a union of boundary components of $V$ with $r_X = fi_X:X \to M$ transverse to $g$ (or, equivalently, $r_X \times \id_{\R^n}:X \times \id_{R^n} \to M \times \R^n$ transverse to $e$) then $(H(-,s) \circ i_X) \times \R^n:X \times \R^n \to M \times \R^n$ is transverse to $e$ for all $s$ in some neighborhood $U$ of $0$ in $D^N$.
-	For simplicity of notation, we assume for the remainder of the proof that $X = \bd V$; in case $X$ is a union of only some of the components of $\bd V$, we can restrict the following arguments to just the relevant components of $X$.
-	Let $H_k$ denote the composition $H_k \colon \bd^kV \times D^N \xr{i_{\bd^kV} \times \id}V \times D^N \xr{f \times \id} M \times D^N \xr{F} M$.
-	As $X$ consists of boundary components of $V$, we must consider the $H_k$, $k\geq 1$.
-	We provide the details for $H_1$, the other cases being similar.
+	We also observe that the homotopy $H$ obtained from this $F$ by $H(x,t) = F(x,ts_0)$ is proper, as any sequence of $M \times I$ that ``escapes to infinity'' must similarly have image that escapes to infinity under $H$, using the boundedness of $\epsilon$.
+
+ 	So it remains to show that if $W$ is compact (as we are currently assuming) and $r_W$ is transverse to $r_X$ (or, equivalently, $r_W \times \id_{\R^n}: W \times \id_{R^n} \to M \times \R^n$ transverse to $e$) then $(F(-,s) \circ r_W) \times \id_{\R^n} \colon W \times \R^n \to M \times \R^n$ is transverse to $e$ for all $s$ in some neighborhood $D_r^N$ of $0$ in $D^N$.
+	Similarly to \cref{P: ball stability}, it is more convenient here to work with boundaries than with strata, recalling that, by \cref{L: simple trans}, to prove that two maps of manifolds with corners are transverse it is sufficient to show that their compositions with all pairs of boundary inclusions are naively transverse (see \cref{D: naive transversality}).
+	Let $\Upsilon_k$ denote the composition $\Upsilon_k \colon \bd^k W \times D^N \xr{i_{\bd^k W} \times \id_{D^N}} W \times D^N \xr{r_W \times \id_{D^N}} M \times D^N \xr{F} M$.
+	We must show that there is a $D_r^N$ such that for each $s\in D_r^N$ the maps $\Upsilon_k(-,s) \times \id_{\R^n}$ and $e i_{\bd^jX}$ are naively transverse for all $j,k$.
+	We will sometimes provide the details only for $\Upsilon_0$, with $\bd^0 W$ being $W$ itself, when the other cases are analogous.
 
 	We must start with two observations that were not needed in the proof of \cref{P: ball stability}.
 
-	First, as we are currently assuming that $V$ is compact, $L = H(V \times \bar D^N_{1/2}) \subset M$ is compact, and so by \cref{L: compact preimage} we have $e(g^{-1}(L)) \subset M \times \bar B^n_L$ for some closed ball $\bar B^n_L$.
-	In particular, this implies that for $|s| \leq 1/2$ only points in the compact set $V \times \bar B^n_k$ can be taken by $H(-,s) \times \id_{\R^n}$ to points of $e(W)$ in $M \times \R^n$.
+	First, as we are currently assuming that $W$ is compact, $L_k = \Upsilon_k(\bd^k W \times \bar D^N_{1/2}) \subset M$ is compact, and so by \cref{L: compact preimage} we have $e(r_X^{-1}(L_k)) \subset M \times \bar B^n_k$ for some closed ball $\bar B^n_k \in \R^n$.
+	In particular, this implies that for $|s| \leq 1/2$ only points in the compact set $\bd^k W \times \bar B^n_k$ can be taken by $\Upsilon_k(-,s) \times \id_{\R^n}$ to points of $e(X)$ in $M \times \R^n$.
 
-	Second, we also have to be more careful here about the map $e \colon W \times \R^n$, as its behavior can be more complicated than the embedding of a closed face of a cubulation.
-	Let $W_j = ei_{\bd^jW}(\bd^jW)$, the image of $\bd^jW$ in $M \times \R^n$.
-	As the maps $i_{\bd^jW}$ are not necessarily embeddings, it will not generally be the case that $W_j \cong \bd^jW$.
-	However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jW}$ are proper maps, so $W_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Proposition I.10.1.1]{Bou98}).
+	Second, we also have to be more careful here about the map $e \colon X \to M \times \R^n$, as its behavior can be more complicated than the embedding of a closed cube of a cubulation, in which each boundary component also embeds.
+	Let $X_j = ei_{\bd^jX}(\bd^jX)$, the image of $\bd^jX$ in $M \times \R^n$.
+	As the maps $i_{\bd^jX}$ are not necessarily embeddings, it will not generally be the case that $X_j \cong \bd^jX$.
+	However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jX}$ are proper maps, so $X_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Proposition I.10.1.1]{Bou98}).
 
-	Now, suppose $(x,z) \in X \times \bar B^n_L$.
-	As $f \times \id_{\R^n} = H_1(-,0) \times \id_{\R^n}$ is transverse $e \colon W \to M \times \R^n$, either $(r_X(x),z)\notin W_j$ or $r_X \times \id_{\R^n}$ is (naively) transverse to $ei_{\bd^jW}$ at $(r_X(x),z)$.
-	In the former case, as $W_j$ is closed, there is an open neighborhood $A_{(x,z)}$ of $(x,0,z) \in X \times D^N \times \R^n$ such that $(H_1 \times \id_{\R^n})(A_x) \cap W_j = \emptyset$.
-	Now suppose that $(r_X(x),z) \in W_j$ and is transverse there to $ei_{\bd^jW} \colon \bd^jW \to M \times \R^n$.
-	As $e$ is an embedding, the preimage of $(r_X(x),z)$ in $\bd^jW$ is the preimage of a point of $W$ under the boundary map $i_{\bd^jW}$, which is a finite set of points.
-	Let $a \in \bd^jW$ be one point of the preimage.
-	As the boundary maps are immersions, there is a neighborhood $C_a$ of $a$ in $\bd^jW$ on which $ei_{\bd^jW}$ restricts to an embedding from a $w-j$ dimensional manifold with corners into $M \times \R^n$.
-	In fact, by choosing a chart around $a$ and using the definition of a smooth map of manifolds with corners, $ei_{\bd^jW}$ (composed with the chart map) extends to a smooth immersion of a neighborhood of $0 \in \R^{w-j}$ into $M \times \R^n$.
-	By further appealing to charts and local diffeomorphisms, we can identify a neighborhood of $(r_X(x),z)$ in $M \times \R^n$ with $\R^{m+n}$ and the image of the extension of $ei_{\bd^jW}$ with $\R^{w-j} \times 0 \subset \R^{m+n}$.
-	The transversality assumption means that the composition of $D(r_X \times \id_{\R^n}) \colon T_xX \times T_z\R^n
-	\to T_{(r_X(x),z)}(M \times \R^n)$ with the projection to the last $m+n-(w-j)$ coordinates is a linear surjection.
-	As this is an open condition on the Jacobian matrix of $r_X \times \id_{\R^n}$ at $(x,z)$, it follows again that there is an open neighborhood $A_{(x,t),a}$ of $(x,0,z)$ in $X \times D_{1/2}^N \times \R^n$ such that for each $(x',s,z')$ in the neighborhood $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ in a neighborhood of $a$.
-	As there are a finite number of possible points $a$ and the transversality assumptions must hold for all of them, by taking $A_{(x,z)} = \cap_a A_{(x,z),a}$ with the finite intersection running over all points of $\bd^jW$ that map to $(r_X(x),z)$, we obtain a neighborhood $A_{(x,z)}$ of $(x,0,z)$ in $W \times D_{1/2}^N \times \R^n$ such that for each $(x',s,z')$ in the neighborhood, $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ at $(x',z')$.
+	Now, suppose\footnote{In this argument we will use the symbol $w$ to refer to a point in $W$, not the dimension of $W$.} $(w,z) \in W \times \bar B^n_0$, and let us fix $X_j$ as above.
+	As $r_W$ is transverse to $r_X$ by assumption, $\Upsilon_0(-,0) \times \id_{\R^n} = r_W \times \id_{\R^n}$ is transverse to $e \colon X \to M \times \R^n$.
+	So either $(r_W(w),z)\notin X_j$ or $r_W \times \id_{\R^n}$ is naively transverse to $ei_{\bd^jZ}$ at $(w,z)$ (recall \cref{D: naive transversality}).
+	In the former case, as $X_j$ is closed, there is an open neighborhood $A_{(w,z)}$ of $(w,0,z) \in W \times D^N \times \R^n$ such that $(\Upsilon_0 \times \id_{\R^n})(A_{(w,z)}) \cap X_j = \emptyset$.
+	On the other hand, suppose that $(r_W(w),z) \in X_j$ and $\Upsilon_0(-,0) \times \id_{\R^n}$ is naively transverse to $ei_{\bd^jX}$ at $(w,z)$.
+	As $e$ is an embedding, the preimage of $(r_W(w),z)$ in $\bd^jX$ is the preimage of a point of $X$ under the boundary map $i_{\bd^jX}$, which is a finite set of points.
+	Let $a \in \bd^jX$ be one point of this preimage.
+	As the boundary maps are immersions, there is a neighborhood $C_a$ of $a$ in $\bd^jX$ on which $ei_{\bd^jX}$ restricts to an embedding from an $x-j$ dimensional manifold with corners into $M \times \R^n$.
+	In fact, by choosing a chart that takes $0 \subset \R^{x-j}$ to $a$ and using the definition of a smooth map of manifolds with corners, $ei_{\bd^jX}$ (composed with the chart map) extends to a smooth immersion of a neighborhood of $0 \in \R^{x-j}$ into $M \times \R^n$.
+	By further appealing to charts and local diffeomorphisms, we can identify a neighborhood of $(r_W(w),z)$ in $M \times \R^n$ with $\R^{m+n}$ and the image of the extension of $ei_{\bd^jX}$ with $\R^{x-j} \times 0 \subset \R^{m+n}$ (cf.\ the Local Immersion Theorem in \cite{GuPo74}).
+	Making these identifications, the transversality assumption means that the composition of $D(\Upsilon_0(-,0) \times \id_{\R^n}) \colon T_wW \times T_z\R^n
+	\to T_{(r_W(w),z)}(M \times \R^n)$ with the projection to the last $m+n-(x-j)$ coordinates is a linear surjection.
+	As this is an open condition on the Jacobian matrix of $\Upsilon_0(-,0) \times \id_{\R^n}$ at $(w,z)$, it follows again that there is an open neighborhood $A_{(w,t),a}$ of $(w,0,z)$ in $W \times D_{1/2}^N \times \R^n$ such that for each $(w',s,z')$ in the neighborhood $\Upsilon_0(-,s) \times \id_{\R^n}$ is transverse to the restriction of $ei_{\bd^jX}$ to a neighborhood of $a$ (cf.\ the Stability Theorem in \cite{GuPo74}).
+	As there are a finite number of possible choices for the point $a$ and the transversality assumptions must hold for all of them, by taking $A_{(w,z)} = \cap_a A_{(w,z),a}$ with the finite intersection running over all points of $\bd^jX$ that map to $(r_W(w),z)$, we obtain a neighborhood $A_{(w,z)}$ of $(w,0,z)$ in $W \times D_{1/2}^N \times \R^n$ such that for each $(w',s,z')$ in the neighborhood, $\Upsilon_0(-,s) \times \id_{\R^n} \colon W \times \R^n \to M \times \R^n$ is transverse to $ei_{\bd^jX}$ at $(w',z')$.
 
-	Now, taking the union of the $A_{(x,z)}$ over all $(x,z) \in X \times \bar B^n_L$ gives a neighborhood $G_j$ of $X \times 0 \times \bar B^n_L$ in $X \times D_{1/2}^N \times \bar B^n_L$, and by the Tube Lemma, as $X \times \bar B^n_L$ is compact, there is a neighborhood of $X \times 0 \times \bar B^n_L$ of the form $X \times U_j \times \bar B^n_L$ in $G_j$.
-	For each $s \in U_j$, we have $H_1(-,s) \times \id_{\R^n}:X \times \bar B^n_L \to M \times \R^n$ transverse to $ei_{\bd^jW}$.
-	Furthermore, by the choice of $\bar B^n_L$, the map $H_1(-,s) \times \id_{\R^n}$ takes no point of $X \times \R^n$ that is in the complement of $X \times \bar B^n_L$ to the image of $W$.
-	Repeating the argument for all of the finite $j$ such that $\bd^jW\neq \emptyset$ and taking $U = \cap_j U_j$, we obtain a neighborhood of $0$ in $D_{1/2}^N$ on which $H_1(-,s) \times \id_{\R^n}:X \times \R^n \to M \times \R^n$ is (naively) transverse to all $ei_{\bd^jW}$.
-	By the same argument, we can then find an even smaller $U$ such that $H_k(-,s) \times \id_{\R^n} \colon \bd^{k}V \times \R^n \to M \times \R^n$ is (simply) transverse to all $ei_{\bd^jW}$ for all $k\geq 1$.
+	Now, taking the union of the $A_{(w,z)}$ over all $(w,z) \in W \times \bar B^n_0$ gives a neighborhood $G_j$ of $W \times 0 \times \bar B^n_0$ in $W \times D_{1/2}^N \times \bar B^n_0$, and by the Tube Lemma, as $W \times \bar B^n_0$ is compact, there is a neighborhood of $W \times 0 \times \bar B^n_0$ of the form $W \times U_j \times \bar B^n_0$ in $G_j$.
+	For each $s \in U_j$, we have $\Upsilon_0(-,s) \times \id_{\R^n} \colon W \times \bar B^n_0 \to M \times \R^n$ naively transverse to $ei_{\bd^jX}$.
+	Furthermore, by the choice of $\bar B^n_0$, the map $\Upsilon_0(-,s) \times \id_{\R^n}$ takes no point of $W \times \R^n$ that is in the complement of $W \times \bar B^n_0$ to the image of $X$,
+	so in fact $\Upsilon_0(-,s) \times \id_{\R^n} \colon W \times \R^n \to M \times \R^n$ is naively transverse to $ei_{\bd^jX}$.
+	Repeating the argument for all of the finite $j$ such that $\bd^jX \neq \emptyset$ and taking $U^0 = \cap_j U_j$, we obtain a neighborhood of $0$ in $D_{1/2}^N$ on which $\Upsilon_0(-,s) \times \id_{\R^n} \colon W \times \R^n \to M \times \R^n$ is naively transverse to all $ei_{\bd^jX}$.
+	By equivalent arguments, we can find open sets $U^k$ such that $\Upsilon_k(-,s) \times \id_{\R^n} \colon \bd^k W \times \R^n \to M \times \R^n$ is naively transverse to all $ei_{\bd^jX}$ for all $s \in U^k$ and all $k\geq 0$.
+	Finally, taking $r$ sufficiently small so that $D_r^N \subset \cap_k U^k$, we obtain the desired $D_r^N$.
 
-	This completes the proof of the proposition for $V$ compact.
+	This completes the proof of the proposition for $W$ compact.
 
-	Next suppose that $V$ is no longer necessarily compact.
-	We construct a homotopy $\hat h \colon V \times I \to M$ that fulfills the proposition.
+	Next suppose that $W$ is no longer necessarily compact.
 
-	We will utilize $F \colon M \times I \to M$ as defined above, which did not rely on $V$ being compact.
-	For $V$ not compact, the first two properties listed above for $F$ will continue to hold, but the third relied on compactness and so need not hold any long in general.
-	However, let $K \subset X$ be compact, and let $L = H_1(i_X(K) \times \bar D_{1/2}^N) \subset M$.
-	Choosing a $W_j$ as above and taking the union of the resulting $A_{(x,z)} \subset X \times D_{1/2}^N \times \R^n$ over all $(x,z) \in K \times \bar B^n_L$ and intersecting with $K \times D^N \times \bar B^n_L$ gives an open neighborhood $G_j$ of $K \times 0 \times \bar B^n_L$ in $K \times D^N \times \bar B^n_L$, such that
-	$H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ for all $(x,z) \in K \times \bar B^n_L$.
-	Again we can use the Tube Lemma to find a neighborhood $U_j$ of $0$ in $D^N$ so that $K \times U_j \times \bar B^n_L \subset G_j$, and then for every $s \in U_k$, we know that $H_1(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^jW}$ at every point of $K \times \R^n$, as points of $K \times \R^n$ outside of $K \times \bar B^n_L$ do not intersect $W_j$.
-	Now, as above, by ranging over all of the finite options for $j$ and $k$, we can then find a neighborhood $U$ of $0$ in $D^N_{1/2}$ such that for all $s \in U$ we have $H_k(-,s) \times \id_{\R^n}$ (naively) transverse to all $ei_{\bd^jW}$ at all points of $\bd^kV \times \R^n$, $k\geq 1$, that map to $K \times \R^n$ via the boundary immersions.
+	We will continue to utilize $F \colon M \times I \to M$ as defined above, which did not rely on $W$ being compact.
+	For $W$ not compact, the first two properties listed above for $F$ will continue to hold, but the third relied on compactness and so need not hold any long in general.
+	However, the only places where we required compactness above were in defining $L_k$ and hence $\bar B^n_k$ via \cref{L: compact preimage}, and then in applying the Tube Lemma.
+	So now let $K \subset W$ be compact.
+	Then each $i_{\bd^k W}^{-1}(K)$ is also compact as the $i_{\bd^k W}$ are proper.
+	Proceeding exactly as in the argument above, using $L_k = \Upsilon_k(i_{\bd^k W}^{-1}(K) \times \bar D^N_{1/2})$, we can find an open neighborhood
+	$D_{r_K}^N$ of $0$ in $D^N$ such that for all $s \in D_{r_K}^N$ and any $k\geq 0$ we have that $\Upsilon_k(-,s) \times \id_{\R^n} \colon W \times \R^n \to M \times \R^n$ is naively transverse to all $ei_{\bd^j X}$ at all points of $i_{\bd^k W}^{-1}(K) \times \R^n$.\footnote{We note that this condition still concerns transversality of $\Upsilon_k(-,s) \times \id_{\R^n}$ as a map with domain $\bd^k W \times \R^n$, not $i_{\bd^k W}^{-1}(K) \times \R^n$, which may not be a manifold with corners. But we only consider this condition at points of $i_{\bd^k W}^{-1}(K) \times \R^n$.}
+
+	\begin{comment}
+		Let $L^K_k = \Upsilon_k(i_{\bd^k W}^{-1}(K) \times \bar D_{1/2}^N) \subset M$.
+		Choosing an $X_j$ as above, we can now proceed exactly as in the precious argument, obtaining and taking the union of the resulting $A_{(w,z)} \subset W \times D_{1/2}^N \times \R^n$ over all $(w,z) \in K \times \bar B^n_0$ and intersecting with $K \times D^N \times \bar B^n_0$ gives an open neighborhood $G_j$ of $K \times 0 \times \bar B^n_0$ in $K \times D^N \times \bar B^n_0$, such that
+		$\Upsilon_0(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^j X}$ for all $(w,z) \in K \times \bar B^n_0$.
+		Again we can use the Tube Lemma to find a neighborhood $U_j$ of $0$ in $D^N$ so that $K \times U_j \times \bar B^n_0 \subset G_j$, and then for every $s \in U_j$, we know that $\Upsilon_0(-,s) \times \id_{\R^n}$ is transverse to $ei_{\bd^j X}$ at every point of $K \times \R^n$, as points of $K \times \R^n$ outside of $K \times \bar B^n_0$ do not intersect $W_j$.
+		Now, as above, by ranging over all of the finite options for $j$ and then similarly considering the $\bd^k W$ with subsets $i_{\bd^k W}^{-1}(K)$, maps $\Upsilon_k$, and balls $\bar B^n_k$, we can then find a neighborhood $U$ of $0$ in $D^N_{1/2}$ such that for all $s \in U$ we have $\Upsilon_k(-,s) \times \id_{\R^n}$ naively transverse to all $ei_{\bd^j X}$ at all points of $\bd^k W \times \R^n$, $k\geq 0$, that map to $K \times \R^n$ via the boundary immersions times $\id_{R^n}$.
+	\end{comment}
 
 	Let $\{\mc U_\ell\}$ be a locally finite covering of $M$ such that each $\bar{\mc U_\ell}$ is compact.
-	As $f \colon V \to M$ and $r_X = f \circ i_{X}$ are proper, each $r^{-1}_X(\bar {\mc U_\ell})$ is compact in $X$.
-	Proceeding as just above with $r_X^{-1}(\bar U_\ell)$ in place of $K$, we can find for each $\ell$ an $\varepsilon_{\ell,1} \leq 1$ so that for every $s \in D^N_{\varepsilon_{\ell,1}}$ we have $H_1(-,s) \times \id_{\R^n}$ transverse to all $ei_{\bd^jW}$ at every $(x,z) \in r^{-1}_X(\bar {\mc U_\ell}) \times \R^n$.
-	Analogously, we have $\varepsilon_{\ell,k}$ for all $k\geq 1$ so that $H_k(-,s) \times \id_{\R^n}$ is transverse to all $ei_{\bd^jW}$ at every $(x,z)$ in $(r_Vi_{\bd^kV})^{-1}(\bar {\mc U_\ell}) \times \R^n$.
-	Let $\varepsilon_\ell = \min\{\varepsilon_{\ell,k} \mid k\geq 1\}$.
-	These minima exist as $V$ has finite depth.
+	As $r_W \colon W \to M$ is proper, each $r^{-1}_W(\bar {\mc U_\ell})$ is compact in $W$.
+	Proceeding as just above with $r_W^{-1}(\bar U_\ell)$ in place of $K$, we can find for each $\ell$ an $\varepsilon_{\ell,k} \leq 1/2$ so that for every $s \in D^N_{\varepsilon_{\ell,k}}$ we have $\Upsilon_k(-,s) \times \id_{\R^n}$ naively transverse to all $ei_{\bd^j X}$ at every $(w,z) \in i_{\bd^k W}^{-1} r^{-1}_W(\bar {\mc U_\ell}) \times \R^n$.
+	Let $\varepsilon_\ell = \min\{\varepsilon_{\ell,k} \mid k\geq 0\}$.
+	These minima exist as $W$ has finite depth.
 
-	Now, using \cref{L: minimizer}, we choose a smooth function $\phi \colon M \to \R$ such that for all $x \in M$ we have $0<\phi(x)<\epsilon_\ell$ if $x \in \bar{\mc U_\ell}$.
-	Let $M\times_\phi D^N = \{(y,s) \in M \times D^N \mid |s|<\phi(y)\}$.
-	By our construction, for all $k\geq 1$ we have $H_k(-,s) \times \id_{\R^n} \colon \bd^{k}V \times \R^n \to M \times \R^n$ transverse to $ei_{\bd^jW}$ for each $s$ and at each $(x,z)$ such that $(x,s)\in(r_Xi_{\bd^{k}V} \times \id)^{-1}(M\times_\phi D^N) = \{(x,s) \in \bd^{k}V \times I \mid |s|<\phi(r_Xi_{\bd^kV}(x))\}$.
+	Now, using \cref{L: minimizer}, we choose a smooth function $\phi \colon M \to \R$ such that for all $y \in M$ we have $0<\phi(y)<\epsilon_\ell$ if $y \in \bar{\mc U_\ell}$.
+	Let $M \times_\phi D^N = \{(y,s) \in M \times D^N \mid |s|<\phi(y)\}$.
+	By our construction, for all $k\geq 0$ we have $\Upsilon_k(-,s) \times \id_{\R^n} \colon \bd^k W \times \R^n \to M \times \R^n$ transverse to $ei_{\bd^j X}$ for at each $(w,s,z) \in \bd^k W \times D^N \times \R^n$ such that $(w,s) \in (r_Wi_{\bd^{k}W} \times \id_{D^N})^{-1}(M\times_\phi D^N) = \{(w,s) \in \bd^k W \times D^N \mid |s|<\phi(r_Wi_{\bd^k W}(w))\}$.
 
-	Let $\hat \theta: M \times D^N \to M_\epsilon$ be given by $\hat \theta(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points.
-	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat \theta}M_\epsilon \xr{\pi_\epsilon}M$, and let $\hat H_k$ be the composition $\bd^kV \times D^N \xr{i_{\bd^kV} \times \id}V \times D^N \xr{f \times \id} M \times D^N \xr{\hat F} M$ for $k\geq 0$.
-	Once again by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for almost all $s \in D^N$ we have $\hat H_k(-,s) \times \id_{\R^n}$ transverse to all $ei_{\bd^jW}$
-	for all $k\geq 0$.
-	Letting $s_0$ be any such point we define $\hat h \colon V \times I \to M$ to be $\hat h(x,t) = \hat H(x,ts_0)$, and we claim that this $h$ satisfies the conditions of the proposition.
+	We now modify our above constructions as follows.
+	Let $\hat f: M \times D^N \to M_\epsilon \subset \R^N$ be given by $\hat f(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points.
+	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat f} M_\epsilon \xr{\pi_\epsilon} M$, and let $\hat \Upsilon_k$ be the composition $\bd^k W \times D^N \xr{i_{\bd^k W} \times \id} W \times D^N \xr{r_W \times \id} M \times D^N \xr{\hat F} M$ for $k\geq 0$.
+	Once again employing the Transversality Theorem of \cite[Section 2.3]{GuPo74} as above, for almost all $s \in D^N$ we have $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{\hat F(-,s) \times \id_{\R^n}} M \times \R^n$ transverse to $e \colon X \to M \times \R^n$.
+	Letting $s_0$ be any such point we define $\hat H \colon M \times I \to M$ to be $\hat H(y,t) = \hat F(x,ts_0)$, and we claim that this $\hat H$ satisfies the conditions required by the proposition.
 
-	The map $\hat h$ is proper, and the first two conditions of the proposition follow immediately from the construction.
-	It remains to verify that $$(\hat h \circ (i_{X} \times \id_I)) \times \id_{\R^n}: X \times I \times \R^n \to M \times \R^n$$ is transverse to $e$.
-	As we already know from the second condition of the proposition that $\hat h(-,1) \times \id_{\R^n}$ is transverse to $e$ and from the hypotheses that $\hat h(-,0)$ is transverse to $e$, it suffices to demonstrated transversality to $e$ of the restriction of $\hat h \times \id_{\R^n}$ to $X \times (0,1) \times \R^n$.
+	The map $\hat H$ is proper, again because any sequence of $M \times I$ that ``escapes to infinity'' must similarly have image that escapes to infinity under $H$.
+	The first two conditions of the proposition follow immediately from the construction and preceding observations.
+	Let $$\hat h_k = \hat H \circ (r_W i_{\bd^k W} \times \id_I): \bd^k W \times I \to M.$$
+	By \cref{L: all transversality is wrt embeddings}, it remains to verify that each $$\hat h_k \times \id_{\R^n} \colon \bd^k W \times I \times \R^n \to M \times \R^n$$ is naively transverse to each $ei_{\bd^j X}$.
+	\begin{comment}
+		DO WE NEED ANY OF THIS??
+		As we already know from the second condition of the proposition that $\hat h(-,1) \times \id_{\R^n}$ is transverse to $e$ and from the hypotheses that $\hat h(-,0)$ is transverse to $e$, it suffices to demonstrated transversality to $e$ of the restriction of $\hat h \times \id_{\R^n}$ to $X \times (0,1) \times \R^n$.
+	\end{comment}
 	From here, the argument is essentially the same as the end of the proof of \cref{P: ball stability} with the $\R^n$ factor just along for the ride.
+	Again we focus primarily on $k=0$ to simplify notation slightly.
 
-	In detail, for $(x,t) \in X \times I$ we can write $\hat h \circ (i_X \times \id_I):X \times I \to M$ explicitly as
-	$$\hat h(i_X(x),t) = \pi_\epsilon(r_X(x)+\phi(r_X(x))\epsilon(r_X(x))ts_0).$$
-	So, alternatively, we can observe that $\hat h \circ (i_X \times \id_I)$ is the composition
-	\begin{equation}\label{E: alt hat g}
-		X \times I \xr{\Phi} X \times I \xhookrightarrow{\Psi} X \times D^N \xr{r_X \times \id} M \times D^N \xr{F} M,
+	In detail, for $(w,t) \in W \times I$ we can write $\hat h_0 \colon W \times I \to M$ explicitly as
+	$$\hat h_0(w,t) = \pi_\epsilon(r_W(w)+\phi(r_W(w))\epsilon(r_W(w))ts_0).$$
+	So, alternatively, we can observe that $\hat h_0 (w,t)$ is the composition
+	\begin{equation}\label{E: perturb transverse to map}
+		W \times I \xr{\Phi} W \times I \xhookrightarrow{\Psi} W \times D^N \xr{r_W \times \id} M \times D^N \xr{F} M,
 	\end{equation}
-	with $\Phi(x,t) = (x,\phi(r_X(x))t)$, $\Psi(x,t) = (x,ts_0)$, and noting that on the right we do mean our original $F$ and not $\hat F$.
+	with $\Phi(w,t) = (w,\phi(r_W(w))t)$, $\Psi(w,t) = (w,ts_0)$, and noting that on the right we do mean our original $F$ and not $\hat F$.
 
-	The first map $\Phi$ is a diffeomorphism onto its image, which is a neighborhood of $X \times 0$ in $X \times I$, and the map $\Psi$ embeds this linearly into $X \times D^N$.
-	The composition of the last two maps is just our earlier map $H_1$.
-	By construction, the map $r_X \times \id_{D^N}$ now takes the image of $\Psi\Phi$ into $M\times_\phi D^N$, and so at each point $(x,s,z)$ in the image of $\Psi\Phi \times \id_{\R^n}$ if we fix $s$ and consider $H_1(-,s) \times \id_{\R^n}$ we get by construction a map on $X \times \R^n$ that is transverse to $e$.
-	But as $\Phi$ is a diffeomorphism onto its image and $\Psi$ is an embedding that is the identity with respect to $X$, we see $\Psi\Phi$ takes a neighborhood of any $(x,t) \in X \times (0,1)$ to a neighborhood of its image in $X \times \R s_0$, where $\R s_0$ is the line in $\R^N$ spanned by $s_0$.
-	In particular, the derivative of $\Psi\Phi$ maps the tangent space to $X \times (0,1)$ at $(x,t)$ onto $ T_xX \times \R s_0 \subset T_{\Psi\Phi(x,t)}(X \times D^N)$.
-	So for any $(x,t,z) \in X \times (-1,1) \times \R^n$, the image of $T_{(x,t,z)}(X \times (-1,1) \times \R^n)$ under
-	$D(\Psi\Phi \times \id_{\R^n})$ contains $T_xX \times 0 \times \R^n$.
-	By our construction, $DH_1$ takes this tangent space to a tangent subspace in $M \times \R^n$ at $\hat h(x,t)$ that is transverse to the images of all $D(ei_{\bd^jW})$.
-	The same holds for $k>1$ replacing $X$ with $\bd^{k}V$ and $r_X$ with $r_{\bd^{k}V}$.
-	So we see that $\hat h$ satisfies all the requirements of the proposition.
+	As $0 < \phi(r_W(w)) < 1$ for all $w \in W$, the first map $\Phi$ is a diffeomorphism onto its image, which is a neighborhood of $W \times 0$ in $W \times I$, and the map $\Psi$ embeds this into $W \times D^N$ by a product map that is constant in the $W$ direction and nontrivial linear in the second factor.
+	The composition of the last two maps is just our earlier map $\Upsilon_0$.
+	By construction, the map $r_W \times \id_{D^N}$ now takes the image of $\Psi\Phi$ into $M\times_\phi D^N$ (as $|s_0|<1$), and so at each point $(w,s,z)$ in the image of $\Psi\Phi \times \id_{\R^n}$ if we fix $s$ and consider $\Upsilon_0(-,s) \times \id_{\R^n}$ we get by construction a map on $W \times \R^n$ that is naively transverse at $(w,s,z)$ to each $ei_{\bd^j X}$.
+	Let $(w,t) \in W \times I$, let $\Psi \Phi(w,t) = (\xi,s)$, and let $\R s_0$ denote the line in $\R^N = T_sD^N$ spanned by the position vector of $s_0$.
+	As $\Phi$ is a diffeomorphism onto its image and $\Psi$ is an embedding that is the identity with respect to $W$ and nontrivial linear on $I$ for each fixed $w$, we see
+	that the derivative of $\Psi\Phi$ maps the tangent space $T_{(w,t)}(W \times I)$ onto $T_\xi W \times \R s_0 \subset T_{(\xi,s)}(W \times D^N)$.
+	In particular, this image contains $T_\xi W \times 0$, and we have established that $D(\Upsilon_0 \times \id_{\R^n})$ takes $T_w W \times 0 \times T_z\R^n$ to a tangent subspace in $M \times \R^n$ at $(\hat h_0(w,t),z)$ that is transverse to the tangent space there of each $ei_{\bd^j X}$.
+
+	The same argument holds for each $k>0$ replacing $W$ with $\bd^{k}W$ in \eqref{E: perturb transverse to map} and $r_W$ with $r_{\bd^k W}$.
+	So we see that $\hat H$ satisfies all the requirements of the proposition.
+	\qedhere
+	\begin{comment}
+		But as $\Phi$ is a diffeomorphism onto its image and $\Psi$ is an embedding that is the identity with respect to $X$, we see $\Psi\Phi$ takes a neighborhood of any $(x,t) \in X \times (0,1)$ to a neighborhood of its image in $X \times \R s_0$, where $\R s_0$ is the line in $\R^N$ spanned by $s_0$.
+		In particular, the derivative of $\Psi\Phi$ maps the tangent space to $X \times (0,1)$ at $(x,t)$ onto $ T_xX \times \R s_0 \subset T_{\Psi\Phi(x,t)}(X \times D^N)$.
+		So for any $(x,t,z) \in X \times (-1,1) \times \R^n$, the image of $T_{(x,t,z)}(X \times (-1,1) \times \R^n)$ under
+		$D(\Psi\Phi \times \id_{\R^n})$ contains $T_xX \times 0 \times \R^n$.
+		By our construction, $DH_1$ takes this tangent space to a tangent subspace in $M \times \R^n$ at $\hat h(x,t)$ that is transverse to the images of all $D(ei_{\bd^jW})$.
+		The same holds for $k>1$ replacing $X$ with $\bd^{k}V$ and $r_X$ with $r_{\bd^{k}V}$.
+		So we see that $\hat h$ satisfies all the requirements of the proposition.
+	\end{comment}
 \end{proof}
 
 \subsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}
