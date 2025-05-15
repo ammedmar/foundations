@@ -817,20 +817,22 @@ Similarly, we obtain external homology and cohomology products, although this is
 	\end{align*}
 \end{theorem}
 
-We will prove \cref{T: (co)homology products} in a moment, but first we note the following immediate consequence.
+We will prove \cref{T: (co)homology products} below.
+The basic idea, in the case of the last three products, will be to show that we can represent pairs of homology or cohomology classes by simply transverse representatives and then form the usual fiber products.
+We therefore have the following immediate consequence.
 
 \begin{theorem}
 	The homology cross product, cohomology cross product, cup product, cap product, and, if $M$ is oriented, intersection product satisfy the properties enumerated in \cref{S: (co)chain properties}, except for the boundary formulas.
 \end{theorem}
 
-To prove \cref{T: (co)homology products}, we use the following important theorem.
+To prove \cref{T: (co)homology products}, we will use the following important theorem.
 
 
 \begin{theorem}\label{T: transverse reps}
-Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in C_*^\Gamma(M)$ (or $C^*_\Gamma(M)$) be a cycle (or cocycle).
-Then there is an $r_V \colon V \to M$ representing the same homology (or cohomology) class as $\uV$ such that $V$ is simply transverse to $W$.
+Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in H_*^\Gamma(M)$ or $\uV \in H^*_\Gamma(M)$.
+Then there is an $r_V \colon V \to M$ representing $\uV$ such that $V$ is transverse to $W$.
 
-Furthermore, if $V$ is simply transverse $W$ and $\uV$ bounds (or cobounds), i.e.\ there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, then such a $Z$ can be chosen so that it is simply transverse to $W$.
+Furthermore, if $V$ is transverse $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, i.e.\ $\uV = 0$ as a homology or cohomology class, then such a $Z$ can be chosen so that it is transverse to $W$.
 \end{theorem}
 
 We will prove \cref{T: transverse reps} below in \cref{S: transverse maps}.
@@ -870,15 +872,14 @@ Which is in Q.
 	\end{comment}
 
 	To define the other products, we utilize \cref{T: transverse reps}.
-	Given (co)homology classes represented by $r_V \colon V \to M$ and $r_W \colon W \to M$, we can find by \cref{T: transverse reps} a map $r_V' \colon V \to M$ that represents the same (co)homology class as $V$ and is simply transverse to $W$.
+	Given (co)homology classes represented by $r_V \colon V \to M$ and $r_W \colon W \to M$, we can find by \cref{T: transverse reps} a map $r_V' \colon V' \to M$ that represents the same (co)homology class as $V$ and is transverse to $W$.
 	We then represent the product by the (oriented or co-oriented) fiber product of $r_V'$ and $r_W$.
 
-	To show that this gives a well-defined (co)homology class, we can suppose that $r_V'' \colon V \to M$ is another map transverse to $r_W$ representing the same (co)homology class as $r_V \colon V \to M$ with $r_Z:Z \to M$ providing the (co)homology.
-	For notational purposes, let us write $r_V' \colon V' \to M$ and $r_V'' \colon V'' \to M$ with $V = V' = V''$.
-	Then $\bd Z \sqcup V' \sqcup -V'' \in Q(M)$, so $V' \sqcup -V''$ bounds.
+	To show that this gives a well-defined (co)homology class, we can suppose that $r_V'' \colon V'' \to M$ is another map transverse to $r_W$ representing the same (co)homology class as $r_V \colon V \to M$.
+	Suppose $r_Z:Z \to M$ with $\bd Z \sqcup V' \sqcup -V'' \in Q(M)$, provides the (co)homology.
 	We must show that $V' \times_M W$ and $V'' \times_M W$ are (co)homologous.
 
-	Now by \cref{T: transverse reps}, we can replace assume that $Z$ is also simply transverse to $W$.
+	Now by \cref{T: transverse reps}, we can assume that $Z$ is also transverse to $W$.
 	\begin{comment}
 		 To do so, we claim we can find a proper universal homotopy $H \colon Z \times I \to M$ from $r_Z$ to an $r_Z':Z' \to M$ with $Z = Z'$ such that the restrictions of $H$ to $V' \times I$ and $V'' \times I$ are transverse to $r_W$ and $r_Z'$ is also transverse to $r_W$.
 		We will prove this is possible in \cref{P: perturb transverse to map}.
@@ -886,7 +887,7 @@ Which is in Q.
 		Altogether, this gives a (co)homology from $V'$ to $V''$ via maps that are transverse to $r_W$.
 		Call the (co)chain representing this last (co)homology $\mc V$ so that $(\bd \mc V) \sqcup V' \sqcup -V'' \in Q(M)$ and $\mc V$ is transverse to $W$.
 	\end{comment}
-	So we can consider $Z \times_M W$, and we have $$\bd (Z \times_M W) = \pm \left( (\bd Z) \times_M W \right) \sqcup \pm \left( Z \times_M \bd W \right)$$ via the appropriate boundary formulas, with the precise signs depending on which kind of product we are considering (see \cref{P: oriented fiber boundary,leibniz,P: Leibniz cap}).
+	So we can form $Z \times_M W$, and we have $$\bd (Z \times_M W) = \pm \left( (\bd Z) \times_M W \right) \sqcup \pm \left( Z \times_M \bd W \right)$$ via the appropriate boundary formulas, with the precise signs depending on which kind of product we are considering (see \cref{P: oriented fiber boundary,leibniz,P: Leibniz cap}).
 	As $W$ represents a (co)cycle, $\bd W \in Q(M)$ by \cref{R: cycles and boundaries}, so $Z \times_M \bd W \in Q(M)$ by \cref{L: pullback with Q}.
 	Meanwhile, we have
 	$$((\bd Z) \times_M W) \sqcup (V' \times_M W) \sqcup -(V'' \times_M W) = \left((\bd Z) \sqcup V' \sqcup -V''\right) \times_M W,$$
@@ -897,12 +898,15 @@ Which is in Q.
 	  = \pm \left( (\bd Z) \times_M W \right) \sqcup \pm \left( Z \times_M \bd W \right) \sqcup (V' \times_M W) \sqcup -(V'' \times_M W)\\
 	 = \left[\pm Z \times_M \bd W\right] \sqcup \left[ \pm \left((\bd Z) \times_M W \right) \sqcup (V' \times_M W) \sqcup -(V'' \times_M W)\right].
 	\end{multline*}
-	If we now replace $Z \times_M W$ in this last formula with $\pm Z \times_M W$ with the sign chosen so that we obtain $+(\bd Z) \times_M W$ in the bottom line, then the bottom line will be an element of $Q(M)$.
+	We need to have $+(\bd Z) \times_M W$ in the bottom line of this computation, but we can obtain that by replacing $Z \times_M W$ with $-Z \times_M W$ if necessary.
+	Then the bottom line will be an element of $Q(M)$.
 
 	So $V' \times_M W$ and $V'' \times_M W$ are (co)homologous.
-
-	To finish the proof, we need an analogue of \cref{P: ball stability} that allows us to construct the homotopy $H$.
-	This is the content of \cref{P: perturb transverse to map} below.
+	\qedhere
+	\begin{comment}
+		To finish the proof, we need an analogue of \cref{P: ball stability} that allows us to construct the homotopy $H$.
+		This is the content of \cref{P: perturb transverse to map} below.
+	\end{comment}
 \end{proof}
 
 \begin{comment}
@@ -918,7 +922,6 @@ The arguments of the proof of \cref{T: (co)homology products} also demonstrate t
 
 
 \subsubsection{Representing (co)homology classes by transverse maps}\label{S: transverse maps}.
-
 
 In this section, we prove \cref{T: transverse reps}.
 The main tool will be \cref{P: perturb transverse to map}, stated below.
@@ -1165,23 +1168,37 @@ Finally, we prove \cref{T: transverse reps}.
 	Given \cref{L: compact preimage}, the proof is very analogous to that of \cref{T: transverse complex}.
 
 	Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in C_*^\Gamma(M)$ (or $C^*_\Gamma(M)$) be a cycle (or cocycle).
-	Let $r_V \colon C \to M$ be any representative for $\uV$.
+	Let $r_V \colon V \to M$ be any representative for $\uV$.
 	By \cref{P: perturb transverse to map} there is a proper homotopy $H \colon M \to I$ such that $H(-,1)r_V$ is transverse to $r_W$.
 	By \cref{D: universal homotopy,P: universal homotopy}, $H(-,1)r_V$ represents the same homology or cohomology class as $V$.
 
-	Next, suppose $V$ is simply transverse to $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$.
+	Next, suppose $V$ is transverse to $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$.
+	We consider first the case where $V$ is a precochain.
 	By \cref{P: perturb transverse to map}, there is a proper homotopy $H$ such that $H(-,1)r_Z$ is transverse to $r_W$ and $V \times I \xr{r_V \times \id_I} M \times I \xr{H} M$ is transverse to $r_W$.
-	Let $Z'$ be the precochain $Z \xr{H(-,1)r_Z} M$, let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, and let $Y$ be the precochain $V \times I \xr{H\circ (r_V \times \id_I)} M$.
+	Let $Z'$ denote the precochain $Z \xr{H(-,1)r_Z} M$, let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, and let $Y$ be the precochain $V \times I \xr{H\circ (r_V \times \id_I)} M$.
 	Let $A$ be the precochain $Z' \sqcup -Y$, which is transverse to $r_W$.
-	We note that $\bd Z' \sqcup -V'$ is the image of $\bd Z \sqcup -V$ after composing with $H(-,1)$, and so it is in $Q^*(M)$ by \cref{L: Q preservation}, using in the cochain case that we can co-orient $H$ and $H(-,1)$ as in \cref{S: co-oriented homotopy}.
-	We compute
+	We note that $\bd Z' \sqcup -V'$ is the image of $\bd Z \sqcup -V$ after composing with $H(-,1)$, and so it is in $Q(M)$ by \cref{L: Q preservation}, using that we can co-orient $H$ and $H(-,1)$ as in \cref{S: co-oriented homotopy}.
+	We also have $\bd Y = V' \sqcup -V \sqcup B$, where $B$ is the precochain $\bd V \times I \xr{H\circ (r_{\bd V} \times \id_I)} M$ (cf. the proof of \cref{C: homotopy}).
+	We now compute
 	\begin{align*}
 		\bd A \sqcup -V &= \bd Z' \sqcup -\bd Y \sqcup -V\\
-		&= \bd Z' \sqcup -(V' \sqcup -V) \sqcup -V\\
-		&= \bd Z' \sqcup -V' \sqcup V \sqcup -V.
+		&= \bd Z' \sqcup -(V' \sqcup -V \sqcup B) \sqcup -V\\
+		&= \bd Z' \sqcup -V' \sqcup V \sqcup -V \sqcup -B.
 	\end{align*}
-	We have already noted $\bd Z' \sqcup -V' \in Q^*(M)$ and $V \sqcup -V$ is trivial.
-	So $\bd A \sqcup -V \in Q^*(M)$ and $A$ is transverse to the cubulation.
+	We have already noted $\bd Z' \sqcup -V' \in Q(M)$ and $V \sqcup -V$ is trivial.
+	Since $V$ represents a cycle, $\bd V \in Q^*(M)$ and hence $B \in Q^*(M)$ by \cref{L: dessicated homotopy}.
+	So $\bd A \sqcup -V \in Q^*(M)$ and $A$ is transverse to $r_W$.
+	So $A$ is our desired replacement for $Z$.
+
+	In the oriented case, we instead have $\bd Y = (-1)^{v} V' \sqcup (-1)^{v+1} V \sqcup B$, identifying $V \times I$ with $V \times_{pt} I$ and applying \cref{P: oriented fiber boundary} (again cf.\ the proof of \cref{C: homotopy}).
+	In this case, we let $A = Z' \sqcup (-1)^{v+1} Y$.
+	Then
+	\begin{align*}
+		\bd A \sqcup -V &= \bd Z' \sqcup (-1)^{v+1}\bd Y \sqcup -V\\
+		&= \bd Z' \sqcup (-1)^{v+1}((-1)^{v} V' \sqcup (-1)^{v+1} V \sqcup B) \sqcup -V\\
+		&= \bd Z' \sqcup -V' \sqcup V \sqcup -V \sqcup (-1)^{v+1}B,
+	\end{align*}
+	and this is in $Q(M)$ for the same reasons as above.
 \end{proof}
 
 
