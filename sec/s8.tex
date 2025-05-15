@@ -227,7 +227,7 @@ It will follow later from \cref{R: Alex tubular} that $\mc A$ is also independen
 	Once we show that $\mc A$ is independent of the specific choices of $V$ (representing a given $\uV$ in $H^*_\Gamma(S^n-L)$) and $x$, it will follow immediately that $\mc A$ is a homomorphism, as given $V,W\in PC^*_\Gamma(S^n-L)$ representing cohomology classes and transverse to $S_x$, then $\mc A(\uV + \uW)$ will be represented by $\pi((V \sqcup W) \times_{S^n} S_x)$, which is the same precochain as $\pi(V \times_{S^n} S_x) \sqcup \pi(W \times_{S^n} S_x)$.
 
 	Next, suppose $V' \in PC^*_\Gamma(S^n-L)$ also represents $\uV \in H^*_\Gamma(S^n-L)$ and is transverse to $S_x$.
-	As $V$ and $V'$ represent the same cohomology class, by \cref{R: cycles and boundaries} there exists $Z \in PC^*_\Gamma(S^n-L)$ so that $\bd Z\sqcup -V \sqcup V' \in Q^*(S^n-L)$; we may also assume $Z$ transverse to $S_x$ by REFERENCE NEEDED\greg{This needs a reference after editing Chapter 7 - can be pulled out of proof of 7.22 and 7.24 as of Feb 3, 2025 version.}.
+	As $V$ and $V'$ represent the same cohomology class, by \cref{R: cycles and boundaries} there exists $Z \in PC^*_\Gamma(S^n-L)$ so that $\bd Z\sqcup -V \sqcup V' \in Q^*(S^n-L)$; we may also assume $Z$ transverse to $S_x$ by \cref{T: transverse reps}.
 	Then $(\bd Z \sqcup -V \sqcup V') \times_{S^n} S_x \in Q_*(S^n-L)$ by \cref{L: pullback with Q}.
 	This prechain can also be considered to be in $Q_*(U) \subset PC_*^\Gamma(U)$, where $U$ is the $\epsilon$-neighborhood described above.
 	So then $\pi((\bd Z \sqcup -V \sqcup V') \times_{S^n} S_x ) \in Q_*(L)$ by \cref{L: Q preservation}.
@@ -288,7 +288,7 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	So suppose $\uV \in \td H_i^\Gamma(L)$ represented by $r_V \colon V \to L$.
 	Then $\mc Z(\uV)$ is represented by $\mr r_Z \colon \mr Z \to S^n-L$, where $Z \in PC_{i+1}^\Gamma(S^n)$ is such that $\bd Z \sqcup -V \in Q_*(S^n)$.
 	Recall that we choose an $x \in (0,\epsilon)$ that is a regular value for the distance function to $L$.
-	By REFERENCE NEEDED\greg{This needs a reference after editing Chapter 7 - can be pulled out of proof of 7.22 and 7.24 as of Feb 3, 2025 version.} we may suppose $Z$ is transverse to $S_x$, and then $\mc A \mc Z(\uV)$ is represented by $\pi(\mr Z \times_{S^n} S_x) = \pi(\hat Z \times_{S^n} S_x)$, which we denote $W$.
+	By \cref{T: transverse reps}, we may suppose $Z$ is transverse to $S_x$, and then $\mc A \mc Z(\uV)$ is represented by $\pi(\mr Z \times_{S^n} S_x) = \pi(\hat Z \times_{S^n} S_x)$, which we denote $W$.
 
 	Let $Y = \pi(\hat Z \times_{S^n} D_x^-)$.
 	By \cref{P: Leibniz cap} and the above observation that $(\bd Z)\hat{\vrule height1.3ex width0pt} = (-1)^{i+1} (\bd \hat Z)$, we have
