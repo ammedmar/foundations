@@ -386,7 +386,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	Then $H(-,0) = \id_M$ since $F(-,0) = \id$.
 	We will have $H(-,1) r_V \colon V \to M$ transverse to the cubulation by our choice of $s_0$.
 	Finally, as $ts_0 \in D_r^N$ for all $t \in I$, each $F(-,ts_0)r_W$ is transverse to the cubulation, which then implies that $H \circ (r_{W} \times \id)$ is transverse to it as well.
-	This does not provide the properness of $H$, but that will follow from our construction of $F$.
+	This does not provide the properness of $H$, but that we consider that below.
 	\begin{comment}Furthermore, for $V$ compact any map and homotopy are proper, and this homotopy is universal as it can be decomposed into $r_V \colon V \times I \to M \times I$ and the homotopy $M \times I \to M$ taking $(z,t)$ to $F(z,ts_0)$.
 	\end{comment}
 
@@ -395,7 +395,8 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	$M_\epsilon$ is an $\epsilon$-neighborhood of a proper embedding of $M$ into $\R^N$ that possesses a submersion $\pi \colon M_\epsilon \to M$.
 	We may also assume $\epsilon$ is a bounded function.
 	If $M$ is not compact, then $\epsilon$ is a smooth bounded positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
-	Let $f \colon M \times D^N \to M_\epsilon$ be given by $f(y, s) = y + \epsilon(y) s$; as $\epsilon(y)>0$, this is clearly a submersion (onto its image) at all points.
+	Let $f \colon M \times D^N \to M_\epsilon$ be given by $f(y, s) = y + \eta(y) s$, where $\eta \colon M \to \R$ is a smooth function such that $0 < \eta(y) < \epsilon(y)$ for all $y \in M$.
+	As $\eta > 0$, this is clearly a submersion (onto its image) at all points.
 	We let $F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{f}M_\epsilon \xr{\pi}M$.
 	Furthermore, the map $\ms F \colon V \times D^N \to M$ given by the composition $$V \times D^N \xr{r_V \times \id} M \times D^N \xr{F} M$$ as well as all the restrictions $\ms F|_{S^k(V)}$
 	are submersions.
@@ -403,8 +404,18 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	In particular, we may take $Z$ to be the interior of any cube $E$ (of any dimension) of the cubulation.
 	There are countably many cubes in the cubulation of $M$ and finitely many manifolds $S^k(V)$.
 	As the countable union of measure zero sets has measure zero, for almost all $s \in D^N$ we have for all $k$ that $\ms F|_{S^k(V)}(-,s) = F(-,s)r_V|_{S^k(V)}$ is transverse to all cubical faces.
-	We also observe that the homotopy $H$ obtained from this $F$ is proper, as any sequence of $M \times I$ that ``escapes to infinity'' must similarly have image that escapes to infinity under $H$.
 
+	We now show how to ensure $H$ is proper.
+	We consider $M$ endowed with the the distance function $|\cdot|$ obtained by restricting the standard distance function on $\R^N$ to $M$.
+	The projection $p \colon M \times I \to M$ is proper, and by
+	\cref{L: nearby proper homotopy}, there is a continuous function $\varepsilon \colon M \times I \to (0,\infty)$ such that if $H \colon M \times I \to M$ satisfies $|p(y,t)-H(y,t)| < \varepsilon(y,t)$ for all $(y,t) \in M \times I$, then $H$ is proper.
+	By essentially the same computation performed in the proof of \cref{T: basic trans},
+	$$|p(y,t)-H(y,t)| = |y-H(y,t)| = |y - \pi(y + \eta(y) ts_0)| < 2 \eta(y).$$
+	So for $H$ to be proper, it suffices to have $\eta(y) < \varepsilon(y,t)/2$ for all $(y,t) \in M \times I$.
+	But if this is not already the case, we can simply replace $\eta$ in the above definition of $f$ with an $\eta \colon M \to (0,\infty)$ such that $\eta(y) < \min\{\epsilon(y), \min\{\varepsilon(y,t)/2 \mid t \in I\}\}$ for all $y$, analogously to the construction in the proof of \cref{T: basic trans}.
+	Such an $\eta$ can be found by considering a locally finite open cover $\mc U = \{U_j\}$ of $M$ such that each $\bar U_j$ is compact.
+	Then $\min\{\epsilon(y) \mid y \in \bar U_j\}$ and $\min\{\varepsilon(y,t)/2 \mid (y,t) \in \bar U_j \times I\}$ are both defined and positive as $\bar U_j$ and $\bar U_j \times I$ are compact and $\epsilon$ and $\varepsilon$ are both positive continuous functions.
+	Now choose $b_j > 0$ such that $b_j$ is less than the minimum of these two minima for each $j$, and then apply \cref{L: minimizer}.
 
 	It remains in the compact $W$ setting to show that if we are given compact $W$ with $r_W \colon W \to M$ transverse to the cubulation then $F(-,s)r_W$ is transverse to the cubulation for all $s$ in some neighborhood $D_r^N$ of $0$ in $D^N$.
 	It is here that we need to generalize the Stability Theorem of \cite[Section 1.6]{GuPo74}.
@@ -449,24 +460,24 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 
 	Let $\{\mc U_j\}$ be a locally finite covering of $M$ such that each $\bar{\mc U_j}$ is compact.
 	As $r_W$ is proper, each $r^{-1}_W(\bar {\mc U_j})$ is compact in $W$.
-	Proceeding as just above with $r_W^{-1}(\bar U_j)$ in place of $K$, we can find for each $j$ an $\varepsilon_{j,0} \leq 1$ so that for every $s \in D^N_{\varepsilon_{j,0}}$ we have $\Upsilon_0(-,s)$ transverse to all cubical faces of $M$ at every $x \in r^{-1}_W(\bar {\mc U_j})$.
+	Proceeding as just above with $r_W^{-1}(\bar U_j)$ in place of $K$, we can find for each $j$ an $\varepsilon_{j,0}$ with $0 < \varepsilon_{j,0} \leq 1$ so that for every $s \in D^N_{\varepsilon_{j,0}}$ we have $\Upsilon_0(-,s)$ transverse to all cubical faces of $M$ at every $x \in r^{-1}_W(\bar {\mc U_j})$.
 	Analogously, we have $\varepsilon_{j,k}$ for all $k\geq 1$ using $(r_{\bd^k W})^{-1}(\bar {\mc U_j})$.
 	Let $\varepsilon_j = \min\{\varepsilon_{j,k} \mid k\geq 0\}$.
 	These minima exist as $W$ has finite depth.
 
-	Now, using \cref{L: minimizer}, we choose a smooth function $\phi \colon M \to \R$ such that for all $x \in M$ we have $0<\phi(x)<\epsilon_j$ if $x \in \bar{\mc U_j}$.
+	Now, using \cref{L: minimizer}, we choose a smooth function $\phi \colon M \to \R$ such that for all $y \in M$ we have $0<\phi(y)<\epsilon_j$ if $y \in \bar{\mc U_j}$.
 	Let $M\times_\phi D^N = \{(y,s) \in M \times D^N \mid |s|<\phi(y)\}$.
 	By our construction, $\Upsilon_k(-,s) \colon \bd^{k}W \to M$ is transverse to the cubulation at each $x$ such that $(x,s)\in(r_{\bd^{k}W} \times \id)^{-1}(M\times_\phi D^N) = \{(x,s) \in \bd^{k}W \times D^N \mid |s|<\phi(r_{\bd^kW}(x))\}$.
 	Unfortunately, however, while $M\times_\phi D^N$ is a neighborhood of $M \times 0$ in $M \times D^N$, there is not necessarily a $U \in D^M$ so that $M \times U \subset M\times_\phi D^M$.
 	Thus,
 	we cannot construct $H$ from $F$ as above using a fixed $s_0$ as there may be no single $s_0\neq 0$ so that $W \times s_0 \subset M\times_\phi D^N$.
 
-	To account for this, we modify our functions above as follows: Let $\hat f \colon M \times D^N \to M_\epsilon$ be given by $\hat f(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points.
+	To account for this, we modify our functions above as follows: Let $\hat f \colon M \times D^N \to M_\epsilon$ be given by $\hat f(y, s) = y + \phi(y) \eta(y) s$; as $\phi(y)\eta(y)>0$, this is again a submersion onto its image at all points.
 	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat f}M_\epsilon \xr{\pi}M$, and let $\hat \Upsilon_k$ be the composition $\bd^kW \times D^N \xr{r_{\bd^kW} \times \id}M \times D^N \xr{\hat F} M$ for $k\geq 0$.
 	Once again by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for almost all $s \in D^N$ we have $V \xr{r_V} M \xr{\hat F(-,s)} M$ transverse to all cubical faces of $M$.
 	Letting $s_0 \neq 0$ be any such point\footnote{If $s_0 = 0$ satisfies the conditions, we can finish immediately by letting $H$ be the constant homotopy.} we define $\hat H \colon M \times I \to M$ by $\hat H(x,t) = \hat F(x,ts_0)$, and we claim that this $\hat H$ satisfies the conditions required for the proposition.
 
-	The map $\hat H$ is proper because again any sequence of $M \times I$ that escapes to infinity must similarly have image that escapes to infinity under $\hat H$.
+	The map $\hat H$ is proper again by \cref{L: nearby proper homotopy} because $\phi(y) \eta(y) \leq \eta(y)$.
 	The conditions of the proposition for $V$ follow immediately from the construction.
 	It remains to verify that each $\hat h_k \defeq \hat H \circ (r_{\bd^k W} \times \id_I) \colon \bd^k W \times I \to M$ is transverse to the cubulation.
 	Again, we focus primarily on $\hat h_0$.
@@ -477,7 +488,7 @@ In the following $D^N$ is the open unit ball in $\R^N$ and, more generally, $D^N
 	\end{comment}
 
 	We begin by observing that for $(x,t) \in W \times I$ we can write $\hat h_0(x,t) \in M$ explicitly as
-	$$\hat h_0(x,t) = \pi(r_W(x)+\phi(r_W(x))\epsilon(r_W(x))ts_0).$$
+	$$\hat h_0(x,t) = \pi(r_W(x)+\phi(r_W(x))\eta(r_W(x))ts_0).$$
 	So, alternatively, we can observe that $\hat h_0$ is the composition
 	\begin{equation}\label{E: alt hat h}
 		W \times I \xr{\Phi} W \times I \xhookrightarrow{\Psi} W \times D^N \xr{r_W \times \id} M \times D^N \xr{F} M,

@@ -746,7 +746,7 @@ For naturality of cup products we will assume not just that $\uV$ and $\uW$ are 
 	\item $V_{ij}$ and $W_{ji}$ are transverse and
 	\item $V_{ij}$, $W_{ji}$, and $V_{ij} \times_M W_{ji}$ are all transverse to $h$.
 \end{itemize}
-If we assume that $\uV$ and $\uW$ are simply transverse, then we need only representatives $V$ and $W$ such that $V$ and $W$ are transverse and $V \times_M W$ is transverse to $h$.
+If we assume that $\uV$ and $\uW$ are simply transverse, then we need only representatives $V$ and $W$ such that $V$ and $W$ are transverse and, $V$, $W$, and $V \times_M W$ is transverse to $h$.
 
 For naturality of cap products, we suppose $h \colon N \to M$, $\uV \in C^*_\Gamma(M)$, and $\uW \in C_*^\Gamma(N)$.
 Then, via \cref{P: natural cap}, it is sufficient to assume decompositions $\uV = \sum_i \underline{V_i}$ and $\uW = \sum_j \underline{W_j}$ with representative pairs $(V_{ij}, W_{ji})$ such that each $V_{ij}$ is transverse to $h$ and each $W_{ji}$ is transverse to the pullback $V_{ij} \times_M N \to N$.
@@ -775,9 +775,9 @@ With these assumptions, we have the following formulas.
 
 For the associativity formulas we add a manifold with corners $X$ either mapping to $M$ for the cup, cap, and intersection products or to a third target manifold $Q$ for the cross products.
 Once again, there are no special requirements for the exterior products in the first two formulas below.
-For the other associativity formulas, while this might not encompass the most general possibility, in order to ensure associativity in a compound transversality setting, we assume decompositions into finite sums $\uV = \sum_i \underline{V_i}$, $\uW = \sum_j \underline{W_j}$, and $\underline{Z} = \sum_k \underline{Z_k}$ such that for each triple $(\underline{V_i},\underline{W_j}, \underline{Z_k})$ there are representatives $V_{i,jk}$, $W_{j,ik}$, and $Z_{k,ij}$ such that the following pairs are transverse: $(V_{i,jk}, W_{j,ik})$, $(W_{j,ik},Z_{k,ij})$, $(V_{i,jk} \times_M W_{j,ik},Z_{k,ij})$, and $(V_{i,jk}, W_{j,ik} \times_M Z_{k,ij})$.
+For the other associativity formulas, while this might not encompass the most general possibility, in order to ensure associativity in a compound transversality setting, we assume decompositions into finite sums $\uV = \sum_i \underline{V_i}$, $\uW = \sum_j \underline{W_j}$, and $\underline{X} = \sum_k \underline{X_k}$ such that for each triple $(\underline{V_i},\underline{W_j}, \underline{X_k})$ there are representatives $V_{i,jk}$, $W_{j,ik}$, and $X_{k,ij}$ such that the following pairs are transverse: $(V_{i,jk}, W_{j,ik})$, $(W_{j,ik},X_{k,ij})$, $(V_{i,jk} \times_M W_{j,ik},X_{k,ij})$, and $(V_{i,jk}, W_{j,ik} \times_M X_{k,ij})$.
 These assumptions will allow us to invoke \cref{C: fiber assoc,P: OC mixed associativity,P: oriented fiber mixed associativity}.
-For simple transversality versions, we need only assume $V, W, Z$ such that $(V, W)$, $(W,Z)$, $(V \times_M W,Z)$, and $(V, W \times_M Z)$ are transverse pairs.
+For simple transversality versions, we need only assume $V, W, X$ such that $(V, W)$, $(W,X)$, $(V \times_M W,X)$, and $(V, W \times_M X)$ are transverse pairs (and by \cref{P: 3 out of 4 trans}, the condition on the last pair is redundant).
 
 We leave the reader to formulate associativity for products of larger collections of maps.
 
@@ -818,15 +818,21 @@ Similarly, we obtain external homology and cohomology products, although this is
 \end{theorem}
 
 We will prove \cref{T: (co)homology products} below.
-The basic idea, in the case of the last three products, will be to show that we can represent pairs of homology or cohomology classes by simply transverse representatives and then form the usual fiber products.
+The basic idea, in the case of the last three products, will be to show that we can represent pairs of homology or cohomology classes by simply transverse representatives, which is accomplished by \cref{T: transverse reps}, below, and then form the usual fiber products.
 We therefore have the following immediate consequence.
 
 \begin{theorem}
 	The homology cross product, cohomology cross product, cup product, cap product, and, if $M$ is oriented, intersection product satisfy the properties enumerated in \cref{S: (co)chain properties}, except for the boundary formulas.
 \end{theorem}
 
-To prove \cref{T: (co)homology products}, we will use the following important theorem.
+\begin{remark}
+	For the naturality and associativity properties which require additional assumptions about transversality of representatives, those assumptions can all be met in the (co)homology setting.
+	For example, for naturality of the cup product with respect to a map $h \colon N \to M$, once transverse representatives $V$ and $W$ of $\uV$ and $\uW$ have been found, we can use \cref{T: basic trans,R: countable trans} to replace $h$ with a homotopic map transverse to $V$, $W$, and $V \times_M W$, and by \cref{P: cohomology pullback}, we can use this transverse map to pull back our cohomology classes.
+	For the cap product, we can again use \cref{T: basic trans} to assume $h$ transverse to $V$ and then \cref{T: transverse reps}, below, to choose a $W$ in the desired homology class transverse to the pullback $V \times_M N \to N$.
+	Similarly, for associativity, we use \cref{T: transverse reps,R: countable trans2} to choose representatives $V$, $W$, and $X$ first so that $W$ is transverse to $V$ and then so that $X$ is transverse to $V \times_M W$ and $W$.
+\end{remark}
 
+To prove \cref{T: (co)homology products}, we will use the following important theorem.
 
 \begin{theorem}\label{T: transverse reps}
 Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in H_*^\Gamma(M)$ or $\uV \in H^*_\Gamma(M)$.
@@ -1022,7 +1028,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	\end{enumerate}
 
 	Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{F(-,s_0) \times \id_{\R^n}} M \times \R^n$ is transverse to $e \colon X \to M \times \R^n$.
-	Then let $H(-,t) = F(-,ts_0)$, i.e.\ $H(x,t) = F(x,ts_0)$.
+	Then let $H(-,t) = F(-,ts_0)$, i.e.\ $H(y,t) = F(y,ts_0)$.
 	Then $H(-,0) = F(-,0) = \id$, and $H(-,1)r_V$ will be transverse to $r_X$ by our choice of $s_0$ and \cref{L: all transversality is wrt embeddings}.
 	Finally, $ts_0 \in D_r^N$ for all $t \in I$, each $F(-,ts_0)r_W \times \id_{\R^n}$ is transverse to $e$, so $F(-,ts_0)r_W$ is transverse to $r_X$.
 	Each $F(-,ts_0)r_W$ is the restriction of $H \circ (r_W \times \id) \colon W \times I \to M$ to a fixed $W \times t$, so this implies $H \circ (r_W \times \id)$ is transverse to $r_X$.
@@ -1032,7 +1038,8 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	Recall that we let $M_\epsilon$ be an $\epsilon$-neighborhood of a proper embedding of $M$ into some $\R^N$ in the sense of the $\epsilon$-Neighborhood Theorem of \cite[Section 2.3]{GuPo74}, with $\epsilon$ a smooth positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
 	We may assume $\epsilon$ is a bounded function.
 	Let $\pi_\epsilon: M_\epsilon \to M$ be the submersion.
-	We define $f: M \times D^N \to M_\epsilon$ by $f(y, s) = y + \epsilon(y) s$, which is a submersion onto its image.
+	We define $f: M \times D^N \to M_\epsilon$ by $f(y, s) = y + \eta(y) s$, where $\eta \colon M \to \R$ is a smooth function such that $0 < \eta(y) < \epsilon(y)$ for all $y \in M$.
+	As $\eta > 0$, this is clearly a submersion (onto its image) at all points.
 	Then we let $F \colon M \times D^N \to M$ be the submersion $M \times D^N \xr{f}M_\epsilon \xr{\pi} M$ and let $\ms F \colon V \times D^N \to M$ be the composition $F \circ (r_V \times \id_{D^N})$.
 	It is clear that $F(-,0) = \id_M$,
 	Furthermore, the map $\ms F$, as well as each $\ms F|_{S^k(V)}$, is a submersion onto its image.
@@ -1044,7 +1051,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	As $X$ and $V$ each have finitely many strata and as the finite union of measure zero sets has measure zero, for almost all $s \in D^N$ we have all $\ms F|_{S^k(V)}(-,s) \times \id_{\R^n}$ transverse to all $S^j(X) \subset M \times \R^n$.
 	So $\ms F(-,s) \times \id_{R^n}$ is transverse to $e$ for almost all $s \in D^N$.
 
-	We also observe that the homotopy $H$ obtained from this $F$ by $H(x,t) = F(x,ts_0)$ is proper, as any sequence of $M \times I$ that ``escapes to infinity'' must similarly have image that escapes to infinity under $H$, using the boundedness of $\epsilon$.
+	We also observe as in the proof of \cref{P: ball stability} that $H$ can be assumed proper, by replacing $\eta$ with a function with smaller values if necessary.
 
  	So it remains to show that if $W$ is compact (as we are currently assuming) and $r_W$ is transverse to $r_X$ (or, equivalently, $r_W \times \id_{\R^n}: W \times \id_{R^n} \to M \times \R^n$ transverse to $e$) then $(F(-,s) \circ r_W) \times \id_{\R^n} \colon W \times \R^n \to M \times \R^n$ is transverse to $e$ for all $s$ in some neighborhood $D_r^N$ of $0$ in $D^N$.
 	Similarly to \cref{P: ball stability}, it is more convenient here to work with boundaries than with strata, recalling that, by \cref{L: simple trans}, to prove that two maps of manifolds with corners are transverse it is sufficient to show that their compositions with all pairs of boundary inclusions are naively transverse (see \cref{D: naive transversality}).
@@ -1062,7 +1069,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	As the maps $i_{\bd^jX}$ are not necessarily embeddings, it will not generally be the case that $X_j \cong \bd^jX$.
 	However, by \cite[Lemma 2.8]{Joy12}, the $i_{\bd^jX}$ are proper maps, so $X_j$ is a closed subset of $M \times \R^n$ (recall that proper maps are closed --- see \cite[Proposition I.10.1.1]{Bou98}).
 
-	Now, suppose\footnote{In this argument we will use the symbol $w$ to refer to a point in $W$, not the dimension of $W$.} $(w,z) \in W \times \bar B^n_0$, and let us fix $X_j$ as above.
+	Now, suppose\footnote{In this argument we will use the symbol $w$ to refer to points in $W$ or $\bd^k W$, not the dimension of $W$.} $(w,z) \in W \times \bar B^n_0$, and let us fix $X_j$ as above.
 	As $r_W$ is transverse to $r_X$ by assumption, $\Upsilon_0(-,0) \times \id_{\R^n} = r_W \times \id_{\R^n}$ is transverse to $e \colon X \to M \times \R^n$.
 	So either $(r_W(w),z)\notin X_j$ or $r_W \times \id_{\R^n}$ is naively transverse to $ei_{\bd^jZ}$ at $(w,z)$ (recall \cref{D: naive transversality}).
 	In the former case, as $X_j$ is closed, there is an open neighborhood $A_{(w,z)}$ of $(w,0,z) \in W \times D^N \times \R^n$ such that $(\Upsilon_0 \times \id_{\R^n})(A_{(w,z)}) \cap X_j = \emptyset$.
@@ -1116,12 +1123,12 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	By our construction, for all $k\geq 0$ we have $\Upsilon_k(-,s) \times \id_{\R^n} \colon \bd^k W \times \R^n \to M \times \R^n$ transverse to $ei_{\bd^j X}$ for at each $(w,s,z) \in \bd^k W \times D^N \times \R^n$ such that $(w,s) \in (r_Wi_{\bd^{k}W} \times \id_{D^N})^{-1}(M\times_\phi D^N) = \{(w,s) \in \bd^k W \times D^N \mid |s|<\phi(r_Wi_{\bd^k W}(w))\}$.
 
 	We now modify our above constructions as follows.
-	Let $\hat f: M \times D^N \to M_\epsilon \subset \R^N$ be given by $\hat f(y, s) = y +\phi(y) \epsilon(y) s$; as $\phi(y)\epsilon(y)>0$, this is again a submersion onto its image at all points.
+	Let $\hat f: M \times D^N \to M_\epsilon \subset \R^N$ be given by $\hat f(y, s) = y +\phi(y) \eta(y) s$; as $\phi(y)\eta(y)>0$, this is again a submersion onto its image at all points.
 	Let $\hat F \colon M \times D^N \to M$ be the composition $M \times D^N \xr{\hat f} M_\epsilon \xr{\pi_\epsilon} M$, and let $\hat \Upsilon_k$ be the composition $\bd^k W \times D^N \xr{i_{\bd^k W} \times \id} W \times D^N \xr{r_W \times \id} M \times D^N \xr{\hat F} M$ for $k\geq 0$.
 	Once again employing the Transversality Theorem of \cite[Section 2.3]{GuPo74} as above, for almost all $s \in D^N$ we have $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{\hat F(-,s) \times \id_{\R^n}} M \times \R^n$ transverse to $e \colon X \to M \times \R^n$.
-	Letting $s_0$ be any such point we define $\hat H \colon M \times I \to M$ to be $\hat H(y,t) = \hat F(x,ts_0)$, and we claim that this $\hat H$ satisfies the conditions required by the proposition.
+	Letting $s_0$ be any such point we define $\hat H \colon M \times I \to M$ to be $\hat H(y,t) = \hat F(y,ts_0)$, and we claim that this $\hat H$ satisfies the conditions required by the proposition.
 
-	The map $\hat H$ is proper, again because any sequence of $M \times I$ that ``escapes to infinity'' must similarly have image that escapes to infinity under $H$.
+	The map $\hat H$ is proper again by \cref{L: nearby proper homotopy} because $\phi(y) \eta(y) \leq \eta(y)$.
 	The first two conditions of the proposition follow immediately from the construction and preceding observations.
 	Let $$\hat h_k = \hat H \circ (r_W i_{\bd^k W} \times \id_I): \bd^k W \times I \to M.$$
 	By \cref{L: all transversality is wrt embeddings}, it remains to verify that each $$\hat h_k \times \id_{\R^n} \colon \bd^k W \times I \times \R^n \to M \times \R^n$$ is naively transverse to each $ei_{\bd^j X}$.
@@ -1133,7 +1140,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	Again we focus primarily on $k=0$ to simplify notation slightly.
 
 	In detail, for $(w,t) \in W \times I$ we can write $\hat h_0 \colon W \times I \to M$ explicitly as
-	$$\hat h_0(w,t) = \pi_\epsilon(r_W(w)+\phi(r_W(w))\epsilon(r_W(w))ts_0).$$
+	$$\hat h_0(w,t) = \pi_\epsilon(r_W(w)+\phi(r_W(w))\eta(r_W(w))ts_0).$$
 	So, alternatively, we can observe that $\hat h_0 (w,t)$ is the composition
 	\begin{equation}\label{E: perturb transverse to map}
 		W \times I \xr{\Phi} W \times I \xhookrightarrow{\Psi} W \times D^N \xr{r_W \times \id} M \times D^N \xr{F} M,
@@ -1202,18 +1209,20 @@ Finally, we prove \cref{T: transverse reps}.
 \end{proof}
 
 
-
+\begin{remark}\label{R: countable trans2}
+As in \cref{R: countable trans}, and for the same reasons, the proof of \cref{T: transverse reps} allows use to extend the first part of theorem, concerning finding a representative $V$ of $\uV$ that is transverse to $W$, to finding a $V$ that is transverse to each of a countable collection $W_i$.
+\end{remark}
 
 
 
 
 \subsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}
 
-When applying the cap product to a chain and cochain of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
+When applying the cap product to cohomology and homology classes of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
 $$H^i_\Gamma(M) \otimes H_i^\Gamma(M) \xr{\nplus} H_0^\Gamma(M) \to \Z.$$
 Taking the adjunct then provides a map
 $$\alpha: H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z).$$
-Tracing through the definitions, this maps acts by counting the intersection number between a geometric chain and a geometric cochain in the sense of \cref{D: intersection number,D: intersection number}.
+Tracing through the definitions, this maps acts by counting the intersection number between a geometric chain and a geometric cochain in the sense of \cref{D: intersection number}.
 
 When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact sequence, just as for singular cohomology.
 
@@ -1227,7 +1236,7 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 \begin{remark}
 	The existence of a Universal Coefficient exact sequence holds even if $H^i_\Gamma(M)$ is not finitely generated, as we know by \cref{T: geometric is singular} that $H^i_\Gamma(M) \cong H^i(M)$, and then we have the usual singular cohomology Universal Coefficient Theorem.
 	We can further identify $\Hom(H_i(M),\Z)$ and $\Ext(H_{i-1}(M),\Z)$ with $\Hom(H^\Gamma_i(M),\Z)$ and $\Ext(H^\Gamma_{i-1}(M),\Z)$, also using \cref{T: geometric is singular}.
-	What we lose in this general case is that this approach does not allow us to identify the map $H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z)$ as given by counting intersection numbers.
+	The reason we need to invoke finite generation in \cref{T: UCT} is that we use \cref{T: intersection qi}, which has that condition, in the proof. What we lose from \cref{T: UCT} by following instead the approach outlined in this remark is the identification of the map $H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z)$ with the map $\alpha$ given by counting intersection numbers.
 \end{remark}
 
 \begin{proof}[Proof of \cref{T: UCT}]
@@ -1238,7 +1247,7 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 	\begin{tikzcd}
 		H^i_\Gamma(M) \arrow[r, "\alpha"] & \Hom(H_i^\Gamma(M),\Z) \arrow[dd, "\cong", "\mc J^*"'] \\
 		H^i(C^*_{\Gamma \pf X}(M)) \arrow[u, "\cong"'] \arrow[d, "\cong", "\mc I"'] & \\
-		H^i(K^*(X)) \arrow[r] & \Hom(H_*(K_*(X)), \Z).
+		H^i(K^*(X)) \arrow[r] & \Hom(H_i(K_*(X)), \Z).
 	\end{tikzcd}
 	\]
 	The vertical maps on the left are isomorphisms by \cref{T: transverse complex,T: intersection qi}, while the right hand vertical map is an isomorphism by \cref{T: cubical homology iso}.
@@ -1247,11 +1256,11 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 	Then $V$ is transverse to the cubulation, and by definition the path clockwise around the diagram takes $\uV$ to a map that acts on an element $\xi$ of $H_*(K_*(X))$ represented by a $\Z$-linear combination of cubical faces $\sum_j c_j E_j$ by treating each $E_j$ as a geometric chain and forming
 	$$\aug\left( V \times_M \sum_jc_jE_j\right) = \sum_jc_j\aug(V \times_M E_j).$$
 
-	On the other hand, by \cref{D: intersection homomorphism}, the composition counterclockwise takes $\uV$ to a map that acts on $\xi$ by $\sum_j I_M(V,E_j)$.
+	On the other hand, by \cref{D: intersection homomorphism}, the composition counterclockwise takes $\uV$ to a map that acts on $\xi$ by $\sum_j c_j I_M(V,E_j)$.
 	But $I_M(V,E_j)$ is precisely $\aug(V \times_M E_j)$ by \cref{D: intersection number}.
 	So the diagram commutes.
 
-	We know that the $K_i(X)$ is a free abelian group, so the bottom map of the diagram is a surjection by the algebraic Universal Coefficient Theorem, with kernel $\Ext(H_{i-1}(X),\Z)$.
+	We know that $K_i(X)$ is a free abelian group, so the bottom map of the diagram is a surjection by the algebraic Universal Coefficient Theorem, with kernel $\Ext(H_{i-1}(K_*(X)),\Z)$.
 	The commutativity of the diagram thus implies that the top map of the diagram is a surjection with isomorphic kernel.
 	To complete the proof, we again invoke \cref{T: cubical homology iso} to observe $\Ext(H_{i-1}(X),\Z) \cong \Ext(H^\Gamma_{i-1}(X),\Z)$.
 \end{proof}

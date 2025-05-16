@@ -255,7 +255,7 @@ In particular, we record the following results, referring the reader to \cite[Se
 The closest point characterization of the retraction map $\pi$ in \cref{T: epsilon neighborhood} is not discussed in \cite{GuPo74}.
 However, it is observed in \cite[Problem 6-5]{Lee13} that there exists a tubular
 neighborhood $U$ of $Y$ in $\R^M$ with retraction $r \colon U \to Y$ such that for each $z \in U$, $r(z)$ is the unique point of $Y$ closest to $z$.
-The construction of $\epsilon$-neighborhoods in \cite{GuPo74} essentially finds them within any tubular neighborhood using the same retraction map for both the tubular neighborhood and the $\epsilon$-neighborhood, so by using tubular neighborhoods as described above, we may assume the closest-point characterization holds for our $\epsilon$-neighborhoods even when $Y$ is not compact.
+The construction of $\epsilon$-neighborhoods in \cite{GuPo74} essentially finds them within any tubular neighborhood using the same retraction map for both the tubular neighborhood and the $\epsilon$-neighborhood, so by using tubular neighborhoods as described above, we may assume the closest-point characterization holds for our $\epsilon$-neighborhoods even when $Y$ is not compact.\greg{Add a proof?}
 \end{remark}
 
 
@@ -345,7 +345,7 @@ We now need one more particular technical result that will allow us to achieve t
 \begin{lemma}\label{L: nearby proper homotopy}
 	Let $X$ be a topological space and $M$ a manifold without boundary possessing a metric $d$.
 	Suppose $f \colon X \to M$ is a proper map.
-	Then there exists a function $\varepsilon \colon X \to (0,\infty)$ such that if $g \colon X \to M$ satisfies $d(f(x),g(x)) < \varepsilon(x)$ for all $x \in X$, then $g$ is proper and homotopic to $f$ by a proper homotopy.
+	Then there exists a continuous function $\varepsilon \colon X \to (0,\infty)$ such that if $g \colon X \to M$ satisfies $d(f(x),g(x)) < \varepsilon(x)$ for all $x \in X$, then $g$ is proper and homotopic to $f$ by a proper homotopy.
 	Furthermore, if $X$ is a manifold with corners and $f$ and $g$ are smooth and homotopic by a proper homotopy, then they are homotopic by a smooth proper homotopy.
 \end{lemma}
 
@@ -414,6 +414,11 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	For $x \notin \bd M$, the argument goes through exactly as above.
 	\end{comment}
 \end{proof}
+
+\begin{remark}\label{R: countable trans}
+	In the statement of \cref{T: basic trans} we make $f$ transverse to $g \colon V \to N$, but the construction depends on $g$ only in determining the set of almost all possible $s\in D$ that can be chosen as $s_0$ to construct the homotopy.
+	So as the countable intersection of sets of full measure will still have full measure, we can generalize the theorem to see that $f$ is homotopic to a map that is simultaneously transverse to any given countable collection of maps $V_i \to N$.
+\end{remark}
 
 Our second theorem will be applied below when $M$ is of the form $Y \times I$ for $Y$ a manifold without boundary in order to improve a homotopy between maps that are both transverse to another given map $g$ to a homotopy that is transverse to $g$.
 
