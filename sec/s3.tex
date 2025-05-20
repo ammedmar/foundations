@@ -1478,7 +1478,7 @@ They will be useful when working with the splitting and creasing constructions f
 \end{proof}
 
 \begin{corollary}\label{C: cup with identity}
-	Let $f \colon V \to M$ be a co-oriented map from a manifold with corners to a manifold without boundary, and let $\id_M \colon M \to M$ be the identity.
+	Let $f \colon V \to M$ be a co-oriented map from a manifold with corners to a manifold without boundary, and let $\id_M \colon M \to M$ be the identity with its tautological co-orientation.
 	Then both co-oriented fiber products $V \times_M M \to M$ and $M \times_M V \to M$ are again $f \colon V \to M$ with the given co-orientation.
 \end{corollary}
 
@@ -2224,11 +2224,12 @@ The analogues for singular chains and cochains are the cap product with the coch
 
 \begin{proposition}\label{P: cap with identity M}
 	Let $f \colon V \to M$ be a co-oriented map from a manifold with corners to an oriented manifold without boundary, and consider $M$ equipped with its identity map $M \to M$.
-	Then $V \times_M M$ is $V$ with its induced orientation.
+	Then $V \times_M M$ with the cap orientation is simply $V$ with its induced orientation.
 \end{proposition}
 
 \begin{proof}
-	This follows directly from \cref{C: cup with identity} and the definitions.
+	By definition, the cap orientation of $V \times_M M$ is the induced orientation arising from the co-oriented pullback of $V \to M$ by the identity map $M \to M$.
+	But by \cref{P: pullback functoriality} this co-oriented pullback is simply $V$ again.
 \end{proof}
 
 The next property relates products of pullbacks with pullbacks of products. Again, our signs agree with the cap product formulas in Spanier, in this case \cite[Section 5.6.21]{Span81}.
@@ -2279,7 +2280,7 @@ The following technical lemma will be used to prove \cref{P: OC mixed associativ
 	So the orientation induced by the orientation of $M$ and the composite co-orientation is again $\beta_P$.
 \end{proof}
 
-\begin{proposition}[Mixed associativity]\label{P: OC mixed associativity}
+\begin{proposition}[Mixed associativity 1]\label{P: OC mixed associativity}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be co-oriented maps from manifolds with corners to a manifold without boundary.
 	Let $h \colon Z \to M$ be a map with $Z$ an oriented manifold with corners.
 	Then, assuming sufficient transversality for all terms to be defined (see \cref{R: multiproducts}),
@@ -2577,7 +2578,38 @@ As a corollary of  \cref{P: compare cup and intersection orientations,P: OC mixe
 
 \end{comment}
 
+\begin{comment}
+Cap/intersect associativity
 
+\cref{P: compare cup and intersection orientations} allows us to obtain another associativity formula, this time one that will eventually become associativity of the cap product and intersection product on an oriented manifold, i.e.\ $(a \frown x) \bullet y = a \frown (x \bullet y)$.
+
+
+\begin{proposition}[Mixed associativity 2]\label{P: OC mixed associativity}
+	Let $f \colon V \to M$ be a co-oriented map from a manifold with corners to an oriented manifold without boundary.
+	Let $g \colon Y \to M$ and $h \colon Z \to M$ be maps with $Y$ and $Z$ oriented manifold with corners.
+	Then, assuming sufficient transversality for all terms to be defined (see \cref{R: multiproducts}),
+	$$(V \times_M Y) \times_M Z = V \times_M (Y \times_M Z),$$
+	as oriented manifolds.
+	Here, on the left, $V \times_M Y$ has its cap orientation and then we form the oriented fiber product of \cref{S: orientation of fiber products} with $Z$.
+	On the right we first form the oriented fiber product $Y \times_M Z$ and then form $V \times_M (Y \times_M Z)$ with its cap orientation.
+\end{proposition}
+
+\begin{proof}
+	To simplify the argument, let us write $V$, $Y$, and $Z$ when considering them as coming with co-oriented maps, for $Y$ and $Z$ with the induced co-orientations, and let us write $v$, $y$, and $z$ when interpreting these as oriented manifolds with boundary.
+	Similarly, we will let $m$ represent identity map $M \to M$ thinking of $M$ as an oriented object.
+	We then assume in the formulas below that we give the fiber product of co-oriented objects the fiber product co-orientation, the fiber product of two oriented objects the fiber product orientation, and the fiber product of a co-oriented object on the left with an oriented object on the right the cap orientation.
+	In this notation, \cref{L: same induced} can be written as $V \times_M w = (V \times_M W) \times_M m$, using \cref{P: cap with identity M}.
+	We can now compute as follows using many of our previous results:
+	\begin{align*}
+		(V \times_M y) \times_M z & = ((V \times_M Y) \times_M m) \times_M z \\
+		& = (V \times_M Y) \times_M z\\
+		& = V \times_M (Y \times_M z)\\
+		& = V \times_M ((Y \times_M Z) \times_M m)\\
+		& = V \times_M ((Y \times^c_M Z))\\
+		& = (-1)^{(m-y)(m-z)} V \times_M ((y \times^o_M z))\\
+	\end{align*}
+\end{proof}
+\end{comment}
 
 We can similarly consider the exterior products.
 

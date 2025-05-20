@@ -1032,7 +1032,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	Then $H(-,0) = F(-,0) = \id$, and $H(-,1)r_V$ will be transverse to $r_X$ by our choice of $s_0$ and \cref{L: all transversality is wrt embeddings}.
 	Finally, $ts_0 \in D_r^N$ for all $t \in I$, each $F(-,ts_0)r_W \times \id_{\R^n}$ is transverse to $e$, so $F(-,ts_0)r_W$ is transverse to $r_X$.
 	Each $F(-,ts_0)r_W$ is the restriction of $H \circ (r_W \times \id) \colon W \times I \to M$ to a fixed $W \times t$, so this implies $H \circ (r_W \times \id)$ is transverse to $r_X$.
-	This does not provide the properness of $H$, but that will follow from our construction of $F$.
+	This does not provide the properness of $H$, which we will discuss below.
 
 	We now claim that we can construct $F$ almost exactly as in \cref{P: ball stability}.
 	Recall that we let $M_\epsilon$ be an $\epsilon$-neighborhood of a proper embedding of $M$ into some $\R^N$ in the sense of the $\epsilon$-Neighborhood Theorem of \cite[Section 2.3]{GuPo74}, with $\epsilon$ a smooth positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
@@ -1272,11 +1272,10 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 
 \subsection{The geometric cup product is the usual cup product}\label{S: usual cup}
 
-In this section we show that the geometric cup product agrees with the singular cup product.
-Our proof is based on an axiomatic characterization of the cup product on manifolds due to Kreck and Singhof.
+In this section we show that the geometric cup product agrees with the singular cup product in the sense that there is a natural ring isomorphism between singular cohomology $H^*(-)$ with the usual cup product and geometric cohomology $H^*_\Gamma(-)$ with the cup product $\uplus$.
 
 \begin{theorem}\label{T: intersection is cup product}
-	On the category of smooth manifold without boundary and continuous maps, there is for each $p\geq 0$ a natural isomorphism of functors $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$ from singular cohomology to geometric cohomology that is also compatible with cup products.
+	On the category of smooth manifolds without boundary and continuous maps, there are natural isomorphisms of functors $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$, $p \geq 0$, from singular cohomology to geometric cohomology that are also compatible with cup products.
 	In other words, for each manifold without boundary $M$ there is a commutative diagram
 	\[
 	\begin{tikzcd}
@@ -1287,24 +1286,28 @@ Our proof is based on an axiomatic characterization of the cup product on manifo
 	\]
 \end{theorem}
 
-The proof will rely on work of Kreck and Singhof \cite[Proposition 12]{Krec10b}.
+Our proof is based on an axiomatic characterization of the cup product on manifolds due to Kreck and Singhof \cite[Proposition 12]{Krec10b}.
 As the proof of this proposition is only sketched in \cite{Krec10b}, we first fill in the details, restricting ourselves to $\Z$ coefficients and changing Kreck and Singhof's notation a bit to avoid conflicts with our earlier notation.
-Before stating the result, we establish some further notation.
+Before stating the result, we establish some further notation and conventions for this section.
 
-In this section we assume the $S^p$, $p>0$, to each have a fixed orientation.
+In this section we assume the spheres $S^p$, $p>0$, to each have a fixed orientation.
 We also want these orientations to be compatible in the sense that the composition $\nu \colon S^p \times S^q \to S^p \wedge S^q \cong S^{p+q}$ is orientation preserving away from the subspace that is collapsed to form the wedge product.
 In particular, if $[S^p]$ and $[S^q]$ are the corresponding fundamental classes, the quotient should take $[S^p] \times [S^q]$ to $[S^{p+q}]$.
 This can be arranged, for example, by modeling our spheres as the standardly-oriented cubes with their boundaries collapsed.
-For each $p$, we let $s_p \in H^p(S^p) \cong \Hom(H_p(S^p), \Z)$ be the cohomology class that evaluates to $1$ on $[S^p]$.
+For each $p>0$, we let $s_p \in H^p(S^p) \cong \Hom(H_p(S^p), \Z)$ be the cohomology class that evaluates to $1$ on $[S^p]$.
 Let $\pi_1 \colon S^p \times S^q \to S^p$ and $\pi_2 \colon S^p \times S^q \to S^q$ be the projections.
 
-Similarly, let $K_p = K(\Z,p)$, $p>0$, be the Eilenberg-MacLane space, and let $\iota_p \in H^p(K_p)$ denote the fundamental class such that if the $p$-skeleton of $K_p$ is $S^p$ and $\phi_p \colon S^p \to K_p$ is the inclusion, then $\phi_p^*(\iota_p) = s_p$.
-As the $p+1$ skeleton of $K_p$ can be taken to be the image of $S^p$ under $\phi_p$, it is standard that $\phi_p^*$ is an isomorphism.
-We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map that extends the collapse map $\nu$.
+We let $K_p = K(\Z,p)$, $p>0$, be the Eilenberg-MacLane spaces, which we can assume have been constructed as CW complexes such that the $p+1$-skeleton of $K_p$ is $S^p$.
+Let $\iota_p \in H^p(K_p)$ denote the fundamental class such that if $\phi_p \colon S^p \to K_p$ is the inclusion, then $\phi_p^*(\iota_p) = s_p$.
+As the $p+1$ skeleton of $K_p$ is the image of $S^p$ under $\phi_p$, it is standard that $\phi_p^*$ is an isomorphism.
+We also let $\mu \colon K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map that extends the collapse map $\nu$.
+
+For $M$ connected, we always assume $H^0(M) \cong \Z$ generated by the class of the cochain $1 \in C^0(M)$,  i.e.\ the cochain that evaluates to $1$ on each singular $0$-simplex.
+Then for $\lambda \in \Z$, we write $\lambda$ also for the class $\lambda 1$,.
 
 \begin{proposition}[Kreck and Singhof, Proposition 12 of \cite{Krec10b}]\label{P: Kreck-Singhof pairing}
 	Consider singular cohomology $H^*(-)$ as a cohomology theory on smooth manifolds\footnote{As defined in \cite{Krec10b}; see the proof of \cref{T: geometric is singular} above.}.
-	Suppose $\star$ is a natural multiplication on $H^*(-)$ such that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$ (and with the obvious extension when $M$ is not connected).
+	Suppose $\star$ is a natural multiplication on $H^*(-)$ such that if $M$ is connected and $\lambda \in H^0(M)$ then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$ (and with the obvious extension when $M$ is not connected).
 	Then if\footnote{Rather than $s_p \times s_q$, Kreck and Singhof require $\pi_1^*(s_p) \star \pi_2^*(s_q)$ to be the element of $H^{p+q}(S^p \times S^q)$ that evaluates to $1$ on the fundamental class of $S^p \times S^q$, but with our conventions that tensor products of cochains act by $(\alpha \otimes \beta)(x \otimes y) = \alpha(x)\beta(y)$, these are the same cohomology class (c.f.\ \cite[page 245]{Span81} and \cite[Section 3B]{Hatc02}.
 	} $\pi_1^*(s_p) \star \pi_2^*(s_q) = s_p \times s_q \in H^{p+q}(S^p \times S^q)$ for all $p,q\geq 1$, the product $\star$ is the cup product.
 \end{proposition}
@@ -1315,7 +1318,7 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	As $H^*$ is ordinary singular cohomology, we know that $\alpha$ and $\beta$ can be represented by maps $\bar \alpha \colon M \to K_p$ and $\bar\beta \colon M \to K_q$ with $\alpha = \bar \alpha^*(\iota_p)$ and $\beta = \bar\beta^*(\iota_q)$.
 	Furthermore, $\alpha\smile \beta$ is the pullback of $\iota_{p+q}$ by the composition
 	\begin{equation}\label{E: EM cross}
-		M \xr{\diag} M \times M \xr{\bar\alpha \times \bar \beta} K_p \times K_q \xr{\mu} K_{p+q};
+		M \xr{\diag} M \times M \xr{\bar\alpha \times \bar \beta} K_p \times K_q \xr{\mu} K_{p+q},
 	\end{equation}
 	while similarly $s_p \times s_q$ is the pullback of $\iota_{p+q}$ by
 	\begin{equation}\label{E: sphere cross}
@@ -1325,13 +1328,14 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 
 	As we will want to apply the naturality of $\star$ in the category of smooth manifolds, we will choose manifold replacements for $K_p$, $K_q$, and $K_{p+q}$.
 	In particular, suppose we realize $K_p$ as a CW complex by the standard constructions and let $K_p^N$ be the $N$-skeleton of $K_p$ with $N$ much larger than $\dim(M)$.
-	Then $K_p$ is homotopy equivalent to a finite simplicial complex, and we can embed it simplicially into some Euclidean space and take an open regular neighborhood to get a smooth manifold $\mc K_p$ homotopy equivalent to the $N$-skeleton of $K_p$.
-	We define $\mc K_q$ and $\mc K_{p+q}$ analogously, using a large enough skeleton $K^M_{p+q}$ of $K_{p+q}$ for the restriction of $\mu$ to $K_p^N \times K_q^N \to K_{p+q}^M$ to be defined.
+	Then $K_p^N$ is homotopy equivalent to a finite simplicial complex \cite[Theorem 2C.5]{Hatc02}, and we can embed it simplicially into some Euclidean space and take an open regular neighborhood to get a smooth manifold $\mc K_p$ homotopy equivalent to the $N$-skeleton of $K_p$.
+	We define $\mc K_q$ and $\mc K_{p+q}$ analogously, using a large enough skeleton $K^{N'}_{p+q}$ of $K_{p+q}$ for the restriction of $\mu$ to $K_p^N \times K_q^N \to K_{p+q}^{N'}$ to be defined.
 	Abusing notation, we continue to write $\bar \alpha$, $\bar \beta$, $\phi_p$, $\mu$, etc.
 	for the maps involving these manifold replacements of the $K_*$.
+	These replacements will be sufficient for all cohomology and homotopy computations required in what follows.
 
 	Next we make two more preliminary observations.
-	The first is that it follows from $\star$ being natural with respect to pullbacks that, when $f^*$ is an isomorphism, the product $\star$ is also natural with respect to $(f^*)^{-1}$, as we see by applying $f^*$ to the claimed identity $(f^*)^{-1}(x)\star (f^*)^{-1}(y) = (f^*)^{-1}(x\star y)$.
+	The first is that it follows from $\star$ being natural with respect to pullbacks that, when $f^*$ is an isomorphism, the product $\star$ is also natural with respect to $(f^*)^{-1}$, as we see by applying the isomorphism $f^*$ to the claimed identity $(f^*)^{-1}(x)\star (f^*)^{-1}(y) = (f^*)^{-1}(x\star y)$.
 	The second is that there is an evident commutative diagram
 	\begin{equation}\label{D: projections}
 		\begin{tikzcd}
@@ -1363,42 +1367,51 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 		& = \diag^*(\bar \alpha \times \bar \beta)^*(\pi_1^*(\phi_p^*)^{-1}(s_p) \star \pi_2^*(\phi_q^*)^{-1}(s_q))&\text{by diagram \eqref{D: projections}}\\
 		& = \diag^*(\bar \alpha \times \bar \beta)^*(\pi_1^*(\iota_p) \star \pi_2^*(\iota_q))\\
 		& = (\diag^*(\bar \alpha \times \bar \beta)^*\pi_1^*(\iota_p)) \star (\diag^*(\bar \alpha \times \bar \beta)^*\pi_2^*(\iota_q))&\text{by naturality}\\
-		& = \bar\alpha^*(\iota_p) \star \bar\beta^*(\iota_q)\\
+		& = \bar\alpha^*(\iota_p) \star \bar\beta^*(\iota_q)&\text{see below}\\
 		& = \alpha\star\beta &\text{by definition}.
 	\end{align*}
 	For the penultimate equality, we have used that the composition of maps $$M \xr{\diag}M \times M \xr{\bar\alpha \times \bar \beta}K_p \times K_q \xr{\pi_1}K_p$$ is just $\bar \alpha$, and similarly for $\bar \beta$.
 \end{proof}
 
-\begin{proof}[Proof of \cref{T: intersection is cup product}]
-	Recall that in the Proof of \cref{T: geometric is singular}, which established an isomorphism between geometric and singular cohomology, we applied \cite[Theorem 10]{Krec10b}.
+
+	Now, recall that in the proof of \cref{T: geometric is singular}, which established an isomorphism between geometric and singular cohomology, we applied \cite[Theorem 10]{Krec10b}.
 	That theorem of Kreck-Singhof shows that there is a natural isomorphism of these cohomology theories on the category of smooth manifolds and continuous maps.
 	In fact, it shows there is such an isomorphism extending any given isomorphism of coefficients $\Phi_0 \colon H^0(pt) \to H^0_\Gamma(pt)$ to natural isomorphisms $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$ for all $p\geq 0$.
-	For the argument below, we would like to arrange that for all $p\geq 1$ we have $\Phi_p(s_p) = s_p^\Gamma$, where
-	$s_p \in H^p(S^p)$ is our preferred generator described just above and $s_p^\Gamma \in H^p_\Gamma(S^p)$ is the generator represented by an embedded point with normal co-orientation agreeing with our chosen orientation of $S^p$.
+	We will here assume $\Phi_0$ chosen so that it takes $1 \in H^0(pt)$ to the element $\underline{pt} \in H^0_\Gamma(pt)$ represented by the identity $pt \to pt$ with tautological co-orientation (see \cref{E: first examples}).
+
+	For the proof of \cref{T: intersection is cup product}, we need to arrange that for all $p\geq 1$ we have $\Phi_p(s_p) = s_p^\Gamma$, where
+	$s_p \in H^p(S^p)$ is our preferred generator described above and $s_p^\Gamma \in H^p_\Gamma(S^p)$ is the generator represented by an embedded point with normal co-orientation agreeing with our chosen orientation of $S^p$.
 	This will not necessarily be the case for the $\Phi_p$ output by \cref{T: geometric is singular}.
 	However, part of the data for a cohomology theory in the Kreck-Singhof theory consists of the natural connecting maps $\delta$ of the Mayer--Vietoris sequence, and part of the output of the theorem is that the isomorphisms $\Phi_p$ commute with these connecting maps.
 	Let us write the connecting map for a cohomology theory $h^*$ more explicitly as $h^p(U \cap V) \xr{\delta_p}h^{p+1}(U \cup V)$; we will generally write $\delta_p$ for the connecting map independent of which cohomology theory we are discussing.
-	Of course if we replace a given $\delta_p$ by $-\delta_p$ for all spaces, then we still have a natural connecting map and we will not have affected the exactness of the Mayer--Vietoris sequence.
+	Of course if we replace a given $\delta_p$ by $-\delta_p$ for all spaces, then we still have a natural connecting map, and we will not have affected the exactness of the Mayer--Vietoris sequence.
 	If we make such a change, we technically have a new cohomology theory with the same cohomology groups, but \cite[Theorem 10]{Krec10b} will output different isomorphisms $\Phi_p$.
-	As our present theorem does not particularly care about the signs of the connecting maps in the Mayer--Vietoris sequence, we will feel free to thus tinker with the connecting maps in order to arrange that $\Phi_p(s_p) = s_p^\Gamma$ for all $p\geq 1$.
-	Then we will show the resulting $\Phi_p$ satisfy \cref{T: intersection is cup product}.
+	As \cref{T: intersection is cup product} does not particularly care about the signs of the connecting maps in the Mayer--Vietoris sequence, we will first tinker with the connecting maps in order to arrange that $\Phi_p(s_p) = s_p^\Gamma$ for all $p\geq 1$.
+\begin{comment}
+	Then we will be able to show the resulting $\Phi_p$ satisfy \cref{T: intersection is cup product}.
+\end{comment}
 
+\begin{lemma}\label{L: connecting signs}
+	Possibly by changing the signs of the connecting morphisms in the Mayer-Vietoris sequences for geometric cohomology, we can arrange for $\Phi_p(s_p) = s_p^\Gamma$ for all $p \geq 1$, where $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$ are the isomorphisms output by \cref{T: geometric is singular} given $\Phi_0(1) = \underline{pt}$, as above.
+\end{lemma}
+\begin{proof}
 	Let
 	\begin{align*}
 		U_p& = \{(x_1,\ldots,x_{p+1}) \in S^p \mid x_{p+1}>-1/2\}\\
 		V_p& = \{(x_1,\ldots,x_{p+1}) \in S^p \mid x_{p+1}<1/2\}.
 	\end{align*}
-	Then $U_p \cap V_p$ is homotopy equivalent to $S^{p-1}$.
-	For $p\geq 1$, we now choose the sign of $\delta_p \colon H^{p}(U_{p+1} \cap V_{p+1}) \cong H^{p}(S^p) \to H^{p+1}(S^{p+1})$ so that $\delta_p(s_p) = s_{p+1}$, and similarly for geometric cohomology so that $\delta_p(s_p^\Gamma) = s_{p+1}^\Gamma$.
+	Then the equatorial inclusion $S^{p-1} \into U_p \cap V_p$ is a homotopy equivalence.
+	We will abuse notation and let $s_p$ also denote its image under the isomorphism $H^{p}(S^p) \cong  H^{p}(U_{p+1} \cap V_{p+1})$ induced by the homotopy equivalence.
+	For $p\geq 1$, we now choose the sign of $\delta_p \colon H^{p}(U_{p+1} \cap V_{p+1}) \to H^{p+1}(S^{p+1})$ so that $\delta_p(s_p) = s_{p+1}$.
+	Similarly, for geometric cohomology we arrange for $\delta_p(s_p^\Gamma) = s_{p+1}^\Gamma$.
 	For $p = 0$, to avoid confusion let us write $z_- = -1 \in \R$ and $z_+ = 1 \in \R$.
 	We let $s_0$ be the element of $H^0(S^0) \cong \Z^2$ that restricts to $1 \in H^0(z_+)$ and $0 \in H^0(z_-)$.
-	Similarly, let $s_0^\Gamma \in H^0_\Gamma(S^0)$ be represented by the identity map of $z_+$ with its tautological co-orientation.
+	Similarly, let $s_0^\Gamma \in H^0_\Gamma(S^0)$ be represented by the identity map of $z_+$ with its tautological co-orientation, and then $s_0^\Gamma$ is the element of $H^0_\Gamma(S^0) \cong \Z^2$ that restricts to $\underline{pt} \in H^0_\Gamma(z_+)$ and $0 \in H^0_\Gamma(z_-)$.
 	Then we choose the signs of $\delta_0$ so that $\delta_0(s_0) = s_{1}$ and $\delta_0(s_0^\Gamma) = s_{1}^\Gamma$.
-	Finally, let $\Phi_0$ take $1 \in H^0(pt)$ to the element of $H^0_\Gamma(pt)$ represented by the identity with tautological co-orientation.
 
-	Taking $H^*(-)$ and $H^*_\Gamma(-)$ with these Mayer--Vietoris maps and this $\Phi_0 \colon H^0(pt) \to H^0_\Gamma(pt)$, \cite[Theorem 10]{Krec10b} gives natural isomorphisms $\Phi_p \colon H^p(-) \to H^*_\Gamma(-)$ extending $\Phi_0$ on a point.
+	Taking $H^*(-)$ and $H^*_\Gamma(-)$ with these Mayer--Vietoris connecting maps and this $\Phi_0 \colon H^0(pt) \to H^0_\Gamma(pt)$, \cite[Theorem 10]{Krec10b} gives natural isomorphisms $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$ extending $\Phi_0$ on a point.
 	The naturality implies that $\Phi_0(s_0) = s_0^\Gamma$.
-	It now follows by induction using the following diagram due to the commutativity of $\Phi_*$ with the connecting maps, that $\Phi_p(s_p) = s_p^\Gamma$ for all $p$:
+	It now follows by induction, using the following diagram due to the commutativity of $\Phi_*$ with the connecting maps, that $\Phi_p(s_p) = s_p^\Gamma$ for all $p$:
 	\[
 	\begin{tikzcd}
 		H^p(S^p) \cong H^p(U_{p+1} \cap V_{p+1}) \arrow{r}{\delta_p} \arrow[d, "\Phi_p"] &
@@ -1407,6 +1420,52 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 		H_\Gamma^{p+1}(U_{p+1} \cup V_{p+1}) = H^{p+1}_\Gamma(S^{p+1}).
 	\end{tikzcd}
 	\]
+\end{proof}
+
+\begin{corollary}\label{C: sphere product}
+	Given $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$ as in \cref{L: connecting signs}, then $\Phi_{p+q}(s_p \times s_q) = s_p^\Gamma \times s_q^\Gamma$ for all $p,q \geq 1$.
+\end{corollary}
+
+
+\begin{proof}
+	Recall the maps $\nu \colon S^p \times S^q \to S^p \wedge S^q \cong S^{p+q}$ and $\mu \colon K_p \times K_q \to K_{p+q}$, defined above.
+	We consider the following diagram, which commutes by the naturality of $\Phi_{p+q}$:
+	\[
+	\begin{tikzcd}
+		H^{p+q}(S^p \times S^q) \arrow{d}{\Phi_{p+q}} &
+		H^{p+q}(S^{p+q}) \arrow[l, "\nu^*"'] \arrow{d}{\Phi_{p+q}} \\
+		H^{p+q}_\Gamma(S^p \times S^q) &
+		H_\Gamma^{p+q}(S^{p+q}) \arrow[l, "\nu^*"'].
+	\end{tikzcd}
+	\]
+	Let $s_{p+q}^\Gamma$ be represented by the embedding of a point at $y \in S^{p+q}$, normally co-oriented consistently with the orientation of $S^{p+q}$.
+	By possibly choosing a different $y$ if necessary, we can also choose a smooth map homotopic to $\nu$ that maps a Euclidean neighborhood of some point $x \in S^p \times S^q$ by an orientation-preserving diffeomorphism onto a neighborhood of $y$, taking $x$ to $y$ and the complement of the neighborhood of $x$ to the complement of the neighborhood of $y$.
+	Then, from the definitions, the pullback of $s_{p+q}^\Gamma$ is the embedding of $x$ into $S^p \times S^q$ with normal co-orientation corresponding to the orientation of $S^p \times S^q$.
+	By \cref{E: sphere product}, this is exactly $s_p^\Gamma \times s_q^\Gamma$, i.e.\ $\nu^*(s_{p+q}^\Gamma) = s_p^\Gamma \times s_q^\Gamma$.
+	So, recalling that $\Phi_p(s_{p+q}) = s_{p+q}^\Gamma$, we have $\nu^*\Phi_{p+q}(s_{p+q}) = s_p^\Gamma \times s_q^\Gamma$.
+	Thus, from the commutativity of the diagram and $\Phi_{p+q}$ being an isomorphism, it suffices to show that $\nu^*(s_{p+q}) = s_p \times s_q$.
+
+	For this, consider the commutative diagram
+	\[
+	\begin{tikzcd}
+		H^{p+q}(K_p \times K_q) \arrow[d, "(\phi_p \times \phi_q)^*"] &
+		\arrow[l, "\mu^*"'] H^{p+q}(K_{p+q}) \arrow[d, "\phi_{p+q}^*"] \\
+		H^{p+q}(S^p \times S^q) & \arrow[l, "\nu^*"'] H^{p+q}(S^{p+q}).
+	\end{tikzcd}
+	\]
+	As the $p+q+1$ skeleton of $K_p \times K_q$ is $S^p \times S^q$, the vertical maps are isomorphisms.
+	And we know from \eqref{E: sphere cross} and the definitions that
+	$$(\phi_p \times \phi_q)^*\mu^*(\phi_{p+q}^*)^{-1}(s_{p+q}) = (\phi_p \times \phi_q)^*\mu^*(\iota_{p+q})\\
+	= s_p \times s_q,$$
+	so we must have $\nu^*(s_{p+q}) = s_p \times s_q$, as needed.
+\end{proof}
+
+
+We can now apply \cref{L: connecting signs,C: sphere product} to prove \cref{T: intersection is cup product}.
+
+\begin{proof}[Proof of \cref{T: intersection is cup product}]
+	Applying \cref{L: connecting signs}, we assume isomorphisms $\Phi_p \colon H^p(-) \to H^p_\Gamma(-)$, $p \geq 0$, such that $\Phi_p(s_p) = s_p^\Gamma$ for all $p \geq 0$.
+
 	For each $M$, we can now define pairings $\star$ on $H^p(-) \otimes H^q(-) \to H^{p+q}(-)$ by the composition
 	\[
 	H^p(M) \otimes H^q(M) \xr{\Phi_p \otimes \Phi_q}
@@ -1417,8 +1476,9 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	This pairing is natural, as all the maps are natural.
 	We will apply \cref{P: Kreck-Singhof pairing} to show that this is really the cup product, which will prove the theorem.
 
-	We first show that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ (generated by the class of $1 \in C^0(M)$) then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$.
-	Let $pt$ be an arbitrary point in $M$ and consider the diagram
+	We first show that if $M$ is connected and $\lambda \in H^0(M) \cong \Z$ then $\lambda\star \alpha = \alpha\star \lambda = \lambda\alpha$ for all $\alpha \in H^*(M)$.
+	Let $pt$ be an arbitrary point in $M$.
+	By the naturality of $\Phi_0$, the following diagram, in which the horizontal maps are induced by the inclusion $pt \into M$, commutes:
 	\[
 	\begin{tikzcd}
 		H^0(M) \arrow{r} \arrow[d, "\Phi_0"] & H^0(pt) \arrow[d, "\Phi_0"] \\
@@ -1428,10 +1488,9 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	The vertical maps are isomorphisms by our application of \cite[Theorem 10]{Krec10b}, and it is standard that the top map is an isomorphism.
 	In fact, we can consider $H^0(M)$ as generated by the cochain $1_M$, and this pulls back to the generator $1_{pt} \in H^0(pt)$ (each represented by the map that takes a positively oriented point considered as a singular $0$-chain to $1$).
 	It follows that the bottom map is an isomorphism.
-	Consider the generator $\uM \in H_\Gamma^0(M)$ given by the identity map of $M$ with its tautological co-orientation $(\beta_M,\beta_M)$.
-	This has normal orientation given by the positively-oriented $0$-dimensional normal bundle.
-	By the pullback construction, the pullback to $H^0_\Gamma(pt)$ is similarly represented by $\underline{pt}$, the identity map of $pt$ with its canonical co-orientation.
-	As we know that $\Phi_0(1_{pt}) = \underline{pt}$, it follows from the commutativity that $\Phi_0(1_M) = \uM$.
+	Consider the generator $\uM \in H_\Gamma^0(M)$ given by the identity map of $M$ with its tautological co-orientation $(\beta_M,\beta_M)$; see \cref{E: first examples}.
+	This has normal orientation given by the positively-oriented $0$-dimensional normal bundle, so by the pullback construction of \cref{D: pullback coorient}, the pullback to $H^0_\Gamma(pt)$ is similarly represented by $\underline{pt}$, the identity map of $pt$ with its canonical co-orientation.
+	As $\Phi_0(1_{pt}) = \underline{pt}$ by assumption, it follows from the commutativity that $\Phi_0(1_M) = \uM$.
 
 	So for $\alpha \in H^p(M)$, we have
 	\begin{align*}
@@ -1445,49 +1504,19 @@ We also let $\mu:K_p \times K_q \to K_{p+q}$ be the unique-up-to-homotopy map th
 	If $M$ has multiple components, then these properties clearly hold component-wise, as needed.
 
 	To apply \cref{P: Kreck-Singhof pairing}, it remains to show that $\pi_1^*(s_p) \star \pi_2^*(s_q) = s_p \times s_q$ for all $p,q\geq 1$.
-	We have
+	For this, we have
 	\begin{align*}
-		\Phi_{p+q}(\pi_1^*(s_p) \star \pi_2^*(s_q))& = \Phi_{p+q}\Phi_{p+q}^{-1}(\Phi_p(\pi_1^*(s_p))\uplus\Phi_q(\pi_2^*(s_q)))&\text{by definition of $\star$}\\
-		& = \pi_1^*\Phi_p(s_p)\uplus\pi_2^*\Phi_q(s_q)&\text{by naturality of the $\Phi$}\\
-		& = \pi_1^*(s_p^\Gamma)\uplus\pi_2^*(s_q^\Gamma)&\text{by the preceding}\\
-		& = (s_p^\Gamma \times \underline{S^q})\uplus(\underline{S^p} \times s_q^\Gamma)&\text{by Prop.
+		\pi_1^*(s_p) \star \pi_2^*(s_q)& = \Phi_{p+q}^{-1}(\Phi_p(\pi_1^*(s_p))\uplus\Phi_q(\pi_2^*(s_q)))&\text{by definition of $\star$}\\
+		& = \Phi_{p+q}^{-1}(\pi_1^*\Phi_p(s_p)\uplus\pi_2^*\Phi_q(s_q))&\text{by naturality of the $\Phi$}\\
+		& = \Phi_{p+q}^{-1}(\pi_1^*(s_p^\Gamma)\uplus\pi_2^*(s_q^\Gamma))&\text{by \cref{L: connecting signs}}\\
+		& = \Phi_{p+q}^{-1}((s_p^\Gamma \times \underline{S^q})\uplus(\underline{S^p} \times s_q^\Gamma))&\text{by Prop.
 			\ref{P: projection pullbacks}}\\
-		& = (s_p^\Gamma\uplus \underline{S^p})\times( \underline{S^q}\uplus s_q^\Gamma)&\text{by Cor.
+		& = \Phi_{p+q}^{-1}((s_p^\Gamma\uplus \underline{S^p})\times( \underline{S^q}\uplus s_q^\Gamma))&\text{by Cor.
 			\ref{C: criss cross} }\\
-		& = s_p^\Gamma \times s_q^\Gamma&\text{by Cor.
-			\ref{C: cup with identity}}.
+		& = \Phi_{p+q}^{-1}(s_p^\Gamma \times s_q^\Gamma)&\text{by Cor.
+			\ref{C: cup with identity}}\\
+		& = s_p \times s_q & \text{by \cref{C: sphere product}}.
 	\end{align*}
-	So $\pi_1^*(s_p) \star \pi_2^*(s_q) = \Phi_{p+q}^{-1}(s_p^\Gamma \times s_q^\Gamma)$, and it remains to show that this is $s_p \times s_q$, i.e.\ that $\Phi_{p+q}(s_p \times s_q) = s_p^\Gamma \times s_q^\Gamma$.
-
-	To do so, consider the following diagram, which commutes by the naturality of $\Phi_{p+q}$:
-	\[
-	\begin{tikzcd}
-		H^{p+q}(S^p \times S^q) \arrow{d}{\Phi_{p+q}} &
-		H^{p+q}(S^{p+q}) \arrow[l, "\nu^*"'] \arrow{d}{\Phi_{p+q}} \\
-		H^{p+q}_\Gamma(S^p \times S^q) &
-		H_\Gamma^{p+q}(S^{p+q}) \arrow[l, "\nu^*"'].
-	\end{tikzcd}
-	\]
-	Let $s_{p+q}^\Gamma$ be represented by the embedding of a point at $y \in S^{p+q}$, normally co-oriented consistently with the orientation of $S^{p+q}$.
-	By possibly choosing the point again, we can choose a smooth map homotopic to $\nu$ that maps a Euclidean neighborhood of some point $x \in S^p \times S^q$ by an orientation-preserving diffeomorphism to a neighborhood of $y$, taking $x$ to $y$ and the complement of a neighborhood of $x$ to the complement of a neighborhood of $y$.
-	Then, from the definitions, the pullback of $s_{p+q}^\Gamma$ is the embedding of $x$ into $S^p \times S^q$ with normal co-orientation corresponding to the orientation of $S^p \times S^q$.
-	By \cref{E: sphere product}, this is exactly $s_p^\Gamma \times s_q^\Gamma$, i.e.\ $\nu^*(s_{p+q}^\Gamma) = s_p^\Gamma \times s_q^\Gamma$.
-	So, recalling that $\Phi_p(s_{p+q}) = s_{p+q}^\Gamma$, we have $\nu^*\Phi_{p+q}(s_{p+q}) = s_p^\Gamma \times s_q^\Gamma$.
-	Thus, from the commutativity of the diagram and $\Phi_{p+q}$ being an isomorphism, it suffices to show that $\nu^*(s_{p+q}) = s_p \times s_q$.
-
-	For this, consider the commutative diagram
-	\[
-	\begin{tikzcd}
-		H^{p+q}(\mc K_p \times \mc K_q) \arrow[d, "(\phi_p \times \phi_q)^*"] &
-		\arrow[l, "\mu^*"'] H^{p+q}(\mc K_{p+q}) \arrow[d, "\phi_{p+q}^*"] \\
-		H^{p+q}(S^p \times S^q) & \arrow[l, "\nu^*"'] H^{p+q}(S^{p+q}).
-	\end{tikzcd}
-	\]
-	As the $p+q+1$ skeleton of $K_p \times K_q$ can be taken to be $S^p \times S^q$, the vertical maps are isomorphisms.
-	And we know from \eqref{E: sphere cross} and the definitions that
-	$$(\phi_p \times \phi_q)^*\mu^*(\phi_{p+q}^*)^{-1}(s_{p+q}) = (\phi_p \times \phi_q)^*\mu^*(\iota_{p+q})\\
-	= s_p \times s_q,$$
-	so we must have $\nu^*(s_{p+q}) = s_p \times s_q$, as needed
 \end{proof}
 
 \subsection{K\"unneth theorems}
