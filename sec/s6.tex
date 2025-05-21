@@ -2,13 +2,13 @@
 
 \section{Interaction with cubical structures}\label{S: transversality}
 
-In this section we bring in some auxiliary structures that will help us further develop geometric cohomology and its connections to singular cohomology.
+In this section, we bring in some auxiliary structures that will help us further develop geometric cohomology and its connections to singular cohomology.
 In particular, we equip our manifolds with smooth cubulations.
 Many of our results would apply just as well with the more familiar smooth triangulations, but we find cubulations to be more convenient.
-In particular, in \cite{FMS-flows} we have considered geometric cochains in the presence of cubulations, demonstrating how to obtain a fully-defined cochain-level cup product via intersection using certain flows developed in terms of the cubulation.
+In particular, in \cite{FMS-flows}, we have considered geometric cochains in the presence of cubulations, demonstrating how to obtain a fully-defined cochain-level cup product via intersection using certain flows developed in terms of the cubulation.
 Cup products in geometric cohomology will be discussed in the following section.
 
-Smooth cubulations are analogous to smooth triangulations in that they involve a homeomorphism $M \cong |X|$ between a manifold $M$ and the geometric realization $|X|$ of a cubical complex $X$ such that the restriction to each cubical face is a smooth embedding.
+Smooth cubulations are analogous to smooth triangulations in that they involve a homeomorphism $M \cong |X|$ between a manifold $M$ and the geometric realization $|X|$ of a cubical complex $X$, such that the restriction to each cubical face is a smooth embedding.
 What is slightly different, aside from substituting cubes (i.e.\ copies of $\interval^k$) for simplices, is that cubical complexes require a bit more combinatorial structure; simplicial complexes can always be constructed just by gluing together simplices along faces, while gluing of cubical faces requires a certain combinatorial compatibility among the faces being glued.
 
 The issue is that any simplicial complex can be given a total ordering of its vertices, and this ordering provides a canonical identification between any simplicial face and the standard model simplex of the same dimension.
@@ -99,12 +99,11 @@ This is precisely the set of vertices of the unique face $F$ of $\interval^n$ wi
 This association determines a canonical bijection between faces of $\interval^n$ and such subposets; explicitly, to $[v, w]$ we associate the face $F$ defined by $F_\varepsilon = \{i \in \overline{n}\ |\ v_i = w_i = \varepsilon\}$ for $\varepsilon \in \{0, 1\}$.
 
 The posets $\{\mathcal P(\overline n)\}_{n \geq 1}$ play the role for cubical complexes that finite totally ordered sets play for simplicial complexes.
-Recall for comparison that one definition of an abstract ordered simplicial complex is as a pair $(V, X)$, where $V$ is a poset and $X$ is a collection of subsets of $V$ (the simplices), each with an induced total order, such that all singletons are in $X$ (the vertices) and subsets of sets in $X$ (faces of simplices) are also in $X$.
+Recall for comparison that an abstract ordered simplicial complex can be defined as a pair $(\vertices(X), X)$, where $X$ is a collection of subsets of the set $\vertices(X)$, called simplices, such that every singleton subset (vertex) is in $X$, every subset of a simplex (face) is again in $X$, and each simplex is equipped with a total order compatible with its faces.
 We have the following cubical analogue.
 
 \begin{definition}\label{D:cubical}
-	A \textbf{cubical complex} $X$ is a collection $\{ \sigma \}$ of finite non-empty subsets of a set
-	$\vertices(X)$, together with, for each $\sigma \in X$, a bijection $\iota_\sigma \colon \sigma \to \mathcal P(\overline n)$ for some $n$, such that:
+	A \textbf{cubical complex} $X$ is a collection $\{ \sigma \}$ of finite non-empty subsets of a set $\vertices(X)$, together with, for each $\sigma \in X$, a bijection $\iota_\sigma \colon \sigma \to \mathcal P(\overline n)$ for some $n$, such that:
 	\begin{enumerate}
 		\item For all $v \in \vertices(X)$, $\{v\} \in X$,
 		\item For all $\sigma \in X$ and all $[u,w] \subset \mathcal P(\overline n)$ the set $\rho = \iota_\sigma^{-1}([u,w])$ is in $X$ and the following diagram commutes, with the two diagonal maps being order preserving:
@@ -138,6 +137,25 @@ Our definition sits between cubical sets \cite{jardine2002cubical} and cellular 
 	It does, however, sometimes occur naturally, such as when a cubical complex is a subcomplex of a lattice, as will be the case in our construction below of cubulations of smooth manifolds.
 \end{remark}
 
+\noindent Given two cubical complexes $X$ and $Y$, their \textbf{product} is the cubical complex
+\[
+X \times Y = \{ \sigma_X \times \sigma_Y \mid \sigma_X \in X,\ \sigma_Y \in Y \},
+\]
+with vertex set $\vertices(X \times Y)$ and characteristic maps defined by
+\[
+\iota_{\sigma_X \times \sigma_Y} = \iota_{\sigma_X} \times \iota_{\sigma_Y} \colon \sigma_X \times \sigma_Y \to \mathcal{P}(\overline{n}) \times \mathcal{P}(\overline{m}) \cong \mathcal{P}(\overline{n + m}),
+\]
+where
+\[
+\mathcal{P}(\overline{n}) \times \mathcal{P}(\overline{m}) \cong \mathcal{P}(\overline{n + m}),
+\]
+is the canonical order-preserving bijection, which is compatible with the identification
+\[
+\vertices(\interval^n) \times \vertices(\interval^m) \cong \vertices(\interval^{n + m}).
+\]
+
+\subsection{Cubulations}
+
 Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$ be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
 The poset of faces of a cubical complex $X$ also determines a category, and the characteristic maps of $X$ determine a functor from this poset category to $\mathtt{Cube}$.
 We define the \textbf{geometric realization} $|X|$ of $X$ as the colimit of this functor; in other words, we glue topological cubes together according to the combinatorial data of the cubical complex $X$ in the evident way.
@@ -150,12 +168,14 @@ A \textbf{cubical structure} or \textbf{cubulation} on a space $S$ is a homeomor
 A smooth cubulation is one for which the restriction of $h \colon |X| \to S$ to each cube is a smooth map of manifolds with corners.
 For a given face of $F$ of $X$, we will also refer to the corresponding map $\interval^n \to S$ as the characteristic map of the face.
 Smooth cubulations exist for any smooth manifold, as in the following construction of \cite{ShSh92}.
+
 Start with a smooth triangulation (see for example \cite[Theorem 10.6]{MUNK66} for the existence of such).
 Consider the cell complex that is dual to its barycentric subdivision.
 Intersecting those dual cells with each simplex in the triangulation provides a subdivision of the simplex into cells that are linearly isomorphic to cubes.
 Moreover, starting with an ordered triangulation -- obtained for example by taking a barycentric subdivision -- such a cubical decomposition embeds cellularly into the cubical lattice of $\R^\infty$, and thus it is the geometric realization of a cubical complex.
 See \cite{ShSh92} for details.
 
+Using the product of cubical complexes, it follows immediately that the product of cubulated manifolds is again a cubulated manifold.
 
 \begin{figure}
 	\input{auxy/torus.tex}
@@ -182,6 +202,8 @@ Regarding a cubical complex $X$ as a functor to $\mathtt{Cube}$, we can compose 
 The complex of \textbf{cubical chains} of $X$, denoted $K_*(X)$, is defined to be the colimit of this composition.
 As one would expect, in each degree it is a free abelian group generated by the cubes of that dimension, and its boundary homomorphism sends the
 generator associated to a cube to a sum of generators associated to its codimension-one faces with appropriate signs.
+Furtheremore, the functor of cubical chains is strongly monoidal in the sense that $K_*(X \times X)$ is canonically isomorphic to $K_*(X) \otimes K_*(Y)$ for any pair of cubical complexes.
+
 By abuse, we will use the same notation and terminology for an element in $X$, its geometric realization in $|X|$,
 and the corresponding basis element in $K_*(X)$.
 Most commonly we will write $F$ and refer simply to a ``face of $X$.''
@@ -191,12 +213,14 @@ For any face $F$ of $\interval^n$, the ordered subset $\beta_F = \{\e_i\ |\ i \i
 In forming the cubical complex $X$, these orientations are preserved, and so each face of $X$ carries an orientation.
 These orientations are compatible with our standard generators of $K_*(X)$ in the sense that if we identify $[0,1]^{ \otimes k}$ with $\interval^k$ with its standard orientation then, in the boundary formula, $k-1$ faces appear with sign $1$ or $-1$ according to whether or not their standard orientations agree with the boundary orientation of $\interval^k$ as a manifold with corners.
 
-The \textbf{cubical cochain complex} of $X$ (with $\Z$ coefficients) is the chain complex $K^*(X) = \Hom_\Z(K_*(X), \Z)$.
+The \textbf{cubical cochain complex} of $X$ (with $\Z$ coefficients) is the chain complex
+\[
+K^*(X) = \Hom_\Z(K_*(X), \Z).
+\]
 If $F$ is a face of $X$, and correspondingly a generator of $K_*(X)$, then we will write $F^*$ for the dual, i.e.\ the element of $K^*(X)$ such that $F^*(F) = 1$ and $F^*(E) = 0$ for all other faces $E\neq F$ of $X$.
 We will use the convention as in \cite[Section 42]{Mun84} that
 $$(dF^*)(\xi) = F^*(\bd \xi).$$
-As discussed in \cite[Section 42]{Mun84} in the simplicial context, these formulas are sufficient to determine the coboundary operaton on all of $K^*(X)$, thinking of elements of $K^*(X)$ as possibly infinite formal sums $\sum n_i F_i^*$.
-
+As discussed in \cite[Section 42]{Mun84} in the simplicial context, these formulas are sufficient to determine the coboundary operator on all of $K^*(X)$, thinking of elements of $K^*(X)$ as possibly infinite formal sums $\sum n_i F_i^*$.
 
 \subsection{Comparing cubical and geometric homology}\label{S: cubical and geometric homology}
 
