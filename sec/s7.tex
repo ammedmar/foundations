@@ -1568,7 +1568,7 @@ As elements of $NK^{sm}_*(M)$ are represented by linear combinations of smooth m
 \end{proof}
 
 We now turn to cohomology.
-We will provide two proofs of the cohomology K\"unneth Theorem, one using our maps $\Phi$ from the Kreck-Singhof argument and one using our intersection maps $\mc I$ in the cubical setting.
+We will provide two proofs of the cohomology K\"unneth Theorem, one using our maps $\Phi$ from the Kreck-Singhof argument of \cref{T: intersection is cup product} and one using our intersection maps $\mc I$ in the cubical setting of \cref{S: intersection map}.
 
 For the first, recall that for $\uV \in H^*_\Gamma(M)$ and $\uW \in H^*_\Gamma(N)$ we have the relation
 $\uV \times \uW = \pi_M^*(\uV)\uplus\pi_N^*(\uW)$, which follows from \cref{C: cross is cup}, while the same relation is well known to hold in singular cohomology \cite[Corollary 5.6.14]{Span81}.
@@ -1599,11 +1599,11 @@ So the following is immediate from the naturality of our comparison maps $\Phi$ 
 	Using \cref{P: cross product is cross product}, we can form the left part of the diagram
 	\[
 	\begin{tikzcd}
-	\displaystyle\bigoplus_{p+q = a}H^p_\Gamma(M) \otimes H^q_\Gamma(N) \arrow[r,"\times",hook]\arrow[d,"\bigoplus \Phi_p \otimes \Phi_q"',"\cong"]& H^{p+q}_\Gamma(M \times N) \arrow[r,twoheadrightarrow]\arrow[d,"\Phi_{p+q}"',"\cong"]&\displaystyle\bigoplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N) \arrow[d,dashed,"\bigoplus \Phi_p * \Phi_q"',"\cong"]\\
-	\displaystyle\bigoplus_{p+q = a}H^p_\Gamma(M) \otimes H^q_\Gamma(N) \arrow[r,dashed,hook,"\times"]& H^{p+q}_\Gamma(M \times N) \arrow[r,dashed,twoheadrightarrow]& \displaystyle\bigoplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N).
+	\displaystyle\bigoplus_{p+q = a}H^p(M) \otimes H^q(N) \arrow[r,"\times",hook]\arrow[d,"\bigoplus \Phi_p \otimes \Phi_q"',"\cong"]& H^{p+q}(M \times N) \arrow[r,twoheadrightarrow]\arrow[d,"\Phi_{p+q}"',"\cong"]&\displaystyle\bigoplus_{p+q = a+1}H^p(M)* H^q(N) \arrow[d,dashed,"\bigoplus \Phi_p * \Phi_q"',"\cong"]\\
+	\displaystyle\bigoplus_{p+q = a}H^p_\Gamma(M) \otimes H^q_\Gamma(N) \arrow[r,"\times"]& H^{p+q}_\Gamma(M \times N) \arrow[r,dashed,twoheadrightarrow]& \displaystyle\bigoplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N).
 	\end{tikzcd}
 	\]
-	Since we know there is a cohomology K\"unneth Theorem of this form for singular cohomology \cite[Theorem 60.5]{Mun84}, and the vertical maps on the left and middle are isomorphisms, the bottom left horizontal map is also injective.
+	Since we know there is a cohomology K\"unneth Theorem for singular cohomology \cite[Theorem 60.5]{Mun84}, and the vertical maps on the left and middle are isomorphisms, the bottom left horizontal map is injective.
 	It follows that there is an isomorphism between the quotient terms of the two sequences, and the quotient term on the top is $\displaystyle\bigoplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N)$, which is then isomorphic to $\displaystyle\bigoplus_{p+q = a+1}H^p_\Gamma(M)* H^q_\Gamma(N)$ via the maps $\Phi_p*\Phi_q$.
 
 	As the exact sequences are isomorphic and the top one splits, they both split.
@@ -1612,9 +1612,28 @@ So the following is immediate from the naturality of our comparison maps $\Phi$ 
 \end{proof}
 
 In the preceding argument we had to work directly with cohomology because our maps $\Phi_p$ are only defined on cohomology, not on cochains.
-Alternatively, we can approach the cohomology K\"unneth theorem more explicitly and in closer analogy with the proof of \cref{T: homology kunneth} by again utilizing cubulations and intersection maps.
+Alternatively, we can approach the cohomology K\"unneth theorem more explicitly and in closer analogy with the proof of \cref{T: homology kunneth} by utilizing cubulations and intersection maps.
 
 One benefit of cubulations over triangulations is that the product of two cubical complexes is again a cubical complex: the product of two cubes $E$ and $F$ is simply the cube $E \times F$.
+Furthermore, as noted in \cref{S: cubical cochains}, this product provides a canonical isomorphism $K_*(X) \otimes K_*(Y) \xr{\times} K_*(X \times Y)$ for any cubical complexes $X$ and $Y$.
+Passing to cohomology, we thus have maps
+\begin{multline*}
+	K^*(X) \otimes K^*(Y) = \Hom(K_*(X), \Z) \otimes \Hom(K_*(Y), \Z) \xr{\theta} \Hom(K_*(X) \otimes K_*(Y),\Z) \\ \underset{\cong}{\xleftarrow{\times^*}} \Hom(K_*(X \times Y),\Z) = K^*(X \times Y),
+\end{multline*}
+where $\times^*$ is the Hom dual of $K_*(X) \otimes K_*(Y) \xr{\times} K_*(X \times Y)$ and $\theta$ is the canonical map so that $$\theta(\alpha \otimes \beta)(E \otimes F) = \alpha(E)\beta(F);$$ compare \cite[Sections 60,61]{Mun84}.
+The composition left to right will be our \textbf{cubical cochain cross product}, which we denote simply $\times$, by the standard convention.
+
+The cubical cochain cross product induces a cohomology cross product $H^*(X) \otimes H^*(Y) \xr{\times} H^*(X \times Y)$ that also takes the tensor product of cohomology classes represented by cocycles $\alpha$ and $\beta$ to the class of the cocycle $\alpha \times \beta$.
+
+If either $H_*(X)$ or $H_*(Y)$ are finite in all dimensions, then $\theta \colon \Hom(K_*(X), \Z) \otimes \Hom(K_*(Y), \Z) \xr{\theta} \Hom(K_*(X) \otimes K_*(Y),\Z)$ is a quasi-isomorphism, as can be seen by replacing $K_*(X)$ or $K_*(Y)$ up to chain homotopy equivalence by a free complex of finite type; see \cite[Lemma 5.5.6 and 5.5.9]{Span81}.
+Consequently, the cubical cochain cross product $K^*(X) \otimes K^*(Y) \xr{\times}  K^*(X \times Y)$ is a quasi-isomorphism.
+Using this together with the algebraic K\"unneth theorem \cite[Theorem V.2.1]{HS} and assuming these finiteness hypotheses, there is a natural K\"unneth short exact sequence for cubical cohomology
+	\[
+	0 \to \bigoplus_{p+q = a}H^p(X) \otimes H^q(Y) \xr{\times} H^{p+q}(X \times Y) \to \bigoplus_{p+q = a+1} H^p(X)* H^q(Y) \to 0
+	\]
+that splits, but not naturally.
+
+\begin{comment}
 If $X$ and $Y$ are cubical complexes, this provides a cubical cross product $K_*(X) \otimes K_*(Y) \to K_*(X \times Y)$.
 
 \begin{lemma}
@@ -1639,26 +1658,37 @@ If $X$ and $Y$ are cubical complexes, this provides a cubical cross product $K_*
 
 Another benefit of the cubical category is that the inverse to the cros
 
+\end{comment}
+
 \begin{proposition}\label{P: cross product comparison}
-	Let $M$ and $N$ be cubulated manifolds without boundary, and let $M \times N$ have the product cubulation.
-	Let $K^*$ denote the complex of cubical cochains for the appropriate cubulation.
+	Let $M$ and $N$ be manifolds without boundary cubulated by cubical complexes $X$ and $Y$, and let $M \times N$ have the product cubulation.
 	The following diagram commutes
 	\[
 	\begin{tikzcd}
 		C^*_{\Gamma}(M) \otimes C^*_{\Gamma}(N) \arrow{r}{\times} & C^*_{\Gamma}(M \times N) \\
 		C^*_{\Gamma\pf}(M) \otimes C^*_{\Gamma\pf}(N) \arrow{r}{\times} \arrow[u, hook] \arrow[d, "\mc I \otimes \mc I"] & C^*_{\Gamma\pf}(M \times N) \arrow[u, hook] \arrow[d, "\mc I"] \\
-		K^*(M) \otimes K^*(N) \arrow{r}{\times} & K^*(M \times N).
+		K^*(X) \otimes K^*(Y) \arrow{r}{\times} & K^*(X \times Y).
+	\end{tikzcd}
+	\]
+	Furthermore, if all $H^i(M)$ and $H^j(N)$ are finitely generated, then the cubical cohomology cross product is isomorphic to the geometric cohomology cross product.
+	In particular, we have the following diagram with all vertical maps isomorphisms:
+	\[
+	\begin{tikzcd}
+		H^*_{\Gamma}(M) \otimes H^*_{\Gamma}(N) \arrow{r}{\times} & H^*_{\Gamma}(M \times N) \\
+		H^*_{\Gamma\pf}(M) \otimes H^*_{\Gamma\pf}(N) \arrow{r}{\times} \arrow[u, "\cong"'] \arrow[d, "\cong", "\mc I \otimes \mc I"'] &
+		H^*_{\Gamma\pf}(M \times N) \arrow[u, "\cong"'] \arrow[d, "\cong", "\mc I"'] \\
+		H^*(X) \otimes H^*(Y) \arrow{r}{\times} & H^*(X \times Y).
 	\end{tikzcd}
 	\]
 \end{proposition}
 
 \begin{proof}
-	The top square certainly commutes as the vertical maps are inclusions.
+	In the top diagram, the top square certainly commutes as the vertical maps are inclusions.
 	Note that the product of two maps transverse to the cubulation will be transverse to the product cubulation, so the middle horizontal map is well defined.
 
-	Let $V$ and $W$ represent elements of $C^*_{\Gamma\pf}(M)$, and let $E$ and $F$ be cubes of the cubulation.
+	Let $V$ and $W$ represent elements of $C^*_{\Gamma\pf}(M)$ and $C^*_{\Gamma\pf}(N)$, and let $E$ and $F$ be cubes of the cubulations $X$ and $Y$, respectively.
 	We check that the two ways around the bottom square evaluate the same on $E \times F$.
-	Applying $\mc I(V \times W)$ to $E \times F$ gives $I_{M \times N}(V \times W, E \times F) = \aug((V \times W)\times_{M \times N}(E \times F))$ by \cref{D: intersection homomorphism,D: intersection number}, while going the other way around the diagram and applying the result to $E \times F$ yields, with our conventions, $I_M(V,E)I_N(W,F) = \aug(V \times_M E)\aug(W \times_N F)$.
+	Applying $\mc I(V \times W)$ to $E \times F$ gives $I_{M \times N}(V \times W, E \times F) = \aug((V \times W)\times_{M \times N}(E \times F))$ by \cref{D: intersection homomorphism,D: intersection number}, while going the other way around the diagram and applying the result to $E \times F$ yields $I_M(V,E)I_N(W,F) = \aug(V \times_M E)\aug(W \times_N F)$.
 
 	We can now compute
 	\begin{align*}
@@ -1669,10 +1699,11 @@ Another benefit of the cubical category is that the inverse to the cros
 	Note that if either $V \times_M E$ or $W \times_N F$ is not $0$-dimensional then also $(V \times W)\times_{M \times N}(E \times F)$ is not $0$-dimensional, and all three expressions above are $0$.
 	Otherwise, the second equality is apparent as the product of a $(-1)^a$-oriented point with a $(-1)^b$-oriented point is a $(-1)^{a+b}$-oriented point.
 	In this case we also have $w+f = n$ so that $(-1)^{(w+f-n)(m-v)} = 1$.
+
+	The bottom diagram now commutes as a consequence of the first diagram commuting, and the vertical maps are isomorphisms by \cref{T: transverse complex,T: intersection qi}.
 \end{proof}
 
-The following corollary is now immediate from \cref{P: cross product comparison,T: transverse complex,T: intersection qi}.
-
+\begin{comment}
 \begin{corollary}
 	If $M$ and $N$ are cubulated manifolds without boundary and each $H^i(M)$ and $H^j(N)$ is finitely generated, then the cubical cohomology cross product is isomorphic to the geometric cohomology cross product.
 	In particular, we have the following diagram with all vertical maps isomorphisms:
@@ -1685,9 +1716,16 @@ The following corollary is now immediate from \cref{P: cross product comparison,
 	\end{tikzcd}
 	\]
 \end{corollary}
+\end{comment}
 
-Furthermore, \cref{P: cross product comparison} now implies a proof of \cref{T: cohomology kunneth} completely analogous to the proof of \cref{T: homology kunneth}.
-The finiteness hypothesis is required both for the maps $\mc I \colon C^*_{\Gamma\pf}(-) \to K^*(-)$ to be isomorphisms via \cref{T: intersection qi} and for the cross product $H^*(K^*(M)) \otimes H^*(K*(N)) \xr{\times} H^*(K^*(M \times N))$ to be an isomorphism.
+\cref{P: cross product comparison} now implies an alternative proof of \cref{T: cohomology kunneth} when all of the cohomology groups are finitely generated and the homology groups of either $X$ or $Y$ are all finitely generated.
+In this case the vertical maps of the first diagram in \cref{P: cross product comparison} are all quasi-isomorphisms by \cref{T: transverse complex,T: intersection qi,L: flat}, and the
+cubical cochain cross product $K^*(X) \otimes K^*(Y) \xr{\times} K^*(X \times Y)$ is a quasi-isomorphism by our discussion preceding the statement of the proposition.
+Thus by the commutativity of the diagram, $C^*_{\Gamma}(M) \otimes C^*_{\Gamma}(N) \xr{\times}  C^*_{\Gamma}(M \times N)$ is a quasi-isomorphism, and the K\"unneth short exact sequence for $C^*_{\Gamma}(M) \otimes C^*_{\Gamma}(N)$ is again a purely algebraic matter \cite[Theorem V.2.1]{HS}.
+
+While this argument for the cohomology K\"unneth Theorem requires more hypotheses than the proof of \cref{T: cohomology kunneth} given above, they will always be satisfied if $X$ and $Y$ are compact, and the benefit, as seen in the second diagram of \cref{P: cross product comparison}, is that we obtain isomorphisms between our geometric cohomology K\"unneth short exact sequence and the cubical cohomology K\"unneth short exact sequence given by the geometric intersection maps.
+
+
 
 
 
@@ -1741,7 +1779,7 @@ We first discuss formulas for the cubical cup and cap products, relying on known
 Then we apply the cubical formulas to the geometric world.
 
 In \cref{T: equivalent cap,C: cap relation} we show that the cubical cap product (and hence the singular cap product) determines the geometric cap product in general, while the geometric cap product determines the cubical cap product if all $H^i(M)$ are finitely generated.
-This last condition is needed because \cref{T: intersection qi} only tells us that the intersection map induces cohomology isomorphisms $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K_X^*(M))$, for some cubulation $X$, when $H^i(M)$ is finitely generated.
+This last condition is needed because \cref{T: intersection qi} only tells us that the intersection map induces cohomology isomorphisms $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$, for some cubulation $X$, when $H^i(M)$ is finitely generated.
 Unlike the situation with \cref{T: intersection is cup product}, for which we used the Kreck-Singhof theorem for cup products to show that the geometric and singular cup products are always isomorphic, we do not know of an analogue of the Kreck-Singhof theorem for cap products that would allow us to provide compatibility of cap products in full generality.
 
 \subsubsection{Cubical cup and cap products}\label{S: cubical products}
@@ -1802,8 +1840,8 @@ These products are then compatible with the constructions for normalized singula
 \subsubsection{Relating geometric and cubical cap products via the intersection map}
 
 In this section we show that the geometric and cubical cap products are compatible in the sense given below in \cref{T: equivalent cap,C: cap relation}.
-Recall that in \cref{R: intersection map extension} we extended the definition of the intersection map $\mc I$ to give us a map $H^*_\Gamma(M) \to H^i(K_X^*(M))$ for the manifold $M$ cubulated by $X$, though we leave $X$ tacit in the following.
-We again let $\mc J \colon K_*(X) \cong K^X_*(M) \to C^\Gamma_*(M)$ be the map that takes a cubical face of $X$ to its embedding into $M$; see \cref{T: cubical homology iso}.
+Recall that in \cref{R: intersection map extension} we extended the definition of the intersection map $\mc I$ to give us a map $H^*_\Gamma(M) \to H^i(X)$ for the manifold $M$ cubulated by $X$, though we leave $X$ tacit in the following.
+We again let $\mc J \colon K_*(X) \to C^\Gamma_*(M)$ be the map that takes a cubical face of $X$ to its embedding into $M$; see \cref{T: cubical homology iso}.
 
 \begin{theorem}\label{T: equivalent cap}
 	Let $M$ be a smoothly cubulated manifold without boundary.
