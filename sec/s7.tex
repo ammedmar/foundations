@@ -1794,8 +1794,8 @@ The map $\zeta: NK_*(X) \otimes NK_*(Y) \to NK_*(X \times Y)$ is simply the cros
 If $S$ or $T$ is degenerate, so is $S \times T$, so this product is well defined for the normalized complexes.
 The homotopy inverse map\footnote{Massey sometimes writes this map as $\eta$.} $\xi: NK_*(X \times Y) \to NK_*(X) \otimes NK_*(Y)$ takes $S \colon \interval^n \to X \times Y$ to
 $$\xi(S) = \sum \rho_{H,K}A_H(\pi_1S) \otimes B_K(\pi_2S),$$ where $\pi_i$ is the projection to the $i$th factor.
-The precise definitions of $\rho_{H,K}$, $A_H$, and $B_K$ will not need to concern us except to note that $H$ and $K$ are complementary subsets of $\{1,\ldots, n\}$, the sum is over all such partitions, $\rho_{H,K}$ is either $1$ or $-1$ (in fact it is the sign of permutation $HK$), and $A_H$ and $B_K$ are cubical faces of various dimensions of the singular cubes $\pi_1S$ and $\pi_2S$.
-Again, this construction is sufficiently compatible with degeneracies to be well defined for the normalized singular cube complexes.
+The precise definitions of $\rho_{H,K}$, $A_H$, and $B_K$ will not need to concern us except to note that $H$ and $K$ are complementary subsets of $\{1,\ldots, n\}$, the sum is over all such partitions, $\rho_{H,K}$ is either $1$ or $-1$ (in fact it is the sign of the permutation $HK$), and $A_H$ and $B_K$ are cubical faces of various dimensions of the singular cubes $\pi_1S$ and $\pi_2S$.
+Again, this construction is sufficiently compatible with degeneracies to be well defined for the normalized singular cubical complexes.
 We also observe that if $X$ is a smooth manifold and our input singular cubes are smooth, then all other cubes appearing in the constructions are smooth.
 
 As usual, one then defines cup and cap products (up to one's favorite sign conventions) as follows (using our current sign conventions).
@@ -1810,47 +1810,48 @@ while the cap product $\alpha\frown S$ is given by
 \end{equation}
 identifying $NK_*(X) \otimes \Z$ with $NK_*(X)$.
 
-Now suppose that $X$ is a cubical complex, and let $K_*(X)$ and $K^*(X) = \Hom(K_*(X),\Z)$ be the cubical chain and cochain complexes.
-If $E, F \in K_*(X)$ are any cubical faces, then $E \times F$ is also a cubical face.
-Furthermore, abusing notation by conflating $E$ with its embedding into the cubical complex (thought of as a space), we have $\pi_1\diag(E) = \pi_2\diag(E) = E$, and every face of $E$ is also a cube in the complex.
-So now if $M$ is a cubulated manifold without boundary and we abuse notation by using $K_*$ for the cubical chain complex $K_*(M)$ corresponding to the cubulation $X$ and $K_*(M \times M)$ for the cubical complex coming from the product cubulation $X \times X$, we have the following commutative diagrams with the upward arrows being inclusions (note that all complexes are free) and the lower horizontal maps being the restrictions of the top horizontal maps:
+So now suppose $M$ is a manifold without boundary with cubulation $X$.
+As usual, let $K_*(X)$ and $K^*(X) = \Hom(K_*(X),\Z)$ be the cubical chain and cochain complexes.
+If $E$ is a face of $X$, we also regard $E$ as an element of $NK^{sm}_*(M)$ given by the embedding of $E$ into $M$.
+If $E, F \in K_*(X)$ are any cubical faces, then $E \times F$ is also a cubical face, and  we have $\pi_1\diag(E) = \pi_2\diag(E) = E$.
+Then the following diagram commutes, with the upward arrows being inclusions (note that all complexes are free) and the lower horizontal maps being the restrictions of the top horizontal maps:
 \[
 \begin{tikzcd}
 	NK_*(M) \otimes NK_*(M) \arrow{r}{\zeta} & NK_*(M \times M) \\
 	NK^{sm}_*(M) \otimes NK^{sm}_*(M) \arrow{r}{\zeta} \arrow[u, hook] & NK^{sm}_*(M \times M) \arrow[u, hook] \\
-	K_*(M) \otimes K_*(M) \arrow{r}{\zeta} \arrow[u, hook] & K_*(M \times M). \arrow[u, hook]
+	K_*(X) \otimes K_*(X) \arrow{r}{\zeta} \arrow[u, hook] & K_*(X \times X). \arrow[u, hook]
 \end{tikzcd}
 \]
-and
 \[
 \begin{tikzcd}
 	NK_*(M) \otimes NK_*(M) & \arrow[l, "\xi"'] NK_*(M \times M) \\
 	NK^{sm}_*(M) \otimes NK^{sm}_*(M) \arrow[u, hook] & \arrow[l, "\xi"'] NK^{sm}_*(M \times M) \arrow[u, hook] \\
-	K_*(M) \otimes K_*(M) \arrow[u, hook] & \arrow[l, "\xi"'] K_*(M \times M). \arrow[u, hook]
+	K_*(X) \otimes K_*(X) \arrow[u, hook] & \arrow[l, "\xi"'] K_*(X \times X). \arrow[u, hook]
 \end{tikzcd}
 \]
 
-The top map in each diagram is a homotopy equivalences, the vertical maps are all quasi-isomorphisms by \cref{P: singular smooth cubes} and the proof of \cref{T: cubical homology iso},
-and the complexes are all free, so the horizontal maps are all chain homotopy equivalences \cite[Theorem 46.2]{Mun84}.
+The top map in each diagram is a homotopy equivalences, and the vertical maps on the right are all quasi-isomorphisms by \cref{P: singular smooth cubes,T: cubical homology iso}.
+As these are all free modules, the vertical maps on the left are also quasi-isomorphisms.
+It follows that the horizontal maps are quasi-isomorphisms, and in fact chain homotopy equivalences \cite[Theorem 46.2]{Mun84}.
 
 Putting this all together, for both the complexes of normalized smooth singular cubical chains and the cubical complexes $K_*$ coming from the smooth cubulations, we may define cup and cap products again by the formulas \eqref{E: cubical cup} and \eqref{E: cubical cap}.
 Note that in the case of a geometric cube $E$ coming from a cubulation, $\diag E$ is not a cube in the cubical complex, but that does not matter as in the end formula for $\xi(\diag E)$ we work with $\diag E$ only through its projections $\pi_1(\diag E) = \pi_2(\diag E) = E$.
-These products are then compatible with the constructions for normalized singular cubical chains and cochains, i.e.\ the restriction of the cup product is the cup product of the restriction and the appropriate mixed functoriality version of that statement holds for cap products.
+These products are then compatible with the constructions for normalized singular cubical chains and cochains, i.e.\ the restriction of the cup product is the cup product of the restriction, and the appropriate mixed functoriality version of that statement holds for cap products.
 
 \subsubsection{Relating geometric and cubical cap products via the intersection map}
 
 In this section we show that the geometric and cubical cap products are compatible in the sense given below in \cref{T: equivalent cap,C: cap relation}.
-Recall that in \cref{R: intersection map extension} we extended the definition of the intersection map $\mc I$ to give us a map $H^*_\Gamma(M) \to H^i(X)$ for the manifold $M$ cubulated by $X$, though we leave $X$ tacit in the following.
+Recall that in \cref{R: intersection map extension} we extended the definition of the intersection map $\mc I$ to give us a map $H^*_\Gamma(M) \to H^i(X)$ for the manifold $M$ cubulated by $X$.
 We again let $\mc J \colon K_*(X) \to C^\Gamma_*(M)$ be the map that takes a cubical face of $X$ to its embedding into $M$; see \cref{T: cubical homology iso}.
 
 \begin{theorem}\label{T: equivalent cap}
-	Let $M$ be a smoothly cubulated manifold without boundary.
-	Let $\uV \in H^*_\Gamma(M)$ and $W \in H_*(K_*(M))$.
+	Let $M$ be a manifold without boundary smoothly cubulated by the cubical complex $X$.
+	Let $\uV \in H^*_\Gamma(M)$ and $W \in H_*(X )$.
 	Then
 	$$\uV \nplus \mc J(W) = \mc J(\mc I(\uV)\frown W).$$
 \end{theorem}
 
-Here the cap product on the left is our geometric cap product and the cap on the right is the cubical cap product defined in \cref{T: cubical homology iso}.
+Here the cap product on the left is our geometric cap product and the cap on the right is the cubical cap product.
 
 Before proving the theorem, we note the following corollary.
 
@@ -1861,11 +1862,11 @@ Before proving the theorem, we note the following corollary.
 
 \begin{proof}
 	Let $\uV \in H^*_\Gamma(M)$ and $\uW \in H_*^\Gamma(M)$.
-	Choose a cubulation of $M$.
-	As $\mc J \colon H_*(K_*(M)) \to H_*^\Gamma(M)$ is an isomorphism by \cref{T: cubical homology iso}, we have by \cref{T: equivalent cap}
+	Choose a cubulation $X$ of $M$.
+	As $\mc J \colon H_*(X) \to H_*^\Gamma(M)$ is an isomorphism by \cref{T: cubical homology iso}, we have by \cref{T: equivalent cap}
 	$$\uV\nplus \uW = \uV\nplus \mc J(\mc J^{-1}(\uW)) = \mc J(\mc I(\uV)\frown \mc J^{-1}(\uW)).$$
-	On the other hand, suppose $V \in H^*(K^*(M))$ and $W \in H_*(K_*(M))$.
-	Then $\mc I \colon H^*_\Gamma(M) \to H^*(K^*(M))$ is an isomorphism by \cref{T: intersection qi,R: intersection map extension} when all $H^i(M)$ are finitely generated.
+	On the other hand, suppose $V \in H^*(X)$ and $W \in H_*(X)$.
+	Then $\mc I \colon H^*_\Gamma(M) \to H^*(X)$ is an isomorphism by \cref{T: intersection qi,R: intersection map extension} when all $H^i(M)$ are finitely generated.
 	So then
 	$$V\frown M = \mc J^{-1}(\mc J(\mc I\mc I^{-1}(V)\frown W)) = \mc J^{-1}(\mc I^{-1}(V) \nplus \mc J(W)).$$
 \end{proof}
@@ -1890,41 +1891,45 @@ Once we have all the lemma established, we explain how to tie them all together 
 \begin{lemma}\label{L: product transversal}
 	Let $M$ be a cubulated manifold without boundary.
 	Let $V \in PC^*_{\Gamma}(M)$, and suppose $W \in PC_*(M \times M)$ is represented by a collection of embeddings.
-	Then there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1) \colon V \to M$ is transverse to the cubulation and $M \times V \xr{\id_M \times h(-,1)} M \times M$ is transverse $W$ in $M \times M$.
+	Then there is a proper universal homotopy $h \colon V \times I \to M$ such that $h(-,1) \colon V \to M$ is transverse to the cubulation and $M \times V \xr{\id_M \times h(-,1)} M \times M$ is transverse to $W$ in $M \times M$.
 \end{lemma}
 
 \begin{proof}
 	As in the proof of \cref{P: ball stability}, we use the transversality techniques of \cite[Section 2.3]{GuPo74}.
 	Consider $M$ as embedded in some $\R^N$ with an $\epsilon$-neighborhood $M_\epsilon$ and proper submersion $\pi \colon M_\epsilon \to M$.
-	We define $H$ as in proof of \cref{P: ball stability} so that $H \colon V \times D^N \to M$ is the proper universal homotopy given by $H(x,s) = \pi(r_V(x)+\epsilon(x)s)$.
-	Then $H$ is a submersion and so transverse to each face of the cubulation, and also $\id_M \times H \colon M \times V \times D^N \to M \times M$ is a submersion and hence transverse to $W$.
-	So now by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for any face $E$ of the cubulation $H(-,s)$ is transverse to $E$ for almost all $s \in D^N$ and, similarly, $\id_M \times H(-,s)$ is transverse $W$ for almost all $s \in D^N$ (and similarly for each stratum of $W$).
-	As the cubulation must have a countable number of faces and $W$ has a finite number of strata, there is an $s_0 \in D^N$ such that $H(-,s_0)$ is transverse to the cubulation and $\id_M \times H(-,s_0)$ is transverse $W$.
-	Now let $h(x,t) = H(x,ts_0)$.
+	We define $\ms F$ as in proof of \cref{P: ball stability} so that $\ms F \colon V \times D^N \to M$ is given by $\ms F(x,s) = \pi(r_V(x)+\eta(x)s)$.
+	Then $\ms F$ is a submersion and so transverse to each face of the cubulation, and also $\id_M \times \ms F \colon M \times V \times D^N \to M \times M$ is a submersion and hence transverse to $W$.
+	So now by the Transversality Theorem of \cite[Section 2.3]{GuPo74}, for any face $E$ of the cubulation, $\ms F(-,s)$ is transverse to $E$ for almost all $s \in D^N$ and, similarly, $\id_M \times \ms F(-,s)$ is transverse to $W$ for almost all $s \in D^N$ (and similarly for each stratum of $W$).
+	As the cubulation must have a countable number of faces and $W$ has a finite number of strata, there is an $s_0 \in D^N$ such that $\ms F(-,s_0)$ is transverse to the cubulation and $\id_M \times \ms F(-,s_0)$ is transverse $W$.
+	Now let $h(x,t) = \ms F(x,ts_0)$.
 	This is a proper universal homotopy, and $h(-,1)$ has the required transversality properties.
+	See the proof of \cref{P: ball stability} for additional details.
 \end{proof}
 
 \begin{lemma}\label{L: M times transverse diag}
-	Suppose $M$ is a manifold without boundary, $V \in PC^*_{\Gamma}(M)$, and $V$ is transverse to $W \in PC_*^\Gamma(M)$.
+	Suppose $r_V \colon V \to M$ and $r_W \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary.
 	Then $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag r_W \colon W \to M \times M$ in $M \times M$, where $\diag \colon M \to M \times M$ is the diagonal map.
-	In particular, $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag \colon M \to M \times M$.
+	In particular, $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag \colon M \to M \times M$ for any $r_V$.
 \end{lemma}
 
 \begin{proof}
-	By assumption, if $r_V(x) = r_W(y)$, then $Dr_V(T_xV)+Dr_W(T_yW) = T_{r_V(x)}M$.
-	Now suppose that $(z,x) \in M \times V$ maps to $\diag r_W(y)$ with $y \in W$.
-	This is equivalent to $r_V(x) = r_W(y) = z$.
-	At any $(z,x) \in M \times V$, the image of $D(\id_M \times r_V)$ acting on $T_{(z,x)}(M \times V) = T_zM \oplus T_xV$ is $T_z(M) \oplus Dr_V(T_xV)$.
-	While the image of $D(\diag r_W)$ acting on $T_yW$ is $Dr_W(T_yW) \oplus Dr_W(T_yW)$.
-	As we know $Dr_V(T_xV)+Dr_W(T_yW) = T_{r_V(x)}M$, when $r_V(x) = r_W(y) = z$ these images together span $T_{(r_W(y),r_W(y))}M \times M$.
+	Without loss of generality, we suppose $V$ and $W$ are manifolds without boundary; the general case then holds by applying the following to pairs of strata.
 
-	The last statement follows by taking $r_W \colon W \to M$ to be $\id_M \colon M \to M$, which is certainly transverse to any $V$.
+	Suppose $x \in V$ and $y \in W$ such that $r_V(x) = r_W(y)$.
+	Then $Dr_V(T_xV)+Dr_W(T_yW) = T_{r_V(x)}M$ by assumption.
+	Now suppose $(z,x) \in M \times V$ and $y \in W$ such that $(\id_M \times r_V) (z,x) = \diag r_W(y)$.
+	This is equivalent to $r_V(x) = r_W(y) = z$.
+	At any such $(z,x)$, the image of $D(\id_M \times r_V)$ acting on $T_{(z,x)}(M \times V) = T_zM \oplus T_xV$ is $$T_zM \oplus Dr_V(T_xV) \subset T_zM \oplus T_zM = T_{(z,z)}(M \times M).$$
+	The image of $D(\diag r_W)$ acting on $T_yW$ is $\{(a,a) \in T_z \oplus T_z \mid a \in Dr_W(T_yW)\}$.
+	As we know $Dr_V(T_xV)+Dr_W(T_yW) = T_{r_V(x)}M$, when $r_V(x) = r_W(y) = z$ these images together span $(T_{(z,z)}M \times M)$.
+
+	The last statement follows by taking $r_W \colon W \to M$ to be $\id_M \colon M \to M$, which is certainly transverse to any $r_V$.
 \end{proof}
 
 For the next lemmas, we make the following definitions.
 
 \begin{definition}
-	For a cubulation of $M$, let $\Delta:K_*(M) \to K_*(M \times M)$ be the chain map given by $\Delta(E) = \zeta\xi(\diag E)$ (see \cref{S: cubical products}).
+	For a cubulation $X$ of $M$, let $\Delta \colon K_*(X) \to K_*(X \times X)$ be the chain map given by $\Delta(E) = \zeta\xi(\diag E)$ (see \cref{S: cubical products}).
 	This is a chain map because it is the restriction of a chain map of the singular cubical complexes to subcomplexes.
 \end{definition}
 
@@ -1934,15 +1939,15 @@ For the next lemmas, we make the following definitions.
 \end{definition}
 
 \begin{lemma}\label{L: image of cubical cap}
-	Suppose $M$ is a cubulated manifold without boundary and that $K_*(M)$ is the cubical chain complex with respect to some fixed cubulation.
-	Let $V \in PC^*_{\Gamma\pf}(M)$ represent a cocycle, and let $W \in K_*(M)$.
+	Suppose $M$ is a manifold without boundary with cubulation $X$.
+	Let $V \in PC^*_{\Gamma\pf}(M)$ represent a cocycle, and let $W \in K_*(X)$.
 	Suppose $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\mc J(\Delta(W))$.
 	Then $$\mc J(\mc I(V)\frown W) = \pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W))) \in C_*^\Gamma(M),$$
 	where $\pi_1 \colon M \times M \to M$ is the projection to the first factor.
 \end{lemma}
 
 \begin{proof}
-	For a cubical face $E$ representing an element of $K_*(M)$, let us writem$\xi(\diag (E)) = \sum_i E_{1i} \otimes E_{2i}$, analogously to Sweedler notation.
+	For a cubical face $E$ representing an element of $K_*(X)$, let us write $\xi(\diag (E)) = \sum_i E_{1i} \otimes E_{2i}$, analogously to Sweedler notation.
 	By definition, at the chain/cochain level $\mc I(V)\frown E$ is given by
 	$$(1 \otimes \mc I(V))(\xi(\diag (E))) = (1 \otimes \mc I(V))\left(\sum_i E_{1i} \otimes E_{2i}\right) = \sum_i E_{1i} \otimes \mc I(V)(E_{2i}) = \sum_i \mc I(V)(E_{2i})\cdot E_{1i},$$
 	where $\mc I(V)(E_{2i})$ is the intersection number of $V$ with $E_{2i}$ by \cref{D: intersection homomorphism}.
@@ -1951,11 +1956,13 @@ For the next lemmas, we make the following definitions.
 
 	On the other hand, $\mc J(\Delta(E))$ is the geometric chain corresponding to $\sum_i E_{1i} \times E_{2i}$, and, applying our transversality assumption, we have
 	\begin{align*}
-		(M \times V)&\times_{M \times M}\mc J(\zeta\Delta(E))\\
+		(M \times V)&\times_{M \times M}\mc J(\Delta(E))\\
 		& = (M \times V)\times_{M \times M}\left(\sum_i E_{1i} \times E_{2i}\right)\\
-		& = \sum_i (-1)^{(v+e_{2i}-m)(m-v)}(M \times_M E_{1i}) \times (V \times_M E_{2i})&\text{by \cref{P: cap cross}}\\
-		& = \sum_i (-1)^{(v+e_{2i}-m)(m-v)}E_{1i} \times (V \times_M E_{2i})&\text{by \cref{P: cap with 1}}.
+		& = \sum_i (M \times_M E_{1i}) \times (V \times_M E_{2i})&\text{by \cref{P: cap cross}}\\
+		& = \sum_i E_{1i} \times (V \times_M E_{2i})&\text{by \cref{P: cap with 1}}.
 	\end{align*}
+	Note that the signs in the formula for \cref{P: cap cross} all vanish in this setting.
+
 	We now consider cases depending on the dimension of $V \times_M E_{2i}$.
 	If $\dim(V)+\dim(E_{2i})<\dim (M)$, then $V \times_M E_{2i} = \emptyset$, and the corresponding terms in the above formula vanish.
 	Similarly if $\dim(V)+\dim(E_{2i})\geq \dim (M)$ but $V$ and $E_{2i}$ do not intersect.
@@ -1964,7 +1971,6 @@ For the next lemmas, we make the following definitions.
 
 	If $V$ and $E_{2i}$ have complementary dimension, then $V \times_M E_{2i}$ is $0$ dimensional, and $\pi_1(
 	E_{1i} \times (V \times_M E_{2i}))$ is simply $\aug(V \times_M E_{2i})E_{1i}$.
-	Furthermore, $(-1)^{(v+e_{2i}-m)(m-v)} = 1$.
 
 	If $\dim(V \times_M E_{2i})\geq 2$, then when we take the projection,
 	$\pi_1(E_{1i} \times (V \times_M E_{2i}))$ has small rank.
@@ -2000,7 +2006,7 @@ For the next lemmas, we make the following definitions.
 \begin{lemma}\label{L: diagonal version of intersection}
 	Let $M$ be a manifold without boundary.
 	Let $V \in PC^*_\Gamma(M)$ and $W \in PC_*^\Gamma(M)$ be transverse.
-	Let $\pi_1 \colon M \times M \to M$ be the projection on the first factor.
+	Let $\pi_1 \colon M \times M \to M$ be the projection to the first factor.
 	Then $$V \times_M W = \pi_1((M \times V)\times_{M \times M} \diag(W)).$$
 \end{lemma}
 
@@ -2011,10 +2017,10 @@ For the next lemmas, we make the following definitions.
 	\begin{align*}
 		V \times_M W& = \pi_1\diag (V \times_M W)&\text{since $\pi_1\diag = \id_M$}\\
 		& = \pi_1\diag (\diag^*(M \times V) \times_M W)&\text{by the above}\\
-		& = \pi_1((V \times M)\times_{M \times M}\diag(W))&\text{by naturality of cap products.}
+		& = \pi_1((M \times V)\times_{M \times M}\diag(W))&\text{by naturality of cap products.}
 	\end{align*}
 	For the last equality, see \cref{P: natural cap} and its interpretation in terms of naturality of the cap product in \cref{S: (co)chain properties}.
-	\cref{P: natural cap} requires $\id_M \times r_V \colon M \times V \to M \times M$ be transverse to $\diag \colon M \to M \times M$ and $W \to M$ be transverse to the pullback of $M \times V$ by $\diag \colon M \to M \times M$ to
+	\cref{P: natural cap} requires $\id_M \times r_V \colon M \times V \to M \times M$ to be transverse to $\diag \colon M \to M \times M$ and $W \to M$ to be transverse to the pullback of $M \times V$ by $\diag \colon M \to M \times M$ to
 	$(M \times V)\times_{M \times M}M \to M$.
 	The first requirement holds by \cref{L: M times transverse diag}.
 	For the second transversality requirement, \cref{L: transverse to pullback} says that in the presence of the first transversality condition, this is equivalent to requiring $\id_M \times r_V \colon M \times V \to M \times M$ to be transverse to $\diag r_W \colon W \to M \times M$.
@@ -2022,18 +2028,18 @@ For the next lemmas, we make the following definitions.
 \end{proof}
 
 \begin{lemma}\label{L: diagonal equivalence}
-	Let $M$ be a cubulated manifold without boundary.
-	Let $W$ be a cycle in $K_*(M)$, and let $V \in PC^*_\Gamma(M)$ be a cocycle such that $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag(\mc J(W))$ and $\mc J(\Delta(W))$.
+	Let $M$ be a manifold without boundary with cubulation $X$.
+	Let $W$ be a cycle in $K_*(X)$, and let $V \in PC^*_\Gamma(M)$ represent a cocycle such that $\id_M \times r_V \colon M \times V \to M \times M$ is transverse to $\diag(\mc J(W))$ and $\mc J(\Delta(W))$.
 	Then $$\underline{\pi_1((M \times V) \times_{M \times M}\diag(\mc J(W)))} = \underline{\pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W)))} \in H_*^\Gamma(M).$$
 \end{lemma}
 
 \begin{proof}
 	If we consider $W$ as an element of $NK_*^{sm}(M)$, then the geometric chain $\diag(\mc J(W))$ is represented by the singular cubical chain $\diag(W)$ and $\mc J(\Delta(M))$ is represented by the singular cubical chain $\zeta\xi\diag(W)$.
 
-	As $\zeta\xi: NK_*^{sm}(M) \to NK_*^{sm}(M)$ is chain homotopic to the identity, $\diag(W)$ and $\zeta\xi\diag(W)$ must be homologous in $NK_*^{sm}(M)$, and so they are also homologous as geometric chains.
+	As $\zeta\xi: NK_*^{sm}(M) \to NK_*^{sm}(M)$ is chain homotopic to the identity by \cite[Section XI.5]{Mas91}, $\diag(W)$ and $\zeta\xi\diag(W)$ must be homologous in $NK_*^{sm}(M)$, and so they are also homologous as geometric chains.
 	In particular, $\diag(\mc J(W))$ and $\mc J(\Delta(M))$ represent the same element of $H_*^\Gamma(M \times M)$.
 
-	As $V$ is a cocycle, so is $M \times V$.
+	As $V$ represents a cocycle, so does $M \times V$ by \cref{P: boundary of exterior product,L: exterior Q}.
 	It now follows from \cref{T: (co)homology products} that
 	$(M \times V)\times_{M \times M} \diag(\mc J(W))$ and $(M \times V)\times_{M \times M} \mc J(\Delta(W))$ represent the same geometric homology class, and so their images under $\pi_1$ represent the same geometric homology class.
 \end{proof}
@@ -2056,7 +2062,7 @@ For the next lemmas, we make the following definitions.
 \end{comment}
 
 \begin{proof}[Proof of \cref{T: equivalent cap}]
-	Let us first choose a cubical cycle $W$ representing our given cubical homology class.
+	Let us first choose a cubical cycle $W \in K_*(X)$ representing our given cubical homology class.
 	By \cref{L: product transversal}, we can choose a representative $V$ of our geometric cohomology class such that $V$ is transverse to the cubulation (and hence to $W$) and $M \times V$ is transverse to $\diag(\mc J(W)) \sqcup \mc J(\Delta(W))$, which is also represented by a union of embeddings.
 	Then by \cref{L: image of cubical cap}, we have
 	$$\underline{\mc J(\mc I(V)\frown W)} = \underline{\pi_1( (M \times V)\times_{M \times M}\mc J(\Delta(W)))} \in H_*^\Gamma(M),$$
@@ -2072,18 +2078,18 @@ In \cref{T: PD}, we noticed that geometric homology and cohomology satisfy a ver
 \cref{T: equivalent cap} allows us to observe that this strong version of geometric Poincar\'e is compatible with the classical Poincar\'e duality:
 
 \begin{corollary}[Poincar\'e duality]\label{C: PD}
-	Let $M$ be a closed oriented cubulated manifold.
-	Let $\underline M \in C_m^\Gamma(M)$ be represented by the orientation-preserving identity map $\id_M \colon M \to M$, and let $[M] \in K_*(M)$ represent the cubical fundamental class.
+	Let $M$ be a closed oriented manifold with cubulation $X$.
+	Let $\underline M \in C_m^\Gamma(M)$ be represented by the orientation-preserving identity map $\id_M \colon M \to M$, and let $[M] \in K_*(X)$ represent the cubical fundamental class.
 	Then there is a commutative diagram of isomorphisms
 	\[
 	\begin{tikzcd}
-		H^{n-i}_\Gamma(M) \arrow{r}{\nplus \uM} \arrow[d, "\mc I"] & H_i^\Gamma(M) \\
-		H^{n-i}_{cub}(M) \arrow{r}{\frown [M]} & H_i^{cub}(M). \arrow[u, "\mc J"']
+		H^{n-i}_\Gamma(M) \arrow{r}{\nplus \uM} \arrow[d, "\mc I","\cong"'] & H_i^\Gamma(M) \\
+		H^{n-i}(X) \arrow{r}{\frown [M]} & H_i(X). \arrow[u, "\mc J"',,"\cong"]
 	\end{tikzcd}
 	\]
 \end{corollary}
 
-The proof follows immediately from \cref{T: equivalent cap} and the following lemma.
+The corollary follows immediately from \cref{T: equivalent cap} and the following lemma.
 
 \begin{lemma}
 	Let $M$ be closed, oriented, cubulated, and connected.
@@ -2091,10 +2097,11 @@ The proof follows immediately from \cref{T: equivalent cap} and the following le
 \end{lemma}
 
 \begin{proof}
+	It suffices to prove the lemma for $M$ connected.
 	Let $\uV \in H^m_\Gamma(M)$ be represented by a map $V = pt \into M$ taking the point to the center of an $m$-cube of the cubulation, co-oriented so that its normal co-orientation agrees with the orientation of $M$.
 	By \cref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ are both represented by embeddings with the same orientation in a neighborhood of the embedded point $V$, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are each represented by the same point with its induced orientation (which by \cref{P: cap of immersions} will be the positive orientation).
 	This is a generator of $H_0^\Gamma(M) \cong \Z$, as we can see, for example, via our homology isomorphism $H_*(NK_*(M)) \to H_*^\Gamma(M)$.
-	As $H_m^\Gamma(M) \cong H_0^\Gamma(M) \cong \Z$ by the isomorphisms between geometric and singular homology and cohomology, $\uV\nplus \colon H_m^\Gamma(M) \to H_0^\Gamma(M)$ must be injective as we have shown it is not the $0$ map.
+	As $H^m_\Gamma(M) \cong H_0^\Gamma(M) \cong \Z$ by the isomorphisms between geometric and singular homology and cohomology, $\uV\nplus \colon H^m_\Gamma(M) \to H_0^\Gamma(M)$ must be injective as we have shown it is not the $0$ map.
 	Since we have shown $\uV\nplus\uM = \uV\nplus\mc J([M])$, we have $\uM = \mc J([M])$.
 \end{proof}
 
@@ -2115,24 +2122,26 @@ These are maps
 typically defined by taking a homology or cohomology class, dualizing using Poincar\'e duality, applying $f$ or $f^*$, and then dualizing again; see \cite[Definition VI.11.2]{Bred97}.
 We will show that when $M$ and $N$ are closed and oriented, these transfer maps correspond to the pullbacks and pushforwards already encountered in \cref{S: functoriality}, where we only required for cohomology pushforwards that $f$ be proper and co-oriented and for homology pullbacks that $f$ be proper and that $M$ and $N$ be oriented.
 
+\greg{Need sign for second diagram}
+
 \begin{proposition}
 	Let $f \colon N \to M$ be a map of closed oriented manifolds.
 	We may consider $f$ co-oriented via the orientations of $M$ and $N$.
-	Then the following diagrams commute:
+	Then the following diagrams commute:\greg{Probably need better way to set this spacing}
 	\[
 	\begin{tikzcd}
-		H^{n-i}_\Gamma(N) \arrow{r}{f} \arrow[d, "\nplus \uN"] & H^{m-i}_\Gamma(M) \arrow[d, "\nplus \uM"] & H^{i}_\Gamma(M) \arrow{r}{f^*} \arrow[d, "\nplus \uM"] & H^{i}_\Gamma(N) \arrow[d, "\nplus \uN"] \\
-		H_i^\Gamma(N) \arrow{r}{f} & H_i^\Gamma(M) & H_{m-i}^\Gamma(M) \arrow{r}{f^*} & H_{n-i}^\Gamma(N).
+		H^{n-i}_\Gamma(N) \arrow{r}{f} \arrow[d, "\nplus \uN"] & H^{m-i}_\Gamma(M) \arrow[d, "\nplus \uM"] & H^{i}_\Gamma(M) \arrow{r}{f^*} \arrow[d, "\nplus \uM"] &[.75in] H^{i}_\Gamma(N) \arrow[d, "\nplus \uN"] \\
+		H_i^\Gamma(N) \arrow{r}{f} & H_i^\Gamma(M) & H_{m-i}^\Gamma(M) \arrow[r,"(-1)^{i(m-n)}f^*"] & H_{n-i}^\Gamma(N).
 	\end{tikzcd}
 	\]
 \end{proposition}
 
 \begin{proof}
 	We start with the diagram on the left.
-	Let $\uV \in H^{n-i}_\Gamma(N)$ represented by a co-oriented map $r_v \colon V \to N$.
+	Let $\uV \in H^{n-i}_\Gamma(N)$ be represented by a co-oriented map $r_v \colon V \to N$.
 	Then $\uV\nplus\uN$ is represented by the same map to $N$ with its induced orientation; see \cref{S: co-orientations}.
 	In particular, if $x \in V$ then $V$ is oriented at $x$ by the local orientation $\beta_V$ such that $(\beta_V,\beta_N)$ gives the co-orientation of $r_V$.
-	The path down then right is then the composition $fr_V$, considering $V$ with its orientation induced by $r_V$ and the orientation of $N$.
+	The path down then right is then the composition $fr_V$, considering $V$ with its orientation $\beta_V$.
 	On the other hand, by the definition in \cref{S: covariant functoriality}, the element $f(\uV)$ in $H^{m-i}_\Gamma(M)$ is represented by $fr_V$ co-oriented by composing the co-orientations of $r_V$ and $f$.
 	So if the co-orientation of $r_V$ is again $(\beta_V,\beta_N)$, the co-orientation of $fr_V$ representing $f(\uV)$ is $(\beta_V,\beta_N)*(\beta_N,\beta_M) = (\beta_V,\beta_M)$.
 	So $f(\uV)\nplus \uM$ is represented by $fr_V$ with $V$ oriented again by $\beta_V$.
@@ -2140,41 +2149,15 @@ We will show that when $M$ and $N$ are closed and oriented, these transfer maps 
 
 	For the second diagram, let $r_V \colon V \to M$ represent $\uV \in H^{i}_\Gamma(M)$.
 	We can assume up to a homotopy that $f$ is smooth and transverse to $r_V$.
-	Then $f^*(\uV)$ is represented by the co-oriented pullback $V \times_M N \to N$, and $f^*(\uV)\nplus\uN$ is represented by this map with the orientation on $V \times_M N$ induced by the pullback co-orientation and the orientation of $N$.
-	Meanwhile, $\uV\nplus \uM$ is represented by $r_V$ with the orientation consistent with the given co-orientation and the orientation of $M$.
-	Applying $f^*$, \cref{D: cohomology pullback and homology transfer} gives the pullback $f^*(\uV\nplus \uM)$ the same orientation just described for $f^*(\uV)\nplus\uN$.
+	Then $f^*(\uV)$ is represented by the co-oriented pullback $V \times_M N \to N$, and $f^*(\uV)\nplus\uN$ is represented by the same map, now with the orientation on $V \times_M N$ induced by the pullback co-orientation and the orientation of $N$.
+	By the naturality of cap products, if we consider $f(f^*(\uV) \cap \uN)$, this is equal to $\uV \nplus f(\uN)$.
+	As the pushforward $f \colon H_*^\Gamma(N) \to H_*^\Gamma(M)$ is determined by composition with $f$ (see \cref{S: covariant functoriality}), this means that the composition right then down in the diagram is represented by $V \times_M N$ with its cap orientation, thinking of $f \colon N \to M$ as representing an element of $C_*^\Gamma(M)$.
+	If we consider $f \colon N \to M$ with the co-orientation induced by the orientations of $M$ and $N$, then this prechain $f \colon N \to M$ is the cap orientation of $N \times_M M$, again by \cref{P: cap with identity M}, so $V \times_M N$ with its cap orientation is $V \times_M (N \times_M M)$, which by \cref{P: OC mixed associativity} is $(V \times_M N) \times_M M$ (in which $N \to M$ is treated as co-oriented).
+	In other words, going right then down gives us the chain represented by the co-oriented fiber product of $V$ and $N$, followed by taking its induced orientation.
+	This is precisely the product that we denoted by $V \times^c_M N$ in \cref{S: c vs o}.
+	On the other hand, the map down then right first gives $V$ its induced orientation by \cref{P: cap with identity M} and then forms $(-1)^{i(m-n)}$ times the oriented fiber product $V \times_M N$ by \cref{D: cohomology pullback and homology transfer}.
+	This is precisely $(-1)^{i(m-n)}$ times the product that we denoted by $V \times^o_M N$ in \cref{S: c vs o}.
+	By \cref{P: compare cup and intersection orientations},
+	$$V \times_M^o N = (-1)^{(m-v)(m-n)} V \times_M^c N,$$
+	hence the sign, noting that $i = m-v$.
 \end{proof}
-
-\begin{corollary}
-	If $f \colon N \to M$ is a map of closed oriented manifolds then
-	$f^! = f \colon H^{n-i}(N) \to H^{m-i}(M)$ and
-\end{corollary}
-
-\begin{comment}
-	We know $H_m^\Gamma(M) \cong \Z$ by the isomorphism between geometric and singular homology.
-	We first show that $\uM$ is a generator.
-
-	Let $\uV \in H^m_\Gamma(M)$ be represented by a map $V = pt \into M$ taking the point to the center of an $m$-cube of the cubulation, co-oriented so that its normal co-orientation agrees with the orientation of $M$.
-	Then by Proposition \ref{P: cap with identity M}, the cap product $\uV\nplus \uM \in H_0^\Gamma(M)$ is represented by the same embedding of a point with its induced orientation (which by Proposition \ref{P: cap of immersions} will be the positive orientation).
-	This is certainly a generator of $H_0^\Gamma(M) \cong \Z$, as we can see, for example, via our homology isomorphism $H_*(NK_*(M)) \to H_*^\Gamma(M)$.
-	If there were another class $\uW \in H_m^\Gamma(M)$ with $k\uW = \uM$, $|k|>1$, then $\uV\nplus \uM = \uV\nplus (k\uW) = k(\uV\nplus \uW)$ could not be a generator, providing a contradiction.
-	So $\uM$ is a generator of $H_m^\Gamma(M)$.
-
-	Now, as $\mc J$ is a homology isomorphism and $[M]$ is a generator of $H_m^{cub}(M)$ by the classical theory, we must have $\mc J([M]) = \pm\uM$.
-	But by Proposition \ref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ are both represented by embeddings with the same orientation in a neighborhood of the embedded point $V$, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are again each represented by the same point with its positive orientation.
-	So we must have $\mc J([M]) = \uM$ rather than $-\uM$.
-\end{comment}
-
-\begin{comment}
-	\begin{lemma}
-		With the hypotheses of Corollary \ref{C: PD}, $\mc J([M]) = \uM$.
-	\end{lemma}
-	\begin{proof}
-		It suffices to assume $M$ is connected, otherwise we could work component-wise.
-		By the preceding lemma and classical theory, we know that $\uM$ and $M$ are respective generators of $H_m^\Gamma(M) \cong H_m(M) \cong \Z$, so, as $\mc J$ induces an isomorphism on homology, we must have $\mc J([M]) = \pm\uM$.
-
-		Let $\uV \in H^m_\Gamma(M)$ be represented by a map $V = pt \into M$ taking the point to the center of an $m$-cube, co-oriented so that its normal co-orientation agrees with the orientation of $M$.
-		Then by Proposition \ref{P: cap with identity M}, as $\uM$ and $\mc J([M])$ both have the same orientation in a neighborhood of the embedded point, the cap products $\uV\nplus \uM$ and $\uV\nplus \mc J([M])$ in $H_0^\Gamma(M)$ are each represented by the same embedding of a point with its induced orientation (which by Proposition \ref{P: cap of immersions} will be the positive orientation).
-		So we must have $\mc J([M]) = \uM$ rather than $-\uM$.
-	\end{proof}
-\end{comment}
