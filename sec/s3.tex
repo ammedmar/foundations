@@ -351,7 +351,7 @@ Let $g \colon W \to M$ be a map of manifolds with corners. Then $g$ is co-orient
 \begin{proof}
 It is clear from the definition that if $g$ is co-orientable then so is its restriction to any open set of $W$.
 
-Conversely, suppose the restriction of $g$ to $S^0(W)$ is co-orientable. As $W$ is a topological manifold with boundary, which we will denote $bd(W)$, the collaring theorem tells us that $bd(W)$ possesses a collar \cite[Theorem 2]{Bro62}. Let $C$ be a closed collar of $bd(W)$. Then $C$ is homeomorphic to $bd(W)\times I$ with $bd (W)$ identified under the homeomorphism with $bd(W) \times 0$. Let $B$ be the image of $bd(W) \times 1$ in $W$, and let $int(C)$ be the image of $bd(W) \times [0,1)$. Since $g|_{S^0(W)}$ is co-orientable, any choice of co-orientation restricts to a bundle isomorphism $\bigwedge TW|_B \to \bigwedge g^*\Or(TM)|_B$. Due to the product structure of the collar, the restriction of $\bigwedge TW$ to $C$ is isomorphic to $\bigwedge TW|_B \times I$ and similarly for $\bigwedge g^*\Or(TM)$ \cite[Theorem 3.4.4]{Hus94}, and so the bundle isomorphism over $B$ can be extended to a bundle isomorphism over $C$. As we chose the bundle isomorphism over $B$ to be the restriction of an isomorphism over $g|_{S^0(W)}$, we can glue together the bundle isomorphisms over $C$ and over $W-int(C)$ to obtain an isomorphism over all of $W$.
+Conversely, suppose the restriction of $g$ to $S^0(W)$ is co-orientable. As $W$ is a topological manifold with boundary, which we will here denote $bd(W)$, the collaring theorem tells us that $bd(W)$ possesses a collar \cite[Theorem 2]{Bro62}. Let $C$ be a closed collar of $bd(W)$. Then $C$ is homeomorphic to $bd(W)\times I$ with $bd (W)$ identified under the homeomorphism with $bd(W) \times 0$. Let $B$ be the image of $bd(W) \times 1$ in $W$, and let $int(C)$ be the image of $bd(W) \times [0,1)$. Since $g|_{S^0(W)}$ is co-orientable, any choice of co-orientation restricts to a bundle isomorphism $\bigwedge TW|_B \to \bigwedge g^*\Or(TM)|_B$. Due to the product structure of the collar, the restriction of $\bigwedge TW$ to $C$ is isomorphic to $\bigwedge TW|_B \times I$ and similarly for $\bigwedge g^*\Or(TM)$ \cite[Theorem 3.4.4]{Hus94}, and so the bundle isomorphism over $B$ can be extended to a bundle isomorphism over $C$. As we chose the bundle isomorphism over $B$ to be the restriction of an isomorphism over $g|_{S^0(W)}$, we can glue together the bundle isomorphisms over $C$ and over $W-int(C)$ to obtain an isomorphism over all of $W$.
 \end{proof}
 
 \subsection{Normal co-orientations of immersions and co-orientations of boundaries}\label{S: normal orientation}
@@ -2612,6 +2612,37 @@ Cap/intersect associativity
 	\end{align*}
 \end{proof}
 \end{comment}
+
+
+As a corollary to \cref{P: compare cup and intersection orientations} and some of our previous formulas, we have the following, which will eventually provide associativity between the cap and intersection products.
+We continue to use the notation of \cref{P: compare cup and intersection orientations}.
+
+\begin{corollary}\label{C: cap/intersect}
+	Let $M$ be an oriented manifold without boundary, let $f \colon V \to M$ be a co-oriented map from a manifold with corners, and let $g \colon W \to M$ and $h \colon Z \to M$ be maps from oriented manifolds with corners.
+	Then, assuming sufficient transversality for all terms to be defined (see \cref{R: multiproducts}), $$V \times_M (W \times_M^o Z) = (-1)^{(m-v)(m-z)} (V \times_M W) \times_M^o Z,$$
+	where in each case the $\times_M$ symbol on the left indicates that the output has the cap orientation.
+\end{corollary}
+\begin{proof}
+	Let $\hat W$ and $\hat Z$ denote $W$ and $Z$ when considered with the induced co-orientations, and let $M$ denote the identity map $M \to M$, thinking of $M$ as oriented.
+	We apply several of our previous results in the following computation:
+	\begin{align*}
+		V \times_M (W \times_M^o Z)
+		&= (-1)^{(m-w)(m-z)} V \times_M (W \times_M^c Z)\\
+			&\qquad\qquad \text{\cref{P: compare cup and intersection orientations}}\\
+		&= (-1)^{(m-w)(m-z)} V \times_M ((\hat W \times_M \hat Z)\times_M M)\\
+			&\qquad\qquad\text{definition of $\times_M^c$ and \cref{P: cap with identity M}}\\
+		&= (-1)^{(m-w)(m-z)} (V \times_M (\hat W \times_M \hat Z)) \times_M M\\
+			 &\qquad\qquad\text{\cref{P: OC mixed associativity}}\\
+		&= (-1)^{(m-w)(m-z)} ((V \times_M \hat W) \times_M \hat Z)\times_M M \\
+			&\qquad\qquad\text{\cref{C: fiber assoc}}\\
+		&= (-1)^{(m-w)(m-z)+(m-(v+w-m))(m-z)} ((V \times_M \hat W)\times_M M) \times_M^o (\hat Z \times_M M) \\
+			&\qquad\qquad\text{\cref{P: OC mixed associativity,P: cap with identity M}}\\
+		&= (-1)^{(m-v)(m-z)} (V \times_M (\hat W\times_M M)) \times_M^o (\hat Z \times_M M)\\
+			&\qquad\qquad\text{\cref{P: OC mixed associativity}}\\
+		&= (-1)^{(m-v)(m-z)} (V \times_M W) \times_M^o Z \\
+			&\qquad\qquad \text{\cref{P: cap with identity M}.}
+	\end{align*}
+\end{proof}
 
 We can similarly consider the exterior products.
 
