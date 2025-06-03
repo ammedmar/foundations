@@ -2625,23 +2625,42 @@ We continue to use the notation of \cref{P: compare cup and intersection orienta
 \begin{proof}
 	Let $\hat W$ and $\hat Z$ denote $W$ and $Z$ when considered with the induced co-orientations, and let $M$ denote the identity map $M \to M$, thinking of $M$ as oriented.
 	We apply several of our previous results in the following computation:
-	\begin{align*}
-		V \times_M (W \times_M^o Z)
-		&= (-1)^{(m-w)(m-z)} V \times_M (W \times_M^c Z)\\
-			&\qquad\qquad \text{\cref{P: compare cup and intersection orientations}}\\
-		&= (-1)^{(m-w)(m-z)} V \times_M ((\hat W \times_M \hat Z)\times_M M)\\
-			&\qquad\qquad\text{definition of $\times_M^c$ and \cref{P: cap with identity M}}\\
-		&= (-1)^{(m-w)(m-z)} (V \times_M (\hat W \times_M \hat Z)) \times_M M\\
-			 &\qquad\qquad\text{\cref{P: OC mixed associativity}}\\
-		&= (-1)^{(m-w)(m-z)} ((V \times_M \hat W) \times_M \hat Z)\times_M M \\
-			&\qquad\qquad\text{\cref{C: fiber assoc}}\\
-		&= (-1)^{(m-w)(m-z)+(m-(v+w-m))(m-z)} ((V \times_M \hat W)\times_M M) \times_M^o (\hat Z \times_M M) \\
-			&\qquad\qquad\text{\cref{P: OC mixed associativity,P: cap with identity M}}\\
-		&= (-1)^{(m-v)(m-z)} (V \times_M (\hat W\times_M M)) \times_M^o (\hat Z \times_M M)\\
-			&\qquad\qquad\text{\cref{P: OC mixed associativity}}\\
-		&= (-1)^{(m-v)(m-z)} (V \times_M W) \times_M^o Z \\
-			&\qquad\qquad \text{\cref{P: cap with identity M}.}
-	\end{align*}
+%	\begin{align*}
+%		V \times_M (W \times_M^o Z)
+%		&= (-1)^{(m-w)(m-z)} V \times_M (W \times_M^c Z)\\
+%			&\qquad\qquad \text{\cref{P: compare cup and intersection orientations}}\\
+%		&= (-1)^{(m-w)(m-z)} V \times_M ((\hat W \times_M \hat Z)\times_M M)\\
+%			&\qquad\qquad\text{definition of $\times_M^c$ and \cref{P: cap with identity M}}\\
+%		&= (-1)^{(m-w)(m-z)} (V \times_M (\hat W \times_M \hat Z)) \times_M M\\
+%			 &\qquad\qquad\text{\cref{P: OC mixed associativity}}\\
+%		&= (-1)^{(m-w)(m-z)} ((V \times_M \hat W) \times_M \hat Z)\times_M M \\
+%			&\qquad\qquad\text{\cref{C: fiber assoc}}\\
+%		&= (-1)^{(m-w)(m-z)+(m-(v+w-m))(m-z)} ((V \times_M \hat W)\times_M M) \times_M^o (\hat Z \times_M M) \\
+%			&\qquad\qquad\text{\cref{P: OC mixed associativity,P: cap with identity M}}\\
+%		&= (-1)^{(m-v)(m-z)} (V \times_M (\hat W\times_M M)) \times_M^o (\hat Z \times_M M)\\
+%			&\qquad\qquad\text{\cref{P: OC mixed associativity}}\\
+%		&= (-1)^{(m-v)(m-z)} (V \times_M W) \times_M^o Z \\
+%			&\qquad\qquad \text{\cref{P: cap with identity M}.}
+%	\end{align*}
+	\[
+	\begin{aligned}
+		V &\times_M (W \times_M^o Z)
+		= (-1)^{(m-w)(m-z)} V \times_M (W \times_M^c Z)
+		&& \text{Prop.~\ref{P: compare cup and intersection orientations}} \\
+		&= (-1)^{(m-w)(m-z)} V \times_M ((\hat W \times_M \hat Z)\times_M M)
+		&& \text{def.\ of $\times_M^c$, Prop.~\ref{P: cap with identity M}} \\
+		&= (-1)^{(m-w)(m-z)} (V \times_M (\hat W \times_M \hat Z)) \times_M M
+		&& \text{Prop.~\ref{P: OC mixed associativity}} \\
+		&= (-1)^{(m-w)(m-z)} ((V \times_M \hat W) \times_M \hat Z)\times_M M
+		&& \text{Prop.~\ref{C: fiber assoc}} \\
+		&= (-1)^{(m-w)(m-z)+(m-(v+w-m))(m-z)} ((V \times_M \hat W)\times_M M) \times_M^o (\hat Z \times_M M)
+		&& \text{Prop.~\ref{P: OC mixed associativity},~\ref{P: cap with identity M}} \\
+		&= (-1)^{(m-v)(m-z)} (V \times_M (\hat W\times_M M)) \times_M^o (\hat Z \times_M M)
+		&& \text{Prop.~\ref{P: OC mixed associativity}} \\
+		&= (-1)^{(m-v)(m-z)} (V \times_M W) \times_M^o Z
+		&& \text{Prop.~\ref{P: cap with identity M}.}\qedhere
+	\end{aligned}
+	\]
 \end{proof}
 
 We can similarly consider the exterior products.
