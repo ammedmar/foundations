@@ -2154,12 +2154,12 @@ We will show that when $M$ and $N$ are closed and oriented, these transfer maps 
 	Then $f^*(\uV)$ is represented by the co-oriented pullback $V \times_M N \to N$, and $f^*(\uV)\nplus\uN$ is represented by the same map, now with the orientation on $V \times_M N$ induced by the pullback co-orientation and the orientation of $N$.
 	By the naturality of cap products, if we consider $f(f^*(\uV) \cap \uN)$, this is equal to $\uV \nplus f(\uN)$.
 	As the pushforward $f \colon H_*^\Gamma(N) \to H_*^\Gamma(M)$ is determined by composition with $f$ (see \cref{S: covariant functoriality}), this means that the composition right then down in the diagram is represented by $V \times_M N$ with its cap orientation, thinking of $f \colon N \to M$ as representing an element of $C_*^\Gamma(M)$.
-	If we consider $f \colon N \to M$ with the co-orientation induced by the orientations of $M$ and $N$, then this prechain $f \colon N \to M$ is the cap orientation of $N \times_M M$, again by \cref{P: cap with identity M}, so $V \times_M N$ with its cap orientation is $V \times_M (N \times_M M)$, which by \cref{P: OC mixed associativity} is $(V \times_M N) \times_M M$ (in which $N \to M$ is treated as co-oriented).
-	In other words, going right then down gives us the chain represented by the co-oriented fiber product of $V$ and $N$, followed by taking its induced orientation.
-	This is precisely the product that we denoted by $V \times^c_M N$ in \cref{S: c vs o}.
-	On the other hand, the map down then right first gives $V$ its induced orientation by \cref{P: cap with identity M} and then forms $(-1)^{i(m-n)}$ times the oriented fiber product $V \times_M N$ by \cref{D: cohomology pullback and homology transfer}.
-	This is precisely $(-1)^{i(m-n)}$ times the product that we denoted by $V \times^o_M N$ in \cref{S: c vs o}.
+	If we consider $f \colon N \to M$ with the co-orientation $\hat N$ induced by the orientations of $M$ and $N$, then this prechain $f \colon N \to M$ is the cap orientation of $\hat N \times_M M$, again by \cref{P: cap with identity M}, so $V \times_M N$ with its cap orientation is $V \times_M (\hat N \times_M M)$, which by \cref{P: OC mixed associativity} is $(V \times_M \hat N) \times_M M$.
+	In other words, going right then down gives us the chain represented by the co-oriented fiber product of $V$ and $N$, followed by taking its induced orientation, i.e.\ it is $(V \times_M \hat N)\,\check{\vrule height1.3ex width0pt}$.
+	This is precisely the product that we denoted by $\check V \times^c_M N$ in \cref{S: c vs o}.
+	On the other hand, the map down then right first gives $V$ its induced orientation $\check V$ by \cref{P: cap with identity M} and then forms $(-1)^{i(m-n)}$ times the oriented fiber product $\check V \times_M N$ by \cref{D: cohomology pullback and homology transfer}.
+	This is precisely $(-1)^{i(m-n)}$ times the product that we denoted by $\check V \times^o_M N$ in \cref{S: c vs o}.
 	By \cref{P: compare cup and intersection orientations},
-	$$V \times_M^o N = (-1)^{(m-v)(m-n)} V \times_M^c N,$$
+	$$\check V \times_M^o N = (-1)^{(m-v)(m-n)} \check V \times_M^c N,$$
 	hence the sign, noting that $i = m-v$.
 \end{proof}

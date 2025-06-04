@@ -300,7 +300,19 @@ Conversely, if $M$ and $W$ are both oriented, say by $\beta_M$ and $\beta_W$ res
 On the other hand, it is not true that if we have an orientation of $W$ and a co-orientation of $g \colon W \to M$ then we obtain an orientation of $M$.
 For example, if $W$ is orientable, any constant map to $M$ is co-orientable, regardless of whether or not $M$ is orientable.
 
-More generally, recall that the fundamental group of a manifold acts on classes of local orientations as the deck transformations of the orientation cover.
+\begin{notation}\label{N: hat check}
+	Suppose $M$ is an oriented manifold with corners and $g \colon W \to M$ is a map from another manifold with corners.
+	By convention, below we will often simply write $W$ to refer to $W$ together with its given map to $M$.
+	If $W$ comes equipped with an orientation, we may write $\hat W$ to refer to $W$ with the induced co-orientation on $g$.
+	If $W$ (technically the map $g \colon W \to M$) comes equipped with a co-orientation, we may write $\check W$ to refer to $W$ with its induced orientation.
+	For spaces with longer expressions, such as $V \times_M W$, we will sometimes write instead $(-)\,\hat{\vrule height1.3ex width0pt}$ or $(-)\,\check{\vrule height1.3ex width0pt}$.
+	These are inverse operations in the sense that if $W$ is oriented then $(\hat W)\,\check{\vrule height1.3ex width0pt} = W$ and if $g$ is co-oriented then  $(\check W)\,\hat{\vrule height1.3ex width0pt} = W$.
+
+	The notation is meant to evoke raising and lowering indices, as maps from oriented objects will eventually play the role of chains and co-oriented maps will eventually play the role of cochains.
+\end{notation}
+
+Here is another point of view on co-orientations, immediate from the definition.
+Recall that the fundamental group of a manifold acts on classes of local orientations as the deck transformations of the orientation cover.
 A map is co-orientable if it holds that a loop in $W$ acts nontrivially on a local orientation of $W$ if and only if its image in $M$ acts nontrivially on a local orientation of $M$.
 Explicitly, if $g \colon W \to M$ is co-orientable, following a loop in $W$ may change the local orientation pair
 $(\beta_W, \beta_M)$ to $(-\beta_W, -\beta_M)$, but these pairs define equivalent co-orientations.
@@ -2227,11 +2239,12 @@ The analogues for singular chains and cochains are the cap product with the coch
 \begin{proposition}\label{P: cap with identity M}
 	Let $f \colon V \to M$ be a co-oriented map from a manifold with corners to an oriented manifold without boundary, and consider $M$ equipped with its identity map $M \to M$.
 	Then $V \times_M M$ with the cap orientation is simply $V$ with its induced orientation.
+	In other words, following \cref{N: hat check}, $$V \times_M M = \check V.$$
 \end{proposition}
 
 \begin{proof}
 	By definition, the cap orientation of $V \times_M M$ is the induced orientation arising from the co-oriented pullback of $V \to M$ by the identity map $M \to M$.
-	But by \cref{P: pullback functoriality} this co-oriented pullback is simply $V$ again.
+	But by \cref{P: pullback functoriality} this co-oriented pullback is simply $f \colon V \to M$ again.
 \end{proof}
 
 The next property relates products of pullbacks with pullbacks of products. Again, our signs agree with the cap product formulas in Spanier, in this case \cite[Section 5.6.21]{Span81}.
@@ -2273,13 +2286,18 @@ The following technical lemma will be used to prove \cref{P: OC mixed associativ
 	Suppose that $f$ is co-oriented and that $W$ and $M$ are oriented, with respective (global) orientations $\beta_W$ and $\beta_M$.
 	Suppose we co-orient $g$ by $(\beta_W,\beta_M)$.
 	Then the cap orientation of $V \times_M W$ (i.e.\ that induced from the pullback co-orientation of $V \times_M W \to W$ and the orientation of $W$) is the same as the orientation induced on $V \times_M W$ by the fiber product co-orientation of $V \times_M W \to M$ and the orientation of $M$.
-	In particular, this orientation does not depend on the orientation of $M$.
+
+	In other words, following \cref{N: hat check}, $$V \times_M W = (V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}.$$
+
+	In particular, the orientation of $(V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}$ does not depend on the orientation of $M$.
 \end{lemma}
 
 \begin{proof}
 	By definition, the orientation of $V \times_M W$ induced from the orientation of $W$ and the pullback co-orientation of $V \times_M W \to W$ is the orientation $\beta_P$ such that $(\beta_P,\beta_W)$ is the pullback co-orientation.
 	But then the fiber product co-orientation is the composite $(\beta_P,\beta_W)*(\beta_W,\beta_M) = (\beta_P,\beta_M)$.
 	So the orientation induced by the orientation of $M$ and the composite co-orientation is again $\beta_P$.
+
+	The last statement holds because $V \times_M W$ does not depend on the orientation of $M$.
 \end{proof}
 
 \begin{proposition}[Mixed associativity 1]\label{P: OC mixed associativity}
@@ -2295,9 +2313,13 @@ The following technical lemma will be used to prove \cref{P: OC mixed associativ
 
 \begin{proof}
 	First suppose $M$ is orientable and that we have given it an arbitrary, but fixed, orientation.
-	Then applying \cref{L: same induced}, the cap orientation of $(V \times_M W) \times_M Z$ is the same as the orientation induced by the orientation of $M$ and the fiber product co-orientation $(V \times_M W) \times_M Z \to M$, after co-orienting $Z \to M$ with the co-orientation induced by the orientations of $Z$ and $M$.
-	Similarly, applying \cref{L: same induced} twice, the cap orientation of $V \times_M (W \times_M Z)$ is the same as that induced by the orientation of $M$ and the iterated fiber product co-orientation $V \times_M (W \times_M Z) \to M$ again coming from the canonical co-orientation of $Z \to M$.
-	But now these co-oriented fiber products are the same by \cref{C: fiber assoc}.
+	Then applying \cref{L: same induced}, the cap orientation of $(V \times_M W) \times_M Z$ is the same as the orientation induced by the orientation of $M$ and the fiber product co-orientation $(V \times_M W) \times_M Z \to M$, after co-orienting $Z \to M$ with the co-orientation induced by the orientations of $Z$ and $M$, i.e.\ $$(V \times_M W) \times_M Z = ((V \times_M W) \times_M \hat Z)\,\check{\vrule height1.3ex width0pt}.$$
+	Similarly, applying \cref{L: same induced} twice, the cap orientation of $V \times_M (W \times_M Z)$ is the same as that induced by the orientation of $M$ and the iterated fiber product co-orientation $V \times_M (W \times_M Z) \to M$ again coming from the canonical co-orientation of $Z \to M$:
+	\begin{align*}
+		V \times_M (W \times_M Z) &= V \times_M (W \times_M \hat Z)\,\check{\vrule height1.3ex width0pt}\\
+		&=(V \times_M (W \times_M \hat Z))\,\check{\vrule height1.3ex width0pt}.
+	\end{align*}
+	But now the co-oriented fiber products $(V \times_M W) \times_M \hat Z$ and $V \times_M (W \times_M \hat Z)$ are the same by \cref{C: fiber assoc}.
 
 	Next, suppose $M$ is not necessarily orientable.
 	We know from their constructions that $(V \times_M W) \times_M Z$ and $V \times_M (W \times_M Z)$ are oriented manifolds, and it is not difficult to see that they are diffeomorphic, both being diffeomorphic to $\{(v,w,z) \in V \times W \times Z \mid f(v) = g(w) = h(z)\}$.
@@ -2333,21 +2355,21 @@ Of course the same is true of $W$ and $g$.
 In this scenario, we have two different ways to orient $V \times_M W$, depending on whether we start by thinking of $V$ and $W$ as oriented or by thinking of $f$ and $g$ as co-oriented.
 If we think of $V$ and $W $as oriented, we have the fiber product orientation of $V \times_M W$
 discussed in \cref{S: orientations}.
-Alternatively, if we think of $f$ and $g$ as co-oriented, we can form the fiber product co-orientation of $V \times_M W \to M$ as in \cref{S: co-orientation of pullbacks} and then consider the induced orientation given the orientation of $M$.
+Alternatively, if we think of $f$ and $g$ as co-oriented, we can form the fiber product co-orientation of $V \times_M W \to M$ as in \cref{S: co-orientation of pullbacks} and then consider the induced orientation $(V \times_M W)\,\check{\vrule height1.3ex width0pt}$ given the orientation of $M$ (recall \cref{N: hat check}).
 
 Our goal in this section is to compare these two orientations on $V \times_M W$.
-To attempt to avoid confusion, we will write $V \times_M ^oW$ for the fiber product orientation of \cref{S: orientations} and $V \times_M ^cW$ for the co-oriented fiber product or, equivalently, the resulting induced orientation.
+To attempt to avoid confusion, let us consider $V$ and $W$ given as oriented, and we will write $V \times_M^o W$ for the fiber product orientation of \cref{S: orientations} and $V \times_M^c W$ for $(\hat V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}$.
 
 The reader might have noticed that a third way to orient $V \times_M W$ is to consider $f$ to be co-oriented and $W$ to be oriented and then form the cap orientation that we studied in detail in the preceding section.
 However, we already know this to be identical to $V \times_M ^cW$ by \cref{L: same induced}.
-By contrast, these are not always the same as $V \times_M ^oW$.
+By contrast, the following proposition shows this is not always the same as $V \times_M^o W$.
 
-When we move on to geometric homology, $V \times_M ^oW$ will correspond to the classical intersection product of homology classes, as described for example in \cite[Section VI.11]{Bred97}, while $V \times_M ^cW$ will correspond to the cup product of cohomology classes.
+When we move on to geometric homology, $V \times_M ^oW$ will correspond to the classical intersection product of homology classes, as described for example in \cite[Section VI.11]{Bred97}, while $V \times_M^c W$ will correspond to (the Poincar\'e dual of) the cup product of cohomology classes.
 When $M$ is closed and oriented, switching between thinking of $V$ and $W$ as oriented vs. co-oriented will be precisely the Poincar\'e duality isomorphism.
 So this proposition will ultimately demonstrate that the intersection product is Poincar\'e dual to the cup product, up to a sign; see \cref{S: PD}.
 
 \begin{proposition}\label{P: compare cup and intersection orientations}
-	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds with corners to an oriented manifold without boundary or, equivalently, suppose $V$, $W$, and $M$ all oriented.
+	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from manifolds with corners to an oriented manifold without boundary with $V$, $W$, and $M$ all oriented.
 	Then $$V \times_M^o W = (-1)^{(m-v)(m-w)} V \times_M^c W$$ as oriented manifolds with corners.
 \end{proposition}
 
@@ -2397,13 +2419,13 @@ We begin with the case where $V$ and $W$ are immersions and then work toward the
 \begin{proof}
 	It suffices to consider small neighborhoods of interior points on which $f$ and $g$ are embeddings.
 	Let $\beta_V$, $\beta_W$, and $\beta_M$ denote the local orientations of $V$, $W$, and $M$, respectively, at such a point.
-	Assuming $f$ and $g$ to be co-oriented with the compatible co-orientations $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$, we have the resulting Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ of the normal bundles of $V$ and $W$.
+	Assuming $f$ and $g$ to be co-oriented with the induced co-orientations $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$, we have the resulting Quillen orientations $\beta_{\nu V}$ and $\beta_{\nu W}$ of the normal bundles of $V$ and $W$.
 	Recall that these are defined so that $(\beta_V,\beta_V \wedge \beta_{\nu V})$ and $(\beta_W,\beta_W \wedge \beta_{\nu W})$ are the co-orientations of $f$ and $g$, respectively.
 	In this scenario, with $\beta_V$ and $\beta_W$ fixed as the orientations of $V$ and $W$, this is equivalent to requiring $\beta_V \wedge \beta_{\nu V} = \beta_M$ and $\beta_W \wedge \beta_{\nu W} = \beta_M$.
 	Again, to keep the contexts clear, for the remainder of the argument we will write $\beta^c_{\nu V}$ and $\beta^c_{\nu W}$ for the Quillen orientations of $\nu V$ and $\nu W$.
 
-	By \cref{P: normal pullback}, the co-orientation of the fiber product $V \times_M^c W$ is $(\beta_P,\beta_P \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W})$.
-	In particular, the induced orientation of $V\times_m^c W$ is the orientation $\beta_P^c$ such that $\beta_P^c \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W} = \beta_M$.
+	By \cref{P: normal pullback}, the co-orientation of the fiber product $\hat V \times_M \hat W$ is $(\beta_P,\beta_P \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W})$.
+	So, taking the induced orientation, $V\times_M^c W$ has the orientation $\beta_P^c$ such that $\beta_P^c \wedge \beta^c_{\nu V} \wedge \beta^c_{\nu W} = \beta_M$.
 
 	On the other hand, in \cref{P: orient intersection}, $\beta^o_P$ is such that if $\beta^o_P \wedge \beta^o_{\nu W} = \beta_V$ and $\beta^o_P \wedge \beta^o_{\nu V} = \beta_W$ then $\beta^o_P \wedge \beta^o_{\nu V} \wedge \beta^o_{\nu W} = \beta_M.$ A priori these may be different orientations of $\nu V$ and $\nu W$ than those of the preceding paragraph, so we use these alternate labels.
 	In fact, let us suppose $\beta^o_P$, $\beta^o_{\nu V}$, and $\beta^o_{\nu W}$ chosen so that these expressions all hold.
@@ -2429,7 +2451,7 @@ In our remaining constructions in this section we take all introduced Euclidean 
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds without boundary to an oriented manifold without boundary.
 	Let $V\xhookrightarrow{e}M \times \R^a \to M$ be a Quillen co-orientation for $f$ with $a$ even.
 
-	Then $V \times_M W$ (with its orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically oriented diffeomorphic to $V\times_{M \times \R^a }(W \times \R^a )$ (with its orientation induced by the fiber product co-orientation and the orientation of $M \times \R^a $).
+	Then $(V \times_M W)\,\check{\vrule height1.3ex width0pt}$ (with the orientation induced by the fiber product co-orientation and the orientation of $M$) is canonically oriented diffeomorphic to $(V\times_{M \times \R^a }(W \times \R^a ))\,\check{\vrule height1.3ex width0pt}$ (with the orientation induced by the fiber product co-orientation and the orientation of $M \times \R^a $).
 	Here the maps for the second fiber product are $e \colon V \to M \times \R^a $ and $g \times \id_{\R^a } \colon W \times \R^a \to M \times \R^a $.
 	As in the construction of the Quillen co-orientation (\cref{D: Quillen normal or}), we assume $e \colon V \into M \times \R^a $ to be co-oriented so that its composition with the canonical co-orientation $(\beta_{M}\wedge\beta_a,\beta_M)$ is the co-orientation of $f$.
 	We also take $g \times \id_{\R^a }$ to be co-oriented by the product co-orientation $(\beta_W \wedge \beta_a,\beta_M \wedge \beta_a)$ if $(\beta_W,\beta_M)$ is the co-orientation of $g$.
@@ -2446,12 +2468,12 @@ In our remaining constructions in this section we take all introduced Euclidean 
 \begin{corollary}\label{C: co-oriented full transition to embedded}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse co-oriented maps from manifolds without boundary to an oriented manifold without boundary.
 	Let $V \xhookrightarrow{r} M \times \R^a \to M$ and $W\xhookrightarrow{s} M \times \R^b \to M$ be Quillen co-orientations compatible with $f$ and $g$.
-	Then the fiber product $V \times_M W$ (with its orientation induced from the co-oriented fiber product) is canonically oriented diffeomorphic to the fiber product $(V \times \R^b ) \times_{M \times \R^a \times \R^b }(W \times \R^a )$ (with its orientation induced from the co-oriented fiber product), in which the first map is $r \times \id_{\R^b }$ and the second map takes $(w,z) \in W \times \R^a $ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
+	Then the fiber product $(V \times_M W)\,\check{\vrule height1.3ex width0pt}$ is canonically oriented diffeomorphic to the fiber product $((V \times \R^b ) \times_{M \times \R^a \times \R^b }(W \times \R^a))\,\check{\vrule height1.3ex width0pt}$, in which the first map is $r \times \id_{\R^b }$ and the second map takes $(w,z) \in W \times \R^a $ to $s(w)$ in the first and third coordinates and $z$ in the second coordinate.
 \end{corollary}
 
 \begin{proof}
-	By the preceding lemma we have $V \times_M W$ canonically oriented diffeomorphic to $V\times_{M \times \R^a }(W \times \R^a )$ with $V \to M \times \R^a $ an embedding.
-	By \cref{P: graded comm}, the transposition map from this space to $(W \times \R^a ) \times_{M \times \R^a }V$ is $(-1)^{(m-v)(m-w)}$-orientation preserving, using that all our Euclidean spaces are taken even-dimensional.
+	By the preceding lemma we have $(V \times_M W)\,\check{\vrule height1.3ex width0pt}$ canonically oriented diffeomorphic to $(V\times_{M \times \R^a}(W \times \R^a))\,\check{\vrule height1.3ex width0pt}$ with $V \to M \times \R^a $ an embedding.
+	By \cref{P: graded comm}, the transposition map from this space to $((W \times \R^a ) \times_{M \times \R^a }V)\,\check{\vrule height1.3ex width0pt}$ is $(-1)^{(m-v)(m-w)}$-orientation preserving, using that all our Euclidean spaces are taken even-dimensional.
 	We next observe the map described for $W \times \R^a \to M \times \R^a \times \R^b $ is an embedding whose composition with the projection to $M \times \R^a $ gives a Quillen co-orientation for $g \times \id_{\R^a }$.
 	Now we can apply the lemma again and then transpose again with the same sign, so that the signs cancel out.
 \end{proof}
@@ -2648,22 +2670,21 @@ We continue to use the notation of \cref{P: compare cup and intersection orienta
 
 We can similarly consider the exterior products.
 
-Suppose $f \colon V \to M$ and $g \colon W \to N$ are co-oriented maps from manifolds with corners to oriented manifolds with corners.
-Then by \cref{S: co-orientations} we have induced orientations on $V$ and $W$.
-For this section, write $V \times^o W$ for $V \times W$ with the product orientation.
-Let $V \times^c W$ be $V \times W$ with the orientation obtained by considering the product co-orientation of \cref{D: co-oriented exterior} on $f \times g$ and then taking the orientation on $V \times W$ induced by the product orientation on $M \times N$ (which is $M \times^o N$).
+Suppose $f \colon V \to M$ and $g \colon W \to N$ with $V$ and $W$ are oriented.
+We write $V \times^o W$ for $V \times W$ with the product orientation.
+On the other hand, let $V \times^c W = (\hat V \times \hat W)\,\check{\vrule height1.3ex width0pt}$, where the product $\hat V \times \hat W$ on the right is the product co-orientation of \cref{D: co-oriented exterior}.
 
 
 
 \begin{proposition}\label{P: compare exterior orientations}
-	Let $f \colon V \to M$ and $g \colon W \to N$ be co-oriented maps from manifolds with corners to oriented manifolds with corneres.
+	Let $f \colon V \to M$ and $g \colon W \to N$ be maps from oriented manifolds with corners to oriented manifolds with corners.
 	Then $$V \times^o W = (-1)^{(m-v)w} V \times^c W$$ as oriented manifolds with corners.
 \end{proposition}
 \begin{proof}
-Let $\beta_M$ and $\beta_N$ be the orientations of $M$ and $N$, and let $\beta_V$ and $\beta_W$ be the induced orientations on $V$ and $W$.
-Then the orientation of $V \times^o W$ is $\beta_V \wedge \beta_W$, and the orientation for $M \times^o N$ is $(\beta_M \wedge \beta_N)$.
-The co-orientations of $f$ and $g$ are then, respectively, $(\beta_V, \beta_M)$ and $(\beta_W, \beta_N)$.
-By \cref{D: co-oriented exterior}, the product co-orientation is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N),$ and so the induced orientation on $V \times^c W$ is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W)$.
+Let $\beta_M$ and $\beta_N$ be the orientations of $M$ and $N$, and let $\beta_V$ and $\beta_W$ be the orientations on $V$ and $W$.
+Then the orientation of $V \times^o W$ is $\beta_V \wedge \beta_W$, and the orientation for $M \times^o N$ is $\beta_M \wedge \beta_N$.
+The induced co-orientations of $f$ and $g$ are then, respectively, $(\beta_V, \beta_M)$ and $(\beta_W, \beta_N)$.
+By \cref{D: co-oriented exterior}, the product co-orientation is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N),$ and so the resulting orientation on $V \times^c W$ is $(-1)^{(m-v)w}(\beta_V \wedge \beta_W)$.
 \end{proof}
 
 
