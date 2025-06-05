@@ -46,13 +46,13 @@ ADD CONVENTION ABOUT TENSORS OF COCHAINS
 
 SHOW UNIVERSAL HOMOTOPIES YIELD HOMOLOGY AND COHOMOLOGIES
 
-SIMPLIFY BELOW USING That as chains all that degenerate crud vanishes and then just think of A as a geometric chain so can ignore all the crud. 
+SIMPLIFY BELOW USING That as chains all that degenerate crud vanishes and then just think of A as a geometric chain so can ignore all the crud.
 
 NEED TO CHOOSE ORIENTATION OF TRACES SO THAT BOUNDARY WORKS OUT
 
 
 \begin{lemma}\label{L: trans diag cube}
-Let $M$ be a manifold without boundary and let $V$, $W$, and $Z$ be  manifolds with corners. Suppose $f:V\to M$ and $g:W\to M$ are transverse and that $f\times_Mg:V\times_MW\to M$ is transverse to $h:Z\to M$. Then $f\times g:V\times W\to M\times M$ is transverse to the composition $Z\xr{h}M\xr{\diag}M\times M$, where $\diag:M\to M\times M$ is the diagonal map. 
+Let $M$ be a manifold without boundary and let $V$, $W$, and $Z$ be  manifolds with corners. Suppose $f:V\to M$ and $g:W\to M$ are transverse and that $f\times_Mg:V\times_MW\to M$ is transverse to $h:Z\to M$. Then $f\times g:V\times W\to M\times M$ is transverse to the composition $Z\xr{h}M\xr{\diag}M\times M$, where $\diag:M\to M\times M$ is the diagonal map.
 \end{lemma}
 \begin{proof}
 We will apply \cref{L: transverse to pullback}. Consider the pullback diagram
@@ -62,37 +62,37 @@ We will apply \cref{L: transverse to pullback}. Consider the pullback diagram
 		Z \arrow[r, "h"] & M \arrow[r, "\diag"]&  M\times M.
 	\end{tikzcd}
 	\]
-As $V$ and $W$ are transverse, we know that $f\times g:V\times W\to M\times M$ and $\diag:M\to M\times M$ are transverse by \cref{P: cross to cup}, and so by \cref{L: transverse to pullback}, the conclusion of the lemma holds if and only if $h$ is transverse to the projection $\diag^*(V\times W)=(V \times W)\times_{M\times M} M \to M$. But now by \cref{P: cross to cup} again, this pullback projection is precisely $f\times_Mg:V\times_MW\to M$. So the needed transversality holds by hypothesis. 
+As $V$ and $W$ are transverse, we know that $f\times g:V\times W\to M\times M$ and $\diag:M\to M\times M$ are transverse by \cref{P: cross to cup}, and so by \cref{L: transverse to pullback}, the conclusion of the lemma holds if and only if $h$ is transverse to the projection $\diag^*(V\times W)=(V \times W)\times_{M\times M} M \to M$. But now by \cref{P: cross to cup} again, this pullback projection is precisely $f\times_Mg:V\times_MW\to M$. So the needed transversality holds by hypothesis.
 \end{proof}
 
 
 
 \begin{proposition}
-Let $M$ be a smoothly cubulated manifold without boundary with cubulation $X$. Let $\uV,\uW\in H^*_\Gamma(M)$. Then the cohomology classes $\mc I(\uV\uplus\uW)\in H^*(K_X^*(M))$ and $\mc I(\uV) \smile \mc I(\uW)\in H^*(K_X^*(M))$ have the same image under the evaluation map $$H^*(K_X^*(M))\to \Hom(H_*(K_*^X(M)),\Z).$$ 
+Let $M$ be a smoothly cubulated manifold without boundary with cubulation $X$. Let $\uV,\uW\in H^*_\Gamma(M)$. Then the cohomology classes $\mc I(\uV\uplus\uW)\in H^*(K_X^*(M))$ and $\mc I(\uV) \smile \mc I(\uW)\in H^*(K_X^*(M))$ have the same image under the evaluation map $$H^*(K_X^*(M))\to \Hom(H_*(K_*^X(M)),\Z).$$
 \end{proposition}
 
 \begin{proof}
-Let $Z$ be a cubical cycle representing an element of $H_*(K_*^X(M))$. As in \cref{S: cubical products}, we can consider $Z$ to also represent a smooth normalized singular cubical chain in $NK_*(M)$. We also have from that section a smooth chain homotopy of normalized singular cubes  in $M\times M$ between $\diag(Z)$ and $\zeta\xi\diag(Z)$. Let $Y$ be a smooth singular cubical chain representing this homotopy. Since $Z$ is a cycle, we have (up to choice of orientation) $\bd Y=\diag(Z)-\zeta\xi\diag(Z)+Q$, where $Q$ is a degenerate singular cubical chain. Recall that we can also think of $\diag(Z)$, $\zeta\xi\diag(Z)$, and $Q$ as representing elements of $PC^\Gamma_*(M\times M)$. For simplicity of notation, we write $\diag(Z)$, $\zeta\xi\diag(Z)$ to represent these manifolds with corners, each of which is a union of signed cubes mapping to $M\times M$. 
+Let $Z$ be a cubical cycle representing an element of $H_*(K_*^X(M))$. As in \cref{S: cubical products}, we can consider $Z$ to also represent a smooth normalized singular cubical chain in $NK_*(M)$. We also have from that section a smooth chain homotopy of normalized singular cubes  in $M\times M$ between $\diag(Z)$ and $\zeta\xi\diag(Z)$. Let $Y$ be a smooth singular cubical chain representing this homotopy. Since $Z$ is a cycle, we have (up to choice of orientation) $\bd Y=\diag(Z)-\zeta\xi\diag(Z)+Q$, where $Q$ is a degenerate singular cubical chain. Recall that we can also think of $\diag(Z)$, $\zeta\xi\diag(Z)$, and $Q$ as representing elements of $PC^\Gamma_*(M\times M)$. For simplicity of notation, we write $\diag(Z)$, $\zeta\xi\diag(Z)$ to represent these manifolds with corners, each of which is a union of signed cubes mapping to $M\times M$.
 
-In order to proceed from here, we need to establish chain and cochain representatives with sufficient transversality to begin computing intersections. 
+In order to proceed from here, we need to establish chain and cochain representatives with sufficient transversality to begin computing intersections.
 
-First, choose $f:V\to M$ and $g:W\to M$ representing $\uV$ and $\uW$. Let $h$ be the map representing the cubulation, though of as a disjoint union of top-dimensional cubes mapping to $M$. We can let $X$ denote this disjoint union of cubes mapping to $M$ and note that this contains the same information as the cubulation. By \cref{T: transverse complex}, we can assume that $g:W\to M$ is transverse to the cubulation. So $W\times_MX$ is well defined as a manifold with corners mapping to $M$ (ignoring (co)-orientation considerations for the moment). 
-Next, let us consider the union $W\sqcup X\sqcup (W\times_M X)$ as a single manifold with corners over $M$. By \cref{P: perturb transverse to map} there is a proper universal homotopy from $f$ to a map $f':V\to M$ that is transverse to this union; $f'$ represents the same cohomology class as $f$ by and application of \cref{L: dessicated homotopy} and the definition of universal homotopy. Abusing notation, let us rechristen this new transverse map $f:V\to M$.  By \cref{P: 3 out of 4 trans}, since $W$ is transverse to $X$ and $V$ is transverse to both $W$ and $W\times_MX$, we also have that $X$ is transverse to $V\times_M W$. 
+First, choose $f:V\to M$ and $g:W\to M$ representing $\uV$ and $\uW$. Let $h$ be the map representing the cubulation, though of as a disjoint union of top-dimensional cubes mapping to $M$. We can let $X$ denote this disjoint union of cubes mapping to $M$ and note that this contains the same information as the cubulation. By \cref{T: transverse complex}, we can assume that $g:W\to M$ is transverse to the cubulation. So $W\times_MX$ is well defined as a manifold with corners mapping to $M$ (ignoring (co)-orientation considerations for the moment).
+Next, let us consider the union $W\sqcup X\sqcup (W\times_M X)$ as a single manifold with corners over $M$. By \cref{P: perturb transverse to map} there is a proper universal homotopy from $f$ to a map $f':V\to M$ that is transverse to this union; $f'$ represents the same cohomology class as $f$ by and application of \cref{L: dessicated homotopy} and the definition of universal homotopy. Abusing notation, let us rechristen this new transverse map $f:V\to M$.  By \cref{P: 3 out of 4 trans}, since $W$ is transverse to $X$ and $V$ is transverse to both $W$ and $W\times_MX$, we also have that $X$ is transverse to $V\times_M W$.
 
-Next, consider $V\times W$ in $M\times M$. As $V$ and $W$ are each transverse to the cubulation $X$, we have $V\times W$ transverse to the product cubulation $X\times X$ by the proof of \cref{P: oriented interchange}. 
+Next, consider $V\times W$ in $M\times M$. As $V$ and $W$ are each transverse to the cubulation $X$, we have $V\times W$ transverse to the product cubulation $X\times X$ by the proof of \cref{P: oriented interchange}.
 Also, as $V$ and $W$ are transverse and as $V\times_MW$ is transverse to the cubulation $X$, \cref{L: trans diag cube} shows that $V\times W$ is transverse to the cubulation of the embedded diagonal  $\diag(X)$. So, as $Z$ is a cubical chain with respect to the cubulation $X$ and $\zeta\xi\diag(Z)$ is composed of cubes of the product cubulation $X\times X$, we see that the singular cubical chains $\diag(Z)$ and  $\zeta\xi\diag(Z)$ are transverse to $V\times W$. So now by \cref{P: perturb transverse to map}, there is a universal homotopy $H$ that takes $Y$ (now considered as an element of $PC^\Gamma_*(M\times M)$) to a $Y'$ that is transverse to $V\times W$ and such that the traces of the restrictions of the homotopy to $\diag(Z)$ and  $\zeta\xi\diag(Z)$
-are also transverse to  $V\times W$. 
+are also transverse to  $V\times W$.
 
 We construct an element $A\in PC^\Gamma_*(M\times M)$ from the end of the homotopy and the traces of $\diag(Z)$ and $\zeta\xi\diag(Z)$. To simplify notation, recall from \cref{S: covariant functoriality} that if we have $r_U:U\to M$ representing an element that we call $U\in PC^\Gamma_*(M)$ and if we have a map $F:M\to N$, then we write $F(U)$ for the corresponding element of $PC^\Gamma_*(M)$, represented by the composition $U\xr{r_U}M\xr{F}M$.
 Utilizing this notation, also letting $H_1=H(-,1):M\times M\to M\times M$, we let $A\in PC^\Gamma_*(M\times M)$ be the union of the following:
 \begin{enumerate}
-\item $Y'=H_1(Y)$, i.e.\ if $r_Y:Y\to M\times M$ represents $Y$ as an element of $PC^\Gamma_*(M)$, then $Y'$ is represented by  the composition $Y\xr{r_Y} M\times M\xr{H_1}M\times M$, 
+\item $Y'=H_1(Y)$, i.e.\ if $r_Y:Y\to M\times M$ represents $Y$ as an element of $PC^\Gamma_*(M)$, then $Y'$ is represented by  the composition $Y\xr{r_Y} M\times M\xr{H_1}M\times M$,
 
 \item $-H(\diag(Z)\times I)$, i.e.\ the homotopy $\diag(Z)\times I\xr{r_{\diag(Z)}\times \id_I} M\times M\times I\xr{H}M\times M$ with its opposite orientation,
 
 \item $H(\zeta\xi\diag(Z)\times I)$, i.e.\ the homotopy $\zeta\xi\diag(Z)\times I\xr{r_{\zeta\xi\diag(Z)}\times \id_I} M\times M\times I\xr{H}M\times M$.
 \end{enumerate}
-Then as observed above, $A$ is transverse to $V\times W$, and we next compute $\bd A$. We have 
+Then as observed above, $A$ is transverse to $V\times W$, and we next compute $\bd A$. We have
 \begin{enumerate}
 \item $\bd Y'=H_1(\bd Y)=H_1(\diag(Z)-\zeta\xi\diag(Z)+Q)=H_1(\diag(Z))-H_1(\zeta\xi\diag(Z))+H_1(Q)$,
 
@@ -100,19 +100,19 @@ Then as observed above, $A$ is transverse to $V\times W$, and we next compute $\
 
 \item $\bd H(\zeta\xi\diag(Z)\times I)=H(\bd (\zeta\xi\diag(Z)\times I))=H_1(\zeta\xi\diag(Z))-\zeta\xi\diag(Z)+H((\bd\zeta\xi\diag(Z))\times I)$.
 \end{enumerate}
-As $\bd Z=0$ as a cubical chain, it is trivial as a singular cubical chain or element of $PC_*^\Gamma(M)$, and so the terms involving $\bd\diag(Z)$ or $\bd\zeta\xi\diag(Z)$ are also trivial by \cref{L: dessicated homotopy}. Similarly, $H_1(Q)$ is trivial. So, in $C_*^\Gamma(X)$, we have $\bd Y=\bd A$. 
+As $\bd Z=0$ as a cubical chain, it is trivial as a singular cubical chain or element of $PC_*^\Gamma(M)$, and so the terms involving $\bd\diag(Z)$ or $\bd\zeta\xi\diag(Z)$ are also trivial by \cref{L: dessicated homotopy}. Similarly, $H_1(Q)$ is trivial. So, in $C_*^\Gamma(X)$, we have $\bd Y=\bd A$.
 
 
 
 
-Now, at last we can compute, treating $A$ as a manifold with corners. To fix our indices, we assume as usual that $\dim(M)=m$, $\dim(V)=v$, and $\dim(W)=w$, so $\dim(V\times_MW)= v+w-m$, which is the dimension of an $m-(v+w-m)=2m-v-w$ cochain. So we take $\dim(Z)=2m-v-w$, which implies $\dim(A)=\dim(Y)=2m-v-w+1$. So $\dim((V\times W)\times_{M\times M}A)=(v+w)+(2m-v-w+1)-2m=1$, and its boundary is $0$-dimensional and augments to $0$ by \cref{D: aug}. But, as $V$ and $W$ represent geometric cocycles, 
+Now, at last we can compute, treating $A$ as a manifold with corners. To fix our indices, we assume as usual that $\dim(M)=m$, $\dim(V)=v$, and $\dim(W)=w$, so $\dim(V\times_MW)= v+w-m$, which is the dimension of an $m-(v+w-m)=2m-v-w$ cochain. So we take $\dim(Z)=2m-v-w$, which implies $\dim(A)=\dim(Y)=2m-v-w+1$. So $\dim((V\times W)\times_{M\times M}A)=(v+w)+(2m-v-w+1)-2m=1$, and its boundary is $0$-dimensional and augments to $0$ by \cref{D: aug}. But, as $V$ and $W$ represent geometric cocycles,
 this implies  $$\aug((V\times W)\times_{M\times M}\diag(Z))=\aug((V\times W)\times_{M\times M}\zeta\xi\diag(Z)).$$
 We claim the former represents $(\mc I(\uV\uplus\uW))(Z)$ and the latter represents $(\mc I(\uV) \smile \mc I(\uW))(Z)$.
 
-We first consider  $(V\times W)\times_{M\times M}\diag(Z)$, which is a cap product. By \cref{P: natural cap}, this is the same oriented manifold as $\diag^*(V\times W)\times_M Z$, which is $(V\times_MW)\times_M Z$ by \cref{P: cross to cup}. 
+We first consider  $(V\times W)\times_{M\times M}\diag(Z)$, which is a cap product. By \cref{P: natural cap}, this is the same oriented manifold as $\diag^*(V\times W)\times_M Z$, which is $(V\times_MW)\times_M Z$ by \cref{P: cross to cup}.
 So it follows from \cref{D: intersection homomorphism} and from the fact that $V\times_MW$ represents $\uV\uplus \uW$, that $$\aug((V\times W)\times_{M\times M}\diag(Z))=\aug((V\times_MW)\times_M Z)=\mc I(\uV\uplus \uW)(Z).$$
 
-Next, consider $(\mc I(\uV) \smile \mc I(\uW))(Z)$. If $Z=\sum_i a_iE_i$, then by the discussion in \cref{S: cubical products}, we have  
+Next, consider $(\mc I(\uV) \smile \mc I(\uW))(Z)$. If $Z=\sum_i a_iE_i$, then by the discussion in \cref{S: cubical products}, we have
 \begin{align*}
 (\mc I(\uV) \smile \mc I(\uW))(Z)
 &=\sum a_i (\mc I(\uV) \smile \mc I(\uW))(E_i)\\
@@ -130,16 +130,106 @@ CHECK CONVENTION ESTABLISHED FOR TENSOR PRODUCT OF COCHAINS ACTING ON CHAINS
 
 
 
-We next recall that when $H^i(X)$ is finitely generated, there is an isomorphism $\lambda:T(H^i(X))\to \Hom(T(H_{i-1}(X));\Q/\Z)$, where $T(G)$ is the torsion subgroup of the abelian group $G$. A construction and proof can be found in \cite[Section 8.4.3]{Frie20}. The discussion there is in the context of intersection homology of singular spaces, but the relevant homological algebra applies in general for any cohomology groups coming from a cochain complex $C^*=\Hom(C_*,R)$, where $R$ is a Dedekind domain, $C_*$ is projective in each degree, and the homology and cohomology groups are all finitely generated. In this case, the map $\lambda$ can be described as follows. Let $\alpha$ be a cocycle representing an element of $T(H^i(X))$, and let $w$ be a cycle representing an element of $T(H_{i-1}(X))$. Since $w$ represents a torsion element of $H_{i-1}(X)$, there is a chain $z$ such that $\bd z=rw$ for some integer $r\neq 0$. Then $\lambda(\alpha)(w)=\frac{\alpha(z)}{r}$. It is shown in \cite{Frie20} that this construction is well defined, independent of the choices involved. 
+We next recall that when $H^i(X)$ is finitely generated, there is an isomorphism $\lambda:T(H^i(X))\to \Hom(T(H_{i-1}(X));\Q/\Z)$, where $T(G)$ is the torsion subgroup of the abelian group $G$. A construction and proof can be found in \cite[Section 8.4.3]{Frie20}. The discussion there is in the context of intersection homology of singular spaces, but the relevant homological algebra applies in general for any cohomology groups coming from a cochain complex $C^*=\Hom(C_*,R)$, where $R$ is a Dedekind domain, $C_*$ is projective in each degree, and the homology and cohomology groups are all finitely generated. In this case, the map $\lambda$ can be described as follows. Let $\alpha$ be a cocycle representing an element of $T(H^i(X))$, and let $w$ be a cycle representing an element of $T(H_{i-1}(X))$. Since $w$ represents a torsion element of $H_{i-1}(X)$, there is a chain $z$ such that $\bd z=rw$ for some integer $r\neq 0$. Then $\lambda(\alpha)(w)=\frac{\alpha(z)}{r}$. It is shown in \cite{Frie20} that this construction is well defined, independent of the choices involved.
 
-In the current setting we will apply this to cubical cohomology with integer coefficients, in which case the homological conditions are satisfied so long as each cohomology group --- or equivalently, each homology group --- is finitely generated.  
+In the current setting we will apply this to cubical cohomology with integer coefficients, in which case the homological conditions are satisfied so long as each cohomology group --- or equivalently, each homology group --- is finitely generated.
 
 
 \begin{proposition}
-Let $M$ be a smoothly cubulated manifold without boundary with cubulation $X$, and suppose $H^i(X)$ is finitely generated for each $i$. Let $\uV,\uW\in H^*_\Gamma(M)$. Suppose the cohomology classes $\mc I(\uV\uplus\uW)$ and $\mc I(\uV) \smile \mc I(\uW)$ lie in $T(H^*(K_X^*(M)))$. Then they agree after composition with the map $$\lambda:T(H^*(K_X^*(M)))\to \Hom(H_{*-1}(K_*^X(M)),\Q/\Z).$$ 
+Let $M$ be a smoothly cubulated manifold without boundary with cubulation $X$, and suppose $H^i(X)$ is finitely generated for each $i$. Let $\uV,\uW\in H^*_\Gamma(M)$. Suppose the cohomology classes $\mc I(\uV\uplus\uW)$ and $\mc I(\uV) \smile \mc I(\uW)$ lie in $T(H^*(K_X^*(M)))$. Then they agree after composition with the map $$\lambda:T(H^*(K_X^*(M)))\to \Hom(H_{*-1}(K_*^X(M)),\Q/\Z).$$
 \end{proposition}
 
 UGH, WHAT IF ONE IS TORSION AND THE OTHER ISN'T?
+
+--------------------------
+
+Restart
+
+For the next proposition, we need to further limit the cochains considered.
+Let $M$ be a manifold without boundary cubulated by $X$.
+Recall from SECTION ??? that $\zeta \xi \colon NK^s_*(M \times M) \to  NK^s_*(M \times M)$ is chain homotopic to the identity by \cite[Section XI.5]{Mas91}, and so $\zeta\xi \diag$, which we denoted $\Delta$ in \cref{D: Delta}, is chain homotopic to $\diag \colon K_*(X) \to NK^s_*(M \times M)$, thinking of $K_*(X)$ as a subcomplex of $NK_*^s(M)$.
+Let $P \colon K_i(X) \to NK^s_{i+1}(M \times M)$ be a fixed chain homotopy such that $\diag - \Delta = \bd P - P \bd$.
+
+We now define $C^*_{\Gamma \pf P} (M \times M)$ analogously to our definition of $C^*_{\Gamma \pf X}(M \times M)$ in \cref{D: trans cube} except instead of just being transverse to the cubulation, we require
+$PC^*_{\Gamma \pf P} (M \times M)$ to consist of those elements of $V \in PC^*_{\Gamma}(M \times M)$ such that
+\begin{enumerate}
+\item $V$ is transverse to each characteristic map of the cubulation $X \times X$ of $M \times M$,
+\item $V$ is transverse to $\diag(E)$ for every $E$ in $X$,
+\item $V$ is transverse to $P(E)$ for every $E$ in $X$.
+\end{enumerate}
+
+Due to the last condition, the maps that each $V$ must be transverse to are not all embeddings.
+Nevertheless, a directly analogous construction to the discussion in \cref{D: trans cube} allows us to define $C^*_{\Gamma \pf P} (M \times M)$.
+
+\begin{lemma}
+	The inclusion $C^*_{\Gamma \pf P} (M \times M) \to C^*_\Gamma (M \times M)$ is a quasi-isomorphism.
+\end{lemma}
+\begin{proof}
+The proof is identical to that of \cref{T: transverse complex} (DOUBLE CHECK), though since we do not need to be transverse only to faces of the cubulation, we use \cref{P: perturb transverse to map} rather than \cref{P: ball stability} to provide the needed transversality arguments.
+As in \cref{R: countable trans} and the proof of \cref{P: ball stability}, \cref{P: perturb transverse to map} immediately generalizes to allow transversality with respect to the countable number of objects detailed above DOUBLE CHECK.
+\end{proof}
+
+
+Next, we notice that the chain map $\mc I \colon C^*_{\Gamma \pf X\times X}(M\times M) \to K^*(X \times I)$ of \cref{D: intersection homomorphism} restricts to a chain map on $C^*_{\Gamma \pf X\times P}(M\times M)$.
+Furthermore, if we have any map $f \colon N \to M \times M$ that is transverse to every element of $C^*_{\Gamma \pf X\times P}(M\times M)$, then we have a pullback chain map $f^* \colon C^*_{\Gamma \pf X\times P}(M\times M) \to C^*_\Gamma(N)$ given by $f^*(\uV) = \underline{V \times_{M \times M} N}$ as a pullback mapping to $N$, where $V$ is any representative of $\uV$; cf.\ \cref{S: cohomology pullback,P: trans to f} DOUBLE CHECK ALL THIS.
+This allows us to state our key proposition.
+
+\begin{proposition}
+	Let $M$ be a manifold without boundary with cubulation $X$, and let $C^*_{\Gamma \pf P}(M \times M)$ be as defined above.
+	The following diagram commutes up to homotopy:
+	\[
+	\begin{tikzcd}
+	C^*_\Gamma(M) \arrow[d,"\mc I"] & C^*_{\Gamma \pf P}(M \times M) \arrow[l,"\diag^*"'] \arrow[d,"\mc I"] \\
+	K^*(X) & \arrow[l,"(\Delta)^*"'] K^*(X\times X),
+	\end{tikzcd}
+	\]
+	where $\Delta = \zeta \xi \diag$ as in \cref{D: Delta}.
+\end{proposition}
+\begin{proof}
+	Let $V \in PC^*_\Gamma(M)$ represent an element of $C^*_{\Gamma \pf ???}(M \times M)$, and let $E$ be a cubical face of $X$.
+	We first compute as follows:
+	\begin{align*}
+		(\mc I \diag^*(V))(E) & = \aug(\diag^*(V) \times_M  E) &\text{\cref{D: intersection homomorphism,D: intersection number}}\\
+		&=\aug((V \times_{M \times M} M) \times_M E) &\text{\cref{D: cohomology pullback and homology transfer}}\\
+		&=\aug(V \times_{M \times M} \diag(E)) &\text{\cref{P: natural cap}},
+	\end{align*}
+	where $\diag(E)$ denotes the map $E \xr{\diag} M$ in the notation of \cref{S: covariant functoriality}.
+	On the other hand,
+		\begin{align*}
+		(\Delta^*\mc I(V))(E) & = \mc I(V)(\Delta E)\\
+		&=\aug(V \times_{M \times M} (\Delta E)).
+	\end{align*}
+
+	Next, recall that in $NK^s_*(M \times M)$ we know that $\zeta \xi$ is chain homotopic to the identity by \cite[Section XI.5]{Mas91}, and so $\zeta\xi \diag = \Delta \colon $ is chain homotopic to $\diag$.
+	Let $P \colon K_i(X) \to NK^s_{i+1}(M \times M)$ be the chain homotopy such that $\diag - \Delta = \bd P - P \bd$.
+	We define $L \colon C^j_{\Gamma \pf ??}(M \times M) \to K^{j-1}(X)$ by $$L(\uV)(E) = \aug(V \times_{M \times M} P(E))$$
+	for any representative $V$ of $\uV$ (WELL DEFINED BY).
+	Then we have
+	\begin{align*}
+		((dL + L\bd)(V))(E) &=(dL(V))(E) + ((L\bd)(V))(E) \\
+			& = L(V)(\bd E) +L(\bd V)(E)\\
+			& = \aug(V \times_{M \times M} P(\bd E)) + \aug((\bd V) \times_{M \times M} P(E))\\
+			& = \aug(V \times_{M \times M} P(\bd E)) + (-1)^{v+e+1}\aug(\bd(V \times_{M \times M} P(E)))+(-1)^{v+e}\aug(V \times_{M \times M} \bd P(E))\\
+			&=\aug(V \times_{M \times M} P(\bd E)) +\aug(V \times_{M \times M} \bd P(E))\\
+			&=\aug(V \times_{M \times M} (P\bd + \bd P)(E))\\
+			&=\aug(V \times_{M \times M} (\diag - \Delta)(E))\\
+			&=\aug(V \times_{M \times M} (\diag(E))) - \aug(V \times_{M \times M} \Delta)(E)\\
+			&=(\mc I \diag^*(V))(E)- 	(\Delta^*\mc I(V))(E)\\
+			&=((\mc I \diag^*(V)- \Delta^*\mc I)(V))(E).
+	\end{align*}
+	Here in the fourth line we use \cref{P: Leibniz cap}, and in the fifth line we use that $\aug \circ \bd =0$  and $\aug$ will be trivial unless $\dim(V)+ \dim(E) = \dim(M \times M) \equiv 0 \mod 2$.
+	As $E$ and $V$ were arbitrary, we see that we have a chain homotopy between $\mc I \diag^*$ and $\Delta^*\mc I$.
+
+
+
+
+
+
+
+
+
+
+\end{proof}
 
 
 \end{document}

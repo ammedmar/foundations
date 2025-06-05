@@ -495,7 +495,7 @@ In this section we consider $f^*$ as a partially-defined map of cochain complexe
 
 We notice that the transversality situation here is simpler than the more general ones in the preceding section, as $f$ is a fixed map.
 
-\begin{proposition}
+\begin{proposition}\label{P: trans to f}
 	Given a smooth map of manifolds without boundary $f \colon M \to N$, the set $C^*_{\Gamma \pf f}(N)$ is a subcomplex of $C^*_{\Gamma}(N)$, and the map $f^*:C^*_{\Gamma \pf f}(N) \to C^*_{\Gamma}(M)$ is a well-defined chain map.
 \end{proposition}
 
@@ -930,7 +930,7 @@ The arguments of the proof of \cref{T: (co)homology products} also demonstrate t
 \end{comment}
 
 
-\subsubsection{Representing (co)homology classes by transverse maps}\label{S: transverse maps}.
+\subsubsection{Representing (co)homology classes by transverse maps}\label{S: transverse maps}
 
 In this section, we prove \cref{T: transverse reps}.
 The main tool will be \cref{P: perturb transverse to map}, stated below.
@@ -1931,9 +1931,9 @@ Once we have all the lemma established, we explain how to tie them all together 
 
 For the next lemmas, we make the following definitions.
 
-\begin{definition}
-	For a cubulation $X$ of $M$, let $\Delta \colon K_*(X) \to K_*(X \times X)$ be the chain map given by $\Delta(E) = \zeta\xi(\diag E)$ (see \cref{S: cubical products}).
-	This is a chain map because it is the restriction of a chain map of the singular cubical complexes to subcomplexes.
+\begin{definition}\label{D: Delta}
+	For a cubulation $X$ of $M$, let $\Delta \colon K_*(X) \to K_*(X \times X)$ be the chain map given by $\Delta(E) = \zeta\xi(\diag E)$.
+	This is a chain map because it is the restriction of a chain map of the singular cubical complexes to subcomplexes, noting again as in \cref{S: cubical products} that $\xi(\diag E)$ can be identified as an element of $K_*(X \times X)$ even though $\diag E$ is not.
 \end{definition}
 
 \begin{definition}
