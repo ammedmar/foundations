@@ -292,6 +292,8 @@ In this section we consider the cochains on $M$ represented by maps $W \to M$ th
 	We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma \pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma \pf X}^*(M)$ such that $V\sim W$ if and only if $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$.
 	The \textbf{geometric cochains of $M$ transverse to $X$}, denoted $C_{\Gamma \pf X}^*(M)$, are the equivalence classes in $PC_{\Gamma \pf X}^*(M)$.
 	The set $C_{\Gamma \pf X}^*(M)$ is a chain complex under the operation $\sqcup$ and with boundary map $\bd$.
+	If $V, W \in PC_{\Gamma \pf X}^*(M)$, then $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$ if and only if as elements of $PC_\Gamma^*(M)$ we have $V \sqcup -W \in Q^*(M)$, so $V$ and $W$ represent the same element of $C_{\Gamma \pf X}^*(M)$ if and only if they represent the same element of $C^*_\Gamma(M)$.
+	Thus $C_{\Gamma \pf X}^*(M)$ is a subcomplex of $C_\Gamma^*(M)$.
 	The \textbf{geometric cohomology transverse to $X$} is $H_{\Gamma \pf X}^*(M) \defeq H^*(C_{\Gamma \pf X}^*(M))$.
 
 	When the specific cubulation $X$ is understood, we sometimes simplify the notation to $PC_{\Gamma\pf}^*(M)$, $C_{\Gamma\pf}^*(M)$, and $H_{\Gamma\pf}^*(M)$.
@@ -650,6 +652,12 @@ We begin in the next subsection by using the cubical structure to start building
 
 We conjecture that $\mc I$ is always an isomorphism, but we have not been able to demonstrate this.
 
+
+\begin{remark}\label{R: intersection map extension}
+	Putting together the map $\mc I \colon H^*_{\Gamma \pf X}(M) \to H^*(X)$ with the inverse of the isomorphism $H^*_{\Gamma \pf X}(M) \to H^*_\Gamma(M)$ of \cref{T: transverse complex}, it is sometimes useful to abuse notation and speak of the ``intersection map'' $\mc I \colon H^*_\Gamma(M) \to H^*(X)$.
+	This map is given by taking a cohomology class representative that is transverse to the cubulation and applying the intersection map $\mc I$ to find a cubical cocycle representing the target cohomology class.
+\end{remark}
+
 \subsubsection{Dualization in cubes}\label{S: dual cubes}
 
 Analogous to barycentric subdivisions of simplices, we will need to consider standard subdivisions of cubes.
@@ -974,7 +982,7 @@ We are nearly ready to prove \cref{T: intersection qi}, which we restate here:
 
 
 \begin{theorem*}[\cref{T: intersection qi}]
-	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(K^*(X))$ is a surjection.
+	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$ is a surjection.
 	If, in addition, $H^i(M)$ is finitely generated, then $\mc I$ is an isomorphism.
 \end{theorem*}
 
@@ -1024,9 +1032,3 @@ At last we prove \cref{T: intersection qi}.
 \end{proof}
 
 We conjecture that $\mc I$ is an isomorphism in the general case but have not been able to prove this.
-
-\begin{remark}\label{R: intersection map extension}
-	Putting together the isomorphism $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$ with the inverse of the isomorphism $H^*_{\Gamma \pf X}(M) \to H^*_\Gamma(M)$, it is sometimes useful to abuse notation and speak of the intersection-induced isomorphism
-	$H^*_\Gamma(M) \to H^i(X)$.
-	Of course this map is given by taking a cohomology class representative that is transverse to the cubulation and applying the intersection map $\mc I$ to find a cubical cocycle representing the target cohomology class.
-\end{remark}

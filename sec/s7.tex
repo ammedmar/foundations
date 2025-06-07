@@ -455,11 +455,13 @@ Unlike the cup, cap, and intersection products, these are fully defined, as the 
 
 \begin{definition}\label{D: exterior chain}
 	Suppose $\uV \in C_*^{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(N)$ are represented by $V \in PC_*^{\Gamma}(M)$ and $W \in PC_*^{\Gamma}(N)$.
-	Then we define the \textbf{exterior chain product (or chain cross product)} $$\times \colon C_*^{\Gamma}(M) \times C_*^{\Gamma}(N) \to C_*^{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$, giving the product of oriented manifolds the standard product orientation, as in \cref{S: oriented product}.
+	Then we define the \textbf{exterior chain product (or chain cross product)} $$\times \colon C_*^{\Gamma}(M) \otimes C_*^{\Gamma}(N) \to C_*^{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$, giving the product of oriented manifolds the standard product orientation, as in \cref{S: oriented product}.
 
 	Similarly, suppose $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C^*_{\Gamma}(N)$ are represented by $V \in PC^*_{\Gamma}(M)$ and $W \in PC^*_{\Gamma}(N)$.
 	Then we define the \textbf{exterior cochain product (or cochain cross product)}
-	$$\times \colon C^*_{\Gamma}(M) \times C^*_{\Gamma}(N) \to C^*_{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$, using the co-orientation of a product of co-oriented maps as defined in \cref{D: co-oriented exterior}.
+	$$\times \colon C^*_{\Gamma}(M) \otimes C^*_{\Gamma}(N) \to C^*_{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$, using the co-orientation of a product of co-oriented maps as defined in \cref{D: co-oriented exterior}.
+
+	These are chain maps by \cref{P: oriented fiber boundary,P: boundary of exterior product}.
 \end{definition}
 
 As is standard for singular homology and cohomology, we use the symbol $\times$ for both products, allowing context to determine which product is meant.
@@ -1825,17 +1827,40 @@ Then the following diagram commutes, with the upward arrows being inclusions (no
 	K_*(X) \otimes K_*(X) \arrow{r}{\zeta} \arrow[u, hook] & K_*(X \times X). \arrow[u, hook]
 \end{tikzcd}
 \]
-\[
+\begin{equation}\label{E: cube products}
 \begin{tikzcd}
 	NK_*(M) \otimes NK_*(M) & \arrow[l, "\xi"'] NK_*(M \times M) \\
 	NK^{sm}_*(M) \otimes NK^{sm}_*(M) \arrow[u, hook] & \arrow[l, "\xi"'] NK^{sm}_*(M \times M) \arrow[u, hook] \\
 	K_*(X) \otimes K_*(X) \arrow[u, hook] & \arrow[l, "\xi"'] K_*(X \times X). \arrow[u, hook]
 \end{tikzcd}
-\]
+\end{equation}
 
 The top map in each diagram is a homotopy equivalences, and the vertical maps on the right are all quasi-isomorphisms by \cref{P: singular smooth cubes,T: cubical homology iso}.
 As these are all free modules, the vertical maps on the left are also quasi-isomorphisms.
-It follows that the horizontal maps are quasi-isomorphisms, and in fact chain homotopy equivalences \cite[Theorem 46.2]{Mun84}.
+It follows that the horizontal maps are all quasi-isomorphisms, and in fact chain homotopy equivalences \cite[Theorem 46.2]{Mun84}.
+
+In fact, we can say something stronger:
+
+\begin{lemma}\label{L: EZ for cubical}
+	The maps $K_*(X) \otimes K_*(X) \xr{\zeta}  K_*(X \times X)$ and $K_*(X \times X) \xr{\xi} K_*(X) \otimes K_*(X)$ are homotopy inverses, and similarly for $NK^s_*(M) \otimes NK^s_*(M) \xr{\zeta}  NK^s_*(M \times M)$ and $NK^s_*(M \times M) \xr{\xi} NK^s_*(M) \otimes NK^s_*(M) $.
+\end{lemma}
+\begin{proof}
+	Consider the commutative square
+	\[
+	\begin{tikzcd}
+	A \arrow[r,"\td f{,} \td g"]\arrow[d,"\phi"]& B\arrow[d,"\psi"]\\
+	C \arrow[r,"f{,} g"]& D,
+	\end{tikzcd}
+	\]
+	meaning that this diagram commutes with the pair of maps $f, \td f$ or with the pair of maps $g,\td g$.
+	Let $\eta \colon D \to B$ be a chain homotopy inverse to $\psi$ and suppose $f$ is homotopic to $g$.
+	Then $f \phi = \psi \td f$, so $\eta f \phi = \eta \psi \td f \sim \td f$, writing $\sim$ to indicate a chain homotopy.
+	Similarly,  $\eta g \phi \sim \td g$.
+	So then $$\td f \sim \eta f \phi  \sim \eta g \phi \sim \td g.$$
+
+	The lemma now follows by applying this argument to the horizontal compositions of the diagrams above, using that $\xi \zeta$ and $\zeta \xi$ are each homotopic to identity maps on the $NK_*$ lines.
+\end{proof}
+
 
 Putting this all together, for both the complexes of normalized smooth singular cubical chains and the cubical complexes $K_*$ coming from the smooth cubulations, we may define cup and cap products again by the formulas \eqref{E: cubical cup} and \eqref{E: cubical cap}.
 Note that in the case of a geometric cube $E$ coming from a cubulation, $\diag E$ is not a cube in the cubical complex, but that does not matter as in the end formula for $\xi(\diag E)$ we work with $\diag E$ only through its projections $\pi_1(\diag E) = \pi_2(\diag E) = E$.
