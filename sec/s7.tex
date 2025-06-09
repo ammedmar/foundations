@@ -16,8 +16,10 @@ We also provide fully-defined chain and cochain exterior products, though these 
 In \cref{S: (co)chain properties}, we collect the various properties of these partially-defined products, mostly based on properties we have established for fiber products of maps in earlier sections.
 
 In \cref{S: homology products}, we then turn to the resulting products in geometric homology and cohomology, which we show are fully defined, providing cup, cap, intersection, and exterior products.
-We also utilize this machinery along with our cubulations to construct a universal coefficient theorem when the cohomology is finitely generated.
-In \cref{S: usual cup}, we show that the cup product in geometric cohomology is isomorphic to the singular cohomology cup product.
+In \cref{S: kroneker}, we utilize this machinery along with our cubulations to construct a Universal Coefficient Theorem when the cohomology is finitely generated.
+In \cref{S: usual cup}, we show that the cup product in geometric cohomology is abstractly isomorphic to the singular cohomology cup product, which we use to prove a K\"unneth Theorem in \cref{S: kunneth}.
+Finally, in \cref{S: cubical cup and cap}, we relate geometric (co)homology cup and cap products to their singular (co)homology counterparts more concretely, using cubulations and the intersection maps introduced in \cref{S: intersection map}.
+This includes some applications to Poincar\'e Duality and umkehr maps.
 
 \begin{comment}
 	in this section endow geometric cochains with a commutative product given by intersection of immersed submanifolds, or pullback more generally.
@@ -1221,7 +1223,7 @@ As in \cref{R: countable trans}, and for the same reasons, the proof of \cref{T:
 
 
 
-\subsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}
+\subsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}\label{S: kroneker}
 
 When applying the cap product to cohomology and homology classes of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
 $$H^i_\Gamma(M) \otimes H_i^\Gamma(M) \xr{\nplus} H_0^\Gamma(M) \to \Z.$$
@@ -1524,7 +1526,7 @@ We can now apply \cref{L: connecting signs,C: sphere product} to prove \cref{T: 
 	\end{align*}
 \end{proof}
 
-\subsection{K\"unneth theorems}
+\subsection{K\"unneth theorems}\label{S: kunneth}
 
 Now that we know that the geometric cup product is naturally isomorphic to the singular chain cup product, we can use this to compare cohomology cross products and obtain the geometric cohomology K\"unneth Theorem.
 We begin with the homology K\"unneth Theorem, which is simpler, and then address the cohomology one.
@@ -1777,15 +1779,16 @@ While this argument for the cohomology K\"unneth Theorem requires more hypothese
 	\end{proof}
 \end{comment}
 
-\subsection{The geometric cap product is the usual cap product}
+\subsection{Relating geometric and singular cup and cap products via intersection maps}\label{S: cubical cup and cap}
 
-Our goal in this section is to use the intersection map $\mc I$ to relate the geometric cap product with the classical singular cap product, using the cubical cap product as an intermediary.
-We first discuss formulas for the cubical cup and cap products, relying on known formulas for the singular cubical products.
-Then we apply the cubical formulas to the geometric world.
+Our goal in this section is to relate the cup and cap products in geometric (co)homology to those in singular (co)homology using cubical (co)homology as an intermediary and via the intersection map $\mc I$ of \cref{D: intersection homomorphism}.
+While we have already shown in Section \cref{S: usual cup} that the geometric cohomology cup product is abstractly isomorphic to the singular cohomology cup product, the approach through intersection provides a concrete comparison map, which, by \cref{T: intersection qi} also provides cohomology isomorphisms when $H^i(M)$ is finitely generated.
+In the case of cap products this is especially necessary, as the work of Kreck and Singhof in \cite{Krec10b} does not directly apply to provide a more abstract comparison as we did for cup products.
 
-In \cref{T: equivalent cap,C: cap relation} we show that the cubical cap product (and hence the singular cap product) determines the geometric cap product in general, while the geometric cap product determines the cubical cap product if all $H^i(M)$ are finitely generated.
-This last condition is needed because \cref{T: intersection qi} only tells us that the intersection map induces cohomology isomorphisms $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$, for some cubulation $X$, when $H^i(M)$ is finitely generated.
-Unlike the situation with \cref{T: intersection is cup product}, for which we used the Kreck-Singhof theorem for cup products to show that the geometric and singular cup products are always isomorphic, we do not know of an analogue of the Kreck-Singhof theorem for cap products that would allow us to provide compatibility of cap products in full generality.
+In \cref{S: cubical products}, we first discuss formulas for the cubical cup and cap products, relying on known formulas for the singular cubical products. Then we apply the cubical formulas to the geometric world, first in \cref{S: cup via intersection} where we relate the geometric and cubical cup products.
+In \cref{S: cap product via intersection} we show that the cubical cap product (and hence the singular cap product) determines the geometric cap product in general, while the geometric cap product determines the cubical cap product if all $H^i(M)$ are finitely generated.
+
+We then turn to some applications in \cref{S: umkehr}, which concerns Poincar\'e Duality, and \cref{S: umkehr}, which concerns umkehr, or transfer, maps.
 
 \subsubsection{Cubical cup and cap products}\label{S: cubical products}
 
@@ -1842,7 +1845,7 @@ It follows that the horizontal maps are all quasi-isomorphisms, and in fact chai
 In fact, we can say something stronger:
 
 \begin{lemma}\label{L: EZ for cubical}
-	The maps $K_*(X) \otimes K_*(X) \xr{\zeta}  K_*(X \times X)$ and $K_*(X \times X) \xr{\xi} K_*(X) \otimes K_*(X)$ are homotopy inverses, and similarly for $NK^s_*(M) \otimes NK^s_*(M) \xr{\zeta}  NK^s_*(M \times M)$ and $NK^s_*(M \times M) \xr{\xi} NK^s_*(M) \otimes NK^s_*(M) $.
+	The maps $K_*(X) \otimes K_*(X) \xr{\zeta}  K_*(X \times X)$ and $K_*(X \times X) \xr{\xi} K_*(X) \otimes K_*(X)$ are homotopy inverses, and similarly for $NK^{sm}_*(M) \otimes NK^{sm}_*(M) \xr{\zeta}  NK^{sm}_*(M \times M)$ and $NK^{sm}_*(M \times M) \xr{\xi} NK^{sm}_*(M) \otimes NK^{sm}_*(M) $.
 \end{lemma}
 \begin{proof}
 	Consider the commutative square
@@ -1866,7 +1869,246 @@ Putting this all together, for both the complexes of normalized smooth singular 
 Note that in the case of a geometric cube $E$ coming from a cubulation, $\diag E$ is not a cube in the cubical complex, but that does not matter as in the end formula for $\xi(\diag E)$ we work with $\diag E$ only through its projections $\pi_1(\diag E) = \pi_2(\diag E) = E$.
 These products are then compatible with the constructions for normalized singular cubical chains and cochains, i.e.\ the restriction of the cup product is the cup product of the restriction, and the appropriate mixed functoriality version of that statement holds for cap products.
 
-\subsubsection{Relating geometric and cubical cap products via the intersection map}
+\begin{comment}
+	Let $M$ be a manifold (with or without corners) cubulated by the cubical complex $X$.
+	Recall from \cref{S: cubical products} that the cup product for cubical or singular cubical cohomology is defined by the cochain-level formula
+	\begin{equation}\label{E: cubical cup}
+		(\alpha \smile \beta)(S) = (\alpha \otimes \beta)(\xi(\diag S)),
+	\end{equation}
+	where $\diag \colon M \to M \times M$ is the diagonal map and $\xi \colon NK_*(M \times M) \to NK_*(M) \otimes NK_*(M)$ is a chain homotopy inverse to the cross product $\zeta \colon NK_*(M) \otimes NK_*(M) \to NK_*(M \times M)$.
+	This formula also functions in the cubical complex setting, as the composition $\xi \diag$ takes a face of a cubical complex $X$ to an element of $K_*(X) \otimes K_*(X) \subset NK_*(M) \otimes NK_*(M)$.
+\end{comment}
+
+It follows directly from this definition that the singular cubical cup product satisfies the familiar formula $$\alpha \smile \beta = \diag^*(\alpha \times \beta),$$
+where $\alpha \times \beta$ is the cochain cross product given by $$\alpha \times \beta = \xi^*\theta$$
+and $\theta \colon NK^*(M) \otimes NK^*(M) \to \Hom(NK_*(M) \otimes NK_*(M),\Z)$ is the canonical map so that $$(\theta(\alpha \otimes \beta))(E \otimes F) = \alpha(E)\beta(F).$$
+In other words, $$\alpha \smile \beta = \diag^* \xi^* \theta(\alpha \otimes \beta) = (\xi \diag)^*\theta (\alpha \otimes \beta).$$
+
+In the setting of cubical complexes, we have the maps $\xi$ and $\theta$, but we do not have the map $\diag \colon K_*(X) \to K_*(X \times X) $, so to express the cup product similarly as a pullback of the cross product in that setting, we replace $\diag$ with a map we call $\Delta \colon K_*(X) \to K_*(X \times X)$.
+
+\begin{definition}\label{D: Delta}
+	For a cubical complex $X$ with geometric realization $|X|$, let $\Delta \colon K_*(X) \to K_*(X \times X)$ be the chain map given by $\Delta = \zeta(\xi\diag)$.
+	This is a chain map because it is the restriction of a chain map of the singular cubical complexes to subcomplexes, noting again that $\xi\diag(E)$ can be identified as an element of $K_*(X \times X)$ even though $\diag E$ is not.
+\end{definition}
+
+The composition $\xi \Delta = \xi \zeta (\xi \diag)$ is chain homotopic to $\xi \diag$ as a map $\diag \colon K_*(X) \to K_*(X) \otimes K_*(X)$ by \cref{L: EZ for cubical}.
+The upshot is that $(\xi \Delta)^*\theta = \Delta^* \xi^* \theta \colon K^*(X) \otimes K^*(X) \to K^*(X)$ is chain homotopic to the cup product, with each map well defined in the cubical context.
+
+\begin{remark}\label{R: smooth Massey}
+This discussion remains true replacing each instance of $NK_*(M)$ with $NK_*^{sm}(M)$.
+The proof of the Eilenberg-Zilber Theorem in \cite[Section XI.5]{Mas91} showing that $\xi$ and $\zeta$ are natural homotopy inverses works just as well when considering only smooth singular cubical complexes on the category of (smooth) manifolds with corners.
+In particular, in that case we can take the chain homotopies to also be realized by smooth singular cubical chains.
+\end{remark}
+
+The following proposition demonstrates the compatibility between the cubical, cubical singular, and smooth cubical singular cup products.
+
+\begin{proposition}\label{P: cubical and singular cups}
+	Let $X$ be a cubical complex and $|X|$ its geometric realization.
+	The following diagram commutes, with the top line involving the cohomology of cubical cochain complexes $K^*$, and each horizontal composition being the cup product:
+	\[
+	\begin{tikzcd}
+	H^*(X) \otimes H^*(X) \arrow[r,"\times"]& H^*(X \times X) \arrow[r,"\Delta^*"] & H^*(X)\\
+	H^*(NK^*_{sm}(|X|)) \otimes H^*(NK^*_{sm}(|X|)) \arrow[r,"\times"]\arrow[u,"\cong"] & H^*(NK^*_{sm}(|X| \times |X|)) \arrow[r,"\diag^*"]\arrow[u,"\cong"] & H^*(NK^*_{sm}(|X|))\arrow[u,"\cong"]\\
+	H^*(NK^*(|X|)) \otimes H^*(NK^*(|X|))\arrow[r,"\times"]\arrow[u,"\cong"] & H^*(NK^*(|X| \times |X|)) \arrow[u,"\cong"]\arrow[r,"\diag^*"] &H^*(NK^*(|X|))\arrow[u,"\cong"].
+	\end{tikzcd}
+	\]
+\end{proposition}
+\begin{proof}
+The commutativity of the left side of the diagram is a consequence of diagram \eqref{E: cube products} on page \pageref{E: cube products} after applying $\Hom(-,\Z)$,  together with the naturality of our $\theta$ maps of the form $\Hom(C_*,\Z) \otimes \Hom(D_*,\Z) \to \Hom(C_* \otimes D_*,\Z)$.
+
+Commutativity on the right side follows from our preceding discussion, noting that $\zeta \xi \colon NK_*^{sm}(|X| \times |X|) \to NK_*^{sm}(|X| \times |X|)$ is chain homotopic to the identity by \cref{L: EZ for cubical}.
+\end{proof}
+
+
+\subsubsection{Relating geometric and cubical cup products via the intersection map}\label{S: cup via intersection}
+
+
+We now consider the relationship between the geometric cohomology cup product and the classical cup product, as mediated by our intersection map given a cubical structure on the manifold.
+Our goal is to prove the following theorem; putting this together with \cref{P: cubical and singular cups}, we obtain the compatibility of the geometric cohomology and singular (cubical) cohomology cup products.
+Recall the definition of the intersection map $\mc I$ in \cref{D: intersection homomorphism} and our convention from \cref{R: intersection map extension} by which we abuse notation and also write $\mc I$ for the composition $H^*_\Gamma(M) \xleftarrow{\cong} H^*_{\Gamma \pf X}(M) \xr{\mc I} H^*(X)$.
+
+\begin{theorem}\label{T: cup compatibility}
+Let $M$ be a manifold without boundary cubulated by the cubical complex $X$.
+The following diagram, in which the horizontal compositions are the geometric cohomology cup product and the cubical cohomology cup product, commutes.
+If $H^*(M)$ is finitely generated, then the vertical maps are isomorphisms.
+	\[
+	\begin{tikzcd}
+	H^*_\Gamma(M) \otimes H^*_\Gamma(M) \arrow[r,"\times"]\arrow[d,"\mc I \otimes \mc I"]& H^*_\Gamma(M \times M) \arrow[d,"\mc I"]\arrow[r,"\diag^*"] & H^*_\Gamma(M) \arrow[d,"\mc I"]\\
+	H^*(X) \otimes H^*(X) \arrow[r,"\times"]& H^*(X \times X) \arrow[r,"\Delta^*"] & H^*(X).
+	\end{tikzcd}
+	\]
+\end{theorem}
+
+The proof of \cref{T: cup compatibility} will rely on some further work.
+
+For the next proposition, we need to further limit the geometric cochains we allow.
+So let $M$ be a manifold without boundary cubulated by $X$, and recall that there is a natural chain homotopy between $\zeta \xi \colon NK^{sm}_*(M \times M) \to  NK^{sm}_*(M \times M)$ and the identity  \cite[Section XI.5]{Mas91}; see also \cref{R: smooth Massey}.
+The naturality here means that these chain homotopies can be chosen compatibly across our category of manifolds with corners, and we will fix these as the homotopies in what follows.
+So $\zeta\xi \diag$, which we denoted $\Delta$ in \cref{D: Delta}, is chain homotopic to $\diag \colon K_*(X) \to NK^{sm}_*(M \times M)$, thinking of $K_*(X)$ as a subcomplex of $NK_*^{sm}(M)$.
+Let $P \colon K_i(X) \to NK^{sm}_{i+1}(M \times M)$ be the chain homotopy such that $\diag - \Delta = \bd P + P \bd$, coming from our fixed chain homotopy between $\zeta \xi$ and the identity.
+
+We now define the subcomplex $C^*_{\Gamma \pf P}(M \times M) \subset C^*_{\Gamma \pf (X \times X)}(M \times M) \subset C^*_\Gamma(M \times M)$.
+The definition is analogous to our definition of $C^*_{\Gamma \pf X}(M)$ in \cref{D: trans cube} except instead of just being transverse to the cubulation, we require
+$PC^*_{\Gamma \pf P} (M \times M)$ to consist of those elements of $V \in PC^*_{\Gamma}(M \times M)$ such that
+\begin{enumerate}
+\item $V$ is transverse to each characteristic map of the cubulation $X \times X$ of $M \times M$,
+\item $V$ is transverse to $\diag(E)$ for every $E$ in $X$, which also implies that $V$ is transverse to $\diag \colon M \to M \times M$,
+\item $V$ is transverse to $P(E)$ for every $E$ in $X$, thinking of the cubical chain $P(E)$ as an element of $PC^\Gamma_*(M \times M)$ in the usual way.
+\end{enumerate}
+
+Due to the last condition, the maps that each $V$ must be transverse to are not all embeddings.
+Nevertheless, a directly analogous construction to the discussion in \cref{D: trans cube} allows us to define $C^*_{\Gamma \pf P} (M \times M)$.
+
+\begin{lemma}\label{L: P-transverse iso}
+	The inclusions $C^*_{\Gamma \pf P} (M \times M) \to C^*_{\Gamma \pf X} (M \times M) \to C^*_\Gamma (M \times M)$ are quasi-isomorphisms.
+\end{lemma}
+\begin{proof}
+	The proof that $C^*_{\Gamma \pf P} (M \times M)  \to C^*_\Gamma (M \times M)$ is a quasi-isomorphism is identical to that of \cref{T: transverse complex}, though since we do not need to be transverse only to faces of the cubulation, we use \cref{P: perturb transverse to map} rather than \cref{P: ball stability} to provide the needed transversality arguments.
+	For this, we just need to create an appropriate $r_{\mf X}  \colon \mf X \to M$ so that precochains transverse to $\mf X$ will be in $PC^*_{\Gamma \pf P} (M \times M)$.
+	So we let $\mf X$ be the disjoint union of
+	\begin{enumerate}
+		\item the cubes in $X \times X$,
+		\item the cubes of $X$,
+		\item for each cube $E$ in $X$, the domain of $P(E)$, which will be a collection of cubes, thinking of the cubical chain $P(E)$ as an element of $PC^\Gamma_*(M)$ in the usual way.
+	\end{enumerate}
+	The map $r_{\mf X}$ then consists of
+	\begin{enumerate}
+		\item the embeddings of the cubes of $X \times X$ into $M \times M$ via the cubulation,
+		\item the embeddings of the cubes of $X$ into $M \times M$ via the cubulation of $M$ and the diagonal map $\diag$,
+		\item for each cube $E$ in $X$, the map realizing $P(E)$ as a cubical chain.
+	\end{enumerate}
+	We note that $\mf X$ is a manifold with corners as it is a countable disjoint union of cubes.
+	To see that $r_{\mf X}$ is proper, we observe that each $P(E)$ is a finite cubical chain and, furthermore, by the naturality of the chain homotopies in the proof of the Eilenberg-Zilber theorem through acyclic models (see \cite[Section XI.5]{Mas91}), $P(E)$ will be supported in $E \times E$.
+	Therefore, each compact set of $M \times M$ will intersect the image of at most a finite number of the cubes of $\mf X$.
+
+	So, by construction, transversality to $\mf X$ implies membership in $PC^*_{\Gamma \pf P} (M \times M)$, and we conclude inclusion $C^*_{\Gamma \pf P} (M \times M) \to C^*_\Gamma (M \times M)$ is a quasi-isomorphism by the proof of \cref{T: transverse complex} using \cref{P: perturb transverse to map} rather than \cref{P: ball stability}.
+	As we already know $C^*_{\Gamma \pf X} (M \times M) \to C^*_\Gamma (M \times M)$ is a quasi-isomorphism by \cref{T: transverse complex}, the lemma follows.
+\end{proof}
+
+Next, we notice that the chain map $\mc I \colon C^*_{\Gamma \pf (X\times X)}(M\times M) \to K^*(X \times X)$ of \cref{D: intersection homomorphism} restricts to a chain map on $C^*_{\Gamma \pf P}(M\times M)$.
+Furthermore, if we have any map $f \colon N \to M \times M$ that is transverse to every element of $C^*_{\Gamma \pf P}(M\times M)$, then we have a pullback chain map $f^* \colon C^*_{\Gamma \pf P}(M\times M) \to C^*_\Gamma(N)$ given by $f^*(\uV) = \underline{V \times_{M \times M} N}$ as a pullback mapping to $N$, where $V$ is any representative of $\uV$; cf.\ \cref{S: cohomology pullback} and the statement and proof of \cref{P: trans to f}.
+In particular, this is the case for $\diag \colon M \to M \times M$, in which case we have a well defined chain map $\diag^* \colon C^*_{\Gamma \pf X\times P}(M\times M) \to C^*_\Gamma(M)$.
+In fact, we can say a bit more: If $V \in  C^*_{\Gamma \pf P}(M\times M)$, then we know that $V$ is transverse to the composition $E \into M \xr{\diag} M \times M$ for any face $E$ of $X$.
+So by \cref{L: transverse to pullback}, the pullback $V \times_{M \times M} M \to M$ is transverse to the inclusion $E \into M$.
+So the image of $\diag^*$ is in the subcomplex $C^*_{\Gamma \pf X}(M)$.
+Furthermore, $\diag^* \colon C^*_{\Gamma \pf P}(M \times M) \to C^*_{\Gamma \pf X}(M)$ is a chain map by \cref{leibniz}, as $M$ has no boundary.
+
+This allows us to state our key proposition.
+
+\begin{proposition}\label{P: diag/intersect}
+	Let $M$ be a manifold without boundary, cubulated by the cubical complex $X$, and let $C^*_{\Gamma \pf P}(M \times M)$ be as defined above.
+	The following diagram commutes up to chain homotopy:
+	\[
+	\begin{tikzcd}
+	C^*_{\Gamma \pf P}(M \times M) \arrow[r,"\diag^*"] \arrow[d,"\mc I"]& C^*_{\Gamma \pf X}(M) \arrow[d,"\mc I"]  \\
+	 \arrow[r,"\Delta^*"] K^*(X\times X)&K^*(X).
+	\end{tikzcd}
+	\]
+\end{proposition}
+\begin{proof}
+	Let $V \in PC^*_{\Gamma \pf P}(M \times M)$ be a representative of $\uV \in C^*_{\Gamma \pf P}(M \times M)$, and let $E$ be a cubical face of $X$.
+	We first compute as follows:
+	\begin{align*}
+		(\mc I \diag^*(V))(E) & = \aug(\diag^*(V) \times_M  E) &\text{\cref{D: intersection homomorphism,D: intersection number}}\\
+		&=\aug(V \times_{M \times M} \diag(E)) &\text{\cref{P: natural cap}},
+	\end{align*}
+	where $\diag(E)$ denotes the map $E \into M \xr{\diag} M \times M$ in the notation of \cref{S: covariant functoriality}.
+	On the other hand,
+		\begin{align*}
+		(\Delta^*\mc I(V))(E) & = \mc I(V)(\Delta (E))\\
+		&=\aug(V \times_{M \times M} \Delta (E)).
+	\end{align*}
+	Note that since $\Delta (E) = \diag(E) - \bd P(E) + P \bd(E)$ and $V \in PC^*_{\Gamma \pf P}(M \times M)$, we have $\Delta(E)$ transverse to $V$, and all other needed transversality for the preceding computations follows from the definitions and discussion above.
+
+	Next, we define $L \colon C^j_{\Gamma \pf P}(M \times M) \to K^{j-1}(X)$ by $$L(\uV)(E) = \aug(V \times_{M \times M} P(E))$$
+	for any representative $V$ of $\uV$.
+	This is well defined by arguments analogous to those for \cref{P: I is well defined}.
+	Then we have
+	\begin{align*}
+		((dL + L\bd)(V))(E) &=(dL(V))(E) + ((L\bd)(V))(E) \\
+			& = L(V)(\bd E) +L(\bd V)(E)\\
+			& = \aug(V \times_{M \times M} P(\bd E)) + \aug((\bd V) \times_{M \times M} P(E))\\
+			& = \aug(V \times_{M \times M} P(\bd E)) + (-1)^{v+e+1}\aug(\bd(V \times_{M \times M} P(E)))+(-1)^{v+e}\aug(V \times_{M \times M} \bd P(E))\\
+			&=\aug(V \times_{M \times M} P(\bd E)) +\aug(V \times_{M \times M} \bd P(E))\\
+			&=\aug(V \times_{M \times M} (P\bd + \bd P)(E))\\
+			&=\aug(V \times_{M \times M} (\diag - \Delta)(E))\\
+			&=\aug(V \times_{M \times M} (\diag(E))) - \aug(V \times_{M \times M} \Delta(E))\\
+			&=(\mc I \diag^*(V))(E)- 	(\Delta^*\mc I(V))(E)\\
+			&=((\mc I \diag^*- \Delta^*\mc I)(V))(E).
+	\end{align*}
+	Here in the fourth line we use \cref{P: Leibniz cap}, and in the fifth line we use that $\aug \circ \bd =0$ and that $\aug$ will be trivial unless $\dim(V)+ \dim(E) = \dim(M \times M) \equiv 0 \mod 2$.
+	As $E$ and $V$ were arbitrary, we see that we have a chain homotopy between $\mc I \diag^*$ and $\Delta^*\mc I$.
+\end{proof}
+
+We obtain the following corollary.
+
+\begin{corollary}\label{C: diag commute}
+	The following diagram commutes:
+	\[
+	\begin{tikzcd}
+		&H^*_{\Gamma}(M \times M) \arrow[r,"\diag^*"]& H^*_{\Gamma}(M) \\
+	H^*_{\Gamma \pf (X \times X)}(M \times M)  \arrow[rd,"\mc I"']\arrow[ru,"\cong"] & \arrow[l,"\cong"']H^*_{\Gamma \pf P}(M \times M) \arrow[r,"\diag^*"] \arrow[d,"\mc I"] \arrow[u,"\cong"']& H^*_{\Gamma \pf X}(M) \arrow[d,"\mc I"] \arrow[u,"\cong"'] \\
+		&H^*(K^*(X\times X))	\arrow[r,"\Delta^*"] & H^*(K^*(X)) .
+	\end{tikzcd}
+	\]
+\end{corollary}
+\begin{proof}
+	The upper left triangle commutes because the maps are all induced by subcomplex inclusions, and the maps are all isomorphisms by \cref{L: P-transverse iso}.
+	The bottom left triangle similarly commutes because $C^*_{\Gamma \pf P}(M \times M) \subset C^*_{\Gamma \pf (X \times X)}(M \times M)$ and, at the chain level, the map $\mc I$ on the right is a restriction of the $\mc I$ map on the left.
+	The bottom right square commutes by \cref{P: diag/intersect}.
+	Finally, the upper right square commutes at the chain level thanks to our observation above that the chain map $\diag^*$ takes the subcomplex $C^*_{\Gamma \pf P}(M \times M) \subset C^*_\Gamma(M \times M)$ to the subcomplex $C^*_{\Gamma \pf X}(M) \subset C^*_\Gamma(M)$.
+\end{proof}
+
+We can now prove \cref{T: cup compatibility}.
+
+\begin{proof}[Proof of \cref{T: cup compatibility}]
+We obtain the proof by concatenating the diagrams of \cref{P: cross product comparison} (after taking cohomology) and \cref{C: diag commute} and considering the rectangle formed on the outside.
+\end{proof}
+
+\medskip
+
+\noindent\textbf{Comparing with \cite{FMS-flows}}.
+While we have \cref{T: cup compatibility} concerning the cup product on cohomology, the geometric cup product is not fully-defined as a map of cochains $C^*_\Gamma(M) \otimes C^*_\Gamma(M) \to C^*_\Gamma(M)$ due to the transversality requirements considered in detail in \cref{S: simple products}.
+However, we do have the following result from \cite{FMS-flows}, which we rephrase for the current context and for which we refer to \cite{FMS-flows} for details.
+This essentially says that, given two geometric cochains $V$ and $W$ on a compact cubulated manifold, there is a canonical flow, depending only on the cubulation, such that after enough time, $V$ and $W$ are transverse and then their co-oriented fiber product is compatible with the cubical cup product via the intersection map.
+We note that this implies another proof of \cref{T: cup compatibility} when $M$ is compact, observing that in our language here the flow provides a universal homotopy of $M$ to itself.
+
+\begin{theorem}[Theorem 1 of \cite{FMS-flows}]\label{T: FMMS}
+	Let $M$ be a closed manifold cubulated by the cubical complex $X$, let $\f_t$ be the time $t$ flow of the logistic vector field associated to the cubulation, and let $V,W \in PC^*_{\Gamma \pf X}(M)$.
+	Then, for $t$ sufficiently large:
+	\begin{enumerate}
+		\item $\f_t(W)$ and $\f_{-t}(V)$ are transverse and
+		\[
+		\mc I \left(\f_t(W) \times_M \f_{-t}(V)\right) = \mc I \left(\f_t(W)\right) \sms \mc I \left(\f_{-t}(V)\right) \in K^*(X).
+		\]
+		\item $\f_{-t}(W)$ and $\f_t(V)$ are transverse and
+		\[
+		\mc I \left(\f_{-t}(W) \times_M \f_t(V)\right) = (-1)^{(m-v)(m-w)} \, \mc I \left(\f_t(V)\right) \sms \mc I \left(\f_{-t}(W)\right) \in K^*(X).
+		\]
+	\end{enumerate}
+\end{theorem}
+
+
+
+In general, the flow time $t$ required will depend on $V$ and $W$, but we can say the following.
+
+\begin{corollary}[Corollary 46 of \cite{FMS-flows}]
+	Let $M$ be a closed cubulated manifold, and let $F^*$ be a finitely-generated chain complex with chain map $g \colon F^*\to C^*_{\Gamma \pf}(M)$.
+	Then, there is a $T \in \R$ such that for all $t > T$ the following diagram commutes:
+	\[
+	\begin{tikzcd} [row sep=tiny]
+		& C^*_{\Gamma \pf}(M) \otimes C^*_{\Gamma \pf}(M) \arrow[r, "\mc I \otimes \mc I"] & K^*(X) \otimes K^*(X) \arrow[dd, "\sms"] \\
+		F^*\otimes F^* \arrow[ur, in=180, out=45,"g\otimes g"] \arrow[dr, in=180, out=-45, "\f_t \circ g \; \uplus \; \f_{-t} \circ g"']& & \\
+		& C^*_{\Gamma \pf}(M) \arrow[r, "\mc I"] & K^*(X).
+	\end{tikzcd}
+	\]
+\end{corollary}
+
+If $F^*$ is the subcomplex of $C^*_{\Gamma \pf}(M)$ generated by two cochains $\uV$ and $\uW$, this recapitulates \cref{T: FMMS} as a statement about cochains, not just precochains.
+More generally, the corollary applies if $F^*$ is a finitely-generated subcomplex of $C^*_{\Gamma \pf}(M)$ whose inclusion induces a quasi-isomorphism, in which case we obtain a fully-defined geometric cochain model for a cup product on $C^*_\Gamma(M)$.
+
+
+\subsubsection{Relating geometric and cubical cap products via the intersection map}\label{S: cap product via intersection}
 
 In this section we show that the geometric and cubical cap products are compatible in the sense given below in \cref{T: equivalent cap,C: cap relation}.
 Recall that in \cref{R: intersection map extension} we extended the definition of the intersection map $\mc I$ to give us a map $H^*_\Gamma(M) \to H^i(X)$ for the manifold $M$ cubulated by $X$.
@@ -1954,12 +2196,8 @@ Once we have all the lemma established, we explain how to tie them all together 
 	The last statement follows by taking $r_W \colon W \to M$ to be $\id_M \colon M \to M$, which is certainly transverse to any $r_V$.
 \end{proof}
 
-For the next lemmas, we make the following definitions.
-
-\begin{definition}\label{D: Delta}
-	For a cubulation $X$ of $M$, let $\Delta \colon K_*(X) \to K_*(X \times X)$ be the chain map given by $\Delta(E) = \zeta\xi(\diag E)$.
-	This is a chain map because it is the restriction of a chain map of the singular cubical complexes to subcomplexes, noting again as in \cref{S: cubical products} that $\xi(\diag E)$ can be identified as an element of $K_*(X \times X)$ even though $\diag E$ is not.
-\end{definition}
+For the next lemmas, recall \cref{D: Delta}.
+We also make the following definition.
 
 \begin{definition}
 	Let $V \in PC^*_\Gamma(M)$.
@@ -2139,7 +2377,7 @@ demonstrates the usual relationship between intersection products and cup produc
 Here we see that this relationship extends not just for intersections of embedded manifolds but to all homology classes.
 Of course this is always possible if one takes the above formula as a defining formula for the intersection product, but here we see that the intersection product can always be defined geometrically in terms of fiber products.
 
-\subsubsection{Umkehr maps}
+\subsubsection{Umkehr maps}\label{S: umkehr}
 
 \Cref{C: PD} allows us to make some remarks about umkehr maps, also known as wrong-way or transfer maps, associated to maps of closed oriented manifolds $f \colon N \to M$.
 These are maps

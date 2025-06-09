@@ -52,7 +52,7 @@ NEED TO CHOOSE ORIENTATION OF TRACES SO THAT BOUNDARY WORKS OUT
 
 
 \begin{lemma}\label{L: trans diag cube}
-Let $M$ be a manifold without boundary and let $V$, $W$, and $Z$ be  manifolds with corners. Suppose $f:V\to M$ and $g:W\to M$ are transverse and that $f\times_Mg:V\times_MW\to M$ is transverse to $h:Z\to M$. Then $f\times g:V\times W\to M\times M$ is transverse to the composition $Z\xr{h}M\xr{\diag}M\times M$, where $\diag:M\to M\times M$ is the diagonal map.
+Let $M$ be a  without boundary and let $V$, $W$, and $Z$ be  manifolds with corners. Suppose $f:V\to M$ and $g:W\to M$ are transverse and that $f\times_Mg:V\times_MW\to M$ is transverse to $h:Z\to M$. Then $f\times g:V\times W\to M\times M$ is transverse to the composition $Z\xr{h}M\xr{\diag}M\times M$, where $\diag:M\to M\times M$ is the diagonal map.
 \end{lemma}
 \begin{proof}
 We will apply \cref{L: transverse to pullback}. Consider the pullback diagram
@@ -142,47 +142,15 @@ Let $M$ be a smoothly cubulated manifold without boundary with cubulation $X$, a
 UGH, WHAT IF ONE IS TORSION AND THE OTHER ISN'T?
 
 --------------------------
+\pagebreak
 
 Restart
 
 
 We now consider the relationship between the geometric cohomology cup product and the classical cup product, as mediated by our intersection map given a cubical structure on the manifold.
 
-Let $M$ be a manifold (with or without corners) cubulated by the cubical complex $X$.
-Recall from \cref{S: cubical products} that the cup product for cubical or singular cubical cohomology is defined by the cochain-level formula
-\begin{equation}\label{E: cubical cup}
-	(\alpha \smile \beta)(S) = (\alpha \otimes \beta)(\xi(\diag S)),
-\end{equation}
-where $\diag \colon M \to M \times M$ is the diagonal map and $\xi \colon NK_*(M \times M) \to NK_*(M) \otimes NK_*(M)$ is a chain homotopy inverse to the cross product $\zeta \colon NK_*(M) \otimes NK_*(M) \to NK_*(M \times M)$.
-This formula also functions in the cubical complex setting, as the composition $\xi \diag$ takes a face of a cubical complex $X$ to an element of $K_*(X) \otimes K_*(X) \subset NK_*(M) \otimes NK_*(M)$.
 
-It follows directly from this definition that the singular cubical cup product satisfies the familiar formula $$\alpha \smile \beta = \diag^*(\alpha \times \beta),$$
-where $\alpha \times \beta$ is the cochain cross product given by $$\alpha \times \beta = \xi^*\theta$$
-and $\theta$ is the canonical map so that $$\theta(\alpha \otimes \beta)(E \otimes F) = \alpha(E)\beta(F).$$
-In other words, $$\alpha \cup \beta = \diag^* \xi^* \theta(\alpha \otimes \beta) = (\xi \diag)^*\theta (\alpha \otimes \beta).$$
-
-In the setting of cubical complexes, we do not have the map $\diag \colon K_*(X) \to K_*(X \times X) $, so to express the cup product similarly in that setting, we replace $\diag$ with the map   $\Delta = \zeta (\xi \diag) \colon K_*(X) \to K_*(X \times X)$ of \cref{D: Delta}.
-In this case, $\Delta $ is well defined, and the composition $\xi \Delta = \xi \zeta (\xi \diag)$ is chain homotopic to $\xi \diag$ as a map $\diag \colon K_*(X) \to K_*(X) \otimes K_*( X\times X)$ by \cref{L: EZ for cubical}.
-The upshot is that $(\xi \Delta)^*\theta = \Delta^* \xi^* \theta = \colon K^*(X) \otimes K^*(X) \to K^*(X)$ is chain homotopic to the cup product, with each map well defined in the cubical context.
-
-The following corollary demonstrates the compatibility between the cubical, cubical singular, and smooth cubical singular cup products.
-
-\begin{corollary}
-	Let $X$ be a cubical complex and $|X|$ its geometric realization.
-	The following diagram commutes, with the top line involving the cohomology of cubical cochain complexes $K^*$, and each horizontal composition being the cup product.
-	\[
-	\begin{tikzcd}
-	H^*(X) \otimes H^*(X) \arrow[r,"\times"]& H^*(X \times X) \arrow[r,"\Delta^*"] & H^*(X)\\
-	H^*(NK^*_s(|X|)) \otimes H^*(NK^*_s(|X|)) \arrow[r,"\times"]\arrow[u,"\cong"] & H^*(NK^*_s(|X \times X|)) \arrow[r,"\diag^*"]\arrow[u,"\cong"] & H^*(NK^*_s(|X|))\arrow[u,"\cong"]\\
-	H^*(NK^*(|X|)) \otimes H^*(NK^*(|X|))\arrow[r,"\times"]\arrow[u,"\cong"] & H^*(NK^*(|X \times X|)) \arrow[u,"\cong"]\arrow[r,"\diag^*"] &H^*(NK^*(|X|))\arrow[u,"\cong"].
-	\end{tikzcd}
-	\]
-\end{corollary}
-\begin{proof}
-The commutativity of the left side of the diagram is a consequence of diagram \eqref{E: cube products} on page \pageref{E: cube products} after applying $\Hom(-,\Z)$,  together with the naturality of our $\theta$ maps of the form $\Hom(C_*,\Z) \otimes \Hom(D_*,\Z) \to \Hom(C_* \otimes D_*,\Z)$.
-
-Commutativity on the right side follows from our preceding discussion, nothing that $\zeta \xi \colon NK_*^s(|X \times X|) \to NK_*^s(|X \times X|)$ is chain homotopic to the identity by \cref{L: EZ for cubical}.
-\end{proof}
+DIVIDE HERE
 
 
 Our goal now is to prove the following theorem relating cup products in geometric cohomology to cup products in cubical cohomology via the intersection maps of \cref{D: intersection homomorphism}.
@@ -201,17 +169,19 @@ The following diagram, in which the horizontal compositions are the geometric co
 
 The proof of \cref{T: cup compatibility} will rely on some further work.
 
-For the next proposition, we need to further limit the cochains considered.
-Let $M$ be a manifold without boundary cubulated by $X$.
-Recall from \cref{L: EZ for cubical} that $\zeta \xi \colon NK^s_*(M \times M) \to  NK^s_*(M \times M)$ is chain homotopic to the identity by \cite[Section XI.5]{Mas91}, and so $\zeta\xi \diag$, which we denoted $\Delta$ in \cref{D: Delta}, is chain homotopic to $\diag \colon K_*(X) \to NK^s_*(M \times M)$, thinking of $K_*(X)$ as a subcomplex of $NK_*^s(M)$.
-Let $P \colon K_i(X) \to NK^s_{i+1}(M \times M)$ be a fixed chain homotopy such that $\diag - \Delta = \bd P - P \bd$.
+For the next proposition, we need to further limit the geometric cochains we allow.
+So let $M$ be a manifold without boundary cubulated by $X$, and recall that there is a natural chain homotopy between $\zeta \xi \colon NK^{sm}_*(M \times M) \to  NK^{sm}_*(M \times M)$ and the identity  \cite[Section XI.5]{Mas91}; see also \cref{R: smooth Massey}.
+The naturality here means that these chain homotopies can be chosen compatibly across our category of manifolds with corners, and we will fix these as the homotopies in what follows.
+So $\zeta\xi \diag$, which we denoted $\Delta$ in \cref{D: Delta}, is chain homotopic to $\diag \colon K_*(X) \to NK^{sm}_*(M \times M)$, thinking of $K_*(X)$ as a subcomplex of $NK_*^{sm}(M)$.
+Let $P \colon K_i(X) \to NK^{sm}_{i+1}(M \times M)$ be the chain homotopy such that $\diag - \Delta = \bd P + P \bd$, coming from our fixed chain homotopy between $\zeta \xi$ and the identity.
 
-We now define $C^*_{\Gamma \pf P} (M \times M)$ analogously to our definition of $C^*_{\Gamma \pf X}(M \times M)$ in \cref{D: trans cube} except instead of just being transverse to the cubulation, we require
+We now define the subcomplex $C^*_{\Gamma \pf P}(M \times M) \subset C^*_{\Gamma \pf (X \times X)}(M \times M) \subset C^*_\Gamma(M \times M)$.
+The definition is analogous to our definition of $C^*_{\Gamma \pf X}(M)$ in \cref{D: trans cube} except instead of just being transverse to the cubulation, we require
 $PC^*_{\Gamma \pf P} (M \times M)$ to consist of those elements of $V \in PC^*_{\Gamma}(M \times M)$ such that
 \begin{enumerate}
 \item $V$ is transverse to each characteristic map of the cubulation $X \times X$ of $M \times M$,
 \item $V$ is transverse to $\diag(E)$ for every $E$ in $X$, which also implies that $V$ is transverse to $\diag \colon M \to M \times M$,
-\item $V$ is transverse to $P(E)$ for every $E$ in $X$, thinking of the cubical chain $P(E)$ as an element of $PC^\Gamma_*(M)$ in the obvious way.
+\item $V$ is transverse to $P(E)$ for every $E$ in $X$, thinking of the cubical chain $P(E)$ as an element of $PC^\Gamma_*(M \times M)$ in the usual way.
 \end{enumerate}
 
 Due to the last condition, the maps that each $V$ must be transverse to are not all embeddings.
@@ -221,70 +191,66 @@ Nevertheless, a directly analogous construction to the discussion in \cref{D: tr
 	The inclusions $C^*_{\Gamma \pf P} (M \times M) \to C^*_{\Gamma \pf X} (M \times M) \to C^*_\Gamma (M \times M)$ are quasi-isomorphisms.
 \end{lemma}
 \begin{proof}
-	The proof that $C^*_{\Gamma \pf P} (M \times M)  \to C^*_\Gamma (M \times M)$ is a quasi-isomorphism is identical to that of \cref{T: transverse complex} (DOUBLE CHECK), though since we do not need to be transverse only to faces of the cubulation, we use \cref{P: perturb transverse to map} rather than \cref{P: ball stability} to provide the needed transversality arguments.
-	For this, we just need to create an appropriate second map $r_{\mf X}  \colon \mf X \to M$ to make things transverse to.
+	The proof that $C^*_{\Gamma \pf P} (M \times M)  \to C^*_\Gamma (M \times M)$ is a quasi-isomorphism is identical to that of \cref{T: transverse complex}, though since we do not need to be transverse only to faces of the cubulation, we use \cref{P: perturb transverse to map} rather than \cref{P: ball stability} to provide the needed transversality arguments.
+	For this, we just need to create an appropriate $r_{\mf X}  \colon \mf X \to M$ so that precochains transverse to $\mf X$ will be in $PC^*_{\Gamma \pf P} (M \times M)$.
 	So we let $\mf X$ be the disjoint union of
 	\begin{enumerate}
 		\item the cubes in $X \times X$,
 		\item the cubes of $X$,
-		\item for each cube $E$ in $X$, the domain of $P(E)$, which will be a collection of cubes, thinking of the cubical chain $P(E)$ as an element of $PC^\Gamma_*(M)$ in the obvious way.
+		\item for each cube $E$ in $X$, the domain of $P(E)$, which will be a collection of cubes, thinking of the cubical chain $P(E)$ as an element of $PC^\Gamma_*(M)$ in the usual way.
 	\end{enumerate}
 	The map $r_{\mf X}$ then consists of
 	\begin{enumerate}
 		\item the embeddings of the cubes of $X \times X$ into $M \times M$ via the cubulation,
-		\item the embeddings of the cubes of $X$ in $M \times M$ via the diagonal map $\diag$,
+		\item the embeddings of the cubes of $X$ into $M \times M$ via the cubulation of $M$ and the diagonal map $\diag$,
 		\item for each cube $E$ in $X$, the map realizing $P(E)$ as a cubical chain.
 	\end{enumerate}
-	We note that $\mf X$ is a manifold with corners.
-	To see that $\mf X$ is proper, we observe that each $P(E)$ is a finite cubical chain and, furthermore, by the naturality of the chain homotopies in the proof of the Eilenberg-Zilber theorem through acyclic models (see, e.g., \cite[Section XI.5]{Mas91}), $P(E)$ will be supported in $E \times E$. DOUBLE CHECK.
+	We note that $\mf X$ is a manifold with corners as it is a countable disjoint union of cubes.
+	To see that $r_{\mf X}$ is proper, we observe that each $P(E)$ is a finite cubical chain and, furthermore, by the naturality of the chain homotopies in the proof of the Eilenberg-Zilber theorem through acyclic models (see \cite[Section XI.5]{Mas91}), $P(E)$ will be supported in $E \times E$.
 	Therefore, each compact set of $M \times M$ will intersect the image of at most a finite number of the cubes of $\mf X$.
 
+	So, by construction, transversality to $\mf X$ implies membership in $PC^*_{\Gamma \pf P} (M \times M)$, and we conclude inclusion $C^*_{\Gamma \pf P} (M \times M) \to C^*_\Gamma (M \times M)$ is a quasi-isomorphism by the proof of \cref{T: transverse complex} using \cref{P: perturb transverse to map} rather than \cref{P: ball stability}.
 	As we already know $C^*_{\Gamma \pf X} (M \times M) \to C^*_\Gamma (M \times M)$ is a quasi-isomorphism by \cref{T: transverse complex}, the lemma follows.
 \end{proof}
 
-
-
-
-Next, we notice that the chain map $\mc I \colon C^*_{\Gamma \pf X\times X}(M\times M) \to K^*(X \times I)$ of \cref{D: intersection homomorphism} restricts to a chain map on $C^*_{\Gamma \pf X\times P}(M\times M)$.
-Furthermore, if we have any map $f \colon N \to M \times M$ that is transverse to every element of $C^*_{\Gamma \pf X\times P}(M\times M)$, then we have a pullback chain map $f^* \colon C^*_{\Gamma \pf X\times P}(M\times M) \to C^*_\Gamma(N)$ given by $f^*(\uV) = \underline{V \times_{M \times M} N}$ as a pullback mapping to $N$, where $V$ is any representative of $\uV$; cf.\ \cref{S: cohomology pullback,P: trans to f} DOUBLE CHECK ALL THIS.
+Next, we notice that the chain map $\mc I \colon C^*_{\Gamma \pf (X\times X)}(M\times M) \to K^*(X \times X)$ of \cref{D: intersection homomorphism} restricts to a chain map on $C^*_{\Gamma \pf P}(M\times M)$.
+Furthermore, if we have any map $f \colon N \to M \times M$ that is transverse to every element of $C^*_{\Gamma \pf P}(M\times M)$, then we have a pullback chain map $f^* \colon C^*_{\Gamma \pf P}(M\times M) \to C^*_\Gamma(N)$ given by $f^*(\uV) = \underline{V \times_{M \times M} N}$ as a pullback mapping to $N$, where $V$ is any representative of $\uV$; cf.\ \cref{S: cohomology pullback} and the statement and proof of \cref{P: trans to f}.
 In particular, this is the case for $\diag \colon M \to M \times M$, in which case we have a well defined chain map $\diag^* \colon C^*_{\Gamma \pf X\times P}(M\times M) \to C^*_\Gamma(M)$.
-In fact, we can say a bit more: If $V \in  C^*_{\Gamma \pf X\times P}(M\times M)$, then we know that $V$ is transverse to the composition $E \into M \xr{\diag} M \times M$ for any face $E$ of the cubulation.
+In fact, we can say a bit more: If $V \in  C^*_{\Gamma \pf P}(M\times M)$, then we know that $V$ is transverse to the composition $E \into M \xr{\diag} M \times M$ for any face $E$ of $X$.
 So by \cref{L: transverse to pullback}, the pullback $V \times_{M \times M} M \to M$ is transverse to the inclusion $E \into M$.
 So the image of $\diag^*$ is in the subcomplex $C^*_{\Gamma \pf X}(M)$.
-Furthermore, $\diag^* \colon C^*_{\Gamma \pf P}(M \times M) \to C^*_{\Gamma \pf X}(M)$ is a chain map by \cref{leibniz}.
+Furthermore, $\diag^* \colon C^*_{\Gamma \pf P}(M \times M) \to C^*_{\Gamma \pf X}(M)$ is a chain map by \cref{leibniz}, as $M$ has no boundary.
 
 This allows us to state our key proposition.
 
 \begin{proposition}\label{P: diag/intersect}
-	Let $M$ be a manifold without boundary with cubulation $X$, and let $C^*_{\Gamma \pf P}(M \times M)$ be as defined above.
-	The following diagram commutes up to homotopy:
+	Let $M$ be a manifold without boundary, cubulated by the cubical complex $X$, and let $C^*_{\Gamma \pf P}(M \times M)$ be as defined above.
+	The following diagram commutes up to chain homotopy:
 	\[
 	\begin{tikzcd}
 	C^*_{\Gamma \pf P}(M \times M) \arrow[r,"\diag^*"] \arrow[d,"\mc I"]& C^*_{\Gamma \pf X}(M) \arrow[d,"\mc I"]  \\
-	 \arrow[r,"\Delta^*"] K^*(X\times X)&K^*(X),
+	 \arrow[r,"\Delta^*"] K^*(X\times X)&K^*(X).
 	\end{tikzcd}
 	\]
-	where $\Delta = \zeta \xi \diag$ as in \cref{D: Delta}.
 \end{proposition}
 \begin{proof}
-	Let $V \in PC^*_\Gamma(M)$ represent an element of $C^*_{\Gamma \pf ???}(M \times M)$, and let $E$ be a cubical face of $X$.
+	Let $V \in PC^*_{\Gamma \pf P}(M \times M)$ be a representative of $\uV \in C^*_{\Gamma \pf P}(M \times M)$, and let $E$ be a cubical face of $X$.
 	We first compute as follows:
 	\begin{align*}
 		(\mc I \diag^*(V))(E) & = \aug(\diag^*(V) \times_M  E) &\text{\cref{D: intersection homomorphism,D: intersection number}}\\
-		&=\aug((V \times_{M \times M} M) \times_M E) &\text{\cref{D: cohomology pullback and homology transfer}}\\
 		&=\aug(V \times_{M \times M} \diag(E)) &\text{\cref{P: natural cap}},
 	\end{align*}
-	where $\diag(E)$ denotes the map $E \xr{\diag} M$ in the notation of \cref{S: covariant functoriality}.
+	where $\diag(E)$ denotes the map $E \into M \xr{\diag} M \times M$ in the notation of \cref{S: covariant functoriality}.
 	On the other hand,
 		\begin{align*}
-		(\Delta^*\mc I(V))(E) & = \mc I(V)(\Delta E)\\
-		&=\aug(V \times_{M \times M} (\Delta E)).
+		(\Delta^*\mc I(V))(E) & = \mc I(V)(\Delta (E))\\
+		&=\aug(V \times_{M \times M} \Delta (E)).
 	\end{align*}
+	Note that since $\Delta (E) = \diag(E) - \bd P(E) + P \bd(E)$ and $V \in PC^*_{\Gamma \pf P}(M \times M)$, we have $\Delta(E)$ transverse to $V$, and all other needed transversality for the preceding computations follows from the definitions and discussion above.
 
-	Next, recall that in $NK^s_*(M \times M)$ we know that $\zeta \xi$ is chain homotopic to the identity by \cite[Section XI.5]{Mas91}, and so $\zeta\xi \diag = \Delta \colon $ is chain homotopic to $\diag$.
-	Let $P \colon K_i(X) \to NK^s_{i+1}(M \times M)$ be the chain homotopy such that $\diag - \Delta = \bd P - P \bd$.
-	We define $L \colon C^j_{\Gamma \pf ??}(M \times M) \to K^{j-1}(X)$ by $$L(\uV)(E) = \aug(V \times_{M \times M} P(E))$$
-	for any representative $V$ of $\uV$ (WELL DEFINED BY).
+	Next, we define $L \colon C^j_{\Gamma \pf P}(M \times M) \to K^{j-1}(X)$ by $$L(\uV)(E) = \aug(V \times_{M \times M} P(E))$$
+	for any representative $V$ of $\uV$.
+	This is well defined by arguments analogous to those for \cref{P: I is well defined}.
 	Then we have
 	\begin{align*}
 		((dL + L\bd)(V))(E) &=(dL(V))(E) + ((L\bd)(V))(E) \\
@@ -294,11 +260,11 @@ This allows us to state our key proposition.
 			&=\aug(V \times_{M \times M} P(\bd E)) +\aug(V \times_{M \times M} \bd P(E))\\
 			&=\aug(V \times_{M \times M} (P\bd + \bd P)(E))\\
 			&=\aug(V \times_{M \times M} (\diag - \Delta)(E))\\
-			&=\aug(V \times_{M \times M} (\diag(E))) - \aug(V \times_{M \times M} \Delta)(E)\\
+			&=\aug(V \times_{M \times M} (\diag(E))) - \aug(V \times_{M \times M} \Delta(E))\\
 			&=(\mc I \diag^*(V))(E)- 	(\Delta^*\mc I(V))(E)\\
-			&=((\mc I \diag^*(V)- \Delta^*\mc I)(V))(E).
+			&=((\mc I \diag^*- \Delta^*\mc I)(V))(E).
 	\end{align*}
-	Here in the fourth line we use \cref{P: Leibniz cap}, and in the fifth line we use that $\aug \circ \bd =0$  and $\aug$ will be trivial unless $\dim(V)+ \dim(E) = \dim(M \times M) \equiv 0 \mod 2$.
+	Here in the fourth line we use \cref{P: Leibniz cap}, and in the fifth line we use that $\aug \circ \bd =0$ and that $\aug$ will be trivial unless $\dim(V)+ \dim(E) = \dim(M \times M) \equiv 0 \mod 2$.
 	As $E$ and $V$ were arbitrary, we see that we have a chain homotopy between $\mc I \diag^*$ and $\Delta^*\mc I$.
 \end{proof}
 
@@ -317,14 +283,14 @@ We obtain the following corollary.
 \begin{proof}
 	The upper left triangle commutes because the maps are all induced by subcomplex inclusions, and the maps are all isomorphisms by \cref{L: P-transverse iso}.
 	The bottom left triangle similarly commutes because $C^*_{\Gamma \pf P}(M \times M) \subset C^*_{\Gamma \pf (X \times X)}(M \times M)$ and, at the chain level, the map $\mc I$ on the right is a restriction of the $\mc I$ map on the left.
-	The bottom right square commutes by {P: diag/intersect}.
-	Finally, the upper right map commutes at the chain level thanks to our observation above that the chain map $\diag^*$ takes the subcomplex $C^*_{\Gamma \pf P}(M \times M) \subset C^*_\Gamma(M \times M)$ to the subcomplex $C^*_{\Gamma \pf X}(M) \subset C^*_\Gamma(M)$.
+	The bottom right square commutes by \cref{P: diag/intersect}.
+	Finally, the upper right square commutes at the chain level thanks to our observation above that the chain map $\diag^*$ takes the subcomplex $C^*_{\Gamma \pf P}(M \times M) \subset C^*_\Gamma(M \times M)$ to the subcomplex $C^*_{\Gamma \pf X}(M) \subset C^*_\Gamma(M)$.
 \end{proof}
 
 We can now prove \cref{T: cup compatibility}.
 
 \begin{proof}[Proof of \cref{T: cup compatibility}]
-We obtain the proof by concatenating the diagrams of \cref{P: cross product comparison,C: diag commute} and considering the rectangle formed on the outside.
+We obtain the proof by concatenating the diagrams of \cref{P: cross product comparison} (after taking cohomology) and \cref{C: diag commute} and considering the rectangle formed on the outside.
 \end{proof}
 
 
