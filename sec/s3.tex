@@ -352,7 +352,6 @@ We refer to this as \textbf{transporting} the co-orientation from $x$ to $y$.
 \begin{notation}\label{N: implicit notation}
 	It will be useful in notation to sometimes leave the maps, codomains, and co-orientations all implicit once they have already been established and just write $V$ to represent the co-oriented map $f \colon V \to M$.
 	In this, case we write $-V$ to refer to the same map with the opposite co-orientation.
-	\greg{Is there a better place to put this?}
 \end{notation}
 
 Just as is the case for orientations, when working with co-orientations it suffices to consider the interior of the manifold, in this case of the domain.
@@ -701,7 +700,7 @@ It is not obvious how to define the co-orientations of pullbacks and fiber produ
 Our goal in this section is to provide a definition such that co-orientations of fiber products of co-oriented maps possess the following desirable properties:
 
 \begin{enumerate}
-	\item Embedding property: If $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented embeddings, then their fiber product is just the (embedding of the) intersection of the images of $V$ and $W$ in $M$.\greg{Is this always an embedding? Do we care?}
+	\item Embedding property: If $f \colon V \to M$ and $g \colon W \to M$ are transverse co-oriented embeddings of manifolds without boundary into a manifold without boundary, then their fiber product is locally just the (embedding of the) intersection of the images of $V$ and $W$ in $M$ \cite[Proposition 7.3.5]{MaDo92}.
 	If $f$ and $g$ are normally co-oriented (see \cref{normal co-or}), then the intersection should be normally co-oriented with the orientation of the normal bundle of the intersection given by concatenating the orientation for the normal bundle of $V$ followed by the orientation for the normal bundle of $W$.
 
 	\item Associativity: If $V$, $W$, and $X$ are all manifolds with corners mapping to the manifold without boundary $M$ and if all the required transversality assumptions hold for the following statement to involve only well-defined fiber products, then, using Notation \ref{N: implicit notation} to allow the domain to represent also the co-oriented map, we should have
@@ -1591,7 +1590,21 @@ In other words, if $V$ and $W$ are oriented by $\beta_V$ and $\beta_W$, then $V 
 We observe the following interplay between fibered and exterior products of maps of oriented manifolds more generally.
 In our notational shorthand (see \cref{N: implicit notation}), if $f \colon V \to M$ and $h \colon X \to N$, then we let $V \times X$ represent the product map $f \times h \colon M \times N$.
 
+\begin{comment}
 \greg{I think there's something wrong with this formula. It's consistent with Dold but not Bredon, while our definition of the intersection product is consistent with Bredon via Poincare duality. I think this also gives the wrong answer when $M$ and $N$ are $\R^2$ and both fiber products are the intersection of the x and y axes.}
+
+Follow-up to Dev and Anibal in May 30, 2025 email:
+
+I went back and looked at that formula (interchange of intersection and cross products) where I was worried about the sign, but I couldn’t find any errors in the argument.
+
+Then, since we agree with Bredon’s convention for the relation between the intersection and cup products, I went to see what his sign is. He doesn’t have a formula for interchange of intersection and cross product, so I tried to go the long way around by converting to cup products and doing the cohomology cup product/cross product interchange, mediated by cap products. That also came up with a formula different from ours BUT in doing that I noticed that our cap/cross interchange formula ALSO has a different sign from Bredon’s, so it makes sense that that shouldn’t work out right.
+
+So, forgetting Bredon, I did a consistent check just within Foundations. The current proof of interchange of intersection and cross is a direct argument, so I compared that to the long way around: convert to cup and interchange cross and cup mediated by the cap product, all using the formulas in Foundations. By a miracle, I got the sign that agrees with the direct computation.
+
+I’m not sure anymore what I was doing last week, but I think I neglected the interchange involved into taking the Poincare dual of a product.
+
+Upshot: Am I sure there aren’t any sign errors  - absolutely not! There are a lot of weird signs in Foundations. But the consistency check I just did involved several of the messier formulas and managed to spit out the right thing in the end, so right now I can’t point to anyplace where I know there’s a problem, either.
+\end{comment}
 
 \begin{proposition}\label{P: oriented interchange}
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps of oriented manifolds with corners to an oriented manifold without boundary and similarly for $h \colon X \to N$ and $k \colon Y \to N$.
