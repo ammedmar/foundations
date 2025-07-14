@@ -359,7 +359,7 @@ We now need one more particular technical result that will allow us to achieve t
 
 
 We now apply the above results to demonstrate two transversality theorems that we will need in \cref{S: cohomology pullback} to obtain contravariant functoriality of geometric homology and cohomology.
-We will see various alternative, and in some cases fancier, versions of these theorems below.
+We will see various fancier versions of these theorems below.
 See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
 \begin{theorem}\label{T: basic trans}
@@ -367,7 +367,10 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, and $h(-,1)$ is smooth and transverse to $g$.
 	Furthermore, if $f$ is proper, then there is such an $h$ so that both $h$ and $h(-,1)$ are proper.
 \end{theorem}
-\greg{Old version of this had a bit about $M$ having boundary and keeping the $f$ restricted to boundary fixed if it was already good. Got rid of that to add proper without trouble. Need to make sure I never really need the boundary thing. Changeover around 9-11-23. Though see also the next theorem I added for homotopies.}
+
+\begin{comment}\greg{Old version of this had a bit about $M$ having boundary and keeping the $f$ restricted to boundary fixed if it was already good. Got rid of that to add proper without trouble. Need to make sure I never really need the boundary thing. Changeover around 9-11-23. Though see also the next theorem I added for homotopies.}
+6-20-25 - I looked at where this is referenced and it seems ok.
+\end{comment}
 
 \begin{proof}
 	By \cref{C: embed V}, there is a closed embedding $e \colon V \to N \times \R^k$ that satisfies the hypotheses of \cref{L: all transversality is wrt embeddings}, so by that lemma it suffices to find a homotopy such that $h(-,0) = f$ and $h(-,1) \times \id_{\R^k} \colon M \times \R^k \to N \times \R^k$ is smooth and transverse to $e(V)$.

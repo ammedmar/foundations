@@ -950,14 +950,14 @@ As we will see in the proof, the actual construction is a bit fiddly in order to
 	But there are also only a countable number of faces of $sd(X)$, and so for almost every $s_0 \in S$, $H|_G(-,s_0)$ is transverse to the interior of $F$ at every point in the interior of $G$, for every $G$ and every $F$.
 	Lastly, $H(-,s_0)$ is homotopic to $\Phi$ via $H(-, ts_0)$.
 
-	To complete the proof we must do one last thing: we must fine tune $\rho$ to ensure that in forming $H(-,s_0)$ to obtain the required transversality we have not pushed any $F^\vee$ so far as to create new intersections with $\dim(F)$ faces of $X$ beyond the single desired intersection of $H(F^\vee,s_0)$ with $F$ that was obtained early using the map $\Phi$.
+	To complete the proof we must do one last thing: we must fine tune $\rho$ to ensure that in forming $H(-,s_0)$ to obtain the required transversality we have not pushed any $F^\vee$ so far as to create new intersections with $\dim(F)$ faces of $X$ beyond the single desired intersection of $H(F^\vee,s_0)$ with $F$ that was obtained earlier using the map $\Phi$.
 	For this we do the following.
 
 	Recall that $H(-,s_0) = \Phi$ on $W_3$, and that $\Phi$ already creates the desired intersection between each $F$ and a point in the image of $W_4$.
 	As noted above, if $F$ is any face of $X$ then the distance between $\Phi(F^\vee-(F^\vee \cap W_4))$ and the union of $\dim(F)$-faces of $X$ is positive.
 	Now suppose $x \in M-W_4$ and consider a compact neighborhood $\bar U_x$ of $x$ in $M-W_4$.
 	By the above, if $\bar U_x \cap F^\vee \neq \emptyset$, then there is a positive distance between $\Phi(\bar U_x \cap F^\vee)$ and the $\dim(F)$-skeleton of the cubulation.
-	So using the Tube Lemma as in the proof of \cref{P: ball stability}, there is an $\varepsilon_{x,F} > 0$ such that $H(z,s)$ does not intersect the $\dim(F)$-skeleton of the cubulation for any $z \in \bar U_x \cap F^\vee$ and any $s \leq \varepsilon_{x,F}$.
+	So using the Tube Lemma as in the proof of \cref{P: ball stability}, there is an $\varepsilon_{x,F} > 0$ such that $H(z,s)$ does not intersect the $\dim(F)$-skeleton of the cubulation for any $z \in \bar U_x \cap F^\vee$ and any $s$ with $|s| \leq \varepsilon_{x,F}$.
 	As $\bar U_x$ is compact, it intersects only a finite number of $F^\vee$ as $F$ ranges over all faces of $X$, and we let $$\varepsilon_x = \min\{\varepsilon_{x,F} \mid \bar U_x \cap F^\vee\neq \emptyset\}.$$
 	So, by construction, any map $g \colon M \to M$ such that $d(z,g(z))<\varepsilon_x$ for all $z \in \bar U_x$ satisfies the property that if $z \in F^\vee \cap \bar U_x$ then $g(z)$ is not contained in a $\dim(F)$ face of $X$.
 
@@ -970,9 +970,7 @@ As we will see in the proof, the actual construction is a bit fiddly in order to
 	So now if we replace $H$ with $H_2 \colon M \times S \to M$ defined by $H_2(x,s) = \pi(\Phi(x)+\rho_2(x)\epsilon(\Phi(x)) s)$, then for any $s_0 \in S$ and for any $x \in (M - W_4) \cap F^\vee$, we have that $H_2(x,s_0)$ does not intersect any face of dimension $\dim(F)$ as desired.
 	We can now set $h(-) = H_2(-,s_0)$ for almost all $s_0$ to achieve all three required conditions, noting that the conclusions of the preceding paragraphs did not depend on the choice of $\rho$.
 
-	\greg{Need to relate $\rho_2$ to distance in $M$ from $\Phi(x)$. Should also improve properness proof below to be }
-
-	Lastly, we observe that the homotopies from the identity to $\Phi$ and from $\Phi$ to $h$ (given by $H_2(-,ts_0)$) are proper as it is clear from the construction that sequences that ``escape to infinity'' in $M \times I$ in each case continue to do so after applying the homotopy.
+	Lastly, we observe that the homotopies from the identity to $\Phi$ and from $\Phi$ to $h$ (given by $H_2(-,ts_0)$) can be taken to be proper by an application of \cref{L: nearby proper homotopy} as in the proof of \cref{P: ball stability}, assuming we make all of our homotopies above yet smaller if necessary to meet the requirements of \cref{L: nearby proper homotopy}.
 \end{proof}
 
 \subsubsection{The intersection map is an isomorphism for finitely-generated cohomology groups}
