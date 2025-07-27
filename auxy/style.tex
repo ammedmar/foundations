@@ -1,38 +1,76 @@
 % !TEX root = ../foundations.tex
 
-\usepackage{amssymb, amsmath, amsfonts, verbatim, mathtools, stmaryrd, tabularx}
-\usepackage{bm}
-\usepackage{mathbbol}
-\usepackage{ulem} % Used in the To-Do list
-\usepackage[all]{xy}
-\usepackage{tikz-cd}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{mathrsfs}
-\usepackage{babel}
-\usepackage{standalone}
-\usepackage{todo}
-\usepackage{diagrams}
-\def\todoname{Comments, remarks and to-do's}
-\usepackage{tikz}
-\usetikzlibrary{decorations.pathmorphing}
+% ------------------------------------------------------------------------------
+% Core math packages
+% ------------------------------------------------------------------------------
+\usepackage{amsmath, amssymb, amsfonts, mathtools} % Core AMS math tools
+\usepackage{bm} % Bold math symbols
+\usepackage{mathbbol} % Blackboard bold, including digits
+\usepackage{mathrsfs} % Script fonts
+\usepackage{stmaryrd} % Additional symbols (e.g., semantic brackets)
+\usepackage{verbatim} % Block comments
+\usepackage{tabularx} % Table environment with fixed width columns
+
+% ------------------------------------------------------------------------------
+% Diagrams and graphics
+% ------------------------------------------------------------------------------
+\usepackage[all]{xy} % Xy-pic for commutative diagrams
+\usepackage{tikz} % TikZ for general purpose drawings
+\usetikzlibrary{decorations.pathmorphing} % TikZ library for decorations
 \tikzset{snake it/.style={decorate, decoration=snake}}
 
-\usepackage[bookmarks=true, linktocpage=true,
-bookmarksnumbered=true, breaklinks=true,
-pdfstartview=FitH, hyperfigures=false,
-plainpages=false, naturalnames=true,
-colorlinks=true, pagebackref=true,
-pdfpagelabels]{hyperref}
-\hypersetup{
-	linkcolor=blue, citecolor=blue,
-	urlcolor=blue, colorlinks=true,
-}
-\usepackage[capitalise,noabbrev,nosort]{cleveref}
-\newcommand{\creflastconjunction}{, and\nobreakspace} %makes cleveref use serial commas
+\usepackage{tikz-cd} % TikZ-based commutative diagrams
+\usepackage{diagrams} % Legacy diagram package
+\usepackage{standalone} % Standalone graphics compilation
 
-% GBF: Indents the table of contents.
-\setcounter{tocdepth}{4}% to get subsubsections in toc
+% ------------------------------------------------------------------------------
+% Figures and captions
+% ------------------------------------------------------------------------------
+\usepackage{caption}
+\usepackage{subcaption}
+
+% ------------------------------------------------------------------------------
+% Indexing
+% ------------------------------------------------------------------------------
+\usepackage{imakeidx}
+\makeindex
+
+% ------------------------------------------------------------------------------
+% Localization and language
+% ------------------------------------------------------------------------------
+\usepackage{babel}
+
+% ------------------------------------------------------------------------------
+% Hyperlinks and cross-referencing
+% ------------------------------------------------------------------------------
+\usepackage[
+	bookmarks=true,
+	linktocpage=true,
+	bookmarksnumbered=true,
+	breaklinks=true,
+	pdfstartview=FitH,
+	hyperfigures=false,
+	plainpages=false,
+	naturalnames=true,
+	colorlinks=true,
+	pagebackref=true,
+	pdfpagelabels
+	]{hyperref}
+
+\hypersetup{
+	linkcolor=blue,
+	citecolor=blue,
+	urlcolor=blue,
+	colorlinks=true
+}
+
+\usepackage[capitalise,noabbrev,nosort]{cleveref}
+\newcommand{\creflastconjunction}{, and\nobreakspace} % Serial comma in cleveref
+
+% ------------------------------------------------------------------------------
+% Table of contents formatting
+% ------------------------------------------------------------------------------
+\setcounter{tocdepth}{4} % Include subsubsections in TOC
 \let\oldtocsection=\tocsection
 \let\oldtocsubsection=\tocsubsection
 \let\oldtocsubsubsection=\tocsubsubsection
@@ -40,7 +78,9 @@ pdfpagelabels]{hyperref}
 \renewcommand{\tocsubsection}[2]{\hspace{1em}\oldtocsubsection{#1}{#2}}
 \renewcommand{\tocsubsubsection}[2]{\hspace{2em}\oldtocsubsubsection{#1}{#2}}
 
-% Paper's geometry
+% ------------------------------------------------------------------------------
+% Paper layout and spacing
+% ------------------------------------------------------------------------------
 \renewcommand{\arraystretch}{1.5}
 \setlength{\tabcolsep}{15pt}
 
@@ -48,15 +88,18 @@ pdfpagelabels]{hyperref}
 \oddsidemargin=0in
 \evensidemargin=0in
 
-% alphabetically:
+% ------------------------------------------------------------------------------
+% Miscellaneous
+% ------------------------------------------------------------------------------
+\usepackage{todo} % To-do notes
+\usepackage{ulem} % Underlining and strikeout (used in to-do list)
+\def\todoname{Comments, remarks and to-do's}
+
+% Contributor-specific todo commands (alphabetical)
 \newcommand{\anibal}[1]{\todo[A.\!]{#1}}
 \newcommand{\dev}[1]{\todo[D.\!]{#1}}
 \newcommand{\greg}[1]{\todo[G.\!]{#1}}
 
-
-%index
-\usepackage{makeidx}
-\makeindex
 
 \begin{comment}
 %diagrams.sty fix

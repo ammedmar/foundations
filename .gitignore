@@ -16,3 +16,7 @@ arXiv/
 referee/
 
 .DS_Store
+
+*.ilg
+
+*.ind
