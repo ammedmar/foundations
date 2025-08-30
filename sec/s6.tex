@@ -658,6 +658,26 @@ We conjecture that $\mc I$ is always an isomorphism, but we have not been able t
 	This map is given by taking a cohomology class representative that is transverse to the cubulation and applying the intersection map $\mc I$ to find a cubical cocycle representing the target cohomology class.
 \end{remark}
 
+Before starting toward the proof, we provide an application to cohomology with coefficients.
+
+\begin{corollary}
+	If $H_*(M)$ is finitely-generated in each dimension and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
+\end{corollary}
+\begin{proof}
+	First choose a cubulation $X$ of $M$.
+	Next, as each $H_*(M)$ is finitely generated, by \cite[Lemma 56.3 and Theorem 45.1]{Mun84} we can choose a chain complex $F_*$ and a map $\phi \colon F_* \to K_*(X)$ such $F_*$ vanishes in negative degrees, is finitely-generated in each degree, and $\phi$ is a quasi-isomorphism.
+
+	Now consider the maps
+	$$C^*_\Gamma(M) \otimes G \hookleftarrow C^*_{\Gamma \pf X}(M) \otimes G \xr{\mc I \otimes \id} K^*(X) \otimes G = \Hom(K_*(X),\Z)\otimes G \xr{\phi^* \otimes \id} \Hom(F_*, \Z) \otimes G.$$
+	Omitting the tensor products with $G$, these maps are all quasi-isomorphisms by \cref{T: transverse complex}, \cref{T: intersection qi}, and \cite[Theorem 45.5]{Mun84}.
+	Furthermore, continuing to omit $\otimes G$, these complexes are all torsion free and so flat, and any submodule is thus also flat.
+	So it follows from the Universal Coefficient Theorem for Homology \cite[Theorem 7.55 ]{ROTMAN} and the Five Lemma that this remains a chain of quasi-isomorphisms after tensoring with $G$.
+	Now by Step 2 of the proof of \cite[Theorem 56.1]{Mun84}, $\Hom(F_*, \Z) \otimes G \cong \Hom(F_*, G)$, and this is quasi-isomorphic to $\Hom(K_*(X), G)$, again by \cite[Theorem 45.5]{Mun84}.
+\end{proof}
+
+In this argument, the requirement that $H_*(M)$ be finitely generated is used not just to ensure $\mc I$ is a quasi-isomorphism.
+It is needed to construct an $F_*$ and have $\Hom(F_*, \Z) \otimes G \cong \Hom(F_*, G)$.
+
 \subsubsection{Dualization in cubes}\label{S: dual cubes}
 
 Analogous to barycentric subdivisions of simplices, we will need to consider standard subdivisions of cubes.
