@@ -494,7 +494,7 @@ In this section we consider $f^*$ as a partially-defined map of cochain complexe
 	We will say that $\uV$ is \textbf{transverse to $f$} if $\uV$ has a representative $r_V \colon V \to N$ such that $r_V$ is transverse to $f$.
 	In this case we define the pullback $f^*(\uV)$ to be $\underline{f^*(V)} \in C^*_\Gamma(M)$.
 
-	We will write the set of cochains transverse to $h$ as $C^*_{\Gamma \pf f}(N)$.
+	We will write the set of cochains transverse to $f$ as $C^*_{\Gamma \pf f}(N)$.
 \end{definition}
 
 We notice that the transversality situation here is simpler than the more general ones in the preceding section, as $f$ is a fixed map.
@@ -946,7 +946,7 @@ We change notation slightly from that of \cref{T: transverse reps} to make it mo
 	Suppose $r_V \colon V \to M$ and $r_X \colon X \to M$ are proper maps from manifolds with corners to a manifold without boundary.
 	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id$ and $H(-,1)r_V \colon V \to M$ is transverse to $r_X$.
 
-	Furthermore, given another proper map $r_W \colon W \to M$ that is transverse to $r_X$, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to $r_X$.
+	Furthermore, given another proper map from a manifold with corners $r_W \colon W \to M$ that is transverse to $r_X$, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to $r_X$.
 \end{proposition}
 
 Proving \cref{P: perturb transverse to map} will involve \cref{L: all transversality is wrt embeddings}, which, in our current notation, says that two maps $r_V \colon V \to M$ and $r_X \colon X \to M$ are transverse if and only when we replace $r_X$ with an embedding $e \colon X \into M \times \R^n$ that projects to $r_X$, then $e$ is transverse to $r_V \times \id_{\R^n}$.
@@ -1104,7 +1104,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	Next suppose that $W$ is no longer necessarily compact.
 
 	We will continue to utilize $F \colon M \times I \to M$ as defined above, which did not rely on $W$ being compact.
-	For $W$ not compact, the first two properties listed above for $F$ will continue to hold, but the third relied on compactness and so need not hold any long in general.
+	For $W$ not compact, the first two properties listed above for $F$ will continue to hold, but the third relied on compactness and so need not hold any longer in general.
 	However, the only places where we required compactness above were in defining $L_k$ and hence $\bar B^n_k$ via \cref{L: compact preimage}, and then in applying the Tube Lemma.
 	So now let $K \subset W$ be compact.
 	Then each $i_{\bd^k W}^{-1}(K)$ is also compact as the $i_{\bd^k W}$ are proper.
@@ -1217,7 +1217,7 @@ Finally, we prove \cref{T: transverse reps}.
 
 
 \begin{remark}\label{R: countable trans2}
-As in \cref{R: countable trans}, and for the same reasons, the proof of \cref{T: transverse reps} allows use to extend the first part of theorem, concerning finding a representative $V$ of $\uV$ that is transverse to $W$, to finding a $V$ that is transverse to each of a countable collection $W_i$.
+As in \cref{R: countable trans}, and for the same reasons, the proof of \cref{T: transverse reps} allows us to extend the first part of theorem, concerning finding a representative $V$ of $\uV$ that is transverse to $W$, to finding a $V$ that is transverse to each of a countable collection $W_i$.
 \end{remark}
 
 
