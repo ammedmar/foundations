@@ -502,44 +502,31 @@ The following algebraic property will be useful below as we consider homological
 	The second statement follows from the first as $\Z$ is a Dedekind domain.
 	The first statement is proven for geometric chains in \cite[Lemma 34]{Lipy14}.
 	The proof for geometric cochains, even accounting for our different definition of degeneracy, is the same.
-	We give the argument for chains.
+	The argument is as follows.
 
 	Suppose $\uW$ satisfies $n \uW = 0$ for some $n \in \Z$ with $n \neq 0$.
 	Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: trivial structure,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct if $i\neq j$.
+	Even in the cochain case, each $W_i$ contains only finitely many connected components due to the properness condition.
 	Then $n \uW$ is represented by taking $n$ copies of each $W_i$ if $n > 0$ or, if $n < 0$, taking $|n|$ copies of each $-W_i$.
-	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so $n W$ is the union of a trivial prechain and a degenerate prechain, $nW = T \sqcup D$ with $T$ trivial and $D$ degenerate.
-
-	Again as in the proof of \cref{L: trivial structure}, as $T$ is trivial, it can be decomposed into connected components that are trivial or that form a trivial pair with another connected component.
-	First suppose the connected component $V$ of $T$ is trivial.
-	Then $V$ is isomorphic to one of the $W_i$.
-	But then $W_i$ is trivial and so are all the components of $n W_i$.
-	On the other hand, suppose $V$ is not itself trivial but that it is part of a trivial pair with another component $V'$.
-	If $V$ is isomorphic to $W_i$ and $V'$ is isomorphic to $W_j$, then $i \neq j$, since otherwise, denoting isomorphism by $\cong$, we have $W_i \cong V \cong -V' \cong -W_i$, but we have assumed $V$ is not trivial.
-	So instead we must have $W_i \cong - W_j$, and these form a trivial pair.
-
-
-	\begin{comment}Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: trivial structure,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct f $i\neq j$.
-	Then $n \uW$ is represented by taking $n$ copies of each $W_i$ if $n > 0$ or, if $n < 0$, taking $|n|$ copies of each $-W_i$.
-	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so each component of $n W_i$ is trivial or has small image.
+	By \cref{L: co/chains well defined}, $n W \in Q(M)$, so $nW$ is the union of a trivial pre(co)chain and a degenerate pre(co)chain, which we can write as $nW = T \sqcup D$.
+	A connected component of $W_i$ has small rank if and only if they all do, so if $W_i$ consists of components that are not of small rank, then all of $nW_i$ must be part of $T$.
+	Furthermore, as the components of $nW_i$ and $nW_j$ are distinct for $i \neq j$, each such $nW_i$ must itself be trivial.
+	It follows that each $n W_i$ is trivial or has small rank.
 
 	Suppose $n W_i$ is trivial for some $i$.
-	Then each component of $n W_i$ is trivial or the total number of components of $n W_i$ is zero when counted with sign.
+	Then each connected component of $n W_i$ is trivial or the total number of components of $n W_i$ is zero when counted with sign.
 	But this implies that each component of $W_i$ is trivial or that $W_i$ must also have the total number of components be zero when counted with sign.
 	So $W_i$ is trivial.
 	It is also clear that if $W_i$ is trivial, then so is $n W_i$, so $W_i$ is trivial if and only if $n W_i$ is trivial.
 
-	Now let $W'$ be the union of those components $W_i$ that are not trivial.
-	Then $nW$ is the union of trivial components and $n W'$, so by \cref{L: Lipy12}, we have $n W' \in Q_*(M)$.
-	Furthermore, since none of the components of $n W'$ are trivial, $n W'$ must be degenerate.
-	In particular, $n W'$ must have small rank, which implies that $W'$ must have small rank.
-	Further, since $n W' \in Q_*(M)$, we have $\bd (n W') = n (\bd W') \in Q_*(M)$ by \cref{L: bd defined}.
-	So by the same argument as above, $\bd W'$ must be a union of prechains that are trivial or of small rank.
+	Now let $W'$ be the union of those $W_i$ that are not trivial.
+	Then $nW$ is the union of a trivial pre(co)chain and $n W'$, so by \cref{L: Lipy12}, we have $n W' \in Q(M)$.
+	Furthermore, $n W'$ must have small rank, which implies that $W'$ must have small rank.
+	Further, since $n W' \in Q(M)$, we have $\bd (n W') = n (\bd W') \in Q(M)$ by \cref{L: bd defined}.
+	So by the same argument as above, $\bd W'$ must be a union of pre(co)chains that are trivial or of small rank.
 	So $W'$ is degenerate.
-	\end{comment}
 
-
-
-	Altogether, we have now shown that $W$ is the union of a trivial prechain and a degenerate prechain, so $W \in Q_*(M)$.
+	Altogether, we have now shown that $W$ is the union of a trivial pre(co)chain and a degenerate pre(co)chain, so $W \in Q(M)$.
 \end{proof}
 
 \subsection{Products of manifolds over \texorpdfstring{$M$}{M}}
