@@ -304,6 +304,9 @@ We will show that the claims of the following definition hold in \cref{L: co/cha
 
 We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every geometric chain or geometric cochain can be represented by a single map $r_Z \colon Z \to M$ for appropriate (possibly disconnected) $Z$.
 In particular, $k \uV$ for $k>0$ can be represented by a single map consisting of the disjoint union of $k$ (co-)oriented isomorphic pre(co)chains, while $k \uV$ for $k<0$ is represented by the same map with the opposite (co-)orientations; see \cref{E: copies,D: prechain sum}.
+We will show below in \cref{E: uncountable} that the $C^i_\Gamma(M)$ are not necessarily free abelian groups.
+We do not know if the $C^\Gamma_i(M)$ are free abelian groups; if so this is not evident from their construction.
+However, we will show that these groups are all torsion free below in \cref{L: flat}.
 
 
 \begin{lemma}\label{L: co/chains well defined}
@@ -502,7 +505,20 @@ The following algebraic property will be useful below as we consider homological
 	We give the argument for chains.
 
 	Suppose $\uW$ satisfies $n \uW = 0$ for some $n \in \Z$ with $n \neq 0$.
-	Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: trivial structure,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct of $i\neq j$.
+	Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: trivial structure,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct if $i\neq j$.
+	Then $n \uW$ is represented by taking $n$ copies of each $W_i$ if $n > 0$ or, if $n < 0$, taking $|n|$ copies of each $-W_i$.
+	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so $n W$ is the union of a trivial prechain and a degenerate prechain, $nW = T \sqcup D$ with $T$ trivial and $D$ degenerate.
+
+	Again as in the proof of \cref{L: trivial structure}, as $T$ is trivial, it can be decomposed into connected components that are trivial or that form a trivial pair with another connected component.
+	First suppose the connected component $V$ of $T$ is trivial.
+	Then $V$ is isomorphic to one of the $W_i$.
+	But then $W_i$ is trivial and so are all the components of $n W_i$.
+	On the other hand, suppose $V$ is not itself trivial but that it is part of a trivial pair with another component $V'$.
+	If $V$ is isomorphic to $W_i$ and $V'$ is isomorphic to $W_j$, then $i \neq j$, since otherwise, denoting isomorphism by $\cong$, we have $W_i \cong V \cong -V' \cong -W_i$, but we have assumed $V$ is not trivial.
+	So instead we must have $W_i \cong - W_j$, and these form a trivial pair.
+
+
+	\begin{comment}Representing $\uW$ by $W$, we can decompose $W$ as in the proofs of \cref{L: trivial structure,L: Lipy12} so that $W = W_1 \sqcup W_2 \sqcup \cdots$ with each $W_i$ being the union of isomorphic-up-to-sign connected manifolds over $M$ with the isomorphism classes of components in $W_i$ and $W_j$ distinct f $i\neq j$.
 	Then $n \uW$ is represented by taking $n$ copies of each $W_i$ if $n > 0$ or, if $n < 0$, taking $|n|$ copies of each $-W_i$.
 	By \cref{L: co/chains well defined}, $n W \in Q_*(M)$, so each component of $n W_i$ is trivial or has small image.
 
@@ -519,6 +535,9 @@ The following algebraic property will be useful below as we consider homological
 	Further, since $n W' \in Q_*(M)$, we have $\bd (n W') = n (\bd W') \in Q_*(M)$ by \cref{L: bd defined}.
 	So by the same argument as above, $\bd W'$ must be a union of prechains that are trivial or of small rank.
 	So $W'$ is degenerate.
+	\end{comment}
+
+
 
 	Altogether, we have now shown that $W$ is the union of a trivial prechain and a degenerate prechain, so $W \in Q_*(M)$.
 \end{proof}
