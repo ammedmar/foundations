@@ -642,7 +642,7 @@ Furthermore, in a neighborhood of $x$ the co-orientation of $r_W$ determines an 
 	Let $Z$ denote the integers, considered as a space with the discrete topology.
 	This space has a unique cubulation, which we will also write simply as $Z$.
 	In this example, we demonstrate that the map $\mc I \colon C^0_\Gamma(Z) \to K^0(Z)$ is an isomorphism.
-	As $K^0(Z) = \Hom(K_0(Z),\Z) \cong \Hom\left(\displaystyle\oplus_{i \in \Z} \Z, \Z\right) \cong \prod_{i\in \Z} \Z$, this shows that the geometric cochain groups $C^*_\Gamma(M)$ need not be free abelian.
+	As $K^0(Z) = \Hom(K_0(Z),\Z) \cong \Hom\left(\displaystyle\oplus_{i \in \Z} \Z, \Z\right) \cong \prod_{i\in \Z} \Z$, this shows that the geometric cochain groups $C^*_\Gamma(M)$ need not be free abelian \cite{Sch08}.
 
 	To demonstrate the isomorphism, first consider an element $\alpha \in K^0(Z)$.
 	The cochain $\alpha$ is determined by the value it assigns to each element of $Z$.
@@ -680,7 +680,7 @@ We conjecture that $\mc I$ is always an isomorphism, but we have not been able t
 Before starting toward the proof, we provide an application to cohomology with coefficients.
 
 \begin{corollary}
-	If $H_*(M)$ is finitely-generated in each dimension and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
+	If $H_*(M)$ is finitely-generated in each degree and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
 \end{corollary}
 \begin{proof}
 	First choose a cubulation $X$ of $M$.
@@ -691,7 +691,7 @@ Before starting toward the proof, we provide an application to cohomology with c
 	Omitting the tensor products with $G$, these maps are all quasi-isomorphisms by \cref{T: transverse complex}, \cref{T: intersection qi}, and \cite[Theorem 45.5]{Mun84}.
 	Furthermore, continuing to omit $\otimes G$, these complexes are all torsion free and so flat, and any submodule is thus also flat.
 	So it follows from the Universal Coefficient Theorem for Homology \cite[Theorem 7.55 ]{ROTMAN} and the Five Lemma that this remains a chain of quasi-isomorphisms after tensoring with $G$.
-	Now by Step 2 of the proof of \cite[Theorem 56.1]{Mun84}, $\Hom(F_*, \Z) \otimes G \cong \Hom(F_*, G)$, and this is quasi-isomorphic to $\Hom(K_*(X), G)$, again by \cite[Theorem 45.5]{Mun84}.
+	Now by Step 2 of the proof of \cite[Theorem 56.1]{Mun84}, $\Hom(F_*, \Z) \otimes G \cong \Hom(F_*, G)$, and this is quasi-isomorphic to $\Hom(K_*(X), G) = K^*(X; G)$, again by \cite[Theorem 45.5]{Mun84}.
 \end{proof}
 
 In this argument, the requirement that $H_*(M)$ be finitely generated is used not just to ensure $\mc I$ is a quasi-isomorphism.

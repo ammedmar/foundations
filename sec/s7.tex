@@ -1220,6 +1220,30 @@ Finally, we prove \cref{T: transverse reps}.
 As in \cref{R: countable trans}, and for the same reasons, the proof of \cref{T: transverse reps} allows us to extend the first part of theorem, concerning finding a representative $V$ of $\uV$ that is transverse to $W$, to finding a $V$ that is transverse to each of a countable collection $W_i$.
 \end{remark}
 
+While \cref{P: perturb transverse to map} as stated was what we needed to prove \cref{T: transverse reps}, we take the opportunity while in the midst of the machinery to prove the following generalization, which will be useful for other applications, particularly in \cite{GBF47}.
+
+\begin{proposition}\label{P: perturb transverse to map; pairs}
+	Suppose $r_V \colon V \to M$ and $r_X \colon X \to M$ are proper maps from manifolds with corners to a manifold without boundary.
+	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id$ and $H(-,1)r_V \colon V \to M$ is transverse to $r_X$.
+
+	Furthermore, given a finite collection of pairs of proper maps of manifolds with corners $r_{W_i} \colon W_i \to M$ and $r_{Y_i} \colon Y_i \to M$ such that $r_{W_i}$ is transverse to $r_{Y_i}$ for all $i$, we can choose the homotopy $H$ above so that for each $i$ the resulting universal proper homotopy $W_i \times I \xr{r_{W_i} \times \id_I} M \times I \xr{H} M$ is transverse to $r_{Y_i}$ .
+\end{proposition}
+\begin{proof}
+	First consider a single pair $(W,Y)$.
+	We see in the part of the proof of \cref{P: perturb transverse to map} involving $W$ that we do not really need the $X$ there to be the same as the $X$ in the first part of the proof.
+	If we replace $X$ in this part of the argument with $Y$ and choose the embedding $e$ to be an embedding $e \colon X \sqcup Y \into M \times \R^n$ for appropriate $n$, and if we assume that $W$ is transverse to $Y$ instead of $X$, then in the compact $W$ case the arguments are exactly the same to conclude there is a radius $r$ such that for all $s \in D_r^N$ the composition $W \times \R^n \xr{r_W \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to the restriction of $e$ to $Y$.
+	Constructing $H$ using $s_0 \in D_r^N$, we conclude just as above that $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to $r_Y$.
+	Similarly, if $W$ is not compact, we come to the same conclusions by modifying the argument to choose $\phi$ based on $Y$ instead of $X$.
+
+	Taking this further, next suppose we have any finite collection of pairs $(W_i, Y_i)$ with each $W_i$ compact.
+	By starting with an embedding $e \colon X \sqcup (\bigsqcup_i Y_i) \into M \times \R^n$ for appropriate $n$, the preceding paragraph says that we can find $D_{r_i}^N$ such that for all $s \in D_{r_i}^N$ the composition $W_i \times \R^n \xr{r_{W_i} \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to the restriction of $e$ to $Y_i$.
+	Then choosing $r < \min\{r_i\}$, we end up with an $H$ such that that $W_i \times I \xr{r_{W_i} \times \id_I} M \times I \xr{H} M$ is transverse to $r_{Y_i}$ for each $i$, in addition to the original result that $H(-,1)r_V$ is transverse to $r_X$.
+
+	For $W_i$ that are not necessarily compact, we further modify the argument as in the proof of the proposition by using open covers with compact closures to find functions $\phi_i \colon M \to \R$ as in that proof using the pairs $(W_i, Y_i)$.
+	If we then let $\phi \colon M \to \R$ be such that $0 < \phi(y) < \min\{\phi_i(y)\}$ for all $i$ and all $y \in M$, the rest of the argument applies to show that again $W_i \times I \xr{r_{W_i} \times \id_I} M \times I \xr{H} M$ is transverse to $r_{Y_i}$ for all $i$, in addition to the original result that $H(-,1)r_V$ is transverse to $r_X$.
+\end{proof}
+
+
 
 
 
