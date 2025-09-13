@@ -133,8 +133,8 @@ This includes some applications to Poincar\'e Duality and umkehr maps.
 In this section, we develop chain- and cochain-level products, as well as study some other aspects of chain- and cochain-level transversality.
 We begin in \cref{S: simple products} with the case of ``simple products,'' in which two chains or cochains can be represented by transverse prechains or precochains, in which case we can take the fiber product.
 Building on this case, we then define a more general notion of transversality for chains and cochains that allows for some amount of bilinear behavior.
-In \cref{S: product pullbacks}, we consider pullbacks of cochains, and in \cref{S: Kronecker} we obtain a Kronecker pairing for geometric chains and cochains.
-Finally, in \cref{S: exterior chain products}, we define exterior products of chains and cochains.
+After introducing some more transversality results in \cref{S: homology products} in the context of considering (co)homology products, we will return to this theme in \cref{S: product pullbacks}, where we consider pullbacks of cochains, and in \cref{S: Kronecker}, where we consider a Kronecker pairing for geometric chains and cochains.
+In \cref{S: exterior chain products}, we define exterior products of chains and cochains.
 
 
 \subsubsection{Transversality and products}\label{S: simple products}
@@ -480,110 +480,6 @@ As is standard for singular homology and cohomology, we use the symbol $\times$ 
 	But we need only observe that $(V \times W) \sqcup -(V' \times W) = (V \sqcup -V') \times W$ and then apply
 	\cref{L: exterior Q}.
 \end{proof}
-
-
-\subsubsection{Pullbacks of cochains}\label{S: product pullbacks}
-\greg{Should this section go here?}
-We now return to the main program of \cref{S: chain products} --- the behavior of geometric chains and cochains, and particularly the need for transversality assumptions.
-
-In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon M \to N$ of manifolds without boundary yields a well-defined cohomology map $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$.
-In this section we consider $f^*$ as a partially-defined map of cochain complexes $C^*_\Gamma(N) \to C^*_\Gamma(M)$.
-
-\begin{definition}\label{D: transverse to map}
-	Let $f \colon M \to N$ be a smooth map of manifolds without boundary, and let $\uV \in C^*_\Gamma(N)$.
-	We will say that $\uV$ is \textbf{transverse to $f$} if $\uV$ has a representative $r_V \colon V \to N$ such that $r_V$ is transverse to $f$.
-	In this case we define the pullback $f^*(\uV)$ to be $\underline{f^*(V)} \in C^*_\Gamma(M)$.
-
-	We will write the set of cochains transverse to $f$ as $C^*_{\Gamma \pf f}(N)$.
-\end{definition}
-
-We notice that the transversality situation here is simpler than the more general ones in the preceding section, as $f$ is a fixed map.
-
-\begin{proposition}\label{P: trans to f}
-	Given a smooth map of manifolds without boundary $f \colon M \to N$, the set $C^*_{\Gamma \pf f}(N)$ is a subcomplex of $C^*_{\Gamma}(N)$, and the map $f^*:C^*_{\Gamma \pf f}(N) \to C^*_{\Gamma}(M)$ is a well-defined chain map.
-\end{proposition}
-
-\begin{proof}
-	To show that $f^*$ is well defined on $C^*_{\Gamma \pf f}(N)$ we must show that it does not depend on the choice of representative $V$.
-	Suppose $V$ and $V'$ both represent $\uV$ and are transverse to $f$.
-	Then $V \sqcup -V'$ is transverse to $f$ and an element of $Q^*(N)$.
-	So by \cref{L: pullback map Q}, $f^*(V \sqcup -V')$, which is by definition $(V \sqcup -V') \times_N M = (V \times_N M) \sqcup (-V' \times_N M)$ mapping to $M$, is an element of $Q^*(M)$.
-	So $f^*(V)$ and $f^*(V')$ represent the same element of $C^*_{\Gamma}(M)$.
-	Thus $f^*$ is well defined.
-
-	If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $r_V \colon V \to N$ and $r_W \colon W \to N$ that are transverse to $f$, then $\uV+\uW$ can be represented by $V \sqcup W$, which will also be transverse to $f$.
-	So $C^*_{\Gamma \pf f}(N)$ is closed under addition.
-	If $r_V \colon V \to N$ is transverse to $f$ then so is $-r_V$, i.e.\ $r_V$ with the opposite co-orientation, so $C^*_{\Gamma \pf f}(N)$ is closed under negation.
-	The empty map $\emptyset \to N$ is always transverse to $f$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma \pf f}(N)$.
-	Finally, if $\uV$ is represented by $r_V \colon V \to N$ transverse to $f$, then by definition $\bd V \to N$ is transverse to $f$, so $\bd \uV \in C^*_{\Gamma \pf f}(N)$.
-	Therefore, $C^*_{\Gamma \pf f}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
-
-	To see that $f^*$ is a homomorphism, let $V,W \to N$ represent elements of $C^*_{\Gamma}(N)$ that are transverse to $f$.
-	Then
-	$$f^*(\uV+\uW) = \underline{f^*(V \sqcup W)} = \underline{f^*(V) \sqcup f^*(W)} = \underline{f^*(V)}+\underline{f^*(W)},$$
-	using the definitions and obvious properties of the pullback.
-	Furthermore, as $\bd M = \emptyset$, $f^*$ is a chain map by \cref{leibniz}, .
-\end{proof}
-
-\begin{remark}
-	While $C^*_{\Gamma \pf f}(N)$ is a subcomplex, it is not closed under taking cup products, even when they are well defined.
-	As an example, let $f \colon M \to N$ be the inclusion of the $x$-axis into the plane $\R^2$.
-	Let $V$ be represented by an embedding of $\R$ into $\R^2$ as the line $y = x$, and let $W$ similarly correspond to $y = -x$, with any co-orientations.
-	Then $\uV \uplus \uW$ is represented by the embedding of the origin into $\R^2$, but this is not transverse to $f$, even though both $V$ and $W$ are transverse to $f$.
-\end{remark}
-
-\subsubsection{Kronecker pairing}\label{S: Kronecker}
-\greg{Should this section go here?}
-Using similar arguments to those in \cref{S: product pullbacks}, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
-
-The partially-defined cap product yields a partially-defined pairing
-$$C^i_\Gamma(M) \times C_i^\Gamma(M) \xr{\nplus} C_0^\Gamma(M) \xr{\aug}\Z,$$
-where $\aug \colon C_0^\Gamma(M) \to \Z$ is the augmentation map of \cref{D: aug}.
-We consider here the extent to which this pairing corresponds to a function $C^i_\Gamma(M) \to \Hom(C_i^\Gamma(M),\Z)$.
-This situation is closely related to the preceding discussion of pullbacks.
-
-\begin{definition}\label{D: transverse to cohain}
-	Let $\uV \in C^i_\Gamma(M)$ be a geometric cochain.
-	We write $C_i^{\Gamma \pf \uV}(M)$ for the subgroup of $C_i^\Gamma(M)$ generated by geometric $i$-chains simply transverse to $\uV$.
-\end{definition}
-
-\begin{proposition}
-	Given a geometric cochain $\uV \in C^i_\Gamma(M)$, the map $\aug(\uV\nplus -):C_i^{\Gamma \pf \uV}(M) \to \Z$ is a well-defined homomorphism.
-\end{proposition}
-
-\begin{proof}
-	We first observe that $\uV\nplus -$ is defined on all elements of $C_i^{\Gamma \pf \uV}(M)$.
-	If $\uW \in C_i^\Gamma(M)$ can be written as a sum $\uW = \sum \underline{W_i}$ with each $\underline{W_i}$ simply transverse to $\uV$, then $\uV\nplus \uW$ is well defined as $\sum \uV\nplus \underline{W_i}$ by \cref{T: multicup}.
-	The element $0 \in C_i^\Gamma(M)$, as represented by the empty map, is simply transverse to $\uV$ with $\uV\nplus 0 = 0$, and if $\uW$ is transverse to $\uV$ then so is $-\uW$.
-	\cref{D: multicup,T: multicup} imply that $\uV \nplus -$ is a homomorphism.
-	We know that $\aug$ is a homomorphism, so the proposition follows.
-\end{proof}
-
-So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom\left(C_i^{\Gamma \pf \uV}(M),\Z\right)$, but of course we will not in general obtain an element of $\Hom\left(C_i^{\Gamma}(M), \Z \right)$ due to transversality requirements.
-
-\begin{comment}
-	\begin{proof}
-		If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $f \colon V \to N$ and $g \colon W \to N$ that are transverse to $h$, then $\uV+\uW$ is represented by $V \sqcup W$, which will also be transverse to $h$.
-		So $C^*_{\Gamma \pf h}(N)$ is closed under addition.
-		If $f \colon V \to N$ is transverse to $h$ then so is $-f$, i.e.\ $f$ with the opposite co-orientation, so $C^*_{\Gamma \pf h}(N)$ is closed under taking negatives.
-		The empty map $\emptyset \to N$ is always transverse to $h$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma \pf h}(N)$.
-		Finally, if $\uV$ is represented by $f \colon V \to N$ transverse to $h$, then by definition $\bd V \to N$ is transverse to $h$, so $\bd \uV \in C^*_{\Gamma \pf h}(N)$.
-		Therefore, $C^*_{\Gamma \pf h}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
-
-		To how that $h^*$ is well defined on $C^*_{\Gamma \pf h}(N)$ we must show that it does not depend on the choice of representative $V$.
-		Suppose $V$ and $V'$ both represent $\uV$ and are transverse to $h$.
-		Then $V \sqcup -V'$ is transverse to $h$ and an element of $Q^*(N)$.
-		So by \cref{L: pullback map Q}, $h^*(V \sqcup -V')$, which is by definition $(V \sqcup -V') \times_N M = (V \times_N M) \sqcup (-V' \times_N M)$ mapping to $M$, is an element of $Q^*(M)$.
-		So $h^*(V)$ and $h^*(V')$ represent the same element of $C^*_{\Gamma}(M)$.
-		Thus $h^*$ is well defined.
-
-		To see that $h^*$ is a homomorphism, let $V,W \to N$ represent elements of $C^*_{\Gamma}(N)$ that are transverse to $h$.
-		Then
-		$$h^*(\uV+\uW) = \underline{h^*(V \sqcup W)} = \underline{h^*(V) \sqcup h^*(W)} = \underline{h^*(V)}+\underline{h^*(W)},$$
-		using the definitions, obvious properties of the pullback and \cref{L: co/chains well defined}.
-		Furthermore, $h^*$ is a chain map by \cref{leibniz}, as $\bd M = \emptyset$.
-	\end{proof}
-\end{comment}
 
 
 \subsection{Properties of the chain and cochain products}\label{S: (co)chain properties}
@@ -1242,6 +1138,141 @@ While \cref{P: perturb transverse to map} as stated was what we needed to prove 
 	For $W_i$ that are not necessarily compact, we further modify the argument as in the proof of the proposition by using open covers with compact closures to find functions $\phi_i \colon M \to \R$ as in that proof using the pairs $(W_i, Y_i)$.
 	If we then let $\phi \colon M \to \R$ be such that $0 < \phi(y) < \min\{\phi_i(y)\}$ for all $i$ and all $y \in M$, the rest of the argument applies to show that again $W_i \times I \xr{r_{W_i} \times \id_I} M \times I \xr{H} M$ is transverse to $r_{Y_i}$ for all $i$, in addition to the original result that $H(-,1)r_V$ is transverse to $r_X$.
 \end{proof}
+
+
+\subsection{Transverse complexes}\label{S: product pullbacks}
+\greg{Should this section go here?}
+
+In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon N \to M$ of manifolds without boundary yields a well-defined cohomology map $f^* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$.
+In this section, we consider $f^*$ as a partially-defined map of cochain complexes $C^*_\Gamma(M) \to C^*_\Gamma(N)$.
+In general, $f^*$ will not be fully defined, as we cannot form pullbacks of cochains that are not transverse to $f$.
+To solve this problem, we define a subcomplex of $C^*_\Gamma(M)$ that will be quasi-isomorphic to $C^*_\Gamma(M)$ if $f$ is proper.
+
+\begin{definition}\label{D: transverse to map}
+	Let $f \colon N \to M$ be a smooth map from a manifold with corners to a manifold without boundary, and let $\uV \in C^*_\Gamma(M)$.
+	We will say that $\uV$ is \textbf{transverse to $f$} if $\uV$ has a representative $r_V \colon V \to M$ such that $r_V$ is transverse to $f$.
+	In this case we define the pullback $f^*(\uV)$ to be $\underline{f^*(V)} \in C^*_\Gamma(N)$.
+
+	We will write the set of cochains transverse to $f$ as $C^*_{\Gamma \pf f}(M)$.
+\end{definition}
+
+We notice that the transversality situation here is simpler than the more general ones in \cref{S: chain products}, as $f$ is a fixed map.
+We also remark that given a cubulation $X$ of $M$, it determines a proper map from the disjoint union of all the $\dim(M)$-cubes of $X$ to $M$, which we can also write $F \colon X \to M$ with an abuse of notation.
+In this case, $C^*_{\Gamma \pf F}(M) = C^*_{\Gamma \pf X}(M)$.
+
+\begin{proposition}\label{P: trans to f}
+	Given a smooth map from a manifolds with corners to a manifold without boundary $f \colon N \to M$, the set $C^*_{\Gamma \pf f}(M)$ is a subcomplex of $C^*_{\Gamma}(M)$.
+	If $\bd N = \emptyset$, then $f^*:C^*_{\Gamma \pf f}(M) \to C^*_{\Gamma}(N)$ is a well-defined chain map.
+\end{proposition}
+
+\begin{proof}
+	If $\uV,\uW \in C^*_\Gamma(M)$ are represented by $r_V \colon V \to M$ and $r_W \colon W \to M$ that are transverse to $f$, then $\uV+\uW$ can be represented by $V \sqcup W$, which will also be transverse to $f$.
+	So $C^*_{\Gamma \pf f}(M)$ is closed under addition.
+	If $r_V \colon V \to M$ is transverse to $f$ then so is $-r_V$, i.e.\ $r_V$ with the opposite co-orientation, so $C^*_{\Gamma \pf f}(M)$ is closed under negation.
+	The empty map $\emptyset \to M$ is always transverse to $f$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma \pf f}(M)$.
+	Finally, if $\uV$ is represented by $r_V \colon V \to M$ transverse to $f$, then by definition $\bd V \to M$ is transverse to $f$, so $\bd \uV \in C^*_{\Gamma \pf f}(M)$.
+	Therefore, $C^*_{\Gamma \pf f}(M)$ is a subcomplex of $C^*_{\Gamma}(M)$.
+
+	Now suppose $\bd N = \emptyset$.
+	To show that $f^*$ is well defined on $C^*_{\Gamma \pf f}(M)$ we must show that it does not depend on the choice of representative $V$.
+	Suppose $V$ and $V'$ both represent $\uV$ and are transverse to $f$.
+	Then $V \sqcup -V'$ is transverse to $f$ and an element of $Q^*(M)$.
+	So by \cref{L: pullback map Q}, $f^*(V \sqcup -V')$, which is by definition $(V \sqcup -V') \times_M N = (V \times_M N) \sqcup (-V' \times_M N)$ mapping to $N$, is an element of $Q^*(N)$.
+	So $f^*(V)$ and $f^*(V')$ represent the same element of $C^*_{\Gamma}(N)$.
+	Thus $f^*$ is well defined.
+
+	To see that $f^*$ is a homomorphism, let $V,W \to M$ represent elements of $C^*_{\Gamma}(M)$ that are transverse to $f$.
+	Then
+	$$f^*(\uV+\uW) = \underline{f^*(V \sqcup W)} = \underline{f^*(V) \sqcup f^*(W)} = \underline{f^*(V)}+\underline{f^*(W)},$$
+	using the definitions and obvious properties of the pullback.
+	Furthermore, as $\bd N = \emptyset$, $f^*$ is a chain map by \cref{leibniz}, .
+\end{proof}
+
+\begin{remark}
+	While $C^*_{\Gamma \pf f}(N)$ is a subcomplex, it is not closed under taking cup products, even when they are well defined.
+	As an example, let $f \colon M \to N$ be the inclusion of the $x$-axis into the plane $\R^2$.
+	Let $V$ be represented by an embedding of $\R$ into $\R^2$ as the line $y = x$, and let $W$ similarly correspond to $y = -x$, with any co-orientations.
+	Then $\uV \uplus \uW$ is represented by the embedding of the origin into $\R^2$, but this is not transverse to $f$, even though both $V$ and $W$ are transverse to $f$.
+	For more general constructions that address this issue, see \cite{GBF47}.
+\end{remark}
+
+Generalizing \cref{T: transverse complex}, we have the following.
+
+\begin{theorem}\label{T: transverse qi}
+	If $f \colon N \to M$ is a proper map from a manifold with corners to a manifold without boundary, then the inclusion $C^*_{\Gamma \pf f}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism.
+\end{theorem}
+\begin{proof}
+	The proof is identical to that of \cref{T: transverse complex}, using \cref{P: perturb transverse to map} in place of \cref{P: ball stability}.
+\end{proof}
+
+The following corollary is immediate from \cref{{T: transverse qi}} and the construction in \cref{D: cohomology pullback and homology transfer}.
+It says that, in the case at hand, the cohomology map of \cref{D: cohomology pullback and homology transfer} is induced by a chain map after restricting to a subcomplex of $C^*_\Gamma(M)$.
+
+\begin{corollary}
+	Let $f \colon N \to M$ be a proper map between manifolds without boundary.
+	The following diagram commutes, in which the top map is induced by the chain map $f^*$, the vertical map is induced by the inclusion $C^*_{\Gamma \pf f}(M) \into C^*_\Gamma(M)$, and the bottom map is that of \cref{D: cohomology pullback and homology transfer}.
+	\begin{equation*}
+	\begin{tikzcd}
+		H^*_\Gamma(N) & H^*(C^*_{\Gamma \pf f}(M)) \arrow[l]  \arrow[d,"\cong"]\\
+		& H^*_\Gamma(M). \arrow[lu]
+	\end{tikzcd}
+	\end{equation*}
+\end{corollary}
+
+\subsubsection{Kronecker pairing}\label{S: Kronecker}
+\greg{Should this section go here?}
+Using similar arguments to those in \cref{S: product pullbacks}, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
+
+The partially-defined cap product yields a partially-defined pairing
+$$C^i_\Gamma(M) \times C_i^\Gamma(M) \xr{\nplus} C_0^\Gamma(M) \xr{\aug}\Z,$$
+where $\aug \colon C_0^\Gamma(M) \to \Z$ is the augmentation map of \cref{D: aug}.
+We consider here the extent to which this pairing corresponds to a function $C^i_\Gamma(M) \to \Hom(C_i^\Gamma(M),\Z)$.
+This situation is closely related to the preceding discussion of pullbacks.
+
+\begin{definition}\label{D: transverse to cohain}
+	Let $\uV \in C^i_\Gamma(M)$ be a geometric cochain.
+	We write $C_i^{\Gamma \pf \uV}(M)$ for the subgroup of $C_i^\Gamma(M)$ generated by geometric $i$-chains simply transverse to $\uV$.
+\end{definition}
+
+\begin{proposition}
+	Given a geometric cochain $\uV \in C^i_\Gamma(M)$, the map $\aug(\uV\nplus -):C_i^{\Gamma \pf \uV}(M) \to \Z$ is a well-defined homomorphism.
+\end{proposition}
+
+\begin{proof}
+	We first observe that $\uV\nplus -$ is defined on all elements of $C_i^{\Gamma \pf \uV}(M)$.
+	If $\uW \in C_i^\Gamma(M)$ can be written as a sum $\uW = \sum \underline{W_i}$ with each $\underline{W_i}$ simply transverse to $\uV$, then $\uV\nplus \uW$ is well defined as $\sum \uV\nplus \underline{W_i}$ by \cref{T: multicup}.
+	The element $0 \in C_i^\Gamma(M)$, as represented by the empty map, is simply transverse to $\uV$ with $\uV\nplus 0 = 0$, and if $\uW$ is transverse to $\uV$ then so is $-\uW$.
+	\cref{D: multicup,T: multicup} imply that $\uV \nplus -$ is a homomorphism.
+	We know that $\aug$ is a homomorphism, so the proposition follows.
+\end{proof}
+
+So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom\left(C_i^{\Gamma \pf \uV}(M),\Z\right)$, but of course we will not in general obtain an element of $\Hom\left(C_i^{\Gamma}(M), \Z \right)$ due to transversality requirements.
+
+\begin{comment}
+	\begin{proof}
+		If $\uV,\uW \in C^*_\Gamma(N)$ are represented by $f \colon V \to N$ and $g \colon W \to N$ that are transverse to $h$, then $\uV+\uW$ is represented by $V \sqcup W$, which will also be transverse to $h$.
+		So $C^*_{\Gamma \pf h}(N)$ is closed under addition.
+		If $f \colon V \to N$ is transverse to $h$ then so is $-f$, i.e.\ $f$ with the opposite co-orientation, so $C^*_{\Gamma \pf h}(N)$ is closed under taking negatives.
+		The empty map $\emptyset \to N$ is always transverse to $h$ (since there are no points at which to check the tangent space condition), and so $0 \in C^*_{\Gamma \pf h}(N)$.
+		Finally, if $\uV$ is represented by $f \colon V \to N$ transverse to $h$, then by definition $\bd V \to N$ is transverse to $h$, so $\bd \uV \in C^*_{\Gamma \pf h}(N)$.
+		Therefore, $C^*_{\Gamma \pf h}(N)$, is a subcomplex of $C^*_{\Gamma}(N)$.
+
+		To how that $h^*$ is well defined on $C^*_{\Gamma \pf h}(N)$ we must show that it does not depend on the choice of representative $V$.
+		Suppose $V$ and $V'$ both represent $\uV$ and are transverse to $h$.
+		Then $V \sqcup -V'$ is transverse to $h$ and an element of $Q^*(N)$.
+		So by \cref{L: pullback map Q}, $h^*(V \sqcup -V')$, which is by definition $(V \sqcup -V') \times_N M = (V \times_N M) \sqcup (-V' \times_N M)$ mapping to $M$, is an element of $Q^*(M)$.
+		So $h^*(V)$ and $h^*(V')$ represent the same element of $C^*_{\Gamma}(M)$.
+		Thus $h^*$ is well defined.
+
+		To see that $h^*$ is a homomorphism, let $V,W \to N$ represent elements of $C^*_{\Gamma}(N)$ that are transverse to $h$.
+		Then
+		$$h^*(\uV+\uW) = \underline{h^*(V \sqcup W)} = \underline{h^*(V) \sqcup h^*(W)} = \underline{h^*(V)}+\underline{h^*(W)},$$
+		using the definitions, obvious properties of the pullback and \cref{L: co/chains well defined}.
+		Furthermore, $h^*$ is a chain map by \cref{leibniz}, as $\bd M = \emptyset$.
+	\end{proof}
+\end{comment}
+
+
 
 
 
@@ -2010,7 +2041,7 @@ Nevertheless, a directly analogous construction to the discussion in \cref{D: tr
 \end{proof}
 
 Next, we notice that the chain map $\mc I \colon C^*_{\Gamma \pf (X\times X)}(M\times M) \to K^*(X \times X)$ of \cref{D: intersection homomorphism} restricts to a chain map on $C^*_{\Gamma \pf P}(M\times M)$.
-Furthermore, if we have any map $f \colon N \to M \times M$ that is transverse to every element of $C^*_{\Gamma \pf P}(M\times M)$, then we have a pullback chain map $f^* \colon C^*_{\Gamma \pf P}(M\times M) \to C^*_\Gamma(N)$ given by $f^*(\uV) = \underline{V \times_{M \times M} N}$ as a pullback mapping to $N$, where $V$ is any representative of $\uV$; cf.\ \cref{S: cohomology pullback} and the statement and proof of \cref{P: trans to f}.
+Furthermore, if we have any map $f \colon N \to M \times M$ that is transverse to every element of $C^*_{\Gamma \pf P}(M\times M)$ and if $\bd N = \emptyset$ , then we have a pullback chain map $f^* \colon C^*_{\Gamma \pf P}(M\times M) \to C^*_\Gamma(N)$ given by $f^*(\uV) = \underline{V \times_{M \times M} N}$ as a pullback mapping to $N$, where $V$ is any representative of $\uV$; cf.\ \cref{S: cohomology pullback} and the statement and proof of \cref{P: trans to f}.
 In particular, this is the case for $\diag \colon M \to M \times M$, in which case we have a well defined chain map $\diag^* \colon C^*_{\Gamma \pf X\times P}(M\times M) \to C^*_\Gamma(M)$.
 In fact, we can say a bit more: If $V \in  C^*_{\Gamma \pf P}(M\times M)$, then we know that $V$ is transverse to the composition $E \into M \xr{\diag} M \times M$ for any face $E$ of $X$.
 So by \cref{L: transverse to pullback}, the pullback $V \times_{M \times M} M \to M$ is transverse to the inclusion $E \into M$.

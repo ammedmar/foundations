@@ -338,7 +338,7 @@ The needed versions of these results is established in the following proposition
 	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id_M$ and $H(-,1) r_V \colon V \to M$ is transverse to the cubulation.
 	In other words, there is a proper universal homotopy from $r_V$ to a map that is transverse to the cubulation.
 
-	Furthermore, given another proper map $r_W \colon W \to M$ that is transverse to the cubulation, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to the cubulation.
+	Furthermore, given another proper map $r_W \colon W \to M$ from a manifold with corners that is transverse to the cubulation, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to the cubulation.
 \end{proposition}
 
 Before proving the proposition, which is somewhat technical, we use it to prove \cref{T: transverse complex}, which states that $H^*(C^*_{\Gamma \pf X}(M)) \to H^*(C_\Gamma^*(M))$ is an isomorphism.
@@ -358,7 +358,8 @@ Before proving the proposition, which is somewhat technical, we use it to prove 
 	Let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, let $W'$ be the precochain $W \xr{H(-,1)r_W} M$, and let $Y$ be the precochain $W \times I \xr{H\circ (r_W \times \id_I)} M$.
 	Let $Z$ be the precochain $V' \sqcup -Y$, which is transverse to the cubulation.
 	We note that $\bd V' \sqcup -W'$ is the image of $\bd V \sqcup -W$ after composing with $H(-,1)$, and so it is in $Q^*(M)$ by \cref{L: Q preservation}, using that we can co-orient $H$ and $H(-,1)$ as in \cref{S: co-oriented homotopy}.
-	Also as in \cref{S: co-oriented homotopy}, for the co-oriented case we have $\bd Y = W' \sqcup -W \sqcup B$, where $B$ is the pre(co)chain $\bd W \times I \xr{H\circ (r_{\bd V} \times \id_I)} M$ (cf. the proof of \cref{C: homotopy}).
+	Also as in \cref{S: co-oriented homotopy}, for the co-oriented case we have $\bd Y = W' \sqcup -W \sqcup B$, where $B$ is the pre(co)chain $\bd W \times I \xr{H\circ (r_{\bd W} \times \id_I)} M$ (cf. the proof of \cref{C: homotopy}).
+	Note that $B$ is also transverse to the cubulation as part of the boundary of $Y$.
 	Continuing in the co-oriented case, we now compute
 	\begin{align*}
 		\bd Z \sqcup -W &= \bd V' \sqcup -\bd Y \sqcup -W\\
