@@ -1,3 +1,52 @@
 \indexentry{Table of Contents|hyperpage}{3}
 \indexentry{acknowledgments|hyperpage}{5}
-\indexentry{conventions|hyperpage}{5}
+\indexentry{conventions|hyperindexformat{\textbf}}{5}
+\indexentry{conventions!dimension labels|hyperpage}{5}
+\indexentry{conventions!evaluation of tensors|hyperpage}{5}
+\indexentry{$\sqcup$|hyperpage}{5}
+\indexentry{smooth!maps of subsets of Euclidean space|hyperindexformat{\textbf}}{5}
+\indexentry{diffeomorphism|hyperindexformat{\textbf}}{5}
+\indexentry{$\R^n_k$|hyperpage}{6}
+\indexentry{manifold with corners|hyperindexformat{\textbf}}{6}
+\indexentry{proper map|hyperindexformat{\textbf}}{6}
+\indexentry{smooth!map of manifold with corners|hyperindexformat{\textbf}}{7}
+\indexentry{tangent bundle|hyperindexformat{\textbf}}{7}
+\indexentry{conventions!dimension labels|hyperpage}{7}
+\indexentry{depth|hyperindexformat{\textbf}}{7}
+\indexentry{stratum|hyperindexformat{\textbf}}{7}
+\indexentry{depth|hyperindexformat{\textbf}}{7}
+\indexentry{$S^k(W)$|hyperpage}{7}
+\indexentry{boundary!local boundary component (of manifold with corners)|hyperpage}{8}
+\indexentry{boundary!of manifold with corners|hyperindexformat{\textbf}}{8}
+\indexentry{$\bd^k$|hyperindexformat{\textbf}}{8}
+\indexentry{transversality!classical|hyperpage}{9}
+\indexentry{transversality!manifolds with corners|hyperindexformat{\textbf}}{9}
+\indexentry{regular value|hyperindexformat{\textbf}}{10}
+\indexentry{transversality!naive|hyperindexformat{\textbf}}{10}
+\indexentry{test|hyperpage}{10}
+\indexentry{transversality!Transversality Theorem|hyperpage}{10}
+\indexentry{$\epsilon$-neighborhood theorem|hyperpage}{11}
+\indexentry{transversality!Transversality Homotopy Theorem|hyperpage}{11}
+\indexentry{proper map!homotopy criterion|hyperpage}{12}
+\indexentry{tranversality!Transversality Theorem|hyperpage}{12}
+\indexentry{tranversality!Transversality Theorem|hyperpage}{13}
+\indexentry{pullback|hyperindexformat{\textbf}}{14}
+\indexentry{fiber product|hyperindexformat{\textbf}}{14}
+\indexentry{pullback!manifold with corners|hyperpage}{14}
+\indexentry{pullback!stratification|hyperpage}{14}
+\indexentry{pullback!boundary formula|hyperpage}{15}
+\indexentry{pullback!tangent space|hyperpage}{16}
+\indexentry{pullback!normal bundle|hyperpage}{16}
+\indexentry{fiber product!of submanifolds|hyperpage}{16}
+\indexentry{immersion|hyperpage}{17}
+\indexentry{pullback!of immersion|hyperpage}{17}
+\indexentry{fiber product!of immersions|hyperpage}{17}
+\indexentry{transversality!with respect to pullbacks|hyperpage}{17}
+\indexentry{pullbacks!transversality of|hyperpage}{17}
+\indexentry{fiber products!more than two inputs|hyperpage}{18}
+\indexentry{fiber products!more than two inputs!redundancy of transversality conditions|hyperpage}{19}
+\indexentry{geometric chains!with coefficients|hyperpage}{119}
+\indexentry{geometric homology!with coefficients|hyperpage}{119}
+\indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{189}
+\indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{189}
+\indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{189}

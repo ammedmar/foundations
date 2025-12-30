@@ -939,7 +939,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 
 	We now claim that we can construct $F$ almost exactly as in \cref{P: ball stability}.
 	Recall that we let $M_\epsilon$ be an $\epsilon$-neighborhood of a proper embedding of $M$ into some $\R^N$ in the sense of the $\epsilon$-Neighborhood Theorem of \cite[Section 2.3]{GuPo74}, with $\epsilon$ a smooth positive function of $M$ and $M_\epsilon = \{z \in \R^N \mid |z-y|<\epsilon(y) \text{ for some }y \in M\}$.
-	We may assume $\epsilon$ is a bounded function.
+	We may assume $\epsilon$ is bounded by $1$ (see \cite[Exercise 2.3.1]{GuPo74}).
 	Let $\pi_\epsilon: M_\epsilon \to M$ be the submersion.
 	We define $f: M \times D^N \to M_\epsilon$ by $f(y, s) = y + \eta(y) s$, where $\eta \colon M \to \R$ is a smooth function such that $0 < \eta(y) < \epsilon(y)$ for all $y \in M$.
 	As $\eta > 0$, this is clearly a submersion (onto its image) at all points.
@@ -1023,7 +1023,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 
 	Now, using \cref{L: minimizer}, we choose a smooth function $\phi \colon M \to \R$ such that for all $y \in M$ we have $0<\phi(y)<\epsilon_\ell$ if $y \in \bar{\mc U_\ell}$.
 	Let $M \times_\phi D^N = \{(y,s) \in M \times D^N \mid |s|<\phi(y)\}$.
-	By our construction, for all $k\geq 0$ we have $\Upsilon_k(-,s) \times \id_{\R^n} \colon \bd^k W \times \R^n \to M \times \R^n$ transverse to $ei_{\bd^j X}$ for at each $(w,s,z) \in \bd^k W \times D^N \times \R^n$ such that $(w,s) \in (r_Wi_{\bd^{k}W} \times \id_{D^N})^{-1}(M\times_\phi D^N) = \{(w,s) \in \bd^k W \times D^N \mid |s|<\phi(r_Wi_{\bd^k W}(w))\}$.
+	By our construction, for all $k\geq 0$ we have $\Upsilon_k(-,s) \times \id_{\R^n} \colon \bd^k W \times \R^n \to M \times \R^n$ transverse to $ei_{\bd^j X}$ at each $(w,s,z) \in \bd^k W \times D^N \times \R^n$ such that $(w,s) \in (r_Wi_{\bd^{k}W} \times \id_{D^N})^{-1}(M\times_\phi D^N) = \{(w,s) \in \bd^k W \times D^N \mid |s|<\phi(r_Wi_{\bd^k W}(w))\}$.
 
 	We now modify our above constructions as follows.
 	Let $\hat f: M \times D^N \to M_\epsilon \subset \R^N$ be given by $\hat f(y, s) = y +\phi(y) \eta(y) s$; as $\phi(y)\eta(y)>0$, this is again a submersion onto its image at all points.
@@ -1144,8 +1144,8 @@ While \cref{P: perturb transverse to map} as stated was what we needed to prove 
 \greg{Should this section go here?}
 
 In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon N \to M$ of manifolds without boundary yields a well-defined cohomology map $f^* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$.
-In this section, we consider $f^*$ as a partially-defined map of cochain complexes $C^*_\Gamma(M) \to C^*_\Gamma(N)$.
-In general, $f^*$ will not be fully defined, as we cannot form pullbacks of cochains that are not transverse to $f$.
+In this section, we consider $f^*$ as a partially-defined map of cochain complexes $f^* \colon C^*_\Gamma(M) \to C^*_\Gamma(N)$.
+In general, $f^*$ will not be fully defined as a chain map, as we cannot form pullbacks of cochains that are not transverse to $f$.
 To solve this problem, we define a subcomplex of $C^*_\Gamma(M)$ that will be quasi-isomorphic to $C^*_\Gamma(M)$ if $f$ is proper.
 
 \begin{definition}\label{D: transverse to map}
@@ -1161,7 +1161,7 @@ We also remark that given a cubulation $X$ of $M$, it determines a proper map fr
 In this case, $C^*_{\Gamma \pf F}(M) = C^*_{\Gamma \pf X}(M)$.
 
 \begin{proposition}\label{P: trans to f}
-	Given a smooth map from a manifolds with corners to a manifold without boundary $f \colon N \to M$, the set $C^*_{\Gamma \pf f}(M)$ is a subcomplex of $C^*_{\Gamma}(M)$.
+	Given a smooth map from a manifold with corners to a manifold without boundary $f \colon N \to M$, the set $C^*_{\Gamma \pf f}(M)$ is a subcomplex of $C^*_{\Gamma}(M)$.
 	If $\bd N = \emptyset$, then $f^*:C^*_{\Gamma \pf f}(M) \to C^*_{\Gamma}(N)$ is a well-defined chain map.
 \end{proposition}
 
@@ -1217,6 +1217,7 @@ It says that, in the case at hand, the cohomology map of \cref{D: cohomology pul
 		& H^*_\Gamma(M). \arrow[lu]
 	\end{tikzcd}
 	\end{equation*}
+	In particular, the image of the top map is independent of the choice of smooth $f$ within its (not necessarily proper) homotopy class.
 \end{corollary}
 
 \subsubsection{Kronecker pairing}\label{S: Kronecker}
@@ -2042,7 +2043,7 @@ Nevertheless, a directly analogous construction to the discussion in \cref{D: tr
 
 Next, we notice that the chain map $\mc I \colon C^*_{\Gamma \pf (X\times X)}(M\times M) \to K^*(X \times X)$ of \cref{D: intersection homomorphism} restricts to a chain map on $C^*_{\Gamma \pf P}(M\times M)$.
 Furthermore, if we have any map $f \colon N \to M \times M$ that is transverse to every element of $C^*_{\Gamma \pf P}(M\times M)$ and if $\bd N = \emptyset$ , then we have a pullback chain map $f^* \colon C^*_{\Gamma \pf P}(M\times M) \to C^*_\Gamma(N)$ given by $f^*(\uV) = \underline{V \times_{M \times M} N}$ as a pullback mapping to $N$, where $V$ is any representative of $\uV$; cf.\ \cref{S: cohomology pullback} and the statement and proof of \cref{P: trans to f}.
-In particular, this is the case for $\diag \colon M \to M \times M$, in which case we have a well defined chain map $\diag^* \colon C^*_{\Gamma \pf X\times P}(M\times M) \to C^*_\Gamma(M)$.
+In particular, this is the case for $\diag \colon M \to M \times M$, in which case we have a well defined chain map $\diag^* \colon C^*_{\Gamma \pf P}(M\times M) \to C^*_\Gamma(M)$.
 In fact, we can say a bit more: If $V \in  C^*_{\Gamma \pf P}(M\times M)$, then we know that $V$ is transverse to the composition $E \into M \xr{\diag} M \times M$ for any face $E$ of $X$.
 So by \cref{L: transverse to pullback}, the pullback $V \times_{M \times M} M \to M$ is transverse to the inclusion $E \into M$.
 So the image of $\diag^*$ is in the subcomplex $C^*_{\Gamma \pf X}(M)$.
@@ -2073,7 +2074,7 @@ This allows us to state our key proposition.
 		(\Delta^*\mc I(V))(E) & = \mc I(V)(\Delta (E))\\
 		&=\aug(V \times_{M \times M} \Delta (E)).
 	\end{align*}
-	Note that since $\Delta (E) = \diag(E) - \bd P(E) + P \bd(E)$ and $V \in PC^*_{\Gamma \pf P}(M \times M)$, we have $\Delta(E)$ transverse to $V$, and all other needed transversality for the preceding computations follows from the definitions and discussion above.
+	Note that since $\Delta (E) = \diag(E) - \bd P(E) - P \bd(E)$ and $V \in PC^*_{\Gamma \pf P}(M \times M)$, we have $\Delta(E)$ transverse to $V$, and all other needed transversality for the preceding computations follows from the definitions and discussion above.
 
 	Next, we define $L \colon C^j_{\Gamma \pf P}(M \times M) \to K^{j-1}(X)$ by $$L(\uV)(E) = \aug(V \times_{M \times M} P(E))$$
 	for any representative $V$ of $\uV$.

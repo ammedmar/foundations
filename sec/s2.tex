@@ -9,8 +9,8 @@ By \textbf{smooth} we always mean differentiable of all orders.
 Throughout the paper, all manifolds and maps will be in the smooth category unless noted otherwise.
 
 \begin{definition}\label{D: smooth}
-	If $A \subset \R^n$ and $B \subset \R^m$ are any subsets, we say that $f \colon A \to B$ is \textbf{smooth} if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$.
-	We say that $f$ is a \textbf{diffeomorphism} if $f$ is a homeomorphism and both $f$ and $f^{-1}$ are smooth\footnote{Joyce requires $n = m$ in his definition for $f$ to be a diffeomorphism.
+	If $A \subset \R^n$ and $B \subset \R^m$ are any subsets, we say that $f \colon A \to B$ is \textbf{smooth}\index{smooth!maps of subsets of Euclidean space|textbf} if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$.
+	We say that $f$ is a \textbf{diffeomorphism}\index{diffeomorphism|textbf} if $f$ is a homeomorphism and both $f$ and $f^{-1}$ are smooth\footnote{Joyce requires $n = m$ in his definition for $f$ to be a diffeomorphism.
 	But suppose $f$ is a diffeomorphism as defined here and, without loss of generality, $n>m$.
 	Let $\R^m \subset \R^n$ in the usual way.
 	Then as $f$ extends to a smooth map from a neighborhood of $A$ to $\R^m$, we can certainly consider $f$ as extending to a smooth map from a neighborhood of $A$ to $\R^n$.
@@ -18,7 +18,7 @@ Throughout the paper, all manifolds and maps will be in the smooth category unle
 	So diffeomorphisms in our sense can be made into diffeomorphisms in Joyce's sense, and obviously vice versa.}.
 \end{definition}
 
-With this definition, the notions of smooth charts and atlases for manifolds in the standard setting can be extended to define (smooth) manifolds with corners; see \cite[Section 2]{Joy12}: An $n$-dimensional chart $(U,\phi)$ of the space $W$ has domain $U$ an open subset of $\R^n_k = [0,\infty)^k \times \R^{n-k} \subset \R^n$, and $\phi$ is a homeomorphism from $U$ to $\phi(U) \subset W$.
+With this definition, the notions of smooth charts and atlases for manifolds in the standard setting can be extended to define (smooth) manifolds with corners; see \cite[Section 2]{Joy12}: An $n$-dimensional chart $(U,\phi)$ of the space $W$ has domain $U$ an open subset of $\R^n_k = [0,\infty)^k \times \R^{n-k} \subset \R^n$,\index{$\R^n_k$} and $\phi$ is a homeomorphism from $U$ to $\phi(U) \subset W$.
 Two $n$-dimensional charts $(U,\phi)$ and $(V,\psi)$ are compatible if $\psi^{-1}\phi \colon \phi^{-1}(\phi(U) \cap \psi(V)) \to \psi^{-1}(\phi(U) \cap \psi(V))$ is a diffeomorphism of subsets of $\R^n$.
 An $n$-dimensional atlas for $W$ is a family of pairwise compatible $n$-dimensional charts that cover $W$, and an $n$-dimensional manifold with corners is a second countable Hausdorff space with a maximal $n$-dimensional atlas.
 Our condition that $W$ be second countable is slightly more restrictive than Joyce's definition, which requires only that $W$ be paracompact.
@@ -26,7 +26,7 @@ Our condition that $W$ be second countable is slightly more restrictive than Joy
 The reason for our additional restriction is that we choose to work entirely with subspaces of $\R^\infty$ in order to have a set of such objects, so rather than directly employ Joyce's definition, we define manifolds with corners for the purposes of this text as follows.
 
 \begin{definition}\label{D: MWC}
-	An $n$-dimensional \textbf{manifold with corners} $W$ is a subspace of some $\R^N \subset \R^\infty$ such that each point of $W$ possesses a neighborhood diffeomorphic to an open subset of $\R^n_k$ for some $k$.
+	An $n$-dimensional \textbf{manifold with corners}\index{manifold with corners|textbf} $W$ is a subspace of some $\R^N \subset \R^\infty$ such that each point of $W$ possesses a neighborhood diffeomorphic to an open subset of $\R^n_k$ for some $k$.
 \end{definition}
 
 We note that these local diffeomorphisms provide charts $\phi \colon U \subset \R^n_k \to W$, and these charts are compatible, with $\psi^{-1}\phi \colon \phi^{-1}(\phi(U) \cap \psi(V)) \to \psi^{-1}(\phi(U) \cap \psi(V))$ being a diffeomorphism, even using Joyce's more restrictive notion of diffeomorphism.
@@ -34,7 +34,7 @@ These charts collectively give an atlas, and every atlas extends to a unique max
 So our manifolds with corners are also manifolds with corners by Joyce's definition.
 
 On the other hand, Joyce notes in \cite[Remark 2.11 (see also Remark 6.3)]{Joy12} that his version of manifolds with corners agrees with that of Margalef--Roig and Outerelo Dominguez \cite{MaDo92} (except that they consider the much more general case of possibly infinite-dimensional manifolds and possibly of differentiable class $p<\infty$).
-They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth closed embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92} (in particular, the embeddings are proper maps \cite[Proposition 3.3.4]{MaDo92}).
+They show that when their manifolds with corners (which they simply call manifolds) are second countable, Hausdorff, and of the same finite dimension at all points, they have smooth closed embeddings into finite-dimensional Euclidean spaces \cite[Corollary 11.3.10]{MaDo92} (in particular, the embeddings are proper\footnote{Recall that a map between locally compact Hausdorff spaces is \textbf{proper}\index{proper map|textbf} if the inverse image of any compact set is compact.} maps \cite[Proposition 3.3.4]{MaDo92}).
 Joyce already assumes his manifolds with corners to be paracompact Hausdorff in \cite[Definition 2.1]{Joy12}, so if we add the second countable condition to his definition,\footnote{\label{F: countable}For us this will not be a terrible restriction, as in this case being second countable is the same as being paracompact with a countable number of components.
 Indeed, every regular second countable space is metrizable \cite[Theorem 34.1]{Mu00}, and hence paracompact, and clearly a locally connected second countable space must have a countable number of connected components.
 Conversely, each connected component of a paracompact manifold with corners will be closed, paracompact \cite[Theorem 41.2]{Mu00}, and locally compact (via our charts), so it will be $\sigma$-compact \cite[Appendix A.1]{Sp79}.
@@ -53,11 +53,11 @@ By modeling on $\R^n_k$, our category includes manifolds ($k = 0$ in all charts)
 \end{comment}
 
 \begin{definition}
-	A map $f \colon W \to M$ between manifolds with corners is {(weakly) \bf smooth} if whenever $(U,\phi)$, $(V,\psi)$ are charts for $W$ and $M$ respectively then
+	A map $f \colon W \to M$ between manifolds with corners is {(weakly) \bf smooth}\index{smooth!map of manifold with corners|textbf} if whenever $(U,\phi)$, $(V,\psi)$ are charts for $W$ and $M$ respectively then
 	$$\psi^{-1}f \phi \colon (f\phi)^{-1}\psi(V) \to V$$
 	is smooth.
 
-	The \textbf{tangent bundle} of a manifold with corners is the space of derivations of the ring of smooth real-valued functions.
+	The \textbf{tangent bundle}\index{tangent bundle|textbf} of a manifold with corners is the space of derivations of the ring of smooth real-valued functions.
 	Analogously to smooth manifolds with boundary, if $(U,\phi)$ is a chart of $W$ then $D\phi$ takes the tangent space to $\R^n$ at $x \in U$ isomorphically to the tangent spaces of $W$ at $\phi(x)$.
 	In particular, if $W$ is $n$-dimensional and $x \in W$, then the tangent space at $x$, denoted $T_xW$, is isomorphic to $\R^n$.
 \end{definition}
@@ -76,7 +76,7 @@ Then, by the definition of smooth maps, $f \phi$ extends smoothly to a neighborh
 As $f$ is an embedding, $D(\phi f)_0$ must be injective, so by classical differential topology there is a neighborhood of $0$ in $\R^v$ on which $f\phi$ extends to an embedding with $x$ in the interior \cite[Section 1.3]{GuPo74}.
 In other words, the embedding of $V$ can be extended (locally in some neighborhood of $x$) to an embedding of an ordinary manifold without boundary, and the neighborhood of $x$ in $V$ sits inside a Euclidean neighborhood of this embedding as the diffeomorphic image of $\R^v_k$ for some $k$.
 
-\begin{notation}
+\begin{notation}\index{conventions!dimension labels}
 	Our default notation for manifolds with corners will be capital letters with the corresponding lower case letter denoting the dimension.
 	In other words, $\dim(V) = v$, $\dim(W) = w$, $\dim(M) = m$, etc.
 	We generally reserve $M$ for a manifold without boundary.
@@ -88,9 +88,9 @@ We next need to describe boundaries of manifolds with corners.
 Again see \cite[Section 2]{Joy12} for further details.
 
 \begin{definition}
-	A point $x$ in an $n$-dimensional manifold with corners $W$ has \textbf{depth} $k$ if there is a chart from an open subset of $\R^n_k$ which sends the origin to $x$.
-	The set $S^k(W) \subseteq W$ of elements having depth~$k$ is called the \textbf{stratum of depth $k$}.
-	By \cite[Proposition 2.4.]{Joy12}, $S^k(W)$ is an $n-k$ manifold without boundary.
+	A point $x$ in an $n$-dimensional manifold with corners $W$ has \textbf{depth}\index{depth|textbf} $k$ if there is a chart from an open subset of $\R^n_k$ which sends the origin to $x$.
+	The set $S^k(W) \subseteq W$ of elements having depth~$k$ is called the \textbf{stratum of depth $k$}.\index{stratum|textbf}\index{depth|textbf}
+	By \cite[Proposition 2.4.]{Joy12}, $S^k(W)$\index{$S^k(W)$} is an $n-k$ manifold without boundary.
 \end{definition}
 
 \begin{example}
@@ -112,7 +112,7 @@ To explain in more detail, we have the following definitions.
 \end{figure}
 
 \begin{definition}
-	A \textbf{local boundary component} $\beta$ of $W$ at $x \in W$ is a consistent choice of connected component $\mathbf{b}_V$ of $S^1(W) \cap V$ for any neighborhood $V$ of $x$, with consistent meaning that $\mathbf{b}_{V \cap V'} \subset \mathbf{b}_{V} \cap \mathbf{b}_{V'}$.
+	A \textbf{local boundary component}\index{boundary!local boundary component (of manifold with corners)} $\beta$ of $W$ at $x \in W$ is a consistent choice of connected component $\mathbf{b}_V$ of $S^1(W) \cap V$ for any neighborhood $V$ of $x$, with consistent meaning that $\mathbf{b}_{V \cap V'} \subset \mathbf{b}_{V} \cap \mathbf{b}_{V'}$.
 \end{definition}
 
 Since this notion is local, the number of such components is determined by the depth.
@@ -121,7 +121,7 @@ As another example, letting $\interval = [0,1]$ and so $\interval^3$ the 3-cube,
 
 \begin{definition}\label{D: MWC boundary}
 	Let $W$ be a manifold with corners.
-	Define its \textbf{boundary} $\bd W$ to be the space of pairs $(x, \bb)$ with $x \in W$ and $\bb$ a local boundary component\footnote{Note that if $x \in S^0(W)$ then $x$ does not have any local boundary components and so does not appear in such a pair.} of $W$ at $x$.
+	Define its \textbf{boundary}\index{boundary!of manifold with corners|textbf} $\bd W$ to be the space of pairs $(x, \bb)$ with $x \in W$ and $\bb$ a local boundary component\footnote{Note that if $x \in S^0(W)$ then $x$ does not have any local boundary components and so does not appear in such a pair.} of $W$ at $x$.
 	Define $i_{\bd W} \colon \bd W \to W$ by sending $(x,\bb)$ to $x$.
 \end{definition}
 
@@ -130,7 +130,7 @@ For $\interval^3$, the boundary consists of six closed two-dimensional squares e
 In general, $|i_{\bd W}^{-1}(x)|$ is equal to the depth of $x$.
 
 As in Douady \cite{Doua61}, $\bd W$ is itself a manifold with corners, and the boundary map $i_{\bd W}$ is a smooth immersion \cite[Theorem 3.4]{Joy12}. Note that $S^1(W)$ will always be diffeomorphic to the interior of $\bd W$, i.e.\ $S^0(\bd W) = S^1(W)$.
-Inductively, we let $\bd^k W$ denote $\bd (\bd^{k-1} W)$ with $\bd^0 W = W$, and we let $i_{\bd^k W}$ denote the composite of the boundary maps sending $\bd^k W$ to $W$. The map $i_{\bd^k W}$ takes $S^a(\bd^k W)$ onto $S^{a+k}(W)$, but not, in general, injectively.
+Inductively, we let $\bd^k W$\index{$\bd^k$|textbf} denote $\bd (\bd^{k-1} W)$ with $\bd^0 W = W$, and we let $i_{\bd^k W}$ denote the composite of the boundary maps sending $\bd^k W$ to $W$. The map $i_{\bd^k W}$ takes $S^a(\bd^k W)$ onto $S^{a+k}(W)$, but not, in general, injectively.
 
 \begin{remark}\label{R: bd diff}
 	If $f \colon V \to W$ is a diffeomorphism of manifolds with corners then it must, in particular, take components of $S^i(V)$ diffeomorphically onto corresponding components of $S^i(W)$, and, consequently, given a local boundary component $\mathbf{b}$ at a point $x \in V$, the map $f$ picks out a corresponding local boundary component, say $f_*(\mathbf{b})$ in $W$. We obtain a diffeomorphism $f_\bd \colon \bd V \to \bd W$ by $(x,\mathbf{b})\mapsto (f(x),f_*(\mathbf{b}))$ with $fi_{\bd V} = i_{\bd W} f_\bd$.
@@ -173,13 +173,13 @@ $$\bd (V \times W) = (\bd V \times W) \sqcup (V \times \bd W).$$
 \subsection{Transversality}
 
 Transversality of smooth maps will play a key role, as this is the condition that assures that intersections or, more generally, pullbacks of manifolds (with corners) are also manifolds (with corners).
-Recall that in the classical setting if $f \colon V \to M$ and $g \colon W \to M$ are smooth maps of manifolds without boundary then we say that $f$ and $g$ are \textbf{transverse} if whenever $f(x) = g(y) = z$ for some $x \in V$, $y \in W$, and $z \in M$ we have $Df(T_xV)+Dg(T_yW) = T_z M$.
+Recall that in the classical setting if $f \colon V \to M$ and $g \colon W \to M$ are smooth maps of manifolds without boundary then we say that $f$ and $g$ are \textbf{transverse}\index{transversality!classical} if whenever $f(x) = g(y) = z$ for some $x \in V$, $y \in W$, and $z \in M$ we have $Df(T_xV)+Dg(T_yW) = T_z M$.
 We here discuss the extension of transversality to manifolds with corners, though only in the case where $M$ is without boundary; as noted in \cite[Remark 6.3]{Joy12}, in this special case Joyce's transversality of manifolds with corners is equivalent to the formulation of transversality in \cite[Section 7.2]{MaDo92}.
 More general versions of transversality can be found in \cite[Section 6]{Joy12}.
 
 \begin{definition}{\cite[Special case of Definition 6.1]{Joy12}}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be smooth maps of manifolds with corners to a manifold without boundary.
-	We say $f$ and $g$ are \textbf{transverse} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$, if $x\in S^j(V)$ and $y \in S^k(W)$ then $Df|_{S^j(V)}(T_xS^j(V))+Dg|_{S^k(W)}(T_yS^k(W)) = T_zM$.
+	We say $f$ and $g$ are \textbf{transverse}\index{transversality!manifolds with corners|textbf} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$, if $x\in S^j(V)$ and $y \in S^k(W)$ then $Df|_{S^j(V)}(T_xS^j(V))+Dg|_{S^k(W)}(T_yS^k(W)) = T_zM$.
 	In this case, we often abuse notation by saying that $V$ and $W$ are transverse, leaving the maps tacit.
 	Note that the empty map $\emptyset \to M$ is transverse to all other maps.
 \end{definition}
@@ -189,7 +189,7 @@ Note that in our version of the definition, we use maps of the form $f|_{S^j(V)}
 The following special case of the definition will also sometimes be useful:
 
 \begin{definition}\label{D: regular value}
-If $M = \R$ and $g$ is the inclusion of the point $p$ into $\R$, we will say that $p$ is a \textbf{regular value} for $f \colon V \to M$ when $f$ and $g$ are transverse.
+If $M = \R$ and $g$ is the inclusion of the point $p$ into $\R$, we will say that $p$ is a \textbf{regular value}\index{regular value|textbf} for $f \colon V \to M$ when $f$ and $g$ are transverse.
 \end{definition}
 
 While this definition of transversality is given in terms of the behavior of $f$ and $g$ on the strata $S^j(V)$ and $S^k(W)$, it is sometimes useful to have a reformulation in terms of the boundaries $\bd^j V$ and $\bd^kW$.
@@ -197,8 +197,10 @@ This is the content of \cref{L: simple trans} below, for which we need a further
 
 \begin{definition}\label{D: naive transversality}
 Let $f \colon V \to M$ and $g \colon W \to M$ be maps from manifolds with corners to a manifold without boundary.
-We say that $f$ and $g$ are \textbf{naively transverse} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$ we have $Df(T_xV)+Dg(T_yW) = T_z M$. Note that $x$ and $y$ may be boundary points of $V$ and $W$, the maps $Df$ and $Dg$ being those of \cite[Definition 3.2]{Joy12}.
+We say that $f$ and $g$ are \textbf{naively transverse}\index{transversality!naive|textbf} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$ we have $Df(T_xV)+Dg(T_yW) = T_z M$. Note that $x$ and $y$ may be boundary points of $V$ and $W$, the maps $Df$ and $Dg$ being those of \cite[Definition 3.2]{Joy12}.
 \end{definition}
+
+\index{test}
 
 \begin{comment}
 To be explicit in the case that $x \in V-S^0(V)$ or $y \in W-S^0(W)$ with $f(x) = g(y)$, let $(U_x,\phi_x)$ and $(U_y,\phi_y)$ be charts with $\phi_x(0) = x$ and $\phi_y(0) = y$.
@@ -239,12 +241,12 @@ We put these first transversality results here, as some of the fundamental ideas
 Our transversality theorems will be built primarily using some basic tools that can be found in \cite[Section 2.3]{GuPo74}.
 In particular, we record the following results, referring the reader to \cite[Section 2.3]{GuPo74} for the proofs\footnote{We rephrase the statements of these theorems slightly to better fit our context and notation.}:
 
-\begin{theorem}[Transversality Theorem]\label{T: GP transversality}
+\begin{theorem}[Transversality Theorem]\label{T: GP transversality}\index{transversality!Transversality Theorem}
 	Suppose $F \colon X \times S \to Y$ is a smooth map of manifolds, where only $X$ has boundary, and let $Z$ be any boundaryless submanifold of $Y$.
 	If both $F$ and $F|_{\bd X \times S}$ are transverse to $Z$, then for almost every $s \in S$, both $F(-,s) \colon X \to Y$ and $F(-,s)|_{\bd X} \colon \bd X \to Y$ are transverse to $Z$.
 \end{theorem}
 
-\begin{theorem}[$\epsilon$-Neighborhood Theorem]\label{T: epsilon neighborhood}
+\begin{theorem}[$\epsilon$-Neighborhood Theorem]\label{T: epsilon neighborhood}\index{$\epsilon$-neighborhood theorem}
 	For a compact boundaryless manifold $Y$ in $\R^M$ and a positive number $\epsilon$, let $Y_\epsilon$ be the open set of points in $\R^M$ with distance less than $\epsilon$ from $Y$.
 	If $\epsilon$ is sufficiently small, then each point $w \in Y_\epsilon$ possesses a unique closest point in $Y$, denoted $\pi(w)$.
 	Moreover, the map $\pi \colon Y_\epsilon \to Y$ is a submersion.
@@ -259,7 +261,7 @@ In particular, we record the following results, referring the reader to \cite[Se
 
 These theorems are used in \cite{GuPo74} to prove the following basic transversality result:
 
-\begin{theorem}[Transversality Homotopy Theorem]
+\begin{theorem}[Transversality Homotopy Theorem]\index{transversality!Transversality Homotopy Theorem}
 	Let $X$ be a smooth manifold with boundary.
 	For any smooth map $f \colon X \to Y$ and any boundaryless submanifold $Z$ of the boundaryless manifold $Y$, there exists a smooth map $g \colon X \to Y$ homotopic to $f$ such that $g$ is transverse to $Z$ and $g|_{\bd X}$ is transverse to $Z$.
 \end{theorem}
@@ -340,7 +342,7 @@ Then for some $k$ there exists a closed embedding $e \colon W \to M \times \R^k$
 
 We now need one more particular technical result that will allow us to achieve transversality while keeping proper maps proper.
 
-\begin{lemma}\label{L: nearby proper homotopy}
+\begin{lemma}\label{L: nearby proper homotopy}\index{proper map!homotopy criterion}
 	Let $X$ be a topological space and $M$ a manifold without boundary possessing a metric $d$.
 	Suppose $f \colon X \to M$ is a proper map.
 	Then there exists a continuous function $\varepsilon \colon X \to (0,\infty)$ such that if $g \colon X \to M$ satisfies $d(f(x),g(x)) < \varepsilon(x)$ for all $x \in X$, then $g$ is proper and homotopic to $f$ by a proper homotopy.
@@ -362,7 +364,7 @@ We now apply the above results to demonstrate two transversality theorems that w
 We will see various fancier versions of these theorems below.
 See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
-\begin{theorem}\label{T: basic trans}
+\begin{theorem}\label{T: basic trans}\index{tranversality!Transversality Theorem}
 	Let $f \colon M \to N$ be a continuous map of manifolds without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
 	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, and $h(-,1)$ is smooth and transverse to $g$.
 	Furthermore, if $f$ is proper, then there is such an $h$ so that both $h$ and $h(-,1)$ are proper.
@@ -423,7 +425,7 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
 Our second theorem will be applied below when $M$ is of the form $Y \times I$ for $Y$ a manifold without boundary in order to improve a homotopy between maps that are both transverse to another given map $g$ to a homotopy that is transverse to $g$.
 
-\begin{theorem}\label{T: homotopy trans}
+\begin{theorem}\label{T: homotopy trans}\index{tranversality!Transversality Theorem}
 	Let $f \colon M \to N$ be a smooth map from a manifold with boundary to a manifold without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
 	Suppose $\bd f \colon \bd M \to N$ is transverse to $g$.
 	Then there is a smooth homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, $h(-,1)$ is smooth and transverse to $g$, and $h$ fixes $\bd M$, i.e.\ $h(x,t)=f(x)$ for all $x \in \bd M$ and all $t \in I$.
@@ -453,7 +455,7 @@ This construction extends to manifolds with corners mapping into a manifold with
 
 \begin{definition}\label{D: top pullback}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
-	Define the \textbf{pullback} or \textbf{fiber product} $V \times_M W$ by
+	Define the \textbf{pullback}\index{pullback|textbf} or \textbf{fiber product}\index{fiber product|textbf} $V \times_M W$ by
 	$$V \times_M W = \{(x, y) \in V \times W \mid f(x) = g(y)\}.$$
 
 	There are canonical maps from $V \times_M W$ to $V$, $W$, and $M$ that respectively take $(x,y)$ to $x$, $y$, and $f(x) = g(y)$.
@@ -475,7 +477,7 @@ This construction extends to manifolds with corners mapping into a manifold with
 
 The reason for the transversality requirement in \cref{D: top pullback} is that this ensures that $V \times_M W$ is itself a manifold with corners, as follows from \cite[Theorem 7.2.7]{MaDo92} or \cite[Theorem 6.4]{Joy12}. In fact, we have the following.
 
-\begin{theorem}\label{pullback}
+\begin{theorem}\label{pullback}\index{pullback!manifold with corners}\index{pullback!stratification}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps from manifolds with corners to a manifold without boundary.
 	Then $V \times_M W$ is a manifold with corners of dimension $v+w-m$ with
 	\begin{equation*}
@@ -508,7 +510,7 @@ Such a generalization is a central result in \cite{Joy12}.
 
 There is a Leibniz rule for taking boundaries of fiber products of transverse maps \cite[Proposition~6.7]{Joy12}:
 
-\begin{proposition}\label{P: product boundary}
+\begin{proposition}\label{P: product boundary}\index{pullback!boundary formula}
 	If $f \colon V \to M$ and $g \colon W \to M$ are transverse maps from manifolds with corners to a manifold without boundary, then
 	\[
 	\bd(V \times_M W) = (\bd V \times_M W) \sqcup (V \times_M \bd W),
@@ -523,7 +525,7 @@ We will see versions of this formula below that take into account orientations a
 In this section we mostly collect some well-known, though not always easy to find in the literature, results about transversality and fiber products.
 We state these results mainly in the classical setting of manifolds without boundary, though they generally extend to the case of transverse maps of manifolds with corners mapping to a manifold without boundary, either by applying them to the pairwise transverse strata or by thinking in terms of the ``naive transversality'' of \cref{D: naive transversality}.
 
-\begin{lemma}[Tangent spaces of pullbacks]\label{L: tangent of pullbacks}
+\begin{lemma}[Tangent spaces of pullbacks]\label{L: tangent of pullbacks}\index{pullback!tangent space}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds with corners to a manifold without boundary.
 	Suppose $x \in V$ and $y \in W$ with $f(x) = g(y) = z$ so that $(x,y) \in V \times_MW$.
 	Then the tangent space of $V \times_MW$ at $(x,y)$ as a subspace of $T_{(x,y)}(V \times W) = T_xV \oplus T_yW$ consists of those vectors $(\mathbf v,\mathbf w)$ such that $Df(\mathbf v) = Dg(\mathbf w) \in T_zM$.
@@ -549,7 +551,7 @@ With the notation of \cref{L: tangent of pullbacks}, $D_{(x,y)}(f \times_M g)=D_
 	But this projection is precisely $D_{(x,y)} \pi_W$, so the maps agree.
 \end{proof}
 
-\begin{lemma}\label{L: normal pullback}
+\begin{lemma}\label{L: normal pullback}\index{pullback!normal bundle}
 	Let $W$ be a manifold with boundary and $V$ and $M$ manifolds without boundary. Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse smooth maps and that $f$ is an embedding so that $V$ is a submanifold of $M$ with normal bundle $\nu V$.
 	Then the pullback map $g^*V = V \times_MW \to W$ is an embedding onto the neat submanifold $g^*V \cong g^{-1}(V)$ and the normal bundle of $g^*V$ in $W$ is isomorphic to the pullback of $\nu V$.
 	In other words,
@@ -565,7 +567,7 @@ Here ``neat'' means that $\bd (g^*V) \subset \bd W$ and at each such point there
 
 As we like to think geometrically where possibly, we will generally perform the common abuse of thinking of normal bundles as subbundles of the tangent bundle of the ambient space over the embedded submanifold via a (usually tacit) choice of splitting of the quotient map to the true normal bundle.
 
-\begin{lemma}\label{L: fiber product of embeddings}
+\begin{lemma}\label{L: fiber product of embeddings}\index{fiber product!of submanifolds}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse smooth maps of manifolds without boundary, and suppose $f$ and $g$ are both embeddings.
 	Then, identifying $V$ and $W$ as submanifolds of $M$, the fiber product $V \times_MW$ is simply the intersection $V \cap W$, which is a smooth submanifold of $M$.
 	In this case, we can identify the restriction of $\nu V$ to $V \cap W$ with a sub-bundle of the restriction of $TW$ to $V \cap W$.
@@ -580,7 +582,7 @@ As we like to think geometrically where possibly, we will generally perform the 
 
 The preceding statements are not so evident in the case of manifolds with corners, as even how to extend the notions of immersions and embeddings when the target space is a manifold with corners is not so obvious. Joyce enforces his stronger version of smoothness in \cite{Joy12}, while the definition of immersion in \cite[Section 3.2]{MaDo92} has conditions beyond the classical injectivity of the tangent map. However, we have the following useful facts.
 
-\begin{lemma}\label{L: immersions}
+\begin{lemma}\label{L: immersions}\index{immersion}
 	Let $f \colon V \to M$ be a map from a manifold with corners to a manifold without boundary.
 	Then:
 	\begin{enumerate}
@@ -597,7 +599,7 @@ The preceding statements are not so evident in the case of manifolds with corner
 
 The third statement of \cref{L: immersions} holds even when $M$ is a manifold with corners but requires the more sophisticated definition of immersion in \cite{MaDo92}.
 
-\begin{lemma}\label{L: immersion pullback}
+\begin{lemma}\label{L: immersion pullback}\index{pullback!of immersion}
 	Let $f \colon V \to M$ be an immersion of a manifold with corners into a manifold without boundary, let $W$ be a manifold without boundary, and let $g \colon W \to M$ be transverse to $V$.
 	Then the pullback $\pi_W: V \times_M W \to W$ is an immersion and so, locally in a neighborhood of each point, an embedding.
 \end{lemma}
@@ -613,7 +615,7 @@ The third statement of \cref{L: immersions} holds even when $M$ is a manifold wi
 	So $D\pi_W$ is injective, and therefore $\pi_W$ is an immersion, and so a local embedding, again by \cref{L: immersions}.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\index{fiber product!of immersions}
 	The fiber product of two transverse immersions $f \colon V \to M$ and $g \colon W \to M$ from manifolds with corners to a manifold without boundary is an immersion and so, locally in a neighborhood of each point, an embedding onto its image.
 \end{lemma}
 
@@ -626,7 +628,7 @@ The third statement of \cref{L: immersions} holds even when $M$ is a manifold wi
 The next lemma, concerning transversality with respect to pullbacks, will be useful later in proving certain functoriality formulas.
 By \cref{pullback} and the fact that transversality of manifolds with corners reduces to transversality of manifolds without corners (looking at all the pairs of strata), it suffices to state the lemma just for manifolds without boundary.
 
-\begin{lemma}\label{L: transverse to pullback}
+\begin{lemma}\label{L: transverse to pullback}\index{transversality!with respect to pullbacks}\index{pullbacks!transversality of}
 	Let $f \colon V \to M$, $g \colon W \to M$, and $h \colon X \to W$ be smooth maps of manifolds without boundary, and suppose $f$ is transverse to $g$.
 	Then $gh \colon X \to M$ is transverse to $f$ if and only if $h$ is transverse to the pullback $\pi_W \colon V \times_M W \to W$.
 \end{lemma}
@@ -667,7 +669,7 @@ By \cref{pullback} and the fact that transversality of manifolds with corners re
 	As $\mathbf w$ was arbitrary, $W = D\pi_W(T_{(h(x),\pi_V(p))}P)+Dh(T_xX)$, as desired.
 \end{proof}
 
-\subsubsection{Fiber products with more than two inputs}
+\subsubsection{Fiber products with more than two inputs}\index{fiber products!more than two inputs}
 
 Finally for this section, we briefly consider transversality of more than two maps. \cref{R: multiproducts} highlights some of the issues and difficulties involved, while \cref{P: 3 out of 4 trans} shows that there are still some simplifications that can be observed.
 
@@ -718,7 +720,7 @@ Finally for this section, we briefly consider transversality of more than two ma
 
 Despite the preceding remark, the transversality conditions involved in associativity of fiber products are not completely independent, as the following proposition shows. In later sections, we will usually simply assume all needed transversality exists, but the following proposition can be useful in practice.
 
-\begin{proposition}\label{P: 3 out of 4 trans}
+\begin{proposition}\label{P: 3 out of 4 trans}\index{fiber products!more than two inputs!redundancy of transversality conditions}
 	Let $f \colon V \to M$, $g \colon W \to M$, and $h \colon Z \to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $W$ is transverse to $Z$ and that $V$ is transverse to $W$ and to $W \times_MZ$. Then $V \times_MW$ is transverse to $Z$. In particular, if $V \times_M(W \times_MZ)$ and $V \times_MW$ are well defined, then so is $(V \times_MW) \times_M Z$.
 \end{proposition}
 
@@ -731,5 +733,5 @@ Despite the preceding remark, the transversality conditions involved in associat
 \end{proof}
 
 \begin{remark}
-	The end of the preceding proof at first seems to imply that if $g$ and $h$ are transverse and $g \times_M h$ is transverse to $f$, then $f$ is transverse to $g$ and $f \times_Mg$ is transverse to $h$. Indeed, \cite[Propositions~4-9]{RamBas09} says this is the case for the linear maps of the tangent spaces. Unfortunately, however, as \cite[Propositions~4-9]{RamBas09} applies only to linear maps, we can apply it only at those points $(v,w,z) \in V \times W \times Z$ where we know that $f(v) = g(w) = h(z)$ so that all three tangent space maps are well defined. So such a result would hold if the only intersections among the maps were such triple intersections. However, as noted in \cref{R: multiproducts}, there could be pairs $(v,w) \in V \times W$ with $f(v) = g(w)$, but with this common image in $M$ not in the image of $h$. At such points, \cite[Propositions~4-9]{RamBas09} cannot tell us anything about the transversality of $V$ and $W$, and so $V \times_MW$ might not be well defined due to failure of transversality, even if $V \times_M (W \times_M Z)$ is.
+	The end of the preceding proof at first seems to imply that if $g$ and $h$ are transverse and $g \times_M h$ is transverse to $f$, then $f$ is transverse to $g$ and $f \times_Mg$ is transverse to $h$. Indeed, \cite[Propositions~4-9]{RamBas09} says this is the case for the linear maps of the tangent spaces. Unfortunately, however, as \cite[Propositions~4-9]{RamBas09} applies only to linear maps, we can apply it only at those points $(v,w,z) \in V \times W \times Z$ where we know that $f(v) = g(w) = h(z)$ so that all three tangent space maps are well defined. So such a result would hold if the only intersections among the maps were such triple intersections. However, as noted in \cref{R: multiproducts}, there could be pairs $(v,w) \in V \times W$ with $f(v) = g(w)$, but with this common image in $M$ not in the image of $h$. At such points, \cite[Propositions~4-9]{RamBas09} cannot tell us anything about the transversality of $V$ and $W$, and so $V \times_MW$ might not be well defined as a manifold with corners due to failure of transversality, even if $V \times_M (W \times_M Z)$ is.
 \end{remark}

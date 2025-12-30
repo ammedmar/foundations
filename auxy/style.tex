@@ -29,11 +29,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 
-% ------------------------------------------------------------------------------
-% Indexing
-% ------------------------------------------------------------------------------
-\usepackage{imakeidx}
-%\makeindex
+
+
 
 % ------------------------------------------------------------------------------
 % Localization and language
@@ -66,6 +63,20 @@
 
 \usepackage[capitalise,noabbrev,nosort]{cleveref}
 \newcommand{\creflastconjunction}{, and\nobreakspace} % Serial comma in cleveref
+
+
+% ------------------------------------------------------------------------------
+% Indexing
+% ------------------------------------------------------------------------------
+%\usepackage{makeidx}
+
+\makeindex
+
+	%Fix "see" command to output "see" in italics (not "see also" underlined)
+	\renewcommand*\see[2]{\textit{see} #1}
+	\renewcommand*\seealso[2]{\textit{see also} #1}
+
+
 
 % ------------------------------------------------------------------------------
 % Table of contents formatting
@@ -102,9 +113,9 @@
 
 
 \begin{comment}
-%diagrams.sty fix
-\makeatletter
-\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
-\expandafter\foo\row@to@buffer\foo
-\makeatother
+	%diagrams.sty fix
+	\makeatletter
+	\def\foo#1\endgraf\unskip#2\foo{\def\row@to@buffer{#1\endgraf\unskip\unskip#2}}
+	\expandafter\foo\row@to@buffer\foo
+	\makeatother
 \end{comment}
