@@ -17,7 +17,7 @@ While co-orientations can be found in many places in the literature, we could no
 Therefore, we develop co-orientations in depth in this (long) section.
 Some readers may prefer to skip ahead, either considering geometric cohomology only with mod~2 coefficients in a first reading, or perhaps take orientation of the normal bundle as a temporary partial definition, coming back later to understand the general setting.
 
-\subsection{Orientations}\label{S: orientations}
+\subsection{Orientations}\label{S: orientations}\index{orientation|textbf}
 
 If $W$ is a manifold with corners then it is a topological manifold with boundary and so in the interior of $W$, i.e.\ on $S^0(W)$, we can consider orientability and orientations of $W$ in the usual sense, from either the topological or smooth manifold points of view, which are equivalent \cite[Theorem VI.7.15]{Bred97}.
 Following standard conventions, we typically refer to an oriented manifold with corners $W$ with the orientation tacit.
@@ -27,7 +27,7 @@ When $W$ is orientable, so is its (topological) boundary \cite[Lemma 6.9.1]{Bred
 This gives an orientation for $\bd W$, as we can identify $S^1(W)$ with the interior of $\bd W$.
 In particular, we choose the following convention, which agrees with that of Joyce \cite[Convention 7.2.a]{Joy12}:
 
-\begin{convention}\label{Con: oriented boundary}
+\begin{convention}\label{Con: oriented boundary}\index{orientation!boundary}
 	For a smooth oriented manifold with boundary $N$, we orient $\bd N$ by stipulating that an outward normal vector followed by an oriented basis of $\bd N$ yields an oriented basis for $N$.
 
 	When $W$ is an oriented manifold with corners, we identify $S^1(W)$ with the interior of $\bd W$, and this convention determines an orientation of $\bd W$.
@@ -35,20 +35,20 @@ In particular, we choose the following convention, which agrees with that of Joy
 
 When we wish to work with orientations symbolically, the following interpretation will be extremely useful.
 
-\begin{definition}\label{D: det bundle}
+\begin{definition}\label{D: det bundle}\index{determinant line bundle}
 	Let $E \to B$ be a rank $d$ real vector bundle.
 	Define the \textbf{determinant line bundle}
 	$\Or(E)$ to be $\bigwedge^d E$.
 	If $d = 0$ this is interpreted to be the trivial rank one ``bundle of coefficients.''
-	We call the principal $O(1) \cong C_2$ bundle associated to $\Or(E)$ the \textbf{orientation cover} of $E$.
+	We call the principal $O(1) \cong C_2$ bundle associated to $\Or(E)$ the \textbf{orientation cover}\index{orientation cover} of $E$.
 
-	An \textbf{orientation} of $E$, if it exists, is then a section of its orientation cover or, equivalently, an equivalence class of non-zero sections of $\Or(E)$ such that two sections are equivalent if they differ by multiplication by an everywhere positive scalar function.
+	An \textbf{orientation}\index{determinant line bundle!orientation of} of $E$, if it exists, is then a section of its orientation cover or, equivalently, an equivalence class of non-zero sections of $\Or(E)$ such that two sections are equivalent if they differ by multiplication by an everywhere positive scalar function.
 \end{definition}
 
 In particular, we thus think of orientations of a manifold $M^m$ as (equivalence classes of) non-zero sections of $\Or(TM)$.
 We typically use the notation $\beta_M$ to stand for such a section, and, as we are only ever interested in such sections to represent orientations, we systematically abuse notation by not distinguishing between a section and its equivalence class.
 Thus an expression such as $\beta_M = \beta_V \wedge \beta_W$ should be interpreted as an equality of equivalence classes.
-Such formulas are also often meant to be interpreted locally over some particular point or subspace that will be understood from context, and in this context we refer to expressions such as $\beta_V$ as \textbf{local orientations}.
+Such formulas are also often meant to be interpreted locally over some particular point or subspace that will be understood from context, and in this context we refer to expressions such as $\beta_V$ as \textbf{local orientations}\index{orientation!local}.
 This notation turn out to be extremely useful in working with orientations, and we will use it frequently.
 Whenever we form such wedge products, if one of the terms is an element of $\bigwedge^0 TV$ for some $V$ we treat that term as a scalar function and interpret $\wedge$ as the fiberwise scalar product.
 
@@ -68,7 +68,7 @@ Any abuses of notation involved in this calculus are very much justified by its 
 	Such identifications will be used regularly and tacitly when working with normal bundles.
 \end{example}
 
-\subsubsection{Orientations of fiber products}\label{S: orientation of fiber products}
+\subsubsection{Orientations of fiber products}\label{S: orientation of fiber products}\index{orientation!of fiber product|(}
 
 If $V$ and $W$ are oriented manifolds, we orient $V \times W$ in the standard way by concatenating oriented bases of tangent spaces of $V$ with those of $W$.
 More generally, if $f \colon V \to M$ and $g \colon W \to M$ are transverse maps with $V$, $W$, and $M$ all oriented and $M$ without boundary, Joyce defines an orientation on the pullback $V \times_M W$ as follows \cite[Convention 7.2b]{Joy12}.
@@ -95,15 +95,15 @@ We state these properties in the following two propositions.
 \begin{proposition}\label{P: oriented fiber product basic properties}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
 	\begin{enumerate}
-		\item When $M$ is a point, the oriented fiber product $V \times_M W$ is simply $V \times W$, and in this case the fiber product orientation is consistent with the basic concatenation rule for products.
-		\item When one of the maps is the identity $\id_M \colon M \to M$, the projection map to the other factor is an orientation preserving diffeomorphisms
+		\item\index{orientation!of fiber product!over a point} When $M$ is a point, the oriented fiber product $V \times_M W$ is simply $V \times W$, and in this case the fiber product orientation is consistent with the basic concatenation rule for products.
+		\item{orientation!of fiber product!one map is the $\id$} When one of the maps is the identity $\id_M \colon M \to M$, the projection map to the other factor is an orientation preserving diffeomorphisms
 		\begin{equation*}
 			M \times_M V = V\quad\text{and}\quad V \times_M M = V.
 		\end{equation*}
 	\end{enumerate}
 \end{proposition}
 
-\begin{proposition}\label{P: oriented fiber mixed associativity}
+\begin{proposition}\label{P: oriented fiber mixed associativity}\index{orientation!of fiber product!mixed associativity}
 	Let $V$, $W$, and $Z$ be oriented manifolds with corners, and let $M$ and $N$ be oriented manifolds without boundary.
 	Then the ``mixed associativity'' formula for oriented fiber products
 	\begin{equation}\label{E: mixed associativity fiber orientation}
@@ -119,7 +119,7 @@ These propositions are evident at the level of spaces.
 When taking orientations into account, the first property in \cref{P: oriented fiber product basic properties} is proven in \cite[Sections 9.3.9]{RamBas09} as the ``concatenation axiom,'' and the second is proven in \cite[Sections 9.3.5 and 9.3.6]{RamBas09} as the ``left and right identity axioms.''
 The mixed associativity property is proven in \cite[Sections 9.3.7]{RamBas09}.
 An important special case of this associativity that we will need below occurs when $M = N$ and $g = h$, so that our initial data is three maps all to $M$.
-In this case we have the ordinary associativity
+In this case we have the ordinary associativity\index{orientation!of fiber product!associativity}
 \begin{equation}\label{E: oriented fiber associativity}
 	(V \times_M W) \times_M Z = V \times_M (W \times_M Z).
 \end{equation}
@@ -131,7 +131,7 @@ There is also a commutativity rule proven in \cite[Sections 9.3.8]{RamBas09} tha
 
 \begin{proposition}\label{P: commute oriented fiber}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
-	Then, as oriented manifolds,
+	Then, as oriented manifolds,\index{orientation!of fiber product!commutativity}
 	\begin{equation*}
 		V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V.
 	\end{equation*}
@@ -142,7 +142,7 @@ We note that these signs, while note quite in line with the Koszul conventions, 
 
 Furthermore, with our convention for oriented boundaries, one obtains the following useful identity; see \cite[Propositions 7.4 and 7.5]{Joy12}
 
-\begin{proposition}\label{P: oriented fiber boundary}
+\begin{proposition}\label{P: oriented fiber boundary}\index{orientation!of fiber product!boundary formula}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps from oriented manifolds with corners to an oriented manifold without boundary.
 	Then, as oriented manifolds,
 	\begin{equation*}
@@ -150,7 +150,7 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 	\end{equation*}
 \end{proposition}
 
-\subsubsection{Fiber products of immersions}
+\subsubsection{Fiber products of immersions}\index{orientation!of immersions}
 
 The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is of particular interest, especially for developing intuition.
 Once again, since we are concerned primarily with orientations in this section, it is sufficient to consider $V$ and $W$ to be manifolds without boundary, and then the results we obtain extend directly to manifolds with corners.
@@ -196,7 +196,7 @@ By definition, the orientation of $P$ determined by the orientations of $V$, $W$
 
 This call can be expressed via our calculus of local orientations as follows.
 
-\begin{proposition}\label{P: orient intersection}
+\begin{proposition}\label{P: orient intersection}\index{orientation!of fiber product!of immersions}
 	Let $V$ and $W$ be transverse oriented submanifolds of the oriented manifold $M$.
 	Let $\beta_V$, $\beta_W$, and $\beta_M$ be local orientations of $V$, $W$, and $M$ at a point of $P = V \times_M W = V \cap W$.
 	Then, using our notation established just above, the fiber product orientation of $P$ is the unique orientation $\beta_P$ such that if we choose orientations $\beta_{\nu W}$ and $\beta_{\nu V}$ for $\nu W$ and $\nu V$ such that $\beta_P \wedge \beta_{\nu W} = \beta_V$ and $\beta_P \wedge \beta_{\nu V} = \beta_W$ then $\beta_{\nu W} \wedge \beta_P \wedge \beta_{\nu V} = (-1)^{w(m+1)}\beta_M$ or, alternatively, $$\beta_P \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M.$$
@@ -260,30 +260,32 @@ The corollary shows that the fiber product orientation is \textit{not} necessari
 	This runs against the standard convention for transverse intersections of manifolds of complementary dimension, but we nonetheless favor this overall convention for orienting fiber products due to the properties and uniqueness result of \cite{RamBas09}.
 \end{example}
 
+\index{orientation!of fiber product|)}
+
 \subsection{Co-orientations}\label{S: co-orientations}
 
 To define co-orientations, we recall our definition of an orientation of a bundle from \cref{D: det bundle} as an equivalence class, up to positive scalar multiplication, of an everywhere non-zero section of the top exterior power of the bundle.
 This motivates the following.
 
-\begin{definition}\label{D: co-orientations}
+\begin{definition}\label{D: co-orientations}\index{co-orientations|textbf}
 	A \textbf{co-orientation} $\omega_g$ of a \textit{continuous}\footnote{We will most often be interested in the case of $g$ smooth, but continuous co-orientable maps do come up, for example in \cref{S: basic properties} where we consider covariant functoriality of geometric cohomology with respect to continuous maps.} map $g \colon W \to M$ of manifolds with corners is an equivalence class, up to positive scalar multiplication, of a nowhere zero section of the line bundle $\Hom(\Or(TW), \Or(g^*TM)) \cong \Hom(\Or(TW), g^*\Or(TM))$.
 	Equivalently, a co-orientation is a choice of isomorphism between the associated orientation cover $\Or(TW)$ and the pullback of the associated orientation cover $\Or(TM)$.
 
-	In particular, a co-orientation exists if and only if $\Hom(\Or(TW), \Or(g^*TM))$ is a trivial line bundle, in which case we say that $g$ is \textbf{co-orientable}.
+	In particular, a co-orientation exists if and only if $\Hom(\Or(TW), \Or(g^*TM))$ is a trivial line bundle, in which case we say that $g$ is \textbf{co-orientable}.\index{co-orientable|textbf}
 \end{definition}
 
-Thus, if $W$ is connected and $g \colon W \to M$ is co-orientable, there are exactly two co-orientations, which are \textbf{opposite} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
+Thus, if $W$ is connected and $g \colon W \to M$ is co-orientable, there are exactly two co-orientations, which are \textbf{opposite}\index{co-orientation!opposite co-orientation} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
 In particular, for connected $W$ a choice of co-orientation at a single point determines a co-orientation globally when $g$ is co-orientable (analogously to orientations).
 Also, just as most manifolds do not possess a preferred orientation, most maps $g \colon W \to M$ do not carry a natural choice of co-orientation, with the following notable exception.
 
-\begin{definition}\label{D: tautological co-orientation}
+\begin{definition}\label{D: tautological co-orientation}\index{co-orientation!tautolocigal}
 	Suppose $g$ is a diffeomorphism, or more generally a codimension-0 immersion. In this case, the top exterior power of $Dg$,
 	$$\textstyle{\bigwedge^w} Dg \colon \textstyle{\bigwedge^w} TW \to \textstyle{\bigwedge^w} g^*(TM),$$
 	provides a \textbf{tautological co-orientation}.
 \end{definition}
 
 The local triviality of the determinant line bundle of a manifold means being able to choose a consistent basis vector over sufficiently small neighborhoods.
-Again, we call such a choice of basis vector around a point in $W$ a \textbf{local orientation}, and, as for global orientations, often denote a local orientation by $\beta_W$.
+Again, we call such a choice of basis vector around a point in $W$ a \textbf{local orientation}\index{orientation!local}, and, as for global orientations, often denote a local orientation by $\beta_W$.\index{$\beta_W$}
 Again, abusing notation, we also often allow $\beta_W$ to refer to its equivalence class up to multiplication by a positive scalar.
 We identify $\beta_W$ with a local choice of (equivalence class of) non-zero section of\footnote{As usual, if $\dim(W) = 0$ we identify $\bigwedge^0 TW$ with the trivial $\R$ bundle, and, when forming exterior products, multiplication by a section is treated as scalar multiplication.} $\bigwedge^w TW$ in a neighborhood of a point $x$ in $W$ or, equivalently, a local smoothly varying ordered basis for the fibers of $TW$.
 We typically do not specify the point $x$, though when necessary we write $\beta_{W,x}$.
@@ -294,17 +296,17 @@ As a co-orientation at a point completely determines the co-orientation of a co-
 
 A manifold is orientable if and only if the orientation cover is trivial.
 So if $M$ is orientable, $\Or(g^*(TM))$ is trivial, and co-orientability of $g \colon W \to M$ implies that $W$ is orientable.
-Moreover, an orientation on $M$ along with a co-orientation of $g$ gives rise to an \textbf{induced orientation} of $W$.
+Moreover, an orientation on $M$ along with a co-orientation of $g$ gives rise to an \textbf{induced orientation}\index{orientation!induced by a co-orientation} of $W$.
 Explicitly, if $\beta_M$ denotes the global orientation of $M$, then we orient $W$ at each point by the $\beta_W$ such that $\omega_g = (\beta_W,\beta_M)$.
-Conversely, if $M$ and $W$ are both oriented, say by $\beta_M$ and $\beta_W$ respectively, we have the \textbf{induced co-orientation} given by $\omega_g = (\beta_W,\beta_M)$ at each point of $W$.
+Conversely, if $M$ and $W$ are both oriented, say by $\beta_M$ and $\beta_W$ respectively, we have the \textbf{induced co-orientation}\index{co-orientation!induced by map of oriented manifolds} given by $\omega_g = (\beta_W,\beta_M)$ at each point of $W$.
 On the other hand, it is not true that if we have an orientation of $W$ and a co-orientation of $g \colon W \to M$ then we obtain an orientation of $M$.
 For example, if $W$ is orientable, any constant map to $M$ is co-orientable, regardless of whether or not $M$ is orientable.
 
 \begin{notation}\label{N: hat check}
 	Suppose $M$ is an oriented manifold with corners and $g \colon W \to M$ is a map from another manifold with corners.
 	By convention, below we will often simply write $W$ to refer to $W$ together with its given map to $M$.
-	If $W$ comes equipped with an orientation, we may write $\hat W$ to refer to $W$ with the induced co-orientation on $g$.
-	If $W$ (technically the map $g \colon W \to M$) comes equipped with a co-orientation, we may write $\check W$ to refer to $W$ with its induced orientation.
+	If $W$ comes equipped with an orientation, we may write $\hat W$\index{$\hat W$} to refer to $W$ with the induced co-orientation on $g$.
+	If $W$ (technically the map $g \colon W \to M$) comes equipped with a co-orientation, we may write $\check W$\index{$\check W$} to refer to $W$ with its induced orientation.
 	For spaces with longer expressions, such as $V \times_M W$, we will sometimes write instead $(-)\,\hat{\vrule height1.3ex width0pt}$ or $(-)\,\check{\vrule height1.3ex width0pt}$.
 	These are inverse operations in the sense that if $W$ is oriented then $(\hat W)\,\check{\vrule height1.3ex width0pt} = W$ and if $g$ is co-oriented then  $(\check W)\,\hat{\vrule height1.3ex width0pt} = W$.
 
@@ -324,7 +326,7 @@ We then define $\gamma_*\beta_{W}$ to be the equivalence class of $\td \gamma(1)
 Likewise, we define $(g\gamma)_*\beta_M$ by a lift of $g\gamma$ to the complement of the zero section of $\Or(TM)$.
 Then $\gamma_*\beta_{W}$ and $(g\gamma)_*\beta_M$ depend on $\gamma$, but if $g \colon W \to M$ is co-orientable the pair $(\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ is independent of $\gamma$ as this data also determines a non-vanishing lift of $\gamma$ in $\Hom(\Or(TW),g^*\Or(TM))$, which is trivial if $g$ is co-orientable.
 In particular, if $g$ is co-oriented and $(\beta_{W}, \beta_M)$ represents the choice of co-orientation locally at $x$, then $\gamma_*(\beta_W,\beta_M) \defeq (\gamma_*\beta_{W}, (g\gamma)_*\beta_M)$ will represent the same co-orientation locally at $y$.
-We refer to this as \textbf{transporting} the co-orientation from $x$ to $y$.
+We refer to this as \textbf{transporting}\index{co-orientation!transportation} the co-orientation from $x$ to $y$.
 
 \begin{example}
 	Let $g$ be any map $g \colon S^1 \to S^2$.
@@ -341,7 +343,7 @@ We refer to this as \textbf{transporting} the co-orientation from $x$ to $y$.
 \end{example}
 
 \begin{remark}\label{R: cooriented composition}
-	Co-oriented maps compose in an immediate way, forming a category.
+	Co-oriented maps compose\index{co-orientation!compositions of} in an immediate way, forming a category.
 	Namely, given $V \xr{f} W \xr{g} M$ and co-orientations $\Or(TV) \to \Or(f^*TW)$ and $\Or(TW) \to \Or(g^*TM)$, we simply compose the former with the pullback of the latter via $f^*$, recalling that $f^*(\Or(E)) = \Or(f^*E)$ in a natural way.
 	We will refer to this simply as composing co-orientations and write the composition in symbols as $\omega_f*\omega_g$.
 	Warning: note that we write the terms in the order $\omega_f*\omega_g$ for the map $g \circ f$.
@@ -351,12 +353,12 @@ We refer to this as \textbf{transporting} the co-orientation from $x$ to $y$.
 
 \begin{notation}\label{N: implicit notation}
 	It will be useful in notation to sometimes leave the maps, codomains, and co-orientations all implicit once they have already been established and just write $V$ to represent the co-oriented map $f \colon V \to M$.
-	In this, case we write $-V$ to refer to the same map with the opposite co-orientation.
+	In this, case we write $-V$\index{$-V$}\index{co-orienation!notation for opposite} to refer to the same map with the opposite co-orientation.
 \end{notation}
 
 Just as is the case for orientations, when working with co-orientations it suffices to consider the interior of the manifold, in this case of the domain.
 
-\begin{proposition}\label{P: interior co-orientation}
+\begin{proposition}\label{P: interior co-orientation}\index{co-orientability!only depends on map of interior}
 Let $g \colon W \to M$ be a map of manifolds with corners. Then $g$ is co-orientable if and only if its restriction to $S^0(W)$, the interior of $W$, is co-orientable.
 \end{proposition}
 \begin{proof}
@@ -364,6 +366,8 @@ It is clear from the definition that if $g$ is co-orientable then so is its rest
 
 Conversely, suppose the restriction of $g$ to $S^0(W)$ is co-orientable. As $W$ is a topological manifold with boundary, which we will here denote $bd(W)$, the collaring theorem tells us that $bd(W)$ possesses a collar \cite[Theorem 2]{Bro62}. Let $C$ be a closed collar of $bd(W)$. Then $C$ is homeomorphic to $bd(W)\times I$ with $bd (W)$ identified under the homeomorphism with $bd(W) \times 0$. Let $B$ be the image of $bd(W) \times 1$ in $W$, and let $int(C)$ be the image of $bd(W) \times [0,1)$. Since $g|_{S^0(W)}$ is co-orientable, any choice of co-orientation restricts to a bundle isomorphism $\bigwedge TW|_B \to \bigwedge g^*\Or(TM)|_B$. Due to the product structure of the collar, the restriction of $\bigwedge TW$ to $C$ is isomorphic to $\bigwedge TW|_B \times I$ and similarly for $\bigwedge g^*\Or(TM)$ \cite[Theorem 3.4.4]{Hus94}, and so the bundle isomorphism over $B$ can be extended to a bundle isomorphism over $C$. As we chose the bundle isomorphism over $B$ to be the restriction of an isomorphism over $g|_{S^0(W)}$, we can glue together the bundle isomorphisms over $C$ and over $W-int(C)$ to obtain an isomorphism over all of $W$.
 \end{proof}
+
+%INDEX HERE
 
 \subsection{Normal co-orientations of immersions and co-orientations of boundaries}\label{S: normal orientation}
 

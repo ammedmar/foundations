@@ -45,8 +45,40 @@
 \indexentry{pullbacks!transversality of|hyperpage}{17}
 \indexentry{fiber products!more than two inputs|hyperpage}{18}
 \indexentry{fiber products!more than two inputs!redundancy of transversality conditions|hyperpage}{19}
+\indexentry{orientation|hyperindexformat{\textbf}}{20}
+\indexentry{orientation!boundary|hyperpage}{21}
+\indexentry{determinant line bundle|hyperpage}{21}
+\indexentry{orientation cover|hyperpage}{21}
+\indexentry{determinant line bundle!orientation of|hyperpage}{21}
+\indexentry{orientation!local|hyperpage}{21}
+\indexentry{orientation!of fiber product|(hyperpage}{22}
+\indexentry{orientation!of fiber product!over a point|hyperpage}{22}
+\indexentry{orientation!of fiber product!mixed associativity|hyperpage}{22}
+\indexentry{orientation!of fiber product!associativity|hyperpage}{23}
+\indexentry{orientation!of fiber product!commutativity|hyperpage}{23}
+\indexentry{orientation!of fiber product!boundary formula|hyperpage}{23}
+\indexentry{orientation!of immersions|hyperpage}{23}
+\indexentry{orientation!of fiber product!of immersions|hyperpage}{24}
+\indexentry{orientation!of fiber product|)hyperpage}{25}
+\indexentry{co-orientations|hyperindexformat{\textbf}}{25}
+\indexentry{co-orientable|hyperindexformat{\textbf}}{25}
+\indexentry{co-orientation!opposite co-orientation|hyperpage}{26}
+\indexentry{co-orientation!tautolocigal|hyperpage}{26}
+\indexentry{orientation!local|hyperpage}{26}
+\indexentry{$\beta_W$|hyperpage}{26}
+\indexentry{orientation!induced by a co-orientation|hyperpage}{26}
+\indexentry{co-orientation!induced by map of oriented manifolds|hyperpage}{26}
+\indexentry{$\hat W$|hyperpage}{26}
+\indexentry{$\check W$|hyperpage}{26}
+\indexentry{co-orientation!transportation|hyperpage}{27}
+\indexentry{co-orientation!compositions of|hyperpage}{27}
+\indexentry{$-V$|hyperpage}{27}
+\indexentry{co-orienation!notation for opposite|hyperpage}{27}
+\indexentry{co-orientability!only depends on map of interior|hyperpage}{27}
 \indexentry{geometric chains!with coefficients|hyperpage}{119}
 \indexentry{geometric homology!with coefficients|hyperpage}{119}
 \indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{189}
 \indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{189}
 \indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{189}
+\indexentry{local orientation|hyperindexformat{\see{orientation, local}}}{189}
+\indexentry{tautological co-orientation|hyperindexformat{\see{co-orientation, tautological}}}{189}
