@@ -17,18 +17,18 @@ We first identify certain types of ``manifolds over $M$.'' In future sections $M
 
 \begin{definition}\label{V: maps are co-oriented}
 	Let $M$ be a smooth manifold, possibly with corners.
-	A \textbf{manifold over $\mathbf{M}$} is a manifold with corners $W$ with a smooth map $r_W \colon W \to M$,
-	called the \textbf{reference map}.
+	A \textbf{manifold over $\mathbf{M}$}\index{manifold over a manifold|textbf} is a manifold with corners $W$ with a smooth map $r_W \colon W \to M$,
+	called the \textbf{reference map}\index{reference map|textbf}\index{$r_W$}.
 	We freely and almost always abuse notation
 	by using the domain $W$ to refer to the manifold over $M$, not $r_W$ or some other symbol, letting
 	context determine whether we are referring to the entire data or the domain; see \cref{N: implicit notation}.
 
 	We say a manifold over $M$, is:
 	\begin{itemize}
-		\item \textbf{compact} if its domain is compact,
-		\item \textbf{proper} if its reference map is proper (i.e. the preimage of compact subsets is compact),
-		\item \textbf{oriented} if its domain is oriented, and
-		\item \textbf{co-oriented} if its reference map is co-oriented.
+		\item \textbf{compact}\index{manifold over a manifold!compact|textbf} if its domain is compact,
+		\item \textbf{proper}\index{manifold over a manifold!proper|textbf} if its reference map is proper (i.e. the preimage of compact subsets is compact),
+		\item \textbf{oriented}\index{manifold over a manifold!oriented|textbf} if its domain is oriented, and
+		\item \textbf{co-oriented}\index{manifold over a manifold!co-oriented|textbf} if its reference map is co-oriented.
 	\end{itemize}
 	If $W$ is a manifold over $M$ then so is $\bd W$ using the reference map $r_W \circ i_{\bd W} \colon \bd W \to M$.
 	If $W$ is oriented or co-oriented, then $\bd W$ inherits an orientation or co-orientation as in \cref{Con: oriented boundary} or \cref{D: boundary co-orientation}.
@@ -37,7 +37,7 @@ We first identify certain types of ``manifolds over $M$.'' In future sections $M
 	If $W$ is oriented or co-oriented, we write $-W$ to refer to the manifold over $M$ with the opposite orientation or co-orientation; it should always be clear from context which structure we are replacing with its opposite.
 
 	If $V$ and $W$ are manifolds over $M$ that are disjoint\footnote{Recall that all of our manifolds with corners are subsets of $\R^\infty$.} as submanifolds of $\R^\infty$, we let the disjoint union $V \sqcup W$ be a manifold over $M$ with reference map $r_{V \sqcup W}$ such that $r_{V \sqcup W}(x) = r_V(x)$ when $x \in V$ and $r_{V \sqcup W}(x) = r_W(x)$ when $x \in W$.
-	We call this construction the \textbf{disjoint union} of $V$ and $W$.
+	We call this construction the \textbf{disjoint union}\index{disjoint union|textbf}\index{$\sqcup$} of $V$ and $W$.
 	If $V$ and $W$ are both oriented, co-oriented, compact, or proper, then so is $V \sqcup W$.
 	In \cref{E: copies,D: prechain sum} we consider disjoint union for the case where $V$ and $W$ are not necessarily disjoint in $\R^\infty$ using the notion of isomorphism classes, which we introduce next.
 \end{definition}
@@ -52,13 +52,13 @@ the definitions of \cite{Lipy14}.
 	Let $V, W$ be manifolds over $M$ with reference maps $r_V$ and $r_W$.
 	\begin{itemize}
 		\item Suppose $V$ and $W$ are co-oriented and $\phi \colon W \to V$ is a diffeomorphism such that $r_V \circ \phi = r_W$.
-		We say that $\phi$ is \textbf{co-orientation preserving (or co-orientation reversing)} if the composition of the tautological co-orientation of $\phi$ (\cref{D: tautological co-orientation}) with the co-orientation of $r_V$ agrees with (or disagrees with) the co-orientation of $r_W$.
-		\item If $V$ and $W$ are oriented, we say they are \textbf{(oriented) isomorphic} if there is an orientation-preserving diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$.
-		\item If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic} if there is a co-orientation-preserving diffeomorphism $\phi \colon W \to V$.
-		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial} if there is an orientation-reversing diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
-		\item If $W$ is co-oriented then it is \textbf{(co-oriented) trivial} if there is a co-orientation-reversing diffeomorphism $\rho \colon W \to W$.
-		\item $W$ has \textbf{small rank} if the differential $D r_W$ is everywhere less than full rank, in other words if the rank of $D_w r_W$ is less than $\dim(W)$ for all $w\in W$.
-		\item If $W$ is (co\nobreakdash-)oriented, then it is \textbf{((co\nobreakdash-)oriented) degenerate} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co\nobreakdash-)oriented manifold over $M$ and one with small rank.
+		We say that $\phi$ is \textbf{co-orientation preserving (or co-orientation reversing)}\index{co-orientation preserving|textbf}\index{co-orientation reversing|textbf} if the composition of the tautological co-orientation of $\phi$ (\cref{D: tautological co-orientation}) with the co-orientation of $r_V$ agrees with (or disagrees with) the co-orientation of $r_W$.
+		\item If $V$ and $W$ are oriented, we say they are \textbf{(oriented) isomorphic}\index{manifold over a manifold!isomorphic|textbf} if there is an orientation-preserving diffeomorphism $\phi \colon W \to V$ such that $r_V \circ \phi = r_W$.
+		\item If $V$ and $W$ are co-oriented, we say they are \textbf{(co-oriented) isomorphic}\index{manifold over a manifold!isomorphic|textbf} if there is a co-orientation-preserving diffeomorphism $\phi \colon W \to V$.
+		\item If $W$ is oriented then $W$ is \textbf{(oriented) trivial}\index{manifold over a manifold!trivial|textbf}\index{trivial|textbf} if there is an orientation-reversing diffeomorphism $\rho \colon W \to W$ such that $r_W \circ \rho = r_W$.
+		\item If $W$ is co-oriented then it is \textbf{(co-oriented) trivial}\index{manifold over a manifold!trivial|textbf}\index{trivial|textbf} if there is a co-orientation-reversing diffeomorphism $\rho \colon W \to W$.
+		\item $W$ has \textbf{small rank}\index{manifold over a manifold!small rank|textbf}\index{small rank|textbf} if the differential $D r_W$ is everywhere less than full rank, in other words if the rank of $D_w r_W$ is less than $\dim(W)$ for all $w\in W$.
+		\item If $W$ is (co\nobreakdash-)oriented, then it is \textbf{((co\nobreakdash-)oriented) degenerate}\index{manifold over a manifold!degenerate|textbf}\index{degenerate|textbf} if it has small rank and ${\bd W}$ is the disjoint union of a trivial (co\nobreakdash-)oriented manifold over $M$ and one with small rank.
 	\end{itemize}
 	We declare the empty map $\emptyset \to M$ to be both trivial and degenerate.
 \end{definition}
@@ -67,7 +67,7 @@ Note that while we can speak of a diffeomorphism being orientation-preserving or
 
 We observe that isomorphism is an equivalence relation and that it preserves triviality and degeneracy.
 
-Rather than small rank, Lipyanskiy uses the condition of \textbf{small image}.
+Rather than small rank, Lipyanskiy uses the condition of \textbf{small image}\index{small image}.
 In our notation, a map $r_W \colon W \to M$ has small image if there is another map $r_T \colon T \to M$ such that $r_T(T)\supset r_W(W)$ but $\dim(T)<\dim(W)$.
 However, the small rank condition turns out to be more manageable for our purposes while still providing geometric homology and cohomology theories that are equivalent to singular homology and cohomology.
 Roughly speaking, the geometric chains and cochains of a manifold $M$ will consist of isomorphism classes of oriented or proper co-oriented manifolds with corners over $M$ modulo the trivial and degenerate chains or cochains.
@@ -116,7 +116,7 @@ The degeneracy comes into play in ensuring that geometric homology and cohomolog
 The notions of orientation-preserving and -reversing diffeomorphisms are fairly standard, and oriented isomorphisms and triviality of oriented manifolds over $M$ are simply such diffeomorphisms that commute with the reference maps.
 By contrast, the corresponding notions for co-orientation are less familiar, but the following statement shows how the situation for co-orientations is locally similar to that for orientations.
 
-\begin{lemma}\label{L: co-or preserving/reversing}
+\begin{lemma}\label{L: co-or preserving/reversing}\index{manifold over a manifold!isomorphism!local (co-)orientation criteria}
 	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$.
 	For $x \in W$, let $(\beta_{W,x},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_W$ and let $(\beta_{V, \phi(x)},\beta_{M,r_W(x)})$ be a local representation of the co-orientation of $r_V$, noting $r_V\phi(x)=r_W(x)$.
 	Then $\phi$ provides a co-oriented isomorphism if and only if for all $x\in W$ the derivative $D_x\phi$ takes the orientation $\beta_{W,x}$ of $T_xW$ to the orientation $\beta_{V, \phi(x)}$ of $T_{\phi(x)}V$.
@@ -137,12 +137,12 @@ We could equivalently phrase this in terms of the map $\textstyle{\bigwedge^w}D_
 
 The following corollaries are now immediate from \cref{L: co-or preserving/reversing} and the definitions.
 
-\begin{corollary}\label{C: co-or preserving is or preserving}
+\begin{corollary}\label{C: co-or preserving is or preserving}\index{co-orientation!reversing/preserving vs. orientation reversing/preserving}\index{orientation!reversing/preserving vs. co-orientation reversing/preserving}
 	Let $r_V \colon V \to M$ and $r_W \colon W \to M$ be co-oriented manifolds over the oriented manifold $M$, and let $\phi \colon W \to V$ be a diffeomorphism such that $r_W = r_V \phi$.
 	Then $\phi$ is co-orientation preserving (reversing) if and only if it is orientation preserving (reversing) with respect to the orientations of $V$ and $W$ induced by the co-orientations and the orientation of $M$ (\cref{S: co-orientations}).
 \end{corollary}
 
-\begin{corollary}\label{C: induced triviality}
+\begin{corollary}\label{C: induced triviality}\index{triviality!oriented vs. co-oriented}
 	Let $r_V \colon V \to M$ be a map from a manifold with corners to an oriented manifold $M$, and let $\check V$ denote $V$ with the induced orientation; equivalently, we could start with an oriented $\check V$ over $M$ and write $V$ when considering the induced co-orientation.
 	Then $V$ is co-oriented trivial if and only if $\check V$ is oriented trivial.
 \end{corollary}
@@ -153,21 +153,21 @@ We can now move toward defining geometric homology and cohomology, starting with
 
 \begin{definition}\label{D: PC}
 	Let $M$ be a smooth manifold with corners.
-	Denote by $PC^\Gamma_*(M)$ the set of oriented isomorphism classes of compact oriented manifolds over $M$, $r_W \colon W \to M$,
+	Denote by $PC^\Gamma_*(M)$\index{$PC^\Gamma_*(M)$} the set of oriented isomorphism classes of compact oriented manifolds over $M$, $r_W \colon W \to M$,
 	graded by dimension $\dim(W)$.
-	Denote by $PC_\Gamma^*(M)$ the set of co-oriented isomorphism classes of proper co-oriented manifolds over $M$, $r_W \colon W \to M$,
-	graded by \textbf{codimension} $\dim(M) - \dim(W)$.
+	Denote by $PC_\Gamma^*(M)$\index{$PC_\Gamma^*(M)$} the set of co-oriented isomorphism classes of proper co-oriented manifolds over $M$, $r_W \colon W \to M$,
+	graded by \textbf{codimension}\index{codimension} $\dim(M) - \dim(W)$.
 	We declare the empty manifold of each dimension to be orientable and the empty maps from the empty manifolds to $M$ to be co-orientable.
 
 	As per \cref{V: maps are co-oriented}, we will often write $W \in PC^\Gamma_*(M)$ or $W \in PC_\Gamma^*(M)$, letting $W$ represent both its reference map and its isomorphism class as a manifold over $M$.
 	In these respective cases we write $-W$ for $W$ with the opposite orientation or co-orientation.
 
-	We will sometimes refer to elements of $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$ as \textbf{prechains} or \textbf{precochains}, respectively.
+	We refer to elements of $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$ as \textbf{prechains}\index{prechain!textbf} or \textbf{precochains}\index{precochain|textbf}, respectively.
 \end{definition}
 
 When necessary, as in the following definition, we may write prechains or precochains as $[W]$ to emphasize that they are isomorphism classes.
 
-\begin{definition}\label{D: prechain sum}
+\begin{definition}\label{D: prechain sum}\index{prechain!disjoint union}\index{precochain!disjoint union}
 	If $V,W$ are compact oriented manifolds over $M$ (respectively proper co-oriented manifolds over $M$), then define $[V] \sqcup [W] = [V' \sqcup W']$, where on the right $\sqcup$ denotes disjoint union and $V'$ and $W'$ are compact oriented manifolds over $M$ (respectively proper co-oriented manifolds over $M$) such $[V]=[V']$, $[W]=[W']$, and $V'$ and $W'$ are disjoint in $\R^\infty$ (cf.
 	\cref{D: MWC}); note that the images of $V'$ and $W'$ are not necessarily disjoint in $M$.
 \end{definition}
@@ -182,20 +182,22 @@ We now return to denoting isomorphism classes by their representatives, noting a
 In particular, when we write $V \sqcup W$, we assume that $V$ and $W$ are disjoint in $\R^\infty$.
 
 \begin{definition}\label{D: Q}
-	Let $Q_*(M) \subset PC_*(M)$ denote the set of (isomorphism classes of) compact oriented manifolds over $M$ of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate.
-	Let $Q^*(M) \subset PC^*(M)$ denote the set of (isomorphism classes of) proper co-oriented manifolds over $M$ of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate.
+	Let $Q_*(M) \subset PC^\Gamma_*(M)$\index{$Q_*(M)$} denote the set of (isomorphism classes of) compact oriented manifolds over $M$ of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate.
+	Let $Q^*(M) \subset PC_\Gamma^*(M)$\index{$Q^*(M)$} denote the set of (isomorphism classes of) proper co-oriented manifolds over $M$ of the form $V \sqcup W$ with $V$ trivial and $W$ degenerate.
 	In either case $V$ or $W$ may be empty.
 
-	We will sometimes write $W \in Q(M)$ to mean $W \in Q_*(M)$ or $W \in Q^*(M)$ for arguments that are analogous in the two cases.
+	We will sometimes write $W \in Q(M)$\index{$Q(M)$} to mean $W \in Q_*(M)$ or $W \in Q^*(M)$ for arguments that are analogous in the two cases.
 	When we do so, we assume a consistent choice of $Q_*(M)$ or $Q^*(M)$ throughout the discussion; see for instance \cref{L: bd defined} and its proof.
 \end{definition}
 
 Our first lemma is immediate:
 
-\begin{lemma}\label{L: sum of trivial/degenerate}
-	If $V$ and $W$ are trivial, then $V \sqcup W$ is trivial.
-	If $V$ and $W$ are degenerate, then $V \sqcup W$ is degenerate.
-	If $V,W\in Q_*(M)$ (or $Q^*(M)$), then $V \sqcup W \in Q_*(M)$ (or $Q^*(M)$).
+\begin{lemma}\label{L: sum of trivial/degenerate}\index{disjoint union!of trivial is trivial}\index{disjoint union!of degenerate is degenerate}\index{trivial!disjoint union of trivial is trivial}\index{degenerate!disjoint union of degenerate is degenerate}
+	\begin{enumerate}
+		\item If $V$ and $W$ are trivial, then $V \sqcup W$ is trivial.
+		\item If $V$ and $W$ are degenerate, then $V \sqcup W$ is degenerate.
+		\item If $V,W\in Q_*(M)$ (or $Q^*(M)$), then $V \sqcup W \in Q_*(M)$ (or $Q^*(M)$).
+	\end{enumerate}
 \end{lemma}
 
 We also have the following directly from \cref{C: induced triviality} and the fact that the small rank property does not depend on (co-)orientation information.
@@ -225,7 +227,7 @@ Our first lemma is contained within the proof of \cite[Lemma 10]{Lipy14}, though
 	So because $W$ is trivial, either $W_i$ consists of connected components each isomorphic to some $A$  that possesses a (co\nobreakdash-)orientation reversing diffeomorphism, and so $A$ is trivial, or $W_i$ has zero components when counting with (co\nobreakdash-)orientation, in which case the components of $W_i$ can be paired up into $B \sqcup -B$ pairs.
 \end{proof}
 
-\begin{lemma}[Lipyanskiy Lemma 10]\label{L: Lip L10}
+\begin{lemma}[Lipyanskiy Lemma 10]\label{L: Lip L10}\index{cancellation property of triviality}\index{trivial!cancellation property}
 	If $V$ is trivial and $V \sqcup W$ is trivial, then $W$ is trivial.
 \end{lemma}
 \begin{proof}
@@ -235,7 +237,7 @@ Our first lemma is contained within the proof of \cite[Lemma 10]{Lipy14}, though
 	So if $V \sqcup W$ is trivial, $W$ must have already been trivial.
 \end{proof}
 
-\begin{lemma}[Lipyanskiy Lemma 11]\label{L: bd defined}
+\begin{lemma}[Lipyanskiy Lemma 11]\label{L: bd defined}\index{$Q(M)$!preserves boundary}
 	If $W$ is in $Q(M)$ then so is $\bd W$.
 \end{lemma}
 
@@ -258,7 +260,7 @@ Our first lemma is contained within the proof of \cite[Lemma 10]{Lipy14}, though
 	Thus $\bd W$ is degenerate.
 \end{proof}
 
-\begin{lemma}[Lipyanskiy Lemma 12]\label{L: Lipy12}
+\begin{lemma}[Lipyanskiy Lemma 12]\label{L: Lipy12}\index{$Q(M)$!cancellation property}\index{cancellation property!in $Q(M)$}
 	If both $V$ and $V \sqcup W$ are in $Q(M)$ then so is $W$.
 \end{lemma}
 
@@ -272,7 +274,7 @@ Our first lemma is contained within the proof of \cite[Lemma 10]{Lipy14}, though
 	But this shows $B$ is degenerate, so $W \in Q(M)$.
 \end{proof}
 
-\begin{lemma}[Lipyanskiy Lemma 13]\label{L: cancel Q}
+\begin{lemma}[Lipyanskiy Lemma 13]\label{L: cancel Q}\index{$Q(M)$!determines equivalence relation}
 	The relation given by $V\sim W$ if $V \sqcup -W$ is in $Q_*(M)$ (respectively $Q^*(M)$) is an equivalence relation on $PC^\Gamma_*(M)$ (respectively $PC_\Gamma^*(M)$).
 \end{lemma}
 
@@ -290,16 +292,16 @@ We will show that the claims of the following definition hold in \cref{L: co/cha
 
 \begin{definition}\label{D: chains and cochains}
 	Let $M$ be a smooth manifold with corners.
-	The \textbf{geometric chains} of $M$, denoted $C^\Gamma_*(M)$, are the $\sim$ equivalence classes in $PC^\Gamma_*(M)$.
-	The \textbf{geometric cochains} of $M$, denoted $C_\Gamma^*(M)$, are the $\sim$ equivalence classes in $PC_\Gamma^*(M)$.
+	The \textbf{geometric chains}\index{geometric chain|textbf} of $M$, denoted $C^\Gamma_*(M)$\index{$C^\Gamma_*(M)$}, are the $\sim$ equivalence classes in $PC^\Gamma_*(M)$.
+	The \textbf{geometric cochains}\index{geometric cochain|textbf} of $M$, denoted $C_\Gamma^*(M)$,\index{$C_\Gamma^*(M)$} are the $\sim$ equivalence classes in $PC_\Gamma^*(M)$.
 	In either case, we denote the equivalence class of $W$ by $\uW$ and say that $W$ represents (or is a representative of) $\uW$.
 
 	These are chain complexes with group operation $\uV + \uW = \underline{V \sqcup W}$ and boundary map $\bd \uW = \underline{\bd W}$.
 	Furthermore, $\uW = 0$ in $C^\Gamma_*(M)$ (respectively $C_\Gamma^*(M)$) if and only if $W$ is in $Q_*(M)$ (respectively $Q^*(M)$), and in either case, the inverse of $\uW$ is $-\uW = \underline{-W}$.
 	In particular, the empty manifold $\emptyset$ represents $0$ in $C^\Gamma_*(M)$ and the empty map $\emptyset \to M$ represents $0$ in $C^*_\Gamma(M)$.
 
-	We define the \textbf{geometric homology} of $M$, written $H_*^\Gamma(M)$, to be $H_*(C^\Gamma_*(M))$, and
-	we define the \textbf{geometric cohomology} of $M$, written $H^*_\Gamma(M)$ to be $H^*(C_\Gamma^*(M))$.
+	We define the \textbf{geometric homology}\index{geometric homology|textbf} of $M$, written $H_*^\Gamma(M)$, to be $H_*(C^\Gamma_*(M))$,\index{$H_*(C^\Gamma_*(M))$} and
+	we define the \textbf{geometric cohomology}\index{geometric cohomology|textbf} of $M$, written $H^*_\Gamma(M)$ to be $H^*(C_\Gamma^*(M))$.\index{$H^*(C_\Gamma^*(M))$}
 \end{definition}
 
 We note that the formula $\uV + \uW = \underline{V \sqcup W}$ implies that every geometric chain or geometric cochain can be represented by a single map $r_Z \colon Z \to M$ for appropriate (possibly disconnected) $Z$.
@@ -309,7 +311,7 @@ We do not know if the $C^\Gamma_i(M)$ are free abelian groups; if so this is not
 However, we will show that these groups are all torsion free below in \cref{L: flat}.
 
 
-\begin{lemma}\label{L: co/chains well defined}
+\begin{lemma}\label{L: co/chains well defined}\index{geometric chain!negative of}\index{geometric chain!representing $0$}\index{geometric cochain!negative of}\index{geometric cochain!representing $0$}
 	The chain complexes $C_\Gamma^*(M)$ and $C_\Gamma^*(M)$ are well defined with the properties claimed in the definition.
 	In particular, $\uW = 0$ in $C^\Gamma_*(M)$ (respectively $C_\Gamma^*(M)$) if and only if $W$ is in $Q_*(M)$ (respectively $Q^*(M)$), and the additive inverse of $\uW$ is $\underline{-W}$.
 \end{lemma}
@@ -387,9 +389,9 @@ However, we will show that these groups are all torsion free below in \cref{L: f
 	and that of homotopy invariance as we need details about such constructions in our work.
 \end{comment}
 
-\begin{remark}\label{R: cycles and boundaries}
+\begin{remark}\label{R: cycles and boundaries}\index{geometric chain!cycle representative}\index{geometric chain!boundary representative}\index{geometric cochain!cocycle representative}\index{geometric cochain!coboundary representative}
 	Suppose $W \in PC_*^{\Gamma}(M)$.
-	It follows directly from \cref{{D: chains and cochains},L: co/chains well defined} that $W$ represents a cycle in $C_*^{\Gamma}(M)$, i.e.\ $\bd \uW=0$, if and only if $\bd W \in Q_*(M)$.
+	It follows directly from \cref{D: chains and cochains,L: co/chains well defined} that $W$ represents a cycle in $C_*^{\Gamma}(M)$, i.e.\ $\bd \uW=0$, if and only if $\bd W \in Q_*(M)$.
 	We also observe that $W$ represents a boundary precisely when there is some $Z \in PC_*^\Gamma(M)$ such that $\bd \underline{Z} = \underline{\bd Z} = \uW$, which translates to $(\bd Z) \sqcup -W \in Q_*(M)$.
 	The corresponding statements for cohomology are analogous.
 \end{remark}
@@ -401,7 +403,7 @@ Lipyanskiy does not provided a detailed treatment of geometric cohomology, which
 We next present some immediate examples and observations.
 The first is that geometric homology and cohomology satisfy a very strong form of Poincar\'e duality.
 
-\begin{theorem}[Poincar\'e Duality]\label{T: PD}
+\begin{theorem}[Poincar\'e Duality]\label{T: PD}\index{Poincar\'e Duality}
 	If $M$ is closed and oriented then tautologically $C_*^\Gamma(M) = C_\Gamma^{m-*}(M)$.
 	Consequently, also $H_*^\Gamma(M) = H_\Gamma^{m-*}(M)$.
 \end{theorem}
@@ -411,7 +413,7 @@ The first is that geometric homology and cohomology satisfy a very strong form o
 
 
 
-\begin{example}\label{E: first examples}
+\begin{example}\label{E: first examples}\index{geometric homology!in top and bottom degrees|(}\index{geometric cohomology!in top and bottom degrees|(}
 	We will see in the next chapter that geometric homology and cohomology are isomorphic to ordinary singular homology and cohomology with $\Z$-coefficients.
 	So the following calculations are not surprising, though we hope they may be illuminating and help build some intuition.
 	We begin by considering homology and cohomology classes represented by maps from $0$-manifolds.
@@ -453,10 +455,10 @@ The first is that geometric homology and cohomology satisfy a very strong form o
 	At the opposite end of the spectrum, the groups $H_m^\Gamma(M)$ and $H^0_\Gamma(M)$ are represented by maps of $m$-dimensional manifolds with corners.
 	If $M$ is connected, then $H^0_\Gamma(M) \cong \Z$ with a generator represented by the identity map $M \to M$ with its tautological co-orientation.
 	This will follow most readily from \cref{E: coho 0 generator,T: intersection qi}, below.
-	Consequently, if $M$ is closed and oriented, then \cref{T: PD} implies $H_m^\Gamma(M) \cong \Z$ generated by the identity map.
+	Consequently, if $M$ is closed and oriented, then \cref{T: PD} implies $H_m^\Gamma(M) \cong \Z$ generated by the identity map.\index{geometric homology!in top and bottom degrees|)}\index{geometric cohomology!in top and bottom degrees|)}
 \end{example}
 
-\begin{example}\label{E: dimension range}
+\begin{example}\label{E: dimension range}\index{geometric homology!vanishing theorem}\index{geometric cohomology!vanishing theorem}
 	If $\dim(M) = m$, then $H_i^\Gamma(M) = H^i_\Gamma(M) = 0$ if $i < 0$ or $i > m$.
 	In fact, $C_i^\Gamma(M) = 0$ when $i<0$ and $C^i_\Gamma(M) = 0$ when $i > m$, as in these cases the only elements of $PC_i^\Gamma(M)$ or $PC^i_\Gamma(M)$ are respectively the empty manifold $\emptyset$ and the empty map $\emptyset \to M$.
 	For homology when $i>m+1$, every element of $PC_i^\Gamma(M)$ must have small rank and its boundary must also have small rank, so it is in $Q_i(M)$ and hence $C_i^\Gamma(M) = 0$.
@@ -468,7 +470,7 @@ The first is that geometric homology and cohomology satisfy a very strong form o
 
 
 
-\begin{example}[Dimension axiom]\label{E: dimension}
+\begin{example}[Dimension axiom]\label{E: dimension}\index{geometric homology!dimension axiom}\index{geometric cohomology!dimension axiom}
 	By \cref{E: dimension range}, $H_i^\Gamma(pt) = H^i_\Gamma(pt) = 0$ unless $i = 0$.
 	When $i = 0$, we have $H^0_\Gamma(M) \cong H_0^\Gamma(M) \cong \Z$ by the computations of \cref{E: first examples}.
 	In fact, this is an equality by \cref{T: PD}.
@@ -494,7 +496,7 @@ The first is that geometric homology and cohomology satisfy a very strong form o
 
 The following algebraic property will be useful below as we consider homological algebra with geometric cochains:
 
-\begin{lemma}\label{L: flat}
+\begin{lemma}\label{L: flat}\index{geometric chain complex is torsion-free}\index{geometric cochain complex is torsion-free}
 	Each $C_i^\Gamma(M)$ or $C_\Gamma^i(M)$ is torsion-free and hence flat as a $\Z$-module.
 \end{lemma}
 
@@ -529,6 +531,7 @@ The following algebraic property will be useful below as we consider homological
 	Altogether, we have now shown that $W$ is the union of a trivial pre(co)chain and a degenerate pre(co)chain, so $W \in Q(M)$.
 \end{proof}
 
+
 \subsection{Products of manifolds over \texorpdfstring{$M$}{M}}
 
 In this section we define various products of elements of $PC_*^\Gamma(M)$ and $PC^*_\Gamma(M)$, all coming from the external products or fiber products defined above.
@@ -538,7 +541,7 @@ These products will ultimately become our cup, cap, intersection, and exterior p
 We begin with the products coming from fiber products.
 These are only partially defined, as fiber products require transversality.
 
-\begin{definition}\label{D: PC products}
+\begin{definition}\label{D: PC products}\index{manifold over a manifold!fiber product|(}\index{fiber product|(}\index{geometric precochain!cup product|(}\index{geometric prechain!cap product|(}\index{geometric precochain!cap product|(}\index{geometric prechain!intersection product|(}\index{cup product|(}\index{cap product|(}\index{intersection product|(}
 	Given a manifold without boundary $M$, the fiber products of transverse manifolds over $M$ determine partially-defined products of the following forms:
 	\begin{align*}
 		PC^*_\Gamma(M) \times PC^*_\Gamma(M)& \to PC^*_\Gamma(M)\\
@@ -622,6 +625,7 @@ In the last case, we really need $M$ to be oriented in general, as we have obser
 	But we have just recalled that these are exactly the orientations that we want for these products.
 \end{proof}
 
+
 \begin{comment}
 	\begin{remark}\label{R: product preserves reverse}
 		It is easy to modify the preceding arguments to show that if exactly one of $\phi_V \colon V \to V'$ or $\phi_W \colon W \to W'$ is an orientation- or co-orientation-\textit{reversing} diffeomorphism, then $\phi_V \times \phi_W$ restricts to a corresponding orientation- or co-orientation-\textit{reversing} diffeomorphism $V \times_M W \to V' \times_M W'$.
@@ -641,7 +645,7 @@ It will also be needed much sooner to show that the creasing construction is wel
 
 For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ as appropriate.
 
-\begin{lemma}\label{L: pullback with Q}
+\begin{lemma}\label{L: pullback with Q}\index{fiber product!trivial}\index{fiber product!degenerate}\index{fiber product!small rank}\index{trivial!fiber product}\index{degenerate!fiber product}\index{$Q(M)$!in fiber product}
 	For any of the products of \cref{D: PC products}, if either $V$ or $W$ is in $Q(M)$ then so is $V \times_M W$.
 	In fact, if $V$ or $W$ is trivial then $V \times_M W$ is trivial, if $V$ or $W$ has small rank then $V \times_M W$ has small rank, and if $V$ or $W$ is degenerate then $V \times_M W$ is degenerate.
 \end{lemma}
@@ -671,6 +675,9 @@ For the statement, recall that we use $Q(M)$ to stand for $Q_*(M)$ or $Q^*(M)$ a
 	Of course it is in $Q(M)$ with our actual definitions by the preceding lemma.
 \end{remark}
 
+\index{manifold over a manifold!fiber product|)}\index{fiber product|)}\index{geometric precochain!cup product|)}\index{geometric prechain!cap product|)}\index{geometric precochain!cap product|)}\index{geometric prechain!intersection product|)}\index{cup product|)}\index{cap product|)}\index{intersection product|)}
+
+\index{manifold over a manifold!exterior product|(}\index{exterior product|(}\index{geometric precochain!cross product|(}\index{geometric prechain!cross product|(}
 We have similar results for the exterior products studied in \cref{S: exterior products}, which are always fully defined:
 
 
@@ -690,7 +697,7 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 \end{proof}
 
 
-\begin{lemma}\label{L: exterior Q}
+\begin{lemma}\label{L: exterior Q}\index{external product!trivial}\index{external product!degenerate}\index{external product!small rank}\index{trivial!external product}\index{degenerate!external product}\index{$Q(M)$!in external product}
 	Consider two pre(co)chains $f \colon V \to M$ and $g \colon W \to N$.
 	If $V \in Q(M)$ or $W \in Q(N)$ then $f \times g \colon V \times W \to M \times N$ is in $Q(M \times N)$.
 \end{lemma}
@@ -709,6 +716,9 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 	As $V$ is degenerate, $\bd V$ is a disjoint union of trivial and small rank manifolds over $M$, and so by the preceding arguments $(\bd V) \times_M W$ will be a union of trivial and small rank manifolds over $M$.
 	Altogether, $V \times_M W$ is degenerate.
 \end{proof}
+
+
+\index{manifold over a manifold!exterior product|)}\index{exterior product|)}\index{geometric precochain!cross product|)}\index{geometric prechain!cross product|)}
 
 \begin{comment}
 	The next theorem, which is yet another Leibniz formula, in this case for the pullback of a co-oriented manifold over $M$ by an oriented manifolds over $M$, will be used in Section \ref{S: intersection map} to demonstrate that our intersection map $\mc I$, relating geometric cochains to cubical cochains of a cubulation, is a chain map.
@@ -779,7 +789,7 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 \end{comment}
 
 
-\subsection{Essential decompositions}\label{S: essential decomp}
+\subsection{Essential decompositions}\label{S: essential decomp}\index{essential decomposition|(}
 
 The material in this subsection will not be needed until \cref{S: products}, but we present it here both because it involves fundamental properties of chains and cochains and because it may be illuminating for the reader concerning the ambiguities involved when considering prechain and precochain representatives of chains and cochains.
 
@@ -871,19 +881,19 @@ There is some finer work to be done in showing that $V \times_M W $ and $V' \tim
 \begin{definition}\label{D: essential}
 	Suppose $V \in PC(M)$ and $V_1$ is a connected component of $V$.
 	\begin{itemize}
-		\item We call $V_1$ \textbf{trivially inessential} if either
+		\item We call $V_1$ \textbf{trivially inessential}\index{trivially inessential|textbf}\index{geometric prechain!trivially inessential}\index{geometric precochain!trivially inessential} if either
 		$V_1$ is trivial or if the number of components of
 		$V$ isomorphic to $\pm V_1$ is $0$, counting with signs.
 
-		\item We call ${V_1}$ \textbf{non-trivially inessential} if it is not trivially inessential but it is of small rank.
+		\item We call ${V_1}$ \textbf{non-trivially inessential}\index{non-trivially inessential|textbf}\index{geometric prechain!non-trivially inessential}\index{geometric precochain!non-trivially inessential} if it is not trivially inessential but it is of small rank.
 
-		\item We call ${V_1}$ \textbf{essential} if it is not (trivially or non-trivially) inessential.
+		\item We call ${V_1}$ \textbf{essential}\index{essential|textbf}\index{geometric prechain!essential}\index{geometric precochain!essential} if it is not (trivially or non-trivially) inessential.
 	\end{itemize}
 
 	Each connected component of $V$ falls into exactly one of these categories by definition.
 
-	The \textbf{essential decomposition} of $V$ is the unique decomposition of $V$ into essential, trivially inessential, and non-trivially inessential components,
-	written $V = V_E \sqcup V_{TI} \sqcup V_{NI}$.
+	The \textbf{essential decomposition}\index{essential decomposition|textbf} of $V$ is the unique decomposition of $V$ into essential, trivially inessential, and non-trivially inessential components,
+	written $V = V_E \sqcup V_{TI} \sqcup V_{NI}$.\index{$V_E$}\index{$V_{TI}$}\index{$V_{NI}$}
 \end{definition}
 
 In an essential decomposition, $V_{TI} \in Q(M)$, and in fact $V_{TI}$ is trivial as it decomposes as a union of connected trivial components and pairs of connected components of the form $V_1 \sqcup -V_1$.
@@ -1064,7 +1074,7 @@ We also highlight \cref{C: essential trans}, which concerns transversality and w
 	It follows that $\bigsqcup_i W_{i,E} \in Q(M)$ is trivial, and so again by \cref{L: Lipy12}, $\bigsqcup_i W_{i,NI} \in Q(M)$.
 \end{proof}
 
-\begin{corollary}\label{C: Q essential}
+\begin{corollary}\label{C: Q essential}\index{minimial essential prechain or precochain|(}\index{geometric prechain!minimal essential|(}\index{geometric precochain!minimal essential|(}
 	Let $\uW$ be an element of $C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$).
 	Then there is some prechain (or precochain) $Z$ so that for any prechain (or precochain) $W$ representing $\uW$, we have $W_E = Z \sqcup T$ for some trivial $T$.
 	Furthermore, for every connected component $\mc W$ of $T$, either $\mc W$ or $-\mc W$ is a connected component of $Z$.
@@ -1100,10 +1110,11 @@ We also highlight \cref{C: essential trans}, which concerns transversality and w
 \end{proof}
 
 
-\begin{definition}\label{D: minimal essential}
+\begin{definition}\label{D: minimal essential}\index{minimial essential prechain or precochain|textbf}\index{geometric prechain!minimal essential|textbf}\index{geometric precochain!minimal essential|textbf}
 We refer to the prechain or precochain $Z$ of \cref{C: Q essential} as the \textbf{minimal essential prechain or precochain of $\uW$}.
 It is constructed from the representative $W$ of $\uW$ by starting with $W_E$ and removing any trivial pairs of components $\mc W \sqcup - \mc W$.
 \end{definition}
+
 
 The preceding work now implies the following:
 
@@ -1121,6 +1132,7 @@ The preceding work now implies the following:
 	\end{align*}
 	As this consists of trivial objects and pairs, it is in $Q(M)$, which demonstrates the claim.
 \end{proof}
+\index{minimial essential prechain or precochain|)}\index{geometric prechain!minimal essential|)}\index{geometric precochain!minimal essential|)}
 
 The following further corollaries will be useful below.
 The first is an immediate consequence of \cref{C: Q essential}.
@@ -1130,7 +1142,7 @@ The first is an immediate consequence of \cref{C: Q essential}.
 	Then $V_E \sqcup -W_E$ is trivial and if $\mc W$ is a connected component of $V_E$ then $\mc W$ or $-\mc W$ is a connected component $W_E$.
 \end{corollary}
 
-\begin{corollary}\label{C: essential trans}
+\begin{corollary}\label{C: essential trans}\index{essential!and transversality}
 	Suppose $\uV = \uV' \in C^*_\Gamma(M)$ (or $C_*^\Gamma(M)$) and that $V_E$ is transverse to some $r_W \colon W \to M$.
 	Then $V'_E$ is also transverse to $W$.
 \end{corollary}
@@ -1194,10 +1206,10 @@ The first is an immediate consequence of \cref{C: Q essential}.
 	We know $V_{TI} \sqcup -W_{TI} \in Q(M)$ as each of $V_{TI}$ and $W_{TI}$ is in $Q(M)$, and $V_E \sqcup -W_E \in Q(M)$ by \cref{L: essential}.
 	Thus $V_{NI} \sqcup -W_{NI} \in Q(M)$ by \cref{L: Lipy12}, and the second equality follows by \cref{L: bd defined}.
 \end{proof}
+\index{essential decomposition|)}
 
 
-
-
+%INDEX HERE
 
 \subsection{Splitting and creasing}\label{S: splitting and creasing}
 

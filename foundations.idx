@@ -63,9 +63,11 @@
 \indexentry{co-orientations|hyperindexformat{\textbf}}{25}
 \indexentry{co-orientable|hyperindexformat{\textbf}}{25}
 \indexentry{co-orientation!opposite co-orientation|hyperpage}{26}
-\indexentry{co-orientation!tautolocigal|hyperpage}{26}
+\indexentry{co-orientation!tautological|hyperpage}{26}
 \indexentry{orientation!local|hyperpage}{26}
 \indexentry{$\beta_W$|hyperpage}{26}
+\indexentry{co-orientation!local|hyperpage}{26}
+\indexentry{co-orientation!local notation|hyperpage}{26}
 \indexentry{orientation!induced by a co-orientation|hyperpage}{26}
 \indexentry{co-orientation!induced by map of oriented manifolds|hyperpage}{26}
 \indexentry{$\hat W$|hyperpage}{26}
@@ -75,6 +77,257 @@
 \indexentry{$-V$|hyperpage}{27}
 \indexentry{co-orienation!notation for opposite|hyperpage}{27}
 \indexentry{co-orientability!only depends on map of interior|hyperpage}{27}
+\indexentry{co-orientation!normal|hyperpage}{28}
+\indexentry{map, decomposition as an embedding then a projection|hyperpage}{28}
+\indexentry{co-orientation!normal|(hyperindexformat{\textbf}}{29}
+\indexentry{co-orientation!Quillen|(hyperindexformat{\textbf}}{29}
+\indexentry{co-orientation!normal|(hyperindexformat{\textbf}}{29}
+\indexentry{co-orientation!Quillen|)hyperindexformat{\textbf}}{29}
+\indexentry{co-orientation!standard boundary co-orientation|hyperpage}{29}
+\indexentry{co-orientation!induced|hyperpage}{29}
+\indexentry{co-orientation!boundary|hyperpage}{29}
+\indexentry{co-orientation!codimension 0 embedding|hyperpage}{30}
+\indexentry{co-orientation!codimension 1 embedding|hyperpage}{30}
+\indexentry{co-orientation!codimension 1 embedding|hyperpage}{30}
+\indexentry{regular value|hyperpage}{30}
+\indexentry{$W^0$|hyperpage}{30}
+\indexentry{$W^-$|hyperpage}{30}
+\indexentry{$W^+$|hyperpage}{30}
+\indexentry{co-orientation!of $W^0$|(hyperpage}{30}
+\indexentry{$W^0$!induced co-orientation|(hyperpage}{30}
+\indexentry{co-orientation!of $W^0$|)hyperpage}{31}
+\indexentry{$W^0$!induced co-orientation|)hyperpage}{31}
+\indexentry{co-orientations!of $\bd^2$|hyperpage}{31}
+\indexentry{orientation!of $\bd^2$|hyperpage}{32}
+\indexentry{co-orientation!of homotopies|(hyperpage}{32}
+\indexentry{co-orientation!co-oriented homotopy|hyperpage}{32}
+\indexentry{co-orientation!co-oriented homotopy|hyperindexformat{\textbf}}{32}
+\indexentry{co-orientation!induced on a homotopy|hyperpage}{33}
+\indexentry{co-orientation!induced by a homotopy|hyperpage}{33}
+\indexentry{co-orientation!of homotopy!local description|hyperpage}{33}
+\indexentry{co-orientation!co-oriented homotopy!boundary of|hyperpage}{33}
+\indexentry{co-orientation!of homotopies|)hyperpage}{33}
+\indexentry{pullback!canonical vs. categorical|hyperpage}{34}
+\indexentry{co-orientaton!of pullback!equivalence across realizations|hyperpage}{34}
+\indexentry{co-orientation!commutativity|hyperpage}{34}
+\indexentry{co-orientatability!of pullbacks|hyperpage}{35}
+\indexentry{proper map!pullback of|hyperpage}{35}
+\indexentry{co-orientability!of fiber products|hyperpage}{36}
+\indexentry{co-orientation!of pullback|(hyperindexformat{\textbf}}{36}
+\indexentry{co-orientation!of pullback|)hyperindexformat{\textbf}}{37}
+\indexentry{co-orientation!of fiber product|hyperpage}{37}
+\indexentry{co-orientation!of pullback!functoriality|hyperpage}{40}
+\indexentry{co-orientation!of fiber product!of immersions|hyperpage}{41}
+\indexentry{co-orientation!of pullback!boundary formula (Leibniz rule)|hyperpage}{41}
+\indexentry{co-orientation!of fiber product!boundary formula (Leibniz rule)|hyperpage}{41}
+\indexentry{co-orientation!of pullback!of codimension $0$ embedding|hyperpage}{44}
+\indexentry{co-orientation!of fiber product!of codimension $0$ embedding|hyperpage}{44}
+\indexentry{pullback!of codimension $0$ embedding|hyperpage}{44}
+\indexentry{fiber product!with identity map|hyperpage}{44}
+\indexentry{$M^0$|hyperpage}{44}
+\indexentry{$M^+$|hyperpage}{44}
+\indexentry{$M^-$|hyperpage}{44}
+\indexentry{$W^+$|hyperpage}{44}
+\indexentry{$W^-$|hyperpage}{44}
+\indexentry{pullback!of codimension $1$ submanifold|hyperpage}{44}
+\indexentry{$W^0$|hyperpage}{44}
+\indexentry{$\bd (W^0)$ vs. $(\bd W)^0$|hyperpage}{45}
+\indexentry{external product!orientation|hyperpage}{45}
+\indexentry{orientation!of external product|hyperpage}{45}
+\indexentry{orientation!of fiber product!of external products|hyperpage}{45}
+\indexentry{orientation!of external product!of fiber products|hyperpage}{45}
+\indexentry{criss cross|hyperpage}{45}
+\indexentry{co-orientability!of extern product|hyperpage}{46}
+\indexentry{co-orientation!of external product|hyperindexformat{\textbf}}{47}
+\indexentry{product!with a point|hyperpage}{47}
+\indexentry{co-orientation!of external product!boundary (Leibniz formula)|hyperpage}{47}
+\indexentry{co-orientation!of external product!associativity|hyperpage}{48}
+\indexentry{co-orientation!of external product!Quillen co-orientation|hyperpage}{48}
+\indexentry{co-orientation!of external product!commutativity|hyperpage}{49}
+\indexentry{co-orientation!of pullback!of a projection is product co-orientation|hyperpage}{50}
+\indexentry{pullback!of external product|hyperpage}{51}
+\indexentry{co-orientation!of pullback!of external product map|hyperpage}{51}
+\indexentry{transversality!relation to the diagonal|hyperpage}{51}
+\indexentry{diagonal map!relation to transversality|hyperpage}{51}
+\indexentry{diagonal map|hyperpage}{51}
+\indexentry{$\diag$|hyperpage}{51}
+\indexentry{pullback!by the diagonal|hyperpage}{52}
+\indexentry{pullback!of fiber product|hyperpage}{54}
+\indexentry{fiber product!associativity|hyperpage}{54}
+\indexentry{co-orientation!of fiber product!associativity|hyperpage}{54}
+\indexentry{fiber product!commutativity|hyperpage}{55}
+\indexentry{co-orientation!of fiber product!commutativity|hyperpage}{55}
+\indexentry{pullback!of embedding|hyperpage}{55}
+\indexentry{co-orientation!of pullback!of embedding|hyperpage}{55}
+\indexentry{co-orientation!of fiber product!of external products|hyperpage}{56}
+\indexentry{co-orientation!of external product!of fiber products|hyperpage}{56}
+\indexentry{criss cross|hyperpage}{56}
+\indexentry{external product!as fiber product of pullbacks of projections|hyperpage}{56}
+\indexentry{fiber product!of pullbacks by projections is external product|hyperpage}{56}
+\indexentry{co-orientation!of external product!as fiber product of pullbacks of projections|hyperpage}{56}
+\indexentry{co-orientation!of fiber product!of pullbacks by projections is external product|hyperpage}{56}
+\indexentry{cap orientation|hyperindexformat{\textbf}}{57}
+\indexentry{orientation!cap|hyperpage}{57}
+\indexentry{cap orientation!boundary formual (Leibniz rule)|hyperpage}{57}
+\indexentry{cap orientation!of embeddings|hyperpage}{58}
+\indexentry{cap orientation!of embeddings!of complementary dimension|hyperpage}{58}
+\indexentry{cap orientation!with the identity map|hyperpage}{59}
+\indexentry{fiber product!with identity map|hyperpage}{59}
+\indexentry{cap orientation!with the identity map|hyperpage}{59}
+\indexentry{fiber product!with identity map|hyperpage}{59}
+\indexentry{orientation!induced!is cap orientation of fiber product with identity|hyperpage}{59}
+\indexentry{cap orientation!of external product!|hyperpage}{59}
+\indexentry{external product!of fiber products with cap orientations|hyperpage}{59}
+\indexentry{cap orientation!associativity|(hyperpage}{60}
+\indexentry{fiber product!mixed associativity|hyperpage}{60}
+\indexentry{cap orientation!associativity|)hyperpage}{60}
+\indexentry{cap orientation!naturality|hyperpage}{61}
+\indexentry{$\times_M^o$|hyperpage}{61}
+\indexentry{$\times_M^c$|hyperpage}{61}
+\indexentry{fiber product!co-oriented vs. oriented|hyperpage}{61}
+\indexentry{co-orientation!of fiber product!vs. orientation|hyperpage}{61}
+\indexentry{orientation!of fiber product!vs. co-orientation|hyperpage}{61}
+\indexentry{fiber product!co-oriented vs. oriented!for immersions|hyperpage}{62}
+\indexentry{fiber product!mixed associativity|hyperpage}{65}
+\indexentry{external product!orientation vs. co-orientation|hyperpage}{66}
+\indexentry{co-orientation!Lipyanskiy definition|(hyperpage}{66}
+\indexentry{co-orientation!Lipyanskiy definition|)hyperpage}{69}
+\indexentry{manifold over a manifold|hyperindexformat{\textbf}}{69}
+\indexentry{reference map|hyperindexformat{\textbf}}{69}
+\indexentry{$r_W$|hyperpage}{69}
+\indexentry{manifold over a manifold!compact|hyperindexformat{\textbf}}{69}
+\indexentry{manifold over a manifold!proper|hyperindexformat{\textbf}}{69}
+\indexentry{manifold over a manifold!oriented|hyperindexformat{\textbf}}{69}
+\indexentry{manifold over a manifold!co-oriented|hyperindexformat{\textbf}}{69}
+\indexentry{disjoint union|hyperindexformat{\textbf}}{70}
+\indexentry{$\sqcup$|hyperpage}{70}
+\indexentry{co-orientation preserving|hyperindexformat{\textbf}}{70}
+\indexentry{co-orientation reversing|hyperindexformat{\textbf}}{70}
+\indexentry{manifold over a manifold!isomorphic|hyperindexformat{\textbf}}{70}
+\indexentry{manifold over a manifold!isomorphic|hyperindexformat{\textbf}}{70}
+\indexentry{manifold over a manifold!trivial|hyperindexformat{\textbf}}{70}
+\indexentry{trivial|hyperindexformat{\textbf}}{70}
+\indexentry{manifold over a manifold!trivial|hyperindexformat{\textbf}}{70}
+\indexentry{trivial|hyperindexformat{\textbf}}{70}
+\indexentry{manifold over a manifold!small rank|hyperindexformat{\textbf}}{70}
+\indexentry{small rank|hyperindexformat{\textbf}}{70}
+\indexentry{manifold over a manifold!degenerate|hyperindexformat{\textbf}}{70}
+\indexentry{degenerate|hyperindexformat{\textbf}}{70}
+\indexentry{small image|hyperpage}{70}
+\indexentry{manifold over a manifold!isomorphism!local (co-)orientation criteria|hyperpage}{71}
+\indexentry{co-orientation!reversing/preserving vs. orientation reversing/preserving|hyperpage}{71}
+\indexentry{orientation!reversing/preserving vs. co-orientation reversing/preserving|hyperpage}{71}
+\indexentry{triviality!oriented vs. co-oriented|hyperpage}{72}
+\indexentry{$PC^\Gamma_*(M)$|hyperpage}{72}
+\indexentry{$PC_\Gamma^*(M)$|hyperpage}{72}
+\indexentry{codimension|hyperpage}{72}
+\indexentry{prechain!textbf|hyperpage}{72}
+\indexentry{precochain|hyperindexformat{\textbf}}{72}
+\indexentry{prechain!disjoint union|hyperpage}{72}
+\indexentry{precochain!disjoint union|hyperpage}{72}
+\indexentry{$Q_*(M)$|hyperpage}{72}
+\indexentry{$Q^*(M)$|hyperpage}{72}
+\indexentry{$Q(M)$|hyperpage}{72}
+\indexentry{disjoint union!of trivial is trivial|hyperpage}{72}
+\indexentry{disjoint union!of degenerate is degenerate|hyperpage}{72}
+\indexentry{trivial!disjoint union of trivial is trivial|hyperpage}{72}
+\indexentry{degenerate!disjoint union of degenerate is degenerate|hyperpage}{72}
+\indexentry{cancellation property of triviality|hyperpage}{73}
+\indexentry{trivial!cancellation property|hyperpage}{73}
+\indexentry{$Q(M)$!preserves boundary|hyperpage}{73}
+\indexentry{$Q(M)$!cancellation property|hyperpage}{74}
+\indexentry{cancellation property!in $Q(M)$|hyperpage}{74}
+\indexentry{$Q(M)$!determines equivalence relation|hyperpage}{74}
+\indexentry{geometric chain|hyperindexformat{\textbf}}{74}
+\indexentry{$C^\Gamma_*(M)$|hyperpage}{74}
+\indexentry{geometric cochain|hyperindexformat{\textbf}}{74}
+\indexentry{$C_\Gamma^*(M)$|hyperpage}{74}
+\indexentry{geometric homology|hyperindexformat{\textbf}}{74}
+\indexentry{$H_*(C^\Gamma_*(M))$|hyperpage}{74}
+\indexentry{geometric cohomology|hyperindexformat{\textbf}}{74}
+\indexentry{$H^*(C_\Gamma^*(M))$|hyperpage}{74}
+\indexentry{geometric chain!negative of|hyperpage}{74}
+\indexentry{geometric chain!representing $0$|hyperpage}{74}
+\indexentry{geometric cochain!negative of|hyperpage}{74}
+\indexentry{geometric cochain!representing $0$|hyperpage}{74}
+\indexentry{geometric chain!cycle representative|hyperpage}{75}
+\indexentry{geometric chain!boundary representative|hyperpage}{75}
+\indexentry{geometric cochain!cocycle representative|hyperpage}{75}
+\indexentry{geometric cochain!coboundary representative|hyperpage}{75}
+\indexentry{Poincar\'e Duality|hyperpage}{75}
+\indexentry{geometric homology!in top and bottom degrees|(hyperpage}{75}
+\indexentry{geometric cohomology!in top and bottom degrees|(hyperpage}{75}
+\indexentry{geometric homology!in top and bottom degrees|)hyperpage}{76}
+\indexentry{geometric cohomology!in top and bottom degrees|)hyperpage}{76}
+\indexentry{geometric homology!vanishing theorem|hyperpage}{76}
+\indexentry{geometric cohomology!vanishing theorem|hyperpage}{76}
+\indexentry{geometric homology!dimension axiom|hyperpage}{76}
+\indexentry{geometric cohomology!dimension axiom|hyperpage}{76}
+\indexentry{geometric chain complex is torsion-free|hyperpage}{77}
+\indexentry{geometric cochain complex is torsion-free|hyperpage}{77}
+\indexentry{manifold over a manifold!fiber product|(hyperpage}{77}
+\indexentry{fiber product|(hyperpage}{77}
+\indexentry{geometric precochain!cup product|(hyperpage}{77}
+\indexentry{geometric prechain!cap product|(hyperpage}{77}
+\indexentry{geometric precochain!cap product|(hyperpage}{77}
+\indexentry{geometric prechain!intersection product|(hyperpage}{77}
+\indexentry{cup product|(hyperpage}{77}
+\indexentry{cap product|(hyperpage}{77}
+\indexentry{intersection product|(hyperpage}{77}
+\indexentry{fiber product!trivial|hyperpage}{79}
+\indexentry{fiber product!degenerate|hyperpage}{79}
+\indexentry{fiber product!small rank|hyperpage}{79}
+\indexentry{trivial!fiber product|hyperpage}{79}
+\indexentry{degenerate!fiber product|hyperpage}{79}
+\indexentry{$Q(M)$!in fiber product|hyperpage}{79}
+\indexentry{manifold over a manifold!fiber product|)hyperpage}{80}
+\indexentry{fiber product|)hyperpage}{80}
+\indexentry{geometric precochain!cup product|)hyperpage}{80}
+\indexentry{geometric prechain!cap product|)hyperpage}{80}
+\indexentry{geometric precochain!cap product|)hyperpage}{80}
+\indexentry{geometric prechain!intersection product|)hyperpage}{80}
+\indexentry{cup product|)hyperpage}{80}
+\indexentry{cap product|)hyperpage}{80}
+\indexentry{intersection product|)hyperpage}{80}
+\indexentry{manifold over a manifold!exterior product|(hyperpage}{80}
+\indexentry{exterior product|(hyperpage}{80}
+\indexentry{geometric precochain!cross product|(hyperpage}{80}
+\indexentry{geometric prechain!cross product|(hyperpage}{80}
+\indexentry{external product!trivial|hyperpage}{80}
+\indexentry{external product!degenerate|hyperpage}{80}
+\indexentry{external product!small rank|hyperpage}{80}
+\indexentry{trivial!external product|hyperpage}{80}
+\indexentry{degenerate!external product|hyperpage}{80}
+\indexentry{$Q(M)$!in external product|hyperpage}{80}
+\indexentry{manifold over a manifold!exterior product|)hyperpage}{81}
+\indexentry{exterior product|)hyperpage}{81}
+\indexentry{geometric precochain!cross product|)hyperpage}{81}
+\indexentry{geometric prechain!cross product|)hyperpage}{81}
+\indexentry{essential decomposition|(hyperpage}{81}
+\indexentry{trivially inessential|hyperindexformat{\textbf}}{81}
+\indexentry{geometric prechain!trivially inessential|hyperpage}{81}
+\indexentry{geometric precochain!trivially inessential|hyperpage}{81}
+\indexentry{non-trivially inessential|hyperindexformat{\textbf}}{81}
+\indexentry{geometric prechain!non-trivially inessential|hyperpage}{81}
+\indexentry{geometric precochain!non-trivially inessential|hyperpage}{81}
+\indexentry{essential|hyperindexformat{\textbf}}{81}
+\indexentry{geometric prechain!essential|hyperpage}{81}
+\indexentry{geometric precochain!essential|hyperpage}{81}
+\indexentry{essential decomposition|hyperindexformat{\textbf}}{81}
+\indexentry{$V_E$|hyperpage}{81}
+\indexentry{$V_{TI}$|hyperpage}{81}
+\indexentry{$V_{NI}$|hyperpage}{81}
+\indexentry{minimial essential prechain or precochain|(hyperpage}{82}
+\indexentry{geometric prechain!minimal essential|(hyperpage}{82}
+\indexentry{geometric precochain!minimal essential|(hyperpage}{82}
+\indexentry{minimial essential prechain or precochain|hyperindexformat{\textbf}}{83}
+\indexentry{geometric prechain!minimal essential|hyperindexformat{\textbf}}{83}
+\indexentry{geometric precochain!minimal essential|hyperindexformat{\textbf}}{83}
+\indexentry{minimial essential prechain or precochain|)hyperpage}{83}
+\indexentry{geometric prechain!minimal essential|)hyperpage}{83}
+\indexentry{geometric precochain!minimal essential|)hyperpage}{83}
+\indexentry{essential!and transversality|hyperpage}{83}
+\indexentry{essential decomposition|)hyperpage}{83}
 \indexentry{geometric chains!with coefficients|hyperpage}{119}
 \indexentry{geometric homology!with coefficients|hyperpage}{119}
 \indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{189}
@@ -82,3 +335,9 @@
 \indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{189}
 \indexentry{local orientation|hyperindexformat{\see{orientation, local}}}{189}
 \indexentry{tautological co-orientation|hyperindexformat{\see{co-orientation, tautological}}}{189}
+\indexentry{normal co-orientation|hyperindexformat{\see{co-orientation, normal}}}{189}
+\indexentry{pullback co-orientaton|hyperindexformat{\see{coorientation, of pullback}}}{189}
+\indexentry{products|hyperindexformat{\seealso{external products}}}{189}
+\indexentry{product orientation!see{orientation!of external product}|hyperpage}{189}
+\indexentry{product co-orientation!see{co-orientation!of external product}|hyperpage}{189}
+\indexentry{orientation!cap!seealso{cap orientation}|hyperpage}{189}
