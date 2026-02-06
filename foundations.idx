@@ -108,7 +108,7 @@
 \indexentry{co-orientation!co-oriented homotopy!boundary of|hyperpage}{33}
 \indexentry{co-orientation!of homotopies|)hyperpage}{33}
 \indexentry{pullback!canonical vs. categorical|hyperpage}{34}
-\indexentry{co-orientaton!of pullback!equivalence across realizations|hyperpage}{34}
+\indexentry{co-orientation!of pullback!equivalence across realizations|hyperpage}{34}
 \indexentry{co-orientation!commutativity|hyperpage}{34}
 \indexentry{co-orientatability!of pullbacks|hyperpage}{35}
 \indexentry{proper map!pullback of|hyperpage}{35}
@@ -137,7 +137,7 @@
 \indexentry{orientation!of fiber product!of external products|hyperpage}{45}
 \indexentry{orientation!of external product!of fiber products|hyperpage}{45}
 \indexentry{criss cross|hyperpage}{45}
-\indexentry{co-orientability!of extern product|hyperpage}{46}
+\indexentry{co-orientability!of external product|hyperpage}{46}
 \indexentry{co-orientation!of external product|hyperindexformat{\textbf}}{47}
 \indexentry{product!with a point|hyperpage}{47}
 \indexentry{co-orientation!of external product!boundary (Leibniz formula)|hyperpage}{47}
@@ -328,6 +328,46 @@
 \indexentry{geometric precochain!minimal essential|)hyperpage}{83}
 \indexentry{essential!and transversality|hyperpage}{83}
 \indexentry{essential decomposition|)hyperpage}{83}
+\indexentry{splitting|(hyperpage}{84}
+\indexentry{$W^+$|hyperpage}{84}
+\indexentry{$W^-$|hyperpage}{84}
+\indexentry{$W^0$|hyperpage}{84}
+\indexentry{splitting function|hyperpage}{84}
+\indexentry{splitting!as fiber products|hyperpage}{84}
+\indexentry{splitting!of geometric precochains|hyperpage}{84}
+\indexentry{splitting!boundary formulas|hyperpage}{84}
+\indexentry{splitting!of geometric prechains|hyperpage}{85}
+\indexentry{splitting!boundary formulas|hyperpage}{85}
+\indexentry{$W^{[p,q]}$|hyperpage}{85}
+\indexentry{$W^p$|hyperpage}{85}
+\indexentry{$W^{[p,q]}$!boundary formula|hyperpage}{85}
+\indexentry{splitting|)hyperpage}{86}
+\indexentry{creasing|(hyperpage}{86}
+\indexentry{$W^+$|hyperpage}{86}
+\indexentry{$W^-$|hyperpage}{86}
+\indexentry{$W^0$|hyperpage}{86}
+\indexentry{$\Cre(W)$|hyperpage}{86}
+\indexentry{creasing homotopy|hyperindexformat{\textbf}}{86}
+\indexentry{creasing homotopy|hyperindexformat{\textbf}}{87}
+\indexentry{fiber product!with projection|hyperpage}{87}
+\indexentry{$\Cre(W)$!boundary formula|hyperpage}{87}
+\indexentry{creasing!in $Q(M)$|hyperpage}{88}
+\indexentry{creasing!of geometric (co)chains|hyperpage}{88}
+\indexentry{geometric chain!creasing|hyperpage}{88}
+\indexentry{geometric cochain!creasing|hyperpage}{88}
+\indexentry{creasing!in geometric (co)homology|hyperpage}{88}
+\indexentry{creasing|)hyperpage}{89}
+\indexentry{geometric homology!functoriality|(hyperpage}{89}
+\indexentry{geometric cohomology!functoriality|(hyperpage}{89}
+\indexentry{geometric homology!functoriality|)hyperpage}{90}
+\indexentry{geometric cohomology!functoriality|)hyperpage}{90}
+\indexentry{co-orientation!convention for homotopies|hyperpage}{90}
+\indexentry{geometric homology!functoriality|hyperpage}{93}
+\indexentry{geometric cohomology!functoriality|hyperpage}{93}
+\indexentry{geometric homology!functoriality|(hyperpage}{94}
+\indexentry{geometric cohomology!functoriality|(hyperpage}{94}
+\indexentry{geometric homology!functoriality|)hyperpage}{97}
+\indexentry{geometric cohomology!functoriality|)hyperpage}{97}
 \indexentry{geometric chains!with coefficients|hyperpage}{119}
 \indexentry{geometric homology!with coefficients|hyperpage}{119}
 \indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{189}
@@ -336,7 +376,7 @@
 \indexentry{local orientation|hyperindexformat{\see{orientation, local}}}{189}
 \indexentry{tautological co-orientation|hyperindexformat{\see{co-orientation, tautological}}}{189}
 \indexentry{normal co-orientation|hyperindexformat{\see{co-orientation, normal}}}{189}
-\indexentry{pullback co-orientaton|hyperindexformat{\see{coorientation, of pullback}}}{189}
+\indexentry{pullback co-orientation|hyperindexformat{\see{co-orientation, of pullback}}}{189}
 \indexentry{products|hyperindexformat{\seealso{external products}}}{189}
 \indexentry{product orientation!see{orientation!of external product}|hyperpage}{189}
 \indexentry{product co-orientation!see{co-orientation!of external product}|hyperpage}{189}

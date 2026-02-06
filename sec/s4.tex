@@ -1209,8 +1209,6 @@ The first is an immediate consequence of \cref{C: Q essential}.
 \index{essential decomposition|)}
 
 
-%INDEX HERE
-
 \subsection{Splitting and creasing}\label{S: splitting and creasing}
 
 In this section we discuss the closely related notions of splitting and creasing, both of which are concerned with breaking chains and cochains into smaller pieces.
@@ -1221,8 +1219,8 @@ This has various uses.
 In particular, when $W$ represents a cycle or cocycle, the creasing construction then shows that $\uW$ is homologous (or cohomologous) to $\underline{W^+} + \underline{W^-}$.
 
 
-\subsubsection{Splitting}\label{S: splitting}
-In this section, we begin by consolidating and extending some results previously encountered in \cref{E: manifold decomposition,S: codim 0 and 1 co-or}, namely the splitting of a manifold with corners over a manifold without boundary $r_W \colon W \to M$ into pieces $W^+$ and $W^-$ with common boundary $W^0$ using a function $\phi \colon M \to \R$.
+\subsubsection{Splitting}\label{S: splitting}\index{splitting|(}
+In this section, we begin by consolidating and extending some results previously encountered in \cref{E: manifold decomposition,S: codim 0 and 1 co-or}, namely the splitting of a manifold with corners over a manifold without boundary $r_W \colon W \to M$ into pieces $W^+$\index{$W^+$} and $W^-$\index{$W^-$} with common boundary $W^0$\index{$W^0$} using a function $\phi \colon M \to \R$\index{splitting function}.
 In this subsection, we use our previous results to establish the facts we will need in the context of prechains and precochains, and in the next subsection we will utilize these spaces to perform creasing.
 
 Our standing assumptions throughout this section will be that $M$ is a manifold without boundary and $\phi \colon M \to \R$ is a smooth map having $0$ as a regular value in the classical sense, i.e.\ for all $x \in \phi^{-1}(0)$ the differential $D_x\phi$ is nonzero.
@@ -1256,7 +1254,7 @@ We sometimes write $M^\pm$ for statements that could involve either $M^+$ or $M^
 	\end{proof}
 \end{comment}
 
-\begin{lemma}\label{L: pm0 as fiber products}
+\begin{lemma}\label{L: pm0 as fiber products}\index{splitting!as fiber products}
 	With our standing assumptions, there are diffeomorphisms
 	\begin{align*}
 		M^0 & \cong 0 \times_{\R} M &W^0 & \cong 0 \times_{\R} W & W^0& \cong M^0 \times_M W \\
@@ -1275,7 +1273,7 @@ The rightmost column above demonstrates $W^0$, $W^-$, and $W^+$ as fiber product
 We can use these descriptions to realize these spaces as prechains or precochains.
 Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which case appropriate versions of the following statements hold vacuously.
 
-\begin{lemma}\label{L: W0 cochain}
+\begin{lemma}\label{L: W0 cochain}\index{splitting!of geometric precochains}\index{splitting!boundary formulas}
 	Suppose $W \in PC^*_\Gamma(M)$, and $0$ is a regular value of $\phi \colon M \to \R$ and $\phi r_W \colon W \to \R$.
 	Let the inclusions $M^\pm \into M$ have their tautological co-orientations, and give the inclusion $M^0 \into M$ the co-orientation determined by its normal vector field oriented by pulling back the positively-oriented normal vector field over $0$ in $\R$.
 	Then $W^0$, $W^-$, and $W^+$, defined as the fiber products of $M^0$, $M^-$, and $M^+$ with $W$ over $M$, are elements of $PC^*_\Gamma(M)$.
@@ -1295,7 +1293,7 @@ Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which
 \end{proof}
 
 
-\begin{lemma}\label{L: W0 chain}
+\begin{lemma}\label{L: W0 chain}\index{splitting!of geometric prechains}\index{splitting!boundary formulas}
 	Suppose $W \in PC_*^\Gamma(M)$, and $0$ is a regular value of $\phi \colon M \to \R$ and $\phi r_W \colon W \to \R$.
 	Let $\R$, $(-\infty, 0]$, and $[0,\infty)$ have their standard orientations, and give $0$ its positive orientation.
 	Now orient $W^0$, $W^-$, and $W^+$ by realizing them as oriented fiber products of $0$, $(-\infty, 0]$, and $[0,\infty)$ with $\phi r_W \colon W \to \R$ over $\R$.
@@ -1334,10 +1332,10 @@ Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which
 
 Lastly, we will occasionally need to consider the preimage of an interval $[p,q] \subset \R$.
 If $p < q$ are regular values for $\phi$, then $\phi^{-1}([p,q])$ will be an embedded manifold with boundary in $M$ that we denote $M^{[p,q]}$.
-If further $\phi r_W$ is transverse to $p$ and $q$ then we can form $W^{[p,q]} = M^{[p,q]} \times_M W$.
-We also let $W^p = \phi^{-1}(p) \times_M W$, and similarly for $q$.
+If further $\phi r_W$ is transverse to $p$ and $q$ then we can form $W^{[p,q]} = M^{[p,q]} \times_M W$\index{$W^{[p,q]}$}.
+We also let $W^p = \phi^{-1}(p) \times_M W$\index{$W^p$}, and similarly for $q$.
 
-\begin{lemma}\label{L: Wpq cochain}
+\begin{lemma}\label{L: Wpq cochain}\index{$W^{[p,q]}$!boundary formula}
 	If $p < q$ are regular values for $\phi \colon M \to \R$, if $W \in PC^*_\Gamma(M)$, and if the inclusion $M^{[p,q]} \into M$ is given its tautological co-orientation, then
 	$W^{[p,q]} \in PC^*_\Gamma(M)$ and
 	$$\bd W^{[p,q]} = W^p \sqcup -W^q \sqcup (\bd W)^{[p,q]}.$$
@@ -1355,10 +1353,10 @@ We also let $W^p = \phi^{-1}(p) \times_M W$, and similarly for $q$.
 	The agreement of orientation and the boundary formula are similar to the arguments of \cref{L: W0 chain}.
 \end{proof}
 
+\index{splitting|)}
 
 
-
-\subsubsection{Creasing}\label{S: creasing}
+\subsubsection{Creasing}\label{S: creasing}\index{creasing|(}
 
 
 
@@ -1379,11 +1377,11 @@ We now discuss the creasing construction of \cite[Section 2.4]{Lipy14}, though w
 
 Suppose we are given a function $\varphi \colon W \to (-1,1)$ with $0$ a regular value, i.e.\ that $\varphi$ is transverse to the inclusion of $0$ into $(-1,1)$.
 Below $\varphi$ will typically be a composition $W \xr{r_W} M \xr{\phi} (-1,1)$.
-As in the preceding section, we define $W^+$ to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$, and we define $W^0 = \varphi^{-1}(0)$.
+As in the preceding section, we define $W^+$\index{$W^+$} to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$\index{$W^-$}, and we define $W^0 = \varphi^{-1}(0)$\index{$W^0$}.
 Note that here our codomain is $(-1,1)$ for reasons that will become apparent momentarily, though this is certainly still consistent with our maps being to $\R$ as above, using $(-1,1) \subset \R$.
 
-By \cite[Lemma~9]{Lipy14}, the idea of creasing is that the topological space $W \times [0,1]$ can be given the structure of a manifold with corners, which we will write $\Cre(W)$, satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
-We call the manifold with corners $\Cre(W)$ the \textbf{creasing homotopy} of $W$.
+By \cite[Lemma~9]{Lipy14}, the idea of creasing is that the topological space $W \times [0,1]$ can be given the structure of a manifold with corners, which we will write $\Cre(W)$\index{$\Cre(W)$}, satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
+We call the manifold with corners $\Cre(W)$ the \textbf{creasing homotopy}\index{creasing homotopy|textbf} of $W$.
 The creasing homotopy depends on $\varphi$, but we usually leave it tacit in the notation.
 We will define $\Cre(W)$ by using pullbacks, which will provide an arguably simpler description of $\Cre(W)$ than found in \cite{Lipy14}.
 
@@ -1406,7 +1404,7 @@ We can now officially define creasing.
 
 \begin{definition}
 	Suppose $W$ is a manifold with corners and $\varphi \colon W \to (-1,1)$ is a smooth map with a regular value at $0$.
-	We define the \textbf{creasing homotopy} to be the pullback
+	We define the \textbf{creasing homotopy}\index{creasing homotopy|textbf} to be the pullback
 	\[
 	\Cre(W) = D\times_{(-1,1)} W \to W.
 	\]
@@ -1441,12 +1439,13 @@ We can now officially define creasing.
 To justify the notion of creasing as a type of homotopy, at least topologically, we have the following lemma and corollary.
 Note that these results are purely in the topological category, not the smooth category.
 
-\begin{lemma}
-	Suppose given a projection $\pi \colon X \times Y \to X$ and a map $g \colon W \to X$ transverse to $\pi$.
+\begin{lemma}\index{fiber product!with projection}
+	Suppose given a projection $\pi \colon X \times Y \to X$ and a map $g \colon W \to X$.
 	Then the fiber product $(X \times Y) \times_X W$ is homeomorphic to $Y \times W$.
 \end{lemma}
 
 \begin{proof}
+	Note that $g$ is transverse to $\pi$ as $\pi$ is a projection.
 	We have $(X \times Y) \times_X W = \{(x,y,w) \in X \times Y \times W \mid x = g(w)\}$.
 	A homeomorphism $(X \times Y) \times_X W \to Y \times W$ is then given by $(x,y,w) \mapsto (y,w)$ with inverse given by $(y,w) \mapsto (g(w),y,w)$.
 \end{proof}
@@ -1470,7 +1469,7 @@ See \cref{F: creasing} for a sketch of a creasing homotopy of the teardrop manif
 	\label{F: creasing}
 \end{figure}
 
-\begin{lemma}\label{E: bd crease}
+\begin{lemma}\label{E: bd crease}\index{$\Cre(W)$!boundary formula}
 	Let $M$ be a manifold without boundary.
 	Suppose given $\phi \colon M \to (-1,1)$ with $0$ a regular value and $r_W \colon W \to M$ transverse to $M^0 = \phi^{-1}(0)$, representing an element of $PC^\Gamma_*(M)$ or $W \in PC_\Gamma^*(M)$.
 	Then
@@ -1536,7 +1535,7 @@ To next promote the construction $\Cre(-)$ to an operator on $C_*^{\Gamma}(M)$ o
 	\end{proof}
 \end{comment}
 
-\begin{corollary}\label{C: creasing Q}
+\begin{corollary}\label{C: creasing Q}\index{creasing!in $Q(M)$}
 	Let $M$ be a manifold without boundary.
 	Suppose given $\phi \colon M \to (-1,1)$ with $0$ a regular value and $r_T \colon T \to M$ transverse to $M^0 = \phi^{-1}(0)$.
 	If $T \in Q(M)$, then so are $T^+$, $T^-$, $T^0$, and $\Cre(T)$.
@@ -1552,7 +1551,7 @@ To next promote the construction $\Cre(-)$ to an operator on $C_*^{\Gamma}(M)$ o
 	Thus all components of $\bd \Cre(T)$ are trivial or of small rank, and so $\Cre(T)$ is degenerate.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}\index{creasing!of geometric (co)chains}\index{geometric chain!creasing}\index{geometric cochain!creasing}
 	Let $M$ be a manifold without boundary.
 	Suppose given $\phi \colon M \to (-1,1)$ with $0$ a regular value and that all creasing is done with respect to $\phi$.
 	If $V$ and $W$ are any two representatives of $\uW \in C_*^\Gamma(M)$ whose reference maps are transverse to $M^0$, then $\Cre_\phi(V)$ and $\Cre_\phi(W)$ represent the same element of $C_*^\Gamma(M)$.
@@ -1571,7 +1570,7 @@ To next promote the construction $\Cre(-)$ to an operator on $C_*^{\Gamma}(M)$ o
 
 Finally, we come to the punchline of creasing:
 
-\begin{theorem}\label{T: cohomology creasing}
+\begin{theorem}\label{T: cohomology creasing}\index{creasing!in geometric (co)homology}
 	Let $M$ be a manifold without boundary.
 	Suppose $\uW \in H_*^\Gamma(M)$ and that $\uW$ has a representative $r_W \colon W \to M$ that is transverse to $M^0$, defined with respect to some $\phi \colon M \to (-1,1)$ with $0$ a regular value.
 	Then $\uW = \underline{W^+} + \underline{W^-} \in H_*^\Gamma(M)$.
@@ -1591,6 +1590,8 @@ Finally, we come to the punchline of creasing:
 	In the last line we have used that $\underline{\bd W} = 0$ so that $\bd W \in Q_*(M)$; hence $\Cre(\bd W) \in Q_*(M)$ by \cref{C: creasing Q} and so $\underline{\Cre(\bd W)} = 0 \in C_*^\Gamma(M)$.
 	The theorem follows.
 \end{proof}
+
+\index{creasing|)}
 
 \begin{comment}
 	Let $f \colon W \to \R$ and $p$ be a regular value of $f$.

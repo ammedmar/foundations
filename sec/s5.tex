@@ -7,7 +7,7 @@ In \cref{S: homology is homology}, this allows us to show that geometric homolog
 In the case of homology, we will also construct in \cref{S: homology direct} an explicit isomorphism from smooth singular homology to geometric homology.
 It is more challenging to find an explicit isomorphism in the case of cohomology, and, in fact, the bulk of \cref{S: transversality} will be dedicated to such a construction.
 
-\subsection{Functoriality and homotopy properties}\label{S: functoriality}
+\subsection{Functoriality and homotopy properties}\label{S: functoriality}\index{geometric homology!functoriality|(}\index{geometric cohomology!functoriality|(}
 
 Given a \textit{continuous} map of smooth manifolds $f \colon M \to N$, we define in this section the induced maps $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ and $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$ and show that they are independent of $f$ up to homotopy.
 In subsequent sections, we will sometimes write the homology map simply as $f$ when the context is clear.
@@ -62,11 +62,12 @@ This is the content of the following lemma.
 \begin{corollary}\label{C: proper cofunctoriality}
 	Given a smooth proper co-oriented map $f \colon M \to N$ of manifolds (possibly with corners), there is an induced chain map $C^*_\Gamma(M) \to C^{*+n-m}_\Gamma(N)$ given by $\uW \to \underline{f(W)}$, and this construction gives a covariant functor from the category of smooth manifolds and smooth maps to cochain complexes over $\Z$ with chain maps of degree $n-m$.
 \end{corollary}
+\index{geometric homology!functoriality|)}\index{geometric cohomology!functoriality|)}
 
 Next we consider behavior with respect to homotopies.
 For the remainder of the section, and for simplicity of notation, we leave degree shifts tacit in the notation; for example, for a chain complex $A_*$, we write $x \in A_*$ to mean an element of any degree and simply write $f \colon A_* \to B_*$ even when $f$ is a chain map of non-zero degree.
 
-\begin{convention}\label{homotopy product co-orientation convention}
+\begin{convention}\label{homotopy product co-orientation convention}\index{co-orientation!convention for homotopies}
 	If $r_W \colon W \to M$ is co-oriented, then we co-orient $r_W \times \id_I \colon W \times I \to M \times I$ so that if $(\beta_W,\beta_M)$ is the co-orientation at $x \in W$ then $(\beta_W \wedge \beta_I,\beta_M \wedge \beta_I)$ is the co-orientation at $(x,t)$ for any $t \in I$, with $\beta_I$ being the standard orientation of the interval.
 \end{convention}
 
@@ -198,7 +199,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 We now come to the culmination of this section.
 The first part of the following theorem is Lipyanskiy's Theorem 5 in \cite{Lipy14}.
 
-\begin{theorem}\label{T: homology homotopy functor}
+\begin{theorem}\label{T: homology homotopy functor}\index{geometric homology!functoriality}\index{geometric cohomology!functoriality}
 	Given a \textnormal{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$.
 	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^{*+n-m}_\Gamma(N)$, which depends only on the proper homotopy class and co-orientation of $f$.
 
@@ -288,7 +289,7 @@ If one thinks of an ordinary homotopy from $f$ to $g$ as a way of obtaining $g$ 
 	The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we co-orient $H$ using the co-orientation induced by the tautological co-orientation of $H(-,0) = \id \colon M \to M$; see \cref{D: homotopy co-orientation}.
 \end{proof}
 
-\subsubsection{Contravariant functoriality of geometric homology and cohomology}\label{S: cohomology pullback}
+\subsubsection{Contravariant functoriality of geometric homology and cohomology}\label{S: cohomology pullback}\index{geometric homology!functoriality|(}\index{geometric cohomology!functoriality|(}
 
 In this section, we assign to a continuous map $f \colon M \to N$ of manifolds without boundary a map $H^*_\Gamma(N) \to H^*_\Gamma(M)$.
 If $f$ is proper and $M$ and $N$ are oriented, we also have a map $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
@@ -442,6 +443,7 @@ These are the identity maps $\id \colon D \to D$ with either co-orientation.
 Next consider the projection $M \times D \to M$, which is a homotopy equivalence for any manifold $M$ and any contractible manifold $D$.
 Then $H^i_\Gamma(M \times D) \cong H^i_\Gamma(M)$, and if $r_W \colon W \to M$ (with some co-orientation) represents a cohomology class in $H^i_\Gamma(M)$, the corresponding class in $H^i_\Gamma(M \times D)$ is represented by the map $W \times D \to M \times D$ given by $(w,d) \mapsto (r_W(w),d)$, with its pullback co-orientation.
 \end{example}
+\index{geometric homology!functoriality|)}\index{geometric cohomology!functoriality|)}
 
 The functoriality of geometric cohomology allows us to establish the standard additivity property for cohomology.
 The argument is analogous to that for \cref{P: additive h}.
