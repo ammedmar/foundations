@@ -67,8 +67,14 @@ This is the content of the following lemma.
 Next we consider behavior with respect to homotopies.
 For the remainder of the section, and for simplicity of notation, we leave degree shifts tacit in the notation; for example, for a chain complex $A_*$, we write $x \in A_*$ to mean an element of any degree and simply write $f \colon A_* \to B_*$ even when $f$ is a chain map of non-zero degree.
 
-\begin{convention}\label{homotopy product co-orientation convention}\index{co-orientation!convention for homotopies}
-	If $r_W \colon W \to M$ is co-oriented, then we co-orient $r_W \times \id_I \colon W \times I \to M \times I$ so that if $(\beta_W,\beta_M)$ is the co-orientation at $x \in W$ then $(\beta_W \wedge \beta_I,\beta_M \wedge \beta_I)$ is the co-orientation at $(x,t)$ for any $t \in I$, with $\beta_I$ being the standard orientation of the interval.
+
+
+\begin{convention}[Naive prehomotopy co-orientation convention]\label{homotopy product co-orientation convention}\index{co-orientation!naive prehomotopy convention}
+	To determine the interaction of homotopies $M \times I \to N$ with geometric chains and cochains, we will often need to consider compositions of the form $W \times I \xr{r_W \times \id_I} M \times I \to N$.
+	The maps $W \times I \xr{r_W \times \id_I} M \times I$ are technically external products, but they function more as a sort of ``prehomotopy'' on the way to forming the composite homotopy $W \times I \to N$.
+	As such, in this section (and when using its results later on) we follow a naive co-orientation convention for prehomotopies rather than the external product convention of \cref{D: co-oriented exterior} in order to avoid some unpleasant signs that are not consequential to the ultimate results of this section.
+
+	Specifically: If $r_W \colon W \to M$ is co-oriented, then we co-orient $r_W \times \id_I \colon W \times I \to M \times I$ so that if $(\beta_W,\beta_M)$ is the co-orientation at $x \in W$ then $(\beta_W \wedge \beta_I,\beta_M \wedge \beta_I)$ is the co-orientation at $(x,t)$ for any $t \in I$, with $\beta_I$ being the standard orientation of the interval.
 \end{convention}
 
 We will also need the following observations for the co-oriented cases.
