@@ -364,10 +364,31 @@
 \indexentry{co-orientation!naive prehomotopy convention|hyperpage}{90}
 \indexentry{geometric homology!functoriality|hyperpage}{93}
 \indexentry{geometric cohomology!functoriality|hyperpage}{93}
+\indexentry{geometric homology!functoriality!homotopy|hyperpage}{93}
+\indexentry{geometric cohomology!functoriality!homotopy|hyperpage}{93}
+\indexentry{geometric homology!reduced|hyperindexformat{\textbf}}{93}
+\indexentry{geometric homology!additivity|hyperpage}{94}
+\indexentry{universal homotopy|hyperindexformat{\textbf}}{94}
 \indexentry{geometric homology!functoriality|(hyperpage}{94}
 \indexentry{geometric cohomology!functoriality|(hyperpage}{94}
+\indexentry{precochain!pullback of|hyperpage}{95}
+\indexentry{prechain!pullback of|hyperpage}{95}
+\indexentry{pullback!of trivial is trivial|hyperpage}{95}
+\indexentry{pullback!of small rank is small rank|hyperpage}{95}
+\indexentry{geometric cohomology!pullback of|hyperpage}{95}
+\indexentry{geometric homology!pullback of|hyperpage}{95}
+\indexentry{geometric homology!functoriality|hyperpage}{96}
+\indexentry{geometric cohomology!functoriality|hyperpage}{96}
+\indexentry{geometric homology!functoriality!homotopy|hyperpage}{96}
+\indexentry{geometric cohomology!functoriality!homotopy|hyperpage}{96}
+\indexentry{geometric homology!functoriality|hyperpage}{97}
+\indexentry{geometric cohomology!functoriality|hyperpage}{97}
+\indexentry{geometric homology!functoriality!homotopy|hyperpage}{97}
+\indexentry{geometric cohomology!functoriality!homotopy|hyperpage}{97}
 \indexentry{geometric homology!functoriality|)hyperpage}{97}
 \indexentry{geometric cohomology!functoriality|)hyperpage}{97}
+\indexentry{geometric cohomology!additivity|hyperpage}{97}
+\indexentry{geometric cohomology!reduced|hyperpage}{98}
 \indexentry{geometric chains!with coefficients|hyperpage}{119}
 \indexentry{geometric homology!with coefficients|hyperpage}{119}
 \indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{189}
