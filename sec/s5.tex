@@ -67,11 +67,17 @@ This is the content of the following lemma.
 Next we consider behavior with respect to homotopies.
 For the remainder of the section, and for simplicity of notation, we leave degree shifts tacit in the notation; for example, for a chain complex $A_*$, we write $x \in A_*$ to mean an element of any degree and simply write $f \colon A_* \to B_*$ even when $f$ is a chain map of non-zero degree.
 
-\begin{convention}\label{homotopy product co-orientation convention}\index{co-orientation!convention for homotopies}
-	If $r_W \colon W \to M$ is co-oriented, then we co-orient $r_W \times \id_I \colon W \times I \to M \times I$ so that if $(\beta_W,\beta_M)$ is the co-orientation at $x \in W$ then $(\beta_W \wedge \beta_I,\beta_M \wedge \beta_I)$ is the co-orientation at $(x,t)$ for any $t \in I$, with $\beta_I$ being the standard orientation of the interval.
+
+
+\begin{convention}[Naive prehomotopy co-orientation convention]\label{homotopy product co-orientation convention}\index{co-orientation!naive prehomotopy convention}
+	To determine the interaction of homotopies $M \times I \to N$ with geometric chains and cochains, we will often need to consider compositions of the form $W \times I \xr{r_W \times \id_I} M \times I \to N$.
+	The maps $W \times I \xr{r_W \times \id_I} M \times I$ are technically external products, but they function more as a sort of ``prehomotopy'' on the way to forming the composite homotopy $W \times I \to N$.
+	As such, in this section (and when using its results later on) we follow a naive co-orientation convention for prehomotopies rather than the external product convention of \cref{D: co-oriented exterior} in order to avoid some unpleasant signs that are not consequential to the ultimate results of this section.
+
+	Specifically: If $r_W \colon W \to M$ is co-oriented, then we co-orient $r_W \times \id_I \colon W \times I \to M \times I$ so that if $(\beta_W,\beta_M)$ is the co-orientation at $x \in W$ then $(\beta_W \wedge \beta_I,\beta_M \wedge \beta_I)$ is the co-orientation at $(x,t)$ for any $t \in I$, with $\beta_I$ being the standard orientation of the interval.
 \end{convention}
 
-We will also need the following observations for the co-oriented cases.
+We begin with the following observations for the co-oriented cases.
 
 \begin{lemma}
 	Let $r_W \colon W \to M$ be co-oriented, and let $r_W \times \id \colon W \times I \to M \times I$ be co-oriented by \cref{homotopy product co-orientation convention}.
@@ -153,7 +159,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 	And the components of $W \times \bd I$ can be written for $j = 0, 1$ as $W \times j = W \xr{r_W} M \xr{F(-,j)} N$, and thus are of small rank since $r_W$ is.
 	This completes the argument for $PC_*^\Gamma(M)$.
 
-	If $W \in PC^*_\Gamma(M)$, then $F$ is proper and co-oriented by assumption, and we noted above our co-orientation convention for $r_W \times \id_I$.
+	If $W \in PC^*_\Gamma(M)$, then $F$ is proper and co-oriented by assumption, and \cref{homotopy product co-orientation convention} gives our co-orientation convention for $r_W \times \id_I$.
 	To see the latter is proper, if $K$ is compact in $M \times I$, then $K \subset \pi_M(K) \times I$, which is also compact.
 	Then $(r_W \times \id_I)^{-1}(K) \subset (r_W \times \id_I)^{-1}(\pi_M(K) \times I) = r_W^{-1}(\pi_M(K)) \times I$, which is compact as $r_W$ is proper.
 	As compositions of proper co-oriented maps are proper and co-oriented, $F \circ (r_W \times \id_I) \colon W \times I \to N$ is well defined in $PC^*_\Gamma(N)$.
@@ -190,7 +196,9 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 	As $F \circ (r_W \times \id_I)|_{W \times 1} = gr_W$ and $F \circ (r_W \times \id_I)|_{W \times 0} = fr_W$, we see that up to the overall sign $(-1)^{w}$, the boundary of $F \circ (r_W \times \id_I)$ is represented in $C_*^\Gamma(N)$ by the disjoint union of $gr_W \colon W \to N$ and the negative of $fr_W \colon W \to N$.
 	Thus $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent homologous cycles.
 
-	Next consider the case of $W$ a cocycle. By \cref{C: universal homotopy boundary co-orientation,D: co-oriented homotopy}, $$\bd (F \circ (r_W \times \id_I)) = gr_W \amalg -fr_W \amalg H,$$ where $H$ is the homotopy $F \circ (r_W \times \id_I) \circ i_{\bd W \times \id_I} = F \circ (r_{\bd W} \times \id_I) \colon \bd W \times I \to N$.
+	Next consider the case of $W$ a cocycle.
+	Employing \cref{homotopy product co-orientation convention}, by \cref{C: universal homotopy boundary co-orientation,D: co-oriented homotopy} we have $$\bd (F \circ (r_W \times \id_I)) = gr_W \amalg -fr_W \amalg H,$$ where $H$ is the homotopy $F \circ (r_W \times \id_I) \circ i_{\bd W \times \id_I}$.
+	So, up to co-orientation, $H = F \circ (r_{\bd W} \times \id_I) \colon \bd W \times I \to N$.
 	But $\bd W \in Q^*(M)$, and hence so is $H \colon (\bd W) \times I \to N$ by \cref{L: dessicated homotopy}.
 	Thus we have
 	that $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent cohomologous cocycles.
@@ -199,7 +207,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 We now come to the culmination of this section.
 The first part of the following theorem is Lipyanskiy's Theorem 5 in \cite{Lipy14}.
 
-\begin{theorem}\label{T: homology homotopy functor}\index{geometric homology!functoriality}\index{geometric cohomology!functoriality}
+\begin{theorem}\label{T: homology homotopy functor}\index{geometric homology!functoriality}\index{geometric cohomology!functoriality}\index{geometric homology!functoriality!homotopy}\index{geometric cohomology!functoriality!homotopy}
 	Given a \textnormal{continuous} map $f \colon M \to N$ of manifolds without boundary\footnote{Possibly we can still let $M$ and $N$ be manifolds with corners and obtain a true statement, but we simplify our assumption here to avoid treating the question of smooth approximations in that setting.}, it induces a map $f_* \colon H_*^\Gamma(M) \to H_*^\Gamma(N)$ that depends only on the homotopy class of $f$.
 	If $f$ is proper and co-oriented, it also induces $f_* \colon H^*_\Gamma(M) \to H^{*+n-m}_\Gamma(N)$, which depends only on the proper homotopy class and co-orientation of $f$.
 
@@ -230,8 +238,8 @@ If $f \colon M \to N$ as above, we will often abuse notation by writing simply $
 
 With functoriality of geometric homology established, we can introduce reduced homology; cf.\ \cite[page 200]{Span81}.
 
-\begin{definition}\label{D: reduced}
-The \textbf{reduced geometric homology} $\td H_*^\Gamma(M)$ of the manifold without corners $M$ is defined to be the kernel of the homomorphism $H_*^\Gamma(M) \to H_*^\Gamma(pt)$ induced by the unique map of $M$ to a point.
+\begin{definition}\label{D: reduced}\index{geometric homology!reduced|textbf}
+	The \textbf{reduced geometric homology} $\td H_*^\Gamma(M)$ of the manifold without corners $M$ is defined to be the kernel of the homomorphism $H_*^\Gamma(M) \to H_*^\Gamma(pt)$ induced by the unique map of $M$ to a point.
 \end{definition}
 
 \begin{remark}\label{R: reduced h}
@@ -246,7 +254,7 @@ So $\td H_0^\Gamma(M)$ can be identified with either the free abelian group on g
 
 We can also now establish the standard additivity property.
 
-\begin{proposition}\label{P: additive h}
+\begin{proposition}\label{P: additive h}\index{geometric homology!additivity}
 Let $M = \amalg{M_a}$, and let $i_a \colon M_a \into M$ be the inclusion.
 Define $i \colon \oplus H_*^\Gamma(M_a) \to H_*^\Gamma(M)$ by $i(\oplus \underline{V_a}) = \sum i_a(\underline{V_a})$.
 Then $i$ is an isomorphism.
@@ -274,7 +282,7 @@ So, in general, geometric homology and cohomology do not behave well with respec
 This will cause difficulties below, for example when we want to alter a map representing a cycle by a homotopy to make it transverse to some other cycle.
 The solution will be to define and use what we call universal homotopies.
 
-\begin{definition}\label{D: universal homotopy}
+\begin{definition}\label{D: universal homotopy}\index{universal homotopy|textbf}
 	Given two maps $f,g \colon W\to M$, we say that there is a \textbf{universal homotopy} from $f$ to $g$ if there is a smooth homotopy $H \colon M\times I\to M$ with $H(-,0)=\id_M$ and such that $g=H(-,1)\circ f$; in other words, if $f$ and $g$ are homotopic by a composition of the form $W \times I \xr{f\times \id} M \times I \xr{H} M$ with $H(-,0)$ the identity. In this case, we call the composition a \textbf{universal homotopy} from $f$ to $g$. We say that the universal homotopy is proper if $f$, $g$, and $H$ are proper maps.
 \end{definition}
 
@@ -282,11 +290,11 @@ If one thinks of an ordinary homotopy from $f$ to $g$ as a way of obtaining $g$ 
 
 
 \begin{proposition}\label{P: universal homotopy}
-	Suppose there is a universal homotopy from $f \colon W\to M$ to $g \colon W\to M$. If $f \colon W\to M$ represents an element of $H_*^\Gamma(M)$, then $g = H(-,1)f \colon W\to M$ represents the same element. Similarly, if $f \colon W\to M$ represents an element of $H^*_\Gamma(M)$ and the universal homotopy is proper, then $g \colon W\to M$ represents the same element.
+	Suppose there is a universal homotopy $H$ from $f \colon W\to M$ to $g \colon W\to M$. If $f \colon W\to M$ represents an element of $H_*^\Gamma(M)$, then $g = H(-,1)f \colon W\to M$ represents the same element. Similarly, if $f \colon W\to M$ represents an element of $H^*_\Gamma(M)$ and the universal homotopy is proper, then $g \colon W\to M$ represents the same element, assuming we choose co-orientations for $g$ and $H$ such that $H$ is a homotopy from $f$ to $g$ in the sense of \cref{D: co-oriented homotopy}.
 \end{proposition}
 
 \begin{proof}
-	The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we co-orient $H$ using the co-orientation induced by the tautological co-orientation of $H(-,0) = \id \colon M \to M$; see \cref{D: homotopy co-orientation}.
+	The proposition is immediate from \cref{C: homotopy}, taking $M=N$ there and letting $F$ be the map $H \colon M \times I \to M$ of \cref {D: universal homotopy} that realizes the universal homotopy. In the case of cohomology, we note that we can always find such co-orientations; see \cref{L: co-orientable homotopies,D: homotopy co-orientation}.
 \end{proof}
 
 \subsubsection{Contravariant functoriality of geometric homology and cohomology}\label{S: cohomology pullback}\index{geometric homology!functoriality|(}\index{geometric cohomology!functoriality|(}
@@ -298,13 +306,13 @@ For simplicity of notation in what follows, we will not always explicitly write 
 
 First, suppose $W \in PC^*_\Gamma(N)$ is represented by a proper co-oriented map $r_W \colon W \to N$, and let $g \colon M \to N$ be a \textit{smooth} map such that $g$ is transverse to $r_W$.
 We emphasize that there is no need for assumptions that $g$ be co-oriented or proper.
-We define $g^*(W)$ to be the pullback $r_W \times_N g \colon W \times_N M \to M$, co-oriented by our standard convention from \cref{D: pullback coorient}.
+We define $g^*(W)$\index{precochain!pullback of} to be the pullback $r_W \times_N g \colon W \times_N M \to M$, co-oriented by our standard convention from \cref{D: pullback coorient}.
 The pullback is proper by \cref{L: co-orientable pullback}.
 Also, using our standard convention for notating dimensions, the pullback has dimension $w+m-n$, and we have $m - (w+m-n) = n - w$. In other words, the index of $W$ as a precochain of $N$ is the same as the index of $W \times_N M$ as a precochain of $M$.
 So, when defined, $g^*$ takes elements of $PC_\Gamma^i(N)$ to elements of $PC_\Gamma^i(M)$.
 
 Similarly, if $W \in PC_*^\Gamma(N)$ and $g \colon M \to N$ is smooth and transverse to $r_W$ and if $M$ and $N$ are oriented, the pullback $W \times_N M$ has the pullback orientation of \cref{S: orientation of fiber products} and maps to $M$ by projection.
-Furthermore, if $g$ is proper, then $W \times_N M$ is compact, as we show in the following lemma.
+Furthermore, if $g$ is proper, then $W \times_N M$ is compact, as we show in the following lemma, so that we can pull back elements of $PC_*^\Gamma(N)$ to $PC_*^\Gamma(M)$ when they are transverse to $g$.\index{prechain!pullback of}
 
 \begin{lemma}\label{L: compact pullback}
 	Suppose $g \colon M \to N$ is a proper map from a manifold with corners to a manifold without boundary.
@@ -325,7 +333,7 @@ It will be useful later to allow $M$ to be a manifold with corners here.
 	\red{GBF: Might want to try to combine those into a single lemma somewhere at some point, but it looks like it might be less messy, if a bit redundant, not to.}
 \end{comment}
 
-\begin{lemma}\label{L: pullback map Q}
+\begin{lemma}\label{L: pullback map Q}\index{pullback!of trivial is trivial}\index{pullback!of small rank is small rank}
 	Suppose $M$ is a manifold with corners and $N$ is a manifold without boundary.
 	Suppose $r_S \colon S \to N$ is trivial (oriented or co-oriented) or has small rank, and let $g \colon M \to N$ be a smooth map transverse to $r_S$.
 	Then the pullback $g^*(S) = S \times_N M \to M$ is also trivial or has small rank, respectively.
@@ -349,7 +357,7 @@ The requirement that $g \colon M \to N$ must be transverse to $W$ means that eve
 Nonetheless, given any continuous $f \colon M \to N$ of manifolds without boundary we can define a map in geometric cohomology $f^* \colon H^*_\Gamma(N) \to H^*_\Gamma(M)$, and if $M$ and $N$ are oriented and $f$ is proper, we can further define a map in geometric homology $f^* \colon H_*^\Gamma(N) \to H_{*+m-n}^\Gamma(M)$.
 The constructions are as follows.
 
-\begin{definition}\label{D: cohomology pullback and homology transfer}
+\begin{definition}\label{D: cohomology pullback and homology transfer}\index{geometric cohomology!pullback of}\index{geometric homology!pullback of}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary and $\uW \in H^*_\Gamma(N)$ is represented by $r_W \colon W \to N$.
 	Let $g \colon M \to N$ be any smooth map homotopic to $f$ that is transverse to $r_W$ (which we know exists by \cref{T: basic trans}).
 	Then we define $f^*(\uW) \in H^*_\Gamma(M)$ as the cohomology class represented by the pullback of $W$ by $g$, i.e.\ $g^*(W) = W \times_N M \to M$.
@@ -358,7 +366,7 @@ The constructions are as follows.
 	Then we define $f^*(\uW) \in H_*^\Gamma(M)$ as the homology class represented by the pullback of $W$ by $g$, i.e.\ $g^*(W) = W \times_N M \to M$, with the pullback oriented as in \cref{S: orientation of fiber products}.
 \end{definition}
 
-\begin{proposition}\label{P: cohomology pullback}
+\begin{proposition}\label{P: cohomology pullback}\index{geometric homology!functoriality}\index{geometric cohomology!functoriality}\index{geometric homology!functoriality!homotopy}\index{geometric cohomology!functoriality!homotopy}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary.
 	The map $f^* \colon H^k_\Gamma(N) \to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
 	Similarly, if $M$ is oriented and $f$ is proper, then the map $f_* \colon H_k^\Gamma(N) \to H_{k+m-n}^\Gamma(M)$ is well defined and depends only on the proper homotopy class of $f$.
@@ -406,7 +414,7 @@ The constructions are as follows.
 	Thus $f^*$ does not depend on our choices and depends on $f$ only through its homotopy class.
 \end{proof}
 
-\begin{corollary}\label{C: contra funct}
+\begin{corollary}\label{C: contra funct}\index{geometric homology!functoriality}\index{geometric cohomology!functoriality}\index{geometric homology!functoriality!homotopy}\index{geometric cohomology!functoriality!homotopy}
 	The assignment taking $f$ to $f^*$ is functorial.
 	In other words:
 		\begin{enumerate}
@@ -448,7 +456,7 @@ Then $H^i_\Gamma(M \times D) \cong H^i_\Gamma(M)$, and if $r_W \colon W \to M$ (
 The functoriality of geometric cohomology allows us to establish the standard additivity property for cohomology.
 The argument is analogous to that for \cref{P: additive h}.
 
-\begin{proposition}\label{P: additive c}
+\begin{proposition}\label{P: additive c}\index{geometric cohomology!additivity}
 Let $M = \amalg{M_a}$, and let $i_a \colon M_a \into M$ be the inclusion.
 Define $i^* \colon H^*_\Gamma(M) \to \prod_a H^*_\Gamma(M_a)$ by $i^*(\uV) = \prod i^*_a(\uV)$.
 Then $i^*$ is an isomorphism.
@@ -473,7 +481,7 @@ So $V$ represents $0$ in $H^*_\Gamma(M)$, and $i^*$ is injective.
 
 We can now discuss reduced cohomology; cf.\ \cite[page 240]{Span81}.
 
-\begin{definition}\label{D: reduced c}
+\begin{definition}\label{D: reduced c}\index{geometric cohomology!reduced}
 The \textbf{reduced geometric cohomology} $\td H^*_\Gamma(M)$ of the manifold without corners $M$ is defined to be the cokernel of the homomorphism $H^*_\Gamma(pt)\to H^*_\Gamma(M)$ induced by the unique map of $M$ to a point.
 
 As $H^i_\Gamma(pt) = 0$ for $i \neq 0$, we have the standard fact that  $\td H^i_\Gamma(M) = H^i_\Gamma(M)$ for $i \neq 0$.
@@ -483,7 +491,7 @@ So by \cref{P: additive c}, we have $H^0_\Gamma(M) \cong \prod \Z$, where the pr
 Then $\td H^0_\Gamma(M)$ is the quotient of this $\prod \Z$ by the subgroup generated by $(1,1,\ldots)$.
 \end{definition}
 
-
+%INDEX HERE
 
 \subsection{Mayer--Vietoris sequences}\label{S: MV}
 
