@@ -243,9 +243,9 @@
 \indexentry{geometric cochain|hyperindexformat{\textbf}}{74}
 \indexentry{$C_\Gamma^*(M)$|hyperpage}{74}
 \indexentry{geometric homology|hyperindexformat{\textbf}}{74}
-\indexentry{$H_*(C^\Gamma_*(M))$|hyperpage}{74}
+\indexentry{$H_*^\Gamma(M)$|hyperpage}{74}
 \indexentry{geometric cohomology|hyperindexformat{\textbf}}{74}
-\indexentry{$H^*(C_\Gamma^*(M))$|hyperpage}{74}
+\indexentry{$H^*_\Gamma(M)$|hyperpage}{74}
 \indexentry{geometric chain!negative of|hyperpage}{74}
 \indexentry{geometric chain!representing $0$|hyperpage}{74}
 \indexentry{geometric cochain!negative of|hyperpage}{74}
@@ -389,16 +389,54 @@
 \indexentry{geometric cohomology!functoriality|)hyperpage}{97}
 \indexentry{geometric cohomology!additivity|hyperpage}{97}
 \indexentry{geometric cohomology!reduced|hyperpage}{98}
+\indexentry{geometric cohomology!supported on an open set|hyperindexformat{\textbf}}{98}
+\indexentry{$C_\Gamma^*(M \pipe_U)$|hyperpage}{98}
+\indexentry{$H_\Gamma^*(M \pipe_U)$|hyperpage}{98}
+\indexentry{geometric cohomology!supported on an open set!for an open ball|hyperpage}{99}
+\indexentry{separating function|hyperindexformat{\textbf}}{99}
+\indexentry{separating function!existence of|hyperpage}{99}
+\indexentry{Mayer-Vietoris sequence!covariant|hyperpage}{100}
+\indexentry{geometric homology!of spheres|hyperpage}{101}
+\indexentry{Mayer-Vietoris sequence!for geometric cohomology!connecting morphism|hyperindexformat{\textbf}}{102}
+\indexentry{Mayer-Vietoris sequence!for geometric cohomology!connecting morphism|(hyperpage}{102}
+\indexentry{connecting morphism for geometric cohomology|(hyperpage}{102}
+\indexentry{connecting morphism for geometric cohomology!is well defined|hyperpage}{104}
+\indexentry{connecting morphism for geometric cohomology!naturality|hyperpage}{105}
+\indexentry{Mayer-Vietoris sequence!for geometric cohomology!connecting morphism|)hyperpage}{108}
+\indexentry{connecting morphism for geometric cohomology|)hyperpage}{108}
+\indexentry{Mayer-Vietoris sequence!geometric cohomology|hyperpage}{108}
+\indexentry{geometric cohomology!Mayer-Vietoris sequence|hyperpage}{108}
+\indexentry{geometric cohomology!of spheres|hyperpage}{112}
+\indexentry{geometric homology!is singular homology|hyperpage}{112}
+\indexentry{geometric cohomology!is singular cohomology|hyperpage}{112}
+\indexentry{geometric cohomology!of the projective plane|hyperpage}{113}
+\indexentry{$S^{sm}_*(M)$|hyperpage}{114}
+\indexentry{smooth singular chains|(hyperpage}{114}
+\indexentry{cubical singular chains|hyperpage}{114}
+\indexentry{$SK_*(M)$|hyperpage}{114}
+\indexentry{$\interval^k$|hyperpage}{114}
+\indexentry{$NK_*(M)$|hyperpage}{114}
+\indexentry{cubical singular chains!normalized|hyperpage}{114}
+\indexentry{geometric homology!via smooth singular simplices|hyperpage}{115}
+\indexentry{geometric homology!via smooth singular cubes|hyperpage}{115}
+\indexentry{geometric homology!is singular homology|hyperpage}{115}
+\indexentry{smooth singular chains|)hyperpage}{116}
+\indexentry{smooth singular cubes|(hyperpage}{116}
+\indexentry{smooth singular cubes|)hyperpage}{119}
+\indexentry{geometric chains!with coefficients|hyperindexformat{\textbf}}{119}
+\indexentry{geometric homology!with coefficients|hyperindexformat{\textbf}}{119}
 \indexentry{geometric chains!with coefficients|hyperpage}{119}
 \indexentry{geometric homology!with coefficients|hyperpage}{119}
-\indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{189}
-\indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{189}
-\indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{189}
-\indexentry{local orientation|hyperindexformat{\see{orientation, local}}}{189}
-\indexentry{tautological co-orientation|hyperindexformat{\see{co-orientation, tautological}}}{189}
-\indexentry{normal co-orientation|hyperindexformat{\see{co-orientation, normal}}}{189}
-\indexentry{pullback co-orientation|hyperindexformat{\see{co-orientation, of pullback}}}{189}
-\indexentry{products|hyperindexformat{\seealso{external products}}}{189}
-\indexentry{product orientation!see{orientation!of external product}|hyperpage}{189}
-\indexentry{product co-orientation!see{co-orientation!of external product}|hyperpage}{189}
-\indexentry{orientation!cap!seealso{cap orientation}|hyperpage}{189}
+\indexentry{geometric homology!with coefficients!is singular homology with coefficients|hyperpage}{119}
+\indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{190}
+\indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{190}
+\indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{190}
+\indexentry{local orientation|hyperindexformat{\see{orientation, local}}}{190}
+\indexentry{tautological co-orientation|hyperindexformat{\see{co-orientation, tautological}}}{190}
+\indexentry{normal co-orientation|hyperindexformat{\see{co-orientation, normal}}}{190}
+\indexentry{pullback co-orientation|hyperindexformat{\see{co-orientation, of pullback}}}{190}
+\indexentry{products|hyperindexformat{\seealso{external products}}}{190}
+\indexentry{product orientation!see{orientation!of external product}|hyperpage}{190}
+\indexentry{product co-orientation!see{co-orientation!of external product}|hyperpage}{190}
+\indexentry{orientation!cap!seealso{cap orientation}|hyperpage}{190}
+\indexentry{Mayer-Vietoris sequence!for geometric cohomology!connecting morphism|hyperindexformat{\seealso{connecting morphism for geometric cohomology}}}{190}
