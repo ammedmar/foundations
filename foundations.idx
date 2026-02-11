@@ -28,8 +28,8 @@
 \indexentry{$\epsilon$-neighborhood theorem|hyperpage}{11}
 \indexentry{transversality!Transversality Homotopy Theorem|hyperpage}{11}
 \indexentry{proper map!homotopy criterion|hyperpage}{12}
-\indexentry{tranversality!Transversality Theorem|hyperpage}{12}
-\indexentry{tranversality!Transversality Theorem|hyperpage}{13}
+\indexentry{transversality!Transversality Theorem|hyperpage}{12}
+\indexentry{transversality!Transversality Theorem|hyperpage}{13}
 \indexentry{pullback|hyperindexformat{\textbf}}{14}
 \indexentry{fiber product|hyperindexformat{\textbf}}{14}
 \indexentry{pullback!manifold with corners|hyperpage}{14}
@@ -428,6 +428,69 @@
 \indexentry{geometric chains!with coefficients|hyperpage}{119}
 \indexentry{geometric homology!with coefficients|hyperpage}{119}
 \indexentry{geometric homology!with coefficients!is singular homology with coefficients|hyperpage}{119}
+\indexentry{cube|hyperpage}{121}
+\indexentry{cube!partition of coordinates|hyperpage}{121}
+\indexentry{cube!face|hyperindexformat{\textbf}}{121}
+\indexentry{cube!free coordinates|hyperindexformat{\textbf}}{121}
+\indexentry{cube!bound coordinates|hyperindexformat{\textbf}}{121}
+\indexentry{cube!initial vertex|hyperpage}{121}
+\indexentry{cube!terminal vertex|hyperpage}{121}
+\indexentry{cube!face inclusion|hyperpage}{121}
+\indexentry{cube!face/degeneracy identities|hyperpage}{121}
+\indexentry{cube!interval poset|hyperindexformat{\textbf}}{121}
+\indexentry{cubical complex|hyperindexformat{\textbf}}{122}
+\indexentry{cubical complex!face|hyperpage}{122}
+\indexentry{cubical complex!characteristic map|hyperpage}{122}
+\indexentry{cubical complex!product of|hyperpage}{122}
+\indexentry{$\mathtt{Cube}$|hyperpage}{123}
+\indexentry{cubical complex!geometric realization|hyperindexformat{\textbf}}{123}
+\indexentry{cubulation|hyperindexformat{\textbf}}{123}
+\indexentry{cubulation!smooth cubulations exist|hyperpage}{123}
+\indexentry{cubical chain|hyperindexformat{\textbf}}{123}
+\indexentry{$K_*(X)$|hyperpage}{123}
+\indexentry{$H_*(X)$|hyperpage}{124}
+\indexentry{cubical homology|hyperpage}{124}
+\indexentry{cubical complex!face!canonical orientation of|hyperpage}{124}
+\indexentry{cubical cochain|hyperindexformat{\textbf}}{124}
+\indexentry{$K^*(X)$|hyperpage}{124}
+\indexentry{$H^*(X)$|hyperpage}{124}
+\indexentry{cubical cohomology|hyperpage}{124}
+\indexentry{cubical homology!is singular cubical homology|hyperpage}{124}
+\indexentry{cubical cohomology!is cubical singular cohomology|hyperpage}{125}
+\indexentry{cubulation!transversality to|hyperindexformat{\textbf}}{125}
+\indexentry{$PC^*_{\Gamma \pf X}(M)$|hyperpage}{125}
+\indexentry{geometric cochains!transverse to cubulation|hyperindexformat{\textbf}}{125}
+\indexentry{$C_{\Gamma \pf X}^*(M)$|hyperpage}{125}
+\indexentry{geometric cohomology!transverse to cubulation|hyperindexformat{\textbf}}{126}
+\indexentry{$H_{\Gamma \pf X}^*(M)$|hyperpage}{126}
+\indexentry{geometric cohomology!transverse to cubulation!is geometric cochomology|hyperpage}{126}
+\indexentry{transversality!Transversality Theorem|hyperpage}{126}
+\indexentry{function subordinate to a cover with constants|hyperpage}{127}
+\indexentry{augmentation map|hyperpage}{130}
+\indexentry{$\aug$|hyperpage}{130}
+\indexentry{intersection number|(hyperpage}{131}
+\indexentry{intersection number|)hyperpage}{131}
+\indexentry{intersection map|hyperindexformat{\textbf}}{131}
+\indexentry{intersection map!is well defined|hyperpage}{131}
+\indexentry{geometric cochain!complex need not be free abelian|hyperpage}{132}
+\indexentry{intersection map!is a cohomology surjection|hyperpage}{132}
+\indexentry{intersection map!is a cohomology isomorphism when finitely generated|hyperpage}{132}
+\indexentry{geometric cohomology!with coefficients|hyperpage}{133}
+\indexentry{$\jinterval^n$|hyperpage}{133}
+\indexentry{cube!central subdivision|hyperindexformat{\textbf}}{133}
+\indexentry{$\jinterval^n$!internal face|hyperindexformat{\textbf}}{133}
+\indexentry{$\jinterval^n$!external face|hyperindexformat{\textbf}}{133}
+\indexentry{$\hat F$|hyperpage}{133}
+\indexentry{cube!center|hyperindexformat{\textbf}}{133}
+\indexentry{cube!dual face|hyperindexformat{\textbf}}{133}
+\indexentry{$F^\vee$|hyperpage}{133}
+\indexentry{$\bd_{\text{int}}f$|hyperpage}{134}
+\indexentry{$\bd_{\text{ext}}f$|hyperpage}{134}
+\indexentry{cubical complex!centrally subdivided|hyperpage}{136}
+\indexentry{cubulation!pushing the dual|(hyperpage}{137}
+\indexentry{cubulation!pushing the dual|)hyperpage}{140}
+\indexentry{intersection map!is a cohomology surjection|hyperpage}{140}
+\indexentry{intersection map!is a cohomology isomorphism when finitely generated|hyperpage}{140}
 \indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{190}
 \indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{190}
 \indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{190}

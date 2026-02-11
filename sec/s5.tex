@@ -72,7 +72,7 @@ For the remainder of the section, and for simplicity of notation, we leave degre
 \begin{convention}[Naive prehomotopy co-orientation convention]\label{homotopy product co-orientation convention}\index{co-orientation!naive prehomotopy convention}
 	To determine the interaction of homotopies $M \times I \to N$ with geometric chains and cochains, we will often need to consider compositions of the form $W \times I \xr{r_W \times \id_I} M \times I \to N$.
 	The maps $W \times I \xr{r_W \times \id_I} M \times I$ are technically external products, but they function more as a sort of ``prehomotopy'' on the way to forming the composite homotopy $W \times I \to N$.
-	As such, in this section (and when using its results later on) we follow a naive co-orientation convention for prehomotopies rather than the external product convention of \cref{D: co-oriented exterior} in order to avoid some unpleasant signs that are not consequential to the ultimate results of this section.
+	As such, in this section (and when using its results later on) we follow a naive co-orientation convention for prehomotopies rather than the external product convention of \cref{D: co-oriented exterior} in order to avoid some unpleasant signs that are not consequential to the ultimate results.
 
 	Specifically: If $r_W \colon W \to M$ is co-oriented, then we co-orient $r_W \times \id_I \colon W \times I \to M \times I$ so that if $(\beta_W,\beta_M)$ is the co-orientation at $x \in W$ then $(\beta_W \wedge \beta_I,\beta_M \wedge \beta_I)$ is the co-orientation at $(x,t)$ for any $t \in I$, with $\beta_I$ being the standard orientation of the interval.
 \end{convention}
@@ -105,7 +105,7 @@ We begin with the following observations for the co-oriented cases.
 
 \begin{corollary}\label{C: universal homotopy boundary co-orientation}
 	Let $F \colon M \times I \to N$ be a co-oriented homotopy from $f$ to $g$ (see \cref{D: co-oriented homotopy}), and let $r_W \colon W \to M$ be a co-oriented map.
-	Then $F \circ (r_W \times \id_I)$ is a co-oriented homotopy from $fr_W$ to $gr_W$.
+	If $r_W \times \id_I$ is co-oriented according to \cref{homotopy product co-orientation convention}, then $F \circ (r_W \times \id_I)$ is a co-oriented homotopy from $fr_W$ to $gr_W$.
 \end{corollary}
 
 \begin{proof}
@@ -127,7 +127,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 \begin{lemma}\label{L: dessicated homotopy}
 	Let $W \in PC_*^\Gamma(M)$ (or $W \in PC^*_\Gamma(M)$).
 	Let $F \colon M \times I \to N$ be a smooth homotopy; if $W \in PC^*_\Gamma(M)$ suppose further that $F$ is proper and co-oriented.
-	Then $F \circ (r_W \times \id_I) \colon W \times I \to N$ is in $PC_*^\Gamma(N)$ (or $PC^*_\Gamma(N))$.
+	Then $F \circ (r_W \times \id_I) \colon W \times I \to N$ is in $PC_*^\Gamma(N)$ (or $PC^*_\Gamma(N)$, using \cref{homotopy product co-orientation convention}).
 	Furthermore,
 	if $r_W \colon W \to M$ is trivial, of small rank, or degenerate then so are
 	$F \circ (r_W \times id_I) \colon W \times I \to N$ and $F(-,j) \circ r_W \colon W \to N$ for $j=0,1$ (for either co-orientation of $F(-,j)$, which is co-orientable by \cref{L: co-orientable homotopies}).
@@ -169,7 +169,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 \begin{corollary}\label{C: chain homotopy}
 	Let $V, W \in PC_i^\Gamma(M)$ or $V, W \in PC^i_\Gamma(M)$.
 	Let $F \colon M \times I \to N$ be a smooth homotopy; if $V,W \in PC^i_\Gamma(M)$ suppose further that $F$ is proper and co-oriented.
-	If $V,W$ represent the same element of $C_i^\Gamma(M)$ and $j=0,1$, then $F(-,j) \circ r_V: V \to N$ and	$F(-,j) \circ r_W \colon W \to N$ represent the same element of $C_i^\Gamma(N)$ (for either chosen co-orientation of $F(-,j)$) and $F \circ (r_V \times id_I) \colon V \times I \to N$ and $F \circ (r_W \times id_I) \colon W \times I \to N$ represent the same element of $C_{i+1}^\Gamma(M)$.
+	If $V,W$ represent the same element of $C_i^\Gamma(M)$ and $j=0,1$, then $F(-,j) \circ r_V: V \to N$ and	$F(-,j) \circ r_W \colon W \to N$ represent the same element of $C_i^\Gamma(N)$ (for either chosen co-orientation of $F(-,j)$) and $F \circ (r_V \times id_I) \colon V \times I \to N$ and $F \circ (r_W \times id_I) \colon W \times I \to N$ represent the same element of $C_{i+1}^\Gamma(M)$, using \cref{homotopy product co-orientation convention} for the co-orientations.
 	The analogous fact holds for $V, W \in PC^i_\Gamma(M)$.
 \end{corollary}
 
@@ -197,7 +197,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 	Thus $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent homologous cycles.
 
 	Next consider the case of $W$ a cocycle.
-	Employing \cref{homotopy product co-orientation convention}, by \cref{C: universal homotopy boundary co-orientation,D: co-oriented homotopy} we have $$\bd (F \circ (r_W \times \id_I)) = gr_W \amalg -fr_W \amalg H,$$ where $H$ is the homotopy $F \circ (r_W \times \id_I) \circ i_{\bd W \times \id_I}$.
+	Employing \cref{homotopy product co-orientation convention}, by \cref{C: universal homotopy boundary co-orientation,D: co-oriented homotopy} we have $$\bd (F \circ (r_W \times \id_I)) = gr_W \amalg -fr_W \amalg H,$$ where $H$ has underlying map $F \circ (r_W \times \id_I) \circ i_{\bd W \times \id_I}$.
 	So, up to co-orientation, $H = F \circ (r_{\bd W} \times \id_I) \colon \bd W \times I \to N$.
 	But $\bd W \in Q^*(M)$, and hence so is $H \colon (\bd W) \times I \to N$ by \cref{L: dessicated homotopy}.
 	Thus we have

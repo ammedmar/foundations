@@ -37,21 +37,21 @@ To implement this proof, we include in \cref{S: dual cubes} a discussion of what
 \subsection{Cubical complexes and cubulations}\label{S: cubes}
 
 We begin by recalling some notation from \cite{FMS-flows}.
-In the context of cubical complexes we write the unit interval as $\interval = [0,1]$ and define the \textbf{standard $n$-cube} to be
+In the context of cubical complexes we write the unit interval as $\interval = [0,1]$ and define the \textbf{standard $n$-cube}\index{cube} to be
 \begin{equation*}
 	\interval^n = \big\{ (x_1, \dots, x_n) \in \R^n\ |\ 0 \leq x_i \leq 1 \big\}.
 \end{equation*}
 Denote the set $\{1, \dots, n\}$ by $\overline{n}$.
 
-Given a partition $F = (F_0, F_{01}, F_1)$ of $\overline n$, it determines a \textbf{face} of $\interval^n$ given by
+Given a partition $F = (F_0, F_{01}, F_1)$\index{cube!partition of coordinates} of $\overline n$, it determines a \textbf{face}\index{cube!face|textbf} of $\interval^n$ given by
 \begin{equation*}
 	\{(x_1, \dots, x_n) \in \interval^n\ |\ \forall \varepsilon \in \{0, 1\},\ i \in F_\varepsilon \Rightarrow x_i = \varepsilon\}.
 \end{equation*}
 We abuse notation and write $F$ for both the partition and its associated face.
-We refer to coordinates $x_i$ with $i \in F_{01}$ as \textbf{free} and to the others as \textbf{bound}.
+We refer to coordinates $x_i$ with $i \in F_{01}$ as \textbf{free}\index{cube!free coordinates|textbf} and to the others as \textbf{bound}\index{cube!bound coordinates|textbf}.
 The \textbf{dimension} of $F$ is its number of free coordinates, and as usual the faces of dimension $0$ and $1$ are called vertices and edges, respectively.
 The set of vertices of $\interval^n$ is denoted by $\vertices(\interval^n)$.
-Given any face $F$, its \textbf{initial vertex} is obtained by setting all free coordinates to $0$, and its \textbf{terminal vertex} is obtained by setting all free coordinates to $1$.
+Given any face $F$, its \textbf{initial vertex|textbf}\index{cube!initial vertex} is obtained by setting all free coordinates to $0$, and its \textbf{terminal vertex|textbf}\index{cube!terminal vertex} is obtained by setting all free coordinates to $1$.
 We note that $F$ is determined completely by its initial and terminal vertices: $F_0$ is the set of coordinates that are $0$ for both vertices, $F_1$ is the set of coordinates that are $1$ for both vertices, and $F_{01}$ is the set of coordinates that disagree.
 
 \begin{example}
@@ -63,12 +63,12 @@ For $\varepsilon \in \{0, 1\}$ and $i \in \overline{n}$, we define maps $\delta_
 \begin{align*}
 	\delta_i^\varepsilon(x_1, \dots, x_{n-1}) & = (x_1, \dots, x_{i-1}, \varepsilon, x_i, \dots, x_{n-1}).
 \end{align*}
-Any composition of these is referred to as a \textbf{face inclusion map}.
+Any composition of these is referred to as a \textbf{face inclusion map}.\index{cube!face inclusion}
 
 We also have projection maps $\pi_i \colon \interval^n \to \interval^{n-1}$ such that
 \[\pi_i(x_1, \ldots, x_n) = (x_1, \ldots, \hat x_i, \ldots, x_n),\]
 with $\hat x_i$ as usual denoting the omission of the $x_i$ term.
-Analogous to the face and degeneracy identities for simplicial sets, these operators satisfy the following relations \cite[Section 4]{GrMa03} (it is also easy and illuminating to work these out on one's own):
+Analogous to the face and degeneracy identities for simplicial sets, these operators satisfy the following relations \cite[Section 4]{GrMa03} (it is also easy and illuminating to work these out on one's own):\index{cube!face/degeneracy identities}
 
 \[
 \begin{array}{rlc}
@@ -94,7 +94,7 @@ The inclusion relation in the power set induces a poset structure on $\vertices(
 We will freely use the identification of these two posets, thinking of $\mathcal P(\overline n)$ as a combinatorial model for $\interval^n$ in the same way that one identifies the totally ordered set $[0,\dots, n]$ with the $n$-simplex $\Delta^n$ in the simplicial setting.
 Note that face embedding maps induce order-preserving maps at the level of vertices.
 
-An \textbf{interval subposet} of $\mathcal P(\overline n)$ is one of the form $[v, w] = \{u \in \mathcal P(\overline n)\ |\ v \leq u \leq w\}$ for a pair of vertices $v \leq w$.
+An \textbf{interval subposet}\index{cube!interval poset|textbf} of $\mathcal P(\overline n)$ is one of the form $[v, w] = \{u \in \mathcal P(\overline n)\ |\ v \leq u \leq w\}$ for a pair of vertices $v \leq w$.
 This is precisely the set of vertices of the unique face $F$ of $\interval^n$ with $v$ as its initial vertex and $w$ as its terminal vertex.
 This association determines a canonical bijection between faces of $\interval^n$ and such subposets; explicitly, to $[v, w]$ we associate the face $F$ defined by $F_\varepsilon = \{i \in \overline{n}\ |\ v_i = w_i = \varepsilon\}$ for $\varepsilon \in \{0, 1\}$.
 
@@ -102,7 +102,7 @@ The posets $\{\mathcal P(\overline n)\}_{n \geq 1}$ play the role for cubical co
 Recall for comparison that an abstract ordered simplicial complex can be defined as a pair $(\vertices(X), X)$, where $X$ is a collection of subsets of the set $\vertices(X)$, called simplices, such that every singleton subset (vertex) is in $X$, every subset of a simplex (face) is again in $X$, and each simplex is equipped with a total order compatible with its faces.
 We have the following cubical analogue.
 
-\begin{definition}\label{D:cubical}
+\begin{definition}\label{D:cubical}\index{cubical complex|textbf}
 	A \textbf{cubical complex} $X$ is a collection $\{ \sigma \}$ of finite non-empty subsets of a set $\vertices(X)$, together with, for each $\sigma \in X$, a bijection $\iota_\sigma \colon \sigma \to \mathcal P(\overline n)$ for some $n$, such that:
 	\begin{enumerate}
 		\item For all $v \in \vertices(X)$, $\{v\} \in X$,
@@ -116,7 +116,7 @@ We have the following cubical analogue.
 			\end{tikzcd}
 		\end{equation*}
 	\end{enumerate}
-	We refer to an element $\sigma \in X$ as a \textbf{cube} or \textbf{face} of $X$, refer to $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ as its \textbf{characteristic map},
+	We refer to an element $\sigma \in X$ as a \textbf{cube} or \textbf{face}\index{cubical complex!face} of $X$, refer to $\iota_\sigma \colon \sigma \to \mathcal P(\overline{n})$ as its \textbf{characteristic map},\index{cubical complex!characteristic map}
 	and refer to $n$ as its \textbf{dimension}.
 	If $\rho \subseteq \sigma \in X$, we say that $\rho$ is a \textbf{face} of $\sigma$ in $X$, and this determines a poset structure on $X$ itself.
 	We identify elements in $\vertices(X)$ with the singleton subsets in $X$, referring to them as vertices.
@@ -137,7 +137,7 @@ Our definition sits between cubical sets \cite{jardine2002cubical} and cellular 
 	It does, however, sometimes occur naturally, such as when a cubical complex is a subcomplex of a lattice, as will be the case in our construction below of cubulations of smooth manifolds.
 \end{remark}
 
-\noindent Given two cubical complexes $X$ and $Y$, their \textbf{product} is the cubical complex
+\noindent Given two cubical complexes $X$ and $Y$, their \textbf{product}\index{cubical complex!product of} is the cubical complex
 \[
 X \times Y = \{ \sigma_X \times \sigma_Y \mid \sigma_X \in X,\ \sigma_Y \in Y \},
 \]
@@ -156,10 +156,10 @@ is the canonical order-preserving bijection, which is compatible with the identi
 
 \subsection{Cubulations}
 
-Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$ be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
+Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$\index{$\mathtt{Cube}$} be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
 The poset of faces of a cubical complex $X$ also determines a category, and the characteristic maps of $X$ determine a functor from this poset category to $\mathtt{Cube}$.
-We define the \textbf{geometric realization} $|X|$ of $X$ as the colimit of this functor; in other words, we glue topological cubes together according to the combinatorial data of the cubical complex $X$ in the evident way.
-A \textbf{cubical structure} or \textbf{cubulation} on a space $S$ is a homeomorphism $h \colon |X| \to S$ for some cubical complex $X$.
+We define the \textbf{geometric realization}\index{cubical complex!geometric realization|textbf} $|X|$ of $X$ as the colimit of this functor; in other words, we glue topological cubes together according to the combinatorial data of the cubical complex $X$ in the evident way.
+A \textbf{cubical structure} or \textbf{cubulation}\index{cubulation|textbf} on a space $S$ is a homeomorphism $h \colon |X| \to S$ for some cubical complex $X$.
 
 \begin{comment}
 	We abuse notation and write $h \circ \iota_{|\sigma|}$ simply as $\iota_\sigma$ for any $\sigma \in X$ when a cubical structure $h \colon |X| \to S$ is understood.
@@ -167,9 +167,9 @@ A \textbf{cubical structure} or \textbf{cubulation} on a space $S$ is a homeomor
 
 A smooth cubulation is one for which the restriction of $h \colon |X| \to S$ to each cube is a smooth map of manifolds with corners.
 For a given face of $F$ of $X$, we will also refer to the corresponding map $\interval^n \to S$ as the characteristic map of the face.
-Smooth cubulations exist for any smooth manifold, as in the following construction of \cite{ShSh92}.
+Smooth cubulations exist for any smooth manifold, as in the following construction of \cite{ShSh92}.\index{cubulation!smooth cubulations exist}
 
-Start with a smooth triangulation (see for example \cite[Theorem 10.6]{MUNK66} for the existence of such).
+Start with a smooth triangulation (see for example \cite[Theorem 10.6]{Munk66} for the existence of such).
 Consider the cell complex that is dual to its barycentric subdivision.
 Intersecting those dual cells with each simplex in the triangulation provides a subdivision of the simplex into cells that are linearly isomorphic to cubes.
 Moreover, starting with an ordered triangulation -- obtained for example by taking a barycentric subdivision -- such a cubical decomposition embeds cellularly into the cubical lattice of $\R^\infty$, and thus it is the geometric realization of a cubical complex.
@@ -199,37 +199,37 @@ Given a face inclusion $\delta_i^{\varepsilon} \colon \interval^n \to \interval^
 	x_1 \otimes \cdots \otimes [\underline{\varepsilon}] \otimes \cdots \otimes x_n.
 \end{equation*}
 Regarding a cubical complex $X$ as a functor to $\mathtt{Cube}$, we can compose it with the chain functor above to obtain a functor to chain complexes.
-The complex of \textbf{cubical chains} of $X$, denoted $K_*(X)$, is defined to be the colimit of this composition.
+The complex of \textbf{cubical chains}\index{cubical chain|textbf} of $X$, denoted $K_*(X)$,\index{$K_*(X)$} is defined to be the colimit of this composition.
 As one would expect, in each degree it is a free abelian group generated by the cubes of that dimension, and its boundary homomorphism sends the
 generator associated to a cube to a sum of generators associated to its codimension-one faces with appropriate signs.
 Furtheremore, the functor of cubical chains is strongly monoidal in the sense that $K_*(X \times Y)$ is canonically isomorphic to $K_*(X) \otimes K_*(Y)$ for any pair of cubical complexes.
-We will write $H_*(X)$ for $H_*(K_*(X))$, the cubical homology of $X$.
+We will write $H_*(X)$\index{$H_*(X)$} for $H_*(K_*(X))$, the cubical homology of $X$.\index{cubical homology}
 
 By abuse, we will use the same notation and terminology for an element in $X$, its geometric realization in $|X|$,
 and the corresponding basis element in $K_*(X)$.
 Most commonly we will write $F$ and refer simply to a ``face of $X$.''
 
 We note that for each $\interval^n$ we have the ordered set $\{\e_1, \dots, \e_n\}$ where $\e_i = \frac{\bd\ }{\bd x_i}$.
-For any face $F$ of $\interval^n$, the ordered subset $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ defines the \textbf{canonical orientation} of $F$.
+For any face $F$ of $\interval^n$, the ordered subset $\beta_F = \{\e_i\ |\ i \in F_{01}\}$ defines the \textbf{canonical orientation} of $F$.\index{cubical complex!face!canonical orientation of}
 In forming the cubical complex $X$, these orientations are preserved, and so each face of $X$ carries an orientation.
 These orientations are compatible with our standard generators of $K_*(X)$ in the sense that if we identify $[0,1]^{ \otimes k}$ with $\interval^k$ with its standard orientation then, in the boundary formula, $k-1$ faces appear with sign $1$ or $-1$ according to whether or not their standard orientations agree with the boundary orientation of $\interval^k$ as a manifold with corners.
 
-The \textbf{cubical cochain complex} of $X$ (with $\Z$ coefficients) is the chain complex
+The \textbf{cubical cochain complex}\index{cubical cochain|textbf} of $X$ (with $\Z$ coefficients) is the chain complex
 \[
 K^*(X) = \Hom_\Z(K_*(X), \Z).
-\]
+\]\index{$K^*(X)$}
 If $F$ is a face of $X$, and correspondingly a generator of $K_*(X)$, then we will write $F^*$ for the dual, i.e.\ the element of $K^*(X)$ such that $F^*(F) = 1$ and $F^*(E) = 0$ for all other faces $E\neq F$ of $X$.
 We will use the convention as in \cite[Section 42]{Mun84} that
 $$(dF^*)(\xi) = F^*(\bd \xi).$$
 As discussed in \cite[Section 42]{Mun84} in the simplicial context, these formulas are sufficient to determine the coboundary operator on all of $K^*(X)$, thinking of elements of $K^*(X)$ as possibly infinite formal sums $\sum n_i F_i^*$.
-We will write $H^*(X)$ for $H^*(K^*(X))$, the cubical cohomology of $X$.
+We will write $H^*(X)$\index{$H^*(X)$} for $H^*(K^*(X))$, the cubical cohomology of $X$.\index{cubical cohomology}
 
 \subsection{Comparing cubical and geometric homology}\label{S: cubical and geometric homology}
 
 Suppose $h \colon |X| \to M$ is a smooth cubulation.
 As the cubes of $X$ are compact oriented manifolds with corners, the composition of the inclusion of a cube into $X$ with the map $h$ gives an element of $PC_*^\Gamma(M)$ and hence an element of $C_*^\Gamma(M)$.
 Furthermore, the boundary formula for cubes in $K_*(X)$ agrees with the geometric boundary formula.
-So we obtain a chain map, in fact a subcomplex inclusion, $\mc J \colon K^X_*(M) \into C^\Gamma_*(M)$ with $K_*^X(M)$ canonically isomorphic to $K_*(X)$.
+So we obtain a chain map, in fact a subcomplex inclusion, $\mc J \colon K_*(X) \into C^\Gamma_*(M)$.
 We show in \cref{T: cubical homology iso} that the homology of $K_*(X)$ is both the standard homology of $M$ and the geometric homology $M$.
 
 Recall from \cref{S: homology is homology} the normalized singular cubical chain complex of $M$, denoted $NK_*(M)$, as well as the subcomplex $NK^{sm}_*(M)$ generated by smooth cubes.
@@ -240,7 +240,7 @@ There is also a map $\eta: K_*(X) \to NK^{sm}_*(M)$ that takes each cube into it
 Then $\mc J = \phi\eta \colon K_*(X) \to C^\Gamma_*(M)$.
 
 
-\begin{theorem}\label{T: cubical homology iso}
+\begin{theorem}\label{T: cubical homology iso}\index{cubical homology!is singular cubical homology}
 	The map $\eta: K_*(X) \to NK^{sm}_*(M)$ is a chain homotopy equivalence, and the map $\mc J \colon K_*(X) \to C^\Gamma_*(M)$ induces an isomorphism of homology groups $H_*(K_*(X)) \to H_*^\Gamma(M)$.
 \end{theorem}
 
@@ -271,7 +271,7 @@ As a corollary of the proof, we have the following useful result concerning the 
 	NK_{sm}^*(M)& \defeq \Hom(NK^{sm}_*(M),\Z).
 \end{align*}
 
-\begin{corollary}
+\begin{corollary}\index{cubical cohomology!is cubical singular cohomology}
 	The following maps on cohomology induced by restrictions are isomorphisms: $$H^*(NK^*(M)) \to H^*(NK_{sm}^*(M)) \to H^*(X).$$
 \end{corollary}
 
@@ -285,16 +285,16 @@ In this section we consider the cochains on $M$ represented by maps $W \to M$ th
 
 \begin{definition}\label{D: trans cube}
 	Let $M$ be equipped with a smooth cubulation $|X| \to M$.
-	We say that $r_W \colon W \to M$ is \textbf{transverse} to $X$ if $r_W \colon W \to M$ is transverse to each characteristic map of the cubulation.
+	We say that $r_W \colon W \to M$ is \textbf{transverse}\index{cubulation!transversality to|textbf} to $X$ if $r_W \colon W \to M$ is transverse to each characteristic map of the cubulation.
 	In particular, this implies by \cref{L: simple trans} that each induced $\bd^kW \to M$ is naively transverse to each face of the cubulation.
-	If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$, and so we can define $PC^*_{\Gamma \pf X}(M)$ to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
+	If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$, and so we can define $PC^*_{\Gamma \pf X}(M)$\index{$PC^*_{\Gamma \pf X}(M)$} to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
 
 	We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma \pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma \pf X}^*(M)$ such that $V\sim W$ if and only if $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$.
-	The \textbf{geometric cochains of $M$ transverse to $X$}, denoted $C_{\Gamma \pf X}^*(M)$, are the equivalence classes in $PC_{\Gamma \pf X}^*(M)$.
+	The \textbf{geometric cochains of $M$ transverse to $X$},\index{geometric cochains!transverse to cubulation|textbf} denoted $C_{\Gamma \pf X}^*(M)$,\index{$C_{\Gamma \pf X}^*(M)$} are the equivalence classes in $PC_{\Gamma \pf X}^*(M)$.
 	The set $C_{\Gamma \pf X}^*(M)$ is a chain complex under the operation $\sqcup$ and with boundary map $\bd$.
 	If $V, W \in PC_{\Gamma \pf X}^*(M)$, then $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$ if and only if as elements of $PC_\Gamma^*(M)$ we have $V \sqcup -W \in Q^*(M)$, so $V$ and $W$ represent the same element of $C_{\Gamma \pf X}^*(M)$ if and only if they represent the same element of $C^*_\Gamma(M)$.
 	Thus $C_{\Gamma \pf X}^*(M)$ is a subcomplex of $C_\Gamma^*(M)$.
-	The \textbf{geometric cohomology transverse to $X$} is $H_{\Gamma \pf X}^*(M) \defeq H^*(C_{\Gamma \pf X}^*(M))$.
+	The \textbf{geometric cohomology transverse to $X$}\index{geometric cohomology!transverse to cubulation|textbf} is $H_{\Gamma \pf X}^*(M) \defeq H^*(C_{\Gamma \pf X}^*(M))$.\index{$H_{\Gamma \pf X}^*(M)$}
 
 	When the specific cubulation $X$ is understood, we sometimes simplify the notation to $PC_{\Gamma\pf}^*(M)$, $C_{\Gamma\pf}^*(M)$, and $H_{\Gamma\pf}^*(M)$.
 \end{definition}
@@ -306,7 +306,7 @@ A key technical result, which will take the remainder of this section to prove,
 is that this inclusion induces a cohomology isomorphism.
 In other words, the cochains that are transverse to $X$ are sufficient to compute the cohomology of $M$.
 
-\begin{theorem}\label{T: transverse complex}
+\begin{theorem}\label{T: transverse complex}\index{geometric cohomology!transverse to cubulation!is geometric cochomology}
 	The inclusion $C^*_{\Gamma \pf X}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism.
 \end{theorem}
 
@@ -333,7 +333,7 @@ Also, the Stability Theorem was not stated correct in early printings of \cite{G
 	However, this can be avoided if $Z$ is a closed set in $Y$, as is the case for the statement of the theorem in later printings of \cite{GuPo74}.}.
 The needed versions of these results is established in the following proposition:
 
-\begin{proposition}\label{P: ball stability}
+\begin{proposition}\label{P: ball stability}\index{transversality!Transversality Theorem}
 	Suppose $r_V \colon V \to M$ is a proper map from a manifold with corners to a cubulated manifold without boundary.
 	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id_M$ and $H(-,1) r_V \colon V \to M$ is transverse to the cubulation.
 	In other words, there is a proper universal homotopy from $r_V$ to a map that is transverse to the cubulation.
@@ -354,13 +354,13 @@ Before proving the proposition, which is somewhat technical, we use it to prove 
 
 	For injectivity, suppose $W \in PC^*_{\Gamma \pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
 	Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V \sqcup -W \in Q^*(M)$.
-	By \cref{P: ball stability}, there is a proper homotopy $H \colon M \times I \to M$ such that both $H(-,1)r_V$ and $H\circ (r_W \times \id_I)$ are transverse to the cubulation.
-	Let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, let $W'$ be the precochain $W \xr{H(-,1)r_W} M$, and let $Y$ be the precochain $W \times I \xr{H\circ (r_W \times \id_I)} M$.
+	By \cref{P: ball stability}, there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id_M$ and both $H(-,1)r_V$ and $H\circ (r_W \times \id_I)$ are transverse to the cubulation; co-orient $H$ and $H(-,1)$ as in \cref{D: homotopy co-orientation} based on the tautological co-orientation of $H(-,0)$.
+	Let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, let $W'$ be the precochain $W \xr{H(-,1)r_W} M$, and let $Y$ be the precochain $W \times I \xr{H\circ (r_W \times \id_I)} M$, co-orienting $r_W \times \id_I$ using the naive pre-homotopy co-orientation convention, \cref{homotopy product co-orientation convention}.
 	Let $Z$ be the precochain $V' \sqcup -Y$, which is transverse to the cubulation.
-	We note that $\bd V' \sqcup -W'$ is the image of $\bd V \sqcup -W$ after composing with $H(-,1)$, and so it is in $Q^*(M)$ by \cref{L: Q preservation}, using that we can co-orient $H$ and $H(-,1)$ as in \cref{S: co-oriented homotopy}.
-	Also as in \cref{S: co-oriented homotopy}, for the co-oriented case we have $\bd Y = W' \sqcup -W \sqcup B$, where $B$ is the pre(co)chain $\bd W \times I \xr{H\circ (r_{\bd W} \times \id_I)} M$ (cf. the proof of \cref{C: homotopy}).
+	We note that $\bd V' \sqcup -W'$ is the image of $\bd V \sqcup -W$ after composing with $H(-,1)$, and so it is in $Q^*(M)$ by \cref{L: Q preservation}.
+	Also by \cref{C: universal homotopy boundary co-orientation,L: co-oriented homotopy}, we have $\bd Y = W' \sqcup -W \sqcup B$, where $B$ is the map $\bd W \times I \xr{H\circ (r_{\bd W} \times \id_I)} M$ co-oriented as a homotopy from $-\bd W$ to $-\bd W'$.
 	Note that $B$ is also transverse to the cubulation as part of the boundary of $Y$.
-	Continuing in the co-oriented case, we now compute
+	We now compute
 	\begin{align*}
 		\bd Z \sqcup -W &= \bd V' \sqcup -\bd Y \sqcup -W\\
 		&= \bd V' \sqcup -(W' \sqcup -W \sqcup B) \sqcup -W\\
@@ -385,7 +385,7 @@ Before proving the proposition, which is somewhat technical, we use it to prove 
 
 It remains to prove \cref{P: ball stability}, which will require the following technical lemma that is also useful below in the proof of \cref{T: intersection qi}.
 
-\begin{lemma}\label{L: minimizer}
+\begin{lemma}\label{L: minimizer}\index{function subordinate to a cover with constants}
 	Let $M$ be a manifold without boundary, and let $\mc U = \{U_j\}$ be a locally finite open cover such that each $\bar U_j$ is compact.
 	Suppose given $\varepsilon_j>0$ for each $j$.
 	Then there exists a smooth function $\phi \colon M \to \R$ such that $0<\phi(x)<\varepsilon_j$ if $x \in \bar U_j$.
@@ -557,7 +557,7 @@ For this we first need a quick lemma.
 \end{proof}
 
 \begin{definition}\label{D: aug}
-	We define the \textbf{augmentation map} $\aug \colon PC^\Gamma_0(M) \to \Z$ as follows: If $W \in PC^\Gamma_0(M)$, then $W$ is the disjoint union of a finite number of points, each with orientation denoted $1$ or $-1$.
+	We define the \textbf{augmentation map}\index{augmentation map}\index{$\aug$} $\aug \colon PC^\Gamma_0(M) \to \Z$ as follows: If $W \in PC^\Gamma_0(M)$, then $W$ is the disjoint union of a finite number of points, each with orientation denoted $1$ or $-1$.
 	We let $\aug(W)$ be the sum of the orientations of the points in $W$, interpreting $1$ and $-1$ as integers.
 	By \cref{L: Q0}, an element of $PC^\Gamma_0(M)$ can be in $Q_0(M)$ only if this sum is $0$, so the augmentation descends to a homomorphism $\aug \colon C^\Gamma_0(M) \to \Z$.
 	Furthermore, if $W \in PC_1^\Gamma(M)$ then $\aug(\bd W) = 0$, so $\aug$ further descends to a homomorphism $\aug \colon H_0^\Gamma(M) \to \Z$.
@@ -568,9 +568,9 @@ In general, this is delicate, as geometric chains and cochains do not have fixed
 However, at the moment we do not need this full generality to define the intersection map we will need to compare geometric cohomology and cubical cohomology.
 This is reflected in the following more limited definition:
 
-\begin{definition}\label{D: intersection number}
+\begin{definition}\label{D: intersection number}\index{intersection number|(}
 	Suppose $M$ is an $m$-manifold without boundary and $W \in PC_\Gamma^i(M)$ and $N \in PC_{i}^\Gamma(M)$ are transverse.
-	We define the \textit{intersection number} $I_M(W,N)$ (or simply $I(W,N)$ if $M$ is clear from context) by $$I_M(W,N) = \aug(W \times_M N),$$ with $W \times_M N$ as defined in \cref{D: PC products}.
+	We define the \textbf{intersection number} $I_M(W,N)$ (or simply $I(W,N)$ if $M$ is clear from context) by $$I_M(W,N) = \aug(W \times_M N),$$ with $W \times_M N$ as defined in \cref{D: PC products}.
 \end{definition}
 
 We observe that this definition makes sense as $W$ and $N$ are transverse with complementary dimensions and $W \times_M N$ is an element of $PC_0^\Gamma(M)$.
@@ -606,13 +606,15 @@ Furthermore, in a neighborhood of $x$ the co-orientation of $r_W$ determines an 
 	By \cref{L: pullback with Q}, we know $W \times_M N \in Q_0(M)$, so $I(W,N) = \aug(W \times_M N) = 0$ by definition and \cref{L: Q0}.
 \end{proof}
 
-\begin{definition}\label{D: intersection homomorphism}
+\index{intersection number|)}
+
+\begin{definition}\label{D: intersection homomorphism}\index{intersection map|textbf}
 	Given the manifold without boundary $M$ cubulated by $X$, we define the \textbf{intersection map} $\mc I \colon C^*_{\Gamma \pf X}(M) \to K^*(X)$ by the possibly infinite formal sum $$\mc I(\uW) = \sum_F I_M(W,F)F^*,$$ where the sum is taken over faces $F$ of the cubulation $X$ such that $\dim(F)+\dim(W) = \dim(M)$ and the $W$ on the right hand side is any element of $PC^*_{\Gamma \pf X}(M)$ representing $\uW$.
 
 	In particular, for a face $F$ of dimension $\dim(M)-\dim(W)$, we have $$\mc I(\uW)(F) = I_M(W,F) = \aug(W \times_M F).$$
 \end{definition}
 
-\begin{proposition}\label{P: I is well defined}
+\begin{proposition}\label{P: I is well defined}\index{intersection map!is well defined}
 	The intersection map $\mc I$ is a well-defined chain map.
 \end{proposition}
 
@@ -639,7 +641,7 @@ Furthermore, in a neighborhood of $x$ the co-orientation of $r_W$ determines an 
 	It will therefore follow from \cref{T: intersection qi}, below, that the tautologically co-oriented identity map $M \to M$ generates $H^0_\Gamma(M) \cong \Z$, as promised in \cref{E: first examples}.
 \end{example}
 
-\begin{example}\label{E: uncountable}
+\begin{example}\label{E: uncountable}\index{geometric cochain!complex need not be free abelian}
 	Let $Z$ denote the integers, considered as a space with the discrete topology.
 	This space has a unique cubulation, which we will also write simply as $Z$.
 	In this example, we demonstrate that the map $\mc I \colon C^0_\Gamma(Z) \to K^0(Z)$ is an isomorphism.
@@ -662,7 +664,7 @@ Our goal now is to show that the intersection map $\mc I$ induces an isomorphism
 Recall that we already know these groups are abstractly isomorphic by \cref{T: transverse complex,T: geometric is singular} and the footnote on page \pageref{FN: cubical and singular}.
 Here is the formal statement of the theorem:
 
-\begin{theorem}\label{T: intersection qi}
+\begin{theorem}\label{T: intersection qi}\index{intersection map!is a cohomology surjection}\index{intersection map!is a cohomology isomorphism when finitely generated}
 	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$ is a surjection.
 	If, in addition, $H^i(M)$ is finitely generated, then $\mc I$ is an isomorphism.
 \end{theorem}
@@ -680,7 +682,7 @@ We conjecture that $\mc I$ is always an isomorphism, but we have not been able t
 
 Before starting toward the proof, we provide an application to cohomology with coefficients.
 
-\begin{corollary}
+\begin{corollary}\index{geometric cohomology!with coefficients}
 	If $H_*(M)$ is finitely-generated in each degree and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
 \end{corollary}
 \begin{proof}
@@ -702,19 +704,19 @@ It is needed to construct an $F_*$ and have $\Hom(F_*, \Z) \otimes G \cong \Hom(
 
 Analogous to barycentric subdivisions of simplices, we will need to consider standard subdivisions of cubes.
 For this we let $\jinterval$ denote the interval $\interval = [0,1]$ thought of as the (non-disjoint) union $[0,1/2] \cup [1/2,1]$.
-We can then write $\jinterval^n = \left([0,1/2] \cup [1/2,1]\right)^n$, with the idea being that we consider $\interval^n$ as the union of $2^n$ \textit{subcubes} of side length $1/2$, each of which is the product within $\interval^n$ of $n$ factors, each factor equal to either $[0,1/2]$ or $[1/2,1]$.
-We refer to $\jinterval^n$ with this structure as the \textbf{central subdivision} of $\interval^n$.
+We can then write \index{$\jinterval^n$} $\jinterval^n = \left([0,1/2] \cup [1/2,1]\right)^n$, with the idea being that we consider $\interval^n$ as the union of $2^n$ \textit{subcubes} of side length $1/2$, each of which is the product within $\interval^n$ of $n$ factors, each factor equal to either $[0,1/2]$ or $[1/2,1]$.
+We refer to $\jinterval^n$ with this structure as the \textbf{central subdivision}\index{cube!central subdivision|textbf} of $\interval^n$.
 It is a cubical complex with the evident partial orders obtained from $0 < 1/2 < 1$.
 The resulting subdivision of each cubical face of $\interval^n$ is precisely the central subdivision obtained by treating that face as some $\interval^k$ in its own right.
 
 Analogously to the case with $\interval^n$, each cube $S$ of $\jinterval^n$ possesses faces (some of which it shares with other $n$-cubes) consisting of subsets of $S$ in which some variables have been bound to the values $0$, $1$, or $1/2$.
 In general we refer to such faces as \textbf{faces of $\jinterval^n$}.
-If no variable of such a face is bound to $0$ or $1$, we say that we have an \textbf{internal face of $\jinterval^n$}, otherwise we call it an \textbf{external} face.
+If no variable of such a face is bound to $0$ or $1$, we say that we have an \textbf{internal face of $\jinterval^n$},\index{$\jinterval^n$!internal face|textbf} otherwise we call it an \textbf{external} face.\index{$\jinterval^n$!external face|textbf}
 External faces are all subsets of $\bd \interval^n$; internal faces are not subsets of $\bd \interval^n$.
 
-To each face $F$ of $\interval^n$, we refer to the point $\hat F$ at which all its free variables are equal to $1/2$ as the \textbf{center} of $F$.
+To each face $F$ of $\interval^n$, we refer to the point $\hat F$ \index{$\hat F$} at which all its free variables are equal to $1/2$ as the \textbf{center}\index{cube!center|textbf} of $F$.
 Each vertex is its own center.
-To each face $F$ of $\interval^n$ we define its \textbf{dual face in $\interval^n$}, or simply its \textbf{dual}, to be the face $F^\vee$ of $\jinterval^n$ determined as follows:
+To each face $F$ of $\interval^n$ we define its \textbf{dual face in $\interval^n$},\index{cube!dual face|textbf} or simply its \textbf{dual}, to be the face $F^\vee$ \index{$F^\vee$} of $\jinterval^n$ determined as follows:
 \begin{itemize}
 	\item If $i \in F_{01}$ (i.e.\ the coordinate $x_i$ is free in $F$), then $x_i = 1/2$ in $F^\vee$.
 
@@ -745,7 +747,7 @@ We define a map $\Psi \colon K^*(\interval^n) \to C_\Gamma^*(\interval^n)$ given
 To avoid overburdening the notation too much, throughout the remainder of this section we will simply write $F^\vee$ for the output geometric cochain, rather than $\underline{F^\vee}$; it should be clear from context when we refer to the cube face and when we refer to its corresponding geometric cochain.
 
 We introduce one more piece of notation for the following lemma.
-If $f$ is a face in $\jinterval^n$, we let $\bd_{\text{int}}f$ denote the union of the internal $\dim(f)-1$ faces of $\bd f$ and $\bd_{\text{ext}}f$ denote the union of the $\dim(f)-1$ external faces of $f$.
+If $f$ is a face in $\jinterval^n$, we let $\bd_{\text{int}}f$ \index{$\bd_{\text{int}}f$} denote the union of the internal $\dim(f)-1$ faces of $\bd f$ and $\bd_{\text{ext}}f$ \index{$\bd_{\text{ext}}f$} denote the union of the $\dim(f)-1$ external faces of $f$.
 If $f$ is co-oriented, then we interpret the terms of $\bd_{\text{int}}f$ and $\bd_{\text{ext}}f$ as co-oriented with the boundary co-orientations.
 When $f$ is interpreted as a geometric cochain, we interpret $\bd_{\text{int}}f$ and $\bd_{\text{ext}}f$ as sums of geometric cochains, in which case $\bd f = \bd_{\text{int}}f + \bd_{\text{ext}}f$.
 We can then extend $\bd_{\text{int}}$ and $\bd_{\text{ext}}$ to linear operators in the obvious way.
@@ -842,7 +844,7 @@ In other words, we identify $E$ with $\interval^k$ for an appropriate $k$ and fo
 \subsubsection{Dualization in cubical complexes}\label{S: dualization of complexes}
 
 Now suppose that $X$ is any cubical complex.
-We obtain the \textbf{centrally subdivided cubical complex $sd(X)$} by replacing each cube $\interval^n$ with $\jinterval^n$.
+We obtain the \textbf{centrally subdivided cubical complex $sd(X)$}\index{cubical complex!centrally subdivided} by replacing each cube $\interval^n$ with $\jinterval^n$.
 This is well defined as we have noted that the central subdivision of each cube is consistent with the central subdivision of each cube of which it is a face.
 
 Now suppose that $M$ is an $n$-manifold without boundary cubulated by the cubical complex $X$ via $\phi \colon |X| \to M$.
@@ -875,7 +877,7 @@ This is sufficient to determine a homomorphism $\Psi \colon K^*(X) \to C_\Gamma^
 Morally speaking, $\Psi$ will be our inverse to the intersection map $\mc I$, but unfortunately the elements of $PC^*_\Gamma(M)$ that represent the image of $\Psi$ are not transverse to the cubulation.
 So we need another step.
 
-\subsubsection{Pushing the dual cubulation}
+\subsubsection{Pushing the dual cubulation}\index{cubulation!pushing the dual|(}
 
 To remedy the problem with the image of $\Psi$ consisting of elements of $PC^*_\Gamma(M)$ that are not transverse to the cubulation, we construct a homotopy of $M$ to itself that pushes these cochains into transverse position with respect to the cubulation, which we regard as fixed.
 Moreover, we want to do so in a way such that the intersection number of the pushed $F^\vee$ with $F$ will be $1$, as expected.
@@ -1012,6 +1014,7 @@ As we will see in the proof, the actual construction is a bit fiddly in order to
 
 	Lastly, we observe that the homotopies from the identity to $\Phi$ and from $\Phi$ to $h$ (given by $H_2(-,ts_0)$) can be taken to be proper by an application of \cref{L: nearby proper homotopy} as in the proof of \cref{P: ball stability}, assuming we make all of our homotopies above yet smaller if necessary to meet the requirements of \cref{L: nearby proper homotopy}.
 \end{proof}
+\index{cubulation!pushing the dual|)}
 
 \subsubsection{The intersection map is an isomorphism for finitely-generated cohomology groups}
 
@@ -1019,7 +1022,7 @@ We are nearly ready to prove \cref{T: intersection qi}, which we restate here:
 
 
 
-\begin{theorem*}[\cref{T: intersection qi}]
+\begin{theorem*}[\cref{T: intersection qi}]\index{intersection map!is a cohomology surjection}\index{intersection map!is a cohomology isomorphism when finitely generated}
 	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$ is a surjection.
 	If, in addition, $H^i(M)$ is finitely generated, then $\mc I$ is an isomorphism.
 \end{theorem*}
