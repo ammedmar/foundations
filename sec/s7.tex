@@ -156,21 +156,21 @@ We will discuss the difficulties further after establishing some definitions and
 
 We begin with simple transversality.
 
-\begin{definition}\label{D: cochain trans}
+\begin{definition}\label{D: cochain trans}\index{transversality!simple|textbf}\index{geometric cochain!simply transverse|textbf}
 	Let $M$ be a manifold without boundary.
 	We say that $\uV, \uW \in C^*_{\Gamma}(M)$ are \textbf{simply transverse} as geometric cochains if there exist representatives $V,W \in PC^*_\Gamma(M)$ such that $V$ and $W$ are transverse as manifolds with corners mapping to $M$.
-	We call the data of such a pair $(V,W)$ a \textbf{simple transverse representation} for the pair $(\uV,\uW)$.
+	We call the data of such a pair $(V,W)$ a \textbf{simple transverse representation}\index{simple transverse representation|textbf} for the pair $(\uV,\uW)$.
 
 	We define simple transversality similarly if $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(M)$ or if $M$ is oriented and $\uV, \uW \in C_*^{\Gamma}(M)$.
 \end{definition}
 
 \begin{definition}\label{D: cochain products}
 	Let $M$ be a manifold without boundary.
-	For $\uV, \uW \in C^*_{\Gamma}(M)$ simply transverse, we define the \textbf{cup product} $\uV \uplus \uW \in C^*_\Gamma(M)$ to be the geometric cochain represented by the fiber product $V \times_M W$ for some simple transverse representation $(V,W)$ of $(\uV,\uW)$.
+	For $\uV, \uW \in C^*_{\Gamma}(M)$ simply transverse, we define the \textbf{cup product}\index{cup product|textbf}\index{geometric cochain!cup product} $\uV \uplus \uW \in C^*_\Gamma(M)$ to be the geometric cochain represented by the fiber product $V \times_M W$ for some simple transverse representation $(V,W)$ of $(\uV,\uW)$.
 
-	Analogously, if $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(M)$ are simply transverse, we define the \textbf{cap product} $\uV \nplus \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
+	Analogously, if $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(M)$ are simply transverse, we define the \textbf{cap product}\index{cap product|textbf}\index{geometric cochain!cap product}\index{geometric chain!cap product} $\uV \nplus \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
 
-	If $M$ is oriented and $\uV,\uW \in C_*^\Gamma(M)$ are simply transverse, we define the \textbf{intersection product} $\uV \bullet \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
+	If $M$ is oriented and $\uV,\uW \in C_*^\Gamma(M)$ are simply transverse, we define the \textbf{intersection product}\index{intersection product|textbf}\index{geometric chain!intersection product product} $\uV \bullet \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
 
 	In each context, the given product $V \times_M W$ is as defined in \cref{D: PC products}, as $V$ and $W$ are transverse by assumption.
 \end{definition}
@@ -184,7 +184,7 @@ We begin with simple transversality.
 The first main result of this section is that these products are well defined as operations on simply transverse geometric chains or cochains, independent of the prechain or precochain representatives chosen.
 This is not immediately clear, as a geometric (co)chain $\uV$ has in general an infinite number of representatives in $PC(M)$ that may or may not be transverse to any other given element of $PC(M)$; see \cref{E: bad transversality}.
 
-\begin{theorem}\label{T: cochain product}
+\begin{theorem}\label{T: cochain product}\index{cup product|textbf}\index{geometric cochain!cup product}\index{cap product|textbf}\index{geometric cochain!cap product}\index{geometric chain!cap product}\index{intersection product|textbf}\index{geometric chain!intersection product product}\index{simple transverse representation}
 	Given simply transverse $\uV$ and $\uW$, the cup, cap, or intersection products of \cref{D: cochain products} are well defined, independent of choice of simple transverse representation.
 \end{theorem}
 
@@ -328,7 +328,7 @@ The next definition builds on this idea.
 \begin{definition}\label{D: multicup}
 	Let $M$ be a manifold without boundary.
 	Let $\uV, \uW \in C_\Gamma^*(M)$, and suppose $\uV$ and $\uW$ can be written as finite sums $\uV = \sum_i \underline{V_i} \in C_\Gamma^*(M)$ and $\uW = \sum_j \underline{W_j} \in C_\Gamma^*(M)$ such that each pair $(\underline{V_i},\underline{W_j})$ is simply transverse.
-	Then we say that $\uV$ and $\uW$ are \textbf{compound transverse} and define the cup product $\uV\uplus\uW$ as $$\uV\uplus\uW = \sum_{i,j} \underline{V_i}\uplus \underline{W_j},$$
+	Then we say that $\uV$ and $\uW$ are \textbf{compound transverse}\index{transversality!compound} and define the cup product $\uV\uplus\uW$ as $$\uV\uplus\uW = \sum_{i,j} \underline{V_i}\uplus \underline{W_j},$$
 	where the cup products on the right are those of \cref{D: cochain products}.
 
 	We extend the definition of the cap and intersection products analogously.
@@ -365,8 +365,8 @@ The proof utilizes the essential decompositions of prechains and precochains dev
 	The assumptions mean that for each pair $(\underline{V_i},\underline{W_j})$, there are simple transverse representatives we can choose and call $(V_{ij}, W_{ji})$, and similarly for the primed versions.
 	Then we must show that $$\left(\bigsqcup_{i,j} V_{ij} \times_M W_{ji}\right) \sqcup \left(-\bigsqcup_{k,\ell} V'_{k\ell} \times_M W'_{\ell k}\right) \in Q^*(M).$$
 
-	For each $V_{ij}$, we have its essential decomposition $$V_{ij} = V_{ij,E} \sqcup V_{ij,TI} \sqcup V_{ij,NI},$$
-	and by \cref{T: minimal rep}, the cochain $\underline{V_{ij}}$ is also represented by a precochain of the form $Z_{ij} \sqcup V_{ij,NI}$, where $Z_{ij}$ is the minimal essential precochain of $\underline{V_{ij}}$.
+	For each $V_{ij}$, we have its essential decomposition\index{essential decomposition} $$V_{ij} = V_{ij,E} \sqcup V_{ij,TI} \sqcup V_{ij,NI},$$
+	and by \cref{T: minimal rep}, the cochain $\underline{V_{ij}}$ is also represented by a precochain of the form $Z_{ij} \sqcup V_{ij,NI}$, where $Z_{ij}$ is the minimal essential precochain\index{minimial essential prechain or precochain|textbf} of $\underline{V_{ij}}$.
 	As $Z_{ij} \sqcup V_{ij,NI}$ is obtained from $V_{ij}$ by removing some components, we may assume that all $V_{ij}$ in fact have this form without disturbing our transversality assumptions, and similarly for the $W_{ji}$, $V'_{k\ell}$, and $W'_{\ell k}$.
 	Furthermore, as $V_{ia}$ and $V_{ib}$ represent the same $\underline{V_i}$, they will have the same minimal essential cochain, which we can therefore write simply as $V_{i,E}$ rather than $Z_{ij}$, and again similarly for the other precochains.
 
@@ -455,7 +455,7 @@ But we will not pursue this project here.
 As a complement to \cref{S: simple products}, we observe in this section that the exterior products defined in \cref{S: exterior products} give rise to well-defined products for geometric chains and cochains.
 Unlike the cup, cap, and intersection products, these are fully defined, as the exterior products do not require any transversality assumptions.
 
-\begin{definition}\label{D: exterior chain}
+\begin{definition}\label{D: exterior chain}\index{exterior product}\index{geometric cochain!exterior product}\index{geometric chain!exterior product}
 	Suppose $\uV \in C_*^{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(N)$ are represented by $V \in PC_*^{\Gamma}(M)$ and $W \in PC_*^{\Gamma}(N)$.
 	Then we define the \textbf{exterior chain product (or chain cross product)} $$\times \colon C_*^{\Gamma}(M) \otimes C_*^{\Gamma}(N) \to C_*^{\Gamma}(M \times N)$$ by $\uV \times \uW = \underline{V \times W}$, giving the product of oriented manifolds the standard product orientation, as in \cref{S: oriented product}.
 
@@ -482,7 +482,7 @@ As is standard for singular homology and cohomology, we use the symbol $\times$ 
 \end{proof}
 
 
-\subsection{Properties of the chain and cochain products}\label{S: (co)chain properties}
+\subsection{Properties of the chain and cochain products}\label{S: (co)chain properties}\index{cup product!properties|(}\index{cap product!properties|(}\index{intersection product!properties|(}\index{exterior product!properties|(}
 
 Now that we have defined cup, cap, intersection, and exterior products of geometric chains and cochains and shown that these products are well defined, at least when the necessary transversality and orientation conditions hold, they immediately inherit many of the properties demonstrated in \cref{S: orientations and co-orientations}.
 We provide below some tables listing these properties and the locations of the previous results that support them.
@@ -506,7 +506,7 @@ Unless stated otherwise, our default notations for cup, cap, and intersection pr
 Our default notations for chain and cochain cross products will assume $V \to M$ and $W \to N$.
 We explain the further assumptions and notations prior to each table of formulas
 
-\subsubsection{Boundary formulas}
+\subsubsection{Boundary formulas}\index{cup product!boundary formulas}\index{cap product!boundary formulas}\index{intersection product!boundary formulas}\index{exterior product!boundary formulas}
 
 For our first table, with formulas involving boundaries, we also invoke the well-definedness of boundaries of geometric chains and cochains, see \cref{L: co/chains well defined}.
 The cup, cap, and intersection products require (simple or compound) transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
@@ -528,7 +528,7 @@ In the first line, we use that $\uV \times \uW = \uV \times_M \uW$, when $M$ is 
 	\end{tabular}
 \end{center}
 
-\subsubsection{Commutativity formulas}
+\subsubsection{Commutativity formulas}\index{cup product!commutativity}\index{cap product!commutativity}\index{intersection product!commutativity}\index{exterior product!commutativity}
 
 For the commutativity properties listed below, $\tau$ is the transposition map $\tau \colon N \times M \to M \times N$.
 The cup and intersection products require transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
@@ -548,7 +548,7 @@ In the first line, we again use that $\uV \times \uW = \uV \times_M \uW$, when $
 	\end{tabular}
 \end{center}
 
-\subsubsection{Unital properties}\label{S: unital properties}
+\subsubsection{Unital properties}\label{S: unital properties}\index{cup product!unitality}\index{cap product!unitality}\index{intersection product!unitality}\index{exterior product!unitality}
 
 For the following unital properties, we write $pt$ to refer to the point with its positive orientation.
 We will write $\underline{pt}$ for the geometric chain given by $\id_{pt}:pt \to pt$ or for the geometric cochain given by the canonically co-oriented identity map $\id_{pt}:pt \to pt$.
@@ -580,7 +580,7 @@ As $\id_M$ is transverse to all other maps, the following hold for all $\uV$.
 	\end{tabular}
 \end{center}
 
-\subsubsection{Mixed properties}\label{S: mixed formulas}
+\subsubsection{Mixed properties}\label{S: mixed formulas}\index{cup product!mixed product properties}\index{cap product!mixed product properties}\index{intersection product!mixed product properties}\index{exterior product!mixed product properties}
 
 The next grouping concerns properties that involve multiple kinds of products.
 We recall that $\diag \colon M \to M \times M$ is the diagonal map.
@@ -614,7 +614,7 @@ The next three require that $\uV$ be transverse to $\uW$ and that $\underline{X}
 	\end{tabular}
 \end{center}
 
-\subsubsection{Immersion formulas}
+\subsubsection{Immersion formulas}\index{cup product!of immersions}\index{cap product!of immersions}\index{intersection product!of immersions}\index{exterior product!of immersions}
 
 While geometric chains and cochains do not have unique representatives by prechains and precochains, we recall that if the two terms can be represented by transverse embeddings, then the cup, cap, and intersection products are represented by their intersection and we have simple formulas for the orientations or co-orientations; see \cref{P: normal pullback,P: cap of immersions,P: orient intersection}, respectively.
 For cap and intersection products, the special cases where the (co)chains have complementary dimensions are further specified in \cref{C: complementary cap,C: orient complementary intersection}.
@@ -636,7 +636,7 @@ These assumptions can be simplified if we only wish to consider simple transvers
 
 Similar concerns arise for our naturality formulas, as, for example, pulling back a cup product by a map $h$ requires that $h$ be transverse to the cup product, so we again have an interaction of three maps, leading to similar issues.
 
-\textbf{Naturality.}
+\textbf{Naturality.}\index{cup product!naturality}\index{cap product!naturality}\index{intersection product!naturality}\index{exterior product!naturality}
 As noted above, naturality of cup and cap products requires some extra care to ensure not just that chains and cochains are appropriately transverse but that there are also the appropriate transversalities with respect to the maps we pull back by.
 This requires a good number of further assumptions; see \cref{R: multiproducts,P: 3 out of 4 trans}.
 
@@ -671,8 +671,7 @@ With these assumptions, we have the following formulas.
 	\end{tabular}
 \end{center}
 
-\medskip\noindent\textbf{Associativity.}
-
+\medskip\noindent\textbf{Associativity.}\index{cup product!associativity}\index{cap product!associativity}\index{intersection product!associativity}\index{exterior product!associativity}
 For the associativity formulas we add a manifold with corners $X$ either mapping to $M$ for the cup, cap, and intersection products or to a third target manifold $Q$ for the cross products.
 Once again, there are no special requirements for the exterior products in the first two formulas below.
 For the other associativity formulas, while this might not encompass the most general possibility, in order to ensure associativity in a compound transversality setting, we assume decompositions into finite sums $\uV = \sum_i \underline{V_i}$, $\uW = \sum_j \underline{W_j}$, and $\underline{X} = \sum_k \underline{X_k}$ such that for each triple $(\underline{V_i},\underline{W_j}, \underline{X_k})$ there are representatives $V_{i,jk}$, $W_{j,ik}$, and $X_{k,ij}$ such that the following pairs are transverse: $(V_{i,jk}, W_{j,ik})$, $(W_{j,ik},X_{k,ij})$, $(V_{i,jk} \times_M W_{j,ik},X_{k,ij})$, and $(V_{i,jk}, W_{j,ik} \times_M X_{k,ij})$.
@@ -703,12 +702,14 @@ We leave the reader to formulate associativity for products of larger collection
 
 We note that with our assumptions, these triple products exhibit a form of linearity in each variable akin to that discussed in \cref{S: simple products}.
 
+\index{cup product!properties|)}\index{cap product!properties|)}\index{intersection product!properties|)}\index{exterior product!properties|)}
+
 \subsection{Homology and cohomology products}\label{S: homology products}
 
 In this section we observe that the partially-defined cup, cap, and intersection products of geometric chains and cochains give rise to fully-defined products of geometric homology and cohomology classes.
 Similarly, we obtain external homology and cohomology products, although this is more evident as external products are already fully defined for geometric chains and cochains.
 
-\begin{theorem}\label{T: (co)homology products}
+\begin{theorem}\label{T: (co)homology products}\index{cup product|textbf}\index{geometric cohomology!cup product}\index{cap product|textbf}\index{geometric cohomology!cap product}\index{geometric cohomology!cap product}\index{intersection product|textbf}\index{geometric homology!intersection product product}\index{simple transverse representation}
 	Let $M$ and $N$ be manifolds without boundary.
 	The chain cross product, cochain cross product, cup product, cap product, and, if $M$ is oriented, intersection product induce fully-defined bilinear maps
 	\begin{align*}
@@ -724,7 +725,7 @@ We will prove \cref{T: (co)homology products} below.
 The basic idea, in the case of the last three products, will be to show that we can represent pairs of homology or cohomology classes by simply transverse representatives, which is accomplished by \cref{T: transverse reps}, below, and then form the usual fiber products.
 We therefore have the following immediate consequence.
 
-\begin{theorem}
+\begin{theorem}\index{cup product!properties}\index{cap product!properties}\index{intersection product!properties}\index{exterior product!properties}
 	The homology cross product, cohomology cross product, cup product, cap product, and, if $M$ is oriented, intersection product satisfy the properties enumerated in \cref{S: (co)chain properties}, except for the boundary formulas.
 \end{theorem}
 
@@ -737,11 +738,11 @@ We therefore have the following immediate consequence.
 
 To prove \cref{T: (co)homology products}, we will use the following important theorem.
 
-\begin{theorem}\label{T: transverse reps}
+\begin{theorem}\label{T: transverse reps}\index{geometric cohomology!transverse representative}\index{geometric homology!transverse representative}
 Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in H_*^\Gamma(M)$ or $\uV \in H^*_\Gamma(M)$.
 Then there is an $r_V \colon V \to M$ representing $\uV$ such that $V$ is transverse to $W$.
 
-Furthermore, if $V$ is transverse $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, i.e.\ $\uV = 0$ as a homology or cohomology class, then such a $Z$ can be chosen so that it is transverse to $W$.
+Furthermore, if $V$ is transverse to $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, i.e.\ $\uV = 0$ as a homology or cohomology class, then such a $Z$ can be chosen so that it is transverse to $W$.
 \end{theorem}
 
 We will prove \cref{T: transverse reps} below in \cref{S: transverse maps}.
@@ -829,6 +830,7 @@ The arguments of the proof of \cref{T: (co)homology products} also demonstrate t
 }
 \end{comment}
 
+%INDEX HERE
 
 \subsubsection{Representing (co)homology classes by transverse maps}\label{S: transverse maps}
 

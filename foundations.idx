@@ -491,6 +491,80 @@
 \indexentry{cubulation!pushing the dual|)hyperpage}{140}
 \indexentry{intersection map!is a cohomology surjection|hyperpage}{140}
 \indexentry{intersection map!is a cohomology isomorphism when finitely generated|hyperpage}{140}
+\indexentry{transversality!simple|hyperindexformat{\textbf}}{142}
+\indexentry{geometric cochain!simply transverse|hyperindexformat{\textbf}}{142}
+\indexentry{simple transverse representation|hyperindexformat{\textbf}}{142}
+\indexentry{cup product|hyperindexformat{\textbf}}{142}
+\indexentry{geometric cochain!cup product|hyperpage}{142}
+\indexentry{cap product|hyperindexformat{\textbf}}{142}
+\indexentry{geometric cochain!cap product|hyperpage}{142}
+\indexentry{geometric chain!cap product|hyperpage}{142}
+\indexentry{intersection product|hyperindexformat{\textbf}}{142}
+\indexentry{geometric chain!intersection product product|hyperpage}{142}
+\indexentry{cup product|hyperindexformat{\textbf}}{142}
+\indexentry{geometric cochain!cup product|hyperpage}{142}
+\indexentry{cap product|hyperindexformat{\textbf}}{142}
+\indexentry{geometric cochain!cap product|hyperpage}{142}
+\indexentry{geometric chain!cap product|hyperpage}{142}
+\indexentry{intersection product|hyperindexformat{\textbf}}{142}
+\indexentry{geometric chain!intersection product product|hyperpage}{142}
+\indexentry{simple transverse representation|hyperpage}{142}
+\indexentry{transversality!compound|hyperpage}{143}
+\indexentry{essential decomposition|hyperpage}{143}
+\indexentry{minimial essential prechain or precochain|hyperindexformat{\textbf}}{143}
+\indexentry{exterior product|hyperpage}{145}
+\indexentry{geometric cochain!exterior product|hyperpage}{145}
+\indexentry{geometric chain!exterior product|hyperpage}{145}
+\indexentry{cup product!properties|(hyperpage}{146}
+\indexentry{cap product!properties|(hyperpage}{146}
+\indexentry{intersection product!properties|(hyperpage}{146}
+\indexentry{exterior product!properties|(hyperpage}{146}
+\indexentry{cup product!boundary formulas|hyperpage}{146}
+\indexentry{cap product!boundary formulas|hyperpage}{146}
+\indexentry{intersection product!boundary formulas|hyperpage}{146}
+\indexentry{exterior product!boundary formulas|hyperpage}{146}
+\indexentry{cup product!commutativity|hyperpage}{146}
+\indexentry{cap product!commutativity|hyperpage}{146}
+\indexentry{intersection product!commutativity|hyperpage}{146}
+\indexentry{exterior product!commutativity|hyperpage}{146}
+\indexentry{cup product!unitality|hyperpage}{147}
+\indexentry{cap product!unitality|hyperpage}{147}
+\indexentry{intersection product!unitality|hyperpage}{147}
+\indexentry{exterior product!unitality|hyperpage}{147}
+\indexentry{cup product!mixed product properties|hyperpage}{147}
+\indexentry{cap product!mixed product properties|hyperpage}{147}
+\indexentry{intersection product!mixed product properties|hyperpage}{147}
+\indexentry{exterior product!mixed product properties|hyperpage}{147}
+\indexentry{cup product!of immersions|hyperpage}{148}
+\indexentry{cap product!of immersions|hyperpage}{148}
+\indexentry{intersection product!of immersions|hyperpage}{148}
+\indexentry{exterior product!of immersions|hyperpage}{148}
+\indexentry{cup product!naturality|hyperpage}{148}
+\indexentry{cap product!naturality|hyperpage}{148}
+\indexentry{intersection product!naturality|hyperpage}{148}
+\indexentry{exterior product!naturality|hyperpage}{148}
+\indexentry{cup product!associativity|hyperpage}{149}
+\indexentry{cap product!associativity|hyperpage}{149}
+\indexentry{intersection product!associativity|hyperpage}{149}
+\indexentry{exterior product!associativity|hyperpage}{149}
+\indexentry{cup product!properties|)hyperpage}{149}
+\indexentry{cap product!properties|)hyperpage}{149}
+\indexentry{intersection product!properties|)hyperpage}{149}
+\indexentry{exterior product!properties|)hyperpage}{149}
+\indexentry{cup product|hyperindexformat{\textbf}}{149}
+\indexentry{geometric cohomology!cup product|hyperpage}{149}
+\indexentry{cap product|hyperindexformat{\textbf}}{149}
+\indexentry{geometric cohomology!cap product|hyperpage}{149}
+\indexentry{geometric cohomology!cap product|hyperpage}{149}
+\indexentry{intersection product|hyperindexformat{\textbf}}{149}
+\indexentry{geometric homology!intersection product product|hyperpage}{149}
+\indexentry{simple transverse representation|hyperpage}{149}
+\indexentry{cup product!properties|hyperpage}{150}
+\indexentry{cap product!properties|hyperpage}{150}
+\indexentry{intersection product!properties|hyperpage}{150}
+\indexentry{exterior product!properties|hyperpage}{150}
+\indexentry{geometric cohomology!transverse representative|hyperpage}{150}
+\indexentry{geometric homology!transverse representative|hyperpage}{150}
 \indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{190}
 \indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{190}
 \indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{190}
@@ -503,3 +577,6 @@
 \indexentry{product co-orientation!see{co-orientation!of external product}|hyperpage}{190}
 \indexentry{orientation!cap!seealso{cap orientation}|hyperpage}{190}
 \indexentry{Mayer-Vietoris sequence!for geometric cohomology!connecting morphism|hyperindexformat{\seealso{connecting morphism for geometric cohomology}}}{190}
+\indexentry{simple transversality|hyperindexformat{\see{transversality, simple}}}{190}
+\indexentry{compound transversality|hyperindexformat{\see{transversality, compound}}}{190}
+\indexentry{cross product|hyperindexformat{\see{exterior product}}}{190}
