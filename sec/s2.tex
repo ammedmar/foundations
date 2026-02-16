@@ -241,7 +241,7 @@ We put these first transversality results here, as some of the fundamental ideas
 Our transversality theorems will be built primarily using some basic tools that can be found in \cite[Section 2.3]{GuPo74}.
 In particular, we record the following results, referring the reader to \cite[Section 2.3]{GuPo74} for the proofs\footnote{We rephrase the statements of these theorems slightly to better fit our context and notation.}:
 
-\begin{theorem}[Transversality Theorem]\label{T: GP transversality}\index{transversality!Transversality Theorem}
+\begin{theorem}[Transversality Theorem]\label{T: GP transversality}\index{transversality!Transversality Theorem!Guillemin-Pollack}
 	Suppose $F \colon X \times S \to Y$ is a smooth map of manifolds, where only $X$ has boundary, and let $Z$ be any boundaryless submanifold of $Y$.
 	If both $F$ and $F|_{\bd X \times S}$ are transverse to $Z$, then for almost every $s \in S$, both $F(-,s) \colon X \to Y$ and $F(-,s)|_{\bd X} \colon \bd X \to Y$ are transverse to $Z$.
 \end{theorem}
@@ -366,7 +366,7 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
 \begin{theorem}\label{T: basic trans}\index{transversality!Transversality Theorem}
 	Let $f \colon M \to N$ be a continuous map of manifolds without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
-	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, and $h(-,1)$ is smooth and transverse to $g$.
+	Then there is a homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$ and $h(-,1)$ is smooth and transverse to $g$.
 	Furthermore, if $f$ is proper, then there is such an $h$ so that both $h$ and $h(-,1)$ are proper.
 \end{theorem}
 
@@ -425,7 +425,7 @@ See, for example, \cref{P: ball stability,P: perturb transverse to map}.
 
 Our second theorem will be applied below when $M$ is of the form $Y \times I$ for $Y$ a manifold without boundary in order to improve a homotopy between maps that are both transverse to another given map $g$ to a homotopy that is transverse to $g$.
 
-\begin{theorem}\label{T: homotopy trans}\index{transversality!Transversality Theorem}
+\begin{theorem}\label{T: homotopy trans}\index{transversality!Transversality Theorem!relative}
 	Let $f \colon M \to N$ be a smooth map from a manifold with boundary to a manifold without boundary, and let $g \colon V \to N$ be a smooth map from a manifold with corners.
 	Suppose $\bd f \colon \bd M \to N$ is transverse to $g$.
 	Then there is a smooth homotopy $h \colon M \times I \to N$ such that $h(-,0) = f$, $h(-,1)$ is smooth and transverse to $g$, and $h$ fixes $\bd M$, i.e.\ $h(x,t)=f(x)$ for all $x \in \bd M$ and all $t \in I$.

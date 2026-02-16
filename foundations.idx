@@ -24,12 +24,12 @@
 \indexentry{regular value|hyperindexformat{\textbf}}{10}
 \indexentry{transversality!naive|hyperindexformat{\textbf}}{10}
 \indexentry{test|hyperpage}{10}
-\indexentry{transversality!Transversality Theorem|hyperpage}{10}
+\indexentry{transversality!Transversality Theorem!Guillemin-Pollack|hyperpage}{10}
 \indexentry{$\epsilon$-neighborhood theorem|hyperpage}{11}
 \indexentry{transversality!Transversality Homotopy Theorem|hyperpage}{11}
 \indexentry{proper map!homotopy criterion|hyperpage}{12}
 \indexentry{transversality!Transversality Theorem|hyperpage}{12}
-\indexentry{transversality!Transversality Theorem|hyperpage}{13}
+\indexentry{transversality!Transversality Theorem!relative|hyperpage}{13}
 \indexentry{pullback|hyperindexformat{\textbf}}{14}
 \indexentry{fiber product|hyperindexformat{\textbf}}{14}
 \indexentry{pullback!manifold with corners|hyperpage}{14}
@@ -464,7 +464,7 @@
 \indexentry{geometric cohomology!transverse to cubulation|hyperindexformat{\textbf}}{126}
 \indexentry{$H_{\Gamma \pf X}^*(M)$|hyperpage}{126}
 \indexentry{geometric cohomology!transverse to cubulation!is geometric cochomology|hyperpage}{126}
-\indexentry{transversality!Transversality Theorem|hyperpage}{126}
+\indexentry{transversality!Transversality Theorem!universal with respect to cubulation|hyperpage}{126}
 \indexentry{function subordinate to a cover with constants|hyperpage}{127}
 \indexentry{augmentation map|hyperpage}{130}
 \indexentry{$\aug$|hyperpage}{130}
@@ -565,6 +565,38 @@
 \indexentry{exterior product!properties|hyperpage}{150}
 \indexentry{geometric cohomology!transverse representative|hyperpage}{150}
 \indexentry{geometric homology!transverse representative|hyperpage}{150}
+\indexentry{tranversality!Transversality Theorem!universal|hyperpage}{151}
+\indexentry{transversality!Transversality Theorem!for collection of pairs|hyperpage}{156}
+\indexentry{geometric cochain!transverse to a map|hyperindexformat{\textbf}}{157}
+\indexentry{$C^*_{\Gamma \pf f}(M)$|hyperpage}{157}
+\indexentry{geometric cochain!transverse to a map|hyperpage}{157}
+\indexentry{geometric cochain!transverse to a map!pullback of|hyperpage}{157}
+\indexentry{geometric cohomology!transverse to a map!is geometric cohomology|hyperpage}{157}
+\indexentry{geometric cohomology!transverse to a map!pullback of|hyperpage}{158}
+\indexentry{Kronecker pairing|(hyperpage}{158}
+\indexentry{geometric chain!transverse to a cochain|hyperpage}{158}
+\indexentry{$C_i^{\Gamma \pf \uV}(M)$|hyperpage}{158}
+\indexentry{Kronecker pairing|)hyperpage}{158}
+\indexentry{Universal Coefficient Theorem|hyperpage}{158}
+\indexentry{geometric cohomology!cup product!is singular cup product|hyperpage}{159}
+\indexentry{Kreck-Singhof Theorem|hyperpage}{160}
+\indexentry{Kreck-Singhof Theorem|hyperpage}{160}
+\indexentry{geometric homology!exterior product!is singular homology exterior product|hyperpage}{164}
+\indexentry{K\"unneth Theorem!geometric homology|hyperpage}{165}
+\indexentry{geometric homology!K\"unneth Theorem|hyperpage}{165}
+\indexentry{geometric cohomology!exterior product!is singular cohomology exterior product|hyperpage}{165}
+\indexentry{K\"unneth Theorem!geometric cohomology|hyperpage}{165}
+\indexentry{geometric cohomology!K\"unneth Theorem|hyperpage}{165}
+\indexentry{exterior product!cubical cochain|hyperpage}{166}
+\indexentry{geometric cohomology!exterior product!is singular cohomology exterior product|hyperpage}{167}
+\indexentry{cup product!cubical cohomology|hyperpage}{168}
+\indexentry{cap product!cubical cohomology|hyperpage}{168}
+\indexentry{cap product!cubical homology|hyperpage}{168}
+\indexentry{Serre diagonal|hyperpage}{170}
+\indexentry{cup product!cubical cohomology|hyperpage}{170}
+\indexentry{geometric cohomology!cup product!is cubical cohomology cup product|hyperpage}{171}
+\indexentry{Serre diagonal!versus geometric diagonal|hyperpage}{172}
+\indexentry{cup product!via flows|hyperpage}{174}
 \indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{190}
 \indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{190}
 \indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{190}
