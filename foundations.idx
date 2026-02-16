@@ -535,6 +535,8 @@
 \indexentry{cap product!mixed product properties|hyperpage}{147}
 \indexentry{intersection product!mixed product properties|hyperpage}{147}
 \indexentry{exterior product!mixed product properties|hyperpage}{147}
+\indexentry{cup product!is diagonal pullback of exterior product|hyperpage}{147}
+\indexentry{exterior product!is cup product of pullbacks|hyperpage}{147}
 \indexentry{cup product!of immersions|hyperpage}{148}
 \indexentry{cap product!of immersions|hyperpage}{148}
 \indexentry{intersection product!of immersions|hyperpage}{148}
@@ -597,6 +599,22 @@
 \indexentry{geometric cohomology!cup product!is cubical cohomology cup product|hyperpage}{171}
 \indexentry{Serre diagonal!versus geometric diagonal|hyperpage}{172}
 \indexentry{cup product!via flows|hyperpage}{174}
+\indexentry{cap product!is the cubical cap product|hyperpage}{174}
+\indexentry{cap product!is the cubical cap product|hyperpage}{174}
+\indexentry{Poincar\'e Duality!via cap product|hyperpage}{178}
+\indexentry{umkehr maps|(hyperpage}{178}
+\indexentry{Poincar\'e Duality!and umkehr maps|hyperpage}{178}
+\indexentry{umkehr maps!and Poincar\'e Duality|hyperpage}{178}
+\indexentry{umkehr maps|)hyperpage}{179}
+\indexentry{Alexander Duality|(hyperpage}{179}
+\indexentry{Alexander Duality|)hyperpage}{185}
+\indexentry{Alexander Duality!application to links|(hyperpage}{185}
+\indexentry{linking number|hyperpage}{186}
+\indexentry{triple linking number|(hyperpage}{187}
+\indexentry{link!triple linking number|(hyperpage}{187}
+\indexentry{Alexander Duality!application to links|)hyperpage}{188}
+\indexentry{triple linking number|)hyperpage}{188}
+\indexentry{link!triple linking number|)hyperpage}{188}
 \indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{190}
 \indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{190}
 \indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{190}
