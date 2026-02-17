@@ -159,7 +159,7 @@ We begin with simple transversality.
 \begin{definition}\label{D: cochain trans}\index{transversality!simple|textbf}\index{geometric cochain!simply transverse|textbf}
 	Let $M$ be a manifold without boundary.
 	We say that $\uV, \uW \in C^*_{\Gamma}(M)$ are \textbf{simply transverse} as geometric cochains if there exist representatives $V,W \in PC^*_\Gamma(M)$ such that $V$ and $W$ are transverse as manifolds with corners mapping to $M$.
-	We call the data of such a pair $(V,W)$ a \textbf{simple transverse representation}\index{simple transverse representation|textbf} for the pair $(\uV,\uW)$.
+	We call the data of such a pair $(V,W)$ a \textbf{simple transverse representation}\index{simple transverse representation} for the pair $(\uV,\uW)$.
 
 	We define simple transversality similarly if $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(M)$ or if $M$ is oriented and $\uV, \uW \in C_*^{\Gamma}(M)$.
 \end{definition}
@@ -170,7 +170,7 @@ We begin with simple transversality.
 
 	Analogously, if $\uV \in C^*_{\Gamma}(M)$ and $\uW \in C_*^{\Gamma}(M)$ are simply transverse, we define the \textbf{cap product}\index{cap product|textbf}\index{geometric cochain!cap product}\index{geometric chain!cap product} $\uV \nplus \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
 
-	If $M$ is oriented and $\uV,\uW \in C_*^\Gamma(M)$ are simply transverse, we define the \textbf{intersection product}\index{intersection product|textbf}\index{geometric chain!intersection product product} $\uV \bullet \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
+	If $M$ is oriented and $\uV,\uW \in C_*^\Gamma(M)$ are simply transverse, we define the \textbf{intersection product}\index{intersection product|textbf}\index{geometric chain!intersection product} $\uV \bullet \uW \in C_*^\Gamma(M)$ by $V \times_M W$ for some simple transverse representation $(V,W)$.
 
 	In each context, the given product $V \times_M W$ is as defined in \cref{D: PC products}, as $V$ and $W$ are transverse by assumption.
 \end{definition}
@@ -184,7 +184,7 @@ We begin with simple transversality.
 The first main result of this section is that these products are well defined as operations on simply transverse geometric chains or cochains, independent of the prechain or precochain representatives chosen.
 This is not immediately clear, as a geometric (co)chain $\uV$ has in general an infinite number of representatives in $PC(M)$ that may or may not be transverse to any other given element of $PC(M)$; see \cref{E: bad transversality}.
 
-\begin{theorem}\label{T: cochain product}\index{cup product|textbf}\index{geometric cochain!cup product}\index{cap product|textbf}\index{geometric cochain!cap product}\index{geometric chain!cap product}\index{intersection product|textbf}\index{geometric chain!intersection product product}\index{simple transverse representation}
+\begin{theorem}\label{T: cochain product}\index{cup product|textbf}\index{geometric cochain!cup product}\index{cap product|textbf}\index{geometric cochain!cap product}\index{geometric chain!cap product}\index{intersection product|textbf}\index{geometric chain!intersection product}\index{simple transverse representation}
 	Given simply transverse $\uV$ and $\uW$, the cup, cap, or intersection products of \cref{D: cochain products} are well defined, independent of choice of simple transverse representation.
 \end{theorem}
 
@@ -506,7 +506,7 @@ Unless stated otherwise, our default notations for cup, cap, and intersection pr
 Our default notations for chain and cochain cross products will assume $V \to M$ and $W \to N$.
 We explain the further assumptions and notations prior to each table of formulas
 
-\subsubsection{Boundary formulas}\index{cup product!boundary formulas}\index{cap product!boundary formulas}\index{intersection product!boundary formulas}\index{exterior product!boundary formulas}
+\subsubsection{Boundary formulas}\index{cup product!boundary formula}\index{cap product!boundary formula}\index{intersection product!boundary formula}\index{exterior product!boundary formulas}
 
 For our first table, with formulas involving boundaries, we also invoke the well-definedness of boundaries of geometric chains and cochains, see \cref{L: co/chains well defined}.
 The cup, cap, and intersection products require (simple or compound) transversality of $\uV$ and $\uW$; the exterior products have no transversality requirements.
@@ -596,7 +596,7 @@ The next three require that $\uV$ be transverse to $\uW$ and that $\underline{X}
 
 
 
-\begin{center}\index{cup product!is diagonal pullback of exterior product}\index{exterior product!is cup product of pullbacks}
+\begin{center}\index{cup product!is diagonal pullback of exterior product}\index{exterior product!is cup product of pullback}
 	\begin{tabular}{|l|c|l|}
 		\hline
 		Cup from cross& $\uV\uplus \uW = \diag^*(\uV \times \uW)$&\ref{P: cross to cup}	\\
@@ -709,7 +709,7 @@ We note that with our assumptions, these triple products exhibit a form of linea
 In this section we observe that the partially-defined cup, cap, and intersection products of geometric chains and cochains give rise to fully-defined products of geometric homology and cohomology classes.
 Similarly, we obtain external homology and cohomology products, although this is more evident as external products are already fully defined for geometric chains and cochains.
 
-\begin{theorem}\label{T: (co)homology products}\index{cup product|textbf}\index{geometric cohomology!cup product}\index{cap product|textbf}\index{geometric cohomology!cap product}\index{geometric cohomology!cap product}\index{intersection product|textbf}\index{geometric homology!intersection product product}\index{simple transverse representation}
+\begin{theorem}\label{T: (co)homology products}\index{cup product|textbf}\index{geometric cohomology!cup product}\index{cap product|textbf}\index{geometric cohomology!cap product}\index{geometric cohomology!cap product}\index{intersection product|textbf}\index{geometric homology!intersection product}\index{simple transverse representation}
 	Let $M$ and $N$ be manifolds without boundary.
 	The chain cross product, cochain cross product, cup product, cap product, and, if $M$ is oriented, intersection product induce fully-defined bilinear maps
 	\begin{align*}
@@ -840,7 +840,7 @@ This proposition is analogous to \cref{P: ball stability} with the difference be
 We will explain how to modify the proof of \cref{P: ball stability} to accomplish this.
 We change notation slightly from that of \cref{T: transverse reps} to make it more consistent with \cref{P: ball stability}, which we hope will ease comparison of the two results for the reader.
 
-\begin{proposition}\label{P: perturb transverse to map}\index{tranversality!Transversality Theorem!universal}
+\begin{proposition}\label{P: perturb transverse to map}\index{transversality!Transversality Theorem!universal}
 	Suppose $r_V \colon V \to M$ and $r_X \colon X \to M$ are proper maps from manifolds with corners to a manifold without boundary.
 	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id$ and $H(-,1)r_V \colon V \to M$ is transverse to $r_X$.
 
@@ -1151,7 +1151,7 @@ In this section, we consider $f^*$ as a partially-defined map of cochain complex
 In general, $f^*$ will not be fully defined as a chain map, as we cannot form pullbacks of cochains that are not transverse to $f$.
 To solve this problem, we define a subcomplex of $C^*_\Gamma(M)$ that will be quasi-isomorphic to $C^*_\Gamma(M)$ if $f$ is proper.
 
-\begin{definition}\label{D: transverse to map}\index{geometric cochain!transverse to a map|textbf}
+\begin{definition}\label{D: transverse to map}\index{geometric cochain!transverse to a map}
 	Let $f \colon N \to M$ be a smooth map from a manifold with corners to a manifold without boundary, and let $\uV \in C^*_\Gamma(M)$.
 	We will say that $\uV$ is \textbf{transverse to $f$} if $\uV$ has a representative $r_V \colon V \to M$ such that $r_V$ is transverse to $f$.
 	In this case we define the pullback $f^*(\uV)$ to be $\underline{f^*(V)} \in C^*_\Gamma(N)$.

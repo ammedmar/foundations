@@ -150,7 +150,7 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 	\end{equation*}
 \end{proposition}
 
-\subsubsection{Fiber products of immersions}\index{orientation!of immersions}
+\subsubsection{Fiber products of immersions}\index{orientation!of immersion}
 
 The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is of particular interest, especially for developing intuition.
 Once again, since we are concerned primarily with orientations in this section, it is sufficient to consider $V$ and $W$ to be manifolds without boundary, and then the results we obtain extend directly to manifolds with corners.
@@ -267,11 +267,11 @@ The corollary shows that the fiber product orientation is \textit{not} necessari
 To define co-orientations, we recall our definition of an orientation of a bundle from \cref{D: det bundle} as an equivalence class, up to positive scalar multiplication, of an everywhere non-zero section of the top exterior power of the bundle.
 This motivates the following.
 
-\begin{definition}\label{D: co-orientations}\index{co-orientations|textbf}
+\begin{definition}\label{D: co-orientations}\index{co-orientation|textbf}
 	A \textbf{co-orientation} $\omega_g$ of a \textit{continuous}\footnote{We will most often be interested in the case of $g$ smooth, but continuous co-orientable maps do come up, for example in \cref{S: basic properties} where we consider covariant functoriality of geometric cohomology with respect to continuous maps.} map $g \colon W \to M$ of manifolds with corners is an equivalence class, up to positive scalar multiplication, of a nowhere zero section of the line bundle $\Hom(\Or(TW), \Or(g^*TM)) \cong \Hom(\Or(TW), g^*\Or(TM))$.
 	Equivalently, a co-orientation is a choice of isomorphism between the associated orientation cover $\Or(TW)$ and the pullback of the associated orientation cover $\Or(TM)$.
 
-	In particular, a co-orientation exists if and only if $\Hom(\Or(TW), \Or(g^*TM))$ is a trivial line bundle, in which case we say that $g$ is \textbf{co-orientable}.\index{co-orientable|textbf}
+	In particular, a co-orientation exists if and only if $\Hom(\Or(TW), \Or(g^*TM))$ is a trivial line bundle, in which case we say that $g$ is \textbf{co-orientable}.\index{co-orientability|textbf}
 \end{definition}
 
 Thus, if $W$ is connected and $g \colon W \to M$ is co-orientable, there are exactly two co-orientations, which are \textbf{opposite}\index{co-orientation!opposite co-orientation} to one another; we write the opposite of $\omega_g$ as $-\omega_g$.
@@ -285,7 +285,7 @@ Also, just as most manifolds do not possess a preferred orientation, most maps $
 \end{definition}
 
 The local triviality of the determinant line bundle of a manifold means being able to choose a consistent basis vector over sufficiently small neighborhoods.
-Again, we call such a choice of basis vector around a point in $W$ a \textbf{local orientation}\index{orientation!local}, and, as for global orientations, often denote a local orientation by $\beta_W$.\index{$\beta_W$}
+Again, we call such a choice of basis vector around a point in $W$ a \textbf{local orientation}\index{orientation!local}, and, as for global orientations, often denote a local orientation by $\beta_W$.\index{$B$@$\beta_W$}
 Again, abusing notation, we also often allow $\beta_W$ to refer to its equivalence class up to multiplication by a positive scalar.
 We identify $\beta_W$ with a local choice of (equivalence class of) non-zero section of\footnote{As usual, if $\dim(W) = 0$ we identify $\bigwedge^0 TW$ with the trivial $\R$ bundle, and, when forming exterior products, multiplication by a section is treated as scalar multiplication.} $\bigwedge^w TW$ in a neighborhood of a point $x$ in $W$ or, equivalently, a local smoothly varying ordered basis for the fibers of $TW$.
 We typically do not specify the point $x$, though when necessary we write $\beta_{W,x}$.
@@ -305,8 +305,8 @@ For example, if $W$ is orientable, any constant map to $M$ is co-orientable, reg
 \begin{notation}\label{N: hat check}
 	Suppose $M$ is an oriented manifold with corners and $g \colon W \to M$ is a map from another manifold with corners.
 	By convention, below we will often simply write $W$ to refer to $W$ together with its given map to $M$.
-	If $W$ comes equipped with an orientation, we may write $\hat W$\index{$\hat W$} to refer to $W$ with the induced co-orientation on $g$.
-	If $W$ (technically the map $g \colon W \to M$) comes equipped with a co-orientation, we may write $\check W$\index{$\check W$} to refer to $W$ with its induced orientation.
+	If $W$ comes equipped with an orientation, we may write $\hat W$\index{$W$@$\hat W$} to refer to $W$ with the induced co-orientation on $g$.
+	If $W$ (technically the map $g \colon W \to M$) comes equipped with a co-orientation, we may write $\check W$\index{$W$@$\check W$} to refer to $W$ with its induced orientation.
 	For spaces with longer expressions, such as $V \times_M W$, we will sometimes write instead $(-)\,\hat{\vrule height1.3ex width0pt}$ or $(-)\,\check{\vrule height1.3ex width0pt}$.
 	These are inverse operations in the sense that if $W$ is oriented then $(\hat W)\,\check{\vrule height1.3ex width0pt} = W$ and if $g$ is co-oriented then  $(\check W)\,\hat{\vrule height1.3ex width0pt} = W$.
 
@@ -353,12 +353,12 @@ We refer to this as \textbf{transporting}\index{co-orientation!transportation} t
 
 \begin{notation}\label{N: implicit notation}
 	It will be useful in notation to sometimes leave the maps, codomains, and co-orientations all implicit once they have already been established and just write $V$ to represent the co-oriented map $f \colon V \to M$.
-	In this, case we write $-V$\index{$-V$}\index{co-orienation!notation for opposite} to refer to the same map with the opposite co-orientation.
+	In this, case we write $-V$\index{$V$@$-V$}\index{co-orientation!notation for opposite} to refer to the same map with the opposite co-orientation.
 \end{notation}
 
 Just as is the case for orientations, when working with co-orientations it suffices to consider the interior of the manifold, in this case of the domain.
 
-\begin{proposition}\label{P: interior co-orientation}\index{co-orientability!only depends on map of interior}
+\begin{proposition}\label{P: interior co-orientation}\index{co-orientability!only depends on interior}
 Let $g \colon W \to M$ be a map of manifolds with corners. Then $g$ is co-orientable if and only if its restriction to $S^0(W)$, the interior of $W$, is co-orientable.
 \end{proposition}
 \begin{proof}
@@ -429,10 +429,10 @@ He assumed the normal bundles to have complex structures and so called these \te
 \begin{definition}\label{D: Quillen normal or}
 	If $(e_1, \ldots, e_n)$ is the standard ordered basis of $\R^N$, we denote the corresponding orientation from by $\beta_E = e_1 \wedge \cdots \wedge e_N$.
 	Then the projection $\pi \colon M \times \R^N \to M$ has a canonical co-orientation $(\beta_M \wedge \beta_E, \beta_M)$ that is well defined as $\R^N$ is contractible.
-	If $g \colon W \to M$ is co-oriented and $e \colon W \into M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation}\index{co-orientation!normal|(textbf}\index{co-orientation!Quillen|(textbf} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
+	If $g \colon W \to M$ is co-oriented and $e \colon W \into M \times \R^N$ is an immersion with normal bundle $\nu$, we then define the \textbf{compatible normal orientation} or \textbf{Quillen normal orientation}\index{co-orientation!normal|textbf}\index{co-orientation!Quillen|textbf} of $\nu$ so that the composition of co-orientations $(\beta_W,\beta_W \wedge \beta_\nu)$ with $(\beta_M \wedge \beta_E,\beta_M)$ is the given co-orientation of $g$.
 	In other words, if $(\beta_W,\beta_M)$ is the given co-orientation of $g$, then the compatible normal orientation of $\nu$ is such that $\beta_W \wedge \beta_\nu = \beta_M \wedge \beta_E$.
 
-	We sometimes speak of the entire structure $W \into M \times \R^N \to M$ with an orientation of $\nu$ as a \textbf{Quillen co-orientation}\index{co-orientation!normal|(textbf}\index{co-orientation!Quillen|)textbf} for $W \to M$ or as a ``compatible Quillen co-orientation'' if we have already specified a co-orientation for $W \to M$ and we wish to choose the Quillen co-orientation that agrees with it.
+	We sometimes speak of the entire structure $W \into M \times \R^N \to M$ with an orientation of $\nu$ as a \textbf{Quillen co-orientation}\index{co-orientation!normal|textbf}\index{co-orientation!Quillen|textbf} for $W \to M$ or as a ``compatible Quillen co-orientation'' if we have already specified a co-orientation for $W \to M$ and we wish to choose the Quillen co-orientation that agrees with it.
 \end{definition}
 
 \begin{remark}\label{R: immersion}
@@ -522,7 +522,7 @@ The following example will be very important later for breaking geometric chains
 		Also need to show that $\bd W^0 = -(\bd W)^0$, which should follow from the Leibniz rule and the first thing the previous sentence.}
 \end{comment}
 
-\subsubsection{Co-orientations of boundaries of boundaries}\index{co-orientations!of $\bd^2$}
+\subsubsection{Co-orientations of boundaries of boundaries}\index{co-orientation!of $\bd^2$}
 
 In order to form a chain complex of geometric cochains in \cref{S: geometric cochains}, we will need a result about co-orientations of $\bd^2 W$.
 Recall from \cref{S: boundaries} that Proposition 2.9 of \cite{Joy12} identifies $\bd^2 W$ with the set of points $(x,\bb_1,\bb_2)$ with $x \in W$ and the $\bb_i$ encoding distinct local boundary components.
@@ -560,7 +560,7 @@ The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism 
 	Thus the two copies of $U$ have opposite orientations, and again the diffeomorphism simply interchanges the two copies.
 \end{remark}
 
-\subsection{Co-orientation of homotopies}\label{S: co-oriented homotopy}\index{co-orientation!of homotopies|(}
+\subsection{Co-orientation of homotopies}\label{S: co-oriented homotopy}\index{co-orientation!of homotopy|(}
 
 In this section we develop co-orientations related to homotopies.
 As the product of two spaces is the same as their fiber product over a point, we have by \cref{P: product boundary} and rearranging the order of components the topological formula:
@@ -574,7 +574,7 @@ Now recall that in general if we have a map $f \colon V \to M$ then we write $\b
 $$\bd V \xr{i_{\bd V}} V \xr{f} M.$$
 We make the following definition:
 
-\begin{definition}\label{D: co-oriented homotopy}\index{co-orientation!co-oriented homotopy}
+\begin{definition}\label{D: co-oriented homotopy}
 	If $G \colon W \times I \to M$ is a co-oriented map, we say that $G$ is a \textbf{co-oriented homotopy}\index{co-orientation!co-oriented homotopy|textbf} (or simply a \textbf{homotopy} when working with co-orientations is understood) from $g_0 \colon W \to M$ to $g_1 \colon W \to M$ if $\bd G = g_1 \amalg -g_0\amalg H$, where $g_1$, $-g_0$, and $H$ correspond respectively to the compositions of $G$ with the inclusions into $W \times I$ of $W \times 1$, $W \times 0$, and $\bd W \times I$, taking each with its boundary co-orientation as in \cref{D: boundary co-orientation}.
 	In particular, then, $g_0$ is the composition
 	$$W=W \times 0 \into W \times I \xr{G} M$$
@@ -688,7 +688,7 @@ For this the following lemma is useful.
 		Thus, altogether, the $(\bd W) \times I$ boundary component of $W \times I$ with its boundary co-orientation is $-G_\bd$.
 	\end{proof}
 \end{comment}
-\index{co-orientation!of homotopies|)}
+\index{co-orientation!of homotopy|)}
 
 \subsection{Co-orientations of pullbacks and fiber products}\label{S: co-orient pullbacks}
 
@@ -741,7 +741,7 @@ Further properties of co-orientations of fiber products, including associativity
 	This foreshadows the notion of isomorphic representatives of geometric chains and cochains; see \cref{D: equiv triv and small}.
 \end{remark}
 
-\begin{remark}\label{R: precise commutativity}\index{co-orientation!commutativity}
+\begin{remark}\label{R: precise commutativity}\index{co-orientation!of fiber product commutativity}
 	This is also a good place to point out exactly what we mean by writing $V \times_M W = (-1)^{(m-v)(m-w)}W \times_M V$ in our graded commutativity statement, as, using the canonical pullbacks, $V \times_M W \subset V \times W$ and $W \times_M V \subset W \times V$ are different spaces, though canonically identified via the map $\tau \colon V \times W \to W \times V$ that switches the coordinates.
 	This map fits into a commutative diagram of fiber products
 	\[
@@ -838,7 +838,7 @@ We also take the opportunity to observe that pullbacks of proper maps are proper
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps of manifolds with corners to a manifold without boundary.
 	Then:
 	\begin{enumerate}
-		\item\index{co-orientatability!of pullbacks} If $f$ is co-orientable, the pullback $f^* \colon P = V \times_M W \to W$ is co-orientable.
+		\item\index{co-orientability!of pullback} If $f$ is co-orientable, the pullback $f^* \colon P = V \times_M W \to W$ is co-orientable.
 		\item\index{proper map!pullback of} If $f$ is proper, the pullback $f^* \colon P = V \times_M W \to W$ is proper.
 	\end{enumerate}
 \end{lemma}
@@ -901,7 +901,7 @@ Note that $g$ need not be co-orientable or proper for this lemma to apply.
 	Of course when we do identify $P$ with $(g \times \id)^{-1}(e(V))$, it is via the map $\{(v,(w,z)) \in V \times (W \times \R^N) \mid e(v) = (g(w),z)\} \to W \times \R^N$ given by $(v,(w,z)) \mapsto (w,z)$.
 \end{remark}
 
-\begin{corollary}\index{co-orientability!of fiber products}
+\begin{corollary}\index{co-orientability!of fiber product}
 	If $f \colon V \to M$ and $g \colon W \to M$ are transverse and co-orientable, their fiber product $V \times_M W \to M$ is also co-orientable.
 \end{corollary}
 
@@ -1567,7 +1567,7 @@ We express the following corollary using Notation \ref{N: implicit notation}.
 
 \begin{corollary}\label{C: co-orient W0}
 	Suppose the hypotheses and notation of \cref{P: codim 1 co-orient} and suppose $V$ is without boundary.
-	Then $(\bd W)^0 = -\bd (W^0)$\index{$\bd (W^0)$ vs. $(\bd W)^0$} as co-oriented maps to $W$, with $W^0$ and $(\bd W)^0 = (gi_{\bd W})^{-1}(V)$ co-oriented as in \cref{P: codim 1 co-orient} as the pullbacks $V \times_M W \to W$ and $V \times_M \bd W \to W$.
+	Then $(\bd W)^0 = -\bd (W^0)$\index{$bd$@$\bd (W^0)$ vs. $(\bd W)^0$} as co-oriented maps to $W$, with $W^0$ and $(\bd W)^0 = (gi_{\bd W})^{-1}(V)$ co-oriented as in \cref{P: codim 1 co-orient} as the pullbacks $V \times_M W \to W$ and $V \times_M \bd W \to W$.
 \end{corollary}
 
 \begin{proof}
@@ -1587,7 +1587,7 @@ This will also allow us to prove associativity of fiber products.
 
 \subsubsection{Exterior products of oriented manifolds}\label{S: oriented product}
 
-Recall that we defined the oriented fiber product of oriented manifolds with corners in \cref{S: orientation of fiber products}.\index{external product!orientation}\index{orientation!of external product}
+Recall that we defined the oriented fiber product of oriented manifolds with corners in \cref{S: orientation of fiber products}.\index{exterior product!orientation}\index{orientation!of external product}
 In particular, if $V$ and $W$ are oriented manifolds, we saw in \cref{P: oriented fiber product basic properties} that the oriented fiber product of the maps from $V$ and $W$ to a point is just the standard product $V \times W$ oriented with the usual concatenation convention.
 In other words, if $V$ and $W$ are oriented by $\beta_V$ and $\beta_W$, then $V \times W$ is oriented at any point by $\beta_V \wedge \beta_W$.
 
@@ -1610,7 +1610,7 @@ I’m not sure anymore what I was doing last week, but I think I neglected the i
 Upshot: Am I sure there aren’t any sign errors  - absolutely not! There are a lot of weird signs in Foundations. But the consistency check I just did involved several of the messier formulas and managed to spit out the right thing in the end, so right now I can’t point to anyplace where I know there’s a problem, either.
 \end{comment}
 
-\begin{proposition}\label{P: oriented interchange}\index{orientation!of fiber product!of external products}\index{orientation!of external product!of fiber products}\index{criss cross}
+\begin{proposition}\label{P: oriented interchange}\index{orientation!of fiber product!of external product}\index{orientation!of external product!of fiber product}\index{criss cross}
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are transverse maps of oriented manifolds with corners to an oriented manifold without boundary and similarly for $h \colon X \to N$ and $k \colon Y \to N$.
 	Then
 	$$(V \times X)\times_{M \times N} (W \times Y) = (-1)^{(m-w)(n-x)}(V \times_M W) \times (X \times_N Y)$$
@@ -1716,7 +1716,7 @@ The following example will be useful in the proof of \cref{T: intersection is cu
 	There is no extra sign in this case as $\dim(W) = 0$.
 \end{example}
 
-\begin{proposition}\label{P: co-oriented exterior unit}\index{product!with a point}
+\begin{proposition}\label{P: co-oriented exterior unit}\index{product with a point}
 	Let $f \colon V \to M$ be a co-oriented map of manifolds with corners, and let $g:pt \to pt$ be the unique map with the tautological co-orientation.
 	Then $f \times g \colon V \times pt \to M \times pt$ and $g \times f:pt \times V \to pt \times M$ are each isomorphic as co-oriented maps of manifolds with corners to $f \colon V \to M$.
 \end{proposition}
@@ -1918,7 +1918,7 @@ This will also be useful for proving some properties of the co-oriented fiber pr
 We start with the following version of a well-known fact.
 
 
-\begin{lemma}\label{L: alternative transversality}\index{transversality!relation to the diagonal}\index{diagonal map!relation to transversality}\index{diagonal map}\index{$\diag$}
+\begin{lemma}\label{L: alternative transversality}\index{transversality!relation to the diagonal}\index{diagonal map!relation to transversality}\index{diagonal map}\index{$D$@$\diag$}
 	Suppose $f \colon V \to M$ and $g \colon W \to M$ are co-oriented maps from manifolds with corners to a manifold without boundary.
 	Let $\diag \colon M \to M \times M$ be the diagonal map $\diag(x) = (x,x)$.
 	Then $f$ and $g$ are transverse if and only if $f \times g$ is transverse to $\diag$.
@@ -2142,7 +2142,7 @@ We start with the following version of a well-known fact.
 	For the third equality, we use that $\diag_M \times \diag_N = (\id_M \times \tau \times \id_N)\diag_{M \times N}$.
 \end{proof}
 
-\begin{corollary}\label{C: cross is cup}\index{external product!as fiber product of pullbacks of projections}\index{fiber product!of pullbacks by projections is external product}\index{co-orientation!of external product!as fiber product of pullbacks of projections}\index{co-orientation!of fiber product!of pullbacks by projections is external product}
+\begin{corollary}\label{C: cross is cup}\index{exterior product!as fiber product of pullbacks of projections}\index{fiber product!of pullback by projection is external product}\index{co-orientation!of external product!as fiber product of pullbacks of projections}\index{co-orientation!of fiber product!of pullbacks by projections is external product}
 	Let $V \to M$ and $W \to N$ be maps from manifolds with corners to manifolds without boundary.
 	Let $\pi_M \colon M \times N \to M$ and $\pi_N \colon M \times N \to N$ be the projections.
 	Then $$V \times W = \pi_M^*(V)\times_{M \times N}\pi_N^*(W)$$ as co-oriented manifolds mapping to $M \times N$.
@@ -2269,7 +2269,7 @@ The analogues for singular chains and cochains are the cap product with the coch
 
 The next property relates products of pullbacks with pullbacks of products. Again, our signs agree with the cap product formulas in Spanier, in this case \cite[Section 5.6.21]{Span81}.
 
-\begin{proposition}\label{P: cap cross}\index{cap orientation!of external product!}\index{external product!of fiber products with cap orientations}
+\begin{proposition}\label{P: cap cross}\index{cap orientation!of external product!}\index{exterior product!of fiber products with cap orientations}
 	Let $f \colon V \to M$ and $g:X \to N$ be co-oriented maps from manifolds with corners to manifolds without boundary, and let $h \colon W \to M$ and $k \colon Y \to N$ be maps with $W$ and $Y$ oriented manifolds with corners.
 	Suppose that $V$ is transverse to $W$ and that $X$ is transverse to $Y$.
 	Then,
@@ -2378,7 +2378,7 @@ discussed in \cref{S: orientations}.
 Alternatively, if we think of $f$ and $g$ as co-oriented, we can form the fiber product co-orientation of $V \times_M W \to M$ as in \cref{S: co-orientation of pullbacks} and then consider the induced orientation $(V \times_M W)\,\check{\vrule height1.3ex width0pt}$ given the orientation of $M$ (recall \cref{N: hat check}).
 
 Our goal in this section is to compare these two orientations on $V \times_M W$.
-To attempt to avoid confusion, let us consider $V$ and $W$ given as oriented, and we will write $V \times_M^o W$\index{$\times_M^o$} for the fiber product orientation of \cref{S: orientations} and $V \times_M^c W$\index{$\times_M^c$} for $(\hat V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}$.
+To attempt to avoid confusion, let us consider $V$ and $W$ given as oriented, and we will write $V \times_M^o W$\index{$Z$@$\times_M^o$} for the fiber product orientation of \cref{S: orientations} and $V \times_M^c W$\index{$Z$@$\times_M^c$} for $(\hat V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}$.
 
 The reader might have noticed that a third way to orient $V \times_M W$ is to consider $f$ to be co-oriented and $W$ to be oriented and then form the cap orientation that we studied in detail in the preceding section.
 However, we already know this to be identical to $V \times_M ^cW$ by \cref{L: same induced}.
@@ -2696,7 +2696,7 @@ On the other hand, let $V \times^c W = (\hat V \times \hat W)\,\check{\vrule hei
 
 
 
-\begin{proposition}\label{P: compare exterior orientations}\index{external product!orientation vs. co-orientation}
+\begin{proposition}\label{P: compare exterior orientations}\index{exterior product!orientation vs. co-orientation}
 	Let $f \colon V \to M$ and $g \colon W \to N$ be maps from oriented manifolds with corners to oriented manifolds with corners.
 	Then $$V \times^o W = (-1)^{(m-v)w} V \times^c W$$ as oriented manifolds with corners.
 \end{proposition}

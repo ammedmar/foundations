@@ -18,7 +18,7 @@ We first identify certain types of ``manifolds over $M$.'' In future sections $M
 \begin{definition}\label{V: maps are co-oriented}
 	Let $M$ be a smooth manifold, possibly with corners.
 	A \textbf{manifold over $\mathbf{M}$}\index{manifold over a manifold|textbf} is a manifold with corners $W$ with a smooth map $r_W \colon W \to M$,
-	called the \textbf{reference map}\index{reference map|textbf}\index{$r_W$}.
+	called the \textbf{reference map}\index{reference map|textbf}\index{$R$@$r_W$}.
 	We freely and almost always abuse notation
 	by using the domain $W$ to refer to the manifold over $M$, not $r_W$ or some other symbol, letting
 	context determine whether we are referring to the entire data or the domain; see \cref{N: implicit notation}.
@@ -37,7 +37,7 @@ We first identify certain types of ``manifolds over $M$.'' In future sections $M
 	If $W$ is oriented or co-oriented, we write $-W$ to refer to the manifold over $M$ with the opposite orientation or co-orientation; it should always be clear from context which structure we are replacing with its opposite.
 
 	If $V$ and $W$ are manifolds over $M$ that are disjoint\footnote{Recall that all of our manifolds with corners are subsets of $\R^\infty$.} as submanifolds of $\R^\infty$, we let the disjoint union $V \sqcup W$ be a manifold over $M$ with reference map $r_{V \sqcup W}$ such that $r_{V \sqcup W}(x) = r_V(x)$ when $x \in V$ and $r_{V \sqcup W}(x) = r_W(x)$ when $x \in W$.
-	We call this construction the \textbf{disjoint union}\index{disjoint union|textbf}\index{$\sqcup$} of $V$ and $W$.
+	We call this construction the \textbf{disjoint union}\index{disjoint union|textbf}\index{$Z$@$\sqcup$} of $V$ and $W$.
 	If $V$ and $W$ are both oriented, co-oriented, compact, or proper, then so is $V \sqcup W$.
 	In \cref{E: copies,D: prechain sum} we consider disjoint union for the case where $V$ and $W$ are not necessarily disjoint in $\R^\infty$ using the notion of isomorphism classes, which we introduce next.
 \end{definition}
@@ -162,7 +162,7 @@ We can now move toward defining geometric homology and cohomology, starting with
 	As per \cref{V: maps are co-oriented}, we will often write $W \in PC^\Gamma_*(M)$ or $W \in PC_\Gamma^*(M)$, letting $W$ represent both its reference map and its isomorphism class as a manifold over $M$.
 	In these respective cases we write $-W$ for $W$ with the opposite orientation or co-orientation.
 
-	We refer to elements of $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$ as \textbf{prechains}\index{prechain!textbf} or \textbf{precochains}\index{precochain|textbf}, respectively.
+	We refer to elements of $PC^\Gamma_*(M)$ or $PC_\Gamma^*(M)$ as \textbf{prechains}\index{prechain|textbf} or \textbf{precochains}\index{precochain|textbf}, respectively.
 \end{definition}
 
 When necessary, as in the following definition, we may write prechains or precochains as $[W]$ to emphasize that they are isomorphism classes.
@@ -697,7 +697,7 @@ We have similar results for the exterior products studied in \cref{S: exterior p
 \end{proof}
 
 
-\begin{lemma}\label{L: exterior Q}\index{external product!trivial}\index{external product!degenerate}\index{external product!small rank}\index{trivial!external product}\index{degenerate!external product}\index{$Q(M)$!in external product}
+\begin{lemma}\label{L: exterior Q}\index{exterior product!trivial}\index{exterior product!degenerate}\index{exterior product!small rank}\index{trivial!external product}\index{degenerate!external product}\index{$Q(M)$!in external product}
 	Consider two pre(co)chains $f \colon V \to M$ and $g \colon W \to N$.
 	If $V \in Q(M)$ or $W \in Q(N)$ then $f \times g \colon V \times W \to M \times N$ is in $Q(M \times N)$.
 \end{lemma}
@@ -892,7 +892,7 @@ There is some finer work to be done in showing that $V \times_M W $ and $V' \tim
 
 	Each connected component of $V$ falls into exactly one of these categories by definition.
 
-	The \textbf{essential decomposition}\index{essential decomposition|textbf} of $V$ is the unique decomposition of $V$ into essential, trivially inessential, and non-trivially inessential components,
+	The \textbf{essential decomposition} of $V$ is the unique decomposition of $V$ into essential, trivially inessential, and non-trivially inessential components,
 	written $V = V_E \sqcup V_{TI} \sqcup V_{NI}$.\index{$V_E$}\index{$V_{TI}$}\index{$V_{NI}$}
 \end{definition}
 
@@ -1110,7 +1110,7 @@ We also highlight \cref{C: essential trans}, which concerns transversality and w
 \end{proof}
 
 
-\begin{definition}\label{D: minimal essential}\index{minimial essential prechain or precochain|textbf}\index{geometric prechain!minimal essential|textbf}\index{geometric precochain!minimal essential|textbf}
+\begin{definition}\label{D: minimal essential}\index{minimial essential prechain or precochain}
 We refer to the prechain or precochain $Z$ of \cref{C: Q essential} as the \textbf{minimal essential prechain or precochain of $\uW$}.
 It is constructed from the representative $W$ of $\uW$ by starting with $W_E$ and removing any trivial pairs of components $\mc W \sqcup - \mc W$.
 \end{definition}
@@ -1254,7 +1254,7 @@ We sometimes write $M^\pm$ for statements that could involve either $M^+$ or $M^
 	\end{proof}
 \end{comment}
 
-\begin{lemma}\label{L: pm0 as fiber products}\index{splitting!as fiber products}
+\begin{lemma}\label{L: pm0 as fiber products}\index{splitting!as fiber product}
 	With our standing assumptions, there are diffeomorphisms
 	\begin{align*}
 		M^0 & \cong 0 \times_{\R} M &W^0 & \cong 0 \times_{\R} W & W^0& \cong M^0 \times_M W \\
@@ -1273,7 +1273,7 @@ The rightmost column above demonstrates $W^0$, $W^-$, and $W^+$ as fiber product
 We can use these descriptions to realize these spaces as prechains or precochains.
 Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which case appropriate versions of the following statements hold vacuously.
 
-\begin{lemma}\label{L: W0 cochain}\index{splitting!of geometric precochains}\index{splitting!boundary formulas}
+\begin{lemma}\label{L: W0 cochain}\index{splitting!of geometric precochain}\index{splitting!boundary formula}
 	Suppose $W \in PC^*_\Gamma(M)$, and $0$ is a regular value of $\phi \colon M \to \R$ and $\phi r_W \colon W \to \R$.
 	Let the inclusions $M^\pm \into M$ have their tautological co-orientations, and give the inclusion $M^0 \into M$ the co-orientation determined by its normal vector field oriented by pulling back the positively-oriented normal vector field over $0$ in $\R$.
 	Then $W^0$, $W^-$, and $W^+$, defined as the fiber products of $M^0$, $M^-$, and $M^+$ with $W$ over $M$, are elements of $PC^*_\Gamma(M)$.
@@ -1293,7 +1293,7 @@ Note: depending on $\phi$ and $r_W$, some of these spaces may be empty, in which
 \end{proof}
 
 
-\begin{lemma}\label{L: W0 chain}\index{splitting!of geometric prechains}\index{splitting!boundary formulas}
+\begin{lemma}\label{L: W0 chain}\index{splitting!of geometric prechain}\index{splitting!boundary formulas}
 	Suppose $W \in PC_*^\Gamma(M)$, and $0$ is a regular value of $\phi \colon M \to \R$ and $\phi r_W \colon W \to \R$.
 	Let $\R$, $(-\infty, 0]$, and $[0,\infty)$ have their standard orientations, and give $0$ its positive orientation.
 	Now orient $W^0$, $W^-$, and $W^+$ by realizing them as oriented fiber products of $0$, $(-\infty, 0]$, and $[0,\infty)$ with $\phi r_W \colon W \to \R$ over $\R$.
@@ -1380,7 +1380,7 @@ Below $\varphi$ will typically be a composition $W \xr{r_W} M \xr{\phi} (-1,1)$.
 As in the preceding section, we define $W^+$\index{$W^+$} to be $\varphi^{-1}( [0,1))$, we define $W^-$ to be $\varphi^{-1} ((-1, 0])$\index{$W^-$}, and we define $W^0 = \varphi^{-1}(0)$\index{$W^0$}.
 Note that here our codomain is $(-1,1)$ for reasons that will become apparent momentarily, though this is certainly still consistent with our maps being to $\R$ as above, using $(-1,1) \subset \R$.
 
-By \cite[Lemma~9]{Lipy14}, the idea of creasing is that the topological space $W \times [0,1]$ can be given the structure of a manifold with corners, which we will write $\Cre(W)$\index{$\Cre(W)$}, satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
+By \cite[Lemma~9]{Lipy14}, the idea of creasing is that the topological space $W \times [0,1]$ can be given the structure of a manifold with corners, which we will write $\Cre(W)$\index{$C$@$\Cre(W)$}, satisfying $\bd \Cre(W) = W \sqcup -W^+ \sqcup -W^- \sqcup - \Cre(\bd W)$.
 We call the manifold with corners $\Cre(W)$ the \textbf{creasing homotopy}\index{creasing homotopy|textbf} of $W$.
 The creasing homotopy depends on $\varphi$, but we usually leave it tacit in the notation.
 We will define $\Cre(W)$ by using pullbacks, which will provide an arguably simpler description of $\Cre(W)$ than found in \cite{Lipy14}.
@@ -1469,7 +1469,7 @@ See \cref{F: creasing} for a sketch of a creasing homotopy of the teardrop manif
 	\label{F: creasing}
 \end{figure}
 
-\begin{lemma}\label{E: bd crease}\index{$\Cre(W)$!boundary formula}
+\begin{lemma}\label{E: bd crease}\index{$C$@$\Cre(W)$!boundary formula}
 	Let $M$ be a manifold without boundary.
 	Suppose given $\phi \colon M \to (-1,1)$ with $0$ a regular value and $r_W \colon W \to M$ transverse to $M^0 = \phi^{-1}(0)$, representing an element of $PC^\Gamma_*(M)$ or $W \in PC_\Gamma^*(M)$.
 	Then

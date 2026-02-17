@@ -156,7 +156,7 @@ is the canonical order-preserving bijection, which is compatible with the identi
 
 \subsection{Cubulations}
 
-Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$\index{$\mathtt{Cube}$} be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
+Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$\index{$Cu$@$\mathtt{Cube}$} be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
 The poset of faces of a cubical complex $X$ also determines a category, and the characteristic maps of $X$ determine a functor from this poset category to $\mathtt{Cube}$.
 We define the \textbf{geometric realization}\index{cubical complex!geometric realization|textbf} $|X|$ of $X$ as the colimit of this functor; in other words, we glue topological cubes together according to the combinatorial data of the cubical complex $X$ in the evident way.
 A \textbf{cubical structure} or \textbf{cubulation}\index{cubulation|textbf} on a space $S$ is a homeomorphism $h \colon |X| \to S$ for some cubical complex $X$.
@@ -290,7 +290,7 @@ In this section we consider the cochains on $M$ represented by maps $W \to M$ th
 	If $r_W \colon W \to M$ is transverse to $X$ then the same is true for any $r_V \colon V \to M$ isomorphic to $r_W \colon W \to M$, and so we can define $PC^*_{\Gamma \pf X}(M)$\index{$PC^*_{\Gamma \pf X}(M)$} to be the subset of $PC^*_{\Gamma}(M)$ consisting of those precochains with reference maps transverse to $X$.
 
 	We let $Q^*_{\Gamma \pf X}(M) = PC_{\Gamma \pf X}^*(M) \cap Q^*(M)$ and note that the equivalence relation of \cref{L: cancel Q} descends to an equivalence relation on $PC_{\Gamma \pf X}^*(M)$ such that $V\sim W$ if and only if $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$.
-	The \textbf{geometric cochains of $M$ transverse to $X$},\index{geometric cochains!transverse to cubulation|textbf} denoted $C_{\Gamma \pf X}^*(M)$,\index{$C_{\Gamma \pf X}^*(M)$} are the equivalence classes in $PC_{\Gamma \pf X}^*(M)$.
+	The \textbf{geometric cochains of $M$ transverse to $X$},\index{geometric cochain!transverse to cubulation|textbf} denoted $C_{\Gamma \pf X}^*(M)$,\index{$C_{\Gamma \pf X}^*(M)$} are the equivalence classes in $PC_{\Gamma \pf X}^*(M)$.
 	The set $C_{\Gamma \pf X}^*(M)$ is a chain complex under the operation $\sqcup$ and with boundary map $\bd$.
 	If $V, W \in PC_{\Gamma \pf X}^*(M)$, then $V \sqcup -W \in Q^*_{\Gamma \pf X}(M)$ if and only if as elements of $PC_\Gamma^*(M)$ we have $V \sqcup -W \in Q^*(M)$, so $V$ and $W$ represent the same element of $C_{\Gamma \pf X}^*(M)$ if and only if they represent the same element of $C^*_\Gamma(M)$.
 	Thus $C_{\Gamma \pf X}^*(M)$ is a subcomplex of $C_\Gamma^*(M)$.
@@ -306,7 +306,7 @@ A key technical result, which will take the remainder of this section to prove,
 is that this inclusion induces a cohomology isomorphism.
 In other words, the cochains that are transverse to $X$ are sufficient to compute the cohomology of $M$.
 
-\begin{theorem}\label{T: transverse complex}\index{geometric cohomology!transverse to cubulation!is geometric cochomology}
+\begin{theorem}\label{T: transverse complex}\index{geometric cohomology!transverse to cubulation!is geometric cohomology}
 	The inclusion $C^*_{\Gamma \pf X}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism.
 \end{theorem}
 
@@ -557,7 +557,7 @@ For this we first need a quick lemma.
 \end{proof}
 
 \begin{definition}\label{D: aug}
-	We define the \textbf{augmentation map}\index{augmentation map}\index{$\aug$} $\aug \colon PC^\Gamma_0(M) \to \Z$ as follows: If $W \in PC^\Gamma_0(M)$, then $W$ is the disjoint union of a finite number of points, each with orientation denoted $1$ or $-1$.
+	We define the \textbf{augmentation map}\index{augmentation map}\index{$A$@$\aug$} $\aug \colon PC^\Gamma_0(M) \to \Z$ as follows: If $W \in PC^\Gamma_0(M)$, then $W$ is the disjoint union of a finite number of points, each with orientation denoted $1$ or $-1$.
 	We let $\aug(W)$ be the sum of the orientations of the points in $W$, interpreting $1$ and $-1$ as integers.
 	By \cref{L: Q0}, an element of $PC^\Gamma_0(M)$ can be in $Q_0(M)$ only if this sum is $0$, so the augmentation descends to a homomorphism $\aug \colon C^\Gamma_0(M) \to \Z$.
 	Furthermore, if $W \in PC_1^\Gamma(M)$ then $\aug(\bd W) = 0$, so $\aug$ further descends to a homomorphism $\aug \colon H_0^\Gamma(M) \to \Z$.
@@ -704,17 +704,17 @@ It is needed to construct an $F_*$ and have $\Hom(F_*, \Z) \otimes G \cong \Hom(
 
 Analogous to barycentric subdivisions of simplices, we will need to consider standard subdivisions of cubes.
 For this we let $\jinterval$ denote the interval $\interval = [0,1]$ thought of as the (non-disjoint) union $[0,1/2] \cup [1/2,1]$.
-We can then write \index{$\jinterval^n$} $\jinterval^n = \left([0,1/2] \cup [1/2,1]\right)^n$, with the idea being that we consider $\interval^n$ as the union of $2^n$ \textit{subcubes} of side length $1/2$, each of which is the product within $\interval^n$ of $n$ factors, each factor equal to either $[0,1/2]$ or $[1/2,1]$.
+We can then write \index{$J$@$\jinterval^n$} $\jinterval^n = \left([0,1/2] \cup [1/2,1]\right)^n$, with the idea being that we consider $\interval^n$ as the union of $2^n$ \textit{subcubes} of side length $1/2$, each of which is the product within $\interval^n$ of $n$ factors, each factor equal to either $[0,1/2]$ or $[1/2,1]$.
 We refer to $\jinterval^n$ with this structure as the \textbf{central subdivision}\index{cube!central subdivision|textbf} of $\interval^n$.
 It is a cubical complex with the evident partial orders obtained from $0 < 1/2 < 1$.
 The resulting subdivision of each cubical face of $\interval^n$ is precisely the central subdivision obtained by treating that face as some $\interval^k$ in its own right.
 
 Analogously to the case with $\interval^n$, each cube $S$ of $\jinterval^n$ possesses faces (some of which it shares with other $n$-cubes) consisting of subsets of $S$ in which some variables have been bound to the values $0$, $1$, or $1/2$.
 In general we refer to such faces as \textbf{faces of $\jinterval^n$}.
-If no variable of such a face is bound to $0$ or $1$, we say that we have an \textbf{internal face of $\jinterval^n$},\index{$\jinterval^n$!internal face|textbf} otherwise we call it an \textbf{external} face.\index{$\jinterval^n$!external face|textbf}
+If no variable of such a face is bound to $0$ or $1$, we say that we have an \textbf{internal face of $\jinterval^n$},\index{$J$@$\jinterval^n$!internal face|textbf} otherwise we call it an \textbf{external} face.\index{$J$@$\jinterval^n$!external face|textbf}
 External faces are all subsets of $\bd \interval^n$; internal faces are not subsets of $\bd \interval^n$.
 
-To each face $F$ of $\interval^n$, we refer to the point $\hat F$ \index{$\hat F$} at which all its free variables are equal to $1/2$ as the \textbf{center}\index{cube!center|textbf} of $F$.
+To each face $F$ of $\interval^n$, we refer to the point $\hat F$ \index{$F$@$\hat F$} at which all its free variables are equal to $1/2$ as the \textbf{center}\index{cube!center|textbf} of $F$.
 Each vertex is its own center.
 To each face $F$ of $\interval^n$ we define its \textbf{dual face in $\interval^n$},\index{cube!dual face|textbf} or simply its \textbf{dual}, to be the face $F^\vee$ \index{$F^\vee$} of $\jinterval^n$ determined as follows:
 \begin{itemize}
@@ -747,7 +747,7 @@ We define a map $\Psi \colon K^*(\interval^n) \to C_\Gamma^*(\interval^n)$ given
 To avoid overburdening the notation too much, throughout the remainder of this section we will simply write $F^\vee$ for the output geometric cochain, rather than $\underline{F^\vee}$; it should be clear from context when we refer to the cube face and when we refer to its corresponding geometric cochain.
 
 We introduce one more piece of notation for the following lemma.
-If $f$ is a face in $\jinterval^n$, we let $\bd_{\text{int}}f$ \index{$\bd_{\text{int}}f$} denote the union of the internal $\dim(f)-1$ faces of $\bd f$ and $\bd_{\text{ext}}f$ \index{$\bd_{\text{ext}}f$} denote the union of the $\dim(f)-1$ external faces of $f$.
+If $f$ is a face in $\jinterval^n$, we let $\bd_{\text{int}}f$ \index{$bd$@$\bd_{\text{int}}f$} denote the union of the internal $\dim(f)-1$ faces of $\bd f$ and $\bd_{\text{ext}}f$ \index{$bd$@$\bd_{\text{ext}}f$} denote the union of the $\dim(f)-1$ external faces of $f$.
 If $f$ is co-oriented, then we interpret the terms of $\bd_{\text{int}}f$ and $\bd_{\text{ext}}f$ as co-oriented with the boundary co-orientations.
 When $f$ is interpreted as a geometric cochain, we interpret $\bd_{\text{int}}f$ and $\bd_{\text{ext}}f$ as sums of geometric cochains, in which case $\bd f = \bd_{\text{int}}f + \bd_{\text{ext}}f$.
 We can then extend $\bd_{\text{int}}$ and $\bd_{\text{ext}}$ to linear operators in the obvious way.

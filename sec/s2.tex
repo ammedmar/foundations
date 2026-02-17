@@ -9,7 +9,7 @@ By \textbf{smooth} we always mean differentiable of all orders.
 Throughout the paper, all manifolds and maps will be in the smooth category unless noted otherwise.
 
 \begin{definition}\label{D: smooth}
-	If $A \subset \R^n$ and $B \subset \R^m$ are any subsets, we say that $f \colon A \to B$ is \textbf{smooth}\index{smooth!maps of subsets of Euclidean space|textbf} if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$.
+	If $A \subset \R^n$ and $B \subset \R^m$ are any subsets, we say that $f \colon A \to B$ is \textbf{smooth}\index{smooth!map of subset of Euclidean space|textbf} if it extends to a smooth map from an open neighborhood of $A$ to $\R^m$.
 	We say that $f$ is a \textbf{diffeomorphism}\index{diffeomorphism|textbf} if $f$ is a homeomorphism and both $f$ and $f^{-1}$ are smooth\footnote{Joyce requires $n = m$ in his definition for $f$ to be a diffeomorphism.
 	But suppose $f$ is a diffeomorphism as defined here and, without loss of generality, $n>m$.
 	Let $\R^m \subset \R^n$ in the usual way.
@@ -18,7 +18,7 @@ Throughout the paper, all manifolds and maps will be in the smooth category unle
 	So diffeomorphisms in our sense can be made into diffeomorphisms in Joyce's sense, and obviously vice versa.}.
 \end{definition}
 
-With this definition, the notions of smooth charts and atlases for manifolds in the standard setting can be extended to define (smooth) manifolds with corners; see \cite[Section 2]{Joy12}: An $n$-dimensional chart $(U,\phi)$ of the space $W$ has domain $U$ an open subset of $\R^n_k = [0,\infty)^k \times \R^{n-k} \subset \R^n$,\index{$\R^n_k$} and $\phi$ is a homeomorphism from $U$ to $\phi(U) \subset W$.
+With this definition, the notions of smooth charts and atlases for manifolds in the standard setting can be extended to define (smooth) manifolds with corners; see \cite[Section 2]{Joy12}: An $n$-dimensional chart $(U,\phi)$ of the space $W$ has domain $U$ an open subset of $\R^n_k = [0,\infty)^k \times \R^{n-k} \subset \R^n$,\index{$R$@$\R^n_k$} and $\phi$ is a homeomorphism from $U$ to $\phi(U) \subset W$.
 Two $n$-dimensional charts $(U,\phi)$ and $(V,\psi)$ are compatible if $\psi^{-1}\phi \colon \phi^{-1}(\phi(U) \cap \psi(V)) \to \psi^{-1}(\phi(U) \cap \psi(V))$ is a diffeomorphism of subsets of $\R^n$.
 An $n$-dimensional atlas for $W$ is a family of pairwise compatible $n$-dimensional charts that cover $W$, and an $n$-dimensional manifold with corners is a second countable Hausdorff space with a maximal $n$-dimensional atlas.
 Our condition that $W$ be second countable is slightly more restrictive than Joyce's definition, which requires only that $W$ be paracompact.
@@ -130,7 +130,7 @@ For $\interval^3$, the boundary consists of six closed two-dimensional squares e
 In general, $|i_{\bd W}^{-1}(x)|$ is equal to the depth of $x$.
 
 As in Douady \cite{Doua61}, $\bd W$ is itself a manifold with corners, and the boundary map $i_{\bd W}$ is a smooth immersion \cite[Theorem 3.4]{Joy12}. Note that $S^1(W)$ will always be diffeomorphic to the interior of $\bd W$, i.e.\ $S^0(\bd W) = S^1(W)$.
-Inductively, we let $\bd^k W$\index{$\bd^k$|textbf} denote $\bd (\bd^{k-1} W)$ with $\bd^0 W = W$, and we let $i_{\bd^k W}$ denote the composite of the boundary maps sending $\bd^k W$ to $W$. The map $i_{\bd^k W}$ takes $S^a(\bd^k W)$ onto $S^{a+k}(W)$, but not, in general, injectively.
+Inductively, we let $\bd^k W$\index{$bd$@$\bd^k$|textbf} denote $\bd (\bd^{k-1} W)$ with $\bd^0 W = W$, and we let $i_{\bd^k W}$ denote the composite of the boundary maps sending $\bd^k W$ to $W$. The map $i_{\bd^k W}$ takes $S^a(\bd^k W)$ onto $S^{a+k}(W)$, but not, in general, injectively.
 
 \begin{remark}\label{R: bd diff}
 	If $f \colon V \to W$ is a diffeomorphism of manifolds with corners then it must, in particular, take components of $S^i(V)$ diffeomorphically onto corresponding components of $S^i(W)$, and, consequently, given a local boundary component $\mathbf{b}$ at a point $x \in V$, the map $f$ picks out a corresponding local boundary component, say $f_*(\mathbf{b})$ in $W$. We obtain a diffeomorphism $f_\bd \colon \bd V \to \bd W$ by $(x,\mathbf{b})\mapsto (f(x),f_*(\mathbf{b}))$ with $fi_{\bd V} = i_{\bd W} f_\bd$.
@@ -200,7 +200,6 @@ Let $f \colon V \to M$ and $g \colon W \to M$ be maps from manifolds with corner
 We say that $f$ and $g$ are \textbf{naively transverse}\index{transversality!naive|textbf} if whenever $x \in V$ and $y\in W$ with $f(x) = g(y) = z$ we have $Df(T_xV)+Dg(T_yW) = T_z M$. Note that $x$ and $y$ may be boundary points of $V$ and $W$, the maps $Df$ and $Dg$ being those of \cite[Definition 3.2]{Joy12}.
 \end{definition}
 
-\index{test}
 
 \begin{comment}
 To be explicit in the case that $x \in V-S^0(V)$ or $y \in W-S^0(W)$ with $f(x) = g(y)$, let $(U_x,\phi_x)$ and $(U_y,\phi_y)$ be charts with $\phi_x(0) = x$ and $\phi_y(0) = y$.
@@ -246,7 +245,7 @@ In particular, we record the following results, referring the reader to \cite[Se
 	If both $F$ and $F|_{\bd X \times S}$ are transverse to $Z$, then for almost every $s \in S$, both $F(-,s) \colon X \to Y$ and $F(-,s)|_{\bd X} \colon \bd X \to Y$ are transverse to $Z$.
 \end{theorem}
 
-\begin{theorem}[$\epsilon$-Neighborhood Theorem]\label{T: epsilon neighborhood}\index{$\epsilon$-neighborhood theorem}
+\begin{theorem}[$\epsilon$-Neighborhood Theorem]\label{T: epsilon neighborhood}\index{epsilon@$\epsilon$-neighborhood theorem}
 	For a compact boundaryless manifold $Y$ in $\R^M$ and a positive number $\epsilon$, let $Y_\epsilon$ be the open set of points in $\R^M$ with distance less than $\epsilon$ from $Y$.
 	If $\epsilon$ is sufficiently small, then each point $w \in Y_\epsilon$ possesses a unique closest point in $Y$, denoted $\pi(w)$.
 	Moreover, the map $\pi \colon Y_\epsilon \to Y$ is a submersion.
@@ -669,7 +668,7 @@ By \cref{pullback} and the fact that transversality of manifolds with corners re
 	As $\mathbf w$ was arbitrary, $W = D\pi_W(T_{(h(x),\pi_V(p))}P)+Dh(T_xX)$, as desired.
 \end{proof}
 
-\subsubsection{Fiber products with more than two inputs}\index{fiber products!more than two inputs}
+\subsubsection{Fiber products with more than two inputs}\index{fiber product!more than two inputs}
 
 Finally for this section, we briefly consider transversality of more than two maps. \cref{R: multiproducts} highlights some of the issues and difficulties involved, while \cref{P: 3 out of 4 trans} shows that there are still some simplifications that can be observed.
 
@@ -720,7 +719,7 @@ Finally for this section, we briefly consider transversality of more than two ma
 
 Despite the preceding remark, the transversality conditions involved in associativity of fiber products are not completely independent, as the following proposition shows. In later sections, we will usually simply assume all needed transversality exists, but the following proposition can be useful in practice.
 
-\begin{proposition}\label{P: 3 out of 4 trans}\index{fiber products!more than two inputs!redundancy of transversality conditions}
+\begin{proposition}\label{P: 3 out of 4 trans}\index{fiber product!more than two inputs!redundancy of transversality conditions}
 	Let $f \colon V \to M$, $g \colon W \to M$, and $h \colon Z \to M$ be maps from manifolds with corners to a manifold without boundary. Suppose that $W$ is transverse to $Z$ and that $V$ is transverse to $W$ and to $W \times_MZ$. Then $V \times_MW$ is transverse to $Z$. In particular, if $V \times_M(W \times_MZ)$ and $V \times_MW$ are well defined, then so is $(V \times_MW) \times_M Z$.
 \end{proposition}
 
