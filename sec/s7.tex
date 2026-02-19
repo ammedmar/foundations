@@ -2126,9 +2126,37 @@ We can now prove \cref{T: cup compatibility}.
 We obtain the proof by concatenating the diagrams of \cref{P: cross product comparison} (after taking cohomology) and \cref{C: diag commute} and considering the rectangle formed on the outside.
 \end{proof}
 
-\medskip
 
-\noindent\textbf{Comparing with \cite{FMS-flows}}.
+\subsubsection{A cup product with coefficients}\index{cup product!with coefficients}
+
+In \cref{C: cohomology with coefficients}, we observed that if $H_*(M)$ is finitely-generated in each degree and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
+In this section we let $G$ be a commutative ring with unit $R$ and show that \cref{T: cup compatibility} generalized to this case.
+In other words, the geometric cup product with coefficient ring $R$ is isomorphic to the singular cup product with coefficient ring $R$.
+
+Let us first define our cup product with coefficients, starting with a notational convention that is familiar for chains, though a bit unusual for cochains.
+However, recall that geometric cochains are not defined as elements of a $\Hom$ group and that we introduce coefficients by taking tensor products.
+
+\begin{notation}
+	Let $M$ be a manifold and $R$ a commutative ring with unit.
+	We may write elements $\uV \otimes r \in C^*_\Gamma(M) \otimes R$ as $r \uV$.
+\end{notation}
+
+\begin{definition} \label{D: cup with coeffs}
+	Let $M$ be a manifold without boundary and $R$ a commutative ring with unit.
+	Suppose we have two elements $r \uV, s \uW \in C^*_{\Gamma}(M) \otimes R$ and that $\uV$ and $\uW$ are simply transverse.
+	We define the \textbf{cup product with coefficients}\index{cup product!with coefficients}\index{geometric cochain!cup product!with coefficients} $(r\uV) \uplus (s\uW) \in C^*_\Gamma(M)\otimes R$ to be $rs (\uV \ucup \uW) \in C^*_\Gamma(M) \otimes R$.
+\end{definition}
+
+\begin{lemma}
+	The cup product in \cref{D: cup with coeffs} is well defined.
+\end{lemma}
+\begin{proof}
+	We must show that the output is independent of choices, in this case
+
+\end{proof}
+
+
+\subsubsection{A fully defined cup product via flows}.
 While we have \cref{T: cup compatibility} concerning the cup product on cohomology, the geometric cup product is not fully-defined as a map of cochains $C^*_\Gamma(M) \otimes C^*_\Gamma(M) \to C^*_\Gamma(M)$ due to the transversality requirements considered in detail in \cref{S: simple products}.
 However, we do have the following result from \cite{FMS-flows}, which we rephrase for the current context and for which we refer to \cite{FMS-flows} for details.
 This essentially says that, given two geometric cochains $V$ and $W$ on a compact cubulated manifold, there is a canonical flow, depending only on the cubulation, such that after enough time, $V$ and $W$ are transverse and then their co-oriented fiber product is compatible with the cubical cup product via the intersection map.
