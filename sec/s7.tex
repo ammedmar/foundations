@@ -1161,7 +1161,7 @@ To solve this problem, we define a subcomplex of $C^*_\Gamma(M)$ that will be qu
 
 We notice that the transversality situation here is simpler than the more general ones in \cref{S: chain products}, as $f$ is a fixed map.
 We also remark that given a cubulation $X$ of $M$, it determines a proper map from the disjoint union of all the $\dim(M)$-cubes of $X$ to $M$, which we can also write $F \colon X \to M$ with an abuse of notation.
-In this case, $C^*_{\Gamma \pf F}(M) = C^*_{\Gamma \pf X}(M)$.
+In this case, $C^*_{\Gamma \pf f}(M) = C^*_{\Gamma \pf X}(M)$.
 
 \begin{proposition}\label{P: trans to f}\index{geometric cochain!transverse to a map}\index{geometric cochain!transverse to a map!pullback of}
 	Given a smooth map from a manifold with corners to a manifold without boundary $f \colon N \to M$, the set $C^*_{\Gamma \pf f}(M)$ is a subcomplex of $C^*_{\Gamma}(M)$.
@@ -1211,7 +1211,7 @@ Generalizing \cref{T: transverse complex}, we have the following.
 The following corollary is immediate from \cref{{T: transverse qi}} and the construction in \cref{D: cohomology pullback and homology transfer}.
 It says that, in the case at hand, the cohomology map of \cref{D: cohomology pullback and homology transfer} is induced by a chain map after restricting to a subcomplex of $C^*_\Gamma(M)$.
 
-\begin{corollary}\index{geometric cohomology!transverse to a map!pullback of}
+\begin{corollary}\label{C: transverse cohomology pullback}\index{geometric cohomology!transverse to a map!pullback of}
 	Let $f \colon N \to M$ be a proper map between manifolds without boundary.
 	The following diagram commutes, in which the top map is induced by the chain map $f^*$, the vertical map is induced by the inclusion $C^*_{\Gamma \pf f}(M) \into C^*_\Gamma(M)$, and the bottom map is that of \cref{D: cohomology pullback and homology transfer}.
 	\begin{equation*}
@@ -2126,9 +2126,7 @@ We can now prove \cref{T: cup compatibility}.
 We obtain the proof by concatenating the diagrams of \cref{P: cross product comparison} (after taking cohomology) and \cref{C: diag commute} and considering the rectangle formed on the outside.
 \end{proof}
 
-\medskip
-
-\noindent\textbf{Comparing with \cite{FMS-flows}}.
+\subsubsection{The cup product via flowing}
 While we have \cref{T: cup compatibility} concerning the cup product on cohomology, the geometric cup product is not fully-defined as a map of cochains $C^*_\Gamma(M) \otimes C^*_\Gamma(M) \to C^*_\Gamma(M)$ due to the transversality requirements considered in detail in \cref{S: simple products}.
 However, we do have the following result from \cite{FMS-flows}, which we rephrase for the current context and for which we refer to \cite{FMS-flows} for details.
 This essentially says that, given two geometric cochains $V$ and $W$ on a compact cubulated manifold, there is a canonical flow, depending only on the cubulation, such that after enough time, $V$ and $W$ are transverse and then their co-oriented fiber product is compatible with the cubical cup product via the intersection map.
