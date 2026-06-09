@@ -567,60 +567,61 @@
 \indexentry{$C^*_{\Gamma \pf f}(M)$|hyperpage}{157}
 \indexentry{geometric cochain!transverse to a map|hyperpage}{157}
 \indexentry{geometric cochain!transverse to a map!pullback of|hyperpage}{157}
-\indexentry{geometric cohomology!transverse to a map!is geometric cohomology|hyperpage}{157}
+\indexentry{geometric cohomology!transverse to a map!is geometric cohomology|hyperpage}{158}
 \indexentry{geometric cohomology!transverse to a map!pullback of|hyperpage}{158}
 \indexentry{Kronecker pairing|(hyperpage}{158}
 \indexentry{geometric chain!transverse to a cochain|hyperpage}{158}
 \indexentry{$C_i^{\Gamma \pf \uV}(M)$|hyperpage}{158}
 \indexentry{Kronecker pairing|)hyperpage}{158}
-\indexentry{Universal Coefficient Theorem|hyperpage}{158}
-\indexentry{geometric cohomology!cup product!is singular cup product|hyperpage}{159}
+\indexentry{Universal Coefficient Theorem|hyperpage}{159}
+\indexentry{geometric cohomology!cup product!is singular cup product|hyperpage}{160}
 \indexentry{Kreck-Singhof Theorem|hyperpage}{160}
 \indexentry{Kreck-Singhof Theorem|hyperpage}{160}
 \indexentry{geometric homology!exterior product!is singular homology exterior product|hyperpage}{164}
 \indexentry{K\"unneth Theorem!geometric homology|hyperpage}{165}
 \indexentry{geometric homology!K\"unneth Theorem|hyperpage}{165}
 \indexentry{geometric cohomology!exterior product!is singular cohomology exterior product|hyperpage}{165}
-\indexentry{K\"unneth Theorem!geometric cohomology|hyperpage}{165}
-\indexentry{geometric cohomology!K\"unneth Theorem|hyperpage}{165}
+\indexentry{K\"unneth Theorem!geometric cohomology|hyperpage}{166}
+\indexentry{geometric cohomology!K\"unneth Theorem|hyperpage}{166}
 \indexentry{exterior product!cubical cochain|hyperpage}{166}
 \indexentry{geometric cohomology!exterior product!is singular cohomology exterior product|hyperpage}{167}
 \indexentry{cup product!cubical cohomology|hyperpage}{168}
 \indexentry{cap product!cubical cohomology|hyperpage}{168}
 \indexentry{cap product!cubical homology|hyperpage}{168}
 \indexentry{Serre diagonal|hyperpage}{170}
-\indexentry{cup product!cubical cohomology|hyperpage}{170}
+\indexentry{cup product!cubical cohomology|hyperpage}{171}
 \indexentry{geometric cohomology!cup product!is cubical cohomology cup product|hyperpage}{171}
 \indexentry{Serre diagonal!versus geometric diagonal|hyperpage}{172}
-\indexentry{cup product!via flows|hyperpage}{174}
-\indexentry{cap product!is the cubical cap product|hyperpage}{174}
-\indexentry{cap product!is the cubical cap product|hyperpage}{174}
-\indexentry{Poincar\'e Duality!via cap product|hyperpage}{178}
-\indexentry{umkehr maps|(hyperpage}{178}
-\indexentry{Poincar\'e Duality!and umkehr maps|hyperpage}{178}
-\indexentry{umkehr maps!and Poincar\'e Duality|hyperpage}{178}
-\indexentry{umkehr maps|)hyperpage}{179}
-\indexentry{Alexander Duality|(hyperpage}{179}
-\indexentry{Alexander Duality|)hyperpage}{185}
-\indexentry{Alexander Duality!application to links|(hyperpage}{185}
-\indexentry{linking number|hyperpage}{186}
-\indexentry{triple linking number|(hyperpage}{187}
-\indexentry{link!triple linking number|(hyperpage}{187}
-\indexentry{Alexander Duality!application to links|)hyperpage}{188}
-\indexentry{triple linking number|)hyperpage}{188}
-\indexentry{link!triple linking number|)hyperpage}{188}
-\indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{190}
-\indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{190}
-\indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{190}
-\indexentry{local orientation|hyperindexformat{\see{orientation, local}}}{190}
-\indexentry{tautological co-orientation|hyperindexformat{\see{co-orientation, tautological}}}{190}
-\indexentry{normal co-orientation|hyperindexformat{\see{co-orientation, normal}}}{190}
-\indexentry{pullback co-orientation|hyperindexformat{\see{co-orientation, of pullback}}}{190}
-\indexentry{product|hyperindexformat{\seealso{external products}}}{190}
-\indexentry{product orientation|hyperindexformat{\see{orientation!of external product}}}{190}
-\indexentry{product co-orientation|hyperindexformat{\see{co-orientation!of external product}}}{190}
-\indexentry{orientation!cap|hyperindexformat{\seealso{cap orientation}}}{190}
-\indexentry{Mayer-Vietoris sequence!for geometric cohomology!connecting morphism|hyperindexformat{\seealso{connecting morphism for geometric cohomology}}}{190}
-\indexentry{simple transversality|hyperindexformat{\see{transversality, simple}}}{190}
-\indexentry{compound transversality|hyperindexformat{\see{transversality, compound}}}{190}
-\indexentry{cross product|hyperindexformat{\see{exterior product}}}{190}
+\indexentry{cup product!with coefficients|hyperpage}{174}
+\indexentry{cup product!via flows|hyperpage}{176}
+\indexentry{cap product!is the cubical cap product|hyperpage}{176}
+\indexentry{cap product!is the cubical cap product|hyperpage}{176}
+\indexentry{Poincar\'e Duality!via cap product|hyperpage}{179}
+\indexentry{umkehr maps|(hyperpage}{180}
+\indexentry{Poincar\'e Duality!and umkehr maps|hyperpage}{180}
+\indexentry{umkehr maps!and Poincar\'e Duality|hyperpage}{180}
+\indexentry{umkehr maps|)hyperpage}{181}
+\indexentry{Alexander Duality|(hyperpage}{181}
+\indexentry{Alexander Duality|)hyperpage}{187}
+\indexentry{Alexander Duality!application to links|(hyperpage}{187}
+\indexentry{linking number|hyperpage}{188}
+\indexentry{triple linking number|(hyperpage}{189}
+\indexentry{link!triple linking number|(hyperpage}{189}
+\indexentry{Alexander Duality!application to links|)hyperpage}{190}
+\indexentry{triple linking number|)hyperpage}{190}
+\indexentry{link!triple linking number|)hyperpage}{190}
+\indexentry{naive transversality|hyperindexformat{\see{transversality, naive}}}{191}
+\indexentry{fiber product|hyperindexformat{\seealso{pullback}}}{191}
+\indexentry{pullback|hyperindexformat{\seealso{fiber product}}}{191}
+\indexentry{local orientation|hyperindexformat{\see{orientation, local}}}{191}
+\indexentry{tautological co-orientation|hyperindexformat{\see{co-orientation, tautological}}}{191}
+\indexentry{normal co-orientation|hyperindexformat{\see{co-orientation, normal}}}{191}
+\indexentry{pullback co-orientation|hyperindexformat{\see{co-orientation, of pullback}}}{191}
+\indexentry{product|hyperindexformat{\seealso{external products}}}{191}
+\indexentry{product orientation|hyperindexformat{\see{orientation!of external product}}}{191}
+\indexentry{product co-orientation|hyperindexformat{\see{co-orientation!of external product}}}{191}
+\indexentry{orientation!cap|hyperindexformat{\seealso{cap orientation}}}{191}
+\indexentry{Mayer-Vietoris sequence!for geometric cohomology!connecting morphism|hyperindexformat{\seealso{connecting morphism for geometric cohomology}}}{191}
+\indexentry{simple transversality|hyperindexformat{\see{transversality, simple}}}{191}
+\indexentry{compound transversality|hyperindexformat{\see{transversality, compound}}}{191}
+\indexentry{cross product|hyperindexformat{\see{exterior product}}}{191}
