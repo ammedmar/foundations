@@ -725,7 +725,7 @@ We will prove \cref{T: (co)homology products} below.
 The basic idea, in the case of the last three products, will be to show that we can represent pairs of homology or cohomology classes by simply transverse representatives, which is accomplished by \cref{T: transverse reps}, below, and then form the usual fiber products.
 We therefore have the following immediate consequence.
 
-\begin{theorem}\index{cup product!properties}\index{cap product!properties}\index{intersection product!properties}\index{exterior product!properties}
+\begin{theorem}\label{T: coho product properties}\index{cup product!properties}\index{cap product!properties}\index{intersection product!properties}\index{exterior product!properties}
 	The homology cross product, cohomology cross product, cup product, cap product, and, if $M$ is oriented, intersection product satisfy the properties enumerated in \cref{S: (co)chain properties}, except for the boundary formulas.
 \end{theorem}
 
@@ -736,7 +736,12 @@ We therefore have the following immediate consequence.
 	Similarly, for associativity, we use \cref{T: transverse reps,R: countable trans2} to choose representatives $V$, $W$, and $X$ first so that $W$ is transverse to $V$ and then so that $X$ is transverse to $V \times_M W$ and $W$.
 \end{remark}
 
-To prove \cref{T: (co)homology products}, we will use the following important theorem.
+
+One particular consequence of \cref{T: coho product properties} is that, by the first ``mixed'' property in \cref{S: mixed formulas}, the cup product in cohomology is the composition of the exterior product and the pullback by the diagonal map, as for singular cohomology.
+While we could have taken this as the definition of the cohomology cup product and thus avoided some effort below in showing that the cohomology cup product as coming from the cochain cup product is well defined, it would not have been clear that we can always find transverse representatives $\uV$ and $\uW$ for two cohomology classes and so represent their cohomology cup product by the cochain cup product $\uV \uplus \uW$.
+Consequently, in what follows we show that the cohomology cup product is well defined ``the hard way,'' but obtain several valuable results in their own right along the way.
+
+In particular, to prove \cref{T: (co)homology products}, we will use the following important theorem.
 
 \begin{theorem}\label{T: transverse reps}\index{geometric cohomology!transverse representative}\index{geometric homology!transverse representative}
 Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in H_*^\Gamma(M)$ or $\uV \in H^*_\Gamma(M)$.
@@ -811,7 +816,7 @@ Which is in Q.
 	We need to have $+(\bd Z) \times_M W$ in the bottom line of this computation, but we can obtain that by replacing $Z \times_M W$ with $-Z \times_M W$ if necessary.
 	Then the bottom line will be an element of $Q(M)$.
 
-	So $V' \times_M W$ and $V'' \times_M W$ are (co)homologous.
+	So $V' \times_M W$ and $V'' \times_M W$ are (co)homologous, and similarly for different choices of $W$.
 	\qedhere
 	\begin{comment}
 		To finish the proof, we need an analogue of \cref{P: ball stability} that allows us to construct the homotopy $H$.
@@ -1988,15 +1993,16 @@ Our goal is to prove the following theorem; putting this together with \cref{P: 
 Recall the definition of the intersection map $\mc I$ in \cref{D: intersection homomorphism} and our convention from \cref{R: intersection map extension} by which we abuse notation and also write $\mc I$ for the composition $H^*_\Gamma(M) \xleftarrow{\cong} H^*_{\Gamma \pf X}(M) \xr{\mc I} H^*(X)$.
 
 \begin{theorem}\label{T: cup compatibility}\index{geometric cohomology!cup product!is cubical cohomology cup product}
-Let $M$ be a manifold without boundary cubulated by the cubical complex $X$.
-The following diagram, in which the horizontal compositions are the geometric cohomology cup product and the cubical cohomology cup product, commutes.
-If $H^*(M)$ is finitely generated, then the vertical maps are isomorphisms.
-	\[
-	\begin{tikzcd}
-	H^*_\Gamma(M) \otimes H^*_\Gamma(M) \arrow[r,"\times"]\arrow[d,"\mc I \otimes \mc I"]& H^*_\Gamma(M \times M) \arrow[d,"\mc I"]\arrow[r,"\diag^*"] & H^*_\Gamma(M) \arrow[d,"\mc I"]\\
-	H^*(X) \otimes H^*(X) \arrow[r,"\times"]& H^*(X \times X) \arrow[r,"\Delta^*"] & H^*(X).
-	\end{tikzcd}
-	\]
+	Let $M$ be a manifold without boundary cubulated by the cubical complex $X$.
+	The following diagram, in which the horizontal compositions are the geometric cohomology cup product and the cubical cohomology cup product, commutes.
+	If $H^*(M)$ is finitely generated, then the vertical maps are isomorphisms.
+		\[
+		\begin{tikzcd}
+		H^*_\Gamma(M) \otimes H^*_\Gamma(M) \arrow[r,"\times"]\arrow[d,"\mc I \otimes \mc I"]& H^*_\Gamma(M \times M) \arrow[d,"\mc I"]\arrow[r,"\diag^*"] & H^*_\Gamma(M) \arrow[d,"\mc I"]\\
+		H^*(X) \otimes H^*(X) \arrow[r,"\times"]& H^*(X \times X) \arrow[r,"\Delta^*"] & H^*(X).
+		\end{tikzcd}
+		\]
+	In other words, if $H^*(M)$ is finitely generated, the geometric and cubical cup products are isomorphic.
 \end{theorem}
 
 The proof of \cref{T: cup compatibility} will rely on some further work.
@@ -2125,7 +2131,129 @@ We can now prove \cref{T: cup compatibility}.
 We obtain the proof by concatenating the diagrams of \cref{P: cross product comparison} (after taking cohomology) and \cref{C: diag commute} and considering the rectangle formed on the outside.
 \end{proof}
 
-\subsubsection{The cup product via flowing}
+
+\subsubsection{A cup product with coefficients}\index{cup product!with coefficients}
+
+In \cref{C: cohomology with coefficients}, we observed that if $H_*(M)$ is finitely-generated in each degree and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
+In this section we wish to extend this compatibility to cup products. We will consider only the cases $R=\Z_n$ and $R=\Q$.
+
+
+
+In the following discussion, for clarity we will use notation such as $\uV$ for cochains and $[\uV]$ for cohomology classes.
+
+\begin{definition}
+	For a commutative ring with unit $R$ and manifold $M$, let $C^*_\Gamma(M;R) = C^*_\Gamma(M) \otimes R$ and $H^*_\Gamma(M;R) = H^*(C^*_\Gamma(M;R))$.
+\end{definition}
+
+In this section we will also write $1_n$ for the image of $1 \in \Z$ in $\Z_n$ and $1_\Q$ for the image in $\Q$.
+
+To define the cup product $H^*_\Gamma(M;R) \otimes H^*_\Gamma(M;R) \xr{\uplus} H^*_\Gamma(M;R)$ when $R=\Z_n$, we recall that $C^*_\Gamma(M)$ is flat by \cref{L: flat} and tensor it with the short exact sequence $$0 \to \Z \xr{\times n} \Z \to \Z_n \to 0.$$
+We then see that every element in $C^*_\Gamma(M;\Z_n)$ can be written as $\uV \otimes 1_n$ for some $\uV \in C^*_\Gamma(M)$, and $\uV$ is unique modulo cochains of the form $n \cdot \underline{Y}$.
+When useful, we can also write $\uV \in C^*_\Gamma(M) = C^*_\Gamma(M)\otimes \Z$ as $\uV \otimes 1$.
+Now if $[\uV \otimes 1_n], [\uW \otimes 1_n] \in H^*_\Gamma(M;\Z_n)$ and our representing cochains $\uV$ and $\uW$ are simply transverse, we define $[\uV \otimes 1_n] \uplus [\uW \otimes 1_n]$ to be represented by $(\uV \uplus \uW) \otimes 1_n \in C^*_\Gamma(M;\Z_n)$.
+
+When $R=\Q$, we observe that for every element of $C^*_\Gamma(M;\Q) = C^*_\Gamma(M) \otimes \Q$, there is a $d \in \Z_+$ such that the element can be written as $\uV \otimes \frac{1}{d}$.
+Of course $d$ is not unique and we have, for example, $\uV \otimes \frac{1}{d} = n\uV \otimes \frac{1}{nd}$ for $n \in \Z_+$.
+If $\left[\uV \otimes \frac{1}{d}
+\right]$ and $\left[\uV \otimes \frac{1}{e}
+\right]\in H^*(M;\Q)$ with $\uV$ and $\uW$ simply transverse, we take their cup product to be $\left[(\uV \uplus \uW) \otimes \frac{1}{de} \right]$.
+We observe that, as $C^*_\Gamma(M)$ is flat and $\Z \xr{\frac{1}{d}} \Q$ is injective for any $d$, the element $\uV \otimes \frac{1}{d}$ is $0$ in $C^*_\Gamma(M;\Q)$ if and only if $\uV = 0$ in $C^*_\Gamma(M)$.
+
+In either case, letting $r$ stand for $1_n$ or $\frac{1}{d}$ and $s$ stand for $1_n$ or $\frac{1}{e}$, we see that $[\uV \otimes r] \uplus [\uW \otimes s]$ is represented by $\diag^*(\uV \times \uM) \otimes rs$ for appropriate choices of representing cochains $\uV$ and $\uW$.
+
+We must ensure that these definitions always apply and do not depend on the choices made.
+
+\begin{theorem}
+	Let $M$ be a manifold without boundary and $R = \Z_n$ or $\Q$.
+	The cup product $H^*_{\Gamma}(M;R) \otimes H^*_{\Gamma}(M;R) \to H^*_{\Gamma}(M;R)$ is fully defined and well defined.
+\end{theorem}
+
+\begin{proof}
+	Let us first show that we can find appropriate simply transverse $\uV$ and $\uW$.
+
+	For $\R = \Z_n$, we first choose arbitrary precochains $V$ and $W$ whose corresponding cochains $\uV$ and $\uW$ map to classes representing $[\uV \otimes 1_n]$ and $[\uW \otimes 1_n]$.
+	By \cref{P: perturb transverse to map}, there is a proper universal homotopy that takes $V$ to a precochain $V'$ that is transverse to $W$.
+	Following the proof of \cref{T: transverse reps}, we appeal to \cref{P: universal homotopy}, which relies on \cref{C: homotopy}.
+	The proof of \cref{C: homotopy} together with \cref{L: co-oriented homotopy} shows that if $H$ is our homotopy of $M$ then taking a cochain $\underline{Z}$ to the cochain represented by $H\circ (r_Z \times \id_I)$ is a chain homotopy on $C^*_\Gamma(M)$, say $\mc H$ from the identity to $H(-,1)$.
+	Thus $\mc H \otimes \id_{\Z_n}$ is a chain homotopy on $C^*_\Gamma(M;\Z_n)$,
+	and we have $$\bd (\mc H \otimes \id_{\Z_n})(\uV \otimes 1_n) = (\uV'\otimes 1_n) - (\uV\otimes 1_n) -
+	(\mc H \otimes \id_{\Z_n})\bd (\uV \otimes 1_n).$$
+	But the last summand vanishes as $\uV \otimes 1_n$ is a cocycle by assumption.
+	So we can always find a $\uV' \otimes 1_n$ representing $[\uV \otimes 1_n] \in H^*_\Gamma(M;\Z_n)$ such that $\uV'$ is simply transverse to $\uW$, and so we can take $[\uV \otimes 1_n] \uplus [\uW \otimes 1_n] = [(\uV \uplus \uW)\otimes 1_n]$.
+
+	Similarly, for $R= \Q$, we obtain a chain homotopy between $\uV \otimes \frac{1}{d}$ and $\uV' \otimes \frac{1}{d}$ with $\uV'$ simply transverse to $\uW$.
+
+	It remains to show that our resulting cohomology classes are independent of the choices. It suffices to show this for the first input, as the argument for the second input is identical. Again, we begin with $R = \Z_n$.
+
+	Suppose given $\uV$ and $\uV'$ simply transverse to $\uW$ and such that $[\uV \otimes 1_n] = [\uV' \otimes 1_n].$
+	Thus there is a $\uZ$ such that $\bd (\uZ \otimes 1_n)= (\uV'-\uV)\otimes 1_n$.
+	By \cref{P: perturb transverse to map}, there is a proper universal homotopy that takes $\uZ$ to a $\uZ'$ that is simply transverse to $\uW$ and such that the trace of the homotopy of $\uV'-\uV$ is simply transverse to $\uW$.
+	In this case, taking $\uX = \uZ' + \mc H(\uV'-\uV)$, the boundary of $\uX \otimes 1_n$ is $(\uV'-\uV) \otimes 1_n$.
+	So by \cref{leibniz},
+	$$\bd ((\uX \uplus \uW)\otimes 1_n) = ((\bd \uX) \uplus \uW)\otimes 1_n +(-1)^{m-x}(\uX \uplus \bd \uW)\otimes 1_n.$$
+	By assumption $\bd \uW \otimes 1_n = 0$, so $\bd \uW$ must be $n$ times some element of $C^*_\Gamma(M)$.
+	But then $\uX \uplus \bd \uW$ will also be a multiple of $n$, so the second term vanishes, while the first is $((\uV'-\uV)\uplus \uW) \otimes 1_n$.
+	Furthermore, employing \cref{S: chain products}, this is $(\uV' \uplus \uW)\otimes 1_n - (\uV \uplus \uW) \otimes 1_n$, and so the class $[(\uV \uplus \uW)\otimes 1_n]$ does not depend on the choice of cochain representative of $[\uV \otimes 1_n]$.
+
+	For $R=\Q$, by finding common denominators, we can write our cohomologous options as $(\uV'-\uV)\otimes \frac{1}{d}$ and the cohomology as $\uZ \otimes \frac{1}{d}$.
+	The remaining argument is essentially identical to conclude $\left[(\uV \uplus \uW)\otimes \frac{1}{de}\right] = \left[(\uV' \uplus \uW)\otimes \frac{1}{de}\right]$.
+\end{proof}
+
+\begin{theorem}
+	Let $M$ be a manifold without boundary cubulated by the cubical complex $X$, and suppose $H^*(M)$ is finitely generated.
+	Let $R = \Z_n$ or $\Q$.
+	Then the following diagram commutes, and all the vertical maps are isomorphisms.
+	\[
+	\begin{tikzcd}
+	H^*_\Gamma(M;R) \otimes H^*_\Gamma(M;R) \arrow[r,"\times"]\arrow[d,"\mc I \otimes \id_R \otimes \mc I \otimes \id_R"]& H^*_\Gamma(M \times M;R) \arrow[d,"\mc I\otimes \id_R"]\arrow[r,"\diag^*"] & H^*_\Gamma(M;R) \arrow[d,"\mc I \otimes \id_R"]\\
+	H^*(K^*(X)\otimes R) \otimes H^*(K^*(X)\otimes R) \arrow[d,"\cong"] \arrow[r,"\times"]& H^*(K^*(X \times X)\otimes R) \arrow[r,"\Delta^*"]\arrow[d,"\cong"]  & H^*(K^*(X)\otimes R)\arrow[d,"\cong"] \\
+	H^*(X; R) \otimes H^*(X; R) \arrow[r,"\times"]& H^*(X \times X;R) \arrow[r,"\Delta^*"] & H^*(X;R).
+	\end{tikzcd}
+	\]
+	In other words, the geometric and cubical cup products with $R$ coefficients are isomorphic.
+\end{theorem}
+\begin{proof}
+	All of the regions of the diagrams of \cref{E: cube products,C: diag commute} commute or commute up to homotopy at the chain level, and so they continue to commute or commute up to homotopy after tensoring with $R$, using that the tensor product of a chain homotopy with $\id_R$ is a chain homotopy and that $R \otimes_\Z R = R$ for $R = \Z_n$ or $\Q$
+	The quasi-isomorphisms remain quasi-isomorphisms by the Universal Coefficient Theorem and Five Lemma, recalling that we treat $R$ here as a $\Z$-module.
+	So, as in the proof of \cref{T: cup compatibility}, we can put these diagrams together to obtain the top two rows of desired diagram.
+
+	Furthermore, $H^*(K^*(X)\otimes R) \cong H^*(K^*(X;R))=H^*(X;R)$ by \cref{C: cohomology with coefficients}, and similarly for $X \times X$, and these constructions can be done naturally by the techniques of \cite[Section 56]{Mun84}.
+	This provides the commutativity of the bottom two rows.
+\end{proof}
+
+
+\begin{comment}
+Our focus will be primarily on the cup product for cohomology rather than at the cochain level, leaving that for other work.
+However, to define the cup product with coefficients, we first assume elements of $\V,\W \in H^*_{\Gamma}(M;R) = H^*(C^*_\Gamma(M) \otimes R)$ represented by cochains $\sum_i \underline{V_i} \otimes r_i$ and $\sum_j \underline{W_j} \otimes s_j$ such that each pair $\underline{V_i}, \underline{W_j})$ is simply transverse.
+Then we let $$\V \uplus \W = \sum_{ij} \left(\underline{V_i} \uplus \underline{W_j}\right) \otimes r_is_j.$$
+We must show that this is always possible and independent of choices.
+
+\begin{theorem}
+	The cup product $H^*_{\Gamma}(M;R) \otimes H^*_{\Gamma}(M;R) \to H^*_{\Gamma}(M;R)$ is well defined.
+\end{theorem}
+\begin{proof}
+	We first choose any cochain representative $\sum_j \underline{W_j} \otimes s_j$ for $\W$ and precochains $W_j$ representing each $\underline{W_j}$.
+	Let $\mf V = \bigsqcup_i V_i$ and $\mf W = \bigsqcup_j W_j$.
+	By \cref{P: perturb transverse to map}, there is a proper universal homotopy from $\mf V$ to a precochain $\mf V' =\bigsqcup_i V_i'$ such that $\mf V'$ is transverse to $\mf W$.
+	Following the proof of \cref{T: transverse reps}, we appeal to \cref{P: universal homotopy}, which relies on \cref{C: homotopy}.
+	The proof of \cref{C: homotopy} together with \cref{L: co-oriented homotopy} shows that if $H$ is our homotopy then taking $\uV$ to the cochain represented by $H\circ (r_V \times \id_I)$ is a chain homotopy, say $\mc H$.
+	So in our case $\mc H \otimes \id_R$ provides a chain homotopy between the identity and $H(-,1)\otimes \id_R$, so $\sum \underline{V_i'}\otimes r_i = \sum_i \underline{V_i} \otimes r_i$ in $H^*_\Gamma(M;R)$.
+	This shows that given any two cohomology classes, they have representatives that satisfy the required transversality.
+
+	Next we show that the cup product is independent of choice of transverse representatives.
+
+	Suppose $\{V_i\}$ and $\{U_k\}$ are such that $\sum \underline{V_i}\otimes r_i$ and $\sum \underline{U_k} \otimes t_k$ are two homologous elements of $H^*_\Gamma(M;R)$ and the $\{V_i\}$ and $\{U_k\}$ are all transverse to all elements of $\{W_j\}$ with $\sum \underline{W_j} \otimes s_j$ another element of $H^*_\Gamma(M;R)$.
+	Let the cohomology be realized by $\sum Z_\alpha \otimes a_\alpha$.
+
+
+
+
+
+\end{proof}
+\end{comment}
+
+
+\subsubsection{A fully defined cup product via flows}.
 While we have \cref{T: cup compatibility} concerning the cup product on cohomology, the geometric cup product is not fully-defined as a map of cochains $C^*_\Gamma(M) \otimes C^*_\Gamma(M) \to C^*_\Gamma(M)$ due to the transversality requirements considered in detail in \cref{S: simple products}.
 However, we do have the following result from \cite{FMS-flows}, which we rephrase for the current context and for which we refer to \cite{FMS-flows} for details.
 This essentially says that, given two geometric cochains $V$ and $W$ on a compact cubulated manifold, there is a canonical flow, depending only on the cubulation, such that after enough time, $V$ and $W$ are transverse and then their co-oriented fiber product is compatible with the cubical cup product via the intersection map.
