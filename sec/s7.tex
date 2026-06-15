@@ -2200,25 +2200,25 @@ We must ensure that these definitions always apply and do not depend on the choi
 \end{proof}
 
 \begin{theorem}
-	Let $M$ be a manifold without boundary cubulated by the cubical complex $X$, and suppose $H^*(M)$ is finitely generated.
+	Let $M$ be a manifold without boundary cubulated by the cubical complex $X$, and suppose $H_*(M)$ is finitely generated.
 	Let $R = \Z_n$ or $\Q$.
-	Then the following diagram commutes, and all the vertical maps are isomorphisms.
+	Then the following diagram commutes, and, if $H_*(M)$ is finitely generated in all dimensions, the vertical maps are isomorphisms.
 	\[
 	\begin{tikzcd}
 	H^*_\Gamma(M;R) \otimes H^*_\Gamma(M;R) \arrow[r,"\times"]\arrow[d,"\mc I \otimes \id_R \otimes \mc I \otimes \id_R"]& H^*_\Gamma(M \times M;R) \arrow[d,"\mc I\otimes \id_R"]\arrow[r,"\diag^*"] & H^*_\Gamma(M;R) \arrow[d,"\mc I \otimes \id_R"]\\
-	H^*(K^*(X)\otimes R) \otimes H^*(K^*(X)\otimes R) \arrow[d,"\cong"] \arrow[r,"\times"]& H^*(K^*(X \times X)\otimes R) \arrow[r,"\Delta^*"]\arrow[d,"\cong"]  & H^*(K^*(X)\otimes R)\arrow[d,"\cong"] \\
+	H^*(K^*(X)\otimes R) \otimes H^*(K^*(X)\otimes R) \arrow[d] \arrow[r,"\times"]& H^*(K^*(X \times X)\otimes R) \arrow[r,"\Delta^*"]\arrow[d]  & H^*(K^*(X)\otimes R)\arrow[d] \\
 	H^*(X; R) \otimes H^*(X; R) \arrow[r,"\times"]& H^*(X \times X;R) \arrow[r,"\Delta^*"] & H^*(X;R).
 	\end{tikzcd}
 	\]
-	In other words, the geometric and cubical cup products with $R$ coefficients are isomorphic.
+	In other words, if $H_*(M)$ is finitely generated in all degrees, the geometric and cubical cup products with $R$ coefficients are isomorphic.
 \end{theorem}
 \begin{proof}
-	All of the regions of the diagrams of \cref{E: cube products,C: diag commute} commute or commute up to homotopy at the chain level, and so they continue to commute or commute up to homotopy after tensoring with $R$, using that the tensor product of a chain homotopy with $\id_R$ is a chain homotopy and that $R \otimes_\Z R = R$ for $R = \Z_n$ or $\Q$
+	All of the regions of the diagrams of \cref{E: cube products,C: diag commute} commute or commute up to homotopy at the chain level, and so they continue to commute or commute up to homotopy after tensoring with $R$, using that the tensor product of a chain homotopy with $\id_R$ is a chain homotopy and that $R \otimes_\Z R = R$ for $R = \Z_n$ or $\Q$.
 	The quasi-isomorphisms remain quasi-isomorphisms by the Universal Coefficient Theorem and Five Lemma, recalling that we treat $R$ here as a $\Z$-module.
 	So, as in the proof of \cref{T: cup compatibility}, we can put these diagrams together to obtain the top two rows of desired diagram.
 
-	Furthermore, $H^*(K^*(X)\otimes R) \cong H^*(K^*(X;R))=H^*(X;R)$ by \cref{C: cohomology with coefficients}, and similarly for $X \times X$, and these constructions can be done naturally by the techniques of \cite[Section 56]{Mun84}.
-	This provides the commutativity of the bottom two rows.
+	Furthermore, $H^*(K^*(X)\otimes R) \cong H^*(K^*(X;R))=H^*(X;R)$ by \cref{C: cohomology with coefficients}, and similarly for $X \times X$, so the lower vertical maps are isomorphisms.
+	Commutativity of the bottom rows can be checked directly.
 \end{proof}
 
 
