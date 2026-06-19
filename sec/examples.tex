@@ -1,0 +1,64 @@
+% !TEX root = ../foundations.tex
+
+Before beginning the technical development, we offer a few examples which illustrate the basic appeal of geometric cochains.
+They are not meant as full calculations.
+Rather, they show how familiar cohomology classes can be represented by visible geometric conditions, and how products then become intersections of those conditions.
+
+\subsubsection{Crossing a ray}
+
+Let $M = \R^2-\{0\}$.
+The positive $\e_1$-axis in $M$, co-oriented by the normal vector $\e_2$, is a proper codimension-one submanifold and hence a geometric cochain.
+It represents the usual generator of $H^1(M;\Z)$:
+an oriented loop pairs with this cochain by counting, with signs, how many times it crosses the ray.
+In other words, winding number is recorded by a toll booth on the ray rather than by the differential form $d\theta$.
+
+This example is deliberately elementary, but it already displays two useful features of the theory.
+First, the representative is integral rather than real-valued.
+Second, a cochain need not be compact; the correct condition is properness of the map to the target.
+Thus geometric cohomology includes representatives that are natural in pictures but awkward in approaches that identify cohomology only through compact dual cycles.
+
+\subsubsection{Linear algebra as cup product}
+
+Projective spaces provide a second guiding example.
+In complex projective space, a hyperplane $\mathbb{C}P^{n-1} \into \mathbb{C}P^n$ represents the degree-two generator, and a linear subspace $\mathbb{C}P^{n-k}$ represents its $k$th power.
+The usual calculation
+\[
+	H^*(\mathbb{C}P^n;\Z) \cong \Z[h]/(h^{n+1})
+\]
+is then a geometric reflection of the elementary fact that transverse linear subspaces intersect linearly, with codimensions adding, and that $n+1$ independent hyperplane conditions have no common solution.
+
+Real projective spaces show why co-orientations must be part of the foundations rather than an afterthought.
+With mod-two coefficients, linear real projective subspaces represent the familiar powers of the degree-one generator.
+Over the integers, however, the same inclusions define geometric cochains only when the corresponding normal bundles are orientable.
+The distinction between orienting a cycle and co-orienting a cocycle is one of the recurring themes of this paper.
+
+\subsubsection{Characteristic classes}
+
+Characteristic classes also have a geometric flavor from the start.
+The Euler class of an oriented vector bundle can be represented by the zero locus of a transverse section.
+More generally, Stiefel--Whitney and Chern classes may be approached through degeneracy loci, such as the locus where a collection of sections becomes linearly dependent.
+These loci are often singular as subsets, but the geometric-cochain perspective suggests replacing them by smooth spaces mapping to the base, for instance by remembering a choice of linear dependence.
+
+This is not the route by which we develop characteristic classes in the present paper.
+But it is a useful motivation for allowing cochains to be represented by maps from manifolds rather than only by embedded submanifolds.
+The same flexibility appears in Schubert calculus, where cohomology classes of Grassmannians are naturally tied to incidence conditions and their resolutions.
+
+\subsubsection{Configurations}
+
+Configuration spaces give examples where the representatives are combinatorial as well as geometric.
+For ordered configurations in $\R^N$, one can impose the condition
+\[
+	x_j-x_i = c v
+\]
+for some fixed $v \in S^{N-1}$ and some $c>0$.
+This condition defines a codimension $N-1$ cochain.
+Products correspond to imposing several such directed-edge conditions simultaneously, so graphs begin to encode cochains and their intersections.
+
+For unordered configurations, similar coordinate-equality conditions lead to geometric representatives for cohomology classes of symmetric groups.
+For example, when two points are unordered, remembering the line spanned by their difference identifies the basic geometry with that of real projective space.
+For more points, one must remember which subset of the configuration satisfies a condition; this is exactly the kind of ``manifold over the target'' allowed in geometric cohomology.
+Calculations of the mod-two cohomology rings of symmetric and alternating groups in \cite{giusti2012symmetric, giusti2021alternating} make essential use of this kind of geometry.
+
+These examples point toward a common pattern.
+One first finds geometric representatives for additive generators, then pairs them with geometric chains to check that they detect the desired classes, and finally computes products by making the cochain representatives transverse and intersecting them.
+The purpose of the foundations below is to make this familiar geometric reasoning into a precise theory of ordinary homology and cohomology.
