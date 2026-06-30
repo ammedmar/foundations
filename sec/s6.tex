@@ -662,12 +662,14 @@ Furthermore, in a neighborhood of $x$ the co-orientation of $r_W$ determines an 
 
 Our goal now is to show that the intersection map $\mc I$ induces an isomorphism $H^i_{\Gamma \pf X}(M) \to H^i(X)$ whenever $H^i_\Gamma(M)$ and $H^i(X)$ are finitely generated.
 Recall that we already know these groups are abstractly isomorphic by \cref{T: transverse complex,T: geometric is singular} and the footnote on page \pageref{FN: cubical and singular}.
-Here is the formal statement of the theorem:
+\cref{T: intersection qi} is the formal statement of this theorem.
+We will show below in \cref{T: intersection natural} that the intersection map in cohomology is natural with respect to proper maps in an appropriate sense.
 
 \begin{theorem}\label{T: intersection qi}\index{intersection map!is a cohomology surjection}\index{intersection map!is a cohomology isomorphism when finitely generated}
 	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$ is a surjection.
 	If, in addition, $H^i(M)$ is finitely generated, then $\mc I$ is an isomorphism.
 \end{theorem}
+
 
 The proof will take us the remainder of \cref{S: transversality}.
 We begin in the next subsection by using the cubical structure to start building an inverse map to $\mc I$.
@@ -1073,3 +1075,54 @@ At last we prove \cref{T: intersection qi}.
 \end{proof}
 
 We conjecture that $\mc I$ is an isomorphism in the general case but have not been able to prove this.
+
+\subsubsection{Naturality of the intersection map on cohomology}
+
+
+Finally, we prove the following naturality statement.
+
+\begin{theorem}\label{T: intersection natural}\index{intersection map!naturality}
+	The cohomology intersection map $\mc I$ of \cref{T: intersection qi} is natural in the following sense.
+	If $f \colon N \to M$ is a smooth proper map of manifolds without boundary and $f$ is homotopic to a cubical map $f_1 \colon Y \to X$ for respective smooth cubulations $Y$ and $X$ of $N$ and $M$, then the following diagram commutes:
+	\begin{equation*}
+		\begin{tikzcd}
+		 	H^*_{\Gamma}(M) \arrow[d,"f^*"]	&\arrow[l,"\cong"'] H^*_{\Gamma \pf X}(M) \arrow[r,"\mc 	I"]\arrow[d,"f^*"]& H^*(X)\arrow[d,"f_1^*"]\\
+			H^*_{\Gamma}(N) 	&\arrow[l,"\cong"'] H^*_{\Gamma \pf Y}(N) \arrow[r,"\mc I"]& H^*(Y).
+		\end{tikzcd}
+	\end{equation*}
+\end{theorem}
+
+
+\begin{proof}
+	The map on the left is defined and depends only on the homotopy class of $f$ by \cref{P: cohomology pullback}.
+	The leftwards maps are by inclusion and are isomorphisms by \cref{T: transverse complex}.
+	For the middle vertical arrow and commutativity of the left square, it suffices to show that for every $\uV \in H^*_{\Gamma \pf X}(M)$ there is a precochain $V$ representing $\uV$ such that the $V$ is transverse to $X$ and the pullback $V \times_M N \to N$ is transverse to the cubulation $Y$.
+	By \cref{L: transverse to pullback}, the latter condition is equivalent to each composition $fi_C \colon C \to M$ being transverse to $V$, where $i_C \colon C \to N$ is the inclusion of a cube of the cubulation of $N$.
+	To achieve this, we utilize a generalization of \cref{P: ball stability,T: transverse complex} that we will prove below in \cref{S: homology products}.
+	In particular, we can treat the smooth cubulation of a manifold as a proper smooth map from the disjoint union of the top dimensional cubes to the manifold, essentially obtaining a precochain (we ignore the co-orientation).
+	Let $\ms X$ be the union of cubes of $X$ and $\ms Y$ be the union of cubes of $Y$.
+	Then the disjoint union of the cubulation $\ms X \to M$ and the composition $\ms Y \to N \xr{f} M$, is essentially a precochain in $M$.
+	By \cref{P: perturb transverse to map,T: transverse reps}, there is a precochain representing $\uV$ that is transverse to $\ms X$ and $\ms Y$.
+
+	For the right square, if $V$ is a precochain representing $\uV \in H^*_{\Gamma \pf X}(M)$, then $f_1^* \mc I(\uV)$ is represented by the cubical cochain that takes a cube $C$ of $Y$ to $\aug(V \times_M f_1(C))$.
+	This is well defined since $f_1(C)$ will be a cube of $X$, and so transverse to $V$ by assumption.
+	On the other hand, $\mc I f^*(\uV)$ is represented by the cubical cochain that acts on $C$ by $\aug((V \times_M N) \times_N C)$, which can be made well-defined by choosing $V$ as in the preceding paragraph.
+	By \cref{P: natural cap}, this last expression is the same as $\aug(V \times_M f(C))$.
+
+
+	Now, by assumption $f$ and $f_1$ are homotopic, however $f_1$ may not be smooth.
+	Nonetheless, let $F \colon N \times I \to M$ be the homotopy, which restricts to a continuous homotopy $C \times I \to M$ on each cube.
+	We wish to modify $F$ to a homotopy $F'$ that is smooth and transverse to $V$ on each $C \times I$.
+	Note that this is already the case on each $C \times 0$ and $C \times 1$ by assumption.
+	We can proceed by induction on the dimensions of the cubes, modifying each $C \times I$ by a (continuous) homotopy rel $C \times \{0,1\}$ to obtain the desired $F'$.
+	This can be done by the techniques of \cite{FMS-transverse singular}; that paper is written for simplices, rather than cubes, but the modification is direct.
+
+	We thus obtain for any cube $C$ a fiber product $V \times_M (C \times I)$, with the mapping $C \times I$ to $M$ given by $F'$, and we define a cochain $A \in C^*(Y)$ by $A(C) = \aug(V \times_M (C \times I))$.
+	We compute $$(dA)(C) = A(\bd C) = \aug(V \times_M ((\bd C) \times I)).$$
+	We also observe that $\aug(V \times_M \bd (C \times I))$, the augmentation of the fiber product of $V$ with the full boundary of $C \times I$, must be $0$ because $V$ represents a cocycle and so $V \times_M (C\times I)$ consists of arcs with boundaries on the boundary of $C\times I$ (possibly plus elements of $Q^*(M)$).
+	But $\bd (C \times I) = (\bd C) \times I \pm (C \times 1 - C \times 0)$,
+	so $$(dA)(C) = \aug(V \times_M ((\bd C) \times I)) = \pm \aug(V \times_M (C \times 1) - V \times_M  (C \times 0))=\pm \aug(V\times_M f_1(C) - V \times_M f(C)).$$
+	Hence $f_1^* \mc I(\uV)$ and $\mc I f^*(\uV)$ are cohomologous, as desired.
+\end{proof}
+
+
