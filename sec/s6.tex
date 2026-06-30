@@ -154,7 +154,7 @@ is the canonical order-preserving bijection, which is compatible with the identi
 \vertices(\interval^n) \times \vertices(\interval^m) \cong \vertices(\interval^{n + m}).
 \]
 
-\subsection{Cubulations}
+\subsection{Cubulations}\label{S: cubulation}
 
 Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$\index{$Cu$@$\mathtt{Cube}$} be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
 The poset of faces of a cubical complex $X$ also determines a category, and the characteristic maps of $X$ determine a functor from this poset category to $\mathtt{Cube}$.
@@ -281,7 +281,8 @@ As a corollary of the proof, we have the following useful result concerning the 
 
 \subsection{Cubically transverse geometric cohomology}\label{S: transverse cochains}
 
-In this section we consider the cochains on $M$ represented by maps $W \to M$ that are transverse to a given cubulation of $M$.
+In this subsection we consider the cochains on $M$ represented by maps $W \to M$ that are transverse to a given cubulation of $M$.
+While we focus primarily on cubulations, the same arguments apply for any smooth polyhedral subdivision of $M$, a fact that will be useful below.
 
 \begin{definition}\label{D: trans cube}
 	Let $M$ be equipped with a smooth cubulation $|X| \to M$.
@@ -666,7 +667,7 @@ Recall that we already know these groups are abstractly isomorphic by \cref{T: t
 We will show below in \cref{T: intersection natural} that the intersection map in cohomology is natural with respect to proper maps in an appropriate sense.
 
 \begin{theorem}\label{T: intersection qi}\index{intersection map!is a cohomology surjection}\index{intersection map!is a cohomology isomorphism when finitely generated}
-	If $M$ is a manifold without boundary cubulated by $X$, the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$ is a surjection.
+	If $M$ is a manifold without boundary cubulated by $X$, then the intersection map $\mc I \colon H^i_{\Gamma \pf X}(M) \to H^i(X)$ is a surjection.
 	If, in addition, $H^i(M)$ is finitely generated, then $\mc I$ is an isomorphism.
 \end{theorem}
 
@@ -682,7 +683,7 @@ We conjecture that $\mc I$ is always an isomorphism, but we have not been able t
 	This map is given by taking a cohomology class representative that is transverse to the cubulation and applying the intersection map $\mc I$ to find a cubical cocycle representing the target cohomology class.
 \end{remark}
 
-Before starting toward the proof, we provide an application to cohomology with coefficients.
+Before starting toward the proof, we provide an application to cohomology with coefficients and then show that we obtain similar isomorphisms with simplices instead of cubes.
 
 \begin{corollary}\label{C: cohomology with coefficients}\index{geometric cohomology!with coefficients}
 	If $H_*(M)$ is finitely-generated in each degree and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
@@ -701,6 +702,34 @@ Before starting toward the proof, we provide an application to cohomology with c
 
 In this argument, the requirement that $H_*(M)$ be finitely generated is used not just to ensure $\mc I$ is a quasi-isomorphism.
 It is needed to construct an $F_*$ and have $\Hom(F_*, \Z) \otimes G \cong \Hom(F_*, G)$.
+
+While we primarily utilize cubes for various technical reasons, it will be useful to also have a comparison of geometric and simplicial cohomology.
+In particular, this is necessary for naturality results, as continuous maps of cubical complexes are not known to have cubical approximations.
+If $C^*(T)$ denotes the simplicial cocochain complex of the simplicial complex $T$ that smoothly triangulates the manifold $M$, the intersection map $\mc I \colon C^*_{\Gamma(M) \pf T} \to C^*(T)$ is defined just as for cubical complexes.
+To prove the following corollary regarding the induced map on cohomology, we do not need a completely separate proof; rather we can leverage \cref{T: intersection qi}.
+
+\begin{corollary}\label{C: intersection simp qi}\index{intersection map!is a cohomology surjection}\index{intersection map!is a cohomology isomorphism when finitely generated}
+	If $M$ is a manifold without boundary triangulated by $T$, then the intersection map $\mc I \colon H^i_{\Gamma \pf T}(M) \to H^i(T)$ is a surjection.
+	If, in addition, $H^i(M)$ is finitely generated, then $\mc I$ is an isomorphism.
+\end{corollary}
+\begin{proof}
+	As observed in \cref{S: cubulation}, a smooth triangulation can be subdivided into a smooth cubulation.
+	Let $X$ be such a cubical subdivision of $T$ and consider the following diagram
+	\begin{equation*}
+		\begin{tikzcd}
+		 	H^*_{\Gamma \pf X}(M)\arrow[d] \arrow[r,"\mc I"] & H^*(X)  \arrow[d]   \\
+			H^*_{\Gamma \pf T}(M)\arrow[r,"\mc I"]&  H^*(T).
+		\end{tikzcd}
+	\end{equation*}
+	The lefthand map is defined because any precochain transverse to $X$ is also transverse to $T$.
+	It is also an isomorphism, employing that in the diagram $H^*_{\Gamma \pf X}(M) \to H^*_{\Gamma \pf T}(M) \to H^*_\Gamma(M)$, both the righthand map and the composition are isomorphisms by \cref{T: intersection qi}, which holds for any polyhedral subdivision of $M$.
+	The righthand map is induced by the cellular subdivision chain map that takes an $i$-simplex to the sum of the $i$-cubes it contains (with appropriate signs), which induces an isomorphism on homology and so also on cohomology \cite[Theorem 1.49]{Fenn}.
+	In particular, the underlying chain map right then down takes a geometric cocycle to a simplicial cocycle that acts on a simplex $\sigma$ by adding (with appropriate signs) the intersection numbers of the geometric cocycle with all the cubes contained in $\sigma$. But this is precisely the same as the map down then right after the easy verification that the signs work out.
+ 	So the diagram commutes, and the bottom map is a surjection or isomorphism when the top map is.
+	The corollary now follows from \cref{T: intersection qi}.
+\end{proof}
+
+
 
 \subsubsection{Dualization in cubes}\label{S: dual cubes}
 
@@ -1080,20 +1109,24 @@ We conjecture that $\mc I$ is an isomorphism in the general case but have not be
 
 
 Finally, we prove the following naturality statement.
+We provide both cubical and simplicial statements, noting that one of our needs to consider triangulations at all is that a cubical approximation theorem is not known for cubical complexes!
 
 \begin{theorem}\label{T: intersection natural}\index{intersection map!naturality}
 	The cohomology intersection map $\mc I$ of \cref{T: intersection qi} is natural in the following sense.
-	If $f \colon N \to M$ is a smooth proper map of manifolds without boundary and $f$ is homotopic to a cubical map $f_1 \colon Y \to X$ for respective smooth cubulations $Y$ and $X$ of $N$ and $M$, then the following diagram commutes:
+	If $f \colon N \to M$ is a smooth proper map of manifolds without boundary and $f$ is properly homotopic to a cubical map $f_1 \colon Y \to X$ for respective smooth cubulations $Y$ and $X$ of $N$ and $M$, then the following diagram commutes:
 	\begin{equation*}
 		\begin{tikzcd}
 		 	H^*_{\Gamma}(M) \arrow[d,"f^*"]	&\arrow[l,"\cong"'] H^*_{\Gamma \pf X}(M) \arrow[r,"\mc 	I"]\arrow[d,"f^*"]& H^*(X)\arrow[d,"f_1^*"]\\
 			H^*_{\Gamma}(N) 	&\arrow[l,"\cong"'] H^*_{\Gamma \pf Y}(N) \arrow[r,"\mc I"]& H^*(Y).
 		\end{tikzcd}
 	\end{equation*}
+	The equivalent result holds replacing cubulations with triangulations, in which case such a diagram always exists for any smooth $f \colon N \to M$ by taking $f_1$ to be a simplicial approximation.
 \end{theorem}
 
 
-\begin{proof}
+
+\begin{proof}[Proof of \cref{T: intersection natural}]
+	We first consider the cubical case.
 	The map on the left is defined and depends only on the homotopy class of $f$ by \cref{P: cohomology pullback}.
 	The leftwards maps are by inclusion and are isomorphisms by \cref{T: transverse complex}.
 	For the middle vertical arrow and commutativity of the left square, it suffices to show that for every $\uV \in H^*_{\Gamma \pf X}(M)$ there is a precochain $V$ representing $\uV$ such that the $V$ is transverse to $X$ and the pullback $V \times_M N \to N$ is transverse to the cubulation $Y$.
@@ -1123,6 +1156,10 @@ Finally, we prove the following naturality statement.
 	But $\bd (C \times I) = (\bd C) \times I \pm (C \times 1 - C \times 0)$,
 	so $$(dA)(C) = \aug(V \times_M ((\bd C) \times I)) = \pm \aug(V \times_M (C \times 1) - V \times_M  (C \times 0))=\pm \aug(V\times_M f_1(C) - V \times_M f(C)).$$
 	Hence $f_1^* \mc I(\uV)$ and $\mc I f^*(\uV)$ are cohomologous, as desired.
+
+	The proof in the simplicial case is identical, noting that there is no need to triangulate the prisms $\sigma \times I$ in the argument.
+	The final claim is due to the existence, for any continuous map of simplicial complexes, of a homotopic simplicial map, possibly after subdivision.
+	The construction of such a homotopy in \cite[Section 16]{Mun84} shows that the resulting simplicial approximation and the homotopy will be proper.
 \end{proof}
 
 
