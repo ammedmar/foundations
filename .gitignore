@@ -22,3 +22,7 @@ referee/
 *.ind
 
 *.idx
+
+*.fdb_latexmk
+
+*.fls

@@ -1,5 +1,6 @@
 % !TEX root = ../foundations.tex
 
+
 \section{Introduction}\label{S: introduction}
 
 We fully develop a geometric approach to ordinary homology and cohomology on smooth manifolds, with classes represented by smooth maps from manifolds to our target manifold of interest.
@@ -42,17 +43,46 @@ For concrete applications of ideas in line with our viewpoint, we mention Cochra
 Lipyanskiy's manuscript \cite{Lipy14}, on which we build, gives a fairly thorough account of geometric homology, but a much more lightly sketched account of geometric cohomology, which leaves several major theorems unproven.
 Some other expected results are not stated at all, including an isomorphism between geometric and ordinary cohomology, either as graded abelian groups or as rings.
 So one of our main goals is to give a thorough account, with detailed proofs, of geometric homology and cohomology, with our primary focus on geometric cohomology, both because Lipyanskiy's account of this requires more filling in and also because cohomology with its algebra structure is of more interest to us.
-In addition to research applications, we find these ideas helpful in teaching graduate students as, for example, cohomology of projective spaces follows from linear algebra, and pushforward or umkehr maps are defined just by taking images.
+In addition to research applications, we find these ideas helpful in teaching graduate students: cohomology classes can often be represented by geometric conditions, products can often be computed by intersecting those conditions, and pushforward or umkehr maps are defined just by taking images.
 At the research level, we found Lipyanskiy's work thanks to Mike Miller, while working on \cite{FMS-flows} and looking for a rigorous foundation to geometrically model the cup product.
 Ultimately our main aim is to obtain a full -- but partially defined -- $E_\infty$-algebra structure on geometric cochains, with the $E_\infty$-structure ``resolving'' partial definedness (though itself being partially defined!) rather than non-commutativity.
 We also see plenty of room for development to make geometric cochains more broadly applicable, for example conjecturally to CW complexes with smooth attaching maps.
 Our careful treatment here is offered to facilitate such work.
 
-\section*{Acknowledgments}\index{acknowledgments}
+\subsection{The intuitive idea}\index{intuition}
 
-The authors thank Mike Miller for pointing us to \cite{Lipy14} and Dominic Joyce for answering questions about his work.
+Before providing some motivating examples, we must first explain the intuitive idea of geometric chains and cochains.
+While the precise formulations are surprisingly technical, the basic idea is fairly straightforward.
 
-\section*{Conventions}\index{conventions|textbf}
+Geometric chains of degree $i$ on a smooth manifold $M$ are represented by smooth maps to $M$ from compact, oriented $i$-dimensional manifolds with corners.
+We often write simply ``$V$'' to denote the full data $f \colon V \to M$.
+Addition is represented by disjoint union of such maps, meaning that the sum of $f \colon V \to M$ and $g \colon W \to M$ is $f \sqcup g \colon V \sqcup W \to M$; note that the images do not need to be disjoint.
+As $V \sqcup W$ is again a compact, oriented manifold with corners, this disjoint union again represents a geometric chain.
+The zero element is represented by the empty map from the empty set, and the negative of $V \to M$ is obtained by reversing the orientation of $V$, which we write as $-V$.
+The need for $V \sqcup -V$ to agree with the empty set \textit{as geometric chains} is where the technicalities start to come in, as the geometric chains need to become some sort of equivalence classes; we will not address the details here.
+Cycles are represented by maps from manifolds without boundaries (or those whose maps restricted to the boundary are appropriately equivalent to the empty set).
+Cycles represented by $V$ and $W$ are homologous if there is a chain with boundary equivalent to $V \sqcup -W$.
+
+The more remarkable theory is that of geometric cochains.
+Rather than considering algebraic duals of geometric chains, geometric cochains are again represented by maps from manifolds with corners, however instead of the conditions that the domain manifold be compact and oriented, rather the map must be proper and co-oriented.
+We will develop co-orientation in great detail in \cref{S: orientations and co-orientations}; the idea to keep in mind for now is that a co-orientation of an embedding is equivalent to an orientation of the normal bundle.
+Also, a degree $i$-cochain is represented by a map from a $\dim(M)-i$ manifold with corners.
+The definitions of equivalence classes of maps that represent the same geometric cochain, addition, zero, inverses, cocycles, and cohomologies are completely analogous to those for geometric chains.
+
+We will see in later chapters that the resulting homology and cohomology groups are isomorphic to the standard singular homology and cohomology groups.
+The greatest benefit of the geometric approach is a very simple description of products: for homology and cohomology classes represented by transverse embeddings, cup and cap products are given by taking intersections and employing appropriate (co)orientation conventions.
+More generally, products of (co)homology classes are represented by fiber products of their maps, which can also be understood very geometrically.
+This is somewhat consistent with classical intersection theory of homology on manifolds.
+Where our theory goes further is that we have a well-defined partial commutative algebra structure\footnote{See \cite{McC} for the definition.} on the geometric cochains themselves.
+Chain and cochain-level products will be developed in \cref{S: products} and explored further in \cite{GBF47}.
+
+\subsection{Motivating examples}
+
+\input{sec/examples}
+
+
+
+\subsection{Conventions}\index{conventions|textbf}
 
 Throughout we will denote the dimension of a manifold represented by an upper case character by the corresponding lower case character, for example, $\dim(M) = m$, $\dim(V) = v$, etc. \index{conventions!dimension labels}
 
@@ -64,3 +94,7 @@ For evaluation of a tensor products of cochains on a tensor product of chains, w
 This convention is used to define the cup product in Munkres \cite[Section 60]{Mun84}, Hatcher \cite[Section 3.2]{Hatc02}, and Spanier \cite[Section 5.6]{Span81}, though it disagrees with the conventions in some other sources, such as Dold \cite[Section VII.7]{Dol72}.
 
 The symbol $\sqcup$ denotes disjoint union.\index{$Z$@$\sqcup$}
+
+\subsection{Acknowledgments}\index{acknowledgments}
+
+The authors thank Mike Miller for pointing us to \cite{Lipy14} and Dominic Joyce for answering questions about his work.

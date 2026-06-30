@@ -1,0 +1,95 @@
+% !TEX root = ../foundations.tex
+
+Before beginning the technical development, we offer a few examples which illustrate the basic appeal of geometric cochains.
+They are intentionally brief; the paper's main work is to justify the constructions that make such examples legitimate.
+
+\subsubsection{Crossing a ray}
+
+Let \(M = \R^2 - \{0\}\), oriented by the ordered basis \((\e_1,\e_2)\).
+Let
+\[
+W = \{t\e_1 \mid t > 0\} \subset M
+\]
+be the positive \(\e_1\)-axis, co-oriented by the normal vector \(\e_2\).
+The inclusion \(W \into M\) is proper, so it defines a geometric cochain even though its domain is noncompact.
+Since \(W\) has no boundary, it is a geometric cocycle which represents the usual generator of \(H^1_\Gamma(M) \cong \Z\).
+Indeed, let \(S^1 \into M\) be the unit circle with its counterclockwise orientation.
+It is transverse to \(W\) and intersects \(W\) once, at \(\e_1\).
+The sign of this intersection is positive, since the tangent vector to \(S^1\) at \(\e_1\) is \(\e_2\), which agrees with the chosen normal co-orientation of \(W\).
+Thus the pairing of the class of \(W\) with the fundamental class of \(S^1\) is \(1\), and therefore \(W\) represents a generator.
+
+This simple example already displays two useful features of the theory.
+First, the representative is integral rather than real-valued.
+It records winding number by a discrete crossing count: a positively oriented loop contributes \(+1\) each time it crosses the ray in the positive co-oriented direction.
+By contrast, the de Rham representative \((2\pi)^{-1}d\theta\) records the same invariant continuously around the circle and only after extension of coefficients to \(\R\).
+One can approximate the crossing representative analytically by normalized angular bump forms supported in narrower and narrower sectors around the positive ray, but the limiting object is naturally a geometric, or current-like, representative.
+
+Second, the domain of a geometric cochain need not be compact.
+The correct finiteness condition is properness of the map to the target.
+Thus geometric cohomology admits representatives that are natural in pictures but less directly visible in approaches that identify ordinary cohomology with duals of compact cycles.
+%Equivalently, this ray is familiar from Borel--Moore or locally finite homology, but the geometric-cochain viewpoint uses it directly as a cohomology representative.
+
+\subsubsection{Cup products}
+
+Once the additive cohomology groups are known, geometric representatives can often be chosen so that cup products are read from intersections.
+Projective spaces provide the basic examples.
+
+For complex projective space, let \(h \in H^2_\Gamma(\mathbb{C}P^n)\) be represented by a hyperplane
+\[
+\mathbb{C}P^{n-1} \into \mathbb{C}P^n,
+\]
+with its normal co-orientation induced by the complex structure.
+More generally, a linear subspace
+\[
+\mathbb{C}P^{n-k} \into \mathbb{C}P^n
+\]
+represents \(h^k\).
+The product calculation is then the elementary fact that transverse linear subspaces intersect in a linear subspace, with codimensions adding.
+Thus the presentation
+\[
+H^*(\mathbb{C}P^n;\Z) \cong \Z[h]/(h^{n+1})
+\]
+reflects the fact that \(k\) independent hyperplane conditions cut out \(\mathbb{C}P^{n-k}\), while \(n+1\) independent hyperplane conditions have empty intersection.
+
+\medskip
+The real setting illustrates the distinction between orientations and co-orientations, with odd-dimensional projective spaces being orientable but even-codimension projective spaces being co-orientable.
+
+With mod-two coefficients, the linear inclusions
+\[
+\mathbb{R}P^{n-k} \into \mathbb{R}P^n
+\]
+represent the powers of the degree-one generator.
+With integral coefficients, such an inclusion defines a geometric cochain only when its normal bundle is orientable.
+This separates two pieces of structure that coincide too easily in examples over \(\mathbb{F}_2\): an integral chain requires an orientation of its domain, whereas an integral cochain requires a co-orientation of its map to the target.
+
+\medskip
+These examples illustrate the basic geometric procedure.
+After the additive groups have been computed, one chooses geometric cocycles dual to geometric cycles and then computes products by making the cocycles transverse and intersecting them.
+
+\subsubsection{Characteristic classes}
+
+Characteristic classes also admit geometric representatives of this kind.
+Let \(E \to M\) be a rank \(r\) vector bundle.
+The zero section
+\[
+M \into E
+\]
+is a canonical submanifold of the total space.
+With an orientation of \(E\) it represents the Thom class geometrically; without such an orientation it does so with \(\mathbb{F}_2\)-coefficients.
+Pulling this class back along a transverse section \(s \colon M \to E\) gives the Euler class, represented by the zero locus \(s^{-1}(0)\).
+
+The higher characteristic classes can be described similarly by replacing the zero locus of one section by a linear-dependence locus.
+For a rank \(r\) real or complex vector bundle \(E\), consider \(n+1\) sections of \(E\).
+The locus where these sections become linearly dependent is generally singular, but it has a natural smooth resolution.
+Over \(E^{\oplus(n+1)}\), define
+\[
+\chi_{r-n}(E) =
+\Big\{ \big((v_0,\ldots,v_n),\, [a_0:\cdots:a_n]\big) \,\mid\, \textstyle \sum_i a_i v_i = 0 \Big\},
+\]
+where \([a_0:\cdots:a_n]\) lies in \(\mathbb{R}P^n\) in the real case and in \(\mathbb{C}P^n\) in the complex case.
+The projection
+\[
+\chi_{r-n}(E) \to E^{\oplus(n+1)}
+\]
+has image the linear-dependence locus and defines a geometric cochain of codimension \(r-n\) in the real case, respectively complex codimension \(r-n\) in the complex case.
+It represents the Stiefel--Whitney class \(w_{r-n}(E)\) with \(\mathbb{F}_2\)-coefficients in the real case and the Chern class \(c_{r-n}(E)\) with integral coefficients in the complex case.
