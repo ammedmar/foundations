@@ -1113,7 +1113,7 @@ We provide both cubical and simplicial statements, noting that one of our needs 
 
 \begin{theorem}\label{T: intersection natural}\index{intersection map!naturality}
 	The cohomology intersection map $\mc I$ of \cref{T: intersection qi} is natural in the following sense.
-	If $f \colon N \to M$ is a smooth proper map of manifolds without boundary and $f$ is properly homotopic to a cubical map $f_1 \colon Y \to X$ for respective smooth cubulations $Y$ and $X$ of $N$ and $M$, then the following diagram commutes:
+	If $f \colon N \to M$ is a smooth map of manifolds without boundary and $f$ is homotopic to a cubical map $f_1 \colon Y \to X$ for respective smooth cubulations $Y$ and $X$ of $N$ and $M$, then the following diagram commutes:
 	\begin{equation*}
 		\begin{tikzcd}
 		 	H^*_{\Gamma}(M) \arrow[d,"f^*"]	&\arrow[l,"\cong"'] H^*_{\Gamma \pf X}(M) \arrow[r,"\mc 	I"]\arrow[d,"f^*"]& H^*(X)\arrow[d,"f_1^*"]\\
@@ -1132,9 +1132,9 @@ We provide both cubical and simplicial statements, noting that one of our needs 
 	For the middle vertical arrow and commutativity of the left square, it suffices to show that for every $\uV \in H^*_{\Gamma \pf X}(M)$ there is a precochain $V$ representing $\uV$ such that the $V$ is transverse to $X$ and the pullback $V \times_M N \to N$ is transverse to the cubulation $Y$.
 	By \cref{L: transverse to pullback}, the latter condition is equivalent to each composition $fi_C \colon C \to M$ being transverse to $V$, where $i_C \colon C \to N$ is the inclusion of a cube of the cubulation of $N$.
 	To achieve this, we utilize a generalization of \cref{P: ball stability,T: transverse complex} that we will prove below in \cref{S: homology products}.
-	In particular, we can treat the smooth cubulation of a manifold as a proper smooth map from the disjoint union of the top dimensional cubes to the manifold, essentially obtaining a precochain (we ignore the co-orientation).
+	In particular, we can treat the smooth cubulation of a manifold as a smooth map from the disjoint union of the top dimensional cubes to the manifold.
 	Let $\ms X$ be the union of cubes of $X$ and $\ms Y$ be the union of cubes of $Y$.
-	Then the disjoint union of the cubulation $\ms X \to M$ and the composition $\ms Y \to N \xr{f} M$, is essentially a precochain in $M$.
+	Then the disjoint union of the cubulation $\ms X \to M$ and the composition $\ms Y \to N \xr{f} M$ can be considered a single map from a manifold with corners to $M$.
 	By \cref{P: perturb transverse to map,T: transverse reps}, there is a precochain representing $\uV$ that is transverse to $\ms X$ and $\ms Y$.
 
 	For the right square, if $V$ is a precochain representing $\uV \in H^*_{\Gamma \pf X}(M)$, then $f_1^* \mc I(\uV)$ is represented by the cubical cochain that takes a cube $C$ of $Y$ to $\aug(V \times_M f_1(C))$.
@@ -1158,8 +1158,7 @@ We provide both cubical and simplicial statements, noting that one of our needs 
 	Hence $f_1^* \mc I(\uV)$ and $\mc I f^*(\uV)$ are cohomologous, as desired.
 
 	The proof in the simplicial case is identical, noting that there is no need to triangulate the prisms $\sigma \times I$ in the argument.
-	The final claim is due to the existence, for any continuous map of simplicial complexes, of a homotopic simplicial map, possibly after subdivision.
-	The construction of such a homotopy in \cite[Section 16]{Mun84} shows that the resulting simplicial approximation and the homotopy will be proper.
+	The final claim is due to the existence, for any continuous map of simplicial complexes, of a homotopic simplicial map, possibly after subdivision \cite[Section 16]{Mun84}.
 \end{proof}
 
 

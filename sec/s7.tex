@@ -744,10 +744,10 @@ Consequently, in what follows we show that the cohomology cup product is well de
 In particular, to prove \cref{T: (co)homology products}, we will use the following important theorem.
 
 \begin{theorem}\label{T: transverse reps}\index{geometric cohomology!transverse representative}\index{geometric homology!transverse representative}
-Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in H_*^\Gamma(M)$ or $\uV \in H^*_\Gamma(M)$.
+Let $r_W \colon W \to M$ be a map from a manifold with corners to a manifold without boundary, and let $\uV \in H_*^\Gamma(M)$ or $\uV \in H^*_\Gamma(M)$.
 Then there is an $r_V \colon V \to M$ representing $\uV$ such that $V$ is transverse to $W$.
 
-Furthermore, if $V$ is transverse to $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, i.e.\ $\uV = 0$ as a homology or cohomology class, then such a $Z$ can be chosen so that it is transverse to $W$.
+Furthermore, if $r_W$ is proper, $V$ is transverse to $W$, and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, i.e.\ $\uV = 0$ as a homology or cohomology class, then such a $Z$ can be chosen so that it is transverse to $W$.
 \end{theorem}
 
 We will prove \cref{T: transverse reps} below in \cref{S: transverse maps}.
@@ -846,15 +846,15 @@ We will explain how to modify the proof of \cref{P: ball stability} to accomplis
 We change notation slightly from that of \cref{T: transverse reps} to make it more consistent with \cref{P: ball stability}, which we hope will ease comparison of the two results for the reader.
 
 \begin{proposition}\label{P: perturb transverse to map}\index{transversality!Transversality Theorem!universal}
-	Suppose $r_V \colon V \to M$ and $r_X \colon X \to M$ are proper maps from manifolds with corners to a manifold without boundary.
+	Suppose $r_V \colon V \to M$ and $r_X \colon X \to M$ are maps from manifolds with corners to a manifold without boundary and that $r_V$ is proper.
 	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id$ and $H(-,1)r_V \colon V \to M$ is transverse to $r_X$.
 
-	Furthermore, given another proper map from a manifold with corners $r_W \colon W \to M$ that is transverse to $r_X$, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to $r_X$.
+	Furthermore, if $r_X$ is proper and given another proper map from a manifold with corners $r_W \colon W \to M$ that is transverse to $r_X$, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to $r_X$.
 \end{proposition}
 
 Proving \cref{P: perturb transverse to map} will involve \cref{L: all transversality is wrt embeddings}, which, in our current notation, says that two maps $r_V \colon V \to M$ and $r_X \colon X \to M$ are transverse if and only when we replace $r_X$ with an embedding $e \colon X \into M \times \R^n$ that projects to $r_X$, then $e$ is transverse to $r_V \times \id_{\R^n}$.
 So this lemma allows us to replace transversality of arbitrary maps with transversality in which one map is an embedding.
-The following lemma says, roughly speaking, that when we construct such an embedding $e$, then $e(X)$ does not run off to infinity in the $\R^n$ factors over compact subsets of $M$.
+The following lemma says, roughly speaking, that when we construct such an embedding $e$, if $r_X$ is proper then $e(X)$ does not run off to infinity in the $\R^n$ factors over compact subsets of $M$.
 
 \begin{comment}
 	\red{GOING TO MOVE ELSEWHERE - HEREHERE}
@@ -934,7 +934,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 		\item $F(-,0) = \id \colon M \to M$,
 		\item for almost all $s \in D^N$ the composition $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}} M \times \R^n$ is transverse to $e \colon X \to M \times \R^n$,
 
-		\item there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $W \times \R^n \xr{r_W \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e$.
+		\item if $r_X$ is proper, there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $W \times \R^n \xr{r_W \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e$.
 	\end{enumerate}
 
 	Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{F(-,s_0) \times \id_{\R^n}} M \times \R^n$ is transverse to $e \colon X \to M \times \R^n$.
@@ -962,6 +962,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	So $\ms F(-,s) \times \id_{R^n}$ is transverse to $e$ for almost all $s \in D^N$.
 
 	We also observe as in the proof of \cref{P: ball stability} that $H$ can be assumed proper, by replacing $\eta$ with a function with smaller values if necessary.
+	We further note that up to this point we have not needed to assume $r_X$ to be proper, and the construction to this point is sufficient to prove the first paragraph of \cref{P: perturb transverse to map}.
 
  	So it remains to show that if $W$ is compact (as we are currently assuming) and $r_W$ is transverse to $r_X$ (or, equivalently, $r_W \times \id_{\R^n}: W \times \id_{R^n} \to M \times \R^n$ transverse to $e$) then $(F(-,s) \circ r_W) \times \id_{\R^n} \colon W \times \R^n \to M \times \R^n$ is transverse to $e$ for all $s$ in some neighborhood $D_r^N$ of $0$ in $D^N$.
 	Similarly to \cref{P: ball stability}, it is more convenient here to work with boundaries than with strata, recalling that, by \cref{L: simple trans}, to prove that two maps of manifolds with corners are transverse it is sufficient to show that their compositions with all pairs of boundary inclusions are naively transverse (see \cref{D: naive transversality}).
@@ -1082,15 +1083,15 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 Finally, we prove \cref{T: transverse reps}.
 
 \begin{proof}[Proof of \cref{T: transverse reps}]
-	Given \cref{L: compact preimage}, the proof is very analogous to that of \cref{T: transverse complex}.
+	Given \cref{P: perturb transverse to map}, the proof is very analogous to that of \cref{T: transverse complex}.
 
-	Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in C_*^\Gamma(M)$ (or $C^*_\Gamma(M)$) be a cycle (or cocycle).
+	Let $r_W \colon W \to M$ be a map from a manifold with corners to a manifold without boundary, and let $\uV \in C_*^\Gamma(M)$ (or $C^*_\Gamma(M)$) be a cycle (or cocycle).
 	Let $r_V \colon V \to M$ be any representative for $\uV$.
 	By \cref{P: perturb transverse to map} there is a proper homotopy $H \colon M \to I$ such that $H(-,1)r_V$ is transverse to $r_W$.
 	We co-orient $H$ and $H(-,1)$ as in \cref{D: homotopy co-orientation} based on the tautological co-orientation of $H(-,0)$.
 	By \cref{D: universal homotopy,P: universal homotopy}, $H(-,1)r_V$ represents the same homology or cohomology class as $V$.
 
-	Next, suppose $V$ is transverse to $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$.
+	Next, suppose $r_W$ is proper, $V$ is transverse to $W$, and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$.
 	We consider first the case where $V$ is a precochain.
 	By \cref{P: perturb transverse to map}, there is a proper homotopy $H$ such that $H(-,1)r_Z$ is transverse to $r_W$ and $V \times I \xr{r_V \times \id_I} M \times I \xr{H} M$ is transverse to $r_W$.
 	Let $Z'$ denote the precochain $Z \xr{H(-,1)r_Z} M$, let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, and let $Y$ be the precochain $V \times I \xr{H\circ (r_V \times \id_I)} M$, co-orienting $r_V \times \id_I$ using the naive pre-homotopy co-orientation convention, \cref{homotopy product co-orientation convention}.
