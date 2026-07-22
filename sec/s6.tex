@@ -25,7 +25,7 @@ Analogously to simplicial complexes, cubical complexes possess algebraic cubical
 As all of the involved chain complexes are free, the corresponding cohomologies are also isomorphic by basic homological algebra \cite[Theorem 45.5]{Mun84}.\label{FN: cubical and singular}}.
 Our primary goal in this section is to see that there are direct geometrically-defined isomorphisms between cubical (co)homology and geometric (co)homology.
 
-For this, we first provide some background on cubical complexes and cubical homology and cohomology in \cref{S: cubes,S: cubical cochains}.
+For this, we first provide some background on cubical complexes and cubical homology and cohomology in \cref{S: cubes}.
 Then in \cref{S: cubical and geometric homology} we show that the obvious map that takes a face of a cube complex to its corresponding geometric chain induces an isomorphism from cubical homology to geometric homology.
 Next, in \cref{S: transverse cochains}, we consider those geometric cochains that are transverse to a given cubulation and show that their cohomology agrees with the geometric cohomology obtained without that constraint.
 
@@ -34,8 +34,11 @@ If $F$ is a face of the cubulation, $F^*$ its dual cochain, and $W$ represents a
 This intersection map is defined in \cref{S: intersection map}, which also contains our proof that the intersection map induces a cohomology isomorphism when $H^*(M)$ is finitely generated in each degree.
 To implement this proof, we include in \cref{S: dual cubes} a discussion of what we call ``central subdivisions'' of cubical complexes, which are analogous to barycentric subdivisions of simplicial complexes and allow us to construct the cubical dual cells to faces of the cubulation.
 
-\subsection{Cubical complexes and cubulations}\label{S: cubes}
+\subsection{Cubical complexes, cubulations, and cubical cochains}\label{S: cubes}
 
+In this section, we develop notions and conventions concerning cubical structures and cubical cohomology.
+
+\subsubsection{Cubical complexes}
 We begin by recalling some notation from \cite{FMS-flows}.
 In the context of cubical complexes we write the unit interval as $\interval = [0,1]$ and define the \textbf{standard $n$-cube}\index{cube} to be
 \begin{equation*}
@@ -154,7 +157,7 @@ is the canonical order-preserving bijection, which is compatible with the identi
 \vertices(\interval^n) \times \vertices(\interval^m) \cong \vertices(\interval^{n + m}).
 \]
 
-\subsection{Cubulations}\label{S: cubulation}
+\subsubsection{Cubulations}\label{S: cubulation}
 
 Let ${\tt Top}$ denote the category of topological spaces and continuous maps, and let ${\tt Cube}$\index{$Cu$@$\mathtt{Cube}$} be the subcategory whose objects are the $n$-cubes, identified with $\interval^n$, and whose morphisms are face inclusions.
 The poset of faces of a cubical complex $X$ also determines a category, and the characteristic maps of $X$ determine a functor from this poset category to $\mathtt{Cube}$.
@@ -185,7 +188,7 @@ Using the product of cubical complexes, it follows immediately that the product 
 	\label{F: cubical structure}
 \end{figure}
 
-\subsection{Cubical chains and cochains}\label{S: cubical cochains}
+\subsubsection{Cubical chains and cochains}\label{S: cubical cochains}
 
 We can also define an ``algebraic realization" for a cubical complex in analogy to its geometric realization.
 Let $K_*(\interval^1)$ be the usual cellular chain complex of the interval with integer coefficients.

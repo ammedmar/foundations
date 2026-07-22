@@ -69,18 +69,18 @@ After the additive groups have been computed, one can choose transverse cocycles
 \subsubsection{Characteristic classes}
 
 Characteristic classes also admit geometric representatives of this kind.
-Let \(E \to M\) be a rank \(r\) vector bundle.
+Let \(E \to M\) be a rank \(r\) vector bundle over a (not necessarily compact) smooth manifold.
 The zero section
 \[
 M \into E
 \]
 is a canonical submanifold of the total space.
-With an orientation of \(E\) it represents the Thom class geometrically; without such an orientation it does so with \(\mathbb{F}_2\)-coefficients.
-Pulling this class back along a transverse section \(s \colon M \to E\) gives the Euler class, represented by the zero locus \(s^{-1}(0)\).
+With an orientation of \(E\), this embedding is a geometric cochain in $E$ that represents the Thom class in geometric cohomology; without such an orientation it does so with \(\mathbb{F}_2\)-coefficients.
+Pulling this class back along a transverse section \(s \colon M \to E\) gives the Euler class in the cohomology of $M$, represented by the zero locus \(s^{-1}(0)\).
 
 The higher characteristic classes can be described similarly by replacing the zero locus of one section by a linear-dependence locus.
 For a rank \(r\) real or complex vector bundle \(E\), consider \(n+1\) sections of \(E\).
-The locus where these sections become linearly dependent is generally singular, but it has a natural smooth resolution.
+The locus in $M$ where these sections become linearly dependent is generally singular, but it has a natural smooth resolution.
 Over \(E^{\oplus(n+1)}\), define
 \[
 \chi_{r-n}(E) =
@@ -91,5 +91,14 @@ The projection
 \[
 \chi_{r-n}(E) \to E^{\oplus(n+1)}
 \]
-has image the linear-dependence locus and defines a geometric cochain of codimension \(r-n\) in the real case, respectively complex codimension \(r-n\) in the complex case.
-It represents the Stiefel--Whitney class \(w_{r-n}(E)\) with \(\mathbb{F}_2\)-coefficients in the real case and the Chern class \(c_{r-n}(E)\) with integral coefficients in the complex case.
+has image the linear-dependence locus and defines a geometric cochain of codimension \(r-n\) in $E^{\oplus(n+1)}$ in the real case, respectively complex codimension \(r-n\) in $E^{\oplus(n+1)}$ in the complex case.
+Pulling back to $M$ via a transverse section of $M$, we obtain a geometric cochain in $M$ representing the Stiefel--Whitney class \(w_{r-n}(E)\) with \(\mathbb{F}_2\)-coefficients in the real case and the Chern class \(c_{r-n}(E)\) with integral coefficients in the complex case.
+
+We plan to pursue this example in detail in future work.
+
+\subsubsection{Link invariants}
+
+In \cref{S: links}, following our development of geometric chains and cochains, we return to additional examples concerning spherical links, including links of circles in $S^3$.
+We show that geometric cochains provide a pictorial method for computing both classical linking numbers and triple linking numbers. In particular, we use geometric cohomology to verify that the Borromean rings are nontrivially linked.
+
+More advanced applications of geometric cochains to link theory are currently being undertaken by the first- and third-named authors in conjunction with Nir Gadish, Robin Koytcheff, and Ben Walter.

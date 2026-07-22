@@ -366,11 +366,11 @@ The constructions are as follows.
 	Then we define $f^*(\uW) \in H_*^\Gamma(M)$ as the homology class represented by the pullback of $W$ by $g$, i.e.\ $g^*(W) = W \times_N M \to M$, with the pullback oriented as in \cref{S: orientation of fiber products}.
 \end{definition}
 
-\begin{proposition}\label{P: cohomology pullback}\index{geometric homology!functoriality}\index{geometric cohomology!functoriality}\index{geometric homology!functoriality!homotopy}\index{geometric cohomology!functoriality!homotopy}
+\begin{theorem}\label{P: cohomology pullback}\index{geometric homology!functoriality}\index{geometric cohomology!functoriality}\index{geometric homology!functoriality!homotopy}\index{geometric cohomology!functoriality!homotopy}
 	Suppose $f \colon M \to N$ is a continuous (not necessarily smooth, co-oriented, or proper) map of manifolds without boundary.
 	The map $f^* \colon H^k_\Gamma(N) \to H^k_\Gamma(M)$ is well defined and depends only on the homotopy class of $f$.
 	Similarly, if $M$ is oriented and $f$ is proper, then the map $f_* \colon H_k^\Gamma(N) \to H_{k+m-n}^\Gamma(M)$ is well defined and depends only on the proper homotopy class of $f$.
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
 	We treat only the cohomology case, as the homology arguments are analogous taking the appropriate maps and homotopies to be proper, which is consistent with our applications of \cref{T: basic trans,T: homotopy trans} below.
@@ -546,7 +546,7 @@ As Mayer--Vietoris sequences are often the engines of induction arguments and as
 
 \begin{proposition}\label{P: P lemma}\index{geometric cohomology!supported on an open set!for an open ball}
 	Let $M$ be an $m$-dimensional smooth manifold, and $U \subset M$ an open set that is diffeomorphic to an open ball and whose closure in $M$ is compact.
-	Then $H^n_\Gamma(M|_U)$ is $\Z$ if $n = m$ and is zero otherwise.
+	Then $H^n_\Gamma(M|_U)$ is isomorphic to $\Z$ if $n = m$ and is zero otherwise.
 \end{proposition}
 
 
@@ -1836,7 +1836,7 @@ In this appendix, we show that normalized singular cubical chains and normalized
 \end{proof}
 \index{smooth singular cube|)}
 
-\subsection{Geometric homology with coefficients}
+\subsection{Geometric homology with coefficients}\label{S: coefficients}
 
 In this brief section, we consider geometric homology with coefficients in an arbitrary abelian group $G$.
 

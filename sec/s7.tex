@@ -16,10 +16,10 @@ We also provide fully-defined chain and cochain exterior products, though these 
 In \cref{S: (co)chain properties}, we collect the various properties of these partially-defined products, mostly based on properties we have established for fiber products of maps in earlier sections.
 
 In \cref{S: homology products}, we then turn to the resulting products in geometric homology and cohomology, which we show are fully defined, providing cup, cap, intersection, and exterior products.
-In \cref{S: kroneker}, we utilize this machinery along with our cubulations to construct a Universal Coefficient Theorem when the cohomology is finitely generated.
+In \cref{S: trans apps}, we utilize this machinery along with our cubulations to construct a Kroneker pairing and a Universal Coefficient Theorem when the cohomology is finitely generated.
 In \cref{S: usual cup}, we show that the cup product in geometric cohomology is abstractly isomorphic to the singular cohomology cup product, which we use to prove a K\"unneth Theorem in \cref{S: kunneth}.
-Finally, in \cref{S: cubical cup and cap}, we relate geometric (co)homology cup and cap products to their singular (co)homology counterparts more concretely, using cubulations and the intersection maps introduced in \cref{S: intersection map}.
-This includes some applications to Poincar\'e Duality and umkehr maps.
+In \cref{S: cubical cup and cap}, we relate geometric (co)homology cup and cap products to their singular (co)homology counterparts more concretely, using cubulations and the intersection maps introduced in \cref{S: intersection map}.
+We conclude with some applications to Poincar\'e Duality and umkehr maps.
 
 \begin{comment}
 	in this section endow geometric cochains with a commutative product given by intersection of immersed submanifolds, or pullback more generally.
@@ -133,7 +133,7 @@ This includes some applications to Poincar\'e Duality and umkehr maps.
 In this section, we develop chain- and cochain-level products, as well as study some other aspects of chain- and cochain-level transversality.
 We begin in \cref{S: simple products} with the case of ``simple products,'' in which two chains or cochains can be represented by transverse prechains or precochains, in which case we can take the fiber product.
 Building on this case, we then define a more general notion of transversality for chains and cochains that allows for some amount of bilinear behavior.
-After introducing some more transversality results in \cref{S: homology products} in the context of considering (co)homology products, we will return to this theme in \cref{S: product pullbacks}, where we consider pullbacks of cochains, and in \cref{S: Kronecker}, where we consider a Kronecker pairing for geometric chains and cochains.
+After introducing some more transversality results in \cref{S: homology products} in the context of considering (co)homology products, we will return to this theme in \cref{S: trans apps}, where we consider pullbacks of cochains, a Kronecker pairing for geometric chains and cochains, and a universal coefficient theorem.
 In \cref{S: exterior chain products}, we define exterior products of chains and cochains.
 
 
@@ -1149,7 +1149,11 @@ While \cref{P: perturb transverse to map} as stated was what we needed to prove 
 \end{proof}
 
 
-\subsection{Transverse complexes}\label{S: product pullbacks}
+\subsection{Further applications of transversality}\label{S: trans apps}
+
+In this section, we gather together several developments that are available now that we have proven that arbitrary cochain can be made transverse in \cref{T: transverse reps}.
+
+\subsubsection{Transverse complexes}\label{S: product pullbacks}
 \greg{Should this section go here?}
 
 In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon N \to M$ of manifolds without boundary yields a well-defined cohomology map $f^* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$.
@@ -1288,7 +1292,7 @@ So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom\left(C_i^{\Gamma
 
 
 
-\subsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}\label{S: kroneker}
+\subsubsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}\label{S: kronecker}
 
 When applying the cap product to cohomology and homology classes of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
 $$H^i_\Gamma(M) \otimes H_i^\Gamma(M) \xr{\nplus} H_0^\Gamma(M) \to \Z.$$
@@ -2256,7 +2260,7 @@ We must show that this is always possible and independent of choices.
 \end{comment}
 
 
-\subsubsection{A fully defined cup product via flows}.
+\subsubsection{A fully defined cup product via flows}\label{S: flows}
 While we have \cref{T: cup compatibility} concerning the cup product on cohomology, the geometric cup product is not fully-defined as a map of cochains $C^*_\Gamma(M) \otimes C^*_\Gamma(M) \to C^*_\Gamma(M)$ due to the transversality requirements considered in detail in \cref{S: simple products}.
 However, we do have the following result from \cite{FMS-flows}, which we rephrase for the current context and for which we refer to \cite{FMS-flows} for details.
 This essentially says that, given two geometric cochains $V$ and $W$ on a compact cubulated manifold, there is a canonical flow, depending only on the cubulation, such that after enough time, $V$ and $W$ are transverse and then their co-oriented fiber product is compatible with the cubical cup product via the intersection map.
@@ -2528,7 +2532,7 @@ We also make the following definition.
 	Finally, $V \times_M \mc J(W)$ represents $\uV\nplus \mc J(W)$ by definition.
 \end{proof}
 
-\subsubsection{Poincar\'e duality}\label{S: PD}
+\subsection{Poincar\'e duality}\label{S: PD}
 
 In \cref{T: PD}, we noticed that geometric homology and cohomology satisfy a very strong form of Poincar\'e duality, as for a closed oriented manifold $M$ we in fact have chain-level identities $C^{m-i}_\Gamma(M) = C_i^\Gamma(M)$ obtained by identifying co-oriented cochains with their corresponding oriented chains, using the orientations induced by the orientation of $M$.
 \cref{T: equivalent cap} allows us to observe that this strong version of geometric Poincar\'e is compatible with the classical Poincar\'e duality:
@@ -2567,7 +2571,7 @@ demonstrates the usual relationship between intersection products and cup produc
 Here we see that this relationship extends not just for intersections of embedded manifolds but to all homology classes.
 Of course this is always possible if one takes the above formula as a defining formula for the intersection product, but here we see that the intersection product can always be defined geometrically in terms of fiber products.
 
-\subsubsection{Umkehr maps}\label{S: umkehr}\index{umkehr maps|(}
+\subsection{Umkehr maps}\label{S: umkehr}\index{umkehr maps|(}
 
 \Cref{C: PD} allows us to make some remarks about umkehr maps, also known as wrong-way or transfer maps, associated to maps of closed oriented manifolds $f \colon N \to M$.
 These are maps
