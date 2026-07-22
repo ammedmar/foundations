@@ -1,6 +1,6 @@
 % !TEX root = ../foundations.tex
 
-Before beginning the technical development, we offer a few examples which illustrate the basic appeal of geometric cochains.
+Before beginning the technical development, we offer a few examples that illustrate the basic appeal of geometric cochains.
 They are intentionally brief; the paper's main work is to justify the constructions that make such examples legitimate.
 
 \subsubsection{Crossing a ray}
@@ -18,11 +18,11 @@ It is transverse to \(W\) and intersects \(W\) once, at \(\e_1\).
 The sign of this intersection is positive, since the tangent vector to \(S^1\) at \(\e_1\) is \(\e_2\), which agrees with the chosen normal co-orientation of \(W\).
 Thus the pairing of the class of \(W\) with the fundamental class of \(S^1\) is \(1\), and therefore \(W\) represents a generator.
 
-This simple example already displays two useful features of the theory.
-First, the representative is integral rather than real-valued.
+This simple example already displays two useful features of the theory in contrast to more classical analytic ways of counting winding numbers.
+First, our representative cochain lives in an intrinsically integral, rather than real-valued, cochain complex.
 It records winding number by a discrete crossing count: a positively oriented loop contributes \(+1\) each time it crosses the ray in the positive co-oriented direction.
 By contrast, the de Rham representative \((2\pi)^{-1}d\theta\) records the same invariant continuously around the circle and only after extension of coefficients to \(\R\).
-One can approximate the crossing representative analytically by normalized angular bump forms supported in narrower and narrower sectors around the positive ray, but the limiting object is naturally a geometric, or current-like, representative.
+One can approximate the crossing representative analytically by normalized angular bump forms supported in narrower and narrower sectors around the positive ray, but the limiting object is naturally a current-like representative.
 
 Second, the domain of a geometric cochain need not be compact.
 The correct finiteness condition is properness of the map to the target.
@@ -31,7 +31,7 @@ Thus geometric cohomology admits representatives that are natural in pictures bu
 
 \subsubsection{Cup products}
 
-Once the additive cohomology groups are known, geometric representatives can often be chosen so that cup products are read from intersections.
+Once the additive cohomology groups are known, geometric representatives can often be chosen so that cup products are read from transverse intersections and, more generally, transverse fiber products.
 Projective spaces provide the basic examples.
 
 For complex projective space, let \(h \in H^2_\Gamma(\mathbb{C}P^n)\) be represented by a hyperplane
@@ -49,10 +49,10 @@ Thus the presentation
 \[
 H^*(\mathbb{C}P^n;\Z) \cong \Z[h]/(h^{n+1})
 \]
-reflects the fact that \(k\) independent hyperplane conditions cut out \(\mathbb{C}P^{n-k}\), while \(n+1\) independent hyperplane conditions have empty intersection.
+reflects the fact that \(k <n+1\) independent hyperplane conditions cut out \(\mathbb{C}P^{n-k}\), while \(n+1\) independent hyperplane conditions have empty intersection.
 
 \medskip
-The real setting illustrates the distinction between orientations and co-orientations, with odd-dimensional projective spaces being orientable but even-codimension projective spaces being co-orientable.
+Switching to real projective spaces illustrates the distinction between orientations and co-orientations. Only odd-dimensional projective spaces are orientable but standard inclusions of $2k$-dimensional real projective spaces into $2n$-dimensional real projective spaces are co-orientable.
 
 With mod-two coefficients, the linear inclusions
 \[
@@ -64,7 +64,7 @@ This separates two pieces of structure that coincide too easily in examples over
 
 \medskip
 These examples illustrate the basic geometric procedure.
-After the additive groups have been computed, one chooses geometric cocycles dual to geometric cycles and then computes products by making the cocycles transverse and intersecting them.
+After the additive groups have been computed, one can choose transverse cocycles and form the fiber product; when both cochains are represented by embeddings, this is simply the (co-oriented) intersection.
 
 \subsubsection{Characteristic classes}
 
