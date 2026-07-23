@@ -3,15 +3,15 @@
 We here provide an outline of the work below.
 
 In \cref{S: manifolds with corners}, we review some differential topological background,  including \textbf{manifolds with corners}, primarily following Joyce \cite{Joy12}.
-\cref{S: boundaries} explains boundaries of manifolds with corners, and \cref{S: transversality} begins our treatment of transversality. Here again we rely on \cite{Joy12} for transversality of manifolds with corners. To avoid the most technical situations, we only consider transversality within manifolds without boundary.
-We also review the classical transversality theorems that can be found, for example, in \cite{GuPo74}.
-We also begin our development of transversality via \textbf{universal homotopies}; these are homotopies of maps $f \colon V \to M$ obtained by composing $f$ with a homotopy of the identity map of $M$.
+\cref{S: boundaries} explains boundaries of manifolds with corners, and \cref{S: first transversality} begins our treatment of transversality. Here again we rely on \cite{Joy12} for transversality of manifolds with corners. To avoid the most technical situations, we only consider transversality within manifolds without boundary.
+We also review the classical transversality theorems that can be found, for example, in \cite{GuPo74} and
+begin our development of transversality via \textbf{universal homotopies}; these are homotopies of maps $f \colon V \to M$ obtained by composing $f$ with a homotopy of the identity map of $M$.
 Such homotopies are needed to make pairs of geometric chains and cochains transverse.
-We begin with basic versions of such results in \cref{T: basic trans,T: homotopy trans}.
+We start with basic versions of such results in \cref{T: basic trans,T: homotopy trans}.
 
-In \cref{S: pullbacks} we review pullbacks and fiber products, including Joyce's result \cite{Joy12} that the fiber product of transverse manifolds with corners (over a manifold without boundary) is again a manifold with corners.
+In \cref{S: pullbacks} we review pullbacks and fiber products, including Joyce's result that the fiber product of transverse manifolds with corners (over a manifold without boundary) is again a manifold with corners \cite{Joy12}.
 This is the key construction for cup and cap products of geometric cochains and chains.
-We briefly consider notions of transversality of more than two objects in \cref{S:multitransversality}.
+We briefly consider notions of transversality for more than two objects in \cref{S:multitransversality}.
 
 In \cref{S: orientations and co-orientations}, we consider \textbf{orientations} and \textbf{co-orientations}.
 As orientations are much better known, \cref{S: orientations} contains a relatively brief review, allowing us to establish conventions.
@@ -28,23 +28,23 @@ This property allows us to further consider associativity and (graded) commutati
 We also provide comparisons with alternative definitions of co-orientations due to Quillen and Lipyanskiy --- see \cref{S: Quillen,S: Lipyanskiy co-orientations}.
 
 We construct \textbf{geometric chains} and \textbf{geometric cochains} in \cref{S: geometric cochains}, starting in \cref{S: prelims} with preliminary definitions, including manifolds over another manifold and the important properties of \textbf{triviality}, \textbf{small rank}, and \textbf{degeneracy}.
-Our small rank condition for degeneracy replaces Lipyanskiy's notion of small image, which we have found technically easier to work with.
+Our small rank condition for degeneracy replaces Lipyanskiy's notion of small image; we have found small rank technically easier to work with.
 \cref{S: geometric homology and cohomology} contains our central definitions.
 We define geometric chains and cochains as equivalence classes of \textbf{prechains} and \textbf{precochains}.
-Prechains and precochains are essentially just manifolds with corners mapping to the manifold of interest $M$ with appropriate (co)-orientation and compactness or properness properties.
+Prechains and precochains are essentially just manifolds with corners mapping to the manifold of interest $M$ with appropriate (co)orientation and compactness or properness properties.
 Roughly, two such pre(co)chains are equivalent if they differ by something trivial or degenerate, as we shall explain.
 \textbf{Geometric homology} and \textbf{geometric cohomology} are then the homology groups of the chain complexes of geometric chains and cochains.
-A satisfying consequence of these definitions is that geometric chains and cochains are tautologically identical on closed oriented manifolds, which immediately implies Poincar\'e Duality as stated ub \cref{T: PD}.
-In \cref{S: chain products}, we develop proto versions of cup, cap, and intersection products of transverse prechains and precochains.
+A satisfying consequence of these definitions is that geometric chains and cochains are tautologically identical on closed oriented manifolds, which immediately implies Poincar\'e Duality as stated in \cref{T: PD}.
+In \cref{S: prechain products}, we develop proto versions of cup, cap, and intersection products for transverse prechains and precochains.
 
 In \cref{S: essential decomp}, we demonstrate that geometric chains and cochains possess what we call \textbf{essential decompositions}.
 As noted above, geometric chains and cochains are technically equivalence classes of prechains and precochains.
 The essential decompositions consider which pre(co)chain components must occur in every equivalence class representative (and so are essential) and what the inessential pieces, which may vary, look like.
-We place this material here to help the reader get a better sense for geometric chains and cochains, but the true applications are to transversality in \cref{S: products}.
+We place this material here to help the reader get a better sense for geometric chains and cochains, but the true applications are to transverse chain and cochain products in \cref{S: products}.
 
 We conclude \cref{S: geometric cochains} with \cref{S: splitting and creasing} where we consider \textbf{splitting} and \textbf{creasing}.
 Splitting, introduced in \cref{S: splitting}, concerns breaking a pre(co)chain into two pieces along a codimension one submanifold, typically determined by a regular value of a function from the target manifold $M$ to the real numbers $\R$.
-Creasing, considered in \cref{S: creasing}, is the technique by which we show that a geometric (co)chain represents the same (co)homology class as the sum of the two pieces determined by a splitting.
+Creasing, also due to Lipyanskiy and considered in \cref{S: creasing}, is the technique by which we show that a geometric (co)chain represents the same (co)homology class as the sum of the two pieces determined by a splitting.
 These techniques are needed in the following section to construct Mayer-Vietoris sequences.
 
 \cref{S: basic properties} contains the fundamental properties of geometric homology and cohomology.
@@ -60,7 +60,7 @@ The overall idea of these arguments owes much to Kreck's proof of Mayer-Vietoris
 
 In \cref{S: homology is homology} we show that geometric homology and cohomology are isomorphic to singular homology and cohomology.
 For various technical reasons, we typically choose our model for singular cohomology to be cubical, rather than simplicial; a good reference for singular cubical homology and cohomology is \cite{Mas91}, and we show in \cref{S: smooth cubes} that we need consider only smooth singular cubes.
-We first demonstrate the isomorphisms of (co)homology theories abstractly by applying a result of Kreck and Singhof \cref{Krec10b}, followed by demonstrating in \cref{S: homology direct} that the homology isomorphism can be obtained simply by considering smooth singular cubes (or singular simplices) as geometric prechains.
+We first demonstrate the isomorphisms of (co)homology theories abstractly by applying a result of Kreck and Singhof \cite{Krec10b}, followed by demonstrating in \cref{S: homology direct} that the homology isomorphism can be obtained simply by considering smooth singular cubes (or singular simplices) as geometric prechains.
 A more direct proof for cohomology requires much more work and is one of the main goals of \cref{S: transversality}.
 \cref{S: basic properties} concludes with the introduction of geometric chains with coefficients in \cref{S: coefficients}.
 
@@ -74,7 +74,7 @@ In \cref{S: cubical and geometric homology}, we briefly relate cubical and geome
 
 In  \cref{S: transverse cochains}, we demonstrate that it is sufficient for cohomological purposes to consider only geometric cochains transverse to all the faces of a given cubulation.
 This requires further developing our transversality theory, which is done in \cref{P: ball stability}.
-\cref{S: intersection map} see our introduction of the intersection map from cubically transverse geometric cochains to cubical cochains, and in \cref{T: intersection qi} we show that this map always induces a surjection cohomology that is also an injection if the singular homology (or, equivalently, cohomology) of $M$ is finitely generated.
+\cref{S: intersection map} see our introduction of the intersection map from cubically transverse geometric cochains to cubical cochains, and in \cref{T: intersection qi} we show that this map always induces a surjection on cohomology that is also an injection if the singular homology (or, equivalently, cohomology) of $M$ is finitely generated.
 The proof has several steps, including discussing the \textbf{dual cubulation} of a given cubulation, and takes most of the remainder of \cref{S: transverse cochains}.
 After establishing our isomorphism, we show in \cref{T: intersection natural} that it is natural, in the functorial sense, with respect to maps of manifolds.
 Before beginning the proof, we also consider cohomology with coefficients.
@@ -83,11 +83,12 @@ Consistent with the nature of geometric cohomology, which avoids Hom dualization
 
 
 \cref{S: products} concerns product structures for both  (co)chains and (co)homology.
-The main result of \cref{S: chain products} is that transversality of (co)chains is a well defined concept even though the same (co)chain can have multiple pre(co)chain representatives, and this is used to define cup, cap, and intersection products on geometric (co)chains.
-We also consider some conditions under which such pairings are bilinear; an alternative, more extensive treatment will be given in \cite{GBF47}.
+The main result of \cref{S: chain products} is that transversality of (co)chains is a well defined concept even though the same (co)chain can have multiple pre(co)chain representatives.
+This is used to define cup, cap, and intersection products on transverse geometric (co)chains.
+We here consider some conditions under which such pairings are bilinear; an alternative, more extensive treatment will be given in \cite{GBF47}.
 We also introduce (co)chain-level exterior products.
 
-In \cite{GBF47}, we apply our previous results about pullbacks and fiber products to obtain all the expected properties of cup, cap, intersection, and exterior products, including boundary formulas (Leibniz rules), graded commutativity, unital properties, naturality formulas, associativity, and formulas involving multiple types of products simultaneously.
+In \cref{S: (co)chain properties}, we apply our previous results about pullbacks and fiber products to obtain all the expected properties of cup, cap, intersection, and exterior products, including boundary formulas (Leibniz rules), graded commutativity, unital properties, naturality formulas, associativity, and formulas involving multiple types of products simultaneously.
 These each have various transversality requirements that are carefully listed.
 It is worth noting that the geometric cup product is (graded) commutative at the cochain level.
 However, consistent with the commutative cochain problem, it is not fully defined due to the transversality requirements.
@@ -95,11 +96,11 @@ However, consistent with the commutative cochain problem, it is not fully define
 In \cref{S: homology products}, we descend to homology and cohomology versions of our products.
 To show that these are always fully defined and that all the expected properties always hold, we employ our most general transversality result, \cref{T: transverse reps}, which shows that any (co)chain can be made transverse to any other by a universal homotopy.
 
-Continuing to apply our transversality results in \cref{S: trans apps}, we show in \cref{S: product pullbacks} that for any map $f \colon N \to M$ with $M$ boundary-less, there is a subcomplex of geometric cochains on $M$ that is transverse to $f$ and on which, consequently, pullbacks ot $N$ are always defined.
-We also consider a Kronecker pairing of chains in cochains in \cref{S: Kronecker} and on homology and cohomology classes in \cref{S: kronecker}.
-This also leads us to a universal coefficient theorem, \cref{T: UCT}.
+Continuing to apply our transversality results in \cref{S: trans apps}, we show in \cref{S: product pullbacks} that for any map $f \colon N \to M$ with $M$ boundary-less, there is a subcomplex of geometric cochains on $M$ that is transverse to $f$ and on which, consequently, pullbacks to $N$ are always defined.
+We also consider Kronecker pairings of chains with cochains and homology with cohomology in \cref{S: Kronecker}.
+This leads us to a universal coefficient theorem in \cref{S: UCT}.
 
-In \cref{S: usual cup}, we apply Kreck and Singhof \cite{Krec10b} one again to say that the geometric cup product is abstractly isomorphic to the singular cohomology cup product.
+In \cref{S: usual cup}, we apply Kreck and Singhof \cite{Krec10b} once again to say that the geometric cup product is abstractly isomorphic to the singular cohomology cup product.
 Further below in \cref{S: cubical cup and cap}, we show that this isomorphism is realized by the intersection map, again assuming finite generation conditions, but first in \cref{S: kunneth} we prove the K\"unneth Theorems for geometric homology and cohomology.
 
 In the somewhat technical \cref{S: cubical cup and cap}, we show that the cup and cap products on geometric cohomology are isomorphic to the cubical cup and cap products via the intersection map.
@@ -107,7 +108,8 @@ This begins with a review of cubical cup and cap products and includes a version
 We also describe, in \cref{S: flows}, the main result of \cite{FMS-flows}, which uses flows to turn the partially-defined product on geometric cochains into a fully-defined product consistent with the cubical cup product via the intersection map.
 Of course due to the commutative cochains problem, the flows must ``break the symmetry'' by replacing our partially-defined (graded) commutative product with a fully-defined but not commutative product.
 
-We conclude \cref{S: products} with \cref{S: PD}, in which we show that the intersection map takes our tautological Poincar\'e duality of \cref{T: PD} precisely to classical Poincar\'e duality induced by cap product with the fundamental class, and \cref{S: umkehr}, which contains a short treatment of umkehr maps.
+In \cref{S: PD}, we show that the intersection map takes our tautological Poincar\'e duality of \cref{T: PD} precisely to classical Poincar\'e duality induced by cap product with the fundamental class.
+\cref{S: umkehr} contains a short treatment of umkehr maps.
 
 Our last chapter, \cref{S: Alexander}, discusses Alexander duality in terms of geometric homology and cohomology, revealing a pleasingly geometric description.
-This is then applied to describe the cohomology of spherical link complements, including linking numbers in $S^3$, and the nontriviality of triple linking of the Borromean rings.
+This is then applied to the cohomology of spherical link complements, including linking numbers in $S^3$ and the nontrivial triple linking of the Borromean rings.

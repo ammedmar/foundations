@@ -30,15 +30,15 @@ Even the foundations of a theory of transversality for manifolds with corners su
 
 While the idea of homology as represented by fundamental classes of submanifolds or, more generally, manifold mappings is quite familiar, historically it was only in some corners of 20th century geometric topology, such as those noted above, that \textit{co}homology classes were also represented by appropriate maps from manifolds.
 Such cochains are geometric objects in their own right, which partially evaluate on chains through intersection.
-A great benefit to such thinking is that the classical operations of algebraic topology, such as cup and cap products, can be described \textit{at the level of chains and cochains} by simple geometric operations based on intersection, without recourse to chain approximations to the diagonals, Alexander--Whitney maps, or other such combinatorics.
+A great benefit to such thinking is that the classical operations of algebraic topology, such as cup and cap products, can be described \textit{at the level of chains and cochains} by simple geometric operations based on intersection (more generally, fiber product), without recourse to chain approximations to the diagonals, Alexander--Whitney maps, or other such combinatorics.
 This again is reminiscent of the original thinking about such products in terms of intersection, and parallels modern work such as intersection theory in the PL category as in McClure's \cite{McC06}.
 
 The trade-off for such a pleasant description is that these intersections are not always defined; they require transversality.
 This limitation is also classically anticipated by the famous commutative cochain problem.
-Loosely speaking, no integral cochain construction computing ordinary cohomology can be made canonically into a (graded) commutative ring.
+Loosely speaking, no fully-defined integral cochain construction computing ordinary cohomology can be made canonically into a (graded) commutative ring.
 Since the process of forming intersections is commutative, the ring structure it induces in our theory cannot be fully defined.
 We find the trade-off worthwhile, and in work building on these foundations \cite{FMS-flows} we have already ``married'' multiplicatively the theory we develop here, which is commutative and partially defined, and the one defined by cubical cochains with the Serre product, which is not commutative but everywhere defined.
-For concrete applications of ideas in line with our viewpoint, we mention Cochran's work relating Seifert surface intersections with Massey products in the context of Milnor invariants for links \cite{cochran1990milnor}, as well as the work of our third-named author and his collaborator on group cohomology through configuration spaces, where key calculations are made through intersections \cite{giusti2012symmetric, giusti2021alternating}.
+For concrete applications of ideas in line with our viewpoint, we mention Cochran's work relating Seifert surface intersections with Massey products in the context of Milnor invariants for links \cite{cochran1990milnor}, as well as the work of our third-named author, Giusti, and Salvatore on group cohomology through configuration spaces, where key calculations are made through intersections \cite{giusti2012symmetric, giusti2021alternating}.
 
 Lipyanskiy's manuscript \cite{Lipy14}, on which we build, gives a fairly thorough account of geometric homology, but a much more lightly sketched account of geometric cohomology, which leaves several major theorems unproven.
 Some other expected results are not stated at all, including an isomorphism between geometric and ordinary cohomology, either as graded abelian groups or as rings.
@@ -48,6 +48,17 @@ At the research level, we found Lipyanskiy's work thanks to Mike Miller, while w
 Ultimately our main aim is to obtain a full -- but partially defined -- $E_\infty$-algebra structure on geometric cochains, with the $E_\infty$-structure ``resolving'' partial definedness (though itself being partially defined!) rather than non-commutativity.
 We also see plenty of room for development to make geometric cochains more broadly applicable, for example conjecturally to CW complexes with smooth attaching maps.
 Our careful treatment here is offered to facilitate such work.
+
+\textbf{Above the foundation.} Further developments are already in process, including work on partial algebra structures and bar complexes for geometric cochains in \cite{GBF47} and applications of geometric cochains and their bar complexes to concordance invariants of links in \cite{FGKSW}.
+Other aspects of geometric homology and cohomology remain to be explored.
+We have yet to identify a satisfactory theory of geometric (co)homology of pairs, and we have not developed transverse products on manifolds with boundaries or corners.
+Consequently, we do not yet have a Lefschetz Duality theorem.
+We here treat coefficients other than $\Z$ only minimally; for example, we have not considered a cap product with coefficients, and in some places we consider only $\Z$, $\Q$, and $\Z_n$ as coefficient rings.
+There are also finite generation conditions for some theorems that we suspect are not necessary but do not know how to avoid.
+In other places, we would like to remove certain properness assumptions for maps between manifolds.
+As indicated in the title, we hope here to provide the foundations on which to build a much larger edifice.
+
+
 
 \subsection{The intuitive idea}\index{intuition}
 
@@ -64,7 +75,7 @@ Cycles are represented by maps from manifolds without boundaries (or those whose
 Cycles represented by $V$ and $W$ are homologous if there is a chain with boundary equivalent to $V \sqcup -W$.
 
 The more remarkable theory is that of geometric cochains.
-Rather than considering algebraic duals of geometric chains, geometric cochains are again represented by maps from manifolds with corners, however instead of the conditions that the domain manifold be compact and oriented, rather the map must be proper and co-oriented.
+Rather than considering algebraic duals of geometric chains, geometric cochains are again represented by maps from manifolds with corners, however instead of the condition that the domain manifold be compact and oriented, rather the map must be proper and co-oriented.
 We will develop co-orientation in great detail in \cref{S: orientations and co-orientations}; the idea to keep in mind for now is that a co-orientation of an embedding is equivalent to an orientation of the normal bundle.
 Also, a degree $i$-cochain is represented by a map from a $\dim(M)-i$ manifold with corners.
 The definitions of equivalence classes of maps that represent the same geometric cochain, addition, zero, inverses, cocycles, and cohomologies are completely analogous to those for geometric chains.
@@ -73,7 +84,7 @@ We will see in later chapters that the resulting homology and cohomology groups 
 The greatest benefit of the geometric approach is a very simple description of products: for homology and cohomology classes represented by transverse embeddings, cup and cap products are given by taking intersections and employing appropriate (co)orientation conventions.
 More generally, products of (co)homology classes are represented by fiber products of their maps, which can also be understood very geometrically.
 This is somewhat consistent with classical intersection theory of homology on manifolds.
-Where our theory goes further is that we have a well-defined partial commutative algebra structure\footnote{See \cite{McC} for the definition.} on the geometric cochains themselves.
+Where our theory goes further is that it provides a well-defined partial commutative algebra structure \cite{McC} (equivalently, a Segal $\Gamma$ structure in chain complexes\footnote{Our adoption of $\Gamma$ in our notation for geometric chains and cochains was not made with Segal's category $\Gamma$ in mind, but it turns out to be a happy coincidence.} \cite{Se74}) on the geometric cochains themselves.
 Chain and cochain-level products will be developed in \cref{S: products} and explored further in \cite{GBF47}.
 
 \subsection{Motivating examples}
@@ -97,6 +108,9 @@ For evaluation of a tensor products of cochains on a tensor product of chains, w
 This convention is used to define the cup product in Munkres \cite[Section 60]{Mun84}, Hatcher \cite[Section 3.2]{Hatc02}, and Spanier \cite[Section 5.6]{Span81}, though it disagrees with the conventions in some other sources, such as Dold \cite[Section VII.7]{Dol72}.
 
 The symbol $\sqcup$ denotes disjoint union.\index{$Z$@$\sqcup$}
+
+Given maps $f \colon V \to M$ and $g \colon W \to M$, we typically write ``pullback'' for the resulting object $V \times_M W$ over $W$ and ``fiber product'' for the object $V \times_M W$ over $M$.
+See \cref{S: pullbacks} for details. \index{pullback!vs. fiber product}\index{fiber product!vs. pullback}
 
 \subsection{Acknowledgments}\index{acknowledgments}
 

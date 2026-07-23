@@ -1151,11 +1151,9 @@ While \cref{P: perturb transverse to map} as stated was what we needed to prove 
 
 \subsection{Further applications of transversality}\label{S: trans apps}
 
-In this section, we gather together several developments that are available now that we have proven that arbitrary cochain can be made transverse in \cref{T: transverse reps}.
+In this section, we gather together several developments that are available now that we have proven in \cref{T: transverse reps} that arbitrary cochains can be made transverse.
 
-\subsubsection{Transverse complexes}\label{S: product pullbacks}
-\greg{Should this section go here?}
-
+\subsubsection{Transverse subcomplexes}\label{S: product pullbacks}
 In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon N \to M$ of manifolds without boundary yields a well-defined cohomology map $f^* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$.
 In this section, we consider $f^*$ as a partially-defined map of cochain complexes $f^* \colon C^*_\Gamma(M) \to C^*_\Gamma(N)$.
 In general, $f^*$ will not be fully defined as a chain map, as we cannot form pullbacks of cochains that are not transverse to $f$.
@@ -1170,8 +1168,8 @@ To solve this problem, we define a subcomplex of $C^*_\Gamma(M)$ that will be qu
 \end{definition}
 
 We notice that the transversality situation here is simpler than the more general ones in \cref{S: chain products}, as $f$ is a fixed map.
-We also remark that given a cubulation $X$ of $M$, it determines a proper map from the disjoint union of all the $\dim(M)$-cubes of $X$ to $M$, which we can also write $F \colon X \to M$ with an abuse of notation.
-In this case, $C^*_{\Gamma \pf f}(M) = C^*_{\Gamma \pf X}(M)$.
+We also remark that, given a cubulation $X$ of $M$, it determines a proper map from the disjoint union of all the $\dim(M)$-cubes of $X$ to $M$, which we can also write $F \colon X \to M$ with an abuse of notation.
+In this case, $C^*_{\Gamma \pf F}(M) = C^*_{\Gamma \pf X}(M)$ as defined in \cref{D: trans cube}.
 
 \begin{proposition}\label{P: trans to f}\index{geometric cochain!transverse to a map}\index{geometric cochain!transverse to a map!pullback of}
 	Given a smooth map from a manifold with corners to a manifold without boundary $f \colon N \to M$, the set $C^*_{\Gamma \pf f}(M)$ is a subcomplex of $C^*_{\Gamma}(M)$.
@@ -1198,7 +1196,7 @@ In this case, $C^*_{\Gamma \pf f}(M) = C^*_{\Gamma \pf X}(M)$.
 	Then
 	$$f^*(\uV+\uW) = \underline{f^*(V \sqcup W)} = \underline{f^*(V) \sqcup f^*(W)} = \underline{f^*(V)}+\underline{f^*(W)},$$
 	using the definitions and obvious properties of the pullback.
-	Furthermore, as $\bd N = \emptyset$, $f^*$ is a chain map by \cref{leibniz}, .
+	Furthermore, as $\bd N = \emptyset$, $f^*$ is a chain map by \cref{leibniz}.
 \end{proof}
 
 \begin{remark}
@@ -1223,7 +1221,7 @@ It says that, in the case at hand, the cohomology map of \cref{D: cohomology pul
 
 \begin{corollary}\label{C: transverse cohomology pullback}\index{geometric cohomology!transverse to a map!pullback of}
 	Let $f \colon N \to M$ be a proper map between manifolds without boundary.
-	The following diagram commutes, in which the top map is induced by the chain map $f^*$, the vertical map is induced by the inclusion $C^*_{\Gamma \pf f}(M) \into C^*_\Gamma(M)$, and the bottom map is that of \cref{D: cohomology pullback and homology transfer}.
+	The following diagram commutes, in which the top map is induced by the chain map $f^*$, the vertical map is induced by the inclusion $C^*_{\Gamma \pf f}(M) \into C^*_\Gamma(M)$, and the bottom map is that of \cref{D: cohomology pullback and homology transfer}:
 	\begin{equation*}
 	\begin{tikzcd}
 		H^*_\Gamma(N) & H^*(C^*_{\Gamma \pf f}(M)) \arrow[l]  \arrow[d,"\cong"]\\
@@ -1234,13 +1232,13 @@ It says that, in the case at hand, the cohomology map of \cref{D: cohomology pul
 \end{corollary}
 
 \subsubsection{Kronecker pairing}\label{S: Kronecker}\index{Kronecker pairing|(}
-\greg{Should this section go here?}
+%\greg{Should this section go here?}
 Using similar arguments to those in \cref{S: product pullbacks}, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
 
 The partially-defined cap product yields a partially-defined pairing
 $$C^i_\Gamma(M) \times C_i^\Gamma(M) \xr{\nplus} C_0^\Gamma(M) \xr{\aug}\Z,$$
 where $\aug \colon C_0^\Gamma(M) \to \Z$ is the augmentation map of \cref{D: aug}.
-We consider here the extent to which this pairing corresponds to a function $C^i_\Gamma(M) \to \Hom(C_i^\Gamma(M),\Z)$.
+We consider here the extent to which this pairing corresponds to a map $C^i_\Gamma(M) \to \Hom(C_i^\Gamma(M),\Z)$.
 This situation is closely related to the preceding discussion of pullbacks.
 
 \begin{definition}\label{D: transverse to cohain}\index{geometric chain!transverse to a cochain}\index{$C_i^{\Gamma \pf \uV}(M)$}
@@ -1248,7 +1246,7 @@ This situation is closely related to the preceding discussion of pullbacks.
 	We write $C_i^{\Gamma \pf \uV}(M)$ for the subgroup of $C_i^\Gamma(M)$ generated by geometric $i$-chains simply transverse to $\uV$.
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}\label{P: chain kronecker}
 	Given a geometric cochain $\uV \in C^i_\Gamma(M)$, the map $\aug(\uV\nplus -):C_i^{\Gamma \pf \uV}(M) \to \Z$ is a well-defined homomorphism.
 \end{proposition}
 
@@ -1261,6 +1259,12 @@ This situation is closely related to the preceding discussion of pullbacks.
 \end{proof}
 
 So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom\left(C_i^{\Gamma \pf \uV}(M),\Z\right)$, but of course we will not in general obtain an element of $\Hom\left(C_i^{\Gamma}(M), \Z \right)$ due to transversality requirements.
+
+\begin{comment}
+\cref{P: chain kronecker} can be extended in various ways to include coefficients.
+For example, given an abelian group $G$, then tensoring with $G$ gives a homomorphism $C_i^{\Gamma \pf \uV}(M;G) \to G$, or, given $g \in G$ we can take $\uW \in C_i^{\Gamma \pf \uV}(M)$ to $\aug(\uV \nplus \uW)\otimes g$.
+If $R$ is a commutative ring, we can make both of these extensions.
+\end{comment}
 
 \begin{comment}
 	\begin{proof}
@@ -1286,24 +1290,19 @@ So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom\left(C_i^{\Gamma
 	\end{proof}
 \end{comment}
 
-
-
-\index{Kronecker pairing|)}
-
-
-
-\subsubsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}\label{S: kronecker}
-
-When applying the cap product to cohomology and homology classes of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
+Descending to homology and cohomology, when applying the cap product to cohomology and homology classes of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing\index{Kronecker pairing!of (co)homology}
 $$H^i_\Gamma(M) \otimes H_i^\Gamma(M) \xr{\nplus} H_0^\Gamma(M) \to \Z.$$
 Taking the adjunct then provides a map
 $$\alpha: H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z).$$
 Tracing through the definitions, this maps acts by counting the intersection number between a geometric chain and a geometric cochain in the sense of \cref{D: intersection number}.
 
-When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact sequence, just as for singular cohomology.
+\index{Kronecker pairing|)}
+
+\subsubsection{The Universal Coefficient Theorem for geometric cohomology}\label{S: UCT}
+When $H^i_\Gamma(M)$ is finitely generated, the Kronecker map $\alpha$ of the preceding section fits into a short exact sequence, just as for singular cohomology.
 
 \begin{theorem}\label{T: UCT}\index{Universal Coefficient Theorem}
-	If $H^i_\Gamma(M)$ is finitely generated, there is a short exact sequence
+	If $H^i_\Gamma(M)$ is finitely generated, there is a split short exact sequence
 	\[
 	0 \to \Ext\left(H_{i-1}^\Gamma(M),\Z\right) \to H^i_\Gamma(M) \xr{\alpha} \Hom\left(H_i^\Gamma(M),\Z\right) \to 0.
 	\]
@@ -1336,8 +1335,8 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 	But $I_M(V,E_j)$ is precisely $\aug(V \times_M E_j)$ by \cref{D: intersection number}.
 	So the diagram commutes.
 
-	We know that $K_i(X)$ is a free abelian group, so the bottom map of the diagram is a surjection by the algebraic Universal Coefficient Theorem, with kernel $\Ext(H_{i-1}(K_*(X)),\Z)$.
-	The commutativity of the diagram thus implies that the top map of the diagram is a surjection with isomorphic kernel.
+	We know that $K_i(X)$ is a free abelian group, so the bottom map of the diagram is a split surjection by the algebraic Universal Coefficient Theorem, with kernel $\Ext(H_{i-1}(K_*(X)),\Z)$.
+	The commutativity of the diagram thus implies that the top map of the diagram is a split surjection with isomorphic kernel.
 	To complete the proof, we again invoke \cref{T: cubical homology iso} to observe $\Ext(H_{i-1}(X),\Z) \cong \Ext(H^\Gamma_{i-1}(X),\Z)$.
 \end{proof}
 
