@@ -1852,7 +1852,7 @@ While this argument for the cohomology K\"unneth Theorem requires more hypothese
 \subsection{Relating geometric and singular cup and cap products via intersection maps}\label{S: cubical cup and cap}
 
 Our goal in this section is to relate the cup and cap products in geometric (co)homology to those in singular (co)homology using cubical (co)homology as an intermediary and via the intersection map $\mc I$ of \cref{D: intersection homomorphism}.
-While we have already shown in Section \cref{S: usual cup} that the geometric cohomology cup product is abstractly isomorphic to the singular cohomology cup product, the approach through intersection provides a concrete comparison map, which, by \cref{T: intersection qi} also provides cohomology isomorphisms when $H^i(M)$ is finitely generated.
+While we have already shown in \cref{S: usual cup} that the geometric cohomology cup product is abstractly isomorphic to the singular cohomology cup product, the approach through intersection provides a concrete comparison map, which, by \cref{T: intersection qi} also provides cohomology isomorphisms when $H^i(M)$ is finitely generated.
 In the case of cap products this is especially necessary, as the work of Kreck and Singhof in \cite{Krec10b} does not directly apply to provide a more abstract comparison as we did for cup products.
 
 In \cref{S: cubical products}, we first discuss formulas for the cubical cup and cap products, relying on known formulas for the singular cubical products. Then we apply the cubical formulas to the geometric world, first in \cref{S: cup via intersection} where we relate the geometric and cubical cup products.
@@ -1938,6 +1938,7 @@ In fact, we can say something stronger:
 Putting this all together, for both the complexes of normalized smooth singular cubical chains and the cubical complexes $K_*$ coming from the smooth cubulations, we may define cup and cap products again by the formulas \eqref{E: cubical cup} and \eqref{E: cubical cap}.
 Note that in the case of a geometric cube $E$ coming from a cubulation, $\diag E$ is not a cube in the cubical complex, but that does not matter as in the end formula for $\xi(\diag E)$ we work with $\diag E$ only through its projections $\pi_1(\diag E) = \pi_2(\diag E) = E$.
 These products are then compatible with the constructions for normalized singular cubical chains and cochains, i.e.\ the restriction of the cup product is the cup product of the restriction, and the appropriate mixed functoriality version of that statement holds for cap products.
+For an explicit formula relating the cap products, cf.\ \cref{T: equivalent cap} and the proof of \cref{C: cap relation}.
 
 \begin{comment}
 	Let $M$ be a manifold (with or without corners) cubulated by the cubical complex $X$.
@@ -1949,7 +1950,8 @@ These products are then compatible with the constructions for normalized singula
 	This formula also functions in the cubical complex setting, as the composition $\xi \diag$ takes a face of a cubical complex $X$ to an element of $K_*(X) \otimes K_*(X) \subset NK_*(M) \otimes NK_*(M)$.
 \end{comment}
 
-It follows directly from this definition that the singular cubical cup product satisfies the familiar formula $$\alpha \smile \beta = \diag^*(\alpha \times \beta),$$
+For cup products, it will be useful for us also to have formulas in terms of cross products.
+It follows directly from the above definition that the singular cubical cup product satisfies the familiar formula $$\alpha \smile \beta = \diag^*(\alpha \times \beta),$$
 where $\alpha \times \beta$ is the cochain cross product given by $$\alpha \times \beta = \xi^*\theta$$
 and $\theta \colon NK^*(M) \otimes NK^*(M) \to \Hom(NK_*(M) \otimes NK_*(M),\Z)$ is the canonical map so that $$(\theta(\alpha \otimes \beta))(E \otimes F) = \alpha(E)\beta(F).$$
 In other words, $$\alpha \smile \beta = \diag^* \xi^* \theta(\alpha \otimes \beta) = (\xi \diag)^*\theta (\alpha \otimes \beta).$$
@@ -1970,7 +1972,7 @@ The proof of the Eilenberg-Zilber Theorem in \cite[Section XI.5]{Mas91} showing 
 In particular, in that case we can take the chain homotopies to also be realized by smooth singular cubical chains.
 \end{remark}
 
-The following proposition demonstrates the compatibility between the cubical, cubical singular, and smooth cubical singular cup products.
+The following proposition demonstrates the compatibility between the cubical, cubical singular, and smooth cubical singular cup products as written in terms of these ``diagonals.''
 
 \begin{proposition}\label{P: cubical and singular cups}\index{cup product!cubical cohomology}
 	Let $X$ be a cubical complex and $|X|$ its geometric realization.
@@ -2333,6 +2335,9 @@ Before proving the theorem, we note the following corollary.
 	Then $\mc I \colon H^*_\Gamma(M) \to H^*(X)$ is an isomorphism by \cref{T: intersection qi,R: intersection map extension} when all $H^i(M)$ are finitely generated.
 	So then
 	$$V\frown M = \mc J^{-1}(\mc J(\mc I\mc I^{-1}(V)\frown W)) = \mc J^{-1}(\mc I^{-1}(V) \nplus \mc J(W)).$$
+
+	To relate with singular cubical cochains, we have equivalent formulas between cubical and singular cubical cap products, replacing $\mc J$ and $\mc I$ with the inclusion quasi-isomorphism $K_*(X) \into NK_*(M)$ of \cref{P: singular smooth cubes,T: cubical homology iso} and its dual quasi-isomorphism $NK^*(M) \to K^*(X)$.
+	The cubical/singular cubical version of the formula of \cref{T: equivalent cap} follows from the discussion in \cref{S: cubical products}, as noted following the proof of \cref{L: EZ for cubical}.
 \end{proof}
 
 We will approach the proof of \cref{T: equivalent cap} through a series of lemmas.
