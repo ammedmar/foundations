@@ -52,6 +52,8 @@ H^*(\mathbb{C}P^n;\Z) \cong \Z[h]/(h^{n+1})
 reflects the fact that \(k <n+1\) independent hyperplane conditions cut out \(\mathbb{C}P^{n-k}\), while \(n+1\) independent hyperplane conditions have empty intersection.
 
 \medskip
+
+\begin{comment}
 Switching to real projective spaces illustrates the distinction between orientations and co-orientations. Only odd-dimensional projective spaces are orientable but standard inclusions of $2k$-dimensional real projective spaces into $2n$-dimensional real projective spaces are co-orientable.
 
 With mod-two coefficients, the linear inclusions
@@ -61,10 +63,36 @@ With mod-two coefficients, the linear inclusions
 represent the powers of the degree-one generator.
 With integral coefficients, such an inclusion defines a geometric cochain only when its normal bundle is orientable.
 This separates two pieces of structure that coincide too easily in examples over \(\mathbb{F}_2\): an integral chain requires an orientation of its domain, whereas an integral cochain requires a co-orientation of its map to the target.
+\end{comment}
+
+Switching to real projective spaces illustrates the distinction between orientations and co-orientations.  Only odd-dimensional projective spaces are orientable, and integral homology classes of any $\R P^n$ are represented by the linear inclusions  $\R P^i \into RP^n$ with $i$ odd.
+But geometric cochains are instead defined with integer coefficients exactly when the maps are co-orientable, meaning in the case of embeddings that their normal bundles are orientable.
+For the canonical inclusions of real projective spaces this occurs precisely when the difference $n-i$ (corresponding to cochains of degree $i$) is even.
+In particular, when $n$ is even, the cohomology representatives live in the even dimensions and are not themselves orientable, so they differ completely from the collection of homology representatives.
+
+If we consider four classes of manifolds, depending on whether or not they are compact or orientable, only in the case they are both do their chains and cochains coincide.
+In this setting, orientable submanifolds provide the basic (though not only) example of both chains and cochains.
+Non-compact manifolds have proper submanifolds that can be non-compact, and manifolds that are not orientable can have submanifolds that are not orientable but are co-orientable.
+If either compactness or orientability of a manifold fails, one has geometric cochains that do not correspond to geometric chains.
+
+
+
+
+
 
 \medskip
 These examples illustrate the basic geometric procedure.
 After the additive groups have been computed, one can choose transverse cocycles and form the fiber product; when both cochains are represented by embeddings, this is simply the (co-oriented) intersection.
+
+Our present work also gives a geometric chain-cochain level approach to Poincar\'e-Lefschetz duality.
+In the classical development of basic algebraic topology, such duality can be used to make the above calculations of cohomology of projective spaces.
+Even though the combinatorial definition of cup product is often emphasized in introductory courses, to our knowledge nobody chooses to triangulate projective spaces for this analysis (such an explicit calculation may not exist!).
+Then many other calculations are based on this one, for example of the cohomology of infinite Grassmannians using the splitting principle.
+Techniques such a spectral sequences allow one to propagate information further.
+There is a similar story in group (co)homology, where standard algebraic chain-level calculations start the story for cyclic groups.
+We have seen in our own research that geometric cochain calculations can similarly provide essential fuel, necessary input for computational machines.
+For example, the last-named author’s calculations of cohomology of alternating groups with Giusti in \cite{giusti2021alternating} --- a “pure algebra” question from one perspective --- would not have been complete without one such calculation.
+The work on link invariants by the first- and third-named authors, Gadish, Koytcheff, and Walter provides another example \cite{FGKSW}.
 
 \subsubsection{Characteristic classes}
 
