@@ -81,8 +81,15 @@ If either compactness or orientability of a manifold fails, one has geometric co
 
 
 \medskip
-These examples illustrate the basic geometric procedure.
-After the additive groups have been computed, one can choose transverse cocycles and form the fiber product; when both cochains are represented by embeddings, this is simply the (co-oriented) intersection.
+These examples begin to illustrate how we can use geometric chains and cochains to calculate cohomology rings.
+Additively, these techniques enhance standard tools such as cellular homology and spectral sequences.  Sometimes such calculations are formal, as when a spectral sequence collapses for degree reasons.
+In some difficult cases geometric chains or cochains can help, in at least two ways.  One is to resolve particular maps.
+For example, in computing maps induced by inclusions in the Mayer-Vietoris sequence, one can pick chain representatives to see what happens when they are included in a larger space.
+Indeed, any differential which arises in a long exact sequence or spectral sequence could in principle be resolved through geometric (co)chain representative analysis.
+A second way is to realize homology and cohomology classes with geometric cycle and cocycle representatives and pair them through intersection (or more generally fiber product).  This gives ``lower bounds’’ for homology and cohomology, which can match the ``upper bounds’’ given by exact sequence and spectral sequence techniques.
+Multiplicatively, geometric tools become more essential, as for example cellular cohomology has no ring structure and spectral sequence techniques rarely fully determine ring structure.
+But given geometric cycle and cocycle representatives --- which could have been calculated in the process of determining additive structure or as an enhancement after additive structure is known --- further intersection/ fiber product calculations can be made on the cochain side.
+These can again be paired with the basis found for chain representatives through intersection/ fiber product calculations, to determine all products.
 
 Our present work also gives a geometric chain-cochain level approach to Poincar\'e-Lefschetz duality.
 In the classical development of basic algebraic topology, such duality can be used to make the above calculations of cohomology of projective spaces.
