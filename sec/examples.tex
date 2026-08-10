@@ -1,0 +1,139 @@
+% !TEX root = ../foundations.tex
+
+Before beginning the technical development, we offer a few examples that illustrate the basic appeal of geometric cochains.
+They are intentionally brief; the paper's main work is to justify the constructions that make such examples legitimate.
+
+\subsubsection{Crossing a ray}
+
+Let \(M = \R^2 - \{0\}\), oriented by the ordered basis \((\e_1,\e_2)\).
+Let
+\[
+W = \{t\e_1 \mid t > 0\} \subset M
+\]
+be the positive \(\e_1\)-axis, co-oriented by the normal vector \(\e_2\).
+The inclusion \(W \into M\) is proper, so it defines a geometric cochain even though its domain is noncompact.
+Since \(W\) has no boundary, it is a geometric cocycle which represents the usual generator of \(H^1_\Gamma(M) \cong \Z\).
+Indeed, let \(S^1 \into M\) be the unit circle with its counterclockwise orientation.
+It is transverse to \(W\) and intersects \(W\) once, at \(\e_1\).
+The sign of this intersection is positive, since the tangent vector to \(S^1\) at \(\e_1\) is \(\e_2\), which agrees with the chosen normal co-orientation of \(W\).
+Thus the pairing of the class of \(W\) with the fundamental class of \(S^1\) is \(1\), and therefore \(W\) represents a generator.
+
+This simple example already displays two useful features of the theory in contrast to more classical analytic ways of counting winding numbers.
+First, our representative cochain lives in an intrinsically integral, rather than real-valued, cochain complex.
+It records winding number by a discrete crossing count: a positively oriented loop contributes \(+1\) each time it crosses the ray in the positive co-oriented direction.
+By contrast, the de Rham representative \((2\pi)^{-1}d\theta\) records the same invariant continuously around the circle and only after extension of coefficients to \(\R\).
+One can approximate the crossing representative analytically by normalized angular bump forms supported in narrower and narrower sectors around the positive ray, but the limiting object is naturally a current-like representative.
+
+Second, the domain of a geometric cochain need not be compact.
+The correct finiteness condition is properness of the map to the target.
+Thus geometric cohomology admits representatives that are natural in pictures but less directly visible in approaches that identify ordinary cohomology with duals of compact cycles.
+%Equivalently, this ray is familiar from Borel--Moore or locally finite homology, but the geometric-cochain viewpoint uses it directly as a cohomology representative.
+
+\subsubsection{Cup products}
+
+Once the additive cohomology groups are known, geometric representatives can often be chosen so that cup products are read from transverse intersections and, more generally, transverse fiber products.
+Projective spaces provide the basic examples.
+
+For complex projective space, let \(h \in H^2_\Gamma(\mathbb{C}P^n)\) be represented by a hyperplane
+\[
+\mathbb{C}P^{n-1} \into \mathbb{C}P^n,
+\]
+with its normal co-orientation induced by the complex structure.
+More generally, a linear subspace
+\[
+\mathbb{C}P^{n-k} \into \mathbb{C}P^n
+\]
+represents \(h^k\).
+The product calculation is then the elementary fact that transverse linear subspaces intersect in a linear subspace, with codimensions adding.
+Thus the presentation
+\[
+H^*(\mathbb{C}P^n;\Z) \cong \Z[h]/(h^{n+1})
+\]
+reflects the fact that \(k <n+1\) independent hyperplane conditions cut out \(\mathbb{C}P^{n-k}\), while \(n+1\) independent hyperplane conditions have empty intersection.
+
+\medskip
+
+\begin{comment}
+Switching to real projective spaces illustrates the distinction between orientations and co-orientations. Only odd-dimensional projective spaces are orientable but standard inclusions of $2k$-dimensional real projective spaces into $2n$-dimensional real projective spaces are co-orientable.
+
+With mod-two coefficients, the linear inclusions
+\[
+\mathbb{R}P^{n-k} \into \mathbb{R}P^n
+\]
+represent the powers of the degree-one generator.
+With integral coefficients, such an inclusion defines a geometric cochain only when its normal bundle is orientable.
+This separates two pieces of structure that coincide too easily in examples over \(\mathbb{F}_2\): an integral chain requires an orientation of its domain, whereas an integral cochain requires a co-orientation of its map to the target.
+\end{comment}
+
+Switching to real projective spaces illustrates the distinction between orientations and co-orientations.  Only odd-dimensional projective spaces are orientable, and integral homology classes of any $\R P^n$ are represented by the linear inclusions  $\R P^i \into RP^n$ with $i$ odd.
+But geometric cochains are instead defined with integer coefficients exactly when the maps are co-orientable, meaning in the case of embeddings that their normal bundles are orientable.
+For the canonical inclusions of real projective spaces this occurs precisely when the difference $n-i$ (corresponding to cochains of degree $i$) is even.
+In particular, when $n$ is even, the cohomology representatives live in the even dimensions and are not themselves orientable, so they differ completely from the collection of homology representatives.
+
+If we consider four classes of manifolds, depending on whether or not they are compact or orientable, only in the case they are both do their chains and cochains coincide.
+In this setting, orientable submanifolds provide the basic (though not only) example of both chains and cochains.
+Non-compact manifolds have proper submanifolds that can be non-compact, and manifolds that are not orientable can have submanifolds that are not orientable but are co-orientable.
+If either compactness or orientability of a manifold fails, one has geometric cochains that do not correspond to geometric chains.
+
+
+
+
+
+
+\medskip
+These examples begin to illustrate how we can use geometric chains and cochains to calculate cohomology rings.
+Additively, these techniques enhance standard tools such as cellular homology and spectral sequences.  Sometimes such calculations are formal, as when a spectral sequence collapses for degree reasons.
+In some difficult cases geometric chains or cochains can help, in at least two ways.  One is to resolve particular maps.
+For example, in computing maps induced by inclusions in the Mayer-Vietoris sequence, one can pick chain representatives to see what happens when they are included in a larger space.
+Indeed, any differential which arises in a long exact sequence or spectral sequence could in principle be resolved through geometric (co)chain representative analysis.
+A second way is to realize homology and cohomology classes with geometric cycle and cocycle representatives and pair them through intersection (or more generally fiber product).  This gives ``lower bounds’’ for homology and cohomology, which can match the ``upper bounds’’ given by exact sequence and spectral sequence techniques.
+Multiplicatively, geometric tools become more essential, as for example cellular cohomology has no ring structure and spectral sequence techniques rarely fully determine ring structure.
+But given geometric cycle and cocycle representatives --- which could have been calculated in the process of determining additive structure or as an enhancement after additive structure is known --- further intersection/ fiber product calculations can be made on the cochain side.
+These can again be paired with the basis found for chain representatives through intersection/ fiber product calculations, to determine all products.
+
+Our present work also gives a geometric chain-cochain level approach to Poincar\'e-Lefschetz duality.
+In the classical development of basic algebraic topology, such duality can be used to make the above calculations of cohomology of projective spaces.
+Even though the combinatorial definition of cup product is often emphasized in introductory courses, to our knowledge nobody chooses to triangulate projective spaces for this analysis (such an explicit calculation may not exist!).
+Then many other calculations are based on this one, for example of the cohomology of infinite Grassmannians using the splitting principle.
+Techniques such a spectral sequences allow one to propagate information further.
+There is a similar story in group (co)homology, where standard algebraic chain-level calculations start the story for cyclic groups.
+We have seen in our own research that geometric cochain calculations can similarly provide essential fuel, necessary input for computational machines.
+For example, the last-named author’s calculations of cohomology of alternating groups with Giusti in \cite{giusti2021alternating} --- a “pure algebra” question from one perspective --- would not have been complete without one such calculation.
+The work on link invariants by the first- and third-named authors, Gadish, Koytcheff, and Walter provides another example \cite{FGKSW}.
+
+\subsubsection{Characteristic classes}
+
+Characteristic classes also admit geometric representatives of this kind.
+Let \(E \to M\) be a rank \(r\) vector bundle over a (not necessarily compact) smooth manifold.
+The zero section
+\[
+M \into E
+\]
+is a canonical submanifold of the total space.
+With an orientation of \(E\), this embedding is a geometric cochain in $E$ that represents the Thom class in geometric cohomology; without such an orientation it does so with \(\mathbb{F}_2\)-coefficients.
+Pulling this class back along a transverse section \(s \colon M \to E\) gives the Euler class in the cohomology of $M$, represented by the zero locus \(s^{-1}(0)\).
+
+The higher characteristic classes can be described similarly by replacing the zero locus of one section by a linear-dependence locus.
+For a rank \(r\) real or complex vector bundle \(E\), consider \(n+1\) sections of \(E\).
+The locus in $M$ where these sections become linearly dependent is generally singular, but it has a natural smooth resolution.
+Over \(E^{\oplus(n+1)}\), define
+\[
+\chi_{r-n}(E) =
+\Big\{ \big((v_0,\ldots,v_n),\, [a_0:\cdots:a_n]\big) \,\mid\, \textstyle \sum_i a_i v_i = 0 \Big\},
+\]
+where \([a_0:\cdots:a_n]\) lies in \(\mathbb{R}P^n\) in the real case and in \(\mathbb{C}P^n\) in the complex case.
+The projection
+\[
+\chi_{r-n}(E) \to E^{\oplus(n+1)}
+\]
+has image the linear-dependence locus and defines a geometric cochain of codimension \(r-n\) in $E^{\oplus(n+1)}$ in the real case, respectively complex codimension \(r-n\) in $E^{\oplus(n+1)}$ in the complex case.
+Pulling back to $M$ via a transverse section of $M$, we obtain a geometric cochain in $M$ representing the Stiefel--Whitney class \(w_{r-n}(E)\) with \(\mathbb{F}_2\)-coefficients in the real case and the Chern class \(c_{r-n}(E)\) with integral coefficients in the complex case.
+
+We plan to pursue this example in detail in future work.
+
+\subsubsection{Link invariants}
+
+In \cref{S: links}, following our development of geometric chains and cochains, we return to additional examples concerning spherical links, including links of circles in $S^3$.
+We show that geometric cochains provide a pictorial method for computing both classical linking numbers and triple linking numbers. In particular, we use geometric cohomology to verify that the Borromean rings are nontrivially linked.
+
+More advanced applications of geometric cochains to link theory are currently being undertaken by the first- and third-named authors in conjunction with Nir Gadish, Robin Koytcheff, and Ben Walter.

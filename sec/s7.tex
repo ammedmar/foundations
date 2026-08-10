@@ -16,10 +16,10 @@ We also provide fully-defined chain and cochain exterior products, though these 
 In \cref{S: (co)chain properties}, we collect the various properties of these partially-defined products, mostly based on properties we have established for fiber products of maps in earlier sections.
 
 In \cref{S: homology products}, we then turn to the resulting products in geometric homology and cohomology, which we show are fully defined, providing cup, cap, intersection, and exterior products.
-In \cref{S: kroneker}, we utilize this machinery along with our cubulations to construct a Universal Coefficient Theorem when the cohomology is finitely generated.
+In \cref{S: trans apps}, we utilize this machinery along with our cubulations to construct a Kroneker pairing and a Universal Coefficient Theorem when the cohomology is finitely generated.
 In \cref{S: usual cup}, we show that the cup product in geometric cohomology is abstractly isomorphic to the singular cohomology cup product, which we use to prove a K\"unneth Theorem in \cref{S: kunneth}.
-Finally, in \cref{S: cubical cup and cap}, we relate geometric (co)homology cup and cap products to their singular (co)homology counterparts more concretely, using cubulations and the intersection maps introduced in \cref{S: intersection map}.
-This includes some applications to Poincar\'e Duality and umkehr maps.
+In \cref{S: cubical cup and cap}, we relate geometric (co)homology cup and cap products to their singular (co)homology counterparts more concretely, using cubulations and the intersection maps introduced in \cref{S: intersection map}.
+We conclude with some applications to Poincar\'e Duality and umkehr maps.
 
 \begin{comment}
 	in this section endow geometric cochains with a commutative product given by intersection of immersed submanifolds, or pullback more generally.
@@ -133,7 +133,7 @@ This includes some applications to Poincar\'e Duality and umkehr maps.
 In this section, we develop chain- and cochain-level products, as well as study some other aspects of chain- and cochain-level transversality.
 We begin in \cref{S: simple products} with the case of ``simple products,'' in which two chains or cochains can be represented by transverse prechains or precochains, in which case we can take the fiber product.
 Building on this case, we then define a more general notion of transversality for chains and cochains that allows for some amount of bilinear behavior.
-After introducing some more transversality results in \cref{S: homology products} in the context of considering (co)homology products, we will return to this theme in \cref{S: product pullbacks}, where we consider pullbacks of cochains, and in \cref{S: Kronecker}, where we consider a Kronecker pairing for geometric chains and cochains.
+After introducing some more transversality results in \cref{S: homology products} in the context of considering (co)homology products, we will return to this theme in \cref{S: trans apps}, where we consider pullbacks of cochains, a Kronecker pairing for geometric chains and cochains, and a universal coefficient theorem.
 In \cref{S: exterior chain products}, we define exterior products of chains and cochains.
 
 
@@ -744,10 +744,10 @@ Consequently, in what follows we show that the cohomology cup product is well de
 In particular, to prove \cref{T: (co)homology products}, we will use the following important theorem.
 
 \begin{theorem}\label{T: transverse reps}\index{geometric cohomology!transverse representative}\index{geometric homology!transverse representative}
-Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in H_*^\Gamma(M)$ or $\uV \in H^*_\Gamma(M)$.
+Let $r_W \colon W \to M$ be a map from a manifold with corners to a manifold without boundary, and let $\uV \in H_*^\Gamma(M)$ or $\uV \in H^*_\Gamma(M)$.
 Then there is an $r_V \colon V \to M$ representing $\uV$ such that $V$ is transverse to $W$.
 
-Furthermore, if $V$ is transverse to $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, i.e.\ $\uV = 0$ as a homology or cohomology class, then such a $Z$ can be chosen so that it is transverse to $W$.
+Furthermore, if $r_W$ is proper, $V$ is transverse to $W$, and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$, i.e.\ $\uV = 0$ as a homology or cohomology class, then such a $Z$ can be chosen so that it is transverse to $W$.
 \end{theorem}
 
 We will prove \cref{T: transverse reps} below in \cref{S: transverse maps}.
@@ -846,15 +846,15 @@ We will explain how to modify the proof of \cref{P: ball stability} to accomplis
 We change notation slightly from that of \cref{T: transverse reps} to make it more consistent with \cref{P: ball stability}, which we hope will ease comparison of the two results for the reader.
 
 \begin{proposition}\label{P: perturb transverse to map}\index{transversality!Transversality Theorem!universal}
-	Suppose $r_V \colon V \to M$ and $r_X \colon X \to M$ are proper maps from manifolds with corners to a manifold without boundary.
+	Suppose $r_V \colon V \to M$ and $r_X \colon X \to M$ are maps from manifolds with corners to a manifold without boundary and that $r_V$ is proper.
 	Then there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id$ and $H(-,1)r_V \colon V \to M$ is transverse to $r_X$.
 
-	Furthermore, given another proper map from a manifold with corners $r_W \colon W \to M$ that is transverse to $r_X$, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to $r_X$.
+	Furthermore, if $r_X$ is proper and given another proper map from a manifold with corners $r_W \colon W \to M$ that is transverse to $r_X$, we can choose the homotopy $H$ above so that also the resulting universal proper homotopy of $W$ given by $W \times I \xr{r_W \times \id_I} M \times I \xr{H} M$ is transverse to $r_X$.
 \end{proposition}
 
 Proving \cref{P: perturb transverse to map} will involve \cref{L: all transversality is wrt embeddings}, which, in our current notation, says that two maps $r_V \colon V \to M$ and $r_X \colon X \to M$ are transverse if and only when we replace $r_X$ with an embedding $e \colon X \into M \times \R^n$ that projects to $r_X$, then $e$ is transverse to $r_V \times \id_{\R^n}$.
 So this lemma allows us to replace transversality of arbitrary maps with transversality in which one map is an embedding.
-The following lemma says, roughly speaking, that when we construct such an embedding $e$, then $e(X)$ does not run off to infinity in the $\R^n$ factors over compact subsets of $M$.
+The following lemma says, roughly speaking, that when we construct such an embedding $e$, if $r_X$ is proper then $e(X)$ does not run off to infinity in the $\R^n$ factors over compact subsets of $M$.
 
 \begin{comment}
 	\red{GOING TO MOVE ELSEWHERE - HEREHERE}
@@ -934,7 +934,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 		\item $F(-,0) = \id \colon M \to M$,
 		\item for almost all $s \in D^N$ the composition $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}} M \times \R^n$ is transverse to $e \colon X \to M \times \R^n$,
 
-		\item there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $W \times \R^n \xr{r_W \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e$.
+		\item if $r_X$ is proper, there is a ball neighborhood $D_r^N$ of $0$ in $D^N$ such that for all $s \in D_r^N$ the composition $W \times \R^n \xr{r_W \times \id_{\R^n}} M \times \R^n \xr{F(-,s) \times \id_{\R^n}}M \times \R^n$ is transverse to $e$.
 	\end{enumerate}
 
 	Given such an $F$, we let $s_0$ be any point in $D_r^N$ such that $V \times \R^n \xr{r_V \times \id_{\R^n}} M \times \R^n \xr{F(-,s_0) \times \id_{\R^n}} M \times \R^n$ is transverse to $e \colon X \to M \times \R^n$.
@@ -962,6 +962,7 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 	So $\ms F(-,s) \times \id_{R^n}$ is transverse to $e$ for almost all $s \in D^N$.
 
 	We also observe as in the proof of \cref{P: ball stability} that $H$ can be assumed proper, by replacing $\eta$ with a function with smaller values if necessary.
+	We further note that up to this point we have not needed to assume $r_X$ to be proper, and the construction to this point is sufficient to prove the first paragraph of \cref{P: perturb transverse to map}.
 
  	So it remains to show that if $W$ is compact (as we are currently assuming) and $r_W$ is transverse to $r_X$ (or, equivalently, $r_W \times \id_{\R^n}: W \times \id_{R^n} \to M \times \R^n$ transverse to $e$) then $(F(-,s) \circ r_W) \times \id_{\R^n} \colon W \times \R^n \to M \times \R^n$ is transverse to $e$ for all $s$ in some neighborhood $D_r^N$ of $0$ in $D^N$.
 	Similarly to \cref{P: ball stability}, it is more convenient here to work with boundaries than with strata, recalling that, by \cref{L: simple trans}, to prove that two maps of manifolds with corners are transverse it is sufficient to show that their compositions with all pairs of boundary inclusions are naively transverse (see \cref{D: naive transversality}).
@@ -1082,15 +1083,15 @@ We can now use \cref{L: all transversality is wrt embeddings,L: compact preimage
 Finally, we prove \cref{T: transverse reps}.
 
 \begin{proof}[Proof of \cref{T: transverse reps}]
-	Given \cref{L: compact preimage}, the proof is very analogous to that of \cref{T: transverse complex}.
+	Given \cref{P: perturb transverse to map}, the proof is very analogous to that of \cref{T: transverse complex}.
 
-	Let $r_W \colon W \to M$ be a proper map from a manifold with corners to a manifold without boundary, and let $\uV \in C_*^\Gamma(M)$ (or $C^*_\Gamma(M)$) be a cycle (or cocycle).
+	Let $r_W \colon W \to M$ be a map from a manifold with corners to a manifold without boundary, and let $\uV \in C_*^\Gamma(M)$ (or $C^*_\Gamma(M)$) be a cycle (or cocycle).
 	Let $r_V \colon V \to M$ be any representative for $\uV$.
 	By \cref{P: perturb transverse to map} there is a proper homotopy $H \colon M \to I$ such that $H(-,1)r_V$ is transverse to $r_W$.
 	We co-orient $H$ and $H(-,1)$ as in \cref{D: homotopy co-orientation} based on the tautological co-orientation of $H(-,0)$.
 	By \cref{D: universal homotopy,P: universal homotopy}, $H(-,1)r_V$ represents the same homology or cohomology class as $V$.
 
-	Next, suppose $V$ is transverse to $W$ and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$.
+	Next, suppose $r_W$ is proper, $V$ is transverse to $W$, and there is a pre(co)chain $Z$ such that $\bd Z \sqcup -V \in Q(M)$.
 	We consider first the case where $V$ is a precochain.
 	By \cref{P: perturb transverse to map}, there is a proper homotopy $H$ such that $H(-,1)r_Z$ is transverse to $r_W$ and $V \times I \xr{r_V \times \id_I} M \times I \xr{H} M$ is transverse to $r_W$.
 	Let $Z'$ denote the precochain $Z \xr{H(-,1)r_Z} M$, let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, and let $Y$ be the precochain $V \times I \xr{H\circ (r_V \times \id_I)} M$, co-orienting $r_V \times \id_I$ using the naive pre-homotopy co-orientation convention, \cref{homotopy product co-orientation convention}.
@@ -1148,9 +1149,11 @@ While \cref{P: perturb transverse to map} as stated was what we needed to prove 
 \end{proof}
 
 
-\subsection{Transverse complexes}\label{S: product pullbacks}
-\greg{Should this section go here?}
+\subsection{Further applications of transversality}\label{S: trans apps}
 
+In this section, we gather together several developments that are available now that we have proven in \cref{T: transverse reps} that arbitrary cochains can be made transverse.
+
+\subsubsection{Transverse subcomplexes}\label{S: product pullbacks}
 In \cref{S: cohomology pullback}, we showed that a continuous map $f \colon N \to M$ of manifolds without boundary yields a well-defined cohomology map $f^* \colon H^*_\Gamma(M) \to H^*_\Gamma(N)$.
 In this section, we consider $f^*$ as a partially-defined map of cochain complexes $f^* \colon C^*_\Gamma(M) \to C^*_\Gamma(N)$.
 In general, $f^*$ will not be fully defined as a chain map, as we cannot form pullbacks of cochains that are not transverse to $f$.
@@ -1165,8 +1168,8 @@ To solve this problem, we define a subcomplex of $C^*_\Gamma(M)$ that will be qu
 \end{definition}
 
 We notice that the transversality situation here is simpler than the more general ones in \cref{S: chain products}, as $f$ is a fixed map.
-We also remark that given a cubulation $X$ of $M$, it determines a proper map from the disjoint union of all the $\dim(M)$-cubes of $X$ to $M$, which we can also write $F \colon X \to M$ with an abuse of notation.
-In this case, $C^*_{\Gamma \pf f}(M) = C^*_{\Gamma \pf X}(M)$.
+We also remark that, given a cubulation $X$ of $M$, it determines a proper map from the disjoint union of all the $\dim(M)$-cubes of $X$ to $M$, which we can also write $F \colon X \to M$ with an abuse of notation.
+In this case, $C^*_{\Gamma \pf F}(M) = C^*_{\Gamma \pf X}(M)$ as defined in \cref{D: trans cube}.
 
 \begin{proposition}\label{P: trans to f}\index{geometric cochain!transverse to a map}\index{geometric cochain!transverse to a map!pullback of}
 	Given a smooth map from a manifold with corners to a manifold without boundary $f \colon N \to M$, the set $C^*_{\Gamma \pf f}(M)$ is a subcomplex of $C^*_{\Gamma}(M)$.
@@ -1193,7 +1196,7 @@ In this case, $C^*_{\Gamma \pf f}(M) = C^*_{\Gamma \pf X}(M)$.
 	Then
 	$$f^*(\uV+\uW) = \underline{f^*(V \sqcup W)} = \underline{f^*(V) \sqcup f^*(W)} = \underline{f^*(V)}+\underline{f^*(W)},$$
 	using the definitions and obvious properties of the pullback.
-	Furthermore, as $\bd N = \emptyset$, $f^*$ is a chain map by \cref{leibniz}, .
+	Furthermore, as $\bd N = \emptyset$, $f^*$ is a chain map by \cref{leibniz}.
 \end{proof}
 
 \begin{remark}
@@ -1218,7 +1221,7 @@ It says that, in the case at hand, the cohomology map of \cref{D: cohomology pul
 
 \begin{corollary}\label{C: transverse cohomology pullback}\index{geometric cohomology!transverse to a map!pullback of}
 	Let $f \colon N \to M$ be a proper map between manifolds without boundary.
-	The following diagram commutes, in which the top map is induced by the chain map $f^*$, the vertical map is induced by the inclusion $C^*_{\Gamma \pf f}(M) \into C^*_\Gamma(M)$, and the bottom map is that of \cref{D: cohomology pullback and homology transfer}.
+	The following diagram commutes, in which the top map is induced by the chain map $f^*$, the vertical map is induced by the inclusion $C^*_{\Gamma \pf f}(M) \into C^*_\Gamma(M)$, and the bottom map is that of \cref{D: cohomology pullback and homology transfer}:
 	\begin{equation*}
 	\begin{tikzcd}
 		H^*_\Gamma(N) & H^*(C^*_{\Gamma \pf f}(M)) \arrow[l]  \arrow[d,"\cong"]\\
@@ -1229,13 +1232,13 @@ It says that, in the case at hand, the cohomology map of \cref{D: cohomology pul
 \end{corollary}
 
 \subsubsection{Kronecker pairing}\label{S: Kronecker}\index{Kronecker pairing|(}
-\greg{Should this section go here?}
+%\greg{Should this section go here?}
 Using similar arguments to those in \cref{S: product pullbacks}, we consider a partially-defined Kronecker-type evaluation $C^*_\Gamma(M) \to \Hom(C_*^\Gamma(M),\Z)$.
 
 The partially-defined cap product yields a partially-defined pairing
 $$C^i_\Gamma(M) \times C_i^\Gamma(M) \xr{\nplus} C_0^\Gamma(M) \xr{\aug}\Z,$$
 where $\aug \colon C_0^\Gamma(M) \to \Z$ is the augmentation map of \cref{D: aug}.
-We consider here the extent to which this pairing corresponds to a function $C^i_\Gamma(M) \to \Hom(C_i^\Gamma(M),\Z)$.
+We consider here the extent to which this pairing corresponds to a map $C^i_\Gamma(M) \to \Hom(C_i^\Gamma(M),\Z)$.
 This situation is closely related to the preceding discussion of pullbacks.
 
 \begin{definition}\label{D: transverse to cohain}\index{geometric chain!transverse to a cochain}\index{$C_i^{\Gamma \pf \uV}(M)$}
@@ -1243,7 +1246,7 @@ This situation is closely related to the preceding discussion of pullbacks.
 	We write $C_i^{\Gamma \pf \uV}(M)$ for the subgroup of $C_i^\Gamma(M)$ generated by geometric $i$-chains simply transverse to $\uV$.
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}\label{P: chain kronecker}
 	Given a geometric cochain $\uV \in C^i_\Gamma(M)$, the map $\aug(\uV\nplus -):C_i^{\Gamma \pf \uV}(M) \to \Z$ is a well-defined homomorphism.
 \end{proposition}
 
@@ -1256,6 +1259,12 @@ This situation is closely related to the preceding discussion of pullbacks.
 \end{proof}
 
 So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom\left(C_i^{\Gamma \pf \uV}(M),\Z\right)$, but of course we will not in general obtain an element of $\Hom\left(C_i^{\Gamma}(M), \Z \right)$ due to transversality requirements.
+
+\begin{comment}
+\cref{P: chain kronecker} can be extended in various ways to include coefficients.
+For example, given an abelian group $G$, then tensoring with $G$ gives a homomorphism $C_i^{\Gamma \pf \uV}(M;G) \to G$, or, given $g \in G$ we can take $\uW \in C_i^{\Gamma \pf \uV}(M)$ to $\aug(\uV \nplus \uW)\otimes g$.
+If $R$ is a commutative ring, we can make both of these extensions.
+\end{comment}
 
 \begin{comment}
 	\begin{proof}
@@ -1281,24 +1290,19 @@ So given $\uV \in C^i_\Gamma(M)$, we obtain an element of $\Hom\left(C_i^{\Gamma
 	\end{proof}
 \end{comment}
 
-
-
-\index{Kronecker pairing|)}
-
-
-
-\subsection{The Kronecker pairing and the Universal Coefficient Theorem for geometric cohomology}\label{S: kroneker}
-
-When applying the cap product to cohomology and homology classes of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing
+Descending to homology and cohomology, when applying the cap product to cohomology and homology classes of the same degree, we can compose with the augmentation map $\aug \colon H_0^\Gamma(M) \to \Z$ of \cref{D: aug} to obtain a bilinear Kronecker pairing\index{Kronecker pairing!of (co)homology}
 $$H^i_\Gamma(M) \otimes H_i^\Gamma(M) \xr{\nplus} H_0^\Gamma(M) \to \Z.$$
 Taking the adjunct then provides a map
 $$\alpha: H^i_\Gamma(M) \to \Hom(H_i^\Gamma(M),\Z).$$
 Tracing through the definitions, this maps acts by counting the intersection number between a geometric chain and a geometric cochain in the sense of \cref{D: intersection number}.
 
-When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact sequence, just as for singular cohomology.
+\index{Kronecker pairing|)}
+
+\subsubsection{The Universal Coefficient Theorem for geometric cohomology}\label{S: UCT}
+When $H^i_\Gamma(M)$ is finitely generated, the Kronecker map $\alpha$ of the preceding section fits into a short exact sequence, just as for singular cohomology.
 
 \begin{theorem}\label{T: UCT}\index{Universal Coefficient Theorem}
-	If $H^i_\Gamma(M)$ is finitely generated, there is a short exact sequence
+	If $H^i_\Gamma(M)$ is finitely generated, there is a split short exact sequence
 	\[
 	0 \to \Ext\left(H_{i-1}^\Gamma(M),\Z\right) \to H^i_\Gamma(M) \xr{\alpha} \Hom\left(H_i^\Gamma(M),\Z\right) \to 0.
 	\]
@@ -1331,8 +1335,8 @@ When $H^i_\Gamma(M)$ is finitely generated, this map fits into a short exact seq
 	But $I_M(V,E_j)$ is precisely $\aug(V \times_M E_j)$ by \cref{D: intersection number}.
 	So the diagram commutes.
 
-	We know that $K_i(X)$ is a free abelian group, so the bottom map of the diagram is a surjection by the algebraic Universal Coefficient Theorem, with kernel $\Ext(H_{i-1}(K_*(X)),\Z)$.
-	The commutativity of the diagram thus implies that the top map of the diagram is a surjection with isomorphic kernel.
+	We know that $K_i(X)$ is a free abelian group, so the bottom map of the diagram is a split surjection by the algebraic Universal Coefficient Theorem, with kernel $\Ext(H_{i-1}(K_*(X)),\Z)$.
+	The commutativity of the diagram thus implies that the top map of the diagram is a split surjection with isomorphic kernel.
 	To complete the proof, we again invoke \cref{T: cubical homology iso} to observe $\Ext(H_{i-1}(X),\Z) \cong \Ext(H^\Gamma_{i-1}(X),\Z)$.
 \end{proof}
 
@@ -1847,7 +1851,7 @@ While this argument for the cohomology K\"unneth Theorem requires more hypothese
 \subsection{Relating geometric and singular cup and cap products via intersection maps}\label{S: cubical cup and cap}
 
 Our goal in this section is to relate the cup and cap products in geometric (co)homology to those in singular (co)homology using cubical (co)homology as an intermediary and via the intersection map $\mc I$ of \cref{D: intersection homomorphism}.
-While we have already shown in Section \cref{S: usual cup} that the geometric cohomology cup product is abstractly isomorphic to the singular cohomology cup product, the approach through intersection provides a concrete comparison map, which, by \cref{T: intersection qi} also provides cohomology isomorphisms when $H^i(M)$ is finitely generated.
+While we have already shown in \cref{S: usual cup} that the geometric cohomology cup product is abstractly isomorphic to the singular cohomology cup product, the approach through intersection provides a concrete comparison map, which, by \cref{T: intersection qi} also provides cohomology isomorphisms when $H^i(M)$ is finitely generated.
 In the case of cap products this is especially necessary, as the work of Kreck and Singhof in \cite{Krec10b} does not directly apply to provide a more abstract comparison as we did for cup products.
 
 In \cref{S: cubical products}, we first discuss formulas for the cubical cup and cap products, relying on known formulas for the singular cubical products. Then we apply the cubical formulas to the geometric world, first in \cref{S: cup via intersection} where we relate the geometric and cubical cup products.
@@ -1933,6 +1937,7 @@ In fact, we can say something stronger:
 Putting this all together, for both the complexes of normalized smooth singular cubical chains and the cubical complexes $K_*$ coming from the smooth cubulations, we may define cup and cap products again by the formulas \eqref{E: cubical cup} and \eqref{E: cubical cap}.
 Note that in the case of a geometric cube $E$ coming from a cubulation, $\diag E$ is not a cube in the cubical complex, but that does not matter as in the end formula for $\xi(\diag E)$ we work with $\diag E$ only through its projections $\pi_1(\diag E) = \pi_2(\diag E) = E$.
 These products are then compatible with the constructions for normalized singular cubical chains and cochains, i.e.\ the restriction of the cup product is the cup product of the restriction, and the appropriate mixed functoriality version of that statement holds for cap products.
+For an explicit formula relating the cap products, cf.\ \cref{T: equivalent cap} and the proof of \cref{C: cap relation}.
 
 \begin{comment}
 	Let $M$ be a manifold (with or without corners) cubulated by the cubical complex $X$.
@@ -1944,7 +1949,8 @@ These products are then compatible with the constructions for normalized singula
 	This formula also functions in the cubical complex setting, as the composition $\xi \diag$ takes a face of a cubical complex $X$ to an element of $K_*(X) \otimes K_*(X) \subset NK_*(M) \otimes NK_*(M)$.
 \end{comment}
 
-It follows directly from this definition that the singular cubical cup product satisfies the familiar formula $$\alpha \smile \beta = \diag^*(\alpha \times \beta),$$
+For cup products, it will be useful for us also to have formulas in terms of cross products.
+It follows directly from the above definition that the singular cubical cup product satisfies the familiar formula $$\alpha \smile \beta = \diag^*(\alpha \times \beta),$$
 where $\alpha \times \beta$ is the cochain cross product given by $$\alpha \times \beta = \xi^*\theta$$
 and $\theta \colon NK^*(M) \otimes NK^*(M) \to \Hom(NK_*(M) \otimes NK_*(M),\Z)$ is the canonical map so that $$(\theta(\alpha \otimes \beta))(E \otimes F) = \alpha(E)\beta(F).$$
 In other words, $$\alpha \smile \beta = \diag^* \xi^* \theta(\alpha \otimes \beta) = (\xi \diag)^*\theta (\alpha \otimes \beta).$$
@@ -1965,7 +1971,7 @@ The proof of the Eilenberg-Zilber Theorem in \cite[Section XI.5]{Mas91} showing 
 In particular, in that case we can take the chain homotopies to also be realized by smooth singular cubical chains.
 \end{remark}
 
-The following proposition demonstrates the compatibility between the cubical, cubical singular, and smooth cubical singular cup products.
+The following proposition demonstrates the compatibility between the cubical, cubical singular, and smooth cubical singular cup products as written in terms of these ``diagonals.''
 
 \begin{proposition}\label{P: cubical and singular cups}\index{cup product!cubical cohomology}
 	Let $X$ be a cubical complex and $|X|$ its geometric realization.
@@ -2003,6 +2009,8 @@ Recall the definition of the intersection map $\mc I$ in \cref{D: intersection h
 		\end{tikzcd}
 		\]
 	In other words, if $H^*(M)$ is finitely generated, the geometric and cubical cup products are isomorphic.
+
+	Furthermore, this compatibility is natural with respect to maps of spaces in the sense of \cref{T: intersection natural}.
 \end{theorem}
 
 The proof of \cref{T: cup compatibility} will rely on some further work.
@@ -2128,7 +2136,7 @@ We obtain the following corollary.
 We can now prove \cref{T: cup compatibility}.
 
 \begin{proof}[Proof of \cref{T: cup compatibility}]
-We obtain the proof by concatenating the diagrams of \cref{P: cross product comparison} (after taking cohomology) and \cref{C: diag commute} and considering the rectangle formed on the outside.
+We obtain the proof by concatenating the diagrams of \cref{P: cross product comparison} (after taking cohomology) and \cref{C: diag commute} and considering the rectangle formed on the outside. Naturality follows from \cref{T: intersection natural} and naturality of geometric, cubical, and simplicial cohomology.
 \end{proof}
 
 
@@ -2253,7 +2261,7 @@ We must show that this is always possible and independent of choices.
 \end{comment}
 
 
-\subsubsection{A fully defined cup product via flows}.
+\subsubsection{A fully defined cup product via flows}\label{S: flows}
 While we have \cref{T: cup compatibility} concerning the cup product on cohomology, the geometric cup product is not fully-defined as a map of cochains $C^*_\Gamma(M) \otimes C^*_\Gamma(M) \to C^*_\Gamma(M)$ due to the transversality requirements considered in detail in \cref{S: simple products}.
 However, we do have the following result from \cite{FMS-flows}, which we rephrase for the current context and for which we refer to \cite{FMS-flows} for details.
 This essentially says that, given two geometric cochains $V$ and $W$ on a compact cubulated manifold, there is a canonical flow, depending only on the cubulation, such that after enough time, $V$ and $W$ are transverse and then their co-oriented fiber product is compatible with the cubical cup product via the intersection map.
@@ -2326,6 +2334,9 @@ Before proving the theorem, we note the following corollary.
 	Then $\mc I \colon H^*_\Gamma(M) \to H^*(X)$ is an isomorphism by \cref{T: intersection qi,R: intersection map extension} when all $H^i(M)$ are finitely generated.
 	So then
 	$$V\frown M = \mc J^{-1}(\mc J(\mc I\mc I^{-1}(V)\frown W)) = \mc J^{-1}(\mc I^{-1}(V) \nplus \mc J(W)).$$
+
+	To relate with singular cubical cochains, we have equivalent formulas between cubical and singular cubical cap products, replacing $\mc J$ and $\mc I$ with the inclusion quasi-isomorphism $K_*(X) \into NK_*(M)$ of \cref{P: singular smooth cubes,T: cubical homology iso} and its dual quasi-isomorphism $NK^*(M) \to K^*(X)$.
+	The cubical/singular cubical version of the formula of \cref{T: equivalent cap} follows from the discussion in \cref{S: cubical products}, as noted following the proof of \cref{L: EZ for cubical}.
 \end{proof}
 
 We will approach the proof of \cref{T: equivalent cap} through a series of lemmas.
@@ -2525,7 +2536,7 @@ We also make the following definition.
 	Finally, $V \times_M \mc J(W)$ represents $\uV\nplus \mc J(W)$ by definition.
 \end{proof}
 
-\subsubsection{Poincar\'e duality}\label{S: PD}
+\subsection{Poincar\'e duality}\label{S: PD}
 
 In \cref{T: PD}, we noticed that geometric homology and cohomology satisfy a very strong form of Poincar\'e duality, as for a closed oriented manifold $M$ we in fact have chain-level identities $C^{m-i}_\Gamma(M) = C_i^\Gamma(M)$ obtained by identifying co-oriented cochains with their corresponding oriented chains, using the orientations induced by the orientation of $M$.
 \cref{T: equivalent cap} allows us to observe that this strong version of geometric Poincar\'e is compatible with the classical Poincar\'e duality:
@@ -2564,7 +2575,7 @@ demonstrates the usual relationship between intersection products and cup produc
 Here we see that this relationship extends not just for intersections of embedded manifolds but to all homology classes.
 Of course this is always possible if one takes the above formula as a defining formula for the intersection product, but here we see that the intersection product can always be defined geometrically in terms of fiber products.
 
-\subsubsection{Umkehr maps}\label{S: umkehr}\index{umkehr maps|(}
+\subsection{Umkehr maps}\label{S: umkehr}\index{umkehr maps|(}
 
 \Cref{C: PD} allows us to make some remarks about umkehr maps, also known as wrong-way or transfer maps, associated to maps of closed oriented manifolds $f \colon N \to M$.
 These are maps
