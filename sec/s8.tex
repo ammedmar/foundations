@@ -4,7 +4,7 @@
 
 In this section, as a sample application of geometric cohomology, we demonstrate some computations in link theory.
 The first step is a proof of Alexander Duality in the language of geometric homology and cohomology.
-This allows immediate applications to link theory, as Seifert surfaces of link components with their induced co-orientations are precochains in the link the complement.
+This allows immediate applications to link theory, as Seifert surfaces of link components with their induced co-orientations are precochains in the link complement.
 
 
 \subsection{Alexander Duality}\index{Alexander Duality|(}
@@ -161,7 +161,7 @@ We first define the nonreduced version $\mc A \colon H^{n-i-1}_\Gamma(S^n-L) \to
 
 We suppose $S^n$ is the standard unit sphere in $\R^{n+1}$ with the induced metric; this assumption is convenient to start, though we will see below that it is not critical (see \cref{R: Alex tubular}).
 Let $d \colon \R^{n+1} \to [0,\infty)$ be the distance function to $L$.
-As a subset of $\R^n$, the subspace $L$ will have an $\epsilon$-neighborhood $Y_\epsilon$ in in the sense of \cite[Section 2.3]{GuPo74}, and so also a retraction $\pi \colon Y_\epsilon \to L$ that takes a point in $Y_\epsilon$ to the nearest point in $L$.
+As a subset of $\R^n$, the subspace $L$ will have an $\epsilon$-neighborhood $Y_\epsilon$ in the sense of \cite[Section 2.3]{GuPo74}, and so also a retraction $\pi \colon Y_\epsilon \to L$ that takes a point in $Y_\epsilon$ to the nearest point in $L$.
 We let $U = Y_\epsilon \cap S^n$ and also write $\pi$ for the restriction to $U$.
 We can further extend $\pi$ to a deformation retraction $h \colon U \times I \to L$ by setting
 \begin{equation}\label{E: alex retraction}
@@ -398,7 +398,7 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	That leaves the terms involving $(\bd V) \times_{S^n} D_x^+$ and $(\bd V_0) \times I$.
 	By assumption that $V$ represents a cocycle, $\bd V \in Q^*(S^n-L)$, so $(\bd V) \times_{S^n} D_x^+ \in Q_*(S^n-L)$ by \cref{L: pullback with Q}.
 	Similarly, $$\bd (V_0) = \bd (V \times_{S^n} S_x) = (-1)^{i+1}(\bd V) \times_{S^n} S_x$$ by \cref{P: Leibniz cap}, and so this is in $Q_*(S^n-L)$ by \cref{L: pullback with Q}.
-	Furthermore, the homotopy that defines $T$ behaves like a universal homotopy since the underlying homotopy $h$ is of $U \subset S^n$; so $(\bd V_0) \times I \in Q_*(S^n)$ by \cref{L: dessicated homotopy}.
+	Furthermore, the homotopy that defines $T$ behaves like a universal homotopy since the underlying homotopy $h$ is of $U \subset S^n$; so $(\bd V_0) \times I \in Q_*(S^n)$ by \cref{L: desiccated homotopy}.
 	We conclude that $Z$ has the desired cobounding properties.
 
 	It remains to show that $\mr Z = V^+ \sqcup (-1)^i\mr T$ represents the same cohomology class as $V$.
@@ -408,7 +408,7 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	$\bd Y \sqcup (-1)^{i+1} \mr T \sqcup V^- \in Q^*(S^n-L)$.
 	For this we let the underlying space of $Y$ be $(\mr T \sqcup V^-) \times [0,1)$, and if we define $\rho \colon \mr T \sqcup V^- \to S^n -L$ to be the reference map for $(-1)^{i+1}\mr T \sqcup V^-$, we define a map $H \colon Y \to S^n-L$ by $H(u,t) = h(\rho(u),t)$.
 	So $H$ is essentially a universal homotopy that pushes the image of $\mr T \sqcup V^-$ off of $S^n-L$ into $L$, but $H$ is well defined into $S^n-L$ because no point goes to $L$ until time $1$, which is omitted from the domain.
-	Also, $H$ is proper because the reference map for $\mr T \sqcup V^-$ is proper and the homotopy moves points closer to $L$ (cf.\ \cite[Corollory I.10.3.7]{Bou98}), and $H$ behaves like a universal homotopy because it is built from a homotopy of $U$.
+	Also, $H$ is proper because the reference map for $\mr T \sqcup V^-$ is proper and the homotopy moves points closer to $L$ (cf.\ \cite[Corollary I.10.3.7]{Bou98}), and $H$ behaves like a universal homotopy because it is built from a homotopy of $U$.
 	We co-orient $H$ as a homotopy as in \cref{S: co-oriented homotopy} so that it is a homotopy from $(-1)^{i+1}\mr T \sqcup V^-$; in particular, its boundary will include the term $(-1)^{i}\mr T \sqcup - V^-$.
 	So we can now compute
 	\begin{align*}
@@ -419,7 +419,7 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 	The two bracketed terms give us a trivial pair, so we consider
 	$\mc H$.
 
-	It suffices to show that $\bd[(-1)^i\mr T \sqcup - V^-] \in Q^*(S^n-L)$ as then the homotopy will be in $Q^*(S^n-L)$ by \cref{L: dessicated homotopy}.
+	It suffices to show that $\bd[(-1)^i\mr T \sqcup - V^-] \in Q^*(S^n-L)$ as then the homotopy will be in $Q^*(S^n-L)$ by \cref{L: desiccated homotopy}.
 	We recall from \cref{L: W0 cochain} that $\bd(V^-) = -(V^0) \sqcup (\bd V)^-$.
 	Meanwhile $\mr T$ is the restriction to $S^n - L$ of $\hat T$, and using \eqref{E: alex cylinder bdry},
 	\begin{align*}
@@ -427,7 +427,7 @@ Altogether, we see that $\mc A$ defines a homomorphism $\td H^{n-i-1}_\Gamma(S^n
 		&=(-1)^{i+1}[(\bd (V_0) \times I) \sqcup (-1)^i\pi(V_0)\sqcup (-1)^{i+1} V_0]\,\hat{\vrule height1.3ex width0pt}\\
 		&=[(-1)^{i+1}(\bd (V_0) \times I) \sqcup -\pi(V_0)\sqcup V_0]\,\hat{\vrule height1.3ex width0pt}.
 	\end{align*}
-	The terms of $\bd[ (-1)^i\mr T \sqcup - V^-]$ that come from these computations and involve $\bd V$ and $\bd V_0$ are all in $Q^*(S^n-L)$ by the assumption that $V$ represents a cocycle and \cref{L: pullback with Q,L: W0 cochain,L: dessicated homotopy}.
+	The terms of $\bd[ (-1)^i\mr T \sqcup - V^-]$ that come from these computations and involve $\bd V$ and $\bd V_0$ are all in $Q^*(S^n-L)$ by the assumption that $V$ represents a cocycle and \cref{L: pullback with Q,L: W0 cochain,L: desiccated homotopy}.
 	The $\pi(V_0)$ term has image in $L$ and so vanishes when we restrict to $S^n - L$.
 	Finally, the remaining terms are $(-1)^i(V_0)\hat{\vrule height1.3ex width0pt} = -V^0$ from the $T$ term and $V^0$ from the $V^-$ term, so these also form a trivial pair.
 

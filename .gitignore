@@ -26,3 +26,7 @@ referee/
 *.fdb_latexmk
 
 *.fls
+
+publication/
+
+latexdiff/

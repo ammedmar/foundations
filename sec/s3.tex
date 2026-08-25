@@ -138,7 +138,7 @@ There is also a commutativity rule proven in \cite[Sections 9.3.8]{RamBas09} tha
 \end{proposition}
 
 Recalling that we write $\dim(M)=m$, etc., this means that the canonical diffeomorphism taking $(x,y) \in V \times_M W \subset V \times W$ to $(y,x) \in W \times_M V \subset W \times V$ takes a positively-oriented basis of the tangent space of $V \times_M W$ to a $(-1)^{(m-v)(m-w)}$-oriented basis of the tangent space of $W \times_M V$.
-We note that these signs, while note quite in line with the Koszul conventions, agree with those for the intersection product of homology classes in Dold \cite[Section VIII.13]{Dol72}.
+We note that these signs, while not quite in line with the Koszul conventions, agree with those for the intersection product of homology classes in Dold \cite[Section VIII.13]{Dol72}.
 
 Furthermore, with our convention for oriented boundaries, one obtains the following useful identity; see \cite[Propositions 7.4 and 7.5]{Joy12}
 
@@ -150,7 +150,7 @@ Furthermore, with our convention for oriented boundaries, one obtains the follow
 	\end{equation*}
 \end{proposition}
 
-\subsubsection{Fiber products of immersions}\label{S:products of immmersions}\index{orientation!of immersion}
+\subsubsection{Fiber products of immersions}\label{S:products of immersions}\index{orientation!of immersion}
 
 The special case of fiber products with $f \colon V \to M$ and $g \colon W \to M$ embeddings or, a bit more generally, immersions, is of particular interest, especially for developing intuition.
 Once again, since we are concerned primarily with orientations in this section, it is sufficient to consider $V$ and $W$ to be manifolds without boundary, and then the results we obtain extend directly to manifolds with corners.
@@ -174,7 +174,7 @@ In our current context, the exact sequence \eqref{E: fiber orientation} becomes 
 \begin{equation*}
 	0 \to P \to V \oplus W \xr{f-g} M \to 0
 \end{equation*}
-with the first non-trivial map being the direct sum of inclusions and with $f$ and $g$ the emeddings of $V$ and $W$ into $M$.
+with the first non-trivial map being the direct sum of inclusions and with $f$ and $g$ the embeddings of $V$ and $W$ into $M$.
 Using our direct sum decompositions of the preceding paragraph, we can choose a splitting $M \to V \oplus W$ as
 \[
 \nu W \oplus P \oplus \nu V \to P \oplus \nu W \oplus P \oplus \nu V,
@@ -375,7 +375,7 @@ Once again, a key example is when $g$ is an immersion, which is co-orientable if
 	In any case, locally in the neighborhood of any point of $W$ one has the usual identification of the normal bundle with a tubular neighborhood of the image, which suffices for our purposes here.}.
 Specifically, if $g \colon W \to M$ is an immersion, letting $\nu W$ denote the normal bundle, we have $TW \oplus \nu W \cong g^*TM$.
 So, taking $w = \dim(W)$ and $m = \dim(M)$, a co-orientation is a nowhere-zero map from $\bigwedge^w TW$ to $\bigwedge^m g^*TM = \bigwedge^m (TW \oplus \nu W) \cong \bigwedge^w TW \otimes \bigwedge^{m-w}\nu W$.
-Such a nowhere-zero map exists if and only $\bigwedge^{m-w}\nu W$ is a trivial line bundle, i.e.\ if $\nu W$ is orientable.
+Such a nowhere-zero map exists if and only if $\bigwedge^{m-w}\nu W$ is a trivial line bundle, i.e.\ if $\nu W$ is orientable.
 
 Given a specific orientation of $\nu W$, we specify a standard choice of \textbf{normal co-orientation}\index{co-orientation!normal} for the immersion $g \colon W \to M$ by the following local construction:
 
@@ -598,11 +598,11 @@ For this the following lemma is useful.
 
 \begin{proof}
 	Over $W \times t_0$, we have $\Or(T(W \times I)) \cong \Or(TW \oplus TI) \cong \Or(TW) \otimes \Or (TI) \cong \Or(TW)$, while the restriction of $G^*\Or(TM)$ over $W \times t_0$ is just $g^*\Or(TM)$.
-	If $G$ is co-orientable then there is a nowhere-vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM))$, so restricting to $W \times t_0$ and using the above identifications we obtain a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM))$ over $W \times t_0$, hence $g$ is co-orientable.
+	If $G$ is co-orientable then there is a nowhere-vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM)$, so restricting to $W \times t_0$ and using the above identifications we obtain a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM)$ over $W \times t_0$, hence $g$ is co-orientable.
 	Conversely,
 	if $g$ is co-orientable, there is a nowhere-vanishing map of line bundles $\Or(TW) \to g^*\Or(TM)$ over $W \times t_0$.
 	By general bundle theory \cite[Theorem 3.4.4]{Hus94}, any vector bundle $E$ over $W \times I$ is isomorphic to $E_{t_0} \times I$, where $E_{t_0}$ is the restriction of $E$ to $W \times \{t_0\}$.
-	So our nowhere-vanishing map of line bundles over $W \times t_0$ extends to a nowhere vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM))$ over $W \times I$.
+	So our nowhere-vanishing map of line bundles over $W \times t_0$ extends to a nowhere-vanishing map of line bundles $\Or(T(W \times I)) \to G^*\Or(TM)$ over $W \times I$.
 	This implies the co-orientability of $G$.
 \end{proof}
 
@@ -723,7 +723,7 @@ Of course the latter two properties will later correspond to the graded commutat
 
 Before getting into the specifics of the construction, we conclude this introductory section with some important general observations.
 In the following subsections, we first show that pullbacks of co-orientable maps are co-orientable; the proof will then become the roadmap for defining a specific pullback co-orientation convention.
-We then demonstrate that our convention yields pullback and fiber product co-orientations satisfying a number of desireable properties, including the above Leibniz rule.
+We then demonstrate that our convention yields pullback and fiber product co-orientations satisfying a number of desirable properties, including the above Leibniz rule.
 Further properties of co-orientations of fiber products, including associativity and graded commutativity, will be proven in \cref{S: exterior products}, using a co-orientation we will define there for direct (exterior) products of co-oriented maps.
 
 \begin{remark}\label{R: pullback representative}
@@ -1235,7 +1235,7 @@ The lemma will let us identify a normal direction to $\bd V$ in $V$ with a norma
 	So the pullback co-orientation is $(\beta_{\bd P},\beta_W)$ if and only if $\beta_{\bd P} \wedge \beta_{\nu(\bd V)} \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$.
 	But we have previously identified $\beta_{\nu(\bd V)}$ with $\beta_{\nu(\bd P)}$, and $\beta_{\bd P} \wedge \beta_{\nu(\bd P)} = \beta_P$ by assumption.
 	So this condition reduces to $\beta_P \wedge \beta_{\nu V} = \beta_W \wedge \beta_E$, which also holds by previous assumption.
-	So the boundar and pullback co-orientations agree at points of $(\bd V) \times_M W$.
+	So the boundary and pullback co-orientations agree at points of $(\bd V) \times_M W$.
 
 	Next, consider a point $x$ in $V \times_M \bd W$.
 	As our pullback $V \times_M W$ is embedded neatly in $W \times \R^N$ \cite[Proposition IV.1.4]{Kos93}, it is immediate that, at $x$, the normal bundle of $V \times_M \bd W = (g \times \id)|_{(\bd W) \times \R^N}^{-1}(V)$ in $W \times \R^N$ can be decomposed into the direct sum of the pullback of $\nu V$, which can be identified with a subbundle of $T_x((\bd W) \times \R^N)$, and a 1-dimensional summand that is normal to $(\bd W) \times \R^N$. By projection, we can identify this summand with a normal direction to $\bd W$ in $W$ and again write $\beta_{\nu(\bd P)}=\beta_{\nu(\bd W)}$ for the orientation determined by these inward pointing normals.
@@ -1700,7 +1700,7 @@ In the next subsection, we will see that such products are intimately related to
 
 \begin{remark}
 	The sign in the definition is not at first obvious, though it will be justified in the following lemmas.
-	One way to think of it is as follows: If we we take $V$ and $W$ as immersed submanifolds co-oriented by orienting their normal bundles as in \cref{normal co-or}, then $V \times W$ is also immersed, and at an image point we have $T(M \times N) \cong TV \oplus \nu V \oplus TW \oplus \nu W$, letting $\nu V$ and $\nu W$ stand for the normal bundles of $V$ and $W$ in $M$ and $N$, respectively.
+	One way to think of it is as follows: If we take $V$ and $W$ as immersed submanifolds co-oriented by orienting their normal bundles as in \cref{normal co-or}, then $V \times W$ is also immersed, and at an image point we have $T(M \times N) \cong TV \oplus \nu V \oplus TW \oplus \nu W$, letting $\nu V$ and $\nu W$ stand for the normal bundles of $V$ and $W$ in $M$ and $N$, respectively.
 	The sign $(-1)^{(m-v)w}$ is the sign needed in the local orientation to permute this to $TV \oplus TW \oplus \nu V \oplus \nu W$ so that we can properly utilize the normal co-orientation for $\nu(V \times W) \cong \nu V \oplus \nu W$.
 	While this argument is essentially heuristic, it is borne out in the computations below.
 \end{remark}
@@ -1889,7 +1889,7 @@ The next proposition shows that the exterior product construction is natural.
 
 \begin{proof}
 	It is easy to show that $h \times k$ is transverse to $f \times g$, so we focus on co-orientation.
-	As in the preceding proofs, we write the Quillen orientation of the normal bunle to the embedded image of $V \times W \into M \times N \times \R^a \times \R^b$ as $\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}$.
+	As in the preceding proofs, we write the Quillen orientation of the normal bundle to the embedded image of $V \times W \into M \times N \times \R^a \times \R^b$ as $\beta_{\nu V \oplus \nu W} = \beta_{\nu V} \wedge \beta_{\nu W}$.
 	Then the pullback $P = (h \times k)^*(V \times W)$ is co-oriented by $(\beta_P,\beta_{X \times Y})$ if and only if we choose $\beta_P$ and $\beta_{X \times Y}$ so that
 	$$\beta_{P} \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_{X \times Y} \wedge \beta_{a+b}.$$
 
@@ -1958,7 +1958,7 @@ We start with the following version of a well-known fact.
 	This pullback by $\diag$ is $$P' = \{(v,w,z) \in V \times W \times M \mid (f(v),g(w)) = \diag(z) = (z,z)\},$$ which is diffeomorphic to $$P = V \times_M W = \{(v,w) \in V \times W \mid f(v) = g(w)\}$$ via the projection $(v,w,z) \mapsto (v,w)$ with inverse $(v,w) \mapsto (v,w,f(v))$.
 	So we consider the co-orientations, for which we may assume as usual that all manifolds are without boundary by \cref{pullback,P: interior co-orientation}.
 
-	By \cref{L: Quillen product co-orientation}, now with $M = N$, if $f$ and $g$ are co-oriented (at appropriate points) by $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$ and if we we take Quillen co-orientations coming from $V \xhookrightarrow{e_V} M \times \R^a \to M$ and $W \xhookrightarrow{e_W} M \times \R^b \to M$ (with $a$ and $b$ assumed even) by orienting $\nu V$ and $\nu W$ in $M \times \R^a$ and $M \times \R^b$, then the co-orientation of the product $f \times g$ has Quillen co-orientation with the normal bundle to $V \times W$ in $M \times M \times \R^{a+b}$ oriented by $\beta_{\nu V} \wedge \beta_{\nu W}$.
+	By \cref{L: Quillen product co-orientation}, now with $M = N$, if $f$ and $g$ are co-oriented (at appropriate points) by $(\beta_V,\beta_M)$ and $(\beta_W,\beta_M)$ and if we take Quillen co-orientations coming from $V \xhookrightarrow{e_V} M \times \R^a \to M$ and $W \xhookrightarrow{e_W} M \times \R^b \to M$ (with $a$ and $b$ assumed even) by orienting $\nu V$ and $\nu W$ in $M \times \R^a$ and $M \times \R^b$, then the co-orientation of the product $f \times g$ has Quillen co-orientation with the normal bundle to $V \times W$ in $M \times M \times \R^{a+b}$ oriented by $\beta_{\nu V} \wedge \beta_{\nu W}$.
 	Recall that we interpret this expression so that $\nu V$ is our standard normal bundle to $V$ in $M \times \R^a$ embedded into the first and third factors of $M \times M \times \R^a \times \R^b$ and analogous for $\nu W$.
 
 	Pulling back by the diagonal, we thus obtain from \cref{D: pullback coorient} that the pullback co-orientation is $(\beta_{P'},\beta_M)$ if and only if $\beta_{P'} \wedge \beta_{\nu V} \wedge \beta_{\nu W} = \beta_M \wedge \beta_{a+b}$.
@@ -2169,7 +2169,7 @@ This will lead us eventually to a boundary formula for the cap product of geomet
 It will also be used in \cref{S: intersection map} to demonstrate that our intersection map $\mc I$, relating geometric cochains to cubical cochains of a cubulation, is a chain map.
 This map is a critical component in relating geometric cohomology to other cohomology theories and is also central to the main result about cup products in \cite{FMS-flows}.
 
-\begin{proposition}\label{P: Leibniz cap}\index{cap orientation!boundary formual (Leibniz rule)}
+\begin{proposition}\label{P: Leibniz cap}\index{cap orientation!boundary formula (Leibniz rule)}
 	Let $f \colon V \to M$ and $g \colon W \to M$ be transverse maps of manifolds with corners to a manifold without boundary.
 	Suppose $f$ is co-oriented and $W$ is oriented.
 	Then $$\bd(V \times_M W) = \left[(-1)^{v+w-m} (\bd V) \times_M W\right] \bigsqcup (V \times_M \bd W)$$

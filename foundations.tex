@@ -2,6 +2,11 @@
 \input{auxy/style} % Add packages here
 \input{auxy/commands} % Add commands here
 
+% Production build: retain contributor notes in the source without rendering them.
+\renewcommand{\anibal}[1]{}
+\renewcommand{\dev}[1]{}
+\renewcommand{\greg}[1]{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title[Foundations of geometric cohomology]{Foundations of geometric cohomology:\\ from co-orientations to product structures}
@@ -23,10 +28,10 @@
 \email{\href{mailto:dps@uoregon.edu}{dps@uoregon.edu}}
 
 \begin{document}
-	\begin{center}
-		||PREPRINT||
-		\vskip 20pt
-	\end{center}
+%	\begin{center}
+%		||PREPRINT||
+%		\vskip 20pt
+%	\end{center}
 
 	\input{sec/abstract}
 	\maketitle
@@ -55,8 +60,8 @@
 	\index{normal co-orientation|see{co-orientation, normal}}
 	\index{pullback co-orientation|see{co-orientation, of pullback}}
 	\index{product|seealso{external products}}
-	\index{product orientation|see{orientation!of external product}}
-	\index{product co-orientation|see{co-orientation!of external product}}
+	\index{product orientation|see{orientation, of external product}}
+	\index{product co-orientation|see{co-orientation, of external product}}
 	\index{orientation!cap|seealso{cap orientation}}
 	\index{Mayer-Vietoris sequence!for geometric cohomology!connecting morphism|seealso{connecting morphism for geometric cohomology}}
 	\index{simple transversality|see{transversality, simple}}
@@ -70,6 +75,6 @@
 %	\input{sec/to-do}
 %	\input{sec/legacy}
 %	\pagebreak
-	\todos
+%	\todos
 
 \end{document}

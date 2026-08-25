@@ -124,7 +124,7 @@ We begin with the following observations for the co-oriented cases.
 
 The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot ``promote'' a manifold over $M$ that is in $Q(M)$ to one that is not in $Q(N)$.
 
-\begin{lemma}\label{L: dessicated homotopy}
+\begin{lemma}\label{L: desiccated homotopy}
 	Let $W \in PC_*^\Gamma(M)$ (or $W \in PC^*_\Gamma(M)$).
 	Let $F \colon M \times I \to N$ be a smooth homotopy; if $W \in PC^*_\Gamma(M)$ suppose further that $F$ is proper and co-oriented.
 	Then $F \circ (r_W \times \id_I) \colon W \times I \to N$ is in $PC_*^\Gamma(N)$ (or $PC^*_\Gamma(N)$, using \cref{homotopy product co-orientation convention}).
@@ -152,7 +152,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 	So $W \times I \to N$ has small rank if $r_W$ does.
 
 	By definition, if $W \to M$ is degenerate then it has small rank and $\bd W = T \sqcup S$ with $T$ trivial and $S$ small rank.
-	We have shown that $W \times I \xr{F\circ(r_W\times\id_I)} N$ then has small rank, so its suffices to consider its boundary,
+	We have shown that $W \times I \xr{F\circ(r_W\times\id_I)} N$ then has small rank, so it suffices to consider its boundary,
 	which is the union (up to signs) of $\bd W \times I$ and $W \times \bd I$.
 	But $\bd W \times I = (T \times I) \sqcup (S \times I)$, which by our previous
 	arguments are trivial and of small rank respectively.
@@ -174,7 +174,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 \end{corollary}
 
 \begin{proof}
-	We know $V, W \in PC_i^\Gamma(M)$ represent the same element of $C_i^\Gamma(M)$ if and only if $V \sqcup -W \in Q_*(M)$, so the corollary follows from \cref{L: dessicated homotopy}.
+	We know $V, W \in PC_i^\Gamma(M)$ represent the same element of $C_i^\Gamma(M)$ if and only if $V \sqcup -W \in Q_*(M)$, so the corollary follows from \cref{L: desiccated homotopy}.
 	Similarly for cochains.
 \end{proof}
 
@@ -199,7 +199,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 	Next consider the case of $W$ a cocycle.
 	Employing \cref{homotopy product co-orientation convention}, by \cref{C: universal homotopy boundary co-orientation,D: co-oriented homotopy} we have $$\bd (F \circ (r_W \times \id_I)) = gr_W \amalg -fr_W \amalg H,$$ where $H$ has underlying map $F \circ (r_W \times \id_I) \circ i_{\bd W \times \id_I}$.
 	So, up to co-orientation, $H = F \circ (r_{\bd W} \times \id_I) \colon \bd W \times I \to N$.
-	But $\bd W \in Q^*(M)$, and hence so is $H \colon (\bd W) \times I \to N$ by \cref{L: dessicated homotopy}.
+	But $\bd W \in Q^*(M)$, and hence so is $H \colon (\bd W) \times I \to N$ by \cref{L: desiccated homotopy}.
 	Thus we have
 	that $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent cohomologous cocycles.
 \end{proof}
