@@ -23,7 +23,7 @@ The standard singular (co)homology proof proceeds by using relative homology, Le
 
 
 Throughout the proof, we will use the orientation of $S^n$ to convert prechains to precochains by converting orientations to their induced co-orientations, and vice versa.
-To facilitate this, recall \cref{N: hat check}:
+To facilitate this, recall Notation \ref{N: hat check}:
 If $V$ is a prechain, we let $\hat V$ denote the corresponding precochain so that $V = \hat V \times_{S^n} S^n$ by \cref{P: cap with identity M}; if $V$ is a precochain, we let $\check V$ be the corresponding prechain so that $\check V = V \times_{S^n} S^n$.
 We think of the inverse operations $\hat{\phantom{a}}$ and $\check{\phantom{a}}$ as respectively raising and lowering the index.
 If $V$ is replaced by a complicated expression, we sometimes write $V\,\hat{\vrule height1.3ex width0pt}$ or $V\,\check{\vrule height1.3ex width0pt}$.
@@ -529,7 +529,7 @@ More precisely, we orient a bicollar of $S_2$ so that $L_2$ runs counterclockwis
 
 To verify our claim, let us first develop carefully the orientations and co-orientations involved.
 We assume that $S^3$ has its standard orientation and the components $L_i$ of $L$ have given orientations $\beta_{L_i}$.
-Then, by \cref{Con: oriented boundary}, if $x \in L_i$ and $\mu_i$ is a normal vector to $L_i$ in $T_xS_i$ pointing outward from $S_i$, then the orientation of $S_i$ is such that $\beta_{S_i} = \beta_{\mu_i} \wedge \beta_{L_i}$.
+Then, by Convention \ref{Con: oriented boundary}, if $x \in L_i$ and $\mu_i$ is a normal vector to $L_i$ in $T_xS_i$ pointing outward from $S_i$, then the orientation of $S_i$ is such that $\beta_{S_i} = \beta_{\mu_i} \wedge \beta_{L_i}$.
 The induced co-orientation on the inclusion of $S_i$ into $S^3$ is then $(\beta_{S_i}, \beta_{S^3}) = (\beta_{S_i}, \beta_{S_i} \wedge \beta_{\nu_i})$, where $\nu_i$ is a vector normal to $S_i$.
 Comparing with Rolfsen, $\nu_i$ points in the positive direction of a bicollar on $S_i$.
 Hence by \cref{normal co-or}, $\beta_{\nu_i}$ is the normal orientation of $S_i$.
@@ -728,7 +728,7 @@ In this case,  $C$ arises from the intersection of $S_2$ with the interior of $S
 	Consequently, we can identify $U_a$ with $S^1 \times B^2$ in such a way that $S_a \cap (U_a-L_a) \cong S^1 \times pt \times (0,1)$.
 	So the cochains represented by the $\hat S_a$ must generate $H^1_\Gamma(M)$.
 
-	To be a bit more specific for future use, let $\beta_{L_a}$ be the orientation of $L_a$. Then by \cref{Con: oriented boundary}, the orientation $\beta_{S_a}$ of $S_a$ will be such that $\beta_{\nu_a} \wedge \beta_{L_a} = \beta_{S_a}$, where $\nu_a$ is the outward pointing normal to $S_a$ at the boundary.
+	To be a bit more specific for future use, let $\beta_{L_a}$ be the orientation of $L_a$. Then by Convention \ref{Con: oriented boundary}, the orientation $\beta_{S_a}$ of $S_a$ will be such that $\beta_{\nu_a} \wedge \beta_{L_a} = \beta_{S_a}$, where $\nu_a$ is the outward pointing normal to $S_a$ at the boundary.
 	So at such a point the induced co-orientation of the embedding of $S_a$ is $(\beta_{S_a},\beta_{S^3}) = (\beta_{\nu_a} \wedge \beta_{L_a},\beta_{S^3})$.
 	Thus if we let $n_a$ be a normal vector to $S_a$, the corresponding normal co-orientation of $S_a$ is such that $\beta_{\nu_a} \wedge \beta_{L_a} \wedge \beta_{n_a} = \beta_{S^3}$.
 	So we see the normal co-orientation is equivalent to the standard righthand rule for orienting the normal to a surface that cobounds an oriented curve in $\R^3$, and this agrees with our convention for generators of $H^1_\Gamma(U_a-L_a)$.

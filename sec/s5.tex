@@ -80,7 +80,7 @@ For the remainder of the section, and for simplicity of notation, we leave degre
 We begin with the following observations for the co-oriented cases.
 
 \begin{lemma}
-	Let $r_W \colon W \to M$ be co-oriented, and let $r_W \times \id \colon W \times I \to M \times I$ be co-oriented by \cref{homotopy product co-orientation convention}.
+	Let $r_W \colon W \to M$ be co-oriented, and let $r_W \times \id \colon W \times I \to M \times I$ be co-oriented by Convention \ref{homotopy product co-orientation convention}.
 	For $j = 0,1$, let $i_j \colon W = W \times j \into W \times I$ and $k_j \colon M = M \times j \into M \times I$ be the inclusions, co-oriented with the usual boundary co-orientation (\cref{D: boundary co-orientation}).
 	Then for $j = 0,1$, the following diagram of co-oriented maps commutes:
 	\[
@@ -105,7 +105,7 @@ We begin with the following observations for the co-oriented cases.
 
 \begin{corollary}\label{C: universal homotopy boundary co-orientation}
 	Let $F \colon M \times I \to N$ be a co-oriented homotopy from $f$ to $g$ (see \cref{D: co-oriented homotopy}), and let $r_W \colon W \to M$ be a co-oriented map.
-	If $r_W \times \id_I$ is co-oriented according to \cref{homotopy product co-orientation convention}, then $F \circ (r_W \times \id_I)$ is a co-oriented homotopy from $fr_W$ to $gr_W$.
+	If $r_W \times \id_I$ is co-oriented according to Convention \ref{homotopy product co-orientation convention}, then $F \circ (r_W \times \id_I)$ is a co-oriented homotopy from $fr_W$ to $gr_W$.
 \end{corollary}
 
 \begin{proof}
@@ -127,7 +127,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 \begin{lemma}\label{L: desiccated homotopy}
 	Let $W \in PC_*^\Gamma(M)$ (or $W \in PC^*_\Gamma(M)$).
 	Let $F \colon M \times I \to N$ be a smooth homotopy; if $W \in PC^*_\Gamma(M)$ suppose further that $F$ is proper and co-oriented.
-	Then $F \circ (r_W \times \id_I) \colon W \times I \to N$ is in $PC_*^\Gamma(N)$ (or $PC^*_\Gamma(N)$, using \cref{homotopy product co-orientation convention}).
+	Then $F \circ (r_W \times \id_I) \colon W \times I \to N$ is in $PC_*^\Gamma(N)$ (or $PC^*_\Gamma(N)$, using Convention \ref{homotopy product co-orientation convention}).
 	Furthermore,
 	if $r_W \colon W \to M$ is trivial, of small rank, or degenerate then so are
 	$F \circ (r_W \times id_I) \colon W \times I \to N$ and $F(-,j) \circ r_W \colon W \to N$ for $j=0,1$ (for either co-orientation of $F(-,j)$, which is co-orientable by \cref{L: co-orientable homotopies}).
@@ -159,7 +159,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 	And the components of $W \times \bd I$ can be written for $j = 0, 1$ as $W \times j = W \xr{r_W} M \xr{F(-,j)} N$, and thus are of small rank since $r_W$ is.
 	This completes the argument for $PC_*^\Gamma(M)$.
 
-	If $W \in PC^*_\Gamma(M)$, then $F$ is proper and co-oriented by assumption, and \cref{homotopy product co-orientation convention} gives our co-orientation convention for $r_W \times \id_I$.
+	If $W \in PC^*_\Gamma(M)$, then $F$ is proper and co-oriented by assumption, and Convention \ref{homotopy product co-orientation convention} gives our co-orientation convention for $r_W \times \id_I$.
 	To see the latter is proper, if $K$ is compact in $M \times I$, then $K \subset \pi_M(K) \times I$, which is also compact.
 	Then $(r_W \times \id_I)^{-1}(K) \subset (r_W \times \id_I)^{-1}(\pi_M(K) \times I) = r_W^{-1}(\pi_M(K)) \times I$, which is compact as $r_W$ is proper.
 	As compositions of proper co-oriented maps are proper and co-oriented, $F \circ (r_W \times \id_I) \colon W \times I \to N$ is well defined in $PC^*_\Gamma(N)$.
@@ -169,7 +169,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 \begin{corollary}\label{C: chain homotopy}
 	Let $V, W \in PC_i^\Gamma(M)$ or $V, W \in PC^i_\Gamma(M)$.
 	Let $F \colon M \times I \to N$ be a smooth homotopy; if $V,W \in PC^i_\Gamma(M)$ suppose further that $F$ is proper and co-oriented.
-	If $V,W$ represent the same element of $C_i^\Gamma(M)$ and $j=0,1$, then $F(-,j) \circ r_V: V \to N$ and	$F(-,j) \circ r_W \colon W \to N$ represent the same element of $C_i^\Gamma(N)$ (for either chosen co-orientation of $F(-,j)$) and $F \circ (r_V \times id_I) \colon V \times I \to N$ and $F \circ (r_W \times id_I) \colon W \times I \to N$ represent the same element of $C_{i+1}^\Gamma(M)$, using \cref{homotopy product co-orientation convention} for the co-orientations.
+	If $V,W$ represent the same element of $C_i^\Gamma(M)$ and $j=0,1$, then $F(-,j) \circ r_V: V \to N$ and	$F(-,j) \circ r_W \colon W \to N$ represent the same element of $C_i^\Gamma(N)$ (for either chosen co-orientation of $F(-,j)$) and $F \circ (r_V \times id_I) \colon V \times I \to N$ and $F \circ (r_W \times id_I) \colon W \times I \to N$ represent the same element of $C_{i+1}^\Gamma(M)$, using Convention \ref{homotopy product co-orientation convention} for the co-orientations.
 	The analogous fact holds for $V, W \in PC^i_\Gamma(M)$.
 \end{corollary}
 
@@ -197,7 +197,7 @@ The next lemma shows that a homotopy $M \times I \to N$ of the above form cannot
 	Thus $fr_W \colon W \to N$ and $gr_W \colon W \to N$ represent homologous cycles.
 
 	Next consider the case of $W$ a cocycle.
-	Employing \cref{homotopy product co-orientation convention}, by \cref{C: universal homotopy boundary co-orientation,D: co-oriented homotopy} we have $$\bd (F \circ (r_W \times \id_I)) = gr_W \amalg -fr_W \amalg H,$$ where $H$ has underlying map $F \circ (r_W \times \id_I) \circ i_{\bd W \times \id_I}$.
+	Employing Convention \ref{homotopy product co-orientation convention}, by \cref{C: universal homotopy boundary co-orientation,D: co-oriented homotopy} we have $$\bd (F \circ (r_W \times \id_I)) = gr_W \amalg -fr_W \amalg H,$$ where $H$ has underlying map $F \circ (r_W \times \id_I) \circ i_{\bd W \times \id_I}$.
 	So, up to co-orientation, $H = F \circ (r_{\bd W} \times \id_I) \colon \bd W \times I \to N$.
 	But $\bd W \in Q^*(M)$, and hence so is $H \colon (\bd W) \times I \to N$ by \cref{L: desiccated homotopy}.
 	Thus we have
@@ -1184,7 +1184,7 @@ As $f$ is smooth and necessarily transverse to $r_W$, we have $f^*(\uW)$ represe
 In what follows, we will write the pullback $W \times_M U$ as $W|_U$, and the corresponding cohomology class, represented by $W|_U$, as $\uW|_U$.
 
 \begin{theorem}\label{T: absolute MV}\index{Mayer-Vietoris sequence!geometric cohomology}\index{geometric cohomology!Mayer-Vietoris sequence}
-	Let $U,V \subset M$ be open subsets.
+	Let $U,V \subset M$ be open subsets of a manifold without boundary.
 	There is a long exact Mayer--Vietoris sequence
 	\[
 	\cdots \to H^k_\Gamma(U \cup V) \xr{i} H^k_\Gamma(U) \oplus H^k_\Gamma(V) \xr{j} H^k_\Gamma(U \cap V) \xr{\delta} H^{k+1}_\Gamma(U \cup V)\to\cdots
@@ -1465,7 +1465,16 @@ In this section, we apply a theorem of Kreck and Singhof to show that geometric 
 	On the category of smooth manifolds (without boundary) and continuous maps, geometric homology and cohomology are respectively isomorphic to singular homology and cohomology with integer coefficients, i.e.\ $H_*^\Gamma(-) \cong H_*(- ;\Z)$ and $H^*_\Gamma(-) \cong H^*(-;\Z)$ as functors.
 \end{theorem}
 
-\begin{proof}
+\begin{remark}
+	The assumption that $M$ is without boundary is critical for the cohomology part of the theorem.
+	For example, let $B^n$ be the closed $n$-ball with its standard orientation.
+	Then using the induced orientation for cochains, we have an isomorphism $C_*^\Gamma(B^n) \cong C^{n-*}_\Gamma(B^n)$.
+	Thus $H^n_\Gamma(B^n) \cong \Z$ and $H^i_\Gamma(B^n)=0$ for $i\neq n$.
+	This, of course, disagrees with the singular cohomology of $B^n$ for $n>0$.
+\end{remark}
+
+
+\begin{proof}[Proof of \cref{T: geometric is singular}]
 	This is a consequence of \cite[Proposition 10]{Krec10b} once we verify that $H_*^\Gamma$ and $H^*_\Gamma$ are respectively an ordinary homology theory and an ordinary cohomology theory on the category of smooth manifolds and continuous maps as defined in \cite{Krec10b}.
 	Putting together the definitions and axioms of Sections 4 and 5 of \cite{Krec10b}, we must show the following:
 
@@ -1498,6 +1507,9 @@ In this section, we apply a theorem of Kreck and Singhof to show that geometric 
 	As $H_*^\Gamma$ and $H^*_\Gamma$ satisfy all the axioms, \cite[Proposition 10]{Krec10b} says that for any isomorphism $H_0(pt) \xr{\cong} H^\Gamma_0(pt)$ there is a unique isomorphism of homology theories $H_*(- ;\Z) \xr{\cong} H_*^\Gamma(-)$, and similarly for cohomology.
 	As we know that $H_0^\Gamma(pt) \cong H_\Gamma^0(pt) \cong \Z$ by \cref{E: dimension}, our theorem follows.
 \end{proof}
+
+
+
 
 \begin{example}\label{E: geometric cohomology of RP2}\index{geometric cohomology!of the projective plane}
 	Let us consider $H^*_\Gamma(\R P^2)$.
