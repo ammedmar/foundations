@@ -1,0 +1,60 @@
+% !TEX root = ../foundations.tex
+
+We set these foundations with a wide range of applications in mind.
+These applications have different natures, namely structural, practical and pedagogical.
+
+Structurally, we start with Mandell's theorem \cite{Mand01} which shows that homotopy types are encoded through singular or simplicial cochains, with their cup product multiplication along with its \(E_\infty\) or ``higher commutativity'' structure, which we explain informally now.
+Recall that the cup product of cochains is ``far from'' commutative and thus requires chain homotopies to cobound the difference between products which differ only by ordering.
+These chain homotopies are not canonical, and the standard yoga in algebraic topology is to use collections of choices to define higher structures (such as Massey products or even the ``Tor term'' in the K\"unneth theorem).
+In this setting, such collections of choices for witnessing homotopy commutativity give rise to Steenrod operations.
+Mandell's theorem is that these cochain algebras with such collections of chain homotopies are enough to encode homotopy types, in parallel to the well-understood fact that de Rham cochains capture rational homotopy types.
+
+Unlike cup product, the geometric cup product developed here is commutative.
+While we show in \cref{S: intersection map} below that geometric cup product coincides with cup product at the cohomology level, they must disagree through any comparisons defined at the cochain level.
+In \cite{FMS-flows} we show that on a cubulated manifold there is a vector field flow which can be used to interpolate between these products, when using their standard intersection theoretic comparison given in \cref{S: intersection map} below.
+This result leads to the following speculation for how geometric cochains may encode homotopy type.
+The key case to consider in both simplicial and geometric theories are products of cochains with themselves.
+In the geometric setting, such products are not defined, as for example the intersection of a submanifold with itself is as far from transverse as possible.
+But if one has a suitable vector field on the ambient manifold then one could use it to deform a submanifold by ``flowing it off of itself.''
+Thus vector fields can be used to ``resolve'' partial-definedness of geometric cup product.
+Families of vector fields give families of resolutions, which we speculate can be used to define a (partially defined) higher -- that is \(E_\infty\) -- structure on geometric cochains which is equivalent to the \(E_\infty\) structure on simplicial cochains (as well as the \(E_\infty\) structure one can define through formal resolution of partial-definedness of the geometric cup product).
+Thus, we expect that geometric cochains and their ``deformations'' encode homotopy types and could be used for geometric calculations to address any question in algebraic topology.
+The third author in particular would like to extend the theory of Hopf invariants developed with Ben Walter \cite{SiWa13}, which span \(\Hom(\pi_*(X), \Q)\) and can be defined geometrically through Thom classes, to invariants which detect torsion, in particular invariants of framed submanifolds which concretely detect homotopy groups of spheres.
+
+Practically, we are already seeing such applications of geometric cochains being developed, in a sense at the level of associative rather than commutative algebras.
+Andrea Pizzi employs geometric cochains for their advantage of ``balance between strict algebra and visible geometry as the central technical device'' in his PhD thesis supervised by Paolo Salvatore \cite{Pizzi26}.
+In the study of Massey products in the cohomology of configuration spaces, which has implications for spaces of embeddings, Pizzi uses geometric cochains for explicit calculation.
+He first shows that, modulo two, geometric cochains are quasi-isomorphic to singular cochains as \(A_\infty\)-algebras, a foundational result building on the present work.
+In fact, the first-named author of this work is making parallel developments in work in progress, in service of the application of geometric cochains to link theory \cite{FGKSW} mentioned above.
+In that application, the bar complex on the geometric cochains of a link complement is developed as an isotopy invariant by the isotopy extension theorem.
+(In fact, it is invariant through concordance, as soon to be shared in a sequel paper.)
+The ability to use curves and surfaces as algebraic means to study knots and links has long been desired.
+In particular, Cochran \cite{cochran1990milnor} asked Massey about making higher product calculations with such geometric means.
+Such higher product calculations through intersection and cobounding require a theory such as ours, along with comparison theorems such as Pizzi's.
+
+While one could calculate products through intersections of submanifolds using only Thom classes and their properties, our theory also has advantages for analysis of standard products.
+First geometric cochains are defined through manifolds with reference maps rather than just submanifolds.
+Classes with natural ``singular'' representatives include characteristic classes described above as well as varieties defined through coordinate equalities in the third author's work with Giusti and Salvatore on cohomology of unordered configuration spaces and thus symmetric and alternating groups \cite{giusti2012symmetric, giusti2021alternating}.
+Also, rather than a single manifold cocycle representative, one can use linear combinations, as is convenient in one approach to lens spaces.
+More recently, in \cite{KV26} Kallal and Venkatesh find these helpful in generalizations of theta functions which arise in the study of the classical topic of indefinite quadratic forms.
+These generalizations are group cohomology classes, which they construct explicitly through linear combinations of geometric cochains on suitable symmetric spaces, requiring both our present work as well as \cite{FMS-transversesingular}.
+
+Pedagogically, many of the strengths of de Rham theory, as masterfully exposed by Bott and Tu \cite{BottTu82}, transfer to the geometric homology and cohomology setting, which are more immediately compatible than singular and de Rham theories and can capture torsion phenomena as well.
+Cochains move from abstract and sometimes transcendental objects, assigning a number to every chain, to being concrete, as in the ``Crossing a ray'' example above.
+Calculations can be tied to geometry, as in our cup product example where the cohomology of projective space is tied to the basic fact that the intersection of linear subspaces is linear, with codimensions adding.
+And understanding is deepened by moving past abstract identification of homology and cohomology groups to investigating bases for each defined by classes with chain and cochain representatives and the pairing between them, all of which can be approached through intersection calculations.
+While one can use naturality to produce such ``bases and co-bases,'' as carried out for labeled configurations in Euclidean space in \cite{Sinh13}, it is more direct and thus pedagogically preferable to by definition use submanifold representatives (when they exist).
+In fact, for ordered configurations in Euclidean space this was carried out for purposes of current application by Pizzi \cite{Pizzi26}.
+
+Our current approach streamlines and conceptually clarifies many parts of elementary algebraic topology, especially around duality.
+For example, Umkehr maps in cohomology are no longer just a formal consequence of Poincar\'e duality, which itself is a difficult theorem to establish, but instead are an immediate definition at the cochain level, since the composite of proper maps is proper.
+We hope to see many topics in intermediate algebraic topology developed from this perspective as well, starting with characteristic classes, whose definition above is direct and thus has many advantages over appeal to more advanced developments such as spectral sequences or Steenrod operations.
+The bar complex also has immediate interpretation, which we briefly discuss for those who already know the definitions.
+In \cref{S: intersection map} we show a suitable geometric cochain \(\uW\) defines a cubical cochain on a cubulated manifold through counting intersections with \(W\).
+In this spirit, \([\uW]\) should count the number of times a suitable chain on the loop space, viewed as a family of loops, intersects \(W\).
+And \([\uV \mid \uW]\) should count the number of times within such a family of loops some loop crosses through \(V\) and then \(W\).
+We leave as a pleasant exercise to understand the differential in the bar complex.
+The foundational work for all of this, developing sufficient transversality when working with the loop space, is well beyond the current volume.
+But the ability of students to understand why the bar complex gives models on the loop space would be worth the effort.
+In our experience, topics at this level involving homology and cohomology, including Steenrod and Dyer--Lashof operations, Thom isomorphisms and Gysin sequences, and cohomology of spaces such as configuration spaces and Grassmannians, are easier to teach when one can build on geometric reasoning.
+And in some cases we have already seen research-level applications of such reasoning.
