@@ -284,7 +284,7 @@ As a corollary of the proof, we have the following useful result concerning the 
 
 \subsection{Cubically transverse geometric cohomology}\label{S: transverse cochains}
 
-In this subsection we consider the cochains on $M$ represented by maps $W \to M$ that are transverse to a given cubulation of $M$.
+In this subsection we consider the cochains on $M$ represented by maps $W \to M$ that are transverse to a given cubulation of the manifold without boundary $M$.
 While we focus primarily on cubulations, the same arguments apply for any smooth polyhedral subdivision of $M$, a fact that will be useful below.
 
 \begin{definition}\label{D: trans cube}
@@ -311,6 +311,7 @@ is that this inclusion induces a cohomology isomorphism.
 In other words, the cochains that are transverse to $X$ are sufficient to compute the cohomology of $M$.
 
 \begin{theorem}\label{T: transverse complex}\index{geometric cohomology!transverse to cubulation!is geometric cohomology}
+	Let $M$ be a manifold without boundary with cubulation $X$.
 	The inclusion $C^*_{\Gamma \pf X}(M) \into C^*_\Gamma(M)$ is a quasi-isomorphism.
 \end{theorem}
 
@@ -359,7 +360,7 @@ Before proving the proposition, which is somewhat technical, we use it to prove 
 	For injectivity, suppose $W \in PC^*_{\Gamma \pf X}(M)$ is transverse to the cubulation and represents zero in $H^*(C_\Gamma^*(M))$.
 	Then by definition there is a $V \in PC^*_\Gamma(M)$ with $\bd V \sqcup -W \in Q^*(M)$.
 	By \cref{P: ball stability}, there is a proper homotopy $H \colon M \times I \to M$ such that $H(-,0) = \id_M$ and both $H(-,1)r_V$ and $H\circ (r_W \times \id_I)$ are transverse to the cubulation; co-orient $H$ and $H(-,1)$ as in \cref{D: homotopy co-orientation} based on the tautological co-orientation of $H(-,0)$.
-	Let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, let $W'$ be the precochain $W \xr{H(-,1)r_W} M$, and let $Y$ be the precochain $W \times I \xr{H\circ (r_W \times \id_I)} M$, co-orienting $r_W \times \id_I$ using the naive pre-homotopy co-orientation convention, \cref{homotopy product co-orientation convention}.
+	Let $V'$ be the precochain $V \xr{H(-,1)r_V} M$, let $W'$ be the precochain $W \xr{H(-,1)r_W} M$, and let $Y$ be the precochain $W \times I \xr{H\circ (r_W \times \id_I)} M$, co-orienting $r_W \times \id_I$ using the naive pre-homotopy co-orientation convention, Convention \ref{homotopy product co-orientation convention}.
 	Let $Z$ be the precochain $V' \sqcup -Y$, which is transverse to the cubulation.
 	We note that $\bd V' \sqcup -W'$ is the image of $\bd V \sqcup -W$ after composing with $H(-,1)$, and so it is in $Q^*(M)$ by \cref{L: Q preservation}.
 	Also by \cref{C: universal homotopy boundary co-orientation,L: co-oriented homotopy}, we have $\bd Y = W' \sqcup -W \sqcup B$, where $B$ is the map $\bd W \times I \xr{H\circ (r_{\bd W} \times \id_I)} M$ co-oriented as a homotopy from $-\bd W$ to $-\bd W'$.
@@ -689,7 +690,7 @@ We conjecture that $\mc I$ is always an isomorphism, but we have not been able t
 Before starting toward the proof, we provide an application to cohomology with coefficients and then show that we obtain similar isomorphisms with simplices instead of cubes.
 
 \begin{corollary}\label{C: cohomology with coefficients}\index{geometric cohomology!with coefficients}
-	If $H_*(M)$ is finitely-generated in each degree and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
+	If $M$ is a manifold without boundary, $H_*(M)$ is finitely-generated in each degree, and $G$ is an abelian group, then $H^*(C^*_\Gamma(M) \otimes G) \cong H^i(M;G)$.
 \end{corollary}
 \begin{proof}
 	First choose a cubulation $X$ of $M$.

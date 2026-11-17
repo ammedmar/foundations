@@ -555,8 +555,8 @@ The manifold with corners $\bd^2 W$ is equipped with a canonical diffeomorphism 
 \end{proof}
 
 \begin{remark}\label{R: bd2 oriented}\index{orientation!of $\bd^2$}
-	A similar, though more familiar, argument using \cref{Con: oriented boundary} shows that if $W$ is oriented then $\bd^2 W$ possess an orientation reversing diffeomorphism.
-	In this case, we observe that of our two copies of $U$, one is oriented by \cref{Con: oriented boundary} so that $\beta_X \wedge \beta_Y \wedge \beta_U$ is the local orientation of $W$ and the other is oriented so that $\beta_Y \wedge \beta_X \wedge \beta_U$ is the orientation of $W$.
+	A similar, though more familiar, argument using Convention \ref{Con: oriented boundary} shows that if $W$ is oriented then $\bd^2 W$ possess an orientation reversing diffeomorphism.
+	In this case, we observe that of our two copies of $U$, one is oriented by Convention \ref{Con: oriented boundary} so that $\beta_X \wedge \beta_Y \wedge \beta_U$ is the local orientation of $W$ and the other is oriented so that $\beta_Y \wedge \beta_X \wedge \beta_U$ is the orientation of $W$.
 	Thus the two copies of $U$ have opposite orientations, and again the diffeomorphism simply interchanges the two copies.
 \end{remark}
 
@@ -1592,7 +1592,7 @@ In particular, if $V$ and $W$ are oriented manifolds, we saw in \cref{P: oriente
 In other words, if $V$ and $W$ are oriented by $\beta_V$ and $\beta_W$, then $V \times W$ is oriented at any point by $\beta_V \wedge \beta_W$.
 
 We observe the following interplay between fibered and exterior products of maps of oriented manifolds more generally.
-In our notational shorthand (see \cref{N: implicit notation}), if $f \colon V \to M$ and $h \colon X \to N$, then we let $V \times X$ represent the product map $f \times h \colon M \times N$.
+In our notational shorthand (see Notation \ref{N: implicit notation}), if $f \colon V \to M$ and $h \colon X \to N$, then we let $V \times X$ represent the product map $f \times h \colon M \times N$.
 
 \begin{comment}
 	\greg{I think there's something wrong with this formula. It's consistent with Dold but not Bredon, while our definition of the intersection product is consistent with Bredon via Poincare duality. I think this also gives the wrong answer when $M$ and $N$ are $\R^2$ and both fiber products are the intersection of the x and y axes.}
@@ -1695,7 +1695,7 @@ In the next subsection, we will see that such products are intimately related to
 	If $f \colon V \to M$ and $g \colon W \to N$ are co-oriented maps of manifolds with corners with co-orientations given by isomorphisms $\phi \colon \Or(TV) \to f^*\Or(TM)$ and $\psi \colon \Or(TW) \to g^*\Or(TN)$, we define the \textbf{product co-orientation}\index{co-orientation!of external product|textbf} of $f \times g \colon V \times W \to M \times N$ by the isomorphism $(-1)^{(m-v)w}\pi_V^*\phi \otimes \pi_W^*\psi$.
 	In particular, if at $x \in V$ the co-orientation of $f$ is given locally by $(\beta_V,\beta_M)$ and at $y \in W$ the co-orientation of $g$ is given locally by $(\beta_W,\beta_N)$, then the product co-orientation is locally represented at $(x,y)$ by $$(-1)^{(m-v)w}(\beta_V \wedge \beta_W,\beta_M \wedge \beta_N).$$
 
-	Following our standard convention from \cref{N: implicit notation}, we often write simply $V \times W$ to represent the co-oriented product.
+	Following our standard convention from Notation \ref{N: implicit notation}, we often write simply $V \times W$ to represent the co-oriented product.
 \end{definition}
 
 \begin{remark}
@@ -2253,7 +2253,7 @@ The analogues for singular chains and cochains are the cap product with the coch
 \begin{proposition}\label{P: cap with identity M}\index{cap orientation!with the identity map}\index{fiber product!with identity map}\index{orientation!induced!is cap orientation of fiber product with identity}
 	Let $f \colon V \to M$ be a co-oriented map from a manifold with corners to an oriented manifold without boundary, and consider $M$ equipped with its identity map $M \to M$.
 	Then $V \times_M M$ with the cap orientation is simply $V$ with its induced orientation.
-	In other words, following \cref{N: hat check}, $$V \times_M M = \check V.$$
+	In other words, following Notation \ref{N: hat check}, $$V \times_M M = \check V.$$
 \end{proposition}
 
 \begin{proof}
@@ -2301,7 +2301,7 @@ The following technical lemma will be used to prove \cref{P: OC mixed associativ
 	Suppose we co-orient $g$ by $(\beta_W,\beta_M)$.
 	Then the cap orientation of $V \times_M W$ (i.e.\ that induced from the pullback co-orientation of $V \times_M W \to W$ and the orientation of $W$) is the same as the orientation induced on $V \times_M W$ by the fiber product co-orientation of $V \times_M W \to M$ and the orientation of $M$.
 
-	In other words, following \cref{N: hat check}, $$V \times_M W = (V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}.$$
+	In other words, following Notation \ref{N: hat check}, $$V \times_M W = (V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}.$$
 
 	In particular, the orientation of $(V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}$ does not depend on the orientation of $M$.
 \end{lemma}
@@ -2369,7 +2369,7 @@ Of course the same is true of $W$ and $g$.
 In this scenario, we have two different ways to orient $V \times_M W$, depending on whether we start by thinking of $V$ and $W$ as oriented or by thinking of $f$ and $g$ as co-oriented.
 If we think of $V$ and $W $as oriented, we have the fiber product orientation of $V \times_M W$
 discussed in \cref{S: orientations}.
-Alternatively, if we think of $f$ and $g$ as co-oriented, we can form the fiber product co-orientation of $V \times_M W \to M$ as in \cref{S: co-orientation of pullbacks} and then consider the induced orientation $(V \times_M W)\,\check{\vrule height1.3ex width0pt}$ given the orientation of $M$ (recall \cref{N: hat check}).
+Alternatively, if we think of $f$ and $g$ as co-oriented, we can form the fiber product co-orientation of $V \times_M W \to M$ as in \cref{S: co-orientation of pullbacks} and then consider the induced orientation $(V \times_M W)\,\check{\vrule height1.3ex width0pt}$ given the orientation of $M$ (recall Notation \ref{N: hat check}).
 
 Our goal in this section is to compare these two orientations on $V \times_M W$.
 To attempt to avoid confusion, let us consider $V$ and $W$ given as oriented, and we will write $V \times_M^o W$\index{$Z$@$\times_M^o$} for the fiber product orientation of \cref{S: orientations} and $V \times_M^c W$\index{$Z$@$\times_M^c$} for $(\hat V \times_M \hat W)\,\check{\vrule height1.3ex width0pt}$.
